@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-thumbnails" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2010, 2011, 2013</mal:years>
+    </mal:credit>
+  </info>
+  <title>Quellen für Vorschaubilder</title>
+
+  <p>Das Browsrfenster zeigt normalerweise die Vorschauen der Bilder und Filme im gewählten Ordner an. Außerdem werden allgemeine Symbole für sonstige Dateien angezeigt, zum Beispiel für Audio-Dateien.</p>
+
+  <p>Sie können festlegen, welche Dateitypen in der Browseransicht angezeigt werden sollen, indem Sie den Dialog <guiseq><gui>Ansicht</gui><gui>Filter</gui></guiseq> verwenden. Per Voreinstellung werden alle Medien-Dateien (wie Bilder, Filme und Audio) angezeigt, aber dies kann nach Ihren Wünschen angepasst werden.</p>
+
+  <p>Die Vorschaubilder können auf verschiedenen Wegen erzeugt werden. <app>gThumb</app> schaut zuerst nach vorhandenen Vorschaubildern im Zwischenspeicher des Systems.</p>
+
+  <p>Falls kein zwischengespeichertes Vorschaubild gefunden wird und eine Datei ein eingebettetes Vorschaubild enthält (wie es normalerweise bei von Kameras erstellten JPEG-Bildern der Fall ist), dann wird versucht, dieses zu verwenden. <app>gThumb</app> überprüft, ob das Seitenverhältnis das gleiche wie das des eigentlichen Bildes ist, und ignoriert Vorschaubilder, deren Seitenverhältnis offensichtlich nicht mit dem des Originalbildes übereinstimmt.</p>
+
+  <p>Falls dies nicht gelingt, versucht <app>gThumb</app>, die Datei vollständig zu laden und ein auf die entsprechende Größe skaliertes Vorschaubild zu erstellen.</p>
+
+  <p>Letztlich verwendet <app>gThumb</app> jegliche im System definierten Skripte zur Erzeugung von Vorschaubildern für verschiedene Medientypen. Beispielsweise werden auf einigen Systemen <app>mplayer</app>, <app>totem</app> oder andere Video-Wiedergabeprogramme zur Erzeugung von Videovorschauen verwendet.</p>
+
+  <p><app>gThumb</app> speichert Vorschaubilder in einem Zwischenspeicher des Systems, um sie auf diese Weise anderen Anwendungen zur Verfügung zu stellen. Standardmäßig löscht GNOME Vorschaubilder aus dem Zwischenspeicher, wenn sie älter als 180 Tage sind oder wenn die Größe des Zwischenspeichers 512 MB überschreitet. Technisch versierte Benutzer können diese Einstellungen im <app>Konfigurationseditor</app> erkunden, in den Schlüsseln /desktop/gnome/thumbnail_cache/maximum_age und /desktop/gnome/thumbnail_cache/maximum_size. Einige Anwendungen, wie <app>F-Spot</app>, können diese Einstellungen automatisch großzügig erhöhen.</p>
+</page>

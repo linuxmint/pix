@@ -1,0 +1,85 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= language %>" lang="<%= language %>">
+<head>
+<% if pages > 1 %>
+  <title><%= header %> (<%= page_idx %>/<%= pages %>)</title>
+<% else %>
+  <title><%= header %></title>
+<% end %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Generator" content="gThumb Image Viewer" />
+  <link href="<%= theme_link src='style.css' %>" rel="stylesheet" type="text/css" />
+</head>
+<% set_var thumbnail_width="140" thumbnail_height="140" squared %>
+<% set_var preview_width="650" preview_height="650" if="image_description_enabled || image_attributes_enabled" %>
+<% set_var preview_width="750" preview_height="750" unless="image_description_enabled || image_attributes_enabled" %>
+<body>
+  <div id="wrapper">
+    <div id="main">
+    
+      <h1 class="index-title">
+        <%= header %>
+      </h1>
+      
+      <% if pages > 1 %>
+      <ul class="page-navigation">
+        <li class="status">
+          <%= translate 'Page %d of %d', page_idx, pages %> 
+        </li>
+        <% if page_idx > 1  %>
+        <li>
+          <a href="<%= page_link idx_relative="-1" %>" title="<%= translate 'View the previous page' %>">
+            <%= translate 'Previous' %>
+          </a>
+        </li>
+        <% else %>
+        <li class="disabled">
+          <span><%= translate 'Previous' %></span>
+        </li>        
+        <% end %>        
+        <% if page_idx < pages %>
+        <li class="separator">
+          <a href="<%= page_link idx_relative="+1" %>" title="<%= translate 'View the next page' %>">
+            <%= translate 'Next' %>
+          </a>
+        </li>
+        <% else %>
+        <li class="disabled separator">
+          <span><%= translate 'Next' %></span>
+        </li> 
+        <% end %>      
+        <% for_each i in 1..pages %>
+        <% if i == page_idx %>
+        <li class="current number">
+          <span><%= eval i %></span>
+        </li>
+        <% else %>
+        <li class="number">
+          <a href="<%= page_link idx="i" %>" title="<%= translate 'View page %d', i %>">
+            <%= eval i %>
+          </a>
+        </li>
+        <% end %>
+        <li>
+        </li>        
+        <% end %>        
+        <li class="ultimo">
+        </li>
+      </ul>
+      <% end %>
+          
+      <div id="thumbnail-list">
+        <%= thumbnails %>
+      </div>
+
+    </div>    
+  </div>
+  <div id="footer">
+    <div id="footer-2">
+      <%= footer %>
+    </div>
+  </div>
+</body>
+</html>

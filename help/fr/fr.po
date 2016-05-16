@@ -1,0 +1,2903 @@
+# French translation of gthumb documentation.
+# Copyright (C) 2007-2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gthumb
+# documentation package.
+#
+# Claude Paroz <claude@2xlibre.net>, 2007,2011.
+# Laurent Coudeur <laurentc@iol.ie>, 2010.
+# Bruno Brouard <annoa.b@gmail.com>, 2007,2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gthumb.help\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-21 09:34+0000\n"
+"PO-Revision-Date: 2013-03-23 14:50+0100\n"
+"Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Bruno Brouard <annoa.b@gmail.com>, 2007,2010\n"
+"Claude Paroz <claude@2xlibre.net>, 2007,2011\n"
+"Laurent Coudeur <laurentc@iol.ie>, 2010"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:33(media) C/edit-save-undo-redo.page:8(media)
+#: C/edit-colors.page:8(media) C/edit-rotate.page:8(media)
+#: C/edit-resize-crop.page:8(media) C/edit-redeye.page:7(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+msgstr ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+
+#: C/index.page:7(credit/name)
+msgid "Paolo Bacchilega"
+msgstr "Paolo Bacchilega"
+
+#: C/index.page:12(credit/name)
+msgid "Michael J. Chudobiak"
+msgstr "Michael J. Chudobiak"
+
+#: C/index.page:20(page/title)
+msgid "gThumb Help"
+msgstr "Manuel de gThumb"
+
+#: C/index.page:23(section/title)
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: C/index.page:27(section/title)
+msgid "File Management"
+msgstr "Gestion des fichiers"
+
+#: C/index.page:31(section/title)
+msgid "Editing Mode"
+msgstr "Mode Édition"
+
+#: C/index.page:32(section/p)
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
+"Numerous editing tools are provided for touching-up individual photos. Undo "
+"and redo functions are provided, up until the photo is saved. To access the "
+"editing tools, open an image and then click the <gui>Edit File</gui> toolbar "
+"button (the palette icon), or press <keyseq><key>e</key></keyseq>."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> De "
+"nombreux outils d'édition sont fournis pour modifier les photos "
+"individuellement. Des fonctions annuler et rétablir sont fournies tant que "
+"la photo n'est pas enregistrée. Pour accéder aux outils d'édition, ouvrez "
+"une image et cliquez sur le bouton <gui>Modifier le fichier</gui> de la "
+"barre d'outils (l'icône palette) ou appuyez sur la touche <keyseq><key>e</"
+"key></keyseq>."
+
+#: C/index.page:42(section/title)
+msgid "Batch Tools"
+msgstr "Outils de traitement par lot"
+
+#: C/index.page:43(section/p)
+msgid ""
+"Batch tools are provided to modify multiple images simultaneously. Changes "
+"are written immediately, and are not undoable."
+msgstr ""
+"Des outils de traitement par lot sont fournis pour traiter plusieurs images "
+"en même temps. Les modifications sont enregistrées immédiatement et ne sont "
+"pas réversibles."
+
+#: C/index.page:49(section/title)
+msgid "Slideshows"
+msgstr "Diaporamas"
+
+#: C/index.page:53(section/title)
+msgid "Importing"
+msgstr "Importation"
+
+#: C/index.page:57(section/title)
+msgid "Sharing"
+msgstr "Partage"
+
+#: C/index.page:61(section/title)
+msgid "Organizing"
+msgstr "Organisation"
+
+#: C/index.page:65(section/title)
+msgid "Other Tools"
+msgstr "Autres outils"
+
+#: C/index.page:69(section/title)
+msgid "Reference"
+msgstr "Référence"
+
+#: C/attributes.page:6(page/title)
+msgid "Attribute Codes"
+msgstr "Codes d'attributs"
+
+#: C/attributes.page:7(page/p)
+msgid ""
+"<app>gThumb</app> stores many different attributes for each file. Extensions "
+"may add more. The list below is a summary of some of the more common "
+"attributes:"
+msgstr ""
+"<app>gThumb</app> enregistre de nombreux attributs pour chaque fichier. Les "
+"extensions en ajoutent encore plus. La liste qui suit est un résumé d'une "
+"partie des attributs les plus courants :"
+
+#: C/attributes.page:12(item/p)
+msgid "gth::file::display-size"
+msgstr "gth::file::display-size"
+
+#: C/attributes.page:15(item/p)
+msgid "standard::fast-content-type"
+msgstr "standard::fast-content-type"
+
+#: C/attributes.page:18(item/p)
+msgid "general::dimensions"
+msgstr "general::dimensions"
+
+#: C/attributes.page:21(item/p)
+msgid "general::format"
+msgstr "general::format"
+
+#: C/attributes.page:24(item/p)
+msgid "general::location"
+msgstr "general::location"
+
+#: C/attributes.page:27(item/p)
+msgid "general::datetime"
+msgstr "general::datetime"
+
+#: C/attributes.page:30(item/p)
+msgid "general::rating"
+msgstr "general::rating"
+
+#: C/attributes.page:33(item/p)
+msgid "Exif::Image::Make"
+msgstr "Exif::Image::Make"
+
+#: C/attributes.page:36(item/p)
+msgid "Exif::Image::Model"
+msgstr "Exif::Image::Model"
+
+#: C/attributes.page:39(item/p)
+msgid "Exif::Image::Software"
+msgstr "Exif::Image::Software"
+
+#: C/attributes.page:42(item/p)
+msgid "Exif::Image::Artist"
+msgstr "Exif::Image::Artist"
+
+#: C/attributes.page:45(item/p)
+msgid "Exif::Image::Copyright"
+msgstr "Exif::Image::Copyright"
+
+#: C/attributes.page:48(item/p)
+msgid "Exif::Photo::ISOSpeedRatings"
+msgstr "Exif::Photo::ISOSpeedRatings"
+
+#: C/attributes.page:51(item/p)
+msgid "Exif::Photo::BrightnessValue"
+msgstr "Exif::Photo::BrightnessValue"
+
+#: C/attributes.page:54(item/p)
+msgid "Exif::Photo::FNumber"
+msgstr "Exif::Photo::FNumber"
+
+#: C/attributes.page:57(item/p)
+msgid "Exif::Photo::ApertureValue"
+msgstr "Exif::Photo::ApertureValue"
+
+#: C/attributes.page:60(item/p)
+msgid "Exif::Photo::MaxApertureValue"
+msgstr "Exif::Photo::MaxApertureValue"
+
+#: C/attributes.page:63(item/p)
+msgid "Exif::Photo::ExposureTime"
+msgstr "Exif::Photo::ExposureTime"
+
+#: C/attributes.page:66(item/p)
+msgid "Exif::Photo::ExposureProgram"
+msgstr "Exif::Photo::ExposureProgram"
+
+#: C/attributes.page:69(item/p)
+msgid "Exif::Photo::ExposureIndex"
+msgstr "Exif::Photo::ExposureIndex"
+
+#: C/attributes.page:72(item/p)
+msgid "Exif::Photo::ExposureBiasValue"
+msgstr "Exif::Photo::ExposureBiasValue"
+
+#: C/attributes.page:75(item/p)
+msgid "Exif::Photo::ExposureMode"
+msgstr "Exif::Photo::ExposureMode"
+
+#: C/attributes.page:78(item/p)
+msgid "Exif::Photo::ShutterSpeedValue"
+msgstr "Exif::Photo::ShutterSpeedValue"
+
+#: C/attributes.page:81(item/p)
+msgid "Exif::Photo::MeteringMode"
+msgstr "Exif::Photo::MeteringMode"
+
+#: C/attributes.page:84(item/p)
+msgid "Exif::Photo::LightSource"
+msgstr "Exif::Photo::LightSource"
+
+#: C/attributes.page:87(item/p)
+msgid "Exif::Photo::WhiteBalance"
+msgstr "Exif::Photo::WhiteBalance"
+
+#: C/attributes.page:90(item/p)
+msgid "Exif::Photo::Flash"
+msgstr "Exif::Photo::Flash"
+
+#: C/attributes.page:93(item/p)
+msgid "Exif::Photo::FocalLength"
+msgstr "Exif::Photo::FocalLength"
+
+#: C/attributes.page:96(item/p)
+msgid "Exif::Photo::SubjectArea"
+msgstr "Exif::Photo::SubjectArea"
+
+#: C/attributes.page:99(item/p)
+msgid "Exif::Photo::Contrast"
+msgstr "Exif::Photo::Contrast"
+
+#: C/attributes.page:102(item/p)
+msgid "Exif::Photo::Saturation"
+msgstr "Exif::Photo::Saturation"
+
+#: C/attributes.page:105(item/p)
+msgid "Exif::Photo::Sharpness"
+msgstr "Exif::Photo::Sharpness"
+
+#: C/strftime.page:6(page/title)
+msgid "Date/Time Format Codes"
+msgstr "Codes des formats de date/heure"
+
+#: C/strftime.page:8(page/p)
+msgid ""
+"This is a summary of standard date/time codes that may be used in format "
+"strings:"
+msgstr ""
+"Voici un résumé des codes standards de date et d'heure qui peuvent être "
+"utilisés dans les chaînes de format :"
+
+#: C/strftime.page:12(table/title)
+msgid "Valid format codes for custom subfolders"
+msgstr "Codes de format valides pour les sous-dossiers personnalisés"
+
+#: C/strftime.page:15(td/p)
+msgid "%a"
+msgstr "%a"
+
+#: C/strftime.page:18(td/p)
+msgid "The abbreviated weekday name according to the current locale."
+msgstr ""
+"Le nom du jour de la semaine sous forme abrégée conformément à "
+"l'environnement linguistique actuel."
+
+#: C/strftime.page:24(td/p)
+msgid "%A"
+msgstr "%A"
+
+#: C/strftime.page:27(td/p)
+msgid "The full weekday name according to the current locale."
+msgstr ""
+"Le nom complet du jour de la semaine conformément à l'environnement "
+"linguistique actuel."
+
+#: C/strftime.page:33(td/p)
+msgid "%b"
+msgstr "%b"
+
+#: C/strftime.page:36(td/p)
+msgid "The abbreviated month name according to the current locale."
+msgstr ""
+"Le nom du mois sous forme abrégée conformément à l'environnement "
+"linguistique actuel."
+
+#: C/strftime.page:42(td/p)
+msgid "%B"
+msgstr "%B"
+
+#: C/strftime.page:45(td/p)
+msgid "The full month name according to the current locale."
+msgstr ""
+"Le nom complet du mois conformément à l'environnement linguistique actuel."
+
+#: C/strftime.page:50(td/p)
+msgid "%c"
+msgstr "%c"
+
+#: C/strftime.page:53(td/p)
+msgid "The preferred date and time representation for the current locale."
+msgstr ""
+"La représentation préférée de la date et de l'heure conformément à "
+"l'environnement linguistique actuel."
+
+#: C/strftime.page:59(td/p)
+msgid "%C"
+msgstr "%C"
+
+#: C/strftime.page:62(td/p)
+msgid "The century number (year/100) as a 2-digit integer."
+msgstr ""
+"Le numéro du siècle (année/100) sous la forme d'un entier à 2 chiffres."
+
+#: C/strftime.page:67(td/p)
+msgid "%d"
+msgstr "%d"
+
+#: C/strftime.page:70(td/p)
+msgid "The day of the month as a decimal number (range 01 to 31)."
+msgstr ""
+"Le jour du mois sous la forme d'un nombre décimal (compris entre 01 et 31)."
+
+#: C/strftime.page:76(td/p)
+msgid "%D"
+msgstr "%D"
+
+#: C/strftime.page:79(td/p)
+msgid ""
+"Equivalent to %m/%d/%y. (Yecch -- for Americans only. Americans should note "
+"that in other countries %d/%m/%y is rather common. This means that in "
+"international context this format is ambiguous and should not be used.)"
+msgstr ""
+"Équivalent à %m/%d/%y. (Note destinée uniquement aux américains : les "
+"américains devraient remarquer que dans les autres pays %d/%m/%y est très "
+"courant. Cela signifie que, dans un contexte international, ce format est "
+"ambigu et ne devrait pas être utilisé.)"
+
+#: C/strftime.page:87(td/p)
+msgid "%e"
+msgstr "%e"
+
+#: C/strftime.page:90(td/p)
+msgid ""
+"Like %d, the day of the month as a decimal number, but a leading zero is "
+"replaced by a space."
+msgstr ""
+"Comme pour %d, le jour du mois sous la forme d'un nombre décimal mais un "
+"zéro à gauche est remplacé par un espace."
+
+#: C/strftime.page:96(td/p)
+msgid "%E"
+msgstr "%E"
+
+#: C/strftime.page:99(td/p) C/strftime.page:208(td/p)
+msgid "Modifier: use alternative format, see below."
+msgstr "Modificateur : utilisez un format alternatif, voyez plus bas."
+
+#: C/strftime.page:104(td/p)
+msgid "%F"
+msgstr "%F"
+
+#: C/strftime.page:107(td/p)
+msgid "Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)"
+msgstr "Équivalent à %Y-%m-%d (le format de date ISO 8601). (C99)"
+
+#: C/strftime.page:113(td/p)
+msgid "%G"
+msgstr "%G"
+
+#: C/strftime.page:116(td/p)
+msgid ""
+"The ISO 8601 year with century as a decimal number. The 4-digit year "
+"corresponding to the ISO week number (see %V). This has the same format and "
+"value as %y, except that if the ISO week number belongs to the previous or "
+"next year, that year is used instead."
+msgstr ""
+"L'année ISO 8601 avec le siècle sous la forme d'un nombre décimal. L'année à "
+"4 chiffres correspond au nombre ISO de la semaine (voir %V). C'est le même "
+"format et la même valeur que %y à part que, si le nombre ISO de la semaine "
+"appartient à l'année précédente ou à l'année suivante, cette année est "
+"utilisée à la place."
+
+#: C/strftime.page:125(td/p)
+msgid "%g"
+msgstr "%g"
+
+#: C/strftime.page:128(td/p)
+msgid "Like %G, but without century, i.e., with a 2-digit year (00-99)."
+msgstr ""
+"Comme %G mais sans le siècle, c.-à-d. avec une année à 2 chiffres (compris "
+"entre 00 et 99)."
+
+#: C/strftime.page:134(td/p)
+msgid "%h"
+msgstr "%h"
+
+#: C/strftime.page:137(td/p)
+msgid "Equivalent to %b."
+msgstr "Équivalent à %b."
+
+#: C/strftime.page:142(td/p)
+msgid "%H"
+msgstr "%H"
+
+#: C/strftime.page:145(td/p)
+msgid "The hour as a decimal number using a 24-hour clock (range 00 to 23)."
+msgstr ""
+"L'heure sous la forme d'un nombre décimal en utilisant une horloge à 24 "
+"heures (compris entre 00 et 23)."
+
+#: C/strftime.page:151(td/p)
+msgid "%I"
+msgstr "%I"
+
+#: C/strftime.page:154(td/p)
+msgid "The hour as a decimal number using a 12-hour clock (range 01 to 12)."
+msgstr ""
+"L'heure sous la forme d'un nombre décimal en utilisant une horloge à 12 "
+"heures (compris entre 01 et 12)."
+
+#: C/strftime.page:160(td/p)
+msgid "%j"
+msgstr "%j"
+
+#: C/strftime.page:163(td/p)
+msgid "The day of the year as a decimal number (range 001 to 366)."
+msgstr ""
+"Le jour de l'année sous la forme d'un nombre décimal (compris entre 001 et "
+"366)."
+
+#: C/strftime.page:169(td/p)
+msgid "%k"
+msgstr "%k"
+
+#: C/strftime.page:172(td/p)
+msgid ""
+"The hour (24-hour clock) as a decimal number (range 0 to 23); single digits "
+"are preceded by a blank. (See also %H.)"
+msgstr ""
+"L'heure (horloge à 24 heures) sous la forme d'un nombre décimal (compris "
+"entre 0 et 23), un chiffre seul est précédé d'un espace (voir également %H)."
+
+#: C/strftime.page:179(td/p)
+msgid "%l"
+msgstr "%l"
+
+#: C/strftime.page:182(td/p)
+msgid ""
+"The hour (12-hour clock) as a decimal number (range 1 to 12); single digits "
+"are preceded by a blank. (See also %I.)"
+msgstr ""
+"L'heure (horloge à 12 heures) sous la forme d'un nombre décimal (compris "
+"entre 1 et 12), un chiffre seul est précédé d'un espace (voir également %I)."
+
+#: C/strftime.page:189(td/p)
+msgid "%m"
+msgstr "%m"
+
+#: C/strftime.page:192(td/p)
+msgid "The month as a decimal number (range 01 to 12)."
+msgstr "Le mois sous la forme d'un nombre décimal (compris entre 01 et 12)."
+
+#: C/strftime.page:197(td/p)
+msgid "%M"
+msgstr "%M"
+
+#: C/strftime.page:200(td/p)
+msgid "The minute as a decimal number (range 00 to 59)."
+msgstr ""
+"Les minutes sous la forme d'un nombre décimal (compris entre 00 et 59)."
+
+#: C/strftime.page:205(td/p)
+msgid "%O"
+msgstr "%O"
+
+#: C/strftime.page:213(td/p)
+msgid "%p"
+msgstr "%p"
+
+#: C/strftime.page:216(td/p)
+msgid ""
+"Either 'AM' or 'PM' according to the given time value, or the corresponding "
+"strings for the current locale. Noon is treated as 'pm' and midnight as 'am'."
+msgstr ""
+"Soit « AM » ou « PM » selon la valeur actuelle de l'heure ou une chaîne "
+"correspondante conformément à l'environnement linguistique actuel. Midi est "
+"vu comme « pm » et minuit comme « am »."
+
+#: C/strftime.page:223(td/p)
+msgid "%P"
+msgstr "%P"
+
+#: C/strftime.page:226(td/p)
+msgid ""
+"Like %p but in lowercase: 'am' or 'pm' or a corresponding string for the "
+"current locale."
+msgstr ""
+"Comme %p mais en minuscule : « am » ou « pm » ou une chaîne correspondante "
+"conformément à l'environnement linguistique actuel."
+
+#: C/strftime.page:232(td/p)
+msgid "%r"
+msgstr "%r"
+
+#: C/strftime.page:235(td/p)
+msgid ""
+"The time in a.m. or p.m. notation. In the POSIX locale this is equivalent to "
+"'%I:%M:%S %p'."
+msgstr ""
+"L'heure en notation a.m. ou p.m. Dans l'environnement linguistique actuel "
+"POSIX, c'est équivalent à « %I:%M:%S %p »."
+
+#: C/strftime.page:241(td/p)
+msgid "%R"
+msgstr "%R"
+
+#: C/strftime.page:244(td/p)
+msgid ""
+"The time in 24-hour notation (%H:%M). For a version including the seconds, "
+"see %T below."
+msgstr ""
+"L'heure en notation à 24 heures (%H:%M). Pour une version incluant les "
+"secondes, consultez %T ci-dessous."
+
+#: C/strftime.page:250(td/p)
+msgid "%s"
+msgstr "%s"
+
+#: C/strftime.page:253(td/p)
+msgid ""
+"The number of seconds since the Epoch, i.e., since 1970-01-01 00:00:00 UTC."
+msgstr ""
+"Le nombre de secondes depuis la date Epoch, c.-à-d. depuis le 01/01/1970 "
+"00:00:00 UTC."
+
+#: C/strftime.page:259(td/p)
+msgid "%S"
+msgstr "%S"
+
+#: C/strftime.page:262(td/p)
+msgid ""
+"The second as a decimal number (range 00 to 60). (The range is up to 60 to "
+"allow for occasional leap seconds.)"
+msgstr ""
+"Les secondes en nombre décimal (compris entre 00 et 60) (la plage va jusqu'à "
+"60 pour permettre des secondes intercalaires occasionnelles)."
+
+#: C/strftime.page:269(td/p)
+msgid "%T"
+msgstr "%T"
+
+#: C/strftime.page:272(td/p)
+msgid "The time in 24-hour notation (%H:%M:%S)."
+msgstr "L'heure en notation à 24 heures (%H:%M:%S)."
+
+#: C/strftime.page:277(td/p)
+msgid "%u"
+msgstr "%u"
+
+#: C/strftime.page:280(td/p)
+msgid ""
+"The day of the week as a decimal number, range 1 to 7, Monday being 1. See "
+"also %w."
+msgstr ""
+"Le jour de la semaine représenté par un chiffre compris entre 1 et 7, lundi "
+"étant représenté par 1. Consultez aussi %w."
+
+#: C/strftime.page:286(td/p)
+msgid "%U"
+msgstr "%U"
+
+#: C/strftime.page:289(td/p)
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Sunday as the first day of week 01. See also %V and "
+"%W."
+msgstr ""
+"Le numéro de la semaine de l'année actuelle sous la forme d'un nombre "
+"décimal compris entre 00 et 53, le premier dimanche est le premier jour de "
+"la semaine 01. Consultez également %V et %W."
+
+#: C/strftime.page:296(td/p)
+msgid "%V"
+msgstr "%V"
+
+#: C/strftime.page:299(td/p)
+msgid ""
+"The ISO 8601:1988 week number of the current year as a decimal number, range "
+"01 to 53, where week 1 is the first week that has at least 4 days in the "
+"current year, and with Monday as the first day of the week. See also %U and "
+"%W."
+msgstr ""
+"Le numéro ISO 8601:1988 de la semaine de l'année actuelle sous la forme d'un "
+"nombre décimal, compris entre 01 et 53, où la semaine 1 est la première "
+"semaine qui possède au moins 4 jours dans l'année actuelle, le lundi étant "
+"le premier jour de la semaine. Consultez également %U et %W."
+
+#: C/strftime.page:308(td/p)
+msgid "%w"
+msgstr "%w"
+
+#: C/strftime.page:311(td/p)
+msgid ""
+"The day of the week as a decimal, range 0 to 6, Sunday being 0. See also %u."
+msgstr ""
+"Le jour de la semaine sous la forme d'un nombre décimal, compris entre 0 et "
+"6, le dimanche correspond à 0. Consultez également %u."
+
+#: C/strftime.page:317(td/p)
+msgid "%W"
+msgstr "%W"
+
+#: C/strftime.page:320(td/p)
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Monday as the first day of week 01."
+msgstr ""
+"Le numéro de la semaine de l'année actuelle sous la forme d'un nombre "
+"décimal, compris entre 00 et 53, le premier lundi est le premier jour de la "
+"semaine 01."
+
+#: C/strftime.page:327(td/p)
+msgid "%x"
+msgstr "%x"
+
+#: C/strftime.page:330(td/p)
+msgid ""
+"The preferred date representation for the current locale without the time."
+msgstr ""
+"La représentation préférée de la date conformément à l'environnement "
+"linguistique actuel, sans l'heure."
+
+#: C/strftime.page:336(td/p)
+msgid "%X"
+msgstr "%X"
+
+#: C/strftime.page:339(td/p)
+msgid ""
+"The preferred time representation for the current locale without the date."
+msgstr ""
+"La représentation préférée de l'heure conformément à l'environnement "
+"linguistique actuel, sans la date."
+
+#: C/strftime.page:345(td/p)
+msgid "%y"
+msgstr "%y"
+
+#: C/strftime.page:348(td/p)
+msgid "The year as a decimal number without a century (range 00 to 99)."
+msgstr ""
+"L'année sous la forme d'un nombre décimal sans le siècle (compris entre 00 "
+"et 99)."
+
+#: C/strftime.page:354(td/p)
+msgid "%Y"
+msgstr "%Y"
+
+#: C/strftime.page:357(td/p)
+msgid "The year as a decimal number including the century."
+msgstr "L'année sous la forme d'un nombre décimal avec le siècle."
+
+#: C/strftime.page:362(td/p)
+msgid "%z"
+msgstr "%z"
+
+#: C/strftime.page:365(td/p)
+msgid ""
+"The time-zone as hour offset from GMT. Required to emit RFC 822-conformant "
+"dates (using \"%a, %d %b %Y %H:%M:%S %z\")."
+msgstr ""
+"Le fuseau horaire représenté par le décalage horaire par rapport à GMT. Ceci "
+"est nécessaire pour émettre des dates conformes à RFC 822 (en utilisant "
+"« %a, %d %b %Y %H:%M:%S %z »)."
+
+#: C/strftime.page:372(td/p)
+msgid "%Z"
+msgstr "%Z"
+
+#: C/strftime.page:375(td/p)
+msgid "The time zone or name or abbreviation."
+msgstr "Le fuseau horaire ou le nom ou l'abréviation."
+
+#: C/strftime.page:380(page/p)
+msgid ""
+"Some conversion specifications can be modified by preceding the conversion "
+"specifier character by the E or O modifier to indicate that an alternative "
+"format should be used. If the alternative format or specification does not "
+"exist for the current locale, the behaviour will be as if the unmodified "
+"conversion specification were used. The Single Unix Specification mentions "
+"%Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, "
+"%OV, %Ow, %OW, %Oy, where the effect of the O modifier is to use alternative "
+"numeric symbols (say, roman numerals), and that of the E modifier is to use "
+"a locale-dependent alternative representation."
+msgstr ""
+"Certaines spécifications de conversion peuvent être modifiées en faisant "
+"précéder le caractère de spécification de la conversion par le modificateur "
+"E ou O, pour indiquer qu'un format alternatif doit être utilisé. Si le "
+"format alternatif ou la spécification n'existe pas dans l'environnement "
+"linguistique actuel, le comportement reste le même que celui sans le "
+"modificateur. Le « Single Unix Specification » mentionne %Ec, %EC, %Ex, %EX, "
+"%Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy où "
+"les effets de l'utilisation du préfixe O sont l'utilisation d'autres "
+"symboles numériques (comme des chiffres romains, par exemple) et que ceux du "
+"préfixe E sont l'usage d'une représentation alternative dépendante de "
+"l'environnement linguistique."
+
+#: C/introduction.page:6(page/title)
+msgid "About gThumb"
+msgstr "À propos de gThumb"
+
+#: C/introduction.page:8(page/p)
+msgid ""
+"<app>gThumb</app> is an image viewer and browser written for the GNOME "
+"environment. It lets you browse your hard disk, showing you thumbnails of "
+"image files and view single images of many different formats."
+msgstr ""
+"<app>gThumb</app> est un navigateur et visionneur d'images écrit pour "
+"l'environnement GNOME. Il vous permet de naviguer sur votre disque dur en "
+"affichant des vignettes des images et d'afficher des images seules dans de "
+"nombreux formats."
+
+#: C/introduction.page:13(page/p)
+msgid ""
+"<app>gThumb</app> supports the most common graphics formats, including JPEG, "
+"GIF, TIF, and PNG. <app>gThumb</app> will also display other less common "
+"image types if the supporting libraries are installed, including TGA, ICO, "
+"BMP, XPM, and others."
+msgstr ""
+"<app>gThumb</app> prend en charge les formats graphiques les plus courants "
+"parmi JPEG, GIF, TIF et PNG. <app>gThumb</app> affiche aussi des types "
+"d'images moins courants, si les bibliothèques de prise en charge sont "
+"installées, parmi TGA, ICO, BMP, XPM et bien d'autres."
+
+#: C/introduction.page:18(page/p)
+msgid ""
+"Some support for RAW image types is included, especially if the dcraw "
+"program is installed on your system."
+msgstr ""
+"La prise en charge de certains types d'images RAW est incluse, plus "
+"particulièrement si le programme « dcraw » est installé sur votre système."
+
+#: C/introduction.page:21(page/p)
+msgid ""
+"<app>gThumb</app> not only lets you view image files but has many other "
+"features such as adding comments to images, organizing images into catalogs, "
+"printing images, slideshows, setting your desktop background, and more."
+msgstr ""
+"<app>gThumb</app> permet non seulement d'afficher des images, mais il "
+"présente d'autres possibilités telles que l'ajout de commentaires aux "
+"images, l'organisation des images dans des catalogues, l'impression des "
+"images, l'affichage en diaporama, le paramétrage de l'arrière-plan du bureau "
+"et bien d'autres."
+
+#: C/introduction.page:26(page/p)
+msgid ""
+"<app>gThumb</app> includes a tool to import photos from attached cameras and "
+"memory card readers."
+msgstr ""
+"<app>gThumb</app> inclut un outil d'importation de photos à partir des "
+"appareils photos connectés et des lecteurs de cartes mémoire."
+
+#: C/introduction.page:29(page/p)
+msgid ""
+"<app>gThumb</app> can read EXIF, XMP, and IPTC metadata that is commonly "
+"embedded in files."
+msgstr ""
+"<app>gThumb</app> peut lire les méta-données EXIF, XMP et IPTC qui sont très "
+"souvent intégrées dans les fichiers."
+
+#: C/introduction.page:32(page/p)
+msgid ""
+"<app>gThumb</app> provides a systems of extensions (or plug-ins), to allow "
+"users to extend the functionality of <app>gThumb</app>."
+msgstr ""
+"<app>gThumb</app> fournit un système d'extensions (ou greffons) qui "
+"permettent aux utilisateurs d'étendre les fonctionnalités de <app>gThumb</"
+"app>."
+
+#: C/introduction.page:34(page/p)
+msgid ""
+"More information about these extensions, and about <app>gThumb</app> "
+"generally, is available at <link href=\"http://live.gnome.org/gthumb"
+"\">http://live.gnome.org/gthumb</link>."
+msgstr ""
+"Plus d'informations à propos de ces extensions, et de <app>gThumb</app> en "
+"général, sont disponibles sur cette page <link href=\"http://live.gnome.org/"
+"gthumb\">http://live.gnome.org/gthumb</link>."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/browser.page:13(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+msgstr ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+
+#: C/browser.page:6(page/title)
+msgid "Browsing Your Files"
+msgstr "Navigation parmi vos fichiers"
+
+#: C/browser.page:8(page/p)
+msgid "When you start <app>gThumb</app> the following window is displayed:"
+msgstr "Quand vous lancez <app>gThumb</app> la fenêtre suivante s'affiche :"
+
+#: C/browser.page:11(figure/title)
+msgid "The main window"
+msgstr "La fenêtre principale"
+
+#: C/browser.page:16(page/p)
+msgid "The <app>gThumb</app> browser contains the following elements:"
+msgstr "Le navigateur <app>gThumb</app> contient les éléments suivants :"
+
+#: C/browser.page:20(item/title)
+msgid "Menubar"
+msgstr "Barre de menus"
+
+#: C/browser.page:21(item/p)
+msgid ""
+"The menus on the menubar contain all of the commands that you can use in "
+"<app>gThumb</app>"
+msgstr ""
+"Les menus de la barre de menus contiennent toutes les commandes que vous "
+"pouvez utiliser dans <app>gThumb</app>."
+
+#: C/browser.page:25(item/title)
+msgid "Toolbar"
+msgstr "Barre d'outils"
+
+#: C/browser.page:26(item/p)
+msgid ""
+"The toolbar contains a subset of the commands that you can access from the "
+"menubar. In particular, the Tools button contains functions for batch "
+"processing multiple images."
+msgstr ""
+"La barre d'outils contient un sous-ensemble des commandes accessibles à "
+"partir de la barre de menus. En particulier, le bouton Outils contient "
+"certaines fonctions de traitement par lot des images."
+
+#: C/browser.page:31(item/title)
+msgid "Locationbar"
+msgstr "Barre d'adresse"
+
+#: C/browser.page:32(item/p)
+msgid "The locationbar contains the current folder or catalog name."
+msgstr "La barre d'adresse contient le nom du dossier ou du catalogue actuel."
+
+#: C/browser.page:36(item/title)
+msgid "Folder Tree"
+msgstr "Arborescence des dossiers"
+
+#: C/browser.page:37(item/p)
+msgid ""
+"The folder tree allows you to navigate the filesystem. Single-clicking on a "
+"folder will load its images in the browser view. Double-clicking a folder, "
+"or clicking the expander arrow, will also list folder's subfolders in the "
+"tree."
+msgstr ""
+"L'arborescence des dossiers vous permet de parcourir le système de fichiers. "
+"Cliquez sur un dossier pour charger les images qu'il contient dans la "
+"fenêtre de navigation. Double-cliquez sur un dossier ou cliquez sur la "
+"flèche d'extension pour afficher la liste des sous-dossiers qu'il contient "
+"dans l'arborescence."
+
+#: C/browser.page:44(item/title)
+msgid "Browser View"
+msgstr "Fenêtre de Navigation"
+
+#: C/browser.page:45(item/p)
+msgid ""
+"The browser view shows the images in the current folder or catalog. Single-"
+"clicking an image will enable the Information Sidebar for that image. Double-"
+"clicking an image will open it in the viewer mode. Double-clicking with the "
+"middle mouse button will load the image in fullscreen viewer mode."
+msgstr ""
+"La fenêtre de navigation affiche les images contenues dans le dossier ou le "
+"catalogue actuel. Cliquez sur une image pour activer la barre latérale "
+"d'informations pour cette image. Double-cliquez sur une image pour l'ouvrir "
+"en mode de visualisation. Double-cliquez avec le bouton central de la souris "
+"pour charger l'image en mode d'affichage plein écran."
+
+#: C/browser.page:52(item/title)
+msgid "Organize Button"
+msgstr "Bouton Organiser"
+
+#: C/browser.page:53(item/p)
+msgid ""
+"The Organize button, just above the browser view, allows you to group images "
+"into catalogs."
+msgstr ""
+"Le bouton Organiser, juste au dessus de la fenêtre de navigation, vous "
+"permet de regrouper les images dans des catalogues."
+
+#: C/browser.page:57(item/title)
+msgid "Statusbar"
+msgstr "Barre d'état"
+
+#: C/browser.page:58(item/p)
+msgid "On the statusbar you can read:"
+msgstr "Dans la barre d'état, vous pouvez lire :"
+
+#: C/browser.page:61(item/p)
+msgid ""
+"the total number of images contained in the current folder or catalog and "
+"their total size."
+msgstr ""
+"le nombre total d'images contenues dans le dossier ou le catalogue actuel et "
+"la taille totale,"
+
+#: C/browser.page:65(item/p)
+msgid "the number of the selected images and their size."
+msgstr "le nombre d'images sélectionnées et leur taille,"
+
+#: C/browser.page:68(item/p)
+msgid "some properties of the currently focused image."
+msgstr "certaines propriétés de l'image actuellement sélectionnée."
+
+#: C/browser.page:73(item/title)
+msgid "Information Sidebar"
+msgstr "Barre latérale d'informations"
+
+#: C/browser.page:74(item/p)
+msgid ""
+"If a single image is selected, the information sidebar (below the folder "
+"tree) will display detailed information (such as EXIF or XMP tags) about the "
+"selected image."
+msgstr ""
+"Si une seule image est sélectionnée, la barre latérale d'informations (sous "
+"l'arborescence des dossiers) affiche les informations détaillées de l'image "
+"sélectionnée (telles que les balises EXIF ou XMP)."
+
+#: C/browser.page:79(item/title)
+msgid "Filter Bar"
+msgstr "Barre de filtre"
+
+#: C/browser.page:80(item/p)
+msgid ""
+"An image filtering tool is provided just below the browser view. This can be "
+"used to filter the displayed images. For example, the browser view can be "
+"limited to files of a certain size, date, or name pattern, or other "
+"characteristics."
+msgstr ""
+"Un outil de filtrage des images est fourni en dessous de la fenêtre de "
+"navigation. Il est utilisé pour filtrer les images affichées. Par exemple, "
+"la fenêtre de navigation peut être limitée aux fichiers d'une certaine "
+"taille, date, motif de nom ou d'autres caractéristiques."
+
+#: C/batch-rotate.page:6(page/title)
+msgid "Rotating Images Losslessly"
+msgstr "Rotation d'images sans perte"
+
+#: C/batch-rotate.page:8(page/p)
+msgid ""
+"To rotate one or more images, select the images in the browser view. Then "
+"click the <gui>Tools</gui> button on the main toolbar, and select either "
+"<guiseq><gui>Tools</gui><gui>Rotate Right</gui></guiseq> or "
+"<guiseq><gui>Tools</gui><gui>Rotate Left</gui></guiseq>. The images will be "
+"rotated."
+msgstr ""
+"Pour faire pivoter une ou plusieurs images, sélectionnez les images dans le "
+"navigateur. Cliquez ensuite sur le bouton <gui>Outils</gui> sur la barre "
+"d'outils principale et choisissez ensuite soit <guiseq><gui>Outils</"
+"gui><gui>Pivoter vers la droite</gui></guiseq> ou <guiseq><gui>Outils</"
+"gui><gui>Pivoter vers la gauche</gui></guiseq>. Les images sont ensuite "
+"tournées."
+
+#: C/batch-rotate.page:14(page/p)
+msgid "Lossless rotation is used for jpeg images, when possible."
+msgstr ""
+"La rotation sans perte est utilisée pour les images jpeg lorsque c'est "
+"possible."
+
+#: C/batch-convert-format.page:6(page/title)
+msgid "Converting File Formats"
+msgstr "Conversion du format des fichiers"
+
+#: C/batch-convert-format.page:8(page/p)
+msgid ""
+"To convert one or more images into a new file format, select the images in "
+"the browser view. Then click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Convert Format</gui></"
+"guiseq>."
+msgstr ""
+"Pour convertir une ou plusieurs images dans un nouveau format, sélectionnez "
+"les images que vous voulez convertir dans le navigateur. Cliquez ensuite sur "
+"le bouton <gui>Outils</gui> dans la barre d'outils principale et "
+"sélectionnez <guiseq><gui>Outils</gui><gui>Convertir le format</gui></"
+"guiseq>."
+
+#: C/batch-convert-format.page:12(page/p)
+msgid ""
+"Select the desired output format and destination folder. Click <gui>Execute</"
+"gui> to complete the process."
+msgstr ""
+"Sélectionnez le format de sortie souhaité et le dossier de destination. "
+"Cliquez sur <gui>Exécuter</gui> pour terminer le processus."
+
+#: C/batch-resize.page:6(page/title)
+msgid "Resizing Images"
+msgstr "Redimensionnement des images"
+
+#: C/batch-resize.page:8(page/p)
+msgid ""
+"To resize one or more images using the same dimensions or scaling factors, "
+"select the images in the browser view. Then click the <gui>Tools</gui> "
+"button on the main toolbar, and select <guiseq><gui>Tools</gui><gui>Resize "
+"Images</gui></guiseq>."
+msgstr ""
+"Pour redimensionner une ou plusieurs images à la même taille ou avec le même "
+"rapport d'échelle, sélectionnez les fichiers dans le navigateur. Cliquez "
+"ensuite sur le bouton <gui>Outils</gui> dans la barre d'outils principale et "
+"sélectionnez <guiseq><gui>Outils</gui><gui>Redimensionner les images</gui></"
+"guiseq>."
+
+#: C/batch-resize.page:12(page/p)
+msgid ""
+"Then select the desired maximum output dimensions, or the desired percentage "
+"scaling, and the destination folder. Click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Sélectionnez alors les dimensions maximales de sortie souhaitées ou le "
+"pourcentage de l'échelle et le dossier de destination. Cliquez sur "
+"<gui>Exécuter</gui> pour terminer le processus."
+
+#: C/batch-change-date.page:6(page/title)
+msgid "Changing Dates"
+msgstr "Modification de dates"
+
+#: C/batch-change-date.page:8(page/p)
+msgid ""
+"To change the file modification times, the comment dates, or the Exif "
+"DateTimeOriginal tags of multiple files, select the files in the browser "
+"view. Then click the <gui>Tools</gui> button on the main toolbar, and select "
+"<guiseq><gui>Tools</gui><gui>Change Date</gui></guiseq>."
+msgstr ""
+"Pour changer la date de modification de fichiers, les dates des commentaires "
+"ou l'étiquette Exif « DateTimeOriginal » de plusieurs fichiers, sélectionnez "
+"les fichiers dans le navigateur, cliquez ensuite sur le bouton <gui>Outils</"
+"gui> dans la barre d'outils principale et sélectionnez <guiseq><gui>Outils</"
+"gui><gui>Modifier la date</gui></guiseq>."
+
+#: C/batch-change-date.page:13(page/p)
+msgid ""
+"Select the desired date options, and click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Sélectionnez les options de dates souhaitées et cliquez sur <gui>Exécuter</"
+"gui> pour terminer le processus."
+
+#: C/batch-scripts.page:6(page/title)
+msgid "User-Defined Scripts"
+msgstr "Scripts utilisateur"
+
+#: C/batch-scripts.page:8(page/p)
+msgid ""
+"To define a script (a command-line sequence that <app>gThumb</app> will "
+"execute on your files), click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Personalize</gui></guiseq>."
+msgstr ""
+"Pour définir un script (une succession de lignes de commandes que "
+"<app>gThumb</app> exécute sur vos fichiers), cliquez sur le bouton "
+"<gui>Outils</gui> dans la barre d'outils principale et sélectionnez "
+"<guiseq><gui>Outils</gui><gui>Personnaliser</gui></guiseq>."
+
+#: C/batch-scripts.page:12(page/p)
+msgid "TODO: further documentation is need here."
+msgstr "TODO: la documentation doit être complétée ici."
+
+#: C/thumbnails.page:6(page/title)
+msgid "Thumbnail Sources"
+msgstr "Sources des vignettes"
+
+#: C/thumbnails.page:8(page/p)
+msgid ""
+"The browser window normally shows the thumbnails of the images and movies in "
+"the selected folder. Generic icons for other files (audio files, for "
+"instance) may also be shown."
+msgstr ""
+"La fenêtre de navigation affiche normalement les vignettes des images et "
+"vidéos du dossier sélectionné. Les icônes génériques des autres fichiers "
+"(audio par exemple) peuvent aussi être affichées."
+
+#: C/thumbnails.page:12(page/p)
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui> </guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"Vous pouvez sélectionner les types de fichiers à afficher dans le navigateur "
+"en utilisant la boîte de dialogue <guiseq><gui>Affichage</gui><gui>Filtres</"
+"gui></guiseq>. Par défaut tous les fichiers multimédia (image, vidéo, audio) "
+"sont affichés, mais cela peut être rendu plus ou moins strict."
+
+#: C/thumbnails.page:18(page/p)
+msgid ""
+"The thumbnails may be generated by a number of different methods. "
+"<app>gThumb</app> will first check for existing thumbnails in the system "
+"cache."
+msgstr ""
+"Les vignettes peuvent être générées de plusieurs façons, <app>gThumb</app> "
+"vérifie en premier si des vignettes n'existent pas déjà dans le cache du "
+"système."
+
+#: C/thumbnails.page:22(page/p)
+msgid ""
+"If no cached thumbnail is found, and an image file contains an embedded "
+"thumbnail (jpeg files generated by digital cameras normally do), "
+"<app>gThumb</app> will attempt to use that. <app>gThumb</app> will confirm "
+"that the aspect ratio of the thumbnail is similar to that of the main image, "
+"and ignore thumbnails that do not appear to match the main image."
+msgstr ""
+"Si aucune vignette n'est trouvée dans le cache et que l'image contient une "
+"vignette intégrée (généralement les images jpeg générées par les appareils "
+"photo numériques en contiennent une), <app>gThumb</app> essaye alors "
+"d'utiliser celle-ci. <app>gThumb</app> vérifie que les proportions de la "
+"vignette correspondent à celle de l'image et ignore les vignettes qui ne "
+"semblent pas correspondre à l'image principale."
+
+#: C/thumbnails.page:29(page/p)
+msgid ""
+"If that doesn't work, <app>gThumb</app> will attempt to load the entire file "
+"and generate a scaled-down thumbnail."
+msgstr ""
+"Si cela ne fonctionne pas, <app>gThumb</app> tente de charger le fichier "
+"complet et de générer une vignette à l'échelle."
+
+#: C/thumbnails.page:32(page/p)
+msgid ""
+"Lastly, <app>gThumb</app> will use any system-defined scripts for "
+"thumbnailing particular media types. For example, some systems may use "
+"<app>mplayer</app> or <app>totem</app> or other movie viewers to generate "
+"movie thumbnails."
+msgstr ""
+"Enfin, <app>gThumb</app> utilise tous les scripts définis par le système "
+"pour le vignettage des différents types de supports. Par exemple, certains "
+"systèmes utilisent <app>mplayer</app> ou <app>totem</app> ou un autre "
+"lecteur vidéo pour générer les vignettes de vidéos."
+
+#: C/thumbnails.page:37(page/p)
+msgid ""
+"<app>gThumb</app> will save thumbnails to a system cache, to share them with "
+"other applications. By default, Gnome systems prune cached thumbnails when "
+"they are older than 180 days, or when the thumbnail cache exceeds 512 MB. "
+"Technically-inclined users can explore these settings with <app>gconf-"
+"editor</app>. See the /desktop/gnome/thumbnail_cache/maximum_age and /"
+"desktop/gnome/thumbnail_cache/maximum_size keys in particular. Certain "
+"applications (like <app>F-Spot</app>) may automatically increase these "
+"settings greatly."
+msgstr ""
+"<app>gThumb</app> enregistre les vignettes dans un cache système pour les "
+"partager avec les autres applications. Par défaut, les systèmes GNOME "
+"effacent les vignettes dans le cache lorsqu'elles ont plus de 180 jours ou "
+"que la taille du cache excède 512 Mio. Les utilisateurs plus techniques qui "
+"peuvent examiner ces paramètres avec <app>gconf-editor</app>. Consultez plus "
+"particulièrement les clés /desktop/gnome/thumbnail_cache/maximum_age et /"
+"desktop/gnome/thumbnail_cache/maximum_size. Certaines applications (comme "
+"<app>F-Spot</app>) peuvent augmenter automatiquement ces paramètres "
+"drastiquement."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/thumbnail-pane.page:21(media) C/viewer.page:23(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+msgstr ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+
+#: C/thumbnail-pane.page:6(page/title)
+msgid "Thumbnail Pane"
+msgstr "Volet des vignettes"
+
+#: C/thumbnail-pane.page:8(page/p)
+msgid ""
+"When an image has been opened in the <app>gThumb</app> viewer, the user has "
+"the option of enabling or disabling a thumbnail pane, which shows the other "
+"images in the folder as thumbnails. This feature can be toggled with the "
+"<guiseq><gui>View</gui><gui>Thumbnail Pane</gui></guiseq> command, or by "
+"pressing <key>F8</key>."
+msgstr ""
+"Lorsqu'une image est ouverte dans le visionneur <app>gThumb</app>, "
+"l'utilisateur peut afficher ou masquer le volet des vignettes qui affiche "
+"les autres images contenues dans le dossier sous forme de vignettes. Cette "
+"fonction peut être activée/désactivée avec la commande "
+"<guiseq><gui>Affichage</gui><gui>Panneau des vignettes</gui></guiseq> ou "
+"avec la touche<key>F8</key>."
+
+#: C/thumbnail-pane.page:14(page/p)
+msgid ""
+"The thumbnail pane may be positioned along the bottom of the main image, or "
+"along the side. This is controlled by the settings in <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui><gui>General</gui><gui>Thumbnails in Viewer</gui></"
+"guiseq>."
+msgstr ""
+"Le volet des vignettes peut être placé en bas de l'image principale ou sur "
+"le coté. Vous pouvez modifier ce paramètre dans <guiseq><gui>Édition</"
+"gui><gui>Préférences</gui><gui>Général</gui><gui>Vignettes dans le "
+"visionneur</gui></guiseq>."
+
+#: C/thumbnail-pane.page:19(figure/title)
+msgid "Thumbnail Pane, Along Bottom of Main Image"
+msgstr "Volet des vignettes, en bas de l'image principale"
+
+#: C/rename-series.page:8(page/title)
+msgid "Renaming Files"
+msgstr "Renommage de fichiers"
+
+#: C/rename-series.page:10(page/p)
+msgid ""
+"To rename one or more images using a name template, select the files in the "
+"browser and choose <guiseq><gui>Edit</gui><gui>Rename</gui></guiseq>, or "
+"press <key>F2</key>."
+msgstr ""
+"Pour renommer une ou plusieurs images en spécifiant un modèle de nom, "
+"choisissez <guiseq><gui>Édition</gui><gui>Renommer</gui></guiseq> ou appuyez "
+"sur <key>F2</key>."
+
+#: C/rename-series.page:15(page/p)
+msgid ""
+"The name template is simply a pattern that is used for renaming all of the "
+"selected images. You can use some special characters to make the new names "
+"differ each other (this is essential if you are renaming more than one "
+"image, and optional if you are renaming a single image):"
+msgstr ""
+"Le modèle de nom est simplement un motif qui est utilisé pour renommer "
+"toutes les images sélectionnées. Vous pouvez utiliser des caractères "
+"spéciaux afin que les noms de fichiers diffèrent entre eux (c'est essentiel "
+"si vous renommez plus d'une image, et facultatif si vous renommez une seule "
+"image) :"
+
+#: C/rename-series.page:24(td/p)
+msgid "Symbol"
+msgstr "Symbole"
+
+#: C/rename-series.page:27(td/p) C/shortcuts.page:17(td/p)
+#: C/shortcuts.page:94(td/p) C/shortcuts.page:189(td/p)
+#: C/shortcuts.page:273(td/p) C/shortcuts.page:498(td/p)
+msgid "Description"
+msgstr "Description"
+
+#: C/rename-series.page:32(td/p)
+msgid "<key>#</key>"
+msgstr "<key>#</key>"
+
+#: C/rename-series.page:37(td/p)
+msgid ""
+"This symbol will be replaced with the value of a counter that increments "
+"itself by 1 passing from one image to another. If you specify this symbols "
+"in sequence you'll get leading zeros if the counter value has a lesser "
+"number of digits, for example ### will produce the sequence: 001, 002, 003, "
+"etc.."
+msgstr ""
+"Ce symbole est remplacé par la valeur d'un compteur qui s'incrémente de 1 en "
+"passant d'une image à une autre. Si vous spécifiez ce symbole plusieurs fois "
+"à la suite, vous obtenez des zéros non significatifs si la valeur du "
+"compteur possède moins de chiffres ; par exemple, ### produit la suite : "
+"001, 002, 003, etc."
+
+#: C/rename-series.page:47(td/p)
+msgid "<key>%F</key>"
+msgstr ""
+
+#: C/rename-series.page:52(td/p)
+msgid ""
+"This symbol will be replaced with the file's original name, excluding the "
+"original extension."
+msgstr ""
+"Ce symbole est remplacé par le nom original du fichier, sans son extension."
+
+#: C/rename-series.page:58(td/p)
+msgid "<key>%E</key>"
+msgstr ""
+
+#: C/rename-series.page:63(td/p)
+msgid ""
+"This symbol will be replaced with the file's original filename extension."
+msgstr "Ce symbole est remplacé par l'extension du nom de fichier original."
+
+#: C/rename-series.page:69(td/p)
+msgid "<key>%N</key>"
+msgstr "<key>%N</key>"
+
+#: C/rename-series.page:74(td/p)
+msgid ""
+"This symbol will be replaced with original image enumerator. For instance, "
+"if the original filename was IMG_9876.JPG, this extracts the \"9876\" "
+"portion. If the filename has more than one group of digits embedded in it "
+"(for example, IMG_123_456.JPG) only the first number will be used (\"123\" "
+"in this example)."
+msgstr ""
+"Ce symbole est remplacé par l'énumération de l'image originale. Par exemple, "
+"si le nom de fichier original est IMG_9876.JPG, ceci extrait la partie "
+"numérique « 9876 ». Si le nom du fichier contient plusieurs groupes de "
+"nombres (par ex. IMG_123_456.JPG), seul le premier groupe est utilisé "
+"(« 123 » dans cet exemple)."
+
+#: C/rename-series.page:84(td/p)
+msgid "<key>%M{format}</key>"
+msgstr "<key>%M{format}</key>"
+
+#: C/rename-series.page:89(td/p)
+msgid ""
+"This symbol will be replaced with the file modification date. The formatting "
+"of this date (and optionally time) can be specified by adding a standard "
+"formatting code in curly braces. For example, \"%M{%Y-%m-%d, %T}\" would be "
+"replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Ce symbole est remplacé par la date de modification de l'image originale. Le "
+"format de la date (optionnellement de l'heure) peut être spécifié en "
+"ajoutant le code de formatage standard entre accolades. Par exemple, « %M{%Y-"
+"%m-%d, %T} » est remplacé par la date et l'heure suivante « 2010-04-01, "
+"15:02:01 »."
+
+#: C/rename-series.page:98(td/p)
+msgid "<key>%D{format}</key>"
+msgstr "<key>%D{format}</key>"
+
+#: C/rename-series.page:103(td/p)
+msgid ""
+"This symbol will be replaced with the date that the photo was original taken "
+"(normally determined from the EXIF datestamps embedded inside the photo). "
+"The formatting of this date (and optionally time) can be specified by adding "
+"a standard formatting code in curly braces. For example, \"%D{%Y-%m-%d, "
+"%T}\" would be replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Ce symbole est remplacé par la date de prise de vue de l'image originale (en "
+"général déterminée par l'horodatage Exif intégré dans la photo). Le format "
+"de la date (optionnellement de l'heure) peut être spécifié en ajoutant le "
+"code de formatage standard entre accolades. Par exemple, « %D{%Y-%m-%d, "
+"%T} » est remplacé par la date et l'heure suivante « 2010-04-01, 15:02:01 »."
+
+#: C/rename-series.page:114(td/p)
+msgid "<key>%A{identifier}</key>"
+msgstr "<key>%A{identifier}</key>"
+
+#: C/rename-series.page:119(td/p)
+msgid ""
+"This symbol will be replaced with the data that has been specified by the "
+"identifier. For example, \"%A{ general::dimensions }\" would be replaced "
+"with a size like \"320 x 240\"."
+msgstr ""
+"Ce symbole est remplacé par les données spécifiées par l'identifiant. Par "
+"exemple : « %A{ general::dimensions } » est remplacé par les dimensions "
+"suivantes « 320 x 240 »."
+
+#: C/rename-series.page:127(page/p)
+msgid ""
+"A summary of these special codes may be viewed by clicking on the Help icon "
+"inside the template field."
+msgstr ""
+"Un résumé de ces codes spéciaux s'affiche si vous cliquez sur l'icône d'aide "
+"dans le champ du modèle."
+
+#: C/rename-series.page:130(page/p)
+msgid ""
+"The list at the bottom of the dialog displays how the filenames will be "
+"renamed."
+msgstr ""
+"La liste en bas de la boîte de dialogue montre comment les noms de fichiers "
+"sont renommés."
+
+#: C/rename-series.page:133(page/p)
+msgid "To rename the images click on <gui>Rename</gui>."
+msgstr "Pour renommer les images, cliquez sur <gui>Renommer</gui>."
+
+#: C/rename-series.page:135(page/p)
+msgid ""
+"If the renaming of an image can overwrite an already existing image you will "
+"be asked how to proceed, five options are available: overwrite the image; do "
+"not overwrite the image; always overwrite; never overwrite; specify a new "
+"name."
+msgstr ""
+"Si le fait de renommer une image peut écraser une image déjà existante, cinq "
+"manières de procéder vous sont proposées : écraser l'image, ne pas écraser "
+"l'image, toujours écraser, ne jamais écraser ou spécifier un nouveau nom."
+
+#: C/edit-save-undo-redo.page:6(page/title)
+msgid "File Save, Undo, Redo"
+msgstr "Enregistrement des fichiers, annulation, rétablissement"
+
+#: C/edit-save-undo-redo.page:8(page/p) C/edit-colors.page:8(page/p)
+#: C/edit-rotate.page:8(page/p) C/edit-resize-crop.page:8(page/p)
+#: C/edit-redeye.page:7(page/p)
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> To "
+"access the editing tools, open an image and then click the <gui>Edit File</"
+"gui> toolbar button (the palette icon)."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> Pour "
+"accéder aux outils de modification, ouvrez une image et cliquez sur le "
+"bouton <gui>Modifier le fichier</gui> de la barre d'outils (icône palette)."
+
+#: C/edit-save-undo-redo.page:12(page/p)
+msgid ""
+"Multiple changes may be made to an image before saving it. <gui>Undo</gui> "
+"and <gui>Redo</gui> buttons are provided, and may be used up until the file "
+"is saved."
+msgstr ""
+"Plusieurs modifications peuvent être effectuées sur une image avant de les "
+"enregistrer. Des boutons <gui>Annuler</gui> et <gui>Rétablir</gui> sont "
+"disponibles et peuvent être utilisés tant que le fichier n'est pas "
+"enregistré."
+
+#: C/edit-save-undo-redo.page:16(page/p)
+msgid ""
+"A modified image may be saved by pressing <gui>Save</gui>. To save the "
+"modified image to a new location instead, leaving the original image "
+"unchanged, use <gui>Save As</gui>."
+msgstr ""
+"Pour enregistrer une image modifiée, cliquez sur <gui>Enregistrer</gui>. "
+"Pour enregistrer l'image modifiée dans un autre emplacement et conserver "
+"l'image originale, utilisez <gui>Enregistrer sous</gui>."
+
+#: C/edit-save-undo-redo.page:20(page/p)
+msgid ""
+"If you exit the editing mode (by pressing <key>Esc</key> or the <gui>View "
+"the Folders</gui> toolbar button), or navigate away from the current image, "
+"you will be prompted to save or discard your changes."
+msgstr ""
+"Si vous quittez l'éditeur (en appuyant sur <key>Échap</key> ou sur le bouton "
+"<gui>Afficher les dossiers</gui> de la barre d'outils) ou si vous changez "
+"d'image, vous aurez alors la possibilité d'enregistrer ou d'abandonner vos "
+"modifications."
+
+#: C/edit-colors.page:6(page/title)
+msgid "Color Adjustments"
+msgstr "Ajustements des couleur"
+
+#: C/edit-colors.page:12(page/p)
+msgid "Several tools are provided to manipulate the colors in images."
+msgstr ""
+"Il existe plusieurs outils pour manipuler les couleurs dans les images."
+
+#: C/edit-colors.page:17(item/title)
+msgid "<gui>Enhance Colors</gui>"
+msgstr "<gui>Améliorer les couleurs</gui>"
+
+#: C/edit-colors.page:18(item/p)
+msgid ""
+"This tool provides automatic white balance correction. No user adjustments "
+"are required."
+msgstr ""
+"Cet outil fournit une correction automatique de la balance des blancs. "
+"L'utilisateur n'a pas besoin de faire d'ajustements."
+
+#: C/edit-colors.page:22(item/title)
+msgid "<gui>Adjust Colors</gui>"
+msgstr "<gui>Ajuster les couleurs</gui>"
+
+#: C/edit-colors.page:23(item/p)
+msgid ""
+"This tool provides manual color adjustments. Adjustments to the gamma, "
+"brightness, contrast, saturation, and the cyan/red, magenta/green, and "
+"yellow/blue color balances may be made."
+msgstr ""
+"Cet outil permet d'effectuer manuellement des ajustements sur les couleurs. "
+"Les ajustements disponibles sont le gamma, la luminosité, le contraste, la "
+"saturation et les balances de couleur cyan/rouge, magenta/vert et jaune/bleu."
+
+#: C/edit-colors.page:29(item/title)
+msgid "<gui>Equalize</gui>"
+msgstr "<gui>Égaliser</gui>"
+
+#: C/edit-colors.page:30(item/p)
+msgid ""
+"This tool provides automatic histogram equalization. No user adjustments are "
+"required."
+msgstr ""
+"Cet outil fournit une égalisation automatique de l'histogramme. "
+"L'utilisateur n'a pas besoin de faire d'ajustements."
+
+#: C/edit-colors.page:34(item/title)
+msgid "<gui>Desaturate</gui>"
+msgstr "<gui>Désaturer</gui>"
+
+#: C/edit-colors.page:35(item/p)
+msgid ""
+"This tool converts the image colors into shades of grey. (This does not "
+"change this image storage format.)"
+msgstr ""
+"Cet outil convertit les couleurs de l'image en niveaux de gris (cela ne "
+"modifie pas le format d'enregistrement de l'image)."
+
+#: C/edit-colors.page:39(item/title)
+msgid "<gui>Negative</gui>"
+msgstr "<gui>Négatif</gui>"
+
+#: C/edit-colors.page:40(item/p)
+msgid "This tool inverts the color levels, providing an image negative."
+msgstr ""
+"Cet outil inverse les couleurs de l'image, fournissant un négatif de l'image."
+
+#: C/edit-rotate.page:6(page/title)
+msgid "Rotations and Flips"
+msgstr "Pivotement et retournement"
+
+#: C/edit-rotate.page:12(page/p)
+msgid "Several tools are provided to manipulate the orientation of images."
+msgstr ""
+"Plusieurs outils sont disponibles pour modifier l'orientation des images."
+
+#: C/edit-rotate.page:17(item/title)
+msgid "<gui>Mirror</gui>"
+msgstr "<gui>Miroir</gui>"
+
+#: C/edit-rotate.page:18(item/p)
+msgid ""
+"This flips the image horizontally. The left and right sides are swapped."
+msgstr ""
+"Cela retourne l'image horizontalement. Les cotés droit et gauche sont "
+"échangés."
+
+#: C/edit-rotate.page:22(item/title)
+msgid "<gui>Flip</gui>"
+msgstr "<gui>Retourner</gui>"
+
+#: C/edit-rotate.page:23(item/p)
+msgid "This flips the image vertically. The top and bottom are swapped."
+msgstr "Cela retourne l'image verticalement. Le haut et le bas sont échangés."
+
+#: C/edit-rotate.page:27(item/title)
+msgid "<gui>Rotate Right</gui>"
+msgstr "<gui>Pivoter sur la droite</gui>"
+
+#: C/edit-rotate.page:28(item/p)
+msgid "This rotates the image clockwise."
+msgstr "Cela tourne l'image dans le sens horaire."
+
+#: C/edit-rotate.page:31(item/title)
+msgid "<gui>Rotate Left</gui>"
+msgstr "<gui>Pivoter sur la gauche</gui>"
+
+#: C/edit-rotate.page:32(item/p)
+msgid "This rotates the image counter-clockwise."
+msgstr "Cela tourne l'image dans le sens anti-horaire."
+
+#: C/edit-rotate.page:36(page/p)
+msgid ""
+"The rotations offered in the edit mode act on the image in memory. They are "
+"not direct file operations. For jpeg images, these means they are not "
+"lossless operations - the image will degrade slightly when it it is re-"
+"encoded and saved. However, <app>gThumb</app> does provide lossless rotation "
+"tools. See <link xref=\"gthumb-batch-rotate\"/>."
+msgstr ""
+"Les rotations proposées dans le mode édition agissent sur l'image en "
+"mémoire. Il ne s'agit pas d'opérations directes sur les fichiers. Pour les "
+"images jpeg, cela signifie que ce ne sont pas des opérations sans perte de "
+"données ; l'image est légèrement dégradée lorsqu'elle est codée à nouveau et "
+"enregistrée. <app>gThumb</app> fournit des outils de rotation sans perte. "
+"Consultez la section <link xref=\"gthumb-batch-rotate\"/>."
+
+#: C/edit-resize-crop.page:6(page/title)
+msgid "Resizing and Cropping"
+msgstr "Redimensionnement et découpe"
+
+#: C/edit-resize-crop.page:12(page/p)
+msgid "Two tools are provided to resize and crop images."
+msgstr "Il existe deux outils pour redimensionner et découper les images."
+
+#: C/edit-resize-crop.page:15(item/title)
+msgid "<gui>Resize</gui>"
+msgstr "<gui>Redimensionner</gui>"
+
+#: C/edit-resize-crop.page:16(item/p)
+msgid ""
+"This allows you to resize the image. The image may be scaled to a certain "
+"physical size, or to a certain percentage of the original size. The aspect "
+"ratio may be locked to a specific value, or freely adjusted."
+msgstr ""
+"Cela vous permet de redimensionner une image. L'image peut être mise à "
+"l'échelle à une taille physique donnée ou à un pourcentage de la taille "
+"originale. Les proportions de l'image peuvent être conservées ou ajustées "
+"librement."
+
+#: C/edit-resize-crop.page:22(item/title)
+msgid "<gui>Crop</gui>"
+msgstr "<gui>Découper</gui>"
+
+#: C/edit-resize-crop.page:23(item/p)
+msgid ""
+"This allows you to crop the image. Click and drag the mouse over the desired "
+"area of the image. The area may be locked to a specific aspect ratio, or it "
+"may be freely adjusted. A rule-of-thirds grid or golden-sections grid may be "
+"superimposed over the image for composition guidance."
+msgstr ""
+"Cela vous permet de découper l'image. Cliquez et déplacez la souris pour "
+"entourer la zone de l'image que vous souhaitez conserver. Vous pouvez "
+"choisir des proportions hauteur-largeurspécifiques ou ajuster librement la "
+"zone sélectionnée. Vous pouvez aussi surimposer une grille respectant la "
+"règle des tiers ou du nombre d'or pour vous aider dans la composition de "
+"l'image."
+
+#: C/edit-resize-crop.page:31(page/p)
+msgid ""
+"<app>gThumb</app> also offers a batch-mode tool for resizing multiple images "
+"simultaneously. See <link xref=\"gthumb-batch-resize\"/>."
+msgstr ""
+"<app>gThumb</app> fournit aussi un utilitaire de traitement par lots pour "
+"redimensionner plusieurs images à la fois. Consultez la section <link xref="
+"\"gthumb-batch-resize\"/>."
+
+#: C/edit-redeye.page:6(page/title)
+msgid "Red Eye Removal"
+msgstr "Correction des yeux rouges"
+
+#: C/edit-redeye.page:11(page/p)
+msgid ""
+"<app>gThumb</app> provides a <gui>Red Eye Removal</gui> tool. To remove a "
+"red eye, position the mouse pointer over the red eye and click on it. "
+"<app>gThumb</app> will attempt to remove the red region and replace it with "
+"a more natural-looking gray region. If the results do not look correct, "
+"press <key>Escape</key> and click on the <gui>Undo</gui> item."
+msgstr ""
+"<app>gThumb</app> fournit un outil de <gui>Correction des yeux rouges</gui>. "
+"Pour corriger un œil rouge, positionnez le pointeur de la souris sur l'œil "
+"et cliquez dessus. <app>gThumb</app> tente de supprimer la zone rouge et de "
+"la remplacer par une zone grise plus naturelle. Si les résultats ne sont pas "
+"satisfaisants, appuyez sur la touche <key>Échap</key> et cliquez sur le "
+"bouton <gui>Annuler</gui>."
+
+#: C/edit-redeye.page:18(page/p)
+msgid ""
+"This tool works best when there is a high color contrast between the red eye "
+"and the surrounding facial area. It does not work well for \"orange eye\" "
+"sometimes seen in photos of children, or if the surrounding skin has a "
+"reddish tinge. This tool could use improvement - if you are fiendishly "
+"clever, love matrix algebra and open source software, please <link href="
+"\"http://live.gnome.org/gthumb/development\">submit a patch!</link>"
+msgstr ""
+"Cet outil fonctionne mieux lorsqu'il y a un contraste de couleur important "
+"entre l'œil rouge et la zone du visage qui l'entoure. Il ne fonctionne pas "
+"bien avec les « yeux orange » que l'on voit parfois sur les photos "
+"d'enfants, ou si la peau autour de l'œil possède une teinte rouge. Cet outil "
+"peut être amélioré ; si vous êtes très intelligent, aimez l'algèbre "
+"matricielle et le logiciel libre, vous pouvez <link href=\"http://live.gnome."
+"org/gthumb/development\">soumettre un correctif</link>."
+
+#: C/extensions.page:6(page/title)
+msgid "Extending gThumb"
+msgstr "Extension de gThumb"
+
+#: C/extensions.page:8(page/p)
+msgid ""
+"<app>gThumb</app> has a plug-in system for extensions. Some standard "
+"features are implemented as extensions and are supplied with the standard "
+"distribution. Users may write (and share) additional extensions."
+msgstr ""
+"<app>gThumb</app> possède un système de greffons pour ses extensions. "
+"Certaines fonctionnalités de base sont implémentées sous la forme "
+"d'extensions et sont fournies avec la distribution standard. Les "
+"utilisateurs peuvent écrire (et partager) des extensions supplémentaires."
+
+#: C/extensions.page:12(page/p)
+msgid ""
+"You can enable or disable extensions using <guiseq><gui>Edit</"
+"gui><gui>Extensions</gui></guiseq>. Some extensions will have "
+"<gui>Preferences</gui> that can be modified from this dialog."
+msgstr ""
+"Pour activer ou désactiver des extensions, utilisez le menu "
+"<guiseq><gui>Édition</gui><gui>Extensions</gui></guiseq>. Certaines "
+"extensions possèdent des <gui>Préférences</gui> qui peuvent être configurées "
+"dans cette boîte de dialogue."
+
+#: C/extensions.page:16(page/p)
+msgid ""
+"This manual is written with the assumption that the standard extensions are "
+"enabled. If you seem to be missing a feature, check to see which extensions "
+"are actually enabled."
+msgstr ""
+"Ce manuel est écrit en supposant que les extensions de base sont activées. "
+"S'il vous semble qu'une fonction est manquante, vérifiez les extensions "
+"activées."
+
+#: C/extensions.page:20(page/p)
+msgid ""
+"If you would like to write your own extension, please visit <link href="
+"\"http://live.gnome.org/gthumb\">http://live.gnome.org/gthumb</link> for "
+"development information. An example extension is provided in the source "
+"code, which you can base your own extension on."
+msgstr ""
+"Si vous souhaitez écrire votre propre extension, visitez <link href=\"http://"
+"live.gnome.org/gthumb\">http://live.gnome.org/gthumb</link> pour obtenir des "
+"informations sur le développement. Un exemple d'extension est fourni dans le "
+"code source, il peut vous servir de point de départ pour votre extension."
+
+#: C/gimp.page:6(page/title)
+msgid "Launching GIMP"
+msgstr "Lancement de GIMP"
+
+#: C/gimp.page:7(page/p)
+msgid ""
+"If you have files selected in the browser, or an image open in the viewer, "
+"you can open them in the <app>GNU Image Manipulation Program (GIMP)</app> by "
+"pressing <key>g</key>."
+msgstr ""
+"Si des fichiers sont sélectionnés dans le navigateur ou si une image est "
+"ouverte dans le visionneur, vous pouvez les ouvrir dans l'<app>Éditeur "
+"d'images GIMP</app> en appuyant sur la touche <key>g</key>."
+
+#: C/gimp.page:10(page/p)
+msgid ""
+"<app>GIMP</app> provides a more sophisticated set of editing tools than that "
+"provided with <app>gThumb</app>."
+msgstr ""
+"<app>GIMP</app> fournit un ensemble d'outils de modification plus "
+"sophistiqués que ceux fournis avec <app>gThumb</app>."
+
+#: C/viewer.page:6(page/title)
+msgid "Opening an Image"
+msgstr "Ouverture d'une image"
+
+#: C/viewer.page:8(page/p)
+msgid ""
+"The browser view shows the images in the current folder or catalog (see "
+"<link xref=\"gthumb-browser-view\"/>). Double-clicking an image (or pressing "
+"<key>Return</key>) in the browser will open it in the viewer mode."
+msgstr ""
+"Le navigateur affiche les images contenues dans le dossier ou le catalogue "
+"actuel (voir la section <link xref=\"gthumb-browser-view\"/>). Double-"
+"cliquez sur une image (ou appuyez sur <key>Entrée</key>) dans le navigateur "
+"pour ouvrir celle-ci dans le visionneur."
+
+#: C/viewer.page:13(page/p)
+msgid ""
+"Pressing <key>Escape</key> will exit the viewer mode, and return the user to "
+"the browser mode. A toolbar button (<gui>View the folders</gui>) is also "
+"provided for this purpose."
+msgstr ""
+"Appuyer sur <key>Échap</key> permet de quitter le visionneur et de retourner "
+"dans le navigateur. Un bouton de la barre d'outils (<gui>Afficher les "
+"dossiers</gui>) est aussi fourni dans ce but."
+
+#: C/viewer.page:17(page/p)
+msgid ""
+"A <link xref=\"gthumb-thumbnail-pane\"/> may be displayed in the viewer "
+"mode, if desired."
+msgstr ""
+"Le <link xref=\"gthumb-thumbnail-pane\"/> peut être affiché dans le "
+"visionneur, si vous le souhaitez."
+
+#: C/viewer.page:21(figure/title)
+msgid "Viewer Mode with Thumbnail Pane"
+msgstr "Visionneur avec volet des vignettes"
+
+#: C/viewer.page:26(page/p)
+msgid ""
+"In the viewer mode, you can advance to the next image by clicking the "
+"<gui>Next</gui> button, or by pressing <key>Space</key> or <key>Page Down</"
+"key>. You can go back to the previous image by clicking the <gui>Previous</"
+"gui> button, or by pressing <key>Backspace</key> or <key>Page Up</key>. You "
+"can go also click on thumbnails in the thumbnail pane to open a different "
+"image."
+msgstr ""
+"Dans le visionneur, cliquez sur le bouton <gui>Suivant</gui> ou appuyez sur "
+"les touches <key>Espace</key> ou <key>Page bas</key> pour aller à l'image "
+"suivante. Pour retourner à l'image précédente, cliquez sur le bouton "
+"<gui>Précédent</gui> ou appuyez sur les touches <key>Retour Arrière</key> ou "
+"<key>Page haut</key>. Vous pouvez aussi cliquer sur les vignettes dans le "
+"volet des vignettes pour ouvrir une autre image."
+
+#: C/fullscreen.page:8(page/title)
+msgid "Manual Fullscreen Mode"
+msgstr "Mode plein écran manuel"
+
+#: C/fullscreen.page:10(page/p)
+msgid ""
+"Pressing <key>f</key> in the browser or viewer modes will display the "
+"current image in fullscreen mode. (In the browser mode, you can also double-"
+"click with the middle mouse button.)"
+msgstr ""
+"Lorsque vous appuyez sur la touche <key>f</key> dans le navigateur ou le "
+"visionneur, l'image actuelle s'affiche alors plein écran (dans le "
+"navigateur, vous pouvez aussi cliquer deux fois avec le bouton du milieu)."
+
+#: C/fullscreen.page:14(page/p)
+msgid ""
+"Moving the mouse will activate a popup control panel briefly. This can be "
+"used to navigate to the next or previous image, or change zoom levels."
+msgstr ""
+"Lorsque que vous déplacez la souris vous activez brièvement un panneau de "
+"contrôle. Il peut être utilisé pour naviguer vers l'image suivante ou "
+"précédente ou pour modifier le niveau de zoom."
+
+#: C/fullscreen.page:18(page/p)
+msgid ""
+"You can also advance to the next image by pressing <key>PageDown</key> or "
+"<key>Space</key>."
+msgstr ""
+"Vous pouvez aussi appuyer sur <key>Page bas</key> ou <key>Espace</key> pour "
+"aller à l'image suivante."
+
+#: C/fullscreen.page:21(page/p)
+msgid ""
+"You can go back to the previous image by pressing <key>PageUp</key> or "
+"<key>Backspace</key>."
+msgstr ""
+"Vous pouvez appuyer sur la touche <key>Page Haut</key> ou <key>Retour "
+"arrière</key> pour aller à l'image précédente."
+
+#: C/fullscreen.page:24(page/p)
+msgid "This can be used to implement a manually-controlled slideshow."
+msgstr ""
+"Vous pouvez utiliser ce mode pour préparer un diaporama contrôlé "
+"manuellement."
+
+#: C/fullscreen.page:27(page/p)
+msgid "To exit the fullscreen mode, press <key>f</key> or <key>Escape</key>."
+msgstr ""
+"Pour quitter le mode d'affichage plein écran, appuyez sur <key>f</key> ou "
+"<key>Échap</key>."
+
+#: C/sorting.page:7(page/title)
+msgid "Sorting Files"
+msgstr "Tri des fichiers"
+
+#: C/sorting.page:9(page/p)
+msgid ""
+"Use the <guiseq><gui>View</gui><gui>Sort By</gui></guiseq> menu to select "
+"the desired file-sorting method for the browser view. Files can be sorted on "
+"the basis of their name, the file size, the file modification date, or the "
+"date the photo was taken."
+msgstr ""
+"Utilisez le menu <guiseq><gui>Affichage</gui><gui>Trier par</gui></guiseq> "
+"pour sélectionner la méthode de tri des fichiers désirée dans la vue du "
+"navigateur. Les fichiers peuvent être triés par nom, taille, date de "
+"modification ou date de prise de vue."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:17(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+msgstr ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:30(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+msgstr ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+
+#: C/filtering.page:7(page/title)
+msgid "Filtering Files"
+msgstr "Filtrage des fichiers"
+
+#: C/filtering.page:9(page/p)
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui></guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"Vous pouvez sélectionner les types de fichiers à afficher dans le navigateur "
+"en utilisant la boîte de dialogue <guiseq><gui>Affichage</gui><gui>Filtres</"
+"gui></guiseq>. Par défaut tous les fichiers multimédia (image, vidéo, audio) "
+"sont affichés, mais cela peut être rendu plus ou moins strict."
+
+#: C/filtering.page:15(figure/title)
+msgid "Enabling Filters"
+msgstr "Activation des filtres"
+
+#: C/filtering.page:20(page/p)
+msgid ""
+"The figure above shows how to configure <app>gThumb</app> to display media "
+"files only, by setting the <gui>General Filter</gui>."
+msgstr ""
+"La figure ci-dessus montre comment configurer <app>gThumb</app> pour que "
+"seuls les fichiers multimédias s'affichent, en paramétrant le <gui>Filtre "
+"général</gui>."
+
+#: C/filtering.page:23(page/p)
+msgid ""
+"Also, by enabling <gui>Filename</gui> in <gui>Other Filters</gui>, a filter-"
+"by-filename ability is added to the filter bar at the bottom of the browser "
+"view:"
+msgstr ""
+"Si vous activez <gui>Nom du fichier</gui> dans <gui>Autres filtres</gui>, la "
+"fonctionnalité de filtrage par nom est ajoutée à la barre de filtre en bas "
+"de la fenêtre de visualisation :"
+
+#: C/filtering.page:28(figure/title)
+msgid "Browser Filter Bar"
+msgstr "Barre de filtre du navigateur"
+
+#: C/filtering.page:33(page/p)
+msgid ""
+"In the above figure, the filename filter has been configured to show only "
+"files with \"gen\" in the filename. The matching is case-insensitive."
+msgstr ""
+"Dans la figure ci-dessus, le filtre « Nom de fichier » est configuré pour "
+"n'afficher que ceux qui contiennent « gen ». Le critère de recherche n'est "
+"pas sensible à la casse."
+
+#: C/printing.page:7(page/title)
+msgid "Printing Images"
+msgstr "Impression d'images"
+
+#: C/printing.page:9(page/p)
+msgid ""
+"To print the current image in the viewer mode, use <guiseq><gui>File</"
+"gui><gui>Print</gui></guiseq> or <keyseq><key>Ctrl</key><key>p</key></"
+"keyseq>."
+msgstr ""
+"Pour imprimer l'image actuellement affichée dans le visionneur, utilisez "
+"<guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq> ou <keyseq><key>Ctrl</"
+"key><key>p</key></keyseq>."
+
+#: C/printing.page:13(page/p)
+msgid ""
+"To print one or more images from the browser mode, select the desired images "
+"and then use <guiseq><gui>File</gui><gui>Print</gui></guiseq> or "
+"<keyseq><key>Ctrl</key><key>p</key></keyseq>."
+msgstr ""
+"Pour imprimer une ou plusieurs images depuis le navigateur, sélectionnez les "
+"images souhaitées et utilisez <guiseq><gui>Fichier</gui><gui>Imprimer</gui></"
+"guiseq> ou <keyseq><key>Ctrl</key><key>p</key></keyseq>."
+
+#: C/printing.page:18(page/p)
+msgid ""
+"The printer to use can be selected from the <gui>General</gui> tab of the "
+"print dialog."
+msgstr ""
+"L'imprimante à utiliser peut être sélectionnée dans l'onglet <gui>Général</"
+"gui> de la boîte de dialogue d'impression."
+
+#: C/printing.page:21(page/p)
+msgid ""
+"The type of paper to use can be selected from the <gui>Page Setup</gui> tab."
+msgstr ""
+"Le type de papier à utiliser peut être sélectionné dans l'onglet <gui>Mise "
+"en page</gui> de la boîte de dialogue d'impression."
+
+# note preview is separated window
+#: C/printing.page:24(page/p)
+msgid ""
+"The <gui>Layout</gui> tab provides some additional <app>gThumb</app>-"
+"specific options. You can set the number of images to include on each page "
+"here, and a preview pane is provided. Captions can also be added under the "
+"image, in a configurable font. The captions can be chosen from a selection "
+"of listed file attributes (like the file name, the date of the photo, camera "
+"shutter speed, and others). Each image can be repositioned inside its print "
+"area using the controls on this tab."
+msgstr ""
+"L'onglet <gui>Agencement</gui> fournit des options supplémentaires "
+"spécifiques à <app>gThumb</app>. Vous pouvez définir le nombre d'images à "
+"inclure dans chaque page et un onglet de prévisualisation est disponible. Il "
+"est possible d'ajouter une légende sous l'image, la police de caractère de "
+"celle-ci est paramétrable. Les légendes peuvent être choisies parmi les "
+"différents attributs de l'image (tel que le nom du fichier, la date de la "
+"prise de vue, la vitesse d'obturation et bien d'autres). Chaque image peut "
+"être repositionnée dans sa zone d'impression à l'aide des éléments de "
+"contrôle de cet onglet."
+
+#: C/printing.page:34(page/p)
+msgid "When you are ready to print, press the <gui>Print</gui> button."
+msgstr ""
+"Quand vous êtes prêt à imprimer, appuyez sur le bouton <gui>Imprimer</gui>."
+
+#: C/shortcuts.page:7(page/title)
+msgid "Keyboard Shortcuts"
+msgstr "Raccourcis clavier"
+
+#: C/shortcuts.page:10(section/title)
+msgid "Viewing and hiding parts of the user interface"
+msgstr "Affichage et masquage de certaines parties de l'interface utilisateur"
+
+#: C/shortcuts.page:14(td/p) C/shortcuts.page:91(td/p)
+#: C/shortcuts.page:270(td/p) C/shortcuts.page:495(td/p)
+msgid "Keyboard Shortcut"
+msgstr "Raccourci clavier"
+
+#: C/shortcuts.page:22(td/p)
+msgid "<key>F9</key>"
+msgstr "<key>F9</key>"
+
+#: C/shortcuts.page:27(td/p)
+msgid ""
+"Show/Hide the sidebar in the browser mode. The sidebar contains the folder "
+"tree and the file properties summary (if enabled)."
+msgstr ""
+"Affiche/masque la barre latérale dans le navigateur. La barre latérale "
+"contient l'arborescence des dossiers et le résumé des propriétés de fichier "
+"(si activé)."
+
+#: C/shortcuts.page:33(td/p)
+msgid "<key>i</key>"
+msgstr "<key>i</key>"
+
+#: C/shortcuts.page:38(td/p)
+msgid "Show the file properties summary."
+msgstr "Affiche le résumé des propriétés du fichier."
+
+#: C/shortcuts.page:43(td/p)
+msgid "<key>F8</key>"
+msgstr "<key>F8</key>"
+
+#: C/shortcuts.page:48(td/p)
+msgid "Shows/hides the thumbnail pane in the viewer mode."
+msgstr "Affiche/masque le volet des vignettes dans le mode visionneur."
+
+#: C/shortcuts.page:53(td/p)
+msgid "<key>F11</key> or <key>f</key>"
+msgstr "<key>F11</key> ou <key>f</key>"
+
+#: C/shortcuts.page:58(td/p)
+msgid "Toggles the fullscreen mode."
+msgstr "Bascule dans le mode plein écran."
+
+#: C/shortcuts.page:63(td/p)
+msgid "<keyseq><key>Ctrl</key><key>t</key></keyseq>"
+msgstr "<keyseq><key>Ctrl</key><key>t</key></keyseq>"
+
+#: C/shortcuts.page:68(td/p)
+msgid "Shows/hides the thumbnails in the browser mode."
+msgstr "Affiche/masque les vignettes dans le navigateur."
+
+#: C/shortcuts.page:73(td/p) C/shortcuts.page:523(td/p)
+msgid "<key>Esc</key>"
+msgstr "<key>Échap</key>"
+
+#: C/shortcuts.page:78(td/p)
+msgid "Closes the viewer or fullscreen mode."
+msgstr "Quitte le visionneur ou le mode plein écran."
+
+#: C/shortcuts.page:87(section/title)
+msgid "Editing shortcuts for the browser and viewer"
+msgstr "Raccourcis pour l'édition dans le navigateur et le visionneur"
+
+# note: missing space
+#: C/shortcuts.page:99(td/p)
+msgid "<key>e</key>"
+msgstr "<key>e</key>"
+
+#: C/shortcuts.page:104(td/p)
+msgid "Edit the image. Opens the viewer and shows the editing tools."
+msgstr ""
+"Modifie l'image. Ouvre le visionneur et affiche les outils de modification."
+
+#: C/shortcuts.page:109(td/p)
+msgid "<key>g</key>"
+msgstr "<key>g</key>"
+
+#: C/shortcuts.page:114(td/p)
+msgid "Open the image with the GNU Image Manipulation Program (GIMP)."
+msgstr "Ouvre l'image avec le logiciel de manipulation d'image (GIMP) de GNU."
+
+#: C/shortcuts.page:119(td/p)
+msgid "<key>F2</key>"
+msgstr "<key>F2</key>"
+
+#: C/shortcuts.page:124(td/p)
+msgid "Rename the image."
+msgstr "Renomme une image."
+
+#: C/shortcuts.page:129(td/p)
+msgid "<key>c</key> or <keyseq><key>Ctrl</key><key>m</key></keyseq>"
+msgstr "<key>c</key> ou <keyseq><key>Ctrl</key><key>m</key></keyseq>"
+
+#: C/shortcuts.page:134(td/p)
+msgid "Add comments or metadata to an image."
+msgstr "Ajoute des commentaires ou des métadonnées à une image."
+
+#: C/shortcuts.page:139(td/p)
+msgid "<key>]</key>"
+msgstr "<key>]</key>"
+
+#: C/shortcuts.page:144(td/p)
+msgid "Rotate right, losslessly if possible. The file is saved automatically."
+msgstr ""
+"Pivote vers la droite, sans perte de données si possible. Le fichier est "
+"enregistré automatiquement."
+
+#: C/shortcuts.page:149(td/p)
+msgid "<key>[</key>"
+msgstr "<key>[</key>"
+
+#: C/shortcuts.page:154(td/p)
+msgid "Rotate left, losslessly if possible. The file is saved automatically."
+msgstr ""
+"Pivote vers la gauche, sans perte de données si possible. Le fichier est "
+"enregistré automatiquement."
+
+#: C/shortcuts.page:159(td/p)
+msgid "<key>Delete</key>"
+msgstr "<key>Suppr</key>"
+
+#: C/shortcuts.page:164(td/p)
+msgid "Move the selected files to the Trash."
+msgstr "Déplace les images sélectionnées dans la corbeille."
+
+#: C/shortcuts.page:169(td/p)
+msgid "<keyseq><key>Shift</key><key>Delete</key></keyseq>"
+msgstr "<keyseq><key>Maj</key><key>Suppr</key></keyseq>"
+
+#: C/shortcuts.page:174(td/p)
+msgid "Delete the selected files permanently."
+msgstr "Supprime les images sélectionnées définitivement."
+
+#: C/shortcuts.page:182(section/title)
+msgid "Editing shortcuts for the viewer mode only"
+msgstr "Raccourcis pour l'édition dans le visionneur uniquement"
+
+#: C/shortcuts.page:186(td/p)
+msgid "Keyboard Shortcut (Case Sensitive)"
+msgstr "Raccourci clavier (sensible à la casse)"
+
+#: C/shortcuts.page:194(td/p)
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
+
+#: C/shortcuts.page:199(td/p)
+msgid "Enhance colors."
+msgstr "Améliore les couleurs."
+
+#: C/shortcuts.page:204(td/p)
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
+
+#: C/shortcuts.page:209(td/p)
+msgid "Flip image."
+msgstr "Retourne l'image."
+
+#: C/shortcuts.page:214(td/p)
+msgid "<key>m</key>"
+msgstr "<key>m</key>"
+
+#: C/shortcuts.page:219(td/p)
+msgid "Mirror image."
+msgstr "Image en miroir."
+
+# note: missing space
+#: C/shortcuts.page:224(td/p)
+msgid "<key>r</key>"
+msgstr "<key>r</key>"
+
+#: C/shortcuts.page:229(td/p)
+msgid "Rotate right."
+msgstr "Pivote sur la droite."
+
+#: C/shortcuts.page:234(td/p)
+msgid "<key>R</key>"
+msgstr "<key>R</key>"
+
+#: C/shortcuts.page:239(td/p)
+msgid "Rotate left."
+msgstr "Pivote sur la gauche."
+
+#: C/shortcuts.page:244(td/p)
+msgid "<key>C</key>"
+msgstr "<key>C</key>"
+
+#: C/shortcuts.page:249(td/p)
+msgid "Crop image."
+msgstr "Découpe l'image."
+
+#: C/shortcuts.page:254(td/p)
+msgid "<key>S</key>"
+msgstr "<key>S</key>"
+
+#: C/shortcuts.page:259(td/p)
+msgid "Resize image."
+msgstr "Redimensionne l'image."
+
+#: C/shortcuts.page:266(section/title)
+msgid "Viewer shortcuts"
+msgstr "Raccourcis clavier du visionneur"
+
+#: C/shortcuts.page:278(td/p)
+msgid "<key>Space</key> or <key>Page Down</key>"
+msgstr "<key>Espace</key> ou <key>Page bas</key>"
+
+#: C/shortcuts.page:283(td/p)
+msgid "View the next image."
+msgstr "Affiche l'image suivante."
+
+#: C/shortcuts.page:288(td/p)
+msgid "<key>Backspace</key> or <key>Page Up</key>"
+msgstr "<key>Retour Arrière</key> ou <key>Page Haut</key>"
+
+#: C/shortcuts.page:293(td/p)
+msgid "View the previous image."
+msgstr "Affiche l'image précédente."
+
+# note: missing space
+#: C/shortcuts.page:298(td/p) C/shortcuts.page:415(td/p)
+msgid "<key>Home</key>"
+msgstr "<key>Origine</key>"
+
+#: C/shortcuts.page:303(td/p)
+msgid "View the first image."
+msgstr "Affiche la première image."
+
+#: C/shortcuts.page:308(td/p) C/shortcuts.page:425(td/p)
+msgid "<key>End</key>"
+msgstr "<key>Fin</key>"
+
+#: C/shortcuts.page:313(td/p)
+msgid "View the last image."
+msgstr "Affiche la dernière image."
+
+#: C/shortcuts.page:318(td/p)
+msgid "<keyseq> <key>Ctrl</key> <key>D</key> </keyseq>"
+msgstr "<keyseq> <key>Ctrl</key> <key>D</key> </keyseq>"
+
+#: C/shortcuts.page:326(td/p)
+msgid "Add the current location to the bookmarks."
+msgstr "Ajoute l'emplacement actuel aux signets."
+
+# note: missing space
+#: C/shortcuts.page:331(td/p)
+msgid "<key>+</key> or <key>=</key>"
+msgstr "<key>+</key> ou <key>=</key>"
+
+#: C/shortcuts.page:336(td/p)
+msgid "Zoom in."
+msgstr "Zoom avant."
+
+#: C/shortcuts.page:341(td/p)
+msgid "<key>-</key>"
+msgstr "<key>-</key>"
+
+#: C/shortcuts.page:346(td/p)
+msgid "Zoom out."
+msgstr "Zoom arrière."
+
+#: C/shortcuts.page:351(td/p)
+msgid "<key>1</key> or <key>z</key> or <key>/ (numeric keypad)</key>"
+msgstr "<key>1</key> ou <key>z</key> ou <key>/ (pavé numérique)</key>"
+
+#: C/shortcuts.page:357(td/p)
+msgid "Actual size."
+msgstr "Taille réelle."
+
+#: C/shortcuts.page:362(td/p)
+msgid "<key>x</key> or <key>* (numeric keypad)</key>"
+msgstr "<key>x</key> ou <key>*</key> (pavé numérique)"
+
+#: C/shortcuts.page:367(td/p)
+msgid "Zoom to fit (scales down only, does not magnify)"
+msgstr "Taille ajustée (uniquement en réduction, pas d'agrandissement)"
+
+#: C/shortcuts.page:372(td/p)
+msgid "<keyseq> <key>Shift</key> <key>x</key> </keyseq>"
+msgstr "<keyseq> <key>Maj</key> <key>x</key> </keyseq>"
+
+#: C/shortcuts.page:380(td/p)
+msgid "Zoom to fit (scale down or magnify, as required)"
+msgstr "Taille ajustée (réduction ou agrandissement selon les besoins)"
+
+#: C/shortcuts.page:385(td/p)
+msgid "<key>Arrows</key>"
+msgstr "<key>Flèches</key>"
+
+#: C/shortcuts.page:390(td/p)
+msgid "Scroll the image."
+msgstr "Fait défiler l'image."
+
+#: C/shortcuts.page:395(td/p)
+msgid "<keyseq> <key>Shift</key> <key>Arrows</key> </keyseq>"
+msgstr "<keyseq> <key>Maj</key> <key>Flèches</key> </keyseq>"
+
+#: C/shortcuts.page:403(td/p)
+msgid "Scroll the image faster."
+msgstr "Fait défiler l'image plus rapidement."
+
+#: C/shortcuts.page:410(section/title)
+msgid "Browser Navigation"
+msgstr "Déplacement dans le navigateur"
+
+#: C/shortcuts.page:420(td/p)
+msgid "Go to the first file in the browser view."
+msgstr "Va au premier fichier dans le navigateur."
+
+#: C/shortcuts.page:431(td/p)
+msgid "Go to the last file in the browser view."
+msgstr "Va au dernier fichier dans le navigateur."
+
+#: C/shortcuts.page:436(td/p)
+msgid "<key>Down Arrow</key> or <key>Page Down</key>"
+msgstr "<key>Flèche bas</key> ou <key>Page bas</key>"
+
+#: C/shortcuts.page:441(td/p)
+msgid "Scroll downwards through the thumbnails."
+msgstr "Fait défiler les vignettes vers le bas."
+
+#: C/shortcuts.page:446(td/p)
+msgid "<key>Up Arrow</key> or <key>Page Up</key>"
+msgstr "<key>Flèche haut</key> ou <key>Page haut</key>"
+
+#: C/shortcuts.page:451(td/p)
+msgid "Scroll upwards through the thumbnails."
+msgstr "Fait défiler les vignettes vers le haut."
+
+#: C/shortcuts.page:456(td/p)
+msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>Flèche gauche</key></keyseq>"
+
+#: C/shortcuts.page:461(td/p)
+msgid "Go back to the previously viewed folder."
+msgstr "Retourne au précédent dossier visité."
+
+#: C/shortcuts.page:466(td/p)
+msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>Flèche droite</key></keyseq>"
+
+#: C/shortcuts.page:471(td/p)
+msgid "Go forward (after going back to a folder)."
+msgstr "Avance (après être revenu d'un dossier)."
+
+#: C/shortcuts.page:476(td/p)
+msgid "<keyseq> <key>Alt</key> <key>Up</key> </keyseq>"
+msgstr "<keyseq> <key>Alt</key> <key>Flèche haut</key> </keyseq>"
+
+#: C/shortcuts.page:484(td/p)
+msgid "Go up one level."
+msgstr "Remonte d'un niveau."
+
+#: C/shortcuts.page:491(section/title)
+msgid "Slideshow controls"
+msgstr "Contrôles du diaporama"
+
+#: C/shortcuts.page:503(td/p)
+msgid "<key>F5</key>"
+msgstr "<key>F5</key>"
+
+#: C/shortcuts.page:508(td/p)
+msgid "Start a slideshow."
+msgstr "Démarre un diaporama."
+
+#: C/shortcuts.page:513(td/p)
+msgid "<key>Space</key>"
+msgstr "<key>Espace</key>"
+
+#: C/shortcuts.page:518(td/p)
+msgid "Pause/Unpause the slideshow."
+msgstr "Interrompt/reprend le diaporama."
+
+#: C/shortcuts.page:528(td/p)
+msgid "Close the slideshow."
+msgstr "Ferme le diaporama."
+
+#: C/shortcuts.page:533(td/p)
+msgid "<key>Down Arrow</key> or <key>Right Arrow</key> or <key>Page Down</key>"
+msgstr ""
+"<key>Flèche bas</key> ou <key>Flèche droite</key> ou <key>Page bas</key>"
+
+#: C/shortcuts.page:538(td/p)
+msgid "Load the next image."
+msgstr "Charge l'image suivante."
+
+#: C/shortcuts.page:543(td/p)
+msgid "<key>Up Arrow</key> or <key>Left Arrow</key> or <key>Page Up</key>"
+msgstr ""
+"<key>Flèche haut</key> ou <key>Flèche gauche</key> ou <key>Page haut</key>"
+
+#: C/shortcuts.page:548(td/p)
+msgid "Load the previous image."
+msgstr "Charge l'image précédente."
+
+#: C/sharing-disc.page:6(page/title)
+msgid "Creating a CD/DVD/ISO"
+msgstr "Création d'un CD/DVD/ISO"
+
+#: C/sharing-disc.page:7(page/p)
+msgid ""
+"To write a series of files to an optical disk (CD or DVD), or to create an "
+"ISO disk image file, use the <guiseq><gui>File</gui> <gui>Export To</"
+"gui><gui>Optical Disc</gui></guiseq> menu item."
+msgstr ""
+"Pour enregistrer une série de fichiers sur un disque optique (CD ou DVD) ou "
+"créer un fichier image de disque ISO, utilisez le menu <guiseq><gui>Fichier</"
+"gui><gui>Exporter vers</gui><gui>Disque optique</gui></guiseq>."
+
+#: C/sharing-disc.page:13(page/p)
+msgid ""
+"You will be offered the choice of writing the currently selected files, the "
+"entire current folder, or the entire current folder and its subfolders. "
+"Click <gui>OK</gui> when you have made the appropriate selection."
+msgstr ""
+"Il est alors possible d'enregistrer les fichiers actuellement sélectionnés, "
+"le dossier actuel ou le dossier actuel et ses sous-dossiers. Cliquez sur "
+"<gui>OK</gui> lorsque votre choix est fait."
+
+#: C/sharing-disc.page:19(page/p)
+msgid ""
+"The next dialog will select the destination disk, or the ISO file to save. "
+"When you are ready to complete the process, click <gui>Create Image</gui>. "
+"The optical disk writing process will then commence, or the ISO file will be "
+"written, completing the process."
+msgstr ""
+"La boîte de dialogue suivante permet la sélection du disque ou du fichier "
+"ISO à enregistrer. Lorsque votre choix est fait, cliquez sur <gui>Créer "
+"l'image</gui>. La gravure sur le disque optique commence alors ou le fichier "
+"ISO est enregistré, complétant ainsi le processus."
+
+#: C/sharing-social.page:6(page/title)
+msgid "Uploading to Photo-Sharing Web Sites"
+msgstr "Envoi de photos sur des sites Web de partage"
+
+#: C/sharing-social.page:7(page/p)
+msgid ""
+"gThumb is provided with a number of extensions for uploading photos to "
+"various \"social media\" web sites. By default, uploaders for Facebook, "
+"Flickr, Picasa, and Photobucket are enabled."
+msgstr ""
+"gThumb possède un certain nombre d'extensions pour envoyer des photos sur "
+"divers sites Web de réseaux sociaux. Par défaut, les extensions pour "
+"Facebook, Flickr, Picasa et Photobucket sont activés."
+
+#: C/sharing-social.page:13(page/p)
+msgid ""
+"To upload a series of photos, select the images in the browser view, and "
+"click the <gui>Share</gui> button in the toolbar. Select the appropriate web "
+"site from the menu that appears."
+msgstr ""
+"Pour envoyer une série de photos, choisissez les images dans le navigateur "
+"et cliquez sur le bouton <gui>Partager</gui> de la barre d'outils. "
+"Choisissez le site Web souhaité dans le menu qui apparaît."
+
+#: C/sharing-social.page:17(page/p)
+msgid ""
+"You may be prompted for additional information specific to the destination "
+"site, like an album name. You may also be prompted for your user name and "
+"password for the site. It may be necessary for gThumb to open a web browser, "
+"where you complete the required authentication steps. Once you have "
+"completed the required authentication steps in the browser, return to gThumb "
+"and continue the upload."
+msgstr ""
+"Il se peut que vous deviez renseigner des informations supplémentaires "
+"spécifiques au site de destination, comme par exemple un nom d'album ou vos "
+"nom d'utilisateur et mot de passe pour se connecter au site. Il peut arriver "
+"que gThumb doive ouvrir un navigateur Web pour que vous puissiez effectuer "
+"la phase d'authentification. Lorsque celle-ci est terminée, revenez dans "
+"gThumb pour continuer l'envoi des photos."
+
+#: C/sharing-social.page:26(page/p)
+msgid ""
+"If you do not see the expected upload sites in the <gui>Share</gui> menu, "
+"check that the appropriate exporter extensions are enabled in "
+"<guiseq><gui>Edit</gui><gui>Extensions</gui></guiseq>."
+msgstr ""
+"Si le site souhaité ne se trouve pas dans le menu <gui>Partager</gui>, "
+"vérifiez que l'extension correspondante est bien activée dans "
+"<guiseq><gui>Édition</gui><gui>Extensions</gui></guiseq>."
+
+#: C/sharing-social.page:31(page/p)
+msgid ""
+"For some sites, gThumb also supports downloading photos from the site into "
+"gThumb. See the <guiseq><gui>File</gui><gui>Import From</gui></guiseq> menu "
+"for the available download options."
+msgstr ""
+"Pour certains sites, gThumb est aussi capable de télécharger les photos du "
+"site dans gThumb. Examinez le menu <guiseq><gui>Fichier</gui><gui>Importer "
+"depuis</gui></guiseq> pour connaître les options de téléchargement "
+"disponibles."
+
+#: C/wallpaper.page:6(page/title)
+msgid "Desktop Wallpaper"
+msgstr "Papier peint du bureau"
+
+#: C/wallpaper.page:7(page/p)
+msgid ""
+"To set an image as the system desktop wallpaper, right-click on the image "
+"and select <guiseq><gui>Set as Desktop Background</gui></guiseq> from the "
+"pop-up menu. The desktop background will change, and the Gnome Appearance "
+"Preferences dialog will appear. You can use this dialog to make adjustments "
+"to the background settings (positioning, stretching, tiling, et cetera.)."
+msgstr ""
+"Pour définir une image comme fond d'écran, faites un clic droit sur l'image "
+"et sélectionnez dans le menu contextuel <guiseq><gui>Définir comme arrière-"
+"plan du bureau</gui></guiseq>. Le fond d'écran change et la boîte de "
+"dialogue des préférences Apparence de GNOME s'affiche. Vous pouvez utiliser "
+"cette boîte de dialogue pour faire des ajustements aux paramètres du fond "
+"d'écran (positionnement, étirement, mosaïque, etc)."
+
+#: C/bookmarks.page:6(page/title)
+msgid "Using Bookmarks"
+msgstr "Utilisation des signets"
+
+#: C/bookmarks.page:8(page/p)
+msgid ""
+"Frequently-used folders can be added to the bookmark list for rapid access. "
+"To add the current folder to the bookmark list, press <keyseq><key>Ctrl</"
+"key><key>D</key></keyseq> or use the command <guiseq><gui>Bookmarks</"
+"gui><gui>Add Bookmark</gui></guiseq>."
+msgstr ""
+"Les dossiers fréquemment utilisés peuvent être ajoutés à la liste des "
+"signets pour un accès rapide. Pour ajouter le dossier actuel dans la liste "
+"des signets, appuyez sur <keyseq><key>Ctrl</key><key>D</key></keyseq> ou "
+"utilisez la commande <guiseq><gui>Signets</gui><gui>Ajouter un signet</gui></"
+"guiseq>."
+
+#: C/bookmarks.page:13(page/p)
+msgid ""
+"To remove or rearrange bookmarks in a different order use the "
+"<guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq> command."
+msgstr ""
+"Pour supprimer ou modifier l'ordre des signets, utilisez la commande "
+"<guiseq><gui>Signets</gui><gui>Éditer les signets</gui></guiseq>."
+
+#: C/bookmarks.page:16(page/p)
+msgid ""
+"<guiseq><gui>Bookmarks</gui><gui>System Bookmarks</gui></guiseq> provides "
+"access to the system bookmarks that have been defined in <app>Nautilus</app> "
+"or the file-chooser dialog used in most Gnome applications."
+msgstr ""
+"Le menu <guiseq><gui>Signets</gui><gui>Signets du système</gui></guiseq> "
+"donne accès aux signets du système qui ont été définis dans <app>Nautilus</"
+"app> ou la boîte de dialogue de sélection de fichiers utilisée dans de "
+"nombreuses applications GNOME."
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:21(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+msgstr ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:43(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+msgstr ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:75(media)
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+msgstr ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+
+#: C/import.page:8(page/title)
+msgid "Importing From a Camera"
+msgstr "Importation depuis un appareil photo"
+
+#: C/import.page:10(page/p)
+msgid ""
+"On most systems, <app>gThumb</app> will automatically launch the import "
+"dialog when a digital camera is connected to the computer, or a memory card "
+"with photos is plugged into a card reader. (It does this because it is "
+"registered as the default handler for x-content/image-dcf and x-content/"
+"image-picturecd mime types.)"
+msgstr ""
+"Sur la plupart des systèmes, <app>gThumb</app> ouvre automatiquement la "
+"boîte de dialogue d'importation quand un appareil photo numérique est "
+"connecté à l'ordinateur, ou si une carte mémoire contenant des photos est "
+"insérée dans un lecteur de carte car <app>gThumb</app> est déclaré comme "
+"gestionnaire par défaut des types MIME x-content/image-dcf et x-content/"
+"image-picturecd."
+
+#: C/import.page:16(page/p)
+msgid ""
+"To manually launch the import dialog, use <guiseq><gui>File</gui><gui>Import "
+"From</gui><gui>Removable Device</gui></guiseq>."
+msgstr ""
+"Pour lancer la boîte de dialogue d'importation manuellement, utilisez le "
+"menu <guiseq><gui>Fichier</gui><gui>Importer depuis</gui><gui>Périphérique "
+"amovible</gui></guiseq>."
+
+#: C/import.page:20(figure/title)
+msgid "The Import Dialog"
+msgstr "Boîte de dialogue d'importation"
+
+#: C/import.page:24(page/p)
+msgid ""
+"The import dialog shows thumbnails of the photos available on the selected "
+"device. The user can select one of more photos using normal keyboard or "
+"mouse techniques (for example, Ctrl+click to add a photo to the selection, "
+"or click and drag the mouse over the desired photos.) If no photos are "
+"explicitly selected, all will be imported."
+msgstr ""
+"La boîte de dialogue d'importation affiche les vignettes des photos "
+"disponibles sur le périphérique sélectionné. L'utilisateur peut sélectionner "
+"une ou plusieurs photos avec les méthodes standards au clavier ou à la "
+"souris (par exemple : Ctrl + clic pour ajouter une photo à la sélection, ou "
+"clic et déplacement de la souris sur les photos souhaitées). Si aucune photo "
+"n'est sélectionnée explicitement alors elles sont toutes importées."
+
+#: C/import.page:30(page/p)
+msgid ""
+"Tags may optionally be associated with the imported photos, using the "
+"<gui>Tags</gui> control below the thumbnail window. Click the drop-down "
+"control to see the predefined tags."
+msgstr ""
+"Des étiquettes peuvent être associées aux photos importées, à l'aide du "
+"contrôle <gui>Étiquettes</gui> en dessous de la fenêtres des vignettes. "
+"Cliquez sur la liste déroulante pour visualiser les étiquettes prédéfinies."
+
+#: C/import.page:34(page/p)
+msgid ""
+"An event name may also be optionally associated with the photos. This event "
+"name can be used to generate an automatic subfolder name (possibly "
+"incorporating a date) as described below. For example, if the base "
+"destination folder is \"/photos\", and you enter \"Wedding-Jennifer\" in the "
+"<gui>Event</gui> field, you can configure generation of automatic subfolders "
+"like \"/photos/2010-07-31, Wedding-Jennifer\"."
+msgstr ""
+"Le nom d'un évènement peut être associé aux photos. Le nom de cet évènement "
+"peut être utilisé pour générer un sous-dossier automatique (avec la "
+"possibilité d'ajouter la date) tel que décrit ci-dessous. Par exemple : si "
+"le dossier de destination est « /photos », et que vous saisissez « Mariage-"
+"Magalie » dans le champ <gui>Évènement</gui>, vous pouvez configurer la "
+"génération automatique des sous-dossiers comme cela « /photos/2010-07-31, "
+"Mariage-Magalie »."
+
+#: C/import.page:42(figure/title)
+msgid "Standard Date-Based Subfolders"
+msgstr "Sous-dossiers standards basés sur la date"
+
+#: C/import.page:46(page/p)
+msgid ""
+"As mentioned above, subfolders for imported photos can be automatically "
+"generated based on event names and dates. This is enabled or disabled by "
+"clicking on the destination foldername in the import dialog. This opens a "
+"second dialog, where the base folder for imports may be selected (the "
+"<gui>Destination</gui> folder). To generate automatic subfolders, select "
+"<gui>Automatic subfolder</gui>."
+msgstr ""
+"Comme mentionné ci-dessus, les sous-dossiers pour les photos importées "
+"peuvent être créés automatiquement et nommés en fonction des évènements et "
+"de la date. Cette action est activée en cliquant sur le nom de dossier cible "
+"dans la boîte de dialogue d'importation. Une seconde boîte de dialogue "
+"s'ouvre, où le dossier de base pour les importations peut être sélectionné "
+"(le dossier <gui>Destination</gui>). Pour générer des sous-dossiers "
+"automatiquement, sélectionnez <gui>Sous-dossier automatique</gui>."
+
+#: C/import.page:52(page/p)
+msgid ""
+"You can select either the <gui>File Date</gui> or the <gui>Current Date</"
+"gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
+"examines the dates embedded in the file metadata to determine when the photo "
+"was taken.) A variety of standard date formats are available (<gui>year-"
+"month</gui> for example). The <gui>as single subfolder</gui> checkbox "
+"controls whether a \"deep\" or \"shallow\" hierarchy of files is made (for "
+"example, with <gui>year-month</gui>, you can have year subfolders with month "
+"subfolders under them, or all subfolders can be at the same level in the "
+"filesystem, with the year and name both the folder name."
+msgstr ""
+"Vous pouvez sélectionner soit la <gui>Date du fichier</gui> soit la "
+"<gui>Date actuelle</gui> comme base pour le nom du dossier. L'option "
+"<gui>Date du fichier</gui> lit la date intégrée dans les méta-données du "
+"fichier pour déterminer quand la photo a été prise. Divers formats standards "
+"de date sont disponibles (par exemple <gui>Mois-année</gui>). La case à "
+"cocher <gui>comme sous-dossier unique</gui> contrôle la profondeur de "
+"l'arborescence des fichiers (par exemple, avec l'option <gui>Année-mois</"
+"gui>, vous pouvez avoir des sous-dossiers « année » contenant des sous-"
+"dossiers « mois » ou bien tous les sous-dossiers au même niveau dans le "
+"système de fichiers, contenant l'année et le mois dans leur nom."
+
+#: C/import.page:61(page/p)
+msgid ""
+"It is not necessary to use the predefined date formats. If you select "
+"<gui>custom format</gui>, standard date codes can be used. Click on the help "
+"icon to the right of the custom format field for a list of format codes. \"%E"
+"\" is a special code that will embed the <gui>Event</gui> name defined in "
+"the main import dialog."
+msgstr ""
+"Il n'est pas obligatoire d'utiliser les formats de date prédéfinis. Si vous "
+"sélectionnez <gui>Format personnalisé</gui>, les codes de date standards "
+"peuvent être utilisés. Cliquez sur l'icône d'aide à droite du champ de "
+"format personnalisé pour obtenir une liste des codes disponibles. Le code "
+"« %E » est un code spécial qui permet d'inclure le nom de l'<gui>Évènement</"
+"gui> défini dans la boîte de dialogue d'importation principale."
+
+#: C/import.page:67(page/p)
+msgid "See <link xref=\"gthumb-date-formats\"/> for more date format codes."
+msgstr ""
+"Pour plus d'informations sur les codes de format de date, consultez la "
+"section <link xref=\"gthumb-date-formats\"/>."
+
+#: C/import.page:69(page/p)
+msgid ""
+"If you use automatic subfolder naming, the <gui>Destination</gui> field in "
+"the main import dialog will show the automatic portion of the folder in red. "
+"(For date-based formats, dummy data may be shown in the red portion.)"
+msgstr ""
+"Si vous utilisez l'attribution automatique de nom de sous-dossier, le champ "
+"<gui>Destination</gui> de la boîte de dialogue d'importation principale "
+"affiche la partie automatique du nom de dossier en rouge (pour les formats "
+"de date, une valeur fictive peut être affichée dans la partie en rouge)."
+
+#: C/import.page:74(figure/title)
+msgid "Using Custom Formats"
+msgstr "Utilisation des formats personnalisés"
+
+#: C/slideshow.page:7(page/title)
+msgid "Automatic Slideshow"
+msgstr "Diaporama automatique"
+
+#: C/slideshow.page:9(page/p)
+msgid ""
+"A slideshow of the currently selected images can be started from the image "
+"browser by pressing <key>F5</key>, by clicking the slideshow toolbar icon, "
+"or by clicking <guiseq><gui>View</gui><gui>Slideshow</gui></guiseq>. If no "
+"images are selected, all images in the folder will be included."
+msgstr ""
+"Pour lancer un diaporama des images sélectionnées depuis le navigateur "
+"appuyez sur <key>F5</key>, cliquez sur l'icône de diaporama de la barre "
+"d'outils ou cliquez <guiseq><gui>Affichage</gui><gui>Diaporama</gui></"
+"guiseq>. Si aucune image n'est sélectionnée, toutes les images du dossier "
+"sont inclues."
+
+#: C/slideshow.page:15(page/p)
+msgid ""
+"The transition effects and the time each image is shown can be modified from "
+"the <guiseq><gui>Edit</gui><gui>Preferences</gui><gui>Slideshow</gui></"
+"guiseq> dialog."
+msgstr ""
+"Les effets de transition et la durée pendant laquelle chaque image est "
+"affichée peuvent être modifiés dans la boîte de dialogue "
+"<guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Diaporama</gui></"
+"guiseq>."
+
+#: C/slideshow.page:19(page/p)
+msgid ""
+"Some graphics cards and drivers may experience problems (crashes) if "
+"transition effects are enabled. If you experience such difficulties, set the "
+"<gui>Transition effect</gui> preference to <gui>None</gui>."
+msgstr ""
+"Certaines cartes graphiques et leur pilote peuvent présenter des problèmes "
+"(arrêt brutal) si les effets de transition sont activés. Si vous rencontrez "
+"ce type de problèmes, configurez les préférences <gui>Effet de transition</"
+"gui> à <gui>Aucun</gui>."
+
+#: C/slideshow.page:23(page/p)
+msgid ""
+"You can advance manually to the next image by pressing <key>Down Arrow</"
+"key>, <key>Right Arrow</key>, <key>Page Down</key> or <key>Space</key>."
+msgstr ""
+"Pour aller à l'image suivante, appuyez sur la touche <key>Flèche bas</key>, "
+"<key>Flèche droite</key>, <key>Page bas</key> ou <key>Espace</key>."
+
+#: C/slideshow.page:27(page/p)
+msgid ""
+"You can go back to the previous image by pressing <key>Up Arrow</key>, "
+"<key>Left Arrow</key> or <key>Page Up</key>."
+msgstr ""
+"Pour retourner à l'image précédente, appuyez sur la touche <key>Flèche haut</"
+"key>, <key>Flèche gauche</key> ou <key>Page haut</key>."
+
+#: C/slideshow.page:30(page/p)
+msgid "You can pause or un-pause the slideshow by pressing <key>p</key>."
+msgstr "Pour interrompre ou reprendre un diaporama, appuyez sur <key>p</key>."
+
+#: C/slideshow.page:32(page/p)
+msgid "To exit the slideshow, press <key>Escape</key> or <key>F5</key>."
+msgstr ""
+"Pour quitter le diaporama, appuyez sur <key>Échap</key> ou <key>F5</key>."
+
+#: C/file-copy-move.page:6(page/title)
+msgid "Copying and Moving Files"
+msgstr "Copie et déplacement de fichiers"
+
+#: C/file-copy-move.page:8(page/p)
+msgid "There are three ways to copy or move files in <app>gThumb</app>."
+msgstr ""
+"Il y a trois façons de copier ou de déplacer des fichiers dans <app>gThumb</"
+"app>."
+
+#: C/file-copy-move.page:12(item/title)
+msgid "Cut and Paste"
+msgstr "Couper et coller"
+
+#: C/file-copy-move.page:13(item/p)
+msgid ""
+"To copy a file in the browser view, use <guiseq><gui>Edit</gui><gui>Copy</"
+"gui></guiseq>, or press <keyseq><key>Ctrl</key><key>C</key></keyseq>. To "
+"move a file, use <guiseq><gui>Edit</gui><gui>Cut</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>X</key></keyseq>. Then navigate to the "
+"destination folder using the folder tree. Use <guiseq><gui>Edit</"
+"gui><gui>Paste</gui></guiseq>, or press <keyseq><key>Ctrl</key><key>V</key></"
+"keyseq>, to complete the file transfer."
+msgstr ""
+"Pour copier un fichier dans le navigateur, choisissez <guiseq><gui>Édition</"
+"gui><gui>Copier</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>C</"
+"key></keyseq>. Pour déplacer un fichier, choisissez <guiseq><gui>Édition</"
+"gui><gui>Couper</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>X</"
+"key></keyseq>. Placez-vous ensuite dans le dossier de destination dans "
+"l'arborescence. Choisissez <guiseq><gui>Édition</gui><gui>Coller</gui></"
+"guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>V</key></keyseq> pour "
+"terminer le transfert du fichier."
+
+#: C/file-copy-move.page:26(item/title)
+msgid "Drag and Drop"
+msgstr "Glisser-déposer"
+
+#: C/file-copy-move.page:27(item/p)
+msgid ""
+"To copy a file to another folder, simply drag the file (with a sustained "
+"left-mouse click) to the destination folder visible in the folder tree. To "
+"move a file, hold down the <key>Shift</key> key while dragging."
+msgstr ""
+"Pour copier un fichier vers un autre dossier, faites simplement glisser le "
+"fichier (par un clic gauche non relâché) vers le dossier de destination "
+"visible dans l'arborescence des dossiers. Pour déplacer un fichier, appuyez "
+"sur la touche <key>Maj</key> tout en effectuant le glisser-déposer."
+
+#: C/file-copy-move.page:31(item/p)
+msgid ""
+"You can also use the middle mouse button to drag files. In this case, "
+"<app>gThumb</app> will ask you if you wish to copy the files, move the "
+"files, or cancel the operation."
+msgstr ""
+"Il est aussi possible d'utiliser le bouton central de la souris pour faire "
+"glisser des fichiers. Dans ce cas, <app>gThumb</app> demande si vous voulez "
+"copier les fichiers, les déplacer ou annuler l'opération."
+
+#: C/file-copy-move.page:37(item/title)
+msgid "File Copy / Move Dialog"
+msgstr "Boîte de dialogue de copie/déplacement de fichier"
+
+#: C/file-copy-move.page:38(item/p)
+msgid ""
+"Select the files to be transferred, right-click on the selection, and choose "
+"<guiseq><gui>Copy to...</gui></guiseq> or <guiseq><gui>Move to...</gui></"
+"guiseq>. This will open a folder-selection dialog, where you can choose the "
+"destination folder. At the bottom of the dialog, you can enable the "
+"<guiseq><gui>View the destination</gui></guiseq> option if you want to go to "
+"the destination folder after the file transfer is complete."
+msgstr ""
+"Choisissez les fichiers à transférer, faites un clic droit sur la sélection "
+"puis choisissez <guiseq><gui>Copier vers…</gui></guiseq> ou "
+"<guiseq><gui>Déplacer vers…</gui></guiseq>. Cela ouvre une boîte de dialogue "
+"de sélection de dossier qui permet de choisir le dossier de destination. Au "
+"bas de cette boîte de dialogue, vous pouvez activer l'option "
+"<guiseq><gui>Afficher la destination</gui></guiseq> si vous souhaitez aller "
+"dans le dossier de destination après la fin du transfert de fichier."
+
+#: C/legal.xml:4(p/link)
+msgid "Creative Commons Attribution-Share Alike 3.0 Unported License"
+msgstr ""
+
+#: C/legal.xml:3(license/p)
+msgid "This work is licensed under a <_:link-1/>."
+msgstr ""
+
+#: C/legal.xml:6(license/p)
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+

@@ -1,0 +1,14 @@
+[Extension]
+_Name=Image viewer
+_Description=Basic image viewing.
+_Authors=gthumb development team
+Copyright=Copyright © 2009 The Free Software Foundation, Inc.
+Version=%VERSION%
+Icon=image-x-generic
+Category=Viewer
+
+[Loader]
+Type=module
+File=%LIBRARY%
+API=%GTHUMB_API_VERSION%
+After=file_viewer;jpeg_utils

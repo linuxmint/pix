@@ -1,0 +1,23 @@
+    <div class="thumbnail-caption-container">
+
+      <div class="thumbnail-container">
+        <div class="thumbnail-image-container">
+          <a class="thumbnail-image" href="<%= image_link %>" title="<%= translate 'Click to view the image' %>"><%= image thumbnail %></a>
+        </div>
+      </div> <!-- thumbnail-container -->
+
+      <% for_each thumbnail_caption %>
+        <% if first_item %>
+          <div class="caption-container">
+        <% end %>
+
+          <div class="property-row">
+            <span class="property-value" title="<%= item_attribute display_name %>"> <%= item_attribute value %> </span>
+          </div>
+
+        <% if last_item %>
+          </div> <!-- caption-container -->
+        <% end %>
+      <% end %>
+
+    </div> <!-- thumbnail-caption-container -->

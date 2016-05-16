@@ -1,0 +1,628 @@
+From: David Paleino <dapal@debian.org>
+Subject: fix XML so that it validates during dh_auto_test
+Forwarded: no
+
+---
+ help/C/shortcuts.page     |   12 ++++++------
+ help/C/strftime.page      |    2 +-
+ help/de/shortcuts.page    |   12 ++++++------
+ help/de/strftime.page     |    2 +-
+ help/el/shortcuts.page    |   12 ++++++------
+ help/el/strftime.page     |    2 +-
+ help/es/shortcuts.page    |   12 ++++++------
+ help/es/strftime.page     |    2 +-
+ help/fr/shortcuts.page    |   12 ++++++------
+ help/fr/strftime.page     |    2 +-
+ help/oc/shortcuts.page    |   12 ++++++------
+ help/oc/strftime.page     |    2 +-
+ help/sl/shortcuts.page    |   12 ++++++------
+ help/sl/strftime.page     |    2 +-
+ help/sv/shortcuts.page    |   12 ++++++------
+ help/sv/strftime.page     |    2 +-
+ help/zh_CN/shortcuts.page |   12 ++++++------
+ help/zh_CN/strftime.page  |    2 +-
+ 18 files changed, 63 insertions(+), 63 deletions(-)
+
+--- a/help/C/strftime.page
++++ b/help/C/strftime.page
+@@ -8,7 +8,7 @@ id="gthumb-date-formats">
+   <p>This is a summary of standard date/time codes that may be used
+   in format strings:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Valid format codes for custom subfolders</title>
+     <tr>
+       <td>
+--- a/help/de/strftime.page
++++ b/help/de/strftime.page
+@@ -19,7 +19,7 @@
+ 
+   <p>Es folgt eine Zusammenfassung der Datums- und Uhrzeit-Codes, die in Formatangaben verwendet werden können:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Gültige Formatangaben für eigene Unterordner</title>
+     <tr>
+       <td>
+--- a/help/el/strftime.page
++++ b/help/el/strftime.page
+@@ -19,7 +19,7 @@
+ 
+   <p>Αυτή είναι μια περίληψη των τυπικών κωδικών ημερομηνίας/χρόνου που μπορούν να χρησιμοποιηθούν σε συμβολοσειρές:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Έγκυροι κώδικες μορφής για προσαρμοσμένους υποφακέλους</title>
+     <tr>
+       <td>
+--- a/help/es/strftime.page
++++ b/help/es/strftime.page
+@@ -19,7 +19,7 @@
+ 
+   <p>Esto es un resumen de los códigos de fecha y hora que se pueden usar en cadenas de formato:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Códigos de formato válidos para subcarpetas personalizadas</title>
+     <tr>
+       <td>
+--- a/help/fr/strftime.page
++++ b/help/fr/strftime.page
+@@ -25,7 +25,7 @@
+ 
+   <p>Voici un résumé des codes standards de date et d'heure qui peuvent être utilisés dans les chaînes de format :</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Codes de format valides pour les sous-dossiers personnalisés</title>
+     <tr>
+       <td>
+--- a/help/oc/strftime.page
++++ b/help/oc/strftime.page
+@@ -8,7 +8,7 @@
+   <p>This is a summary of standard date/time codes that may be used
+   in format strings:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Valid format codes for custom subfolders</title>
+     <tr>
+       <td>
+--- a/help/sl/strftime.page
++++ b/help/sl/strftime.page
+@@ -7,7 +7,7 @@
+ 
+   <p>To je povzete običajnih kod datuma/časa, ki jih je mogoče uporabiti v nizih oblike:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Veljavne kode oblike za podmape po meri</title>
+     <tr>
+       <td>
+--- a/help/sv/strftime.page
++++ b/help/sv/strftime.page
+@@ -8,7 +8,7 @@
+   <p>This is a summary of standard date/time codes that may be used
+   in format strings:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Valid format codes for custom subfolders</title>
+     <tr>
+       <td>
+--- a/help/zh_CN/strftime.page
++++ b/help/zh_CN/strftime.page
+@@ -8,7 +8,7 @@
+   <p>This is a summary of standard date/time codes that may be used
+   in format strings:</p>
+ 
+-  <table id="gthumb-TBL-strftime">
++  <table>
+     <title>Valid format codes for custom subfolders</title>
+     <tr>
+       <td>
+--- a/help/C/shortcuts.page
++++ b/help/C/shortcuts.page
+@@ -6,7 +6,7 @@ id="gthumb-shortcuts">
+ 
+   <title>Keyboard Shortcuts</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Viewing and hiding parts of the user interface</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -83,7 +83,7 @@ id="gthumb-shortcuts">
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Editing shortcuts for the browser and viewer</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -178,7 +178,7 @@ id="gthumb-shortcuts">
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Editing shortcuts for the viewer mode only</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -262,7 +262,7 @@ id="gthumb-shortcuts">
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Viewer shortcuts</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -406,7 +406,7 @@ id="gthumb-shortcuts">
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Browser Navigation</title>
+     <table frame="all" rules="all">
+ 
+@@ -487,7 +487,7 @@ id="gthumb-shortcuts">
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Slideshow controls</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/de/shortcuts.page
++++ b/help/de/shortcuts.page
+@@ -18,7 +18,7 @@
+ 
+   <title>Tastenkombinationen</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Anzeigen und verbergen von Teilen der grafischen Oberflächen</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -82,7 +82,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Tastenkombinationen für Bildbetrachter und Browser bearbeiten</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -161,7 +161,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Tastenkombinationen nur für den Ansichtsmodus bearbeiten</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -231,7 +231,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Tastenkombinationen des Betrachters</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -341,7 +341,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Browser-Navigation</title>
+     <table frame="all" rules="all">
+ 
+@@ -405,7 +405,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Steuerung von Dia-Vorführungen</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/el/shortcuts.page
++++ b/help/el/shortcuts.page
+@@ -18,7 +18,7 @@
+ 
+   <title>Συντομεύσεις πληκτρολογίου</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Προβολή και απόκρυψη μερών της διεπαφής χρήστη</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -82,7 +82,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Επεξεργασία των συντομεύσεων μόνο για την περιήγηση και προβολή</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -161,7 +161,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Επεξεργασία των συντομεύσεων μόνο για την κατάσταση προβολής</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -231,7 +231,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Συντομεύσεις προβολής</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -341,7 +341,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Περιήγηση εξερευνητή</title>
+     <table frame="all" rules="all">
+ 
+@@ -405,7 +405,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Στοιχεία ελέγχου προβολής διαφανειών</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/es/shortcuts.page
++++ b/help/es/shortcuts.page
+@@ -18,7 +18,7 @@
+ 
+   <title>Combinaciones de teclas</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Ver y ocultar partes del interfaz de usuario</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -82,7 +82,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Editar atajos para el explorador y el visor</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -161,7 +161,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Editar atajos para el modo visor solamente</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -231,7 +231,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Ver atajos de teclado</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -341,7 +341,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Navegación con explorador</title>
+     <table frame="all" rules="all">
+ 
+@@ -405,7 +405,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Controles de las diapositivas</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/fr/shortcuts.page
++++ b/help/fr/shortcuts.page
+@@ -24,7 +24,7 @@
+ 
+   <title>Raccourcis clavier</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Affichage et masquage de certaines parties de l'interface utilisateur</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -88,7 +88,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Raccourcis pour l'édition dans le navigateur et le visionneur</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -167,7 +167,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Raccourcis pour l'édition dans le visionneur uniquement</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -237,7 +237,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Raccourcis clavier du visionneur</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -347,7 +347,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Déplacement dans le navigateur</title>
+     <table frame="all" rules="all">
+ 
+@@ -411,7 +411,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Contrôles du diaporama</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/oc/shortcuts.page
++++ b/help/oc/shortcuts.page
+@@ -6,7 +6,7 @@
+ 
+   <title>Keyboard Shortcuts</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Viewing and hiding parts of the user interface</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -83,7 +83,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Editing shortcuts for the browser and viewer</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -178,7 +178,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Editing shortcuts for the viewer mode only</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -262,7 +262,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Viewer shortcuts</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -406,7 +406,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Browser Navigation</title>
+     <table frame="all" rules="all">
+ 
+@@ -487,7 +487,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Slideshow controls</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/sv/shortcuts.page
++++ b/help/sv/shortcuts.page
+@@ -6,7 +6,7 @@
+ 
+   <title>Keyboard Shortcuts</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Viewing and hiding parts of the user interface</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -83,7 +83,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Editing shortcuts for the browser and viewer</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -178,7 +178,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Editing shortcuts for the viewer mode only</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -262,7 +262,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Viewer shortcuts</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -406,7 +406,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Browser Navigation</title>
+     <table frame="all" rules="all">
+ 
+@@ -487,7 +487,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Slideshow controls</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/zh_CN/shortcuts.page
++++ b/help/zh_CN/shortcuts.page
+@@ -6,7 +6,7 @@
+ 
+   <title>Keyboard Shortcuts</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Viewing and hiding parts of the user interface</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -83,7 +83,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Editing shortcuts for the browser and viewer</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -178,7 +178,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Editing shortcuts for the viewer mode only</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -262,7 +262,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Viewer shortcuts</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -406,7 +406,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Browser Navigation</title>
+     <table frame="all" rules="all">
+ 
+@@ -487,7 +487,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Slideshow controls</title>
+     <table frame="all" rules="all">
+       <tr>
+--- a/help/sl/shortcuts.page
++++ b/help/sl/shortcuts.page
+@@ -6,7 +6,7 @@
+ 
+   <title>Tipkovne bližnjice</title>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-folders">
+     <title>Ogled in skrivanje delov uporabniškega vmesnika</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -80,7 +80,7 @@
+   </section>
+ 
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browser">
+     <title>Urejanje bližnjic za brskalnik in pregledovalnik</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -173,7 +173,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer">
+     <title>Urejanje bližnjic le za način pregledovalnika</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -257,7 +257,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-viewer2">
+     <title>Bližnjice pregledovalnika</title>
+     <table frame="all" rules="all">
+       <tr>
+@@ -390,7 +390,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-browsernav">
+     <title>Krmarjenje brskalnika</title>
+     <table frame="all" rules="all">
+ 
+@@ -467,7 +467,7 @@
+     </table>
+   </section>
+ 
+-  <section>
++  <section id="gthumb-SCT-shortcuts-slideshow">
+     <title>Nadzor predstavitve</title>
+     <table frame="all" rules="all">
+       <tr>

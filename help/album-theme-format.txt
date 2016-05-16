@@ -1,0 +1,368 @@
+The album theme format is mainly HTML code with special tags starting with <%
+and ending with %>
+
+Functions
+=========
+
+Functions are used to print values.  Two functions have a special format, they 
+are "eval" and "translate", all other functions have a standard format similar 
+to that of HTML tags.
+
+eval
+----
+
+To print the value of an expression you can use the eval function.  For example
+
+<%= eval 1+2 %>
+
+will print 3.
+
+translate
+---------
+
+To print a translatable string use the translate function.  The translate
+function take a printf-like argument list, that is the first argument 
+is the string format, and the remaining list of arguments are the expressions
+that will substibute the special codes present in the format.  
+For example:
+
+<%= translate 'Page %d of %d', page_idx, pages %>
+
+will print "Page 1 of 3" on the first index page for an album that has a total
+of 3 index pages.
+
+The string format is specified using single quotes.  There are only two 
+special codes available: %d for integer values and %s for strings.
+
+Other functions
+---------------
+
+All other functions have the following format:
+
+<%= function attribute="value" attribute="value" %>
+
+they all print a value, that can be customized specifing additional attributes.
+
+The following is the list of all avaiable functions with the relative 
+attributes:
+
+*) header
+	Prints the page header, if the user spcifies a different header for 
+	the image page this function prints the image page header when used in 
+	the image page file.
+
+*) footer
+	Prints the page footer, similarly to header print the image page 
+	footer when used in image page files.
+
+*) language
+	Prints the user system language
+
+*) theme_link 
+	Prints the address of a file of the theme, this can be a css or 
+	an image of the theme, this function is necessary because the user can 
+	choose to save all files in a single folder or organize file in 
+	subfolders so we cannot know the position of the theme files before 
+	starting the album creation process. Attributes:
+
+	*) src: (required) the basename of the file.
+
+*) image
+	Print the HTML img tag of an image or of its thumbnail.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+	*) thumbnail:
+
+	*) preview:
+
+	*) class:
+
+	*) max_size:
+
+	*) alt:
+
+	*) id:
+
+*) image_link
+	Prints the html address to an image file or of its thumbnail.  
+	Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+*) image_idx
+	Prints the ordinal number of an image relative to the user specified 
+	thumbnail ordering.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+*) image_dim
+	Prints the image dimensions of an image or of its thumbnail.  
+	Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+*) image_attribute
+	Prints the attribute of an image.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+	*) id: (required) the id of the attribute to print.
+
+*) images
+	Prints the number of images of the album.
+
+*) file_name
+	Prints the filename of an image or of its thumbnail.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+	*) thumbnail:
+
+	*) preview:
+
+	*) with_relative_path:
+
+	*) with_path:
+
+	*) utf8: if 1 translates the filename in utf-8 format.
+
+*) file_path
+	Prints the full path of an image or of its thumbnail.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+	*) thumbnail:
+
+	*) preview:
+
+	*) relative_path:
+
+	*) utf8: if 1 translates the filename in utf-8 format.
+
+*) file_size
+	Prints the file size of an image or of its thumbnail.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+*) page_link
+	Prints the html address to an index page.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+	*) image_idx:
+
+*) page_idx:
+	Prints the current image index or an index relative the the current 
+	one.  Attributes:
+
+	*) idx_relative:
+
+	*) idx:
+
+*) page_rows
+	Prints the number of rows of the thumbnails grid.
+
+*) page_cols
+	Prints the number of columns of the thumbnails grid.
+
+*) pages
+	Prints the total number of index pages.
+
+*) thumbnails
+	Prints the thumbnails index.
+
+*) timestamp
+	Prints the album creation time.  Attributes:
+
+	*) format: a strftime-like format.
+
+
+Flow control
+============
+
+There is a series of commands that allow to control the flow of execution.
+
+if
+--
+
+The if command can be used to execute code only when a condition is true, for 
+example:
+
+	<% if page_idx == 1 %>
+		<p>code visible only on the first page</p>
+	<% elsif page_idx == pages %>
+		<p>code visible onlt on the last page</p>
+	<% else %>
+		<p>code visible in all other cases</p>
+	<% end %>
+
+
+for_each in range
+-----------------
+
+The for_each in range command allows to execute the same code multiple times,
+for example:
+
+	<% for_each i in 1..pages %>
+          <a href="<%= page_link idx="i" %>" title="<%= translate 'View page %d', i %>">
+            <%= eval i %>
+          </a>
+        <% end %>
+
+will print a link for each index page generated for the album.
+
+
+for_each iterator
+-----------------
+
+This command will execute the same code a number of times depending on the
+kind of iterator chosen.  There are two kind of iterators available:
+
+	1) thumbnail_caption: the code is executed for each thumbnail
+	attribute the user chooses in the web album dialog.  For example if
+	the user chooses to print the file size and image dimensions, the code
+	will be executed two times.
+
+	2) image_caption: the code is executed for each image attribute the
+	used chooses in the web album dialog.
+
+This kind of loop enables a series of special functions that give informations
+about the current caption:
+
+	*) first_item: is a boolean function that returns 1 if the current 
+	attribute is the first of the series, 0 otherwise.
+
+	*) last_item: is a boolean function that returns 1 if the current 
+	attribute is the last of the series, 0 othewise.
+
+	*) item_is_empty: a boolean function that returns 1 if the current 
+	attribute is not available for the current image.
+
+	*) item_attribute: prints a property of the current attribute. The 
+	possible properties are:
+		id: prints the attribute id.
+		display_name: prints the attribute display name.
+		value: prints the attribute value.
+
+For example, this is the code used in the Wiki theme to print the image 
+attributes:
+
+      <% for_each image_caption %>
+        <% if first_item %>
+          <dl class="caption-container">
+        <% end %>
+    
+            <dt class="property"> <%= item_attribute display_name %> </dt>
+            <dd class="property-value"> <%= item_attribute value %> </dd>
+    
+        <% if last_item %>
+            <dt class="last property"></dt>
+            <dd class="last property-value"></dd>
+          </dl>
+        <% end %>
+      <% end %>
+
+
+The set_var command
+===================
+
+The set_var command is used to set a series of variables that are used
+during the album creation process.
+
+The variables you can set are the following:
+
+	*) thumbnail_width:
+	*) thumbnail_height:
+	*) preview_width:
+	*) preview_height:
+
+The set_var command has the attributes "if" and "unless" that allow to set the 
+variable value only if a condition is true, for example:
+
+	<% set_var preview_width="650" preview_height="650" if="image_description_enabled || image_attributes_enabled" %>
+
+sets the values only if the user chooses to view the image description and/or 
+the image attributes.
+
+The "unless" attribute is similar to "if", but the values are set only if the 
+condition is false.
+
+
+Expressions
+===========
+
+Expressions can contain integers values and a basic set of operations,
+variables and function calls.  The following is a speudo-language definition of 
+an expression:
+
+EXPR: 
+	EXPR + EXPR
+	EXPR - EXPR
+	EXPR * EXPR
+	EXPR / EXPR
+	EXPR && EXPR
+	EXPR || EXPR
+	- EXPR
+	+ EXPR
+	! EXPR
+	( EXPR )
+	EXPR == EXPR
+	EXPR != EXPR
+	EXPR <= EXPR
+	EXPR >= EXPR
+	EXPR < EXPR
+	EXPR > EXPR
+	INTEGER_NUMBER
+	VARIABLE
+	FUNCTION(EXPR , EXPR)
+
+The boolean operations return 1 for true and 0 for false.
+
+The available variables are the following:
+
+	*) copy_originals: boolean variable that is 1 if the user chooses to
+	copy the original images, 0 otherwise.
+
+	*) image_description_enabled: 1 if the users choose to display
+	the image description, 0 otherwise.
+
+	*) image_attributes_enabled: 1 if the users choose to display
+	the image attributes, 0 otherwise.
+
+The available functions:
+
+	*) image_attribute_enabled(attribute_id): boolean function that returns
+	1 if the user chooses to display the specified image attribute, 0 
+	otherwise.
+
+	*) image_attribute_available(attribute_id): boolean function that 
+	returns	1 if the current image has the specified attribute.
+
+The following example prints the image description if the user chooses to 
+display descriptions in the web album and if the current image has a 
+description:
+
+	<% if image_description_enabled && image_attribute_available('general::description') %>
+		<div class="image-comment">
+		<%= image_attribute id="general::description" %>
+		</div>
+	<% end %>

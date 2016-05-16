@@ -1,0 +1,123 @@
+Source: gthumb
+Section: gnome
+Priority: optional
+Maintainer: Jackson Doak <noskcaj@ubuntu.com>
+Build-Depends:
+ debhelper (>= 9)
+ , dh-autoreconf
+ , intltool
+ , libexiv2-dev (>= 0.21)
+ , flex
+ , bison
+ , libtiff-dev
+ , libpng12-dev | libpng-dev
+ , libjpeg-dev
+ , libsm-dev
+ , libice-dev
+ , scrollkeeper
+ , automake
+ , autoconf
+ , libtool
+ , gnome-doc-utils
+ , gnome-common
+ , gsettings-desktop-schemas-dev
+ , libgtk-3-dev (>= 3.10.0)
+ , libxml2-dev (>= 2.4.0)
+ , libglib2.0-dev (>= 2.34.0)
+ , libcairo2-dev
+ , libltdl3-dev
+ , libglade2-dev (>= 2.4.0)
+ , libgstreamer0.10-dev (>= 0.10)
+ , libgstreamer-plugins-base0.10-dev
+ , libsoup-gnome2.4-dev (>= 2.36)
+ , libchamplain-gtk-0.12-dev (>= 0.12.0)
+ , librsvg2-dev (>= 2.34.0)
+ , zlib1g-dev
+ , yelp-tools
+ , libgstreamer1.0-dev
+ , libsecret-1-dev
+ , libgstreamer-plugins-base1.0-dev
+ , libwebp-dev
+ , libwebkit2gtk-3.0-dev
+Standards-Version: 3.9.5
+Homepage: https://wiki.gnome.org/Apps/gthumb
+Vcs-Git: git://anonscm.debian.org/collab-maint/gthumb.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/gthumb.git
+
+Package: gthumb
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , gthumb-data (= ${source:Version})
+ , gsettings-desktop-schemas
+Recommends: gvfs-bin
+ , gstreamer0.10-gnomevfs
+ , bison
+ , flex
+Conflicts: gthumb2
+Provides: gthumb2
+Replaces: gthumb2
+Description: image viewer and browser
+ gThumb is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
+
+Package: gthumb-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ ${misc:Depends}
+ , gthumb (= ${binary:Version})
+Description: image viewer and browser - debugging symbols
+ gThumb is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
+ .
+ This package contains the debugging symbols for gThumb.
+
+Package: gthumb-data
+Architecture: all
+Breaks: gthumb (<< 3:2.10.8-1)
+Replaces: gthumb (<< 3:2.10.8-1)
+Recommends: yelp
+Depends:
+ ${misc:Depends}
+ , scrollkeeper
+Description: image viewer and browser - arch-independent files
+ gThumb is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
+ .
+ This package contains the architecture-independent files needed by gthumb.
+
+Package: gthumb-dev
+Architecture: any
+Section: devel
+Depends:
+ ${misc:Depends}
+ , gthumb (= ${binary:Version})
+Description: image viewer and browser - development files
+ gThumb is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
+ .
+ This package contains the files needed to develop third-party extensions.

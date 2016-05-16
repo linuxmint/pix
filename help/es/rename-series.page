@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="gthumb-rename-series" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#files"/>
+    <link type="topic" xref="gthumb-attributes"/>
+    <link type="topic" xref="gthumb-date-formats"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@ie.edu</mal:email>
+      <mal:years>2008-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  </info>
+  <title>Renombrar archivos</title>
+
+  <p>Para renombrar una o varias imágenes utilizando una plantilla de nombre, seleccione los archivos en el navegador y elija <guiseq><gui>Editar</gui><gui>Renombrar</gui></guiseq>, o pulse <key>F2</key>.</p>
+
+  <p>La plantilla nombre es simplemente un patrón utilizado para renombrar todas las imágenes seleccionadas. Puede utilizar algunos caracteres especiales para hacer que los nombres nuevos sean diferentes de los demás (esto es esencial si renombra más de una imagen y, opcionalmente, si renombra una única imagen):</p>
+
+  <table>
+    <tr>
+      <td>
+        <p>Símbolo</p>
+      </td>
+      <td>
+        <p>Descripción</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>#</key></p>
+      </td>
+      <td>
+        <p>Este símbolo será reemplazado con el valor de un contador que se autoincrementa en 1 unidad pasando de una imagen a otra. Si especifica estos símbolos secuencialmente obtendrá ceros a la izquierda si el valor del contador tiene un número menor de dígitos, por ejemplo ### generará la secuencia 001, 002, 003, etc.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>%F</key></p>
+      </td>
+      <td>
+        <p>Este símbolo se reemplazará con el nombre original del archivo, exluyendo la extensión original.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>%E</key></p>
+      </td>
+      <td>
+        <p>Este símbolo se reemplazará con la extensión original del nombre del archivo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>%N</key></p>
+      </td>
+      <td>
+        <p>Este símbolo se reemplazará con el enumerador de la imagen original. Por ejemplo, si el nombre original del archivo era IMG_9876.JPG, esto extrae la parte «9876». Si el nombre del archivo tiene más de un grupo de dígitos en su interior (por ejemplo, IMG_123_456.JPG) sólo se utiliza el primero de ellos («123» en este ejemplo).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>%M{formato}</key></p>
+      </td>
+      <td>
+        <p>Este símbolo se reemplazará con la fecha de modificación del archivo. El formato de esta fecha (y opcionalmente de la hora) se puede especificar añadiendo un código estándar de formato entre corchetes. Por ejemplo, «%M{%Y-%m-%d, %T}» se reemplazará con una fecha y una hora similar a «2010-04-01, 15:02:01».</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>%D{formato}</key></p>
+      </td>
+      <td>
+        <p>Este símbolo se reemplazará con la fecha original en que se tomó la foto (normalmente determinada por las marcas de tiempo EXIF empotradas en la foto). El formato de esta fecha (y, opcionalmente, de la hora) se puede especificar añadiendo un código estándar de formateo entre corchetes. Por ejemplo, «%D{%Y-%m-%d, %T}» se reemplazará con una fecha y una hora similares a «2010-04-01, 15:02:01».</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><key>%A{identificador}</key></p>
+      </td>
+      <td>
+        <p>Este símbolo se reemplazará con los datos especificados por el identificador. Por ejemplo, «%A{ general::dimensions }» se reemplazará con un tamaño similar a «320 x 240».</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Se puede ver un resumen de estos códigos especiales pulsando en el icono de Ayuda dentro del campo de la plantilla.</p>
+
+  <p>La lista en la parte inferior del diálogo muestra cómo se renombrarán los archivos.</p>
+
+  <p>Para renombrar las imágenes, pulse <gui>Renombrar</gui>.</p>
+
+  <p>Si al renombrar una imagen se puede sobreescribir una imagen ya existente, se le preguntará cómo proceder, hay cinco opciones disponibles: sobreescribir la imagen; no sobreescribir la imagen; sobreescribir siempre; no sobreescribir nunca; especificar un nombre nuevo.</p>
+
+</page>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="gthumb-rename-series" xml:lang="sl">
+  <info>
+    <link type="guide" xref="index#files"/>
+    <link type="topic" xref="gthumb-attributes"/>
+    <link type="topic" xref="gthumb-date-formats"/>
+  </info>
+  <title>Preimenovanje datotek</title>
+
+  <p>Za preimenovanje ene ali več slik z uporabo predloge imen izberite <guiseq><gui>Uredi</gui><gui>Preimenuj</gui></guiseq>.</p>
+
+  <p>Predloga imena je vzorec, ki je uporabljen za preimenovanje vseh izbranih slik. Uporabite lahko nekaj posebnih znakov za ustvarjanje med seboj različnih novih imen (različnost imen je nujna v primeru preimenovanja več kot ene slike in izbirna v primeru preimenovanja ene slike):</p>
+
+  <table>
+    <tr>
+      <td>
+        <p>Simbol</p>
+      </td>
+      <td>
+        <p>Opis</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>#</key>
+        </p>
+      </td>
+      <td>
+        <p>Ta simbol bo bil zamenjan z vrednostjo števca, ki se s spremembo od ene slike do druge poveča za 1. V primeru da navedete te simbole v zaporedju, boste v primeru da ima števec manj števil dobili vodilne nične, na primer ### bo proizvedel zaporedje 001, 002, 003, itn..</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%F</key>
+        </p>
+      </td>
+      <td>
+        <p>Ta simbol bo bil zamenjan z izvirnim imenom datoteke brez pripone.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%E</key>
+        </p>
+      </td>
+      <td>
+        <p>Ta simbol bo bil zamenjan s pripono izvirnega imena slikovne datoteke.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%N</key>
+        </p>
+      </td>
+      <td>
+        <p>Simbol bo zamenjan z izvirnim številčnikom slike. Na primer, če je bilo izvirno ime datoteke IMG_9876.JPG bo izločen del "9876". V primeru da ima ime datoteke vključeno več kot eno skupino številk (na primer, IMG_123_456.JPG), bo uporabljeno samo prvo število (v tem primeru "123").</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%M{format}</key>
+        </p>
+      </td>
+      <td>
+        <p>Ta simbol bo bil zamenjan z datumom spremembe datoteke. Oblikovanje tega datuma (in izbirno časa) je mogoče določiti z dodajanjem standardne kode oblike v zavite oklepaje. Na primer, "%M{%Y-%m-%d, %T}" bi bil zamenjan z datumom in časom oblike "2010-04-01, 15:02:01".</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%D{format}</key>
+        </p>
+      </td>
+      <td>
+        <p>Ta simbol bo bil zamenjan z datumom zajema fotografija (običajno določen iz žigov datumov EXIF vključenih v fotografijo). Oblikovanje tega datuma (in izbirno časa) je mogoče določiti z dodajanjem standardne kode oblike v zavite oklepaje. Na primer, "%M{%Y-%m-%d, %T}" bi bil zamenjan z datumom in časom oblike "2010-04-01, 15:02:01".</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%A{identifier}</key>
+        </p>
+      </td>
+      <td>
+        <p>Ta simbol do bil zamenjan s podatkom, določenim v določilu. Na primer "%A{ general::dimensions }" bi bil zamenjan z velikostjo kot je "320 x 240".</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Povzetek teh posebnih kod je mogoče videti s klikom na ikono pomoč v polju predloge.</p>
+
+  <p>Seznam na dnu pogovornega okna prikazuje kako bodo preimenovana imena datotek.</p>
+
+  <p>Za preimenovanje slik kliknite na <gui>Preimenuj</gui>.</p>
+
+  <p>V primeru da preimenovanje slike lahko prepiše že obstoječo sliko, boste vprašani kako nadaljevati. Na voljo je pet možnosti: prepiši sliko; ne prepiši slike; vedno prepiši; nikoli ne prepiši; navedi novo ime.</p>
+
+</page>

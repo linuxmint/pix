@@ -1,0 +1,21 @@
+--- gthumb.orig/src/Makefile.am
++++ gthumb/src/Makefile.am
+@@ -223,5 +223,7 @@
+ 	lex.albumtheme.c
+ 
+ CLEANFILES =				\
+-	$(gnome_gthumb_idl_sources)	\
++	GNOME_GThumb-stubs.c            \
++	GNOME_GThumb-skels.c            \
++	GNOME_GThumb-common.c
+ 	gnome_gthumb_idl_stamp
+--- gthumb.orig/src/GNOME_GThumb.h
++++ gthumb/src/GNOME_GThumb.h
+@@ -14,7 +14,6 @@
+ 
+ 
+ /** typedefs **/
+-#line 14 "/usr/share/idl/bonobo-2.0/Bonobo.idl"
+ #include <bonobo/Bonobo.h>
+ #if !defined(ORBIT_DECL_GNOME_GThumb_Application) && !defined(_GNOME_GThumb_Application_defined)
+ #define ORBIT_DECL_GNOME_GThumb_Application 1

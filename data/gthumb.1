@@ -1,0 +1,58 @@
+.TH "gthumb" "1" "May 2002" "GNOME Applications" ""
+.SH "NAME"
+.LP 
+gThumb \- an image viewer and browser for GNOME
+
+.SH "SYNOPSIS"
+.B gthumb 
+[\-\-help] [\-\-version] [\-f] [\-\-fullscreen] [\-s] [\-\-slideshow] 
+[\-\-import\-photos] [\fIdirectory\fP] [\fIfilename\fP] ...
+
+.SH "DESCRIPTION"
+.LP 
+With \fIgThumb\fP you can browse your hard disk viewing thumbnails of image 
+files.  It also lets you view single files (including GIF animations), add
+comments to images, organize images in catalogs, print images, view
+slideshows, set your desktop background, and more.
+
+.SH "OPTIONS"
+.LP 
+.TP 
+\fB\-f, \-\-fullscreen\fR
+Start in fullscreen mode.
+.TP
+\fB\-s, \-\-slideshow\fR
+Automatically start a slideshow.
+.TP
+\fB\-\-import\-photos\fR
+Automatically import digital camera photos.
+.TP
+\fB\-\-help\fR
+Output help information and exit.
+.TP 
+\fB\-\-version\fR
+Output version information and exit.
+.TP 
+Usual other GNOME options apply as well.
+
+.SH "EXAMPLES"
+.LP
+To run this program the standard way type:
+.LP
+	\fBgthumb\fR
+.LP
+To view the content of a directory type:
+.LP 
+	\fBgthumb /path/to/directory\fR
+.LP
+To view all images with jpg extension type:
+.LP
+	\fBgthumb *.jpg\fR
+.LP
+
+.SH "AUTHORS"
+.LP
+Written by Paolo Bacchilega <paolo.bacch@tin.it>.
+.LP 
+This manual page was originally written by Remco van de Meent <remco@debian.org>, for the Debian GNU/Linux system, now is maintained by Paolo Bacchilega.
+

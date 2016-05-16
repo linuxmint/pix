@@ -1,0 +1,42 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic"
+id="gthumb-edit-rotate">
+  <info>
+    <link type="guide" xref="index#editing" />
+  </info>
+  <title>Rotations and Flips</title>
+
+  <p><media type="image" mime="image/png" src="figures/palette.png" />
+  To access the editing tools, open an image and then click the 
+  <gui>Edit File</gui> toolbar button (the palette icon).</p>
+
+  <p>Several tools are provided to manipulate the orientation of
+  images.</p>
+
+  <terms>
+    <item>
+      <title><gui>Mirror</gui></title>
+      <p>This flips the image horizontally. The left and right sides
+      are swapped.</p>
+    </item>
+    <item>
+      <title><gui>Flip</gui></title>
+      <p>This flips the image vertically. The top and bottom
+      are swapped.</p>
+    </item>
+    <item>
+      <title><gui>Rotate Right</gui></title>
+      <p>This rotates the image clockwise.</p>
+    </item>
+    <item>
+      <title><gui>Rotate Left</gui></title>
+      <p>This rotates the image counter-clockwise.</p>
+    </item>
+  </terms>
+
+  <p>The rotations offered in the edit mode act on the image in memory.
+  They are not direct file operations. For jpeg images, these means they
+  are not lossless operations - the image will degrade slightly when it
+  it is re-encoded and saved. However, <app>gThumb</app> does provide
+  lossless rotation tools. See <link xref="gthumb-batch-rotate"/>.</p>
+
+</page>

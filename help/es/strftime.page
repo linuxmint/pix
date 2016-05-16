@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-date-formats" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@ie.edu</mal:email>
+      <mal:years>2008-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  </info>
+  <title>Códigos de formato de fecha/hora</title>
+
+  <p>Esto es un resumen de los códigos de fecha y hora que se pueden usar en cadenas de formato:</p>
+
+  <table>
+    <title>Códigos de formato válidos para subcarpetas personalizadas</title>
+    <tr>
+      <td>
+        <p>%a</p>
+      </td>
+      <td>
+        <p>El día de la semana abreviado, de acuerdo con la configuración regional actual.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%A</p>
+      </td>
+      <td>
+        <p>El día de la semana completo de acuerdo con la configuración regional actual.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%b</p>
+      </td>
+      <td>
+        <p>El nombre abreviado del mes, de acuerdo con la configuración regional actual.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%B</p>
+      </td>
+      <td>
+        <p>El nombre del mes completo de acuerdo con la configuración regional.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%c</p>
+      </td>
+      <td>
+        <p>La representación favorita de la fecha y la hora de acuerdo con la configuración regional.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%C</p>
+      </td>
+      <td>
+        <p>El número de siglo (año/100) como un entero de 2 dígitos.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%d</p>
+      </td>
+      <td>
+        <p>El día del mes como un número decimal (rango de 01 a 31).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%D</p>
+      </td>
+      <td>
+        <p>Equivalente a %m/%d/%y. (Yecch -- sólo para Estadounidenses. Los estadounidenses deben tener en cuenta que en otros países  %d/%m/%y es más común. Esto significa que en contexto internacional este formato es ambigüo y no debería utilizarse.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%e</p>
+      </td>
+      <td>
+        <p>Igual que %d, el día del mes como un número decimal, pero el cero de la izquierda se sustituye por un espacio.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%E</p>
+      </td>
+      <td>
+        <p>Modificador: use el formato alternativo, vea debajo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%F</p>
+      </td>
+      <td>
+        <p>Equivalente a %Y-%m-%d (el formato de fecha de ISO 8601). (C99)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%G</p>
+      </td>
+      <td>
+        <p>El año ISO 8601 con siglo como un número decimal. Los 4 dígitos del año correspondientes al número ISO de la semana (vea %V). Esto tiene el mismo formato y valor que %y, excepto si el número ISO de la semana pertenece al año anterior o siguiente, se utiliza ese año en su lugar.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%g</p>
+      </td>
+      <td>
+        <p>Igual que %G, pero sin siglo, ej. con un año de dos dígitos (00-99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%h</p>
+      </td>
+      <td>
+        <p>Equivalent to %b.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%H</p>
+      </td>
+      <td>
+        <p>La hora como un número decimal, utilizando un reloj de 24 horas (rango de 00 a 23).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%I</p>
+      </td>
+      <td>
+        <p>La hora como un numero decimal, utilizando un reloj de 12 horas (rango de 01 a 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%j</p>
+      </td>
+      <td>
+        <p>El día del año como un número decimal (rango de 001 a 366).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%k</p>
+      </td>
+      <td>
+        <p>La hora (formato de 24 horas) como un número decimal (rango de 0 a 23); los dígitos simples van precedidos por un espacio el blanco. (Vea también %H.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%l</p>
+      </td>
+      <td>
+        <p>La hora (formato de 12 horas) como un número decimal (rango de 1 a 12); los dígitos simples están precedidos por un espacio en blanco. (Vea también %I.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%m</p>
+      </td>
+      <td>
+        <p>El mes como un número decimal (rango de 01 a 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%M</p>
+      </td>
+      <td>
+        <p>El minuto como un numero decimal (rango de 00 a 59).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%O</p>
+      </td>
+      <td>
+        <p>Modificador: use el formato alternativo, vea debajo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%p</p>
+      </td>
+      <td>
+        <p>O «AM» o «PM» de acuerdo con el valor dado del tiempo, o las cadenas correspondientes la para la localización actual. Mediodía es tratado como «pm» y y medianoche como «am».</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%P</p>
+      </td>
+      <td>
+        <p>Similar %p pero en minúsculas: «am» o «pm» o la cadena correspondiente a la configuración regional actual.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%r</p>
+      </td>
+      <td>
+        <p>La hora en notación am o pm. En la configuración regional POSIX esto es equivalente a «%I:%M:%S %p».</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%R</p>
+      </td>
+      <td>
+        <p>La hora en notación de 24 horas (%H:%M). Para una versión que incluya los segundos, vea %T más abajo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%s</p>
+      </td>
+      <td>
+        <p>El número de segundos desde Epoch, por ejemplo, desde 1970-01-01 00:00:00 UTC.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%S</p>
+      </td>
+      <td>
+        <p>Los segundos como un número decimal (rango de 00 a 60). (El rango es superior a 60 para permitir saltos ocasionales en los segundos.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%T</p>
+      </td>
+      <td>
+        <p>La hora en formato 24 horas (%H:%M:%S).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%u</p>
+      </td>
+      <td>
+        <p>El día de la semana como un número decimal, rango de 1 a 7, siendo 1 el lunes. Vea también %w.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%U</p>
+      </td>
+      <td>
+        <p>El número de semana del año actual como un número decimal, rango de 00 a 53, empezando con el primer domingo como primer día de la semana 01. Vea también %V y %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%V</p>
+      </td>
+      <td>
+        <p>El número de semana ISO 8601:1988 del año actual como un número decimal, rango de 01 a 53, donde la semana 1 es la primera semana que tenga al menos 4 días en el año actual, y con el lunes como primer día de la semana. Vea también %U y % W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%w</p>
+      </td>
+      <td>
+        <p>El día de la semana como un decimal, rango de 0 a 6, siendo 0 el Domingo. Vea también %u.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%W</p>
+      </td>
+      <td>
+        <p>El número de semana del año actual como un número decimal, rango de 00 a 53, comenzando con el primer lunes como primer día de la semana 01.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%x</p>
+      </td>
+      <td>
+        <p>La representación preferida de la fecha para la configuración regional actual, sin la hora.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%X</p>
+      </td>
+      <td>
+        <p>La representación preferida de la hora para la configuración regional actual, sin la fecha.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%y</p>
+      </td>
+      <td>
+        <p>El año como número decimal, excluyendo el siglo (rango de 00 a 99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Y</p>
+      </td>
+      <td>
+        <p>El año como número decimal, incluyendo el siglo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%z</p>
+      </td>
+      <td>
+        <p>La zona horaria como diferencia horaria respecto a GTM. Requerido para emitir fechas conformes a la RFC 822 (utilizando «%a, %d %b %Y %H:%M:%S %z»).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Z</p>
+      </td>
+      <td>
+        <p>La zona horaria o el nombre o la abreviatura.</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Se pueden modificar algunas especificaciones de conversión precediendo el carácter especificador de conversión por el modificador E u O para indicar que se debe utilizar un formato alternativo. Si el formato alternativo no existe para a configuración regional actual, el comportamiento será igual que si se hubiese usado la especificación de conversión sin modificar. La especificación única de Unix menciona %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy, donde el modificador O es para utilizar símbolos numéricos alternativos (números romanos), y que el modificador E es para utilizar una representación alternativa dependiente de la configuración regional.</p>
+
+</page>

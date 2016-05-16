@@ -1,0 +1,14 @@
+[Extension]
+_Name=23
+_Description=Upload images to 23hq.com
+Authors=gthumb development team
+Copyright=Copyright © 2011 The Free Software Foundation, Inc.
+Version=%VERSION%
+Icon=site-twentythree
+Category=Exporter
+
+[Loader]
+Type=module
+File=%LIBRARY%
+API=%GTHUMB_API_VERSION%
+Requires=importer;export_tools;flicker_utils

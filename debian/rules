@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH).
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-gconf-schema-file-dir=/usr/share/gconf/schemas \
+		--disable-clutter \
+		--disable-brasero \
+		--enable-libwebp \
+		--disable-silent-rules
+
+#override_dh_auto_install:
+#	dh_auto_install
+#	[ ! -d $(CURDIR)/debian/tmp/usr/share/icons/ ] || \
+#		mv $(CURDIR)/debian/tmp/usr/share/icons/hicolor/16x16/actions/flickr.png \
+#		   $(CURDIR)/debian/tmp/usr/share/icons/hicolor/16x16/actions/gthumb-flickr.png && \
+#		mv $(CURDIR)/debian/tmp/usr/share/icons/hicolor/16x16/actions/facebook.png \
+#		   $(CURDIR)/debian/tmp/usr/share/icons/hicolor/16x16/actions/gthumb-facebook.png
+
+override_dh_strip:
+	dh_strip --keep-debug -X*.la -X*.a --dbg-package=gthumb-dbg
+
+override_dh_installchangelogs:
+	dh_installchangelogs NEWS
+
+%:
+	dh $@ --with autoreconf 

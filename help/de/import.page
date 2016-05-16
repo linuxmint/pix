@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-importing" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#importing"/>
+    <link type="topic" xref="gthumb-date-formats"/>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2010, 2011, 2013</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Importieren von einer Digitalkamera</title>
+
+  <p>Auf den meisten Systemen wird <app>gThumb</app> automatisch den Import-Dialog öffnen, sobald eine Digitalkamera mit dem Rechner verbunden wird oder eine Speicherkarte mit Fotos in einen Kartenleser gesteckt wird. Die geschieht, weil es als Handler für die MIME-Typen x-content/image-dcf und x-content/image-picturecd registriert ist.</p>
+
+  <p>Um den Import-Dialog manuell zu starten, wählen Sie <guiseq><gui>Datei</gui><gui>Importieren von</gui><gui>Tragbares Gerät</gui></guiseq>.</p>
+
+  <figure>
+    <title>Der Importdialog</title>
+    <media type="image" mime="image/png" src="figures/import.png"/>
+  </figure>
+  
+  <p>Der Importdialog zeigt Vorschaubilder der auf dem gewählten Gerät vorliegenden Fotos. Der Benutzer kann ein oder mehrere Fotos mit den üblichen Tastatur- und Maustechniken importieren (wie z.B. Strg+Mausklick zum Hinzufügen eines Fotos zur Auswahl, Einfassen von Fotos mit gedrückter linker Maustaste etc.). Wenn explizit keine Fotos ausgewählt sind, so werden alle importiert.</p>
+
+  <p>Schlagwörter können bei Bedarf mit importierten Fotos mit Hilfe des Auswahlfeldes <gui>Schlagwörter</gui> unter dem Vorschau-Fenster verknüpft werden. Klicken Sie auf den entsprechenden Knopf mit Pfeil nach unten, um die voreingestellten Schlagwörter einzusehen.</p>
+
+  <p>Ein Name für ein Ereignis kann ebenfalls optional mit den Fotos verknüpft werden. Dieser Ereignisname kann zum automatischen Erstellen eines Unterordnernamens (ggfs. mit einem Datum im Namen) wie unten beschrieben genutzt werden. Wenn zum Beispiel der Zielordner »Fotos« wäre und Sie »Hochzeit Jennifer« in das Textfeld <gui>Ereignis</gui> eingeben, dann können Sie die automatische Erstellung von Unterordnern etwa mit dem Namen »/Fotos/31.7.2010, Hochzeit Jennifer« einstellen.</p>
+
+  <figure>
+    <title>Normale, auf Datum basierende Unterordner</title>
+    <media type="image" mime="image/png" src="figures/import-pref-auto-folder.png"/>
+  </figure>
+
+  <p>Wie zuvor erwähnt, können Unterordner für importierte Fotos automatisch auf Basis von Ereignisnamen oder Kalenderdatum erstellt werden. Dies wird durch einen Klick auf den Zielordnernamen im Dialog zum Importieren festgelegt. Dadurch wird ein zweiter Dialog geöffnet, in dem der Basisordner (der <gui>Speicherort</gui>) für die importierten Fotos gewählt wird. Wählen Sie <gui>Automatischer Unterordner</gui>, um automatisch Unterordner erstellen zu lassen.</p>
+
+  <p>Sie können entweder das <gui>Dateidatum</gui> oder das <gui>aktuelle Datum</gui> als Basis für den Namen des Unterordners verwenden (Das <gui>Dateidatum</gui> untersucht die Metadaten der Datei zur Bestimmung des Aufnahmedatums). Eine Reihe von üblichen Datumsformaten steht zur Auswahl (zum Beispiel <gui>Jahr-Monat</gui>). Das Ankreuzfeld <gui>als einzelner Unterordner</gui> legt fest, ob eine tiefe oder flache Ordner-Hierarchie angelegt wird. Zum Beispiel kann es für die Einstellung <gui>Jahr-Monat</gui> einen Unterordner mit der Jahreszahl und einen weiteren innerhalb mit dem Monat geben, oder es kann nur einen mit Monat und Jahreszahl im Ordnernamen geben.</p>
+
+  <p>Es ist nicht zwingend, die vordefinierten Datumsformate zu verwenden. Wenn Sie <gui>Eigenes Format</gui> wählen, können Sie voreingestellte Datumsformatangaben verwenden. Klicken Sie auf das Hilfesymbol rechts im Eingabefeld für das Datumsformat, um eine Liste der Formatangaben einzusehen. »%E« ist eine spezielle Angabe, die den <gui>Ereignisnamen</gui> aus dem Import-Dialog einbindet.</p>
+
+  <p>Lesen Sie auch <link xref="gthumb-date-formats"/> für weitere Datumsformatangaben.</p>
+
+  <p>Wenn Sie automatische Benennung der Unterordner verwenden, dann zeigt das Feld <gui>Speicherort</gui> im Import-Dialog den automatisch erzeugten Anteil des Ordnernamens in rot. Für auf Datum basierende Formate wird eventuell ein Scheinteil in rot dargestellt.</p>
+
+  <figure>
+    <title>Verwendung benutzerdefinierter Formate</title>
+    <media type="image" mime="image/png" src="figures/import-pref-custom-format.png"/>
+  </figure>
+
+</page>

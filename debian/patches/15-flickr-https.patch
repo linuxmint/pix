@@ -1,0 +1,38 @@
+From 4cba2631576653dc86be38bf532c879457cc25bf Mon Sep 17 00:00:00 2001
+From: Paolo Bacchilega <paobac@src.gnome.org>
+Date: Mon, 21 Jul 2014 19:07:47 +0200
+Subject: Forbidden when trying to upload to Flickr
+
+[bug #732557]
+
+diff --git a/extensions/flicker/actions.c b/extensions/flicker/actions.c
+index 0ad858a..2094acf 100644
+--- a/extensions/flicker/actions.c
++++ b/extensions/flicker/actions.c
+@@ -31,17 +31,17 @@
+ static FlickrServer www_flickr_com = {
+ 	"Flickr",
+ 	"flickr",
+-	"http://www.flickr.com",
+-	"http",
++	"https://www.flickr.com",
++	"https",
+ 
+-	"http://www.flickr.com/services/oauth/request_token",
+-	"http://www.flickr.com/services/oauth/authorize",
+-	"http://www.flickr.com/services/oauth/access_token",
++	"https://www.flickr.com/services/oauth/request_token",
++	"https://www.flickr.com/services/oauth/authorize",
++	"https://www.flickr.com/services/oauth/access_token",
+ 	"8960706ee7f4151e893b11837e9c24ce",
+ 	"1ff8d1e45c873423",
+ 
+-	"http://api.flickr.com/services/rest",
+-	"http://api.flickr.com/services/upload",
++	"https://api.flickr.com/services/rest",
++	"https://up.flickr.com/services/upload",
+ 	"static.flickr.com",
+ 	FALSE,
+ 	TRUE
+-- 
+cgit v0.10.1

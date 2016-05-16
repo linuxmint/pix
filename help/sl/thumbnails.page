@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-thumbnails" xml:lang="sl">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  </info>
+  <title>Viri sličic</title>
+
+  <p>Okno brskalnika običajno prikaže sličice slik in filmov v izbrani mapi. Prikazati je mogoče tudi splošne ikone za druge datoteke (na primer zvočne datoteke).</p>
+
+  <p>You can select what types of files to show in the browser view
+  using the <guiseq><gui>View</gui><gui>Filter</gui>
+  </guiseq> dialog. The default is to show all media files (images,
+  movies, audio), but this can be made more or less
+  restrictive.</p>
+
+  <p>Sličice je mogoče ustvariti na več različnih načinov. <app>gThumb</app> bo najprej preveril, če sličice obstajajo v sistemskem predpomnilniku.</p>
+
+  <p>V primeru, da sličic v predpomnilniku ni mogoče najti in slikovne datoteke vsebujejo vstavljene sličice (slike jpeg ustvarjene na digitalnih fotoaparatih jih običajno imajo), jih bo <app>gThumb</app> poskusil uporabiti. <app>gThumb</app> bo potrdil, da je razmerje velikosti sličic podobno glavni sliki in prezrl sličice, ki ne ustrezajo glavni sliki.</p>
+
+  <p>Če tudi to ne deluje, bo <app>gThumb</app> poskusil naložiti celotno datoteko in ustvariti pomanjšano sličico.</p>
+
+  <p>Na koncu bo <app>gThumb</app> uporabil katerekoli sistemsko določene skripte za ustvarjanje sličic posebnih vrst datotek. Na primer, nekateri sistemi morda uporabljajo <app>mplayer</app> ali <app>totem</app> ali druge pregledovalnike filmov za ustvarjanje sličic filmov.</p>
+
+  <p><app>gThumb</app> bo sličice shranil v sistemski predpomnilnik za souporabo z drugimi programi. Privzeto sistemi Gnome izbrišejo predpomnjene sličice, ko so starejše od 180 dni ali ko predpomnilnik sličic preseže 512 MB.  Tehnični uporabniki lahko te nastavitve raziščejo z <app>gconf-editor</app>. Oglejte si predvsem ključa /desktop/gnome/thumbnail_cache/maximum_age in /desktop/gnome/thumbnail_cache/maximum_size. Določeni programi (kot na primer <app>F-Spot</app>) lahko samodejno močno povečajo te nastavitve.</p>
+</page>

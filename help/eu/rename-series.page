@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="gthumb-rename-series" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#files"/>
+    <link type="topic" xref="gthumb-attributes"/>
+    <link type="topic" xref="gthumb-date-formats"/>
+  </info>
+  <title>Fitxategiei izena aldatzea</title>
+
+  <p>Irudi baten edo gehiagoren izena izen-txantiloi bat erabiliz aldatzeko, hautatu fitxategiak arakatzailean, eta aukeratu <guiseq><gui>Editatu</gui><gui>Aldatu izena</gui></guiseq>, edo sakatu <key>F2</key>.</p>
+
+  <p>Izen-txantiloia hautatutako irudi guztien izena aldatzeko erabilitako eredua da. Karaktere berezi batzuk erabil ditzakezu izen berriak eta besteak bereizteko (oso garrantzizkoa da hau irudi bati baino gehiagori izena aldatu nahi badiezu, eta aukerakoa irudi bakar bati aldatuz gero):</p>
+
+  <table>
+    <tr>
+      <td>
+        <p>Ikurra</p>
+      </td>
+      <td>
+        <p>Azalpena</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>#</key>
+        </p>
+      </td>
+      <td>
+        <p>Ikur hau iruditik irudira igarotzean 1 gehitzen duen zenbaketaren balioak ordeztuko du. Ikur hauek sekuentzian zehazten badituzu,  ezkerreko zeroak lortuko dituzu zenbaketa-balioak digitu kopuru txikiagoa badu, adibidez ### ikurrak sekuentzia hau sortuko du: 001, 002, 003, etab.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%F</key>
+        </p>
+      </td>
+      <td>
+        <p>Fitxategiaren jatorrizko izenak ordeztuko du ikur hau, jatorrizko luzapena kanpoan utziz.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%E</key>
+        </p>
+      </td>
+      <td>
+        <p>Fitxategiaren jatorrizko fitxategi-izenaren luzapenak ordeztuko du ikur hau.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%N</key>
+        </p>
+      </td>
+      <td>
+        <p>Jatorrizko irudi-zenbakitzaileak ordeztuko du ikur hau. Esate baterako, jatorrizko fitxategi-izena IMG_9876.JPG bazen, honek "9876" zatia erauzten du. Fitxategi-izenak digitu talde bat baino gehiago baditu kapsulatuta (adibidez, IMG_123_456.JPG) lehenengo zenbakia bakarrik erabiliko da ("123" adibide honetan).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%M{format}</key>
+        </p>
+      </td>
+      <td>
+        <p>Fitxategiaren aldatze-datak ordeztuko du ikur hau. Data honen (eta aukeran orduaren) formatua zehazteko, gehitu formatu-kode estandar bat giltzen artean. Adibidez, "%M{%Y-%m-%d, %T}" honelako data eta orduekin ordeztuko litzateke: "2010-04-01, 15:02:01".</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%D{format}</key>
+        </p>
+      </td>
+      <td>
+        <p>Argazkia jatorrian atera zen datak ordeztuko du ikur hau (normalean argazkiaren barruan kapsulatutako EXIF data-zigiluek erabakitzen dute hori). Data honen (eta aukeran orduaren) formatua zehazteko, gehitu formatu-kode estandar bat giltzen artean. Adibidez, "%D{%Y-%m-%d, %T}" honelako data eta orduekin ordeztuko litzateke: "2010-04-01, 15:02:01".</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%A{identifier}</key>
+        </p>
+      </td>
+      <td>
+        <p>Identifikatzaileak zehaztutako datak ordeztuko du ikur hau. Adibidez, "%A{ general::dimensions }" honelako tamaina batekin ordeztuko litzateke: "320 x 240".</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Kode berezi hauen laburpena ikusteko, egin klik txantiloi-eremuaren barruko Laguntza-ikonoan.</p>
+
+  <p>Elkarrizketa-koadroaren azpiko behealdeko zerrendak fitxategi-izenei emango zaien izena bistaratzen du.</p>
+
+  <p>Irudiei izena aldatzeko, egin klik <gui>Aldatu izena</gui> botoian.</p>
+
+  <p>Irudi bati izena aldatzean lehendik dagoen irudi baten izena gainidatz badaiteke, zer egin galdetuko zaizu; bost aukera daude erabilgarri: irudia gainidaztea; irudia ez gainidaztea; beti gainidaztea; inoiz ez gainidaztea; beste izen bat zehaztea.</p>
+
+</page>

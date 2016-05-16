@@ -1,0 +1,3834 @@
+# Ukrainian translation to gthumb.
+# Copyright (C) 2003, Free Software Foundation
+# This file is distributed under the same license as the gthumb package.
+# Maxim Dubovoy <max@mylinux.com.ua>, 2003
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gthumb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-02 16:37+0300\n"
+"PO-Revision-Date: 2010-01-31 14:42+0300\n"
+"Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ../copy-n-paste/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "Некоректний .desktop файл"
+
+#: ../copy-n-paste/eggdesktopfile.c:188
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Невідома версія desktop-файлу '%s'"
+
+#: ../copy-n-paste/eggdesktopfile.c:958
+#, c-format
+msgid "Starting %s"
+msgstr "Починається %s"
+
+#: ../copy-n-paste/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Програма не сприймає аргументів у командному рядку"
+
+#: ../copy-n-paste/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Невідомий параметр запуску: %d"
+
+#: ../copy-n-paste/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+"Не вдається передати URI документу у елемент 'Type=Link' у файлі desktop"
+
+#: ../copy-n-paste/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "Не є пунктом, який запускається"
+
+#: ../copy-n-paste/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "Вимкнути з'єднання з менеджером сеансів'"
+
+#: ../copy-n-paste/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "Вказати файл, що містить збережену конфігурацію"
+
+#: ../copy-n-paste/eggsmclient.c:228
+msgid "FILE"
+msgstr "ФАЙЛ"
+
+#: ../copy-n-paste/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "Вказати ідентифікатор керування сеансом"
+
+#: ../copy-n-paste/eggsmclient.c:231
+msgid "ID"
+msgstr "ID"
+
+#: ../copy-n-paste/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "Параметри керування сеансом:"
+
+#: ../copy-n-paste/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "Показати параметри керування сеансом"
+
+#: ../data/gthumb.desktop.in.in.h:1
+msgid "Image Viewer"
+msgstr "Перегляд зображень"
+
+#: ../data/gthumb.desktop.in.in.h:2
+msgid "View and organize your images"
+msgstr "Перегляд зображень та ведення альбомів"
+
+#: ../data/gthumb.desktop.in.in.h:3 ../data/gthumb-import.desktop.in.in.h:3
+msgid "gThumb"
+msgstr "gThumb"
+
+#: ../data/gthumb.desktop.in.in.h:4
+msgid "gThumb Image Viewer"
+msgstr "Переглядач зображень GThumb"
+
+#: ../data/gthumb-import.desktop.in.in.h:1
+msgid "Import the photos on your camera card"
+msgstr "Імпорт фотознімків з цифрового фотоапарату"
+
+#: ../data/gthumb-import.desktop.in.in.h:2
+msgid "Photo Import Tool"
+msgstr "Засіб імпорту фотознімків"
+
+#: ../data/gthumb-import.desktop.in.in.h:4
+msgid "gThumb Photo Import Tool"
+msgstr "Засіб імпорту фотознімків gThumb"
+
+#: ../data/gthumb.schemas.in.h:1
+msgid ""
+"Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
+"to generate thumbnails for all images."
+msgstr ""
+"З зображень цього розміру (у байтах) не будуть створюватись мініатюри. "
+"Вкажіть 0, якщо бажаєте створювати мініатюри для будь-яких зображень."
+
+#: ../data/gthumb.schemas.in.h:2
+msgid ""
+"Possible values are: actual_size, fit, keep_prev, fit_if_larger, "
+"fit_width_if_larger."
+msgstr ""
+"Можливі значення: actual_size(не масштабувати), fit(масштабувати), keep_prev"
+"(попередній масштаб), fit_if_larger(зменшувати великі), fit_width_if_larger"
+
+#: ../data/gthumb.schemas.in.h:3
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:2
+msgid "Possible values are: high, low."
+msgstr "Можливі значення: high(висока), low(низька)."
+
+#: ../data/gthumb.schemas.in.h:4
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:3
+msgid "Possible values are: light, midtone, dark."
+msgstr "Можливі значення: light(світлий), midtone(півтони), dark(темний)."
+
+#: ../data/gthumb.schemas.in.h:5
+msgid "Possible values are: list, thumbnails."
+msgstr "Можливі значення: list(список), thumbnails(мініатюри)."
+
+#: ../data/gthumb.schemas.in.h:6
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:4
+msgid "Possible values are: small, medium, large."
+msgstr "Можливі значення: small(маленький), medium(середній), large(великий)."
+
+#: ../data/gthumb.schemas.in.h:7
+msgid ""
+"Possible values are: system, text_below, text_beside, text_only, icons_only."
+msgstr ""
+"Можливі значення: system(як у системі), text_below(текст під значками), "
+"text_beside(текст поруч), text_only(лише текст), icons_only(лише значки)."
+
+#: ../data/gthumb.schemas.in.h:8
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:5
+msgid "Possible values are: white, black, checked, none."
+msgstr ""
+"Можливі значення: white(білий), black(чорний), checked(клітинки), none"
+"(немає)."
+
+#: ../data/gthumb.schemas.in.h:9
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:6
+msgid "Whether to always use a black background."
+msgstr "Чи завжди використовувати чорне тло."
+
+#: ../data/gthumb.schemas.in.h:10
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:7
+msgid "Whether to reset the scrollbar positions after changing image"
+msgstr "Відновити позиції смуг прокрутки після зміни зображення"
+
+#: ../data/ui/extensions.ui.h:1
+msgid "Available _extensions:"
+msgstr "Наявні _розширення:"
+
+#: ../data/ui/extensions.ui.h:2
+msgid "More extensions..."
+msgstr "Більше розширень..."
+
+#: ../data/ui/extensions.ui.h:3
+msgid "_Categories:"
+msgstr "_Категорії:"
+
+#: ../data/ui/extensions.ui.h:4
+msgid "gthumb Extensions"
+msgstr "Розширення gthumb"
+
+#: ../data/ui/filter-editor.ui.h:1
+msgid "Filter _Name:"
+msgstr "Назва _файлу:"
+
+#. limit label
+#: ../data/ui/filter-editor.ui.h:2 ../gthumb/gth-filter.c:259
+#: ../gthumb/gth-filter.c:331
+msgid "_Limit to"
+msgstr "_Обмежити до"
+
+#: ../data/ui/filter-editor.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:3
+msgid "_Match"
+msgstr "_Відповідність"
+
+#: ../data/ui/filter-editor.ui.h:4
+msgid "selected by"
+msgstr "виділено"
+
+#: ../data/ui/overwrite-dialog.ui.h:1
+msgid "Do not overwrite _the old file"
+msgstr "Не переписувати _старі файли"
+
+#: ../data/ui/overwrite-dialog.ui.h:2
+msgid "Filename:"
+msgstr "Назва файлу:"
+
+#: ../data/ui/overwrite-dialog.ui.h:3
+msgid "Modified:"
+msgstr "Змінено:"
+
+#: ../data/ui/overwrite-dialog.ui.h:4
+msgid "New File:"
+msgstr "Новий файл:"
+
+#: ../data/ui/overwrite-dialog.ui.h:5
+msgid "Old File:"
+msgstr "Старий файл:"
+
+#: ../data/ui/overwrite-dialog.ui.h:6
+msgid "Over_write the old file"
+msgstr "_Перезаписати старий файл"
+
+#: ../data/ui/overwrite-dialog.ui.h:7
+msgid "Overwrite _all files"
+msgstr "Перезаписати _всі файли"
+
+#: ../data/ui/overwrite-dialog.ui.h:8
+msgid "Overwrite the old file with the new one?"
+msgstr "Замінити старий файл новим?"
+
+#: ../data/ui/overwrite-dialog.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:12
+msgid "Size:"
+msgstr "Розмір:"
+
+#: ../data/ui/overwrite-dialog.ui.h:10
+msgid "_Do not overwrite any file"
+msgstr "_Не переписувати файли"
+
+#: ../data/ui/overwrite-dialog.ui.h:11
+msgid "_Save the new file as:"
+msgstr "З_берегти новий файл як:"
+
+#: ../data/ui/personalize-filters.ui.h:1
+msgid "Filters"
+msgstr "Фільтри"
+
+#: ../data/ui/personalize-filters.ui.h:2
+msgid "_General filter:"
+msgstr "_Загальний фільтр:"
+
+#: ../data/ui/personalize-filters.ui.h:3
+msgid "_Other filters:"
+msgstr "_Інші фільтри:"
+
+#: ../data/ui/personalize-filters.ui.h:4
+msgid "gtk-close"
+msgstr "gtk-close"
+
+#: ../data/ui/personalize-filters.ui.h:5
+msgid "gtk-edit"
+msgstr "gtk-edit"
+
+#: ../data/ui/personalize-filters.ui.h:6
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:7
+msgid "gtk-help"
+msgstr "gtk-help"
+
+#: ../data/ui/personalize-filters.ui.h:7
+msgid "gtk-new"
+msgstr "gtk-new"
+
+#: ../data/ui/personalize-filters.ui.h:8
+msgid "gtk-remove"
+msgstr "gtk-remove"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Activate items with a double click"
+msgstr "активізувати подвійним клацанням"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Activate items with a single click"
+msgstr "активізувати одиночним клацанням"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Appearance"
+msgstr "Зовнішній вигляд"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "As_k confirmation before deleting files or catalogs"
+msgstr "_Питати підтвердження при вилученні зображень чи альбомів"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Ask whether to save _modified files"
+msgstr "Питати чи зберігати з_мінені файли"
+
+#: ../data/ui/preferences.ui.h:6 ../extensions/image_viewer/preferences.c:112
+msgid "Black"
+msgstr "чорним кольором"
+
+#: ../data/ui/preferences.ui.h:7 ../gthumb/dlg-extensions.c:58
+#: ../gthumb/gth-browser-actions-entries.h:156
+msgid "Browser"
+msgstr "Переглядач"
+
+#: ../data/ui/preferences.ui.h:8
+#: ../extensions/image_print/data/ui/print-layout.ui.h:1
+msgid "Caption"
+msgstr "Підпис"
+
+#: ../data/ui/preferences.ui.h:9 ../extensions/image_viewer/preferences.c:113
+msgid "Checked"
+msgstr "у клітинку"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Choose startup folder"
+msgstr "Виберіть початковий каталог"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "D_etermine image type from content (slower)"
+msgstr "Визначати тип зображення за _вмістом файлу (повільніше)"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Do _not change folder"
+msgstr "_Не змінювати теку"
+
+#: ../data/ui/preferences.ui.h:13 ../extensions/image_viewer/preferences.c:102
+msgid "Fit to width if larger"
+msgstr "розтягувати у ширину зображення, що виходять за межі вікна"
+
+#: ../data/ui/preferences.ui.h:14 ../extensions/image_viewer/preferences.c:99
+msgid "Fit to window"
+msgstr "Умістити у вікні"
+
+#: ../data/ui/preferences.ui.h:15 ../extensions/image_viewer/preferences.c:100
+msgid "Fit to window if larger"
+msgstr "зменшувати зображення з розміром більше вікна"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Follow Nautilus behaviour"
+msgstr "відповідно до поведінки \"Nautilus\""
+
+#: ../data/ui/preferences.ui.h:17
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:2
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:277
+#: ../gthumb/gth-main-default-metadata.c:34
+msgid "General"
+msgstr "Загальне"
+
+#: ../data/ui/preferences.ui.h:18
+msgid "Go to last _visited location"
+msgstr "Перейти до _останнього відвіданого місця"
+
+#: ../data/ui/preferences.ui.h:19
+msgid "Go to this _folder:"
+msgstr "Перейти до вказаної _теки:"
+
+#: ../data/ui/preferences.ui.h:20 ../gthumb/dlg-preferences.c:216
+msgid "Icons only"
+msgstr "лише значки"
+
+#: ../data/ui/preferences.ui.h:21 ../extensions/image_viewer/preferences.c:98
+msgid "Keep previous zoom"
+msgstr "зберігати попередній масштаб"
+
+#: ../data/ui/preferences.ui.h:22
+#: ../extensions/file_tools/gth-file-tool-crop.c:347
+#: ../extensions/image_viewer/preferences.c:111
+#: ../extensions/slideshow/main.c:265
+msgid "None"
+msgstr "не заповнювати"
+
+#: ../data/ui/preferences.ui.h:23
+msgid "On startup:"
+msgstr "При старті:"
+
+#: ../data/ui/preferences.ui.h:24
+#: ../extensions/exiv2_tools/gth-edit-exiv2-page.c:165
+#: ../extensions/gstreamer_tools/main.c:34
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
+msgid "Other"
+msgstr "Інше"
+
+#: ../data/ui/preferences.ui.h:25
+msgid "Set image to actual size"
+msgstr "не масштабувати зображення"
+
+#: ../data/ui/preferences.ui.h:26
+msgid "Set to C_urrent"
+msgstr "П_оточна"
+
+#. Set widgets data.
+#: ../data/ui/preferences.ui.h:27 ../gthumb/dlg-preferences.c:216
+msgid "System settings"
+msgstr "системні параметри"
+
+#: ../data/ui/preferences.ui.h:28 ../gthumb/dlg-preferences.c:216
+msgid "Text below icons"
+msgstr "текст під значками"
+
+#: ../data/ui/preferences.ui.h:29 ../gthumb/dlg-preferences.c:216
+msgid "Text beside icons"
+msgstr "текст за значками"
+
+#: ../data/ui/preferences.ui.h:30 ../gthumb/dlg-preferences.c:216
+msgid "Text only"
+msgstr "лише текст"
+
+#: ../data/ui/preferences.ui.h:31
+msgid "Thumbnail _size:"
+msgstr "_Розмір ескізів:"
+
+#: ../data/ui/preferences.ui.h:32 ../extensions/image_viewer/preferences.c:110
+msgid "White"
+msgstr "білим кольором"
+
+#: ../data/ui/preferences.ui.h:33
+msgid "_Store metadata inside files if possible"
+msgstr "_Зберегти метадані у файлах, якщо можливо"
+
+#: ../data/ui/preferences.ui.h:34
+msgid "_Toolbar style:"
+msgstr "Панель _інструментів:"
+
+#: ../data/ui/preferences.ui.h:35
+msgid "gthumb Preferences"
+msgstr "Налаштовування GThumb"
+
+#: ../data/ui/sort-order.ui.h:1
+msgid "Sort By"
+msgstr "Сортування"
+
+#: ../data/ui/sort-order.ui.h:2
+msgid "_Inverse order"
+msgstr "У _зворотному порядку"
+
+#: ../data/ui/sort-order.ui.h:3
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:32
+msgid "_Sort by:"
+msgstr "С_ортувати:"
+
+#: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
+msgid "Add bookmarks support."
+msgstr "Додає підтримку закладок."
+
+#: ../extensions/bookmarks/bookmarks.extension.in.in.h:2
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#: ../extensions/bookmarks/bookmarks.extension.in.in.h:3
+msgid "Paolo Bacchilega <paobac@src.gnome.org>"
+msgstr "Paolo Bacchilega <paobac@src.gnome.org>"
+
+#: ../extensions/bookmarks/callbacks.c:53
+msgid "_Bookmarks"
+msgstr "_Закладки"
+
+#: ../extensions/bookmarks/callbacks.c:54
+msgid "_System Bookmarks"
+msgstr "_Системні закладки"
+
+#: ../extensions/bookmarks/callbacks.c:57
+msgid "_Add Bookmark"
+msgstr "_Додати закладку"
+
+#: ../extensions/bookmarks/callbacks.c:58
+msgid "Add current location to bookmarks"
+msgstr "Додати закладку на поточний каталог"
+
+#: ../extensions/bookmarks/callbacks.c:62
+msgid "_Edit Bookmarks..."
+msgstr "_Правка закладок..."
+
+#: ../extensions/bookmarks/callbacks.c:63
+msgid "Edit bookmarks"
+msgstr "Редагувати список закладок"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
+msgid "_Bookmarks:"
+msgstr "За_кладки:"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
+msgid "_Location"
+msgstr "_Розташування"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
+msgid "_Name"
+msgstr "_Назва"
+
+#: ../extensions/bookmarks/dlg-bookmarks.c:71
+msgid "Could not remove the bookmark"
+msgstr "Не вдається видалити закладку"
+
+#: ../extensions/burn_disc/burn_disc.extension.in.in.h:1
+msgid "Burn CD/DVD"
+msgstr "Записати CD/DVD"
+
+#: ../extensions/burn_disc/burn_disc.extension.in.in.h:2
+msgid "Save files to an optical disc."
+msgstr "Зберегти файли на оптичний диск."
+
+#: ../extensions/burn_disc/burn_disc.extension.in.in.h:3
+#: ../extensions/catalogs/catalogs.extension.in.in.h:3
+#: ../extensions/change_date/change_date.extension.in.in.h:3
+#: ../extensions/comments/comments.extension.in.in.h:3
+#: ../extensions/convert_format/convert_format.extension.in.in.h:3
+#: ../extensions/desktop_background/desktop_background.extension.in.in.h:3
+#: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:3
+#: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:3
+#: ../extensions/file_manager/file_manager.extension.in.in.h:3
+#: ../extensions/file_tools/file_tools.extension.in.in.h:3
+#: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:3
+#: ../extensions/image_print/image_print.extension.in.in.h:3
+#: ../extensions/image_rotation/image_rotation.extension.in.in.h:3
+#: ../extensions/image_viewer/image_viewer.extension.in.in.h:3
+#: ../extensions/list_tools/list_tools.extension.in.in.h:3
+#: ../extensions/photo_importer/photo_importer.extension.in.in.h:3
+#: ../extensions/pixbuf_savers/pixbuf_savers.extension.in.in.h:3
+#: ../extensions/raw_files/raw_files.extension.in.in.h:3
+#: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:3
+#: ../extensions/rename_series/rename_series.extension.in.in.h:3
+#: ../extensions/resize_images/resize_images.extension.in.in.h:3
+#: ../extensions/search/search.extension.in.in.h:3
+#: ../extensions/slideshow/slideshow.extension.in.in.h:3
+msgid "gthumb development team"
+msgstr "Команда розробки gthumb"
+
+#: ../extensions/burn_disc/callbacks.c:51
+msgid "_Optical Disc..."
+msgstr "_Оптичний диск..."
+
+#: ../extensions/burn_disc/callbacks.c:52
+msgid "Write files to an optical disc"
+msgstr "Записати файли на оптичний диск"
+
+#: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
+msgid "Disc Name"
+msgstr "Назва диску"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
+msgid "Current _folder"
+msgstr "Поточну _теку"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
+msgid "Current folder and its s_ub-folders"
+msgstr "Поточну теку та _вкладені теки"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
+msgid "Source"
+msgstr "Джерело"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
+msgid "_Selected files"
+msgstr "_Обрані файли"
+
+#: ../extensions/burn_disc/gth-burn-task.c:239
+#: ../extensions/burn_disc/gth-burn-task.c:260
+#: ../extensions/burn_disc/gth-burn-task.c:393
+msgid "Write to Disc"
+msgstr "Записати на диск"
+
+#: ../extensions/catalogs/actions.c:63
+msgid "Could not remove the files from the catalog"
+msgstr "Не вдається видалити файли з альбому"
+
+#: ../extensions/catalogs/actions.c:121
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:452
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:461
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:489
+#: ../extensions/search/gth-search.c:296
+msgid "Invalid file format"
+msgstr "Неправильний формат файлів"
+
+#: ../extensions/catalogs/actions.c:190
+#: ../extensions/catalogs/dlg-add-to-catalog.c:217
+msgid "Enter the catalog name: "
+msgstr "Введіть назву альбому:"
+
+#: ../extensions/catalogs/actions.c:194 ../extensions/catalogs/actions.c:260
+#: ../extensions/catalogs/dlg-add-to-catalog.c:221
+#: ../extensions/catalogs/dlg-add-to-catalog.c:287
+#: ../extensions/file_manager/actions.c:47
+msgid "C_reate"
+msgstr "С_творити"
+
+#: ../extensions/catalogs/actions.c:234
+#: ../extensions/catalogs/dlg-add-to-catalog.c:261
+#: ../extensions/search/gth-search-task.c:288
+msgid "Could not create the catalog"
+msgstr "Не вдається створити альбом"
+
+#: ../extensions/catalogs/actions.c:256
+#: ../extensions/catalogs/dlg-add-to-catalog.c:283
+msgid "Enter the library name: "
+msgstr "Введіть назву колекції:"
+
+#: ../extensions/catalogs/actions.c:300
+#: ../extensions/catalogs/dlg-add-to-catalog.c:327
+msgid "Could not create the library"
+msgstr "Не вдається створити колекцію"
+
+#: ../extensions/catalogs/actions.c:336
+msgid "Could not remove the catalog"
+msgstr "Не вдається видалити альбом"
+
+#: ../extensions/catalogs/callbacks.c:99
+msgid "_Add to Catalog"
+msgstr "_Додати до альбому"
+
+#: ../extensions/catalogs/callbacks.c:102
+msgid "Open _Folder"
+msgstr "Відкрити _теку"
+
+#: ../extensions/catalogs/callbacks.c:103
+msgid "Go to the folder that contains the selected file"
+msgstr "Перейти до теки, що містить вибраний файл"
+
+#: ../extensions/catalogs/callbacks.c:107
+msgid "Other..."
+msgstr "Інше..."
+
+#: ../extensions/catalogs/callbacks.c:108
+msgid "Choose another catalog"
+msgstr "Виберіть інший альбом"
+
+#: ../extensions/catalogs/callbacks.c:112
+msgid "_Add to Catalog..."
+msgstr "Додати до ал_ьбому..."
+
+#: ../extensions/catalogs/callbacks.c:113
+msgid "Add selected images to a catalog"
+msgstr "Додати виділені зображення до альбому"
+
+#: ../extensions/catalogs/callbacks.c:117
+msgid "Remo_ve from Catalog"
+msgstr "Вилучити _з альбому"
+
+#: ../extensions/catalogs/callbacks.c:118
+msgid "Remove selected images from the catalog"
+msgstr "Вилучити позначені зображення з альбому"
+
+#: ../extensions/catalogs/callbacks.c:122
+msgid "Create _Catalog"
+msgstr "Створити _альбом"
+
+#: ../extensions/catalogs/callbacks.c:127
+msgid "Create _Library"
+msgstr "Нова _колекція"
+
+#: ../extensions/catalogs/callbacks.c:137
+msgid "Rena_me"
+msgstr "Перей_менувати"
+
+#: ../extensions/catalogs/callbacks.c:264
+#: ../extensions/catalogs/callbacks.c:267
+msgid "Command Line"
+msgstr "Командний рядок"
+
+#: ../extensions/catalogs/callbacks.c:482
+#: ../extensions/catalogs/callbacks.c:487
+#: ../extensions/photo_importer/dlg-photo-importer.c:310
+#: ../extensions/photo_importer/dlg-photo-importer.c:352
+#: ../gthumb/gth-file-list.c:42 ../gthumb/gth-folder-tree.c:668
+msgid "(Empty)"
+msgstr "(Немає)"
+
+#: ../extensions/catalogs/callbacks.c:680
+msgid "Catalog Properties"
+msgstr "Властивості альбому"
+
+#: ../extensions/catalogs/callbacks.c:692
+msgid "Organize"
+msgstr "Впорядкування"
+
+#: ../extensions/catalogs/callbacks.c:693
+msgid "Automatically organize files by date"
+msgstr "Автоматично впорядковувати файли за датою"
+
+#: ../extensions/catalogs/catalogs.extension.in.in.h:1
+#: ../extensions/catalogs/gth-catalog.c:656
+#: ../extensions/catalogs/gth-catalog.c:705
+#: ../extensions/catalogs/gth-catalog.c:1062
+#: ../extensions/catalogs/gth-catalog.c:1063
+msgid "Catalogs"
+msgstr "Альбоми"
+
+#: ../extensions/catalogs/catalogs.extension.in.in.h:2
+msgid "Create file collections."
+msgstr "Створити файл колекції."
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
+msgid "C_atalogs:"
+msgstr "_Альбоми:"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
+msgid "New _Library"
+msgstr "Нова _колекція"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
+msgid "_New Catalog"
+msgstr "Новий _альбом"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
+msgid "_View the destination"
+msgstr "_Виберіть теку призначення"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:5
+msgid "gtk-add"
+msgstr "gtk-add"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:6
+msgid "gtk-cancel"
+msgstr "gtk-cancel"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
+msgid "Catalog"
+msgstr "Альбом"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
+#: ../gthumb/gth-file-properties.c:202
+msgid "Properties"
+msgstr "Властивості"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
+msgid "_Date:"
+msgstr "Да_та:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:5
+#: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:3
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:35
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:4
+msgid "_Name:"
+msgstr "_Назва:"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
+msgid "Catalog _Preview:"
+msgstr "_Попередній перегляд альбому:"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
+msgid "Organization:"
+msgstr "Впорядкування:"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
+msgid "Organize Files"
+msgstr "Впорядкувати файли"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
+msgid "Organizing files"
+msgstr "Впорядкування файлів"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
+msgid "Select All"
+msgstr "Виділити все"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
+msgid "Select None"
+msgstr "Зняти виділення"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
+msgid "Files will be organized in catalogs. No file will be moved on disk."
+msgstr "Файли будуть впорядковані у альбом. Файли на диску не будуть змінені."
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:2
+msgid "Ignore catalogs with a single file"
+msgstr "Ігнорувати альбоми, що містять один файл"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
+msgid "Put single files in the catalog:"
+msgstr "Помістити одиночні файли у альбом:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
+msgid "Singles"
+msgstr "Одиночні файли"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:6
+msgid "_Group files by:"
+msgstr "_Групувати за:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:7
+#: ../extensions/search/data/ui/search-editor.ui.h:2
+msgid "_Include sub-folders"
+msgstr "_Включати підкаталоги"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:8
+msgid "appointment-soon"
+msgstr "appointment-soon"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:9
+msgid "camera-photo"
+msgstr "camera-photo"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:10
+#: ../extensions/exiv2_tools/main.c:214
+msgid "date photo was taken"
+msgstr "датою отримання знімку"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:11
+msgid "file modified date"
+msgstr "за часом зміни файлу"
+
+#: ../extensions/catalogs/dlg-add-to-catalog.c:102
+#: ../extensions/catalogs/dlg-add-to-catalog.c:133
+msgid "Could not add the files to the catalog"
+msgstr "Не вдається додати файли до альбому"
+
+#: ../extensions/catalogs/dlg-catalog-properties.c:81
+msgid "Could not save the catalog"
+msgstr "Не вдається зберегти альбом"
+
+#: ../extensions/catalogs/dlg-catalog-properties.c:167
+msgid "Could not load the catalog"
+msgstr "Не вдається завантажити альбом"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:792
+#, c-format
+msgid "Copying files to '%s'"
+msgstr "Копіювання файлів до '%s'"
+
+#: ../extensions/catalogs/gth-organize-task.c:201
+#, c-format
+msgid "Operation completed. Catalogs: %d. Images: %d."
+msgstr "Операцію завершено. Альбомів: %d. Зображень: %d."
+
+#: ../extensions/change_date/callbacks.c:45
+msgid "Change _Date..."
+msgstr "Змінити _дату..."
+
+#: ../extensions/change_date/callbacks.c:46
+msgid "Change images last modified date"
+msgstr "Змінити дату останньої зміни зображень"
+
+#: ../extensions/change_date/change_date.extension.in.in.h:1
+msgid "Change date"
+msgstr "Змінити дату"
+
+#: ../extensions/change_date/change_date.extension.in.in.h:2
+msgid "Change the files date"
+msgstr "Змінити дату файлів"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:1
+msgid "A_djust by"
+msgstr "З_мінити на"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:2
+msgid "Change Date"
+msgstr "Зміна дати"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:3
+msgid "Change the following values:"
+msgstr "Змінити наступні значення:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:4
+msgid "Change to:"
+msgstr "Змінити:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:5
+msgid "Co_mment date"
+msgstr "Дату _коментаря"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:6
+msgid "Date p_hoto was taken"
+msgstr "_Дату отримання знімку"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:7
+msgid "Exif DateTimeOriginal tag"
+msgstr "Тег Exif DateTimeOriginal"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:8
+msgid "File _modified date"
+msgstr "Дату _останньої зміни файлу"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:9
+msgid "File c_reation date"
+msgstr "Дата с_творення файлу"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:10
+msgid "The _following date:"
+msgstr "_Наступну дату:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:11
+msgid "_Last modified date"
+msgstr "Дата _останньої зміни"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:12
+msgid "hours"
+msgstr "годин"
+
+#: ../extensions/comments/comments.extension.in.in.h:1
+msgid "Add comments and tags to any file type."
+msgstr "Додати коментар чи теги до будь-якого типу файлу."
+
+#: ../extensions/comments/comments.extension.in.in.h:2
+msgid "Comments and tags"
+msgstr "Коментарі та теги"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:1
+#: ../extensions/importer/gth-import-preferences-dialog.c:304
+msgid "Preferences"
+msgstr "Параметри"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:2
+msgid "_Synchronize with the embedded metadata"
+msgstr "_Синхронізувати з вбудованими метаданими"
+
+#: ../extensions/comments/gth-test-category.c:40
+#: ../gthumb/gth-test-simple.c:48
+msgid "is"
+msgstr "збігається з"
+
+#: ../extensions/comments/gth-test-category.c:41
+#: ../gthumb/gth-test-simple.c:49
+msgid "is not"
+msgstr "не збігається з"
+
+#: ../extensions/comments/gth-test-category.c:297
+#: ../gthumb/gth-test-simple.c:680 ../gthumb/gth-test-simple.c:706
+#: ../gthumb/gth-test-simple.c:727
+#, c-format
+msgid "The test definition is incomplete"
+msgstr "Перевірку визначення завершено"
+
+#: ../extensions/comments/main.c:35
+msgid "Comment"
+msgstr "Коментар"
+
+#: ../extensions/comments/main.c:207
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:24
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:19
+#: ../gthumb/gth-main-default-metadata.c:53
+msgid "Description"
+msgstr "Опис:"
+
+#: ../extensions/comments/main.c:215 ../gthumb/gth-main-default-metadata.c:51
+msgid "Place"
+msgstr "Місце:"
+
+#: ../extensions/comments/main.c:222
+msgid "Tag"
+msgstr "Тег"
+
+#: ../extensions/convert_format/callbacks.c:46
+msgid "Convert Format..."
+msgstr "Перетворити формат..."
+
+#: ../extensions/convert_format/callbacks.c:47
+msgid "Convert image format"
+msgstr "Перетворення формату зображення"
+
+#: ../extensions/convert_format/convert_format.extension.in.in.h:1
+msgid "Convert format"
+msgstr "Перетворити формат"
+
+#: ../extensions/convert_format/convert_format.extension.in.in.h:2
+msgid "Save images in a different format"
+msgstr "Зберегти зображення у іншому форматі"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:1
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:4
+msgid "Choose destination folder"
+msgstr "Виберіть каталог призначення"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:2
+msgid "Convert Format"
+msgstr "Перетворити формат"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:3
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:5
+msgid "Destination"
+msgstr "Призначення"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:4
+msgid "New format"
+msgstr "Новий формат"
+
+#: ../extensions/convert_format/dlg-convert-format.c:92
+msgid "Converting images"
+msgstr "Перетворення зображень"
+
+#: ../extensions/desktop_background/actions.c:54
+msgid "Could not show the desktop background properties"
+msgstr "Не вдається відкрити властивості тла робочого столу"
+
+#: ../extensions/desktop_background/callbacks.c:45
+msgid "Set as Desktop Background"
+msgstr "Встановити як тло робочого столу"
+
+#: ../extensions/desktop_background/callbacks.c:46
+#: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
+msgid "Set the image as desktop background"
+msgstr "Встановити зображення як тло робочого столу"
+
+#: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
+msgid "Desktop background"
+msgstr "Тло робочого столу"
+
+#: ../extensions/edit_metadata/callbacks.c:90 ../gthumb/dlg-extensions.c:60
+msgid "Metadata"
+msgstr "Метадані"
+
+#: ../extensions/edit_metadata/callbacks.c:91
+msgid "Edit file metadata"
+msgstr "Редагування метаданих"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:1
+msgid "D_escription:"
+msgstr "_Опис:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
+msgid "T_ags:"
+msgstr "_Теги:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
+msgid "_Place:"
+msgstr "Міс_це:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
+msgid "_Rating:"
+msgstr "_Рейтинг:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
+msgid "_Title:"
+msgstr "_Заголовок:"
+
+#: ../extensions/edit_metadata/dlg-edit-metadata.c:56
+msgid "Could not save the file metadata"
+msgstr "Не вдається зберегти метадані"
+
+#: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:1
+msgid "Allow to edit files metadata."
+msgstr "Дозволити редагування метаданих файлу."
+
+#: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
+msgid "Edit metadata"
+msgstr "Редагувати метадані"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:391
+msgid "No date"
+msgstr "Без дати"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:392
+msgid "The following date"
+msgstr "Наступна дата"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:393
+#: ../extensions/importer/gth-import-preferences-dialog.c:317
+msgid "Current date"
+msgstr "Поточна дата"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:394
+msgid "Date photo was taken"
+msgstr "Дата отримання знімку"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:395
+msgid "Last modified date"
+msgstr "Дата останньої зміни"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:396
+msgid "File creation date"
+msgstr "Дата створення файлу"
+
+#: ../extensions/edit_metadata/gth-edit-comment-page.c:397
+msgid "Do not modify"
+msgstr "Не змінювати"
+
+#. Translators: the %s in the string is the file name
+#: ../extensions/edit_metadata/gth-edit-metadata-dialog.c:148
+#, c-format
+msgid "%s Metadata"
+msgstr "метадані %s"
+
+#: ../extensions/example/src/example.extension.in.in.h:1
+msgid "Example"
+msgstr "Приклад"
+
+#: ../extensions/example/src/example.extension.in.in.h:2
+msgid "Extension example."
+msgstr "приклад розширення."
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
+msgid "Byline _Title:"
+msgstr "А_втор:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
+msgid "C_opyright:"
+msgstr "_Авторські права:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
+msgid "Co_untry:"
+msgstr "_Країна:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
+msgid "Cr_edit:"
+msgstr "_Подяки:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:5
+msgid "_Byline:"
+msgstr "_Автор:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
+msgid "_City:"
+msgstr "_Місто:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
+msgid "_Code:"
+msgstr "_Код:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
+#: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:2
+msgid "_Destination:"
+msgstr "_Призначення:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
+msgid "_Language:"
+msgstr "_Мова:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
+msgid "_Object Name:"
+msgstr "_Назва об'єкту:'"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:6
+msgid "_Source:"
+msgstr "_Джерело:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
+msgid "_Urgency:"
+msgstr "_Терміновість:"
+
+#: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
+msgid "EXIF, IPTC, XMP support"
+msgstr "Підтримка EXIF, IPTC, XMP"
+
+#: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:2
+msgid "Read and write exif, iptc and xmp metadata."
+msgstr "Читання та запис метаданих exif, iptc та xmp."
+
+#: ../extensions/exiv2_tools/main.c:33
+msgid "Exif General"
+msgstr "Загальне Exif"
+
+#: ../extensions/exiv2_tools/main.c:34
+msgid "Exif Conditions"
+msgstr "Умови Exif"
+
+#: ../extensions/exiv2_tools/main.c:35
+msgid "Exif Structure"
+msgstr "Структура Exif"
+
+#: ../extensions/exiv2_tools/main.c:36
+msgid "Exif Thumbnail"
+msgstr "Ескіз Exif"
+
+#: ../extensions/exiv2_tools/main.c:37
+msgid "Exif GPS"
+msgstr "Exif GPS"
+
+#: ../extensions/exiv2_tools/main.c:38
+msgid "Exif Maker Notes"
+msgstr "Примітки автора Exif"
+
+#: ../extensions/exiv2_tools/main.c:39
+msgid "Exif Versions"
+msgstr "Версії Exif"
+
+#: ../extensions/exiv2_tools/main.c:40
+msgid "Exif Other"
+msgstr "Інше Exif"
+
+#: ../extensions/exiv2_tools/main.c:41
+msgid "IPTC"
+msgstr "IPTC"
+
+#: ../extensions/exiv2_tools/main.c:42
+msgid "XMP Embedded"
+msgstr "Вбудований XMP"
+
+#: ../extensions/exiv2_tools/main.c:43
+msgid "XMP Attached"
+msgstr "Приєднаний XMP"
+
+#: ../extensions/file_manager/actions.c:43
+msgid "Enter the folder name: "
+msgstr "Введіть назву теки:"
+
+#: ../extensions/file_manager/actions.c:65
+msgid "Could not create the folder"
+msgstr "Не вдається створити теку"
+
+#: ../extensions/file_manager/actions.c:302
+#: ../extensions/file_manager/callbacks.c:299
+msgid "Could not move the files"
+msgstr "Не вдається перемістити файли"
+
+#: ../extensions/file_manager/actions.c:303
+#: ../extensions/file_manager/callbacks.c:300
+msgid ""
+"Files cannot be moved to the current location, as alternative you can choose "
+"to copy them."
+msgstr ""
+"Неможливо перемістити файли у поточне місце, ви можете ви можете їх "
+"скопіювати."
+
+#: ../extensions/file_manager/actions.c:390
+#: ../extensions/importer/gth-import-task.c:383
+msgid "Could not delete the files"
+msgstr "Не вдається вилучити файли"
+
+#: ../extensions/file_manager/actions.c:438
+msgid ""
+"The files cannot be moved to the Trash. Do you want to delete them "
+"permanently?"
+msgstr "Файли не можуть бути переміщені у смітник. Видалити їх остаточно?"
+
+#: ../extensions/file_manager/actions.c:449
+msgid "Could not move the files to the Trash"
+msgstr "Не вдається перемістити файли до смітника"
+
+#: ../extensions/file_manager/actions.c:485
+#: ../extensions/file_manager/actions.c:778
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "Ви дійсно хочете остаточно видалити \"%s\"?"
+
+#: ../extensions/file_manager/actions.c:488
+#, c-format
+msgid "Are you sure you want to permanently delete the %'d selected file?"
+msgid_plural ""
+"Are you sure you want to permanently delete the %'d selected files?"
+msgstr[0] "Ви дійсно хочете остаточно видалити %'d файл ?"
+msgstr[1] "Ви дійсно хочете остаточно видалити %'d файли ?"
+msgstr[2] "Ви дійсно хочете остаточно видалити %'d файлів?"
+
+#: ../extensions/file_manager/actions.c:498
+#: ../extensions/file_manager/actions.c:788
+msgid "If you delete a file, it will be permanently lost."
+msgstr "Якщо ви видалите файл, його буде остаточно втрачено."
+
+#: ../extensions/file_manager/actions.c:528
+msgid "Could not open the location"
+msgstr "Не вдається відкрити адресу"
+
+#: ../extensions/file_manager/actions.c:662
+msgid ""
+"The folder is not empty, do you want to delete the folder and its content "
+"permanently?"
+msgstr "Тека не порожня, видалити теку та її вміст?"
+
+#: ../extensions/file_manager/actions.c:678
+msgid "Could not delete the folder"
+msgstr "Не вдається вилучити теку"
+
+#: ../extensions/file_manager/actions.c:737
+msgid ""
+"The folder cannot be moved to the Trash. Do you want to delete it "
+"permanently?"
+msgstr "Зображення не можуть бути переміщені у смітник. Видалити їх остаточно?"
+
+#: ../extensions/file_manager/actions.c:744
+msgid "Could not move the folder to the Trash"
+msgstr "Не вдається перемістити теку до Смітника"
+
+#: ../extensions/file_manager/callbacks.c:149
+#: ../extensions/file_manager/callbacks.c:181
+msgid "Create _Folder"
+msgstr "Створити _теку"
+
+#: ../extensions/file_manager/callbacks.c:150
+#: ../extensions/file_manager/callbacks.c:182
+msgid "Create a new empty folder inside this folder"
+msgstr "Створити нову теку у теці"
+
+#: ../extensions/file_manager/callbacks.c:165
+msgid "D_uplicate"
+msgstr "_Створити копію"
+
+#: ../extensions/file_manager/callbacks.c:166
+msgid "Duplicate the selected files"
+msgstr "Створити копію виділених файлів"
+
+#: ../extensions/file_manager/callbacks.c:169
+#: ../extensions/file_manager/callbacks.c:201
+msgid "Mo_ve to Trash"
+msgstr "Перемістити у см_ітник"
+
+#: ../extensions/file_manager/callbacks.c:170
+msgid "Move the selected files to the Trash"
+msgstr "Перемістити виділені зображення в смітник"
+
+#: ../extensions/file_manager/callbacks.c:173
+#: ../extensions/file_manager/callbacks.c:205
+msgid "_Delete"
+msgstr "В_далити"
+
+#: ../extensions/file_manager/callbacks.c:174
+msgid "Delete the selected files"
+msgstr "Видалити виділені файли"
+
+#: ../extensions/file_manager/callbacks.c:177
+msgid "Open with the _File Manager"
+msgstr "Відкрити у менеджері _файлів"
+
+#: ../extensions/file_manager/callbacks.c:185
+#: ../extensions/rename_series/callbacks.c:48
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:31
+msgid "_Rename"
+msgstr "Перей_менувати"
+
+#: ../extensions/file_manager/callbacks.c:197
+msgid "_Paste Into Folder"
+msgstr "Вст_авити у теку:"
+
+#: ../extensions/file_manager/callbacks.c:796 ../gthumb/gth-browser.c:4152
+#: ../gthumb/gth-browser.c:4190
+msgid "Could not perform the operation"
+msgstr "Не вдається виконати операцію"
+
+#: ../extensions/file_manager/file_manager.extension.in.in.h:1
+msgid "File manager"
+msgstr "Менеджер файлів"
+
+#: ../extensions/file_manager/file_manager.extension.in.in.h:2
+msgid "File manager operations."
+msgstr "Операції менеджера файлів"
+
+#: ../extensions/file_manager/gth-delete-task.c:63
+msgid "Deleting files"
+msgstr "Видалення файлів"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
+msgid "B_rightness:"
+msgstr "_Яскравість:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
+msgid "Color Levels"
+msgstr "Рівні кольорів"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
+msgid "Con_trast:"
+msgstr "К_онтраст:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
+msgid "Cyan-_Red:"
+msgstr "_Блакитно-Червоний:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
+msgid "G_amma:"
+msgstr "_Гамма:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
+msgid "_Magenta-Green:"
+msgstr "_Фіолетово-Зелений:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
+msgid "_Reset"
+msgstr "С_кинути"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
+msgid "_Saturation:"
+msgstr "_Насиченість:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
+msgid "_Yellow-Blue:"
+msgstr "_Жовто-Синій:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:1
+msgid "Aspect ratio"
+msgstr "Співвідношення сторін"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:2
+msgid "C_rop"
+msgstr "_Кадрування"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:3
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:4
+msgid "Heigh_t:"
+msgstr "_Висота:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:4
+msgid "I_nvert aspect ratio"
+msgstr "_Інвертувати відношення сторін"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:5
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
+msgid "Selection"
+msgstr "Виділення"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:6
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:8
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:17
+msgid "_Width:"
+msgstr "_Ширина:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:7
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
+msgid "_X:"
+msgstr "_X:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:8
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:2
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:2
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:3
+#: ../gthumb/gth-main-default-metadata.c:48
+msgid "Dimensions"
+msgstr "Розміри"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:5
+msgid "High _quality"
+msgstr "Висока _якість"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:6
+msgid "Options"
+msgstr "Параметри"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:7
+msgid "_Preserve original aspect ratio"
+msgstr "_Зберігати відношення сторін"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:19
+msgid "pixels"
+msgstr "точок"
+
+#: ../extensions/file_tools/file_tools.extension.in.in.h:1
+msgid "Basic tools to modify images."
+msgstr "Основні засоби роботи із зображеннями."
+
+#: ../extensions/file_tools/file_tools.extension.in.in.h:2
+msgid "Image tools"
+msgstr "Інструменти роботи із зображеннями"
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:311
+#: ../extensions/file_tools/gth-file-tool-negative.c:84
+msgid "Applying changes"
+msgstr "Застосування змін"
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:521
+msgid "Adjust Colors..."
+msgstr "Коригування кольорів..."
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:521
+msgid "Adjust Colors"
+msgstr "Коригування кольорів"
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:522
+msgid "Change brightness, contrast, saturation and gamma level of the image"
+msgstr "Змінити яскравість, контраст, насиченість та гаму зображення"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:347
+msgid "Square"
+msgstr "квадрат"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:348
+#, c-format
+msgid "%d x %d (Image)"
+msgstr "%d x %d (Зображення)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:351
+#, c-format
+msgid "%d x %d (Screen)"
+msgstr "%d x %d (Екран)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:355
+msgid "4 x 3 (Book, DVD)"
+msgstr "4 x 3 (книжка, DVD)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:356
+msgid "4 x 6 (Postcard)"
+msgstr "4 x 6 (поштова картка)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:357
+msgid "5 x 7"
+msgstr "5 x 7"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:358
+msgid "8 x 10"
+msgstr "8 x 10"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:359
+#: ../extensions/image_print/data/ui/print-layout.ui.h:3
+msgid "Custom"
+msgstr "Інше"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:458
+msgid "Crop..."
+msgstr "Кадрувати..."
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:458
+msgid "Crop"
+msgstr "Кадрування"
+
+#: ../extensions/file_tools/gth-file-tool-desaturate.c:101
+msgid "Desaturating image"
+msgstr "Знебарвити зображення"
+
+#: ../extensions/file_tools/gth-file-tool-desaturate.c:119
+msgid "Desaturate"
+msgstr "Знебарвити"
+
+#: ../extensions/file_tools/gth-file-tool-enhance.c:249
+msgid "White balance correction"
+msgstr "Корекція балансу білого"
+
+#: ../extensions/file_tools/gth-file-tool-enhance.c:281
+msgid "Enhance Colors"
+msgstr "Вдосконалення кольорів"
+
+#: ../extensions/file_tools/gth-file-tool-enhance.c:282
+msgid "Automatic white balance correction"
+msgstr "Автоматичний баланс білого"
+
+#: ../extensions/file_tools/gth-file-tool-equalize.c:169
+msgid "Equalizing image histogram"
+msgstr "Врівноваження гістограми зображення"
+
+#: ../extensions/file_tools/gth-file-tool-equalize.c:201
+msgid "Equalize"
+msgstr "Врівноважити"
+
+#: ../extensions/file_tools/gth-file-tool-equalize.c:202
+msgid "Equalize image histogram"
+msgstr "Врівноважити гістограму зображення"
+
+#: ../extensions/file_tools/gth-file-tool-flip.c:74
+msgid "Flip"
+msgstr "Перевернути"
+
+#: ../extensions/file_tools/gth-file-tool-mirror.c:74
+msgid "Mirror"
+msgstr "Дзеркальне відбиття"
+
+#: ../extensions/file_tools/gth-file-tool-negative.c:101
+msgid "Negative"
+msgstr "Негатив"
+
+#: ../extensions/file_tools/gth-file-tool-redo.c:63
+msgid "Redo"
+msgstr "Повторити"
+
+#: ../extensions/file_tools/gth-file-tool-resize.c:348
+msgid "Resize..."
+msgstr "Масштаб..."
+
+#: ../extensions/file_tools/gth-file-tool-resize.c:348
+msgid "Resize"
+msgstr "Масштаб"
+
+#: ../extensions/file_tools/gth-file-tool-rotate-left.c:74
+#: ../extensions/image_rotation/callbacks.c:52
+msgid "Rotate Left"
+msgstr "Обернути _ліворуч"
+
+#: ../extensions/file_tools/gth-file-tool-rotate-right.c:74
+#: ../extensions/image_rotation/callbacks.c:47
+msgid "Rotate Right"
+msgstr "Обернути _праворуч"
+
+#: ../extensions/file_tools/gth-file-tool-save-as.c:57
+msgid "Save As"
+msgstr "Зберегти _як"
+
+#: ../extensions/file_tools/gth-file-tool-save.c:53
+msgid "Save"
+msgstr "З_берегти"
+
+#: ../extensions/file_tools/gth-file-tool-undo.c:62
+msgid "Undo"
+msgstr "Вернути"
+
+#: ../extensions/flicker/callbacks.c:50
+msgid "_Flickr..."
+msgstr "_Flickr..."
+
+#: ../extensions/flicker/callbacks.c:51
+msgid "Upload photos to Flickr"
+msgstr "Запис фото до веб-альбому Flickr"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:1
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:3
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:2
+msgid "Edit accounts"
+msgstr "Редагувати облікові записи"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:2
+msgid "Export to Flickr"
+msgstr "Експорт на Flickr"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:3
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:5
+msgid "Free space:"
+msgstr "Вільний простір:"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:4
+msgid "Hi_de from public searches"
+msgstr "С_ховати від публічного пошуку"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:5
+msgid "Moderate content"
+msgstr "Помірний зміст"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:6
+msgid "Ph_otoset:"
+msgstr "_Фотонабір:"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:7
+msgid "Private photos"
+msgstr "Приватні фотографії"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:8
+msgid "Private photos, visible to family"
+msgstr "Приватні фотографії, видимі лише родині"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:9
+msgid "Private photos, visible to family and friends"
+msgstr "Приватні фотографії, видимі сім'ї та друзям"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:10
+msgid "Private photos, visible to friends"
+msgstr "Приватні фотографії, видимі друзям"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:11
+msgid "Public photos"
+msgstr "Публічні фотографії"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:12
+msgid "Restricted content"
+msgstr "Обмежений зміст"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:13
+msgid "Safe content"
+msgstr "Безпечний зміст"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:14
+msgid "_Account:"
+msgstr "_Обліковий рахунок:"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:15
+msgid "_Privacy:"
+msgstr "_Приватність:"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:16
+msgid "_Safety:"
+msgstr "_Безпека:"
+
+#: ../extensions/flicker/data/ui/export-to-flickr.ui.h:17
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:7
+msgid "_Upload"
+msgstr "_Відвантажити"
+
+#: ../extensions/flicker/data/ui/flicker-account-chooser.ui.h:1
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:1
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
+#: ../extensions/picasaweb/data/ui/picasa-web-account-chooser.ui.h:1
+msgid "A_ccount:"
+msgstr "_Обліковий рахунок:"
+
+#: ../extensions/flicker/data/ui/flicker-account-manager.ui.h:1
+#: ../extensions/picasaweb/data/ui/picasa-web-account-manager.ui.h:1
+msgid "A_ccounts:"
+msgstr "_Облікові записи:"
+
+#: ../extensions/flicker/data/ui/flicker-ask-authorization.ui.h:1
+msgid ""
+"Click 'Authorize' to open your web browser and authorize gthumb to upload "
+"photos to Flickr. When you're finished, return to this window to complete "
+"the authorization."
+msgstr ""
+"Натисніть 'Авторизувати' для відкриття веб-оглядача та авторизації gthumb "
+"для вивантаження фотографій на Flickr. По закінченню, повернутись до цього "
+"вікна для завершення авторизації."
+
+#: ../extensions/flicker/data/ui/flicker-ask-authorization.ui.h:2
+#: ../extensions/flicker/data/ui/flicker-complete-authorization.ui.h:4
+#: ../extensions/flicker/data/ui/flicker-export-completed.ui.h:2
+msgid "Upload to Flickr"
+msgstr "Відвантажити на Flickr"
+
+#: ../extensions/flicker/data/ui/flicker-ask-authorization.ui.h:3
+msgid "_Authorize..."
+msgstr "_Авторизувати..."
+
+#: ../extensions/flicker/data/ui/flicker-ask-authorization.ui.h:4
+msgid "gthumb requires your authorization to upload the photos to Flickr"
+msgstr "gthumb вимагає авторизації для відвантаження фотографій на Flickr"
+
+#: ../extensions/flicker/data/ui/flicker-complete-authorization.ui.h:1
+msgid "C_ontinue"
+msgstr "Пр_одовжити"
+
+#: ../extensions/flicker/data/ui/flicker-complete-authorization.ui.h:2
+msgid "Once you're done, click the 'Continue' button below."
+msgstr "По закінченню, натисніть на кнопку 'Продовжити'."
+
+#: ../extensions/flicker/data/ui/flicker-complete-authorization.ui.h:3
+msgid ""
+"Return to this window when you have finished the authorization process on "
+"Flickr.com"
+msgstr ""
+"Повернутись до цього вікна після закінчення процесу авторизації на Flickr.com"
+
+#: ../extensions/flicker/data/ui/flicker-export-completed.ui.h:1
+msgid "Files successfully uploaded to the server."
+msgstr "Файли успішно відвантажено на сервер."
+
+#: ../extensions/flicker/data/ui/flicker-export-completed.ui.h:3
+msgid "_Open in the Browser"
+msgstr "_Відкрити у веб-оглядачі"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:136
+#: ../extensions/flicker/dlg-export-to-flickr.c:380
+#: ../extensions/flicker/dlg-export-to-flickr.c:437
+#: ../extensions/flicker/dlg-export-to-flickr.c:474
+#: ../extensions/flicker/dlg-export-to-flickr.c:582
+#: ../extensions/flicker/dlg-export-to-flickr.c:629
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:334
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:354
+msgid "Could not connect to the server"
+msgstr "Не вдається з'єднатися з сервером"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:181
+#: ../extensions/flicker/dlg-export-to-flickr.c:215
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:590
+msgid "Could not create the album"
+msgstr "Не вдається створити альбом"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:237
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:115
+msgid "Could not upload the files"
+msgstr "Не вдається записати файли"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:707
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:683
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:618
+msgid "Choose Account"
+msgstr "Виберіть обліковий рахунок"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:764
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:740
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:675
+msgid "Edit Accounts"
+msgstr "Редагувати рахунки"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:839
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:855
+msgid "No valid file selected."
+msgstr "Не вибрано коректного файлу."
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:840
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:856
+msgid "Could not export the files"
+msgstr "Не вдається експортувати файли"
+
+#: ../extensions/flicker/dlg-export-to-flickr.c:847
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:862
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:729
+#: ../gthumb/gth-browser.c:879 ../gthumb/gth-browser.c:880
+#, c-format
+msgid "%d file (%s)"
+msgid_plural "%d files (%s)"
+msgstr[0] "%d файл (%s)"
+msgstr[1] "%d файли (%s)"
+msgstr[2] "%d файлів (%s)"
+
+#: ../extensions/flicker/flicker.extension.in.in.h:1
+msgid "Flicker"
+msgstr "Flicker"
+
+#: ../extensions/flicker/flicker.extension.in.in.h:2
+msgid "Upload images to Flickr"
+msgstr "Запис зображень до Flickr"
+
+#: ../extensions/flicker/flickr-connection.c:281
+#: ../extensions/flicker/flickr-connection.c:428
+#: ../extensions/flicker/flickr-service.c:220
+#: ../extensions/flicker/flickr-service.c:423
+msgid "Unknown error"
+msgstr "Невідома помилка"
+
+#: ../extensions/flicker/flickr-connection.c:307
+#: ../extensions/flicker/flickr-connection.c:454
+#: ../extensions/flicker/flickr-service.c:244
+#: ../extensions/picasaweb/google-connection.c:364
+msgid "Connecting to the server"
+msgstr "З'єднання з сервером'"
+
+#: ../extensions/flicker/flickr-service.c:244
+msgid "Getting account information"
+msgstr "Отримання інформації про обліковий рахунок"
+
+#: ../extensions/flicker/flickr-service.c:348
+#: ../extensions/picasaweb/picasa-web-service.c:238
+msgid "Getting the album list"
+msgstr "Отримання покажчика альбому"
+
+#: ../extensions/flicker/flickr-service.c:451
+#: ../extensions/flicker/flickr-service.c:571
+#: ../extensions/flicker/flickr-service.c:609
+#: ../extensions/picasaweb/picasa-web-service.c:329
+msgid "Creating the new album"
+msgstr "Створити новий альбом"
+
+#. Translators: %s is a filename
+#. send the file
+#. Translators: %s is a filename
+#: ../extensions/flicker/flickr-service.c:828
+#: ../extensions/picasaweb/picasa-web-service.c:510
+#, c-format
+msgid "Uploading '%s'"
+msgstr "Запис '%s'"
+
+#: ../extensions/flicker/flickr-service.c:906
+#: ../extensions/picasaweb/picasa-web-service.c:584
+msgid "Uploading the files to the server"
+msgstr "Запис файлів на сервер"
+
+#: ../extensions/flicker/flickr-service.c:1027
+#: ../extensions/picasaweb/picasa-web-service.c:706
+msgid "Getting the photo list"
+msgstr "Отримання списку фотографій"
+
+#: ../extensions/gstreamer_tools/actions.c:65
+#: ../extensions/image_viewer/gth-image-viewer-page.c:729
+#: ../gthumb/gth-browser.c:1778
+msgid "Could not save the file"
+msgstr "Не вдається зьберегти файл"
+
+#: ../extensions/gstreamer_tools/actions.c:125
+msgid "Could not take a screenshot"
+msgstr "Не вдається зробити екрану"
+
+#: ../extensions/gstreamer_tools/actions.c:131
+#: ../extensions/image_viewer/gth-image-viewer-page.c:873
+msgid "Save Image"
+msgstr "Зберегти зображення"
+
+#: ../extensions/gstreamer_tools/actions.c:151
+msgctxt "Filename"
+msgid "Screenshot"
+msgstr "Екран"
+
+#. this is an empty time
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
+msgid "--:--"
+msgstr "--:--"
+
+#. this is the separator between current position and duration of a media file
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
+msgid "/"
+msgstr "/"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
+msgid "Change volume level"
+msgstr "Змінити рівень гучності"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
+msgid "Faster"
+msgstr "Швидше"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:517
+msgid "Play"
+msgstr "Відтворити"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:8
+msgid "Slower"
+msgstr "Повільніше"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:9
+msgid "Time:"
+msgstr "Час:"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:10
+msgid "Toggle volume"
+msgstr "Перемикнути гучність"
+
+#: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:1
+msgid "Choose a folder"
+msgstr "Виберіть теку"
+
+#: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:1
+msgid "Audio/Video support"
+msgstr "Підтримка аудіо / відео"
+
+#: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:2
+msgid "Play audio and video files."
+msgstr "Відтворення звукових та відео файлів"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:89
+msgid "Screenshot"
+msgstr "Знімок екрану"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:90
+msgid "Take a screenshot"
+msgstr "Отримання знімку екрану"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:509
+msgid "Pause"
+msgstr "Пауза"
+
+#: ../extensions/gstreamer_tools/main.c:32
+#: ../gthumb/gth-main-default-tests.c:155
+msgid "Video"
+msgstr "Відео"
+
+#: ../extensions/gstreamer_tools/main.c:33
+#: ../gthumb/gth-main-default-tests.c:162
+msgid "Audio"
+msgstr "Аудіо"
+
+#: ../extensions/gstreamer_tools/main.c:40
+msgid "Artist"
+msgstr "Виконавець"
+
+#: ../extensions/gstreamer_tools/main.c:41
+msgid "Album"
+msgstr "Альбом"
+
+#: ../extensions/gstreamer_tools/main.c:42
+msgid "Bitrate"
+msgstr "Щільність потоку бітів"
+
+#: ../extensions/gstreamer_tools/main.c:43
+msgid "Encoder"
+msgstr "Кодування"
+
+#: ../extensions/gstreamer_tools/main.c:45
+#: ../extensions/gstreamer_tools/main.c:50
+msgid "Codec"
+msgstr "Кодек"
+
+#: ../extensions/gstreamer_tools/main.c:46
+msgid "Framerate"
+msgstr "Частота кадрів"
+
+#: ../extensions/gstreamer_tools/main.c:47
+#: ../extensions/image_print/data/ui/print-layout.ui.h:15
+#: ../extensions/image_viewer/gth-image-viewer-page.c:190
+msgid "Width"
+msgstr "Ширина"
+
+#: ../extensions/gstreamer_tools/main.c:48
+#: ../extensions/image_print/data/ui/print-layout.ui.h:4
+msgid "Height"
+msgstr "Висота"
+
+#: ../extensions/gstreamer_tools/main.c:51
+msgid "Channels"
+msgstr "Канали"
+
+#: ../extensions/gstreamer_tools/main.c:52
+msgid "Sample rate"
+msgstr "Частота семплів"
+
+#: ../extensions/gstreamer_utils/gstreamer-utils.c:361
+msgid "Stereo"
+msgstr "Стерео"
+
+#: ../extensions/gstreamer_utils/gstreamer-utils.c:361
+msgid "Mono"
+msgstr "Моно"
+
+#: ../extensions/image_print/callbacks.c:50
+msgid "Print the selected images"
+msgstr "Вивести обрані зображення"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:2
+msgid "Centered"
+msgstr "У центрі"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:5
+msgid "Image"
+msgstr "Зображення"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:6
+msgid "Images per page:"
+msgstr "Зображень на сторінку:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:7
+msgid "Left"
+msgstr "Ліворуч"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:8
+msgid "Position:"
+msgstr "Розташування:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:9
+msgid "Preview"
+msgstr "Попередній перегляд"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:10
+msgid "Rotation:"
+msgstr "Обертання:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:11
+msgid "Select Caption Font"
+msgstr "Виберіть шрифт заголовку"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:13
+msgid "Top"
+msgstr "Згори"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:14
+msgid "Unit:"
+msgstr "Одиниці:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:16
+msgid "_Font:"
+msgstr "_Шрифт:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:17
+msgid "inches"
+msgstr "дюйми"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:18
+msgid "millimeters"
+msgstr "міліметри"
+
+#: ../extensions/image_print/gth-image-print-job.c:815
+#, c-format
+msgid "Page %d of %d"
+msgstr "Сторінка %d з %d"
+
+#: ../extensions/image_print/gth-image-print-job.c:1490
+#: ../extensions/image_print/gth-image-print-job.c:1570
+#: ../extensions/image_print/gth-image-print-job.c:1591
+msgid "Could not print"
+msgstr "Не вдається надрукувати"
+
+#: ../extensions/image_print/gth-image-print-job.c:1526
+msgid "Layout"
+msgstr "Розташування"
+
+#. translators: %s is a filename
+#: ../extensions/image_print/gth-load-image-info-task.c:137
+#, c-format
+msgid "Loading \"%s\""
+msgstr "Завантаження \"%s\""
+
+#: ../extensions/image_print/gth-load-image-info-task.c:139
+msgid "Loading images"
+msgstr "Завантаження зображень"
+
+#: ../extensions/image_print/image_print.extension.in.in.h:1
+msgid "Allow to print images choosing the page layout."
+msgstr "Дозволити друкувати зображення обираючи розташування сторінки."
+
+#: ../extensions/image_print/image_print.extension.in.in.h:2
+msgid "Image print"
+msgstr "Друк зображення"
+
+#: ../extensions/image_rotation/callbacks.c:48
+msgid "Rotate the selected images 90° to the right"
+msgstr "Обернути обрані зображення на 90° праворуч"
+
+#: ../extensions/image_rotation/callbacks.c:53
+msgid "Rotate the selected images 90° to the left"
+msgstr "Обернути обрані зображення на 90° ліворуч"
+
+#: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
+msgid "Image rotation"
+msgstr "Обертання зображення"
+
+#: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
+msgid "Rotate images without data loss."
+msgstr "Обернути обрані зображення без втрати якості"
+
+#: ../extensions/image_rotation/rotation-utils.c:117
+#, c-format
+msgid "Problem transforming the image: %s"
+msgstr "Не вдається перейменувати зображення: %s"
+
+#: ../extensions/image_rotation/rotation-utils.c:122
+msgid ""
+"This transformation may introduce small image distortions along one or more "
+"edges, because the image dimensions are not multiples of 8.\n"
+"\n"
+"The distortion is reversible, however. If the resulting image is "
+"unacceptable, simply apply the reverse transformation to return to the "
+"original image.\n"
+"\n"
+"You can also choose to discard (or trim) any untransformable edge pixels. "
+"For practical use, this mode gives the best looking results, but the "
+"transformation is not strictly lossless anymore."
+msgstr ""
+"Це перетворення може додати до зображення маленькі спотворення вздовж одного "
+"або кількох країв, оскільки розміри зображення не кратні 8.\n"
+"\n"
+"Проте спотворення зворотнє. Якщо зображення після перетворення неприйнятне, "
+"щоб повернути початкове зображення просто застосуйте зворотнє перетворення.\n"
+"\n"
+"Також можна відкинути (чи усікти) будь-які не перетворювані  точки на межах. "
+"Для практичного використання, цей режим дає найкращий вигляд, але "
+"перетворення не є перетворенням повністю без втрат."
+
+#: ../extensions/image_rotation/rotation-utils.c:128
+msgid "_Trim"
+msgstr "_Відкинути"
+
+#: ../extensions/image_rotation/rotation-utils.c:130
+msgid "_Accept distortion"
+msgstr "_Прийняти викривлення"
+
+#: ../extensions/image_viewer/data/gthumb-image-viewer.schemas.in.h:1
+msgid ""
+"Possible values are: actual-size, keep-prev, fit-size, fit-size-if-larger, "
+"fit-width, fit-width-if-larger."
+msgstr ""
+"Можливі значення: actual_size(не масштабувати), fit-size(масштабувати), "
+"keep_prev(попередній масштаб), fit-size-if-larger(зменшувати великі), fit-"
+"width-if-larger"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
+msgid "After loading an image:"
+msgstr "Після завантаження зображення:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
+msgid "High"
+msgstr "Висока"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
+msgid "Low"
+msgstr "Низька"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
+msgid "Reset scrollbar positions"
+msgstr "Скинути позицію смуги прокрутки"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
+msgid "Transparency _type:"
+msgstr "Заповнювати прозорі _області:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
+msgid "_Zoom quality:"
+msgstr "_Якість масштабування:"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:170
+msgid "In"
+msgstr "Збільшити"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:171
+msgid "Zoom in"
+msgstr "Збільшити зображення"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:175
+msgid "Out"
+msgstr "Зменшити"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:176
+msgid "Zoom out"
+msgstr "Зменшити зображення"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:180
+msgid "1:1"
+msgstr "1:1"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:181
+msgid "Actual size"
+msgstr "Показати без масштабу"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:185
+msgid "Fit"
+msgstr "Оптимально"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:186
+msgid "Zoom to fit window"
+msgstr "Підібрати оптимальний масштаб під розмір вікна"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:191
+msgid "Zoom to fit width"
+msgstr "Підібрати оптимальний масштаб за шириною"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:195
+msgid "_Fit Window to Image"
+msgstr "_Підігнати розміри вікна до зображення"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:196
+msgid "Resize the window to the size of the image"
+msgstr "Змінювати розмір вікна до розмірів зображення"
+
+#: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
+msgid "Basic image viewing."
+msgstr "Проста програма перегляду зображень."
+
+#: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
+msgid "Image viewer"
+msgstr "Перегляд зображень"
+
+#: ../extensions/image_viewer/preferences.c:97
+msgid "Set to actual size"
+msgstr "Справжній розмір"
+
+#: ../extensions/image_viewer/preferences.c:101
+msgid "Fit to width"
+msgstr "Підігнати ширину"
+
+#: ../extensions/image_viewer/preferences.c:138
+msgid "Viewer"
+msgstr "Перегляд"
+
+#: ../extensions/importer/data/gthumb-importer.schemas.in.h:1
+msgid "Possible values are: none, file_date, current_date"
+msgstr "Можливі значення: none, file_date, current_date"
+
+#: ../extensions/importer/data/gthumb-importer.schemas.in.h:2
+msgid "Possible values are: yyyymmdd, yyyymm, yyyy"
+msgstr "Можливі значення: yyyymmdd, yyyymm, yyyy"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:1
+msgid "Files"
+msgstr "Файли"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:2
+msgid "_Automatic subfolder"
+msgstr "_Автоматичні підтеки"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:3
+msgid "_Destination"
+msgstr "_Призначення:"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:4
+msgid "_Overwrite existing files"
+msgstr "_Перезаписати наявні файли"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:5
+msgid "_Rotate images physically"
+msgstr "_Обертати зображення фізично"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:6
+msgid "as _single subfolder"
+msgstr " як _одну підтеку"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:205
+#, c-format
+msgid "example: %s"
+msgstr "приклад: %s"
+
+#. subfolder type
+#: ../extensions/importer/gth-import-preferences-dialog.c:316
+msgid "File date"
+msgstr "Дата файлу"
+
+#. gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("subfolder_label")), self->priv->subfolder_type_list);
+#. subfolder format
+#: ../extensions/importer/gth-import-preferences-dialog.c:326
+msgid "year-month-day"
+msgstr "day-month-year"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:327
+msgid "year-month"
+msgstr "month-year"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:328
+msgid "year"
+msgstr "year"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:329
+msgid "custom format"
+msgstr "інший формат"
+
+#: ../extensions/importer/gth-import-task.c:325
+#: ../extensions/importer/gth-import-task.c:404
+msgid "Importing files"
+msgstr "Імпорт файлів"
+
+#: ../extensions/importer/gth-import-task.c:362
+msgid "No file imported"
+msgstr "Немає файлу для імпорту"
+
+#: ../extensions/importer/gth-import-task.c:363
+msgid "The selected files are already present in the destination."
+msgstr "Обрані файли вже присутні у цільовій теці."
+
+#: ../extensions/importer/gth-import-task.c:384
+msgid "Delete operation not supported."
+msgstr "Операція видалення не підтримується."
+
+#: ../extensions/importer/gth-import-task.c:450
+msgid "Last imported"
+msgstr "Останній імпорт"
+
+#: ../extensions/list_tools/callbacks.c:65 ../gthumb/gth-filterbar.c:304
+msgid "Personalize..."
+msgstr "Персоналізувати..."
+
+#: ../extensions/list_tools/callbacks.c:211
+msgid "Tools"
+msgstr "Сервіс"
+
+#: ../extensions/list_tools/callbacks.c:252
+#: ../extensions/list_tools/callbacks.c:261
+msgid "Batch tools for multiple files"
+msgstr "Засоби пакетної обробки файлів"
+
+#: ../extensions/list_tools/data/ui/ask-value.ui.h:1
+msgid "_Skip"
+msgstr "_Пропустити"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
+msgid "Co_mmands:"
+msgstr "_Команди:"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:2
+msgid "Commands"
+msgstr "Команди"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:2
+#, no-c-format
+msgid "%B"
+msgstr "%B"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:4
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:8
+#, no-c-format
+msgid "%E"
+msgstr "%E"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:6
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:10
+#, no-c-format
+msgid "%F"
+msgstr "%F"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:8
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:15
+#, no-c-format
+msgid "%N"
+msgstr "%N"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:10
+#, no-c-format
+msgid "%P"
+msgstr "%P"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:12
+#, no-c-format
+msgid "%U"
+msgstr "%U"
+
+#. Translate only 'message' and 'default_value'.
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:15
+#, no-c-format
+msgid "%ask{ message }{ default value }"
+msgstr "%ask{ message }{ default value }"
+
+#. Translate only 'attribute name'
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:18
+#, no-c-format
+msgid "%attr{ attribute name }"
+msgstr "%attr{ attribute name }"
+
+#. Translate only 'text'.
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:21
+#, no-c-format
+msgid "%quote{ text }"
+msgstr "%quote{ текст }"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:22
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:16
+msgid "A file attribute"
+msgstr "Атрибут файлу"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:23
+msgid "Ask an input value"
+msgstr "Запитати значення"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:25
+msgid "E_xecute command once for every file"
+msgstr "_Виконати команду один раз для кожного файлу"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:26
+msgid "Quote the text "
+msgstr "Цитувати текст"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:27
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:23
+msgid "Special code"
+msgstr "Спеціальний код"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:28
+msgid "The file basename"
+msgstr "Назва без розширення"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:29
+msgid "The file basename without extension"
+msgstr "Назва файлу без розширення"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:30
+msgid "The file extension"
+msgstr "Розширення файлу"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:31
+msgid "The file path"
+msgstr "Шлях файлу"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:32
+msgid "The file uri"
+msgstr "URI файлу"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:33
+msgid "The parent folder path"
+msgstr "Шлях до батьківської теки"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:34
+msgid "_Command:"
+msgstr "_Команда:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:36
+msgid "_Terminal command (shell script)"
+msgstr "Команда у _терміналі (сценарій оболонки)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:37
+msgid "_Wait for the command to finish"
+msgstr "_Чекати завершення команди"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:234
+msgid "Script"
+msgstr "Сценарій"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:248
+#: ../gthumb/dlg-personalize-filters.c:252
+msgid "Show"
+msgstr "Показати"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:318
+msgid "Could not save the script"
+msgstr "Не вдається зберегти сценарій:"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:361
+msgid "New Command"
+msgstr "Нова команда"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:388
+msgid "Edit Command"
+msgstr "Редагувати команду"
+
+#: ../extensions/list_tools/gth-script.c:608
+msgid "Enter a value:"
+msgstr "Введіть значення:"
+
+#: ../extensions/list_tools/gth-script.c:741
+msgid "Malformed command"
+msgstr "Неправильна команда"
+
+#: ../extensions/list_tools/gth-script-editor-dialog.c:241
+#: ../gthumb/gth-filter-editor-dialog.c:489
+#, c-format
+msgid "No name specified"
+msgstr "Не вказано назву"
+
+#: ../extensions/list_tools/gth-script-editor-dialog.c:247
+#, c-format
+msgid "No command specified"
+msgstr "Не вказано команду"
+
+#: ../extensions/list_tools/gth-script-task.c:85
+#, c-format
+msgid "Command exited abnormally with status %d"
+msgstr "Аварійне завершення команди з кодом %d"
+
+#: ../extensions/list_tools/list_tools.extension.in.in.h:1
+msgid "File list tools"
+msgstr "Інструменти роботи зі списком файлів"
+
+#: ../extensions/list_tools/list_tools.extension.in.in.h:2
+msgid "Scripting and batch manipulation of files."
+msgstr "Написання сценаріїв та пакетна обробка файлів."
+
+#: ../extensions/photo_importer/callbacks.c:51
+msgid "_Removable Device..."
+msgstr "_Видалення пристрою..."
+
+#: ../extensions/photo_importer/callbacks.c:52
+msgid "Import photos and other files from a removable device"
+msgstr "Імпорт фотографій та інших файлів з змінних пристроїв"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
+msgid "Import from Removable Device"
+msgstr "Імпорт зі змінних пристроїв"
+
+#. view label
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
+#: ../gthumb/gth-filterbar.c:414
+msgid "S_how:"
+msgstr "По_казувати:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
+msgid "_Delete the imported files from the source"
+msgstr "В_идаляти імпортовані зображення з джерела"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
+msgid "_Event:"
+msgstr "_Подія:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:5
+msgid "_Import"
+msgstr "_Імпортувати"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:7
+msgid "_Tags:"
+msgstr "_Теги:"
+
+#. translators: %d is the number of files, %s the total size
+#: ../extensions/photo_importer/dlg-photo-importer.c:245
+#, c-format
+msgid "Files to import: %d (%s)"
+msgstr "Файли для імпорту: %d (%s)"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:285
+msgid "Could not load the folder"
+msgstr "Не вдається завантажити теку"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:315
+#: ../gthumb/gth-browser.c:1691
+msgid "Getting folder listing..."
+msgstr "Читання теки..."
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:363
+msgid "Empty"
+msgstr "Немає"
+
+#: ../extensions/photo_importer/photo_importer.extension.in.in.h:1
+msgid "Import photos"
+msgstr "Імпорт фотознімків"
+
+#: ../extensions/photo_importer/photo_importer.extension.in.in.h:2
+msgid "Import photos from removable devices."
+msgstr "Імпорт фотознімків зі змінний пристроїв."
+
+#: ../extensions/picasaweb/callbacks.c:55
+#: ../extensions/picasaweb/callbacks.c:59
+msgid "_Picasa Web Album..."
+msgstr "Веб-альбом _Picasa..."
+
+#: ../extensions/picasaweb/callbacks.c:56
+msgid "Download photos from Picasa Web Album"
+msgstr "Завантажити фото з веб-альбому Picasa"
+
+#: ../extensions/picasaweb/callbacks.c:60
+msgid "Upload photos to Picasa Web Album"
+msgstr "Запис фото до веб-альбому Picasa"
+
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:2
+msgid "Add a new album"
+msgstr "Додати новий альбом"
+
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:4
+msgid "Export to Picasa Web Albums"
+msgstr "Експорт до веб-альбому Picasa"
+
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:6
+msgid "_Albums:"
+msgstr "_Альбоми:"
+
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:3
+msgid "Import from Picasa Web Album"
+msgstr "Імпорт з веб-альбому Picasa"
+
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:4
+msgid "_Album:"
+msgstr "_Альбом:"
+
+#: ../extensions/picasaweb/data/ui/picasa-web-account-properties.ui.h:1
+msgid ""
+"Type the characters you see in the picture below. Letters are not case-"
+"sensitive."
+msgstr "Введіть символи, які ви бачите. Регістр літер не має значення."
+
+#: ../extensions/picasaweb/data/ui/picasa-web-account-properties.ui.h:2
+msgid "_E-Mail:"
+msgstr "_E-Mail:"
+
+#: ../extensions/picasaweb/data/ui/picasa-web-account-properties.ui.h:3
+msgid "_Password:"
+msgstr "_Пароль:"
+
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:2
+msgid "Private"
+msgstr "Особисте"
+
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:3
+msgid "Public"
+msgstr "Публічне"
+
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:5
+msgid "_Visibility:"
+msgstr "_Видимість"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:276
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:297
+msgid "Could not get the album list"
+msgstr "Не вдається отримати список альбому"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:347
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:367
+msgid "Picasa Web Album"
+msgstr "Веб-альбом Picasa"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:417
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:437
+msgid "Account"
+msgstr "Обліковий рахунок"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:651
+msgid "New Album"
+msgstr "Новий альбом"
+
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:753
+msgid "Could not get the photo list"
+msgstr "Не вдається отримати список фотографій"
+
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:786
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:951
+msgid "No album selected"
+msgstr "Альбом не знайдено"
+
+#: ../extensions/picasaweb/picasa-account-properties-dialog.c:134
+msgid "Could not load the file"
+msgstr "Не вдається завантажити файл"
+
+#: ../extensions/picasaweb/picasaweb.extension.in.in.h:1
+msgid "Picasa Web Albums"
+msgstr "Веб-альбом Picasa"
+
+#: ../extensions/picasaweb/picasaweb.extension.in.in.h:2
+msgid "Upload images to Picasa Web Albums"
+msgstr "Запис зображень до веб-альбому Picasa"
+
+#: ../extensions/pixbuf_savers/data/gthumb-pixbuf-savers.schemas.in.h:1
+msgid "Possible values are: none, deflate, jpeg."
+msgstr ""
+"Можливі значення: none(без стиснення), deflate(стискати без втрат), jpeg."
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:1
+msgid "Opti_mize"
+msgstr "_Оптимізувати"
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:2
+msgid "_Progressive"
+msgstr "_Поступова поява"
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:3
+msgid "_Quality:"
+msgstr "_Якість:"
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:4
+msgid "_Smoothing:"
+msgstr "_Згладжування:"
+
+#: ../extensions/pixbuf_savers/data/ui/png-options.ui.h:1
+msgid "Compression _level:"
+msgstr "_Рівень стиснення:"
+
+#: ../extensions/pixbuf_savers/data/ui/save-options-preferences.ui.h:1
+msgid "Default options:"
+msgstr "Типові параметри:"
+
+#: ../extensions/pixbuf_savers/data/ui/tga-options.ui.h:1
+msgid "_RLE compression"
+msgstr "Стиснення _RLE"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:1
+msgid "Compression"
+msgstr "Стиснення"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:2
+msgid "No_rmal (Deflate)"
+msgstr "_Звичайне (стискання)"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:3
+msgid "Resolution"
+msgstr "Роздільна здатність"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:4
+msgid "_Horizontal:"
+msgstr "По г_оризонталі:"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:5
+msgid "_Loss compression (JPEG)"
+msgstr "З в_тратою якості (JPEG)"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:6
+msgid "_No compression"
+msgstr "_Без стиснення"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:7
+msgid "_Vertical:"
+msgstr "По _вертикалі:"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:8
+msgid "dpi"
+msgstr "точок/дюйм"
+
+#: ../extensions/pixbuf_savers/gth-jpeg-saver.c:479
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:6
+msgid "JPEG"
+msgstr "JPEG"
+
+#: ../extensions/pixbuf_savers/gth-png-saver.c:146
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:9
+msgid "PNG"
+msgstr "PNG"
+
+#: ../extensions/pixbuf_savers/gth-tga-saver.c:292
+#: ../gthumb/gth-buffer-data.c:85
+msgid "Insufficient memory"
+msgstr "Недостатньо пам'яті"
+
+#: ../extensions/pixbuf_savers/gth-tga-saver.c:379
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:13
+msgid "TGA"
+msgstr "TGA"
+
+#: ../extensions/pixbuf_savers/gth-tiff-saver.c:498
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:14
+msgid "TIFF"
+msgstr "TIFF"
+
+#: ../extensions/pixbuf_savers/pixbuf_savers.extension.in.in.h:1
+msgid "Save images"
+msgstr "Зберегти зображення"
+
+#: ../extensions/pixbuf_savers/pixbuf_savers.extension.in.in.h:2
+msgid "Save images in common file formats such as JPEG, PNG and TIFF"
+msgstr "Збереження зображень у форматах  JPEG, PNG та TIFF"
+
+#: ../extensions/pixbuf_savers/preferences.c:135
+msgid "Saving"
+msgstr "Збереження"
+
+#: ../extensions/raw_files/raw_files.extension.in.in.h:1
+msgid "Allow to load raw format images."
+msgstr "Дозволити завантаження зображень у raw-форматі"
+
+#: ../extensions/raw_files/raw_files.extension.in.in.h:2
+msgid "Raw format support"
+msgstr "Підтримка raw-формату"
+
+#: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:439
+msgid "Red Eye Removal..."
+msgstr "Видалення ефекту червоних очей..."
+
+#: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:439
+msgid "Red Eye Removal"
+msgstr "Видалення ефекту червоних очей"
+
+#: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:440
+msgid "Remove the red eye effect caused by camera flashes"
+msgstr "Видалення ефекту червоних очей під час спалаху"
+
+#: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
+msgid "Red-eye removal"
+msgstr "Видалення ефекту червоних очей"
+
+#: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
+msgid "Tool to remove the red-eye effect from a photo."
+msgstr "Інструмент для видалення ефекту червоних очей"
+
+#: ../extensions/rename_series/actions.c:38
+#: ../gthumb/gth-overwrite-dialog.c:119
+msgid "Cannot read file information"
+msgstr "Не вдається отримати інформацю про файл"
+
+#: ../extensions/rename_series/callbacks.c:49
+msgid "Rename the selected files"
+msgstr "Перейменувати виділені файли"
+
+#. translate only the text in the curly brackets
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:3
+#, no-c-format
+msgid "%A{ identifier }"
+msgstr "%A{ ідентифікатор }"
+
+#. translate only the text in the curly brackets
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:6
+#, no-c-format
+msgid "%D{ format }"
+msgstr "%D{ формат }"
+
+#. translate only the text in the curly brackets
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:13
+#, no-c-format
+msgid "%M{ format }"
+msgstr "%M{ формат }"
+
+#. Translators: this is the text case (upper or lower case).
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:18
+msgid "Cas_e:"
+msgstr "Рег_істр:"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:20
+msgid "New enumerator digit"
+msgstr "Цифри для нового оператора"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:21
+msgid "Re_verse Order"
+msgstr "У _зворотному порядку"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:22
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:10
+msgid "Rename"
+msgstr "Перейменувати"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:24
+#: ../extensions/search/data/ui/search-editor.ui.h:1
+msgid "Start _at:"
+msgstr "По_чати з:"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:25
+msgid "The digitalization date"
+msgstr "Дата оцифровування"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:26
+msgid "The modification date"
+msgstr "Дата зміни"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:27
+msgid "The original enumerator"
+msgstr "Оригінальний лічильник"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:28
+msgid "The original extension"
+msgstr "Оригінальне розширення"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:29
+msgid "The original filename"
+msgstr "Оригінальна назва файлу"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:30
+msgid "_Preview:"
+msgstr "_Попередній перегляд"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:33
+msgid "_Template:"
+msgstr "_Шаблон:"
+
+#: ../extensions/rename_series/dlg-rename-series.c:341
+msgid "Could not rename the files"
+msgstr "Не вдається перейменувати файли"
+
+#: ../extensions/rename_series/dlg-rename-series.c:425
+msgid "Old Name"
+msgstr "Стара назва"
+
+#: ../extensions/rename_series/dlg-rename-series.c:433
+msgid "New Name"
+msgstr "Нова назва"
+
+#. change case
+#: ../extensions/rename_series/dlg-rename-series.c:485
+msgid "Keep original case"
+msgstr "З_берігати оригінальний регістр символів"
+
+#: ../extensions/rename_series/dlg-rename-series.c:486
+msgid "Convert to lower-case"
+msgstr "Перетворити на маленькі"
+
+#: ../extensions/rename_series/dlg-rename-series.c:487
+msgid "Convert to upper-case"
+msgstr "Перетворити на великі"
+
+#: ../extensions/rename_series/gth-rename-task.c:158
+msgid "Renaming files"
+msgstr "Перейменування файлів"
+
+#: ../extensions/rename_series/rename_series.extension.in.in.h:1
+msgid "Rename files"
+msgstr "Перейменувати файли"
+
+#: ../extensions/rename_series/rename_series.extension.in.in.h:2
+msgid "Rename series of files."
+msgstr "Перейменувати серії файлів."
+
+#: ../extensions/resize_images/callbacks.c:46
+msgid "Resize Images..."
+msgstr "Змінити розмір зображення..."
+
+#: ../extensions/resize_images/callbacks.c:47
+msgid "Resize the selected images"
+msgstr "Змінити розмір виділених зображень"
+
+#: ../extensions/resize_images/data/gthumb_resize_images.schemas.in.h:1
+msgid "Possible values: pixels, percentage"
+msgstr "Можливі значення: pixels(точок), percentage(відсоток)."
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:3
+msgid "Ask"
+msgstr "Питати"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:7
+msgid "New dimensions"
+msgstr "Новий розмір"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:8
+msgid "Overwrite"
+msgstr "Переписати"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:11
+msgid "Resize Images"
+msgstr "Змінити розмір"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:12
+msgid "Skip"
+msgstr "Пропустити"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:15
+msgid "_Height:"
+msgstr "_Висота:"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:16
+msgid "_Preserve original aspect ratios"
+msgstr "_Зберігати відношення сторін"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:18
+msgid "pixel"
+msgstr "точок"
+
+#: ../extensions/resize_images/dlg-resize-images.c:143
+msgid "Resizing images"
+msgstr "Зміна розміру зображень"
+
+#: ../extensions/resize_images/resize_images.extension.in.in.h:1
+msgid "Resize images"
+msgstr "Зміна розміру зображень"
+
+#: ../extensions/resize_images/resize_images.extension.in.in.h:2
+msgid "Resize series of images."
+msgstr "Змінити розмір серії зображень."
+
+#: ../extensions/search/actions.c:50 ../extensions/search/actions.c:117
+#: ../extensions/search/actions.c:123
+msgid "Could not perform the search"
+msgstr "Не вдається виконати пошук"
+
+#: ../extensions/search/actions.c:54
+msgid "Search Result"
+msgstr "Результат пошуку"
+
+#: ../extensions/search/actions.c:76
+msgid "Find"
+msgstr "Знайти"
+
+#: ../extensions/search/callbacks.c:59
+msgid "Find files"
+msgstr "Пошук файлів"
+
+#: ../extensions/search/callbacks.c:133
+msgid "Search again"
+msgstr "Шукати знову"
+
+#. Translators: This is not a verb, it's a name as in "the search properties".
+#: ../extensions/search/callbacks.c:175
+#: ../extensions/search/search.extension.in.in.h:2
+msgid "Search"
+msgstr "Знайти"
+
+#: ../extensions/search/gth-search-editor.c:139
+#: ../gthumb/gth-filter-editor-dialog.c:196
+msgid "all the following rules"
+msgstr "усі критерії"
+
+#: ../extensions/search/gth-search-editor.c:140
+#: ../gthumb/gth-filter-editor-dialog.c:197
+msgid "any of the following rules"
+msgstr "будь-який критерів"
+
+#: ../extensions/search/gth-search-task.c:229
+msgid "Searching..."
+msgstr "Пошук..."
+
+#: ../extensions/search/search.extension.in.in.h:1
+msgid "File search tool."
+msgstr "Засіб пошуку."
+
+#: ../extensions/slideshow/callbacks.c:58
+msgid "View as a slideshow"
+msgstr "Показати у вигляді слайдів"
+
+#: ../extensions/slideshow/callbacks.c:385
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:4
+#: ../extensions/slideshow/preferences.c:122
+#: ../extensions/slideshow/slideshow.extension.in.in.h:1
+msgid "Slideshow"
+msgstr "Показ слайдів"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
+msgid "Add files to the playlist"
+msgstr "Додати файли до списку відтворення"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
+msgid "Playlist"
+msgstr "Список відтворення"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
+msgid "Remove the selected files"
+msgstr "Видалити обрані файли"
+
+#. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
+msgid "_Change automatically, every"
+msgstr "_Змінювати автоматично, кожні"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
+msgid "_Personalize"
+msgstr "П_ерсоналізувати..."
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
+msgid "_Restart when finished"
+msgstr "_перезапускати після завершення"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
+msgid "_Transition effect:"
+msgstr "_Ефект переносу:"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
+msgid "seconds"
+msgstr "сек"
+
+#: ../extensions/slideshow/gth-slideshow-preferences.c:215
+msgid "Choose the files to play"
+msgstr "Виберіть файли для відтворення"
+
+#: ../extensions/slideshow/gth-slideshow-preferences.c:224
+msgid "Audio files"
+msgstr "Аудіо-файли"
+
+#: ../extensions/slideshow/gth-slideshow-preferences.c:285
+msgid "Random"
+msgstr "Випадковий"
+
+#: ../extensions/slideshow/main.c:271
+msgid "Push from right"
+msgstr "Проштовхувати справа"
+
+#: ../extensions/slideshow/main.c:277
+msgid "Push from bottom"
+msgstr "Проштовхувати знизу"
+
+#: ../extensions/slideshow/main.c:283
+msgid "Slide from right"
+msgstr "Ковзати справа"
+
+#: ../extensions/slideshow/main.c:289
+msgid "Slide from bottom"
+msgstr "Ковзати знизу"
+
+#: ../extensions/slideshow/main.c:295
+msgid "Fade in"
+msgstr "Спадання"
+
+#: ../extensions/slideshow/main.c:301
+msgid "Flip page"
+msgstr "Відбиття сторінки"
+
+#: ../extensions/slideshow/main.c:307
+msgid "Cube from right"
+msgstr "Куб справа"
+
+#: ../extensions/slideshow/main.c:313
+msgid "Cube from bottom"
+msgstr "Куб знизу"
+
+#: ../extensions/slideshow/slideshow.extension.in.in.h:2
+msgid "View images as a slideshow."
+msgstr "Показати зображення як слайд-шоу"
+
+#: ../gthumb/dlg-extensions.c:54 ../gthumb/gth-filterbar.c:270
+msgid "All"
+msgstr "Всі"
+
+#: ../gthumb/dlg-extensions.c:55
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: ../gthumb/dlg-extensions.c:56
+msgid "Disabled"
+msgstr "Вимкнено"
+
+#: ../gthumb/dlg-extensions.c:59
+msgid "Viewers"
+msgstr "Переглядачі"
+
+#: ../gthumb/dlg-extensions.c:61
+msgid "File tools"
+msgstr "Інструменти роботи з файлами"
+
+#: ../gthumb/dlg-extensions.c:62
+msgid "List tools"
+msgstr "Інструменти роботи зі списками"
+
+#: ../gthumb/dlg-extensions.c:63
+msgid "Importers"
+msgstr "Імпортери"
+
+#: ../gthumb/dlg-extensions.c:64
+msgid "Exporters"
+msgstr "Експортери"
+
+#: ../gthumb/dlg-extensions.c:140
+msgid "Restart required"
+msgstr "Потрібен перезапуск"
+
+#: ../gthumb/dlg-extensions.c:141
+msgid "You need to restart gthumb for these changes to take effect"
+msgstr "Треба перезавантажити gthumb щоб зміни набрали сили"
+
+#: ../gthumb/dlg-extensions.c:142
+msgid "_Continue"
+msgstr "Пр_одовжити"
+
+#: ../gthumb/dlg-extensions.c:143
+msgid "_Restart"
+msgstr "_Перезапустити"
+
+#: ../gthumb/dlg-extensions.c:244
+msgid "Could not activate the extension"
+msgstr "Не вдається активувати розширення"
+
+#: ../gthumb/dlg-extensions.c:250
+msgid "Could not deactivate the extension"
+msgstr "Не вдається деактивувати розширення"
+
+#: ../gthumb/dlg-extensions.c:272
+msgid "Use"
+msgstr "Використання"
+
+#: ../gthumb/dlg-extensions.c:288
+msgid "Extension"
+msgstr "Розширення"
+
+#: ../gthumb/dlg-personalize-filters.c:237
+msgid "Filter"
+msgstr "Фільтр"
+
+#: ../gthumb/dlg-personalize-filters.c:315
+msgid "Could not save the filter"
+msgstr "Не вдається зберегти фільтр"
+
+#: ../gthumb/dlg-personalize-filters.c:357
+msgid "New Filter"
+msgstr "Новий фільтр"
+
+#: ../gthumb/dlg-personalize-filters.c:386
+msgid "Edit Filter"
+msgstr "Правка фільтру"
+
+#: ../gthumb/eggfileformatchooser.c:236
+#, c-format
+msgid "File _Format: %s"
+msgstr "_Формат файлу: %s"
+
+#: ../gthumb/eggfileformatchooser.c:397 ../gthumb/gth-main-default-tests.c:141
+msgid "All Files"
+msgstr "Усі файли"
+
+#: ../gthumb/eggfileformatchooser.c:398
+msgid "All Supported Files"
+msgstr "Усі підтримувані файли"
+
+#: ../gthumb/eggfileformatchooser.c:407
+msgid "By Extension"
+msgstr "За розширенням"
+
+#: ../gthumb/eggfileformatchooser.c:422
+msgid "File Format"
+msgstr "Формат файлу"
+
+#: ../gthumb/eggfileformatchooser.c:440
+msgid "Extension(s)"
+msgstr "Розширення"
+
+#: ../gthumb/eggfileformatchooser.c:681
+#, c-format
+msgid ""
+"The program was not able to find out the file format you want to use for `%"
+"s'. Please make sure to use a known extension for that file or manually "
+"choose a file format from the list below."
+msgstr ""
+"Програма не може визначити формат  `%s'. Перевірте розширення файлу або "
+"вручну виберіть формат файлу зі списку."
+
+#: ../gthumb/eggfileformatchooser.c:688
+msgid "File format not recognized"
+msgstr "Невідомий формат файлу"
+
+#. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
+#: ../gthumb/gio-utils.c:1333
+#, c-format
+msgid "%s of %s"
+msgstr "%s з %s"
+
+#: ../gthumb/gio-utils.c:1365
+#, c-format
+msgid "Moving \"%s\" to \"%s\""
+msgstr "Перенесення \"%s\" до \"%s\""
+
+#: ../gthumb/gio-utils.c:1367
+#, c-format
+msgid "Copying \"%s\" to \"%s\""
+msgstr "Копіювання  \"%s\" до \"%s\""
+
+#: ../gthumb/gio-utils.c:1695
+msgid "Moving files"
+msgstr "Переміщення файлів"
+
+#: ../gthumb/gio-utils.c:1695
+msgid "Copying files"
+msgstr "Копіювання файлів"
+
+#: ../gthumb/gio-utils.c:1696
+msgid "Getting file information"
+msgstr "Отримання інформації про файл"
+
+#. hour:minutes:seconds
+#. Translators: This is a time format, like "9:05:02" for 9
+#. * hours, 5 minutes, and 2 seconds. You may change ":" to
+#. * the separator that your locale uses or use "%Id" instead
+#. * of "%d" if your locale uses localized digits.
+#.
+#: ../gthumb/glib-utils.c:2499
+#, c-format
+msgctxt "long time format"
+msgid "%d:%02d:%02d"
+msgstr "%d:%02d:%02d"
+
+#. minutes:seconds
+#. Translators: This is a time format, like "5:02" for 5
+#. * minutes and 2 seconds. You may change ":" to the
+#. * separator that your locale uses or use "%Id" instead of
+#. * "%d" if your locale uses localized digits.
+#.
+#: ../gthumb/glib-utils.c:2508
+#, c-format
+msgctxt "short time format"
+msgid "%d:%02d"
+msgstr "%d:%02d"
+
+#: ../gthumb/gth-browser-actions-callbacks.c:395
+msgid "An image viewer and browser for GNOME."
+msgstr "Переглядач зображень та фотоальбомів для GNOME."
+
+#: ../gthumb/gth-browser-actions-callbacks.c:398
+msgid "translator_credits"
+msgstr ""
+"Юрій Сирота <yuriy@beer.com>\n"
+"Максим Дзюманенко <dziumanenko@gmail.com>\n"
+"Сергій Дубик <serhijdubyk@gmail.com>"
+
+#: ../gthumb/gth-browser-actions-entries.h:31
+msgid "_File"
+msgstr "_Файл"
+
+#: ../gthumb/gth-browser-actions-entries.h:32
+msgid "_Edit"
+msgstr "_Правка"
+
+#: ../gthumb/gth-browser-actions-entries.h:33
+msgid "_View"
+msgstr "_Вигляд"
+
+#: ../gthumb/gth-browser-actions-entries.h:34
+msgid "_Go"
+msgstr "Пере_йти"
+
+#: ../gthumb/gth-browser-actions-entries.h:35
+msgid "_Help"
+msgstr "_Довідка"
+
+#: ../gthumb/gth-browser-actions-entries.h:36
+msgid "Open _With"
+msgstr "_Відкрити у програмі"
+
+#: ../gthumb/gth-browser-actions-entries.h:37
+msgid "I_mport From"
+msgstr "_Імпорт"
+
+#: ../gthumb/gth-browser-actions-entries.h:38
+msgid "E_xport To"
+msgstr "_Експорт"
+
+#: ../gthumb/gth-browser-actions-entries.h:41
+msgid "New _Window"
+msgstr "_Нове вікно"
+
+#: ../gthumb/gth-browser-actions-entries.h:42
+msgid "Open another window"
+msgstr "Відкрити у новому вікні"
+
+#: ../gthumb/gth-browser-actions-entries.h:66
+msgid "Open"
+msgstr "Відкрити"
+
+#: ../gthumb/gth-browser-actions-entries.h:71
+msgid "Open in New Window"
+msgstr "Відкрити у новому вікні"
+
+#: ../gthumb/gth-browser-actions-entries.h:77
+msgid "Edit various preferences"
+msgstr "Змінити параметри програми"
+
+#: ../gthumb/gth-browser-actions-entries.h:81
+msgid "Extensions"
+msgstr "Розширення"
+
+#: ../gthumb/gth-browser-actions-entries.h:82
+msgid "Activate, deactivate and configure the gthumb extensions"
+msgstr "Активація, деактивація та налаштовування розширень gthumb"
+
+#: ../gthumb/gth-browser-actions-entries.h:91
+msgid "_Sort By..."
+msgstr "_Сортувати за..."
+
+#: ../gthumb/gth-browser-actions-entries.h:96
+msgid "_Filter..."
+msgstr "_Фільтр..."
+
+#: ../gthumb/gth-browser-actions-entries.h:111
+msgid "Previous"
+msgstr "Попереднє"
+
+#: ../gthumb/gth-browser-actions-entries.h:112
+msgid "View previous image"
+msgstr "Попереднє зображення"
+
+#: ../gthumb/gth-browser-actions-entries.h:116
+msgid "Next"
+msgstr "Наступне"
+
+#: ../gthumb/gth-browser-actions-entries.h:117
+msgid "View next image"
+msgstr "Наступне зображення"
+
+#: ../gthumb/gth-browser-actions-entries.h:132 ../gthumb/gth-browser.c:3022
+msgid "Go to the previous visited location"
+msgstr "Перейти до попереднього відвіданого місця"
+
+#: ../gthumb/gth-browser-actions-entries.h:137 ../gthumb/gth-browser.c:3043
+msgid "Go to the next visited location"
+msgstr "Перейти до наступного відвіданого місця"
+
+#: ../gthumb/gth-browser-actions-entries.h:142 ../gthumb/gth-browser.c:3064
+msgid "Go up one level"
+msgstr "Піднятися рівнем вище"
+
+#: ../gthumb/gth-browser-actions-entries.h:151 ../gthumb/gth-browser.c:643
+msgid "_Delete History"
+msgstr "О_чистити історію"
+
+#: ../gthumb/gth-browser-actions-entries.h:152
+msgid "Delete the list of visited locations"
+msgstr "Вилучити список відвіданих адрес"
+
+#: ../gthumb/gth-browser-actions-entries.h:157
+msgid "View the folders"
+msgstr "Перегляд тек"
+
+#: ../gthumb/gth-browser-actions-entries.h:162
+msgid "Show information about gthumb"
+msgstr "Показати інформацію про GThumb"
+
+#: ../gthumb/gth-browser-actions-entries.h:166
+msgid "Contents"
+msgstr "Зміст"
+
+#: ../gthumb/gth-browser-actions-entries.h:167
+msgid "Display the gthumb Manual"
+msgstr "Вивести довіку gthumb"
+
+#: ../gthumb/gth-browser-actions-entries.h:171
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбінації клавіш"
+
+#: ../gthumb/gth-browser-actions-entries.h:180
+msgid "_Toolbar"
+msgstr "Панель _інструментів"
+
+#: ../gthumb/gth-browser-actions-entries.h:181
+msgid "View or hide the toolbar of this window"
+msgstr "Показати чи сховати панель інструментів цього вікна"
+
+#: ../gthumb/gth-browser-actions-entries.h:185
+msgid "_Statusbar"
+msgstr "Панель _стану"
+
+#: ../gthumb/gth-browser-actions-entries.h:186
+msgid "View or hide the statusbar of this window"
+msgstr "Показати чи сховати панель стану цього вікна"
+
+#: ../gthumb/gth-browser-actions-entries.h:190
+msgid "_Filterbar"
+msgstr "Панель _фільтрів"
+
+#: ../gthumb/gth-browser-actions-entries.h:191
+msgid "View or hide the filterbar of this window"
+msgstr "Показати чи сховати панель фільтру"
+
+#: ../gthumb/gth-browser-actions-entries.h:195
+msgid "_Sidebar"
+msgstr "_Бічна панель"
+
+#: ../gthumb/gth-browser-actions-entries.h:196
+msgid "View or hide the sidebar of this window"
+msgstr "Показати чи сховати бічну панель"
+
+#: ../gthumb/gth-browser-actions-entries.h:200
+msgid "_Thumbnail Pane"
+msgstr "Панель _ескізів"
+
+#: ../gthumb/gth-browser-actions-entries.h:201
+msgid "View or hide the thumbnail pane in viewer mode"
+msgstr "Показати чи сховати панель ескізів у режимі перегляду"
+
+#: ../gthumb/gth-browser-actions-entries.h:205
+msgid "_Thumbnails"
+msgstr "_Ескізи"
+
+#: ../gthumb/gth-browser-actions-entries.h:206
+msgid "View thumbnails"
+msgstr "Увімкнути чи вимкнути показ ескізів"
+
+#: ../gthumb/gth-browser-actions-entries.h:210
+msgid "Show _Hidden Files"
+msgstr "По_казувати приховані файли"
+
+#: ../gthumb/gth-browser-actions-entries.h:211
+msgid "Show hidden files and folders"
+msgstr "Показувати приховані файли та теки"
+
+#: ../gthumb/gth-browser-actions-entries.h:216
+msgid "View file properties"
+msgstr "Перегляд властивостей"
+
+#: ../gthumb/gth-browser-actions-entries.h:220
+msgid "Edit"
+msgstr "Редагувати"
+
+#: ../gthumb/gth-browser-actions-entries.h:221
+msgid "Edit file"
+msgstr "Редагувати файл"
+
+#: ../gthumb/gth-browser.c:349
+#, c-format
+msgid "Open %s"
+msgstr "Відкрити %s"
+
+#: ../gthumb/gth-browser.c:488
+msgid "[modified]"
+msgstr "[змінено]"
+
+#: ../gthumb/gth-browser.c:492 ../gthumb/gth-main.c:257
+msgid "gthumb"
+msgstr "gthumb"
+
+#: ../gthumb/gth-browser.c:1067 ../gthumb/gth-browser.c:1593
+#: ../gthumb/gth-browser.c:4916 ../gthumb/gth-browser.c:4935
+#: ../gthumb/gth-browser.c:4960
+#, c-format
+msgid "Could not load the position \"%s\""
+msgstr "Не вдається завантажити \"%s\""
+
+#: ../gthumb/gth-browser.c:1675 ../gthumb/gth-browser.c:1702
+#, c-format
+msgid "No suitable module found for %s"
+msgstr "Не знайдено відповідного модуля для %s"
+
+#: ../gthumb/gth-browser.c:1820
+#, c-format
+msgid "Save changes to file '%s'?"
+msgstr "Зберегти зміни у файлі '%s'?"
+
+#: ../gthumb/gth-browser.c:1825
+msgid "If you don't save, changes to the file will be permanently lost."
+msgstr "Якщо ви не збережете зиміни, зміни до файлу будуть остаточно втрачено"
+
+#: ../gthumb/gth-browser.c:1826
+msgid "Do _Not Save"
+msgstr "_Не зберігати"
+
+#: ../gthumb/gth-browser.c:2344 ../gthumb/gth-browser.c:2368
+#: ../gthumb/gth-source-tree.c:179 ../gthumb/gth-source-tree.c:201
+msgid "Could not change name"
+msgstr "Не вдається змінити назву"
+
+#: ../gthumb/gth-browser.c:2749 ../gthumb/gth-main-default-metadata.c:42
+msgid "Modified"
+msgstr "Дата зміни"
+
+#: ../gthumb/gth-browser.c:3023 ../gthumb/gth-browser.c:3044
+msgid "View the list of visited locations"
+msgstr "Переглянути список відвіданих адрес"
+
+#: ../gthumb/gth-browser.c:3065
+msgid "View the list of upper locations"
+msgstr "Переглянути список верхніх адрес"
+
+#: ../gthumb/gth-browser.c:4917
+#, c-format
+msgid "File type not supported"
+msgstr "Тип файлів не підтримується"
+
+#: ../gthumb/gth-browser.c:4961
+#, c-format
+msgid "No suitable module found"
+msgstr "Не було знайдено придатного модуля"
+
+#: ../gthumb/gth-extensions.c:229
+#, c-format
+msgid "Could not open the module `%s`: %s"
+msgstr "Не вдається відкрити модуль `%s`: %s"
+
+#: ../gthumb/gth-extensions.c:817
+#, c-format
+msgid "The extension '%s' is required by the extension '%s'"
+msgstr "Розширення '%s' є обов'язковим для розширення '%s'"
+
+#: ../gthumb/gth-file-source-vfs.c:81
+msgid "Home Folder"
+msgstr "Домашня тека"
+
+#: ../gthumb/gth-file-source-vfs.c:88
+msgid "File System"
+msgstr "Файлова система"
+
+#: ../gthumb/gth-filterbar.c:406
+msgid "Close"
+msgstr "Закрити"
+
+#: ../gthumb/gth-filter.c:44 ../gthumb/gth-filter-editor-dialog.c:209
+#: ../gthumb/gth-test-simple.c:68
+msgid "kB"
+msgstr "кБ"
+
+#: ../gthumb/gth-filter.c:45 ../gthumb/gth-filter-editor-dialog.c:210
+#: ../gthumb/gth-test-simple.c:69
+msgid "MB"
+msgstr "МБ"
+
+#: ../gthumb/gth-filter.c:46 ../gthumb/gth-filter-editor-dialog.c:211
+#: ../gthumb/gth-test-simple.c:70
+msgid "GB"
+msgstr "ГБ"
+
+#. "files" label
+#: ../gthumb/gth-filter.c:280 ../gthumb/gth-filter-editor-dialog.c:208
+msgid "files"
+msgstr "файли"
+
+#: ../gthumb/gth-filter-editor-dialog.c:252
+msgid "ascending"
+msgstr "за зростанням"
+
+#: ../gthumb/gth-filter-editor-dialog.c:253
+msgid "descending"
+msgstr "за спаданням"
+
+#: ../gthumb/gth-filter-editor-dialog.c:543
+#, c-format
+msgid "No limit specified"
+msgstr "Не вказано межу"
+
+#: ../gthumb/gth-folder-tree.c:643
+msgid "Loading..."
+msgstr "Завантаження..."
+
+#: ../gthumb/gth-folder-tree.c:890
+msgid "(Open Parent)"
+msgstr "(Відкрити батьківський)"
+
+#: ../gthumb/gth-image-loader.c:236
+msgid "No suitable loader available for this file type"
+msgstr "Для цього типу немає доступного завантажувача"
+
+#: ../gthumb/gth-main.c:220
+#, c-format
+msgid "Unable to show '%s'"
+msgstr "Неможливо показати '%s'"
+
+#: ../gthumb/gth-main.c:240
+#, c-format
+msgid "Unable to open '%s'"
+msgstr "Неможливо відкрити '%s'"
+
+#: ../gthumb/gth-main-default-metadata.c:33
+msgid "File"
+msgstr "Файл"
+
+#: ../gthumb/gth-main-default-metadata.c:40
+msgid "Name"
+msgstr "Назва"
+
+#: ../gthumb/gth-main-default-metadata.c:41
+#: ../gthumb/gth-main-default-tests.c:192
+msgid "Size"
+msgstr "Розмір"
+
+#: ../gthumb/gth-main-default-metadata.c:43
+msgid "Type"
+msgstr "Формат"
+
+#: ../gthumb/gth-main-default-metadata.c:45
+msgid "Full Name"
+msgstr "Повна назва"
+
+#: ../gthumb/gth-main-default-metadata.c:47
+msgid "Title"
+msgstr "Заголовок"
+
+#: ../gthumb/gth-main-default-metadata.c:49
+msgid "Duration"
+msgstr "Тривалість:"
+
+#: ../gthumb/gth-main-default-metadata.c:50
+msgid "Format"
+msgstr "Формат"
+
+#: ../gthumb/gth-main-default-metadata.c:52
+msgid "Date"
+msgstr "Дата"
+
+#: ../gthumb/gth-main-default-metadata.c:54
+msgid "Tags"
+msgstr "Теги"
+
+#: ../gthumb/gth-main-default-metadata.c:55
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: ../gthumb/gth-main-default-sort-types.c:81
+msgid "file name"
+msgstr "назва файлу"
+
+#: ../gthumb/gth-main-default-sort-types.c:82
+msgid "file size"
+msgstr "оозмір файлу"
+
+#: ../gthumb/gth-main-default-sort-types.c:83
+msgid "file modified date "
+msgstr "дата зміни файлу"
+
+#: ../gthumb/gth-main-default-sort-types.c:84
+msgid "no sorting"
+msgstr "без сортування"
+
+#: ../gthumb/gth-main-default-tests.c:148
+msgid "Images"
+msgstr "Зображення"
+
+#: ../gthumb/gth-main-default-tests.c:169
+msgid "Media"
+msgstr "Носій"
+
+#: ../gthumb/gth-main-default-tests.c:176
+msgid "Text Files"
+msgstr "Текстові файли"
+
+#: ../gthumb/gth-main-default-tests.c:184
+msgid "Filename"
+msgstr "Назва файлу"
+
+#: ../gthumb/gth-pixbuf-saver.c:35
+msgid "No options available for this file type"
+msgstr "Для цього типу файлів немає доступних параметрів"
+
+#: ../gthumb/gth-progress-dialog.c:137
+msgid "Cancel operation"
+msgstr "Скасувати операцію"
+
+#: ../gthumb/gth-tags-entry.c:359
+#, c-format
+msgid "Create tag «%s»"
+msgstr "Створити тег «%s»"
+
+#: ../gthumb/gth-tags-entry.c:717
+msgid "Show all the tags"
+msgstr "Показати усі теги"
+
+#: ../gthumb/gth-tags-file.c:235
+msgid "Holidays"
+msgstr "Вихідні"
+
+#: ../gthumb/gth-tags-file.c:236
+msgid "Temporary"
+msgstr "Тимчасове"
+
+#: ../gthumb/gth-tags-file.c:237
+msgid "Screenshots"
+msgstr "Знімки екрану"
+
+#: ../gthumb/gth-tags-file.c:238
+msgid "Science"
+msgstr "Наука"
+
+#: ../gthumb/gth-tags-file.c:239
+msgid "Favorite"
+msgstr "Улюблене"
+
+#: ../gthumb/gth-tags-file.c:240
+msgid "Important"
+msgstr "Важливе"
+
+#: ../gthumb/gth-tags-file.c:241
+msgid "GNOME"
+msgstr "Середовище GNOME"
+
+#: ../gthumb/gth-tags-file.c:242
+msgid "Games"
+msgstr "Ігри"
+
+#: ../gthumb/gth-tags-file.c:243
+msgid "Party"
+msgstr "Вечірка"
+
+#: ../gthumb/gth-tags-file.c:244
+msgid "Birthday"
+msgstr "День народження"
+
+#: ../gthumb/gth-tags-file.c:245
+msgid "Astronomy"
+msgstr "Астрономія"
+
+#: ../gthumb/gth-tags-file.c:246
+msgid "Family"
+msgstr "Родина"
+
+#: ../gthumb/gth-test-selector.c:279
+msgid "Add a new rule"
+msgstr "Додати нове правило"
+
+#: ../gthumb/gth-test-selector.c:290
+msgid "Remove this rule"
+msgstr "Видалити це правило"
+
+#: ../gthumb/gth-test-simple.c:45
+msgid "contains"
+msgstr "містить"
+
+#: ../gthumb/gth-test-simple.c:46
+msgid "starts with"
+msgstr "починається з"
+
+#: ../gthumb/gth-test-simple.c:47
+msgid "ends with"
+msgstr "закінчується на"
+
+#: ../gthumb/gth-test-simple.c:50
+msgid "does not contain"
+msgstr "не містить"
+
+#: ../gthumb/gth-test-simple.c:51
+msgid "matches"
+msgstr "збігається"
+
+#: ../gthumb/gth-test-simple.c:55
+msgid "is lower than"
+msgstr "менше"
+
+#: ../gthumb/gth-test-simple.c:56
+msgid "is greater than"
+msgstr "більше"
+
+#: ../gthumb/gth-test-simple.c:57
+msgid "is equal to"
+msgstr "збігається з"
+
+#: ../gthumb/gth-time-selector.c:431
+msgid "Today"
+msgstr "Сьогодні"
+
+#: ../gthumb/gth-time-selector.c:439
+msgid "Now"
+msgstr "Зараз"
+
+#: ../gthumb/gth-window-actions-entries.h:33
+msgid "Close this window"
+msgstr "Закрити поточне вікно"
+
+#: ../gthumb/gtk-utils.c:801
+msgid "Could not display help"
+msgstr "Не вдається відобразити довідку"
+
+#: ../gthumb/gtk-utils.c:1086 ../gthumb/gtk-utils.c:1094
+msgid "Could not launch the application"
+msgstr "Не вдається запустити програму"
+
+#: ../gthumb/main.c:64
+msgid "Open a new window"
+msgstr "Відкрити у новому вікні"
+
+#: ../gthumb/main.c:68
+msgid "Start in fullscreen mode"
+msgstr "Запускати в повноекранному режимі"
+
+#: ../gthumb/main.c:72
+msgid "Automatically start a slideshow"
+msgstr "Автоматично запускати перегляд слайдів"
+
+#: ../gthumb/main.c:76
+msgid "Automatically import digital camera photos"
+msgstr "Автоматично запускати перегляд слайдів"
+
+#: ../gthumb/main.c:80
+msgid "Show version"
+msgstr "Показати версію"
+
+#. command line options
+#: ../gthumb/main.c:400
+msgid "- Image browser and viewer"
+msgstr " - перегляд зображень"
+
+#: ../gthumb/pixbuf-io.c:170
+#, c-format
+msgid "Could not find a suitable module to save the image as \"%s\""
+msgstr ""
+"Не вдається знайти відповідний модуль для збереження зображення у форматі \"%"
+"s\""

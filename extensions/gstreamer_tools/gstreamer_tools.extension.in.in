@@ -1,0 +1,14 @@
+[Extension]
+_Name=Audio/Video support
+_Description=Play audio and video files.
+_Authors=gthumb development team
+Copyright=Copyright © 2009-2010 The Free Software Foundation, Inc.
+Version=%VERSION%
+Icon=video-x-generic
+Category=Viewer
+
+[Loader]
+Type=module
+File=%LIBRARY%
+API=%GTHUMB_API_VERSION%
+Requires=gstreamer_utils

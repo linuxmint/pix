@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-date-formats" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  </info>
+  <title>Formátovací kódy data/času</title>
+
+  <p>Jedná se o přehled standardních kódů data a času, které lze použít ve formátovacích řetězcích:</p>
+
+  <table id="gthumb-TBL-strftime">
+    <title>Platné formátovací kódy pro vlastní podsložky</title>
+    <tr>
+      <td>
+        <p>%a</p>
+      </td>
+      <td>
+        <p>Zkratka dne v týdnu podle aktuálního národního prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%A</p>
+      </td>
+      <td>
+        <p>Celý název dne v týdnu podle aktuálního národního prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%b</p>
+      </td>
+      <td>
+        <p>Zkratka měsíce podle aktuálního národního prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%B</p>
+      </td>
+      <td>
+        <p>Celý název měsíce podle aktuálního národního prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%c</p>
+      </td>
+      <td>
+        <p>Reprezentace data a času, která je upřednostňována v aktuálním národním prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%C</p>
+      </td>
+      <td>
+        <p>Století (rok/100) jako dvoumístné celé číslo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%d</p>
+      </td>
+      <td>
+        <p>Den v měsíci jako desítkové číslo (v rozsahu 01 až 31).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%D</p>
+      </td>
+      <td>
+        <p>Odpovídá %m/%d%y. (V podstatě jen pro Američany. Američané by si měli uvědomit, že v ostatních zemních je běžnější %d/%m/%y. To znamená, že z mezinárodního hlediska je tento formát nejednoznačný a neměl by být používán.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%e</p>
+      </td>
+      <td>
+        <p>Podobně jako %d, den v měsíci jako desítkové číslo, ale bez úvodní nuly. Ta je nahrazena mezerou.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%E</p>
+      </td>
+      <td>
+        <p>Modifikátor: použít alternativní formát, viz níže.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%F</p>
+      </td>
+      <td>
+        <p>Odpovídá %Y-%m-%d (formát data podle ISO 8601). (C99)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%G</p>
+      </td>
+      <td>
+        <p>Rok podle ISO 8601 jako desítkové číslo, včetně století. Čtyřčíselný rok, který se na přelomu řídí číslem týdne podle ISO (viz %V). Jde o stejný formát a hodnotu jako u %y vyjma toho, že když číslo týdne podle ISO náleží předchozímu nebo následujícímu roku, použije se místo toho onen rok.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%g</p>
+      </td>
+      <td>
+        <p>Podobně jako %G, ale bez století, t.j. dvoučíselný rok (00 – 99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%h</p>
+      </td>
+      <td>
+        <p>Odpovídá %b.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%H</p>
+      </td>
+      <td>
+        <p>Hodina jako desítkové číslo v 24hodinovém cyklu (rozsah 00 až 23).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%I</p>
+      </td>
+      <td>
+        <p>Hodina jako desítkové číslo v 12hodinovém cyklu (rozsah 01 až 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%j</p>
+      </td>
+      <td>
+        <p>Den roku jako desítkové číslo (rozsah 001 až 366).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%k</p>
+      </td>
+      <td>
+        <p>Hodiny (24hodinový cyklus) jako desítkové číslo (v rozsahu 0 až 23), čísla s jednou čislicí mají předřaznu mezeru. (viz také %H)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%l</p>
+      </td>
+      <td>
+        <p>Hodiny (12hodinový cyklus) jako desítkové číslo (v rozsahu 1 až 12), čísla s jednou čislicí mají předřaznu mezeru. (viz také %I)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%m</p>
+      </td>
+      <td>
+        <p>Měsíc jako desítkové číslo (v rozsau 01 až 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%M</p>
+      </td>
+      <td>
+        <p>Minuty jako desítkové číslo (rozsah 00 až 59).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%O</p>
+      </td>
+      <td>
+        <p>Modifikátor: použít alternativní formát, viz níže.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%p</p>
+      </td>
+      <td>
+        <p>Buď „AM“ nebo „PM“ podle hodnoty času, případně jiný text podle aktuálního národního prostředí. Poledne je označováno jako „PM“ a půlnoc jako „am“.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%P</p>
+      </td>
+      <td>
+        <p>Podobně jako %p, ale malými písmeny: „am“ nebo „pm“, případně jiný text podle aktuálního národního prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%r</p>
+      </td>
+      <td>
+        <p>Čas v notaci a.m. nebo p.m. V nastavení národního prostředí podle POSIX to odpovídá „%I:%M:%S %p“.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%R</p>
+      </td>
+      <td>
+        <p>Čas ve 24hodinové notaci (%H:%M). Pokud chcete verzi i se sekundami, podívejte se na %T.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%s</p>
+      </td>
+      <td>
+        <p>Počet sekund od začátku Epochy, t.j. od 1970-01-01 00:00:00 UTC</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%S</p>
+      </td>
+      <td>
+        <p>Sekundy jako desítkové číslo (v rozsahu 00 až 60). (rozsah je až do 60 kvůli přestupným sekundám)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%T</p>
+      </td>
+      <td>
+        <p>Čas v 24hodinové notaci (%H:%M:%S).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%u</p>
+      </td>
+      <td>
+        <p>Den v týdnu jako desítkové číslo, rozsah do 1 do 7, pondělí je 1. Viz také %w.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%U</p>
+      </td>
+      <td>
+        <p>Číslo týdne v aktuálním roce jako desítkové číslo, v rozsahu 00 až 53. Začíná se první nedělí jako prvním dnem týdne 01. Viz také %V a %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%V</p>
+      </td>
+      <td>
+        <p>Číslo týdne v aktuálním roce jako desítkové číslo podle ISO 8601:1988, v rozsahu 00 až 53, kdy první týden 1 je první týden, který má nejméně 4 dny v aktuálním roce, a s pondělím, jako prvním dnem v týdnu. Viz také %U a %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%w</p>
+      </td>
+      <td>
+        <p>Den v týdnu jako desítkové číslo, rozsah od 0 do 6, neděle je 0. Viz také %u.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%W</p>
+      </td>
+      <td>
+        <p>Číslo týdne v aktuálním roce jako desítkové číso, v rozshau 00 až 53. Začíná se prvním pondělím jako prvním dnem týdne 01.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%x</p>
+      </td>
+      <td>
+        <p>Reprezentace data bez časového údaje, která je upřednostňována v aktuálním národním prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%X</p>
+      </td>
+      <td>
+        <p>Reprezentace času bez data, která je upřednostňována v aktuálním národním prostředí.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%y</p>
+      </td>
+      <td>
+        <p>Rok jako desítkové číslo bez století (rozsah 00 až 99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Y</p>
+      </td>
+      <td>
+        <p>Rok jako desítkové číslo, včetně století.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%z</p>
+      </td>
+      <td>
+        <p>Časová zóna jako posun v hodinách oproti Greenewitchskému času GMT. Požadováno pro formátování data při posílání v souladu s RFC 822 (používá „%a, %d %b %Y %H:%M:%S %z“).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Z</p>
+      </td>
+      <td>
+        <p>Časová zóna nebo její název nebo její zkratka.</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Některé specifikace převodu je možné měnit předřazením modifikátoru E nebo O, který říká, že se má použít alternativní formát. Pokud alternativní formát nebo specifikace neexistuje pro aktuální národní prostředí, bude se to chovat, jako by byla zadána nemodifikovaná specifikace. Single Unix Specification zavádí %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy, kdy O se používá jako alternativní číselný symbol (třeba římské číslice) a E se používá jako alternativní reprezentace závislá na národním prostředí.</p>
+
+</page>

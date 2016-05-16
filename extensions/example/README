@@ -1,0 +1,24 @@
+This is an example extension that can be used as a starting point to develop 
+a new extension.
+
+For example to create a flickr uploader extension, open a terminal and issue 
+the following commands:
+
+cp -R example ~/gthumb-flickr-uploader
+cd ~/gthumb-flickr-uploader
+sh init.sh flickr-uploader
+
+and remember to modify the extension description in 
+src/flickr_uploader.extension.in.in
+
+at this point the extension is ready to be compiled with the usual commands:
+
+./autogen.sh --prefix=SAME_GTHUMB_PREFIX
+make
+sudo make install
+
+After installing the extension, start gthumb and activate it with the
+Edit->Extensions command.
+
+If you think your extension can be useful to others as well, add it to
+the extensions list available at http://live.gnome.org/gthumb/extensions

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-date-formats" xml:lang="zh-CN">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  </info>
+  <title>Date/Time Format Codes</title>
+
+  <p>This is a summary of standard date/time codes that may be used
+  in format strings:</p>
+
+  <table>
+    <title>Valid format codes for custom subfolders</title>
+    <tr>
+      <td>
+        <p>%a</p>
+      </td>
+      <td>
+        <p>The abbreviated weekday name according to the current
+        locale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%A</p>
+      </td>
+      <td>
+        <p>The full weekday name according to the current
+        locale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%b</p>
+      </td>
+      <td>
+        <p>The abbreviated month name according to the current
+        locale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%B</p>
+      </td>
+      <td>
+        <p>The full month name according to the current locale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%c</p>
+      </td>
+      <td>
+        <p>The preferred date and time representation for the
+        current locale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%C</p>
+      </td>
+      <td>
+        <p>The century number (year/100) as a 2-digit integer.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%d</p>
+      </td>
+      <td>
+        <p>The day of the month as a decimal number (range 01 to
+        31).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%D</p>
+      </td>
+      <td>
+        <p>Equivalent to %m/%d/%y. (Yecch -- for Americans only.
+        Americans should note that in other countries %d/%m/%y is
+        rather common. This means that in international context
+        this format is ambiguous and should not be used.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%e</p>
+      </td>
+      <td>
+        <p>Like %d, the day of the month as a decimal number, but a
+        leading zero is replaced by a space.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%E</p>
+      </td>
+      <td>
+        <p>Modifier: use alternative format, see below.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%F</p>
+      </td>
+      <td>
+        <p>Equivalent to %Y-%m-%d (the ISO 8601 date format).
+        (C99)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%G</p>
+      </td>
+      <td>
+        <p>The ISO 8601 year with century as a decimal number. The
+        4-digit year corresponding to the ISO week number (see %V).
+        This has the same format and value as %y, except that if
+        the ISO week number belongs to the previous or next year,
+        that year is used instead.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%g</p>
+      </td>
+      <td>
+        <p>Like %G, but without century, i.e., with a 2-digit year
+        (00-99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%h</p>
+      </td>
+      <td>
+        <p>Equivalent to %b.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%H</p>
+      </td>
+      <td>
+        <p>The hour as a decimal number using a 24-hour clock
+        (range 00 to 23).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%I</p>
+      </td>
+      <td>
+        <p>The hour as a decimal number using a 12-hour clock
+        (range 01 to 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%j</p>
+      </td>
+      <td>
+        <p>The day of the year as a decimal number (range 001 to
+        366).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%k</p>
+      </td>
+      <td>
+        <p>The hour (24-hour clock) as a decimal number (range 0 to
+        23); single digits are preceded by a blank. (See also
+        %H.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%l</p>
+      </td>
+      <td>
+        <p>The hour (12-hour clock) as a decimal number (range 1 to
+        12); single digits are preceded by a blank. (See also
+        %I.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%m</p>
+      </td>
+      <td>
+        <p>The month as a decimal number (range 01 to 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%M</p>
+      </td>
+      <td>
+        <p>The minute as a decimal number (range 00 to 59).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%O</p>
+      </td>
+      <td>
+        <p>Modifier: use alternative format, see below.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%p</p>
+      </td>
+      <td>
+        <p>Either 'AM' or 'PM' according to the given time value,
+        or the corresponding strings for the current locale. Noon
+        is treated as 'pm' and midnight as 'am'.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%P</p>
+      </td>
+      <td>
+        <p>Like %p but in lowercase: 'am' or 'pm' or a
+        corresponding string for the current locale.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%r</p>
+      </td>
+      <td>
+        <p>The time in a.m. or p.m. notation. In the POSIX locale
+        this is equivalent to '%I:%M:%S %p'.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%R</p>
+      </td>
+      <td>
+        <p>The time in 24-hour notation (%H:%M). For a version
+        including the seconds, see %T below.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%s</p>
+      </td>
+      <td>
+        <p>The number of seconds since the Epoch, i.e., since
+        1970-01-01 00:00:00 UTC.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%S</p>
+      </td>
+      <td>
+        <p>The second as a decimal number (range 00 to 60). (The
+        range is up to 60 to allow for occasional leap
+        seconds.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%T</p>
+      </td>
+      <td>
+        <p>The time in 24-hour notation (%H:%M:%S).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%u</p>
+      </td>
+      <td>
+        <p>The day of the week as a decimal number, range 1 to 7,
+        Monday being 1. See also %w.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%U</p>
+      </td>
+      <td>
+        <p>The week number of the current year as a decimal number,
+        range 00 to 53, starting with the first Sunday as the first
+        day of week 01. See also %V and %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%V</p>
+      </td>
+      <td>
+        <p>The ISO 8601:1988 week number of the current year as a
+        decimal number, range 01 to 53, where week 1 is the first
+        week that has at least 4 days in the current year, and with
+        Monday as the first day of the week. See also %U and
+        %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%w</p>
+      </td>
+      <td>
+        <p>The day of the week as a decimal, range 0 to 6, Sunday
+        being 0. See also %u.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%W</p>
+      </td>
+      <td>
+        <p>The week number of the current year as a decimal number,
+        range 00 to 53, starting with the first Monday as the first
+        day of week 01.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%x</p>
+      </td>
+      <td>
+        <p>The preferred date representation for the current locale
+        without the time.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%X</p>
+      </td>
+      <td>
+        <p>The preferred time representation for the current locale
+        without the date.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%y</p>
+      </td>
+      <td>
+        <p>The year as a decimal number without a century (range 00
+        to 99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Y</p>
+      </td>
+      <td>
+        <p>The year as a decimal number including the century.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%z</p>
+      </td>
+      <td>
+        <p>The time-zone as hour offset from GMT. Required to emit
+        RFC 822-conformant dates (using "%a, %d %b %Y %H:%M:%S
+        %z").</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Z</p>
+      </td>
+      <td>
+        <p>The time zone or name or abbreviation.</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Some conversion specifications can be modified by preceding
+  the conversion specifier character by the E or O modifier to
+  indicate that an alternative format should be used. If the
+  alternative format or specification does not exist for the
+  current locale, the behaviour will be as if the unmodified
+  conversion specification were used. The Single Unix Specification
+  mentions %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om,
+  %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy, where the effect of the O
+  modifier is to use alternative numeric symbols (say, roman
+  numerals), and that of the E modifier is to use a
+  locale-dependent alternative representation.</p>
+
+</page>

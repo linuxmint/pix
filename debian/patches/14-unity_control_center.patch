@@ -1,0 +1,33 @@
+Author: Robert Ancell <robert.ancell@canonical.com>
+Forwarded: https://bugzilla.gnome.org/show_bug.cgi?id=722233
+Bug-Ubuntu: https://launchpad.net/bugs/1257505
+
+---
+ extensions/desktop_background/actions.c |   10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+--- a/extensions/desktop_background/actions.c
++++ b/extensions/desktop_background/actions.c
+@@ -184,13 +184,21 @@ infobar_response_cb (GtkInfoBar *info_ba
+ 		     gpointer    user_data)
+ {
+ 	WallpaperData *wdata = user_data;
++	gchar         *path;
++	const gchar   *control_center_command;
+ 	GError        *error = NULL;
+ 
+ 	g_return_if_fail (GTH_IS_BROWSER (wdata->browser));
+ 
+ 	switch (response_id) {
+ 	case _RESPONSE_PREFERENCES:
+-		if (! g_spawn_command_line_async (DESKTOP_BACKGROUND_PROPERTIES_COMMAND, &error)) {
++		path = g_find_program_in_path ("unity-control-center");
++		if (path && g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0)
++			control_center_command = "unity-control-center appearance";
++		else
++			control_center_command = DESKTOP_BACKGROUND_PROPERTIES_COMMAND;
++		g_free (path);
++		if (! g_spawn_command_line_async (control_center_command, &error)) {
+ 			_gtk_error_dialog_from_gerror_run (GTK_WINDOW (wdata->browser), _("Could not show the desktop background properties"), error);
+ 			g_clear_error (&error);
+ 		}

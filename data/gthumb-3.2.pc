@@ -1,0 +1,14 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/gthumb
+includedir=${prefix}/include/gthumb-3.2
+extensionsdir=${exec_prefix}/lib/gthumb/extensions
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+Name: gthumb 
+Description: Image viewer and browser
+Version: 3.2.8
+Requires: gtk+-3.0
+Libs: -L${libdir} 
+Cflags: -I${includedir}

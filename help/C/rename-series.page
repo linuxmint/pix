@@ -1,0 +1,140 @@
+<page xmlns="http://projectmallard.org/1.0/" type="guide"
+id="gthumb-rename-series">
+  <info>
+    <link type="guide" xref="index#files" />
+    <link type="topic" xref="gthumb-attributes" />
+    <link type="topic" xref="gthumb-date-formats" />
+  </info>
+  <title>Renaming Files</title>
+
+  <p>To rename one or more images using a name template, select the
+  files in the browser and choose 
+  <guiseq><gui>Edit</gui><gui>Rename</gui></guiseq>, or press 
+  <key>F2</key>.</p>
+
+  <p>The name template is simply a pattern that is used for
+  renaming all of the selected images. You can use some special
+  characters to make the new names differ each other (this is
+  essential if you are renaming more than one image, and optional
+  if you are renaming a single image):</p>
+
+  <table>
+    <tr>
+      <td>
+        <p>Symbol</p>
+      </td>
+      <td>
+        <p>Description</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>#</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with the value of a counter
+        that increments itself by 1 passing from one image to
+        another. If you specify this symbols in sequence you'll get
+        leading zeros if the counter value has a lesser number of
+        digits, for example ### will produce the sequence: 001,
+        002, 003, etc..</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%F</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with the file's original
+        name, excluding the original extension.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%E</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with the file's original
+        filename extension.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%N</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with original image
+        enumerator. For instance, if the original filename was
+        IMG_9876.JPG, this extracts the "9876" portion. If the
+        filename has more than one group of digits embedded in it
+        (for example, IMG_123_456.JPG) only the first number will
+        be used ("123" in this example).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%M{format}</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with the file modification
+        date. The formatting of this date (and optionally time) can
+        be specified by adding a standard formatting code in curly
+        braces. For example, "%M{%Y-%m-%d, %T}" would be replaced
+        with a date and time like "2010-04-01, 15:02:01".</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%D{format}</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with the date that the
+        photo was original taken (normally determined from the EXIF
+        datestamps embedded inside the photo). The formatting of
+        this date (and optionally time) can be specified by adding
+        a standard formatting code in curly braces. For example,
+        "%D{%Y-%m-%d, %T}" would be replaced with a date and time
+        like "2010-04-01, 15:02:01".</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <key>%A{identifier}</key>
+        </p>
+      </td>
+      <td>
+        <p>This symbol will be replaced with the data that has been
+        specified by the identifier. For example, "%A{
+        general::dimensions }" would be replaced with a size like
+        "320 x 240".</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>A summary of these special codes may be viewed by clicking on
+  the Help icon inside the template field.</p>
+
+  <p>The list at the bottom of the dialog displays how the
+  filenames will be renamed.</p>
+
+  <p>To rename the images click on <gui>Rename</gui>.</p>
+
+  <p>If the renaming of an image can overwrite an already existing
+  image you will be asked how to proceed, five options are
+  available: overwrite the image; do not overwrite the image;
+  always overwrite; never overwrite; specify a new name.</p>
+
+</page>

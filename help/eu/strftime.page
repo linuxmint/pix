@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-date-formats" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  </info>
+  <title>Dataren/orduaren formatu-kodeak</title>
+
+  <p>Hona formatu-kateetan erabil daitezkeen data/ordu kode estandarren laburpena:</p>
+
+  <table id="gthumb-TBL-strftime">
+    <title>Azpikarpeta pertsonalizatuen baliozko formatu-kodeak</title>
+    <tr>
+      <td>
+        <p>%a</p>
+      </td>
+      <td>
+        <p>Astegun-izenaren laburdura, uneko lokalaren arabera.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%A</p>
+      </td>
+      <td>
+        <p>Astegun-izen osoa, uneko lokalaren arabera.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%b</p>
+      </td>
+      <td>
+        <p>Hilabete-izenaren laburdura, uneko lokalaren arabera.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%B</p>
+      </td>
+      <td>
+        <p>Hilabete-izen osoa, uneko lokalaren arabera.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%c</p>
+      </td>
+      <td>
+        <p>Dataren eta orduaren adierazpen hobetsia, uneko lokalaren arabera.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%C</p>
+      </td>
+      <td>
+        <p>Mendearen zenbakia (urtea/100), 2 digituko osoko zenbaki gisa.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%d</p>
+      </td>
+      <td>
+        <p>Hilabeteko eguna zenbaki hamartar gisa (01 - 31 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%D</p>
+      </td>
+      <td>
+        <p>Honen baliokidea: %m/%d/%y. (Ameriketako estatu batuarrentzat soilik. AEBkoek kontuan hartu beharko lukete %d/%m/%y nahiko ohikoa dela beste herrialdeetan. Horrek esan nahi du nazioarteko testuinguru batean formatu hau anbiguoa dela eta ez litzatekeela erabili beharko).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%e</p>
+      </td>
+      <td>
+        <p>%d bezala, hileko eguna zenbaki hamartar gisa, baina zuriune batek ordezten du ezkerreko zero bat.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%E</p>
+      </td>
+      <td>
+        <p>Aldatzailea: erabili beste formatu bat, ikus behean.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%F</p>
+      </td>
+      <td>
+        <p>Honen baliokidea: %Y-%m-%d (ISO 8601 data-formatua). (C99)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%G</p>
+      </td>
+      <td>
+        <p>ISO 8601 urtea mendearekin zenbaki hamartar gisa. ISO aste-zenbakiari dagokion 4 digituko urtea (ikus %V). %y-ren formatu eta balio bera du, ISO aste-zenbakia aurreko edo hurrengo urteari dagokienean izan ezik, urte hori erabiltzen da horren ordez. </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%g</p>
+      </td>
+      <td>
+        <p>%G bezala, baina menderik gabe, hau da, 2 digituko urte batekin (00-99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%h</p>
+      </td>
+      <td>
+        <p>%b-ren baliokidea.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%H</p>
+      </td>
+      <td>
+        <p>Ordua zenbaki hamartar gisa 24 orduko erlojua erabiliz (00 - 23 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%I</p>
+      </td>
+      <td>
+        <p>Ordua zenbaki hamartar gisa 12 orduko erlojua erabiliz (00 - 12 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%j</p>
+      </td>
+      <td>
+        <p>Urteko eguna zenbaki hamartar gisa (001 - 366 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%k</p>
+      </td>
+      <td>
+        <p>Ordua (24 orduko erlojua) zenbaki hamartar gisa (0 - 23 bitartea); digitu bakarren aurretik zuriune bat dago. (Ikus, halaber, %H.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%l</p>
+      </td>
+      <td>
+        <p>Ordua (12 orduko erlojua) zenbaki hamartar gisa (1 - 12 bitartea); digitu bakarren aurretik zuriune bat dago. (Ikus, halaber, %I).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%m</p>
+      </td>
+      <td>
+        <p>Hilabetea, zenbaki hamartar gisa (01 - 12 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%M</p>
+      </td>
+      <td>
+        <p>Minutua, zenbaki hamartar gisa (00 - 59 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%O</p>
+      </td>
+      <td>
+        <p>Aldatzailea: erabili beste formatu bat, ikus behean.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%p</p>
+      </td>
+      <td>
+        <p>'AM' edo 'PM', emandako ordu-balioaren arabera, edo uneko lokalari dagozkion kateen arabera. Arratsaldea 'pm' gisa tratatzen da, eta gauerdia 'am' gisa.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%P</p>
+      </td>
+      <td>
+        <p>%p bezala baina minuskuletan: 'am' edo 'pm', edo uneko lokalari dagokion katea.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%r</p>
+      </td>
+      <td>
+        <p>Ordua, a.m. edo p.m. notazioan. POSIX lokalean honen baliokidea da: '%I:%M:%S %p'.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%R</p>
+      </td>
+      <td>
+        <p>Ordua, 24 orduko notazioan (%H:%M). Segundoak barne hartzen dituen bertsio baterako, ikus %T behean.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%s</p>
+      </td>
+      <td>
+        <p>Segundo kopurua arotik, adibidez, hemendik: 1970-01-01 00:00:00 UTC.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%S</p>
+      </td>
+      <td>
+        <p>Segundoa, zenbaki hamartar gisa (00 - 60 bitartea). (60 arte iristen da bisurte-segundoak direla-eta).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%T</p>
+      </td>
+      <td>
+        <p>Ordua, 24 orduko notazioan (%H:%M:%S).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%u</p>
+      </td>
+      <td>
+        <p>Asteko eguna zenbaki hamartar gisa, 1 - 7 bitartea, astelehena 1. Ikus, halaber, %w.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%U</p>
+      </td>
+      <td>
+        <p>Uneko urteko asteko eguna zenbaki hamartar gisa, 00 - 53 bitartea, igandea asteko lehen eguna: 01. Ikus, halaber, %V eta %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%V</p>
+      </td>
+      <td>
+        <p>ISO 8601:1988, uneko urteko asteko eguna zenbaki hamartar gisa, 01 - 53 bitartea, 1 zenbakiko astea 4 egun dituen urteko lehenengoa da, eta astelehena da asteko lehen eguna. Ikus, halaber, %U eta %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%w</p>
+      </td>
+      <td>
+        <p>Asteko eguna zenbaki hamartar gisa, 0 - 6 bitartea, igandea 0 da. Ikus, halaber, %u.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%W</p>
+      </td>
+      <td>
+        <p>Uneko urteko aste-zenbakia zenbaki hamartar gisa, 00 - 53 bitartea, lehenengo astelehena da 01 asteko lehen eguna.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%x</p>
+      </td>
+      <td>
+        <p>Data-adierazpen hobetsia uneko lokalaren arabera ordurik gabe.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%X</p>
+      </td>
+      <td>
+        <p>Orduaren adierazpen hobetsia, uneko lokalaren arabera.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%y</p>
+      </td>
+      <td>
+        <p>Urtea zenbaki hamartar gisa menderik gabe (00 - 99 bitartea).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Y</p>
+      </td>
+      <td>
+        <p>Urtea zenbaki hamartar gisa, mende eta guzti.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%z</p>
+      </td>
+      <td>
+        <p>Ordu-zona GMTtik konpentsatutako ordu gisa. Beharrezkoa da RFC 822 betetzen duten datekin ("%a, %d %b %Y %H:%M:%S %z" erabiliz).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Z</p>
+      </td>
+      <td>
+        <p>Ordu-zona edo izena edo laburdura.</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Bihurketa-zehaztapen batzuk aldatzeko, jarri bihurketa-zehaztailearen karakterearen aurretik E edo O aldatzailea, beste formatu bat erabili beharko litzatekeela adierazteko. Beste formatu nahiz zehaztapenik ez badago uneko lokalerako, portaera izango da aldatu gabeko bihurketa-zehaztapena erabili izan balitz bezala. Unix zehaztapen bakarrak %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy aipatzen ditu; O aldatzailearen eragina da beste zenbaki-ikur batzuk erabiltzea, eta E aldatzailearena lokalaren araberako beste adierazpen bat erabiltzea.</p>
+
+</page>

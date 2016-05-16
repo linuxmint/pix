@@ -1,0 +1,257 @@
+/* gthumb "ClassicClips" layout, v. 2010-06-11 */
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+#main {
+	overflow: auto;
+	padding-bottom: 4em;	
+}
+
+#footer {
+	position: relative;
+	margin-top: -4em;
+	height: 2em;
+	clear: both;
+	text-align: center;
+}
+
+#footer-2 {
+	padding-top: 2em;
+}
+
+/* image page */
+
+h1.image-title,
+h1.index-title {
+	font-size: 21px;
+	text-align: center;
+	margin: 20px 0 10px 0;
+}
+
+ul.navigation-bar {
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 20px 10px 20px;
+}
+
+ul.navigation-bar li a {
+	display: block;
+}
+
+ul.navigation-bar li span {
+	display: none;
+}
+
+ul.navigation-bar li.index {
+	float: left;
+	background: url(back.png) no-repeat;
+}
+
+ul.navigation-bar li.index a {
+	width: 30px;
+	height: 30px;
+}
+
+ul.navigation-bar li.current-image,
+ul.navigation-bar li.current-page {
+	float: right;
+}
+
+ul.navigation-bar li.current-image span,
+ul.navigation-bar li.current-page span {
+	padding: 7px 20px 0 20px;
+	display: block;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+ul.navigation-bar li.void {
+	float: right;
+	background-image: none;
+	width: 40px;
+	height: 30px;
+}
+
+ul.navigation-bar li.previous-image,
+ul.navigation-bar li.previous-page {
+	float: right;
+	background: url(prev.png) no-repeat;
+}
+
+ul.navigation-bar li.previous-image a,
+ul.navigation-bar li.previous-page a {
+	width: 40px;
+	height: 30px;
+}
+
+ul.navigation-bar li.next-image,
+ul.navigation-bar li.next-page {
+	float: right;
+	background: url(next.png) no-repeat;
+}
+
+ul.navigation-bar li.next-image a,
+ul.navigation-bar li.next-page a {
+	width: 40px;
+	height: 30px;
+}
+
+ul.navigation-bar li.last {
+	clear: both;
+}
+
+div.image-preview {
+	width: 660px;
+	float: left;
+	margin: 15px 0 0 15px;
+	text-align: center;
+}
+
+div.image-preview-centered {
+	float: none;
+	margin: 20px auto;
+	text-align: center;
+}
+
+div.image-comment {
+	float: right;
+	display: block;
+	margin: 15px 15px 0 0;
+	padding: 3px;
+	text-align: left;
+	font-size: 10px;
+	font-family: sans;
+	overflow: auto;
+	width: 300px;
+	border: 0px solid #aaa;
+	clear: right;
+}
+
+dl.caption-container {
+	float: right;
+	display: block;
+	margin: 15px 15px 0 0;
+	padding: 3px;
+	text-align: center;	
+	font-size: 10px;
+	font-family: sans;
+	width: 300px;
+	border: 1px solid #aaa;
+}
+
+dl.caption-container dt {
+	font-weight: bold;
+	cursor: default;
+	float: left;
+	clear: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+	color: #aaa;
+	width: 120px;
+	text-align: right;
+}
+
+dl.caption-container dd {	
+	float: left;
+	margin: 0;
+	padding: 0;
+	color: #fff;	
+}
+
+dl.caption-container dd.last {
+	clear: both;
+	display: block;
+	float: none;
+}
+
+/* index page */
+
+#thumbnail-grid {
+	margin: auto;
+}
+
+#thumbnail-grid td.td_index,
+#thumbnail-grid td.td_empty_index {
+	vertical-align: middle;
+}
+
+#thumbnail-grid tr td.td_empty_index {
+	width: 225px;
+	height: auto;
+}
+
+#thumbnail-grid tr.tr_empty_index td.td_empty_index {
+	height: 0;
+}
+
+#thumbnail-list div.thumbnail-caption-container {
+	float: left;
+	margin: 10px;
+}
+
+#thumbnail-list div.thumbnail-container {
+	height: 160px;
+}
+
+#thumbnail-list div.thumbnail-top {
+	background: url(top.png) no-repeat top left;
+	width: 205px;
+	height: 21px;
+}
+
+#thumbnail-list div.thumbnail-bottom {
+	clear: both;
+	background: url(bot.png) no-repeat bottom left;
+	width: 205px;
+	height: 26px;
+}
+
+#thumbnail-list div.thumbnail-center {
+	background: #fff;
+	overflow: hidden;
+	float: left;
+}
+
+#thumbnail-list div.thumbnail-left {
+	background: url(left.png) no-repeat top left;
+	width: 205px;
+	height: 100%;
+}
+
+#thumbnail-list div.thumbnail-right {
+	background: url(right.png) no-repeat top right;
+	width: 205px;
+	height: 100%;
+}
+
+#thumbnail-list div.thumbnail-image-container {
+	width: 205px;
+	height: 100%;
+}
+
+#thumbnail-list a.thumbnail-image img {
+	display: block;
+	margin: 0 auto;
+	border-style: none;
+	padding: 0;
+}
+
+#thumbnail-list div.caption-container {
+}
+
+#thumbnail-list div.property-row {
+	text-align: center;
+}

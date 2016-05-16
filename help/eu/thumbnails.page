@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-thumbnails" xml:lang="eu">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  </info>
+  <title>Koadro txikien iturburuak</title>
+
+  <p>Arakatzailearen leihoan hautatutako karpetako irudien eta filmen koadro txikiak azaltzen dira normalean. Beste fitxategi batzuen ikono generikoak (audio-fitxategiak, esate baterako) ere azal daitezke.</p>
+
+  <p>You can select what types of files to show in the browser view
+  using the <guiseq><gui>View</gui><gui>Filter</gui>
+  </guiseq> dialog. The default is to show all media files (images,
+  movies, audio), but this can be made more or less
+  restrictive.</p>
+
+  <p>Hainbat metodok sor ditzakete koadro txikiak. <app>gThumb</app>-ek sistemako cachean bilatuko ditu lehenik koadro txikiak.</p>
+
+  <p>Cachean koadro txikirik aurkitzen ez bada, eta irudi-fitxategi batek kapsulatuta koadro txiki bat badauka (kamera digitalek sortutako jpeg fitxategiek normalean badituzte), <app>gThumb</app> hori erabiltzen saiatuko da. <app>gThumb</app>-ek ziurtatuko du koadro txikiaren aspektu-erlazioa irudi nagusiarenaren antzekoa dela, eta ez ikusi egingo die irudi nagusiarekin bat ez datozen koadro txikiei.</p>
+
+  <p>Hori ez badabil, <app>gThumb</app> saiatuko da fitxategi osoa kargatzen, eta eskalan txikitutako koadro txiki bat sortzen.</p>
+
+  <p>Azkenik, <app>gThumb</app>-ek sistemak definitutako scriptak erabiliko ditu hainbat multimedia motaren koadro txikiak lortzeko. Esate baterako, sistema batzuek <app>mplayer</app> edo <app>totem</app> edo beste film-ikustaileren bat erabil dezakete filmen koadro txikiak sortzeko.</p>
+
+  <p><app>gThumb</app>-ek sistemako cachean gordeko ditu koadro txikiak, beste aplikazio batzuekin partekatzeko. Modu lehenetsian, Gnome sistemak cacheko koadro txikiak 180 egun baino zaharrago direnean garbitzen ditu, edo koadro txikien cachea 512 MB baino gehiagokoa denean. Erabiltzaile teknikazaleek  <app>gconf-editor</app>-ekin esplora ditzakete ezarpen horiek. Ikus /desktop/gnome/thumbnail_cache/maximum_age and /desktop/gnome/thumbnail_cache/maximum_size bereziki. Aplikazio batzuek (<app>F-Spot</app> aplikazioak, esate baterako) automatikoki asko hobe ditzakete ezarpen horiek.</p>
+</page>

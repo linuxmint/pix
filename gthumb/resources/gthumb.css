@@ -1,0 +1,27 @@
+GthColorScale.trough.color {
+	box-shadow: none;
+	background: transparent;
+}
+
+GthGridView.cell {
+	background-color: @theme_bg_color;
+	color: @theme_fg_color;
+}
+
+GthGridView.cell:selected,
+GthGridView.cell:selected:focus {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+GthEmptyList.frame {
+	border-style: solid;
+	border-color: @borders;
+	border-width: 1px;
+	border-radius: 2px;
+	padding: 0;
+}
+
+GthEmptyList.frame:backdrop {
+	border-color: @unfocused_borders;
+}

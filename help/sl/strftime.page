@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gthumb-date-formats" xml:lang="sl">
+  <info>
+    <link type="guide" xref="index#reference"/>
+  </info>
+  <title>Kode oblike datuma/časa</title>
+
+  <p>To je povzete običajnih kod datuma/časa, ki jih je mogoče uporabiti v nizih oblike:</p>
+
+  <table>
+    <title>Veljavne kode oblike za podmape po meri</title>
+    <tr>
+      <td>
+        <p>%a</p>
+      </td>
+      <td>
+        <p>Okrajšano ime dneva v tednu glede na trenutne jezikovne nastavitve.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%A</p>
+      </td>
+      <td>
+        <p>Polno ime dneva v tednu glede na trenutno jezikovne nastavitve.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%b</p>
+      </td>
+      <td>
+        <p>Okrajšano ime meseca glede na trenutne jezikovne nastavitve.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%B</p>
+      </td>
+      <td>
+        <p>Polno ime meseca glede na trenutno jezikovne nastavitve.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%c</p>
+      </td>
+      <td>
+        <p>Prednostna predstavitev datuma in časa za trenutno jezikovne nastavitve.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%C</p>
+      </td>
+      <td>
+        <p>Število stoletja (leto/100) kot dvoštevilčno celo število.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%d</p>
+      </td>
+      <td>
+        <p>Dan v mesecu kot decimalno število (obseg od 01 do 31).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%D</p>
+      </td>
+      <td>
+        <p>Enakovredno %m/%d/%y. </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%e</p>
+      </td>
+      <td>
+        <p>Kot %d, dan v mesecu kot decimalno število, toda prva niča je zamenjana s presledkom.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%E</p>
+      </td>
+      <td>
+        <p>Pomožna tipka: uporabi dodatno obliko, glejte spodaj.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%F</p>
+      </td>
+      <td>
+        <p>Enakovredno %Y-%m-%d (oblika datuma ISO 8601). (C99)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%G</p>
+      </td>
+      <td>
+        <p>Leto ISO 8601 s stoletjem kot decimalno število. 4 številčno leto, ki ustreza ISO številu tedna (oglejte si %V). To ima enako obliko in vrednost kot %y, razen v primeru ko ISO število tedna pripada predhodnemu ali naslednjemu letu. V tem primeru je uporabljeno to leto.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%g</p>
+      </td>
+      <td>
+        <p>Kot %G toda brez stoletja, z dvomestnim številom (00-99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%h</p>
+      </td>
+      <td>
+        <p>Enakovredno %b.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%H</p>
+      </td>
+      <td>
+        <p>Ura kot decimalno število z uporabo 24 urne ure (obseg 00 do 23).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%I</p>
+      </td>
+      <td>
+        <p>Ura kot decimalno število z uporabo 12 urne ure (obseg od 01 do 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%j</p>
+      </td>
+      <td>
+        <p>Dan v letu kot decimalno število (obseg od 001 do 366).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%k</p>
+      </td>
+      <td>
+        <p>Ura (24 urna ura) kot decimalno število (obseg od 0 do 23); enomestna števila se začnejo z ničlo. (Oglejte si tudi %H.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%l</p>
+      </td>
+      <td>
+        <p>Ura (12 urna ura) kot decimalno število (obseg od 1 do 12); enomestna števila se začnejo z ničlo. (oglejte si tudi %I.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%m</p>
+      </td>
+      <td>
+        <p>Mesec kot decimalno število (obseg od 01 do 12).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%M</p>
+      </td>
+      <td>
+        <p>Minuta kot decimalno število (obseg od 00 do 59)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%O</p>
+      </td>
+      <td>
+        <p>Pomožna tipka: uporabi dodatno obliko, glejte spodaj.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%p</p>
+      </td>
+      <td>
+        <p>Ali 'DOP' ali 'POP' glede na dano vrednost časa, ali ustrezna niza za trenutne jezikovne nastavitve. Poldne je obravnavano kot 'pop' in polnoč kot 'dop'.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%P</p>
+      </td>
+      <td>
+        <p>Kot %p toda z malimi črkami: 'pop' ali 'dop' ali ustrezen niz za trenutne jezikovne nastavitve.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%r</p>
+      </td>
+      <td>
+        <p>Čas v zapisu a.m. ali p.m. V POSIX jezikovni oznaki je to enakovredno '%I.%M.%S %p'</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%R</p>
+      </td>
+      <td>
+        <p>Čas v 24 urnem zapisu (%H.%M). Za različico, ki vključuje sekunde, si oglejte %T spodaj.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%s</p>
+      </td>
+      <td>
+        <p>Število sekund od epohe, to je od 1.1.1970 00:00:00 UTC.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%S</p>
+      </td>
+      <td>
+        <p>Sekunde kot decimalno število (obseg od 00 do 60). (Obseg je do 60 zaradi občasnih prestopnih sekund.)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%T</p>
+      </td>
+      <td>
+        <p>Čas v 24 urnem zapisu (%H.%M.%S).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%u</p>
+      </td>
+      <td>
+        <p>Dan v tednu kot decimalno število od 1 do 7, ponedeljek je 1. Oglejte si tudi %w.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%U</p>
+      </td>
+      <td>
+        <p>Številka tedna trenutnega leta kot decimalno število, obseg od 00 do 53, začenjajoč s prvo nedeljo kot prvim dnem tedna 01. Oglejte si tudi %V in %W.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%V</p>
+      </td>
+      <td>
+        <p>ISO8601:1988 številka tedna trenutnega tedna kot decimalno število, obseg od 01 do 53, kjer je teden 1 prvi teden, ki ima vsaj 4 dneve v trenutnem letu s ponedeljkom kot prvim dnevom tedna. Oglejte si tudi %U in %W.  </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%w</p>
+      </td>
+      <td>
+        <p>Dan v tednu kot decimalno število, obseg 0 do 6, nedelja je 0. Oglejte si tudi %u.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%W</p>
+      </td>
+      <td>
+        <p>Številka tedna trenutnega leta kot decimalno število, obseg od 00 do 53, začenjajoč s prvim ponedeljkom kot prvim dnevom tedna 01.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%x</p>
+      </td>
+      <td>
+        <p>Prednostna predstavitev datuma za trenutne jezikovne nastavitve brez časa.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%X</p>
+      </td>
+      <td>
+        <p>Prednostna predstavitev časa za trenutne jezikovne nastavitve brez datuma.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%y</p>
+      </td>
+      <td>
+        <p>Leto kot decimalno število brez stoletja (obseg 00 do 99).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Y</p>
+      </td>
+      <td>
+        <p>Leto kot decimalno število vključno s stoletjem.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%z</p>
+      </td>
+      <td>
+        <p>Časovna cona kot odmik od GMT. Zahtevano za oddajanje skladno z RFC 822 (uporablja"%a, %d %b %Y %H.%M.%S %z").</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>%Z</p>
+      </td>
+      <td>
+        <p>Ime ali okrajšava časovnega pasu.</p>
+      </td>
+    </tr>
+  </table>
+
+  <p>Nekatera določila pretvorbe je mogoče spremeniti z dodajanjem spremenilnika E ali O pred znak določila pretvorbe, ki nakaže da naj bo uporabljena dodatna oblika. V primeru da dodatna oblika ali določilo v trenutnemu jezikovnemu določilu ne obstaja, bo obnašanje takšno, kot če bi bilo uporabljeno nespremenjeno določilo pretvorbe. Določilo en Unix omenja %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy, kjer je učinek spremenilnika O uporaba dodatnih števil (na primer rimska števila) in učinek spremenilnika E uporaba od jezikovnega določila odvisno dodatno predstavitvijo.</p>
+
+</page>

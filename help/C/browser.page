@@ -1,0 +1,88 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic"
+id="gthumb-browser-view">
+  <info>
+    <link type="guide" xref="index#files" />
+  </info>
+  <title>Browsing Your Files</title>
+
+  <p>When you start <app>gThumb</app> the following window is displayed:</p>
+
+  <figure>
+    <title>The main window</title>
+    <media type="image" mime="image/png"
+    src="figures/main-win.png" />
+  </figure>
+
+  <p>The <app>gThumb</app> browser contains the following elements:</p>
+
+  <terms>
+    <item>
+      <title>Menubar</title>
+      <p>The menus on the menubar contain all of the commands that
+      you can use in <app>gThumb</app></p>
+    </item>
+    <item>
+      <title>Toolbar</title>
+      <p>The toolbar contains a subset of the commands that you can
+      access from the menubar. In particular, the Tools button
+      contains functions for batch processing multiple images.</p>
+    </item>
+    <item>
+      <title>Locationbar</title>
+      <p>The locationbar contains the current folder or catalog
+      name.</p>
+    </item>
+    <item>
+      <title>Folder Tree</title>
+      <p>The folder tree allows you to navigate the filesystem.
+      Single-clicking on a folder will load its images in the
+      browser view. Double-clicking a folder, or clicking the
+      expander arrow, will also list folder's subfolders in the
+      tree.</p>
+    </item>
+    <item>
+      <title>Browser View</title>
+      <p>The browser view shows the images in the current folder or
+      catalog. Single-clicking an image will enable the Information
+      Sidebar for that image. Double-clicking an image will open it
+      in the viewer mode. Double-clicking with the middle mouse
+      button will load the image in fullscreen viewer mode.</p>
+    </item>
+    <item>
+      <title>Organize Button</title>
+      <p>The Organize button, just above the browser view, allows
+      you to group images into catalogs.</p>
+    </item>
+    <item>
+      <title>Statusbar</title>
+      <p>On the statusbar you can read:</p>
+      <list>
+        <item>
+          <p>the total number of images contained in the current
+          folder or catalog and their total size.</p>
+        </item>
+        <item>
+          <p>the number of the selected images and their size.</p>
+        </item>
+        <item>
+          <p>some properties of the currently focused image.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <title>Information Sidebar</title>
+      <p>If a single image is selected, the information sidebar
+      (below the folder tree) will display detailed information
+      (such as EXIF or XMP tags) about the selected image.</p>
+    </item>
+    <item>
+      <title>Filter Bar</title>
+      <p>An image filtering tool is provided just below the browser
+      view. This can be used to filter the displayed images. For
+      example, the browser view can be limited to files of a
+      certain size, date, or name pattern, or other
+      characteristics.</p>
+    </item>
+  </terms>
+
+</page>

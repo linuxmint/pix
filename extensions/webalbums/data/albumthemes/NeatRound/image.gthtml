@@ -1,0 +1,98 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= language %>" lang="<%= language %>">
+<head>
+<% if images > 1 %>
+  <title><%= header %> (<%= image_idx %>/<%= images %>)</title>
+<% else %>
+  <title><%= header %></title>
+<% end %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Generator" content="gThumb Image Viewer" />
+  <link href="<%= theme_link src="layout.css" %>" rel="stylesheet" type="text/css" />
+  <link href="<%= theme_link src="style.css" %>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="wrapper">
+    <div id="main">
+
+      <h1 class="image-title">
+        <%= header %>
+      </h1>
+
+      <ul class="navigation-bar">
+        <li class="index">
+          <a href="<%= page_link idx_relative="0" image_idx %>" title="<%= translate 'Go back to the index' %>">
+            <span><%= translate 'Go back to the index' %></span>
+          </a>
+        </li>
+        <% if image_idx < images  %>
+        <li class="next-image">
+          <a href="<%= image_link idx_relative="+1" %>" title="<%= translate 'View the next image' %>">
+            <span><%= translate 'View the next image' %></span>
+          </a>
+        </li>
+        <% else %>
+        <li class="void">
+        </li>
+        <% end %>
+        <li class="current-image">
+          <span><%= image_idx %> / <%= images %></span>
+        </li>
+        <% if image_idx > 1  %>
+        <li class="previous-image">
+          <a href="<%= image_link idx_relative="-1" %>" title="<%= translate 'View the previous image' %>">
+            <span><%= translate 'View the previous image' %></span>
+          </a>
+        </li>
+        <% else %>
+        <li class="void">
+        </li>
+        <% end %>
+        <li class="last">
+        </li>
+      </ul>
+
+      <% if image_description_enabled || image_attributes_enabled %>
+      <div class="image-preview">
+      <% else %>
+      <div class="image-preview image-preview-centered">
+      <% end %>
+        <% if copy_originals %>
+        <a href="<%= file_name with_relative_path %>"><%= image preview class="preview" %></a>
+        <% else %>
+        <%= image preview class="preview" %>
+        <% end %>
+      </div>
+
+      <% for_each image_caption %>
+        <% if first_item %>
+          <dl class="caption-container">
+        <% end %>
+
+            <dt class="property"> <%= item_attribute display_name %> </dt>
+            <dd class="property-value"> <%= item_attribute value %> </dd>
+
+        <% if last_item %>
+            <dt class="last property"></dt>
+            <dd class="last property-value"></dd>
+          </dl>
+        <% end %>
+      <% end %>
+
+      <% if image_description_enabled && image_attribute_available('general::description') %>
+      <div class="image-comment">
+        <%= image_attribute id="general::description" %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer-2">
+      <%= footer %>
+    </div>
+  </div>
+</body>
+</html>

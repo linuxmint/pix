@@ -1,0 +1,143 @@
+This is the distribution of gThumb, an image viewer and browser utility
+for the GNOME environment.
+
+Information about gthumb can be found at http://live.gnome.org/gthumb.
+
+
+What is gThumb
+==============
+
+ * gThumb is an image browser
+
+   + Browse your hard disk showing you thumbnails of image files.
+   + Thumbnails are saved in the same database used by Nautilus so you
+     don't waste disk space.
+   + Automatically update the content of a folder.
+   + Copy, move, delete images and folders.
+   + Bookmarks of folders and catalogs.
+
+ * gThumb is an image viewer
+
+   + View single images (including GIF animations).  Supported image
+     types are: BMP, JPEG, GIF, PNG, TIFF, TGA, ICO, XPM.
+   + Optional support for RAW and HDR (high dynamic range) images.
+   + View EXIF data attached to JPEG images.
+   + View in fullscreen mode.
+   + View images rotated, flipped, mirrored.
+
+ * gThumb is an image organizer
+
+   + Add comments to images.
+   + Organize images in catalogs, catalogs in libraries.
+   + Print images and comments.
+   + Search for images on you hard disk and save the result as a catalog.
+     Search criteria remain attached to the catalog so you can update it
+     when you want.
+
+ * gThumb is an image editor
+
+   + Change image hue, saturation, lightness, contrast and adjust colors.
+   + Scale and rotate images.
+   + Save images in the following formats: JPEG, PNG, TIFF, TGA.
+   + Crop images.
+   + Red-eye removal tool.
+
+ * gThumb is an advanced tool
+
+   + Import images from a digital camera.
+   + Slide Shows.
+   + Set an image as Desktop background.
+   + Create index image.
+   + Rename images in series.
+   + Convert image format.
+   + Change images date and time.
+   + JPEG lossless transformations.
+   + Find duplicated images.
+
+
+Licensing
+=========
+
+  This program is released under the terms of the GNU General Public
+  License (GNU GPL).
+
+  You can find a copy of the license in the file COPYING.
+
+
+Compiling
+=========
+
+  In order to build this program you need a working GNOME environment
+  version 2 or greater, with the development tools installed properly.
+  The following is the detailed list of libraries you need:
+
+	* glib	 		version >= 2.16.0
+	* gtk 			version >= 2.18.0
+	* gthread
+ 	* gmodule
+	* gio-unix
+	* gconf			version >= 2.6.0
+	* intltool		version >= 0.35.0
+	* unique		version >= 1.1.2
+
+
+  While not mandatory, these libraries greatly increase gThumb's
+  basic usefulness:
+
+	* exiv2			version >= 0.18
+	  (embedded metadata support)
+
+	* gstreamer		version >= 0.10
+	  (video support)
+
+	* libjpeg
+	* libtiff
+	  (jpeg and tiff writing support)
+
+
+  These libraries are optional:
+
+	* clutter		version >= 1.0.0
+	* clutter-gtk		version >= 0.10.0
+          (These libraries provide enhanced slideshow effects.)
+
+	* libopenraw		version >= 0.0.8
+          (This adds some support for RAW photos)
+
+
+  If dcraw is present (and is in your executable search path), 
+  gthumb can view full RAW photos.
+
+
+Extensions
+==========
+
+  gThumb has a plug-in system for extensions. Some standard features
+  are implemented as extensions and are supplied with the standard
+  distribution. Users may write (and share) additional extensions.
+
+  See http://live.gnome.org/gthumb/extensions for details.
+
+
+Download
+========
+
+  * Tar archives can be found here:
+
+    http://ftp.gnome.org/pub/GNOME/sources/gthumb
+
+  * If you know what git is and how to use it, you can download and
+    compile the latest development version using the following
+    commands:
+
+        git clone git://git.gnome.org/gthumb
+        cd gthumb
+        ./autogen.sh --prefix=/usr CFLAGS="-ggdb"
+        make
+        sudo make install
+
+    More development information is available at
+    http://live.gnome.org/gthumb/development
+
+
+18 January 2010

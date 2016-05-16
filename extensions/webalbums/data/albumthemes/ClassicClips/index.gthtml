@@ -1,0 +1,66 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= language %>" lang="<%= language %>">
+<head>
+<% if pages > 1 %>
+  <title><%= header %> (<%= page_idx %>/<%= pages %>)</title>
+<% else %>
+  <title><%= header %></title>
+<% end %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Generator" content="gThumb Image Viewer" />
+  <link href="<%= theme_link src="layout.css" %>" rel="stylesheet" type="text/css" />
+  <link href="<%= theme_link src="style.css" %>" rel="stylesheet" type="text/css" />
+</head>
+<% set_var thumbnail_width="159" thumbnail_height="120" %>
+<% set_var preview_width="650" preview_height="600" %>
+<body>
+  <div id="wrapper">
+    <div id="main">
+    
+      <h1 class="index-title">
+        <%= header %>
+      </h1>
+      
+      <ul class="navigation-bar">
+        <% if page_idx < pages %>
+        <li class="next-page">
+          <a href="<%= page_link idx_relative="+1" %>" title="<%= translate 'View the next page' %>">
+            <span><%= translate 'View the next page' %></span>
+          </a>   
+        </li> 
+        <% else %>
+        <li class="void">
+        </li>
+        <% end %>
+        <li class="current-page">
+          <span><%= page_idx %> / <%= pages %></span>
+        </li>
+        <% if page_idx > 1  %>
+        <li class="previous-page">          
+          <a href="<%= page_link idx_relative="-1" %>" title="<%= translate 'View the previous page' %>">
+            <span><%= translate 'View the previous page' %></span>
+          </a>       
+        </li>
+        <% else %>
+        <li class="void">
+        </li>        
+        <% end %>
+        <li class="last">
+        </li>
+      </ul>  
+    
+      <div id="thumbnail-list">
+        <%= thumbnails %>
+      </div>
+
+    </div>    
+  </div>
+  <div id="footer">
+    <div id="footer-2">
+      <%= footer %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 04_mime_types.dpatch by Remco van de Meent <remco@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad gthumb-2.6.1/data/gthumb.applications /tmp/dpep.ncAcg4/gthumb-2.6.1/data/gthumb.applications
+--- gthumb-2.6.1/data/gthumb.applications	2004-11-20 21:26:54.000000000 +0100
++++ /tmp/dpep.ncAcg4/gthumb-2.6.1/data/gthumb.applications	2004-12-01 10:19:23.000000000 +0100
+@@ -4,4 +4,4 @@
+         can_open_multiple_files=true
+         expects_uris=false
+         requires_terminal=false
+-        mime_types=x-directory/normal,image/jpeg,image/gif,image/png,image/tiff,image/x-bmp,image/x-png,image/xpm,image/x-tga
++        mime_types=x-directory/normal,image/jpeg,image/gif,image/png,image/tiff,image/x-bmp,image/x-png,image/xpm,image/x-tga,image/svg+xml

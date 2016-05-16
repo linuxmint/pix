@@ -1,0 +1,6997 @@
+# Simplified Chinese translation of gthumb.
+# Copyright (C) 2002, 2003, 2004, 2009, 2010 Free Software Foundation, Inc.
+# Abel Cheung <maddog@linux.org.hk>, 2002, 2003.
+# Liu Songhe <jackliu9999@263.net>, 2003, 2004.
+# Zhang Miao <mymzhang@gmail.com>, 2009.
+# lainme <lainme993@gmail.com>, 2010.
+# tuhaihe <1132321739qq@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gthumb master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=gthumb&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-07 13:16+0000\n"
+"PO-Revision-Date: 2012-05-25 20:58+0800\n"
+"Last-Translator: tuhaihe <1132321739qq@gmail.com>\n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../copy-n-paste/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "不是合法的 .desktop 文件"
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../copy-n-paste/eggdesktopfile.c:191
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "无法识别的 desktop 文件版本“%s”"
+
+#: ../copy-n-paste/eggdesktopfile.c:974
+#, c-format
+msgid "Starting %s"
+msgstr "正在启动 %s"
+
+#: ../copy-n-paste/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "程序在命令行中不接受文档"
+
+#: ../copy-n-paste/eggdesktopfile.c:1184
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "无法识别的启动选项：%d"
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../copy-n-paste/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "无法向 'Type=Link' 的 desktop 项传递文档 URI"
+
+#: ../copy-n-paste/eggdesktopfile.c:1412
+#, c-format
+msgid "Not a launchable item"
+msgstr "不是可启动项"
+
+#: ../copy-n-paste/eggsmclient.c:226
+msgid "Disable connection to session manager"
+msgstr "禁用到会话管理器的连接"
+
+#: ../copy-n-paste/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr "指定保存配置的文件"
+
+#: ../copy-n-paste/eggsmclient.c:229
+msgid "FILE"
+msgstr "文件"
+
+#: ../copy-n-paste/eggsmclient.c:232
+msgid "Specify session management ID"
+msgstr "指定会话管理 ID"
+
+#: ../copy-n-paste/eggsmclient.c:232
+msgid "ID"
+msgstr "ID"
+
+#: ../copy-n-paste/eggsmclient.c:253
+msgid "Session management options:"
+msgstr "会话管理选项："
+
+#: ../copy-n-paste/eggsmclient.c:254
+msgid "Show session management options"
+msgstr "显示会话管理选项"
+
+#. manually set name and icon
+#: ../data/gthumb.desktop.in.in.h:1 ../gthumb/gth-browser.c:530
+#: ../gthumb/gth-progress-dialog.c:388 ../gthumb/main.c:313
+msgid "gThumb"
+msgstr "gThumb"
+
+#: ../data/gthumb.desktop.in.in.h:2
+msgid "Image Viewer"
+msgstr "图像浏览器"
+
+#: ../data/gthumb.desktop.in.in.h:3
+msgid "gThumb Image Viewer"
+msgstr "gThumb 图像浏览器"
+
+#: ../data/gthumb.desktop.in.in.h:4
+msgid "View and organize your images"
+msgstr "查看及管理图像"
+
+#: ../data/gthumb-import.desktop.in.in.h:1
+msgid "Import with gThumb"
+msgstr "使用 gThumb 导入"
+
+#: ../data/gthumb-import.desktop.in.in.h:2
+msgid "Photo Import Tool"
+msgstr "相片导入工具"
+
+#: ../data/gthumb-import.desktop.in.in.h:3
+msgid "gThumb Photo Import Tool"
+msgstr "gThumb 相片导入工具"
+
+#: ../data/gthumb-import.desktop.in.in.h:4
+msgid "Import the photos on your camera card"
+msgstr "由数码照相机导入相片"
+
+#: ../data/org.gnome.gthumb.gschema.xml.in.h:1
+msgid ""
+"Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
+"to generate thumbnails for all images."
+msgstr ""
+"图像如果超过了这个大小(以字节计算)将不能生成缩略图。如果您想为所有图像创建缩"
+"略图，请使用 0。"
+
+#: ../data/org.gnome.gthumb.gschema.xml.in.h:2
+msgid "Whether to resize the window to fit the size of the image"
+msgstr "是否调整窗口以适应图像大小"
+
+#: ../data/org.gnome.gthumb.gschema.xml.in.h:3
+msgid "Open files in the active window"
+msgstr "在活动窗口中打开文件"
+
+#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:1
+msgid "Possible values are: white, black, checked, none."
+msgstr "可能的取值是：white(白)、black(黑)、checked(网格)、none(无)。"
+
+#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:2
+msgid "Whether to reset the scrollbars position after changing image"
+msgstr "更改图像后是否重设滚动条位置"
+
+#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:3
+msgid "Whether to always use a black background."
+msgstr "是否总是使用黑色背景。"
+
+#: ../data/org.gnome.gthumb.pixbuf-savers.gschema.xml.in.h:1
+msgid "Possible values are: jpeg, jpg."
+msgstr "可取的值有：jpeg，jpg。"
+
+#: ../data/org.gnome.gthumb.pixbuf-savers.gschema.xml.in.h:2
+msgid "Possible values are: tiff, tif."
+msgstr "可取的值有：tiff，tif。"
+
+#: ../data/org.gnome.gthumb.rename-series.gschema.xml.in.h:1
+#, fuzzy
+msgid ""
+"Possible values include: general::unsorted, file::name, file::size, file::"
+"mtime, exif::photo::datetimeoriginal"
+msgstr ""
+"可能的值有：常规::未排序，文件::名称，文件::大小，文件::mtime，exif::照片::原"
+"始日期时间"
+
+#: ../data/ui/extensions-preferences.ui.h:1
+msgid "_Extensions:"
+msgstr "扩展(_E)："
+
+#: ../data/ui/extensions-preferences.ui.h:2
+msgid "More extensions..."
+msgstr "更多扩展..."
+
+#: ../data/ui/extensions-preferences.ui.h:3
+msgid "Some extensions are configurable."
+msgstr "部分扩展可以进行配置。"
+
+#: ../data/ui/filter-editor.ui.h:1
+msgid "Filter _Name:"
+msgstr "过滤器名(_N)："
+
+#: ../data/ui/filter-editor.ui.h:2
+#: ../extensions/search/data/ui/search-editor.ui.h:3
+msgid "_Match"
+msgstr "匹配(_M)"
+
+#. limit label
+#: ../data/ui/filter-editor.ui.h:3 ../gthumb/gth-filter.c:270
+#: ../gthumb/gth-filter.c:342
+msgid "_Limit to"
+msgstr "限制到(_L)"
+
+#: ../data/ui/filter-editor.ui.h:4
+msgid "selected by"
+msgstr "选择依据"
+
+#: ../data/ui/histogram-info.ui.h:1
+msgid "Mean:"
+msgstr "平均值："
+
+#. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsizied at the end.
+#: ../data/ui/histogram-info.ui.h:3
+msgid "Std dev:"
+msgstr "标准差："
+
+#: ../data/ui/histogram-info.ui.h:4
+msgid "Median:"
+msgstr "中位数："
+
+#. After the colon there is the total number of pixels
+#: ../data/ui/histogram-info.ui.h:6
+msgid "Pixels:"
+msgstr "像素："
+
+#. After the colon there is a percentile.
+#: ../data/ui/histogram-info.ui.h:8
+msgctxt "Pixels"
+msgid "Max:"
+msgstr "最大值："
+
+#. After the colon there is the percentile of selected pixels.
+#: ../data/ui/histogram-info.ui.h:10
+msgctxt "Pixels"
+msgid "Selected:"
+msgstr "选中："
+
+#: ../data/ui/location.ui.h:1
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:7
+msgid "_Location:"
+msgstr "位置(_L)："
+
+#: ../data/ui/overwrite-dialog.ui.h:1
+msgid "Overwrite the old file with the new one?"
+msgstr "是否用新的文件覆盖原有文件？"
+
+#: ../data/ui/overwrite-dialog.ui.h:2
+msgid "Old File:"
+msgstr "原有文件："
+
+#: ../data/ui/overwrite-dialog.ui.h:3
+msgid "Filename:"
+msgstr "文件名："
+
+#: ../data/ui/overwrite-dialog.ui.h:4
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:2
+#: ../extensions/image_print/data/ui/print-layout.ui.h:23
+msgid "Size:"
+msgstr "大小："
+
+#: ../data/ui/overwrite-dialog.ui.h:5
+msgid "Modified:"
+msgstr "修改时间："
+
+#: ../data/ui/overwrite-dialog.ui.h:6
+msgid "New File:"
+msgstr "新建文件："
+
+#: ../data/ui/overwrite-dialog.ui.h:7
+msgid "Over_write the old file"
+msgstr "覆盖原有文件(_W)"
+
+#: ../data/ui/overwrite-dialog.ui.h:8
+msgid "Do not overwrite _the old file"
+msgstr "不覆盖已有文件(_T)"
+
+#: ../data/ui/overwrite-dialog.ui.h:9
+msgid "Overwrite _all files"
+msgstr "覆盖所有文件(_A)"
+
+#: ../data/ui/overwrite-dialog.ui.h:10
+msgid "_Do not overwrite any file"
+msgstr "不覆盖任何文件(_D)"
+
+#: ../data/ui/overwrite-dialog.ui.h:11
+msgid "_Save the new file as:"
+msgstr "将新文件另存为(_S)："
+
+#: ../data/ui/personalize-filters.ui.h:1
+msgid "Filters"
+msgstr "过滤器"
+
+#: ../data/ui/personalize-filters.ui.h:2
+msgid "_General filter:"
+msgstr "常规过滤器(_G)："
+
+#: ../data/ui/personalize-filters.ui.h:3
+msgid "_Other filters:"
+msgstr "其他过滤器(_O)："
+
+#: ../data/ui/preferences.ui.h:1
+msgid "below the folder list"
+msgstr "在文件夹列表下方"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "on the right"
+msgstr "在右侧"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "gThumb Preferences"
+msgstr "gThumb 首选项"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "_Toolbar style:"
+msgstr "工具栏样式(_T)："
+
+#: ../data/ui/preferences.ui.h:5
+msgid "T_humbnails in viewer:"
+msgstr "查看器中的缩略图(_H)："
+
+#: ../data/ui/preferences.ui.h:6
+msgid "System settings"
+msgstr "系统设置"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "Text below icons"
+msgstr "图标下显示文字"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Text beside icons"
+msgstr "图标旁显示文字"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Icons only"
+msgstr "只显示图标"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Text only"
+msgstr "只显示文字"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "on the bottom"
+msgstr "在底部"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "on the side"
+msgstr "在一侧"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "File _properties in browser:"
+msgstr "浏览器中的文件属性(_P)："
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Appearance"
+msgstr "外观"
+
+#: ../data/ui/preferences.ui.h:15
+msgid "Go to last _visited location"
+msgstr "转到上次访问的位置(_V)"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Go to this _folder:"
+msgstr "转到该文件夹(_F)："
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Choose startup folder"
+msgstr "选择开始文件夹"
+
+#: ../data/ui/preferences.ui.h:18
+msgid "Set to C_urrent"
+msgstr "设为当前的文件夹(_U)"
+
+#: ../data/ui/preferences.ui.h:19
+msgid "_Reuse the active window to open files"
+msgstr "打开文件时重用活动窗口(_R)"
+
+#: ../data/ui/preferences.ui.h:20
+msgid "On startup:"
+msgstr "程序启动时："
+
+#: ../data/ui/preferences.ui.h:21
+msgid "As_k confirmation before deleting files or catalogs"
+msgstr "在删除文件或一览表前要求确认(_K)"
+
+#: ../data/ui/preferences.ui.h:22
+msgid "Ask whether to save _modified files"
+msgstr "询问是否保存修改过的文件(_M)"
+
+#: ../data/ui/preferences.ui.h:23
+msgid "_Store metadata inside files if possible"
+msgstr "尽可能将元数据保存在文件中(_S)"
+
+#: ../data/ui/preferences.ui.h:24
+#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:198
+#: ../extensions/gstreamer_tools/main.c:33
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:17
+msgid "Other"
+msgstr "其它"
+
+#: ../data/ui/preferences.ui.h:25
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:2
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
+#: ../extensions/edit_metadata/gth-edit-general-page.c:481
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
+#: ../gthumb/gth-main-default-metadata.c:33
+msgid "General"
+msgstr "常规"
+
+#: ../data/ui/preferences.ui.h:26
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
+#: ../extensions/image_print/data/ui/print-layout.ui.h:18
+msgid "Caption"
+msgstr "标题"
+
+#: ../data/ui/preferences.ui.h:27
+msgid "Thumbnail _size:"
+msgstr "缩略图大小(_S)："
+
+#: ../data/ui/preferences.ui.h:28
+msgid "48"
+msgstr "48"
+
+#: ../data/ui/preferences.ui.h:29
+msgid "64"
+msgstr "64"
+
+#: ../data/ui/preferences.ui.h:30
+msgid "85"
+msgstr "85"
+
+#: ../data/ui/preferences.ui.h:31
+msgid "95"
+msgstr "95"
+
+#: ../data/ui/preferences.ui.h:32
+msgid "112"
+msgstr "112"
+
+#: ../data/ui/preferences.ui.h:33
+msgid "128"
+msgstr "128"
+
+#: ../data/ui/preferences.ui.h:34
+msgid "164"
+msgstr "164"
+
+#: ../data/ui/preferences.ui.h:35
+msgid "200"
+msgstr "200"
+
+#: ../data/ui/preferences.ui.h:36
+msgid "256"
+msgstr "256"
+
+#: ../data/ui/preferences.ui.h:37
+msgid "D_etermine image type from content (slower)"
+msgstr "按图像数据决定图像格式(较慢)(_E)"
+
+#: ../data/ui/preferences.ui.h:38 ../gthumb/dlg-preferences-extensions.c:71
+#: ../gthumb/gth-browser-actions-entries.h:179
+msgid "Browser"
+msgstr "浏览器"
+
+#: ../data/ui/sort-order.ui.h:1
+msgid "Sort By"
+msgstr "排列"
+
+#: ../data/ui/sort-order.ui.h:2
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:4
+msgid "_Sort by:"
+msgstr "排列(_S)："
+
+#: ../data/ui/sort-order.ui.h:3
+msgid "_Inverse order"
+msgstr "相反次序排列(_I)"
+
+#: ../extensions/23hq/23hq.extension.in.in.h:1
+msgid "23"
+msgstr "23"
+
+#: ../extensions/23hq/23hq.extension.in.in.h:2
+msgid "Upload images to 23hq.com"
+msgstr "上传图像到 23hq.com"
+
+#: ../extensions/23hq/callbacks.c:68
+msgid "_23..."
+msgstr "_23..."
+
+#: ../extensions/23hq/callbacks.c:69
+msgid "Upload photos to 23"
+msgstr "上传照片到 23"
+
+#: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
+msgid "Bookmarks"
+msgstr "书签"
+
+#: ../extensions/bookmarks/bookmarks.extension.in.in.h:2
+msgid "Add bookmarks support."
+msgstr "添加书签支持。"
+
+#: ../extensions/bookmarks/bookmarks.extension.in.in.h:3
+#: ../extensions/burn_disc/burn_disc.extension.in.in.h:3
+#: ../extensions/catalogs/catalogs.extension.in.in.h:3
+#: ../extensions/change_date/change_date.extension.in.in.h:3
+#: ../extensions/comments/comments.extension.in.in.h:3
+#: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:3
+#: ../extensions/convert_format/convert_format.extension.in.in.h:3
+#: ../extensions/desktop_background/desktop_background.extension.in.in.h:3
+#: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:3
+#: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:3
+#: ../extensions/file_manager/file_manager.extension.in.in.h:3
+#: ../extensions/file_tools/file_tools.extension.in.in.h:3
+#: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:3
+#: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:3
+#: ../extensions/image_print/image_print.extension.in.in.h:3
+#: ../extensions/image_rotation/image_rotation.extension.in.in.h:3
+#: ../extensions/image_viewer/image_viewer.extension.in.in.h:3
+#: ../extensions/list_tools/list_tools.extension.in.in.h:3
+#: ../extensions/photo_importer/photo_importer.extension.in.in.h:3
+#: ../extensions/pixbuf_savers/pixbuf_savers.extension.in.in.h:3
+#: ../extensions/raw_files/raw_files.extension.in.in.h:3
+#: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:3
+#: ../extensions/rename_series/rename_series.extension.in.in.h:3
+#: ../extensions/resize_images/resize_images.extension.in.in.h:3
+#: ../extensions/search/search.extension.in.in.h:3
+#: ../extensions/selections/selections.extension.in.in.h:3
+#: ../extensions/slideshow/slideshow.extension.in.in.h:3
+#: ../extensions/webalbums/webalbums.extension.in.in.h:3
+msgid "gthumb development team"
+msgstr "gthumb 开发小组"
+
+#: ../extensions/bookmarks/callbacks.c:54
+msgid "_Bookmarks"
+msgstr "书签(_B)"
+
+#: ../extensions/bookmarks/callbacks.c:55
+msgid "_System Bookmarks"
+msgstr "系统书签(_S)"
+
+#: ../extensions/bookmarks/callbacks.c:58
+msgid "_Add Bookmark"
+msgstr "添加书签(_A)"
+
+#: ../extensions/bookmarks/callbacks.c:59
+msgid "Add current location to bookmarks"
+msgstr "将当前位置添加到书签"
+
+#: ../extensions/bookmarks/callbacks.c:63
+msgid "_Edit Bookmarks..."
+msgstr "编辑书签(_E)..."
+
+#: ../extensions/bookmarks/callbacks.c:64
+msgid "Edit bookmarks"
+msgstr "编辑书签"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
+msgid "_Bookmarks:"
+msgstr "书签(_B)："
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
+msgid "_Name"
+msgstr "名称(_N)"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
+msgid "_Location"
+msgstr "位置(_L)"
+
+#: ../extensions/bookmarks/dlg-bookmarks.c:70
+msgid "Could not remove the bookmark"
+msgstr "无法删除书签"
+
+#: ../extensions/burn_disc/burn_disc.extension.in.in.h:1
+msgid "Burn CD/DVD"
+msgstr "刻录 CD/DVD"
+
+#: ../extensions/burn_disc/burn_disc.extension.in.in.h:2
+msgid "Save files to an optical disc."
+msgstr "保存文件到光盘。"
+
+#: ../extensions/burn_disc/callbacks.c:55
+msgid "_Optical Disc..."
+msgstr "光盘(_O)..."
+
+#: ../extensions/burn_disc/callbacks.c:56
+msgid "Write files to an optical disc"
+msgstr "将文件写入到光盘"
+
+#: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
+msgid "Disc Name"
+msgstr "盘片名称"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
+msgid "Current _folder"
+msgstr "当前文件夹(_F)"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
+msgid "Current folder and its s_ub-folders"
+msgstr "当前文件夹及其子文件夹"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
+msgid "_Selected files"
+msgstr "选中的文件(_S)"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
+msgid "Source"
+msgstr "源"
+
+#: ../extensions/burn_disc/gth-burn-task.c:238
+#: ../extensions/burn_disc/gth-burn-task.c:259
+#: ../extensions/burn_disc/gth-burn-task.c:397
+msgid "Write to Disc"
+msgstr "写入盘片"
+
+#: ../extensions/cairo_io/cairo-io-jpeg.c:62
+#, c-format
+msgid "Error interpreting JPEG image file: %s"
+msgstr "解释 JPEG 图像文件时出错：%s"
+
+#: ../extensions/cairo_io/cairo-io-jpeg.c:482
+#, c-format
+msgid "Unknown JPEG color space (%d)"
+msgstr "未知的 JPEG 颜色空间(%d)"
+
+#: ../extensions/catalogs/actions.c:92 ../extensions/catalogs/actions.c:213
+#: ../extensions/catalogs/dlg-add-to-catalog.c:274
+#: ../extensions/catalogs/dlg-add-to-catalog.c:394
+#: ../extensions/file_manager/actions.c:68
+#: ../extensions/list_tools/gth-script-editor-dialog.c:290
+#: ../gthumb/gth-filter-editor-dialog.c:461
+#, c-format
+msgid "No name specified"
+msgstr "未指定名称"
+
+#: ../extensions/catalogs/actions.c:99 ../extensions/catalogs/actions.c:220
+#: ../extensions/catalogs/dlg-add-to-catalog.c:281
+#: ../extensions/catalogs/dlg-add-to-catalog.c:401
+#: ../extensions/file_manager/actions.c:75
+#, c-format
+msgid "Invalid name. The following characters are not allowed: %s"
+msgstr "无效的名称。下面的字符不被允许：%s"
+
+#: ../extensions/catalogs/actions.c:155 ../extensions/catalogs/actions.c:267
+#: ../extensions/catalogs/dlg-add-to-catalog.c:338
+#: ../extensions/catalogs/dlg-add-to-catalog.c:448
+#: ../extensions/catalogs/gth-file-source-catalogs.c:508
+#: ../extensions/file_manager/actions.c:106
+msgid "Name already used"
+msgstr "名称已使用"
+
+#: ../extensions/catalogs/actions.c:178
+#: ../extensions/catalogs/dlg-add-to-catalog.c:359
+msgid "New catalog"
+msgstr "新建一览表"
+
+#: ../extensions/catalogs/actions.c:179
+#: ../extensions/catalogs/dlg-add-to-catalog.c:360
+msgid "Enter the catalog name:"
+msgstr "输入一览表名称："
+
+#: ../extensions/catalogs/actions.c:181 ../extensions/catalogs/actions.c:293
+#: ../extensions/catalogs/dlg-add-to-catalog.c:362
+#: ../extensions/catalogs/dlg-add-to-catalog.c:474
+#: ../extensions/file_manager/actions.c:136
+msgid "C_reate"
+msgstr "创建(_R)"
+
+#: ../extensions/catalogs/actions.c:290
+#: ../extensions/catalogs/dlg-add-to-catalog.c:471
+msgid "New library"
+msgstr "新建图库"
+
+#: ../extensions/catalogs/actions.c:291
+#: ../extensions/catalogs/dlg-add-to-catalog.c:472
+msgid "Enter the library name:"
+msgstr "输入图库名称："
+
+#: ../extensions/catalogs/actions.c:326
+msgid "Could not remove the catalog"
+msgstr "无法移除一览表"
+
+#: ../extensions/catalogs/actions.c:363
+#, c-format
+msgid "Are you sure you want to remove \"%s\"?"
+msgstr "您确定要删除“%s”？"
+
+#: ../extensions/catalogs/callbacks.c:102
+msgid "_Add to Catalog"
+msgstr "添加到一览表(_A)"
+
+#: ../extensions/catalogs/callbacks.c:105
+#: ../extensions/selections/callbacks.c:80
+msgid "Open _Folder"
+msgstr "打开文件夹(_F)"
+
+#: ../extensions/catalogs/callbacks.c:106
+#: ../extensions/selections/callbacks.c:81
+msgid "Go to the folder that contains the selected file"
+msgstr "转到包含选中图像的文件夹"
+
+#: ../extensions/catalogs/callbacks.c:110
+#: ../extensions/picasaweb/picasa-account-properties-dialog.c:85
+msgid "Other..."
+msgstr "其它..."
+
+#: ../extensions/catalogs/callbacks.c:111
+msgid "Choose another catalog"
+msgstr "选择另一个一览表"
+
+#: ../extensions/catalogs/callbacks.c:115
+msgid "_Add to Catalog..."
+msgstr "添加到一览表(_A)..."
+
+#: ../extensions/catalogs/callbacks.c:116
+msgid "Add selected images to a catalog"
+msgstr "将已选中的图像添加到一览表"
+
+#: ../extensions/catalogs/callbacks.c:120
+msgid "Remo_ve from Catalog"
+msgstr "从一览表中删除(_V)"
+
+#: ../extensions/catalogs/callbacks.c:121
+msgid "Remove selected images from the catalog"
+msgstr "从一览表中删除选中的图像"
+
+#: ../extensions/catalogs/callbacks.c:125
+msgid "Create _Catalog"
+msgstr "创建一览表(_C)"
+
+#: ../extensions/catalogs/callbacks.c:130
+msgid "Create _Library"
+msgstr "新建库(_L)"
+
+#: ../extensions/catalogs/callbacks.c:140
+msgid "Rena_me"
+msgstr "重命名(_M)"
+
+#: ../extensions/catalogs/callbacks.c:281
+#: ../extensions/catalogs/callbacks.c:284
+msgid "Command Line"
+msgstr "命令行"
+
+#: ../extensions/catalogs/callbacks.c:496
+#: ../extensions/catalogs/callbacks.c:501
+#: ../extensions/photo_importer/dlg-photo-importer.c:364
+#: ../extensions/photo_importer/dlg-photo-importer.c:404
+#: ../gthumb/gth-file-list.c:43 ../gthumb/gth-folder-tree.c:883
+msgid "(Empty)"
+msgstr "(空)"
+
+#: ../extensions/catalogs/callbacks.c:700
+msgid "Catalog Properties"
+msgstr "一览表属性"
+
+#: ../extensions/catalogs/callbacks.c:714
+msgid "Organize"
+msgstr "组织"
+
+#: ../extensions/catalogs/callbacks.c:715
+msgid "Automatically organize files by date"
+msgstr "按日期自动组织文件"
+
+#: ../extensions/catalogs/catalogs.extension.in.in.h:1
+#: ../extensions/catalogs/gth-catalog.c:611
+#: ../extensions/catalogs/gth-catalog.c:662
+#: ../extensions/catalogs/gth-catalog.c:1024
+#: ../extensions/catalogs/gth-catalog.c:1025
+msgid "Catalogs"
+msgstr "一览表"
+
+#: ../extensions/catalogs/catalogs.extension.in.in.h:2
+msgid "Create file collections."
+msgstr "创建文件收藏。"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
+msgid "Add to Catalog"
+msgstr "添加到一览表"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
+msgid "C_atalogs:"
+msgstr "一览表(_A)："
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
+msgid "_New Catalog"
+msgstr "新建一览表(_N)"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
+msgid "New _Library"
+msgstr "新建图库(_L)"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:5
+#: ../extensions/file_manager/actions.c:945
+#: ../extensions/webalbums/gth-web-exporter.c:1842
+msgid "_View the destination"
+msgstr "查看目标位置(_V)"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
+#: ../gthumb/gth-file-properties.c:209
+msgid "Properties"
+msgstr "属性"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:4
+#: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:1
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:1
+#: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:1
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:1
+msgid "_Name:"
+msgstr "名称(_N)："
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
+msgid "_Date:"
+msgstr "日期(_D)："
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:5
+msgid "Catalog"
+msgstr "一览表"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:6
+msgid "Organize Files"
+msgstr "组织文件"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
+msgid "Organizing files"
+msgstr "组织文件"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
+msgid "Organization:"
+msgstr "组织："
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
+msgid "Select All"
+msgstr "全选"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
+msgid "Select None"
+msgstr "不选"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
+msgid "Catalog _Preview:"
+msgstr "一览表预览(_P)："
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
+#: ../extensions/edit_metadata/gth-edit-general-page.c:558
+#: ../gthumb/gth-main-default-tests.c:300
+msgid "Date photo was taken"
+msgstr "照片拍摄日期"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:2
+#: ../gthumb/gth-main-default-tests.c:292
+msgid "File modified date"
+msgstr "文件最后修改日期"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
+#: ../extensions/comments/main.c:159
+msgid "Tag"
+msgstr "标签"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
+msgid "tag"
+msgstr "标签"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
+#: ../gthumb/gth-main-default-tests.c:324
+msgid "Tag (embedded)"
+msgstr "标签(内嵌)"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:7
+msgid "_Group files by:"
+msgstr "分组文件(_G)："
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:8
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:2
+msgid "_Include sub-folders"
+msgstr "包含子文件夹(_I)"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:9
+msgid "Ignore catalogs with a single file"
+msgstr "忽略只有一个文件的一览表"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:10
+msgid "Put single files in the catalog:"
+msgstr "将单个文件放入一览表："
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:11
+msgid "Singles"
+msgstr "单个文件"
+
+#: ../extensions/catalogs/dlg-add-to-catalog.c:105
+#: ../extensions/catalogs/dlg-add-to-catalog.c:136
+msgid "Could not add the files to the catalog"
+msgstr "无法将文件添加到一览表"
+
+#: ../extensions/catalogs/dlg-add-to-catalog.c:217
+#: ../extensions/search/gth-search-task.c:356
+msgid "Could not create the catalog"
+msgstr "无法创建一览表"
+
+#: ../extensions/catalogs/dlg-catalog-properties.c:80
+msgid "Could not save the catalog"
+msgstr "无法保存一览表"
+
+#: ../extensions/catalogs/dlg-catalog-properties.c:159
+msgid "Could not load the catalog"
+msgstr "无法载入一览表"
+
+#: ../extensions/catalogs/dlg-organize-files.c:120
+msgid "Files will be organized in catalogs. No file will be moved on disk."
+msgstr "文件将被组织到一览表。磁盘上不会有文件被移动。"
+
+#: ../extensions/catalogs/gth-catalog.c:1122 ../extensions/comments/main.c:44
+#: ../extensions/edit_metadata/callbacks.c:106
+#: ../gthumb/gth-main-default-metadata.c:53
+msgid "Tags"
+msgstr "标签"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:953
+#, c-format
+msgid "The catalog '%s' already exists, do you want to overwrite it?"
+msgstr "一览表 “%s” 已存在，要覆盖它？"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:955
+#, c-format
+msgid "The library '%s' already exists, do you want to overwrite it?"
+msgstr "库 “%s” 已存在，要覆盖它？"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:963
+msgid "Over_write"
+msgstr "覆盖(_W)"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:1081
+msgid "Cannot move the files"
+msgstr "无法移动文件"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:1083
+msgid "Cannot copy the files"
+msgstr "无法复制文件"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:1088
+msgid "Invalid destination."
+msgstr "无效的目标。"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:1135
+#, c-format
+msgid "Copying files to '%s'"
+msgstr "正在复制文件到“%s”"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:1322
+msgid "Could not remove the files from the catalog"
+msgstr "无法从一览表中删除文件"
+
+#: ../extensions/catalogs/gth-file-source-catalogs.c:1380
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:731
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:740
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:769
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:1281
+#: ../extensions/search/gth-search.c:265
+msgid "Invalid file format"
+msgstr "无效的文件格式"
+
+#: ../extensions/catalogs/gth-organize-task.c:202
+#, c-format
+msgid "Operation completed. Catalogs: %d. Images: %d."
+msgstr "操作完成。一览表：%d。图像：%d。"
+
+#: ../extensions/change_date/callbacks.c:44
+msgid "Change _Date..."
+msgstr "更改日期(_D)..."
+
+#: ../extensions/change_date/callbacks.c:45
+msgid "Change images last modified date"
+msgstr "更改图像的最后修改日期"
+
+#: ../extensions/change_date/change_date.extension.in.in.h:1
+msgid "Change date"
+msgstr "更改日期"
+
+#: ../extensions/change_date/change_date.extension.in.in.h:2
+msgid "Change the files date"
+msgstr "更改文件日期"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:1
+msgid "Change Date"
+msgstr "更改日期"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:2
+msgid "Change the following values:"
+msgstr "更改下列值："
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:3
+msgid "_Last modified date"
+msgstr "最后修改日期(_L)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:4
+msgid "Co_mment date"
+msgstr "注释日期(_M)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:5
+msgid "Exif DateTimeOriginal tag"
+msgstr "Exif 日期时间标签"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:6
+msgid "Change to:"
+msgstr "更改为："
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:7
+msgid "The _following date:"
+msgstr "以下日期(_F)："
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:8
+msgid "File _modified date"
+msgstr "最后修改日期"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:9
+msgid "File c_reation date"
+msgstr "创建日期(_R)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:10
+msgid "Date p_hoto was taken"
+msgstr "照片拍摄日期(_H)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:11
+msgid "A_djust by"
+msgstr "调整依据(_D)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:12
+msgid "hours"
+msgstr "小时"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:13
+msgid "minutes"
+msgstr "分钟"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:14
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
+msgid "seconds"
+msgstr "秒"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:15
+msgid "+"
+msgstr "+"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:16
+msgid "-"
+msgstr "-"
+
+#: ../extensions/comments/callbacks.c:46
+msgid "Import Embedded Metadata"
+msgstr "导入内嵌元数据"
+
+#: ../extensions/comments/callbacks.c:47
+msgid "Import the metadata stored inside files into the gThumb comment system"
+msgstr "将存储在文件中的元数据导入到 gThumb 注释系统"
+
+#: ../extensions/comments/comments.extension.in.in.h:1
+msgid "Comments and tags"
+msgstr "注释和标签"
+
+#: ../extensions/comments/comments.extension.in.in.h:2
+msgid "Add comments and tags to any file type."
+msgstr "向任何文件类型添加评论和标签。"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:1
+#: ../extensions/importer/gth-import-preferences-dialog.c:318
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:2
+msgid "_Synchronize with the embedded metadata"
+msgstr "与嵌入的元数据同步(_S)"
+
+#: ../extensions/comments/main.c:34
+#: ../extensions/edit_metadata/callbacks.c:100
+msgid "Comment"
+msgstr "备注"
+
+#: ../extensions/comments/main.c:40 ../gthumb/gth-main-default-metadata.c:46
+msgid "Title"
+msgstr "标题"
+
+#: ../extensions/comments/main.c:41 ../extensions/comments/main.c:143
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:5
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:7
+#: ../extensions/image_print/data/ui/print-layout.ui.h:8
+#: ../extensions/importer/data/ui/import-preferences.ui.h:6
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:11
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:12
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
+#: ../gthumb/gth-main-default-metadata.c:52
+msgid "Description"
+msgstr "描述"
+
+#: ../extensions/comments/main.c:42 ../extensions/comments/main.c:151
+#: ../gthumb/gth-main-default-metadata.c:50
+msgid "Place"
+msgstr "位置"
+
+#: ../extensions/comments/main.c:43 ../gthumb/gth-main-default-metadata.c:51
+msgid "Date"
+msgstr "日期"
+
+#: ../extensions/comments/main.c:45 ../gthumb/gth-main-default-metadata.c:54
+msgid "Rating"
+msgstr "评分"
+
+#: ../extensions/contact_sheet/callbacks.c:59
+msgid "Contact _Sheet"
+msgstr "联系表(_S)"
+
+#: ../extensions/contact_sheet/callbacks.c:61
+msgid "Contact _Sheet..."
+msgstr "联系表(_S)..."
+
+#: ../extensions/contact_sheet/callbacks.c:62
+msgid "Create a contact sheet"
+msgstr "创建联系表"
+
+#: ../extensions/contact_sheet/callbacks.c:65
+msgid "Image _Wall..."
+msgstr "图像墙(_W)..."
+
+#: ../extensions/contact_sheet/callbacks.c:66
+msgid "Create an image-wall"
+msgstr "创建图像墙"
+
+#: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:1
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
+msgid "Contact Sheet"
+msgstr "联系表"
+
+#: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
+msgid "Create an index image displaying the thumbnails of the selected files."
+msgstr "创建一个显示所选文件缩略图的索引图像。"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:424
+#: ../extensions/file_tools/gth-file-tool-crop.c:454
+#: ../extensions/file_tools/gth-file-tool-resize.c:498
+#: ../extensions/file_tools/gth-file-tool-rotate.c:415
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:14
+#: ../extensions/slideshow/main.c:277
+msgid "None"
+msgstr "无"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
+msgid "Simple"
+msgstr "简单"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
+msgid "Simple with shadow"
+msgstr "普通边框加阴影"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
+msgid "Shadow only"
+msgstr "只显示阴影"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
+msgid "Slide"
+msgstr "幻灯片"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
+msgid "Inward Shadow"
+msgstr "内部阴影"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
+msgid "Outward Shadow"
+msgstr "外部阴影"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
+msgid "Background"
+msgstr "背景"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
+msgid "_Solid color"
+msgstr "单色(_S)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
+msgid "_Gradient"
+msgstr "渐变(_G)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:12
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:6
+msgid "_Horizontal:"
+msgstr "水平(_H)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:13
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:7
+msgid "_Vertical:"
+msgstr "垂直(_V)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
+msgid "Select a color"
+msgstr "请选择颜色"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
+msgid "Frame"
+msgstr "帧"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
+msgid "_Style:"
+msgstr "风格(_S)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
+msgid "C_olor:"
+msgstr "颜色(_O)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
+#: ../extensions/rename_series/dlg-rename-series.c:57
+msgid "Text"
+msgstr "文本"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
+#: ../extensions/image_print/data/ui/print-layout.ui.h:3
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:2
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
+msgid "_Header:"
+msgstr "页眉(_H)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
+msgid "Select a font"
+msgstr "选择字体"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
+#: ../extensions/image_print/data/ui/print-layout.ui.h:4
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:3
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
+msgid "_Footer:"
+msgstr "页脚(_F)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:32
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:1
+msgid "Caption:"
+msgstr "标题："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
+#: ../extensions/image_print/data/ui/print-layout.ui.h:5
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
+msgid "The current page number"
+msgstr "当前页码"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
+#: ../extensions/image_print/data/ui/print-layout.ui.h:6
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
+msgid "The total number of pages"
+msgstr "页面总数"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
+#: ../extensions/image_print/data/ui/print-layout.ui.h:7
+#: ../extensions/importer/data/ui/import-preferences.ui.h:5
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:10
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:11
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
+msgid "Special code"
+msgstr "特殊代码"
+
+#. translate only the text in the curly brackets
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
+#: ../extensions/image_print/data/ui/print-layout.ui.h:11
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:20
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
+#, no-c-format
+msgid "%D{ format }"
+msgstr "%D{格式}"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:12
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
+msgid "The current date"
+msgstr "当前日期"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:5
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:5
+#: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:2
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:6
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:6
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:17
+msgid "_Destination:"
+msgstr "目标(_D)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:13
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:3
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:4
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:7
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
+msgid "Choose destination folder"
+msgstr "选择目标文件夹"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
+msgid "File_name:"
+msgstr "文件名(_N)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:8
+#, fuzzy
+msgid "New enumerator digit"
+msgstr "新计数器数字"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
+msgid "Create _HTML image map"
+msgstr "创建 HTML 图像映射(_H)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
+#: ../extensions/pixbuf_savers/preferences.c:134
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
+msgid "Saving"
+msgstr "正在保存"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
+msgid "Create a new theme"
+msgstr "创建新主题"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
+msgid "Edit the selected theme"
+msgstr "编辑选中的主题"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
+msgid "Delete the selected theme"
+msgstr "删除选中的主题"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
+msgid "Theme"
+msgstr "主题"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:16
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:26
+msgid "Columns:"
+msgstr "列数："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:29
+msgid "Images per page:"
+msgstr "每页图像："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:28
+msgid "All images on a single page"
+msgstr "所有图像在同一个页面上"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
+msgid "_All pages with the same size"
+msgstr "每页的大小都相同(_A)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
+#: ../extensions/image_print/data/ui/print-layout.ui.h:15
+msgid "Layout"
+msgstr "布局"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:28
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:13
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:24
+msgid "S_ort:"
+msgstr "排序(_O)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:29
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:14
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
+msgid "Re_verse order"
+msgstr "相反次序排列(_V)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:30
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:15
+msgid "_Size:"
+msgstr "大小(_S)："
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:31
+msgid "Sq_uared"
+msgstr "方形(_U)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:33
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:16
+msgid "Thumbnails"
+msgstr "缩略图"
+
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
+msgid "Image Wall"
+msgstr "图像墙"
+
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:486
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:498
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:512
+msgid "Could not save the theme"
+msgstr "无法保存主题"
+
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:657
+msgid "Could not delete the theme"
+msgstr "无法删除主题"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-creator.c:248
+msgid "Creating images"
+msgstr "正在创建图像"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-creator.c:897
+msgid "Generating thumbnails"
+msgstr "正在生成缩略图"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:32
+msgid "Header"
+msgstr "页眉"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:33
+msgid "Footer"
+msgstr "页脚"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:193
+msgid "Theme Properties"
+msgstr "主题属性"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:208
+msgid "Copy _From"
+msgstr "复制来源(_F)"
+
+#: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:316
+msgid "New theme"
+msgstr "新主题"
+
+#: ../extensions/convert_format/callbacks.c:45
+msgid "Convert Format..."
+msgstr "转换格式..."
+
+#: ../extensions/convert_format/callbacks.c:46
+msgid "Convert image format"
+msgstr "转换图像格式"
+
+#: ../extensions/convert_format/convert_format.extension.in.in.h:1
+msgid "Convert format"
+msgstr "转换格式"
+
+#: ../extensions/convert_format/convert_format.extension.in.in.h:2
+msgid "Save images in a different format"
+msgstr "保存图像到其他格式"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:1
+msgid "Convert Format"
+msgstr "转换格式"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:2
+msgid "New format"
+msgstr "新格式"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:3
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:6
+msgid "Destination"
+msgstr "目的"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:5
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:8
+msgid "_Use the original image folder"
+msgstr "使用原先的图像文件夹(_U)"
+
+#: ../extensions/convert_format/dlg-convert-format.c:93
+msgid "Converting images"
+msgstr "正在转换图像"
+
+#: ../extensions/desktop_background/actions.c:162
+msgid "Could not show the desktop background properties"
+msgstr "无法显示桌面背景属性"
+
+#: ../extensions/desktop_background/actions.c:228
+#: ../extensions/desktop_background/actions.c:246
+msgid "Could not set the desktop background"
+msgstr "无法设置桌面背景"
+
+#: ../extensions/desktop_background/callbacks.c:49
+msgid "Set as Desktop Background"
+msgstr "设置为桌面背景"
+
+#: ../extensions/desktop_background/callbacks.c:50
+#: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
+msgid "Set the image as desktop background"
+msgstr "将图像设置为桌面背景"
+
+#: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
+msgid "Desktop background"
+msgstr "桌面背景"
+
+#: ../extensions/edit_metadata/actions.c:66
+msgid ""
+"Are you sure you want to permanently delete the metadata of the selected "
+"files?"
+msgstr "您确定要永久删除选中文件的元数据吗？"
+
+#: ../extensions/edit_metadata/actions.c:73
+msgid "If you delete the metadata, it will be permanently lost."
+msgstr "如果您删除了元数据，它将永久丢失。"
+
+#: ../extensions/edit_metadata/callbacks.c:97
+msgid "T_ags"
+msgstr "标签(_A)"
+
+#: ../extensions/edit_metadata/callbacks.c:101
+msgid "Edit the comment and other information of the selected files"
+msgstr "编辑所选文件的注释和其它信息"
+
+#: ../extensions/edit_metadata/callbacks.c:107
+msgid "Set the tags of the selected files"
+msgstr "设置选中文件的标签"
+
+#: ../extensions/edit_metadata/callbacks.c:112
+msgid "Delete Metadata"
+msgstr "删除元数据"
+
+#: ../extensions/edit_metadata/callbacks.c:113
+msgid "Delete the comment and the embedded metadata of the selected files"
+msgstr "删除所选文件的注释和内嵌元数据"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:6
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:3
+msgid "D_escription:"
+msgstr "描述(_E)："
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
+msgid "_Place:"
+msgstr "位置(_P)："
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
+#: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
+msgid "T_ags:"
+msgstr "标签(_A)："
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
+msgid "_Rating:"
+msgstr "评分(_R)："
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
+msgid "_Title:"
+msgstr "标题(_T)："
+
+#: ../extensions/edit_metadata/dlg-edit-metadata.c:121
+msgid "Could not save the file metadata"
+msgstr "无法保存文件元数据"
+
+#: ../extensions/edit_metadata/dlg-edit-metadata.c:234
+#: ../gthumb/gth-overwrite-dialog.c:136
+msgid "Cannot read file information"
+msgstr "无法读取文件信息"
+
+#: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:1
+msgid "Edit metadata"
+msgstr "编辑元数据"
+
+#: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
+msgid "Allow to edit files metadata."
+msgstr "允许编辑文件元数据。"
+
+#. Translators: the %s symbol in the string is a file name
+#: ../extensions/edit_metadata/gth-edit-comment-dialog.c:63
+#, c-format
+msgid "%s Metadata"
+msgstr "%s 的元数据"
+
+#: ../extensions/edit_metadata/gth-edit-comment-dialog.c:66
+#: ../extensions/edit_metadata/gth-edit-tags-dialog.c:83
+#: ../extensions/flicker_utils/dlg-import-from-flickr.c:335
+#, c-format
+msgid "%d file"
+msgid_plural "%d files"
+msgstr[0] "%d 个文件"
+
+#: ../extensions/edit_metadata/gth-edit-comment-dialog.c:144
+#: ../extensions/edit_metadata/gth-edit-tags-dialog.c:197
+msgid "Sa_ve and Close"
+msgstr "保存并关闭(_V)"
+
+#: ../extensions/edit_metadata/gth-edit-comment-dialog.c:156
+msgid "Save only cha_nged fields"
+msgstr "只保存已更改的区域(_N)"
+
+#: ../extensions/edit_metadata/gth-edit-general-page.c:555
+msgid "No date"
+msgstr "无日期"
+
+#: ../extensions/edit_metadata/gth-edit-general-page.c:556
+msgid "The following date"
+msgstr "以下的日期"
+
+#: ../extensions/edit_metadata/gth-edit-general-page.c:557
+#: ../extensions/importer/gth-import-preferences-dialog.c:331
+msgid "Current date"
+msgstr "当前日期"
+
+#: ../extensions/edit_metadata/gth-edit-general-page.c:559
+msgid "Last modified date"
+msgstr "最后修改日期"
+
+#: ../extensions/edit_metadata/gth-edit-general-page.c:560
+msgid "File creation date"
+msgstr "文件创建日期"
+
+#: ../extensions/edit_metadata/gth-edit-general-page.c:561
+msgid "Do not modify"
+msgstr "不修改"
+
+#. Translators: the %s symbol in the string is a file name
+#: ../extensions/edit_metadata/gth-edit-tags-dialog.c:80
+#, c-format
+msgid "%s Tags"
+msgstr "%s 标签"
+
+#: ../extensions/edit_metadata/gth-edit-tags-dialog.c:189
+msgid "Assign Tags"
+msgstr "指定标签"
+
+#: ../extensions/edit_metadata/gth-tag-task.c:119
+#: ../extensions/edit_metadata/gth-tag-task.c:136
+msgid "Assigning tags to the selected files"
+msgstr "为选择的文件指定标签"
+
+#: ../extensions/edit_metadata/gth-tag-task.c:119
+msgid "Writing files"
+msgstr "正在写入文件"
+
+#: ../extensions/edit_metadata/gth-tag-task.c:136
+msgid "Reading files"
+msgstr "正在读取文件"
+
+#: ../extensions/example/src/example.extension.in.in.h:1
+msgid "Example"
+msgstr "示例"
+
+#: ../extensions/example/src/example.extension.in.in.h:2
+msgid "Extension example."
+msgstr "扩展示例。"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
+msgid "C_opyright:"
+msgstr "版权(_O)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
+msgid "Co_untry:"
+msgstr "国家(_U)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
+msgid "_Code:"
+msgstr "代号(_C)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
+msgid "Cr_edit:"
+msgstr "鸣谢(_E)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
+msgid "_Source:"
+msgstr "源(_S)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
+msgid "_Urgency:"
+msgstr "紧急程度(_U)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
+msgid "_Object Name:"
+msgstr "对象名称(_O)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
+msgid "Byline _Title:"
+msgstr "署名标题(_T)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
+msgid "_Byline:"
+msgstr "署名(_B)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
+msgid "_City:"
+msgstr "城市(_C)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
+msgid "_Language:"
+msgstr "语言(_L)："
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
+msgid "State/Province:"
+msgstr "州/省："
+
+#: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
+msgid "EXIF, IPTC, XMP support"
+msgstr "EXIF、IPTC、XMP 支持"
+
+#: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:2
+msgid "Read and write exif, iptc and xmp metadata."
+msgstr "读取和写入 EXIF、IPTC 和 XMP 元数据"
+
+#: ../extensions/exiv2_tools/main.c:33
+msgid "Exif General"
+msgstr "Exif 常规"
+
+#: ../extensions/exiv2_tools/main.c:34
+msgid "Exif Conditions"
+msgstr "Exif 照相条件"
+
+#: ../extensions/exiv2_tools/main.c:35
+msgid "Exif Structure"
+msgstr "Exif 图像结构"
+
+#: ../extensions/exiv2_tools/main.c:36
+msgid "Exif Thumbnail"
+msgstr "Exif 缩略图"
+
+#: ../extensions/exiv2_tools/main.c:37
+msgid "Exif GPS"
+msgstr "Exif GPS 定位信息"
+
+#: ../extensions/exiv2_tools/main.c:38
+msgid "Exif Maker Notes"
+msgstr "Exif 生产者信息"
+
+#: ../extensions/exiv2_tools/main.c:39
+msgid "Exif Versions"
+msgstr "Exif 版本"
+
+#: ../extensions/exiv2_tools/main.c:40
+msgid "Exif Other"
+msgstr "Exif 其它"
+
+#: ../extensions/exiv2_tools/main.c:41
+msgid "IPTC"
+msgstr "IPTC"
+
+#: ../extensions/exiv2_tools/main.c:42
+msgid "XMP Embedded"
+msgstr "嵌入的 XMP"
+
+#: ../extensions/exiv2_tools/main.c:43
+msgid "XMP Attached"
+msgstr "附加的 XMP"
+
+#: ../extensions/exiv2_tools/main.c:256
+msgid "date photo was taken"
+msgstr "按照片拍摄时间"
+
+#: ../extensions/export_tools/callbacks.c:99
+msgid "Share"
+msgstr "共享"
+
+#: ../extensions/facebook/callbacks.c:54
+msgid "Face_book..."
+msgstr "Face_book..."
+
+#: ../extensions/facebook/callbacks.c:55
+msgid "Upload photos to Facebook"
+msgstr "上传照片到 Facebook"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:1
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:8
+msgid "Export to Flickr"
+msgstr "导出到 Flickr"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:2
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:9
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:2
+msgid "_Upload"
+msgstr "上传(_U)"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:3
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:2
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:10
+msgid "_Account:"
+msgstr "帐户(_A)："
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:4
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:3
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:2
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:11
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:3
+msgid "Edit accounts"
+msgstr "编辑帐户"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:5
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:13
+msgid "A_lbum:"
+msgstr "相册(_L)："
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:6
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:14
+msgid "Add a new album"
+msgstr "添加一个新相册"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:7
+msgid "Resize the images if larger than this size"
+msgstr "若大于该尺寸则重新调整图像大小"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:8
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:15
+msgid "_Resize to:"
+msgstr "调整大小为(_R)："
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:9
+msgid "720 x 720"
+msgstr "720 x 720"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:10
+msgid "1024 x 1024"
+msgstr "1024 x 1024"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:11
+msgid "1280 x 1280"
+msgstr "1280 x 1280"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:12
+msgid "1600 x 1600"
+msgstr "1600 x 1600"
+
+#: ../extensions/facebook/data/ui/export-to-facebook.ui.h:13
+msgid "2048 x 2048"
+msgstr "2048 x 2048"
+
+#: ../extensions/facebook/data/ui/facebook-account-chooser.ui.h:1
+#: ../extensions/flicker_utils/data/ui/flicker-account-chooser.ui.h:1
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:3
+#: ../extensions/oauth/data/ui/oauth-account-chooser.ui.h:1
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:3
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:4
+#: ../extensions/picasaweb/data/ui/picasa-web-account-chooser.ui.h:1
+msgid "A_ccount:"
+msgstr "帐户(_C)："
+
+#: ../extensions/facebook/data/ui/facebook-account-manager.ui.h:1
+#: ../extensions/flicker_utils/data/ui/flicker-account-manager.ui.h:1
+#: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
+#: ../extensions/picasaweb/data/ui/picasa-web-account-manager.ui.h:1
+msgid "A_ccounts:"
+msgstr "帐户(_C)："
+
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:1
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
+msgid "Public photos"
+msgstr "公开照片"
+
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:2
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
+msgid "Private photos, visible to friends"
+msgstr "私人照片，对朋友可见"
+
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:3
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:5
+msgid "Private"
+msgstr "私有"
+
+#: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:5
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:2
+msgid "_Visibility:"
+msgstr "可见性(_V)："
+
+#: ../extensions/facebook/data/ui/facebook-ask-authorization.ui.h:1
+#: ../extensions/flicker_utils/data/ui/flicker-ask-authorization.ui.h:1
+#: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
+msgid "_Authorize..."
+msgstr "认证(_A)..."
+
+#: ../extensions/facebook/data/ui/facebook-complete-authorization.ui.h:1
+#: ../extensions/facebook/facebook-authentication.c:472
+#: ../extensions/flicker_utils/flickr-authentication.c:408
+#: ../extensions/oauth/oauth-authentication.c:423
+msgid "Once you're done, click the 'Continue' button below."
+msgstr "一旦您完成，单击下面的“继续”按钮。"
+
+#: ../extensions/facebook/data/ui/facebook-complete-authorization.ui.h:2
+#: ../extensions/flicker_utils/data/ui/flicker-complete-authorization.ui.h:1
+#: ../extensions/oauth/data/ui/oauth-complete-authorization.ui.h:1
+msgid "C_ontinue"
+msgstr "继续(_O)"
+
+#: ../extensions/facebook/data/ui/facebook-export-completed.ui.h:1
+#: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:1
+#: ../extensions/photobucket/data/ui/photobucket-export-completed.ui.h:1
+#: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:1
+msgid "Files successfully uploaded to the server."
+msgstr "文件成功上传到服务器。"
+
+#: ../extensions/facebook/data/ui/facebook-export-completed.ui.h:2
+#: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:2
+#: ../extensions/photobucket/data/ui/photobucket-export-completed.ui.h:2
+#: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:2
+#: ../extensions/webalbums/gth-web-exporter.c:1841
+msgid "_Open in the Browser"
+msgstr "在浏览器中打开(_O)"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:130
+#: ../extensions/facebook/dlg-export-to-facebook.c:335
+#: ../extensions/facebook/facebook-authentication.c:192
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:138
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:399
+#: ../extensions/flicker_utils/dlg-import-from-flickr.c:237
+#: ../extensions/flicker_utils/flickr-authentication.c:191
+#: ../extensions/oauth/oauth-authentication.c:187
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:133
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:378
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:139
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:424
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:380
+msgid "Could not connect to the server"
+msgstr "无法连接到服务器"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:182
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:246
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:184
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:192
+msgid "Could not upload the files"
+msgstr "无法上传文件"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:412
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:188
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:223
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:464
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:717
+msgid "Could not create the album"
+msgstr "无法创建相册"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:481
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:536
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:783
+msgid "New Album"
+msgstr "新建相册"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:561
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:557
+#: ../extensions/image_print/gth-image-print-job.c:1789
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:615
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:1002
+msgid "No valid file selected."
+msgstr "未选择有效的文件。"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:562
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:558
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:616
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:1003
+msgid "Could not export the files"
+msgstr "无法导出文件"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:570
+#: ../extensions/find_duplicates/gth-find-duplicates.c:255
+#: ../extensions/find_duplicates/gth-find-duplicates.c:347
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:566
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:624
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:1010
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:803
+#: ../gthumb/gth-browser.c:1006
+#, c-format
+msgid "%d file (%s)"
+msgid_plural "%d files (%s)"
+msgstr[0] "%d 文件(%s)"
+
+#: ../extensions/facebook/dlg-export-to-facebook.c:591
+#: ../extensions/flicker_utils/dlg-export-to-flickr.c:589
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:643
+#, c-format
+msgid "Export to %s"
+msgstr "导出到 %s"
+
+#: ../extensions/facebook/facebook-account-chooser-dialog.c:200
+#: ../extensions/flicker_utils/flickr-account-chooser-dialog.c:200
+#: ../extensions/oauth/oauth-account-chooser-dialog.c:200
+msgid "New authentication..."
+msgstr "新的身份验证..."
+
+#: ../extensions/facebook/facebook-authentication.c:194
+#: ../extensions/flicker_utils/flickr-authentication.c:193
+#: ../extensions/oauth/oauth-authentication.c:189
+msgid "Choose _Account..."
+msgstr "选择帐户(_A)..."
+
+#: ../extensions/facebook/facebook-authentication.c:471
+#: ../extensions/flicker_utils/flickr-authentication.c:407
+#: ../extensions/oauth/oauth-authentication.c:422
+#, c-format
+msgid ""
+"Return to this window when you have finished the authorization process on %s"
+msgstr "当您在 %s 上完成认证过程，返回到这个窗口"
+
+#: ../extensions/facebook/facebook-authentication.c:556
+#: ../extensions/flicker_utils/flickr-authentication.c:487
+#: ../extensions/oauth/oauth-authentication.c:502
+#, c-format
+msgid "gthumb requires your authorization to upload the photos to %s"
+msgstr "gthumb 需要您的认证以上传照片到 %s"
+
+#: ../extensions/facebook/facebook-authentication.c:557
+#: ../extensions/flicker_utils/flickr-authentication.c:488
+#: ../extensions/oauth/oauth-authentication.c:503
+#, c-format
+msgid ""
+"Click 'Authorize' to open your web browser and authorize gthumb to upload "
+"photos to %s. When you're finished, return to this window to complete the "
+"authorization."
+msgstr ""
+"点击“认证”打开您的网络浏览器并认证 gthumb 来上传照片到 %s。当您结束时，返回到"
+"该窗口完成认证。"
+
+#: ../extensions/facebook/facebook-authentication.c:652
+#: ../extensions/flicker_utils/flickr-authentication.c:588
+#: ../extensions/oauth/oauth-authentication.c:605
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:820
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:684
+msgid "Choose Account"
+msgstr "选择帐户"
+
+#: ../extensions/facebook/facebook-authentication.c:761
+#: ../extensions/flicker_utils/flickr-authentication.c:697
+#: ../extensions/oauth/oauth-authentication.c:714
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:881
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:745
+msgid "Edit Accounts"
+msgstr "编辑帐户"
+
+#: ../extensions/facebook/facebook-connection.c:275
+#: ../extensions/facebook/facebook-connection.c:435
+#: ../extensions/facebook/facebook-service.c:162
+#: ../extensions/facebook/facebook-service.c:265
+#: ../extensions/facebook/facebook-service.c:468
+#: ../extensions/flicker_utils/flickr-connection.c:266
+#: ../extensions/flicker_utils/flickr-connection.c:413
+#: ../extensions/flicker_utils/flickr-service.c:195
+#: ../extensions/flicker_utils/flickr-service.c:398
+#: ../extensions/photobucket/photobucket-consumer.c:74
+#: ../extensions/photobucket/photobucket-consumer.c:79
+#: ../extensions/photobucket/photobucket-consumer.c:115
+#: ../extensions/photobucket/photobucket-consumer.c:170
+msgid "Unknown error"
+msgstr "未知错误"
+
+#: ../extensions/facebook/facebook-connection.c:310
+#: ../extensions/facebook/facebook-connection.c:461
+#: ../extensions/facebook/facebook-service.c:188
+#: ../extensions/facebook/facebook-service.c:290
+#: ../extensions/flicker_utils/flickr-connection.c:292
+#: ../extensions/flicker_utils/flickr-connection.c:439
+#: ../extensions/flicker_utils/flickr-service.c:219
+#: ../extensions/oauth/oauth-connection.c:356
+#: ../extensions/oauth/oauth-connection.c:431
+#: ../extensions/oauth/oauth-connection.c:535
+#: ../extensions/picasaweb/google-connection.c:344
+msgid "Connecting to the server"
+msgstr "正在连接服务器"
+
+#: ../extensions/facebook/facebook.extension.in.in.h:1
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../extensions/facebook/facebook.extension.in.in.h:2
+msgid "Upload images to Facebook"
+msgstr "上传图像到 Facebook"
+
+#: ../extensions/facebook/facebook-service.c:188
+#: ../extensions/facebook/facebook-service.c:290
+#: ../extensions/flicker_utils/flickr-service.c:219
+#: ../extensions/oauth/oauth-connection.c:356
+#: ../extensions/oauth/oauth-connection.c:431
+#: ../extensions/oauth/oauth-connection.c:535
+msgid "Getting account information"
+msgstr "正在获取帐户信息"
+
+#: ../extensions/facebook/facebook-service.c:396
+#: ../extensions/flicker_utils/flickr-service.c:323
+#: ../extensions/photobucket/photobucket-service.c:207
+#: ../extensions/picasaweb/picasa-web-service.c:209
+msgid "Getting the album list"
+msgstr "正在获取相册列表"
+
+#: ../extensions/facebook/facebook-service.c:525
+#: ../extensions/flicker_utils/flickr-service.c:426
+#: ../extensions/flicker_utils/flickr-service.c:546
+#: ../extensions/flicker_utils/flickr-service.c:584
+#: ../extensions/photobucket/photobucket-service.c:316
+#: ../extensions/picasaweb/picasa-web-service.c:300
+msgid "Creating the new album"
+msgstr "正在创建新相册"
+
+#: ../extensions/facebook/facebook-service.c:584
+#: ../extensions/flicker_utils/flickr-service.c:634
+#: ../extensions/photobucket/photobucket-service.c:373
+#: ../extensions/picasaweb/picasa-web-service.c:357
+#, c-format
+msgid "Could not upload '%s': %s"
+msgstr "无法上传“%s”：%s"
+
+#. Translators: %s is a filename
+#: ../extensions/facebook/facebook-service.c:670
+#: ../extensions/flicker_utils/flickr-service.c:745
+#: ../extensions/photobucket/photobucket-service.c:430
+#: ../extensions/picasaweb/picasa-web-service.c:412
+#, c-format
+msgid "Uploading '%s'"
+msgstr "正在上传 %s"
+
+#: ../extensions/facebook/facebook-service.c:886
+#: ../extensions/flicker_utils/flickr-service.c:914
+#: ../extensions/photobucket/photobucket-service.c:599
+#: ../extensions/picasaweb/picasa-web-service.c:605
+msgid "Uploading the files to the server"
+msgstr "正在上传文件到服务器"
+
+#: ../extensions/facebook/facebook-service.c:1003
+#: ../extensions/flicker_utils/flickr-service.c:1077
+#: ../extensions/picasaweb/picasa-web-service.c:718
+msgid "Getting the photo list"
+msgstr "正在获取照片列表"
+
+#: ../extensions/file_manager/actions.c:133
+msgid "New folder"
+msgstr "新建文件夹"
+
+#: ../extensions/file_manager/actions.c:134
+msgid "Enter the folder name:"
+msgstr "输入文件夹名称："
+
+#: ../extensions/file_manager/actions.c:400
+#: ../extensions/file_manager/callbacks.c:380
+#: ../extensions/file_manager/callbacks.c:842
+msgid "Could not move the files"
+msgstr "无法移动文件"
+
+#: ../extensions/file_manager/actions.c:401
+#: ../extensions/file_manager/callbacks.c:381
+#: ../extensions/file_manager/callbacks.c:843
+msgid ""
+"Files cannot be moved to the current location, as alternative you can choose "
+"to copy them."
+msgstr "文件无法被移动到当前位置，作为替代您可以选择复制它们。"
+
+#: ../extensions/file_manager/actions.c:563
+msgid "Could not open the location"
+msgstr "无法打开位置"
+
+#: ../extensions/file_manager/actions.c:696
+msgid ""
+"The folder is not empty, do you want to delete the folder and its content "
+"permanently?"
+msgstr "文件夹不为空，是否永久删除该文件夹及其内容？"
+
+#: ../extensions/file_manager/actions.c:712
+msgid "Could not delete the folder"
+msgstr "无法删除文件夹"
+
+#: ../extensions/file_manager/actions.c:773
+msgid ""
+"The folder cannot be moved to the Trash. Do you want to delete it "
+"permanently?"
+msgstr "无法将文件移至回收站，是否永久删除它？"
+
+#: ../extensions/file_manager/actions.c:780
+msgid "Could not move the folder to the Trash"
+msgstr "无法将此文件夹移动到回收站"
+
+#: ../extensions/file_manager/actions.c:816
+#: ../gthumb/gth-file-source-vfs.c:841
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "确定要永久删除“%s”？"
+
+#: ../extensions/file_manager/actions.c:826
+#: ../gthumb/gth-file-source-vfs.c:854
+msgid "If you delete a file, it will be permanently lost."
+msgstr "如果您删除了该文件，将不可恢复。"
+
+#: ../extensions/file_manager/actions.c:920
+msgid "Move To"
+msgstr "移动到"
+
+#: ../extensions/file_manager/actions.c:920
+msgid "Copy To"
+msgstr "复制到"
+
+#: ../extensions/file_manager/actions.c:924
+msgid "Move"
+msgstr "移动"
+
+#: ../extensions/file_manager/actions.c:924
+msgid "Copy"
+msgstr "复制"
+
+#: ../extensions/file_manager/callbacks.c:163
+#: ../extensions/file_manager/callbacks.c:199
+msgid "Create _Folder"
+msgstr "创建文件夹(_F)"
+
+#: ../extensions/file_manager/callbacks.c:164
+#: ../extensions/file_manager/callbacks.c:200
+msgid "Create a new empty folder inside this folder"
+msgstr "在此文件夹中创建新文件夹"
+
+#: ../extensions/file_manager/callbacks.c:179
+msgid "D_uplicate"
+msgstr "复制(_U)"
+
+#: ../extensions/file_manager/callbacks.c:180
+msgid "Duplicate the selected files"
+msgstr "复制选中的文件"
+
+#: ../extensions/file_manager/callbacks.c:183
+#: ../extensions/file_manager/callbacks.c:219
+#: ../gthumb/gth-file-source-vfs.c:813
+msgid "Mo_ve to Trash"
+msgstr "移至回收站(_V)"
+
+#: ../extensions/file_manager/callbacks.c:184
+msgid "Move the selected files to the Trash"
+msgstr "将选中的文件移至回收站"
+
+#: ../extensions/file_manager/callbacks.c:187
+#: ../extensions/file_manager/callbacks.c:223
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:5
+msgid "_Delete"
+msgstr "删除(_D)"
+
+#: ../extensions/file_manager/callbacks.c:188
+msgid "Delete the selected files"
+msgstr "删除选中的文件"
+
+#: ../extensions/file_manager/callbacks.c:191
+#: ../extensions/file_manager/callbacks.c:203
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:2
+msgid "_Rename"
+msgstr "重命名(_R)"
+
+#: ../extensions/file_manager/callbacks.c:192
+msgid "Rename the selected files"
+msgstr "重命名选中的文件"
+
+#: ../extensions/file_manager/callbacks.c:195
+msgid "Open with the _File Manager"
+msgstr "使用文件管理器打开(_F)"
+
+#: ../extensions/file_manager/callbacks.c:215
+msgid "_Paste Into Folder"
+msgstr "粘贴到文件夹(_P)"
+
+#: ../extensions/file_manager/callbacks.c:227
+#: ../extensions/file_manager/callbacks.c:236
+msgid "Copy to..."
+msgstr "复制到..."
+
+#: ../extensions/file_manager/callbacks.c:228
+msgid "Copy the selected folder to another folder"
+msgstr "将选中的文件夹复制到另一个文件夹"
+
+#: ../extensions/file_manager/callbacks.c:231
+#: ../extensions/file_manager/callbacks.c:240
+msgid "Move to..."
+msgstr "移动到..."
+
+#: ../extensions/file_manager/callbacks.c:232
+msgid "Move the selected folder to another folder"
+msgstr "将选中的文件夹移动到另一个文件夹"
+
+#: ../extensions/file_manager/callbacks.c:237
+msgid "Copy the selected files to another folder"
+msgstr "将选中的文件复制到另一个文件夹"
+
+#: ../extensions/file_manager/callbacks.c:241
+msgid "Move the selected files to another folder"
+msgstr "将选中的文件移动到另一个文件夹"
+
+#: ../extensions/file_manager/callbacks.c:1003
+#: ../extensions/find_duplicates/gth-find-duplicates.c:581
+#: ../gthumb/gth-browser.c:5011 ../gthumb/gth-browser.c:5045
+msgid "Could not perform the operation"
+msgstr "无法执行该操作"
+
+#: ../extensions/file_manager/file_manager.extension.in.in.h:1
+msgid "File manager"
+msgstr "文件管理器"
+
+#: ../extensions/file_manager/file_manager.extension.in.in.h:2
+msgid "File manager operations."
+msgstr "文件管理器操作。"
+
+#: ../extensions/file_manager/gth-delete-task.c:62
+msgid "Deleting files"
+msgstr "正在删除文件"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
+msgid "_Preview"
+msgstr "预览(_P)"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
+msgid "B_rightness:"
+msgstr "亮度(_R)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
+msgid "Con_trast:"
+msgstr "对比度(_T)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
+msgid "_Saturation:"
+msgstr "色饱和度(_S)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
+msgid "G_amma:"
+msgstr "伽马(_A)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
+msgid "Cyan-_Red:"
+msgstr "蓝绿色－红色(_R)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
+msgid "_Magenta-Green:"
+msgstr "紫红色－绿色(_M)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
+msgid "_Yellow-Blue:"
+msgstr "黄色－蓝色(_Y)："
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
+msgid "Color Levels"
+msgstr "色彩级别"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:10
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:5
+msgid "_Reset"
+msgstr "重置(_R)"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:1
+msgid "_Position:"
+msgstr "位置(_P)："
+
+#. this is used to separate the dimensions, for example: 120 × 250
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:4
+msgid "×"
+msgstr "×"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:5
+msgid "_Grid:"
+msgstr "网格(_G)："
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:6
+msgid "Maximize"
+msgstr "最大化"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:7
+msgid "Center"
+msgstr "居中"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:8
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
+msgid "Selection"
+msgstr "选区"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:9
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:5
+msgid "I_nvert aspect ratio"
+msgstr "反转长宽比(_N)"
+
+#. after the colon there is a control to select the size in pixels
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:11
+msgid "M_ultiple of:"
+msgstr ""
+
+#. abbreviation of pixel
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:13
+msgid "px"
+msgstr "像素"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:14
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:6
+msgid "Aspect ratio"
+msgstr "长宽比"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:15
+msgid "C_rop"
+msgstr "裁剪(_R)"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:1
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:3
+msgid "_Width:"
+msgstr "宽度(_W)："
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:2
+msgid "Heigh_t:"
+msgstr "高度(_T)："
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:3
+msgid "Set the image size to this value"
+msgstr "将图像大小设为该值"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:4
+#: ../gthumb/gth-main-default-metadata.c:47
+msgid "Dimensions"
+msgstr "大小"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:7
+msgid "High _quality"
+msgstr "高质量(_Q)"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:8
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
+msgid "Options"
+msgstr "选项"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:9
+msgid "Original dimensions:"
+msgstr "原来大小："
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:10
+msgid "Scale factor:"
+msgstr "比例系数："
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:11
+msgid "New dimensions:"
+msgstr "新大小："
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:12
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
+msgid "pixels"
+msgstr "像素"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:14
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:12
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
+msgid "Align"
+msgstr "对齐"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
+msgid "Angle"
+msgstr "角度"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
+msgid "Point 1:"
+msgstr "点 1："
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
+msgid "Point 2:"
+msgstr "点 2："
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
+msgid "Keep aspect ratio"
+msgstr "保持长宽比"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
+msgid "Image size"
+msgstr "图像大小"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
+msgid "Grid:"
+msgstr "网格："
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
+msgid "Pick a background color"
+msgstr "选择一种背景颜色"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
+msgid "_Transparent"
+msgstr "透明(_T)"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
+msgid "_Background:"
+msgstr "背景(_B)："
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
+msgid "Reset"
+msgstr "重置"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
+msgid ""
+"Draw a line on the image \n"
+"to set the alignment."
+msgstr ""
+"在图像上绘制一条线\n"
+"用来设置对齐方式。"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
+msgid "Parallel"
+msgstr "平行"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:16
+msgid "Perpendicular"
+msgstr "垂直"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
+msgid "Alignment"
+msgstr "对齐"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
+msgid "Original size"
+msgstr "原来大小"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
+msgid "Bounding box"
+msgstr "边框"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
+msgid "Crop borders"
+msgstr "剪裁边界"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:28
+msgid "_Preview:"
+msgstr "预览(_P)："
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
+msgid "Threshold:"
+msgstr "阈值："
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
+msgid "Radius:"
+msgstr "半径："
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
+msgid "Amount:"
+msgstr "数量："
+
+#: ../extensions/file_tools/file_tools.extension.in.in.h:1
+msgid "Image tools"
+msgstr "图像工具"
+
+#: ../extensions/file_tools/file_tools.extension.in.in.h:2
+msgid "Basic tools to modify images."
+msgstr "修改图像的简单工具。"
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:538
+msgid "Adjust Colors..."
+msgstr "调整色彩..."
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:538
+msgid "Adjust Colors"
+msgstr "减少色彩"
+
+#: ../extensions/file_tools/gth-file-tool-adjust-colors.c:539
+msgid "Change brightness, contrast, saturation and gamma level of the image"
+msgstr "改变图像的亮度、对比度、饱和度和伽马水平"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:424
+#: ../extensions/file_tools/gth-file-tool-resize.c:498
+msgid "Square"
+msgstr "方形"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:425
+#: ../extensions/file_tools/gth-file-tool-resize.c:499
+#, c-format
+msgid "%d x %d (Image)"
+msgstr "%d x %d (图像)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:428
+#: ../extensions/file_tools/gth-file-tool-resize.c:503
+#, c-format
+msgid "%d x %d (Screen)"
+msgstr "%d x %d (屏幕)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:432
+#: ../extensions/file_tools/gth-file-tool-resize.c:508
+msgid "5:4"
+msgstr "5:4"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:433
+#: ../extensions/file_tools/gth-file-tool-resize.c:509
+msgid "4:3 (DVD, Book)"
+msgstr "4:3 (DVD，图书)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:434
+#: ../extensions/file_tools/gth-file-tool-resize.c:510
+msgid "7:5"
+msgstr "7:5"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:435
+#: ../extensions/file_tools/gth-file-tool-resize.c:511
+msgid "3:2 (Postcard)"
+msgstr "3:2 (明信片)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:436
+#: ../extensions/file_tools/gth-file-tool-resize.c:512
+msgid "16:10"
+msgstr "16:10"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:437
+#: ../extensions/file_tools/gth-file-tool-resize.c:513
+msgid "16:9 (DVD)"
+msgstr "16:9 (DVD)"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:438
+#: ../extensions/file_tools/gth-file-tool-resize.c:514
+msgid "1.85:1"
+msgstr "1.85:1"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:439
+#: ../extensions/file_tools/gth-file-tool-resize.c:515
+msgid "2.39:1"
+msgstr "2.39:1"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:440
+#: ../extensions/file_tools/gth-file-tool-resize.c:516
+#: ../extensions/image_print/data/ui/print-layout.ui.h:2
+#: ../extensions/rename_series/gth-template-selector.c:234
+msgid "Custom"
+msgstr "自定义"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:455
+#: ../extensions/file_tools/gth-file-tool-rotate.c:416
+msgid "Rule of Thirds"
+msgstr "三分法则"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:456
+#: ../extensions/file_tools/gth-file-tool-rotate.c:417
+msgid "Golden Sections"
+msgstr "黄金分割"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:457
+#: ../extensions/file_tools/gth-file-tool-rotate.c:418
+msgid "Center Lines"
+msgstr "中心线"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:458
+#: ../extensions/file_tools/gth-file-tool-rotate.c:419
+#, fuzzy
+msgid "Uniform"
+msgstr "统一化"
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:614
+msgid "Crop..."
+msgstr "裁剪..."
+
+#: ../extensions/file_tools/gth-file-tool-crop.c:614
+msgid "Crop"
+msgstr "裁剪"
+
+#: ../extensions/file_tools/gth-file-tool-desaturate.c:68
+#: ../extensions/file_tools/gth-file-tool-negative.c:68
+msgid "Applying changes"
+msgstr "正在应用变更"
+
+#: ../extensions/file_tools/gth-file-tool-desaturate.c:203
+msgid "Desaturate"
+msgstr "去色"
+
+#: ../extensions/file_tools/gth-file-tool-enhance.c:119
+msgid "White balance correction"
+msgstr "白平衡修正"
+
+#: ../extensions/file_tools/gth-file-tool-enhance.c:342
+msgid "Enhance Colors"
+msgstr "加强颜色"
+
+#: ../extensions/file_tools/gth-file-tool-enhance.c:343
+msgid "Automatic white balance correction"
+msgstr "自动白平衡校正 "
+
+#: ../extensions/file_tools/gth-file-tool-equalize.c:86
+msgid "Equalizing image histogram"
+msgstr "正在平衡图像直方图"
+
+#: ../extensions/file_tools/gth-file-tool-equalize.c:275
+msgid "Equalize"
+msgstr "均衡"
+
+#: ../extensions/file_tools/gth-file-tool-equalize.c:276
+msgid "Equalize image histogram"
+msgstr "平衡图像直方图"
+
+#: ../extensions/file_tools/gth-file-tool-flip.c:87
+msgid "Flip"
+msgstr "上下翻转"
+
+#: ../extensions/file_tools/gth-file-tool-flip.c:88
+msgid "Flip the image vertically"
+msgstr "垂直翻转图像"
+
+#: ../extensions/file_tools/gth-file-tool-mirror.c:87
+msgid "Mirror"
+msgstr "左右翻转"
+
+#: ../extensions/file_tools/gth-file-tool-mirror.c:88
+msgid "Mirror the image horizontally"
+msgstr "水平镜像图像"
+
+#: ../extensions/file_tools/gth-file-tool-negative.c:197
+msgid "Negative"
+msgstr "底片效果"
+
+#: ../extensions/file_tools/gth-file-tool-redo.c:75
+msgid "Redo"
+msgstr "重做"
+
+#: ../extensions/file_tools/gth-file-tool-resize.c:680
+msgid "Resize..."
+msgstr "调整大小..."
+
+#: ../extensions/file_tools/gth-file-tool-resize.c:680
+msgid "Resize"
+msgstr "调整大小"
+
+#: ../extensions/file_tools/gth-file-tool-rotate.c:636
+msgid "Rotate..."
+msgstr "旋转..."
+
+#: ../extensions/file_tools/gth-file-tool-rotate.c:636
+msgid "Rotate"
+msgstr "旋转"
+
+#: ../extensions/file_tools/gth-file-tool-rotate.c:637
+msgid "Freely rotate the image"
+msgstr "自由旋转图像"
+
+#: ../extensions/file_tools/gth-file-tool-rotate-left.c:87
+#: ../extensions/image_rotation/callbacks.c:55
+msgid "Rotate Left"
+msgstr "向左旋转"
+
+#: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
+msgid "Rotate the image by 90 degrees counterclockwise"
+msgstr "逆时针 90 度旋转图像"
+
+#: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
+#: ../extensions/image_rotation/callbacks.c:49
+msgid "Rotate Right"
+msgstr "向右旋转"
+
+#: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
+msgid "Rotate the image by 90 degrees clockwise"
+msgstr "顺时针 90 度旋转图像"
+
+#: ../extensions/file_tools/gth-file-tool-save-as.c:70
+msgid "Save As"
+msgstr "另存为"
+
+#: ../extensions/file_tools/gth-file-tool-save.c:66
+msgid "Save"
+msgstr "保存"
+
+#: ../extensions/file_tools/gth-file-tool-sharpen.c:100
+msgid "Sharpening image"
+msgstr "正在锐化图像"
+
+#: ../extensions/file_tools/gth-file-tool-sharpen.c:458
+msgid "Enhance Focus..."
+msgstr "增强焦点..."
+
+#: ../extensions/file_tools/gth-file-tool-sharpen.c:458
+msgid "Enhance Focus"
+msgstr "增强焦点"
+
+#: ../extensions/file_tools/gth-file-tool-undo.c:75
+msgid "Undo"
+msgstr "撤销"
+
+#: ../extensions/find_duplicates/callbacks.c:48
+msgid "Find _Duplicates..."
+msgstr "查找重复项(_D)..."
+
+#: ../extensions/find_duplicates/callbacks.c:49
+msgid "Find duplicated files in the current location"
+msgstr "在当前位置查找重复文件"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
+msgid "_Folders:"
+msgstr "文件夹(_F)："
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
+msgid "Search for Duplicates"
+msgstr "搜索重复项"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
+msgid "Duplicates:"
+msgstr "重复数："
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
+msgid "Files:"
+msgstr "文件："
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
+#: ../gthumb/gth-browser-actions-entries.h:33
+msgid "_View"
+msgstr "查看(_V)"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
+msgid "No duplicates found."
+msgstr "未找到重复项。"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
+#: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:1
+msgid "Find Duplicates"
+msgstr "查找重复项"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:1
+msgid "Start _at:"
+msgstr "开始的数字(_A)："
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:4
+msgid "_Filter:"
+msgstr "过滤器(_F)："
+
+#: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:2
+msgid "Find duplicated files."
+msgstr "查找重复文件。"
+
+# leave 不解
+#: ../extensions/find_duplicates/gth-find-duplicates.c:53
+#, fuzzy
+msgid "leave the newest duplicates"
+msgstr "留下最新副本"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:54
+#, fuzzy
+msgid "leave the oldest duplicates"
+msgstr "留下最旧副本"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:55
+msgid "by folder..."
+msgstr "按文件夹..."
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:56
+msgid "all files"
+msgstr "所有文件"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:57
+msgid "no file"
+msgstr "无文件"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:397
+#: ../extensions/find_duplicates/gth-find-duplicates.c:492
+#, c-format
+msgid "%d duplicate"
+msgid_plural "%d duplicates"
+msgstr[0] "%d 个重复项"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:536
+msgid "Search completed"
+msgstr "搜索完成"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:548
+msgid "Searching for duplicates"
+msgstr "正在搜索重复项"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:551
+#: ../gthumb/gth-load-file-data-task.c:106
+#: ../gthumb/gth-save-file-data-task.c:100
+#, c-format
+msgid "%d file remaining"
+msgid_plural "%d files remaining"
+msgstr[0] "还剩 %d 个文件"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:634
+msgid "Getting the file list"
+msgstr "正在获取文件列表"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:740
+msgid "Duplicates"
+msgstr "重复项"
+
+#: ../extensions/find_duplicates/gth-find-duplicates.c:997
+msgid "Select"
+msgstr "选择"
+
+#: ../extensions/flicker/callbacks.c:59 ../extensions/flicker/callbacks.c:64
+msgid "_Flickr..."
+msgstr "_Flickr..."
+
+#: ../extensions/flicker/callbacks.c:60
+msgid "Download photos from Flickr"
+msgstr "从 Flickr 下载照片"
+
+#: ../extensions/flicker/callbacks.c:65
+msgid "Upload photos to Flickr"
+msgstr "上传照片到 Flickr"
+
+#: ../extensions/flicker/flicker.extension.in.in.h:1
+msgid "Flicker"
+msgstr "Flicker"
+
+#: ../extensions/flicker/flicker.extension.in.in.h:2
+msgid "Upload images to Flickr"
+msgstr "上传图像到 Flickr"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:12
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:4
+msgid "Free space:"
+msgstr "剩余空间："
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
+msgid "Ph_otoset:"
+msgstr "照片集(_O)："
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
+msgid "_Privacy:"
+msgstr "隐私(_P)："
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
+msgid "Hi_de from public searches"
+msgstr "从公共搜索结果中隐藏(_D)"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
+msgid "_Safety:"
+msgstr "安全(_S)："
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
+msgid "Private photos, visible to family and friends"
+msgstr "私人照片，对家庭成员和朋友可见"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
+msgid "Private photos, visible to family"
+msgstr "私人照片，对家庭成员可见"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
+msgid "Private photos"
+msgstr "私人照片"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
+msgid "Safe content"
+msgstr "安全内容"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
+msgid "Moderate content"
+msgstr "适度内容"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
+msgid "Restricted content"
+msgstr "受限内容"
+
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:2
+msgid "_Import"
+msgstr "导入(_I)"
+
+#: ../extensions/flicker_utils/dlg-import-from-flickr.c:360
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:830
+msgid "Could not get the photo list"
+msgstr "无法获取相片列表"
+
+#: ../extensions/flicker_utils/dlg-import-from-flickr.c:397
+#: ../extensions/flicker_utils/dlg-import-from-flickr.c:561
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:864
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:1026
+msgid "No album selected"
+msgstr "未选中相册"
+
+#: ../extensions/flicker_utils/dlg-import-from-flickr.c:579
+#, c-format
+msgid "Import from %s"
+msgstr "从 %s 导入"
+
+#: ../extensions/gstreamer_tools/actions.c:66
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1080
+#: ../gthumb/gth-browser.c:2013
+msgid "Could not save the file"
+msgstr "无法保存文件"
+
+#: ../extensions/gstreamer_tools/actions.c:126
+msgid "Could not take a screenshot"
+msgstr "无法截图"
+
+#: ../extensions/gstreamer_tools/actions.c:132
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1248
+msgid "Save Image"
+msgstr "保存图像"
+
+#: ../extensions/gstreamer_tools/actions.c:152
+msgctxt "Filename"
+msgid "Screenshot"
+msgstr "屏幕快照"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
+msgid "Slower"
+msgstr "减慢"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:686
+msgid "Play"
+msgstr "播放"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:3
+msgid "Faster"
+msgstr "加快"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
+msgid "Time:"
+msgstr "时间："
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
+msgid "--:--"
+msgstr "--:--"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
+msgid "Toggle volume"
+msgstr "切换音量"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
+msgid "Change volume level"
+msgstr "改变音量级别"
+
+#: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:3
+#: ../extensions/photo_importer/actions.c:67
+#: ../extensions/photo_importer/dlg-photo-importer.c:620
+msgid "Choose a folder"
+msgstr "选择文件夹"
+
+#: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:1
+msgid "Audio/Video support"
+msgstr "音频/视频支持"
+
+#: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:2
+msgid "Play audio and video files."
+msgstr "播放音频和视频文件。"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:104
+msgid "Screenshot"
+msgstr "屏幕快照"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:105
+msgid "Take a screenshot"
+msgstr "截图"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:663
+msgid "Playing video"
+msgstr "正在播放视频"
+
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:676
+msgid "Pause"
+msgstr "暂停"
+
+#: ../extensions/gstreamer_tools/main.c:31
+#: ../gthumb/gth-main-default-tests.c:247
+msgid "Video"
+msgstr "视频"
+
+#: ../extensions/gstreamer_tools/main.c:32
+#: ../gthumb/gth-main-default-tests.c:254
+msgid "Audio"
+msgstr "音频"
+
+#: ../extensions/gstreamer_tools/main.c:39
+msgid "Artist"
+msgstr "艺人"
+
+#: ../extensions/gstreamer_tools/main.c:40
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:16
+msgid "Album"
+msgstr "专辑"
+
+#: ../extensions/gstreamer_tools/main.c:41
+msgid "Bitrate"
+msgstr "比特率"
+
+#: ../extensions/gstreamer_tools/main.c:42
+msgid "Encoder"
+msgstr "编码器"
+
+#: ../extensions/gstreamer_tools/main.c:44
+#: ../extensions/gstreamer_tools/main.c:49
+msgid "Codec"
+msgstr "解码器"
+
+#: ../extensions/gstreamer_tools/main.c:45
+msgid "Framerate"
+msgstr "帧率"
+
+#: ../extensions/gstreamer_tools/main.c:46
+#: ../extensions/image_print/data/ui/print-layout.ui.h:24
+#: ../extensions/image_viewer/gth-image-viewer-page.c:209
+msgid "Width"
+msgstr "宽度"
+
+#: ../extensions/gstreamer_tools/main.c:47
+#: ../extensions/image_print/data/ui/print-layout.ui.h:25
+msgid "Height"
+msgstr "高度"
+
+#: ../extensions/gstreamer_tools/main.c:50
+msgid "Channels"
+msgstr "声道"
+
+#: ../extensions/gstreamer_tools/main.c:51
+msgid "Sample rate"
+msgstr "采样率"
+
+#: ../extensions/gstreamer_utils/gstreamer-utils.c:363
+msgid "Stereo"
+msgstr "立体声"
+
+#: ../extensions/gstreamer_utils/gstreamer-utils.c:363
+msgid "Mono"
+msgstr "单声道"
+
+#. Translators: this is an image size, such as 1024 × 768
+#: ../extensions/gstreamer_utils/gstreamer-utils.c:396
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1303
+#: ../extensions/image_viewer/gth-metadata-provider-image.c:190
+#: ../extensions/webalbums/dlg-web-exporter.c:442
+#: ../extensions/webalbums/gth-web-exporter.c:2446
+#, c-format
+msgid "%d × %d"
+msgstr "%d × %d"
+
+#: ../extensions/image_print/actions.c:69
+msgid "Could not print the selected files"
+msgstr "无法打印选择的文件"
+
+#: ../extensions/image_print/callbacks.c:54
+msgid "Print the selected images"
+msgstr "打印选中的图像"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:1
+msgid "Centered"
+msgstr "居中"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:13
+msgid "The total number of files"
+msgstr "文件总数"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:14
+#: ../extensions/importer/data/ui/import-preferences.ui.h:4
+msgid "The event description"
+msgstr "事件描述"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:17
+msgid "_Rows:"
+msgstr "行数(_R)："
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:19
+msgid "Image"
+msgstr "图像"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:20
+msgid "Position:"
+msgstr "位置："
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:21
+msgid "Left"
+msgstr "左"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:22
+msgid "Top"
+msgstr "上"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:26
+msgid "Rotation:"
+msgstr "旋转："
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:27
+msgid "Unit:"
+msgstr "单位："
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:28
+msgid "Preview"
+msgstr "预览"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+msgid "millimeters"
+msgstr "亳米"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+msgid "inches"
+msgstr "英寸"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:4
+msgid "Select Caption Font"
+msgstr "选择标题字体"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:5
+msgid "Select Header Font"
+msgstr "选择页眉字体"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:6
+msgid "Select Footer Font"
+msgstr "选择页脚字体"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:7
+msgid "Fonts"
+msgstr "字体"
+
+#: ../extensions/image_print/gth-image-print-job.c:971
+#: ../extensions/webalbums/data/albumthemes/text.h:31
+#, c-format
+msgid "Page %d of %d"
+msgstr "第 %d 页(总共 %d 页)"
+
+#: ../extensions/image_print/gth-image-print-job.c:1734
+#: ../extensions/image_print/gth-image-print-job.c:1861
+#: ../extensions/image_print/gth-image-print-job.c:1898
+msgid "Could not print"
+msgstr "无法打印相片"
+
+#: ../extensions/image_print/gth-image-print-job.c:1796
+#: ../gthumb/gth-main-default-tests.c:240
+msgid "Images"
+msgstr "图像"
+
+#: ../extensions/image_print/gth-image-print-job.c:1863
+#: ../gthumb/gth-image-loader.c:204 ../gthumb/gth-image-loader.c:278
+msgid "No suitable loader available for this file type"
+msgstr "没有用于此文件类型的合适载入器"
+
+#. translators: %s is a filename
+#: ../extensions/image_print/gth-load-image-info-task.c:164
+#, c-format
+msgid "Loading \"%s\""
+msgstr "正在载入“%s”"
+
+#: ../extensions/image_print/gth-load-image-info-task.c:166
+#: ../extensions/webalbums/gth-web-exporter.c:2685
+msgid "Loading images"
+msgstr "正在载入图像"
+
+#: ../extensions/image_print/image_print.extension.in.in.h:1
+msgid "Image print"
+msgstr "图像打印"
+
+#: ../extensions/image_print/image_print.extension.in.in.h:2
+msgid "Allow to print images choosing the page layout."
+msgstr "允许打印图像时选择页面布局。"
+
+#: ../extensions/image_print/preferences.c:79
+msgid "Print"
+msgstr "打印"
+
+#: ../extensions/image_rotation/callbacks.c:50
+msgid "Rotate the selected images 90° to the right"
+msgstr "将选择的图像向右旋转 90°"
+
+#: ../extensions/image_rotation/callbacks.c:56
+msgid "Rotate the selected images 90° to the left"
+msgstr "将选择的图像向左旋转 90°"
+
+#: ../extensions/image_rotation/callbacks.c:61
+msgid "Rotate Physically"
+msgstr "物理旋转"
+
+#: ../extensions/image_rotation/callbacks.c:62
+msgid "Rotate the selected images according to the embedded orientation"
+msgstr "根据嵌入的方向旋转选中的图像"
+
+#: ../extensions/image_rotation/callbacks.c:67
+msgid "Reset the EXIF Orientation"
+msgstr "重设 EXIF 方向"
+
+#: ../extensions/image_rotation/callbacks.c:68
+msgid "Reset the embedded orientation without rotating the images"
+msgstr "重设内嵌方向而不用旋转图像"
+
+#: ../extensions/image_rotation/gth-reset-orientation-task.c:111
+#: ../extensions/image_rotation/gth-transform-task.c:141
+#: ../extensions/webalbums/gth-web-exporter.c:2339
+#: ../extensions/webalbums/gth-web-exporter.c:2423
+msgid "Saving images"
+msgstr "正在保存图像"
+
+#: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
+msgid "Image rotation"
+msgstr "图像旋转"
+
+#: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
+msgid "Rotate images without data loss."
+msgstr "以无损方式旋转图像。"
+
+#: ../extensions/image_rotation/rotation-utils.c:117
+#, c-format
+msgid "Problem transforming the image: %s"
+msgstr "转换图像时发生错误：%s"
+
+#: ../extensions/image_rotation/rotation-utils.c:122
+msgid ""
+"This transformation may introduce small image distortions along one or more "
+"edges, because the image dimensions are not multiples of 8.\n"
+"\n"
+"The distortion is reversible, however. If the resulting image is "
+"unacceptable, simply apply the reverse transformation to return to the "
+"original image.\n"
+"\n"
+"You can also choose to discard (or trim) any untransformable edge pixels. "
+"For practical use, this mode gives the best looking results, but the "
+"transformation is not strictly lossless anymore."
+msgstr "这种变换可能导致图像的某些边缘产生小的扭曲，因为图像尺寸不是 8 的倍数。\n"
+"\n"
+"不过，这种扭曲是可逆转的。如果对结果图像不满意，只需应用反变换返回到原始图像。\n"
+"\n"
+"您也可以选择丢弃或裁去无法变换的边缘像素。实际使用中，这种方式产生的结果看起来最好，但变换严格讲不再是无损的了。"
+
+#: ../extensions/image_rotation/rotation-utils.c:128
+msgid "_Trim"
+msgstr "修整(_T)"
+
+#: ../extensions/image_rotation/rotation-utils.c:130
+msgid "_Accept distortion"
+msgstr "接受失真(_A)"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
+msgid "Set to actual size"
+msgstr "实际大小"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
+msgid "Keep previous zoom"
+msgstr "沿用之前的缩放比例"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
+msgid "Fit to window"
+msgstr "适合窗口大小"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
+msgid "Fit to window if larger"
+msgstr "若图像太大则缩小至窗口大小"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
+msgid "Fit to width"
+msgstr "适合宽度"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
+msgid "Fit to width if larger"
+msgstr "若图像太大则缩小至适合宽度"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
+msgid "Reset scrollbar positions"
+msgstr "重设滚动条位置"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
+msgid "After loading an image:"
+msgstr "载入图像后："
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
+msgid "_Zoom quality:"
+msgstr "缩放质量(_Z)："
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:10
+msgid "Transparency _type:"
+msgstr "透明类型(_T)："
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
+msgid "High"
+msgstr "高"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:12
+msgid "Low"
+msgstr "低"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:13
+msgid "White"
+msgstr "白"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:15
+msgid "Black"
+msgstr "黑"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:16
+msgid "Checked"
+msgstr "方格"
+
+#: ../extensions/image_viewer/gth-image-histogram.c:84
+msgid "Histogram"
+msgstr "直方图"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:179
+msgid "Copy Image"
+msgstr "复制图像"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:180
+msgid "Copy the image to the clipboard"
+msgstr "将图像复制到剪贴板"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:184
+msgid "Paste Image"
+msgstr "粘帖图像"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:185
+msgid "Paste the image from the clipboard"
+msgstr "从剪贴板粘贴图像"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:189
+msgid "In"
+msgstr "放大"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:190
+msgid "Zoom in"
+msgstr "放大"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:194
+msgid "Out"
+msgstr "缩小"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:195
+msgid "Zoom out"
+msgstr "缩小"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:199
+msgid "1:1"
+msgstr "1:1"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:200
+msgid "Actual size"
+msgstr "实际大小"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:204
+msgid "Fit"
+msgstr "符合窗口"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:205
+msgid "Zoom to fit window"
+msgstr "缩放以适应窗口"
+
+#: ../extensions/image_viewer/gth-image-viewer-page.c:210
+msgid "Zoom to fit width"
+msgstr "缩放以适应窗口宽度"
+
+#: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
+msgid "Image viewer"
+msgstr "图像浏览器"
+
+#: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
+msgid "Basic image viewing."
+msgstr "基本图形查看。"
+
+#: ../extensions/image_viewer/preferences.c:125
+msgid "Viewer"
+msgstr "查看器"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:1
+msgid "_Destination"
+msgstr "目标(_D)"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:2
+msgid "_Automatic subfolder"
+msgstr "自动设置子文件夹(_A)"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:3
+msgid "as _single subfolder"
+msgstr "作为单个子文件夹(_S)"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:7
+msgid "The year"
+msgstr "年"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:8
+msgid "The month"
+msgstr "月"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:9
+msgid "The day of the month"
+msgstr "天"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:10
+msgid "The hour"
+msgstr "小时"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:11
+msgid "The minutes"
+msgstr "分钟"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:12
+msgid "The seconds"
+msgstr "秒"
+
+#: ../extensions/importer/gth-import-destination-button.c:183
+msgid "Invalid Destination"
+msgstr "无效的目标"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:198
+#, c-format
+msgid "example: %s"
+msgstr "示例：%s"
+
+#. subfolder type
+#: ../extensions/importer/gth-import-preferences-dialog.c:330
+msgid "File date"
+msgstr "文件日期"
+
+#. gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("subfolder_label")), self->priv->subfolder_type_list);
+#. subfolder format
+#: ../extensions/importer/gth-import-preferences-dialog.c:340
+msgid "year-month-day"
+msgstr "年-月-日"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:341
+msgid "year-month"
+msgstr "年-月"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:342
+msgid "year"
+msgstr "年"
+
+#: ../extensions/importer/gth-import-preferences-dialog.c:343
+msgid "custom format"
+msgstr "自定义格式"
+
+#: ../extensions/importer/gth-import-task.c:445
+#: ../extensions/importer/gth-import-task.c:480
+#: ../extensions/importer/gth-import-task.c:651
+msgid "Importing files"
+msgstr "正在导入文件"
+
+#: ../extensions/importer/gth-import-task.c:601
+msgid "No file imported"
+msgstr "没有文件被导入"
+
+#: ../extensions/importer/gth-import-task.c:602
+msgid "The selected files are already present in the destination."
+msgstr "选中的文件已在目标位置。"
+
+#: ../extensions/importer/gth-import-task.c:625
+#: ../gthumb/gth-file-source-vfs.c:694
+msgid "Could not delete the files"
+msgstr "无法删除文件"
+
+#: ../extensions/importer/gth-import-task.c:626
+msgid "Delete operation not supported."
+msgstr "不支持删除操作。"
+
+#: ../extensions/importer/gth-import-task.c:712
+msgid "Last imported"
+msgstr "最后导入"
+
+#: ../extensions/importer/gth-import-task.c:818
+msgid "No file specified."
+msgstr "未指定文件。"
+
+#. Translators: For example: Not enough free space in '/home/user/Images'.\n1.3 GB of space is required but only 300 MB is available.
+#: ../extensions/importer/gth-import-task.c:855
+#, c-format
+msgid ""
+"Not enough free space in '%s'.\n"
+"%s of space is required but only %s is available."
+msgstr ""
+"在“%s”中没有足够的剩余空间。\n"
+"需要空间 %s 但只有 %s 可用。"
+
+#: ../extensions/list_tools/callbacks.c:76 ../gthumb/gth-filterbar.c:304
+msgid "Personalize..."
+msgstr "个性化..."
+
+#: ../extensions/list_tools/callbacks.c:320
+msgid "Tools"
+msgstr "工具"
+
+#: ../extensions/list_tools/callbacks.c:321
+msgid "Batch tools for multiple files"
+msgstr "用于多个文件的批量工具"
+
+#: ../extensions/list_tools/data/ui/ask-value.ui.h:1
+msgid "_Skip"
+msgstr "跳过(_S)"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
+msgid "Commands"
+msgstr "命令"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:2
+msgid "Co_mmands:"
+msgstr "命令(_M)："
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:2
+msgid "_Wait for the command to finish"
+msgstr "等待命令完成(_W)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:3
+msgid "E_xecute command once for every file"
+msgstr "为每个文件执行一次命令(_X)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:4
+msgid "_Terminal command (shell script)"
+msgstr "终端命令(shell 脚本)(_T)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:5
+msgid "Sh_ortcut:"
+msgstr "快捷键(_O)："
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:6
+msgid "The file uri"
+msgstr "文件 URI"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:7
+msgid "The file path"
+msgstr "文件路径"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:8
+msgid "The file basename"
+msgstr "文件前缀名"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:9
+msgid "The parent folder path"
+msgstr "上级文件夹路径"
+
+#. Translate only 'message' and 'default_value'.
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:14
+#, no-c-format
+msgid "%ask{ message }{ default value }"
+msgstr "%ask{消息}{默认值}"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:15
+msgid "Ask an input value"
+msgstr "询问输入值"
+
+#. Translate only 'attribute name'
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:18
+#, no-c-format
+msgid "%attr{ attribute name }"
+msgstr "%attr{属性名称}"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:19
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:25
+msgid "A file attribute"
+msgstr "文件属性"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:21
+#, no-c-format
+msgid "%N"
+msgstr "%N"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:22
+msgid "The file basename without extension"
+msgstr "不带扩展名的文件扩展名"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:24
+#, no-c-format
+msgid "%E"
+msgstr "%E"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:25
+msgid "The file extension"
+msgstr "文件扩展名"
+
+#. Translate only 'text'.
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:28
+#, no-c-format
+msgid "%quote{ text }"
+msgstr "%quote{文本}"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:29
+msgid "Quote the text "
+msgstr "引用文本"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:30
+msgid "_Command:"
+msgstr "命令(_C)："
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:257
+msgid "Script"
+msgstr "脚本"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:271
+msgid "Shortcut"
+msgstr "快捷键"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:285
+#: ../gthumb/dlg-personalize-filters.c:252
+msgid "Show"
+msgstr "显示"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:355
+msgid "Could not save the script"
+msgstr "无法保存脚本"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:406
+msgid "New Command"
+msgstr "新建命令"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:433
+msgid "Edit Command"
+msgstr "编辑命令"
+
+#: ../extensions/list_tools/dlg-personalize-scripts.c:461
+msgid "Are you sure you want to delete the selected command?"
+msgstr "您确定要删除选中的命令吗？"
+
+#: ../extensions/list_tools/gth-script.c:610
+msgid "Enter a value:"
+msgstr "输入值："
+
+#: ../extensions/list_tools/gth-script.c:745
+#: ../extensions/webalbums/gth-web-exporter.c:560
+#: ../extensions/webalbums/gth-web-exporter.c:572
+#: ../extensions/webalbums/gth-web-exporter.c:580
+msgid "Malformed command"
+msgstr "错误的命令"
+
+#: ../extensions/list_tools/gth-script-editor-dialog.c:147
+msgid "none"
+msgstr "无"
+
+#: ../extensions/list_tools/gth-script-editor-dialog.c:153
+#, c-format
+msgid "key %d on the numeric keypad"
+msgstr "小键盘中的键 %d"
+
+#: ../extensions/list_tools/gth-script-editor-dialog.c:296
+#, c-format
+msgid "No command specified"
+msgstr "未指定命令"
+
+#: ../extensions/list_tools/gth-script-task.c:83
+#, c-format
+msgid "Command exited abnormally with status %d"
+msgstr "命令以状态数 %d 非正常退出"
+
+#: ../extensions/list_tools/list_tools.extension.in.in.h:1
+msgid "File list tools"
+msgstr "文件列表工具"
+
+#: ../extensions/list_tools/list_tools.extension.in.in.h:2
+msgid "Scripting and batch manipulation of files."
+msgstr "编写脚本以及批量处理文件。"
+
+#: ../extensions/map_view/gth-map-view.c:130
+msgctxt "Cardinal point"
+msgid "S"
+msgstr "S"
+
+#: ../extensions/map_view/gth-map-view.c:130
+msgctxt "Cardinal point"
+msgid "N"
+msgstr "N"
+
+#: ../extensions/map_view/gth-map-view.c:132
+msgctxt "Cardinal point"
+msgid "W"
+msgstr "W"
+
+#: ../extensions/map_view/gth-map-view.c:132
+msgctxt "Cardinal point"
+msgid "E"
+msgstr "E"
+
+#: ../extensions/map_view/gth-map-view.c:205
+#: ../extensions/map_view/map_view.extension.in.in.h:1
+msgid "Map"
+msgstr "地图"
+
+#. No GPS label
+#: ../extensions/map_view/gth-map-view.c:276
+msgid "The geographical position information is not available for this image."
+msgstr "该图像的地理位置信息不可用。"
+
+#: ../extensions/map_view/map_view.extension.in.in.h:2
+msgid "View the photo position on the map"
+msgstr "在地图上查看照片的位置"
+
+#: ../extensions/photobucket/callbacks.c:54
+msgid "Photobucket..."
+msgstr "Photobucket..."
+
+#: ../extensions/photobucket/callbacks.c:55
+msgid "Upload photos to Photobucket"
+msgstr "上传照片到 Photobucket"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:1
+msgid "Tiny ( 100 x 75 )"
+msgstr "很小( 100 x 75 )"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:2
+msgid "Small ( 160 x 120 )"
+msgstr "小( 160 x 120 )"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:3
+msgid "Medium ( 320 x 240 )"
+msgstr "中等( 320 x 240 )"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:4
+msgid "Large ( 640 x 480 )"
+msgstr "大( 640 x 480 )"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:5
+msgid "15ʺ screen ( 800 x 600 )"
+msgstr "15ʺ 屏幕( 800 x 600 )"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:6
+msgid "17ʺ screen ( 1024 x 768 )"
+msgstr "17ʺ 屏幕( 1024 x 768 )"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:7
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:299
+msgid "1 megabyte file size"
+msgstr "1 MB 文件大小"
+
+#: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:16
+msgid "_Scramble filenames"
+msgstr "打乱文件名(_S)"
+
+#: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:2
+msgid "_Container:"
+msgstr "容器(_C)："
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:293
+msgid "Tiny ( 100 × 75 )"
+msgstr "很小( 100 x 75 )"
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:294
+msgid "Small ( 160 × 120 )"
+msgstr "小( 160 x 120 )"
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:295
+msgid "Medium ( 320 × 240 )"
+msgstr "中等( 320 x 240 )"
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:296
+msgid "Large ( 640 × 480 )"
+msgstr "大( 640 × 480 )"
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:297
+msgid "15ʺ screen ( 800 × 600 )"
+msgstr "15ʺ 屏幕( 800 × 600 )"
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:298
+msgid "17ʺ screen ( 1024 × 768 )"
+msgstr "17ʺ 屏幕( 1024 × 768 )"
+
+#: ../extensions/photobucket/dlg-export-to-photobucket.c:306
+msgid "2 megabyte file size"
+msgstr "2 MB 文件大小"
+
+#: ../extensions/photobucket/photobucket.extension.in.in.h:1
+msgid "PhotoBucket"
+msgstr "PhotoBucket"
+
+#: ../extensions/photobucket/photobucket.extension.in.in.h:2
+msgid "Upload images to PhotoBucket"
+msgstr "上传图像到 PhotoBucket"
+
+#: ../extensions/photo_importer/actions.c:71
+msgid "Import"
+msgstr "导入"
+
+#: ../extensions/photo_importer/callbacks.c:52
+msgid "_Removable Device..."
+msgstr "可移动设备(_R)..."
+
+#: ../extensions/photo_importer/callbacks.c:53
+msgid "Import photos and other files from a removable device"
+msgstr "从可移动设备导入照片和其他文件"
+
+#: ../extensions/photo_importer/callbacks.c:56
+msgid "F_older..."
+msgstr "文件夹(_O)..."
+
+#: ../extensions/photo_importer/callbacks.c:57
+msgid "Import photos and other files from a folder"
+msgstr "从文件夹中导入照片和其他文件"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
+msgid "_Rotate the images physically"
+msgstr "物理旋转图像(_R)"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
+msgid "After importing from a device:"
+msgstr "从设备中导入之后："
+
+#. view label
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
+#: ../gthumb/gth-filterbar.c:414
+msgid "S_how:"
+msgstr "显示(_H)："
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
+msgid "_Tags:"
+msgstr "标签(_T)："
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
+msgid "_Event:"
+msgstr "事件(_E)："
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:7
+msgid "_Delete the imported files from the source"
+msgstr "从来源中删除导入的图像(_D)"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:227
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:174
+msgid "Could not import the files"
+msgstr "无法导入文件"
+
+#. translators: %d is the number of files, %s the total size
+#: ../extensions/photo_importer/dlg-photo-importer.c:299
+#, c-format
+msgid "Files to import: %d (%s)"
+msgstr "要导入的文件：%d (%s)"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:339
+msgid "Could not load the folder"
+msgstr "无法载入文件夹"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:369
+#: ../gthumb/gth-browser.c:1927
+msgid "Getting folder listing..."
+msgstr "正在获取文件夹列表..."
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:415
+msgid "Empty"
+msgstr "空"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:586
+msgid "Import from Removable Device"
+msgstr "从可移动设备导入"
+
+#: ../extensions/photo_importer/dlg-photo-importer.c:618
+msgid "Import from Folder"
+msgstr "从文件夹中导入"
+
+#: ../extensions/photo_importer/photo_importer.extension.in.in.h:1
+msgid "Import photos"
+msgstr "导入相片"
+
+#: ../extensions/photo_importer/photo_importer.extension.in.in.h:2
+msgid "Import photos from removable devices."
+msgstr "从可移动设备导入相片。"
+
+#: ../extensions/picasaweb/callbacks.c:59
+#: ../extensions/picasaweb/callbacks.c:64
+msgid "_Picasa Web Album..."
+msgstr "_Picasa 网络相册..."
+
+#: ../extensions/picasaweb/callbacks.c:60
+msgid "Download photos from Picasa Web Album"
+msgstr "从 Picasa 网络相册下载照片"
+
+#: ../extensions/picasaweb/callbacks.c:65
+msgid "Upload photos to Picasa Web Album"
+msgstr "上传照片到 Picasa 网络相册"
+
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:1
+msgid "Export to Picasa Web Albums"
+msgstr "导出到 Picasa 网络相册"
+
+#: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:5
+msgid "_Albums:"
+msgstr "相册(_A)："
+
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
+msgid "Import from Picasa Web Album"
+msgstr "从 Picasa 网络相册导入"
+
+#: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:5
+msgid "_Album:"
+msgstr "相册(_A)："
+
+#: ../extensions/picasaweb/data/ui/picasa-web-account-properties.ui.h:1
+msgid "_E-Mail:"
+msgstr "电子邮件(_E)："
+
+#: ../extensions/picasaweb/data/ui/picasa-web-account-properties.ui.h:2
+msgid ""
+"Type the characters you see in the picture below. Letters are not case-"
+"sensitive."
+msgstr "键入您在下图中看到的字符。字母大小写不敏感。"
+
+#: ../extensions/picasaweb/data/ui/picasa-web-account-properties.ui.h:3
+msgid "_Password:"
+msgstr "密码(_P)："
+
+#: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:4
+msgid "Public"
+msgstr "公开"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:354
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:310
+msgid "Could not get the album list"
+msgstr "无法获取相册列表"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:438
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:394
+msgid "Picasa Web Album"
+msgstr "Picasa 网络相册"
+
+#: ../extensions/picasaweb/dlg-export-to-picasaweb.c:525
+#: ../extensions/picasaweb/dlg-import-from-picasaweb.c:481
+msgid "Account"
+msgstr "帐户"
+
+#: ../extensions/picasaweb/picasa-account-properties-dialog.c:104
+msgid "Could not load the file"
+msgstr "无法载入文件"
+
+#: ../extensions/picasaweb/picasaweb.extension.in.in.h:1
+msgid "Picasa Web Albums"
+msgstr "Picasa 网络相册"
+
+#: ../extensions/picasaweb/picasaweb.extension.in.in.h:2
+msgid "Upload images to Picasa Web Albums"
+msgstr "上传图片到 Picasa 网络相册"
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:1
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:1
+msgid "_Default extension:"
+msgstr "默认扩展(_D)："
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:2
+msgid "_Quality:"
+msgstr "质量(_Q)："
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:3
+msgid "_Smoothing:"
+msgstr "平滑化(_S)："
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:4
+msgid "Opti_mize"
+msgstr "优化(_M)"
+
+#: ../extensions/pixbuf_savers/data/ui/jpeg-options.ui.h:5
+msgid "_Progressive"
+msgstr "渐进(_P)"
+
+#: ../extensions/pixbuf_savers/data/ui/png-options.ui.h:1
+msgid "Compression _level:"
+msgstr "压缩级别(_L)："
+
+#: ../extensions/pixbuf_savers/data/ui/save-options-preferences.ui.h:1
+msgid "Default options:"
+msgstr "默认选项："
+
+#: ../extensions/pixbuf_savers/data/ui/tga-options.ui.h:1
+msgid "_RLE compression"
+msgstr "_RLE 压缩"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:2
+msgid "_No compression"
+msgstr "不压缩(_N)"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:3
+msgid "No_rmal (Deflate)"
+msgstr "正常(Deflate)(_R)"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:4
+msgid "_Loss compression (JPEG)"
+msgstr "有损压缩(JPEG)(_L)"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:5
+msgid "Compression"
+msgstr "压缩"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:8
+msgid "dpi"
+msgstr "dpi"
+
+#: ../extensions/pixbuf_savers/data/ui/tiff-options.ui.h:9
+msgid "Resolution"
+msgstr "分辨率"
+
+#: ../extensions/pixbuf_savers/gth-jpeg-saver.c:519
+msgid "JPEG"
+msgstr "JPEG"
+
+#: ../extensions/pixbuf_savers/gth-png-saver.c:140
+msgid "PNG"
+msgstr "PNG"
+
+#: ../extensions/pixbuf_savers/gth-tga-saver.c:286
+#: ../gthumb/gth-buffer-data.c:84
+msgid "Insufficient memory"
+msgstr "内存不足"
+
+#: ../extensions/pixbuf_savers/gth-tga-saver.c:373
+msgid "TGA"
+msgstr "TGA"
+
+#: ../extensions/pixbuf_savers/gth-tiff-saver.c:537
+msgid "TIFF"
+msgstr "TIFF"
+
+#: ../extensions/pixbuf_savers/pixbuf_savers.extension.in.in.h:1
+msgid "Save images"
+msgstr "保存图像"
+
+#: ../extensions/pixbuf_savers/pixbuf_savers.extension.in.in.h:2
+msgid "Save images in common file formats such as JPEG, PNG and TIFF"
+msgstr "以常见文件格式保存图像，如 JPEG、PNG 和 TIFF"
+
+#: ../extensions/raw_files/raw_files.extension.in.in.h:1
+msgid "Raw format support"
+msgstr "Raw 格式支持"
+
+#: ../extensions/raw_files/raw_files.extension.in.in.h:2
+msgid "Allow to load raw format images."
+msgstr "允许载入 raw 格式图像。"
+
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
+msgid "_X:"
+msgstr "_X："
+
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
+msgid "_Y:"
+msgstr "_Y："
+
+#: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
+msgid "Red Eye Removal..."
+msgstr "去除红眼..."
+
+#: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
+msgid "Red Eye Removal"
+msgstr "去除红眼"
+
+#: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:511
+msgid "Remove the red eye effect caused by camera flashes"
+msgstr "去除照相机闪光灯造成的红眼效应"
+
+#: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
+msgid "Red-eye removal"
+msgstr "去除红眼"
+
+#: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
+msgid "Tool to remove the red-eye effect from a photo."
+msgstr "从照片中去除红眼效应的工具。"
+
+#: ../extensions/rename_series/data/ui/code-selector.ui.h:1
+msgid "digits"
+msgstr "数字"
+
+#: ../extensions/rename_series/data/ui/code-selector.ui.h:2
+msgid "format:"
+msgstr "格式："
+
+#: ../extensions/rename_series/data/ui/code-selector.ui.h:3
+msgid "remove"
+msgstr "删除"
+
+#: ../extensions/rename_series/data/ui/code-selector.ui.h:4
+msgid "add"
+msgstr "添加"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:1
+msgid "Rename"
+msgstr "重命名"
+
+#. Translators: this is the text case (upper or lower case).
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:6
+msgid "Cas_e:"
+msgstr "大小写(_E)："
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:7
+msgid "Edit template"
+msgstr "编辑模板"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:9
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:34
+msgid "The original filename"
+msgstr "原文件名"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:10
+msgid "The original extension"
+msgstr "原扩展名"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:13
+msgid "The original enumerator"
+msgstr "原计数器"
+
+#. translate only the text in the curly brackets
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:16
+#, no-c-format
+msgid "%M{ format }"
+msgstr "%M{格式}"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:17
+msgid "The modification date"
+msgstr "修改日期"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:21
+msgid "The digitalization date"
+msgstr "数字化日期"
+
+#. translate only the text in the curly brackets
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:24
+#, no-c-format
+msgid "%A{ identifier }"
+msgstr "%A{ 标示符 }"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:26
+msgid "_Template:"
+msgstr "模板(_T)："
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:27
+msgid "Re_verse Order"
+msgstr "相反次序排列(_V)"
+
+#: ../extensions/rename_series/dlg-rename-series.c:58
+msgid "Enumerator"
+msgstr "计数器"
+
+#: ../extensions/rename_series/dlg-rename-series.c:59
+msgid "Original filename"
+msgstr "原文件名"
+
+#: ../extensions/rename_series/dlg-rename-series.c:60
+msgid "Original extension"
+msgstr "原扩展"
+
+#: ../extensions/rename_series/dlg-rename-series.c:61
+msgid "Original enumerator"
+msgstr "原计数器"
+
+#: ../extensions/rename_series/dlg-rename-series.c:62
+msgid "Modification date"
+msgstr "修改日期"
+
+#: ../extensions/rename_series/dlg-rename-series.c:63
+msgid "Digitalization date"
+msgstr "数字化日期"
+
+#: ../extensions/rename_series/dlg-rename-series.c:64
+msgid "File attribute"
+msgstr "文件属性"
+
+#: ../extensions/rename_series/dlg-rename-series.c:552
+#: ../extensions/rename_series/dlg-rename-series.c:683
+msgid "Could not rename the files"
+msgstr "无法重命名文件"
+
+#: ../extensions/rename_series/dlg-rename-series.c:780
+msgid "Could not save the template"
+msgstr "无法保存模板"
+
+#: ../extensions/rename_series/dlg-rename-series.c:798
+msgid "Edit Template"
+msgstr "编辑模板"
+
+#: ../extensions/rename_series/dlg-rename-series.c:856
+msgid "Old Name"
+msgstr "旧文件名"
+
+#: ../extensions/rename_series/dlg-rename-series.c:867
+msgid "New Name"
+msgstr "新文件名"
+
+#: ../extensions/rename_series/dlg-rename-series.c:944
+msgid "Keep original case"
+msgstr "保留原字母大小写"
+
+#: ../extensions/rename_series/dlg-rename-series.c:945
+msgid "Convert to lower-case"
+msgstr "转换为小写"
+
+#: ../extensions/rename_series/dlg-rename-series.c:946
+msgid "Convert to upper-case"
+msgstr "转换为大写"
+
+#: ../extensions/rename_series/gth-rename-task.c:167
+msgid "Renaming files"
+msgstr "正在重命名文件"
+
+#: ../extensions/rename_series/rename_series.extension.in.in.h:1
+msgid "Rename files"
+msgstr "重命名文件"
+
+#: ../extensions/rename_series/rename_series.extension.in.in.h:2
+msgid "Rename series of files."
+msgstr "重命名一系列文件。"
+
+#: ../extensions/resize_images/callbacks.c:45
+msgid "Resize Images..."
+msgstr "调整图像大小..."
+
+#: ../extensions/resize_images/callbacks.c:46
+msgid "Resize the selected images"
+msgstr "改变所选图像的大小"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:1
+msgid "Resize Images"
+msgstr "调整图像大小"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:2
+msgid "New dimensions"
+msgstr "新大小"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:4
+msgid "_Height:"
+msgstr "高度(_H)："
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:5
+msgid "_Preserve original aspect ratios"
+msgstr "保持原长宽比(_P)"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:9
+#: ../gthumb/gth-main-default-metadata.c:49
+msgid "Format"
+msgstr "格式"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:10
+msgid "pixel"
+msgstr "像素"
+
+#: ../extensions/resize_images/dlg-resize-images.c:168
+msgid "Resizing images"
+msgstr "调整图像大小"
+
+#: ../extensions/resize_images/dlg-resize-images.c:412
+msgid "Keep the original format"
+msgstr "保留原格式"
+
+#: ../extensions/resize_images/resize_images.extension.in.in.h:1
+msgid "Resize images"
+msgstr "调整图像大小"
+
+#: ../extensions/resize_images/resize_images.extension.in.in.h:2
+msgid "Resize series of images."
+msgstr "调整图像大小。"
+
+#: ../extensions/search/actions.c:49 ../extensions/search/actions.c:117
+#: ../extensions/search/actions.c:123
+msgid "Could not perform the search"
+msgstr "无法执行搜索"
+
+#: ../extensions/search/actions.c:54
+msgid "Search Result"
+msgstr "搜索结果"
+
+#: ../extensions/search/actions.c:76
+msgid "Find"
+msgstr "查找"
+
+#: ../extensions/search/callbacks.c:59
+msgid "Find files"
+msgstr "查找文件"
+
+#: ../extensions/search/callbacks.c:132
+msgid "Search again"
+msgstr "再次搜索"
+
+#. Translators: This is not a verb, it's a name as in "the search properties".
+#: ../extensions/search/callbacks.c:174
+#: ../extensions/search/search.extension.in.in.h:1
+msgid "Search"
+msgstr "搜索"
+
+#: ../extensions/search/gth-search-editor.c:112
+#: ../gthumb/gth-filter-editor-dialog.c:165
+msgid "all the following rules"
+msgstr "以下全部规则"
+
+#: ../extensions/search/gth-search-editor.c:113
+#: ../gthumb/gth-filter-editor-dialog.c:166
+msgid "any of the following rules"
+msgstr "以下任何规则"
+
+#: ../extensions/search/gth-search-task.c:181
+#, c-format
+msgid "Files found until now: %s"
+msgstr "目前为止找到的文件：%s"
+
+#: ../extensions/search/gth-search-task.c:271
+msgid "Searching..."
+msgstr "正在搜索..."
+
+#: ../extensions/search/gth-search-task.c:277
+msgid "Cancel the operation"
+msgstr "取消操作"
+
+#: ../extensions/search/search.extension.in.in.h:2
+msgid "File search tool."
+msgstr "文件搜索工具。"
+
+#: ../extensions/selections/callbacks.c:77
+msgid "Add to _Selection"
+msgstr "添加到选区(_S)"
+
+#: ../extensions/selections/callbacks.c:86
+msgid "Selection 1"
+msgstr "选区 1"
+
+#: ../extensions/selections/callbacks.c:91
+msgid "Selection 2"
+msgstr "选区 2"
+
+#: ../extensions/selections/callbacks.c:96
+msgid "Selection 3"
+msgstr "选区 3"
+
+#: ../extensions/selections/callbacks.c:285
+#, c-format
+msgid ""
+"Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."
+msgstr "使用 Alt-%d 添加文件到该选区，使用 Ctrl-%d 查看该选区。"
+
+#: ../extensions/selections/gth-selections-manager.c:239
+#, c-format
+msgid "Selection %d"
+msgstr "选区 %d"
+
+#: ../extensions/selections/gth-selections-manager.c:242
+#: ../extensions/selections/selections.extension.in.in.h:1
+msgid "Selections"
+msgstr "选区"
+
+#: ../extensions/selections/selections.extension.in.in.h:2
+msgid "Advanced file selection."
+msgstr "高级文件选择。"
+
+#: ../extensions/slideshow/callbacks.c:56
+msgid "_Slideshow"
+msgstr "幻灯片(_S)"
+
+#: ../extensions/slideshow/callbacks.c:57
+msgid "View as a slideshow"
+msgstr "以放映幻灯片方式查看"
+
+#: ../extensions/slideshow/callbacks.c:410
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
+#: ../extensions/slideshow/preferences.c:162
+#: ../extensions/slideshow/slideshow.extension.in.in.h:1
+msgid "Slideshow"
+msgstr "幻灯片"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
+msgid "_Personalize"
+msgstr "个性化(_P)"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
+msgid "_Transition effect:"
+msgstr "切换效果(_T)："
+
+#. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
+msgid "_Change automatically, every"
+msgstr "自动改变，每(_C)"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
+msgid "_Restart when finished"
+msgstr "完成后重新开始(_R)"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
+msgid "R_andom order"
+msgstr "随机顺序(_A)"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
+msgid "Playlist"
+msgstr "播放列表"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
+msgid "Add files to the playlist"
+msgstr "添加文件到播放列表"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
+msgid "Remove the selected files"
+msgstr "移除选中的文件夹"
+
+#: ../extensions/slideshow/gth-slideshow.c:229
+msgid "Playing slideshow"
+msgstr "正在播放幻灯片"
+
+#: ../extensions/slideshow/gth-slideshow-preferences.c:184
+msgid "Choose the files to play"
+msgstr "选择要播放的文件"
+
+#: ../extensions/slideshow/gth-slideshow-preferences.c:193
+msgid "Audio files"
+msgstr "音频文件"
+
+#: ../extensions/slideshow/gth-slideshow-preferences.c:259
+msgid "Random"
+msgstr "随机"
+
+#: ../extensions/slideshow/main.c:283
+msgid "Push from right"
+msgstr "右侧推入"
+
+#: ../extensions/slideshow/main.c:289
+msgid "Push from bottom"
+msgstr "底部推入"
+
+#: ../extensions/slideshow/main.c:295
+msgid "Slide from right"
+msgstr "右侧滑入"
+
+#: ../extensions/slideshow/main.c:301
+msgid "Slide from bottom"
+msgstr "底部滑入"
+
+#: ../extensions/slideshow/main.c:307
+msgid "Fade in"
+msgstr "淡入"
+
+#: ../extensions/slideshow/main.c:313
+msgid "Flip page"
+msgstr "翻转页面"
+
+#: ../extensions/slideshow/main.c:319
+msgid "Cube from right"
+msgstr "右侧立方体翻转"
+
+#: ../extensions/slideshow/main.c:325
+msgid "Cube from bottom"
+msgstr "底部立方体翻转"
+
+#: ../extensions/slideshow/slideshow.extension.in.in.h:2
+msgid "View images as a slideshow."
+msgstr "以放映幻灯片方式查看图像。"
+
+#: ../extensions/webalbums/callbacks.c:71
+msgid "_Web Album..."
+msgstr "网络相册(_W)..."
+
+#: ../extensions/webalbums/callbacks.c:72
+msgid "Create a static web album"
+msgstr "创建一个静态的网络相册 "
+
+#: ../extensions/webalbums/data/albumthemes/text.h:26
+msgid "Click to view the image"
+msgstr "点击以查看图像"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:27
+msgid "Go back to the index"
+msgstr "返回到索引"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:28
+#, c-format
+msgid "Image %d of %d"
+msgstr "图像 %d/%d"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:29
+msgid "Index"
+msgstr "索引"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:30
+#: ../gthumb/gth-browser-actions-entries.h:125
+msgid "Next"
+msgstr "下一幅"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:32
+#: ../gthumb/gth-browser-actions-entries.h:119
+msgid "Previous"
+msgstr "上一幅"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:33
+#, c-format
+msgid "View page %d"
+msgstr "查看页面 %d"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:34
+msgid "View the next image"
+msgstr "查看下一幅图像"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:35
+msgid "View the next page"
+msgstr "查看下一页"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:36
+msgid "View the previous image"
+msgstr "查看上一幅图像"
+
+#: ../extensions/webalbums/data/albumthemes/text.h:37
+msgid "View the previous page"
+msgstr "查看上一页"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
+msgid "All images on  a single image"
+msgstr "所有图像在同一个图像上"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
+msgid "Adapts to the window width"
+msgstr "调整到窗口宽度"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
+msgid "Web Album"
+msgstr "网络相册"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
+#, no-c-format
+msgid "%P"
+msgstr "%P"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
+msgid "_Copy originals to destination"
+msgstr "将图像复制到目标(_C)"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
+msgid "_Resize if larger than:"
+msgstr "重新调整大小，如果图像大于(_R)："
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:27
+msgid "_Adapt to the window width "
+msgstr "调整到窗口宽度(_A)"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:30
+msgid "Index Page"
+msgstr "索引页面"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:31
+msgid "Thumbnail Caption"
+msgstr "缩略图标题"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
+msgid "The current image number"
+msgstr "当前图像数目"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:33
+msgid "The total number of images"
+msgstr "图像总数"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:35
+msgid "The file comment"
+msgstr "文件注释"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:36
+msgid "Image Page"
+msgstr "图像页面"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:37
+msgid "Show the description, if available"
+msgstr "如果可用，显示描述"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:38
+msgid "Show the following attributes:"
+msgstr "显示下列属性："
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:39
+msgid "Image Attributes"
+msgstr "图像属性"
+
+#: ../extensions/webalbums/gth-web-exporter.c:1802
+msgid "Could not show the destination"
+msgstr "无法显示位置"
+
+#: ../extensions/webalbums/gth-web-exporter.c:1838
+msgid "The album has been created successfully."
+msgstr "该相册已成功创建。"
+
+#: ../extensions/webalbums/gth-web-exporter.c:2106
+#: ../extensions/webalbums/gth-web-exporter.c:2133
+msgid "Saving thumbnails"
+msgstr "保存缩略图"
+
+#: ../extensions/webalbums/gth-web-exporter.c:2161
+msgid "Saving HTML pages: Images"
+msgstr "保存 HTML 页面：图像"
+
+#: ../extensions/webalbums/gth-web-exporter.c:2219
+msgid "Saving HTML pages: Indexes"
+msgstr "保存 HTML 页面：索引"
+
+#: ../extensions/webalbums/gth-web-exporter.c:2502
+msgid "Copying original images"
+msgstr "正在复制原图像"
+
+#: ../extensions/webalbums/gth-web-exporter.c:2929
+msgid "Could not find the style folder"
+msgstr "无法找到该类型的文件夹"
+
+#: ../extensions/webalbums/gth-web-exporter.c:2967
+msgid "Could not create a temporary folder"
+msgstr "无法创建临时文件夹"
+
+#: ../extensions/webalbums/webalbums.extension.in.in.h:1
+msgid "Web Albums"
+msgstr "网络相册"
+
+#: ../extensions/webalbums/webalbums.extension.in.in.h:2
+msgid "Create static web albums."
+msgstr "创建静态网络相册。"
+
+#: ../gthumb/dlg-location.c:200 ../gthumb/gth-browser.c:1249
+#: ../gthumb/gth-browser.c:1818 ../gthumb/gth-browser.c:5974
+#: ../gthumb/gth-browser.c:5993 ../gthumb/gth-browser.c:6017
+#, c-format
+msgid "Could not load the position \"%s\""
+msgstr "无法载入位置“%s”"
+
+#: ../gthumb/dlg-personalize-filters.c:237
+msgid "Filter"
+msgstr "过滤器"
+
+#: ../gthumb/dlg-personalize-filters.c:315
+msgid "Could not save the filter"
+msgstr "无法保存过滤器"
+
+#: ../gthumb/dlg-personalize-filters.c:358
+msgid "New Filter"
+msgstr "新建过滤器"
+
+#: ../gthumb/dlg-personalize-filters.c:387
+msgid "Edit Filter"
+msgstr "编辑过滤器"
+
+#: ../gthumb/dlg-preferences-extensions.c:67 ../gthumb/gth-filterbar.c:270
+msgid "All"
+msgstr "全部"
+
+#: ../gthumb/dlg-preferences-extensions.c:68
+msgid "Enabled"
+msgstr "已启用"
+
+#: ../gthumb/dlg-preferences-extensions.c:69
+msgid "Disabled"
+msgstr "已禁用"
+
+#: ../gthumb/dlg-preferences-extensions.c:72
+msgid "Viewers"
+msgstr "查看器"
+
+#: ../gthumb/dlg-preferences-extensions.c:73
+msgid "Metadata"
+msgstr "元数据"
+
+#: ../gthumb/dlg-preferences-extensions.c:74
+msgid "File tools"
+msgstr "文件工具"
+
+#: ../gthumb/dlg-preferences-extensions.c:75
+msgid "List tools"
+msgstr "列表工具"
+
+#: ../gthumb/dlg-preferences-extensions.c:76
+msgid "Importers"
+msgstr "导入工具"
+
+#: ../gthumb/dlg-preferences-extensions.c:77
+msgid "Exporters"
+msgstr "导出工具"
+
+#: ../gthumb/dlg-preferences-extensions.c:216
+msgid "Could not activate the extension"
+msgstr "无法激活扩展"
+
+#: ../gthumb/dlg-preferences-extensions.c:226
+msgid "Could not deactivate the extension"
+msgstr "无法禁用扩展"
+
+#. add the page to the preferences dialog
+#: ../gthumb/dlg-preferences-extensions.c:772
+msgid "Extensions"
+msgstr "扩展"
+
+#: ../gthumb/dlg-preferences-extensions.c:819
+msgid "Restart required"
+msgstr "需要重新启动"
+
+#: ../gthumb/dlg-preferences-extensions.c:820
+msgid "You need to restart gthumb for these changes to take effect"
+msgstr "您需要重启 gthumb 以使这些更改生效"
+
+#: ../gthumb/dlg-preferences-extensions.c:821
+msgid "_Continue"
+msgstr "继续(_C)"
+
+#: ../gthumb/dlg-preferences-extensions.c:822
+msgid "_Restart"
+msgstr "重启(_R)"
+
+#: ../gthumb/eggfileformatchooser.c:236
+#, c-format
+msgid "File _Format: %s"
+msgstr "文件格式(_F)：%s"
+
+#: ../gthumb/eggfileformatchooser.c:397 ../gthumb/gth-main-default-tests.c:233
+msgid "All Files"
+msgstr "所有文件"
+
+#: ../gthumb/eggfileformatchooser.c:398
+msgid "All Supported Files"
+msgstr "所有支持的文件"
+
+#: ../gthumb/eggfileformatchooser.c:407
+msgid "By Extension"
+msgstr "按扩展名"
+
+#: ../gthumb/eggfileformatchooser.c:422
+msgid "File Format"
+msgstr "文件格式"
+
+#: ../gthumb/eggfileformatchooser.c:440
+msgid "Extension(s)"
+msgstr "扩展名"
+
+#: ../gthumb/eggfileformatchooser.c:681
+#, c-format
+msgid ""
+"The program was not able to find out the file format you want to use for `"
+"%s'. Please make sure to use a known extension for that file or manually "
+"choose a file format from the list below."
+msgstr ""
+"程序无法识别“%s”使用的文件格式。请确保为文件使用已知的扩展名或手动从下面的列"
+"表中选择一个文件格式。"
+
+#: ../gthumb/eggfileformatchooser.c:688
+msgid "File format not recognized"
+msgstr "文件格式无法识别"
+
+#. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
+#: ../gthumb/gio-utils.c:1351
+#, c-format
+msgid "%s of %s"
+msgstr "%2$s 中的 %1$s"
+
+#: ../gthumb/gio-utils.c:1386
+#, c-format
+msgid "Moving \"%s\" to \"%s\""
+msgstr "移动“%s”到“%s”"
+
+#: ../gthumb/gio-utils.c:1388
+#, c-format
+msgid "Copying \"%s\" to \"%s\""
+msgstr "复制“%s”到“%s”"
+
+#: ../gthumb/gio-utils.c:1750
+msgid "Moving files"
+msgstr "正在移动文件"
+
+#: ../gthumb/gio-utils.c:1750
+msgid "Copying files"
+msgstr "正在复制文件"
+
+#: ../gthumb/gio-utils.c:1751
+msgid "Getting file information"
+msgstr "获取文件信息"
+
+#. hour:minutes:seconds
+#. Translators: This is a time format, like "9:05:02" for 9
+#. * hours, 5 minutes, and 2 seconds. You may change ":" to
+#. * the separator that your locale uses or use "%Id" instead
+#. * of "%d" if your locale uses localized digits.
+#.
+#: ../gthumb/glib-utils.c:2945
+#, c-format
+msgctxt "long time format"
+msgid "%d:%02d:%02d"
+msgstr "%d:%02d:%02d"
+
+#. minutes:seconds
+#. Translators: This is a time format, like "5:02" for 5
+#. * minutes and 2 seconds. You may change ":" to the
+#. * separator that your locale uses or use "%Id" instead of
+#. * "%d" if your locale uses localized digits.
+#.
+#: ../gthumb/glib-utils.c:2954
+#, c-format
+msgctxt "short time format"
+msgid "%d:%02d"
+msgstr "%d:%02d"
+
+#: ../gthumb/gth-browser-actions-callbacks.c:400
+msgid ""
+"gthumb is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr ""
+"gthumb 是自由软件；您可以在自由软件基金会发布的 GNU 公共许可协议的下重新发布"
+"和/或修改它；许可协议可以是第二版，或(根据您的选择)任何更高版本。"
+
+#: ../gthumb/gth-browser-actions-callbacks.c:404
+msgid ""
+"gthumb is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+"gthumb 的发布是希望它能有用，但没有任何担保；甚至没有商业性的或对特定目的适用"
+"性的暗指。更多细节请参看 GNU 通用公共许可协议。"
+
+#: ../gthumb/gth-browser-actions-callbacks.c:408
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"gthumb.  If not, see http://www.gnu.org/licenses/."
+msgstr ""
+"您应该已经随 gthumb 收到了一份 GNU 公共许可协议的拷贝。如果没有，参见http://"
+"www.gnu.org/License/。"
+
+#: ../gthumb/gth-browser-actions-callbacks.c:427
+msgid "An image viewer and browser for GNOME."
+msgstr "适合在 GNOME 环境下使用的图像查看和浏览器。"
+
+#: ../gthumb/gth-browser-actions-callbacks.c:430
+msgid "translator_credits"
+msgstr ""
+"开源软件国际化简体中文组(http://i18n.linux.net.cn)\n"
+"Abel Cheung <maddog@linux.org.hk>, 2002, 2003.\n"
+"Liu Songhe <jackliu9999@263.net>, 2003, 2004.\n"
+"Zhang Miao <mymzhang@gmail.com>, 2009."
+
+#: ../gthumb/gth-browser-actions-entries.h:31
+msgid "_File"
+msgstr "文件(_F)"
+
+#: ../gthumb/gth-browser-actions-entries.h:32
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: ../gthumb/gth-browser-actions-entries.h:34
+msgid "_Go"
+msgstr "转到(_G)"
+
+#: ../gthumb/gth-browser-actions-entries.h:35
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../gthumb/gth-browser-actions-entries.h:36
+msgid "Open _With"
+msgstr "打开方式(_W)"
+
+#: ../gthumb/gth-browser-actions-entries.h:37
+msgid "I_mport From"
+msgstr "导入(_M)"
+
+#: ../gthumb/gth-browser-actions-entries.h:38
+msgid "E_xport To"
+msgstr "导出到(_X)"
+
+#: ../gthumb/gth-browser-actions-entries.h:41
+msgid "New _Window"
+msgstr "新建窗口(_W)"
+
+#: ../gthumb/gth-browser-actions-entries.h:42
+msgid "Open another window"
+msgstr "在新窗口打开"
+
+#: ../gthumb/gth-browser-actions-entries.h:71
+msgid "Open"
+msgstr "打开"
+
+#: ../gthumb/gth-browser-actions-entries.h:77
+msgid "Open in New Window"
+msgstr "在新窗口打开"
+
+#: ../gthumb/gth-browser-actions-entries.h:84
+msgid "Edit various preferences"
+msgstr "编辑不同的首选项"
+
+#: ../gthumb/gth-browser-actions-entries.h:95
+msgid "_Sort By..."
+msgstr "排序方式(_S)..."
+
+#: ../gthumb/gth-browser-actions-entries.h:101
+msgid "_Filter..."
+msgstr "过滤器(_F)..."
+
+#: ../gthumb/gth-browser-actions-entries.h:108
+msgid "Stop loading the current location"
+msgstr "停止载入当前的位置"
+
+#: ../gthumb/gth-browser-actions-entries.h:114
+msgid "Reload the current location"
+msgstr "重新载入当前的位置"
+
+#: ../gthumb/gth-browser-actions-entries.h:120
+msgid "View previous image"
+msgstr "查看上一幅图像"
+
+#: ../gthumb/gth-browser-actions-entries.h:126
+msgid "View next image"
+msgstr "查看下一幅图像"
+
+#: ../gthumb/gth-browser-actions-entries.h:132
+msgid "Switch to fullscreen"
+msgstr "切换到全屏"
+
+#: ../gthumb/gth-browser-actions-entries.h:138
+msgid "Leave Fullscreen"
+msgstr "离开全屏"
+
+#: ../gthumb/gth-browser-actions-entries.h:144 ../gthumb/gth-browser.c:3654
+msgid "Go to the previous visited location"
+msgstr "转到上一个浏览的位置"
+
+#: ../gthumb/gth-browser-actions-entries.h:150 ../gthumb/gth-browser.c:3672
+msgid "Go to the next visited location"
+msgstr "转到下一个浏览的位置"
+
+#: ../gthumb/gth-browser-actions-entries.h:156 ../gthumb/gth-browser.c:3690
+msgid "Go up one level"
+msgstr "转到上层文件夹"
+
+#: ../gthumb/gth-browser-actions-entries.h:161
+msgid "_Location..."
+msgstr "位置(_L)..."
+
+#: ../gthumb/gth-browser-actions-entries.h:162
+msgid "Specify a location to open"
+msgstr "指定打开的位置"
+
+#: ../gthumb/gth-browser-actions-entries.h:173 ../gthumb/gth-browser.c:673
+msgid "_Delete History"
+msgstr "删除浏览记录(_D)"
+
+#: ../gthumb/gth-browser-actions-entries.h:174
+msgid "Delete the list of visited locations"
+msgstr "删除有关浏览纪录的列表"
+
+#: ../gthumb/gth-browser-actions-entries.h:180
+msgid "View the folders"
+msgstr "查看文件夹"
+
+#: ../gthumb/gth-browser-actions-entries.h:186
+msgid "Show information about gthumb"
+msgstr "显示有关 gThumb 的信息"
+
+#: ../gthumb/gth-browser-actions-entries.h:191
+msgid "Contents"
+msgstr "目录"
+
+#: ../gthumb/gth-browser-actions-entries.h:192
+msgid "Display the gthumb Manual"
+msgstr "显示 gthumb 手册"
+
+#: ../gthumb/gth-browser-actions-entries.h:197
+msgid "_Keyboard Shortcuts"
+msgstr "快捷键(_K)"
+
+#: ../gthumb/gth-browser-actions-entries.h:206
+msgid "_Toolbar"
+msgstr "工具栏(_T)"
+
+#: ../gthumb/gth-browser-actions-entries.h:207
+msgid "View or hide the toolbar of this window"
+msgstr "显示或隐藏本窗口中的工具栏"
+
+#: ../gthumb/gth-browser-actions-entries.h:211
+msgid "_Statusbar"
+msgstr "状态栏(_S)"
+
+#: ../gthumb/gth-browser-actions-entries.h:212
+msgid "View or hide the statusbar of this window"
+msgstr "显示或隐藏本窗口中的状态栏"
+
+#: ../gthumb/gth-browser-actions-entries.h:216
+msgid "_Filterbar"
+msgstr "过滤栏(_F)"
+
+#: ../gthumb/gth-browser-actions-entries.h:217
+msgid "View or hide the filterbar of this window"
+msgstr "显示或隐藏本窗口中的过滤栏"
+
+#: ../gthumb/gth-browser-actions-entries.h:221
+msgid "_Sidebar"
+msgstr "侧边栏(_S)"
+
+#: ../gthumb/gth-browser-actions-entries.h:222
+msgid "View or hide the sidebar of this window"
+msgstr "显示或隐藏本窗口中的侧边栏"
+
+#: ../gthumb/gth-browser-actions-entries.h:226
+msgid "_Thumbnail Pane"
+msgstr "缩略图窗格 (_T)"
+
+#: ../gthumb/gth-browser-actions-entries.h:227
+msgid "View or hide the thumbnail pane in viewer mode"
+msgstr "在查看模式下显示或隐藏本窗口中的缩略图窗格"
+
+#: ../gthumb/gth-browser-actions-entries.h:231
+msgid "_Thumbnails"
+msgstr "缩略图(_T)"
+
+#: ../gthumb/gth-browser-actions-entries.h:232
+msgid "View thumbnails"
+msgstr "查看缩略图"
+
+#: ../gthumb/gth-browser-actions-entries.h:236
+msgid "_Hidden Files"
+msgstr "隐藏的文件(_H)"
+
+#: ../gthumb/gth-browser-actions-entries.h:237
+msgid "Show hidden files and folders"
+msgstr "显示隐藏的文件和文件夹"
+
+#: ../gthumb/gth-browser-actions-entries.h:242
+#: ../gthumb/gth-browser-actions-entries.h:247
+msgid "View file properties"
+msgstr "查看文件属性"
+
+#: ../gthumb/gth-browser-actions-entries.h:251
+msgid "Edit"
+msgstr "编辑"
+
+#: ../gthumb/gth-browser-actions-entries.h:252
+msgid "Edit file"
+msgstr "编辑文件"
+
+#: ../gthumb/gth-browser-actions-entries.h:256
+msgid "_Fit Window to Image"
+msgstr "使窗口适合图像(_F)"
+
+#: ../gthumb/gth-browser-actions-entries.h:257
+msgid "Resize the window to the size of the image"
+msgstr "调整窗口到图像的大小"
+
+#: ../gthumb/gth-browser.c:370
+#, c-format
+msgid "Open %s"
+msgstr "打开 %s"
+
+#: ../gthumb/gth-browser.c:510
+msgid "[modified]"
+msgstr "[最后修改时间]"
+
+#: ../gthumb/gth-browser.c:1007
+#, c-format
+msgid "%d file selected (%s)"
+msgid_plural "%d files selected (%s)"
+msgstr[0] "%d 个选中文件(%s)"
+
+#: ../gthumb/gth-browser.c:1042
+#, c-format
+msgid "%s of free space"
+msgstr "剩余空间 %s"
+
+#: ../gthumb/gth-browser.c:1911 ../gthumb/gth-browser.c:1938
+#, c-format
+msgid "No suitable module found for %s"
+msgstr "没有为 %s 找到合适的模块"
+
+#: ../gthumb/gth-browser.c:2057
+#, c-format
+msgid "Save changes to file '%s'?"
+msgstr "将更改保存到文件“%s”？"
+
+#: ../gthumb/gth-browser.c:2062
+msgid "If you don't save, changes to the file will be permanently lost."
+msgstr "如果您不保存，对文件的更改将永久丢失"
+
+#: ../gthumb/gth-browser.c:2063
+msgid "Do _Not Save"
+msgstr "不保存(_N)"
+
+#: ../gthumb/gth-browser.c:2836 ../gthumb/gth-source-tree.c:182
+msgid "Could not change name"
+msgstr "无法改变名称"
+
+#: ../gthumb/gth-browser.c:3267 ../gthumb/gth-main-default-metadata.c:41
+msgid "Modified"
+msgstr "修改时间"
+
+#: ../gthumb/gth-browser.c:3655 ../gthumb/gth-browser.c:3673
+msgid "View the list of visited locations"
+msgstr "查看浏览过的位置列表"
+
+#: ../gthumb/gth-browser.c:3691
+msgid "View the list of upper locations"
+msgstr "查看上层位置列表"
+
+#: ../gthumb/gth-browser.c:5975
+#, c-format
+msgid "File type not supported"
+msgstr "文件类型不支持"
+
+#: ../gthumb/gth-browser.c:6018
+#, c-format
+msgid "No suitable module found"
+msgstr "没有找到合适的模块"
+
+#: ../gthumb/gth-extensions.c:203
+#, c-format
+msgid "Could not open the module `%s`: %s"
+msgstr "无法打开模块“%s”：%s"
+
+#: ../gthumb/gth-extensions.c:754
+#, c-format
+msgid "The extension '%1$s' is required by the extension '%2$s'"
+msgstr "扩展“%2$s”需要扩展“%1$s”"
+
+#: ../gthumb/gth-file-source-vfs.c:121
+msgid "Home Folder"
+msgstr "主文件夹"
+
+#: ../gthumb/gth-file-source-vfs.c:126
+msgid "File System"
+msgstr "文件系统"
+
+#: ../gthumb/gth-file-source-vfs.c:739
+msgid ""
+"The files cannot be moved to the Trash. Do you want to delete them "
+"permanently?"
+msgstr "无法将文件移至回收站。是否永久删除图像？"
+
+#: ../gthumb/gth-file-source-vfs.c:750
+msgid "Could not move the files to the Trash"
+msgstr "无法将文件移至回收站"
+
+#: ../gthumb/gth-file-source-vfs.c:797
+#, c-format
+msgid "Are you sure you want to move \"%s\" to trash?"
+msgstr "您确定要将“%s”移动到回收站？"
+
+#: ../gthumb/gth-file-source-vfs.c:801
+#, c-format
+msgid "Are you sure you want to move to trash the %'d selected file?"
+msgid_plural "Are you sure you want to move to trash the %'d selected files?"
+msgstr[0] "您确定要将选中的 %'d 个文件移动到回收站？"
+
+#: ../gthumb/gth-file-source-vfs.c:844
+#, c-format
+msgid "Are you sure you want to permanently delete the %'d selected file?"
+msgid_plural ""
+"Are you sure you want to permanently delete the %'d selected files?"
+msgstr[0] "您确定要永久删除 %'d 个选中文件吗？"
+
+#: ../gthumb/gth-filterbar.c:406
+msgid "Hide the filterbar"
+msgstr "隐藏过滤栏"
+
+#: ../gthumb/gth-filter.c:43 ../gthumb/gth-filter-editor-dialog.c:178
+#: ../gthumb/gth-test-simple.c:75
+msgid "kB"
+msgstr "kB"
+
+#: ../gthumb/gth-filter.c:44 ../gthumb/gth-filter-editor-dialog.c:179
+#: ../gthumb/gth-test-simple.c:76
+msgid "MB"
+msgstr "MB"
+
+#: ../gthumb/gth-filter.c:45 ../gthumb/gth-filter-editor-dialog.c:180
+#: ../gthumb/gth-test-simple.c:77
+msgid "GB"
+msgstr "GB"
+
+#. "files" label
+#: ../gthumb/gth-filter.c:291 ../gthumb/gth-filter-editor-dialog.c:177
+msgid "files"
+msgstr "文件"
+
+#: ../gthumb/gth-filter-editor-dialog.c:224
+msgid "ascending"
+msgstr "升序"
+
+#: ../gthumb/gth-filter-editor-dialog.c:225
+msgid "descending"
+msgstr "降序"
+
+#: ../gthumb/gth-filter-editor-dialog.c:515
+#, c-format
+msgid "No limit specified"
+msgstr "未指定限制"
+
+#: ../gthumb/gth-folder-tree.c:857
+msgid "Loading..."
+msgstr "正在载入..."
+
+#: ../gthumb/gth-folder-tree.c:1100
+msgid "(Open Parent)"
+msgstr "(打开父目录)"
+
+#: ../gthumb/gth-histogram-view.c:826
+msgid "Linear scale"
+msgstr "线性刻度"
+
+#: ../gthumb/gth-histogram-view.c:838
+msgid "Logarithmic scale"
+msgstr "对数刻度"
+
+#: ../gthumb/gth-histogram-view.c:858
+msgid "Channel:"
+msgstr "声道："
+
+#: ../gthumb/gth-histogram-view.c:890
+msgid "Value"
+msgstr "亮度"
+
+#: ../gthumb/gth-histogram-view.c:896
+msgid "Red"
+msgstr "红"
+
+#: ../gthumb/gth-histogram-view.c:902
+msgid "Green"
+msgstr "绿"
+
+#: ../gthumb/gth-histogram-view.c:908
+msgid "Blue"
+msgstr "蓝"
+
+#: ../gthumb/gth-histogram-view.c:914
+msgid "Alpha"
+msgstr "透明"
+
+#: ../gthumb/gth-histogram-view.c:921
+msgid "RGB"
+msgstr "RGB"
+
+#: ../gthumb/gth-load-file-data-task.c:108
+msgid "Reading file information"
+msgstr "正在读取文件信息"
+
+#: ../gthumb/gth-main-default-metadata.c:32
+msgid "File"
+msgstr "文件"
+
+#: ../gthumb/gth-main-default-metadata.c:39
+msgid "Name"
+msgstr "名称"
+
+#: ../gthumb/gth-main-default-metadata.c:40
+#: ../gthumb/gth-main-default-tests.c:284
+msgid "Size"
+msgstr "大小"
+
+#: ../gthumb/gth-main-default-metadata.c:42
+msgid "Type"
+msgstr "类型"
+
+#: ../gthumb/gth-main-default-metadata.c:44
+msgid "Full Name"
+msgstr "全名"
+
+#: ../gthumb/gth-main-default-metadata.c:48
+msgid "Duration"
+msgstr "持续时长："
+
+#: ../gthumb/gth-main-default-sort-types.c:131
+msgid "file name"
+msgstr "文件名"
+
+#: ../gthumb/gth-main-default-sort-types.c:132
+msgid "file path"
+msgstr "文件路径"
+
+#: ../gthumb/gth-main-default-sort-types.c:133
+msgid "file size"
+msgstr "文件大小"
+
+#: ../gthumb/gth-main-default-sort-types.c:134
+msgid "file modified date"
+msgstr "按文件修改时间"
+
+#: ../gthumb/gth-main-default-sort-types.c:135
+msgid "no sorting"
+msgstr "不排序"
+
+#: ../gthumb/gth-main-default-sort-types.c:136
+msgid "dimensions"
+msgstr "大小"
+
+#: ../gthumb/gth-main-default-tests.c:261
+msgid "Media"
+msgstr "媒体"
+
+#: ../gthumb/gth-main-default-tests.c:268
+msgid "Text Files"
+msgstr "文本文件"
+
+#: ../gthumb/gth-main-default-tests.c:276
+msgid "Filename"
+msgstr "文件名"
+
+#: ../gthumb/gth-main-default-tests.c:308
+msgid "Title (embedded)"
+msgstr "标题(内嵌)"
+
+#: ../gthumb/gth-main-default-tests.c:316
+msgid "Description (embedded)"
+msgstr "描述(内嵌)"
+
+#: ../gthumb/gth-pixbuf-list-task.c:139
+msgid "Could not rename the file"
+msgstr "无法重命名文件"
+
+#: ../gthumb/gth-pixbuf-saver.c:34
+msgid "No options available for this file type"
+msgstr "这种文件类型没有可用选项"
+
+#: ../gthumb/gth-progress-dialog.c:144
+msgid "Cancel operation"
+msgstr "取消操作"
+
+#: ../gthumb/gth-save-file-data-task.c:102
+msgid "Saving file information"
+msgstr "正在保存文件信息"
+
+#: ../gthumb/gth-tags-entry.c:388
+#, c-format
+msgid "Create tag «%s»"
+msgstr "创建标签 «%s»"
+
+#: ../gthumb/gth-tags-entry.c:735
+msgid "Show all the tags"
+msgstr "显示所有标签"
+
+#: ../gthumb/gth-tags-file.c:236
+msgid "Holidays"
+msgstr "假期"
+
+#: ../gthumb/gth-tags-file.c:237
+msgid "Temporary"
+msgstr "临时"
+
+#: ../gthumb/gth-tags-file.c:238
+msgid "Screenshots"
+msgstr "屏幕快照"
+
+#: ../gthumb/gth-tags-file.c:239
+msgid "Science"
+msgstr "科学"
+
+#: ../gthumb/gth-tags-file.c:240
+msgid "Favorite"
+msgstr "收藏"
+
+#: ../gthumb/gth-tags-file.c:241
+msgid "Important"
+msgstr "重要"
+
+#: ../gthumb/gth-tags-file.c:242
+msgid "GNOME"
+msgstr "GNOME"
+
+#: ../gthumb/gth-tags-file.c:243
+msgid "Games"
+msgstr "游戏"
+
+#: ../gthumb/gth-tags-file.c:244
+msgid "Party"
+msgstr "聚会"
+
+#: ../gthumb/gth-tags-file.c:245
+msgid "Birthday"
+msgstr "生日"
+
+#: ../gthumb/gth-tags-file.c:246
+msgid "Astronomy"
+msgstr "天文"
+
+#: ../gthumb/gth-tags-file.c:247
+msgid "Family"
+msgstr "全家褔"
+
+#: ../gthumb/gth-test-category.c:46 ../gthumb/gth-test-simple.c:49
+#: ../gthumb/gth-test-simple.c:64
+msgid "is"
+msgstr "是"
+
+#: ../gthumb/gth-test-category.c:47
+msgid "is only"
+msgstr "只是"
+
+#: ../gthumb/gth-test-category.c:48 ../gthumb/gth-test-simple.c:50
+#: ../gthumb/gth-test-simple.c:65
+msgid "is not"
+msgstr "不是"
+
+#: ../gthumb/gth-test-category.c:397 ../gthumb/gth-test-simple.c:812
+#: ../gthumb/gth-test-simple.c:838 ../gthumb/gth-test-simple.c:859
+#: ../gthumb/gth-test-simple.c:885
+#, c-format
+msgid "The test definition is incomplete"
+msgstr "测试定义不完整"
+
+#: ../gthumb/gth-test-selector.c:252
+msgid "Add a new rule"
+msgstr "添加一个新规则"
+
+#: ../gthumb/gth-test-selector.c:263
+msgid "Remove this rule"
+msgstr "删除这条规则"
+
+#: ../gthumb/gth-test-simple.c:46
+msgid "contains"
+msgstr "包含"
+
+#: ../gthumb/gth-test-simple.c:47
+msgid "starts with"
+msgstr "开始于"
+
+#: ../gthumb/gth-test-simple.c:48
+msgid "ends with"
+msgstr "结束于"
+
+#: ../gthumb/gth-test-simple.c:51
+msgid "does not contain"
+msgstr "不包括"
+
+#: ../gthumb/gth-test-simple.c:52
+msgid "matches"
+msgstr "匹配"
+
+#: ../gthumb/gth-test-simple.c:56
+msgid "is lower than"
+msgstr "小于"
+
+#: ../gthumb/gth-test-simple.c:57
+msgid "is greater than"
+msgstr "大于"
+
+#: ../gthumb/gth-test-simple.c:58
+msgid "is equal to"
+msgstr "等于"
+
+#: ../gthumb/gth-test-simple.c:62
+msgid "is before"
+msgstr "早于"
+
+#: ../gthumb/gth-test-simple.c:63
+msgid "is after"
+msgstr "晚于"
+
+#: ../gthumb/gth-time-selector.c:478
+msgid "Today"
+msgstr "今天"
+
+#: ../gthumb/gth-time-selector.c:486
+msgid "Now"
+msgstr "现在"
+
+#: ../gthumb/gth-window-actions-entries.h:32
+msgid "Close this window"
+msgstr "关闭本窗口"
+
+#: ../gthumb/gth-window-actions-entries.h:36
+msgid "Close _All Windows"
+msgstr "关闭所有窗口(_A)"
+
+#: ../gthumb/gtk-utils.c:551
+msgid "Could not display help"
+msgstr "无法显示帮助文件"
+
+#: ../gthumb/gtk-utils.c:868 ../gthumb/gtk-utils.c:875
+msgid "Could not launch the application"
+msgstr "无法启动应用程序 "
+
+#: ../gthumb/gtk-utils.c:978
+msgid "_Copy Here"
+msgstr "复制到此处(_C)"
+
+#: ../gthumb/gtk-utils.c:983
+msgid "_Move Here"
+msgstr "移动至此处(_M)"
+
+#: ../gthumb/gtk-utils.c:988
+msgid "_Link Here"
+msgstr "链接到此处(_L)"
+
+#: ../gthumb/gtk-utils.c:997
+msgid "Cancel"
+msgstr "取消"
+
+#: ../gthumb/main.c:59
+msgid "Open a new window"
+msgstr "打开一个新窗口 "
+
+#: ../gthumb/main.c:63
+msgid "Start in fullscreen mode"
+msgstr "以全屏方式开始"
+
+#: ../gthumb/main.c:67
+msgid "Automatically start a slideshow"
+msgstr "自动开始幻灯片播放"
+
+#: ../gthumb/main.c:71
+msgid "Automatically import digital camera photos"
+msgstr "自动导入数码照相机相片"
+
+#: ../gthumb/main.c:75
+msgid "Show version"
+msgstr "显示版本"
+
+#: ../gthumb/main.c:344
+msgid "- Image browser and viewer"
+msgstr "- 图像浏览器和查看器 "
+
+#: ../gthumb/pixbuf-io.c:174
+#, c-format
+msgid "Could not find a suitable module to save the image as \"%s\""
+msgstr "无法找到合适的模块来将图像保存为“%s”"
+
+#~ msgid ""
+#~ "Possible values are: actual_size, fit, keep_prev, fit_if_larger, "
+#~ "fit_width_if_larger."
+#~ msgstr ""
+#~ "可能的取值是：actual_size(实际大小)、fit(自动适应)、keep_prev(保持预览)、"
+#~ "fit_if_larger(如果过大则自动适应)。"
+
+#~ msgid "Possible values are: light, midtone, dark."
+#~ msgstr "可能的取值是：light(亮)、midtone(中)、dark(暗)。"
+
+#~ msgid "Possible values are: list, thumbnails."
+#~ msgstr "可能的取值是：list(列表)、thumbnails(缩略图)。"
+
+#~ msgid "Possible values are: small, medium, large."
+#~ msgstr "可能的取值是：small(小)、medium(中)、large(大)。"
+
+#~ msgid ""
+#~ "Possible values are: system, text_below, text_beside, text_only, "
+#~ "icons_only."
+#~ msgstr ""
+#~ "可能的取值是：system(系统)、text_below(文字在下)、text_beside(文字在旁)、"
+#~ "text_only(仅文字)、icons_only(仅图标)。"
+
+#~ msgid "Available _extensions:"
+#~ msgstr "可用扩展(_E)："
+
+#~ msgid "_Categories:"
+#~ msgstr "类别(_C)："
+
+#~ msgid "gthumb Extensions"
+#~ msgstr "gthumb 扩展"
+
+#~ msgid "Activate items with a double click"
+#~ msgstr "双击后打开指定项目"
+
+#~ msgid "Activate items with a single click"
+#~ msgstr "单击后打开指定项目"
+
+#~ msgid "Follow Nautilus behaviour"
+#~ msgstr "遵从 Nautilus 行为"
+
+#~ msgid "Set image to actual size"
+#~ msgstr "以实际大小显示图像"
+
+#~ msgid "Could not create the library"
+#~ msgstr "无法创建图库"
+
+#~ msgid "     "
+#~ msgstr "     "
+
+#~| msgid "%"
+#~ msgid "%n"
+#~ msgstr "%"
+
+#~| msgid "%"
+#~ msgid "%p"
+#~ msgstr "%"
+
+#~ msgid "Choose another tag"
+#~ msgstr "选择另一个标签"
+
+#~ msgid "New tag"
+#~ msgstr "新标签"
+
+#~ msgid "Could not create the folder"
+#~ msgstr "无法创建文件夹"
+
+#~ msgid "Information"
+#~ msgstr "信息"
+
+#, fuzzy
+#~ msgid "Desaturating image"
+#~ msgstr "去除彩度(_D)"
+
+#~| msgid "/"
+#~ msgctxt "time"
+#~ msgid "/"
+#~ msgstr "/"
+
+#, fuzzy
+#~ msgid ""
+#~ "Possible values are: actual-size, keep-prev, fit-size, fit-size-if-"
+#~ "larger, fit-width, fit-width-if-larger."
+#~ msgstr ""
+#~ "可能的取值是：实际大小(_S)、自动适应、保持预览(_P)、如果过大则自动适应"
+#~ "(_I)。"
+
+#~ msgid "Possible values are: none, file_date, current_date"
+#~ msgstr ""
+#~ "可能的取值是：none(无)、file_date(文件日期)、current_date(当前日期)。"
+
+#~ msgid "Possible values are: yyyymmdd, yyyymm, yyyy"
+#~ msgstr "可能的取值是：yyyymmdd、yyyymm、yyyy。"
+
+#~ msgid "%B"
+#~ msgstr "%B"
+
+#~ msgid "%F"
+#~ msgstr "%F"
+
+#~ msgid "%U"
+#~ msgstr "%U"
+
+#~ msgid "Possible values are: none, deflate, jpeg."
+#~ msgstr "可能的取值是：无、缩减、jpeg。"
+
+#~ msgid "Possible values: 0 (none), 1 (lower), 2 (upper)"
+#~ msgstr "可能的取值是：0(无)、1(小写)、2(大写)"
+
+#~ msgid "Possible values: pixels, percentage"
+#~ msgstr "可能的取值是：像素、百分比"
+
+#~| msgid "%"
+#~ msgid "%I"
+#~ msgstr "%"
+
+#~| msgid "%"
+#~ msgid "%i"
+#~ msgstr "%"
+
+#~ msgid "Use subfolders to organize files"
+#~ msgstr "用子目录组织文件"
+
+#~ msgid "Use"
+#~ msgstr "使用"
+
+#~ msgid "Extension"
+#~ msgstr "扩展"
+
+#~ msgid "Activate, deactivate and configure the gthumb extensions"
+#~ msgstr "激活、禁用和配置 gthumb 扩展"
+
+#~ msgid "gthumb"
+#~ msgstr "gThumb"
+
+#~ msgid "Unable to show '%s'"
+#~ msgstr "无法显示“%s”"
+
+#~ msgid "Unable to open '%s'"
+#~ msgstr "无法打开“%s”"
+
+#~ msgid "Skip"
+#~ msgstr "跳过"
+
+#~ msgid "Do _not change folder"
+#~ msgstr "沿用程序启动时的文件夹(_N)"
+
+#~ msgid "_Overwrite existing files"
+#~ msgstr "覆盖已存在的文件(_O)"
+
+#~ msgid "Paolo Bacchilega <paobac@src.gnome.org>"
+#~ msgstr "Paolo Bacchilega <paobac@src.gnome.org>"
+
+#~ msgid "Edit file metadata"
+#~ msgstr "编辑文件元数据"
+
+#~ msgid "_Preserve original aspect ratio"
+#~ msgstr "保持长宽比(_P)"
+
+#~ msgid "4 x 3 (Book, DVD)"
+#~ msgstr "4 x 3 (书本，DVD)"
+
+#~ msgid "5 x 7"
+#~ msgstr "5 x 7"
+
+#~ msgid "8 x 10"
+#~ msgstr "8 x 10"
+
+#~ msgid "Upload to Flickr"
+#~ msgstr "上传至 Flickr"
+
+#~ msgid "Close"
+#~ msgstr "关闭"
+
+#, fuzzy
+#~ msgid "file modified date "
+#~ msgstr "按文件修改时间"
+
+#~ msgid "Bytes"
+#~ msgstr "字节"
+
+#~ msgid "Exposure mode"
+#~ msgstr "曝光模式"
+
+#~ msgid "Flash"
+#~ msgstr "闪光"
+
+#~ msgid "Shutter speed"
+#~ msgstr "快门速度"
+
+#~ msgid "Aperture value"
+#~ msgstr "光圈值"
+
+#~ msgid "Focal length"
+#~ msgstr "焦距"
+
+#~ msgid "Camera model"
+#~ msgstr "相机型号"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "<b>Categories:</b>"
+#~ msgstr "<b>类别：</b>"
+
+#~ msgid "<b>Information on Channel:</b>"
+#~ msgstr "<b>通道信息：</b>"
+
+#~ msgid "Choose a Catalog"
+#~ msgstr "选择一览表"
+
+#~ msgid "Comm_ent"
+#~ msgstr "备注(_E)"
+
+#~ msgid "Open Images"
+#~ msgstr "打开图像"
+
+#~ msgid "Overwrite Image"
+#~ msgstr "覆盖图像"
+
+#~ msgid "Photo _Data (EXIF)"
+#~ msgstr "相片数据[EXIF](_D)"
+
+#~ msgid "R_ecent applications:"
+#~ msgstr "最近使用的应用程序(_E)："
+
+#~ msgid "_Application:"
+#~ msgstr "应用程序(_A)："
+
+#~ msgid "_Next"
+#~ msgstr "下一幅(_N)"
+
+#~ msgid "_Previous"
+#~ msgstr "上一幅(_P)"
+
+#~ msgid "Camera Model"
+#~ msgstr "相机型号"
+
+#~ msgid "Select a camera model"
+#~ msgstr "请选择相机型号"
+
+#~ msgid "Update previews"
+#~ msgstr "更新预览"
+
+#~ msgid "_Film:"
+#~ msgstr "影片(_F)："
+
+#~ msgid "A_vailable categories:"
+#~ msgstr "可供选择的类别(_V)："
+
+#~ msgid "Categories"
+#~ msgstr "类别"
+
+#~ msgid "Remove selected category"
+#~ msgstr "删除选中的类别"
+
+#~ msgid "_Selected categories:"
+#~ msgstr "选中的类别(_S)："
+
+#~ msgid "<b>Compression</b>"
+#~ msgstr "<b>压缩</b>"
+
+#~ msgid "<b>Image type</b>"
+#~ msgstr "<b>图像类型</b>"
+
+#~ msgid "JPEG Options"
+#~ msgstr "JPEG 选项"
+
+#~ msgid "Overwrite mode:"
+#~ msgstr "覆盖模式："
+
+#~ msgid "R_emove original"
+#~ msgstr "删除原有的图像(_E)"
+
+#~ msgid ""
+#~ "Skip\n"
+#~ "Rename\n"
+#~ "Ask\n"
+#~ "Overwrite"
+#~ msgstr ""
+#~ "跳过\n"
+#~ "重命名\n"
+#~ "询问\n"
+#~ "覆盖"
+
+#~ msgid "TGA Options"
+#~ msgstr "TGA 选项"
+
+#~ msgid "TIFF Options"
+#~ msgstr "TIFF 选项"
+
+#~ msgid "<b>Selection</b>"
+#~ msgstr "<b>选区</b>"
+
+#~ msgid "_Crop"
+#~ msgstr "裁剪(_C)"
+
+#~ msgid "<b>Scale ratio</b>"
+#~ msgstr "<b>缩放比例</b>"
+
+#~ msgid "Brightness - Contrast"
+#~ msgstr "亮度及对比度"
+
+#~ msgid "Color Balance"
+#~ msgstr "颜色平衡"
+
+#~ msgid "Hue - Saturation"
+#~ msgstr "色调及饱和度"
+
+#~ msgid "Posterize"
+#~ msgstr "极色化"
+
+#~ msgid "Preserve l_uminosity"
+#~ msgstr "保留光度(_U)"
+
+#~ msgid "Width:"
+#~ msgstr "宽度："
+
+#~ msgid "_Hue:"
+#~ msgstr "色调(_H)："
+
+#~ msgid "_Levels:"
+#~ msgstr "级别(_L)："
+
+#~ msgid "_Lightness:"
+#~ msgstr "亮度(_L)："
+
+#~ msgid "_Scale"
+#~ msgstr "缩放图像(_S)"
+
+#~ msgid "<b>Background style</b>"
+#~ msgstr "<b>背景样式</b>"
+
+#~ msgid "<b>Caption</b>"
+#~ msgstr "<b>标题</b>"
+
+#~ msgid "<b>Footer</b>"
+#~ msgstr "<b>页脚</b>"
+
+#~ msgid "<b>Header and footer</b>"
+#~ msgstr "<b>页眉及页脚</b>"
+
+#~ msgid "<b>Header</b>"
+#~ msgstr "<b>页眉</b>"
+
+#~ msgid "<b>Index images</b>"
+#~ msgstr "<b>索引图</b>"
+
+#~ msgid "<b>Page size</b>"
+#~ msgstr "<b>页面大小</b>"
+
+#~ msgid "<small><i><b>Note:</b> # (enumerator)</i>.</small>"
+#~ msgstr "<small><i><b>注释：</b> # (计数器)</i>。</small>"
+
+#~ msgid ""
+#~ "<small><i><b>Note:</b> %p (page number), %n (total number of pages)</i>.</"
+#~ "small>"
+#~ msgstr "<small><i><b>注释：</b> %p (页码)，%n (页面总数)</i>。</small>"
+
+#~ msgid "Co_mment"
+#~ msgstr "备注(_M)"
+
+#~ msgid "F_ooter:"
+#~ msgstr "页脚(_O)："
+
+#~ msgid "Frame co_lor:"
+#~ msgstr "边框颜色(_L)："
+
+#~ msgid "H_eader:"
+#~ msgstr "页眉(_E)："
+
+#~ msgid "Header/Footer"
+#~ msgstr "页眉/页脚"
+
+#~ msgid "Hei_ght:"
+#~ msgstr "高度(_G)："
+
+#~ msgid "Image dim_ensions"
+#~ msgstr "图像大小(_E)"
+
+#~ msgid "Index Image Style"
+#~ msgstr "索引图风格"
+
+#~ msgid "Rows a_nd columns"
+#~ msgstr "行列数目(_N)"
+
+#~ msgid "Shadow out"
+#~ msgstr "凸起"
+
+#~ msgid "Sor_t:"
+#~ msgstr "排序(_T)："
+
+#~ msgid "Wi_dth:"
+#~ msgstr "宽度(_D)："
+
+#~ msgid "_Draw frame"
+#~ msgstr "绘制边框(_D)"
+
+#~ msgid "by name"
+#~ msgstr "按名称"
+
+#~ msgid "jpeg"
+#~ msgstr "jpeg"
+
+#~ msgid "png"
+#~ msgstr "png"
+
+#~ msgid "0:"
+#~ msgstr "0:"
+
+#~ msgid "112 x 112"
+#~ msgstr "112 x 112"
+
+#~ msgid "128 x 128"
+#~ msgstr "128 x 128"
+
+#~ msgid "164 x 164"
+#~ msgstr "164 x 164"
+
+#~ msgid "1:"
+#~ msgstr "1:"
+
+#~ msgid "256 x 256"
+#~ msgstr "256 x 256"
+
+#~ msgid "2:"
+#~ msgstr "2:"
+
+#~ msgid "3:"
+#~ msgstr "3:"
+
+#~ msgid "4:"
+#~ msgstr "4:"
+
+#~ msgid "64 x 64"
+#~ msgstr "64 x 64"
+
+#~ msgid "6:"
+#~ msgstr "6:"
+
+#~ msgid "7:"
+#~ msgstr "7:"
+
+#~ msgid "85 x 85"
+#~ msgstr "85 x 85"
+
+#~ msgid "8:"
+#~ msgstr "8:"
+
+#~ msgid "95 x 95"
+#~ msgstr "95 x 95"
+
+#~ msgid "9:"
+#~ msgstr "9:"
+
+#~ msgid "<b>Direction</b>"
+#~ msgstr "<b>方向</b>"
+
+#~ msgid "<b>Hide/Show</b>"
+#~ msgstr "<b>隐藏/显示</b>"
+
+#~ msgid "<b>Interface</b>"
+#~ msgstr "<b>界面</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>其它</b>"
+
+#~ msgid "<b>Slide show</b>"
+#~ msgstr "<b>幻灯片播放</b>"
+
+#~ msgid "<b>Viewer</b>"
+#~ msgstr "<b>查看器</b>"
+
+#~ msgid "C_lick policy:"
+#~ msgstr "鼠标按钮处理方式(_L)："
+
+#~ msgid "D_elay before changing image:"
+#~ msgstr "更换图像前延迟(_E)："
+
+#~ msgid "For_ward"
+#~ msgstr "前进(_W)"
+
+#~ msgid "Go to last _visited folder or catalog"
+#~ msgstr "转到上一次程序启动时浏览的文件夹或一览表(_V)"
+
+#~ msgid "Hot Keys"
+#~ msgstr "热键"
+
+#~ msgid ""
+#~ "Keys 0-9 on the numeric keypad can be used in the browser to open or "
+#~ "modify the selected images with other applications."
+#~ msgstr "数字键盘 0-9 键可用于在浏览器中用其他应用程序打开或更改选定的图像。"
+
+#~ msgid "Layout:"
+#~ msgstr "窗口布局："
+
+#~ msgid "Re_verse"
+#~ msgstr "相反次序(_V)"
+
+#~ msgid "Use a _fading effect when changing image"
+#~ msgstr "更换图像时使用淡出效果(_F)"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "150"
+#~ msgstr "150"
+
+#~ msgid "16"
+#~ msgstr "16"
+
+#~ msgid "300"
+#~ msgstr "300"
+
+#~ msgid "4"
+#~ msgstr "4"
+
+#~ msgid "600"
+#~ msgstr "600"
+
+#~ msgid "72"
+#~ msgstr "72"
+
+#~ msgid "8"
+#~ msgstr "8"
+
+#~ msgid "<b>Image Sizing</b>"
+#~ msgstr "<b>图像大小</b>"
+
+#~ msgid "<b>Margins</b>"
+#~ msgstr "<b>边距</b>"
+
+#~ msgid "<b>Orientation</b>"
+#~ msgstr "<b>方向</b>"
+
+#~ msgid "<b>Size</b>"
+#~ msgstr "<b>大小</b>"
+
+#~ msgid ""
+#~ "<small><i><b>Note:</b> Drag the image to move it in the page.\n"
+#~ "Click on an image to rotate it.</i></small>"
+#~ msgstr ""
+#~ "<small><i><b>注释：</b> 将图像拖动至此页。\n"
+#~ "点击一幅图像使之旋转。</i></small>"
+
+#~ msgid "A4"
+#~ msgstr "A4"
+
+#~ msgid "Center _on Page"
+#~ msgstr "放置在页面中央(_O)"
+
+#~ msgid "Comment _font:"
+#~ msgstr "备注字体(_F)："
+
+#, fuzzy
+#~ msgid "Executive"
+#~ msgstr "美国行政"
+
+#~ msgid "I_nclude comment"
+#~ msgstr "包含备注(_N)"
+
+#~ msgid "Lan_dscape"
+#~ msgstr "横向(_D)"
+
+#, fuzzy
+#~ msgid "Legal"
+#~ msgstr "法律"
+
+#~ msgid "Letter"
+#~ msgstr "信函"
+
+#~ msgid "P_ortrait"
+#~ msgstr "纵向(_O)"
+
+#~ msgid "Paper Details"
+#~ msgstr "纸张细节"
+
+#~ msgid "Postcard"
+#~ msgstr "明信片"
+
+#, fuzzy
+#~ msgid "Scale to this size"
+#~ msgstr "以实际大小显示图像"
+
+#~ msgid "Tabloid"
+#~ msgstr "小报"
+
+#~ msgid "_Bottom:"
+#~ msgstr "下(_B)："
+
+#~ msgid "Actual Size"
+#~ msgstr "实际大小"
+
+#~ msgid "Zoom In"
+#~ msgstr "放大"
+
+#~ msgid "Zoom Out"
+#~ msgstr "缩小"
+
+#~ msgid "Zoom to Fit"
+#~ msgstr "缩放至合适大小"
+
+#~ msgid "<b>Search criteria</b>"
+#~ msgstr "<b>搜索条件</b>"
+
+#~ msgid "<b>Search scope</b>"
+#~ msgstr "<b>搜索范围</b>"
+
+#~ msgid "After"
+#~ msgstr "在指定时间之后"
+
+#~ msgid "Any"
+#~ msgstr "任何时间"
+
+#~ msgid "Before"
+#~ msgstr "在指定时间之前"
+
+#~ msgid "Choose categories from the saved list"
+#~ msgstr "从已保存的列表中选中图像类别"
+
+#~ msgid "Equal to"
+#~ msgstr "等于"
+
+#~ msgid "Found images:"
+#~ msgstr "找到图像："
+
+#~ msgid "Match a_ll selected categories"
+#~ msgstr "完全符合所有选中的类别(_L)"
+
+#~ msgid "Match a_ny selected category"
+#~ msgstr "至少符合其中一个选中的类别(_N)"
+
+#~ msgid "New _Search..."
+#~ msgstr "新建搜索(_S)..."
+
+#~ msgid "Search Progress"
+#~ msgstr "搜索进度"
+
+#~ msgid "_Edit Search"
+#~ msgstr "编辑搜索(_E)"
+
+#~ msgid "<b>Change to:</b>"
+#~ msgstr "<b>更改为：</b>"
+
+#~ msgid "<b>Write to CD</b>"
+#~ msgstr "<b>写入 CD</b>"
+
+#~ msgid ""
+#~ "<small><i><b>Note</b>: JPEG transformations are normally lossless.\n"
+#~ "When viewing images, you can use the [ and ] shortcut\n"
+#~ "keys to rotate and save losslessly, bypassing this dialog.</i></small>"
+#~ msgstr ""
+#~ "<small><i><b>注意</b>：JPEG 转换通常是无损的。\n"
+#~ "当查看图像时，您可以通过此对话框\n"
+#~ "使用 [ 和 ] 快捷键旋转和无损保存。</i></small>"
+
+#~ msgid ""
+#~ "<small><i><b>Special characters:</b> # (enumerator), %f (original "
+#~ "filename), %d (image date), %s (image size), %e (original extension).</"
+#~ "i></small>"
+#~ msgstr ""
+#~ "<small><i><b>特殊字符：</b> # (计数器)，%f (原始文件名)，%d (图像日"
+#~ "期)，%s (图像大小)，%e (原始扩展名)。</i></small>"
+
+#~ msgid "A_djust timezone:"
+#~ msgstr "调整时区(_D)："
+
+#, fuzzy
+#~ msgid "Apply physical _transform"
+#~ msgstr "应用物理转换(_T)"
+
+#~ msgid "Apply to all _images"
+#~ msgstr "应用于所有图像(_I)"
+
+#~ msgid "C_urrent date"
+#~ msgstr "当前日期(_U)"
+
+#~ msgid "Check _All"
+#~ msgstr "全部选中(_A)"
+
+#~ msgid "Check _None"
+#~ msgstr "全部不选(_N)"
+
+#~ msgid "Checking image:"
+#~ msgstr "正在检查图像："
+
+#~ msgid ""
+#~ "Click OK to reset the Exif orientation tag for the selected images to Top-"
+#~ "Left."
+#~ msgstr "点击确认以使选定图像的 Exif 方向标签重新设定为左上。"
+
+#~ msgid "Equal images:"
+#~ msgstr "重复的图像："
+
+#~ msgid "Mirror image vertically (top-bottom)"
+#~ msgstr "垂直颠倒图像 (上下颠倒)"
+
+#~ msgid "New names _preview:"
+#~ msgstr "新文件名预览(_P)："
+
+#~ msgid "P_hoto digitalization date (From EXIF data)"
+#~ msgstr "数字化相片的日期[来自 EXIF 数据](_H)"
+
+#~ msgid "Reset Exif Orientation Tags"
+#~ msgstr "重设 Exif 方向标签"
+
+#~ msgid "Rotate Images"
+#~ msgstr "旋转图像"
+
+#~ msgid "Scale Images"
+#~ msgstr "缩放图像"
+
+#~ msgid "Search terminated, no duplicates found."
+#~ msgstr "搜索中止，找不到任何重复的图像。"
+
+#~ msgid "1024 x 768"
+#~ msgstr "1024 x 768"
+
+#~ msgid "1280 x 960"
+#~ msgstr "1280 x 960"
+
+#~ msgid "320 x 200"
+#~ msgstr "320 x 200"
+
+#~ msgid "320 x 320"
+#~ msgstr "320 x 320"
+
+#~ msgid "640 x 640"
+#~ msgstr "640 x 640"
+
+#~ msgid "800 x 800"
+#~ msgstr "800 x 800"
+
+#~ msgid "<b>Album Style</b>"
+#~ msgstr "<b>相册类型</b>"
+
+#~ msgid "<b>Basic Information</b>"
+#~ msgstr "<b>基本信息</b>"
+
+#~ msgid "<b>Camera Data</b>"
+#~ msgstr "<b>照相机数据</b>"
+
+#~ msgid "<b>Comments</b>"
+#~ msgstr "<b>注释</b>"
+
+#~ msgid "<b>Index Page Layout</b>"
+#~ msgstr "<b>索引页面布局</b>"
+
+#~ msgid "<b>Theme</b>"
+#~ msgstr "<b>主题</b>"
+
+#~ msgid "<small><i><b>Note:</b> %d (current date).</i></small>"
+#~ msgstr "<small><i><b>注释：</b> %d(当前日期)。</i></small>"
+
+#~ msgid ""
+#~ "<small><i><b>Note:</b> Some themes may auto-adjust the\n"
+#~ "number of rows and columns, but keep the total \n"
+#~ "number of images per page constant.</i></small>"
+#~ msgstr ""
+#~ "<small><i><b>注意:</b> 一些主题可能会自动调整\n"
+#~ "行数和列数，但保持每页的图像总数\n"
+#~ "为常数。</i></small>"
+
+#~ msgid "Came_ra Model"
+#~ msgstr "相机型号(_R)"
+
+#~ msgid "Exposure _time"
+#~ msgstr "曝光时间(_T)"
+
+#~ msgid "Focal _length"
+#~ msgstr "焦距(_L)"
+
+#~ msgid "Web Album Theme"
+#~ msgstr "网页相册主题"
+
+#~ msgid "_Aperture value"
+#~ msgstr "光圈值(_A)"
+
+#~ msgid "_Date and Time"
+#~ msgstr "日期和时间(_D)"
+
+#~ msgid "_Flash"
+#~ msgstr "闪光(_F)"
+
+#~ msgid "_Go to Theme Folder"
+#~ msgstr "转到主题文件夹(_G)"
+
+#~ msgid "_Install Theme..."
+#~ msgstr "安装主题(_I)..."
+
+#~ msgid "_Place"
+#~ msgstr "位置(_P)"
+
+#~ msgid "_Shutter speed"
+#~ msgstr "快门速度(_S)"
+
+#, fuzzy
+#~ msgid "columns, by"
+#~ msgstr "列数"
+
+#~ msgid "index.html"
+#~ msgstr "index.html"
+
+#~ msgid "or _use a single index page"
+#~ msgstr "或使用单一索引页面(_U)"
+
+#~ msgid "rows per page,"
+#~ msgstr "每页行数，"
+
+#, fuzzy
+#~ msgid ""
+#~ "Possible values are 0 (portrait), 1 (landscape), 2 (reverse portrait), 3 "
+#~ "(reverse landscape)"
+#~ msgstr "可能的值为 0(肖像)、1(风景)、2(反转肖像)、3(反转风景)"
+
+#~ msgid "Possible values are: 1, 2, 3, 4."
+#~ msgstr "可能的取值是：1、2、3、4。"
+
+#~ msgid "Possible values are: 72, 150, 300, 600."
+#~ msgstr "可能的取值是：72、150、300、600。"
+
+#~ msgid "Possible values are: ascending, descending."
+#~ msgstr "可能的取值是：升序、降序。"
+
+#~ msgid "Possible values are: forward, backward, random."
+#~ msgstr "可能的取值是：前进、后退、随机。"
+
+#~ msgid "Possible values are: image, data, comment."
+#~ msgstr "可能的取值是：图像、数据、备注。"
+
+#~ msgid "Possible values are: jpeg, png, tga, tiff."
+#~ msgstr "可能的取值是：jpeg、png、tga、tiff。"
+
+#~ msgid "Possible values are: manual, auto."
+#~ msgstr "可能的取值是：手动、自动。"
+
+#~ msgid "Possible values are: nautilus, single, double."
+#~ msgstr "可能的取值是：nautilus、单、双。"
+
+#~ msgid ""
+#~ "Possible values are: none, name, path, size, time, exifdate, comment."
+#~ msgstr "可能的取值是：无、名称、路径、大小、时间、exif日期、备注。"
+
+#~ msgid ""
+#~ "Possible values are: none, simple, simple_with_shadow, shadow, slide, "
+#~ "shadow_in, shadow_out."
+#~ msgstr ""
+#~ "可能的取值是：无、普通边框、普通边框带阴影(_W)、阴影、幻灯片、凹陷(_I)、凸"
+#~ "起(_O)。"
+
+#~ msgid ""
+#~ "Possible values are: none, square, image, display, 4x3, 4x6, 5x7, 8x10, "
+#~ "custom."
+#~ msgstr "可能的取值是：无、正方、图像、陈列、4x3、4x6、5x7、8x10、自定义。"
+
+#~ msgid "Possible values are: skip, rename, ask, overwrite."
+#~ msgstr "可能的取值是：跳过、重命名、询问、覆盖。"
+
+#~ msgid "Cannot open catalog \"%s\": %s"
+#~ msgstr "无法打开一览表“%s”：%s"
+
+#~ msgid "Cannot save catalog \"%s\": %s"
+#~ msgstr "无法保存一览表“%s”：%s"
+
+#~ msgid "%d %B %Y, %H:%M"
+#~ msgstr "%Y年%-m月%-d日 %H:%M"
+
+#~ msgid "Image type:"
+#~ msgstr "图像类型："
+
+#~ msgid "Home"
+#~ msgstr "主文件夹"
+
+#~ msgid "Library not empty"
+#~ msgstr "图库内非空"
+
+#~ msgid "Cannot remove library \"%s\": %s"
+#~ msgstr "无法删除图库“%s”：%s"
+
+#~ msgid "Cannot remove catalog \"%s\": %s"
+#~ msgstr "无法删除一览表“%s”：%s"
+
+#~ msgid "No image"
+#~ msgstr "没有任何图像"
+
+#~ msgid "Ro_tate Images"
+#~ msgstr "旋转图像(_T)"
+
+#~ msgid "Loading image: %s"
+#~ msgstr "正在载入图像：%s"
+
+#~ msgid "Deleting all thumbnails, wait please..."
+#~ msgstr "正在删除所有缩略图，请稍等..."
+
+#~ msgid "Deleting old thumbnails, wait please..."
+#~ msgstr "正在删除旧的缩略图，请稍等..."
+
+#~ msgid "(Invalid Name)"
+#~ msgstr "(无效的名称)"
+
+#~ msgid "%d x %d pixels"
+#~ msgstr "%d x %d 像素"
+
+#~ msgid "Move Catalog to..."
+#~ msgstr "将一览表移至..."
+
+#~ msgid "Enter the new category name"
+#~ msgstr "请输入新的类别名称"
+
+#~ msgid ""
+#~ "The name \"%s\" is not valid because it contains the character \",\". "
+#~ "Please use a different name."
+#~ msgstr "名称“%s”无效，因为它含有“,”字符。请使用另一个名称。"
+
+#~ msgid "The category \"%s\" is already present. Please use a different name."
+#~ msgstr "类别“%s”已经存在。请使用另一个名称。"
+
+#~ msgid ""
+#~ "An image named \"%s\" is already present. Please specify a different name."
+#~ msgstr "名称为“%s”的图像已经存在。请使用另一个名称。"
+
+#~ msgid "Duplicates Size"
+#~ msgstr "重复图像的大小"
+
+#~ msgid "Checked images will be moved to the Trash, are you sure?"
+#~ msgstr "已选中的图像将会被移至回收站，您确定吗？"
+
+#~ msgid "The destination folder does not exist. Do you want to create it?"
+#~ msgstr "目标文件夹不存在。是否创建该文件夹？"
+
+#~ msgid "Could not create folder \"%s\": %s."
+#~ msgstr "无法创建文件夹“%s”：%s。"
+
+#~ msgid ""
+#~ "You don't have the right permissions to create images in the folder \"%s\""
+#~ msgstr "没有足够的权限，无法在文件夹“%s”中创建图像"
+
+#~ msgid "_Do not display this message again"
+#~ msgstr "不再显示此消息(_D)"
+
+#~ msgid "%d %b %Y, %H:%M"
+#~ msgstr "%Y年%-m月%-d日 %H:%M"
+
+#~ msgid "You didn't enter the new name"
+#~ msgstr "并未输入新的名称"
+
+#~ msgid ""
+#~ "The name \"%s\" is already used in this folder. Please use a different "
+#~ "name."
+#~ msgstr "本文件夹中已经有文件的名称是“%s”。请使用另一个名称。"
+
+#~ msgid "Could not rename the following images:"
+#~ msgstr "无法更改以下的图像的名称："
+
+#~ msgid "_Abort"
+#~ msgstr "中止(_A)"
+
+#~ msgid "Collecting images info"
+#~ msgstr "正在收集图像信息"
+
+#~ msgid "Copying file %ld of %ld"
+#~ msgstr "正在复制第 %ld 个文件(总共 %ld 个)"
+
+#~ msgid ""
+#~ "Could not move temporary file to remote location. Check remote "
+#~ "permissions."
+#~ msgstr "无法移动临时文件到远程位置。检查远程权限。"
+
+#~ msgid "Film"
+#~ msgstr "影片"
+
+#, fuzzy
+#~ msgid "Import errors detected"
+#~ msgstr "没有检测到相机"
+
+#~ msgid "The files on the camera will not be deleted"
+#~ msgstr "照相机上的文件不会被删除"
+
+#~ msgid "Not enough free space left on disk"
+#~ msgstr "磁盘上没有足够的剩余空间"
+
+#~ msgid "by path"
+#~ msgstr "按路径"
+
+#~ msgid "by size"
+#~ msgstr "按大小"
+
+#~ msgid "by comment"
+#~ msgstr "按备注"
+
+#~ msgid ""
+#~ "The name \"%s\" is not valid because it contains the character \"/\". "
+#~ "Please use a different name."
+#~ msgstr "名称“%s”无效，因为它含有“/”字符。请使用另一个名称。"
+
+#~ msgid "Select Album Theme"
+#~ msgstr "选中相册主题"
+
+#~ msgid "The image will be moved to the Trash, are you sure?"
+#~ msgstr "该图像将会被移动到回收站，您确定吗？"
+
+#~ msgid "The selected images will be moved to the Trash, are you sure?"
+#~ msgstr "选中的图像将会被移至回收站，您确定吗？"
+
+#~ msgid "Enter the new name: "
+#~ msgstr "请输入新的名称："
+
+#~ msgid "The name \"%s\" is already used. Please use a different name."
+#~ msgstr "名称“%s”已经在使用中。请使用另一个名称。"
+
+#~ msgid "Could not rename the library \"%s\": %s"
+#~ msgstr "无法重命名图库“%s”：%s"
+
+#~ msgid "The selected library will be removed, are you sure?"
+#~ msgstr "将会删除选中的图库，您确定吗？"
+
+#~ msgid "The selected catalog will be removed, are you sure?"
+#~ msgstr "将会删除选中的一览表，您确定吗？"
+
+#~ msgid "Could not rename the folder \"%s\": %s"
+#~ msgstr "无法重命名文件夹“%s”：%s"
+
+#~ msgid "source and destination are the same"
+#~ msgstr "源目录和目的地一样"
+
+#~ msgid ""
+#~ "\"%s\" cannot be moved to the Trash. Do you want to delete it permanently?"
+#~ msgstr "“%s”无法移至回收站。是否永久删除该图像？"
+
+#~ msgid "The selected folder will be moved to the Trash, are you sure?"
+#~ msgstr "选中的文件夹将会被移至回收站，您确定吗？"
+
+#~ msgid "Could not copy the folder \"%s\": %s"
+#~ msgstr "无法复制文件夹“%s”：%s"
+
+#~ msgid "source contains destination"
+#~ msgstr "目的地在源目录之下"
+
+#~ msgid "a folder with that name is already present."
+#~ msgstr "该名称的文件夹已经存在。"
+
+#~ msgid "Open Location"
+#~ msgstr "打开位置"
+
+#~ msgid "_Folder"
+#~ msgstr "文件夹(_F)"
+
+#~ msgid "Show/_Hide"
+#~ msgstr "显示/隐藏(_H)"
+
+#~ msgid "S_ort Images"
+#~ msgstr "图像排序(_O)"
+
+#~ msgid "_Zoom"
+#~ msgstr "缩放(_Z)"
+
+#~ msgid "_Image"
+#~ msgstr "图像(_I)"
+
+#~ msgid "Set Image as _Wallpaper"
+#~ msgstr "将图像设置为桌面壁纸(_W)"
+
+#~ msgid "Create a new window"
+#~ msgstr "创建新窗口"
+
+#~ msgid "Open the selected image in a new window"
+#~ msgstr "在新窗口打开选中的图像"
+
+#~ msgid "_Import Photos..."
+#~ msgstr "导入相片(_I)..."
+
+#~ msgid "_Write To CD..."
+#~ msgstr "写入 CD(_W)..."
+
+#~ msgid "Write selection to CD"
+#~ msgstr "将选中内容写入 CD"
+
+#~ msgid "Move this image to the Trash"
+#~ msgstr "将本图像移至回收站"
+
+#~ msgid "Move this image to another location"
+#~ msgstr "将本图像移动到其它位置"
+
+#~ msgid "Copy selected images to another location"
+#~ msgstr "将已选中的图像复制到其它位置"
+
+#~ msgid "Move selected images to another location"
+#~ msgstr "将选中的图像移动到其它位置"
+
+#~ msgid "Select all images"
+#~ msgstr "选中所有图像"
+
+#~ msgid "Open the selected catalog"
+#~ msgstr "打开选中的一览表"
+
+#~ msgid "Open the selected catalog in a new window"
+#~ msgstr "在新窗口打开选中的一览表"
+
+#~ msgid "Rename selected catalog"
+#~ msgstr "重命名选中的一览表"
+
+#~ msgid "Remove selected catalog"
+#~ msgstr "删除选中的一览表"
+
+#~ msgid "Move selected catalog to another location"
+#~ msgstr "将已选中的一览表移动到其它位置"
+
+#~ msgid "_Edit Search..."
+#~ msgstr "编辑搜索(_E)..."
+
+#~ msgid "Modify search criteria"
+#~ msgstr "更改搜索的条件"
+
+#~ msgid "Redo _Search"
+#~ msgstr "重新搜索(_S)"
+
+#~ msgid "_New Catalog..."
+#~ msgstr "新建一览表(_N)..."
+
+#~ msgid "New _Library..."
+#~ msgstr "新建图库(_L)..."
+
+#~ msgid "Create a new catalog library"
+#~ msgstr "创建新的一览表图库"
+
+#~ msgid "Rename current catalog"
+#~ msgstr "重命名当前的一览表"
+
+#~ msgid "Remove current catalog"
+#~ msgstr "删除当前的一览表"
+
+#~ msgid "Move current catalog to another location"
+#~ msgstr "将当前的一览表移动到其它位置"
+
+#~ msgid "Open the selected folder in a new window"
+#~ msgstr "在新窗口打开选中的文件夹"
+
+#~ msgid "Open the selected folder with the Nautilus file manager"
+#~ msgstr "用 Nautilus 文件管理器打开选中的文件夹"
+
+#~ msgid "Rename selected folder"
+#~ msgstr "重命名选中的文件夹"
+
+#~ msgid "Move the selected folder to the Trash"
+#~ msgstr "将选中的文件夹移至回收站"
+
+#~ msgid "Copy selected folder"
+#~ msgstr "复制选中的文件夹"
+
+#~ msgid "Move selected folder"
+#~ msgstr "移动选中的文件夹"
+
+#~ msgid "Ca_tegories..."
+#~ msgstr "类别(_T)..."
+
+#~ msgid "Open current folder with the Nautilus file manager"
+#~ msgstr "用 Nautilus 资源管理器打开当前的文件夹"
+
+#~ msgid "Rename current folder"
+#~ msgstr "重命名当前的文件夹"
+
+#~ msgid "Move the current folder to the Trash"
+#~ msgstr "将当前的文件夹移至回收站"
+
+#~ msgid "Copy current folder"
+#~ msgstr "复制当前的文件夹"
+
+#~ msgid "Assign categories to the current folder"
+#~ msgstr "为当前文件夹分类"
+
+#~ msgid "Go to the home folder"
+#~ msgstr "转到主文件夹"
+
+#~ msgid "_Go to the Image Folder"
+#~ msgstr "转到图像文件夹(_G)"
+
+#~ msgid "_Slide Show"
+#~ msgstr "幻灯片播放(_S)"
+
+#~ msgid "Create _Index Image..."
+#~ msgstr "创建索引图像(_I)..."
+
+#~ msgid "Search for _Duplicates..."
+#~ msgstr "查找重复图像(_D)..."
+
+#~ msgid "Scale Images..."
+#~ msgstr "缩放图像..."
+
+#~ msgid "_Image Preview"
+#~ msgstr "图像预览(_I)"
+
+#~ msgid "_Reversed Order"
+#~ msgstr "相反次序排列(_R)"
+
+#~ msgid "Reverse images order"
+#~ msgstr "以相反的次序显示图像"
+
+#~ msgid "by _Name"
+#~ msgstr "按名称(_N)"
+
+#~ msgid "Sort images by name"
+#~ msgstr "按文件名称排列图像"
+
+#~ msgid "by _Path"
+#~ msgstr "按路径(_P)"
+
+#~ msgid "Sort images by path"
+#~ msgstr "按路径名称排列图像"
+
+#~ msgid "by _Size"
+#~ msgstr "按大小(_S)"
+
+#~ msgid "Sort images by file modification time"
+#~ msgstr "按文件修改时间排列图像"
+
+#~ msgid "by _Exif Time"
+#~ msgstr "按 _Exif 时间"
+
+#~ msgid "Sort images by Exif DateTime tag"
+#~ msgstr "按 Exif 日期时间标签排列图像"
+
+#~ msgid "by _Comment"
+#~ msgstr "按备注(_C)"
+
+#, fuzzy
+#~ msgid "Sort images by comment"
+#~ msgstr "按文件名称排列图像"
+
+#~ msgid "_Manual Order"
+#~ msgstr "手动顺序(_M)"
+
+#~ msgid "Sort images manually"
+#~ msgstr "手动列图像顺序"
+
+#~ msgid "View As Slides"
+#~ msgstr "以幻灯片方式查看"
+
+#~ msgid "View As List"
+#~ msgstr "以列表方式查看"
+
+#~ msgid "_Catalogs"
+#~ msgstr "一览表(_C)"
+
+#~ msgid "View the catalogs"
+#~ msgstr "查看一览表"
+
+#~ msgid "[Press 'c' to add a comment]"
+#~ msgstr "[请按“c”添加备注]"
+
+#~ msgid "1 image (%s)"
+#~ msgstr "1 幅图像 (%s)"
+
+#~ msgid "The current image has been modified, do you want to save it?"
+#~ msgstr "当前图像已修改，你要保存它吗？"
+
+#~ msgid "Dragged Images"
+#~ msgstr "拖放的图像"
+
+#~ msgid "Cannot load folder \"%s\": %s\n"
+#~ msgstr "无法载入文件夹“%s”：%s\n"
+
+#~ msgid "The specified catalog does not exist."
+#~ msgstr "指定的一览表不存在。"
+
+#~ msgid "Wait please..."
+#~ msgstr "请稍等..."
+
+#~ msgid "Filesystem Data"
+#~ msgstr "文件系统数据"
+
+#~ msgid "GPS Coordinates"
+#~ msgstr "GPS 坐标"
+
+#, fuzzy
+#~ msgid "Embedded Thumbnail"
+#~ msgstr "嵌入缩略图"
+
+#~ msgid "Versions & Interoperability"
+#~ msgstr "互操作性 和 互操作性"
+
+#~ msgid "Path"
+#~ msgstr "路径"
+
+#~ msgid "KB"
+#~ msgstr "KB"
+
+#~ msgid "Category"
+#~ msgstr "类别"
+
+#, fuzzy
+#~ msgid "Text contains"
+#~ msgstr "只显示文字"
+
+#~ msgid "<b>_Folder</b>"
+#~ msgstr "<b>文件夹(_F)</b>"
+
+#~ msgid "_Browse..."
+#~ msgstr "浏览(_B)..."
+
+#~ msgid "<b>_Recent folders:</b>"
+#~ msgstr "<b>最近使用的文件夹(_R)：</b>"
+
+#~ msgid "_Transform"
+#~ msgstr "转换(_T)"
+
+#~ msgid "_Single Window"
+#~ msgstr "单窗口(_S)"
+
+#~ msgid "_None"
+#~ msgstr "无(_N)"
+
+#~ msgid "Open selected images with an application"
+#~ msgstr "用其它程序打开已选中的图像"
+
+#~ msgid "_Open With..."
+#~ msgstr "打开方式(_O)..."
+
+#~ msgid "Revert to saved image"
+#~ msgstr "将图像还原为未修改前的版本"
+
+#~ msgid "Print the current image"
+#~ msgstr "打印当前的图像"
+
+#~ msgid "Open this image with an application"
+#~ msgstr "用其它程序打开本图像"
+
+#~ msgid "Comm_ent..."
+#~ msgstr "备注(_E)..."
+
+#~ msgid "Add a comment to selected images"
+#~ msgstr "在选中的图像中添加备注"
+
+#~ msgid "Rem_ove Comment"
+#~ msgstr "删除备注(_O)"
+
+#~ msgid "Remove comments of selected images"
+#~ msgstr "删除选中的图像的备注"
+
+#~ msgid "Assign categories to selected images"
+#~ msgstr "为选中的图像分类"
+
+#~ msgid "Ca_tegories"
+#~ msgstr "类别(_T)"
+
+#~ msgid "View the image rotated clockwise"
+#~ msgstr "查看顺时针旋转后的图像"
+
+#~ msgid "View the image rotated counter-clockwise"
+#~ msgstr "查看逆时针旋转后的图像"
+
+#~ msgid "View the image flipped"
+#~ msgstr "查看上下颠倒的图像"
+
+#~ msgid "View the image mirrored"
+#~ msgstr "查看左右颠倒的图像"
+
+#~ msgid "View the image in black and white"
+#~ msgstr "以黑白模式查看图像"
+
+#~ msgid "View the image with negative colors"
+#~ msgstr "以补色查看图像"
+
+#~ msgid "_Enhance"
+#~ msgstr "增强(_E)"
+
+#~ msgid "Automatically adjust the color levels"
+#~ msgstr "自动调整颜色水平"
+
+#~ msgid "Reduce the number of colors"
+#~ msgstr "减少颜色数目"
+
+#~ msgid "_Brightness-Contrast..."
+#~ msgstr "亮度和对比度(_B)..."
+
+#~ msgid "Adjust brightness and contrast"
+#~ msgstr "调整亮度和对比度"
+
+#~ msgid "_Hue-Saturation..."
+#~ msgstr "色调及饱和度(_H)..."
+
+#~ msgid "Adjust hue and saturation"
+#~ msgstr "调整色调及饱和度"
+
+#~ msgid "Redeye Removal Tool"
+#~ msgstr "红眼移除工具"
+
+#~ msgid "_Color Balance..."
+#~ msgstr "颜色平衡(_C)..."
+
+#~ msgid "Adjust color balance"
+#~ msgstr "调整颜色平衡"
+
+#~ msgid "Black and White"
+#~ msgstr "黑白"
+
+#~ msgid "Web Palette"
+#~ msgstr "Web 调色板"
+
+#~ msgid "Step A_nimation"
+#~ msgstr "逐帧动画(_N)"
+
+#~ msgid "View next animation frame"
+#~ msgstr "查看下一帧动画"
+
+#~ msgid "Set the image as desktop background (centered)"
+#~ msgstr "将图像设置为桌面背景 (居中)"
+
+#~ msgid "_Scaled"
+#~ msgstr "依比例缩放(_S)"
+
+#~ msgid "Set the image as desktop background (scaled keeping aspect ratio)"
+#~ msgstr "将图像设置为桌面背景 (依比例缩放)"
+
+#~ msgid "Str_etched"
+#~ msgstr "拉伸(_E)"
+
+#~ msgid "Set the image as desktop background (stretched)"
+#~ msgstr "将图像设置为桌面背景 (拉伸)"
+
+#~ msgid "Reset Exif orientation to top-left"
+#~ msgstr "重设 Exif 方向 为左上"
+
+#~ msgid "Play _Animation"
+#~ msgstr "播放动画(_A)"
+
+#~ msgid "Start or stop current animation"
+#~ msgstr "开始或停止当前的动画"
+
+#~ msgid "_High Quality"
+#~ msgstr "高质量(_H)"
+
+#~ msgid "Use high quality zoom"
+#~ msgstr "以高质量方式缩放图像"
+
+#~ msgid "_Low Quality"
+#~ msgstr "低质量(_L)"
+
+#~ msgid "Use low quality zoom"
+#~ msgstr "以低质量方式缩放图像"
+
+#, fuzzy
+#~ msgid "Use the viewer mode to view single images"
+#~ msgstr "重用此窗口查看其它图像"
+
+#~ msgid "Could not create a local temporary copy of the remote file."
+#~ msgstr "无法创建远程文件的本地临时拷贝。"
+
+#~ msgid ""
+#~ "Could not move temporary file to local destination. Check folder "
+#~ "permissions."
+#~ msgstr "无法移动临时文件到远程目标。检查文件夹权限。"

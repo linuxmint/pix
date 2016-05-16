@@ -1,0 +1,37 @@
+<page xmlns="http://projectmallard.org/1.0/" type="topic"
+id="gthumb-filtering">
+  <info>
+    <link type="guide" xref="index#files" />
+  </info>
+
+  <title>Filtering Files</title>
+
+  <p>You can select what types of files to show in the browser view
+  using the <guiseq><gui>View</gui><gui>Filter</gui></guiseq> dialog.
+  The default is to show all media files (images, movies, audio), but
+  this can be made more or less restrictive.</p>
+
+  <figure>
+    <title>Enabling Filters</title>
+    <media type="image" mime="image/png"
+    src="figures/general-filter.png" />
+  </figure>
+
+  <p>The figure above shows how to configure <app>gThumb</app> to display
+  media files only, by setting the <gui>General Filter</gui>.</p>
+
+  <p>Also, by enabling <gui>Filename</gui> in <gui>Other Filters</gui>,
+  a filter-by-filename ability is added to the filter bar at the bottom of
+  the browser view:</p>
+
+  <figure>
+    <title>Browser Filter Bar</title>
+    <media type="image" mime="image/png"
+    src="figures/specific-filter.png" />
+  </figure>
+
+  <p>In the above figure, the filename filter has been configured to 
+  show only files with "gen" in the filename. The matching is
+  case-insensitive.</p>
+  
+</page>
