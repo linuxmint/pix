@@ -1,5 +1,5 @@
 AC_PREREQ([2.57])
-AC_INIT([gthumb-example], [1.0])
+AC_INIT([pix-example], [1.0])
 AM_INIT_AUTOMAKE([1.9 foreign])
 
 AC_CONFIG_HEADERS([config.h])
@@ -27,12 +27,12 @@ GNOME_COMMON_INIT
 GNOME_DOC_INIT
 GNOME_MAINTAINER_MODE_DEFINES
 GNOME_COMPILE_WARNINGS([maximum])
-GTHUMB_EXTENSION_INIT(2.12)
+PIX_EXTENSION_INIT(2.12)
 
 GLIB_REQUIRED=2.16.0
 GTK_REQUIRED=2.16.0
 GCONF_REQUIRED=2.6.0
-GTHUMB_REQUIRED=2.11.1
+PIX_REQUIRED=2.11.1
 
 dnl ===========================================================================
 
@@ -62,12 +62,12 @@ PKG_CHECK_MODULES(EXTENSION, [
 	gio-unix-2.0
 	gtk+-2.0 		>= $GTK_REQUIRED
 	gconf-2.0 		>= $GCONF_REQUIRED
-	gthumb-2.12		>= $GTHUMB_REQUIRED
+	pix-2.12		>= $PIX_REQUIRED
 ])
 AC_SUBST(EXTENSION_LIBS)
 AC_SUBST(EXTENSION_CFLAGS)
 
-EXTENSION_DIR=`pkg-config --variable=extensionsdir gthumb-2.12`
+EXTENSION_DIR=`pkg-config --variable=extensionsdir pix-2.12`
 AC_SUBST(EXTENSION_DIR)
 
 EXTENSION_LIBTOOL_FLAGS='-module -avoid-version -disable-static'
@@ -76,7 +76,7 @@ AC_SUBST(EXTENSION_LIBTOOL_FLAGS)
 dnl ===========================================================================
 
 IT_PROG_INTLTOOL([0.35.0])
-GETTEXT_PACKAGE=gthumb-example
+GETTEXT_PACKAGE=pix-example
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[Gettext package])
 AM_GLIB_GNU_GETTEXT

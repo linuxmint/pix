@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008-2009 Free Software Foundation, Inc.
  *
@@ -42,7 +42,7 @@
 
 #include <config.h>
 #include <gst/gst.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gstreamer-utils.h"
 
 

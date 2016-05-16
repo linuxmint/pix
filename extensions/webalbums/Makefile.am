@@ -32,13 +32,13 @@ else
 webalbum_datadir = $(pkgdatadir)
 endif
 
-libwebalbums_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb -DWEBALBUM_DATADIR=\"$(webalbum_datadir)\"
+libwebalbums_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix -DWEBALBUM_DATADIR=\"$(webalbum_datadir)\"
 libwebalbums_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libwebalbums_la_LIBADD = $(GTHUMB_LIBS) ../export_tools/libexport_tools.la
+libwebalbums_la_LIBADD = $(PIX_LIBS) ../export_tools/libexport_tools.la
 if ENABLE_JPEG_TOOLS
 libwebalbums_la_LIBADD += ../image_rotation/libimage_rotation.la
 endif 
-libwebalbums_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libwebalbums_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -52,8 +52,8 @@ endif
 
 extensionini_in_files = webalbums.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)	\
 	albumtheme.c			\

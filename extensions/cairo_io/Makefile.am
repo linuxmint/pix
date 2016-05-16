@@ -66,21 +66,21 @@ libcairo_io_la_SOURCES +=		\
 	gth-image-saver-webp.h
 endif
 
-libcairo_io_la_CFLAGS = $(GTHUMB_CFLAGS) $(JPEG_CFLAGS) $(LIBRSVG_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb
+libcairo_io_la_CFLAGS = $(PIX_CFLAGS) $(JPEG_CFLAGS) $(LIBRSVG_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix
 libcairo_io_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libcairo_io_la_LIBADD = $(GTHUMB_LIBS) $(JPEG_LIBS) $(TIFF_LIBS) $(LIBRSVG_LIBS) $(LIBWEBP_LIBS)
+libcairo_io_la_LIBADD = $(PIX_LIBS) $(JPEG_LIBS) $(TIFF_LIBS) $(LIBRSVG_LIBS) $(LIBWEBP_LIBS)
 if ENABLE_JPEG_TOOLS
 libcairo_io_la_LIBADD += ../jpeg_utils/libjpeg_utils.la
 endif
 
-libcairo_io_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libcairo_io_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = cairo_io.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 DISTCLEANFILES = $(extensionini_DATA)

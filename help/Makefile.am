@@ -1,6 +1,6 @@
 @YELP_HELP_RULES@
 
-HELP_ID = gthumb
+HELP_ID = pix
 
 HELP_FILES = \
 	index.page \

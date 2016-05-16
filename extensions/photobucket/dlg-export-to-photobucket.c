@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/oauth/oauth.h>
 #include "dlg-export-to-photobucket.h"
 #include "photobucket-account.h"
@@ -198,7 +198,7 @@ export_dialog_response_cb (GtkDialog *dialog,
 
 	switch (response_id) {
 	case GTK_RESPONSE_HELP:
-		show_help_dialog (GTK_WINDOW (data->browser), "gthumb-export-social");
+		show_help_dialog (GTK_WINDOW (data->browser), "pix-export-social");
 		break;
 
 	case GTK_RESPONSE_DELETE_EVENT:

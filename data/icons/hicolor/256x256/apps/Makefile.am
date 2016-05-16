@@ -4,7 +4,7 @@ context = apps
 
 iconsdir = $(themedir)/$(size)/$(context)
 
-icons_DATA = gthumb.png
+icons_DATA = pix.png
 
 EXTRA_DIST = $(icons_DATA)	
 

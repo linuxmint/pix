@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 /* schema */
 
-#define GTHUMB_FACEBOOK_SCHEMA       GTHUMB_SCHEMA ".facebook"
+#define PIX_FACEBOOK_SCHEMA       PIX_SCHEMA ".facebook"
 
 /* keys */
 

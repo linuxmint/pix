@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-convert-format.h"
 #include "preferences.h"
 
@@ -64,7 +64,7 @@ static void
 help_button_clicked_cb (GtkWidget  *widget,
 			DialogData *data)
 {
-	show_help_dialog (GTK_WINDOW (data->dialog), "gthumb-batch-convert-format");
+	show_help_dialog (GTK_WINDOW (data->dialog), "pix-batch-convert-format");
 }
 
 
@@ -147,7 +147,7 @@ dlg_convert_format (GthBrowser *browser,
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("convert-format.ui", "convert_format");
-	data->settings = g_settings_new (GTHUMB_CONVERT_FORMAT_SCHEMA);
+	data->settings = g_settings_new (PIX_CONVERT_FORMAT_SCHEMA);
 	data->file_list = gth_file_data_list_dup (file_list);
 	data->use_destination = TRUE;
 

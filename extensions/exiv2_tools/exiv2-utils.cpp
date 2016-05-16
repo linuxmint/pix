@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008-2009 Free Software Foundation, Inc.
  *
@@ -35,7 +35,7 @@
 #include <vector>
 #include <iomanip>
 #include <exiv2/xmp.hpp>
-#include <gthumb.h>
+#include <pix.h>
 #include "exiv2-utils.h"
 
 using namespace std;

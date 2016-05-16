@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -379,7 +379,7 @@ load_themes (DialogData *data)
 
 	/* local themes */
 
-	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, GTHUMB_DIR, "contact_sheet_themes", NULL);
+	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, PIX_DIR, "contact_sheet_themes", NULL);
 	add_themes_from_dir (data, style_dir, TRUE);
 	g_object_unref (style_dir);
 
@@ -472,8 +472,8 @@ theme_dialog_response_cb (GtkDialog *dialog,
 	if (theme->file == NULL) {
 		GFile *themes_dir;
 
-		gth_user_dir_mkdir_with_parents (GTH_DIR_DATA, GTHUMB_DIR, "contact_sheet_themes", NULL);
-		themes_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, GTHUMB_DIR, "contact_sheet_themes", NULL);
+		gth_user_dir_mkdir_with_parents (GTH_DIR_DATA, PIX_DIR, "contact_sheet_themes", NULL);
+		themes_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, PIX_DIR, "contact_sheet_themes", NULL);
 		theme->file = _g_file_create_unique (themes_dir,
 						     theme->display_name,
 						     ".cst",
@@ -694,7 +694,7 @@ dlg_contact_sheet (GthBrowser *browser,
 	data->browser = browser;
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("contact-sheet.ui", "contact_sheet");
-	data->settings = g_settings_new (GTHUMB_CONTACT_SHEET_SCHEMA);
+	data->settings = g_settings_new (PIX_CONTACT_SHEET_SCHEMA);
 
 	data->dialog = _gtk_builder_get_widget (data->builder, "contact_sheet_dialog");
 	gth_browser_set_dialog (browser, "contact_sheet", data->dialog);

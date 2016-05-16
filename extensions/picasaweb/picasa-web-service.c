@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010-2012 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <json-glib/json-glib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/oauth/oauth.h>
 #include "picasa-web-album.h"
 #include "picasa-web-photo.h"
@@ -39,8 +39,8 @@
 #define PICASA_WEB_REDIRECT_URI "urn:ietf:wg:oauth:2.0:oob"
 #define PICASA_WEB_REDIRECT_TITLE "Success code="
 #define PICASA_WEB_SERVICE_ERROR_TOKEN_EXPIRED 190
-#define GTHUMB_PICASA_WEB_CLIENT_ID "499958842898.apps.googleusercontent.com"
-#define GTHUMB_PICASA_WEB_CLIENT_SECRET "-DdIqzDxVRc_Wkobuf-2g-of"
+#define PIX_PICASA_WEB_CLIENT_ID "499958842898.apps.googleusercontent.com"
+#define PIX_PICASA_WEB_CLIENT_SECRET "-DdIqzDxVRc_Wkobuf-2g-of"
 
 
 /* -- post_photos_data -- */
@@ -212,8 +212,8 @@ _picasa_web_service_get_refresh_token (PicasaWebService    *self,
 
 	data_set = g_hash_table_new (g_str_hash, g_str_equal);
 	g_hash_table_insert (data_set, "code", (gpointer) authorization_code);
-	g_hash_table_insert (data_set, "client_id", GTHUMB_PICASA_WEB_CLIENT_ID);
-	g_hash_table_insert (data_set, "client_secret", GTHUMB_PICASA_WEB_CLIENT_SECRET);
+	g_hash_table_insert (data_set, "client_id", PIX_PICASA_WEB_CLIENT_ID);
+	g_hash_table_insert (data_set, "client_secret", PIX_PICASA_WEB_CLIENT_SECRET);
 	g_hash_table_insert (data_set, "redirect_uri", PICASA_WEB_REDIRECT_URI);
 	g_hash_table_insert (data_set, "grant_type", "authorization_code");
 	msg = soup_form_request_new_from_hash ("POST", "https://accounts.google.com/o/oauth2/token", data_set);
@@ -296,7 +296,7 @@ picasa_web_service_get_authorization_url (PicasaWebService *self)
 
 	data_set = g_hash_table_new (g_str_hash, g_str_equal);
 	g_hash_table_insert (data_set, "response_type", "code");
-	g_hash_table_insert (data_set, "client_id", GTHUMB_PICASA_WEB_CLIENT_ID);
+	g_hash_table_insert (data_set, "client_id", PIX_PICASA_WEB_CLIENT_ID);
 	g_hash_table_insert (data_set, "redirect_uri", PICASA_WEB_REDIRECT_URI);
 	g_hash_table_insert (data_set, "scope", "https://picasaweb.google.com/data/ https://www.googleapis.com/auth/userinfo.profile");
 
@@ -394,8 +394,8 @@ _picasa_web_service_get_access_token (PicasaWebService    *self,
 
 	data_set = g_hash_table_new (g_str_hash, g_str_equal);
 	g_hash_table_insert (data_set, "refresh_token", (gpointer) refresh_token);
-	g_hash_table_insert (data_set, "client_id", GTHUMB_PICASA_WEB_CLIENT_ID);
-	g_hash_table_insert (data_set, "client_secret", GTHUMB_PICASA_WEB_CLIENT_SECRET);
+	g_hash_table_insert (data_set, "client_id", PIX_PICASA_WEB_CLIENT_ID);
+	g_hash_table_insert (data_set, "client_secret", PIX_PICASA_WEB_CLIENT_SECRET);
 	g_hash_table_insert (data_set, "grant_type", "refresh_token");
 	msg = soup_form_request_new_from_hash ("POST", "https://accounts.google.com/o/oauth2/token", data_set);
 	_picasa_web_service_add_headers (self, msg);

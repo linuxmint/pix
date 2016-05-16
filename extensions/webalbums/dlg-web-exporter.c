@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2003-2010 Free Software Foundation, Inc.
  *
@@ -312,7 +312,7 @@ load_themes (DialogData *data)
 
 	/* local themes */
 
-	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, GTHUMB_DIR, "albumthemes", NULL);
+	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, PIX_DIR, "albumthemes", NULL);
 	add_themes_from_dir (data, style_dir);
 	g_object_unref (style_dir);
 
@@ -381,7 +381,7 @@ dlg_web_exporter (GthBrowser *browser,
 	data->browser = browser;
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("web-album-exporter.ui", "webalbums");
-	data->settings = g_settings_new (GTHUMB_WEBALBUMS_SCHEMA);
+	data->settings = g_settings_new (PIX_WEBALBUMS_SCHEMA);
 
 	data->dialog = _gtk_builder_get_widget (data->builder, "web_album_dialog");
 	gth_browser_set_dialog (browser, "web_exporter", data->dialog);

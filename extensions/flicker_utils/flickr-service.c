@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "flickr-account.h"
 #include "flickr-consumer.h"
 #include "flickr-photo.h"
@@ -568,8 +568,8 @@ old_auth_frob_ready_cb (GObject      *source_object,
 
 	builder = _gtk_builder_new_from_file ("flickr-ask-authorization-old.ui", "flicker_utils");
 	dialog = _gtk_builder_get_widget (builder, "ask_authorization_dialog");
-	text = g_strdup_printf (_("gThumb requires your authorization to upload the photos to %s"), self->priv->server->display_name);
-	secondary_text = g_strdup_printf (_("Click 'Authorize' to open your web browser and authorize gthumb to upload photos to %s. When you're finished, return to this window to complete the authorization."), self->priv->server->display_name);
+	text = g_strdup_printf (_("Pix requires your authorization to upload the photos to %s"), self->priv->server->display_name);
+	secondary_text = g_strdup_printf (_("Click 'Authorize' to open your web browser and authorize pix to upload photos to %s. When you're finished, return to this window to complete the authorization."), self->priv->server->display_name);
 	g_object_set (dialog, "text", text, "secondary-text", secondary_text, NULL);
 	gtk_widget_show (_gtk_builder_get_widget (builder, "authorize_button"));
 	gtk_widget_hide (_gtk_builder_get_widget (builder, "complete_button"));

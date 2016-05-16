@@ -14,10 +14,10 @@ libburn_disc_la_SOURCES = 		\
 	gth-burn-task.h			\
 	main.c
 
-libburn_disc_la_CFLAGS = $(GTHUMB_CFLAGS) $(LIBBRASERO_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libburn_disc_la_CFLAGS = $(PIX_CFLAGS) $(LIBBRASERO_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libburn_disc_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libburn_disc_la_LIBADD = $(GTHUMB_LIBS) $(LIBBRASERO_LIBS) ../export_tools/libexport_tools.la
-libburn_disc_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libburn_disc_la_LIBADD = $(PIX_LIBS) $(LIBBRASERO_LIBS) ../export_tools/libexport_tools.la
+libburn_disc_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -27,8 +27,8 @@ endif
 
 extensionini_in_files = burn_disc.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

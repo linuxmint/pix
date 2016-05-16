@@ -19,20 +19,20 @@ libcomments_la_SOURCES = 			\
 	main.c					\
 	preferences.h
 
-libcomments_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libcomments_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libcomments_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libcomments_la_LIBADD = $(GTHUMB_LIBS)
+libcomments_la_LIBADD = $(PIX_LIBS)
 if ENABLE_EXIV2
 libcomments_la_LIBADD += ../exiv2_tools/libexiv2_tools.la
 endif 
-libcomments_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libcomments_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = comments.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

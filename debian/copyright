@@ -1,7 +1,4 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: gThumb
-Upstream-Contact: Paolo Bacchilega <paolo.bacchilega@libero.it>
-Source: http://ftp.gnome.org/pub/gnome/sources/gthumb/
 
 Files: *
 Copyright: © 2001-2012, The Free Software Foundation, Inc.
@@ -13,12 +10,12 @@ Copyright: © 2013, Jackson Doak <noskcaj@ubuntu.com>
  © 2001-2007, Remco van de Meent <remco@debian.org>
 License: GPL-3+
 
-Files: libgthumb/gconf-utils.*
+Files: libpix/gconf-utils.*
 Copyright: © 2001-2002, The Free Software Foundation, Inc.
  © 2000-2001, Eazel, Inc.
 License: GPL-2+ or LGPL-2+
 
-Files: libgthumb/pixbuf-utils.c
+Files: libpix/pixbuf-utils.c
 Copyright: © 1999-2003, The Free Software Foundation, Inc.
  © 1999, Michael Zucchi
  © 1999, Red Hat, Inc.
@@ -30,7 +27,7 @@ Copyright: © 2001, The Free Software Foundation, Inc.
  © 2000, Red Hat, Inc. - Jonathan Blandford <jrb@redhat.com>
 License: GPL-2+ or LGPL-2+
 
-Files: libgthumb/md5.*
+Files: libpix/md5.*
 Copyright: © 1995, Software Foundation, Inc.
 License: GPL-2+
 
@@ -38,12 +35,12 @@ Files: src/albumtheme.c
 Copyright: © 1984, 1989, 1990, 2000-2006, The Free Software Foundation, Inc.
 License: GPL-2+
 
-Files: libgthumb/eel-canvas-rect.*
+Files: libpix/eel-canvas-rect.*
 Copyright: © 2002, Alexander Larsson <alla@lysator.liu.se>
 License: LGPL-2+
 
-Files: libgthumb/jpegutils/jpeg-marker.*
- libgthumb/jpegutils/jpeg-data.*
+Files: libpix/jpegutils/jpeg-marker.*
+ libpix/jpegutils/jpeg-data.*
 Copyright: © 2001, Lutz Müller <lutz@users.sourceforge.net>
 License: LGPL-2+
 
@@ -51,7 +48,7 @@ Files: src/totem-scrsaver.*
 Copyright: © 2004-2005, Bastien Nocera <hadess@hadess.net>
 License: LGPL-2+
 
-Files: doc/C/gthumb.xml
+Files: doc/C/pix.xml
 Copyright: © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
 License: GFDL-1.1+
  Permission is granted to copy, distribute and/or modify this document
@@ -59,18 +56,18 @@ License: GFDL-1.1+
  or any later version published by the Free Software Foundation;
  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 
-Files: doc/es/gthumb.xml
+Files: doc/es/pix.xml
 Copyright: © 2007, Jorge González <jorgegonz@svn.gnome.org>
  © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
 License: GFDL-1.1+
 
-Files: doc/fr/gthumb.xml
+Files: doc/fr/pix.xml
 Copyright: © 2007, Bruno Brouard <annoa.b@gmail.com>
  © 2007, Claude Paroz <claude@2xlibre.net>
  © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
 License: GFDL-1.1+
 
-Files: doc/sv/gthumb.xml
+Files: doc/sv/pix.xml
 Copyright: © 2006-2007, Daniel Nylander <po@danielnylander.se>
  © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
 License: GFDL-1.1+
@@ -147,7 +144,7 @@ License: libjpeg
  commercial products, provided that all warranty or liability claims are
  assumed by the product vendor.
 X-Comment: the full READMEs can be found in ./extensions/jpeg_utils/README.6b
- and ./extensions/jpeg_utils/README.8a in gThumb's sourcecode.
+ and ./extensions/jpeg_utils/README.8a in Pix's sourcecode.
 
 License: GFDL-1.1+
  		GNU Free Documentation License

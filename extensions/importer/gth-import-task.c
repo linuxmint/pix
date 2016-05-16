@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009-2010 Free Software Foundation, Inc.
  *
@@ -634,7 +634,7 @@ import_current_file (GthImportTask *self)
 			else
 				gth_browser_go_to (self->priv->browser, self->priv->destination, NULL);
 
-			settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
+			settings = g_settings_new (PIX_IMPORTER_SCHEMA);
 			if (self->priv->delete_not_supported && g_settings_get_boolean (settings, PREF_IMPORTER_WARN_DELETE_UNSUPPORTED)) {
 				GtkWidget *d;
 

@@ -12,8 +12,8 @@ extensioninidir = $(EXTENSION_DIR)
 extensionini_in_files = example.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

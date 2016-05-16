@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001, 2002, 2009 The Free Software Foundation, Inc.
  *
@@ -46,7 +46,7 @@
 #include <string.h>
 #include <jpeglib.h>
 #include <glib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "jmemorydest.h"
 #include "jmemorysrc.h"
 #include "jpegtran.h"
@@ -225,7 +225,7 @@ jpegtran_internal (struct jpeg_decompress_struct  *srcinfo,
 	/* Do not output a JFIF marker for EXIF thumbnails.
 	 * This is not the optimal way to detect the difference
 	 * between a thumbnail and a normal image, but it works
-	 * well for gThumb. */
+	 * well for Pix. */
 	if (option == JCOPYOPT_NONE)
 		dstinfo->write_JFIF_header = FALSE;
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-image-info.h"
 #include "gth-image-print-job.h"
 #include "gth-load-image-info-task.h"
@@ -136,7 +136,7 @@ static void
 gth_image_print_job_init (GthImagePrintJob *self)
 {
 	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_PRINT_JOB, GthImagePrintJobPrivate);
-	self->priv->settings = g_settings_new (GTHUMB_IMAGE_PRINT_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_IMAGE_PRINT_SCHEMA);
 	self->priv->event_name = NULL;
 	self->priv->builder = NULL;
 	self->priv->task = NULL;
@@ -1608,7 +1608,7 @@ print_operation_begin_print_cb (GtkPrintOperation *operation,
 
 	/* save the page setup */
 
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "page_setup", NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "page_setup", NULL);
 	filename = g_file_get_path (file);
 	gtk_page_setup_to_file (self->priv->page_setup, filename, NULL);
 	g_free (filename);
@@ -1687,7 +1687,7 @@ print_operation_done_cb (GtkPrintOperation       *operation,
 		char             *filename;
 
 		settings = gtk_print_operation_get_print_settings (operation);
-		file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "print_settings", NULL);
+		file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "print_settings", NULL);
 		filename = g_file_get_path (file);
 		gtk_print_settings_to_file (settings, filename, NULL);
 
@@ -1862,7 +1862,7 @@ load_image_info_task_completed_cb (GthTask  *task,
 	self->priv->images = loaded_images;
 	self->priv->n_images = n_loaded_images;
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "print_settings", NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "print_settings", NULL);
 	filename = g_file_get_path (file);
 	settings = gtk_print_settings_new_from_file (filename, NULL);
 	if (settings != NULL) {
@@ -1872,7 +1872,7 @@ load_image_info_task_completed_cb (GthTask  *task,
 	g_free (filename);
 	g_object_unref (file);
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "page_setup", NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "page_setup", NULL);
 	filename = g_file_get_path (file);
 	self->priv->page_setup = gtk_page_setup_new_from_file (filename, NULL);
 	if (self->priv->page_setup != NULL)

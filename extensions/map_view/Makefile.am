@@ -8,10 +8,10 @@ libmap_view_la_SOURCES = 	\
 	gth-map-view.h		\
 	main.c
 
-libmap_view_la_CPPFLAGS = $(GTHUMB_CFLAGS) $(LIBCHAMPLAIN_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libmap_view_la_CPPFLAGS = $(PIX_CFLAGS) $(LIBCHAMPLAIN_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libmap_view_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libmap_view_la_LIBADD = $(GTHUMB_LIBS) $(LIBCHAMPLAIN_LIBS)
-libmap_view_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libmap_view_la_LIBADD = $(PIX_LIBS) $(LIBCHAMPLAIN_LIBS)
+libmap_view_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -21,8 +21,8 @@ endif
 
 extensionini_in_files = map_view.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

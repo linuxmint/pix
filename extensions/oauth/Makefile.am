@@ -23,17 +23,17 @@ liboauth_la_SOURCES = 				\
 	web-service.c				\
 	web-service.h
 
-liboauth_la_CFLAGS = $(GTHUMB_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) $(WEBKIT2_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+liboauth_la_CFLAGS = $(PIX_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) $(WEBKIT2_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 liboauth_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-liboauth_la_LIBADD = $(GTHUMB_LIBS) $(JPEG_LIBS) $(LIBSECRET_LIBS) $(LIBSOUP_LIBS) $(WEBKIT2_LIBS)
-liboauth_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+liboauth_la_LIBADD = $(PIX_LIBS) $(JPEG_LIBS) $(LIBSECRET_LIBS) $(LIBSOUP_LIBS) $(WEBKIT2_LIBS)
+liboauth_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = oauth.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

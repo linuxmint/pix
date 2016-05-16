@@ -14,10 +14,10 @@ libexiv2_tools_la_SOURCES = 		\
 	gth-metadata-provider-exiv2.h	\
 	main.c
 
-libexiv2_tools_la_CPPFLAGS = $(GTHUMB_CFLAGS) $(EXIV2_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libexiv2_tools_la_CPPFLAGS = $(PIX_CFLAGS) $(EXIV2_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libexiv2_tools_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libexiv2_tools_la_LIBADD = $(GTHUMB_LIBS) $(EXIV2_LIBS) ../edit_metadata/libedit_metadata.la
-libexiv2_tools_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libexiv2_tools_la_LIBADD = $(PIX_LIBS) $(EXIV2_LIBS) ../edit_metadata/libedit_metadata.la
+libexiv2_tools_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -27,8 +27,8 @@ endif
 
 extensionini_in_files = exiv2_tools.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

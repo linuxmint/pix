@@ -18,17 +18,17 @@ libsearch_la_SOURCES = 			\
 	gth-search-task.h		\
 	main.c
 
-libsearch_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libsearch_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libsearch_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libsearch_la_LIBADD = $(GTHUMB_LIBS) ../catalogs/libcatalogs.la
-libsearch_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libsearch_la_LIBADD = $(PIX_LIBS) ../catalogs/libcatalogs.la
+libsearch_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = search.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

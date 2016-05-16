@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 G_BEGIN_DECLS
 
-#include <gthumb.h>
+#include <pix.h>
 
 typedef enum {
 	GTH_SUBFOLDER_TYPE_NONE = 0,

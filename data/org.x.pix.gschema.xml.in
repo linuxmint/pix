@@ -1,0 +1,183 @@
+<!--
+  Pix
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <enum id="org.x.pix.GtkOrientation">
+    <value nick="horizontal" value="0" />
+    <value nick="vertical" value="1" />
+  </enum>
+
+  <schema id="org.x.pix" path="/org/x/pix/">
+    <child name="general" schema="org.x.pix.general" />
+    <child name="data-migration" schema="org.x.pix.data-migration" />
+    <child name="browser" schema="org.x.pix.browser" />
+    <child name="dialogs" schema="org.x.pix.dialogs" />
+  </schema>
+
+  <schema id="org.x.pix.general" path="/org/x/pix/general/">
+    <key name="active-extensions" type="as">
+      <default>[ 'default' ]</default>
+    </key>
+    <key name="store-metadata-in-files" type="b">
+      <default>true</default>
+    </key>
+  </schema>
+
+  <schema id="org.x.pix.data-migration" path="/org/x/pix/data-migration/">
+    <key name="catalogs-2-10" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+
+  <schema id="org.x.pix.browser" path="/org/x/pix/browser/">
+    <key name="go-to-last-location" type="b">
+      <default>true</default>
+    </key>
+    <key name="use-startup-location" type="b">
+      <default>false</default>
+    </key>
+    <key name="startup-location" type="s">
+      <default>''</default>
+    </key>
+    <key name="startup-current-file" type="s">
+      <default>''</default>
+    </key>
+    <key name="general-filter" type="s">
+      <default>'file::type::is_media'</default>
+    </key>
+    <key name="show-hidden-files" type="b">
+      <default>false</default>
+    </key>
+    <key name="show-thumbnails" type="b">
+      <default>true</default>
+    </key>
+    <key name="fast-file-type" type="b">
+      <default>true</default>
+    </key>
+    <key name="save-thumbnails" type="b">
+      <default>true</default>
+    </key>
+    <key name="thumbnail-size" type="i">
+      <default>128</default>
+    </key>
+    <key name="thumbnail-limit" type="i">
+      <default>0</default>
+      <_description>Images over this size (in bytes) will not be thumbnailed.  Use 0 if you want to generate thumbnails for all images.</_description>
+    </key>
+    <key name="thumbnail-caption" type="s">
+      <default>'comment::note,comment::time'</default>
+    </key>
+    <key name="sort-type" type="s">
+      <default>'file::mtime'</default>
+    </key>
+    <key name="sort-inverse" type="b">
+      <default>false</default>
+    </key>
+    <key name="toolbar-style" enum="org.x.pix.GthToolbarStyle">
+      <default>'system'</default>
+    </key>
+    <key name="window-width" type="i">
+      <default>0</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>0</default>
+    </key>
+    <key name="maximized" type="b">
+      <default>false</default>
+    </key>
+    <key name="image-pane-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="toolbar-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="statusbar-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="filterbar-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="sidebar-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="properties-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="properties-on-the-right" type="b">
+      <default>false</default>
+    </key>
+    <key name="thumbnail-list-visible" type="b">
+      <default>true</default>
+    </key>
+    <key name="thumbnail-list-size" type="i">
+      <default>0</default>
+    </key>
+    <key name="browser-sidebar-width" type="i">
+      <default>285</default>
+    </key>
+    <key name="viewer-sidebar" enum="org.x.pix.GthSidebarState">
+      <default>'hidden'</default>
+    </key>
+    <key name="viewer-sidebar-width" type="i">
+      <default>285</default>
+    </key>
+    <key name="viewer-thumbnails-orientation" enum="org.x.pix.GtkOrientation">
+      <default>'horizontal'</default>
+    </key>
+    <key name="shrink-wrap-viewer" type="b">
+      <default>false</default>
+      <_description>Whether to resize the window to fit the size of the image</_description>
+    </key>
+    <key name="reuse-active-window" type="b">
+      <default>false</default>
+      <_description>Open files in the active window</_description>
+    </key>
+  </schema>
+
+  <schema id="org.x.pix.dialogs" path="/org/x/pix/dialogs/">
+    <child name="messages" schema="org.x.pix.dialogs.messages" />
+    <child name="add-to-catalog" schema="org.x.pix.dialogs.add-to-catalog" />
+    <child name="save-file" schema="org.x.pix.dialogs.save-file" />
+  </schema>
+
+  <schema id="org.x.pix.dialogs.messages" path="/org/x/pix/dialogs/messages/">
+    <key name="cannot-move-to-trash" type="b">
+      <default>true</default>
+    </key>
+    <key name="save-modified-image" type="b">
+      <default>true</default>
+    </key>
+    <key name="confirm-deletion" type="b">
+      <default>true</default>
+    </key>
+  </schema>
+
+  <schema id="org.x.pix.dialogs.add-to-catalog" path="/org/x/pix/dialogs/add-to-catalog/">
+    <key name="view" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+
+  <schema id="org.x.pix.dialogs.save-file" path="/org/x/pix/dialogs/save-file/">
+    <key name="show-options" type="b">
+      <default>true</default>
+    </key>
+  </schema>
+
+</schemalist>

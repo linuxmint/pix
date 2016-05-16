@@ -4,7 +4,7 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="gthumb-example"
+PKG_NAME="pix-example"
 REQUIRED_AUTOMAKE_VERSION=1.8
 
 (test -f $srcdir/configure.ac \

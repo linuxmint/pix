@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2003-2010 Free Software Foundation, Inc.
  *
@@ -29,7 +29,7 @@
 #include <ctype.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_rotation/rotation-utils.h>
 #include "gth-web-exporter.h"
 #include "albumtheme-private.h"
@@ -276,7 +276,7 @@ get_style_dir (GthWebExporter *self,
 
 	/* search in local themes */
 
-	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, GTHUMB_DIR, "albumthemes", style_name, NULL);
+	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, PIX_DIR, "albumthemes", style_name, NULL);
 	if (g_file_query_exists (style_dir, NULL))
 		return style_dir;
 
@@ -2983,11 +2983,11 @@ gth_web_exporter_exec (GthTask *task)
 
 	/* get index file name and sub-directories (hidden preferences) */
 
-	settings = g_settings_new (GTHUMB_WEBALBUMS_SCHEMA);
+	settings = g_settings_new (PIX_WEBALBUMS_SCHEMA);
 	self->priv->index_file = g_settings_get_string (settings, PREF_WEBALBUMS_INDEX_FILE);
 	g_object_unref (settings);
 
-	settings = g_settings_new (GTHUMB_WEBALBUMS_DIRECTORIES_SCHEMA);
+	settings = g_settings_new (PIX_WEBALBUMS_DIRECTORIES_SCHEMA);
 	self->priv->directories.previews = g_settings_get_string (settings, PREF_WEBALBUMS_DIR_PREVIEWS);
 	self->priv->directories.thumbnails = g_settings_get_string (settings, PREF_WEBALBUMS_DIR_THUMBNAILS);
 	self->priv->directories.images = g_settings_get_string (settings, PREF_WEBALBUMS_DIR_IMAGES);

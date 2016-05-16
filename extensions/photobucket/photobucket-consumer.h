@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef PHOTOBUCKET_CONSUMER_H
 #define PHOTOBUCKET_CONSUMER_H
 
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/oauth/oauth.h>
 
 extern OAuthConsumer photobucket_consumer;

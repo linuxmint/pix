@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,22 +23,22 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <json-glib/json-glib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/oauth/oauth.h>
 #include "facebook-album.h"
 #include "facebook-photo.h"
 #include "facebook-service.h"
 
 
-#define GTHUMB_FACEBOOK_NAMESPACE "gthumbviewer"
-#define GTHUMB_FACEBOOK_APP_ID "110609985627460"
-#define GTHUMB_FACEBOOK_APP_SECRET "8c0b99672a9bbc159ebec3c9a8240679"
+#define PIX_FACEBOOK_NAMESPACE "gthumbviewer"
+#define PIX_FACEBOOK_APP_ID "110609985627460"
+#define PIX_FACEBOOK_APP_SECRET "8c0b99672a9bbc159ebec3c9a8240679"
 #define FACEBOOK_API_VERSION "1.0"
 #define FACEBOOK_AUTHENTICATION_RESPONSE_CHOOSE_ACCOUNT 2
 #define FACEBOOK_HTTP_SERVER "https://www.facebook.com"
 #define FACEBOOK_MAX_IMAGE_SIZE 2048
 #define FACEBOOK_MIN_IMAGE_SIZE 720
-#define FACEBOOK_REDIRECT_URI "https://apps.facebook.com/" GTHUMB_FACEBOOK_NAMESPACE
+#define FACEBOOK_REDIRECT_URI "https://apps.facebook.com/" PIX_FACEBOOK_NAMESPACE
 #define FACEBOOK_SERVICE_ERROR_TOKEN_EXPIRED 190
 
 
@@ -158,7 +158,7 @@ facebook_utils_get_authorization_url (WebAuthorization  access_type,
 	GList      *scan;
 
 	data_set = g_hash_table_new (g_str_hash, g_str_equal);
-	g_hash_table_insert (data_set, "client_id", GTHUMB_FACEBOOK_APP_ID);
+	g_hash_table_insert (data_set, "client_id", PIX_FACEBOOK_APP_ID);
 	g_hash_table_insert (data_set, "redirect_uri", FACEBOOK_REDIRECT_URI);
 	g_hash_table_insert (data_set, "scope", get_access_type_name (access_type));
 	g_hash_table_insert (data_set, "response_type", "token");

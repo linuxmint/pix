@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "exiv2-utils.h"
 #include "gth-metadata-provider-exiv2.h"
 
@@ -111,7 +111,7 @@ gth_metadata_provider_exiv2_read (GthMetadataProvider *base,
 	 * not store metadata in files. */
 
 	if (self->priv->general_settings == NULL)
-		self->priv->general_settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
+		self->priv->general_settings = g_settings_new (PIX_GENERAL_SCHEMA);
 	update_general_attributes = g_settings_get_boolean (self->priv->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES);
 
 	/* this function is executed in a secondary thread, so calling
@@ -155,7 +155,7 @@ gth_metadata_provider_exiv2_write (GthMetadataProvider   *base,
 	int                       i;
 
 	if (self->priv->general_settings == NULL)
-		self->priv->general_settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
+		self->priv->general_settings = g_settings_new (PIX_GENERAL_SCHEMA);
 
 	if (! (flags & GTH_METADATA_WRITE_FORCE_EMBEDDED)
 	    && ! g_settings_get_boolean (self->priv->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES))

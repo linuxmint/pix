@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -32,7 +32,7 @@ gth_import_preferences_get_destination (void)
 	char      *last_destination;
 	GFile     *folder;
 
-	settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
+	settings = g_settings_new (PIX_IMPORTER_SCHEMA);
 	last_destination = g_settings_get_string (settings, PREF_IMPORTER_DESTINATION);
 	if ((last_destination == NULL) || (*last_destination == 0))
 		folder = g_file_new_for_path (g_get_user_special_dir (G_USER_DIRECTORY_PICTURES));

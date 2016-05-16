@@ -6,17 +6,17 @@ libexport_tools_la_SOURCES = 		\
 	callbacks.h			\
 	main.c
 
-libexport_tools_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libexport_tools_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libexport_tools_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libexport_tools_la_LIBADD = $(GTHUMB_LIBS)
-libexport_tools_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libexport_tools_la_LIBADD = $(PIX_LIBS)
+libexport_tools_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = export_tools.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

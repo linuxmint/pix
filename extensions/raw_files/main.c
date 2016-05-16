@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -28,7 +28,7 @@
 
 #define GDK_PIXBUF_ENABLE_BACKEND
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <libopenraw/libopenraw.h>
 
 
@@ -208,7 +208,7 @@ openraw_pixbuf_animation_new_from_file (GthFileData  *file_data,
 
 #define GDK_PIXBUF_ENABLE_BACKEND
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 
 
 static gboolean
@@ -244,7 +244,7 @@ get_cache_full_path (const char *filename,
 		name = g_strdup (filename);
 	else
 		name = g_strconcat (filename, ".", extension, NULL);
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CACHE, GTHUMB_DIR, name, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CACHE, PIX_DIR, name, NULL);
 	cache_filename = g_file_get_path (file);
 
 	g_object_unref (file);
@@ -448,7 +448,7 @@ openraw_pixbuf_animation_new_from_file (GInputStream  *istream,
 
 
 G_MODULE_EXPORT void
-gthumb_extension_activate (void)
+pix_extension_activate (void)
 {
 	gth_main_register_image_loader_func (openraw_pixbuf_animation_new_from_file,
 					     GTH_IMAGE_FORMAT_GDK_PIXBUF,
@@ -466,19 +466,19 @@ gthumb_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-gthumb_extension_deactivate (void)
+pix_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-gthumb_extension_is_configurable (void)
+pix_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-gthumb_extension_configure (GtkWindow *parent)
+pix_extension_configure (GtkWindow *parent)
 {
 }

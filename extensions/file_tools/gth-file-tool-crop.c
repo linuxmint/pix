@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/gth-image-viewer-page.h>
 #include <extensions/image_viewer/preferences.h>
 #include "enum-types.h"
@@ -585,7 +585,7 @@ gth_file_tool_crop_destroy_options (GthFileTool *base)
 	gth_image_viewer_set_tool (GTH_IMAGE_VIEWER (viewer), NULL);
 
 	/* restore the zoom quality */
-	viewer_settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	viewer_settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (viewer),
 					   g_settings_get_enum (viewer_settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
 
@@ -604,7 +604,7 @@ static void
 gth_file_tool_crop_init (GthFileToolCrop *self)
 {
 	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_FILE_TOOL_CROP, GthFileToolCropPrivate);
-	self->priv->settings = g_settings_new (GTHUMB_CROP_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_CROP_SCHEMA);
 	gth_file_tool_construct (GTH_FILE_TOOL (self), "tool-crop", _("Crop..."), _("Crop"), FALSE);
 }
 

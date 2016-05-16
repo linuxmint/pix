@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -29,7 +29,7 @@
 #include <brasero-session.h>
 #include <brasero-session-cfg.h>
 #include <brasero-track-data-cfg.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-burn-task.h"
 
 
@@ -349,7 +349,7 @@ source_dialog_response_cb (GtkDialog   *dialog,
 			   GthBurnTask *task)
 {
 	if (response == GTK_RESPONSE_HELP) {
-		show_help_dialog (GTK_WINDOW (dialog), "gthumb-export-disk");
+		show_help_dialog (GTK_WINDOW (dialog), "pix-export-disk");
 	} else {	
 		gtk_widget_hide (task->priv->dialog);
 		gth_task_dialog (GTH_TASK (task), FALSE, NULL);
@@ -367,7 +367,7 @@ source_dialog_response_cb (GtkDialog   *dialog,
 				_g_object_list_unref (task->priv->selected_files);
 				task->priv->selected_files = NULL;
 
-				settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+				settings = g_settings_new (PIX_BROWSER_SCHEMA);
 				recursive = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (_gtk_builder_get_widget (task->priv->builder, "folder_recursive_radiobutton")));
 				task->priv->test = gth_main_get_general_filter ();
 				task->priv->file_source = gth_main_get_file_source (task->priv->location);

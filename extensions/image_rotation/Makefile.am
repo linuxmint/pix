@@ -17,10 +17,10 @@ libimage_rotation_la_SOURCES = 		\
 	rotation-utils.c		\
 	rotation-utils.h
 
-libimage_rotation_la_CFLAGS = $(GTHUMB_CFLAGS) $(JPEG_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb
+libimage_rotation_la_CFLAGS = $(PIX_CFLAGS) $(JPEG_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix
 libimage_rotation_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libimage_rotation_la_LIBADD = $(GTHUMB_LIBS) $(JPEG_LIBS) ../jpeg_utils/libjpeg_utils.la
-libimage_rotation_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libimage_rotation_la_LIBADD = $(PIX_LIBS) $(JPEG_LIBS) ../jpeg_utils/libjpeg_utils.la
+libimage_rotation_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = image_rotation.extension.in.in
@@ -29,8 +29,8 @@ DISTCLEANFILES = $(extensionini_DATA)
 
 endif
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

@@ -1,5 +1,5 @@
 themename = Wiki
-themedir = $(datadir)/gthumb/albumthemes/$(themename)
+themedir = $(datadir)/pix/albumthemes/$(themename)
 theme_DATA =			\
 	image.gthtml		\
 	index.gthtml		\

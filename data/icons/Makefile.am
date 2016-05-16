@@ -4,7 +4,7 @@ icondir = $(pkgdatadir)/icons
 icon_DATA = filmholes.png
 
 EXTRA_DIST = 		\
-	gthumb.svg	\
+	pix.svg	\
 	selection.svg	\
 	$(icon_DATA)
 

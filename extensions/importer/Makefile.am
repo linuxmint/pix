@@ -43,23 +43,23 @@ libimporter_la_SOURCES = 			\
 	main.c					\
 	utils.c
 
-libimporter_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb
+libimporter_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix
 libimporter_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libimporter_la_LIBADD = $(GTHUMB_LIBS) ../catalogs/libcatalogs.la
+libimporter_la_LIBADD = $(PIX_LIBS) ../catalogs/libcatalogs.la
 if ENABLE_JPEG_TOOLS
 libimporter_la_LIBADD += ../image_rotation/libimage_rotation.la
 endif
 if ENABLE_EXIV2
 libimporter_la_LIBADD += ../exiv2_tools/libexiv2_tools.la
 endif
-libimporter_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libimporter_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = importer.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 BUILT_SOURCES = $(ENUM_TYPES)

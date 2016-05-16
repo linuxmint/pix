@@ -4,7 +4,7 @@ gthtml_files =			\
 	thumbnail.gthtml
 
 themename  = NeatRound
-themedir   = $(datadir)/gthumb/albumthemes/$(themename)
+themedir   = $(datadir)/pix/albumthemes/$(themename)
 theme_DATA =			\
 	back.png		\
 	bot.png			\

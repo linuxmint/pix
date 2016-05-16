@@ -26,17 +26,17 @@ libedit_metadata_la_SOURCES = 		\
 	utils.c				\
 	utils.h
 
-libedit_metadata_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libedit_metadata_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libedit_metadata_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libedit_metadata_la_LIBADD = $(GTHUMB_LIBS)
-libedit_metadata_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libedit_metadata_la_LIBADD = $(PIX_LIBS)
+libedit_metadata_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = edit_metadata.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/exiv2_tools/exiv2-utils.h>
 #include "callbacks.h"
 #include "dlg-comments-preferences.h"
@@ -87,7 +87,7 @@ comments__read_metadata_ready_cb (GList      *file_list,
 	GList     *scan;
 	gboolean   synchronize;
 
-	settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
+	settings = g_settings_new (PIX_GENERAL_SCHEMA);
 	store_metadata_in_files = g_settings_get_boolean (settings, PREF_GENERAL_STORE_METADATA_IN_FILES);
 	g_object_unref (settings);
 
@@ -125,7 +125,7 @@ comments__read_metadata_ready_cb (GList      *file_list,
 		 * metadata with the embedded metadata.
 		 */
 
-		settings = g_settings_new (GTHUMB_COMMENTS_SCHEMA);
+		settings = g_settings_new (PIX_COMMENTS_SCHEMA);
 		synchronize = g_settings_get_boolean (settings, PREF_COMMENTS_SYNCHRONIZE);
 		g_object_unref (settings);
 
@@ -154,7 +154,7 @@ comments__delete_metadata_cb (GFile  *file,
 
 
 G_MODULE_EXPORT void
-gthumb_extension_activate (void)
+pix_extension_activate (void)
 {
 	gth_main_register_metadata_category (comments_metadata_category);
 	gth_main_register_metadata_info_v (comments_metadata_info);
@@ -191,20 +191,20 @@ gthumb_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-gthumb_extension_deactivate (void)
+pix_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-gthumb_extension_is_configurable (void)
+pix_extension_is_configurable (void)
 {
 	return TRUE;
 }
 
 
 G_MODULE_EXPORT void
-gthumb_extension_configure (GtkWindow *parent)
+pix_extension_configure (GtkWindow *parent)
 {
 	dlg_comments_preferences (parent);
 }

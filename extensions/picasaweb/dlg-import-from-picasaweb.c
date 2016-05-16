@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/oauth/oauth.h>
 #include <extensions/importer/importer.h>
 #include "dlg-import-from-picasaweb.h"
@@ -155,7 +155,7 @@ import_dialog_response_cb (GtkDialog *dialog,
 					return;
 				}
 
-				settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
+				settings = g_settings_new (PIX_IMPORTER_SCHEMA);
 				subfolder_type = g_settings_get_enum (settings, PREF_IMPORTER_SUBFOLDER_TYPE);
 				subfolder_format = g_settings_get_enum (settings, PREF_IMPORTER_SUBFOLDER_FORMAT);
 				single_subfolder = g_settings_get_boolean (settings, PREF_IMPORTER_SUBFOLDER_SINGLE);

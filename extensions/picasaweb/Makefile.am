@@ -26,10 +26,10 @@ libpicasaweb_la_SOURCES = 			\
 	picasa-web-types.h			\
 	preferences.h
 
-libpicasaweb_la_CFLAGS = $(GTHUMB_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) $(JSON_GLIB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libpicasaweb_la_CFLAGS = $(PIX_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) $(JSON_GLIB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libpicasaweb_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libpicasaweb_la_LIBADD = $(GTHUMB_LIBS) $(LIBSOUP_LIBS) $(LIBSECRET_LIBS) $(JSON_GLIB_LIBS) ../importer/libimporter.la ../export_tools/libexport_tools.la ../oauth/liboauth.la
-libpicasaweb_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libpicasaweb_la_LIBADD = $(PIX_LIBS) $(LIBSOUP_LIBS) $(LIBSECRET_LIBS) $(JSON_GLIB_LIBS) ../importer/libimporter.la ../export_tools/libexport_tools.la ../oauth/liboauth.la
+libpicasaweb_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -39,8 +39,8 @@ endif
 
 extensionini_in_files = picasaweb.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gdk/gdkkeysyms.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "callbacks.h"
 #include "gth-copy-task.h"
@@ -1055,7 +1055,7 @@ _gth_browser_update_open_menu (GthBrowser *browser,
 		GtkWidget *menu_item;
 		GIcon     *icon;
 
-		if (strcmp (g_app_info_get_executable (appinfo), "gthumb") == 0)
+		if (strcmp (g_app_info_get_executable (appinfo), "pix") == 0)
 			continue;
 		if (g_hash_table_lookup (used_apps, g_app_info_get_id (appinfo)) != NULL)
 			continue;

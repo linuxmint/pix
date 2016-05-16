@@ -26,17 +26,17 @@ libphotobucket_la_SOURCES = 			\
 	photobucket-service.c			\
 	photobucket-service.h
 
-libphotobucket_la_CFLAGS = $(GTHUMB_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libphotobucket_la_CFLAGS = $(PIX_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libphotobucket_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libphotobucket_la_LIBADD = $(GTHUMB_LIBS) $(LIBSOUP_LIBS) $(LIBSECRET_LIBS) ../oauth/liboauth.la ../export_tools/libexport_tools.la
-libphotobucket_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libphotobucket_la_LIBADD = $(PIX_LIBS) $(LIBSOUP_LIBS) $(LIBSECRET_LIBS) ../oauth/liboauth.la ../export_tools/libexport_tools.la
+libphotobucket_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = photobucket.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

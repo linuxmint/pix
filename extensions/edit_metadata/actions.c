@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-edit-metadata.h"
 #include "gth-delete-metadata-task.h"
 #include "gth-edit-comment-dialog.h"

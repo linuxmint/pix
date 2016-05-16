@@ -14,17 +14,17 @@ libselections_la_SOURCES = 			\
 	gth-selections-manager.h		\
 	main.c
 
-libselections_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libselections_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libselections_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libselections_la_LIBADD = $(GTHUMB_LIBS)
-libselections_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libselections_la_LIBADD = $(PIX_LIBS)
+libselections_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = selections.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

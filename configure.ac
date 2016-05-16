@@ -1,24 +1,24 @@
-m4_define([gthumb_major_version], [3])
-m4_define([gthumb_minor_version], [2])
-m4_define([gthumb_micro_version], [8])
-m4_define([gthumb_version],
-          [gthumb_major_version.gthumb_minor_version.gthumb_micro_version])
-m4_define([gthumb_api_version],
-          [gthumb_major_version.gthumb_minor_version])
+m4_define([pix_major_version], [1])
+m4_define([pix_minor_version], [0])
+m4_define([pix_micro_version], [0])
+m4_define([pix_version],
+          [pix_major_version.pix_minor_version.pix_micro_version])
+m4_define([pix_api_version],
+          [pix_major_version.pix_minor_version])
 
 AC_PREREQ(2.63)
-AC_INIT([gthumb], [gthumb_version],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=gthumb],
-        [gthumb])
+AC_INIT([pix], [pix_version],
+        [http://bugzilla.gnome.org/enter_bug.cgi?product=pix],
+        [pix])
 AM_INIT_AUTOMAKE([1.11 foreign no-dist-gzip dist-xz tar-ustar])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([configure.ac])
 
-GTHUMB_API_VERSION=gthumb_api_version
-AC_SUBST([GTHUMB_API_VERSION])
-AC_DEFINE_UNQUOTED([GTHUMB_API_VERSION],["$GTHUMB_API_VERSION"],[gThumb API version])
+PIX_API_VERSION=pix_api_version
+AC_SUBST([PIX_API_VERSION])
+AC_DEFINE_UNQUOTED([PIX_API_VERSION],["$PIX_API_VERSION"],[Pix API version])
 
 if test -z "$enable_maintainer_mode"; then
   enable_maintainer_mode=yes
@@ -55,7 +55,7 @@ GNOME_MAINTAINER_MODE_DEFINES
 GNOME_COMPILE_WARNINGS([maximum])
 GNOME_CXX_WARNINGS
 GLIB_GSETTINGS
-GTHUMB_EXTENSION_RULES
+PIX_EXTENSION_RULES
 
 GLIB_REQUIRED=2.34.0
 GTK_REQUIRED=3.4.0
@@ -144,7 +144,7 @@ PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= $GTK_REQUIRED])
 AC_SUBST([GTK_CFLAGS])
 AC_SUBST([GTK_LIBS])
 
-PKG_CHECK_MODULES(GTHUMB, [
+PKG_CHECK_MODULES(PIX, [
 	glib-2.0 		>= $GLIB_REQUIRED
 	gthread-2.0
 	gmodule-2.0
@@ -154,8 +154,8 @@ PKG_CHECK_MODULES(GTHUMB, [
 	zlib
 	gsettings-desktop-schemas
 ])
-AC_SUBST(GTHUMB_LIBS)
-AC_SUBST(GTHUMB_CFLAGS)
+AC_SUBST(PIX_LIBS)
+AC_SUBST(PIX_CFLAGS)
 
 dnl ===========================================================================
 
@@ -250,7 +250,7 @@ AM_CONDITIONAL(ENABLE_LIBCHAMPLAIN, test "x$enable_libchamplain" = xyes)
 dnl ===========================================================================
 
 IT_PROG_INTLTOOL([0.35.0])
-GETTEXT_PACKAGE=gthumb
+GETTEXT_PACKAGE=pix
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[Gettext package])
 AM_GLIB_GNU_GETTEXT
@@ -288,14 +288,14 @@ AC_MSG_RESULT([$os_win32])
 AM_CONDITIONAL(OS_WIN32, test "$os_win32" = "yes")
 
 if test "$platform_win32" = "yes" ; then
-	EXTENSION_LIBTOOL_FLAGS='-module -avoid-version -no-undefined -Wl,$(top_builddir)/gthumb/.libs/libgthumb.a'
-	GTHUMB_IMPLIB="-lgthumb"
+	EXTENSION_LIBTOOL_FLAGS='-module -avoid-version -no-undefined -Wl,$(top_builddir)/pix/.libs/libpix.a'
+	PIX_IMPLIB="-lpix"
 else
 	EXTENSION_LIBTOOL_FLAGS='-module -avoid-version -disable-static'
-	GTHUMB_IMPLIB=""
+	PIX_IMPLIB=""
 fi
 AC_SUBST(EXTENSION_LIBTOOL_FLAGS)
-AC_SUBST(GTHUMB_IMPLIB)
+AC_SUBST(PIX_IMPLIB)
 
 dnl ===========================================================================
 
@@ -638,9 +638,9 @@ AC_CONFIG_FILES([
 Makefile
 copy-n-paste/Makefile
 data/Makefile
-data/gthumb.desktop.in
-data/gthumb-${GTHUMB_API_VERSION}.pc:data/gthumb.pc.in
-data/gthumb-import.desktop.in
+data/pix.desktop.in
+data/pix-${PIX_API_VERSION}.pc:data/pix.pc.in
+data/pix-import.desktop.in
 data/icons/Makefile
 data/icons/hicolor/Makefile
 data/icons/hicolor/16x16/Makefile
@@ -770,8 +770,8 @@ extensions/webalbums/data/albumthemes/ClassicClips/Makefile
 extensions/webalbums/data/albumthemes/NeatRound/Makefile
 extensions/webalbums/data/albumthemes/Wiki/Makefile
 extensions/webalbums/data/ui/Makefile
-gthumb/Makefile
-gthumb/resources/Makefile
+pix/Makefile
+pix/resources/Makefile
 po/Makefile.in
 tests/Makefile
 ])

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2005-2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/gth-metadata-provider-image.h>
 #include "dlg-resize-images.h"
 #include "preferences.h"
@@ -145,7 +145,7 @@ static void
 help_clicked_cb (GtkWidget  *widget,
 		 DialogData *data)
 {
-	show_help_dialog (GTK_WINDOW (data->dialog), "gthumb-batch-resize");
+	show_help_dialog (GTK_WINDOW (data->dialog), "pix-batch-resize");
 }
 
 
@@ -342,7 +342,7 @@ dlg_resize_images (GthBrowser *browser,
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("resize-images.ui", "resize_images");
-	data->settings = g_settings_new (GTHUMB_RESIZE_IMAGES_SCHEMA);
+	data->settings = g_settings_new (PIX_RESIZE_IMAGES_SCHEMA);
 	data->file_list = gth_file_data_list_dup (file_list);
 	data->use_destination = TRUE;
 

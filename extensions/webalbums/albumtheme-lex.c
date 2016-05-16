@@ -684,7 +684,7 @@ char *gth_albumtheme_yytext;
 #line 1 "../../../extensions/webalbums/albumtheme.l"
 #line 2 "../../../extensions/webalbums/albumtheme.l"
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2003, 2010 Free Software Foundation, Inc.
  *

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <gth-catalog.h>
 #include "dlg-catalog-properties.h"
 #include "dlg-organize-files.h"
@@ -187,7 +187,7 @@ browser_data_free (BrowserData *data)
 void
 catalogs__initialize_cb (void)
 {
-	gth_user_dir_mkdir_with_parents (GTH_DIR_DATA, GTHUMB_DIR, "catalogs", NULL);
+	gth_user_dir_mkdir_with_parents (GTH_DIR_DATA, PIX_DIR, "catalogs", NULL);
 }
 
 
@@ -370,9 +370,9 @@ sort_catalogs (gconstpointer a,
 	GthFileData *file_data_a = (GthFileData *) a;
 	GthFileData *file_data_b = (GthFileData *) b;
 
-	if (g_file_info_get_attribute_boolean (file_data_a->info, "gthumb::no-child") != g_file_info_get_attribute_boolean (file_data_b->info, "gthumb::no-child")) {
+	if (g_file_info_get_attribute_boolean (file_data_a->info, "pix::no-child") != g_file_info_get_attribute_boolean (file_data_b->info, "pix::no-child")) {
 		/* put the libraries before the catalogs */
-		return g_file_info_get_attribute_boolean (file_data_a->info, "gthumb::no-child") ? 1 : -1;
+		return g_file_info_get_attribute_boolean (file_data_a->info, "pix::no-child") ? 1 : -1;
 	}
 	else if (g_file_info_get_sort_order (file_data_a->info) == g_file_info_get_sort_order (file_data_b->info))
 		return g_utf8_collate (g_file_info_get_display_name (file_data_a->info),
@@ -466,7 +466,7 @@ catalog_list_ready (GthFileSource *file_source,
 		list_item = insert_menu_item (list_data, list_data->list_menu, file_data, pos);
 		file_item = insert_menu_item (list_data, list_data->file_menu, file_data, pos);
 
-		if (! g_file_info_get_attribute_boolean (file_data->info, "gthumb::no-child")) {
+		if (! g_file_info_get_attribute_boolean (file_data->info, "pix::no-child")) {
 			CatalogListData *child;
 
 			child = g_new0 (CatalogListData, 1);
@@ -615,12 +615,12 @@ catalogs__gth_browser_folder_tree_popup_before_cb (GthBrowser    *browser,
 
 		action = gtk_action_group_get_action (data->actions, "Catalog_Rename");
 		sensitive = ((folder != NULL)
-			     && (_g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/library") || _g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/catalog"))
+			     && (_g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/library") || _g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/catalog"))
 			     && g_file_info_get_attribute_boolean (folder->info, G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME));
 		g_object_set (action, "sensitive", sensitive, NULL);
 
 		action = gtk_action_group_get_action (data->actions, "Catalog_Properties");
-		sensitive = (folder != NULL) && (! _g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/library"));
+		sensitive = (folder != NULL) && (! _g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/library"));
 		g_object_set (action, "sensitive", sensitive, NULL);
 	}
 	else {
@@ -690,7 +690,7 @@ catalogs__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 
 	location_data = gth_browser_get_location_data (browser);
 	if (GTH_IS_FILE_SOURCE_CATALOGS (gth_browser_get_location_source (browser))
-	    && ! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "gthumb/library"))
+	    && ! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "pix/library"))
 	{
 		if (data->properties_button == NULL) {
 			data->properties_button = gtk_button_new ();

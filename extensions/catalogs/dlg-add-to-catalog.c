@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2009 The Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-catalog.h"
 #include "gth-file-source-catalogs.h"
 
@@ -78,7 +78,7 @@ get_selected_catalog (DialogData *data)
 	GFile       *file;
 
 	file_data = gth_folder_tree_get_selected_or_parent (GTH_FOLDER_TREE (data->source_tree));
-	if ((file_data != NULL) && ! g_file_info_get_attribute_boolean (file_data->info, "gthumb::no-child")) {
+	if ((file_data != NULL) && ! g_file_info_get_attribute_boolean (file_data->info, "pix::no-child")) {
 		_g_object_unref (file_data);
 		file_data = NULL;
 	}
@@ -294,7 +294,7 @@ new_catalog_dialog_response_cb (GtkWidget *dialog,
 
 		file_source = gth_main_get_file_source (selected_parent->file);
 		info = gth_file_source_get_file_info (file_source, selected_parent->file, GFILE_BASIC_ATTRIBUTES);
-		if (g_file_info_get_attribute_boolean (info, "gthumb::no-child"))
+		if (g_file_info_get_attribute_boolean (info, "pix::no-child"))
 			parent = g_file_get_parent (selected_parent->file);
 		else
 			parent = g_file_dup (selected_parent->file);
@@ -414,7 +414,7 @@ new_library_dialog_response_cb (GtkWidget *dialog,
 
 		file_source = gth_main_get_file_source (selected_parent->file);
 		info = gth_file_source_get_file_info (file_source, selected_parent->file, GFILE_BASIC_ATTRIBUTES);
-		if (g_file_info_get_attribute_boolean (info, "gthumb::no-child"))
+		if (g_file_info_get_attribute_boolean (info, "pix::no-child"))
 			parent = g_file_get_parent (selected_parent->file);
 		else
 			parent = g_file_dup (selected_parent->file);

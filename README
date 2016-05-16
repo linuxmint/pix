@@ -1,13 +1,11 @@
-This is the distribution of gThumb, an image viewer and browser utility
-for the GNOME environment.
+This is Pix, an image viewer and browser utility.
 
-Information about gthumb can be found at http://live.gnome.org/gthumb.
+Pix is part of the X-Apps project, which aims at producing cross-distribution and cross-desktop software.
 
-
-What is gThumb
+What is Pix
 ==============
 
- * gThumb is an image browser
+ * Pix is an image browser
 
    + Browse your hard disk showing you thumbnails of image files.
    + Thumbnails are saved in the same database used by Nautilus so you
@@ -16,7 +14,7 @@ What is gThumb
    + Copy, move, delete images and folders.
    + Bookmarks of folders and catalogs.
 
- * gThumb is an image viewer
+ * Pix is an image viewer
 
    + View single images (including GIF animations).  Supported image
      types are: BMP, JPEG, GIF, PNG, TIFF, TGA, ICO, XPM.
@@ -25,7 +23,7 @@ What is gThumb
    + View in fullscreen mode.
    + View images rotated, flipped, mirrored.
 
- * gThumb is an image organizer
+ * Pix is an image organizer
 
    + Add comments to images.
    + Organize images in catalogs, catalogs in libraries.
@@ -34,7 +32,7 @@ What is gThumb
      Search criteria remain attached to the catalog so you can update it
      when you want.
 
- * gThumb is an image editor
+ * Pix is an image editor
 
    + Change image hue, saturation, lightness, contrast and adjust colors.
    + Scale and rotate images.
@@ -42,7 +40,7 @@ What is gThumb
    + Crop images.
    + Red-eye removal tool.
 
- * gThumb is an advanced tool
+ * Pix is an advanced tool
 
    + Import images from a digital camera.
    + Slide Shows.
@@ -81,7 +79,7 @@ Compiling
 	* unique		version >= 1.1.2
 
 
-  While not mandatory, these libraries greatly increase gThumb's
+  While not mandatory, these libraries greatly increase Pix's
   basic usefulness:
 
 	* exiv2			version >= 0.18
@@ -105,39 +103,20 @@ Compiling
           (This adds some support for RAW photos)
 
 
-  If dcraw is present (and is in your executable search path), 
-  gthumb can view full RAW photos.
+  If dcraw is present (and is in your executable search path),
+  Pix can view full RAW photos.
 
 
 Extensions
 ==========
 
-  gThumb has a plug-in system for extensions. Some standard features
+  Pix has a plug-in system for extensions. Some standard features
   are implemented as extensions and are supplied with the standard
   distribution. Users may write (and share) additional extensions.
 
-  See http://live.gnome.org/gthumb/extensions for details.
 
+Credits
+=======
 
-Download
-========
-
-  * Tar archives can be found here:
-
-    http://ftp.gnome.org/pub/GNOME/sources/gthumb
-
-  * If you know what git is and how to use it, you can download and
-    compile the latest development version using the following
-    commands:
-
-        git clone git://git.gnome.org/gthumb
-        cd gthumb
-        ./autogen.sh --prefix=/usr CFLAGS="-ggdb"
-        make
-        sudo make install
-
-    More development information is available at
-    http://live.gnome.org/gthumb/development
-
-
-18 January 2010
+  Pix is based on gThumb 3.2.8.
+  Many thanks to the original developers and to all the people who contributed to gThumb.

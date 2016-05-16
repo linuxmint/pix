@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2005-2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-find-duplicates.h"
 #include "gth-find-duplicates.h"
 
@@ -53,7 +53,7 @@ static void
 help_clicked_cb (GtkWidget  *widget,
 		 DialogData *data)
 {
-	show_help_dialog (GTK_WINDOW (data->dialog), "gthumb-find-duplicates");
+	show_help_dialog (GTK_WINDOW (data->dialog), "pix-find-duplicates");
 }
 
 
@@ -99,7 +99,7 @@ dlg_find_duplicates (GthBrowser *browser)
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("find-duplicates.ui", "find_duplicates");
 
-	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	settings = g_settings_new (PIX_BROWSER_SCHEMA);
 
 	/* Get the widgets. */
 

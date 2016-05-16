@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -244,7 +244,7 @@ dlg_image_wall (GthBrowser *browser,
 	data->browser = browser;
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("image-wall.ui", "contact_sheet");
-	data->settings = g_settings_new (GTHUMB_IMAGE_WALL_SCHEMA);
+	data->settings = g_settings_new (PIX_IMAGE_WALL_SCHEMA);
 
 	data->dialog = _gtk_builder_get_widget (data->builder, "image_wall_dialog");
 	gth_browser_set_dialog (browser, "image_wall", data->dialog);

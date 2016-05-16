@@ -18,13 +18,13 @@ libslideshow_la_SOURCES = 		\
 	preferences.c			\
 	preferences.h
 
-libslideshow_la_CFLAGS = $(GTHUMB_CFLAGS) $(CLUTTER_CFLAGS) $(GSTREAMER_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libslideshow_la_CFLAGS = $(PIX_CFLAGS) $(CLUTTER_CFLAGS) $(GSTREAMER_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libslideshow_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libslideshow_la_LIBADD = $(GTHUMB_LIBS) $(CLUTTER_LIBS) $(GSTREAMER_LIBS) ../catalogs/libcatalogs.la
+libslideshow_la_LIBADD = $(PIX_LIBS) $(CLUTTER_LIBS) $(GSTREAMER_LIBS) ../catalogs/libcatalogs.la
 if ENABLE_GSTREAMER
 libslideshow_la_LIBADD += ../gstreamer_utils/libgstreamer_utils.la
 endif
-libslideshow_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libslideshow_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -32,8 +32,8 @@ DISTCLEANFILES = $(extensionini_DATA)
 
 extensionini_in_files = slideshow.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

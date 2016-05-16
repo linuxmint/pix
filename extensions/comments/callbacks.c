@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gdk/gdkkeysyms.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 
 
@@ -44,7 +44,7 @@ static const char *fixed_ui_file_tools_info =
 static GthActionEntryExt comments_action_entries[] = {
 	{ "Tool_ImportEmbeddedMetadata", NULL,
 	  N_("Import Embedded Metadata"), NULL,
-	  N_("Import the metadata stored inside files into the gThumb comment system"),
+	  N_("Import the metadata stored inside files into the Pix comment system"),
 	  GTH_ACTION_FLAG_NONE,
 	  G_CALLBACK (gth_browser_activate_action_tool_import_embedded_metadata) }
 };

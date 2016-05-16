@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-personalize-scripts.h"
 #include "gth-script.h"
 #include "gth-script-editor-dialog.h"

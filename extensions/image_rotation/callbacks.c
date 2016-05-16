@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gdk/gdkkeysyms.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 
 #define BROWSER_DATA_KEY "image-rotation-browser-data"

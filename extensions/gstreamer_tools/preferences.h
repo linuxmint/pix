@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 /* schema */
 
-#define GTHUMB_GSTREAMER_TOOLS_SCHEMA            GTHUMB_SCHEMA ".gstreamer-tools"
+#define PIX_GSTREAMER_TOOLS_SCHEMA            PIX_SCHEMA ".gstreamer-tools"
 
 /* keys */
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <setjmp.h>
 #include <jpeglib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/jpeg_utils/jmemorysrc.h>
 #include <extensions/jpeg_utils/jpeg-info.h>
 #include "cairo-image-surface-jpeg.h"

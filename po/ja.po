@@ -1,4 +1,4 @@
-# gthumb ja.po.
+# pix ja.po.
 # Copyright (C) 2001-2007,2009-2012 Free Software Foundation, Inc.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2001-2007,2009-2011.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012
@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gthumb master\n"
+"Project-Id-Version: pix master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gthumb&keywords=I18N+L10N&component=general\n"
+"product=pix&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2012-04-17 12:12+0000\n"
 "PO-Revision-Date: 2012-04-17 22:03+0900\n"
 "Last-Translator: OKANO Takayoshi <kano@na.rim.or.jp>\n"
@@ -88,40 +88,40 @@ msgid "Show session management options"
 msgstr "セッション管理のオプションを表示する"
 
 #. manually set name and icon
-#: ../data/gthumb.desktop.in.in.h:1 ../gthumb/gth-browser.c:530
-#: ../gthumb/gth-progress-dialog.c:388 ../gthumb/main.c:313
-msgid "gThumb"
-msgstr "gThumb"
+#: ../data/pix.desktop.in.in.h:1 ../pix/gth-browser.c:530
+#: ../pix/gth-progress-dialog.c:388 ../pix/main.c:313
+msgid "Pix"
+msgstr "Pix"
 
-#: ../data/gthumb.desktop.in.in.h:2
+#: ../data/pix.desktop.in.in.h:2
 msgid "Image Viewer"
 msgstr "画像ビューアー"
 
-#: ../data/gthumb.desktop.in.in.h:3
-msgid "gThumb Image Viewer"
-msgstr "gThumb 画像ビューアー"
+#: ../data/pix.desktop.in.in.h:3
+msgid "Pix Image Viewer"
+msgstr "Pix 画像ビューアー"
 
-#: ../data/gthumb.desktop.in.in.h:4
+#: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
 msgstr "画像を表示し管理するツールです"
 
-#: ../data/gthumb-import.desktop.in.in.h:1
-msgid "Import with gThumb"
-msgstr "gThumb でインポート"
+#: ../data/pix-import.desktop.in.in.h:1
+msgid "Import with Pix"
+msgstr "Pix でインポート"
 
-#: ../data/gthumb-import.desktop.in.in.h:2
+#: ../data/pix-import.desktop.in.in.h:2
 msgid "Photo Import Tool"
 msgstr "写真を取り込むツール"
 
-#: ../data/gthumb-import.desktop.in.in.h:3
-msgid "gThumb Photo Import Tool"
-msgstr "gThumb フォトインポートツール"
+#: ../data/pix-import.desktop.in.in.h:3
+msgid "Pix Photo Import Tool"
+msgstr "Pix フォトインポートツール"
 
-#: ../data/gthumb-import.desktop.in.in.h:4
+#: ../data/pix-import.desktop.in.in.h:4
 msgid "Import the photos on your camera card"
 msgstr "お使いのカメラや IC メモリにある写真を取り込みます"
 
-#: ../data/org.gnome.gthumb.gschema.xml.in.h:1
+#: ../data/org.x.pix.gschema.xml.in.h:1
 msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
@@ -129,35 +129,35 @@ msgstr ""
 "このサイズ (バイト単位) より大きい画像はサムネイル表示されません。全ての画像"
 "をサムネイル表示する場合は 0 を指定して下さい。"
 
-#: ../data/org.gnome.gthumb.gschema.xml.in.h:2
+#: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
 msgstr "画像のサイズに合わせてウィンドウの大きさを変更するかどうかです。"
 
-#: ../data/org.gnome.gthumb.gschema.xml.in.h:3
+#: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
 msgstr "使用中のウィンドウでファイルを開きます"
 
-#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:1
+#: ../data/org.x.pix.image-viewer.gschema.xml.in.h:1
 msgid "Possible values are: white, black, checked, none."
 msgstr "設定可能な値: white、black、checked、none"
 
-#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:2
+#: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
 msgstr "画像を変更した後にスクロールバーの位置をリセット"
 
-#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:3
+#: ../data/org.x.pix.image-viewer.gschema.xml.in.h:3
 msgid "Whether to always use a black background."
 msgstr "常に背景を黒色にするかどうかを設定します。"
 
-#: ../data/org.gnome.gthumb.pixbuf-savers.gschema.xml.in.h:1
+#: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
 msgstr "指定可能な値: jpeg、jpg"
 
-#: ../data/org.gnome.gthumb.pixbuf-savers.gschema.xml.in.h:2
+#: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:2
 msgid "Possible values are: tiff, tif."
 msgstr "指定可能な値: tiff、tif"
 
-#: ../data/org.gnome.gthumb.rename-series.gschema.xml.in.h:1
+#: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
 "Possible values include: general::unsorted, file::name, file::size, file::"
 "mtime, exif::photo::datetimeoriginal"
@@ -187,8 +187,8 @@ msgid "_Match"
 msgstr "次を満足するもの(_M): "
 
 #. limit label
-#: ../data/ui/filter-editor.ui.h:3 ../gthumb/gth-filter.c:270
-#: ../gthumb/gth-filter.c:342
+#: ../data/ui/filter-editor.ui.h:3 ../pix/gth-filter.c:270
+#: ../pix/gth-filter.c:342
 msgid "_Limit to"
 msgstr "次に制限する(_L):"
 
@@ -298,8 +298,8 @@ msgid "on the right"
 msgstr "右側"
 
 #: ../data/ui/preferences.ui.h:3
-msgid "gThumb Preferences"
-msgstr "gThumb の設定"
+msgid "Pix Preferences"
+msgstr "Pix の設定"
 
 #: ../data/ui/preferences.ui.h:4
 msgid "_Toolbar style:"
@@ -393,7 +393,7 @@ msgstr "その他"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
 #: ../extensions/edit_metadata/gth-edit-general-page.c:473
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
-#: ../gthumb/gth-main-default-metadata.c:33
+#: ../pix/gth-main-default-metadata.c:33
 msgid "General"
 msgstr "全般"
 
@@ -447,8 +447,8 @@ msgstr "256"
 msgid "D_etermine image type from content (slower)"
 msgstr "画像の内容から種類を判断する (低速)(_E)"
 
-#: ../data/ui/preferences.ui.h:38 ../gthumb/dlg-preferences-extensions.c:71
-#: ../gthumb/gth-browser-actions-entries.h:179
+#: ../data/ui/preferences.ui.h:38 ../pix/dlg-preferences-extensions.c:71
+#: ../pix/gth-browser-actions-entries.h:179
 msgid "Browser"
 msgstr "ブラウザー"
 
@@ -518,8 +518,8 @@ msgstr "ブックマークの機能を追加します"
 #: ../extensions/selections/selections.extension.in.in.h:3
 #: ../extensions/slideshow/slideshow.extension.in.in.h:3
 #: ../extensions/webalbums/webalbums.extension.in.in.h:3
-msgid "gthumb development team"
-msgstr "gThumb 開発チーム"
+msgid "pix development team"
+msgstr "Pix 開発チーム"
 
 #: ../extensions/bookmarks/callbacks.c:54
 msgid "_Bookmarks"
@@ -618,7 +618,7 @@ msgstr "JPEG の色空間 (%d) が不明です"
 #: ../extensions/catalogs/dlg-add-to-catalog.c:394
 #: ../extensions/file_manager/actions.c:68
 #: ../extensions/list_tools/gth-script-editor-dialog.c:290
-#: ../gthumb/gth-filter-editor-dialog.c:461
+#: ../pix/gth-filter-editor-dialog.c:461
 #, c-format
 msgid "No name specified"
 msgstr "名前が指定されていません"
@@ -735,7 +735,7 @@ msgstr "コマンドライン"
 #: ../extensions/catalogs/callbacks.c:502
 #: ../extensions/photo_importer/dlg-photo-importer.c:364
 #: ../extensions/photo_importer/dlg-photo-importer.c:404
-#: ../gthumb/gth-file-list.c:43 ../gthumb/gth-folder-tree.c:883
+#: ../pix/gth-file-list.c:43 ../pix/gth-folder-tree.c:883
 msgid "(Empty)"
 msgstr "(ファイルなし)"
 
@@ -786,7 +786,7 @@ msgid "_View the destination"
 msgstr "送り先のフォルダーを表示する(_V)"
 
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
-#: ../gthumb/gth-file-properties.c:209
+#: ../pix/gth-file-properties.c:209
 msgid "Properties"
 msgstr "プロパティ"
 
@@ -836,12 +836,12 @@ msgstr "カタログのプレビュー(_P):"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:1
 #: ../extensions/edit_metadata/gth-edit-general-page.c:550
-#: ../gthumb/gth-main-default-tests.c:300
+#: ../pix/gth-main-default-tests.c:300
 msgid "Date photo was taken"
 msgstr "写真の撮影日"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:2
-#: ../gthumb/gth-main-default-tests.c:292
+#: ../pix/gth-main-default-tests.c:292
 msgid "File modified date"
 msgstr "ファイルの変更日時"
 
@@ -855,7 +855,7 @@ msgid "tag"
 msgstr "tag"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
-#: ../gthumb/gth-main-default-tests.c:324
+#: ../pix/gth-main-default-tests.c:324
 msgid "Tag (embedded)"
 msgstr "(埋め込まれた) タグ"
 
@@ -907,7 +907,7 @@ msgstr ""
 
 #: ../extensions/catalogs/gth-catalog.c:1122 ../extensions/comments/main.c:44
 #: ../extensions/edit_metadata/callbacks.c:106
-#: ../gthumb/gth-main-default-metadata.c:53
+#: ../pix/gth-main-default-metadata.c:53
 msgid "Tags"
 msgstr "タグ"
 
@@ -1047,9 +1047,9 @@ msgid "Import Embedded Metadata"
 msgstr "埋め込みのメタデータをインポート"
 
 #: ../extensions/comments/callbacks.c:47
-msgid "Import the metadata stored inside files into the gThumb comment system"
+msgid "Import the metadata stored inside files into the Pix comment system"
 msgstr ""
-"ファイル埋め込みのメタデータを gThumb のコメントシステムにインポートします"
+"ファイル埋め込みのメタデータを Pix のコメントシステムにインポートします"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1073,7 +1073,7 @@ msgstr "埋め込まれているメタデータと同期する(_S)"
 msgid "Comment"
 msgstr "コメント"
 
-#: ../extensions/comments/main.c:40 ../gthumb/gth-main-default-metadata.c:46
+#: ../extensions/comments/main.c:40 ../pix/gth-main-default-metadata.c:46
 msgid "Title"
 msgstr "タイトル"
 
@@ -1085,20 +1085,20 @@ msgstr "タイトル"
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:11
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:12
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
-#: ../gthumb/gth-main-default-metadata.c:52
+#: ../pix/gth-main-default-metadata.c:52
 msgid "Description"
 msgstr "説明"
 
 #: ../extensions/comments/main.c:42 ../extensions/comments/main.c:151
-#: ../gthumb/gth-main-default-metadata.c:50
+#: ../pix/gth-main-default-metadata.c:50
 msgid "Place"
 msgstr "場所"
 
-#: ../extensions/comments/main.c:43 ../gthumb/gth-main-default-metadata.c:51
+#: ../extensions/comments/main.c:43 ../pix/gth-main-default-metadata.c:51
 msgid "Date"
 msgstr "日付"
 
-#: ../extensions/comments/main.c:45 ../gthumb/gth-main-default-metadata.c:54
+#: ../extensions/comments/main.c:45 ../pix/gth-main-default-metadata.c:54
 msgid "Rating"
 msgstr "評価"
 
@@ -1544,7 +1544,7 @@ msgid "Could not save the file metadata"
 msgstr "ファイルのメタデータを保存できませんでした"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:234
-#: ../gthumb/gth-overwrite-dialog.c:136
+#: ../pix/gth-overwrite-dialog.c:136
 msgid "Cannot read file information"
 msgstr "ファイル情報を読み込めません"
 
@@ -1947,7 +1947,7 @@ msgstr "ファイルをエクスポートできませんでした"
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:623
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:1010
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:803
-#: ../gthumb/gth-browser.c:1006
+#: ../pix/gth-browser.c:1006
 #, c-format
 msgid "%d file (%s)"
 msgid_plural "%d files (%s)"
@@ -1984,7 +1984,7 @@ msgstr "%s の認証プロセスが完了したらこのウィンドウに戻っ
 #: ../extensions/flicker_utils/flickr-authentication.c:487
 #: ../extensions/oauth/oauth-authentication.c:502
 #, c-format
-msgid "gthumb requires your authorization to upload the photos to %s"
+msgid "pix requires your authorization to upload the photos to %s"
 msgstr "写真を %s へアップロードするには認証が必要です"
 
 #: ../extensions/facebook/facebook-authentication.c:557
@@ -1992,7 +1992,7 @@ msgstr "写真を %s へアップロードするには認証が必要です"
 #: ../extensions/oauth/oauth-authentication.c:503
 #, c-format
 msgid ""
-"Click 'Authorize' to open your web browser and authorize gthumb to upload "
+"Click 'Authorize' to open your web browser and authorize pix to upload "
 "photos to %s. When you're finished, return to this window to complete the "
 "authorization."
 msgstr ""
@@ -2159,13 +2159,13 @@ msgid "Could not move the folder to the Trash"
 msgstr "フォルダーをゴミ箱へ移動できませんでした"
 
 #: ../extensions/file_manager/actions.c:816
-#: ../gthumb/gth-file-source-vfs.c:841
+#: ../pix/gth-file-source-vfs.c:841
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "本当に \"%s\" を完全に消去しますか?"
 
 #: ../extensions/file_manager/actions.c:826
-#: ../gthumb/gth-file-source-vfs.c:854
+#: ../pix/gth-file-source-vfs.c:854
 msgid "If you delete a file, it will be permanently lost."
 msgstr "ファイルを削除すると元に戻すことはできません。"
 
@@ -2205,7 +2205,7 @@ msgstr "選択したファイルの複製を作成します"
 
 #: ../extensions/file_manager/callbacks.c:183
 #: ../extensions/file_manager/callbacks.c:219
-#: ../gthumb/gth-file-source-vfs.c:813
+#: ../pix/gth-file-source-vfs.c:813
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
 
@@ -2269,7 +2269,7 @@ msgstr "選択したファイルを別のフォルダーへ移動します"
 
 #: ../extensions/file_manager/callbacks.c:1003
 #: ../extensions/find_duplicates/gth-find-duplicates.c:581
-#: ../gthumb/gth-browser.c:5015 ../gthumb/gth-browser.c:5049
+#: ../pix/gth-browser.c:5015 ../pix/gth-browser.c:5049
 msgid "Could not perform the operation"
 msgstr "処理を実行できませんでした"
 
@@ -2390,7 +2390,7 @@ msgid "Set the image size to this value"
 msgstr "画像のサイズをこの値にします"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:4
-#: ../gthumb/gth-main-default-metadata.c:47
+#: ../pix/gth-main-default-metadata.c:47
 msgid "Dimensions"
 msgstr "画像の寸法"
 
@@ -2775,7 +2775,7 @@ msgid "Files:"
 msgstr "ファイルの一覧:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
-#: ../gthumb/gth-browser-actions-entries.h:33
+#: ../pix/gth-browser-actions-entries.h:33
 msgid "_View"
 msgstr "表示(_V)"
 
@@ -2838,8 +2838,8 @@ msgid "Searching for duplicates"
 msgstr "検索中です"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:551
-#: ../gthumb/gth-load-file-data-task.c:106
-#: ../gthumb/gth-save-file-data-task.c:100
+#: ../pix/gth-load-file-data-task.c:106
+#: ../pix/gth-save-file-data-task.c:100
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
@@ -2949,7 +2949,7 @@ msgstr "%s からのインポート"
 
 #: ../extensions/gstreamer_tools/actions.c:66
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1080
-#: ../gthumb/gth-browser.c:2019
+#: ../pix/gth-browser.c:2019
 msgid "Could not save the file"
 msgstr "ファイルを保存できませんでした"
 
@@ -3027,12 +3027,12 @@ msgid "Pause"
 msgstr "一時停止します"
 
 #: ../extensions/gstreamer_tools/main.c:31
-#: ../gthumb/gth-main-default-tests.c:247
+#: ../pix/gth-main-default-tests.c:247
 msgid "Video"
 msgstr "動画"
 
 #: ../extensions/gstreamer_tools/main.c:32
-#: ../gthumb/gth-main-default-tests.c:254
+#: ../pix/gth-main-default-tests.c:254
 msgid "Audio"
 msgstr "オーディオ"
 
@@ -3189,12 +3189,12 @@ msgid "Could not print"
 msgstr "印刷できませんでした"
 
 #: ../extensions/image_print/gth-image-print-job.c:1796
-#: ../gthumb/gth-main-default-tests.c:240
+#: ../pix/gth-main-default-tests.c:240
 msgid "Images"
 msgstr "画像"
 
 #: ../extensions/image_print/gth-image-print-job.c:1863
-#: ../gthumb/gth-image-loader.c:204 ../gthumb/gth-image-loader.c:278
+#: ../pix/gth-image-loader.c:204 ../pix/gth-image-loader.c:278
 msgid "No suitable loader available for this file type"
 msgstr "この種類のファイルに対して利用できる妥当なローダーはありません"
 
@@ -3507,7 +3507,7 @@ msgid "The selected files are already present in the destination."
 msgstr "選択したファイルは既に格納場所に存在していました。"
 
 #: ../extensions/importer/gth-import-task.c:622
-#: ../gthumb/gth-file-source-vfs.c:694
+#: ../pix/gth-file-source-vfs.c:694
 msgid "Could not delete the files"
 msgstr "このファイルを削除できませんでした"
 
@@ -3533,7 +3533,7 @@ msgstr ""
 "'%s' の空き容量が十分ではありません。\n"
 "%s の空きが必要ですが実際には %s しかありません。"
 
-#: ../extensions/list_tools/callbacks.c:76 ../gthumb/gth-filterbar.c:304
+#: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:304
 msgid "Personalize..."
 msgstr "指定する..."
 
@@ -3651,7 +3651,7 @@ msgid "Shortcut"
 msgstr "ショートカット"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:285
-#: ../gthumb/dlg-personalize-filters.c:252
+#: ../pix/dlg-personalize-filters.c:252
 msgid "Show"
 msgstr "表示する"
 
@@ -3854,7 +3854,7 @@ msgstr "デバイスからインポートした後:"
 
 #. view label
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
-#: ../gthumb/gth-filterbar.c:414
+#: ../pix/gth-filterbar.c:414
 msgid "S_how:"
 msgstr "フィルター(_H):"
 
@@ -3886,7 +3886,7 @@ msgid "Could not load the folder"
 msgstr "フォルダーを読み込めませんでした"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:369
-#: ../gthumb/gth-browser.c:1932
+#: ../pix/gth-browser.c:1932
 msgid "Getting folder listing..."
 msgstr "フォルダーの一覧を取得しています..."
 
@@ -4051,7 +4051,7 @@ msgid "PNG"
 msgstr "PNG"
 
 #: ../extensions/pixbuf_savers/gth-tga-saver.c:286
-#: ../gthumb/gth-buffer-data.c:84
+#: ../pix/gth-buffer-data.c:84
 msgid "Insufficient memory"
 msgstr "メモリが足りません"
 
@@ -4275,7 +4275,7 @@ msgid "_Preserve original aspect ratios"
 msgstr "オリジナルの縦横比を保持する(_P)"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:9
-#: ../gthumb/gth-main-default-metadata.c:49
+#: ../pix/gth-main-default-metadata.c:49
 msgid "Format"
 msgstr "フォーマット"
 
@@ -4327,12 +4327,12 @@ msgid "Search"
 msgstr "検索"
 
 #: ../extensions/search/gth-search-editor.c:112
-#: ../gthumb/gth-filter-editor-dialog.c:165
+#: ../pix/gth-filter-editor-dialog.c:165
 msgid "all the following rules"
 msgstr "以下の条件の全て"
 
 #: ../extensions/search/gth-search-editor.c:113
-#: ../gthumb/gth-filter-editor-dialog.c:166
+#: ../pix/gth-filter-editor-dialog.c:166
 msgid "any of the following rules"
 msgstr "以下の条件のいずれか"
 
@@ -4517,12 +4517,12 @@ msgid "Index"
 msgstr "目次"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:30
-#: ../gthumb/gth-browser-actions-entries.h:125
+#: ../pix/gth-browser-actions-entries.h:125
 msgid "Next"
 msgstr "次へ"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:32
-#: ../gthumb/gth-browser-actions-entries.h:119
+#: ../pix/gth-browser-actions-entries.h:119
 msgid "Previous"
 msgstr "前へ"
 
@@ -4653,120 +4653,120 @@ msgstr "ウェブアルバム"
 msgid "Create static web albums."
 msgstr "ローカルのウェブアルバムを作成します"
 
-#: ../gthumb/dlg-location.c:200 ../gthumb/gth-browser.c:1251
-#: ../gthumb/gth-browser.c:1820 ../gthumb/gth-browser.c:5975
-#: ../gthumb/gth-browser.c:5994 ../gthumb/gth-browser.c:6018
+#: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1251
+#: ../pix/gth-browser.c:1820 ../pix/gth-browser.c:5975
+#: ../pix/gth-browser.c:5994 ../pix/gth-browser.c:6018
 #, c-format
 msgid "Could not load the position \"%s\""
 msgstr "\"%s\" を読み込めませんでした"
 
-#: ../gthumb/dlg-personalize-filters.c:237
+#: ../pix/dlg-personalize-filters.c:237
 msgid "Filter"
 msgstr "フィルター"
 
-#: ../gthumb/dlg-personalize-filters.c:315
+#: ../pix/dlg-personalize-filters.c:315
 msgid "Could not save the filter"
 msgstr "フィルターを保存できませんでした"
 
-#: ../gthumb/dlg-personalize-filters.c:358
+#: ../pix/dlg-personalize-filters.c:358
 msgid "New Filter"
 msgstr "新しいフィルター"
 
-#: ../gthumb/dlg-personalize-filters.c:387
+#: ../pix/dlg-personalize-filters.c:387
 msgid "Edit Filter"
 msgstr "フィルターの編集"
 
-#: ../gthumb/dlg-preferences-extensions.c:67 ../gthumb/gth-filterbar.c:270
+#: ../pix/dlg-preferences-extensions.c:67 ../pix/gth-filterbar.c:270
 msgid "All"
 msgstr "全て"
 
-#: ../gthumb/dlg-preferences-extensions.c:68
+#: ../pix/dlg-preferences-extensions.c:68
 msgid "Enabled"
 msgstr "有効"
 
-#: ../gthumb/dlg-preferences-extensions.c:69
+#: ../pix/dlg-preferences-extensions.c:69
 msgid "Disabled"
 msgstr "無効"
 
-#: ../gthumb/dlg-preferences-extensions.c:72
+#: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
 msgstr "ビューアー系"
 
-#: ../gthumb/dlg-preferences-extensions.c:73
+#: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
 msgstr "メタデータ系"
 
-#: ../gthumb/dlg-preferences-extensions.c:74
+#: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
 msgstr "ファイル系"
 
-#: ../gthumb/dlg-preferences-extensions.c:75
+#: ../pix/dlg-preferences-extensions.c:75
 msgid "List tools"
 msgstr "一覧系"
 
-#: ../gthumb/dlg-preferences-extensions.c:76
+#: ../pix/dlg-preferences-extensions.c:76
 msgid "Importers"
 msgstr "インポート系"
 
-#: ../gthumb/dlg-preferences-extensions.c:77
+#: ../pix/dlg-preferences-extensions.c:77
 msgid "Exporters"
 msgstr "エクスポート系"
 
-#: ../gthumb/dlg-preferences-extensions.c:216
+#: ../pix/dlg-preferences-extensions.c:216
 msgid "Could not activate the extension"
 msgstr "拡張機能を有効にできませんでした"
 
-#: ../gthumb/dlg-preferences-extensions.c:226
+#: ../pix/dlg-preferences-extensions.c:226
 msgid "Could not deactivate the extension"
 msgstr "拡張機能を無効にできませんでした"
 
 #. add the page to the preferences dialog
-#: ../gthumb/dlg-preferences-extensions.c:772
+#: ../pix/dlg-preferences-extensions.c:772
 msgid "Extensions"
 msgstr "拡張機能"
 
-#: ../gthumb/dlg-preferences-extensions.c:819
+#: ../pix/dlg-preferences-extensions.c:819
 msgid "Restart required"
 msgstr "再起動が必要です"
 
-#: ../gthumb/dlg-preferences-extensions.c:820
-msgid "You need to restart gthumb for these changes to take effect"
-msgstr "変更内容を適用するには gThumb を再起動する必要があります。"
+#: ../pix/dlg-preferences-extensions.c:820
+msgid "You need to restart pix for these changes to take effect"
+msgstr "変更内容を適用するには Pix を再起動する必要があります。"
 
-#: ../gthumb/dlg-preferences-extensions.c:821
+#: ../pix/dlg-preferences-extensions.c:821
 msgid "_Continue"
 msgstr "続行する(_C)"
 
-#: ../gthumb/dlg-preferences-extensions.c:822
+#: ../pix/dlg-preferences-extensions.c:822
 msgid "_Restart"
 msgstr "再起動する(_R)"
 
-#: ../gthumb/eggfileformatchooser.c:236
+#: ../pix/eggfileformatchooser.c:236
 #, c-format
 msgid "File _Format: %s"
 msgstr "ファイルの形式(_F): %s"
 
-#: ../gthumb/eggfileformatchooser.c:397 ../gthumb/gth-main-default-tests.c:233
+#: ../pix/eggfileformatchooser.c:397 ../pix/gth-main-default-tests.c:233
 msgid "All Files"
 msgstr "全てのファイル"
 
-#: ../gthumb/eggfileformatchooser.c:398
+#: ../pix/eggfileformatchooser.c:398
 msgid "All Supported Files"
 msgstr "サポートしている全ファイル"
 
-#: ../gthumb/eggfileformatchooser.c:407
+#: ../pix/eggfileformatchooser.c:407
 msgid "By Extension"
 msgstr "拡張子に合わせる"
 
-#: ../gthumb/eggfileformatchooser.c:422
+#: ../pix/eggfileformatchooser.c:422
 msgid "File Format"
 msgstr "ファイルの形式"
 
-#: ../gthumb/eggfileformatchooser.c:440
+#: ../pix/eggfileformatchooser.c:440
 msgid "Extension(s)"
 msgstr "拡張子"
 
-#: ../gthumb/eggfileformatchooser.c:681
+#: ../pix/eggfileformatchooser.c:681
 #, c-format
 msgid ""
 "The program was not able to find out the file format you want to use for `%"
@@ -4777,35 +4777,35 @@ msgstr ""
 "そのファイルに対して既知の拡張子を使っていることを確認するか、または下の一覧"
 "からファイルの形式を選択して下さい。"
 
-#: ../gthumb/eggfileformatchooser.c:688
+#: ../pix/eggfileformatchooser.c:688
 msgid "File format not recognized"
 msgstr "不明なファイル形式です"
 
 #. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
-#: ../gthumb/gio-utils.c:1351
+#: ../pix/gio-utils.c:1351
 #, c-format
 msgid "%s of %s"
 msgstr "%s / %s"
 
-#: ../gthumb/gio-utils.c:1386
+#: ../pix/gio-utils.c:1386
 #, c-format
 msgid "Moving \"%s\" to \"%s\""
 msgstr "\"%s\" から \"%s\" へ移動中"
 
-#: ../gthumb/gio-utils.c:1388
+#: ../pix/gio-utils.c:1388
 #, c-format
 msgid "Copying \"%s\" to \"%s\""
 msgstr "\"%s\" から \"%s\" へコピー中"
 
-#: ../gthumb/gio-utils.c:1750
+#: ../pix/gio-utils.c:1750
 msgid "Moving files"
 msgstr "ファイルの移動中"
 
-#: ../gthumb/gio-utils.c:1750
+#: ../pix/gio-utils.c:1750
 msgid "Copying files"
 msgstr "ファイルのコピー中"
 
-#: ../gthumb/gio-utils.c:1751
+#: ../pix/gio-utils.c:1751
 msgid "Getting file information"
 msgstr "ファイル情報の取得中"
 
@@ -4815,7 +4815,7 @@ msgstr "ファイル情報の取得中"
 #. * the separator that your locale uses or use "%Id" instead
 #. * of "%d" if your locale uses localized digits.
 #.
-#: ../gthumb/glib-utils.c:2945
+#: ../pix/glib-utils.c:2945
 #, c-format
 msgctxt "long time format"
 msgid "%d:%02d:%02d"
@@ -4827,47 +4827,47 @@ msgstr "%d:%2d:%2d"
 #. * separator that your locale uses or use "%Id" instead of
 #. * "%d" if your locale uses localized digits.
 #.
-#: ../gthumb/glib-utils.c:2954
+#: ../pix/glib-utils.c:2954
 #, c-format
 msgctxt "short time format"
 msgid "%d:%02d"
 msgstr "%d:%2d"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:400
+#: ../pix/gth-browser-actions-callbacks.c:400
 msgid ""
-"gthumb is free software; you can redistribute it and/or modify it under the "
+"pix is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
-"gThumb はフリーソフトウェアです。フリーソフトウェア財団が提供する GNU 一般公"
+"Pix はフリーソフトウェアです。フリーソフトウェア財団が提供する GNU 一般公"
 "衆利用許諾契約書の第二版、あるいはそれ以降の版が定める条項の下で本プログラム"
 "を再頒布または変更することができます。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:404
+#: ../pix/gth-browser-actions-callbacks.c:404
 msgid ""
-"gthumb is distributed in the hope that it will be useful, but WITHOUT ANY "
+"pix is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"gThumb は有用とは思いますが、その頒布にあたり商用での利用や特定の目的に対する"
+"Pix は有用とは思いますが、その頒布にあたり商用での利用や特定の目的に対する"
 "適用については暗黙の保証を含めて、いかなる保証も行ないません。詳細には GNU 一"
 "般公衆利用許諾契約書をご覧下さい。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:408
+#: ../pix/gth-browser-actions-callbacks.c:408
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"gthumb.  If not, see http://www.gnu.org/licenses/."
+"pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
-"あなたは gThumb と一緒に GNU 一般公衆利用許諾契約書の写しを受け取っているはず"
+"あなたは Pix と一緒に GNU 一般公衆利用許諾契約書の写しを受け取っているはず"
 "です。もしくは http://www.gnu.org/licenses/ をご覧下さい。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:427
+#: ../pix/gth-browser-actions-callbacks.c:427
 msgid "An image viewer and browser for GNOME."
 msgstr "GNOME 向けの画像ビューアー/画像ブラウザーです。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:430
+#: ../pix/gth-browser-actions-callbacks.c:430
 msgid "translator_credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -4875,683 +4875,683 @@ msgstr ""
 "Ritsuko Sato <satoritsu@gmail.com>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: ../gthumb/gth-browser-actions-entries.h:31
+#: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../gthumb/gth-browser-actions-entries.h:32
+#: ../pix/gth-browser-actions-entries.h:32
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: ../gthumb/gth-browser-actions-entries.h:34
+#: ../pix/gth-browser-actions-entries.h:34
 msgid "_Go"
 msgstr "ジャンプ(_G)"
 
-#: ../gthumb/gth-browser-actions-entries.h:35
+#: ../pix/gth-browser-actions-entries.h:35
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../gthumb/gth-browser-actions-entries.h:36
+#: ../pix/gth-browser-actions-entries.h:36
 msgid "Open _With"
 msgstr "次で開く(_W)"
 
-#: ../gthumb/gth-browser-actions-entries.h:37
+#: ../pix/gth-browser-actions-entries.h:37
 msgid "I_mport From"
 msgstr "インポート(_M)"
 
-#: ../gthumb/gth-browser-actions-entries.h:38
+#: ../pix/gth-browser-actions-entries.h:38
 msgid "E_xport To"
 msgstr "エクスポート(_X)"
 
-#: ../gthumb/gth-browser-actions-entries.h:41
+#: ../pix/gth-browser-actions-entries.h:41
 msgid "New _Window"
 msgstr "新しいウィンドウ(_W)"
 
-#: ../gthumb/gth-browser-actions-entries.h:42
+#: ../pix/gth-browser-actions-entries.h:42
 msgid "Open another window"
 msgstr "別のウィンドウを開きます"
 
-#: ../gthumb/gth-browser-actions-entries.h:71
+#: ../pix/gth-browser-actions-entries.h:71
 msgid "Open"
 msgstr "開く"
 
-#: ../gthumb/gth-browser-actions-entries.h:77
+#: ../pix/gth-browser-actions-entries.h:77
 msgid "Open in New Window"
 msgstr "新しいウィンドウで開く"
 
-#: ../gthumb/gth-browser-actions-entries.h:84
+#: ../pix/gth-browser-actions-entries.h:84
 msgid "Edit various preferences"
-msgstr "gThumb の設定を変更します"
+msgstr "Pix の設定を変更します"
 
-#: ../gthumb/gth-browser-actions-entries.h:95
+#: ../pix/gth-browser-actions-entries.h:95
 msgid "_Sort By..."
 msgstr "並べ替え(_S)..."
 
-#: ../gthumb/gth-browser-actions-entries.h:101
+#: ../pix/gth-browser-actions-entries.h:101
 msgid "_Filter..."
 msgstr "フィルター(_F)..."
 
-#: ../gthumb/gth-browser-actions-entries.h:108
+#: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
 msgstr "この場所の読み込みを停止します"
 
-#: ../gthumb/gth-browser-actions-entries.h:114
+#: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
 msgstr "この場所の画像を再度読み込みます"
 
-#: ../gthumb/gth-browser-actions-entries.h:120
+#: ../pix/gth-browser-actions-entries.h:120
 msgid "View previous image"
 msgstr "前の画像を表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:126
+#: ../pix/gth-browser-actions-entries.h:126
 msgid "View next image"
 msgstr "次の画像を表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:132
+#: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
 msgstr "フルスクリーン表示に切り替えます"
 
-#: ../gthumb/gth-browser-actions-entries.h:138
+#: ../pix/gth-browser-actions-entries.h:138
 msgid "Leave Fullscreen"
 msgstr "フルスクリーン表示を解除します"
 
-#: ../gthumb/gth-browser-actions-entries.h:144 ../gthumb/gth-browser.c:3658
+#: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3658
 msgid "Go to the previous visited location"
 msgstr "前に訪れた場所へジャンプします"
 
-#: ../gthumb/gth-browser-actions-entries.h:150 ../gthumb/gth-browser.c:3676
+#: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3676
 msgid "Go to the next visited location"
 msgstr "次に訪れた場所へジャンプします"
 
-#: ../gthumb/gth-browser-actions-entries.h:156 ../gthumb/gth-browser.c:3694
+#: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3694
 msgid "Go up one level"
 msgstr "一つ上の場所に上がります"
 
-#: ../gthumb/gth-browser-actions-entries.h:161
+#: ../pix/gth-browser-actions-entries.h:161
 msgid "_Location..."
 msgstr "場所(_L)..."
 
-#: ../gthumb/gth-browser-actions-entries.h:162
+#: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
 msgstr "場所を指定して開く"
 
-#: ../gthumb/gth-browser-actions-entries.h:173 ../gthumb/gth-browser.c:673
+#: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:673
 msgid "_Delete History"
 msgstr "履歴の削除(_D)"
 
-#: ../gthumb/gth-browser-actions-entries.h:174
+#: ../pix/gth-browser-actions-entries.h:174
 msgid "Delete the list of visited locations"
 msgstr "最近訪れた場所の一覧を削除します"
 
-#: ../gthumb/gth-browser-actions-entries.h:180
+#: ../pix/gth-browser-actions-entries.h:180
 msgid "View the folders"
 msgstr "フォルダーを表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:186
-msgid "Show information about gthumb"
-msgstr "gThumb の情報を表示します"
+#: ../pix/gth-browser-actions-entries.h:186
+msgid "Show information about pix"
+msgstr "Pix の情報を表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:191
+#: ../pix/gth-browser-actions-entries.h:191
 msgid "Contents"
 msgstr "目次"
 
-#: ../gthumb/gth-browser-actions-entries.h:192
-msgid "Display the gthumb Manual"
-msgstr "gThumb のマニュアルを表示します"
+#: ../pix/gth-browser-actions-entries.h:192
+msgid "Display the pix Manual"
+msgstr "Pix のマニュアルを表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:197
+#: ../pix/gth-browser-actions-entries.h:197
 msgid "_Keyboard Shortcuts"
 msgstr "キー操作(_K)"
 
-#: ../gthumb/gth-browser-actions-entries.h:206
+#: ../pix/gth-browser-actions-entries.h:206
 msgid "_Toolbar"
 msgstr "ツールバー(_T)"
 
-#: ../gthumb/gth-browser-actions-entries.h:207
+#: ../pix/gth-browser-actions-entries.h:207
 msgid "View or hide the toolbar of this window"
 msgstr "このウィンドウのツールバーの表示を ON/OFF します"
 
-#: ../gthumb/gth-browser-actions-entries.h:211
+#: ../pix/gth-browser-actions-entries.h:211
 msgid "_Statusbar"
 msgstr "ステータスバー(_S)"
 
-#: ../gthumb/gth-browser-actions-entries.h:212
+#: ../pix/gth-browser-actions-entries.h:212
 msgid "View or hide the statusbar of this window"
 msgstr "このウィンドウのステータスバーの表示を ON/OFF します"
 
-#: ../gthumb/gth-browser-actions-entries.h:216
+#: ../pix/gth-browser-actions-entries.h:216
 msgid "_Filterbar"
 msgstr "フィルターバー(_F)"
 
-#: ../gthumb/gth-browser-actions-entries.h:217
+#: ../pix/gth-browser-actions-entries.h:217
 msgid "View or hide the filterbar of this window"
 msgstr "このウィンドウのフィルターバーの表示を ON/OFF します"
 
-#: ../gthumb/gth-browser-actions-entries.h:221
+#: ../pix/gth-browser-actions-entries.h:221
 msgid "_Sidebar"
 msgstr "サイドバー(_S)"
 
-#: ../gthumb/gth-browser-actions-entries.h:222
+#: ../pix/gth-browser-actions-entries.h:222
 msgid "View or hide the sidebar of this window"
 msgstr "このウィンドウのサイドバーの表示を ON/OFF します"
 
-#: ../gthumb/gth-browser-actions-entries.h:226
+#: ../pix/gth-browser-actions-entries.h:226
 msgid "_Thumbnail Pane"
 msgstr "サムネイルの一覧(_T)"
 
-#: ../gthumb/gth-browser-actions-entries.h:227
+#: ../pix/gth-browser-actions-entries.h:227
 msgid "View or hide the thumbnail pane in viewer mode"
 msgstr "サムネイルの一覧表示を ON/OFF します"
 
-#: ../gthumb/gth-browser-actions-entries.h:231
+#: ../pix/gth-browser-actions-entries.h:231
 msgid "_Thumbnails"
 msgstr "サムネイル(_T)"
 
-#: ../gthumb/gth-browser-actions-entries.h:232
+#: ../pix/gth-browser-actions-entries.h:232
 msgid "View thumbnails"
 msgstr "サムネイルで表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:236
+#: ../pix/gth-browser-actions-entries.h:236
 msgid "_Hidden Files"
 msgstr "隠しファイル(_H)"
 
-#: ../gthumb/gth-browser-actions-entries.h:237
+#: ../pix/gth-browser-actions-entries.h:237
 msgid "Show hidden files and folders"
 msgstr "隠しファイルや隠しフォルダーを表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:242
-#: ../gthumb/gth-browser-actions-entries.h:247
+#: ../pix/gth-browser-actions-entries.h:242
+#: ../pix/gth-browser-actions-entries.h:247
 msgid "View file properties"
 msgstr "ファイルのプロパティを表示します"
 
-#: ../gthumb/gth-browser-actions-entries.h:251
+#: ../pix/gth-browser-actions-entries.h:251
 msgid "Edit"
 msgstr "編集する"
 
-#: ../gthumb/gth-browser-actions-entries.h:252
+#: ../pix/gth-browser-actions-entries.h:252
 msgid "Edit file"
 msgstr "ファイルを編集します"
 
-#: ../gthumb/gth-browser-actions-entries.h:256
+#: ../pix/gth-browser-actions-entries.h:256
 msgid "_Fit Window to Image"
 msgstr "画像に合わせる(_F)"
 
-#: ../gthumb/gth-browser-actions-entries.h:257
+#: ../pix/gth-browser-actions-entries.h:257
 msgid "Resize the window to the size of the image"
 msgstr "画像のサイズに合わせてウィンドウの大きさを変更します"
 
-#: ../gthumb/gth-browser.c:370
+#: ../pix/gth-browser.c:370
 #, c-format
 msgid "Open %s"
 msgstr "%s を開きます"
 
-#: ../gthumb/gth-browser.c:510
+#: ../pix/gth-browser.c:510
 msgid "[modified]"
 msgstr "[変更済]"
 
-#: ../gthumb/gth-browser.c:1007
+#: ../pix/gth-browser.c:1007
 #, c-format
 msgid "%d file selected (%s)"
 msgid_plural "%d files selected (%s)"
 msgstr[0] "%d個のファイルを選択しました (%s)"
 
-#: ../gthumb/gth-browser.c:1042
+#: ../pix/gth-browser.c:1042
 #, c-format
 msgid "%s of free space"
 msgstr "%sの空き"
 
-#: ../gthumb/gth-browser.c:1916 ../gthumb/gth-browser.c:1943
+#: ../pix/gth-browser.c:1916 ../pix/gth-browser.c:1943
 #, c-format
 msgid "No suitable module found for %s"
 msgstr "%s に適したモジュールではありませんでした"
 
-#: ../gthumb/gth-browser.c:2063
+#: ../pix/gth-browser.c:2063
 #, c-format
 msgid "Save changes to file '%s'?"
 msgstr "'%s' の変更点を保存しますか?"
 
-#: ../gthumb/gth-browser.c:2068
+#: ../pix/gth-browser.c:2068
 msgid "If you don't save, changes to the file will be permanently lost."
 msgstr "保存しないと、そのファイルに対する変更点は完全に失われます。"
 
-#: ../gthumb/gth-browser.c:2069
+#: ../pix/gth-browser.c:2069
 msgid "Do _Not Save"
 msgstr "保存しない(_N)"
 
-#: ../gthumb/gth-browser.c:2842 ../gthumb/gth-source-tree.c:182
+#: ../pix/gth-browser.c:2842 ../pix/gth-source-tree.c:182
 msgid "Could not change name"
 msgstr "名前を変更できませんでした"
 
-#: ../gthumb/gth-browser.c:3271 ../gthumb/gth-main-default-metadata.c:41
+#: ../pix/gth-browser.c:3271 ../pix/gth-main-default-metadata.c:41
 msgid "Modified"
 msgstr "更新日時"
 
-#: ../gthumb/gth-browser.c:3659 ../gthumb/gth-browser.c:3677
+#: ../pix/gth-browser.c:3659 ../pix/gth-browser.c:3677
 msgid "View the list of visited locations"
 msgstr "最近訪れた場所の一覧を表示します"
 
-#: ../gthumb/gth-browser.c:3695
+#: ../pix/gth-browser.c:3695
 msgid "View the list of upper locations"
 msgstr "上にある場所の一覧を表示します"
 
-#: ../gthumb/gth-browser.c:5976
+#: ../pix/gth-browser.c:5976
 #, c-format
 msgid "File type not supported"
 msgstr "サポートしていない種類のファイルです"
 
-#: ../gthumb/gth-browser.c:6019
+#: ../pix/gth-browser.c:6019
 #, c-format
 msgid "No suitable module found"
 msgstr "妥当なモジュールが見つかりませんでした"
 
-#: ../gthumb/gth-extensions.c:203
+#: ../pix/gth-extensions.c:203
 #, c-format
 msgid "Could not open the module `%s`: %s"
 msgstr "'%s' というモジュールをオープンできませんでした: %s"
 
-#: ../gthumb/gth-extensions.c:744
+#: ../pix/gth-extensions.c:744
 #, c-format
 msgid "The extension '%1$s' is required by the extension '%2$s'"
 msgstr "拡張機能の '%2$s' にはこの '%1$s' が必要です。"
 
-#: ../gthumb/gth-file-source-vfs.c:121
+#: ../pix/gth-file-source-vfs.c:121
 msgid "Home Folder"
 msgstr "ホームフォルダー"
 
-#: ../gthumb/gth-file-source-vfs.c:126
+#: ../pix/gth-file-source-vfs.c:126
 msgid "File System"
 msgstr "ファイルシステム"
 
-#: ../gthumb/gth-file-source-vfs.c:739
+#: ../pix/gth-file-source-vfs.c:739
 msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
 "ファイルをゴミ箱へ移動できませんが、代わりにそれらを完全に消去しますか?"
 
-#: ../gthumb/gth-file-source-vfs.c:750
+#: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
 msgstr "ファイルをゴミ箱へ移動できませんでした"
 
-#: ../gthumb/gth-file-source-vfs.c:797
+#: ../pix/gth-file-source-vfs.c:797
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
 msgstr "本当に \"%s\" をゴミ箱に移動しますか?"
 
-#: ../gthumb/gth-file-source-vfs.c:801
+#: ../pix/gth-file-source-vfs.c:801
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
 msgstr[0] "本当に選択した%'d個のファイルをゴミ箱へ移動しますか?"
 
-#: ../gthumb/gth-file-source-vfs.c:844
+#: ../pix/gth-file-source-vfs.c:844
 #, c-format
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
 msgstr[0] "本当に選択した%'d個のファイルを完全に消去しますか?"
 
-#: ../gthumb/gth-filterbar.c:406
+#: ../pix/gth-filterbar.c:406
 msgid "Hide the filterbar"
 msgstr "フィルターバーを隠します"
 
-#: ../gthumb/gth-filter.c:43 ../gthumb/gth-filter-editor-dialog.c:178
-#: ../gthumb/gth-test-simple.c:75
+#: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
+#: ../pix/gth-test-simple.c:75
 msgid "kB"
 msgstr "KB"
 
-#: ../gthumb/gth-filter.c:44 ../gthumb/gth-filter-editor-dialog.c:179
-#: ../gthumb/gth-test-simple.c:76
+#: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
+#: ../pix/gth-test-simple.c:76
 msgid "MB"
 msgstr "MB"
 
-#: ../gthumb/gth-filter.c:45 ../gthumb/gth-filter-editor-dialog.c:180
-#: ../gthumb/gth-test-simple.c:77
+#: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
+#: ../pix/gth-test-simple.c:77
 msgid "GB"
 msgstr "GB"
 
 #. "files" label
-#: ../gthumb/gth-filter.c:291 ../gthumb/gth-filter-editor-dialog.c:177
+#: ../pix/gth-filter.c:291 ../pix/gth-filter-editor-dialog.c:177
 msgid "files"
 msgstr "個のファイル"
 
-#: ../gthumb/gth-filter-editor-dialog.c:224
+#: ../pix/gth-filter-editor-dialog.c:224
 msgid "ascending"
 msgstr "で昇順"
 
-#: ../gthumb/gth-filter-editor-dialog.c:225
+#: ../pix/gth-filter-editor-dialog.c:225
 msgid "descending"
 msgstr "で降順"
 
-#: ../gthumb/gth-filter-editor-dialog.c:515
+#: ../pix/gth-filter-editor-dialog.c:515
 #, c-format
 msgid "No limit specified"
 msgstr "制限なし"
 
-#: ../gthumb/gth-folder-tree.c:857
+#: ../pix/gth-folder-tree.c:857
 msgid "Loading..."
 msgstr "読み込み中..."
 
-#: ../gthumb/gth-folder-tree.c:1100
+#: ../pix/gth-folder-tree.c:1100
 msgid "(Open Parent)"
 msgstr "(親フォルダーを開く)"
 
-#: ../gthumb/gth-histogram-view.c:826
+#: ../pix/gth-histogram-view.c:826
 msgid "Linear scale"
 msgstr "線形比にします"
 
-#: ../gthumb/gth-histogram-view.c:838
+#: ../pix/gth-histogram-view.c:838
 msgid "Logarithmic scale"
 msgstr "対数比にします"
 
-#: ../gthumb/gth-histogram-view.c:858
+#: ../pix/gth-histogram-view.c:858
 msgid "Channel:"
 msgstr "チャンネル:"
 
-#: ../gthumb/gth-histogram-view.c:890
+#: ../pix/gth-histogram-view.c:890
 msgid "Value"
 msgstr "明度"
 
-#: ../gthumb/gth-histogram-view.c:896
+#: ../pix/gth-histogram-view.c:896
 msgid "Red"
 msgstr "赤"
 
-#: ../gthumb/gth-histogram-view.c:902
+#: ../pix/gth-histogram-view.c:902
 msgid "Green"
 msgstr "緑"
 
-#: ../gthumb/gth-histogram-view.c:908
+#: ../pix/gth-histogram-view.c:908
 msgid "Blue"
 msgstr "青"
 
-#: ../gthumb/gth-histogram-view.c:914
+#: ../pix/gth-histogram-view.c:914
 msgid "Alpha"
 msgstr "アルファ"
 
-#: ../gthumb/gth-histogram-view.c:921
+#: ../pix/gth-histogram-view.c:921
 msgid "RGB"
 msgstr "RGB"
 
-#: ../gthumb/gth-load-file-data-task.c:108
+#: ../pix/gth-load-file-data-task.c:108
 msgid "Reading file information"
 msgstr "ファイル情報の取得中"
 
-#: ../gthumb/gth-main-default-metadata.c:32
+#: ../pix/gth-main-default-metadata.c:32
 msgid "File"
 msgstr "ファイル"
 
-#: ../gthumb/gth-main-default-metadata.c:39
+#: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
 msgstr "名前"
 
-#: ../gthumb/gth-main-default-metadata.c:40
-#: ../gthumb/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40
+#: ../pix/gth-main-default-tests.c:284
 msgid "Size"
 msgstr "サイズ"
 
-#: ../gthumb/gth-main-default-metadata.c:42
+#: ../pix/gth-main-default-metadata.c:42
 msgid "Type"
 msgstr "種類"
 
-#: ../gthumb/gth-main-default-metadata.c:44
+#: ../pix/gth-main-default-metadata.c:44
 msgid "Full Name"
 msgstr "絶対パス名"
 
-#: ../gthumb/gth-main-default-metadata.c:48
+#: ../pix/gth-main-default-metadata.c:48
 msgid "Duration"
 msgstr "再生時間"
 
-#: ../gthumb/gth-main-default-sort-types.c:131
+#: ../pix/gth-main-default-sort-types.c:131
 msgid "file name"
 msgstr "ファイル名"
 
-#: ../gthumb/gth-main-default-sort-types.c:132
+#: ../pix/gth-main-default-sort-types.c:132
 msgid "file path"
 msgstr "パス名"
 
-#: ../gthumb/gth-main-default-sort-types.c:133
+#: ../pix/gth-main-default-sort-types.c:133
 msgid "file size"
 msgstr "サイズ"
 
-#: ../gthumb/gth-main-default-sort-types.c:134
+#: ../pix/gth-main-default-sort-types.c:134
 msgid "file modified date"
 msgstr "更新日時"
 
-#: ../gthumb/gth-main-default-sort-types.c:135
+#: ../pix/gth-main-default-sort-types.c:135
 msgid "no sorting"
 msgstr "並べ替えない"
 
-#: ../gthumb/gth-main-default-sort-types.c:136
+#: ../pix/gth-main-default-sort-types.c:136
 msgid "dimensions"
 msgstr "画像の寸法"
 
-#: ../gthumb/gth-main-default-tests.c:261
+#: ../pix/gth-main-default-tests.c:261
 msgid "Media"
 msgstr "メディア"
 
-#: ../gthumb/gth-main-default-tests.c:268
+#: ../pix/gth-main-default-tests.c:268
 msgid "Text Files"
 msgstr "通常のファイル"
 
-#: ../gthumb/gth-main-default-tests.c:276
+#: ../pix/gth-main-default-tests.c:276
 msgid "Filename"
 msgstr "ファイル名"
 
-#: ../gthumb/gth-main-default-tests.c:308
+#: ../pix/gth-main-default-tests.c:308
 msgid "Title (embedded)"
 msgstr "(埋め込まれた) タイトル"
 
-#: ../gthumb/gth-main-default-tests.c:316
+#: ../pix/gth-main-default-tests.c:316
 msgid "Description (embedded)"
 msgstr "(埋め込まれた) 説明"
 
-#: ../gthumb/gth-pixbuf-list-task.c:139
+#: ../pix/gth-pixbuf-list-task.c:139
 msgid "Could not rename the file"
 msgstr "ファイル名を変更できませんでした"
 
-#: ../gthumb/gth-pixbuf-saver.c:34
+#: ../pix/gth-pixbuf-saver.c:34
 msgid "No options available for this file type"
 msgstr "この種類のファイルで利用できるオプションはありません"
 
-#: ../gthumb/gth-progress-dialog.c:144
+#: ../pix/gth-progress-dialog.c:144
 msgid "Cancel operation"
 msgstr "この操作をキャンセルします"
 
-#: ../gthumb/gth-save-file-data-task.c:102
+#: ../pix/gth-save-file-data-task.c:102
 msgid "Saving file information"
 msgstr "ファイル情報の保存中"
 
-#: ../gthumb/gth-tags-entry.c:388
+#: ../pix/gth-tags-entry.c:388
 #, c-format
 msgid "Create tag «%s»"
 msgstr "タグ «%s» の生成"
 
-#: ../gthumb/gth-tags-entry.c:735
+#: ../pix/gth-tags-entry.c:735
 msgid "Show all the tags"
 msgstr "全てのタグを表示します"
 
-#: ../gthumb/gth-tags-file.c:236
+#: ../pix/gth-tags-file.c:236
 msgid "Holidays"
 msgstr "祝日"
 
-#: ../gthumb/gth-tags-file.c:237
+#: ../pix/gth-tags-file.c:237
 msgid "Temporary"
 msgstr "作業用"
 
-#: ../gthumb/gth-tags-file.c:238
+#: ../pix/gth-tags-file.c:238
 msgid "Screenshots"
 msgstr "スクリーンショット"
 
-#: ../gthumb/gth-tags-file.c:239
+#: ../pix/gth-tags-file.c:239
 msgid "Science"
 msgstr "科学"
 
-#: ../gthumb/gth-tags-file.c:240
+#: ../pix/gth-tags-file.c:240
 msgid "Favorite"
 msgstr "お気に入り"
 
-#: ../gthumb/gth-tags-file.c:241
+#: ../pix/gth-tags-file.c:241
 msgid "Important"
 msgstr "重要"
 
-#: ../gthumb/gth-tags-file.c:242
+#: ../pix/gth-tags-file.c:242
 msgid "GNOME"
 msgstr "GNOME"
 
-#: ../gthumb/gth-tags-file.c:243
+#: ../pix/gth-tags-file.c:243
 msgid "Games"
 msgstr "ゲーム"
 
-#: ../gthumb/gth-tags-file.c:244
+#: ../pix/gth-tags-file.c:244
 msgid "Party"
 msgstr "パーティ"
 
-#: ../gthumb/gth-tags-file.c:245
+#: ../pix/gth-tags-file.c:245
 msgid "Birthday"
 msgstr "誕生日"
 
-#: ../gthumb/gth-tags-file.c:246
+#: ../pix/gth-tags-file.c:246
 msgid "Astronomy"
 msgstr "宇宙"
 
-#: ../gthumb/gth-tags-file.c:247
+#: ../pix/gth-tags-file.c:247
 msgid "Family"
 msgstr "家族"
 
-#: ../gthumb/gth-test-category.c:46 ../gthumb/gth-test-simple.c:49
-#: ../gthumb/gth-test-simple.c:64
+#: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:49
+#: ../pix/gth-test-simple.c:64
 msgid "is"
 msgstr "が次である"
 
-#: ../gthumb/gth-test-category.c:47
+#: ../pix/gth-test-category.c:47
 msgid "is only"
 msgstr "が次だけである"
 
-#: ../gthumb/gth-test-category.c:48 ../gthumb/gth-test-simple.c:50
-#: ../gthumb/gth-test-simple.c:65
+#: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:50
+#: ../pix/gth-test-simple.c:65
 msgid "is not"
 msgstr "が次ではない"
 
-#: ../gthumb/gth-test-category.c:394 ../gthumb/gth-test-simple.c:812
-#: ../gthumb/gth-test-simple.c:838 ../gthumb/gth-test-simple.c:859
-#: ../gthumb/gth-test-simple.c:885
+#: ../pix/gth-test-category.c:394 ../pix/gth-test-simple.c:812
+#: ../pix/gth-test-simple.c:838 ../pix/gth-test-simple.c:859
+#: ../pix/gth-test-simple.c:885
 #, c-format
 msgid "The test definition is incomplete"
 msgstr "テストする定義が足りません。"
 
-#: ../gthumb/gth-test-selector.c:252
+#: ../pix/gth-test-selector.c:252
 msgid "Add a new rule"
 msgstr "新しい条件を追加します"
 
-#: ../gthumb/gth-test-selector.c:263
+#: ../pix/gth-test-selector.c:263
 msgid "Remove this rule"
 msgstr "この条件を削除します"
 
-#: ../gthumb/gth-test-simple.c:46
+#: ../pix/gth-test-simple.c:46
 msgid "contains"
 msgstr "が次を含む"
 
-#: ../gthumb/gth-test-simple.c:47
+#: ../pix/gth-test-simple.c:47
 msgid "starts with"
 msgstr "が次で始まる"
 
-#: ../gthumb/gth-test-simple.c:48
+#: ../pix/gth-test-simple.c:48
 msgid "ends with"
 msgstr "が次で終わる"
 
-#: ../gthumb/gth-test-simple.c:51
+#: ../pix/gth-test-simple.c:51
 msgid "does not contain"
 msgstr "が次を含まない"
 
-#: ../gthumb/gth-test-simple.c:52
+#: ../pix/gth-test-simple.c:52
 msgid "matches"
 msgstr "が次のパターンにマッチする"
 
-#: ../gthumb/gth-test-simple.c:56
+#: ../pix/gth-test-simple.c:56
 msgid "is lower than"
 msgstr "が次より小さい"
 
-#: ../gthumb/gth-test-simple.c:57
+#: ../pix/gth-test-simple.c:57
 msgid "is greater than"
 msgstr "が次より大きい"
 
-#: ../gthumb/gth-test-simple.c:58
+#: ../pix/gth-test-simple.c:58
 msgid "is equal to"
 msgstr "が次と同じ"
 
-#: ../gthumb/gth-test-simple.c:62
+#: ../pix/gth-test-simple.c:62
 msgid "is before"
 msgstr "が次より前"
 
-#: ../gthumb/gth-test-simple.c:63
+#: ../pix/gth-test-simple.c:63
 msgid "is after"
 msgstr "が次より後"
 
-#: ../gthumb/gth-time-selector.c:477
+#: ../pix/gth-time-selector.c:477
 msgid "Today"
 msgstr "今日"
 
-#: ../gthumb/gth-time-selector.c:485
+#: ../pix/gth-time-selector.c:485
 msgid "Now"
 msgstr "現在日時"
 
-#: ../gthumb/gth-window-actions-entries.h:32
+#: ../pix/gth-window-actions-entries.h:32
 msgid "Close this window"
 msgstr "このウィンドウを閉じます"
 
-#: ../gthumb/gth-window-actions-entries.h:36
+#: ../pix/gth-window-actions-entries.h:36
 msgid "Close _All Windows"
 msgstr "全てのウィンドウを閉じる(_A)"
 
-#: ../gthumb/gtk-utils.c:551
+#: ../pix/gtk-utils.c:551
 msgid "Could not display help"
 msgstr "ヘルプを表示することができませんでした"
 
-#: ../gthumb/gtk-utils.c:868 ../gthumb/gtk-utils.c:875
+#: ../pix/gtk-utils.c:868 ../pix/gtk-utils.c:875
 msgid "Could not launch the application"
 msgstr "アプリケーションを起動できませんでした"
 
-#: ../gthumb/gtk-utils.c:978
+#: ../pix/gtk-utils.c:978
 msgid "_Copy Here"
 msgstr "ここへコピーする(_C)"
 
-#: ../gthumb/gtk-utils.c:983
+#: ../pix/gtk-utils.c:983
 msgid "_Move Here"
 msgstr "ここへ移動する(_M)"
 
-#: ../gthumb/gtk-utils.c:988
+#: ../pix/gtk-utils.c:988
 msgid "_Link Here"
 msgstr "リンクの作成(_L)"
 
-#: ../gthumb/gtk-utils.c:997
+#: ../pix/gtk-utils.c:997
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: ../gthumb/main.c:59
+#: ../pix/main.c:59
 msgid "Open a new window"
 msgstr "新しいウィンドウを開く"
 
-#: ../gthumb/main.c:63
+#: ../pix/main.c:63
 msgid "Start in fullscreen mode"
 msgstr "全画面モードで起動する"
 
-#: ../gthumb/main.c:67
+#: ../pix/main.c:67
 msgid "Automatically start a slideshow"
 msgstr "自動的にスライドショーを起動する"
 
-#: ../gthumb/main.c:71
+#: ../pix/main.c:71
 msgid "Automatically import digital camera photos"
 msgstr "自動的にデジタルカメラの写真をインポートする"
 
-#: ../gthumb/main.c:75
+#: ../pix/main.c:75
 msgid "Show version"
 msgstr "バージョンを表示する"
 
-#: ../gthumb/main.c:344
+#: ../pix/main.c:344
 msgid "- Image browser and viewer"
 msgstr "- 画像ブラウザー/画像ビューアー"
 
-#: ../gthumb/pixbuf-io.c:174
+#: ../pix/pixbuf-io.c:174
 #, c-format
 msgid "Could not find a suitable module to save the image as \"%s\""
 msgstr "画像を \"%s\" として保存するのに適したモジュールが見つかりませんでした"

@@ -56,20 +56,20 @@ else
 contact_sheet_datadir = $(pkgdatadir)
 endif
 
-libcontact_sheet_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb -DCONTACT_SHEET_DATADIR=\"$(contact_sheet_datadir)\"
+libcontact_sheet_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix -DCONTACT_SHEET_DATADIR=\"$(contact_sheet_datadir)\"
 libcontact_sheet_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libcontact_sheet_la_LIBADD = $(GTHUMB_LIBS) ../export_tools/libexport_tools.la
+libcontact_sheet_la_LIBADD = $(PIX_LIBS) ../export_tools/libexport_tools.la
 if ENABLE_JPEG_TOOLS
 libcontact_sheet_la_LIBADD += ../image_rotation/libimage_rotation.la
 endif
-libcontact_sheet_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libcontact_sheet_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 extensionini_in_files = contact_sheet.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 DISTCLEANFILES = $(extensionini_DATA)

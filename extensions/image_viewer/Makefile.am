@@ -14,20 +14,20 @@ libimage_viewer_la_SOURCES = 		\
 	preferences.c			\
 	preferences.h
 
-libimage_viewer_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libimage_viewer_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libimage_viewer_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libimage_viewer_la_LIBADD = $(GTHUMB_LIBS)
+libimage_viewer_la_LIBADD = $(PIX_LIBS)
 if ENABLE_JPEG_TOOLS
 libimage_viewer_la_LIBADD += ../jpeg_utils/libjpeg_utils.la
 endif
-libimage_viewer_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libimage_viewer_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = image_viewer.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

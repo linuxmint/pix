@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-rename-series.h"
 #include "gth-template-editor-dialog.h"
 #include "gth-template-selector.h"
@@ -648,7 +648,7 @@ dialog_response_cb (GtkDialog *dialog,
 		break;
 
 	case GTK_RESPONSE_HELP:
-		show_help_dialog (GTK_WINDOW (dialog), "gthumb-rename-series");
+		show_help_dialog (GTK_WINDOW (dialog), "pix-rename-series");
 		break;
 
 	case GTK_RESPONSE_OK:
@@ -836,7 +836,7 @@ dlg_rename_series (GthBrowser *browser,
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("rename-series.ui", "rename_series");
-	data->settings = g_settings_new (GTHUMB_RENAME_SERIES_SCHEMA);
+	data->settings = g_settings_new (PIX_RENAME_SERIES_SCHEMA);
 	data->file_list = _g_file_list_dup (file_list);
 	data->first_update = TRUE;
 	data->template_changed = TRUE;

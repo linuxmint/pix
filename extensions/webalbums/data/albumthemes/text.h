@@ -1,7 +1,7 @@
 /* DO NOT EDIT.  This file is generated automatically. */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *

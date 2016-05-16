@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -312,7 +312,7 @@ gth_import_preferences_dialog_init (GthImportPreferencesDialog *self)
 
 	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMPORT_PREFERENCES_DIALOG, GthImportPreferencesDialogPrivate);
 	self->priv->builder = _gtk_builder_new_from_file ("import-preferences.ui", "importer");
-	self->priv->settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_IMPORTER_SCHEMA);
 	self->priv->help_visible = FALSE;
 
 	gtk_window_set_title (GTK_WINDOW (self), _("Preferences"));

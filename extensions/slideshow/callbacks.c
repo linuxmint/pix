@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009-2010 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "callbacks.h"
 #include "gth-slideshow-preferences.h"
@@ -371,7 +371,7 @@ ss__dlg_catalog_properties (GtkBuilder  *builder,
 		GSettings *settings;
 		char      *current_transition;
 
-		settings = g_settings_new (GTHUMB_SLIDESHOW_SCHEMA);
+		settings = g_settings_new (PIX_SLIDESHOW_SCHEMA);
 		current_transition = g_settings_get_string (settings, PREF_SLIDESHOW_TRANSITION);
 		slideshow_preferences = gth_slideshow_preferences_new (current_transition,
 								       g_settings_get_boolean (settings, PREF_SLIDESHOW_AUTOMATIC),

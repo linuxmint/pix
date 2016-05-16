@@ -26,10 +26,10 @@ libjpeg_utils_la_SOURCES +=		\
 	transupp-62.h
 endif
 
-libjpeg_utils_la_CFLAGS = $(GTHUMB_CFLAGS) $(JPEG_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libjpeg_utils_la_CFLAGS = $(PIX_CFLAGS) $(JPEG_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libjpeg_utils_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libjpeg_utils_la_LIBADD = $(GTHUMB_LIBS) $(JPEG_LIBS)
-libjpeg_utils_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libjpeg_utils_la_LIBADD = $(PIX_LIBS) $(JPEG_LIBS)
+libjpeg_utils_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -39,8 +39,8 @@ endif
 
 extensionini_in_files = jpeg_utils.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) README.6b README.8a
 

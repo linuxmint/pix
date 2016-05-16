@@ -27,7 +27,7 @@ chmod a+x autogen.sh
 if [ -e configure.ac.example ]; then
   mv configure.ac.example configure.ac
 fi
-sed -e "s|gthumb-$originalname|gthumb-$extensionname|" < configure.ac > configure.ac.tmp
+sed -e "s|pix-$originalname|pix-$extensionname|" < configure.ac > configure.ac.tmp
 mv configure.ac.tmp configure.ac
 
 if [ -e src/$original_name.extension.in.in ]; then

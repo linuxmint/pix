@@ -18,17 +18,17 @@ libimage_print_la_SOURCES = 		\
 	preferences.h			\
 	main.c
 
-libimage_print_la_CPPFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libimage_print_la_CPPFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libimage_print_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libimage_print_la_LIBADD = $(GTHUMB_LIBS) 
-libimage_print_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libimage_print_la_LIBADD = $(PIX_LIBS) 
+libimage_print_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = image_print.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 

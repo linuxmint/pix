@@ -81,17 +81,17 @@ libfile_tools_la_SOURCES = 		\
 	gth-preview-tool.c		\
 	main.c
 
-libfile_tools_la_CFLAGS = $(GTHUMB_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libfile_tools_la_CFLAGS = $(PIX_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libfile_tools_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libfile_tools_la_LIBADD = $(GTHUMB_LIBS) ../image_viewer/libimage_viewer.la
-libfile_tools_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libfile_tools_la_LIBADD = $(PIX_LIBS) ../image_viewer/libimage_viewer.la
+libfile_tools_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = file_tools.extension.in.in
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files) 
 DISTCLEANFILES = $(extensionini_DATA)

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <gdk/gdkx.h>
 #include <gst/gst.h>
 #include <gst/video/videooverlay.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/gstreamer_utils/gstreamer-utils.h>
 #include "actions.h"
 #include "gth-media-viewer-page.h"
@@ -464,7 +464,7 @@ update_playback_info (GthMediaViewerPage *self)
 	char *playback_info;
 
 	playback_info = g_strdup_printf ("@%2.2f", self->priv->rate);
-	g_file_info_set_attribute_string (gth_browser_get_current_file (self->priv->browser)->info, "gthumb::statusbar-extra-info", playback_info);
+	g_file_info_set_attribute_string (gth_browser_get_current_file (self->priv->browser)->info, "pix::statusbar-extra-info", playback_info);
 	gth_browser_update_statusbar_file_info (self->priv->browser);
 
 	g_free (playback_info);
@@ -864,7 +864,7 @@ save_volume (GthMediaViewerPage *self)
 	GSettings *settings;
 	double     volume;
 
-	settings = g_settings_new (GTHUMB_GSTREAMER_TOOLS_SCHEMA);
+	settings = g_settings_new (PIX_GSTREAMER_TOOLS_SCHEMA);
 	g_object_get (self->priv->playbin, "volume", &volume, NULL);
 	g_settings_set_int (settings, PREF_GSTREAMER_TOOLS_VOLUME, (int) (volume * 100.0));
 
@@ -1086,7 +1086,7 @@ create_playbin (GthMediaViewerPage *self)
 
 	self->priv->playbin = gst_element_factory_make ("playbin", "playbin");
 
-	settings = g_settings_new (GTHUMB_GSTREAMER_TOOLS_SCHEMA);
+	settings = g_settings_new (PIX_GSTREAMER_TOOLS_SCHEMA);
 	g_object_set (self->priv->playbin,
 		      "volume", (double) g_settings_get_int (settings, PREF_GSTREAMER_TOOLS_VOLUME) / 100.0,
 		      "force-aspect-ratio", TRUE,

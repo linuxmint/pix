@@ -1,7 +1,7 @@
-Source: gthumb
+Source: pix
 Section: gnome
 Priority: optional
-Maintainer: Jackson Doak <noskcaj@ubuntu.com>
+Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
  debhelper (>= 9)
  , dh-autoreconf
@@ -40,84 +40,73 @@ Build-Depends:
  , libwebp-dev
  , libwebkit2gtk-3.0-dev
 Standards-Version: 3.9.5
-Homepage: https://wiki.gnome.org/Apps/gthumb
-Vcs-Git: git://anonscm.debian.org/collab-maint/gthumb.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/gthumb.git
+Homepage: https://github.com/linuxmint/pix
 
-Package: gthumb
+Package: pix
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
- , gthumb-data (= ${source:Version})
+ , pix-data (= ${source:Version})
  , gsettings-desktop-schemas
 Recommends: gvfs-bin
  , gstreamer0.10-gnomevfs
  , bison
  , flex
-Conflicts: gthumb2
-Provides: gthumb2
-Replaces: gthumb2
 Description: image viewer and browser
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
 
-Package: gthumb-dbg
+Package: pix-dbg
 Architecture: any
 Section: debug
 Priority: extra
 Depends:
  ${misc:Depends}
- , gthumb (= ${binary:Version})
+ , pix (= ${binary:Version})
 Description: image viewer and browser - debugging symbols
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
  .
- This package contains the debugging symbols for gThumb.
+ This package contains the debugging symbols for Pix.
 
-Package: gthumb-data
+Package: pix-data
 Architecture: all
-Breaks: gthumb (<< 3:2.10.8-1)
-Replaces: gthumb (<< 3:2.10.8-1)
 Recommends: yelp
 Depends:
  ${misc:Depends}
  , scrollkeeper
 Description: image viewer and browser - arch-independent files
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
  .
- This package contains the architecture-independent files needed by gthumb.
+ This package contains the architecture-independent files needed by pix.
 
-Package: gthumb-dev
+Package: pix-dev
 Architecture: any
 Section: devel
 Depends:
  ${misc:Depends}
- , gthumb (= ${binary:Version})
+ , pix (= ${binary:Version})
 Description: image viewer and browser - development files
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
  .
  This package contains the files needed to develop third-party extensions.

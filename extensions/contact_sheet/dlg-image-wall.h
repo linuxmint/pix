@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_IMAGE_WALL_H
 #define DLG_IMAGE_WALL_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 void  dlg_image_wall (GthBrowser *browser,
 		      GList      *file_list); /* GFile list */

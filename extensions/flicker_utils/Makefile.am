@@ -24,10 +24,10 @@ libflicker_utils_la_SOURCES = 			\
 	main.c					\
 	preferences.h
 
-libflicker_utils_la_CFLAGS = $(GTHUMB_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libflicker_utils_la_CFLAGS = $(PIX_CFLAGS) $(LIBSOUP_CFLAGS) $(LIBSECRET_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libflicker_utils_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libflicker_utils_la_LIBADD = $(GTHUMB_LIBS) $(LIBSOUP_LIBS) $(LIBSECRET_LIBS) ../importer/libimporter.la ../export_tools/libexport_tools.la ../oauth/liboauth.la
-libflicker_utils_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libflicker_utils_la_LIBADD = $(PIX_LIBS) $(LIBSOUP_LIBS) $(LIBSECRET_LIBS) ../importer/libimporter.la ../export_tools/libexport_tools.la ../oauth/liboauth.la
+libflicker_utils_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -37,8 +37,8 @@ endif
 
 extensionini_in_files = flicker_utils.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

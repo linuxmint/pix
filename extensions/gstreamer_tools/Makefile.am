@@ -15,10 +15,10 @@ libgstreamer_tools_la_SOURCES = 		\
 	main.c					\
 	preferences.h
 
-libgstreamer_tools_la_CPPFLAGS = $(GTHUMB_CFLAGS) $(GSTREAMER_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/gthumb 
+libgstreamer_tools_la_CPPFLAGS = $(PIX_CFLAGS) $(GSTREAMER_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/pix 
 libgstreamer_tools_la_LDFLAGS = $(EXTENSION_LIBTOOL_FLAGS)
-libgstreamer_tools_la_LIBADD = $(GTHUMB_LIBS) $(GSTREAMER_LIBS) ../gstreamer_utils/libgstreamer_utils.la
-libgstreamer_tools_la_DEPENDENCIES = $(top_builddir)/gthumb/gthumb$(EXEEXT)
+libgstreamer_tools_la_LIBADD = $(PIX_LIBS) $(GSTREAMER_LIBS) ../gstreamer_utils/libgstreamer_utils.la
+libgstreamer_tools_la_DEPENDENCIES = $(top_builddir)/pix/pix$(EXEEXT)
 
 extensioninidir = $(extensiondir)
 extensionini_DATA = $(extensionini_in_files:.extension.in.in=.extension)
@@ -28,8 +28,8 @@ endif
 
 extensionini_in_files = gstreamer_tools.extension.in.in
 
-@GTHUMB_EXTENSION_IN_RULE@
-@GTHUMB_EXTENSION_RULE@
+@PIX_EXTENSION_IN_RULE@
+@PIX_EXTENSION_RULE@
 
 EXTRA_DIST = $(extensionini_in_files)
 

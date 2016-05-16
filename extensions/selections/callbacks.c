@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "gth-file-source-selections.h"
 #include "gth-selections-manager.h"
@@ -274,10 +274,10 @@ selections__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 	char        *msg;
 
 	location_data = gth_browser_get_location_data (browser);
-	if (! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "gthumb/selection"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "pix/selection"))
 		return;
 
-	n_selection = g_file_info_get_attribute_int32 (location_data->info, "gthumb::n-selection");
+	n_selection = g_file_info_get_attribute_int32 (location_data->info, "pix::n-selection");
 	extra_widget = gth_browser_get_list_extra_widget (browser);
 	gth_embedded_dialog_set_gicon (GTH_EMBEDDED_DIALOG (extra_widget), g_file_info_get_icon (location_data->info), GTK_ICON_SIZE_DIALOG);
 	gth_embedded_dialog_set_primary_text (GTH_EMBEDDED_DIALOG (extra_widget), g_file_info_get_display_name (location_data->info));

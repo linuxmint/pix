@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <glib.h>
 #include <glib-object.h>
 #include <gio/gio.h>
-#include <gthumb.h>
+#include <pix.h>
 
 typedef enum {
 	GTH_CATALOG_TYPE_INVALID,

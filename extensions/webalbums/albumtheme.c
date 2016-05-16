@@ -73,7 +73,7 @@
 #line 1 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:339  */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2003, 2010 Free Software Foundation, Inc.
  *

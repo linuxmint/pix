@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -179,7 +179,7 @@ _webkit_web_view_new (OAuthAskAuthorizationDialog *self)
 	webkit_settings_set_javascript_can_open_windows_automatically (settings, TRUE);
 	webkit_web_view_set_settings (WEBKIT_WEB_VIEW (view), settings);
 
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CACHE, GTHUMB_DIR, "cookies", NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CACHE, PIX_DIR, "cookies", NULL);
 	cookie_filename = g_file_get_path (file);
 
 	cookie_manager = webkit_web_context_get_cookie_manager (context);

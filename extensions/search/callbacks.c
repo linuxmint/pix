@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/catalogs/gth-catalog.h>
 #include "actions.h"
 #include "callbacks.h"
@@ -119,7 +119,7 @@ search__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 	BrowserData *data;
 
 	location_data = gth_browser_get_location_data (browser);
-	if (! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "gthumb/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "pix/search"))
 		return;
 
 	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
@@ -163,7 +163,7 @@ search__dlg_catalog_properties (GtkBuilder  *builder,
 	GtkWidget     *alignment;
 	GtkWidget     *search_editor;
 
-	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "gthumb/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "pix/search"))
 		return;
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
@@ -199,14 +199,14 @@ search__dlg_catalog_properties_save (GtkBuilder  *builder,
 {
 	GthSearch *search;
 
-	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "gthumb/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "pix/search"))
 		return;
 
 	g_return_if_fail (GTH_IS_SEARCH (catalog));
 
 	search = gth_search_editor_get_search (GTH_SEARCH_EDITOR (g_object_get_data (G_OBJECT(builder), "search_editor")), NULL);
 	if (search != NULL) {
-		g_file_info_set_attribute_boolean (file_data->info, "gthumb::search-modified", ! gth_search_equal (GTH_SEARCH (catalog), search));
+		g_file_info_set_attribute_boolean (file_data->info, "pix::search-modified", ! gth_search_equal (GTH_SEARCH (catalog), search));
 		gth_search_set_folder (GTH_SEARCH (catalog), gth_search_get_folder (search));
 		gth_search_set_recursive (GTH_SEARCH (catalog), gth_search_is_recursive (search));
 		gth_search_set_test (GTH_SEARCH (catalog), gth_search_get_test (search));
@@ -221,11 +221,11 @@ search__dlg_catalog_properties_saved (GthBrowser  *browser,
 {
 	GthTask *task;
 
-	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "gthumb/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "pix/search"))
 		return;
 
 	/* Search only if the search parameters changed */
-	if (! g_file_info_get_attribute_boolean (file_data->info, "gthumb::search-modified"))
+	if (! g_file_info_get_attribute_boolean (file_data->info, "pix::search-modified"))
 		return;
 
 	task = gth_search_task_new (browser, GTH_SEARCH (catalog), file_data->file);

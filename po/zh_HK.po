@@ -1,4 +1,4 @@
-# Chinese (Hong Kong) translation of gthumb.
+# Chinese (Hong Kong) translation of pix.
 # Copyright (C) 2002, 03, 04, 05 Free Software Foundation, Inc.
 # Abel Cheung <abel@oaka.org>, 2002-2005.
 # Woodman Tuen <woodman@culturecom.com>, 2004.
@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gthumb 2.12.0\n"
+"Project-Id-Version: pix 2.12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-16 18:12+0800\n"
 "PO-Revision-Date: 2012-10-16 18:13+0800\n"
@@ -88,74 +88,74 @@ msgid "Show session management options"
 msgstr "顯示作業階段管理選項"
 
 #. manually set name and icon
-#: ../data/gthumb.desktop.in.in.h:1 ../gthumb/gth-browser.c:534
-#: ../gthumb/gth-progress-dialog.c:388 ../gthumb/main.c:315
-msgid "gThumb"
-msgstr "gThumb"
+#: ../data/pix.desktop.in.in.h:1 ../pix/gth-browser.c:534
+#: ../pix/gth-progress-dialog.c:388 ../pix/main.c:315
+msgid "Pix"
+msgstr "Pix"
 
-#: ../data/gthumb.desktop.in.in.h:2
+#: ../data/pix.desktop.in.in.h:2
 msgid "Image Viewer"
 msgstr "圖片檢視工具"
 
-#: ../data/gthumb.desktop.in.in.h:3
-msgid "gThumb Image Viewer"
-msgstr "gThumb 圖片管理工具"
+#: ../data/pix.desktop.in.in.h:3
+msgid "Pix Image Viewer"
+msgstr "Pix 圖片管理工具"
 
-#: ../data/gthumb.desktop.in.in.h:4
+#: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
 msgstr "檢視和組織你的圖片"
 
-#: ../data/gthumb-import.desktop.in.in.h:1
-msgid "Import with gThumb"
+#: ../data/pix-import.desktop.in.in.h:1
+msgid "Import with Pix"
 msgstr ""
 
-#: ../data/gthumb-import.desktop.in.in.h:2
+#: ../data/pix-import.desktop.in.in.h:2
 msgid "Photo Import Tool"
 msgstr "照片匯入工具"
 
-#: ../data/gthumb-import.desktop.in.in.h:3
-msgid "gThumb Photo Import Tool"
-msgstr "gThumb 照片匯入工具"
+#: ../data/pix-import.desktop.in.in.h:3
+msgid "Pix Photo Import Tool"
+msgstr "Pix 照片匯入工具"
 
-#: ../data/gthumb-import.desktop.in.in.h:4
+#: ../data/pix-import.desktop.in.in.h:4
 msgid "Import the photos on your camera card"
 msgstr "從你的數碼相機記憶卡匯入照片"
 
-#: ../data/org.gnome.gthumb.gschema.xml.in.h:1
+#: ../data/org.x.pix.gschema.xml.in.h:1
 msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr "超過這個大小的圖片（以位元組計算）不會産生縮圖。如果你要所有的圖片都建立縮圖則使用 0。"
 
-#: ../data/org.gnome.gthumb.gschema.xml.in.h:2
+#: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
 msgstr "是否調整視窗大小以符合圖片尺寸"
 
-#: ../data/org.gnome.gthumb.gschema.xml.in.h:3
+#: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
 msgstr "在作用中的視窗開啟檔案"
 
-#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:1
+#: ../data/org.x.pix.image-viewer.gschema.xml.in.h:1
 msgid "Possible values are: white, black, checked, none."
 msgstr "適用的數值有:white, black, checked, none."
 
-#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:2
+#: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
 msgstr "在改變圖片後是否重設捲動軸位置"
 
-#: ../data/org.gnome.gthumb.image-viewer.gschema.xml.in.h:3
+#: ../data/org.x.pix.image-viewer.gschema.xml.in.h:3
 msgid "Whether to always use a black background."
 msgstr "是否永遠使用黑色背景。"
 
-#: ../data/org.gnome.gthumb.pixbuf-savers.gschema.xml.in.h:1
+#: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
 msgstr "可能的值有：jpeg， jpg。"
 
-#: ../data/org.gnome.gthumb.pixbuf-savers.gschema.xml.in.h:2
+#: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:2
 msgid "Possible values are: tiff, tif."
 msgstr "可能的值有： tiff，tif。"
 
-#: ../data/org.gnome.gthumb.rename-series.gschema.xml.in.h:1
+#: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
 "Possible values include: general::unsorted, file::name, file::size, file::"
 "mtime, exif::photo::datetimeoriginal"
@@ -183,8 +183,8 @@ msgid "_Match"
 msgstr "符合(_M)"
 
 #. limit label
-#: ../data/ui/filter-editor.ui.h:3 ../gthumb/gth-filter.c:269
-#: ../gthumb/gth-filter.c:337
+#: ../data/ui/filter-editor.ui.h:3 ../pix/gth-filter.c:269
+#: ../pix/gth-filter.c:337
 msgid "_Limit to"
 msgstr "限制於(_L)"
 
@@ -295,8 +295,8 @@ msgid "on the right"
 msgstr "在右邊"
 
 #: ../data/ui/preferences.ui.h:3
-msgid "gThumb Preferences"
-msgstr "gthumb 偏好設定"
+msgid "Pix Preferences"
+msgstr "pix 偏好設定"
 
 #: ../data/ui/preferences.ui.h:4
 msgid "_Toolbar style:"
@@ -390,7 +390,7 @@ msgstr "其他"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
 #: ../extensions/edit_metadata/gth-edit-general-page.c:481
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
-#: ../gthumb/gth-main-default-metadata.c:33
+#: ../pix/gth-main-default-metadata.c:33
 msgid "General"
 msgstr "一般"
 
@@ -448,8 +448,8 @@ msgstr "256"
 msgid "D_etermine image type from content (slower)"
 msgstr "從圖片檔內容決定格式，會較慢(_E)"
 
-#: ../data/ui/preferences.ui.h:38 ../gthumb/dlg-preferences-extensions.c:71
-#: ../gthumb/gth-browser-actions-entries.h:179
+#: ../data/ui/preferences.ui.h:38 ../pix/dlg-preferences-extensions.c:71
+#: ../pix/gth-browser-actions-entries.h:179
 msgid "Browser"
 msgstr "圖片清單"
 
@@ -518,8 +518,8 @@ msgstr "加入書籤支援。"
 #: ../extensions/selections/selections.extension.in.in.h:3
 #: ../extensions/slideshow/slideshow.extension.in.in.h:3
 #: ../extensions/webalbums/webalbums.extension.in.in.h:3
-msgid "gthumb development team"
-msgstr "gThumb 的開發隊伍"
+msgid "pix development team"
+msgstr "Pix 的開發隊伍"
 
 #: ../extensions/bookmarks/callbacks.c:54
 msgid "_Bookmarks"
@@ -701,7 +701,7 @@ msgstr "PNG"
 
 #: ../extensions/cairo_io/gth-image-saver-tga.c:257
 #: ../extensions/cairo_io/gth-image-saver-tiff.c:435
-#: ../gthumb/gth-buffer-data.c:84
+#: ../pix/gth-buffer-data.c:84
 msgid "Insufficient memory"
 msgstr "記憶體不足"
 
@@ -730,7 +730,7 @@ msgstr "儲存"
 #: ../extensions/catalogs/dlg-add-to-catalog.c:394
 #: ../extensions/file_manager/actions.c:68
 #: ../extensions/list_tools/gth-script-editor-dialog.c:290
-#: ../gthumb/gth-filter-editor-dialog.c:461
+#: ../pix/gth-filter-editor-dialog.c:461
 #, c-format
 msgid "No name specified"
 msgstr "沒有指定名稱"
@@ -848,7 +848,7 @@ msgstr "指令列"
 #: ../extensions/catalogs/callbacks.c:501
 #: ../extensions/photo_importer/dlg-photo-importer.c:364
 #: ../extensions/photo_importer/dlg-photo-importer.c:404
-#: ../gthumb/gth-file-list.c:43 ../gthumb/gth-folder-tree.c:883
+#: ../pix/gth-file-list.c:43 ../pix/gth-folder-tree.c:883
 msgid "(Empty)"
 msgstr "（空的）"
 
@@ -899,7 +899,7 @@ msgid "_View the destination"
 msgstr "檢視目的端(_V)"
 
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
-#: ../gthumb/gth-file-properties.c:209
+#: ../pix/gth-file-properties.c:209
 msgid "Properties"
 msgstr "屬性"
 
@@ -951,12 +951,12 @@ msgstr "遊戲預覽"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:1
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
-#: ../gthumb/gth-main-default-tests.c:300
+#: ../pix/gth-main-default-tests.c:300
 msgid "Date photo was taken"
 msgstr "照片的拍攝日期"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:2
-#: ../gthumb/gth-main-default-tests.c:292
+#: ../pix/gth-main-default-tests.c:292
 msgid "File modified date"
 msgstr "檔案修改日期"
 
@@ -970,7 +970,7 @@ msgid "tag"
 msgstr "標籤"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
-#: ../gthumb/gth-main-default-tests.c:324
+#: ../pix/gth-main-default-tests.c:324
 msgid "Tag (embedded)"
 msgstr "標籤(嵌入式)"
 
@@ -1025,7 +1025,7 @@ msgstr "檔案將被組織在目錄中。沒有檔案會被移動到磁碟上。
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:44
 #: ../extensions/edit_metadata/callbacks.c:106
-#: ../gthumb/gth-main-default-metadata.c:53
+#: ../pix/gth-main-default-metadata.c:53
 msgid "Tags"
 msgstr "標籤"
 
@@ -1167,8 +1167,8 @@ msgid "Import Embedded Metadata"
 msgstr "匯入嵌入式詮釋資料"
 
 #: ../extensions/comments/callbacks.c:47
-msgid "Import the metadata stored inside files into the gThumb comment system"
-msgstr "匯入儲存在檔案中的詮釋資料到 gThumb 註解系統"
+msgid "Import the metadata stored inside files into the Pix comment system"
+msgstr "匯入儲存在檔案中的詮釋資料到 Pix 註解系統"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1192,7 +1192,7 @@ msgstr "與嵌入式詮釋資料同步(_S)"
 msgid "Comment"
 msgstr "註解"
 
-#: ../extensions/comments/main.c:40 ../gthumb/gth-main-default-metadata.c:46
+#: ../extensions/comments/main.c:40 ../pix/gth-main-default-metadata.c:46
 msgid "Title"
 msgstr "標題"
 
@@ -1204,20 +1204,20 @@ msgstr "標題"
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:11
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:12
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
-#: ../gthumb/gth-main-default-metadata.c:52
+#: ../pix/gth-main-default-metadata.c:52
 msgid "Description"
 msgstr "描述"
 
 #: ../extensions/comments/main.c:42 ../extensions/comments/main.c:151
-#: ../gthumb/gth-main-default-metadata.c:50
+#: ../pix/gth-main-default-metadata.c:50
 msgid "Place"
 msgstr "位置"
 
-#: ../extensions/comments/main.c:43 ../gthumb/gth-main-default-metadata.c:51
+#: ../extensions/comments/main.c:43 ../pix/gth-main-default-metadata.c:51
 msgid "Date"
 msgstr "日期"
 
-#: ../extensions/comments/main.c:45 ../gthumb/gth-main-default-metadata.c:54
+#: ../extensions/comments/main.c:45 ../pix/gth-main-default-metadata.c:54
 msgid "Rating"
 msgstr "評分"
 
@@ -1663,7 +1663,7 @@ msgid "Could not save the file metadata"
 msgstr "無法儲存檔案的註解資料"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:234
-#: ../gthumb/gth-overwrite-dialog.c:136
+#: ../pix/gth-overwrite-dialog.c:136
 msgid "Cannot read file information"
 msgstr "不能讀取檔案資訊"
 
@@ -2082,7 +2082,7 @@ msgstr "無法匯出檔案"
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:624
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:1044
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:803
-#: ../gthumb/gth-browser.c:1072
+#: ../pix/gth-browser.c:1072
 #, c-format
 msgid "%d file (%s)"
 msgid_plural "%d files (%s)"
@@ -2120,18 +2120,18 @@ msgstr "當你已完成在  %s  的授權過程，請返回此視窗"
 #: ../extensions/flicker_utils/flickr-authentication.c:487
 #: ../extensions/oauth/oauth-authentication.c:502
 #, c-format
-msgid "gthumb requires your authorization to upload the photos to %s"
-msgstr "gthumb 需要你的授權才能上傳照片至 %s"
+msgid "pix requires your authorization to upload the photos to %s"
+msgstr "pix 需要你的授權才能上傳照片至 %s"
 
 #: ../extensions/facebook/facebook-authentication.c:557
 #: ../extensions/flicker_utils/flickr-authentication.c:488
 #: ../extensions/oauth/oauth-authentication.c:503
 #, c-format
 msgid ""
-"Click 'Authorize' to open your web browser and authorize gthumb to upload "
+"Click 'Authorize' to open your web browser and authorize pix to upload "
 "photos to %s. When you're finished, return to this window to complete the "
 "authorization."
-msgstr "點擊'授權'來打開你的 Web 瀏覽器，並授權 gThumb 將照片上傳到 %s 。當你完成後，返回到這個視窗來完成授權。"
+msgstr "點擊'授權'來打開你的 Web 瀏覽器，並授權 Pix 將照片上傳到 %s 。當你完成後，返回到這個視窗來完成授權。"
 
 #: ../extensions/facebook/facebook-authentication.c:652
 #: ../extensions/flicker_utils/flickr-authentication.c:588
@@ -2291,13 +2291,13 @@ msgid "Could not move the folder to the Trash"
 msgstr "無法將資料夾丟至回收筒"
 
 #: ../extensions/file_manager/actions.c:816
-#: ../gthumb/gth-file-source-vfs.c:841
+#: ../pix/gth-file-source-vfs.c:841
 #, fuzzy, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "確定要永遠刪除“%s”嗎？"
 
 #: ../extensions/file_manager/actions.c:826
-#: ../gthumb/gth-file-source-vfs.c:854
+#: ../pix/gth-file-source-vfs.c:854
 msgid "If you delete a file, it will be permanently lost."
 msgstr "如果你刪除某個檔案，它將會永久丟失。"
 
@@ -2337,7 +2337,7 @@ msgstr "重製選取的檔案"
 
 #: ../extensions/file_manager/callbacks.c:183
 #: ../extensions/file_manager/callbacks.c:219
-#: ../gthumb/gth-file-source-vfs.c:813
+#: ../pix/gth-file-source-vfs.c:813
 msgid "Mo_ve to Trash"
 msgstr "丟進回收筒(_V)"
 
@@ -2401,7 +2401,7 @@ msgstr "選取的檔案移動到另一個資料夾"
 
 #: ../extensions/file_manager/callbacks.c:1003
 #: ../extensions/find_duplicates/gth-find-duplicates.c:766
-#: ../gthumb/gth-browser.c:5120 ../gthumb/gth-browser.c:5154
+#: ../pix/gth-browser.c:5120 ../pix/gth-browser.c:5154
 #, fuzzy
 msgid "Could not perform the operation"
 msgstr "操作無法進行"
@@ -2511,7 +2511,7 @@ msgstr "像素"
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:13
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:7
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
-#: ../gthumb/gth-file-chooser-dialog.c:252
+#: ../pix/gth-file-chooser-dialog.c:252
 msgid "Options"
 msgstr "選項"
 
@@ -2540,7 +2540,7 @@ msgid "_Average"
 msgstr "平均(_A)"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
-#: ../gthumb/gth-main-default-metadata.c:47
+#: ../pix/gth-main-default-metadata.c:47
 msgid "Dimensions"
 msgstr "尺寸"
 
@@ -2941,7 +2941,7 @@ msgid "Files:"
 msgstr "檔案："
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
-#: ../gthumb/gth-browser-actions-entries.h:33
+#: ../pix/gth-browser-actions-entries.h:33
 msgid "_View"
 msgstr "檢視(_V)"
 
@@ -3008,8 +3008,8 @@ msgid "Searching for duplicates"
 msgstr "正在搜尋重複的"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:728
-#: ../gthumb/gth-load-file-data-task.c:106
-#: ../gthumb/gth-save-file-data-task.c:100
+#: ../pix/gth-load-file-data-task.c:106
+#: ../pix/gth-save-file-data-task.c:100
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
@@ -3126,7 +3126,7 @@ msgstr "由 %s 匯入"
 
 #: ../extensions/gstreamer_tools/actions.c:66
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1072
-#: ../gthumb/gth-browser.c:2100
+#: ../pix/gth-browser.c:2100
 msgid "Could not save the file"
 msgstr "無法儲存檔案"
 
@@ -3204,12 +3204,12 @@ msgid "Pause"
 msgstr "暫停"
 
 #: ../extensions/gstreamer_tools/main.c:31
-#: ../gthumb/gth-main-default-tests.c:247
+#: ../pix/gth-main-default-tests.c:247
 msgid "Video"
 msgstr "影片"
 
 #: ../extensions/gstreamer_tools/main.c:32
-#: ../gthumb/gth-main-default-tests.c:254
+#: ../pix/gth-main-default-tests.c:254
 msgid "Audio"
 msgstr "聲音"
 
@@ -3270,7 +3270,7 @@ msgstr "單聲道"
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:396
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1298
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:209
-#: ../extensions/webalbums/gth-web-exporter.c:2444 ../gthumb/gtk-utils.c:1055
+#: ../extensions/webalbums/gth-web-exporter.c:2444 ../pix/gtk-utils.c:1055
 #, fuzzy, c-format
 msgid "%d × %d"
 msgstr "%d × %d"
@@ -3367,13 +3367,13 @@ msgid "Could not print"
 msgstr "無法列印"
 
 #: ../extensions/image_print/gth-image-print-job.c:1746
-#: ../gthumb/gth-main-default-tests.c:240
+#: ../pix/gth-main-default-tests.c:240
 msgid "Images"
 msgstr "圖片"
 
 #: ../extensions/image_print/gth-image-print-job.c:1847
-#: ../gthumb/gth-image-loader.c:197 ../gthumb/gth-image-loader.c:304
-#: ../gthumb/gth-image-utils.c:131 ../gthumb/gth-image-utils.c:137
+#: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
+#: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
 msgstr ""
 
@@ -3686,7 +3686,7 @@ msgid "The selected files are already present in the destination."
 msgstr "選取的檔案已存在於目的地。"
 
 #: ../extensions/importer/gth-import-task.c:625
-#: ../gthumb/gth-file-source-vfs.c:694
+#: ../pix/gth-file-source-vfs.c:694
 msgid "Could not delete the files"
 msgstr "無法刪除檔案"
 
@@ -3711,7 +3711,7 @@ msgid ""
 "%s of space is required but only %s is available."
 msgstr ""
 
-#: ../extensions/list_tools/callbacks.c:76 ../gthumb/gth-filterbar.c:311
+#: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
 msgid "Personalize..."
 msgstr "個性化..."
 
@@ -3837,7 +3837,7 @@ msgid "Shortcut"
 msgstr "快捷鍵"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:285
-#: ../gthumb/dlg-personalize-filters.c:252
+#: ../pix/dlg-personalize-filters.c:252
 msgid "Show"
 msgstr "顯示"
 
@@ -4049,7 +4049,7 @@ msgstr "從裝置匯入後："
 
 #. view label
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
-#: ../gthumb/gth-filterbar.c:421
+#: ../pix/gth-filterbar.c:421
 msgid "S_how:"
 msgstr "顯示(_H)："
 
@@ -4081,7 +4081,7 @@ msgid "Could not load the folder"
 msgstr "無法載入資料夾"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:369
-#: ../gthumb/gth-browser.c:2014
+#: ../pix/gth-browser.c:2014
 msgid "Getting folder listing..."
 msgstr "正在取得資料夾清單…"
 
@@ -4400,7 +4400,7 @@ msgid "_Preserve original aspect ratios"
 msgstr "保留原來的長寬比(_P)"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:9
-#: ../gthumb/gth-main-default-metadata.c:49
+#: ../pix/gth-main-default-metadata.c:49
 msgid "Format"
 msgstr "格式"
 
@@ -4449,12 +4449,12 @@ msgid "Search"
 msgstr "搜尋"
 
 #: ../extensions/search/gth-search-editor.c:112
-#: ../gthumb/gth-filter-editor-dialog.c:165
+#: ../pix/gth-filter-editor-dialog.c:165
 msgid "all the following rules"
 msgstr "以下所有規則"
 
 #: ../extensions/search/gth-search-editor.c:113
-#: ../gthumb/gth-filter-editor-dialog.c:166
+#: ../pix/gth-filter-editor-dialog.c:166
 msgid "any of the following rules"
 msgstr "任何一個下列規則"
 
@@ -4649,12 +4649,12 @@ msgid "Index"
 msgstr "索引"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:30
-#: ../gthumb/gth-browser-actions-entries.h:125
+#: ../pix/gth-browser-actions-entries.h:125
 msgid "Next"
 msgstr "下一幅"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:32
-#: ../gthumb/gth-browser-actions-entries.h:119
+#: ../pix/gth-browser-actions-entries.h:119
 msgid "Previous"
 msgstr "上一幅"
 
@@ -4786,122 +4786,122 @@ msgstr "網頁相簿"
 msgid "Create static web albums."
 msgstr "建立靜態的網頁相簿。"
 
-#: ../gthumb/dlg-location.c:200 ../gthumb/gth-browser.c:1336
-#: ../gthumb/gth-browser.c:1905 ../gthumb/gth-browser.c:6100
-#: ../gthumb/gth-browser.c:6119 ../gthumb/gth-browser.c:6143
+#: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1336
+#: ../pix/gth-browser.c:1905 ../pix/gth-browser.c:6100
+#: ../pix/gth-browser.c:6119 ../pix/gth-browser.c:6143
 #, fuzzy, c-format
 msgid "Could not load the position \"%s\""
 msgstr "無法載入主題"
 
-#: ../gthumb/dlg-personalize-filters.c:237
+#: ../pix/dlg-personalize-filters.c:237
 msgid "Filter"
 msgstr "篩選器"
 
-#: ../gthumb/dlg-personalize-filters.c:315
+#: ../pix/dlg-personalize-filters.c:315
 msgid "Could not save the filter"
 msgstr "無法儲存篩選器"
 
-#: ../gthumb/dlg-personalize-filters.c:358
+#: ../pix/dlg-personalize-filters.c:358
 msgid "New Filter"
 msgstr "新增篩選器"
 
-#: ../gthumb/dlg-personalize-filters.c:387
+#: ../pix/dlg-personalize-filters.c:387
 msgid "Edit Filter"
 msgstr "編輯篩選器"
 
-#: ../gthumb/dlg-preferences-extensions.c:67 ../gthumb/gth-filterbar.c:277
+#: ../pix/dlg-preferences-extensions.c:67 ../pix/gth-filterbar.c:277
 msgid "All"
 msgstr "全部"
 
-#: ../gthumb/dlg-preferences-extensions.c:68
+#: ../pix/dlg-preferences-extensions.c:68
 msgid "Enabled"
 msgstr "已啟用"
 
-#: ../gthumb/dlg-preferences-extensions.c:69
+#: ../pix/dlg-preferences-extensions.c:69
 msgid "Disabled"
 msgstr "未啟用"
 
-#: ../gthumb/dlg-preferences-extensions.c:72
+#: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
 msgstr "圖片瀏覽器"
 
-#: ../gthumb/dlg-preferences-extensions.c:73
+#: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
 msgstr "註解資料"
 
-#: ../gthumb/dlg-preferences-extensions.c:74
+#: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
 msgstr "檔案工具"
 
-#: ../gthumb/dlg-preferences-extensions.c:75
+#: ../pix/dlg-preferences-extensions.c:75
 msgid "List tools"
 msgstr "工具清單"
 
-#: ../gthumb/dlg-preferences-extensions.c:76
+#: ../pix/dlg-preferences-extensions.c:76
 msgid "Importers"
 msgstr "匯入工具"
 
-#: ../gthumb/dlg-preferences-extensions.c:77
+#: ../pix/dlg-preferences-extensions.c:77
 msgid "Exporters"
 msgstr "匯出工具"
 
-#: ../gthumb/dlg-preferences-extensions.c:216
+#: ../pix/dlg-preferences-extensions.c:216
 msgid "Could not activate the extension"
 msgstr "無法啟用擴充套件"
 
-#: ../gthumb/dlg-preferences-extensions.c:226
+#: ../pix/dlg-preferences-extensions.c:226
 msgid "Could not deactivate the extension"
 msgstr "無法停用擴充套件"
 
 #. add the page to the preferences dialog
-#: ../gthumb/dlg-preferences-extensions.c:772
+#: ../pix/dlg-preferences-extensions.c:772
 msgid "Extensions"
 msgstr "擴充套件"
 
-#: ../gthumb/dlg-preferences-extensions.c:819
+#: ../pix/dlg-preferences-extensions.c:819
 #, fuzzy
 msgid "Restart required"
 msgstr "須要付帳"
 
-#: ../gthumb/dlg-preferences-extensions.c:820
-msgid "You need to restart gthumb for these changes to take effect"
-msgstr "你需要重新啟動 gThumb 讓這些更改生效"
+#: ../pix/dlg-preferences-extensions.c:820
+msgid "You need to restart pix for these changes to take effect"
+msgstr "你需要重新啟動 Pix 讓這些更改生效"
 
-#: ../gthumb/dlg-preferences-extensions.c:821
+#: ../pix/dlg-preferences-extensions.c:821
 msgid "_Continue"
 msgstr "繼續(_C)"
 
-#: ../gthumb/dlg-preferences-extensions.c:822
+#: ../pix/dlg-preferences-extensions.c:822
 msgid "_Restart"
 msgstr "重新啟動(_R)"
 
 #. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
-#: ../gthumb/gio-utils.c:1351
+#: ../pix/gio-utils.c:1351
 #, fuzzy, c-format
 msgid "%s of %s"
 msgstr "%s / %s"
 
-#: ../gthumb/gio-utils.c:1386
+#: ../pix/gio-utils.c:1386
 #, fuzzy, c-format
 msgid "Moving \"%s\" to \"%s\""
 msgstr "正將“%B”移動到“%B”。"
 
-#: ../gthumb/gio-utils.c:1388
+#: ../pix/gio-utils.c:1388
 #, fuzzy, c-format
 msgid "Copying \"%s\" to \"%s\""
 msgstr "將「%s」複製到「%s」"
 
-#: ../gthumb/gio-utils.c:1750
+#: ../pix/gio-utils.c:1750
 #, fuzzy
 msgid "Moving files"
 msgstr "正在移動檔案"
 
-#: ../gthumb/gio-utils.c:1750
+#: ../pix/gio-utils.c:1750
 #, fuzzy
 msgid "Copying files"
 msgstr "正在複製檔案"
 
-#: ../gthumb/gio-utils.c:1751
+#: ../pix/gio-utils.c:1751
 msgid "Getting file information"
 msgstr "正在取得檔案資訊"
 
@@ -4911,7 +4911,7 @@ msgstr "正在取得檔案資訊"
 #. * the separator that your locale uses or use "%Id" instead
 #. * of "%d" if your locale uses localized digits.
 #.
-#: ../gthumb/glib-utils.c:3068
+#: ../pix/glib-utils.c:3068
 #, fuzzy, c-format
 msgctxt "long time format"
 msgid "%d:%02d:%02d"
@@ -4923,42 +4923,42 @@ msgstr "%d:%02d:%02d"
 #. * separator that your locale uses or use "%Id" instead of
 #. * "%d" if your locale uses localized digits.
 #.
-#: ../gthumb/glib-utils.c:3077
+#: ../pix/glib-utils.c:3077
 #, fuzzy, c-format
 msgctxt "short time format"
 msgid "%d:%02d"
 msgstr "%d:%02d"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:414
+#: ../pix/gth-browser-actions-callbacks.c:414
 #, fuzzy
 msgid ""
-"gthumb is free software; you can redistribute it and/or modify it under the "
+"pix is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr "Gucharmap 為自由軟件；你可根據據自由軟件基金會所發表的 GNU 通用公共授權條款規定，就本程式再為散布與／或修改；無論你根據據的是本授權的第二版或（你自行選擇的）任一日後發行的版本。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:418
+#: ../pix/gth-browser-actions-callbacks.c:418
 #, fuzzy
 msgid ""
-"gthumb is distributed in the hope that it will be useful, but WITHOUT ANY "
+"pix is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr "Totem 係基於使用目的而加以散布，然而不負任何擔保責任；亦無對適售性或特定目的適用性所為的默示性擔保。詳情請參照 GNU 通用公共授權。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:422
+#: ../pix/gth-browser-actions-callbacks.c:422
 #, fuzzy
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"gthumb.  If not, see http://www.gnu.org/licenses/."
+"pix.  If not, see http://www.gnu.org/licenses/."
 msgstr "你應該已經和程式一起收到一份 GNU 通用公共許可證的副本。如果還沒有，請參訪 <http://www.gnu.org/licenses/>。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:441
+#: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser for GNOME."
 msgstr "適合在 GNOME 環境下使用的圖片瀏覽器。"
 
-#: ../gthumb/gth-browser-actions-callbacks.c:444
+#: ../pix/gth-browser-actions-callbacks.c:444
 msgid "translator_credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -4968,316 +4968,316 @@ msgstr ""
 "Woodman Tuen <woodman@culturecom.com.hk>, 2004\n"
 "Abel Cheung <abel@oaka.org>, 2002-05"
 
-#: ../gthumb/gth-browser-actions-entries.h:31
+#: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
 msgstr "檔案(_F)"
 
-#: ../gthumb/gth-browser-actions-entries.h:32
+#: ../pix/gth-browser-actions-entries.h:32
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: ../gthumb/gth-browser-actions-entries.h:34
+#: ../pix/gth-browser-actions-entries.h:34
 msgid "_Go"
 msgstr "前往(_G)"
 
-#: ../gthumb/gth-browser-actions-entries.h:35
+#: ../pix/gth-browser-actions-entries.h:35
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: ../gthumb/gth-browser-actions-entries.h:36
+#: ../pix/gth-browser-actions-entries.h:36
 msgid "Open _With"
 msgstr "開啟以(_W)"
 
-#: ../gthumb/gth-browser-actions-entries.h:37
+#: ../pix/gth-browser-actions-entries.h:37
 msgid "I_mport From"
 msgstr "匯入從(_M)"
 
-#: ../gthumb/gth-browser-actions-entries.h:38
+#: ../pix/gth-browser-actions-entries.h:38
 msgid "E_xport To"
 msgstr "匯出至(_X)"
 
-#: ../gthumb/gth-browser-actions-entries.h:41
+#: ../pix/gth-browser-actions-entries.h:41
 msgid "New _Window"
 msgstr "新增視窗(_W)"
 
-#: ../gthumb/gth-browser-actions-entries.h:42
+#: ../pix/gth-browser-actions-entries.h:42
 msgid "Open another window"
 msgstr "開啟另一個視窗"
 
-#: ../gthumb/gth-browser-actions-entries.h:71
+#: ../pix/gth-browser-actions-entries.h:71
 msgid "Open"
 msgstr "開啟"
 
-#: ../gthumb/gth-browser-actions-entries.h:77
+#: ../pix/gth-browser-actions-entries.h:77
 msgid "Open in New Window"
 msgstr "在新視窗中開啟"
 
-#: ../gthumb/gth-browser-actions-entries.h:84
+#: ../pix/gth-browser-actions-entries.h:84
 msgid "Edit various preferences"
 msgstr "編輯不同的偏好設定"
 
-#: ../gthumb/gth-browser-actions-entries.h:95
+#: ../pix/gth-browser-actions-entries.h:95
 msgid "_Sort By..."
 msgstr "排序方式(_S)..."
 
-#: ../gthumb/gth-browser-actions-entries.h:101
+#: ../pix/gth-browser-actions-entries.h:101
 msgid "_Filter..."
 msgstr "篩選器(_F)..."
 
-#: ../gthumb/gth-browser-actions-entries.h:108
+#: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
 msgstr "停止載入目前的位置"
 
-#: ../gthumb/gth-browser-actions-entries.h:114
+#: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
 msgstr "重新載入目前位置的內容"
 
-#: ../gthumb/gth-browser-actions-entries.h:120
+#: ../pix/gth-browser-actions-entries.h:120
 msgid "View previous image"
 msgstr "顯示上一幅圖片"
 
-#: ../gthumb/gth-browser-actions-entries.h:126
+#: ../pix/gth-browser-actions-entries.h:126
 msgid "View next image"
 msgstr "顯示下一幅圖片"
 
-#: ../gthumb/gth-browser-actions-entries.h:132
+#: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
 msgstr "切換至全螢幕"
 
-#: ../gthumb/gth-browser-actions-entries.h:138
+#: ../pix/gth-browser-actions-entries.h:138
 msgid "Leave Fullscreen"
 msgstr "離開全螢幕"
 
-#: ../gthumb/gth-browser-actions-entries.h:144 ../gthumb/gth-browser.c:3749
+#: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3749
 msgid "Go to the previous visited location"
 msgstr "回到前一次瀏覽過的位置"
 
-#: ../gthumb/gth-browser-actions-entries.h:150 ../gthumb/gth-browser.c:3767
+#: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3767
 msgid "Go to the next visited location"
 msgstr "前往下一個瀏覽過的位置"
 
-#: ../gthumb/gth-browser-actions-entries.h:156 ../gthumb/gth-browser.c:3785
+#: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3785
 msgid "Go up one level"
 msgstr "前往上一層資料夾"
 
-#: ../gthumb/gth-browser-actions-entries.h:161
+#: ../pix/gth-browser-actions-entries.h:161
 msgid "_Location..."
 msgstr "位置(_L)..."
 
-#: ../gthumb/gth-browser-actions-entries.h:162
+#: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
 msgstr ""
 
-#: ../gthumb/gth-browser-actions-entries.h:173 ../gthumb/gth-browser.c:677
+#: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:677
 msgid "_Delete History"
 msgstr "刪除瀏覽紀錄(_D)"
 
-#: ../gthumb/gth-browser-actions-entries.h:174
+#: ../pix/gth-browser-actions-entries.h:174
 msgid "Delete the list of visited locations"
 msgstr "刪除所有瀏覽紀錄"
 
-#: ../gthumb/gth-browser-actions-entries.h:180
+#: ../pix/gth-browser-actions-entries.h:180
 msgid "View the folders"
 msgstr "檢視資料夾"
 
-#: ../gthumb/gth-browser-actions-entries.h:186
-msgid "Show information about gthumb"
-msgstr "顯示 gthumb 的資訊"
+#: ../pix/gth-browser-actions-entries.h:186
+msgid "Show information about pix"
+msgstr "顯示 pix 的資訊"
 
-#: ../gthumb/gth-browser-actions-entries.h:191
+#: ../pix/gth-browser-actions-entries.h:191
 msgid "Contents"
 msgstr "內容"
 
-#: ../gthumb/gth-browser-actions-entries.h:192
-msgid "Display the gthumb Manual"
-msgstr "顯示 gthumb 使用者手冊"
+#: ../pix/gth-browser-actions-entries.h:192
+msgid "Display the pix Manual"
+msgstr "顯示 pix 使用者手冊"
 
-#: ../gthumb/gth-browser-actions-entries.h:197
+#: ../pix/gth-browser-actions-entries.h:197
 msgid "_Keyboard Shortcuts"
 msgstr "捷徑鍵(_K)"
 
-#: ../gthumb/gth-browser-actions-entries.h:203
-#: ../gthumb/gth-browser-actions-entries.h:257
+#: ../pix/gth-browser-actions-entries.h:203
+#: ../pix/gth-browser-actions-entries.h:257
 msgid "Edit"
 msgstr "編輯"
 
-#: ../gthumb/gth-browser-actions-entries.h:204
-#: ../gthumb/gth-browser-actions-entries.h:258
+#: ../pix/gth-browser-actions-entries.h:204
+#: ../pix/gth-browser-actions-entries.h:258
 msgid "Edit file"
 msgstr "編輯檔案"
 
-#: ../gthumb/gth-browser-actions-entries.h:212
+#: ../pix/gth-browser-actions-entries.h:212
 msgid "_Toolbar"
 msgstr "工具列(_T)"
 
-#: ../gthumb/gth-browser-actions-entries.h:213
+#: ../pix/gth-browser-actions-entries.h:213
 msgid "View or hide the toolbar of this window"
 msgstr "顯示或隱藏本視窗中的工具列"
 
-#: ../gthumb/gth-browser-actions-entries.h:217
+#: ../pix/gth-browser-actions-entries.h:217
 msgid "_Statusbar"
 msgstr "狀態列(_S)"
 
-#: ../gthumb/gth-browser-actions-entries.h:218
+#: ../pix/gth-browser-actions-entries.h:218
 msgid "View or hide the statusbar of this window"
 msgstr "顯示或隱藏本視窗中的狀態列"
 
-#: ../gthumb/gth-browser-actions-entries.h:222
+#: ../pix/gth-browser-actions-entries.h:222
 msgid "_Filterbar"
 msgstr "篩選器工具列(_F)"
 
-#: ../gthumb/gth-browser-actions-entries.h:223
+#: ../pix/gth-browser-actions-entries.h:223
 msgid "View or hide the filterbar of this window"
 msgstr "顯示或隱藏本視窗中的篩選器工具列"
 
-#: ../gthumb/gth-browser-actions-entries.h:227
+#: ../pix/gth-browser-actions-entries.h:227
 msgid "_Sidebar"
 msgstr "側邊欄(_S)"
 
-#: ../gthumb/gth-browser-actions-entries.h:228
+#: ../pix/gth-browser-actions-entries.h:228
 msgid "View or hide the sidebar of this window"
 msgstr "顯示或隱藏本視窗中的側邊欄"
 
-#: ../gthumb/gth-browser-actions-entries.h:232
+#: ../pix/gth-browser-actions-entries.h:232
 msgid "_Thumbnail Pane"
 msgstr "縮圖窗格(_T)"
 
-#: ../gthumb/gth-browser-actions-entries.h:233
+#: ../pix/gth-browser-actions-entries.h:233
 #, fuzzy
 msgid "View or hide the thumbnail pane in viewer mode"
 msgstr "顯示或隱藏本視窗中的狀態列"
 
-#: ../gthumb/gth-browser-actions-entries.h:237
+#: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
 msgstr "縮圖(_T)"
 
-#: ../gthumb/gth-browser-actions-entries.h:238
+#: ../pix/gth-browser-actions-entries.h:238
 msgid "View thumbnails"
 msgstr "顯示縮圖"
 
-#: ../gthumb/gth-browser-actions-entries.h:242
+#: ../pix/gth-browser-actions-entries.h:242
 msgid "_Hidden Files"
 msgstr "隱藏檔案(_H)"
 
-#: ../gthumb/gth-browser-actions-entries.h:243
+#: ../pix/gth-browser-actions-entries.h:243
 msgid "Show hidden files and folders"
 msgstr "顯示隱藏的檔案和資料夾"
 
-#: ../gthumb/gth-browser-actions-entries.h:248
-#: ../gthumb/gth-browser-actions-entries.h:253
+#: ../pix/gth-browser-actions-entries.h:248
+#: ../pix/gth-browser-actions-entries.h:253
 msgid "View file properties"
 msgstr "檢視檔案的屬性"
 
-#: ../gthumb/gth-browser-actions-entries.h:262
+#: ../pix/gth-browser-actions-entries.h:262
 msgid "_Fit Window to Image"
 msgstr "使視窗符合圖片尺寸(_F)"
 
-#: ../gthumb/gth-browser-actions-entries.h:263
+#: ../pix/gth-browser-actions-entries.h:263
 msgid "Resize the window to the size of the image"
 msgstr "調整視窗大小以符合圖片尺寸"
 
-#: ../gthumb/gth-browser.c:374
+#: ../pix/gth-browser.c:374
 #, c-format
 msgid "Open %s"
 msgstr "開啟 %s"
 
-#: ../gthumb/gth-browser.c:514
+#: ../pix/gth-browser.c:514
 msgid "[modified]"
 msgstr "[已修改]"
 
-#: ../gthumb/gth-browser.c:1073
+#: ../pix/gth-browser.c:1073
 #, c-format
 msgid "%d file selected (%s)"
 msgid_plural "%d files selected (%s)"
 msgstr[0] "%d 個檔案選取的 (大小為 %s)"
 
-#: ../gthumb/gth-browser.c:1108
+#: ../pix/gth-browser.c:1108
 #, c-format
 msgid "%s of free space"
 msgstr "%s 的可用空間："
 
-#: ../gthumb/gth-browser.c:1998 ../gthumb/gth-browser.c:2025
+#: ../pix/gth-browser.c:1998 ../pix/gth-browser.c:2025
 #, fuzzy, c-format
 msgid "No suitable module found for %s"
 msgstr "找不到 URI‘%s’的項目"
 
-#: ../gthumb/gth-browser.c:2144
+#: ../pix/gth-browser.c:2144
 #, c-format
 msgid "Save changes to file '%s'?"
 msgstr "儲存改變至檔案「%s」？"
 
-#: ../gthumb/gth-browser.c:2149
+#: ../pix/gth-browser.c:2149
 msgid "If you don't save, changes to the file will be permanently lost."
 msgstr "如果你不儲存，所有對檔案的更改都會永久消失。"
 
-#: ../gthumb/gth-browser.c:2150
+#: ../pix/gth-browser.c:2150
 msgid "Do _Not Save"
 msgstr "不要儲存(_N)"
 
-#: ../gthumb/gth-browser.c:2928 ../gthumb/gth-source-tree.c:182
+#: ../pix/gth-browser.c:2928 ../pix/gth-source-tree.c:182
 msgid "Could not change name"
 msgstr "無法更改名稱"
 
-#: ../gthumb/gth-browser.c:3359 ../gthumb/gth-main-default-metadata.c:41
+#: ../pix/gth-browser.c:3359 ../pix/gth-main-default-metadata.c:41
 msgid "Modified"
 msgstr "最後修改"
 
-#: ../gthumb/gth-browser.c:3750 ../gthumb/gth-browser.c:3768
+#: ../pix/gth-browser.c:3750 ../pix/gth-browser.c:3768
 msgid "View the list of visited locations"
 msgstr "檢視瀏覽過的位置清單"
 
-#: ../gthumb/gth-browser.c:3786
+#: ../pix/gth-browser.c:3786
 msgid "View the list of upper locations"
 msgstr "檢視上層的位置清單"
 
-#: ../gthumb/gth-browser.c:6101
+#: ../pix/gth-browser.c:6101
 #, c-format
 msgid "File type not supported"
 msgstr "檔案類型不支援"
 
-#: ../gthumb/gth-browser.c:6144
+#: ../pix/gth-browser.c:6144
 #, c-format
 msgid "No suitable module found"
 msgstr "沒有找到合適的模組"
 
-#: ../gthumb/gth-extensions.c:203
+#: ../pix/gth-extensions.c:203
 #, fuzzy, c-format
 msgid "Could not open the module `%s`: %s"
 msgstr "無法開啟連結"
 
-#: ../gthumb/gth-extensions.c:754
+#: ../pix/gth-extensions.c:754
 #, fuzzy, c-format
 msgid "The extension '%1$s' is required by the extension '%2$s'"
 msgstr "需要 XKB 擴展功能。"
 
-#: ../gthumb/gth-file-chooser-dialog.c:144
+#: ../pix/gth-file-chooser-dialog.c:144
 msgid "All Supported Files"
 msgstr "所有支援的檔案"
 
-#: ../gthumb/gth-file-source-vfs.c:121
+#: ../pix/gth-file-source-vfs.c:121
 msgid "Home Folder"
 msgstr "家目錄"
 
-#: ../gthumb/gth-file-source-vfs.c:126
+#: ../pix/gth-file-source-vfs.c:126
 msgid "File System"
 msgstr "檔案系統"
 
-#: ../gthumb/gth-file-source-vfs.c:739
+#: ../pix/gth-file-source-vfs.c:739
 msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr "無法將檔案丟進回收筒。你是否想永久刪除它們？"
 
-#: ../gthumb/gth-file-source-vfs.c:750
+#: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
 msgstr "無法將檔案丟至回收筒"
 
-#: ../gthumb/gth-file-source-vfs.c:797
+#: ../pix/gth-file-source-vfs.c:797
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
 msgstr "你確定要將「%s」丟至回收筒嗎？"
 
-#: ../gthumb/gth-file-source-vfs.c:801
+#: ../pix/gth-file-source-vfs.c:801
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
@@ -5285,383 +5285,383 @@ msgstr[0] ""
 "確定要將選取的 %'d 張圖片\n"
 "移至回收筒嗎？"
 
-#: ../gthumb/gth-file-source-vfs.c:844
+#: ../pix/gth-file-source-vfs.c:844
 #, c-format
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
 msgstr[0] "確定要永久刪除已選的 %'d 個檔案嗎？"
 
-#: ../gthumb/gth-filterbar.c:413
+#: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
 msgstr "隱藏篩選器工具列"
 
-#: ../gthumb/gth-filter.c:43 ../gthumb/gth-filter-editor-dialog.c:178
-#: ../gthumb/gth-test-simple.c:75
+#: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
+#: ../pix/gth-test-simple.c:75
 msgid "kB"
 msgstr "KB"
 
-#: ../gthumb/gth-filter.c:44 ../gthumb/gth-filter-editor-dialog.c:179
-#: ../gthumb/gth-test-simple.c:76
+#: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
+#: ../pix/gth-test-simple.c:76
 msgid "MB"
 msgstr "MB"
 
-#: ../gthumb/gth-filter.c:45 ../gthumb/gth-filter-editor-dialog.c:180
-#: ../gthumb/gth-test-simple.c:77
+#: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
+#: ../pix/gth-test-simple.c:77
 msgid "GB"
 msgstr "GB"
 
 #. "files" label
-#: ../gthumb/gth-filter.c:286 ../gthumb/gth-filter-editor-dialog.c:177
+#: ../pix/gth-filter.c:286 ../pix/gth-filter-editor-dialog.c:177
 msgid "files"
 msgstr "檔案"
 
-#: ../gthumb/gth-filter-editor-dialog.c:224
+#: ../pix/gth-filter-editor-dialog.c:224
 msgid "ascending"
 msgstr "遞增"
 
-#: ../gthumb/gth-filter-editor-dialog.c:225
+#: ../pix/gth-filter-editor-dialog.c:225
 msgid "descending"
 msgstr "遞減"
 
-#: ../gthumb/gth-filter-editor-dialog.c:515
+#: ../pix/gth-filter-editor-dialog.c:515
 #, c-format
 msgid "No limit specified"
 msgstr "沒有限制指定"
 
-#: ../gthumb/gth-folder-tree.c:857
+#: ../pix/gth-folder-tree.c:857
 msgid "Loading..."
 msgstr "載入中..."
 
-#: ../gthumb/gth-folder-tree.c:1100
+#: ../pix/gth-folder-tree.c:1100
 msgid "(Open Parent)"
 msgstr "(開啟上一層)"
 
-#: ../gthumb/gth-histogram-view.c:825
+#: ../pix/gth-histogram-view.c:825
 msgid "Linear scale"
 msgstr "線性刻度"
 
-#: ../gthumb/gth-histogram-view.c:837
+#: ../pix/gth-histogram-view.c:837
 msgid "Logarithmic scale"
 msgstr "對數刻度"
 
-#: ../gthumb/gth-histogram-view.c:857
+#: ../pix/gth-histogram-view.c:857
 msgid "Channel:"
 msgstr "色版："
 
-#: ../gthumb/gth-histogram-view.c:878
+#: ../pix/gth-histogram-view.c:878
 msgid "Value"
 msgstr "亮度"
 
-#: ../gthumb/gth-histogram-view.c:883
+#: ../pix/gth-histogram-view.c:883
 msgid "Red"
 msgstr "紅色"
 
-#: ../gthumb/gth-histogram-view.c:888
+#: ../pix/gth-histogram-view.c:888
 msgid "Green"
 msgstr "綠色"
 
-#: ../gthumb/gth-histogram-view.c:893
+#: ../pix/gth-histogram-view.c:893
 msgid "Blue"
 msgstr "藍色"
 
-#: ../gthumb/gth-histogram-view.c:898
+#: ../pix/gth-histogram-view.c:898
 msgid "Alpha"
 msgstr "透明"
 
-#: ../gthumb/gth-histogram-view.c:904
+#: ../pix/gth-histogram-view.c:904
 msgid "RGB"
 msgstr "RGB"
 
-#: ../gthumb/gth-image-list-task.c:141
+#: ../pix/gth-image-list-task.c:141
 msgid "Could not rename the file"
 msgstr "無法為檔案重新命名"
 
-#: ../gthumb/gth-image-saver.c:39
+#: ../pix/gth-image-saver.c:39
 msgid "No options available for this file type"
 msgstr "無選項可用於此檔案類型"
 
-#: ../gthumb/gth-image-saver.c:181
+#: ../pix/gth-image-saver.c:181
 #, c-format
 msgid "Could not find a suitable module to save the image as \"%s\""
 msgstr "無法找到合適的模組以儲存圖片為「%s」"
 
-#: ../gthumb/gth-load-file-data-task.c:108
+#: ../pix/gth-load-file-data-task.c:108
 msgid "Reading file information"
 msgstr "讀取檔案資訊"
 
-#: ../gthumb/gth-main-default-metadata.c:32
+#: ../pix/gth-main-default-metadata.c:32
 msgid "File"
 msgstr "檔案"
 
-#: ../gthumb/gth-main-default-metadata.c:39
+#: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
 msgstr "名稱"
 
-#: ../gthumb/gth-main-default-metadata.c:40
-#: ../gthumb/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40
+#: ../pix/gth-main-default-tests.c:284
 msgid "Size"
 msgstr "尺寸"
 
-#: ../gthumb/gth-main-default-metadata.c:42
+#: ../pix/gth-main-default-metadata.c:42
 msgid "Type"
 msgstr "類型"
 
-#: ../gthumb/gth-main-default-metadata.c:44
+#: ../pix/gth-main-default-metadata.c:44
 msgid "Full Name"
 msgstr "全名"
 
-#: ../gthumb/gth-main-default-metadata.c:48
+#: ../pix/gth-main-default-metadata.c:48
 msgid "Duration"
 msgstr "期間"
 
-#: ../gthumb/gth-main-default-sort-types.c:131
+#: ../pix/gth-main-default-sort-types.c:131
 msgid "file name"
 msgstr "檔案名稱"
 
-#: ../gthumb/gth-main-default-sort-types.c:132
+#: ../pix/gth-main-default-sort-types.c:132
 msgid "file path"
 msgstr "檔案路徑"
 
-#: ../gthumb/gth-main-default-sort-types.c:133
+#: ../pix/gth-main-default-sort-types.c:133
 msgid "file size"
 msgstr "檔案大小"
 
-#: ../gthumb/gth-main-default-sort-types.c:134
+#: ../pix/gth-main-default-sort-types.c:134
 msgid "file modified date"
 msgstr "檔案修改日期"
 
-#: ../gthumb/gth-main-default-sort-types.c:135
+#: ../pix/gth-main-default-sort-types.c:135
 msgid "no sorting"
 msgstr "沒有排序"
 
-#: ../gthumb/gth-main-default-sort-types.c:136
+#: ../pix/gth-main-default-sort-types.c:136
 msgid "dimensions"
 msgstr "尺寸"
 
-#: ../gthumb/gth-main-default-tests.c:233
+#: ../pix/gth-main-default-tests.c:233
 msgid "All Files"
 msgstr "所有檔案"
 
-#: ../gthumb/gth-main-default-tests.c:261
+#: ../pix/gth-main-default-tests.c:261
 msgid "Media"
 msgstr "媒體"
 
-#: ../gthumb/gth-main-default-tests.c:268
+#: ../pix/gth-main-default-tests.c:268
 msgid "Text Files"
 msgstr "文字檔"
 
-#: ../gthumb/gth-main-default-tests.c:276
+#: ../pix/gth-main-default-tests.c:276
 msgid "Filename"
 msgstr "檔案名稱"
 
-#: ../gthumb/gth-main-default-tests.c:308
+#: ../pix/gth-main-default-tests.c:308
 msgid "Title (embedded)"
 msgstr "標題(嵌入式)"
 
-#: ../gthumb/gth-main-default-tests.c:316
+#: ../pix/gth-main-default-tests.c:316
 msgid "Description (embedded)"
 msgstr "描述(嵌入式)"
 
-#: ../gthumb/gth-progress-dialog.c:144
+#: ../pix/gth-progress-dialog.c:144
 msgid "Cancel operation"
 msgstr "取消操作"
 
-#: ../gthumb/gth-save-file-data-task.c:102
+#: ../pix/gth-save-file-data-task.c:102
 msgid "Saving file information"
 msgstr "儲存檔案資訊"
 
-#: ../gthumb/gth-tags-entry.c:388
+#: ../pix/gth-tags-entry.c:388
 #, c-format
 msgid "Create tag «%s»"
 msgstr "建立標籤 «%s»"
 
-#: ../gthumb/gth-tags-entry.c:735
+#: ../pix/gth-tags-entry.c:735
 msgid "Show all the tags"
 msgstr "顯示所有的標籤"
 
-#: ../gthumb/gth-tags-file.c:235
+#: ../pix/gth-tags-file.c:235
 msgid "Holidays"
 msgstr "假期"
 
-#: ../gthumb/gth-tags-file.c:236
+#: ../pix/gth-tags-file.c:236
 msgid "Temporary"
 msgstr "暫存"
 
-#: ../gthumb/gth-tags-file.c:237
+#: ../pix/gth-tags-file.c:237
 msgid "Screenshots"
 msgstr "畫面快照"
 
-#: ../gthumb/gth-tags-file.c:238
+#: ../pix/gth-tags-file.c:238
 msgid "Science"
 msgstr "科學"
 
-#: ../gthumb/gth-tags-file.c:239
+#: ../pix/gth-tags-file.c:239
 msgid "Favorite"
 msgstr "特別喜愛的"
 
-#: ../gthumb/gth-tags-file.c:240
+#: ../pix/gth-tags-file.c:240
 msgid "Important"
 msgstr "重要"
 
-#: ../gthumb/gth-tags-file.c:241
+#: ../pix/gth-tags-file.c:241
 msgid "GNOME"
 msgstr "GNOME"
 
-#: ../gthumb/gth-tags-file.c:242
+#: ../pix/gth-tags-file.c:242
 msgid "Games"
 msgstr "遊戲"
 
-#: ../gthumb/gth-tags-file.c:243
+#: ../pix/gth-tags-file.c:243
 msgid "Party"
 msgstr "派對"
 
-#: ../gthumb/gth-tags-file.c:244
+#: ../pix/gth-tags-file.c:244
 msgid "Birthday"
 msgstr "生日"
 
-#: ../gthumb/gth-tags-file.c:245
+#: ../pix/gth-tags-file.c:245
 msgid "Astronomy"
 msgstr "天文"
 
-#: ../gthumb/gth-tags-file.c:246
+#: ../pix/gth-tags-file.c:246
 msgid "Family"
 msgstr "全家褔"
 
-#: ../gthumb/gth-test-category.c:46 ../gthumb/gth-test-simple.c:49
-#: ../gthumb/gth-test-simple.c:64
+#: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:49
+#: ../pix/gth-test-simple.c:64
 msgid "is"
 msgstr "是"
 
-#: ../gthumb/gth-test-category.c:47
+#: ../pix/gth-test-category.c:47
 #, fuzzy
 #| msgid "Icons only"
 msgid "is only"
 msgstr "只顯示圖示"
 
-#: ../gthumb/gth-test-category.c:48 ../gthumb/gth-test-simple.c:50
-#: ../gthumb/gth-test-simple.c:65
+#: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:50
+#: ../pix/gth-test-simple.c:65
 msgid "is not"
 msgstr "不是"
 
-#: ../gthumb/gth-test-category.c:407 ../gthumb/gth-test-simple.c:812
-#: ../gthumb/gth-test-simple.c:838 ../gthumb/gth-test-simple.c:859
-#: ../gthumb/gth-test-simple.c:885
+#: ../pix/gth-test-category.c:407 ../pix/gth-test-simple.c:812
+#: ../pix/gth-test-simple.c:838 ../pix/gth-test-simple.c:859
+#: ../pix/gth-test-simple.c:885
 #, fuzzy, c-format
 msgid "The test definition is incomplete"
 msgstr "按鍵組合 (%s) 不完整"
 
-#: ../gthumb/gth-test-selector.c:252
+#: ../pix/gth-test-selector.c:252
 #, fuzzy
 msgid "Add a new rule"
 msgstr "新增過濾器規則"
 
-#: ../gthumb/gth-test-selector.c:263
+#: ../pix/gth-test-selector.c:263
 #, fuzzy
 msgid "Remove this rule"
 msgstr "移除此欄(_C)"
 
-#: ../gthumb/gth-test-simple.c:46
+#: ../pix/gth-test-simple.c:46
 msgid "contains"
 msgstr "包含"
 
-#: ../gthumb/gth-test-simple.c:47
+#: ../pix/gth-test-simple.c:47
 msgid "starts with"
 msgstr "開頭為"
 
-#: ../gthumb/gth-test-simple.c:48
+#: ../pix/gth-test-simple.c:48
 msgid "ends with"
 msgstr "結尾為"
 
-#: ../gthumb/gth-test-simple.c:51
+#: ../pix/gth-test-simple.c:51
 msgid "does not contain"
 msgstr "不包含"
 
-#: ../gthumb/gth-test-simple.c:52
+#: ../pix/gth-test-simple.c:52
 msgid "matches"
 msgstr "符合"
 
-#: ../gthumb/gth-test-simple.c:56
+#: ../pix/gth-test-simple.c:56
 msgid "is lower than"
 msgstr "低於"
 
-#: ../gthumb/gth-test-simple.c:57
+#: ../pix/gth-test-simple.c:57
 msgid "is greater than"
 msgstr "高於"
 
-#: ../gthumb/gth-test-simple.c:58
+#: ../pix/gth-test-simple.c:58
 msgid "is equal to"
 msgstr "等於"
 
-#: ../gthumb/gth-test-simple.c:62
+#: ../pix/gth-test-simple.c:62
 msgid "is before"
 msgstr "早於"
 
-#: ../gthumb/gth-test-simple.c:63
+#: ../pix/gth-test-simple.c:63
 msgid "is after"
 msgstr "晚於"
 
-#: ../gthumb/gth-time-selector.c:478
+#: ../pix/gth-time-selector.c:478
 msgid "Today"
 msgstr "今天"
 
-#: ../gthumb/gth-time-selector.c:486
+#: ../pix/gth-time-selector.c:486
 msgid "Now"
 msgstr "現在"
 
-#: ../gthumb/gth-window-actions-entries.h:32
+#: ../pix/gth-window-actions-entries.h:32
 msgid "Close this window"
 msgstr "關閉本視窗"
 
-#: ../gthumb/gth-window-actions-entries.h:36
+#: ../pix/gth-window-actions-entries.h:36
 msgid "Close _All Windows"
 msgstr "關閉所有視窗(_A)"
 
-#: ../gthumb/gtk-utils.c:499
+#: ../pix/gtk-utils.c:499
 msgid "Could not display help"
 msgstr "無法顯示說明文件"
 
-#: ../gthumb/gtk-utils.c:828 ../gthumb/gtk-utils.c:835
+#: ../pix/gtk-utils.c:828 ../pix/gtk-utils.c:835
 msgid "Could not launch the application"
 msgstr "無法啟動應用程式"
 
-#: ../gthumb/gtk-utils.c:938
+#: ../pix/gtk-utils.c:938
 msgid "_Copy Here"
 msgstr "複製這裏(_C)"
 
-#: ../gthumb/gtk-utils.c:943
+#: ../pix/gtk-utils.c:943
 msgid "_Move Here"
 msgstr "移動這裏(_M)"
 
-#: ../gthumb/gtk-utils.c:948
+#: ../pix/gtk-utils.c:948
 msgid "_Link Here"
 msgstr "鏈接這裏(_L)"
 
-#: ../gthumb/gtk-utils.c:957
+#: ../pix/gtk-utils.c:957
 msgid "Cancel"
 msgstr "取消"
 
-#: ../gthumb/main.c:61
+#: ../pix/main.c:61
 msgid "Open a new window"
 msgstr "開啟一新的視窗"
 
-#: ../gthumb/main.c:65
+#: ../pix/main.c:65
 msgid "Start in fullscreen mode"
 msgstr "在全螢幕模式下啟動"
 
-#: ../gthumb/main.c:69
+#: ../pix/main.c:69
 msgid "Automatically start a slideshow"
 msgstr "自動啟動幻燈片模式"
 
-#: ../gthumb/main.c:73
+#: ../pix/main.c:73
 msgid "Automatically import digital camera photos"
 msgstr "自動匯入數碼相片"
 
-#: ../gthumb/main.c:77
+#: ../pix/main.c:77
 msgid "Show version"
 msgstr "顯示版本"
 
-#: ../gthumb/main.c:483
+#: ../pix/main.c:483
 msgid "- Image browser and viewer"
 msgstr "- 圖片瀏覽器和檢視器"
 
@@ -5743,8 +5743,8 @@ msgstr "- 圖片瀏覽器和檢視器"
 #~ msgid "_Categories:"
 #~ msgstr "類別(_C)："
 
-#~ msgid "gthumb Extensions"
-#~ msgstr "gthumb 擴充套件"
+#~ msgid "pix Extensions"
+#~ msgstr "pix 擴充套件"
 
 #~ msgid "Activate items with a double click"
 #~ msgstr "連按兩下滑鼠後開啟指定項目"
@@ -5840,12 +5840,12 @@ msgstr "- 圖片瀏覽器和檢視器"
 #~ msgid "Extension"
 #~ msgstr "擴充套件"
 
-#~ msgid "Activate, deactivate and configure the gthumb extensions"
-#~ msgstr "啟用，停用和配置 gThumb 的擴充套件"
+#~ msgid "Activate, deactivate and configure the pix extensions"
+#~ msgstr "啟用，停用和配置 Pix 的擴充套件"
 
 #, fuzzy
-#~ msgid "gthumb"
-#~ msgstr "gThumb"
+#~ msgid "pix"
+#~ msgstr "Pix"
 
 #~ msgid "Unable to show '%s'"
 #~ msgstr "無法顯示「%s」"
