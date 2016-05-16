@@ -26,9 +26,11 @@
 #include <extensions/image_viewer/gth-image-viewer-page.h>
 
 
-#define DESKTOP_BACKGROUND_PROPERTIES_COMMAND "gnome-control-center background"
-#define DESKTOP_BACKGROUND_SCHEMA "org.gnome.desktop.background"
+#define CINNAMON_DESKTOP_BACKGROUND_SCHEMA "org.cinnamon.desktop.background"
+#define MATE_DESKTOP_BACKGROUND_SCHEMA "org.mate.background"
+#define GNOME_DESKTOP_BACKGROUND_SCHEMA "org.gnome.desktop.background"
 #define DESKTOP_BACKGROUND_FILE_KEY "picture-uri"
+#define MATE_DESKTOP_BACKGROUND_FILE_KEY "picture-filename"
 #define DESKTOP_BACKGROUND_STYLE_KEY "picture-options"
 
 
@@ -71,10 +73,26 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 	GSettings *settings;
 	char      *uri;
 
-	settings = g_settings_new (DESKTOP_BACKGROUND_SCHEMA);
-	uri = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
+		settings = g_settings_new (CINNAMON_DESKTOP_BACKGROUND_SCHEMA);
+	}
+	else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
+		settings = g_settings_new (MATE_DESKTOP_BACKGROUND_SCHEMA);
+	}
+	else {
+		settings = g_settings_new (GNOME_DESKTOP_BACKGROUND_SCHEMA);
+	}
+
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
+		uri = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
+	}
+	else {
+		uri = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
+	}
+
 	style->file = (uri != NULL) ? g_file_new_for_uri (uri) : NULL;
 	style->background_style = g_settings_get_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY);
+
 
 	g_free (uri);
 	g_object_unref (settings);
@@ -93,8 +111,22 @@ wallpaper_style_set_as_current (WallpaperStyle *style)
 	if (uri != NULL) {
 		GSettings *settings;
 
-		settings = g_settings_new (DESKTOP_BACKGROUND_SCHEMA);
-		g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, uri);
+		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
+			settings = g_settings_new (CINNAMON_DESKTOP_BACKGROUND_SCHEMA);
+		}
+		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
+			settings = g_settings_new (MATE_DESKTOP_BACKGROUND_SCHEMA);
+		}
+		else {
+			settings = g_settings_new (GNOME_DESKTOP_BACKGROUND_SCHEMA);
+		}
+
+		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
+			g_settings_set_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY, uri);
+		}
+		else {
+			g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, uri);
+		}
 		g_settings_set_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY, style->background_style);
 
 		g_object_unref (settings);
@@ -184,21 +216,22 @@ infobar_response_cb (GtkInfoBar *info_bar,
 		     gpointer    user_data)
 {
 	WallpaperData *wdata = user_data;
-	gchar         *path;
-	const gchar   *control_center_command;
+	const gchar   *control_center_command = NULL;
 	GError        *error = NULL;
 
 	g_return_if_fail (GTH_IS_BROWSER (wdata->browser));
 
 	switch (response_id) {
 	case _RESPONSE_PREFERENCES:
-		path = g_find_program_in_path ("unity-control-center");
-		if (path && g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0)
+		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0)
+			control_center_command = "cinnamon-settings backgrounds";
+		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0)
+			control_center_command = "mate-appearance-properties -p background";
+		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "GNOME") == 0)
+			control_center_command = "gnome-control-center appearance";
+		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0)
 			control_center_command = "unity-control-center appearance";
-		else
-			control_center_command = DESKTOP_BACKGROUND_PROPERTIES_COMMAND;
-		g_free (path);
-		if (! g_spawn_command_line_async (control_center_command, &error)) {
+		if (control_center_command != NULL && ! g_spawn_command_line_async (control_center_command, &error)) {
 			_gtk_error_dialog_from_gerror_run (GTK_WINDOW (wdata->browser), _("Could not show the desktop background properties"), error);
 			g_clear_error (&error);
 		}

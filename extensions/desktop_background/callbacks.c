@@ -72,21 +72,28 @@ db__gth_browser_construct_cb (GthBrowser *browser)
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
-	data->action_group = gtk_action_group_new ("Desktop Background Actions");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
-	gtk_action_group_add_actions (data->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0
+		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0
+		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0
+		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "GNOME") == 0
+		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0
+		) {
+		data = g_new0 (BrowserData, 1);
+		data->action_group = gtk_action_group_new ("Desktop Background Actions");
+		gtk_action_group_set_translation_domain (data->action_group, NULL);
+		gtk_action_group_add_actions (data->action_group,
+					      action_entries,
+					      G_N_ELEMENTS (action_entries),
+					      browser);
+		gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
 
-	if (! gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), fixed_ui_info, -1, &error)) {
-		g_message ("building menus failed: %s", error->message);
-		g_clear_error (&error);
+		if (! gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), fixed_ui_info, -1, &error)) {
+			g_message ("building menus failed: %s", error->message);
+			g_clear_error (&error);
+		}
+
+		g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 	}
-
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 }
 
 
