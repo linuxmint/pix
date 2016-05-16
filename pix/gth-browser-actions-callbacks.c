@@ -444,7 +444,7 @@ gth_browser_activate_action_help_about (GtkAction *action,
 			       "translator-credits", _("translator_credits"),
 			       "license", license_text,
 			       "wrap-license", TRUE,
-			       "website", "http://github.com/linuxmint/Apps/pix",
+			       "website", "http://github.com/linuxmint/pix",
 			       (logo != NULL ? "logo" : NULL), logo,
 			       NULL);
 
