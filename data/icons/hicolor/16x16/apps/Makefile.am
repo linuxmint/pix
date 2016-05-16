@@ -7,11 +7,7 @@ iconsdir = $(themedir)/$(size)/$(context)
 icons_DATA = \
 	pix.png
 
-noinst_DATA = \
-	pix.svg
-
 EXTRA_DIST =		\
-	$(icons_DATA)	\
-	$(noinst_DATA)
+	$(icons_DATA)
 
 -include $(top_srcdir)/git.mk
