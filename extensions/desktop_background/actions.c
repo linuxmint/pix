@@ -31,23 +31,9 @@
 #define GNOME_DESKTOP_BACKGROUND_SCHEMA "org.gnome.desktop.background"
 #define DESKTOP_BACKGROUND_FILE_KEY "picture-uri"
 #define MATE_DESKTOP_BACKGROUND_FILE_KEY "picture-filename"
-#define DESKTOP_BACKGROUND_STYLE_KEY "picture-options"
-
-
-typedef enum {
-	BACKGROUND_STYLE_NONE,
-	BACKGROUND_STYLE_WALLPAPER,
-	BACKGROUND_STYLE_CENTERED,
-	BACKGROUND_STYLE_SCALED,
-	BACKGROUND_STYLE_STRETCHED,
-	BACKGROUND_STYLE_ZOOM,
-	BACKGROUND_STYLE_SPANNED
-} BackgroundStyle;
-
 
 typedef struct {
 	GFile           *file;
-	BackgroundStyle  background_style;
 } WallpaperStyle;
 
 
@@ -63,7 +49,6 @@ static void
 wallpaper_style_init (WallpaperStyle *style)
 {
 	style->file = NULL;
-	style->background_style = BACKGROUND_STYLE_WALLPAPER;
 }
 
 
@@ -84,15 +69,13 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 	}
 
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-		uri = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
+		location = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
 		style->file = (location != NULL) ? g_file_new_for_path (location) : NULL;
 	}
 	else {
-		uri = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
+		location = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
 		style->file = (location != NULL) ? g_file_new_for_uri (location) : NULL;
 	}
-
-	style->background_style = g_settings_get_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY);
 
 	g_free (location);
 	g_object_unref (settings);
@@ -132,7 +115,6 @@ wallpaper_style_set_as_current (WallpaperStyle *style)
 		else {
 			g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, location);
 		}
-		g_settings_set_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY, style->background_style);
 
 		g_object_unref (settings);
 	}
