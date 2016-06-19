@@ -71,7 +71,7 @@ static void
 wallpaper_style_init_from_current (WallpaperStyle *style)
 {
 	GSettings *settings;
-	char      *uri;
+	char      *location;
 
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
 		settings = g_settings_new (CINNAMON_DESKTOP_BACKGROUND_SCHEMA);
@@ -85,16 +85,16 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
 		uri = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
+		style->file = (location != NULL) ? g_file_new_for_path (location) : NULL;
 	}
 	else {
 		uri = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
+		style->file = (location != NULL) ? g_file_new_for_uri (location) : NULL;
 	}
 
-	style->file = (uri != NULL) ? g_file_new_for_uri (uri) : NULL;
 	style->background_style = g_settings_get_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY);
 
-
-	g_free (uri);
+	g_free (location);
 	g_object_unref (settings);
 }
 
@@ -102,13 +102,18 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 static void
 wallpaper_style_set_as_current (WallpaperStyle *style)
 {
-	char *uri;
+	char *location;
 
 	if (style->file == NULL)
 		return;
 
-	uri = g_file_get_uri (style->file);
-	if (uri != NULL) {
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
+		location = g_file_get_path (style->file);
+	}
+	else {
+		location = g_file_get_uri (style->file);
+	}
+	if (location != NULL) {
 		GSettings *settings;
 
 		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
@@ -122,17 +127,17 @@ wallpaper_style_set_as_current (WallpaperStyle *style)
 		}
 
 		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-			g_settings_set_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY, uri);
+			g_settings_set_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY, location);
 		}
 		else {
-			g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, uri);
+			g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, location);
 		}
 		g_settings_set_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY, style->background_style);
 
 		g_object_unref (settings);
 	}
 
-	g_free (uri);
+	g_free (location);
 }
 
 
