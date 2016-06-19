@@ -35,23 +35,9 @@
 #define GNOME_DESKTOP_BACKGROUND_SCHEMA "org.gnome.desktop.background"
 #define DESKTOP_BACKGROUND_FILE_KEY "picture-uri"
 #define MATE_DESKTOP_BACKGROUND_FILE_KEY "picture-filename"
-#define DESKTOP_BACKGROUND_STYLE_KEY "picture-options"
-
-
-typedef enum {
-	BACKGROUND_STYLE_NONE,
-	BACKGROUND_STYLE_WALLPAPER,
-	BACKGROUND_STYLE_CENTERED,
-	BACKGROUND_STYLE_SCALED,
-	BACKGROUND_STYLE_STRETCHED,
-	BACKGROUND_STYLE_ZOOM,
-	BACKGROUND_STYLE_SPANNED
-} BackgroundStyle;
-
 
 typedef struct {
 	GFile           *file;
-	BackgroundStyle  background_style;
 } WallpaperStyle;
 
 
@@ -67,7 +53,6 @@ static void
 wallpaper_style_init (WallpaperStyle *style)
 {
 	style->file = NULL;
-	style->background_style = BACKGROUND_STYLE_WALLPAPER;
 }
 
 
@@ -88,15 +73,13 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 	}
 
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-		uri = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
+		location = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
 		style->file = (location != NULL) ? g_file_new_for_path (location) : NULL;
 	}
 	else {
-		uri = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
+		location = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
 		style->file = (location != NULL) ? g_file_new_for_uri (location) : NULL;
 	}
-
-	style->background_style = g_settings_get_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY);
 
 	g_free (location);
 	g_object_unref (settings);
@@ -136,7 +119,6 @@ wallpaper_style_set_as_current (WallpaperStyle *style)
 		else {
 			g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, location);
 		}
-		g_settings_set_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY, style->background_style);
 
 		g_object_unref (settings);
 	}
@@ -402,10 +384,6 @@ wallpaper_metadata_ready_cb (GObject      *source_object,
 		return;
 	}
 
-	/* WALLPAPER handles most of the cases correctly */
-
-	wdata->new_style.background_style = BACKGROUND_STYLE_WALLPAPER;
-
 	/* use ZOOM if the image has a size similar to the monitor's */
 
 #if GTK_CHECK_VERSION(3, 22, 0)
@@ -421,9 +399,6 @@ wallpaper_metadata_ready_cb (GObject      *source_object,
 	file_data = file_list->data;
 	image_width = g_file_info_get_attribute_int32 (file_data->info, "image::width");
 	image_height = g_file_info_get_attribute_int32 (file_data->info, "image::height");
-
-	if ((image_width >= monitor_geometry.width / 2) && (image_height >= monitor_geometry.height / 2))
-		wdata->new_style.background_style = BACKGROUND_STYLE_ZOOM;
 
 	wallpaper_data_set__step2 (wdata);
 }
