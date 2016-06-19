@@ -11,7 +11,6 @@ icons_DATA = 				\
 	file-library.png		\
 	file-search.png			\
 	histogram.png			\
-	palette.png			\
 	share.png			\
 	tag.png				\
 	tool-adjust-colors.png		\

@@ -9,7 +9,6 @@ icons_DATA = 			\
 	file-catalog.png	\
 	file-library.png	\
 	file-search.png		\
-	palette.png		\
 	selection.png		\
 	selection1.png		\
 	selection2.png		\
