@@ -1,6 +1,6 @@
 m4_define([pix_major_version], [1])
 m4_define([pix_minor_version], [0])
-m4_define([pix_micro_version], [1])
+m4_define([pix_micro_version], [2])
 m4_define([pix_version],
           [pix_major_version.pix_minor_version.pix_micro_version])
 m4_define([pix_api_version],
@@ -8,7 +8,7 @@ m4_define([pix_api_version],
 
 AC_PREREQ(2.63)
 AC_INIT([pix], [pix_version],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=pix],
+        [https://github.com/linuxmint/pix/issues],
         [pix])
 AM_INIT_AUTOMAKE([1.11 foreign no-dist-gzip dist-xz tar-ustar subdir-objects])
 
