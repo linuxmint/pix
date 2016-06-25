@@ -10,17 +10,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-08 02:22+0300\n"
-"PO-Revision-Date: 2013-10-05 12:56+0300\n"
-"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"POT-Creation-Date: 2016-06-22 17:53+0100\n"
+"PO-Revision-Date: 2016-06-22 18:59+0000\n"
+"Last-Translator: Rūdolfs Mazurs <Unknown>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
-"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2016-06-25 09:33+0000\n"
+"X-Generator: Launchpad (build 18111)\n"
+"Language: lv\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -158,8 +158,8 @@ msgstr "Iespējamās vērtības ir: tiff, tif."
 
 #: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
-"Possible values include: general::unsorted, file::name, file::size, file::"
-"mtime, exif::photo::datetimeoriginal"
+"Possible values include: general::unsorted, file::name, file::size, "
+"file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
 "Iespējamās vērtības iekļauj: general::unsorted, file::name, file::size, "
 "file::mtime, exif::photo::datetimeoriginal"
@@ -888,7 +888,7 @@ msgstr "Jauna _bibliotēka"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:5
 #: ../extensions/file_manager/actions.c:944
-#: ../extensions/webalbums/gth-web-exporter.c:1840
+#: ../extensions/webalbums/gth-web-exporter.c:1842
 msgid "_View the destination"
 msgstr "_Skatīt mērķi"
 
@@ -917,7 +917,7 @@ msgid "Catalog"
 msgstr "Katalogs"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:6
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
 msgid "Organize Files"
 msgstr "Organizēt datnes"
 
@@ -941,50 +941,25 @@ msgstr "Neizvēlēties nevienu"
 msgid "Catalog _Preview:"
 msgstr "Kataloga _priekšskatījums:"
 
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
-#: ../extensions/edit_metadata/gth-edit-general-page.c:558
-#: ../pix/gth-main-default-tests.c:300
-msgid "Date photo was taken"
-msgstr "Fotogrāfijas uzņemšanas datums"
-
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:2
-#: ../pix/gth-main-default-tests.c:292
-msgid "File modified date"
-msgstr "Datņu izmaiņu datums"
-
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
-#: ../extensions/comments/main.c:182
-msgid "Tag"
-msgstr "Birka"
-
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
-msgid "tag"
-msgstr "birka"
-
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
-#: ../pix/gth-main-default-tests.c:324
-msgid "Tag (embedded)"
-msgstr "Birka (iegulta)"
-
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:7
 msgid "_Group files by:"
 msgstr "_Grupēt datnes pēc:"
 
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:8
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
 #: ../extensions/search/data/ui/search-editor.ui.h:2
 msgid "_Include sub-folders"
 msgstr "_Iekļaut apakšmapes"
 
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:9
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
 msgstr "Ignorēt katalogus ar vienu datni"
 
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:10
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
 msgid "Put single files in the catalog:"
 msgstr "Ievieto vienpatņu datnes katalogā:"
 
-#: ../extensions/catalogs/data/ui/organize-files.ui.h:11
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:6
 msgid "Singles"
 msgstr "Vienpatņi"
 
@@ -1010,6 +985,27 @@ msgstr "Nevarēja ielādēt katalogu"
 msgid "Files will be organized in catalogs. No file will be moved on disk."
 msgstr ""
 "Datnes tiks organizēti katalogos. Uz diska neviena datne netiks pārvietota."
+
+#: ../extensions/catalogs/dlg-organize-files.c:132
+#: ../extensions/edit_metadata/gth-edit-general-page.c:558
+#: ../pix/gth-main-default-tests.c:300
+msgid "Date photo was taken"
+msgstr "Fotogrāfijas uzņemšanas datums"
+
+#: ../extensions/catalogs/dlg-organize-files.c:139
+#: ../pix/gth-main-default-tests.c:292
+msgid "File modified date"
+msgstr "Datņu izmaiņu datums"
+
+#: ../extensions/catalogs/dlg-organize-files.c:146
+#: ../extensions/comments/main.c:182
+msgid "Tag"
+msgstr "Birka"
+
+#: ../extensions/catalogs/dlg-organize-files.c:153
+#: ../pix/gth-main-default-tests.c:324
+msgid "Tag (embedded)"
+msgstr "Birka (iegulta)"
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:45
 #: ../extensions/edit_metadata/callbacks.c:106
@@ -1053,10 +1049,10 @@ msgid "Could not remove the files from the catalog"
 msgstr "Nevarēja izņemt datnes no kataloga"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:746
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:755
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:785
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:1320
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:747
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:756
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:786
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
 msgstr "Nederīgs datnes formāts"
@@ -1168,8 +1164,7 @@ msgstr "Iestatījumi"
 msgid "_Synchronize with the embedded metadata"
 msgstr "_Sinhronizēt ar iegultajiem metadatiem"
 
-#: ../extensions/comments/main.c:35
-#: ../extensions/edit_metadata/callbacks.c:100
+#: ../extensions/comments/main.c:35 ../extensions/edit_metadata/callbacks.c:100
 msgid "Comment"
 msgstr "Komentārs"
 
@@ -1228,7 +1223,8 @@ msgid "Contact Sheet"
 msgstr "Kontaktu loksne"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
-msgid "Create an index image displaying the thumbnails of the selected files."
+msgid ""
+"Create an index image displaying the thumbnails of the selected files."
 msgstr "Izveido indeksa attēlu, kas attēlo izvēlēto datņu sīktēlus."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
@@ -1548,12 +1544,12 @@ msgstr "_Izmantot sākotnējo attēla mapi"
 msgid "Converting images"
 msgstr "Pārveido attēlus"
 
-#: ../extensions/desktop_background/actions.c:194
+#: ../extensions/desktop_background/actions.c:222
 msgid "Could not show the desktop background properties"
 msgstr "Nevarēja parādīt darbvirsmas fona īpašības"
 
-#: ../extensions/desktop_background/actions.c:259
-#: ../extensions/desktop_background/actions.c:277
+#: ../extensions/desktop_background/actions.c:287
+#: ../extensions/desktop_background/actions.c:305
 msgid "Could not set the desktop background"
 msgstr "Nevarēja iestatīt darbvirsmas fonu"
 
@@ -1943,7 +1939,7 @@ msgstr "Datnes tika veiksmīgi augšupielādētas uz serveri."
 #: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:2
 #: ../extensions/photobucket/data/ui/photobucket-export-completed.ui.h:2
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:2
-#: ../extensions/webalbums/gth-web-exporter.c:1839
+#: ../extensions/webalbums/gth-web-exporter.c:1841
 msgid "_Open in the Browser"
 msgstr "_Atvērt pārlūkā"
 
@@ -2166,14 +2162,12 @@ msgstr "Mapi nevar pārvietot uz miskasti. Vai vēlaties to izdzēst pavisam?"
 msgid "Could not move the folder to the Trash"
 msgstr "Nevarēja pārvietot mapi uz miskasti"
 
-#: ../extensions/file_manager/actions.c:816
-#: ../pix/gth-file-source-vfs.c:841
+#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Vai tiešām vēlaties neatgriezeniski dzēst “%s”?"
 
-#: ../extensions/file_manager/actions.c:826
-#: ../pix/gth-file-source-vfs.c:854
+#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
 msgid "If you delete a file, it will be permanently lost."
 msgstr "Ja izdzēsīsiet datni, tā tiks neatgriezeniski zaudēta."
 
@@ -2212,8 +2206,7 @@ msgid "Duplicate the selected files"
 msgstr "Dublēt izvēlētās datnes"
 
 #: ../extensions/file_manager/callbacks.c:183
-#: ../extensions/file_manager/callbacks.c:219
-#: ../pix/gth-file-source-vfs.c:813
+#: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
 msgid "Mo_ve to Trash"
 msgstr "Iz_mest miskastē"
 
@@ -2873,8 +2866,7 @@ msgid "Searching for duplicates"
 msgstr "Meklē dublikātus"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:728
-#: ../pix/gth-load-file-data-task.c:106
-#: ../pix/gth-save-file-data-task.c:100
+#: ../pix/gth-load-file-data-task.c:106 ../pix/gth-save-file-data-task.c:100
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
@@ -2986,7 +2978,8 @@ msgstr "Nezināma kļūda"
 #, c-format
 msgid ""
 "Return to this window when you have finished the authorization process on %s"
-msgstr "Atgriezieties pie šī loga, kad pabeigsiet pilnvarošanas procesu uz %s"
+msgstr ""
+"Atgriezieties pie šī loga, kad pabeigsiet pilnvarošanas procesu uz %s"
 
 #: ../extensions/flicker_utils/flickr-service.c:503
 msgid "Once you're done, click the 'Continue' button below."
@@ -3033,7 +3026,7 @@ msgid "Slower"
 msgstr "Lēnāk"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:699
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:704
 msgid "Play"
 msgstr "Atskaņot"
 
@@ -3079,21 +3072,19 @@ msgstr "Ekrānattēls"
 msgid "Take a screenshot"
 msgstr "Uzņemt ekrānattēlu"
 
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:676
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
 msgstr "Atskaņo video"
 
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:689
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:694
 msgid "Pause"
 msgstr "Pauzēt"
 
-#: ../extensions/gstreamer_tools/main.c:31
-#: ../pix/gth-main-default-tests.c:247
+#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:247
 msgid "Video"
 msgstr "Video"
 
-#: ../extensions/gstreamer_tools/main.c:32
-#: ../pix/gth-main-default-tests.c:254
+#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:254
 msgid "Audio"
 msgstr "Audio"
 
@@ -3154,7 +3145,7 @@ msgstr "Mono"
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:401
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1270
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:243
-#: ../extensions/webalbums/gth-web-exporter.c:2446 ../pix/gtk-utils.c:1037
+#: ../extensions/webalbums/gth-web-exporter.c:2448 ../pix/gtk-utils.c:1037
 #, c-format
 msgid "%d × %d"
 msgstr "%d × %d"
@@ -3266,7 +3257,7 @@ msgid "Loading \"%s\""
 msgstr "Ielādē “%s”"
 
 #: ../extensions/image_print/gth-load-image-info-task.c:166
-#: ../extensions/webalbums/gth-web-exporter.c:2719
+#: ../extensions/webalbums/gth-web-exporter.c:2721
 msgid "Loading images"
 msgstr "Ielādē attēlus"
 
@@ -3307,9 +3298,9 @@ msgid "Reset the embedded orientation without rotating the images"
 msgstr "Atstatīt iegulto virzienu, nepagriežot attēlus"
 
 #: ../extensions/image_rotation/gth-reset-orientation-task.c:111
-#: ../extensions/image_rotation/gth-transform-task.c:141
-#: ../extensions/webalbums/gth-web-exporter.c:2338
-#: ../extensions/webalbums/gth-web-exporter.c:2423
+#: ../extensions/image_rotation/gth-transform-task.c:143
+#: ../extensions/webalbums/gth-web-exporter.c:2340
+#: ../extensions/webalbums/gth-web-exporter.c:2425
 msgid "Saving images"
 msgstr "Saglabā attēlus"
 
@@ -3321,12 +3312,12 @@ msgstr "Attēla pagriešana"
 msgid "Rotate images without data loss."
 msgstr "Pagriezt attēlus bez kvalitātes zudumiem."
 
-#: ../extensions/image_rotation/rotation-utils.c:117
+#: ../extensions/image_rotation/rotation-utils.c:105
 #, c-format
 msgid "Problem transforming the image: %s"
 msgstr "Radās problēma, pārveidojot attēlu — %s"
 
-#: ../extensions/image_rotation/rotation-utils.c:122
+#: ../extensions/image_rotation/rotation-utils.c:110
 msgid ""
 "This transformation may introduce small image distortions along one or more "
 "edges, because the image dimensions are not multiples of 8.\n"
@@ -3349,11 +3340,11 @@ msgstr ""
 "Praktiskai lietošanai šī metode dod vislabākos rezultātus, bet strikti "
 "runājot tas vairs nav bezzudumu pārveidojums."
 
-#: ../extensions/image_rotation/rotation-utils.c:128
+#: ../extensions/image_rotation/rotation-utils.c:116
 msgid "_Trim"
 msgstr "Apgriez_t"
 
-#: ../extensions/image_rotation/rotation-utils.c:130
+#: ../extensions/image_rotation/rotation-utils.c:118
 msgid "_Accept distortion"
 msgstr "_Pieņemt izkropļojumus"
 
@@ -3650,7 +3641,7 @@ msgstr "Datnes bāzes nosaukums"
 msgid "The parent folder path"
 msgstr "Vecāka mape ceļā"
 
-#. Translate only 'message' and 'default_value'.
+#. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:14
 #, no-c-format
 msgid "%ask{ message }{ default value }"
@@ -3660,7 +3651,7 @@ msgstr "%ask{ ziņojums }{ noklusējuma vērtība }"
 msgid "Ask an input value"
 msgstr "Prasīt ievades vērtību"
 
-#. Translate only 'attribute name'
+#. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:18
 #, no-c-format
 msgid "%attr{ attribute name }"
@@ -3689,7 +3680,7 @@ msgstr "%E"
 msgid "The file extension"
 msgstr "Datnes paplašinājums"
 
-#. Translate only 'text'.
+#. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:28
 #, no-c-format
 msgid "%quote{ text }"
@@ -3697,7 +3688,7 @@ msgstr "%quote{ teksts }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:29
 msgid "Quote the text "
-msgstr "Citēt tekstu"
+msgstr "Citēt tekstu "
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:30
 msgid "_Command:"
@@ -3797,7 +3788,8 @@ msgstr "Karte"
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
-msgid "The geographical position information is not available for this image."
+msgid ""
+"The geographical position information is not available for this image."
 msgstr "Šim attēlam nav pieejama ģeogrāfiskās pozīcijas informācija"
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
@@ -4205,15 +4197,15 @@ msgstr "Vecais nosaukums"
 msgid "New Name"
 msgstr "Jauns nosaukums"
 
-#: ../extensions/rename_series/dlg-rename-series.c:950
+#: ../extensions/rename_series/dlg-rename-series.c:951
 msgid "Keep original case"
 msgstr "Paturēt sākotnējo reģistru"
 
-#: ../extensions/rename_series/dlg-rename-series.c:951
+#: ../extensions/rename_series/dlg-rename-series.c:952
 msgid "Convert to lower-case"
 msgstr "Pārveidot uz mazajiem burtiem"
 
-#: ../extensions/rename_series/dlg-rename-series.c:952
+#: ../extensions/rename_series/dlg-rename-series.c:953
 msgid "Convert to upper-case"
 msgstr "Pārveidot uz lielajiem burtiem"
 
@@ -4489,7 +4481,7 @@ msgstr "Attēls %d of %d"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:29
 msgid "Index"
-msgstr "Indekss "
+msgstr "Indekss"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:30
 #: ../pix/gth-browser-actions-entries.h:125
@@ -4545,7 +4537,7 @@ msgstr "_Kopēt oriģinālus uz mērķi"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:27
 msgid "_Adapt to the window width "
-msgstr "Pielāgot log_a platumam"
+msgstr "Pielāgot log_a platumam "
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:30
 msgid "Index Page"
@@ -4583,36 +4575,36 @@ msgstr "Rādīt sekojošos atribūtus:"
 msgid "Image Attributes"
 msgstr "Attēla atribūti"
 
-#: ../extensions/webalbums/gth-web-exporter.c:1800
+#: ../extensions/webalbums/gth-web-exporter.c:1802
 msgid "Could not show the destination"
 msgstr "Nevarēja parādīt galamērķi"
 
-#: ../extensions/webalbums/gth-web-exporter.c:1836
+#: ../extensions/webalbums/gth-web-exporter.c:1838
 msgid "The album has been created successfully."
 msgstr "Albums ir veiksmīgi izveidots."
 
-#: ../extensions/webalbums/gth-web-exporter.c:2104
-#: ../extensions/webalbums/gth-web-exporter.c:2132
+#: ../extensions/webalbums/gth-web-exporter.c:2106
+#: ../extensions/webalbums/gth-web-exporter.c:2134
 msgid "Saving thumbnails"
 msgstr "Saglabā sīktēlus"
 
-#: ../extensions/webalbums/gth-web-exporter.c:2160
+#: ../extensions/webalbums/gth-web-exporter.c:2162
 msgid "Saving HTML pages: Images"
 msgstr "Saglabā HTML lapas — attēlus"
 
-#: ../extensions/webalbums/gth-web-exporter.c:2218
+#: ../extensions/webalbums/gth-web-exporter.c:2220
 msgid "Saving HTML pages: Indexes"
 msgstr "Saglabā HTML lapas — indeksus"
 
-#: ../extensions/webalbums/gth-web-exporter.c:2503
+#: ../extensions/webalbums/gth-web-exporter.c:2505
 msgid "Copying original images"
 msgstr "Kopē sākotnējos attēlus"
 
-#: ../extensions/webalbums/gth-web-exporter.c:2963
+#: ../extensions/webalbums/gth-web-exporter.c:2965
 msgid "Could not find the style folder"
 msgstr "Nevarēja atrast stila mapi"
 
-#: ../extensions/webalbums/gth-web-exporter.c:3001
+#: ../extensions/webalbums/gth-web-exporter.c:3003
 msgid "Could not create a temporary folder"
 msgstr "Nevarēja izveidot pagaidu mapi"
 
@@ -4692,23 +4684,23 @@ msgid "Could not deactivate the extension"
 msgstr "Neizdevās deaktivizēt paplašinājumu"
 
 #. add the page to the preferences dialog
-#: ../pix/dlg-preferences-extensions.c:772
+#: ../pix/dlg-preferences-extensions.c:777
 msgid "Extensions"
 msgstr "Paplašinājumi"
 
-#: ../pix/dlg-preferences-extensions.c:819
+#: ../pix/dlg-preferences-extensions.c:824
 msgid "Restart required"
 msgstr "Nepieciešama pārstartēšana"
 
-#: ../pix/dlg-preferences-extensions.c:820
+#: ../pix/dlg-preferences-extensions.c:825
 msgid "You need to restart pix for these changes to take effect"
 msgstr "Jums ir jāpārstartē pix, lai izmaiņas stātos spēkā"
 
-#: ../pix/dlg-preferences-extensions.c:821
+#: ../pix/dlg-preferences-extensions.c:826
 msgid "_Continue"
 msgstr "_Turpināt"
 
-#: ../pix/dlg-preferences-extensions.c:822
+#: ../pix/dlg-preferences-extensions.c:827
 msgid "_Restart"
 msgstr "Pā_rstartēt"
 
@@ -4745,7 +4737,7 @@ msgstr "Saņem informāciju par datni"
 #. * hours, 5 minutes, and 2 seconds. You may change ":" to
 #. * the separator that your locale uses or use "%Id" instead
 #. * of "%d" if your locale uses localized digits.
-#.
+#. 
 #: ../pix/glib-utils.c:3068
 #, c-format
 msgctxt "long time format"
@@ -4757,7 +4749,7 @@ msgstr "%d:%02d:%02d"
 #. * minutes and 2 seconds. You may change ":" to the
 #. * separator that your locale uses or use "%Id" instead of
 #. * "%d" if your locale uses localized digits.
-#.
+#. 
 #: ../pix/glib-utils.c:3077
 #, c-format
 msgctxt "short time format"
@@ -4771,8 +4763,8 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
-"pix ir brīvā programmatūra; jūs varat izplatīt un/vai modificēt to "
-"saskaņā ar GNU Vispārējās Publiskās Licences 2 vai kādas vēlākas versijas "
+"pix ir brīvā programmatūra; jūs varat izplatīt un/vai modificēt to saskaņā "
+"ar GNU Vispārējās Publiskās Licences 2 vai kādas vēlākas versijas "
 "noteikumiem."
 
 #: ../pix/gth-browser-actions-callbacks.c:418
@@ -4791,8 +4783,8 @@ msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
-"Jums vajadzēja saņemt GNU Vispārējo Publisko Licenci ar pix. Ja nē, "
-"skatiet http://www.gnu.org/licenses/."
+"Jums vajadzēja saņemt GNU Vispārējo Publisko Licenci ar pix. Ja nē, skatiet "
+"http://www.gnu.org/licenses/."
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
@@ -4802,7 +4794,10 @@ msgstr "Attēlu skatītājs un pārlūks."
 msgid "translator_credits"
 msgstr ""
 "Artis Trops <hornet@navigator.lv>\n"
-"Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
+"Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"\n"
+"Launchpad Contributions:\n"
+"  Rūdolfs Mazurs https://launchpad.net/~rudolfs-mazurs"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -5103,7 +5098,8 @@ msgstr "Datņu sistēma"
 msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
-msgstr "Datnes nevar pārvietot uz miskasti. Vai vēlaties tās izdzēst pavisam?"
+msgstr ""
+"Datnes nevar pārvietot uz miskasti. Vai vēlaties tās izdzēst pavisam?"
 
 #: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
@@ -5233,8 +5229,7 @@ msgstr "Datne"
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../pix/gth-main-default-metadata.c:40
-#: ../pix/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:284
 msgid "Size"
 msgstr "Izmērs"
 
@@ -5501,1340 +5496,3 @@ msgstr "Rādīt versiju"
 #: ../pix/main.c:483
 msgid "- Image browser and viewer"
 msgstr "- Attēlu pārlūks un skatītājs"
-
-#~| msgid "Format"
-#~ msgid "RAW Format"
-#~ msgstr "Jēls (RAW) formāts"
-
-#~| msgid "Selection %d"
-#~ msgid "Show selection %d"
-#~ msgstr "Rādīt izvēli %d"
-
-#~| msgid "is greater than"
-#~ msgid "is greater than or equal to"
-#~ msgstr "ir lielāks vai vienāds ar"
-
-#~| msgid "is lower than"
-#~ msgid "is lower than or equal to"
-#~ msgstr "ir mazāks vai vienāds ar"
-
-#~ msgid "Whether to always use a black background."
-#~ msgstr "Vai vienmēr lietot melnu fonu."
-
-#~ msgid "_E-Mail:"
-#~ msgstr "_E-pasts:"
-
-#~ msgid ""
-#~ "Type the characters you see in the picture below. Letters are not case-"
-#~ "sensitive."
-#~ msgstr ""
-#~ "Ievadiet rakstzīmes, ko redzat attēlā zemāk. Burti nav reģistrjutīgi."
-
-#~ msgid "_Password:"
-#~ msgstr "_Parole:"
-
-#~ msgid "Picasa Web Album"
-#~ msgstr "Picasa tīmekļa albums"
-
-#~ msgid "Account"
-#~ msgstr "Konts"
-
-#~ msgid "Could not load the file"
-#~ msgstr "Nevarēja ielādēt datni"
-
-#~ msgid "Exif DateTimeOriginal tag"
-#~ msgstr "Exif DateTimeOriginal birka"
-
-#~| msgid "_Reset"
-#~ msgid "_Resize to:"
-#~ msgstr "Mainīt izmē_ru uz:"
-
-#~ msgid "×"
-#~ msgstr "×"
-
-#~| msgid "_Desaturate"
-#~ msgid "Desaturate"
-#~ msgstr "Noņemt piesātinājumu"
-
-#~ msgid "White balance correction"
-#~ msgstr "Baltās krāsas līdzsvara korekcija"
-
-#~| msgid "Reduce Colors"
-#~ msgid "Enhance Colors"
-#~ msgstr "Uzlabot krāsas"
-
-#~ msgid "Automatic white balance correction"
-#~ msgstr "Automātiska baltās krāsas līdzsvara korekcija"
-
-#~| msgid "Save Image"
-#~ msgid "Save images"
-#~ msgstr "Saglabāt attēlus"
-
-#~ msgid "Save images in common file formats such as JPEG, PNG and TIFF"
-#~ msgstr ""
-#~ "Saglabāt attēlus plaši lietotos failu formātos, piemēram JPEG, PNG un TIFF"
-
-#~ msgid "File _Format: %s"
-#~ msgstr "Faila _formāts — %s"
-
-#~ msgid "By Extension"
-#~ msgstr "Pēc paplašinājuma"
-
-#~| msgid "File pa_th"
-#~ msgid "File Format"
-#~ msgstr "Faila formāts"
-
-#~| msgid "Dimensions"
-#~ msgid "Extension(s)"
-#~ msgstr "Paplašinājums(-i)"
-
-#~ msgid ""
-#~ "The program was not able to find out the file format you want to use for `"
-#~ "%s'. Please make sure to use a known extension for that file or manually "
-#~ "choose a file format from the list below."
-#~ msgstr ""
-#~ "Lietotne nespēja noteikt, kuru faila formātu jūs vēlaties izmantot failam "
-#~ "“%s”. Pārliecinieties, ka izmantojat pareizu faila paplašinājumu, vai arī "
-#~ "pašrocīgi izvēlieties faila formātu no apakšā esošā saraksta."
-
-#~ msgid "File format not recognized"
-#~ msgstr "Faila formāts nav atpazīts"
-
-#~ msgid "Bytes"
-#~ msgstr "Baiti"
-
-#~ msgid "Exposure mode"
-#~ msgstr "Ekspozīcijas režīms"
-
-#~ msgid "Flash"
-#~ msgstr "Zibsnis"
-
-#~ msgid "Shutter speed"
-#~ msgstr "Slēdža ātrums"
-
-#~ msgid "Aperture value"
-#~ msgstr "Diafragmas atvērums"
-
-#~ msgid "Focal length"
-#~ msgstr "Fokusa attālums  "
-
-#~ msgid "Camera model"
-#~ msgstr "Fotokameras modelis"
-
-#~ msgid "    "
-#~ msgstr "    "
-
-#~ msgid "<b>Categories:</b>"
-#~ msgstr "<b>Kategorijas:</b>"
-
-#~ msgid "<b>Information on Channel:</b>"
-#~ msgstr "<b>Informācija par Kanālu:</b>"
-
-#~ msgid "A_vailable applications:"
-#~ msgstr "_Pieejamās aplikācijas:"
-
-#~ msgid "Choose a Catalog"
-#~ msgstr "Iezvēlieties"
-
-#~ msgid "Comm_ent"
-#~ msgstr "Kom_entēt"
-
-#~ msgid "Open Images"
-#~ msgstr "Atvērt Attēlus"
-
-#~ msgid "Overwrite Image"
-#~ msgstr "Pārrakstīt Attēlu"
-
-#~ msgid "Photo _Data (EXIF)"
-#~ msgstr "Foto _Dati (EXIF)"
-
-#~ msgid "R_ecent applications:"
-#~ msgstr "Ne_senās aplikācijas:"
-
-#~ msgid "_Application:"
-#~ msgstr "_Aplikācija:"
-
-#~ msgid "_Next"
-#~ msgstr "_Nakošais"
-
-#~ msgid "_Previous"
-#~ msgstr "_Iepriekšējais"
-
-#~ msgid "Ca_tegories:"
-#~ msgstr "Ka_tegorijas:"
-
-#~ msgid "Camera Model"
-#~ msgstr "Fotokameras modelis"
-
-#~ msgid "Select a camera model"
-#~ msgstr "Izvēlēties fotokameras modeli"
-
-#~ msgid "Update previews"
-#~ msgstr "Atjauninājuma priekšskats"
-
-#~ msgid "_Film:"
-#~ msgstr "_Filma:"
-
-#~ msgid "A_vailable categories:"
-#~ msgstr "Pieeja_mās kategorijas:"
-
-#~ msgid "Categories"
-#~ msgstr "Kategorijas"
-
-#~ msgid "Remove selected category"
-#~ msgstr "Izņemt izvēlēto kategoriju"
-
-#~ msgid "_Selected categories:"
-#~ msgstr "_Izvēlētās kategorijas:"
-
-#~ msgid "<b>Compression</b>"
-#~ msgstr "<b>Kompresija</b>"
-
-#~ msgid "<b>Image type</b>"
-#~ msgstr "<b>Attēla tips</b>"
-
-#~ msgid "JPEG Options"
-#~ msgstr "JPEG Opcijas"
-
-#~ msgid "Overwrite mode:"
-#~ msgstr "Pārrakstīšanas režīms:"
-
-#~ msgid "R_emove original"
-#~ msgstr "Izņ_emt oriģinālu"
-
-#~ msgid ""
-#~ "Skip\n"
-#~ "Rename\n"
-#~ "Ask\n"
-#~ "Overwrite"
-#~ msgstr ""
-#~ "Izlaist\n"
-#~ "Pārsaukt\n"
-#~ "Jautāt\n"
-#~ "Pārrakstīt"
-
-#~ msgid "TGA Options"
-#~ msgstr "TGA Opcijas"
-
-#~ msgid "TIFF Options"
-#~ msgstr "TIFF Opcijas"
-
-#~ msgid "4 x 3 (Book, DVD)"
-#~ msgstr "4 x 3 (grāmata, DVD)"
-
-#~ msgid "5 x 7"
-#~ msgstr "5 x 7"
-
-#~ msgid "8 x 10"
-#~ msgstr "8 x 10"
-
-#~ msgid "_Crop"
-#~ msgstr "Ap_cirpt"
-
-#~ msgid "     "
-#~ msgstr "     "
-
-#~ msgid "<b>Scale ratio</b>"
-#~ msgstr "<b>Mēroga proporcija</b>"
-
-#~ msgid "Brightness - Contrast"
-#~ msgstr "Spilgtums - Kontrasts"
-
-#~ msgid "Color Balance"
-#~ msgstr "Krāsu Balanss"
-
-#~ msgid "Hue - Saturation"
-#~ msgstr "Nokrāsa - Piesātinātība"
-
-#~ msgid "Posterize"
-#~ msgstr "Afišēt"
-
-#~ msgid "Preserve l_uminosity"
-#~ msgstr "Paturēt _spīdumu"
-
-#~ msgid "Width:"
-#~ msgstr "Platums:"
-
-#~ msgid "_Hue:"
-#~ msgstr "_Nokrāsa:"
-
-#~ msgid "_Levels:"
-#~ msgstr "_Līmeņi:"
-
-#~ msgid "_Lightness:"
-#~ msgstr "_Gaišums:"
-
-#~ msgid "_Scale"
-#~ msgstr "_Mērogs"
-
-#~ msgid "<b>Caption</b>"
-#~ msgstr "<b>Uzraksts</b>"
-
-#~ msgid "<b>Footer</b>"
-#~ msgstr "<b>Kājene</b>"
-
-#~ msgid "<b>Header and footer</b>"
-#~ msgstr "<b>Galvene un kājene</b>"
-
-#~ msgid "<b>Header</b>"
-#~ msgstr "<b>Galvene</b>"
-
-#~ msgid "<b>Index images</b>"
-#~ msgstr "<b>Indeksa attēli</b>"
-
-#~ msgid "<b>Page size</b>"
-#~ msgstr "<b>Lapas izmērs</b>"
-
-#~ msgid "<small><i><b>Note:</b> # (enumerator)</i>.</small>"
-#~ msgstr "<small><i><b>Piezīme:</b> # (uzskaitītājs)</i>.</small>"
-
-#~ msgid ""
-#~ "<small><i><b>Note:</b> %p (page number), %n (total number of pages)</i>.</"
-#~ "small>"
-#~ msgstr ""
-#~ "<small><i><b>Note:</b> %p (lappuses numurs), %n (kopējais lappušu skaits)"
-#~ "</i>.</small>"
-
-#~ msgid "Co_mment"
-#~ msgstr "_Komentārs"
-
-#~ msgid "F_ooter:"
-#~ msgstr "_Kājene:"
-
-#~ msgid "Frame co_lor:"
-#~ msgstr "Rāmja krā_sa:"
-
-#~ msgid "H_eader:"
-#~ msgstr "Ga_lvene:"
-
-#~ msgid "Header/Footer"
-#~ msgstr "Galvene/Kājene"
-
-#~ msgid "Hei_ght:"
-#~ msgstr "Au_gstums:"
-
-#~ msgid "Image dim_ensions"
-#~ msgstr "Attēla di_mensijas"
-
-#~ msgid "Index Image Style"
-#~ msgstr "Attēla drukas stila indekss"
-
-#~ msgid "Rows a_nd columns"
-#~ msgstr "Rindas _un kolonnas"
-
-#~ msgid "Shadow out"
-#~ msgstr "Izēnot"
-
-#~ msgid "Sor_t:"
-#~ msgstr "Šķiro_t:"
-
-#~ msgid "Wi_dth:"
-#~ msgstr "Pla_tums:"
-
-#~ msgid "_Draw frame"
-#~ msgstr "_Zīmēt rāmi"
-
-#~ msgid "by name"
-#~ msgstr "pēc nosaukuma"
-
-#~ msgid "jpeg"
-#~ msgstr "jpeg"
-
-#~ msgid "png"
-#~ msgstr "png"
-
-#~ msgid "0:"
-#~ msgstr "0:"
-
-#~ msgid "112 x 112"
-#~ msgstr "112 x 112"
-
-#~ msgid "128 x 128"
-#~ msgstr "128 x 128"
-
-#~ msgid "164 x 164"
-#~ msgstr "164 x 164"
-
-#~ msgid "1:"
-#~ msgstr "1:"
-
-#~ msgid "256 x 256"
-#~ msgstr "256 x 256"
-
-#~ msgid "2:"
-#~ msgstr "2:"
-
-#~ msgid "3:"
-#~ msgstr "3:"
-
-#~ msgid "4:"
-#~ msgstr "4:"
-
-#~ msgid "64 x 64"
-#~ msgstr "64 x 64"
-
-#~ msgid "6:"
-#~ msgstr "6:"
-
-#~ msgid "7:"
-#~ msgstr "7:"
-
-#~ msgid "85 x 85"
-#~ msgstr "85 x 85"
-
-#~ msgid "8:"
-#~ msgstr "8:"
-
-#~ msgid "95 x 95"
-#~ msgstr "95 x 95"
-
-#~ msgid "9:"
-#~ msgstr "9:"
-
-#~ msgid "<b>Direction</b>"
-#~ msgstr "<b>Virziens</b>"
-
-#~ msgid "<b>Hide/Show</b>"
-#~ msgstr "<b>Parādīt/Paslēpt</b>"
-
-#~ msgid "<b>Interface</b>"
-#~ msgstr "<b>Saskarne</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Cits</b>"
-
-#~ msgid "<b>Slide show</b>"
-#~ msgstr "<b>Slīdrāde</b>"
-
-#~ msgid "<b>Viewer</b>"
-#~ msgstr "<b>Skatītājs</b>"
-
-#~ msgid "Activate items with a double click"
-#~ msgstr "Aktivēt priekšmetus ar dubultklikšķi"
-
-#~ msgid "Activate items with a single click"
-#~ msgstr "Aktivēt priekšmetus ar vienu klikšķi"
-
-#~ msgid "C_lick policy:"
-#~ msgstr "_Klikšķu uzvedība:"
-
-#~ msgid "D_elay before changing image:"
-#~ msgstr "Ai_zture pirms attēla nomaiņas:"
-
-#~ msgid "Do _not change folder"
-#~ msgstr "Ne_mainīt mapi"
-
-#~ msgid "Follow Nautilus behaviour"
-#~ msgstr "Sekot Nautilus uzvedībai"
-
-#~ msgid "For_ward"
-#~ msgstr "Uz P_riekšu"
-
-#~ msgid "Go to last _visited folder or catalog"
-#~ msgstr "Iet uz pēdējoreiz ap_meklēto mapi vai katalogu"
-
-#~ msgid "Hot Keys"
-#~ msgstr "Karstie taustiņi"
-
-#~ msgid "Layout:"
-#~ msgstr "Izkārtojums:"
-
-#~ msgid "Re_verse"
-#~ msgstr "Ap_griezta"
-
-#~ msgid "Use a _fading effect when changing image"
-#~ msgstr "Nomainot attēlus izmantot aptumsošanās efektu"
-
-#~ msgid "_Filenames"
-#~ msgstr "_Failu nosaukumi"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "150"
-#~ msgstr "150"
-
-#~ msgid "16"
-#~ msgstr "16"
-
-#~ msgid "300"
-#~ msgstr "300"
-
-#~ msgid "4"
-#~ msgstr "4"
-
-#~ msgid "600"
-#~ msgstr "600"
-
-#~ msgid "72"
-#~ msgstr "72"
-
-#~ msgid "8"
-#~ msgstr "8"
-
-#~ msgid "<b>Image Sizing</b>"
-#~ msgstr "<b>Attēla izmēri</b>"
-
-#~ msgid "<b>Margins</b>"
-#~ msgstr "<b>Starpības</b>"
-
-#~ msgid "<b>Orientation</b>"
-#~ msgstr "<b>Novietojums</b>"
-
-#~ msgid "<b>Size</b>"
-#~ msgstr "<b>Izmērs</b>"
-
-#~ msgid ""
-#~ "<small><i><b>Note:</b> Drag the image to move it in the page.\n"
-#~ "Click on an image to rotate it.</i></small>"
-#~ msgstr ""
-#~ "<small><i><b>Piezīme:</b> Lai pārvietotu attēlu lappusē, velciet to.\n"
-#~ "Lai rotētu attēlu, klikščiniet uz tā.</i></small>"
-
-#~ msgid "A4"
-#~ msgstr "A4"
-
-#~ msgid "Comment _font:"
-#~ msgstr "Kommentāra fonts:"
-
-#~ msgid "Executive"
-#~ msgstr "Izpildītājs"
-
-#~ msgid "Lan_dscape"
-#~ msgstr "Ainava"
-
-#~ msgid "Legal"
-#~ msgstr "Legāls"
-
-#~ msgid "Letter"
-#~ msgstr "Burts "
-
-#~ msgid "P_ortrait"
-#~ msgstr "P_ortrets"
-
-#~ msgid "Paper Details"
-#~ msgstr "Papīra detaļas"
-
-#~ msgid "Postcard"
-#~ msgstr "Atklātne  "
-
-#~ msgid "Tabloid"
-#~ msgstr "Tabloīds"
-
-#~ msgid "_Bottom:"
-#~ msgstr "_apakša:"
-
-#~ msgid "Actual Size"
-#~ msgstr "Patiesais izmērs"
-
-#~ msgid "Zoom In"
-#~ msgstr "Palielināt"
-
-#~ msgid "Zoom Out"
-#~ msgstr "Samazināt"
-
-#~ msgid "Zoom to Fit"
-#~ msgstr "Ietilpināt logā"
-
-#~ msgid "<b>Search criteria</b>"
-#~ msgstr "<b>Meklēšanas kritērijs</b>"
-
-#~ msgid "<b>Search scope</b>"
-#~ msgstr "<b>Meklēšanas mērķis</b>"
-
-#~ msgid "After"
-#~ msgstr "Pēc"
-
-#~ msgid "Any"
-#~ msgstr "Jebkāds"
-
-#~ msgid "Before"
-#~ msgstr "Pirms"
-
-#~ msgid "Choose categories from the saved list"
-#~ msgstr "Izvēlieties kategorijas no saglabāto saraksta"
-
-#~ msgid "Equal to"
-#~ msgstr "Vienāds ar"
-
-#~ msgid "Found images:"
-#~ msgstr "Atrasti attēli:"
-
-#~ msgid "Match a_ll selected categories"
-#~ msgstr "Saskanēt visas izvēlētās kategorijas"
-
-#~ msgid "Match a_ny selected category"
-#~ msgstr "Saska_nēt jebkuru izvēlēto kategoriju"
-
-#~ msgid "New _Search..."
-#~ msgstr "Jauna _Meklēšana..."
-
-#~ msgid "Search Progress"
-#~ msgstr "Meklēšanas Progress"
-
-#~ msgid "_Edit Search"
-#~ msgstr "_Rediģēt Meklēšanu"
-
-#~ msgid "<b>Change to:</b>"
-#~ msgstr "<b>Mainīt uz:</b>"
-
-#~ msgid "<b>Write to CD</b>"
-#~ msgstr "<b>Rakstīt CD</b>"
-
-#~ msgid ""
-#~ "<small><i><b>Special characters:</b> # (enumerator), %f (original "
-#~ "filename), %d (image date), %s (image size), %e (original extension).</"
-#~ "i></small>"
-#~ msgstr ""
-#~ "<small><i><b>Specīālās rakstzīmes:</b> # (uzskaitītājs), %f (sākotnējais "
-#~ "faila nosaukums), %d (attēla datums), %s (attēla lielums), %e "
-#~ "(sākotnejais paplašinājums).</i></small>"
-
-#~ msgid "A_djust timezone:"
-#~ msgstr "Uzstā_dīt laika zonu:"
-
-#~ msgid "Apply to all _images"
-#~ msgstr "Pielietot _visiem attēliem"
-
-#~ msgid "C_urrent date"
-#~ msgstr "Paš_reizējais datums"
-
-#~ msgid "Check _All"
-#~ msgstr "Pārbaudīt _Visus"
-
-#~ msgid "Check _None"
-#~ msgstr "Nepārbaudīt _Nevienu"
-
-#~ msgid "Checking image:"
-#~ msgstr "Pārbaudu attēlu:"
-
-#~ msgid "Equal images:"
-#~ msgstr "Vienādi attēli:"
-
-#~ msgid "Mirror image vertically (top-bottom)"
-#~ msgstr "Spogulēt attēlu vertikāli (augša-apakša)"
-
-#~ msgid "New names _preview:"
-#~ msgstr "Jaunu nosaukumu _priekšapskate:"
-
-#~ msgid "P_hoto digitalization date (From EXIF data)"
-#~ msgstr "F_oto ciparošanas datums (No EXIF datiem)"
-
-#~ msgid "Rotate Images"
-#~ msgstr "Rotēt attēlus"
-
-#~ msgid "Scale Images"
-#~ msgstr "Mērogot attēlus"
-
-#~ msgid "Search terminated, no duplicates found."
-#~ msgstr "Meklēšana pārtraukta, dublikāti nav atrasti."
-
-#~ msgid "1024 x 768"
-#~ msgstr "1024 x 768"
-
-#~ msgid "1280 x 960"
-#~ msgstr "1280 x 960"
-
-#~ msgid "320 x 200"
-#~ msgstr "320 x 200"
-
-#~ msgid "320 x 320"
-#~ msgstr "320 x 320"
-
-#~ msgid "640 x 640"
-#~ msgstr "640 x 640"
-
-#~ msgid "800 x 800"
-#~ msgstr "800 x 800"
-
-#~ msgid "<b>Album Style</b>"
-#~ msgstr "<b>Albuma stils</b>"
-
-#~ msgid "<b>Index Page Layout</b>"
-#~ msgstr "<b>Indeksa izkārtojums</b>"
-
-#~ msgid "<b>Theme</b>"
-#~ msgstr "<b>Tēma</b>"
-
-#~ msgid "<small><i><b>Note:</b> %d (current date).</i></small>"
-#~ msgstr "<small><i><b>Piezīme:</b> %d (pašreizējais datums).</i></small>"
-
-#~ msgid "Came_ra Model"
-#~ msgstr "Kame_ras modelis"
-
-#~ msgid "Exposure _time"
-#~ msgstr "Ekspozīcijas laiks"
-
-#~ msgid "Focal _length"
-#~ msgstr "Fokusa attālums"
-
-#~ msgid "Web Album Theme"
-#~ msgstr "Tīkla albuma tēma"
-
-#~ msgid "_Aperture value"
-#~ msgstr "Diafr_agmas atvērums"
-
-#~ msgid "_Date and Time"
-#~ msgstr "_Datums un laiks"
-
-#~ msgid "_Flash"
-#~ msgstr "_Zibsnis"
-
-#~ msgid "_Go to Theme Folder"
-#~ msgstr "_Iet uz Tēmas Mapi"
-
-#~ msgid "_Install Theme..."
-#~ msgstr "_Instalēt Tēmu..."
-
-#~ msgid "_Place"
-#~ msgstr "_Vieta"
-
-#~ msgid "_Shutter speed"
-#~ msgstr "_Slēdža ātrums"
-
-#~ msgid "columns, by"
-#~ msgstr "kolonnas, "
-
-#~ msgid "index.html"
-#~ msgstr "index.html"
-
-#~ msgid "rows per page,"
-#~ msgstr "attēlu skaits lappusē,"
-
-#~ msgid ""
-#~ "Possible values are 0 (portrait), 1 (landscape), 2 (reverse portrait), 3 "
-#~ "(reverse landscape)"
-#~ msgstr ""
-#~ "Iespējamas vērtības ir (portretveida), 1 (ainavveida), 2 (apgriezts "
-#~ "portretveida), 3 (apgriezts ainavveida)"
-
-#~ msgid "Possible values are: 1, 2, 3, 4."
-#~ msgstr "Iespējamās vērtības ir: 1, 2, 3, 4."
-
-#~ msgid "Possible values are: 72, 150, 300, 600."
-#~ msgstr "Iespējamās vērtības ir: 72, 150, 300, 600."
-
-#~ msgid ""
-#~ "Possible values are: actual_size, fit, keep_prev, fit_if_larger, "
-#~ "fit_width_if_larger."
-#~ msgstr ""
-#~ "Iespējamās vērtības ir: actual_size, fit, keep_prev, fit_if_larger, "
-#~ "fit_width_if_larger."
-
-#~ msgid "Possible values are: ascending, descending."
-#~ msgstr "Iespējamās vērtības ir: ascending, descending."
-
-#~ msgid "Possible values are: forward, backward, random."
-#~ msgstr "Iespējamās vērtības ir:  forward, backward, random."
-
-#~ msgid "Possible values are: high, low."
-#~ msgstr "Iespējamās vērtības ir: augsta, zema."
-
-#~ msgid "Possible values are: image, data, comment."
-#~ msgstr "Iespējamās vērtības ir: image, data, comment."
-
-#~ msgid "Possible values are: jpeg, png, tga, tiff."
-#~ msgstr "Iespējamās vērtības ir: jpeg, png, tga, tiff."
-
-#~ msgid "Possible values are: light, midtone, dark."
-#~ msgstr "Iespējamās vērtības ir: light, midtone, dark."
-
-#~ msgid "Possible values are: list, thumbnails."
-#~ msgstr "Iespējamās vērtības ir: list, thumbnails."
-
-#~ msgid "Possible values are: manual, auto."
-#~ msgstr "Iespējamās vērtības ir: manual, auto."
-
-#~ msgid "Possible values are: nautilus, single, double."
-#~ msgstr "Iespējamās vērtības ir: nautilus, single, double."
-
-#~ msgid "Possible values are: none, deflate, jpeg."
-#~ msgstr "Iespējamās vērtības ir: none, deflate, jpeg."
-
-#~ msgid ""
-#~ "Possible values are: none, name, path, size, time, exifdate, comment."
-#~ msgstr ""
-#~ "Iespējamās vērtības ir: none, name, path, size, time, exifdate, comment."
-
-#~ msgid ""
-#~ "Possible values are: none, simple, simple_with_shadow, shadow, slide, "
-#~ "shadow_in, shadow_out."
-#~ msgstr ""
-#~ "Iespējamās vērtības ir: none, simple, simple_with_shadow, shadow, slide, "
-#~ "shadow_in, shadow_out."
-
-#~ msgid ""
-#~ "Possible values are: none, square, image, display, 4x3, 4x6, 5x7, 8x10, "
-#~ "custom."
-#~ msgstr ""
-#~ "Iespējamās vērtības ir: none, square, image, display, 4x3, 4x6, 5x7, "
-#~ "8x10, custom."
-
-#~ msgid "Possible values are: pixels, percentage."
-#~ msgstr "Iespējamās vērtības ir:  pixels, percentage."
-
-#~ msgid "Possible values are: skip, rename, ask, overwrite."
-#~ msgstr "Iespējamās vērtības ir: skip, rename, ask, overwrite."
-
-#~ msgid "Possible values are: small, medium, large."
-#~ msgstr "Iespējamās vērtības ir: small, medium, large."
-
-#~ msgid ""
-#~ "Possible values are: system, text_below, text_beside, text_only, "
-#~ "icons_only."
-#~ msgstr ""
-#~ "Iespējamās vērtības ir: system, text_below, text_beside, text_only, "
-#~ "icons_only."
-
-#~ msgid "Cannot open catalog \"%s\": %s"
-#~ msgstr "Nevaru atvērt katalogu \"%s\": %s"
-
-#~ msgid "Cannot save catalog \"%s\": %s"
-#~ msgstr "Nevaru saglabāt katalogu \"%s\": %s"
-
-#~ msgid "%d %B %Y, %H:%M"
-#~ msgstr "%d %B %Y, %H:%M"
-
-#~ msgid "Image type:"
-#~ msgstr "Attēla tips:"
-
-#~ msgid "Home"
-#~ msgstr "Mājas"
-
-#~ msgid "Library not empty"
-#~ msgstr "Bibliotēka nav tukša"
-
-#~ msgid "Cannot remove library \"%s\": %s"
-#~ msgstr "Nevaru izņemt bibliotēku \"%s\": %s"
-
-#~ msgid "Cannot remove catalog \"%s\": %s"
-#~ msgstr "Nevaru izņemt katalogu \"%s\": %s"
-
-#~ msgid "No image"
-#~ msgstr "Nav attēla"
-
-#~ msgid "Ro_tate Images"
-#~ msgstr "Ro_tēt attēlu"
-
-#~ msgid "Loading image: %s"
-#~ msgstr "Lādāju attēlu: %s"
-
-#~ msgid "Deleting all thumbnails, wait please..."
-#~ msgstr "Dzēšu visus sīkattēlus, lūdzu uzgaidiet..."
-
-#~ msgid "Deleting old thumbnails, wait please..."
-#~ msgstr "Dzēšu vecos sīkattēlus, lūdzu uzgaidiet..."
-
-#~ msgid "(Invalid Name)"
-#~ msgstr "Nederīgs nosaukums"
-
-#~ msgid "%d x %d pixels"
-#~ msgstr "%d x %d pikseļi"
-
-#~ msgid "Move Catalog to..."
-#~ msgstr "Pārvietot Katalogu uz..."
-
-#~ msgid "Enter the new category name"
-#~ msgstr "Ievadiet jaunu kataloga nosaukumu"
-
-#~ msgid ""
-#~ "The name \"%s\" is not valid because it contains the character \",\". "
-#~ "Please use a different name."
-#~ msgstr ""
-#~ "Nosaukums \"%s\" nav derīgs, jo satur rakstzīmi  \",\". Lūdzu lietojiet "
-#~ "citu nosaukumu."
-
-#~ msgid "The category \"%s\" is already present. Please use a different name."
-#~ msgstr "Kategorija \"%s\" jau ir. Lūdzu lietojiet citu nosaukumu."
-
-#~ msgid ""
-#~ "An image named \"%s\" is already present. Please specify a different name."
-#~ msgstr "Attēls ar nosaukumu \"%s\" jau ir. Lūdzu norādiet citu nosaukumu."
-
-#~ msgid "Duplicates Size"
-#~ msgstr "Dubikātu Izmērs"
-
-#~ msgid "Checked images will be moved to the Trash, are you sure?"
-#~ msgstr ""
-#~ "Atķeksētie attēli tiks pārvietoti uz Atkritumkasti, vai esat pārliecināts?"
-
-#~ msgid "The destination folder does not exist. Do you want to create it?"
-#~ msgstr "Mērķa mape neeksistē. Vēlaties tādu izveidot?"
-
-#~ msgid "Could not create folder \"%s\": %s."
-#~ msgstr "Nevarēju izveidot mapi \"%s\": %s."
-
-#~ msgid ""
-#~ "You don't have the right permissions to create images in the folder \"%s\""
-#~ msgstr "Jums nav nepieciešamo atļauju, lai izveidotu attēlus mapē \"%s\""
-
-#~ msgid "_Do not display this message again"
-#~ msgstr "Nerā_dīt šo ziņojumu vēlreiz"
-
-#~ msgid "%d %b %Y, %H:%M"
-#~ msgstr "%d %b %Y, %H:%M"
-
-#~ msgid "You didn't enter the new name"
-#~ msgstr "Jūs neievadījāt jaunu nosaukumu"
-
-#~ msgid ""
-#~ "The name \"%s\" is already used in this folder. Please use a different "
-#~ "name."
-#~ msgstr ""
-#~ "Nosaukums \"%s\" jau tiek lietots šajā mapē. Lūdzu lietojiet citu "
-#~ "nosaukumu."
-
-#~ msgid "Could not rename the following images:"
-#~ msgstr "Nevarēju pārsaukt sekojošos attēlus:"
-
-#~ msgid "_Abort"
-#~ msgstr "_Pārtraukt"
-
-#~ msgid "Collecting images info"
-#~ msgstr "Savācu attēlu info"
-
-#~ msgid "Copying file %ld of %ld"
-#~ msgstr "Kopēju failu %ld no %ld"
-
-#~ msgid "Information on Channel"
-#~ msgstr "Informācija par Kanālu"
-
-#~ msgid "Film"
-#~ msgstr "Filma"
-
-#~ msgid "Could not create the folder \"%s\": %s"
-#~ msgstr "Nevarēju izveidot mapi \"%s\": %s"
-
-#~ msgid "by path"
-#~ msgstr "pēc ceļa"
-
-#~ msgid "by size"
-#~ msgstr "pēc izmēra"
-
-#~ msgid "by comment"
-#~ msgstr "pēc komentāra"
-
-#~ msgid ""
-#~ "The name \"%s\" is not valid because it contains the character \"/\". "
-#~ "Please use a different name."
-#~ msgstr ""
-#~ "Nosaukums \"%s\" nav derīgs, jo tas satur rakstzīmi \"/\". Lūdzu "
-#~ "lietojiet citu nosaukumu."
-
-#~ msgid "Select Album Theme"
-#~ msgstr "Izvēlieties albuma tēmu"
-
-#~ msgid "The image will be moved to the Trash, are you sure?"
-#~ msgstr "Attēls tiks pārvietots uz Atkritumkasti, vai esat pārliecināts?"
-
-#~ msgid "The selected images will be moved to the Trash, are you sure?"
-#~ msgstr ""
-#~ "Izvēlētie attēli tiks pārvietoti uz Atkritumkasti, vai esat pārliecināts?"
-
-#~ msgid "Enter the new name: "
-#~ msgstr "Ievadiet jaunu nosaukumu: "
-
-#~ msgid "The name \"%s\" is already used. Please use a different name."
-#~ msgstr "Nosaukums \"%s\" jau ir lietošanā. Lūdzu izvēlaties citu nosaukumu."
-
-#~ msgid "Could not rename the library \"%s\": %s"
-#~ msgstr "Nevarēju pārsaukt bibliotēku \"%s\": %s"
-
-#~ msgid "The selected library will be removed, are you sure?"
-#~ msgstr "Izvēlētā bibliotēka tiks izņemta, vai esat pārliecināts?"
-
-#~ msgid "The selected catalog will be removed, are you sure?"
-#~ msgstr "Izvēlētais katalogs tiks izņemts, vai esat pārliecināts?"
-
-#~ msgid "Could not create the library \"%s\": %s"
-#~ msgstr "Nevarēju izveidot bibliotēku \"%s\": %s"
-
-#~ msgid "Could not rename the folder \"%s\": %s"
-#~ msgstr "Nevarēju pārsaukt mapi \"%s\": %s"
-
-#~ msgid "source and destination are the same"
-#~ msgstr "avot un mērķis ir viens un tas pats"
-
-#~ msgid ""
-#~ "\"%s\" cannot be moved to the Trash. Do you want to delete it permanently?"
-#~ msgstr ""
-#~ "\"%s\" Nevar tikt pārvietots uz Atkritumkasti. Vai vēlaties to dzēst "
-#~ "pavisam?"
-
-#~ msgid "The selected folder will be moved to the Trash, are you sure?"
-#~ msgstr ""
-#~ "Izvēlētā mape tiks pārvietota uz Atkritumkasti, vai esat pārliecināts?"
-
-#~ msgid "a folder with that name is already present."
-#~ msgstr "mape ar tādu nosaukumu jau ir."
-
-#~ msgid "Open Location"
-#~ msgstr "Atvērt  atrašanās vietu"
-
-#~ msgid "_Folder"
-#~ msgstr "_Mape"
-
-#~ msgid "Show/_Hide"
-#~ msgstr "Parādīt/_Paslēpt"
-
-#~ msgid "S_ort Images"
-#~ msgstr "_Kārtot Attēlus"
-
-#~ msgid "_Zoom"
-#~ msgstr "_Tālummaiņa"
-
-#~ msgid "_Image"
-#~ msgstr "_Attēls"
-
-#~ msgid "Set Image as _Wallpaper"
-#~ msgstr "Iestatīt Attēlu kā _Fonu"
-
-#~ msgid "Create a new window"
-#~ msgstr "Izveidot jaunu logu"
-
-#~ msgid "Open the selected image in a new window"
-#~ msgstr "Atvērt izvēlēto attēlu jaunā logā"
-
-#~ msgid "_Import Photos..."
-#~ msgstr "_Importēt fotogrāfijas..."
-
-#~ msgid "_Write To CD..."
-#~ msgstr "_Ierakstīt CD..."
-
-#~ msgid "Write selection to CD"
-#~ msgstr "Ierakstīt atlasi CD"
-
-#~ msgid "Move this image to the Trash"
-#~ msgstr "Pārvietot šo attēlu uz Atkritumkasti"
-
-#~ msgid "Move this image to another location"
-#~ msgstr "Pārvietot šo attēlu uz citu lokāciju"
-
-#~ msgid "Move selected images to another location"
-#~ msgstr "Pārvietot izvēlētos attēlus uz citu lokāciju"
-
-#~ msgid "Select all images"
-#~ msgstr "Izvēlēties visus attēlus"
-
-#~ msgid "Open the selected catalog"
-#~ msgstr "Atvērt izvēlēto katalogu"
-
-#~ msgid "Open the selected catalog in a new window"
-#~ msgstr "Atvērt izvēlēto mapi jaunā logā"
-
-#~ msgid "Rename selected catalog"
-#~ msgstr "Pārsaukt izvēlēto katalogu"
-
-#~ msgid "Remove selected catalog"
-#~ msgstr "Izņemt izvēlēto katalogu"
-
-#~ msgid "Move selected catalog to another location"
-#~ msgstr "Pārvietot izvēlēto katalogu uz citu lokāciju"
-
-#~ msgid "_Edit Search..."
-#~ msgstr "_Rediģēt meklēšanu..."
-
-#~ msgid "Modify search criteria"
-#~ msgstr "Modificēt meklēšanas kritērijus"
-
-#~ msgid "Redo _Search"
-#~ msgstr "Pāratsaukt _Meklēšanu"
-
-#~ msgid "_New Catalog..."
-#~ msgstr "_Jauns Katalogs..."
-
-#~ msgid "New _Library..."
-#~ msgstr "Jauna _Bibliotēka..."
-
-#~ msgid "Create a new catalog library"
-#~ msgstr "Izveidot jaunu kataloga bibliotēku"
-
-#~ msgid "Rename current catalog"
-#~ msgstr "Pārsaukt pašreizējo katalogu"
-
-#~ msgid "Remove current catalog"
-#~ msgstr "Izņemt pašreizējo katalogu"
-
-#~ msgid "Move current catalog to another location"
-#~ msgstr "Pārvietot pašreizējo katalogu uz citu lokāciju"
-
-#~ msgid "Open the selected folder in a new window"
-#~ msgstr "Atvērt izvēlēto mapi jaunā logā"
-
-#~ msgid "Open the selected folder with the Nautilus file manager"
-#~ msgstr "Atvērt izvēlēto mapi ar Nautilus failu pārvaldnieku"
-
-#~ msgid "Rename selected folder"
-#~ msgstr "Pārsaukt izvēlēto mapi"
-
-#~ msgid "Copy selected folder"
-#~ msgstr "Kopēt izvēlēto mapi"
-
-#~ msgid "Move selected folder"
-#~ msgstr "Pārvietot izvēlēto mapi"
-
-#~ msgid "Ca_tegories..."
-#~ msgstr "Ka_tegorijas..."
-
-#~ msgid "Open current folder with the Nautilus file manager"
-#~ msgstr "Atvērt pašreizējo logu Nautilus failu pārvaldniekā"
-
-#~ msgid "Rename current folder"
-#~ msgstr "Pārsaukt pašreizējo mapi"
-
-#~ msgid "Move the current folder to the Trash"
-#~ msgstr "Pārvietot pašreizējo mapi uz Atkritumkasti"
-
-#~ msgid "Copy current folder"
-#~ msgstr "Kopēt pašreizējo mapi"
-
-#~ msgid "Assign categories to the current folder"
-#~ msgstr "Piešķirt kategoriju izvēlētajai mapei"
-
-#~ msgid "Go to the home folder"
-#~ msgstr "Iet uz mājas mapi"
-
-#~ msgid "_Go to the Image Folder"
-#~ msgstr "_Iet uz Attēla Mapi"
-
-#~ msgid "Create _Index Image..."
-#~ msgstr "Izveidot _Index attēlu..."
-
-#~ msgid "Search for _Duplicates..."
-#~ msgstr "Meklēt _dublikātus..."
-
-#~ msgid "Scale Images..."
-#~ msgstr "Mērogot attēlus..."
-
-#~ msgid "_Image Preview"
-#~ msgstr "Attēla pr_iekšapskate"
-
-#~ msgid "_Reversed Order"
-#~ msgstr "_Apgriezta Secība"
-
-#~ msgid "Reverse images order"
-#~ msgstr "Apgriezt attēlu secību"
-
-#~ msgid "by _Name"
-#~ msgstr "pēc _Nosaukuma"
-
-#~ msgid "Sort images by name"
-#~ msgstr "Kārtot attēlus pēc nosaukuma"
-
-#~ msgid "by _Path"
-#~ msgstr "pēc _Ceļa"
-
-#~ msgid "Sort images by path"
-#~ msgstr "Kārtot attēlus pēc ceļa"
-
-#~ msgid "by _Size"
-#~ msgstr "pēc _Izmēra"
-
-#~ msgid "Sort images by file modification time"
-#~ msgstr "Kārtot attēlus pēc modifikācijas laika"
-
-#~ msgid "by _Exif Time"
-#~ msgstr "pēc _Exif laika"
-
-#~ msgid "Sort images by Exif DateTime tag"
-#~ msgstr "Kārtot attēlus pēc Exif laika birkas"
-
-#~ msgid "by _Comment"
-#~ msgstr "pēc komentāra"
-
-#~ msgid "Sort images by comment"
-#~ msgstr "Kārtot attēlus pēc komentāra"
-
-#~ msgid "_Manual Order"
-#~ msgstr "_Manuāla sakārtošana"
-
-#~ msgid "Sort images manually"
-#~ msgstr "Kārtot attēlus manuāli"
-
-#~ msgid "View As Slides"
-#~ msgstr "Skatīt kā slīdrādi"
-
-#~ msgid "_Catalogs"
-#~ msgstr "_Katalogi"
-
-#~ msgid "View the catalogs"
-#~ msgstr "Skatīt katalogus"
-
-#~ msgid "[Press 'c' to add a comment]"
-#~ msgstr "[nospiediet 'c', lai pievienotu komentāru]"
-
-#~ msgid "1 image (%s)"
-#~ msgstr "1 attēls (%s)"
-
-#~ msgid "The current image has been modified, do you want to save it?"
-#~ msgstr "Pašreizējais attēls ir pārveidots, vai jūs vēlaties saglabāt to?"
-
-#~ msgid "Dragged Images"
-#~ msgstr "Vilktie Attēli"
-
-#~ msgid "Cannot load folder \"%s\": %s\n"
-#~ msgstr "Nevaru ielādēt mapi \"%s\": %s\n"
-
-#~ msgid "The specified catalog does not exist."
-#~ msgstr "Izvēlētais katalogs neeksistē."
-
-#~ msgid "Wait please..."
-#~ msgstr "Lūdzu uzgaidiet..."
-
-#~ msgid "Filesystem Data"
-#~ msgstr "Failu sistēmas dati"
-
-#~ msgid "Path"
-#~ msgstr "Ceļš"
-
-#~ msgid "KB"
-#~ msgstr "KB"
-
-#~ msgid "Category"
-#~ msgstr "Kategorija"
-
-#~ msgid "Text contains"
-#~ msgstr "Teksts satur"
-
-#~ msgid "<b>_Folder</b>"
-#~ msgstr "<b>_Kājene</b>"
-
-#~ msgid "_Browse..."
-#~ msgstr "_Pārlūkot..."
-
-#~ msgid "<b>_Recent folders:</b>"
-#~ msgstr "<b>Nesenās _kājenes:</b>"
-
-#~ msgid "_Transform"
-#~ msgstr "Pārveodo_t"
-
-#~ msgid "_Single Window"
-#~ msgstr "Nedalīts_s logs"
-
-#~ msgid "_None"
-#~ msgstr "_Nekas"
-
-#~ msgid "Open selected images with an application"
-#~ msgstr "Atvērt izvēlētos attēlus ar aplikāciju"
-
-#~ msgid "_Open With..."
-#~ msgstr "_Atvērt ar..."
-
-#~ msgid "Revert to saved image"
-#~ msgstr "Atgriezt uz saglabāto attēlu"
-
-#~ msgid "Print..."
-#~ msgstr "Drukāt..."
-
-#~ msgid "Print the current image"
-#~ msgstr "Drukāt pašreizējo attēlu"
-
-#~ msgid "Open this image with an application"
-#~ msgstr "Atvērt šo attēlu ar aplikāciju"
-
-#~ msgid "Comm_ent..."
-#~ msgstr "Kom_entēt..."
-
-#~ msgid "Add a comment to selected images"
-#~ msgstr "Pievienot komentāru izvēlētajiem attēliem"
-
-#~ msgid "Rem_ove Comment"
-#~ msgstr "Izņe_mt Komentāru"
-
-#~ msgid "Remove comments of selected images"
-#~ msgstr "Izņemt komentārus no izvēlētajiem attēliem"
-
-#~ msgid "Assign categories to selected images"
-#~ msgstr "Piešķirt kategorijas izvēlētajiem attēliem"
-
-#~ msgid "Ca_tegories"
-#~ msgstr "Ka_tegorijas"
-
-#~ msgid "View the image rotated clockwise"
-#~ msgstr "Skatīt attēlu rotētu pulksteņrādītāja virzienā"
-
-#~ msgid "View the image rotated counter-clockwise"
-#~ msgstr "Skatīt attēlu rotētu pretēji pulksteņrādītāja virzienam"
-
-#~ msgid "View the image flipped"
-#~ msgstr "Skatīt attēlu apmestu"
-
-#~ msgid "View the image mirrored"
-#~ msgstr "Skatīt attēlu spoguļskatā"
-
-#~ msgid "View the image in black and white"
-#~ msgstr "Skatīt attēlu melnbaltu"
-
-#~ msgid "View the image with negative colors"
-#~ msgstr "Skatīt attēlu negatīvās krāsās"
-
-#~ msgid "Automatically adjust the color levels"
-#~ msgstr "Automātiski pieskaņot krāsas līmeņus"
-
-#~ msgid "_Brightness-Contrast..."
-#~ msgstr "_Spilgtumu-kontrastu..."
-
-#~ msgid "Adjust brightness and contrast"
-#~ msgstr "Pieregulēt spilgtumu un kontrastu"
-
-#~ msgid "_Hue-Saturation..."
-#~ msgstr "_Nokrāsu-piesātinātību..."
-
-#~ msgid "Adjust hue and saturation"
-#~ msgstr "Pieregulēt nokrāsu un piesātinātību"
-
-#~ msgid "_Color Balance..."
-#~ msgstr "_Krāsu balansu..."
-
-#~ msgid "Adjust color balance"
-#~ msgstr "Pieregulēt krāsu balansu"
-
-#~ msgid "Black and White"
-#~ msgstr "Melns un balts"
-
-#~ msgid "Web Palette"
-#~ msgstr "Tīmekļa palete"
-
-#~ msgid "Step A_nimation"
-#~ msgstr "Soļa A_nimācija"
-
-#~ msgid "View next animation frame"
-#~ msgstr "Skatīt nākamo animācijas kadru"
-
-#~ msgid "Set the image as desktop background (centered)"
-#~ msgstr "Iestatīt attēlu kā darba virsmas fonu (centrēts)"
-
-#~ msgid "_Scaled"
-#~ msgstr "_Mērogots"
-
-#~ msgid "Set the image as desktop background (scaled keeping aspect ratio)"
-#~ msgstr ""
-#~ "Iestatīt attēlu kā darba virsmas fonu (mērogots, saglabājot izskata "
-#~ "proporcijas)"
-
-#~ msgid "Str_etched"
-#~ msgstr "Iz_stiepts"
-
-#~ msgid "Set the image as desktop background (stretched)"
-#~ msgstr "Iestatīt attēlu kā darba virsmas fonu (izstiepts)"
-
-#~ msgid "Play _Animation"
-#~ msgstr "Parādīt _Animāciju"
-
-#~ msgid "Start or stop current animation"
-#~ msgstr "Sāknēt vai apturēt pašreizējo animāciju"
-
-#~ msgid "_High Quality"
-#~ msgstr "_Augsta Kvalitāte"
-
-#~ msgid "Use high quality zoom"
-#~ msgstr "Lietot augstas kvalitātes tālummaiņu"
-
-#~ msgid "_Low Quality"
-#~ msgstr "_Zema Kvalitāte"
-
-#~ msgid "Use low quality zoom"
-#~ msgstr "Lietot zemas kvalitātes tālummaiņu"
-
-#~ msgid "Use the viewer mode to view single images"
-#~ msgstr "Izmantot skatītāja režīmu, lai aplūkotu atsevisķus attēlus"

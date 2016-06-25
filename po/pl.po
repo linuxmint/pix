@@ -12,18 +12,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-01 16:57+0200\n"
-"PO-Revision-Date: 2014-05-01 16:58+0200\n"
+"POT-Creation-Date: 2016-06-22 17:53+0100\n"
+"PO-Revision-Date: 2016-06-22 18:47+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2016-06-25 09:33+0000\n"
+"X-Generator: Launchpad (build 18111)\n"
 "X-Poedit-Country: Poland\n"
+"Language: pl\n"
+"X-Poedit-Language: Polish\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -58,7 +60,8 @@ msgstr "Nierozpoznana opcja uruchamiania: %d"
 #: ../copy-n-paste/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Nie można przekazać adresów URI do wpisu \"Type=Link\" pliku .desktop"
+msgstr ""
+"Nie można przekazać adresów URI do wpisu \"Type=Link\" pliku .desktop"
 
 #: ../copy-n-paste/eggdesktopfile.c:1412
 #, c-format
@@ -150,7 +153,8 @@ msgstr "Możliwe wartości: white, black, checked, none."
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
-msgstr "Określa, czy przywracać położenie pasków przewijania po zmianie obrazu"
+msgstr ""
+"Określa, czy przywracać położenie pasków przewijania po zmianie obrazu"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
@@ -162,8 +166,8 @@ msgstr "Możliwe wartości: tiff, tif."
 
 #: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
-"Possible values include: general::unsorted, file::name, file::size, file::"
-"mtime, exif::photo::datetimeoriginal"
+"Possible values include: general::unsorted, file::name, file::size, "
+"file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
 "Możliwe wartości: general::unsorted, file::name, file::size, file::mtime, "
 "exif::photo::datetimeoriginal"
@@ -1054,10 +1058,10 @@ msgid "Could not remove the files from the catalog"
 msgstr "Nie można usunąć plików z katalogu"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:746
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:755
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:785
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:1316
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:747
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:756
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:786
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
 msgstr "Nieprawidłowy format pliku"
@@ -1151,8 +1155,7 @@ msgstr "Zaimportuj osadzone metadane"
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
 msgstr ""
-"Importuje metadane przechowywane w plikach do systemu komentarzy programu "
-"Pix"
+"Importuje metadane przechowywane w plikach do systemu komentarzy programu Pix"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1171,8 +1174,7 @@ msgstr "Preferencje"
 msgid "_Synchronize with the embedded metadata"
 msgstr "_Synchronizowanie z osadzonymi metadanymi"
 
-#: ../extensions/comments/main.c:35
-#: ../extensions/edit_metadata/callbacks.c:100
+#: ../extensions/comments/main.c:35 ../extensions/edit_metadata/callbacks.c:100
 msgid "Comment"
 msgstr "Komentarz"
 
@@ -1231,8 +1233,10 @@ msgid "Contact Sheet"
 msgstr "Odbitka stykowa"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
-msgid "Create an index image displaying the thumbnails of the selected files."
-msgstr "Tworzenie obrazu indeksu zawierającego miniatury zaznaczonych plików."
+msgid ""
+"Create an index image displaying the thumbnails of the selected files."
+msgstr ""
+"Tworzenie obrazu indeksu zawierającego miniatury zaznaczonych plików."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1551,12 +1555,12 @@ msgstr "_Użycie katalogu pierwotnego obrazu"
 msgid "Converting images"
 msgstr "Konwertowanie obrazów"
 
-#: ../extensions/desktop_background/actions.c:194
+#: ../extensions/desktop_background/actions.c:222
 msgid "Could not show the desktop background properties"
 msgstr "Nie można wyświetlić właściwości tła pulpitu"
 
-#: ../extensions/desktop_background/actions.c:259
-#: ../extensions/desktop_background/actions.c:277
+#: ../extensions/desktop_background/actions.c:287
+#: ../extensions/desktop_background/actions.c:305
 msgid "Could not set the desktop background"
 msgstr "Nie można ustawić tła pulpitu"
 
@@ -2169,14 +2173,12 @@ msgstr "Nie można przenieść katalogu do kosza. Usunąć go trwale?"
 msgid "Could not move the folder to the Trash"
 msgstr "Nie można przenieść katalogu do kosza"
 
-#: ../extensions/file_manager/actions.c:816
-#: ../pix/gth-file-source-vfs.c:841
+#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Na pewno trwale usunąć \"%s\"?"
 
-#: ../extensions/file_manager/actions.c:826
-#: ../pix/gth-file-source-vfs.c:854
+#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
 msgid "If you delete a file, it will be permanently lost."
 msgstr "Usunięcie pliku spowoduje jego trwałe utracenie."
 
@@ -2215,8 +2217,7 @@ msgid "Duplicate the selected files"
 msgstr "Duplikuje zaznaczone pliki"
 
 #: ../extensions/file_manager/callbacks.c:183
-#: ../extensions/file_manager/callbacks.c:219
-#: ../pix/gth-file-source-vfs.c:813
+#: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
 msgid "Mo_ve to Trash"
 msgstr "P_rzenieś do kosza"
 
@@ -2876,8 +2877,7 @@ msgid "Searching for duplicates"
 msgstr "Wyszukiwanie duplikatów"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:728
-#: ../pix/gth-load-file-data-task.c:106
-#: ../pix/gth-save-file-data-task.c:100
+#: ../pix/gth-load-file-data-task.c:106 ../pix/gth-save-file-data-task.c:100
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
@@ -3009,8 +3009,8 @@ msgid ""
 "authorization."
 msgstr ""
 "Należy kliknąć przycisk \"Upoważnij\", aby otworzyć przeglądarkę WWW i "
-"upoważnić program pix do wysyłania zdjęć do serwisu %s. Po ukończeniu "
-"należy wrócić do tego okna, aby zakończyć upoważnienie."
+"upoważnić program pix do wysyłania zdjęć do serwisu %s. Po ukończeniu należy "
+"wrócić do tego okna, aby zakończyć upoważnienie."
 
 #: ../extensions/gstreamer_tools/actions.c:66
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1042
@@ -3091,13 +3091,11 @@ msgstr "Odtwarzanie nagrania wideo"
 msgid "Pause"
 msgstr "Wstrzymaj"
 
-#: ../extensions/gstreamer_tools/main.c:31
-#: ../pix/gth-main-default-tests.c:247
+#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:247
 msgid "Video"
 msgstr "Wideo"
 
-#: ../extensions/gstreamer_tools/main.c:32
-#: ../pix/gth-main-default-tests.c:254
+#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:254
 msgid "Audio"
 msgstr "Dźwięk"
 
@@ -3657,7 +3655,7 @@ msgstr "Podstawowa nazwa pliku"
 msgid "The parent folder path"
 msgstr "Ścieżka do katalogu nadrzędnego"
 
-#. Translate only 'message' and 'default_value'.
+#. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:14
 #, no-c-format
 msgid "%ask{ message }{ default value }"
@@ -3667,7 +3665,7 @@ msgstr "%ask{ wiadomość }{ domyślna wartość }"
 msgid "Ask an input value"
 msgstr "Pytanie o wartość wejściową"
 
-#. Translate only 'attribute name'
+#. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:18
 #, no-c-format
 msgid "%attr{ attribute name }"
@@ -3696,7 +3694,7 @@ msgstr "%E"
 msgid "The file extension"
 msgstr "Rozszerzenie pliku"
 
-#. Translate only 'text'.
+#. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:28
 #, no-c-format
 msgid "%quote{ text }"
@@ -3804,8 +3802,10 @@ msgstr "Mapa"
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
-msgid "The geographical position information is not available for this image."
-msgstr "Informacje o położeniu geograficznym nie są dostępne dla tego obrazu."
+msgid ""
+"The geographical position information is not available for this image."
+msgstr ""
+"Informacje o położeniu geograficznym nie są dostępne dla tego obrazu."
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
@@ -4752,7 +4752,7 @@ msgstr "Pobieranie informacji o pliku"
 #. * hours, 5 minutes, and 2 seconds. You may change ":" to
 #. * the separator that your locale uses or use "%Id" instead
 #. * of "%d" if your locale uses localized digits.
-#.
+#. 
 #: ../pix/glib-utils.c:3068
 #, c-format
 msgctxt "long time format"
@@ -4764,7 +4764,7 @@ msgstr "%d:%02d:%02d"
 #. * minutes and 2 seconds. You may change ":" to the
 #. * separator that your locale uses or use "%Id" instead of
 #. * "%d" if your locale uses localized digits.
-#.
+#. 
 #: ../pix/glib-utils.c:3077
 #, c-format
 msgctxt "short time format"
@@ -4778,10 +4778,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
-"Program pix jest wolnym oprogramowaniem; można go rozprowadzać dalej i/"
-"lub modyfikować na warunkach Powszechnej Licencji Publicznej GNU, wydanej "
-"przez Fundację Wolnego Oprogramowania (Free Software Foundation) - według "
-"wersji drugiej tej Licencji lub którejś z późniejszych wersji."
+"Program pix jest wolnym oprogramowaniem; można go rozprowadzać dalej i/lub "
+"modyfikować na warunkach Powszechnej Licencji Publicznej GNU, wydanej przez "
+"Fundację Wolnego Oprogramowania (Free Software Foundation) - według wersji "
+"drugiej tej Licencji lub którejś z późniejszych wersji."
 
 #: ../pix/gth-browser-actions-callbacks.c:418
 msgid ""
@@ -4801,8 +4801,8 @@ msgid ""
 "pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
 "Z pewnością wraz z niniejszym programem dostarczono także egzemplarz "
-"Powszechnej Licencji Publicznej GNU (GNU General Public License); jeśli nie "
-"- proszę odwiedzić stronę internetową <http://www.gnu.org/licenses/>."
+"Powszechnej Licencji Publicznej GNU (GNU General Public License); jeśli nie -"
+" proszę odwiedzić stronę internetową <http://www.gnu.org/licenses/>."
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
@@ -4814,7 +4814,10 @@ msgstr ""
 "Artur Flinta <aflinta@at.kernel.pl>, 2003-2004\n"
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2007\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2011-2014\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2007-2014"
+"Aviary.pl <gnomepl@aviary.pl>, 2007-2014\n"
+"\n"
+"Launchpad Contributions:\n"
+"  Piotr Drąg https://launchpad.net/~piotrdrag"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -5247,8 +5250,7 @@ msgstr "Plik"
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../pix/gth-main-default-metadata.c:40
-#: ../pix/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:284
 msgid "Size"
 msgstr "Rozmiar"
 
