@@ -1569,7 +1569,7 @@ _gth_grid_view_draw_item (GthGridView     *self,
 			  GthGridViewItem *item,
 			  cairo_t         *cr)
 {
-	GtkStateType item_state;
+	GtkStateFlags item_state;
 
 	item_state = item->state;
 	if (! gtk_widget_has_focus (GTK_WIDGET (self)) && (item_state & GTK_STATE_FLAG_FOCUSED))
@@ -1583,15 +1583,12 @@ _gth_grid_view_draw_item (GthGridView     *self,
 
 		cairo_save (cr);
 		style_context = gtk_widget_get_style_context (GTK_WIDGET (self));
-		gtk_style_context_get_background_color (style_context, item_state, &color);
-		_gdk_rgba_lighter (&color, &color);
-		cairo_set_source_rgba (cr, color.red, color.green, color.blue, color.alpha);
-		_cairo_draw_rounded_box (cr,
+		gtk_render_background (style_context,
+					 cr,
 				 	 item->area.x,
 				 	 item->area.y,
 				 	 item->area.width,
-				 	 item->area.height,
-				 	 4);
+				 	 item->area.height);
 		cairo_fill (cr);
 
 		cairo_restore (cr);
