@@ -136,11 +136,11 @@ get_access_type_name (WebAuthorization access_type)
 
 	switch (access_type) {
 	case WEB_AUTHORIZATION_READ:
-		name = "";
+		name = "user_photos";
 		break;
 
 	case WEB_AUTHORIZATION_WRITE:
-		name = "publish_actions";
+		name = "user_photos,publish_actions";
 		break;
 	}
 
