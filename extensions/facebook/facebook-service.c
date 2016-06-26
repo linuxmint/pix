@@ -260,24 +260,28 @@ ask_authorization_dialog_redirected_cb (OAuthAskAuthorizationDialog *dialog,
 	uri = oauth_ask_authorization_dialog_get_uri (dialog);
 	if (g_str_has_prefix (uri, FACEBOOK_REDIRECT_URI)) {
 		const char *uri_data;
-		GHashTable *data;
-		const char *access_token;
-		const char *state;
+		GHashTable *data = NULL;
+		const char *access_token = NULL;
 
-		uri_data = uri + strlen (FACEBOOK_REDIRECT_URI "#");
+		uri_data = strchr (uri, '#');
+		if (uri_data != NULL) {
+			const char *state;
 
-		data = soup_form_decode (uri_data);
-		access_token = NULL;
-		state = g_hash_table_lookup (data, "state");
-		if (g_strcmp0 (state, self->priv->state) == 0) {
-			access_token = g_hash_table_lookup (data, "access_token");
-			_facebook_service_set_access_token (self, access_token);
-		}
+			uri_data = uri_data + 1;
+			data = soup_form_decode (uri_data);
+			state = g_hash_table_lookup (data, "state");
+			if (g_strcmp0 (state, self->priv->state) == 0) {
+				access_token = g_hash_table_lookup (data, "access_token");
+				_facebook_service_set_access_token (self, access_token);
+			}
+ 		}
 
 		gtk_dialog_response (GTK_DIALOG (dialog),
 				     (access_token != NULL) ? GTK_RESPONSE_OK : GTK_RESPONSE_CANCEL);
 
-		g_hash_table_destroy (data);
+		if (data != NULL) {
+			g_hash_table_destroy (data);
+		}
 	}
 }
 
