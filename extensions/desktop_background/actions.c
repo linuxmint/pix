@@ -62,6 +62,11 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 	GSettings *settings;
 	char      *location;
 
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0) {
+		// Don't support undo in Xfce
+		return;
+	}
+
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
 		settings = g_settings_new (CINNAMON_DESKTOP_BACKGROUND_SCHEMA);
 	}
@@ -93,6 +98,16 @@ wallpaper_style_set_as_current (WallpaperStyle *style)
 
 	if (style->file == NULL)
 		return;
+
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0) {
+		location = g_file_get_path(style->file);
+		gchar *command = g_strdup_printf("xfce4-set-wallpaper '%s'", location);
+		system(command);
+		g_free(command);
+		g_free(location);
+		return;
+	}
+
 
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
 		location = g_file_get_path (style->file);
@@ -302,6 +317,8 @@ infobar_response_cb (GtkInfoBar *info_bar,
 			control_center_command = "cinnamon-settings backgrounds";
 		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0)
 			control_center_command = "mate-appearance-properties -p background";
+		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0)
+			control_center_command = "xfdesktop-settings";
 		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "GNOME") == 0)
 			control_center_command = "gnome-control-center appearance";
 		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0)
