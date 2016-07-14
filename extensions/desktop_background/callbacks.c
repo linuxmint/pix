@@ -75,6 +75,7 @@ db__gth_browser_construct_cb (GthBrowser *browser)
 	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0
 		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0
 		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0
+		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0
 		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "GNOME") == 0
 		|| g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0
 		) {
