@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-06-23 02:55+0000\n"
+"PO-Revision-Date: 2016-11-08 19:14+0000\n"
 "Last-Translator: kristian <Unknown>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-25 09:33+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-11-09 17:18+0000\n"
+"X-Generator: Launchpad (build 18255)\n"
 "Language: sv\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -180,7 +180,7 @@ msgstr "Filter_namn:"
 #: ../data/ui/filter-editor.ui.h:2
 #: ../extensions/search/data/ui/search-editor.ui.h:3
 msgid "_Match"
-msgstr ""
+msgstr "_Matcha"
 
 #. limit label
 #: ../data/ui/filter-editor.ui.h:3 ../pix/gth-filter.c:269
@@ -190,20 +190,20 @@ msgstr "_Begränsa till"
 
 #: ../data/ui/filter-editor.ui.h:4
 msgid "selected by"
-msgstr ""
+msgstr "valda genom"
 
 #: ../data/ui/histogram-info.ui.h:1
 msgid "Mean:"
-msgstr ""
+msgstr "Medelvärde:"
 
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsizied at the end.
 #: ../data/ui/histogram-info.ui.h:3
 msgid "Std dev:"
-msgstr ""
+msgstr "Standardavv."
 
 #: ../data/ui/histogram-info.ui.h:4
 msgid "Median:"
-msgstr ""
+msgstr "Median:"
 
 #. After the colon there is the total number of pixels
 #: ../data/ui/histogram-info.ui.h:6
@@ -214,13 +214,13 @@ msgstr "Bildpunkter:"
 #: ../data/ui/histogram-info.ui.h:8
 msgctxt "Pixels"
 msgid "Max:"
-msgstr ""
+msgstr "Max:"
 
 #. After the colon there is the percentile of selected pixels.
 #: ../data/ui/histogram-info.ui.h:10
 msgctxt "Pixels"
 msgid "Selected:"
-msgstr ""
+msgstr "Vald:"
 
 #: ../data/ui/location.ui.h:1
 msgid "_Location:"
@@ -281,15 +281,15 @@ msgstr "_Allmänt filter:"
 
 #: ../data/ui/personalize-filters.ui.h:3
 msgid "_Other filters:"
-msgstr ""
+msgstr "_Andra filter:"
 
 #: ../data/ui/preferences.ui.h:1
 msgid "below the folder list"
-msgstr ""
+msgstr "under mapplistan"
 
 #: ../data/ui/preferences.ui.h:2
 msgid "on the right"
-msgstr ""
+msgstr "till höger"
 
 #: ../data/ui/preferences.ui.h:3
 msgid "Pix Preferences"
@@ -325,11 +325,11 @@ msgstr "Endast text"
 
 #: ../data/ui/preferences.ui.h:11
 msgid "on the bottom"
-msgstr ""
+msgstr "Längst ner"
 
 #: ../data/ui/preferences.ui.h:12
 msgid "on the side"
-msgstr ""
+msgstr "vid sidan"
 
 #: ../data/ui/preferences.ui.h:13
 msgid "File _properties in browser:"
@@ -465,7 +465,7 @@ msgstr "23"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:2
 msgid "Upload images to 23hq.com"
-msgstr ""
+msgstr "Ladda upp bilder till 23hq.com"
 
 #: ../extensions/23hq/callbacks.c:68
 msgid "_23..."
@@ -473,7 +473,7 @@ msgstr "_23..."
 
 #: ../extensions/23hq/callbacks.c:69
 msgid "Upload photos to 23"
-msgstr ""
+msgstr "Ladda upp bilder till 23"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
@@ -599,12 +599,12 @@ msgstr "Skriv till skiva"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr ""
+msgstr "Fel vid tolkning av JPEG bildfil: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr ""
+msgstr "Okänd JPEG färgrymd (%d)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
@@ -676,11 +676,11 @@ msgstr "punkter/tum"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
-msgstr ""
+msgstr "_Metod:"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr ""
+msgstr "_Förlustfri"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
@@ -709,7 +709,7 @@ msgstr "TIFF"
 #: ../extensions/cairo_io/gth-image-saver-webp.c:382
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:165
 msgid "WebP"
-msgstr ""
+msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
@@ -734,7 +734,7 @@ msgstr "Inget namn angivet"
 #: ../extensions/file_manager/actions.c:75
 #, c-format
 msgid "Invalid name. The following characters are not allowed: %s"
-msgstr ""
+msgstr "Ogiltigt namn. Följande tecken är otillåtna: %s"
 
 #: ../extensions/catalogs/actions.c:155 ../extensions/catalogs/actions.c:267
 #: ../extensions/catalogs/dlg-add-to-catalog.c:338
@@ -747,12 +747,12 @@ msgstr "Namnet används redan"
 #: ../extensions/catalogs/actions.c:178
 #: ../extensions/catalogs/dlg-add-to-catalog.c:359
 msgid "New catalog"
-msgstr ""
+msgstr "Ny katalog"
 
 #: ../extensions/catalogs/actions.c:179
 #: ../extensions/catalogs/dlg-add-to-catalog.c:360
 msgid "Enter the catalog name:"
-msgstr ""
+msgstr "Ange katalognamn:"
 
 #: ../extensions/catalogs/actions.c:181 ../extensions/catalogs/actions.c:293
 #: ../extensions/catalogs/dlg-add-to-catalog.c:362
@@ -769,7 +769,7 @@ msgstr "Nytt bibliotek"
 #: ../extensions/catalogs/actions.c:291
 #: ../extensions/catalogs/dlg-add-to-catalog.c:472
 msgid "Enter the library name:"
-msgstr ""
+msgstr "Ange namn på bibliotek:"
 
 #: ../extensions/catalogs/actions.c:326
 msgid "Could not remove the catalog"
@@ -778,7 +778,7 @@ msgstr "Kunde inte ta bort albumet"
 #: ../extensions/catalogs/actions.c:363
 #, c-format
 msgid "Are you sure you want to remove \"%s\"?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort \"%s\"?"
 
 #: ../extensions/catalogs/callbacks.c:102
 msgid "_Add to Catalog"
@@ -920,7 +920,7 @@ msgstr "Organisera filer"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
 msgid "Organizing files"
-msgstr ""
+msgstr "Hantera filer"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
 msgid "Organization:"
@@ -936,7 +936,7 @@ msgstr "Markera inget"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
 msgid "Catalog _Preview:"
-msgstr ""
+msgstr "Förhandsgranska _Katalog:"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:2
 msgid "_Group files by:"
@@ -950,15 +950,15 @@ msgstr "_Inkludera undermappar"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
-msgstr ""
+msgstr "Ignorera kataloger med en fil"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
 msgid "Put single files in the catalog:"
-msgstr ""
+msgstr "Lägg enskilda filer i katalog:"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:6
 msgid "Singles"
-msgstr ""
+msgstr "Singlar"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:105
 #: ../extensions/catalogs/dlg-add-to-catalog.c:136
@@ -981,17 +981,19 @@ msgstr "Kunde inte läsa in albumet"
 #: ../extensions/catalogs/dlg-organize-files.c:120
 msgid "Files will be organized in catalogs. No file will be moved on disk."
 msgstr ""
+"Filer kommer att organiseras i kataloger. Inga filer kommer att flyttas på "
+"disken."
 
 #: ../extensions/catalogs/dlg-organize-files.c:132
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
 #: ../pix/gth-main-default-tests.c:300
 msgid "Date photo was taken"
-msgstr ""
+msgstr "Datum när bilden togs"
 
 #: ../extensions/catalogs/dlg-organize-files.c:139
 #: ../pix/gth-main-default-tests.c:292
 msgid "File modified date"
-msgstr ""
+msgstr "Datum när filen ändrades"
 
 #: ../extensions/catalogs/dlg-organize-files.c:146
 #: ../extensions/comments/main.c:182
@@ -1001,7 +1003,7 @@ msgstr "Tagg"
 #: ../extensions/catalogs/dlg-organize-files.c:153
 #: ../pix/gth-main-default-tests.c:324
 msgid "Tag (embedded)"
-msgstr ""
+msgstr "Etikett (inbäddad)"
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:45
 #: ../extensions/edit_metadata/callbacks.c:106
@@ -1012,12 +1014,12 @@ msgstr "Taggar"
 #: ../extensions/catalogs/gth-file-source-catalogs.c:953
 #, c-format
 msgid "The catalog '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "Katalogen '%s' finns redan, vill du skriva över den?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:955
 #, c-format
 msgid "The library '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "Biblioteket '%s' finns redan, vill du skriva över det?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:963
 msgid "Over_write"
@@ -1064,7 +1066,7 @@ msgstr "Ändra _datum..."
 
 #: ../extensions/change_date/callbacks.c:45
 msgid "Change images last modified date"
-msgstr ""
+msgstr "Ändra bildens senast ändrad-datum"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:1
 msgid "Change date"
@@ -1072,7 +1074,7 @@ msgstr "Ändra datum"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:2
 msgid "Change the files date"
-msgstr ""
+msgstr "Ändra filernas datum"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:1
 msgid "+"
@@ -1108,15 +1110,15 @@ msgstr "_Följande datum:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:9
 msgid "File _modified date"
-msgstr ""
+msgstr "Fil _ändrings datum"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:10
 msgid "File c_reation date"
-msgstr ""
+msgstr "Fil s_kapnings datum"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:11
 msgid "Date p_hoto was taken"
-msgstr ""
+msgstr "Datum när b_ilden togs"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:12
 msgid "A_djust by"
@@ -1137,11 +1139,13 @@ msgstr "sekunder"
 
 #: ../extensions/comments/callbacks.c:46
 msgid "Import Embedded Metadata"
-msgstr ""
+msgstr "Importera Inbäddad Metadata"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
 msgstr ""
+"Importera metadatan som är lagrad inuti filerna till kommenteringssystemet i "
+"Pix"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1235,7 +1239,7 @@ msgstr "Ingen"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
 msgid "Simple"
-msgstr ""
+msgstr "Enkel"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
 msgid "Simple with shadow"
@@ -1279,7 +1283,7 @@ msgstr ""
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
 msgid "_Style:"
-msgstr ""
+msgstr "_Stil:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
 msgid "C_olor:"
@@ -1326,7 +1330,7 @@ msgstr "Aktuellt sidnummer"
 #: ../extensions/image_print/data/ui/print-layout.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
 msgid "The total number of pages"
-msgstr ""
+msgstr "Totalt antal sidor"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
@@ -1398,7 +1402,7 @@ msgstr ""
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
 msgid "Delete the selected theme"
-msgstr ""
+msgstr "Ta bort det valda temat"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
@@ -1542,12 +1546,12 @@ msgstr "Konverterar bilder"
 
 #: ../extensions/desktop_background/actions.c:222
 msgid "Could not show the desktop background properties"
-msgstr ""
+msgstr "Kunde inte visa egenskaperna för skrivbordsbakgrunden"
 
 #: ../extensions/desktop_background/actions.c:287
 #: ../extensions/desktop_background/actions.c:305
 msgid "Could not set the desktop background"
-msgstr ""
+msgstr "Kunde inte ställa in skrivbordsbakgrunden"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
@@ -1690,12 +1694,12 @@ msgstr ""
 
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:189
 msgid "Assign Tags"
-msgstr ""
+msgstr "Tilldela Etiketter"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 #: ../extensions/edit_metadata/gth-tag-task.c:136
 msgid "Assigning tags to the selected files"
-msgstr ""
+msgstr "Tilldela etiketter till dom valda filerna"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 msgid "Writing files"
@@ -1828,7 +1832,7 @@ msgstr "Face_book..."
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr ""
+msgstr "Ladda ner foton från Facebook"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
@@ -1928,7 +1932,7 @@ msgstr "S_ynlighet:"
 #: ../extensions/photobucket/data/ui/photobucket-export-completed.ui.h:1
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:1
 msgid "Files successfully uploaded to the server."
-msgstr ""
+msgstr "Filerna har laddats upp till servern."
 
 #: ../extensions/facebook/data/ui/facebook-export-completed.ui.h:2
 #: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:2
@@ -2371,7 +2375,7 @@ msgstr ""
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:13
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:7
@@ -2390,19 +2394,19 @@ msgstr "Bes_kär"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:1
 msgid "Method"
-msgstr ""
+msgstr "Metod"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:2
 msgid "_Brightness"
-msgstr ""
+msgstr "_Ljusstyrka"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:3
 msgid "_Saturation"
-msgstr ""
+msgstr "_Mättnad"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:4
 msgid "_Average"
-msgstr ""
+msgstr "_Medel"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
 #: ../pix/gth-main-default-metadata.c:47
@@ -2492,11 +2496,11 @@ msgstr ""
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
 msgid "Parallel"
-msgstr ""
+msgstr "Parallell"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:16
 msgid "Perpendicular"
-msgstr ""
+msgstr "Vinkelrät"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
 msgid "Alignment"
@@ -2508,7 +2512,7 @@ msgstr "Ursprunglig storlek"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
 msgid "Bounding box"
-msgstr ""
+msgstr "Begränsningsyta"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
 msgid "Crop borders"
@@ -2517,7 +2521,7 @@ msgstr ""
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:28
 msgid "_Preview:"
-msgstr ""
+msgstr "_Förhandsvisning:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
 msgid "Threshold:"
@@ -2537,7 +2541,7 @@ msgstr "Bildverktyg"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:2
 msgid "Basic tools to modify images."
-msgstr ""
+msgstr "Basala verktyg för att modifiera bilder."
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:372
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:272
@@ -2560,11 +2564,11 @@ msgstr "Ändra ljusstyrka, kontrast, färgmättnad och gammanivå för bilden"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
-msgstr ""
+msgstr "Justera kontrast"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:305
 msgid "Automatic contrast adjustment"
-msgstr ""
+msgstr "Automatisk kontrastjustering"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
@@ -2591,7 +2595,7 @@ msgstr "5:4"
 #: ../extensions/file_tools/gth-file-tool-crop.c:425
 #: ../extensions/file_tools/gth-file-tool-resize.c:600
 msgid "4:3 (DVD, Book)"
-msgstr ""
+msgstr "4:3 (DVD, Book)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:426
 #: ../extensions/file_tools/gth-file-tool-resize.c:601
@@ -2680,11 +2684,11 @@ msgstr "Vänd bilden vertikalt"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale..."
-msgstr ""
+msgstr "Gråskala..."
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale"
-msgstr ""
+msgstr "Gråskala"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:87
 msgid "Mirror"
@@ -2734,7 +2738,7 @@ msgstr "Rotera åt vänster"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr ""
+msgstr "Rotera bilden 90 grader motsols"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
 #: ../extensions/image_rotation/callbacks.c:49
@@ -2743,7 +2747,7 @@ msgstr "Rotera åt höger"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr ""
+msgstr "Rotera bilden 90 grader medsols"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
 msgid "Save As"
@@ -2819,15 +2823,15 @@ msgstr "_Filter:"
 
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:2
 msgid "Find duplicated files."
-msgstr ""
+msgstr "Hitta fildubbletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
-msgstr ""
+msgstr "lämna den senaste dubbletten"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:66
 msgid "leave the oldest duplicates"
-msgstr ""
+msgstr "lämna den äldsta dubbletten"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
@@ -2867,7 +2871,7 @@ msgstr[1] "%d filer återstår"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:830
 msgid "Getting the file list"
-msgstr ""
+msgstr "Hämtar fillistan"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1016
 msgid "Duplicates"
@@ -2875,7 +2879,7 @@ msgstr "Dubletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1308
 msgid "Select"
-msgstr ""
+msgstr "Välj"
 
 #: ../extensions/flicker/callbacks.c:59 ../extensions/flicker/callbacks.c:64
 msgid "_Flickr..."
@@ -3061,7 +3065,7 @@ msgstr "Ta en skärmbild"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
-msgstr ""
+msgstr "Spelar video"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:694
 msgid "Pause"
@@ -3204,7 +3208,7 @@ msgstr ""
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:5
 msgid "Select Header Font"
-msgstr ""
+msgstr "Välj rubriktypsnitt"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:6
 msgid "Select Footer Font"
@@ -3262,11 +3266,11 @@ msgstr "Skriv ut"
 
 #: ../extensions/image_rotation/callbacks.c:50
 msgid "Rotate the selected images 90° to the right"
-msgstr ""
+msgstr "Rotera vald bild 90 grader medsols"
 
 #: ../extensions/image_rotation/callbacks.c:56
 msgid "Rotate the selected images 90° to the left"
-msgstr ""
+msgstr "Rotera vald bild 90 grader motsols"
 
 #: ../extensions/image_rotation/callbacks.c:61
 msgid "Rotate Physically"
@@ -3618,7 +3622,7 @@ msgstr ""
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:7
 msgid "The file path"
-msgstr ""
+msgstr "Filens sökväg"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:8
 msgid "The file basename"
@@ -3799,7 +3803,7 @@ msgstr "Ny autentisering..."
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
-msgstr ""
+msgstr "Behörighetskontroll krävs"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
@@ -4098,7 +4102,7 @@ msgstr "Redigera mall"
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:9
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:34
 msgid "The original filename"
-msgstr ""
+msgstr "Ursprungligt filnamn"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:10
 msgid "The original extension"
@@ -4142,11 +4146,11 @@ msgstr ""
 
 #: ../extensions/rename_series/dlg-rename-series.c:59
 msgid "Original filename"
-msgstr ""
+msgstr "Ursprungligt filnamn"
 
 #: ../extensions/rename_series/dlg-rename-series.c:60
 msgid "Original extension"
-msgstr ""
+msgstr "Ursprunglig filändelse"
 
 #: ../extensions/rename_series/dlg-rename-series.c:61
 msgid "Original enumerator"
@@ -4302,7 +4306,7 @@ msgstr "Söker..."
 
 #: ../extensions/search/gth-search-task.c:277
 msgid "Cancel the operation"
-msgstr ""
+msgstr "Avbryt operationen"
 
 #: ../extensions/search/search.extension.in.in.h:2
 msgid "File search tool."
@@ -4788,6 +4792,7 @@ msgstr ""
 "<tp-sv@listor.tp-sv.se>.\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Carl-Uno Olsson https://launchpad.net/~carl-uno\n"
 "  Daniel Nylander https://launchpad.net/~yeager\n"
 "  kristian https://launchpad.net/~kristianm24"
 
@@ -4849,7 +4854,7 @@ msgstr "_Filter..."
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
-msgstr ""
+msgstr "Stoppa inläsning av aktuell plats"
 
 #: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
@@ -4885,11 +4890,11 @@ msgstr "Gå upp en nivå"
 
 #: ../pix/gth-browser-actions-entries.h:161
 msgid "_Location..."
-msgstr ""
+msgstr "_Plats..."
 
 #: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
-msgstr ""
+msgstr "Ange en plats att öppna"
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
@@ -5091,6 +5096,7 @@ msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
+"Filerna kan inte flyttas till papperskorgen. Vill du radera dem permanent?"
 
 #: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
@@ -5117,6 +5123,7 @@ msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
 msgstr[0] ""
 msgstr[1] ""
+"Are you sure you want to permanently delete the %&#x27;d selected files?"
 
 #: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
@@ -5296,7 +5303,7 @@ msgstr "Sparar filinformation"
 #: ../pix/gth-save-image-task.c:160
 #, c-format
 msgid "Saving '%s'"
-msgstr ""
+msgstr "Sparar \"%s\""
 
 #: ../pix/gth-tags-entry.c:390
 #, c-format

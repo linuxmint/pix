@@ -23,21 +23,21 @@ msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-06-22 19:10+0000\n"
-"Last-Translator: Joe Hansen <Unknown>\n"
+"PO-Revision-Date: 2016-10-12 17:46+0000\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-25 09:33+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-11-09 17:18+0000\n"
+"X-Generator: Launchpad (build 18255)\n"
 "Language: da\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Fil er ikke en gyldig .desktop-fil"
+msgstr "Filen er ikke en gyldig .desktop-fil"
 
 #. translators: 'Version' is from a desktop file, and
 #. * should not be translated. '%s' would probably be a
@@ -45,7 +45,7 @@ msgstr "Fil er ikke en gyldig .desktop-fil"
 #: ../copy-n-paste/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Skrivebordsfilversion '%s' er ikke genkendt"
+msgstr "Ukendt skrivebordsfilversion \"%s\""
 
 #: ../copy-n-paste/eggdesktopfile.c:974
 #, c-format
@@ -60,24 +60,23 @@ msgstr "Programmet accepterer ikke dokumenter på kommandolinjen"
 #: ../copy-n-paste/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Opstartstilvalg er ikke genkendt: %d"
+msgstr "Ukendt opstartstilvalg: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
 #: ../copy-n-paste/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
-"Kan ikke videresende dokument-URI'er til et 'Type=Link'-skrivebordspunkt"
+msgstr "Kan ikke sende dokument-URI'er til en 'Type=Link'-skrivebordspost"
 
 #: ../copy-n-paste/eggdesktopfile.c:1412
 #, c-format
 msgid "Not a launchable item"
-msgstr "Ikke et opstartbart punkt"
+msgstr "Ikke et opstartbart element"
 
 #: ../copy-n-paste/eggsmclient.c:226
 msgid "Disable connection to session manager"
-msgstr "Deaktiver forbindelse til sessionshåndtering"
+msgstr "Deaktivér forbindelse til sessionshåndtering"
 
 #: ../copy-n-paste/eggsmclient.c:229
 msgid "Specify file containing saved configuration"
@@ -89,19 +88,19 @@ msgstr "FIL"
 
 #: ../copy-n-paste/eggsmclient.c:232
 msgid "Specify session management ID"
-msgstr "Angiv id for sessionshåndtering"
+msgstr "Angiv ID for sessionshåndtering"
 
 #: ../copy-n-paste/eggsmclient.c:232
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 #: ../copy-n-paste/eggsmclient.c:253
 msgid "Session management options:"
-msgstr "Tilvalg for sessionshåndtering:"
+msgstr "Indstillinger for sessionshåndtering:"
 
 #: ../copy-n-paste/eggsmclient.c:254
 msgid "Show session management options"
-msgstr "Vis tilvalg for sessionshåndtering"
+msgstr "Vis indstillinger for sessionshåndtering"
 
 #. manually set name and icon
 #: ../data/pix.desktop.in.in.h:1 ../pix/gth-browser.c:579
@@ -119,11 +118,11 @@ msgstr "Pix - billedfremviseren"
 
 #: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
-msgstr "Vis og organiser dine billeder"
+msgstr "Vis og organisér dine billeder"
 
 #: ../data/pix-import.desktop.in.in.h:1
 msgid "Import with Pix"
-msgstr ""
+msgstr "Importér med Pix"
 
 #: ../data/pix-import.desktop.in.in.h:2
 msgid "Photo Import Tool"
@@ -136,7 +135,7 @@ msgstr "Billedimporteringsværktøj til Pix"
 
 #: ../data/pix-import.desktop.in.in.h:4
 msgid "Import the photos on your camera card"
-msgstr "Importer billederne på dit kamerakort"
+msgstr "Importér billederne på dit kamerakort"
 
 #: ../data/org.x.pix.gschema.xml.in.h:1
 msgid ""
@@ -148,11 +147,11 @@ msgstr ""
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
-msgstr ""
+msgstr "Om størrelsen på vinduet skal tilpasses til billedets størrelse"
 
 #: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
-msgstr ""
+msgstr "Åbn filer i det aktive vinduer"
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:1
 msgid "Possible values are: white, black, checked, none."
@@ -160,25 +159,27 @@ msgstr "Mulige værdier er: white, black, checked, none."
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
-msgstr ""
+msgstr "Om rullebjælkernes placering skal nulstilles, når der ændres billede"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
-msgstr ""
+msgstr "Mulige værdier er: jpeg, jpg."
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:2
 msgid "Possible values are: tiff, tif."
-msgstr ""
+msgstr "Mulige værdier er: tiff, tif."
 
 #: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
 "Possible values include: general::unsorted, file::name, file::size, "
 "file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
+"Mulige værdier inkluderer: generel::usorteret, fil::navn, fil::størrelse, "
+"fil::mtid, exif::billede::datotidoriginal"
 
 #: ../data/ui/extensions-preferences.ui.h:1
 msgid "_Extensions:"
-msgstr ""
+msgstr "_Udvidelser:"
 
 #: ../data/ui/extensions-preferences.ui.h:2
 msgid "More extensions..."
@@ -186,7 +187,7 @@ msgstr "Flere udvidelser..."
 
 #: ../data/ui/extensions-preferences.ui.h:3
 msgid "Some extensions are configurable."
-msgstr ""
+msgstr "Nogle udvidelser kan konfigureres."
 
 #: ../data/ui/filter-editor.ui.h:1
 msgid "Filter _Name:"
@@ -205,41 +206,41 @@ msgstr "_Begræns til"
 
 #: ../data/ui/filter-editor.ui.h:4
 msgid "selected by"
-msgstr "valgt af"
+msgstr "på baggrund af"
 
 #: ../data/ui/histogram-info.ui.h:1
 msgid "Mean:"
-msgstr ""
+msgstr "Gennemsnit:"
 
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsizied at the end.
 #: ../data/ui/histogram-info.ui.h:3
 msgid "Std dev:"
-msgstr ""
+msgstr "Std.afvig.:"
 
 #: ../data/ui/histogram-info.ui.h:4
 msgid "Median:"
-msgstr ""
+msgstr "Median:"
 
 #. After the colon there is the total number of pixels
 #: ../data/ui/histogram-info.ui.h:6
 msgid "Pixels:"
-msgstr ""
+msgstr "Billedpunkter:"
 
 #. After the colon there is a percentile.
 #: ../data/ui/histogram-info.ui.h:8
 msgctxt "Pixels"
 msgid "Max:"
-msgstr ""
+msgstr "Maks:"
 
 #. After the colon there is the percentile of selected pixels.
 #: ../data/ui/histogram-info.ui.h:10
 msgctxt "Pixels"
 msgid "Selected:"
-msgstr ""
+msgstr "Markeret:"
 
 #: ../data/ui/location.ui.h:1
 msgid "_Location:"
-msgstr "_Sted:"
+msgstr "_Placering:"
 
 #: ../data/ui/overwrite-dialog.ui.h:1
 msgid "Overwrite the old file with the new one?"
@@ -300,19 +301,19 @@ msgstr "_Andre filtre:"
 
 #: ../data/ui/preferences.ui.h:1
 msgid "below the folder list"
-msgstr ""
+msgstr "under mappelisten"
 
 #: ../data/ui/preferences.ui.h:2
 msgid "on the right"
-msgstr ""
+msgstr "til højre"
 
 #: ../data/ui/preferences.ui.h:3
 msgid "Pix Preferences"
-msgstr ""
+msgstr "Indstillinger for Pix"
 
 #: ../data/ui/preferences.ui.h:4
 msgid "_Toolbar style:"
-msgstr "_Værktøjslinjesstil:"
+msgstr "_Værktøjslinjestil:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "T_humbnails in viewer:"
@@ -344,23 +345,23 @@ msgstr "i bunden"
 
 #: ../data/ui/preferences.ui.h:12
 msgid "on the side"
-msgstr "på siden"
+msgstr "til venstre"
 
 #: ../data/ui/preferences.ui.h:13
 msgid "File _properties in browser:"
-msgstr ""
+msgstr "_Filegenskaber i browser:"
 
 #: ../data/ui/preferences.ui.h:14
 msgid "Appearance"
-msgstr "Fremtoning"
+msgstr "Udseende"
 
 #: ../data/ui/preferences.ui.h:15
 msgid "Go to last _visited location"
-msgstr "Gå til seneste _besøgte sted"
+msgstr "Gå til senest _besøgte placering"
 
 #: ../data/ui/preferences.ui.h:16
 msgid "Go to this _folder:"
-msgstr "Gå til denne _mappe:"
+msgstr "G_å til denne mappe:"
 
 #: ../data/ui/preferences.ui.h:17
 msgid "Choose startup folder"
@@ -372,7 +373,7 @@ msgstr "Gør til _aktuel"
 
 #: ../data/ui/preferences.ui.h:19
 msgid "_Reuse the active window to open files"
-msgstr ""
+msgstr "G_enbrug det aktive vindue til at åbne filer i"
 
 #: ../data/ui/preferences.ui.h:20
 msgid "On startup:"
@@ -380,7 +381,7 @@ msgstr "Ved opstart:"
 
 #: ../data/ui/preferences.ui.h:21
 msgid "As_k confirmation before deleting files or catalogs"
-msgstr "Spørg om _bekræftelse inden filer eller album slettes"
+msgstr "_Spørg om bekræftelse inden filer eller albummer slettes"
 
 #: ../data/ui/preferences.ui.h:22
 msgid "Ask whether to save _modified files"
@@ -418,39 +419,39 @@ msgstr "Miniaturebilledernes _størrelse:"
 
 #: ../data/ui/preferences.ui.h:28
 msgid "48"
-msgstr ""
+msgstr "48"
 
 #: ../data/ui/preferences.ui.h:29
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: ../data/ui/preferences.ui.h:30
 msgid "85"
-msgstr ""
+msgstr "85"
 
 #: ../data/ui/preferences.ui.h:31
 msgid "95"
-msgstr ""
+msgstr "95"
 
 #: ../data/ui/preferences.ui.h:32
 msgid "112"
-msgstr ""
+msgstr "112"
 
 #: ../data/ui/preferences.ui.h:33
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: ../data/ui/preferences.ui.h:34
 msgid "164"
-msgstr ""
+msgstr "164"
 
 #: ../data/ui/preferences.ui.h:35
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: ../data/ui/preferences.ui.h:36
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: ../data/ui/preferences.ui.h:37
 msgid "D_etermine image type from content (slower)"
@@ -459,16 +460,16 @@ msgstr "Bestem billedtype fra _indhold (langsommere)"
 #: ../data/ui/preferences.ui.h:38 ../pix/dlg-preferences-extensions.c:71
 #: ../pix/gth-browser-actions-entries.h:179
 msgid "Browser"
-msgstr "Netlæser"
+msgstr "Browser"
 
 #: ../data/ui/sort-order.ui.h:1
 msgid "Sort By"
-msgstr "Sorter efter"
+msgstr "Sortér efter"
 
 #: ../data/ui/sort-order.ui.h:2
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:4
 msgid "_Sort by:"
-msgstr "_Sorter efter:"
+msgstr "Sortér _efter:"
 
 #: ../data/ui/sort-order.ui.h:3
 msgid "_Inverse order"
@@ -476,19 +477,19 @@ msgstr "_Omvendt rækkefølge"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:1
 msgid "23"
-msgstr ""
+msgstr "23"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:2
 msgid "Upload images to 23hq.com"
-msgstr ""
+msgstr "Overfør billeder til 23hq.com"
 
 #: ../extensions/23hq/callbacks.c:68
 msgid "_23..."
-msgstr ""
+msgstr "_23..."
 
 #: ../extensions/23hq/callbacks.c:69
 msgid "Upload photos to 23"
-msgstr ""
+msgstr "Overfør billeder til 23"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
@@ -497,7 +498,7 @@ msgstr "Bogmærker"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:2
 msgid "Add bookmarks support."
-msgstr "_Tilføj understøttelse af bogmærker."
+msgstr "Tilføj understøttelse af bogmærker."
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:3
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:3
@@ -527,7 +528,7 @@ msgstr "_Tilføj understøttelse af bogmærker."
 #: ../extensions/slideshow/slideshow.extension.in.in.h:3
 #: ../extensions/webalbums/webalbums.extension.in.in.h:3
 msgid "pix development team"
-msgstr "pixs udviklingshold"
+msgstr "pix' udviklingshold"
 
 #: ../extensions/bookmarks/callbacks.c:54
 msgid "_Bookmarks"
@@ -543,15 +544,15 @@ msgstr "_Tilføj bogmærke"
 
 #: ../extensions/bookmarks/callbacks.c:59
 msgid "Add current location to bookmarks"
-msgstr "Tilføj aktuelt sted i bogmærkerne"
+msgstr "Tilføj aktuel placering i bogmærkerne"
 
 #: ../extensions/bookmarks/callbacks.c:63
 msgid "_Edit Bookmarks..."
-msgstr "_Rediger bogmærker..."
+msgstr "_Redigér bogmærker..."
 
 #: ../extensions/bookmarks/callbacks.c:64
 msgid "Edit bookmarks"
-msgstr "Rediger bogmærker"
+msgstr "Redigér bogmærker"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
 msgid "_Bookmarks:"
@@ -563,7 +564,7 @@ msgstr "_Navn"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
 msgid "_Location"
-msgstr "_Sted"
+msgstr "_Placering"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:191
 msgid "Could not remove the bookmark"
@@ -575,7 +576,7 @@ msgstr "Brænd cd/dvd"
 
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:2
 msgid "Save files to an optical disc."
-msgstr "Gem filer til en optisk disk."
+msgstr "Gem filer på en optisk disk."
 
 #: ../extensions/burn_disc/callbacks.c:55
 msgid "_Optical Disc..."
@@ -595,7 +596,7 @@ msgstr "Aktuel _mappe"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
 msgid "Current folder and its s_ub-folders"
-msgstr "Aktuel mappe og dennes _undermapper"
+msgstr "Aktuel mappe og _undermapper"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
 msgid "_Selected files"
@@ -614,17 +615,17 @@ msgstr "Skriv til disk"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr ""
+msgstr "Der opstod en fejl under fortolkning af JPEG-billedfilen: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr ""
+msgstr "Ukendt JPEG-farverum (%d)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
 msgid "_Default extension:"
-msgstr ""
+msgstr "_Standardudvidelse:"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
@@ -637,7 +638,7 @@ msgstr "_Udjævning:"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:4
 msgid "Opti_mize"
-msgstr "Opti_mer"
+msgstr "Opti_mér"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:5
 msgid "_Progressive"
@@ -691,11 +692,11 @@ msgstr "punkter/tomme"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
-msgstr ""
+msgstr "_Metode:"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr ""
+msgstr "_Tabsfri"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
@@ -724,14 +725,14 @@ msgstr "TIFF"
 #: ../extensions/cairo_io/gth-image-saver-webp.c:382
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:165
 msgid "WebP"
-msgstr ""
+msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
 msgid "Saving"
-msgstr "Gemmer"
+msgstr "Gemme"
 
 #: ../extensions/catalogs/actions.c:92 ../extensions/catalogs/actions.c:213
 #: ../extensions/catalogs/dlg-add-to-catalog.c:274
@@ -749,7 +750,7 @@ msgstr "Intet navn angivet"
 #: ../extensions/file_manager/actions.c:75
 #, c-format
 msgid "Invalid name. The following characters are not allowed: %s"
-msgstr ""
+msgstr "Ugyldigt navn. Følgende tegn er ikke tilladt: %s"
 
 #: ../extensions/catalogs/actions.c:155 ../extensions/catalogs/actions.c:267
 #: ../extensions/catalogs/dlg-add-to-catalog.c:338
@@ -757,17 +758,17 @@ msgstr ""
 #: ../extensions/catalogs/gth-file-source-catalogs.c:508
 #: ../extensions/file_manager/actions.c:106
 msgid "Name already used"
-msgstr ""
+msgstr "Navn allerede i brug"
 
 #: ../extensions/catalogs/actions.c:178
 #: ../extensions/catalogs/dlg-add-to-catalog.c:359
 msgid "New catalog"
-msgstr ""
+msgstr "Nyt album"
 
 #: ../extensions/catalogs/actions.c:179
 #: ../extensions/catalogs/dlg-add-to-catalog.c:360
 msgid "Enter the catalog name:"
-msgstr ""
+msgstr "Indtast albummets navn:"
 
 #: ../extensions/catalogs/actions.c:181 ../extensions/catalogs/actions.c:293
 #: ../extensions/catalogs/dlg-add-to-catalog.c:362
@@ -779,12 +780,12 @@ msgstr "Op_ret"
 #: ../extensions/catalogs/actions.c:290
 #: ../extensions/catalogs/dlg-add-to-catalog.c:471
 msgid "New library"
-msgstr ""
+msgstr "Nyt bibliotek"
 
 #: ../extensions/catalogs/actions.c:291
 #: ../extensions/catalogs/dlg-add-to-catalog.c:472
 msgid "Enter the library name:"
-msgstr ""
+msgstr "Indtast bibliotekets navn:"
 
 #: ../extensions/catalogs/actions.c:326
 msgid "Could not remove the catalog"
@@ -793,7 +794,7 @@ msgstr "Kunne ikke fjerne albummet"
 #: ../extensions/catalogs/actions.c:363
 #, c-format
 msgid "Are you sure you want to remove \"%s\"?"
-msgstr "Er du sikker på, at du ønsker at fjerne  \"%s\"?"
+msgstr "Er du sikker på, du ønsker at fjerne \"%s\"?"
 
 #: ../extensions/catalogs/callbacks.c:102
 msgid "_Add to Catalog"
@@ -864,11 +865,11 @@ msgstr "Albumegenskaber"
 
 #: ../extensions/catalogs/callbacks.c:714
 msgid "Organize"
-msgstr "Organiser"
+msgstr "Organisér"
 
 #: ../extensions/catalogs/callbacks.c:715
 msgid "Automatically organize files by date"
-msgstr "Organiser automatisk filer efter dato"
+msgstr "Organisér automatisk filer efter dato"
 
 #: ../extensions/catalogs/catalogs.extension.in.in.h:1
 #: ../extensions/catalogs/gth-catalog.c:611
@@ -931,7 +932,7 @@ msgstr "Album"
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:1
 msgid "Organize Files"
-msgstr "Organiser filer"
+msgstr "Organisér filer"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
 msgid "Organizing files"
@@ -939,7 +940,7 @@ msgstr "Organiserer filer"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
 msgid "Organization:"
-msgstr "Organisation:"
+msgstr "Organisering:"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
 msgid "Select All"
@@ -965,11 +966,11 @@ msgstr "_Medtag undermapper"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
-msgstr "Ignorer album der kun indeholder en enkelt fil"
+msgstr "Ignorér albummer, der kun indeholder en enkelt fil"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
 msgid "Put single files in the catalog:"
-msgstr "Placer enlige filer i albummet:"
+msgstr "Placér single filer i albummet:"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:6
 msgid "Singles"
@@ -996,7 +997,8 @@ msgstr "Kunne ikke indlæse albummet"
 #: ../extensions/catalogs/dlg-organize-files.c:120
 msgid "Files will be organized in catalogs. No file will be moved on disk."
 msgstr ""
-"Filer vil blive organiseret i album. Ingen filer vil blive flyttet på disken."
+"Filer vil blive organiseret i albummer. Ingen filer vil blive flyttet på "
+"disken."
 
 #: ../extensions/catalogs/dlg-organize-files.c:132
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
@@ -1028,33 +1030,33 @@ msgstr "Mærker"
 #: ../extensions/catalogs/gth-file-source-catalogs.c:953
 #, c-format
 msgid "The catalog '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "Albummet \"%s\" eksisterer allerede. Ønsker du at overskrive det?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:955
 #, c-format
 msgid "The library '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "Biblioteket \"%s\" eksisterer allerede. Ønsker du at overskrive det?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:963
 msgid "Over_write"
-msgstr ""
+msgstr "Over_skriv"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1081
 msgid "Cannot move the files"
-msgstr ""
+msgstr "Kan ikke flytte filerne"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1083
 msgid "Cannot copy the files"
-msgstr ""
+msgstr "Kan ikke kopiere filerne"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1088
 msgid "Invalid destination."
-msgstr ""
+msgstr "Ugyldig destination"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1135
 #, c-format
 msgid "Copying files to '%s'"
-msgstr "Kopierer filer til '%s'"
+msgstr "Kopierer filer til \"%s\""
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1322
 msgid "Could not remove the files from the catalog"
@@ -1072,7 +1074,7 @@ msgstr "Ugyldigt filformat"
 #: ../extensions/catalogs/gth-organize-task.c:202
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr "Handling færdig. Album: %d. Billeder: %d."
+msgstr "Handling færdig. Albummer: %d. Billeder: %d."
 
 #: ../extensions/change_date/callbacks.c:44
 msgid "Change _Date..."
@@ -1092,11 +1094,11 @@ msgstr "Ændr filernes dato"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:1
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:2
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:3
 msgid "Change Date"
@@ -1136,7 +1138,7 @@ msgstr "Dato _billedet blev taget"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:12
 msgid "A_djust by"
-msgstr "_Juster efter"
+msgstr "_Justér efter"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:13
 msgid "hours"
@@ -1144,7 +1146,7 @@ msgstr "timer"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:14
 msgid "minutes"
-msgstr ""
+msgstr "minutter"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:15
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
@@ -1153,11 +1155,11 @@ msgstr "sekunder"
 
 #: ../extensions/comments/callbacks.c:46
 msgid "Import Embedded Metadata"
-msgstr ""
+msgstr "Importér indlejrede metadata"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
-msgstr ""
+msgstr "Importér metadata gemt inde i filer ind i Pix' kommentarsystem"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1165,7 +1167,7 @@ msgstr "Kommentarer og mærker"
 
 #: ../extensions/comments/comments.extension.in.in.h:2
 msgid "Add comments and tags to any file type."
-msgstr "Tilføj kommentarer og mærker til alle filtyper."
+msgstr "Tilføj kommentarer og mærker til enhver filtype."
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:1
 #: ../extensions/importer/gth-import-preferences-dialog.c:318
@@ -1174,7 +1176,7 @@ msgstr "Indstillinger"
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:2
 msgid "_Synchronize with the embedded metadata"
-msgstr "_Synkroniser med de indlejrede metadata"
+msgstr "_Synkronisér med de indlejrede metadata"
 
 #: ../extensions/comments/main.c:35 ../extensions/edit_metadata/callbacks.c:100
 msgid "Comment"
@@ -1211,33 +1213,33 @@ msgstr "Bedømmelse"
 
 #: ../extensions/contact_sheet/callbacks.c:59
 msgid "Contact _Sheet"
-msgstr ""
+msgstr "_Kontaktark"
 
 #: ../extensions/contact_sheet/callbacks.c:61
 msgid "Contact _Sheet..."
-msgstr ""
+msgstr "_Kontaktark..."
 
 #: ../extensions/contact_sheet/callbacks.c:62
 msgid "Create a contact sheet"
-msgstr ""
+msgstr "Opret et kontaktark"
 
 #: ../extensions/contact_sheet/callbacks.c:65
 msgid "Image _Wall..."
-msgstr ""
+msgstr "_Billedvæg..."
 
 #: ../extensions/contact_sheet/callbacks.c:66
 msgid "Create an image-wall"
-msgstr ""
+msgstr "Opret en billedvæg"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:1
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
 msgid "Contact Sheet"
-msgstr ""
+msgstr "Kontaktark"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
-msgstr ""
+msgstr "Opret en oversigt med miniaturebilleder af de valgte filer,"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1251,60 +1253,60 @@ msgstr "Ingen"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
 msgid "Simple"
-msgstr ""
+msgstr "Enkel"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
 msgid "Simple with shadow"
-msgstr ""
+msgstr "Enkel med skygge"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
 msgid "Shadow only"
-msgstr ""
+msgstr "Kun skygge"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
 msgid "Slide"
-msgstr ""
+msgstr "Slide"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
 msgid "Inward Shadow"
-msgstr ""
+msgstr "Indadvendt skygge"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
 msgid "Outward Shadow"
-msgstr ""
+msgstr "Udadvendt skygge"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
 msgid "Background"
-msgstr ""
+msgstr "Baggrund"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
 msgid "_Solid color"
-msgstr ""
+msgstr "_Ensfarvet"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
 msgid "_Gradient"
-msgstr ""
+msgstr "_Gradient"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
 msgid "Select a color"
-msgstr ""
+msgstr "Vælg en farve"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
 msgid "Frame"
-msgstr ""
+msgstr "Ramme"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
 msgid "_Style:"
-msgstr ""
+msgstr "_Stil:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
 msgid "C_olor:"
-msgstr ""
+msgstr "_Farve:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
 #: ../extensions/rename_series/dlg-rename-series.c:57
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
@@ -1312,11 +1314,11 @@ msgstr ""
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:2
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
 msgid "_Header:"
-msgstr "H_oved:"
+msgstr "Side_hoved:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
 msgid "Select a font"
-msgstr ""
+msgstr "Vælg en skrifttype"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
@@ -1324,19 +1326,19 @@ msgstr ""
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:3
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
 msgid "_Footer:"
-msgstr "F_od:"
+msgstr "Sidef_od:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:32
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:1
 msgid "Caption:"
-msgstr ""
+msgstr "Billedtekst:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
 #: ../extensions/image_print/data/ui/print-layout.ui.h:5
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "The current page number"
-msgstr ""
+msgstr "Det nuværende sidetal"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
 #: ../extensions/image_print/data/ui/print-layout.ui.h:6
@@ -1392,29 +1394,29 @@ msgstr "Vælg målmappe"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
 msgid "File_name:"
-msgstr ""
+msgstr "_Filnavn:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:8
 msgid "New enumerator digit"
-msgstr ""
+msgstr "Nyt tællertal"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
 msgid "Create _HTML image map"
-msgstr ""
+msgstr "O_pret HTML-kortbillede"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
 msgid "Create a new theme"
-msgstr ""
+msgstr "Opret et nyt tema"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
 msgid "Edit the selected theme"
-msgstr ""
+msgstr "Redigér det valgte tema"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
 msgid "Delete the selected theme"
-msgstr ""
+msgstr "Slet det valgte tema"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
@@ -1438,11 +1440,11 @@ msgstr "Billeder pr. side:"
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:28
 msgid "All images on a single page"
-msgstr "Alle billeder på en enkel side"
+msgstr "Alle billeder på en enkelt side"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
 msgid "_All pages with the same size"
-msgstr ""
+msgstr "_Alle sider med samme størrelse"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
@@ -1465,70 +1467,70 @@ msgstr "Om_vendt rækkefølge"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:30
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:15
 msgid "_Size:"
-msgstr ""
+msgstr "S_tørrelse:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:31
 msgid "Sq_uared"
-msgstr ""
+msgstr "_Kvadratisk"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:33
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:16
 msgid "Thumbnails"
-msgstr ""
+msgstr "Miniaturer"
 
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
 msgid "Image Wall"
-msgstr ""
+msgstr "Billedvæg"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:482
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:493
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:507
 msgid "Could not save the theme"
-msgstr ""
+msgstr "Kunne ikke gemme temaet"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:652
 msgid "Could not delete the theme"
-msgstr ""
+msgstr "Kunne ikke slette temaet"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:247
 msgid "Creating images"
-msgstr ""
+msgstr "Opretter billeder"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:896
 msgid "Generating thumbnails"
-msgstr ""
+msgstr "Opretter miniaturer"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:32
 msgid "Header"
-msgstr ""
+msgstr "Sidehoved"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:33
 msgid "Footer"
-msgstr ""
+msgstr "Sidefod"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:193
 msgid "Theme Properties"
-msgstr ""
+msgstr "Temaegenskaber"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:208
 msgid "Copy _From"
-msgstr ""
+msgstr "_Kopiér fra"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:316
 msgid "New theme"
-msgstr ""
+msgstr "Nyt tema"
 
 #: ../extensions/convert_format/callbacks.c:45
 msgid "Convert Format..."
-msgstr "Konverter format..."
+msgstr "Konvertér format..."
 
 #: ../extensions/convert_format/callbacks.c:46
 msgid "Convert image format"
-msgstr "Konverter billedformat"
+msgstr "Konvertér billedformat"
 
 #: ../extensions/convert_format/convert_format.extension.in.in.h:1
 msgid "Convert format"
-msgstr "Konverter format"
+msgstr "Konvertér format"
 
 #: ../extensions/convert_format/convert_format.extension.in.in.h:2
 msgid "Save images in a different format"
@@ -1536,7 +1538,7 @@ msgstr "Gem billeder i et andet format"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:1
 msgid "Convert Format"
-msgstr "Konverter format"
+msgstr "Konvertér format"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:2
 msgid "New format"
@@ -1550,7 +1552,7 @@ msgstr "Destination"
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:5
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:8
 msgid "_Use the original image folder"
-msgstr ""
+msgstr "A_nvend den originale billedmappe"
 
 #: ../extensions/convert_format/dlg-convert-format.c:95
 msgid "Converting images"
@@ -1567,12 +1569,12 @@ msgstr "Kunne ikke angive skrivebordsbaggrunden"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
-msgstr "Angiv som skrivebordsbaggrund"
+msgstr "Anvend som skrivebordsbaggrund"
 
 #: ../extensions/desktop_background/callbacks.c:50
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
 msgid "Set the image as desktop background"
-msgstr "Angiv billedet som skrivebordsbaggrund"
+msgstr "Anvend billedet som skrivebordsbaggrund"
 
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
 msgid "Desktop background"
@@ -1582,11 +1584,11 @@ msgstr "Skrivebordsbaggrund"
 msgid ""
 "Are you sure you want to permanently delete the metadata of the selected "
 "files?"
-msgstr ""
+msgstr "Ønsker du at slette de valgte filers metadata permanent?"
 
 #: ../extensions/edit_metadata/actions.c:73
 msgid "If you delete the metadata, it will be permanently lost."
-msgstr ""
+msgstr "Sletter du metadata, vil de gå tabt for altid."
 
 #: ../extensions/edit_metadata/callbacks.c:97
 msgid "T_ags"
@@ -1594,19 +1596,19 @@ msgstr "_Mærker"
 
 #: ../extensions/edit_metadata/callbacks.c:101
 msgid "Edit the comment and other information of the selected files"
-msgstr "Rediger kommentaren og andre informationer for de valgte filer"
+msgstr "Redigér kommentaren og andre informationer for de valgte filer"
 
 #: ../extensions/edit_metadata/callbacks.c:107
 msgid "Set the tags of the selected files"
-msgstr ""
+msgstr "Angiv mærker for de valgte filer"
 
 #: ../extensions/edit_metadata/callbacks.c:112
 msgid "Delete Metadata"
-msgstr ""
+msgstr "Slet metadata"
 
 #: ../extensions/edit_metadata/callbacks.c:113
 msgid "Delete the comment and the embedded metadata of the selected files"
-msgstr ""
+msgstr "Slet kommentar og indlejrede metadata i de valgte filer"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:6
@@ -1625,7 +1627,7 @@ msgstr "_Mærker:"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
 msgid "_Rating:"
-msgstr "_Bedømmelse:"
+msgstr "B_edømmelse:"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
 msgid "_Title:"
@@ -1642,7 +1644,7 @@ msgstr "Kan ikke læse filinformation"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:1
 msgid "Edit metadata"
-msgstr "Rediger metadata"
+msgstr "Redigér metadata"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
 msgid "Allow to edit files metadata."
@@ -1667,7 +1669,7 @@ msgstr[1] "%d filer"
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:144
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:197
 msgid "Sa_ve and Close"
-msgstr ""
+msgstr "Gem og _luk"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:156
 msgid "Save only cha_nged fields"
@@ -1679,7 +1681,7 @@ msgstr "Ingen dato"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:556
 msgid "The following date"
-msgstr "Nedenstående dato"
+msgstr "Følgende dato"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:557
 #: ../extensions/importer/gth-import-preferences-dialog.c:331
@@ -1702,7 +1704,7 @@ msgstr "Behold nuværende"
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:80
 #, c-format
 msgid "%s Tags"
-msgstr ""
+msgstr "%s mærker"
 
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:189
 msgid "Assign Tags"
@@ -1739,11 +1741,11 @@ msgstr "_Land:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
 msgid "_Code:"
-msgstr "_Kode:"
+msgstr "Ko_de:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
 msgid "Cr_edit:"
-msgstr ""
+msgstr "_Bidragydere:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
@@ -1752,23 +1754,23 @@ msgstr "_Kilde:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
 msgid "_Urgency:"
-msgstr ""
+msgstr "_Vigtighed:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
 msgid "_Object Name:"
-msgstr "_Objektnavn:"
+msgstr "Ob_jektnavn:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
 msgid "Byline _Title:"
-msgstr "_Titel for byline:"
+msgstr "_Titel for forfatterlinje:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
 msgid "_Byline:"
-msgstr "_Byline:"
+msgstr "_Forfatterlinje:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
 msgid "_City:"
-msgstr "_By:"
+msgstr "B_y:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
 msgid "_Language:"
@@ -1776,7 +1778,7 @@ msgstr "_Sprog:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
 msgid "State/Province:"
-msgstr ""
+msgstr "Delstat/Landsdel:"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
 msgid "EXIF, IPTC, XMP support"
@@ -1800,7 +1802,7 @@ msgstr "Exifstruktur"
 
 #: ../extensions/exiv2_tools/main.c:36
 msgid "Exif Thumbnail"
-msgstr "Exif-miniaturebilleder"
+msgstr "Exif-miniaturebillede"
 
 #: ../extensions/exiv2_tools/main.c:37
 msgid "Exif GPS"
@@ -1808,7 +1810,7 @@ msgstr "Exif-GPS"
 
 #: ../extensions/exiv2_tools/main.c:38
 msgid "Exif Maker Notes"
-msgstr ""
+msgstr "Exif-producentnoter"
 
 #: ../extensions/exiv2_tools/main.c:39
 msgid "Exif Versions"
@@ -1845,7 +1847,7 @@ msgstr "Face_book..."
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr ""
+msgstr "Download billeder fra Facebook"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
@@ -1854,7 +1856,7 @@ msgstr "Overfør billeder til Facebook"
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:1
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:1
 msgid "Export to Flickr"
-msgstr "Eksporter til Flickr"
+msgstr "Eksportér til Flickr"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:2
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
@@ -1876,7 +1878,7 @@ msgstr "_Konto:"
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:4
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:3
 msgid "Edit accounts"
-msgstr "Rediger konti"
+msgstr "Redigér konti"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:5
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:6
@@ -1890,7 +1892,7 @@ msgstr "Tilføj et nyt album"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:7
 msgid "Resize the images if larger than this size"
-msgstr ""
+msgstr "Tilpas billedernes størrelse, hvis større end"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:8
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
@@ -1898,27 +1900,27 @@ msgstr ""
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
 msgid "_Resize if larger than:"
-msgstr "_Ændre størrelsen hvis større end:"
+msgstr "_Ændr størrelsen hvis større end:"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:9
 msgid "720 x 720"
-msgstr ""
+msgstr "720 x 720"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:10
 msgid "1024 x 1024"
-msgstr ""
+msgstr "1024 x 1024"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:11
 msgid "1280 x 1280"
-msgstr ""
+msgstr "1280 x 1280"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:12
 msgid "1600 x 1600"
-msgstr ""
+msgstr "1600 x 1600"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:13
 msgid "2048 x 2048"
-msgstr ""
+msgstr "2048 x 2048"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:1
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
@@ -1933,7 +1935,7 @@ msgstr "Private billeder, synlige for venner"
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:3
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:5
 msgid "Private"
-msgstr ""
+msgstr "Privat"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:5
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:2
@@ -1953,19 +1955,19 @@ msgstr "Filer overført til serveren."
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:2
 #: ../extensions/webalbums/gth-web-exporter.c:1841
 msgid "_Open in the Browser"
-msgstr ""
+msgstr "_Åbn i browseren"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:1
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
 msgid "Import from Picasa Web Album"
-msgstr "Importer fra Picasa Webalbum"
+msgstr "Importér fra Picasa Webalbum"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:2
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:2
 msgid "_Import"
-msgstr "_Importer"
+msgstr "_Importér"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:4
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:3
@@ -2048,7 +2050,7 @@ msgstr[1] "%d filer (%s)"
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:635
 #, c-format
 msgid "Export to %s"
-msgstr "Eksporter til %s"
+msgstr "Eksportér til %s"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:344
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:349
@@ -2069,7 +2071,7 @@ msgstr "Intet album valgt"
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:569
 #, c-format
 msgid "Import from %s"
-msgstr "Importer fra %s"
+msgstr "Importér fra %s"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:551
 #: ../extensions/facebook/facebook.extension.in.in.h:1
@@ -2085,7 +2087,7 @@ msgstr "Overfør billeder til Facebook"
 #: ../extensions/photobucket/photobucket-service.c:310
 #: ../extensions/picasaweb/picasa-web-service.c:711
 msgid "Getting the album list"
-msgstr "Hent albumlisten"
+msgstr "Henter albumlisten"
 
 #: ../extensions/facebook/facebook-service.c:616
 #: ../extensions/flicker_utils/flickr-service.c:965
@@ -2102,7 +2104,7 @@ msgstr "Opretter det nye album"
 #: ../extensions/picasaweb/picasa-web-service.c:860
 #, c-format
 msgid "Could not upload '%s': %s"
-msgstr "Kunne ikke overføre '%s': %s"
+msgstr "Kunne ikke overføre \"%s\": %s"
 
 #. Translators: %s is a filename
 #: ../extensions/facebook/facebook-service.c:742
@@ -2111,7 +2113,7 @@ msgstr "Kunne ikke overføre '%s': %s"
 #: ../extensions/picasaweb/picasa-web-service.c:917
 #, c-format
 msgid "Uploading '%s'"
-msgstr "Overfører '%s'"
+msgstr "Overfører \"%s\""
 
 #: ../extensions/facebook/facebook-service.c:955
 #: ../extensions/flicker_utils/flickr-service.c:1482
@@ -2128,11 +2130,11 @@ msgstr "Henter billedlisten"
 
 #: ../extensions/file_manager/actions.c:133
 msgid "New folder"
-msgstr ""
+msgstr "Ny mappe"
 
 #: ../extensions/file_manager/actions.c:134
 msgid "Enter the folder name:"
-msgstr ""
+msgstr "Indtast mappens navn:"
 
 #: ../extensions/file_manager/actions.c:400
 #: ../extensions/file_manager/callbacks.c:380
@@ -2179,7 +2181,7 @@ msgstr "Kunne ikke flytte mappen til papirkurven"
 #: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Er du sikker på, at du permanent ønsker at slette \"%s\"?"
+msgstr "Er du sikker på, du ønsker at slette \"%s\" permanent?"
 
 #: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
 msgid "If you delete a file, it will be permanently lost."
@@ -2187,19 +2189,19 @@ msgstr "Hvis du sletter en fil, vil den være væk for bestandig."
 
 #: ../extensions/file_manager/actions.c:919
 msgid "Move To"
-msgstr ""
+msgstr "Flyt til"
 
 #: ../extensions/file_manager/actions.c:919
 msgid "Copy To"
-msgstr ""
+msgstr "Kopiér til"
 
 #: ../extensions/file_manager/actions.c:923
 msgid "Move"
-msgstr ""
+msgstr "Flyt"
 
 #: ../extensions/file_manager/actions.c:923
 msgid "Copy"
-msgstr ""
+msgstr "Kopiér"
 
 #: ../extensions/file_manager/callbacks.c:163
 #: ../extensions/file_manager/callbacks.c:199
@@ -2209,15 +2211,15 @@ msgstr "Opret _mappe"
 #: ../extensions/file_manager/callbacks.c:164
 #: ../extensions/file_manager/callbacks.c:200
 msgid "Create a new empty folder inside this folder"
-msgstr "Opret en ny tom mappe inden i denne mappe"
+msgstr "Opret en ny tom mappe i denne mappe"
 
 #: ../extensions/file_manager/callbacks.c:179
 msgid "D_uplicate"
-msgstr "_Dupliker"
+msgstr "D_uplikér"
 
 #: ../extensions/file_manager/callbacks.c:180
 msgid "Duplicate the selected files"
-msgstr "Dupliker de valgte filer"
+msgstr "Duplikér de valgte filer"
 
 #: ../extensions/file_manager/callbacks.c:183
 #: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
@@ -2260,28 +2262,28 @@ msgstr "_Indsæt i mappe"
 #: ../extensions/file_manager/callbacks.c:227
 #: ../extensions/file_manager/callbacks.c:236
 msgid "Copy to..."
-msgstr ""
+msgstr "Kopiér til..."
 
 #: ../extensions/file_manager/callbacks.c:228
 msgid "Copy the selected folder to another folder"
-msgstr ""
+msgstr "Kopiér den valgte mappe til en anden mappe"
 
 #: ../extensions/file_manager/callbacks.c:231
 #: ../extensions/file_manager/callbacks.c:240
 msgid "Move to..."
-msgstr ""
+msgstr "Flyt til..."
 
 #: ../extensions/file_manager/callbacks.c:232
 msgid "Move the selected folder to another folder"
-msgstr ""
+msgstr "Flyt den valgte mappe til en anden mappe"
 
 #: ../extensions/file_manager/callbacks.c:237
 msgid "Copy the selected files to another folder"
-msgstr ""
+msgstr "Kopiér de valgte filer til en anden mappe"
 
 #: ../extensions/file_manager/callbacks.c:241
 msgid "Move the selected files to another folder"
-msgstr ""
+msgstr "Flyt de valgte filer til en anden mappe"
 
 #: ../extensions/file_manager/callbacks.c:999
 #: ../extensions/find_duplicates/gth-find-duplicates.c:766
@@ -2296,7 +2298,7 @@ msgstr "Filhåndtering"
 
 #: ../extensions/file_manager/file_manager.extension.in.in.h:2
 msgid "File manager operations."
-msgstr ""
+msgstr "Filhåndteringshandlinger"
 
 #: ../extensions/file_manager/gth-delete-task.c:62
 msgid "Deleting files"
@@ -2305,7 +2307,7 @@ msgstr "Sletter filer"
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:5
 msgid "_Preview"
-msgstr ""
+msgstr "_Forhåndsvisning"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
 msgid "B_rightness:"
@@ -2347,7 +2349,7 @@ msgstr "_Nulstil"
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:1
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
 msgid "Selection"
-msgstr ""
+msgstr "Markering"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:2
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:2
@@ -2366,31 +2368,31 @@ msgstr "_Placering:"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:5
 msgid "Maximize"
-msgstr ""
+msgstr "Maksimér"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:6
 msgid "Center"
-msgstr ""
+msgstr "Centrér"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:7
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:5
 msgid "Aspect ratio"
-msgstr "Størrelsesforhold"
+msgstr "Højde-breddeforhold"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:8
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:6
 msgid "I_nvert aspect ratio"
-msgstr "I_nverter højde-/breddeforhold"
+msgstr "In_vertér højde-/breddeforhold"
 
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "_Multiplum af:"
 
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:13
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:7
@@ -2405,23 +2407,23 @@ msgstr "_Net:"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:15
 msgid "C_rop"
-msgstr "_Beskær"
+msgstr "B_eskær"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:1
 msgid "Method"
-msgstr ""
+msgstr "Metode"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:2
 msgid "_Brightness"
-msgstr ""
+msgstr "_Lysstyrke"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:3
 msgid "_Saturation"
-msgstr ""
+msgstr "_Mætning"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:4
 msgid "_Average"
-msgstr ""
+msgstr "_Gennemsnit"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
 #: ../pix/gth-main-default-metadata.c:47
@@ -2430,7 +2432,7 @@ msgstr "Dimensioner"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:4
 msgid "Set the image size to this value"
-msgstr ""
+msgstr "Indstil billedstørrelsen til denne værdi"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:8
 msgid "High _quality"
@@ -2442,7 +2444,7 @@ msgstr "Oprindelige dimensioner:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:10
 msgid "Scale factor:"
-msgstr ""
+msgstr "Skaleringsfaktor:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:11
 msgid "New dimensions:"
@@ -2461,77 +2463,79 @@ msgstr "%"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
 msgid "Angle"
-msgstr ""
+msgstr "Vinkel"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
 msgid "Align"
-msgstr ""
+msgstr "Justér"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
 msgid "Image size"
-msgstr ""
+msgstr "Billedstørrelse"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
 msgid "Point 1:"
-msgstr ""
+msgstr "Punkt 1:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
 msgid "Point 2:"
-msgstr ""
+msgstr "Punkt 2:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "Bevar højde-/breddeforhold"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
 msgid "Grid:"
-msgstr ""
+msgstr "Net:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
 msgid "_Background:"
-msgstr ""
+msgstr "_Baggrund:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
 msgid "Pick a background color"
-msgstr ""
+msgstr "Vælg en baggrundsfarve"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
 msgid "_Transparent"
-msgstr ""
+msgstr "_Gennemsigtig"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
 msgid "Reset"
-msgstr ""
+msgstr "Nulstil"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
 msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
 msgstr ""
+"Tegn en linje på billedet \n"
+"for at angive justeringen."
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
 msgid "Parallel"
-msgstr ""
+msgstr "Parallel"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:16
 msgid "Perpendicular"
-msgstr ""
+msgstr "Vinkelret"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
 msgid "Alignment"
-msgstr ""
+msgstr "Justering"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
 msgid "Original size"
-msgstr ""
+msgstr "Oprindelig størrelse"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
 msgid "Bounding box"
-msgstr ""
+msgstr "Omgivende felt"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
 msgid "Crop borders"
-msgstr ""
+msgstr "Beskær til kanterne"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:28
@@ -2540,15 +2544,15 @@ msgstr "_Forhåndsvisning:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
 msgid "Threshold:"
-msgstr ""
+msgstr "Tærskel:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
 msgid "Radius:"
-msgstr ""
+msgstr "Radius:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
 msgid "Amount:"
-msgstr ""
+msgstr "Mængde:"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
@@ -2567,23 +2571,23 @@ msgstr "Anvender ændringer"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:618
 msgid "Adjust Colors..."
-msgstr "Juster farver..."
+msgstr "Justér farver..."
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:618
 msgid "Adjust Colors"
-msgstr "Juster farver"
+msgstr "Justér farver"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr ""
+msgstr "Ændr billedets lysstyrke, kontrast, mætning og gammaværdi"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
-msgstr ""
+msgstr "Justér kontrast"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:305
 msgid "Automatic contrast adjustment"
-msgstr ""
+msgstr "Automatisk justering af kontrast"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
@@ -2635,39 +2639,39 @@ msgstr "16:9 (dvd)"
 #: ../extensions/file_tools/gth-file-tool-crop.c:430
 #: ../extensions/file_tools/gth-file-tool-resize.c:605
 msgid "1.85:1"
-msgstr "1.85:1"
+msgstr "1,85:1"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:431
 #: ../extensions/file_tools/gth-file-tool-resize.c:606
 msgid "2.39:1"
-msgstr "2.39:1"
+msgstr "2,39:1"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:432
 #: ../extensions/file_tools/gth-file-tool-resize.c:607
 #: ../extensions/image_print/data/ui/print-layout.ui.h:2
 #: ../extensions/rename_series/gth-template-selector.c:234
 msgid "Custom"
-msgstr "Selvvalgt"
+msgstr "Tilpasset"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:447
 #: ../extensions/file_tools/gth-file-tool-rotate.c:398
 msgid "Rule of Thirds"
-msgstr ""
+msgstr "Tredjedelsreglen"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:448
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
 msgid "Golden Sections"
-msgstr ""
+msgstr "Gyldne snit"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:449
 #: ../extensions/file_tools/gth-file-tool-rotate.c:400
 msgid "Center Lines"
-msgstr ""
+msgstr "Midterlinjer"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:450
 #: ../extensions/file_tools/gth-file-tool-rotate.c:401
 msgid "Uniform"
-msgstr ""
+msgstr "Jævnt fordelt"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:608
 msgid "Crop..."
@@ -2679,7 +2683,7 @@ msgstr "Beskær"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:45
 msgid "Equalizing image histogram"
-msgstr ""
+msgstr "Udjævner billedets histogram"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:230
 msgid "Equalize"
@@ -2687,7 +2691,7 @@ msgstr "Udjævn"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:231
 msgid "Equalize image histogram"
-msgstr ""
+msgstr "Udjævn billedets histogram"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:87
 msgid "Flip"
@@ -2695,15 +2699,15 @@ msgstr "Vend"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:88
 msgid "Flip the image vertically"
-msgstr ""
+msgstr "Spejlvend billedet lodret"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale..."
-msgstr ""
+msgstr "Gråtoner..."
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale"
-msgstr ""
+msgstr "Gråtoner"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:87
 msgid "Mirror"
@@ -2711,7 +2715,7 @@ msgstr "Spejlvend"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:88
 msgid "Mirror the image horizontally"
-msgstr ""
+msgstr "Spejlvend billedet vandret"
 
 #: ../extensions/file_tools/gth-file-tool-negative.c:197
 msgid "Negative"
@@ -2736,33 +2740,33 @@ msgstr "Ændr størrelse"
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:628
 msgid "Rotate..."
-msgstr ""
+msgstr "Rotér..."
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:628
 msgid "Rotate"
-msgstr ""
+msgstr "Rotér"
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:629
 msgid "Freely rotate the image"
-msgstr ""
+msgstr "Rotér billedet frit"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:87
 #: ../extensions/image_rotation/callbacks.c:55
 msgid "Rotate Left"
-msgstr "Roter venstre om"
+msgstr "Rotér venstre om"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr ""
+msgstr "Rotér billedet 90 grader mod uret"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
 #: ../extensions/image_rotation/callbacks.c:49
 msgid "Rotate Right"
-msgstr "Roter højre om"
+msgstr "Rotér højre om"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr ""
+msgstr "Rotér billedet 90 grader med uret"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
 msgid "Save As"
@@ -2774,15 +2778,15 @@ msgstr "Gem"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:101
 msgid "Sharpening image"
-msgstr ""
+msgstr "Gør billedet skarpere"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus..."
-msgstr ""
+msgstr "Gør skarpere..."
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus"
-msgstr ""
+msgstr "Gør skarpere"
 
 #: ../extensions/file_tools/gth-file-tool-undo.c:75
 msgid "Undo"
@@ -2790,27 +2794,27 @@ msgstr "Fortryd"
 
 #: ../extensions/find_duplicates/callbacks.c:48
 msgid "Find _Duplicates..."
-msgstr ""
+msgstr "Find _dubletter..."
 
 #: ../extensions/find_duplicates/callbacks.c:49
 msgid "Find duplicated files in the current location"
-msgstr ""
+msgstr "Find dubletter i den aktuelle placering"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
 msgid "_Folders:"
-msgstr ""
+msgstr "_Mapper:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
 msgid "Search for Duplicates"
-msgstr ""
+msgstr "Søg efter dubletter"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
 msgid "Duplicates:"
-msgstr ""
+msgstr "Dubletter:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
 msgid "Files:"
-msgstr ""
+msgstr "Filer:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
 #: ../pix/gth-browser-actions-entries.h:33
@@ -2819,82 +2823,82 @@ msgstr "_Vis"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
 msgid "No duplicates found."
-msgstr ""
+msgstr "Fandt ingen dubletter."
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:1
 msgid "Find Duplicates"
-msgstr ""
+msgstr "Find dubletter"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:3
 #: ../extensions/search/data/ui/search-editor.ui.h:1
 msgid "Start _at:"
-msgstr "Start _fra:"
+msgstr "S_tart fra:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:4
 msgid "_Filter:"
-msgstr ""
+msgstr "F_ilter:"
 
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:2
 msgid "Find duplicated files."
-msgstr ""
+msgstr "Find dubletter."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
-msgstr ""
+msgstr "behold de nyeste dubletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:66
 msgid "leave the oldest duplicates"
-msgstr ""
+msgstr "behold de ældste dubletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
-msgstr ""
+msgstr "efter mappe..."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:68
 msgid "all files"
-msgstr ""
+msgstr "alle filer"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:69
 msgid "no file"
-msgstr ""
+msgstr "ingen fil"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:560
 #: ../extensions/find_duplicates/gth-find-duplicates.c:668
 #, c-format
 msgid "%d duplicate"
 msgid_plural "%d duplicates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d dublet"
+msgstr[1] "%d dubletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:712
 msgid "Search completed"
-msgstr ""
+msgstr "Søgning færdig"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:725
 msgid "Searching for duplicates"
-msgstr ""
+msgstr "Søger efter dubletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:728
 #: ../pix/gth-load-file-data-task.c:106 ../pix/gth-save-file-data-task.c:100
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d fil tilbage"
+msgstr[1] "%d filer tilbage"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:830
 msgid "Getting the file list"
-msgstr ""
+msgstr "Frembringer fillisten"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1016
 msgid "Duplicates"
-msgstr ""
+msgstr "Dubletter"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1308
 msgid "Select"
-msgstr ""
+msgstr "Vælg"
 
 #: ../extensions/flicker/callbacks.c:59 ../extensions/flicker/callbacks.c:64
 msgid "_Flickr..."
@@ -2910,7 +2914,7 @@ msgstr "Overfør billeder til Flickr"
 
 #: ../extensions/flicker/flicker.extension.in.in.h:1
 msgid "Flicker"
-msgstr ""
+msgstr "Flicker"
 
 #: ../extensions/flicker/flicker.extension.in.in.h:2
 msgid "Upload images to Flickr"
@@ -2937,7 +2941,7 @@ msgstr "_Skjul for offentlige søgninger"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
 msgid "_Safety:"
-msgstr "_Sikkerhed:"
+msgstr "S_ikkerhed:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
 msgid "Private photos, visible to family and friends"
@@ -2953,11 +2957,11 @@ msgstr "Private billeder"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
 msgid "Safe content"
-msgstr ""
+msgstr "Sikkert indhold"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
 msgid "Moderate content"
-msgstr ""
+msgstr "Moderat indhold"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:17
 msgid "Restricted content"
@@ -2965,11 +2969,11 @@ msgstr "Begrænset indhold"
 
 #: ../extensions/flicker_utils/data/ui/flickr-ask-authorization-old.ui.h:1
 msgid "C_ontinue"
-msgstr ""
+msgstr "_Fortsæt"
 
 #: ../extensions/flicker_utils/data/ui/flickr-ask-authorization-old.ui.h:2
 msgid "_Authorize..."
-msgstr ""
+msgstr "_Godkend..."
 
 #: ../extensions/flicker_utils/flickr-consumer.c:124
 #: ../extensions/flicker_utils/flickr-service.c:237
@@ -2989,16 +2993,17 @@ msgstr "Ukendt fejl"
 msgid ""
 "Return to this window when you have finished the authorization process on %s"
 msgstr ""
-"Returner til dette vindue, når du har afsluttet godkendelsesprocessen på %s"
+"Vend tilbage til dette vindue, når du har afsluttet godkendelsesprocessen på "
+"%s"
 
 #: ../extensions/flicker_utils/flickr-service.c:503
 msgid "Once you're done, click the 'Continue' button below."
-msgstr "Når du er færdig, så klik på knappen 'Fortsæt' nedenfor."
+msgstr "Klik på knappen \"Fortsæt\" nedenfor, når du er færdig."
 
 #: ../extensions/flicker_utils/flickr-service.c:571
 #, c-format
 msgid "Pix requires your authorization to upload the photos to %s"
-msgstr ""
+msgstr "Pix har brug for din godkendelse for at overføre billeder til %s"
 
 #: ../extensions/flicker_utils/flickr-service.c:572
 #, c-format
@@ -3007,9 +3012,9 @@ msgid ""
 "photos to %s. When you're finished, return to this window to complete the "
 "authorization."
 msgstr ""
-"Klik 'Godkend' for at åbne din internetbrowser og godkende at pix kan "
-"overføre billeder til %s. Når du er færdig, så returner til dette vindue for "
-"at færdiggøre godkendelsen."
+"Klik \"Godkend\" for at åbne din internetbrowser og godkende, at pix kan "
+"overføre billeder til %s. Når du er færdig, så vend tilbage til dette vindue "
+"for at færdiggøre godkendelsen."
 
 #: ../extensions/gstreamer_tools/actions.c:66
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1042
@@ -3054,7 +3059,7 @@ msgstr "--:--"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
 msgid "Toggle volume"
-msgstr ""
+msgstr "Slå lyd til/fra"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
 msgid "Change volume level"
@@ -3084,7 +3089,7 @@ msgstr "Tag et skærmbillede"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
-msgstr ""
+msgstr "Afspiller video"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:694
 msgid "Pause"
@@ -3109,7 +3114,7 @@ msgstr "Album"
 
 #: ../extensions/gstreamer_tools/main.c:41
 msgid "Bitrate"
-msgstr ""
+msgstr "Bithastighed"
 
 #: ../extensions/gstreamer_tools/main.c:42
 msgid "Encoder"
@@ -3122,7 +3127,7 @@ msgstr "Codec"
 
 #: ../extensions/gstreamer_tools/main.c:45
 msgid "Framerate"
-msgstr ""
+msgstr "Billedhastighed"
 
 #: ../extensions/gstreamer_tools/main.c:46
 #: ../extensions/image_print/data/ui/print-layout.ui.h:24
@@ -3141,7 +3146,7 @@ msgstr "Kanaler"
 
 #: ../extensions/gstreamer_tools/main.c:51
 msgid "Sample rate"
-msgstr ""
+msgstr "Samplingsfrekvens"
 
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:368
 msgid "Stereo"
@@ -3174,16 +3179,16 @@ msgstr "Centreret"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:13
 msgid "The total number of files"
-msgstr ""
+msgstr "Det totale antal filer"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:14
 #: ../extensions/importer/data/ui/import-preferences.ui.h:4
 msgid "The event description"
-msgstr ""
+msgstr "Beskrivelse af begivenheden"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:17
 msgid "_Rows:"
-msgstr ""
+msgstr "_Rækker:"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:19
 msgid "Image"
@@ -3223,19 +3228,19 @@ msgstr "tommer"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:4
 msgid "Select Caption Font"
-msgstr ""
+msgstr "Vælg skrifttype til billedtekst"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:5
 msgid "Select Header Font"
-msgstr ""
+msgstr "Vælg skrifttype til sidehoved"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:6
 msgid "Select Footer Font"
-msgstr ""
+msgstr "Vælg skrifttype til sidefod"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:7
 msgid "Fonts"
-msgstr ""
+msgstr "Skrifttyper"
 
 #: ../extensions/image_print/gth-image-print-job.c:914
 #: ../extensions/webalbums/data/albumthemes/text.h:31
@@ -3258,7 +3263,7 @@ msgstr "Billeder"
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
-msgstr ""
+msgstr "Der er ingen anvendelig indlæser tilgængelig for denne filtype"
 
 #. translators: %s is a filename
 #: ../extensions/image_print/gth-load-image-info-task.c:164
@@ -3277,35 +3282,36 @@ msgstr "Billedudskrivning"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:2
 msgid "Allow to print images choosing the page layout."
-msgstr ""
+msgstr "Vælg sidelayout til udskrivning"
 
 #: ../extensions/image_print/preferences.c:79
 msgid "Print"
-msgstr ""
+msgstr "Udskriv"
 
 #: ../extensions/image_rotation/callbacks.c:50
 msgid "Rotate the selected images 90° to the right"
-msgstr ""
+msgstr "Rotér de valgte billeder 90° med uret"
 
 #: ../extensions/image_rotation/callbacks.c:56
 msgid "Rotate the selected images 90° to the left"
-msgstr ""
+msgstr "Rotér de valgte billeder 90° mod uret"
 
 #: ../extensions/image_rotation/callbacks.c:61
 msgid "Rotate Physically"
-msgstr ""
+msgstr "Rotér fysisk"
 
 #: ../extensions/image_rotation/callbacks.c:62
 msgid "Rotate the selected images according to the embedded orientation"
 msgstr ""
+"Rotér de valgte billeder i overensstemmelse med den indlejrede orientering"
 
 #: ../extensions/image_rotation/callbacks.c:67
 msgid "Reset the EXIF Orientation"
-msgstr ""
+msgstr "Nulstil EXIF-orientering"
 
 #: ../extensions/image_rotation/callbacks.c:68
 msgid "Reset the embedded orientation without rotating the images"
-msgstr ""
+msgstr "Nulstil den indlejrede orientering uden at rotere billederne"
 
 #: ../extensions/image_rotation/gth-reset-orientation-task.c:111
 #: ../extensions/image_rotation/gth-transform-task.c:143
@@ -3316,11 +3322,11 @@ msgstr "Gemmer billeder"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
 msgid "Image rotation"
-msgstr ""
+msgstr "Billedrotation"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
 msgid "Rotate images without data loss."
-msgstr "Roter billeder uden kvalitetstab."
+msgstr "Rotér billeder uden kvalitetstab."
 
 #: ../extensions/image_rotation/rotation-utils.c:105
 #, c-format
@@ -3340,14 +3346,14 @@ msgid ""
 "For practical use, this mode gives the best looking results, but the "
 "transformation is not strictly lossless anymore."
 msgstr ""
-"Denne omformning kan være skyld i små billedeforvrængninger langs et eller "
-"flere kanter, fordi billedets dimensioner ikke er deleligt med 8.\n"
+"Denne omformning kan være skyld i små billedforvrængninger langs en eller "
+"flere kanter, fordi billedets dimensioner ikke er delelige med 8.\n"
 "\n"
 "Forvrængningen kan dog fortrydes. Hvis resultatet af billedet er "
-"uacceptabelt, tilføj fa den modsatte omformning for at returnere til det "
+"uacceptabelt, tilføj den modsatte omformning for at vende tilbage til det "
 "oprindelige billede.\n"
 "\n"
-"Du kan også vælge af forkaste (eller trimme) ikke omformbare kant-"
+"Du kan også vælge af forkaste (eller trimme) ikke-omformbare kant-"
 "billedpunkter. Ved praktisk brug giver denne tilstand de bedst udseende "
 "resultater, men omformningen er ikke helt tabsfri mere."
 
@@ -3357,11 +3363,11 @@ msgstr "_Trim"
 
 #: ../extensions/image_rotation/rotation-utils.c:118
 msgid "_Accept distortion"
-msgstr ""
+msgstr "A_cceptér forvrængning"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
 msgid "Set to actual size"
-msgstr ""
+msgstr "Indstil til faktisk størrelse"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
 msgid "Keep previous zoom"
@@ -3381,11 +3387,11 @@ msgstr "Tilpas til bredde"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
 msgid "Fit to width if larger"
-msgstr "Tilpas til bredden større"
+msgstr "Tilpas til bredden hvis billedet er større"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
 msgid "Reset scrollbar positions"
-msgstr ""
+msgstr "Nulstil rullebjælkepositioner"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
 msgid "After loading an image:"
@@ -3422,23 +3428,23 @@ msgstr "Ternet"
 
 #: ../extensions/image_viewer/gth-image-histogram.c:84
 msgid "Histogram"
-msgstr ""
+msgstr "Histogram"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:179
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopiér billede"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:180
 msgid "Copy the image to the clipboard"
-msgstr ""
+msgstr "Kopiér billedet til udklipsholderen"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:184
 msgid "Paste Image"
-msgstr ""
+msgstr "Indsæt billede"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:185
 msgid "Paste the image from the clipboard"
-msgstr ""
+msgstr "Indsæt billedet fra udklipsholderen"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:189
 msgid "In"
@@ -3482,7 +3488,7 @@ msgstr "Billedfremviser"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
 msgid "Basic image viewing."
-msgstr ""
+msgstr "Grundlæggende billedvisning."
 
 #: ../extensions/image_viewer/preferences.c:125
 msgid "Viewer"
@@ -3498,7 +3504,7 @@ msgstr "_Automatisk undermappe"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:3
 msgid "as _single subfolder"
-msgstr ""
+msgstr "som _enkelt undermappe"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:7
 msgid "The year"
@@ -3510,11 +3516,11 @@ msgstr "Måneden"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:9
 msgid "The day of the month"
-msgstr ""
+msgstr "Månedens dag"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:10
 msgid "The hour"
-msgstr ""
+msgstr "Klokkeslættet"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:11
 msgid "The minutes"
@@ -3526,7 +3532,7 @@ msgstr "Sekunderne"
 
 #: ../extensions/importer/gth-import-destination-button.c:183
 msgid "Invalid Destination"
-msgstr ""
+msgstr "Ugyldig destination"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:198
 #, c-format
@@ -3585,7 +3591,7 @@ msgstr "Senest importeret"
 
 #: ../extensions/importer/gth-import-task.c:838
 msgid "No file specified."
-msgstr ""
+msgstr "Ingen fil angivet."
 
 #. Translators: For example: Not enough free space in '/home/user/Images'.\n1.3 GB of space is required but only 300 MB is available.
 #: ../extensions/importer/gth-import-task.c:875
@@ -3594,6 +3600,8 @@ msgid ""
 "Not enough free space in '%s'.\n"
 "%s of space is required but only %s is available."
 msgstr ""
+"Ikke nok tilgængelig plads i \"%s\".\n"
+"%s er påkrævet, men kun %s er til rådighed."
 
 # kunne måske også være personliggøre
 #: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
@@ -3606,7 +3614,7 @@ msgstr "Værktøjer"
 
 #: ../extensions/list_tools/callbacks.c:321
 msgid "Batch tools for multiple files"
-msgstr ""
+msgstr "Batchværktøjer til flere filer"
 
 #: ../extensions/list_tools/data/ui/ask-value.ui.h:1
 msgid "_Skip"
@@ -3626,7 +3634,7 @@ msgstr "_Vent på at kommandoen afsluttes"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:3
 msgid "E_xecute command once for every file"
-msgstr "_udfør kommando en gang for hver fil"
+msgstr "_Udfør kommando en gang for hver fil"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:4
 msgid "_Terminal command (shell script)"
@@ -3634,7 +3642,7 @@ msgstr "_Terminalkommando (skalskript)"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:5
 msgid "Sh_ortcut:"
-msgstr "_Genvej:"
+msgstr "G_envej:"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:6
 msgid "The file uri"
@@ -3661,7 +3669,7 @@ msgstr "%ask{ besked }{ standardværdi }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:15
 msgid "Ask an input value"
-msgstr ""
+msgstr "Spørg efter en inputværdi"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:18
@@ -3700,7 +3708,7 @@ msgstr "%quote{ tekst }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:29
 msgid "Quote the text "
-msgstr "Citer teksten "
+msgstr "Citér teksten "
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:30
 msgid "_Command:"
@@ -3729,11 +3737,11 @@ msgstr "Ny kommando"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:433
 msgid "Edit Command"
-msgstr "Rediger kommando"
+msgstr "Redigér kommando"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:461
 msgid "Are you sure you want to delete the selected command?"
-msgstr ""
+msgstr "Ønsker du at slette den valgte kommando?"
 
 #: ../extensions/list_tools/gth-script.c:610
 msgid "Enter a value:"
@@ -3744,7 +3752,7 @@ msgstr "Indtast en værdi:"
 #: ../extensions/webalbums/gth-web-exporter.c:570
 #: ../extensions/webalbums/gth-web-exporter.c:578
 msgid "Malformed command"
-msgstr ""
+msgstr "Forkert udformet kommando"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:147
 msgid "none"
@@ -3758,7 +3766,7 @@ msgstr "tast %d på det numeriske tastatur"
 #: ../extensions/list_tools/gth-script-editor-dialog.c:296
 #, c-format
 msgid "No command specified"
-msgstr "Ingen kommando anført"
+msgstr "Ingen kommando angivet"
 
 #: ../extensions/list_tools/gth-script-task.c:83
 #, c-format
@@ -3771,42 +3779,43 @@ msgstr "Fillisteværktøjer"
 
 #: ../extensions/list_tools/list_tools.extension.in.in.h:2
 msgid "Scripting and batch manipulation of files."
-msgstr ""
+msgstr "Skripter og batchhåndtering af filer."
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "W"
-msgstr ""
+msgstr "V"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "E"
-msgstr ""
+msgstr "Ø"
 
 #: ../extensions/map_view/gth-map-view.c:205
 #: ../extensions/map_view/map_view.extension.in.in.h:1
 msgid "Map"
-msgstr ""
+msgstr "Kort"
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
 msgid ""
 "The geographical position information is not available for this image."
 msgstr ""
+"Den geografiske positionsinformation er ikke tilgængelig for dette billede."
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
-msgstr ""
+msgstr "Vis billedpositionen på kortet"
 
 #: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
 msgid "A_ccounts:"
@@ -3815,7 +3824,7 @@ msgstr "_Konti:"
 #: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
 #: ../pix/gth-folder-tree.c:1067
 msgid "Loading..."
-msgstr ""
+msgstr "Indlæser..."
 
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:200
 msgid "New authentication..."
@@ -3823,7 +3832,7 @@ msgstr "Ny godkendelse..."
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
-msgstr ""
+msgstr "Godkendelse påkrævet"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
@@ -3835,7 +3844,7 @@ msgstr "Vælg konto"
 
 #: ../extensions/oauth/web-service.c:777
 msgid "Edit Accounts"
-msgstr "Rediger konti"
+msgstr "Redigér konti"
 
 #: ../extensions/oauth/web-service.c:795 ../extensions/oauth/web-service.c:812
 msgid "Connecting to the server"
@@ -3843,7 +3852,7 @@ msgstr "Forbinder til serveren"
 
 #: ../extensions/oauth/web-service.c:796
 msgid "Asking authorization"
-msgstr ""
+msgstr "Spørger om godkendelse"
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
@@ -3859,7 +3868,7 @@ msgstr "Overfør billeder til Photobucket"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:9
 msgid "_Scramble filenames"
-msgstr ""
+msgstr "_Bland filnavne"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:10
 msgid "Tiny ( 100 x 75 )"
@@ -3879,11 +3888,11 @@ msgstr "Stor ( 640 x 480 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:14
 msgid "15ʺ screen ( 800 x 600 )"
-msgstr ""
+msgstr "15ʺ skærm ( 800 x 600 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:15
 msgid "17ʺ screen ( 1024 x 768 )"
-msgstr ""
+msgstr "17ʺ skærm ( 1024 x 768 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:16
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:296
@@ -3892,7 +3901,7 @@ msgstr "1 megabyte filstørrelse"
 
 #: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:2
 msgid "_Container:"
-msgstr ""
+msgstr "_Container:"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:290
 msgid "Tiny ( 100 × 75 )"
@@ -3932,7 +3941,7 @@ msgstr "Overfør billeder til PhotoBucket"
 
 #: ../extensions/photo_importer/actions.c:71
 msgid "Import"
-msgstr ""
+msgstr "Importér"
 
 #: ../extensions/photo_importer/callbacks.c:52
 msgid "_Removable Device..."
@@ -3940,23 +3949,23 @@ msgstr "_Ekstern enhed..."
 
 #: ../extensions/photo_importer/callbacks.c:53
 msgid "Import photos and other files from a removable device"
-msgstr "Importer billeder og andre filer fra en ekstern enhed"
+msgstr "Importér billeder og andre filer fra en ekstern enhed"
 
 #: ../extensions/photo_importer/callbacks.c:56
 msgid "F_older..."
-msgstr ""
+msgstr "_Mappe..."
 
 #: ../extensions/photo_importer/callbacks.c:57
 msgid "Import photos and other files from a folder"
-msgstr ""
+msgstr "Importér billeder og andre filer fra en mappe"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
 msgid "_Rotate the images physically"
-msgstr ""
+msgstr "_Rotér billederne fysisk"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
 msgid "After importing from a device:"
-msgstr ""
+msgstr "Efter import fra en enhed:"
 
 #. view label
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
@@ -3970,7 +3979,7 @@ msgstr "_Mærker:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
 msgid "_Event:"
-msgstr "_Hændelse:"
+msgstr "H_ændelse:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:7
 msgid "_Delete the imported files from the source"
@@ -3979,7 +3988,7 @@ msgstr "_Slet de importerede billeder fra kilden"
 #: ../extensions/photo_importer/dlg-photo-importer.c:227
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:149
 msgid "Could not import the files"
-msgstr ""
+msgstr "Kunne ikke importere filerne"
 
 #. translators: %d is the number of files, %s the total size
 #: ../extensions/photo_importer/dlg-photo-importer.c:299
@@ -4002,19 +4011,19 @@ msgstr "Tom"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:586
 msgid "Import from Removable Device"
-msgstr "Importer fra ekstern enhed"
+msgstr "Importér fra ekstern enhed"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:618
 msgid "Import from Folder"
-msgstr ""
+msgstr "Importér fra mappe"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:1
 msgid "Import photos"
-msgstr "Importer billeder"
+msgstr "Importér billeder"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:2
 msgid "Import photos from removable devices."
-msgstr "Importer billeder fra eksterne enheder."
+msgstr "Importér billeder fra eksterne enheder."
 
 #: ../extensions/picasaweb/callbacks.c:59
 #: ../extensions/picasaweb/callbacks.c:64
@@ -4031,11 +4040,11 @@ msgstr "Overfør billeder til Picasa Webalbum"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:1
 msgid "Export to Picasa Web Albums"
-msgstr "Eksporter til Picasa Webalbum"
+msgstr "Eksportér til Picasa Webalbum"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:5
 msgid "_Albums:"
-msgstr "_Album:"
+msgstr "_Albummer:"
 
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:4
 msgid "Public"
@@ -4056,11 +4065,11 @@ msgstr "Overfør billeder til Picasa Webalbum"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
-msgstr "Understøttelse af rå-format (raw)"
+msgstr "Understøttelse af raw-format"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:2
 msgid "Allow to load raw format images."
-msgstr "Tillad indlæsning af billeder i rå-format (raw)."
+msgstr "Tillad indlæsning af billeder i raw-format."
 
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
 msgid "_X:"
@@ -4072,39 +4081,39 @@ msgstr "_Y:"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal..."
-msgstr "Fjern _rødøjeeffekt..."
+msgstr "Fjern røde øjne..."
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal"
-msgstr "Fjern rødøjeeffekt"
+msgstr "Fjern røde øjne"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:511
 msgid "Remove the red eye effect caused by camera flashes"
-msgstr "Fjern rødøje-effekten udløst af kamerablitz"
+msgstr "Fjern røde øjne udløst af kamerablitz"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
 msgid "Red-eye removal"
-msgstr "Fjern rødøjeeffekt"
+msgstr "Fjern røde øjne"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
 msgid "Tool to remove the red-eye effect from a photo."
-msgstr "Værktøj til at fjerne rødøje-effekten på et billede."
+msgstr "Værktøj til at fjerne røde øjne på et billede."
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:1
 msgid "digits"
-msgstr ""
+msgstr "cifre"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:2
 msgid "format:"
-msgstr ""
+msgstr "format:"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:3
 msgid "remove"
-msgstr ""
+msgstr "fjern"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:4
 msgid "add"
-msgstr ""
+msgstr "tilføj"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:1
 msgid "Rename"
@@ -4113,11 +4122,11 @@ msgstr "Omdøb"
 #. Translators: this is the text case (upper or lower case).
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:6
 msgid "Cas_e:"
-msgstr ""
+msgstr "Store/små _bogstaver"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:7
 msgid "Edit template"
-msgstr ""
+msgstr "Redigér skabelon"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:9
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:34
@@ -4130,7 +4139,7 @@ msgstr "Den oprindelige filendelse"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:13
 msgid "The original enumerator"
-msgstr ""
+msgstr "Den oprindelige tæller"
 
 #. translate only the text in the curly brackets
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:16
@@ -4140,17 +4149,17 @@ msgstr "%M{ format }"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:17
 msgid "The modification date"
-msgstr ""
+msgstr "Ændringsdato"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:21
 msgid "The digitalization date"
-msgstr ""
+msgstr "Digitaliseringsdato"
 
 #. translate only the text in the curly brackets
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:24
 #, no-c-format
 msgid "%A{ identifier }"
-msgstr ""
+msgstr "%A{identifikator}"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:26
 msgid "_Template:"
@@ -4162,31 +4171,31 @@ msgstr "Om_vendt rækkefølge"
 
 #: ../extensions/rename_series/dlg-rename-series.c:58
 msgid "Enumerator"
-msgstr ""
+msgstr "Tæller"
 
 #: ../extensions/rename_series/dlg-rename-series.c:59
 msgid "Original filename"
-msgstr ""
+msgstr "Oprindeligt filnavn"
 
 #: ../extensions/rename_series/dlg-rename-series.c:60
 msgid "Original extension"
-msgstr ""
+msgstr "Oprindelig filendelse"
 
 #: ../extensions/rename_series/dlg-rename-series.c:61
 msgid "Original enumerator"
-msgstr ""
+msgstr "Oprindelig tæller"
 
 #: ../extensions/rename_series/dlg-rename-series.c:62
 msgid "Modification date"
-msgstr ""
+msgstr "Ændringsdato"
 
 #: ../extensions/rename_series/dlg-rename-series.c:63
 msgid "Digitalization date"
-msgstr ""
+msgstr "Digitaliseringsdato"
 
 #: ../extensions/rename_series/dlg-rename-series.c:64
 msgid "File attribute"
-msgstr ""
+msgstr "Filattribut"
 
 #: ../extensions/rename_series/dlg-rename-series.c:558
 #: ../extensions/rename_series/dlg-rename-series.c:689
@@ -4195,11 +4204,11 @@ msgstr "Kunne ikke omdøbe filerne"
 
 #: ../extensions/rename_series/dlg-rename-series.c:786
 msgid "Could not save the template"
-msgstr ""
+msgstr "Kunne ikke gemme skabelonen"
 
 #: ../extensions/rename_series/dlg-rename-series.c:804
 msgid "Edit Template"
-msgstr ""
+msgstr "Redigér skabelon"
 
 #: ../extensions/rename_series/dlg-rename-series.c:862
 msgid "Old Name"
@@ -4211,15 +4220,15 @@ msgstr "Nyt navn"
 
 #: ../extensions/rename_series/dlg-rename-series.c:951
 msgid "Keep original case"
-msgstr ""
+msgstr "Behold oprindelig størrelse"
 
 #: ../extensions/rename_series/dlg-rename-series.c:952
 msgid "Convert to lower-case"
-msgstr "Konverter til små bogstaver"
+msgstr "Konvertér til små bogstaver"
 
 #: ../extensions/rename_series/dlg-rename-series.c:953
 msgid "Convert to upper-case"
-msgstr "Konverter til store bogstaver"
+msgstr "Konvertér til store bogstaver"
 
 #: ../extensions/rename_series/gth-rename-task.c:167
 msgid "Renaming files"
@@ -4255,7 +4264,7 @@ msgstr "_Højde:"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:5
 msgid "_Preserve original aspect ratios"
-msgstr "_Bevar oprindeligt størrelsesforhold"
+msgstr "_Bevar oprindeligt højde-/breddeforhold"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:9
 #: ../pix/gth-main-default-metadata.c:49
@@ -4268,7 +4277,7 @@ msgstr "billedpunkt"
 
 #: ../extensions/resize_images/dlg-resize-images.c:423
 msgid "Keep the original format"
-msgstr ""
+msgstr "Behold oprindeligt format"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:1
 msgid "Resize images"
@@ -4276,7 +4285,7 @@ msgstr "Ændr størrelse på billeder"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:2
 msgid "Resize series of images."
-msgstr "Ændr størrelse på samlinger af billeder."
+msgstr "Ændr størrelse på serier af billeder."
 
 #: ../extensions/search/actions.c:49 ../extensions/search/actions.c:117
 #: ../extensions/search/actions.c:123
@@ -4318,11 +4327,11 @@ msgstr "enhver af de følgende regler"
 #: ../extensions/search/gth-search-task.c:181
 #, c-format
 msgid "Files found until now: %s"
-msgstr ""
+msgstr "Filer fundet indtil nu : %s"
 
 #: ../extensions/search/gth-search-task.c:271
 msgid "Searching..."
-msgstr "Søgning..."
+msgstr "Søger..."
 
 #: ../extensions/search/gth-search-task.c:277
 msgid "Cancel the operation"
@@ -4334,54 +4343,56 @@ msgstr "Filsøgningsværktøj."
 
 #: ../extensions/selections/callbacks.c:77
 msgid "Add to _Selection"
-msgstr ""
+msgstr "Tilf_øj til samling"
 
 #: ../extensions/selections/callbacks.c:86
 msgid "Selection 1"
-msgstr ""
+msgstr "Samling 1"
 
 #: ../extensions/selections/callbacks.c:91
 msgid "Selection 2"
-msgstr ""
+msgstr "Samling 2"
 
 #: ../extensions/selections/callbacks.c:96
 msgid "Selection 3"
-msgstr ""
+msgstr "Samling 3"
 
 #: ../extensions/selections/callbacks.c:285
 #, c-format
 msgid ""
 "Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."
 msgstr ""
+"Anvend alt-%d for at tilføje filer til denne samling, ctrl-%d for at se "
+"samlingen."
 
 #: ../extensions/selections/gth-selections-manager.c:239
 #, c-format
 msgid "Selection %d"
-msgstr ""
+msgstr "Samling %d"
 
 #: ../extensions/selections/gth-selections-manager.c:242
 #: ../extensions/selections/selections.extension.in.in.h:1
 msgid "Selections"
-msgstr ""
+msgstr "Samlinger"
 
 #: ../extensions/selections/selections.extension.in.in.h:2
 msgid "Advanced file selection."
-msgstr ""
+msgstr "Avanceret filsamlinger."
 
 #: ../extensions/slideshow/callbacks.c:56
 msgid "_Slideshow"
-msgstr "_Diasshow"
+msgstr "S_lideshow"
 
 #: ../extensions/slideshow/callbacks.c:57
 msgid "View as a slideshow"
-msgstr "Vis som et diasshow"
+msgstr "Vis som et slideshow"
 
 #: ../extensions/slideshow/callbacks.c:410
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
 #: ../extensions/slideshow/preferences.c:162
 #: ../extensions/slideshow/slideshow.extension.in.in.h:1
 msgid "Slideshow"
-msgstr "Diasshow"
+msgstr "Slideshow"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
 msgid "_Personalize"
@@ -4394,15 +4405,15 @@ msgstr "_Overgangseffekt:"
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
 msgid "_Change automatically, every"
-msgstr ""
+msgstr "_Skift automatisk efter"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
 msgid "_Restart when finished"
-msgstr "_Genstart efter sidste billede"
+msgstr "G_enstart efter sidste billede"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
 msgid "R_andom order"
-msgstr ""
+msgstr "_Tilfældig rækkefølge"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
 msgid "Playlist"
@@ -4418,7 +4429,7 @@ msgstr "Fjern de valgte filer"
 
 #: ../extensions/slideshow/gth-slideshow.c:233
 msgid "Playing slideshow"
-msgstr ""
+msgstr "Afspiller slideshow"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:184
 msgid "Choose the files to play"
@@ -4434,23 +4445,23 @@ msgstr "Tilfældig"
 
 #: ../extensions/slideshow/main.c:283
 msgid "Push from right"
-msgstr ""
+msgstr "Skub fra højre"
 
 #: ../extensions/slideshow/main.c:289
 msgid "Push from bottom"
-msgstr ""
+msgstr "Skub fra bunden"
 
 #: ../extensions/slideshow/main.c:295
 msgid "Slide from right"
-msgstr ""
+msgstr "Glid fra højre"
 
 #: ../extensions/slideshow/main.c:301
 msgid "Slide from bottom"
-msgstr ""
+msgstr "Glid fra bunden"
 
 #: ../extensions/slideshow/main.c:307
 msgid "Fade in"
-msgstr ""
+msgstr "Tone frem"
 
 #: ../extensions/slideshow/main.c:313
 msgid "Flip page"
@@ -4458,15 +4469,15 @@ msgstr "Vend side"
 
 #: ../extensions/slideshow/main.c:319
 msgid "Cube from right"
-msgstr ""
+msgstr "Terning fra højre"
 
 #: ../extensions/slideshow/main.c:325
 msgid "Cube from bottom"
-msgstr ""
+msgstr "Terning fra bunden"
 
 #: ../extensions/slideshow/slideshow.extension.in.in.h:2
 msgid "View images as a slideshow."
-msgstr "Vis billeder som et diasshow."
+msgstr "Vis billeder som et slideshow."
 
 #: ../extensions/webalbums/callbacks.c:71
 msgid "_Web Album..."
@@ -4530,7 +4541,7 @@ msgstr "Alle billeder på et enkelt billede"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
 msgid "Adapts to the window width"
-msgstr ""
+msgstr "Tilpasses til vinduesbredden"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
 msgid "Web Album"
@@ -4543,7 +4554,7 @@ msgstr "%P"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
 msgid "_Copy originals to destination"
-msgstr "_Kopier originalerne til destinationen"
+msgstr "_Kopiér originaler til destinationen"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:27
 msgid "_Adapt to the window width "
@@ -4555,7 +4566,7 @@ msgstr "Indeksside"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:31
 msgid "Thumbnail Caption"
-msgstr "Optagelse af mniaturebillede"
+msgstr "Billedtekst til miniaturebilleder"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
 msgid "The current image number"
@@ -4567,7 +4578,7 @@ msgstr "Samlet antal billeder"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:35
 msgid "The file comment"
-msgstr ""
+msgstr "Filkommentaren"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:36
 msgid "Image Page"
@@ -4600,11 +4611,11 @@ msgstr "Gemmer miniaturebilleder"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2162
 msgid "Saving HTML pages: Images"
-msgstr "Gemmer HTML sider: Billeder"
+msgstr "Gemmer HTML-sider: Billeder"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2220
 msgid "Saving HTML pages: Indexes"
-msgstr "Gemmer HTML sider: Indexfiler"
+msgstr "Gemmer HTML-sider: Indexfiler"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2505
 msgid "Copying original images"
@@ -4620,18 +4631,18 @@ msgstr "Kunne ikke oprette en midlertidig mappe"
 
 #: ../extensions/webalbums/webalbums.extension.in.in.h:1
 msgid "Web Albums"
-msgstr "Webalbum"
+msgstr "Webalbummer"
 
 #: ../extensions/webalbums/webalbums.extension.in.in.h:2
 msgid "Create static web albums."
-msgstr "Opret statisk internetalbum."
+msgstr "Opret statiske internetalbummer."
 
 #: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1397
 #: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6217
 #: ../pix/gth-browser.c:6236 ../pix/gth-browser.c:6260
 #, c-format
 msgid "Could not load the position \"%s\""
-msgstr ""
+msgstr "Kunne ikke indlæse placeringen \"%s\""
 
 #: ../pix/dlg-personalize-filters.c:237
 msgid "Filter"
@@ -4647,7 +4658,7 @@ msgstr "Nyt filter"
 
 #: ../pix/dlg-personalize-filters.c:387
 msgid "Edit Filter"
-msgstr "Rediger filter"
+msgstr "Redigér filter"
 
 #: ../pix/dlg-preferences-extensions.c:67 ../pix/gth-filterbar.c:277
 msgid "All"
@@ -4667,7 +4678,7 @@ msgstr "Fremvisere"
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
@@ -4675,15 +4686,15 @@ msgstr "Filværktøjer"
 
 #: ../pix/dlg-preferences-extensions.c:75
 msgid "List tools"
-msgstr ""
+msgstr "Listeværktøjer"
 
 #: ../pix/dlg-preferences-extensions.c:76
 msgid "Importers"
-msgstr "Importører"
+msgstr "Importværktøjer"
 
 #: ../pix/dlg-preferences-extensions.c:77
 msgid "Exporters"
-msgstr "Eksportører"
+msgstr "Eksportværktøjer"
 
 #: ../pix/dlg-preferences-extensions.c:216
 msgid "Could not activate the extension"
@@ -4696,7 +4707,7 @@ msgstr "Kunne ikke deaktivere udvidelsen"
 #. add the page to the preferences dialog
 #: ../pix/dlg-preferences-extensions.c:777
 msgid "Extensions"
-msgstr ""
+msgstr "Udvidelser"
 
 #: ../pix/dlg-preferences-extensions.c:824
 msgid "Restart required"
@@ -4704,7 +4715,7 @@ msgstr "Genstart kræves"
 
 #: ../pix/dlg-preferences-extensions.c:825
 msgid "You need to restart pix for these changes to take effect"
-msgstr "Du skal genstarte pix for at disse ændringer træder i kraft"
+msgstr "Du skal genstarte pix, for at disse ændringer træder i kraft"
 
 #: ../pix/dlg-preferences-extensions.c:826
 msgid "_Continue"
@@ -4723,7 +4734,7 @@ msgstr "%s af %s"
 #: ../pix/gio-utils.c:1386
 #, c-format
 msgid "Moving \"%s\" to \"%s\""
-msgstr ""
+msgstr "Flytter \"%s\" til \"%s\""
 
 #: ../pix/gio-utils.c:1388
 #, c-format
@@ -4752,7 +4763,7 @@ msgstr "Henter filinformation"
 #, c-format
 msgctxt "long time format"
 msgid "%d:%02d:%02d"
-msgstr ""
+msgstr "%d:%02d:%02d"
 
 #. minutes:seconds
 #. Translators: This is a time format, like "5:02" for 5
@@ -4764,7 +4775,7 @@ msgstr ""
 #, c-format
 msgctxt "short time format"
 msgid "%d:%02d"
-msgstr ""
+msgstr "%d:%02d"
 
 #: ../pix/gth-browser-actions-callbacks.c:414
 msgid ""
@@ -4773,6 +4784,9 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"pix er fri software; det kan distribueres og/eller modificeres som betinget "
+"af GNU General Public License, udarbejdet af Free Software Foundation; enten "
+"version 2 af licensen eller, efter eget valg, enhver nyere version."
 
 #: ../pix/gth-browser-actions-callbacks.c:418
 msgid ""
@@ -4781,16 +4795,22 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"pix distribueres i håb om, at det viser sig nyttigt, men UDEN NOGEN GARANTI; "
+"selv uden de underforståede garantier om SALGBARHED eller EGNETHED TIL ET "
+"BESTEMT FORMÅL, idet der henvises til GNU General Public License for "
+"detaljer."
 
 #: ../pix/gth-browser-actions-callbacks.c:422
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
+"Du bør have modtaget en kopi af GNU General Public License sammen med pix. "
+"Hvis ikke, så se http://www.gnu.org/licenses/."
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
-msgstr "En billedfremviser og -bladrer."
+msgstr "En billedfremviser og -browser."
 
 #: ../pix/gth-browser-actions-callbacks.c:444
 msgid "translator_credits"
@@ -4804,6 +4824,7 @@ msgstr ""
 "Mere info: http://www.dansk-gruppen.dk\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Alan Mortensen https://launchpad.net/~alanmortensen-am\n"
 "  Joe Hansen https://launchpad.net/~joedalton2"
 
 #: ../pix/gth-browser-actions-entries.h:31
@@ -4812,7 +4833,7 @@ msgstr "_Fil"
 
 #: ../pix/gth-browser-actions-entries.h:32
 msgid "_Edit"
-msgstr "_Rediger"
+msgstr "_Redigér"
 
 #: ../pix/gth-browser-actions-entries.h:34
 msgid "_Go"
@@ -4828,11 +4849,11 @@ msgstr "_Åbn med"
 
 #: ../pix/gth-browser-actions-entries.h:37
 msgid "I_mport From"
-msgstr ""
+msgstr "_Importér fra"
 
 #: ../pix/gth-browser-actions-entries.h:38
 msgid "E_xport To"
-msgstr ""
+msgstr "_Eksportér til"
 
 #: ../pix/gth-browser-actions-entries.h:41
 msgid "New _Window"
@@ -4852,23 +4873,23 @@ msgstr "Åbn i nyt vindue"
 
 #: ../pix/gth-browser-actions-entries.h:84
 msgid "Edit various preferences"
-msgstr "Rediger diverse indstillinger"
+msgstr "Redigér diverse indstillinger"
 
 #: ../pix/gth-browser-actions-entries.h:95
 msgid "_Sort By..."
-msgstr ""
+msgstr "So_rtér efter..."
 
 #: ../pix/gth-browser-actions-entries.h:101
 msgid "_Filter..."
-msgstr "_Filter..."
+msgstr "Fil_ter..."
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
-msgstr ""
+msgstr "Afbryd indlæsning af denne placering"
 
 #: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
-msgstr "Indlæs nuværende sted igen"
+msgstr "Genindlæs den aktuelle placering"
 
 #: ../pix/gth-browser-actions-entries.h:120
 msgid "View previous image"
@@ -4888,11 +4909,11 @@ msgstr "Forlad fuldskærm"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
-msgstr "Gå til foregående besøgte sted"
+msgstr "Gå til den sidst besøgte placering"
 
 #: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3860
 msgid "Go to the next visited location"
-msgstr "Gå til næste besøgte sted"
+msgstr "Gå til den næste besøgte placering"
 
 #: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3878
 msgid "Go up one level"
@@ -4900,11 +4921,11 @@ msgstr "Gå et niveau op"
 
 #: ../pix/gth-browser-actions-entries.h:161
 msgid "_Location..."
-msgstr ""
+msgstr "_Placering..."
 
 #: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
-msgstr ""
+msgstr "Angiv placering der skal åbnes"
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
@@ -4912,7 +4933,7 @@ msgstr "_Slet historik"
 
 #: ../pix/gth-browser-actions-entries.h:174
 msgid "Delete the list of visited locations"
-msgstr "Fjern listen over besøgte steder"
+msgstr "Slet listen over besøgte placeringer"
 
 #: ../pix/gth-browser-actions-entries.h:180
 msgid "View the folders"
@@ -4928,7 +4949,7 @@ msgstr "Indhold"
 
 #: ../pix/gth-browser-actions-entries.h:192
 msgid "Display the pix Manual"
-msgstr ""
+msgstr "Vis manualen til pix"
 
 #: ../pix/gth-browser-actions-entries.h:197
 msgid "_Keyboard Shortcuts"
@@ -4937,12 +4958,12 @@ msgstr "_Tastaturgenveje"
 #: ../pix/gth-browser-actions-entries.h:203
 #: ../pix/gth-browser-actions-entries.h:257
 msgid "Edit"
-msgstr "Rediger"
+msgstr "Redigér"
 
 #: ../pix/gth-browser-actions-entries.h:204
 #: ../pix/gth-browser-actions-entries.h:258
 msgid "Edit file"
-msgstr "Rediger fil"
+msgstr "Redigér fil"
 
 #: ../pix/gth-browser-actions-entries.h:212
 msgid "_Toolbar"
@@ -4950,7 +4971,7 @@ msgstr "_Værktøjslinje"
 
 #: ../pix/gth-browser-actions-entries.h:213
 msgid "View or hide the toolbar of this window"
-msgstr "Vis eller skjul værktøjslinjen for dette vindue"
+msgstr "Vis eller skjul dette vindues værktøjslinje"
 
 #: ../pix/gth-browser-actions-entries.h:217
 msgid "_Statusbar"
@@ -4958,31 +4979,31 @@ msgstr "_Statuslinje"
 
 #: ../pix/gth-browser-actions-entries.h:218
 msgid "View or hide the statusbar of this window"
-msgstr "Vis eller skjul statuslinjen for dette vindue"
+msgstr "Vis eller skjul dette vindues statuslinje"
 
 #: ../pix/gth-browser-actions-entries.h:222
 msgid "_Filterbar"
-msgstr ""
+msgstr "Filterlin_je"
 
 #: ../pix/gth-browser-actions-entries.h:223
 msgid "View or hide the filterbar of this window"
-msgstr "Vis eller skjul filterlinjen for dette vindue"
+msgstr "Vis eller skjul dette vindues filterlinje"
 
 #: ../pix/gth-browser-actions-entries.h:227
 msgid "_Sidebar"
-msgstr ""
+msgstr "Sidep_anel"
 
 #: ../pix/gth-browser-actions-entries.h:228
 msgid "View or hide the sidebar of this window"
-msgstr ""
+msgstr "Vis eller skjul dette vindues sidepanel"
 
 #: ../pix/gth-browser-actions-entries.h:232
 msgid "_Thumbnail Pane"
-msgstr ""
+msgstr "_Miniaturebilledrude"
 
 #: ../pix/gth-browser-actions-entries.h:233
 msgid "View or hide the thumbnail pane in viewer mode"
-msgstr ""
+msgstr "Vis eller skjul rude til miniaturebilleder"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
@@ -4994,24 +5015,24 @@ msgstr "Vis miniaturebilleder"
 
 #: ../pix/gth-browser-actions-entries.h:242
 msgid "_Hidden Files"
-msgstr ""
+msgstr "S_kjulte filer"
 
 #: ../pix/gth-browser-actions-entries.h:243
 msgid "Show hidden files and folders"
-msgstr "Vis _skjulte filer og mapper"
+msgstr "Vis skjulte filer og mapper"
 
 #: ../pix/gth-browser-actions-entries.h:248
 #: ../pix/gth-browser-actions-entries.h:253
 msgid "View file properties"
-msgstr ""
+msgstr "Vis filegenskaber"
 
 #: ../pix/gth-browser-actions-entries.h:262
 msgid "_Fit Window to Image"
-msgstr "_Tilpas vindue til billede"
+msgstr "Til_pas vindue til billede"
 
 #: ../pix/gth-browser-actions-entries.h:263
 msgid "Resize the window to the size of the image"
-msgstr ""
+msgstr "Ændr vinduets størrelse til billedets størrelse"
 
 #: ../pix/gth-browser.c:419
 #, c-format
@@ -5026,13 +5047,13 @@ msgstr "[ændret]"
 #, c-format
 msgid "%d file selected (%s)"
 msgid_plural "%d files selected (%s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d fil markeret (%s)"
+msgstr[1] "%d filer markeret (%s)"
 
 #: ../pix/gth-browser.c:1153
 #, c-format
 msgid "%s of free space"
-msgstr ""
+msgstr "%s ledig plads"
 
 #: ../pix/gth-browser.c:2074 ../pix/gth-browser.c:2101
 #, c-format
@@ -5042,7 +5063,7 @@ msgstr "Intet egnet modul fundet for %s"
 #: ../pix/gth-browser.c:2220
 #, c-format
 msgid "Save changes to file '%s'?"
-msgstr "Gem ændringer til filen '%s'?"
+msgstr "Gem ændringer til filen \"%s\"?"
 
 #: ../pix/gth-browser.c:2225
 msgid "If you don't save, changes to the file will be permanently lost."
@@ -5062,31 +5083,31 @@ msgstr "Ændret"
 
 #: ../pix/gth-browser.c:3843 ../pix/gth-browser.c:3861
 msgid "View the list of visited locations"
-msgstr ""
+msgstr "Vis listen over besøgte placeringer"
 
 #: ../pix/gth-browser.c:3879
 msgid "View the list of upper locations"
-msgstr ""
+msgstr "Vis listen over øvre placeringer"
 
 #: ../pix/gth-browser.c:6218
 #, c-format
 msgid "File type not supported"
-msgstr ""
+msgstr "Filtype ikke understøttet"
 
 #: ../pix/gth-browser.c:6261
 #, c-format
 msgid "No suitable module found"
-msgstr ""
+msgstr "Der kunne ikke findes et anvendeligt modul"
 
 #: ../pix/gth-extensions.c:203
 #, c-format
 msgid "Could not open the module `%s`: %s"
-msgstr ""
+msgstr "Kunne ikke åbne modulet \"%s\": %s"
 
 #: ../pix/gth-extensions.c:754
 #, c-format
 msgid "The extension '%1$s' is required by the extension '%2$s'"
-msgstr ""
+msgstr "Udvidelsen \"%2$s\" har brug for udvidelsen \"%1$s\""
 
 #: ../pix/gth-file-chooser-dialog.c:144
 msgid "All Supported Files"
@@ -5094,7 +5115,7 @@ msgstr "Alle understøttede filer"
 
 #: ../pix/gth-file-source-vfs.c:121
 msgid "Home Folder"
-msgstr ""
+msgstr "Hjem-mappe"
 
 #: ../pix/gth-file-source-vfs.c:126
 msgid "File System"
@@ -5120,25 +5141,25 @@ msgstr "Er du sikker på, at du ønsker at flytte \"%s\" til papirkurven?"
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ønsker du at flytte %'d markeret fil til papirkurven?"
+msgstr[1] "Ønsker du at flytte %'d markerede filer til papirkurven?"
 
 #: ../pix/gth-file-source-vfs.c:844
 #, c-format
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ønsker du at slette %'d markeret fil permanent?"
+msgstr[1] "Ønsker du at slette %'d markerede filer permanent?"
 
 #: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
-msgstr ""
+msgstr "Skjul filterlinjen"
 
 #: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
 #: ../pix/gth-test-simple.c:75
 msgid "kB"
-msgstr ""
+msgstr "kB"
 
 #: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
 #: ../pix/gth-test-simple.c:76
@@ -5148,86 +5169,87 @@ msgstr "MB"
 #: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
 #: ../pix/gth-test-simple.c:77
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #. "files" label
 #: ../pix/gth-filter.c:286 ../pix/gth-filter-editor-dialog.c:177
 msgid "files"
-msgstr ""
+msgstr "filer"
 
 #: ../pix/gth-filter-editor-dialog.c:224
 msgid "ascending"
-msgstr ""
+msgstr "stigende"
 
 #: ../pix/gth-filter-editor-dialog.c:225
 msgid "descending"
-msgstr ""
+msgstr "faldende"
 
 #: ../pix/gth-filter-editor-dialog.c:515
 #, c-format
 msgid "No limit specified"
-msgstr ""
+msgstr "Ingen grænse angivet"
 
 #: ../pix/gth-folder-tree.c:1369
 msgid "(Open Parent)"
-msgstr ""
+msgstr "(Åbn forælder)"
 
 #: ../pix/gth-histogram-view.c:825
 msgid "Linear scale"
-msgstr ""
+msgstr "Lineær skala"
 
 #: ../pix/gth-histogram-view.c:837
 msgid "Logarithmic scale"
-msgstr ""
+msgstr "Logaritmisk skala"
 
 #: ../pix/gth-histogram-view.c:857
 msgid "Channel:"
-msgstr ""
+msgstr "Kanal:"
 
 #: ../pix/gth-histogram-view.c:878
 msgid "Value"
-msgstr ""
+msgstr "Værdi"
 
 #: ../pix/gth-histogram-view.c:883
 msgid "Red"
-msgstr ""
+msgstr "Rød"
 
 #: ../pix/gth-histogram-view.c:888
 msgid "Green"
-msgstr ""
+msgstr "Grøn"
 
 #: ../pix/gth-histogram-view.c:893
 msgid "Blue"
-msgstr ""
+msgstr "Blå"
 
 #: ../pix/gth-histogram-view.c:898
 msgid "Alpha"
-msgstr ""
+msgstr "Alfa"
 
 #: ../pix/gth-histogram-view.c:904
 msgid "RGB"
-msgstr ""
+msgstr "RGB"
 
 #: ../pix/gth-image-list-task.c:141
 msgid "Could not rename the file"
-msgstr ""
+msgstr "Kunne ikke omdøbe filen"
 
 #: ../pix/gth-image-saver.c:39
 msgid "No options available for this file type"
-msgstr ""
+msgstr "Ingen valgmuligheder tilgængelig for denne filtype"
 
 #: ../pix/gth-image-saver.c:185
 #, c-format
 msgid "Could not find a suitable module to save the image as \"%s\""
 msgstr ""
+"Der kunne ikke findes et anvendeligt modul til at gemme filen som \"%s\""
 
 #: ../pix/gth-load-file-data-task.c:108
 msgid "Reading file information"
-msgstr ""
+msgstr "Læser filinformation"
 
 #: ../pix/gth-main-default-metadata.c:32
 msgid "File"
-msgstr ""
+msgstr "Fil"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -5243,11 +5265,11 @@ msgstr "Type"
 
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Full Name"
-msgstr ""
+msgstr "Fulde navn"
 
 #: ../pix/gth-main-default-metadata.c:48
 msgid "Duration"
-msgstr ""
+msgstr "Længde"
 
 #: ../pix/gth-main-default-sort-types.c:131
 msgid "file name"
@@ -5291,38 +5313,38 @@ msgstr "Filnavn"
 
 #: ../pix/gth-main-default-tests.c:308
 msgid "Title (embedded)"
-msgstr ""
+msgstr "Titel (indlejret)"
 
 #: ../pix/gth-main-default-tests.c:316
 msgid "Description (embedded)"
-msgstr ""
+msgstr "Beskrivelse (indlejret)"
 
 #: ../pix/gth-progress-dialog.c:146
 msgid "Cancel operation"
-msgstr ""
+msgstr "Afbryd handling"
 
 #: ../pix/gth-save-file-data-task.c:102
 msgid "Saving file information"
-msgstr ""
+msgstr "Gemmer filinformation"
 
 #. Translators: %s is a filename
 #: ../pix/gth-save-image-task.c:160
 #, c-format
 msgid "Saving '%s'"
-msgstr ""
+msgstr "Gemmer \"%s\""
 
 #: ../pix/gth-tags-entry.c:390
 #, c-format
 msgid "Create tag «%s»"
-msgstr ""
+msgstr "Opret mærke \"%s\""
 
 #: ../pix/gth-tags-entry.c:814
 msgid "Show all the tags"
-msgstr ""
+msgstr "Vis alle mærker"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
-msgstr "Fridage"
+msgstr "Ferier"
 
 #: ../pix/gth-tags-file.c:236
 msgid "Temporary"
@@ -5330,7 +5352,7 @@ msgstr "Midlertidigt"
 
 #: ../pix/gth-tags-file.c:237
 msgid "Screenshots"
-msgstr "Skærmskud"
+msgstr "Skærmbilleder"
 
 #: ../pix/gth-tags-file.c:238
 msgid "Science"
@@ -5338,7 +5360,7 @@ msgstr "Videnskab"
 
 #: ../pix/gth-tags-file.c:239
 msgid "Favorite"
-msgstr ""
+msgstr "Favorit"
 
 #: ../pix/gth-tags-file.c:240
 msgid "Important"
@@ -5375,7 +5397,7 @@ msgstr "er"
 
 #: ../pix/gth-test-category.c:47
 msgid "is only"
-msgstr ""
+msgstr "er kun"
 
 #: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:50
 #: ../pix/gth-test-simple.c:65
@@ -5387,7 +5409,7 @@ msgstr "er ikke"
 #: ../pix/gth-test-simple.c:885
 #, c-format
 msgid "The test definition is incomplete"
-msgstr ""
+msgstr "Testdefinitionen er ikke fuldstændig"
 
 #: ../pix/gth-test-selector.c:252
 msgid "Add a new rule"
@@ -5403,7 +5425,7 @@ msgstr "indeholder"
 
 #: ../pix/gth-test-simple.c:47
 msgid "starts with"
-msgstr "starter med"
+msgstr "begynder med"
 
 #: ../pix/gth-test-simple.c:48
 msgid "ends with"
@@ -5415,7 +5437,7 @@ msgstr "indeholder ikke"
 
 #: ../pix/gth-test-simple.c:52
 msgid "matches"
-msgstr ""
+msgstr "matcher"
 
 #: ../pix/gth-test-simple.c:56
 msgid "is lower than"
@@ -5439,11 +5461,11 @@ msgstr "er efter"
 
 #: ../pix/gth-time-selector.c:478
 msgid "Today"
-msgstr ""
+msgstr "I dag"
 
 #: ../pix/gth-time-selector.c:486
 msgid "Now"
-msgstr ""
+msgstr "Nu"
 
 #: ../pix/gth-window-actions-entries.h:32
 msgid "Close this window"
@@ -5451,7 +5473,7 @@ msgstr "Luk dette vindue"
 
 #: ../pix/gth-window-actions-entries.h:36
 msgid "Close _All Windows"
-msgstr ""
+msgstr "Luk _alle vinduer"
 
 #: ../pix/gtk-utils.c:490
 msgid "Could not display help"
@@ -5459,23 +5481,23 @@ msgstr "Kunne ikke vise hjælp"
 
 #: ../pix/gtk-utils.c:810 ../pix/gtk-utils.c:817
 msgid "Could not launch the application"
-msgstr ""
+msgstr "Kunne ikke åbne programmet"
 
 #: ../pix/gtk-utils.c:920
 msgid "_Copy Here"
-msgstr ""
+msgstr "_Kopiér hertil"
 
 #: ../pix/gtk-utils.c:925
 msgid "_Move Here"
-msgstr ""
+msgstr "_Flyt hertil"
 
 #: ../pix/gtk-utils.c:930
 msgid "_Link Here"
-msgstr ""
+msgstr "_Henvis hertil"
 
 #: ../pix/gtk-utils.c:939
 msgid "Cancel"
-msgstr ""
+msgstr "Annullér"
 
 #: ../pix/main.c:61
 msgid "Open a new window"
@@ -5487,11 +5509,11 @@ msgstr "Start i fuldskærmstilstand"
 
 #: ../pix/main.c:69
 msgid "Automatically start a slideshow"
-msgstr "Start et diasshow automatisk"
+msgstr "Start et slideshow automatisk"
 
 #: ../pix/main.c:73
 msgid "Automatically import digital camera photos"
-msgstr "Importer billeder fra ditalkamera automatisk"
+msgstr "Importér automatisk billeder fra digitalkamera"
 
 #: ../pix/main.c:77
 msgid "Show version"
@@ -5499,4 +5521,4 @@ msgstr "Vis version"
 
 #: ../pix/main.c:483
 msgid "- Image browser and viewer"
-msgstr "- Billedhåndtering og -visning"
+msgstr "- Billedbrowser og -fremviser"

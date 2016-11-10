@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: pix 2.12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-06-25 07:54+0000\n"
+"PO-Revision-Date: 2016-06-26 17:40+0000\n"
 "Last-Translator: tomoe_musashi <hkg.musashi@gmail.com>\n"
 "Language-Team: Chinese/Traditional <ubuntu-l10n-zh-tw@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-06-25 09:32+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-11-09 17:17+0000\n"
+"X-Generator: Launchpad (build 18255)\n"
 "Language: \n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -47,7 +47,7 @@ msgstr "應用程式不接受以命令列開啟文件"
 #: ../copy-n-paste/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "無法辨識的啟動選項：%d"
+msgstr "無法辨識的啟動選項: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
@@ -83,7 +83,7 @@ msgstr "ID"
 
 #: ../copy-n-paste/eggsmclient.c:253
 msgid "Session management options:"
-msgstr "作業階段管理選項："
+msgstr "作業階段管理選項:"
 
 #: ../copy-n-paste/eggsmclient.c:254
 msgid "Show session management options"
@@ -97,11 +97,11 @@ msgstr "Pix"
 
 #: ../data/pix.desktop.in.in.h:2
 msgid "Image Viewer"
-msgstr "影像檢視工具"
+msgstr "影像檢視器"
 
 #: ../data/pix.desktop.in.in.h:3
 msgid "Pix Image Viewer"
-msgstr "Pix 影像管理工具"
+msgstr "Pix 影像檢視器"
 
 #: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
@@ -139,7 +139,7 @@ msgstr "在作用中的視窗開啟檔案"
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:1
 msgid "Possible values are: white, black, checked, none."
-msgstr "適用的數值有:white, black, checked, none."
+msgstr "可能的值包括: white，black，checked，none。"
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
@@ -147,11 +147,11 @@ msgstr "在改變影像後是否重設捲動軸位置"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
-msgstr "可能的值有：jpeg， jpg。"
+msgstr "可能的值包括: jpeg， jpg。"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:2
 msgid "Possible values are: tiff, tif."
-msgstr "可能的值有： tiff，tif。"
+msgstr "可能的值包括: tiff，tif。"
 
 #: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
@@ -195,33 +195,33 @@ msgstr "選取根據"
 
 #: ../data/ui/histogram-info.ui.h:1
 msgid "Mean:"
-msgstr "平均："
+msgstr "平均:"
 
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsizied at the end.
 #: ../data/ui/histogram-info.ui.h:3
 msgid "Std dev:"
-msgstr "標準偏差："
+msgstr "標準偏差:"
 
 #: ../data/ui/histogram-info.ui.h:4
 msgid "Median:"
-msgstr "中位數："
+msgstr "中位數:"
 
 #. After the colon there is the total number of pixels
 #: ../data/ui/histogram-info.ui.h:6
 msgid "Pixels:"
-msgstr "像素："
+msgstr "像素:"
 
 #. After the colon there is a percentile.
 #: ../data/ui/histogram-info.ui.h:8
 msgctxt "Pixels"
 msgid "Max:"
-msgstr "最大："
+msgstr "最大:"
 
 #. After the colon there is the percentile of selected pixels.
 #: ../data/ui/histogram-info.ui.h:10
 msgctxt "Pixels"
 msgid "Selected:"
-msgstr "選取的："
+msgstr "選取的:"
 
 #: ../data/ui/location.ui.h:1
 msgid "_Location:"
@@ -233,16 +233,16 @@ msgstr "是否用新的檔案覆寫舊的檔案？"
 
 #: ../data/ui/overwrite-dialog.ui.h:2
 msgid "Old File:"
-msgstr "舊檔案："
+msgstr "舊檔案:"
 
 #: ../data/ui/overwrite-dialog.ui.h:3
 msgid "Filename:"
-msgstr "檔案名稱："
+msgstr "檔案名稱:"
 
 #: ../data/ui/overwrite-dialog.ui.h:4
 #: ../extensions/image_print/data/ui/print-layout.ui.h:23
 msgid "Size:"
-msgstr "大小："
+msgstr "大小:"
 
 #: ../data/ui/overwrite-dialog.ui.h:5
 msgid "Modified:"
@@ -250,7 +250,7 @@ msgstr "修改時間:"
 
 #: ../data/ui/overwrite-dialog.ui.h:6
 msgid "New File:"
-msgstr "新檔案："
+msgstr "新檔案:"
 
 #: ../data/ui/overwrite-dialog.ui.h:7
 msgid "Over_write the old file"
@@ -362,7 +362,7 @@ msgstr "重新使用作用中的視窗來開啟檔案(_R)"
 
 #: ../data/ui/preferences.ui.h:20
 msgid "On startup:"
-msgstr "在啟動時："
+msgstr "在啟動時:"
 
 #: ../data/ui/preferences.ui.h:21
 msgid "As_k confirmation before deleting files or catalogs"
@@ -635,7 +635,7 @@ msgstr "壓縮程度(_L):"
 
 #: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
 msgid "Default options:"
-msgstr "預設選項："
+msgstr "預設選項:"
 
 #: ../extensions/cairo_io/data/ui/tga-options.ui.h:1
 msgid "_RLE compression"
@@ -753,7 +753,7 @@ msgstr "新目錄"
 #: ../extensions/catalogs/actions.c:179
 #: ../extensions/catalogs/dlg-add-to-catalog.c:360
 msgid "Enter the catalog name:"
-msgstr "請輸入目錄的名稱："
+msgstr "請輸入目錄的名稱:"
 
 #: ../extensions/catalogs/actions.c:181 ../extensions/catalogs/actions.c:293
 #: ../extensions/catalogs/dlg-add-to-catalog.c:362
@@ -770,7 +770,7 @@ msgstr "新增圖庫"
 #: ../extensions/catalogs/actions.c:291
 #: ../extensions/catalogs/dlg-add-to-catalog.c:472
 msgid "Enter the library name:"
-msgstr "輸入圖庫的名稱："
+msgstr "輸入圖庫的名稱:"
 
 #: ../extensions/catalogs/actions.c:326
 msgid "Could not remove the catalog"
@@ -842,7 +842,7 @@ msgstr "指令列"
 #: ../extensions/photo_importer/dlg-photo-importer.c:404
 #: ../pix/gth-file-list.c:43 ../pix/gth-folder-tree.c:1093
 msgid "(Empty)"
-msgstr "（空的）"
+msgstr "(空的)"
 
 #: ../extensions/catalogs/callbacks.c:700
 msgid "Catalog Properties"
@@ -874,7 +874,7 @@ msgstr "加入至目錄"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
 msgid "C_atalogs:"
-msgstr "圖片集(_A):"
+msgstr "目錄(_A):"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
 msgid "_New Catalog"
@@ -1089,7 +1089,7 @@ msgstr "更改日期"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:4
 msgid "Change the following values:"
-msgstr "更改以下數值："
+msgstr "更改以下數值:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:5
 msgid "_Last modified date"
@@ -1101,7 +1101,7 @@ msgstr "註解日期(_M)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:7
 msgid "Change to:"
-msgstr "更改為："
+msgstr "更改為:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:8
 msgid "The _following date:"
@@ -1315,7 +1315,7 @@ msgstr "頁尾(_F):"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:32
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:1
 msgid "Caption:"
-msgstr "標題："
+msgstr "標題:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
 #: ../extensions/image_print/data/ui/print-layout.ui.h:5
@@ -1411,7 +1411,7 @@ msgstr "主題"
 #: ../extensions/image_print/data/ui/print-layout.ui.h:16
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:26
 msgid "Columns:"
-msgstr "欄數："
+msgstr "欄數:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
@@ -1760,7 +1760,7 @@ msgstr "語言(_L):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
 msgid "State/Province:"
-msgstr "州/省："
+msgstr "州/省:"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
 msgid "EXIF, IPTC, XMP support"
@@ -2114,7 +2114,7 @@ msgstr "新資料夾"
 
 #: ../extensions/file_manager/actions.c:134
 msgid "Enter the folder name:"
-msgstr "請輸入資料夾的名稱："
+msgstr "請輸入資料夾的名稱:"
 
 #: ../extensions/file_manager/actions.c:400
 #: ../extensions/file_manager/callbacks.c:380
@@ -2299,7 +2299,7 @@ msgstr "彩度(_S):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
 msgid "G_amma:"
-msgstr "G_amma："
+msgstr "伽瑪(_A):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
 msgid "Cyan-_Red:"
@@ -2416,15 +2416,15 @@ msgstr "高品質(_Q)"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:9
 msgid "Original dimensions:"
-msgstr "原來的尺寸："
+msgstr "原來的尺寸:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:10
 msgid "Scale factor:"
-msgstr "比例因子："
+msgstr "比例因子:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:11
 msgid "New dimensions:"
-msgstr "新的尺寸："
+msgstr "新的尺寸:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:12
 #: ../extensions/image_print/data/ui/print-layout.ui.h:29
@@ -2451,11 +2451,11 @@ msgstr "影像大小"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
 msgid "Point 1:"
-msgstr "第1點："
+msgstr "第1點:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
 msgid "Point 2:"
-msgstr "第2點："
+msgstr "第2點:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
 msgid "Keep aspect ratio"
@@ -2463,7 +2463,7 @@ msgstr "保持長寬比"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
 msgid "Grid:"
-msgstr "格線："
+msgstr "格線:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
 msgid "_Background:"
@@ -2520,15 +2520,15 @@ msgstr "預覽(_P):"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
 msgid "Threshold:"
-msgstr "臨界值："
+msgstr "臨界值:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
 msgid "Radius:"
-msgstr "半徑："
+msgstr "半徑:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
 msgid "Amount:"
-msgstr "總數："
+msgstr "總數:"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
@@ -2786,11 +2786,11 @@ msgstr "搜尋重複的"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
 msgid "Duplicates:"
-msgstr "重複："
+msgstr "重複:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
 msgid "Files:"
-msgstr "檔案："
+msgstr "檔案:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
 #: ../pix/gth-browser-actions-entries.h:33
@@ -2898,7 +2898,7 @@ msgstr "上傳影像至 Flickr"
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:5
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:4
 msgid "Free space:"
-msgstr "可用空間："
+msgstr "可用空間:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
@@ -3020,7 +3020,7 @@ msgstr "加速"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
 msgid "Time:"
-msgstr "時間："
+msgstr "時間:"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
 msgid "--:--"
@@ -3096,7 +3096,7 @@ msgstr "編解碼器"
 
 #: ../extensions/gstreamer_tools/main.c:45
 msgid "Framerate"
-msgstr "畫面更新率："
+msgstr "畫面更新率:"
 
 #: ../extensions/gstreamer_tools/main.c:46
 #: ../extensions/image_print/data/ui/print-layout.ui.h:24
@@ -3165,7 +3165,7 @@ msgstr "影像"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:20
 msgid "Position:"
-msgstr "位置："
+msgstr "位置:"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:21
 msgid "Left"
@@ -3177,11 +3177,11 @@ msgstr "上"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:26
 msgid "Rotation:"
-msgstr "旋轉："
+msgstr "旋轉:"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:27
 msgid "Unit:"
-msgstr "單位："
+msgstr "單位:"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Preview"
@@ -3924,7 +3924,7 @@ msgstr "物理地旋轉影像(_R)"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
 msgid "After importing from a device:"
-msgstr "從裝置匯入後："
+msgstr "從裝置匯入後:"
 
 #. view label
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
@@ -4064,7 +4064,7 @@ msgstr "數字"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:2
 msgid "format:"
-msgstr "格式："
+msgstr "格式:"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:3
 msgid "remove"
@@ -4547,7 +4547,7 @@ msgstr "顯示描述，如果有的話"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:38
 msgid "Show the following attributes:"
-msgstr "顯示下列屬性："
+msgstr "顯示下列屬性:"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:39
 msgid "Image Attributes"
@@ -4631,7 +4631,7 @@ msgstr "未啟用"
 
 #: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
-msgstr "圖片瀏覽器"
+msgstr "檢視器"
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
@@ -5003,7 +5003,7 @@ msgstr[0] "%d 個檔案選取的 (大小為 %s)"
 #: ../pix/gth-browser.c:1153
 #, c-format
 msgid "%s of free space"
-msgstr "%s 的可用空間："
+msgstr "%s 的可用空間"
 
 #: ../pix/gth-browser.c:2074 ../pix/gth-browser.c:2101
 #, c-format
@@ -5152,7 +5152,7 @@ msgstr "對數刻度"
 
 #: ../pix/gth-histogram-view.c:857
 msgid "Channel:"
-msgstr "色版："
+msgstr "色版:"
 
 #: ../pix/gth-histogram-view.c:878
 msgid "Value"

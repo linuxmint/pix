@@ -16,15 +16,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-06-22 19:01+0000\n"
-"Last-Translator: Christian Kirbach <Unknown>\n"
+"PO-Revision-Date: 2016-08-06 11:17+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-25 09:33+0000\n"
-"X-Generator: Launchpad (build 18111)\n"
+"X-Launchpad-Export-Date: 2016-11-09 17:18+0000\n"
+"X-Generator: Launchpad (build 18255)\n"
 "X-Poedit-Country: GERMANY\n"
 "Language: de\n"
 "X-Poedit-Language: German\n"
@@ -107,11 +107,11 @@ msgstr "Pix"
 
 #: ../data/pix.desktop.in.in.h:2
 msgid "Image Viewer"
-msgstr "Pix Bildbetrachter"
+msgstr "Bildbetrachter"
 
 #: ../data/pix.desktop.in.in.h:3
 msgid "Pix Image Viewer"
-msgstr "Pix Bildbetrachter"
+msgstr "Pix-Bildbetrachter"
 
 #: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
@@ -127,7 +127,7 @@ msgstr "Werkzeug zum Importieren von Fotos"
 
 #: ../data/pix-import.desktop.in.in.h:3
 msgid "Pix Photo Import Tool"
-msgstr "Pix Werkzeug zum Importieren von Fotos"
+msgstr "Pix-Fotoimportwerkzeug"
 
 #: ../data/pix-import.desktop.in.in.h:4
 msgid "Import the photos on your camera card"
@@ -138,9 +138,9 @@ msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr ""
-"Von Bildern, die größer sind als dieser Wert, wird kein Miniatur-"
-"Vorschaubild erzeugt. Falls dieser Wert 0 ist, werden für alle Bilder "
-"Miniatur-Vorschaubilder erzeugt."
+"Von Bildern, die größer sind als dieser Wert, wird kein Vorschaubild "
+"erstellt. Falls dieser Wert 0 ist, werden für alle Bilder Vorschaubilder "
+"erstellt."
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
@@ -315,7 +315,7 @@ msgstr "Pix-Einstellungen"
 
 #: ../data/ui/preferences.ui.h:4
 msgid "_Toolbar style:"
-msgstr "_Werkzeugleisten-Stil:"
+msgstr "_Werkzeugleistenstil:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "T_humbnails in viewer:"
@@ -367,7 +367,7 @@ msgstr "Zu _folgendem Ordner gehen:"
 
 #: ../data/ui/preferences.ui.h:17
 msgid "Choose startup folder"
-msgstr "Wählen Sie einen Startordner"
+msgstr "Einen Startordner auswählen"
 
 #: ../data/ui/preferences.ui.h:18
 msgid "Set to C_urrent"
@@ -973,7 +973,7 @@ msgstr "Kataloge mit einer einzelnen Datei ignorieren"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
 msgid "Put single files in the catalog:"
-msgstr "Einzelne Dateien setzen in Katalog:"
+msgstr "Einzelne Dateien in den Katalog stellen:"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:6
 msgid "Singles"
@@ -1244,8 +1244,8 @@ msgstr "Übersichtsbild"
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
 msgstr ""
-"Ein Indexbild erstellen, welches die Miniatur-Vorschaubilder der gewählten "
-"Dateien zeigt."
+"Ein Indexbild erstellen, welches die Vorschaubilder der gewählten Dateien "
+"anzeigt."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1504,7 +1504,7 @@ msgstr "Bilder werden erstellt"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:896
 msgid "Generating thumbnails"
-msgstr "Miniatur-Vorschaubilder werden erstellt"
+msgstr "Vorschaubilder werden erstellt"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:32
 msgid "Header"
@@ -1573,7 +1573,7 @@ msgstr ""
 #: ../extensions/desktop_background/actions.c:287
 #: ../extensions/desktop_background/actions.c:305
 msgid "Could not set the desktop background"
-msgstr "Schreibtischhintergrund konnte nicht gesetzt werden"
+msgstr "Schreibtischhintergrund konnte nicht eingestellt werden"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
@@ -2230,11 +2230,11 @@ msgstr "Einen neuen leeren Ordner in diesem Ordner anlegen"
 
 #: ../extensions/file_manager/callbacks.c:179
 msgid "D_uplicate"
-msgstr "_Duplizieren"
+msgstr "Ver_doppeln"
 
 #: ../extensions/file_manager/callbacks.c:180
 msgid "Duplicate the selected files"
-msgstr "Gewählte Dateien duplizieren"
+msgstr "Gewählte Dateien verdoppeln"
 
 #: ../extensions/file_manager/callbacks.c:183
 #: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
@@ -2811,11 +2811,11 @@ msgstr "Rückgängig"
 
 #: ../extensions/find_duplicates/callbacks.c:48
 msgid "Find _Duplicates..."
-msgstr "Nach _Duplikaten suchen …"
+msgstr "_Doppelte finden …"
 
 #: ../extensions/find_duplicates/callbacks.c:49
 msgid "Find duplicated files in the current location"
-msgstr "Mehrfach vorhandene Dateien am aktuellen Ort suchen"
+msgstr "Doppelte Dateien am aktuellen Ort finden"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
 msgid "_Folders:"
@@ -2823,11 +2823,11 @@ msgstr "_Ordner:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
 msgid "Search for Duplicates"
-msgstr "Nach Duplikaten suchen"
+msgstr "Nach Doppelten suchen"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
 msgid "Duplicates:"
-msgstr "Duplikate:"
+msgstr "Doppelte:"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
 msgid "Files:"
@@ -2840,12 +2840,12 @@ msgstr "_Ansicht"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
 msgid "No duplicates found."
-msgstr "Keine Duplikate gefunden."
+msgstr "Keine Doppelten gefunden."
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:1
 msgid "Find Duplicates"
-msgstr "Nach Duplikaten suchen"
+msgstr "Doppelte finden"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:3
@@ -2859,15 +2859,15 @@ msgstr "_Filter:"
 
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:2
 msgid "Find duplicated files."
-msgstr "Nach mehrfach vorhandenen Dateien suchen"
+msgstr "Doppelte Dateien finden."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
-msgstr "die neuesten Duplikate behalten"
+msgstr "die neuesten Doppelten behalten"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:66
 msgid "leave the oldest duplicates"
-msgstr "die ältesten Duplikate behalten"
+msgstr "die ältesten Doppelten behalten"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
@@ -2886,8 +2886,8 @@ msgstr "Keine Datei"
 #, c-format
 msgid "%d duplicate"
 msgid_plural "%d duplicates"
-msgstr[0] "%d Duplikat"
-msgstr[1] "%d Duplikate"
+msgstr[0] "%d Doppeltes"
+msgstr[1] "%d Doppelte"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:712
 msgid "Search completed"
@@ -2895,7 +2895,7 @@ msgstr "Suche abgeschlossen"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:725
 msgid "Searching for duplicates"
-msgstr "Nach Duplikaten wird gesucht"
+msgstr "Nach Doppelten wird gesucht"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:728
 #: ../pix/gth-load-file-data-task.c:106 ../pix/gth-save-file-data-task.c:100
@@ -2911,7 +2911,7 @@ msgstr "Dateiliste wird geholt"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1016
 msgid "Duplicates"
-msgstr "Duplikate"
+msgstr "Doppelte"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1308
 msgid "Select"
@@ -4631,7 +4631,7 @@ msgstr "Das Album wurde erfolgreich angelegt."
 #: ../extensions/webalbums/gth-web-exporter.c:2106
 #: ../extensions/webalbums/gth-web-exporter.c:2134
 msgid "Saving thumbnails"
-msgstr "Miniatur-Vorschaubilder werden gespeichert"
+msgstr "Vorschaubilder werden gespeichert"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2162
 msgid "Saving HTML pages: Images"
@@ -4852,7 +4852,8 @@ msgstr ""
 "Wolfgang Stöggl <c72578@yahoo.de>\n"
 "\n"
 "Launchpad Contributions:\n"
-"  Christian Kirbach https://launchpad.net/~christian-kirbach-e"
+"  Christian Kirbach https://launchpad.net/~christian-kirbach-e\n"
+"  Tobias Bannert https://launchpad.net/~toba"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -4864,7 +4865,7 @@ msgstr "_Bearbeiten"
 
 #: ../pix/gth-browser-actions-entries.h:34
 msgid "_Go"
-msgstr "_Gehe zu"
+msgstr "_Gehen zu"
 
 #: ../pix/gth-browser-actions-entries.h:35
 msgid "_Help"
@@ -5034,11 +5035,11 @@ msgstr "Die Vorschauleiste im Ansichtsmodus anzeigen/verbergen"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
-msgstr "_Miniatur-Vorschaubilder"
+msgstr "_Vorschaubilder"
 
 #: ../pix/gth-browser-actions-entries.h:238
 msgid "View thumbnails"
-msgstr "Miniatur-Vorschaubilder anzeigen"
+msgstr "Vorschaubilder anzeigen"
 
 #: ../pix/gth-browser-actions-entries.h:242
 msgid "_Hidden Files"
