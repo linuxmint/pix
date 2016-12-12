@@ -1,22 +1,23 @@
 # Turkish translation of pix.
-# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Gorkem Cetin <gorkem@bahcesehir.edu.tr>, 2003
+# Gökhan Gökkaya <gokhanlnx@gmail.com>, 2016
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-10-30 19:37+0000\n"
-"Last-Translator: Mustafa124563 <Unknown>\n"
+"PO-Revision-Date: 2016-11-24 14:32+0000\n"
+"Last-Translator: Butterfly <Unknown>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-11-09 17:18+0000\n"
-"X-Generator: Launchpad (build 18255)\n"
+"X-Launchpad-Export-Date: 2016-12-12 12:17+0000\n"
+"X-Generator: Launchpad (build 18292)\n"
+"Language: tr\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -1122,7 +1123,7 @@ msgstr "Fotoğrafın çekiliş _tarihi"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:12
 msgid "A_djust by"
-msgstr ""
+msgstr "Şununla ayarla"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:13
 msgid "hours"
@@ -1224,6 +1225,7 @@ msgstr "İletişim Sayfası"
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
 msgstr ""
+"Seçilen dosyaların bir resim önizleme gösterimi içerik dosyasını oluştur."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1747,11 +1749,11 @@ msgstr "_Nesne Adı:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
 msgid "Byline _Title:"
-msgstr ""
+msgstr "Yançizgi _Başlığı"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
 msgid "_Byline:"
-msgstr ""
+msgstr "_Yançizgi"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
 msgid "_City:"
@@ -2088,7 +2090,7 @@ msgstr "Yeni albüm oluşturuluyor"
 #: ../extensions/picasaweb/picasa-web-service.c:860
 #, c-format
 msgid "Could not upload '%s': %s"
-msgstr ""
+msgstr "'%s' yüklenemedi: %s"
 
 #. Translators: %s is a filename
 #: ../extensions/facebook/facebook-service.c:742
@@ -2156,7 +2158,7 @@ msgid ""
 "The folder cannot be moved to the Trash. Do you want to delete it "
 "permanently?"
 msgstr ""
-"Dosyalar çöpe taşıanamadı. Bunları kalıcı olarak silmek ister misiniz?"
+"Dosyalar çöpe taşınamadı. Bunları kalıcı olarak silmek ister misiniz?"
 
 #: ../extensions/file_manager/actions.c:780
 msgid "Could not move the folder to the Trash"
@@ -2329,7 +2331,7 @@ msgstr "Renk Seviyeleri"
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:10
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:5
 msgid "_Reset"
-msgstr "Eski Du_rum"
+msgstr "_Sıfırla"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:1
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
@@ -2372,7 +2374,7 @@ msgstr "En boy oranını _tersine çevir"
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "Çoklu:"
 
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
@@ -2537,7 +2539,7 @@ msgstr "Yarıçap:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
 msgid "Amount:"
-msgstr ""
+msgstr "Miktar:"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
@@ -2668,7 +2670,7 @@ msgstr "Kırp"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:45
 msgid "Equalizing image histogram"
-msgstr "Resim histogramı eşitleniyor"
+msgstr "Resim sütun grafiği eşitleniyor"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:230
 msgid "Equalize"
@@ -2676,7 +2678,7 @@ msgstr "Eşitle"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:231
 msgid "Equalize image histogram"
-msgstr "Resim histogramını eşitle"
+msgstr "Resim sütun grafiğini eşitle"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:87
 msgid "Flip"
@@ -2763,15 +2765,15 @@ msgstr "Kaydet"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:101
 msgid "Sharpening image"
-msgstr ""
+msgstr "Resmi keskinleştirme"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus..."
-msgstr ""
+msgstr "Odaklamayı Artır..."
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus"
-msgstr ""
+msgstr "Odaklamayı Artır"
 
 #: ../extensions/file_tools/gth-file-tool-undo.c:75
 msgid "Undo"
@@ -2839,15 +2841,15 @@ msgstr "En eski aynı dosyaları bırak"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
-msgstr ""
+msgstr "Dizine göre..."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:68
 msgid "all files"
-msgstr "tüm dosyalar"
+msgstr "Tüm dosyalar"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:69
 msgid "no file"
-msgstr "dosya yok"
+msgstr "Dosya seçme"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:560
 #: ../extensions/find_duplicates/gth-find-duplicates.c:668
@@ -2914,19 +2916,19 @@ msgstr "Boş alan:"
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
 msgid "Ph_otoset:"
-msgstr ""
+msgstr "Resi_m seti:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
 msgid "_Privacy:"
-msgstr ""
+msgstr "_Gizlilik:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
 msgid "Hi_de from public searches"
-msgstr ""
+msgstr "Genel aramalardan gi_zle"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
 msgid "_Safety:"
-msgstr ""
+msgstr "Güve_nlik:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
 msgid "Private photos, visible to family and friends"
@@ -2946,7 +2948,7 @@ msgstr "Güvenli içerik"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
 msgid "Moderate content"
-msgstr ""
+msgstr "İçeriği yönet"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:17
 msgid "Restricted content"
@@ -2977,7 +2979,7 @@ msgstr "Bilinmeyen hata"
 #, c-format
 msgid ""
 "Return to this window when you have finished the authorization process on %s"
-msgstr ""
+msgstr "%s yetkilendirme süreci tamamlandığında, yeniden bu pencereye dön"
 
 #: ../extensions/flicker_utils/flickr-service.c:503
 msgid "Once you're done, click the 'Continue' button below."
@@ -3211,15 +3213,15 @@ msgstr "inç"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:4
 msgid "Select Caption Font"
-msgstr ""
+msgstr "Başlık Yazıtipini Seç"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:5
 msgid "Select Header Font"
-msgstr ""
+msgstr "Üst Bilgi Yazıtipini Seç"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:6
 msgid "Select Footer Font"
-msgstr ""
+msgstr "Alt Bilgi Yazıtipini Seç"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:7
 msgid "Fonts"
@@ -3246,7 +3248,7 @@ msgstr "Resimler"
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
-msgstr ""
+msgstr "Bu dosya türü için uygun yükleyici yok"
 
 #. translators: %s is a filename
 #: ../extensions/image_print/gth-load-image-info-task.c:164
@@ -3285,15 +3287,15 @@ msgstr "Fiziksel Döndür"
 
 #: ../extensions/image_rotation/callbacks.c:62
 msgid "Rotate the selected images according to the embedded orientation"
-msgstr ""
+msgstr "Seçilen resimleri yerleşik yönlendirmeye göre döndür"
 
 #: ../extensions/image_rotation/callbacks.c:67
 msgid "Reset the EXIF Orientation"
-msgstr ""
+msgstr "EXIF yönünü sıfırla"
 
 #: ../extensions/image_rotation/callbacks.c:68
 msgid "Reset the embedded orientation without rotating the images"
-msgstr ""
+msgstr "Gömülü yönlendirmeyi resimleri döndürmeden sıfırla"
 
 #: ../extensions/image_rotation/gth-reset-orientation-task.c:111
 #: ../extensions/image_rotation/gth-transform-task.c:143
@@ -3304,7 +3306,7 @@ msgstr "Resimler kaydediliyor"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
 msgid "Image rotation"
-msgstr ""
+msgstr "Resim döndürme"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
 msgid "Rotate images without data loss."
@@ -3328,18 +3330,27 @@ msgid ""
 "For practical use, this mode gives the best looking results, but the "
 "transformation is not strictly lossless anymore."
 msgstr ""
+"Resmin boyutları 8'in katı olmadığı için bu dönüştürme işlemi resmin bazı "
+"kenarlarında bozulmalara neden olabilir.\n"
+"\n"
+"Eğer sonuçta oluşan resmi beğenmezseniz, dönüşümü geri çevirerek asıl "
+"resminize geri dönebilirsiniz. \n"
+"\n"
+"İsterseniz dönüştürülemeyen kenar beneklerinin hesaba katılmamasını ya da "
+"budanmasını seçebilirsiniz. En güzel görünümü bu şekilde elde edersiniz "
+"fakat dönüşüm tam olarak \"kayıpsız\" olmaz."
 
 #: ../extensions/image_rotation/rotation-utils.c:116
 msgid "_Trim"
-msgstr ""
+msgstr "Kes Çıka_r"
 
 #: ../extensions/image_rotation/rotation-utils.c:118
 msgid "_Accept distortion"
-msgstr ""
+msgstr "Bozulmayı _Onayla"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
 msgid "Set to actual size"
-msgstr ""
+msgstr "Asıl boyutuna ayarla"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
 msgid "Keep previous zoom"
@@ -3399,7 +3410,7 @@ msgstr "Kontrol et"
 
 #: ../extensions/image_viewer/gth-image-histogram.c:84
 msgid "Histogram"
-msgstr ""
+msgstr "Sütun Grafiği"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:179
 msgid "Copy Image"
@@ -3451,7 +3462,7 @@ msgstr "Büyütmeyi pencereye uydur"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:210
 msgid "Zoom to fit width"
-msgstr ""
+msgstr "Enine sığdırarak yaklaş"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
 msgid "Image viewer"
@@ -3475,7 +3486,7 @@ msgstr "_Otomatik altdizin"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:3
 msgid "as _single subfolder"
-msgstr ""
+msgstr "Tek alt_dizin olarak"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:7
 msgid "The year"
@@ -3531,7 +3542,7 @@ msgstr "yıl"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:343
 msgid "custom format"
-msgstr ""
+msgstr "özel biçim"
 
 #: ../extensions/importer/gth-import-task.c:426
 #: ../extensions/importer/gth-import-task.c:461
@@ -3545,7 +3556,7 @@ msgstr "İçe aktarılan dosya yok"
 
 #: ../extensions/importer/gth-import-task.c:621
 msgid "The selected files are already present in the destination."
-msgstr ""
+msgstr "Seçilen dosyalar zaten hedefte mevcut."
 
 #: ../extensions/importer/gth-import-task.c:644
 #: ../pix/gth-file-source-vfs.c:694
@@ -3571,6 +3582,8 @@ msgid ""
 "Not enough free space in '%s'.\n"
 "%s of space is required but only %s is available."
 msgstr ""
+"'%s' kısmında yeterli boş alan yok.\n"
+"%s boş alan gerekli ama sadece %s alan mevcut."
 
 #: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
 msgid "Personalize..."
@@ -3582,7 +3595,7 @@ msgstr "Araçlar"
 
 #: ../extensions/list_tools/callbacks.c:321
 msgid "Batch tools for multiple files"
-msgstr ""
+msgstr "Çoklu dosyalar için toplu iş araçları"
 
 #: ../extensions/list_tools/data/ui/ask-value.ui.h:1
 msgid "_Skip"
@@ -3614,7 +3627,7 @@ msgstr "_Kısayol:"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:6
 msgid "The file uri"
-msgstr ""
+msgstr "Dosya hedefi"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:7
 msgid "The file path"
@@ -3622,60 +3635,60 @@ msgstr "Dosya yolu"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:8
 msgid "The file basename"
-msgstr ""
+msgstr "Dosya taban adı"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:9
 msgid "The parent folder path"
-msgstr ""
+msgstr "Üst dizin hedefi"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:14
 #, no-c-format
 msgid "%ask{ message }{ default value }"
-msgstr ""
+msgstr "%ask{ mesaj }{ varsayılan değer }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:15
 msgid "Ask an input value"
-msgstr ""
+msgstr "Bir girdi değeri sor"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:18
 #, no-c-format
 msgid "%attr{ attribute name }"
-msgstr ""
+msgstr "%attr{ özellik adı }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:19
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:25
 msgid "A file attribute"
-msgstr ""
+msgstr "Bir dosya özelliği"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:21
 #, no-c-format
 msgid "%N"
-msgstr ""
+msgstr "%N"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:22
 msgid "The file basename without extension"
-msgstr ""
+msgstr "Eklentisiz dosya taban adı"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:24
 #, no-c-format
 msgid "%E"
-msgstr ""
+msgstr "%E"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:25
 msgid "The file extension"
-msgstr ""
+msgstr "Dosya uzantısı"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:28
 #, no-c-format
 msgid "%quote{ text }"
-msgstr ""
+msgstr "%quote{ metin }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:29
 msgid "Quote the text "
-msgstr ""
+msgstr "Metni alıntıla "
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:30
 msgid "_Command:"
@@ -3708,7 +3721,7 @@ msgstr "Komutu Düzenle"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:461
 msgid "Are you sure you want to delete the selected command?"
-msgstr ""
+msgstr "Seçilen komutu silmek istediğinize emin misiniz?"
 
 #: ../extensions/list_tools/gth-script.c:610
 msgid "Enter a value:"
@@ -3738,7 +3751,7 @@ msgstr "Tanımlı komut yok"
 #: ../extensions/list_tools/gth-script-task.c:83
 #, c-format
 msgid "Command exited abnormally with status %d"
-msgstr ""
+msgstr "Komut anormal olarak durumla çıktı %d"
 
 #: ../extensions/list_tools/list_tools.extension.in.in.h:1
 msgid "File list tools"
@@ -3746,46 +3759,46 @@ msgstr "Dosya listesi araçları"
 
 #: ../extensions/list_tools/list_tools.extension.in.in.h:2
 msgid "Scripting and batch manipulation of files."
-msgstr ""
+msgstr "Dosyaların betikle ve toplu işlenmesi."
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "S"
-msgstr ""
+msgstr "G"
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "N"
-msgstr ""
+msgstr "K"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "W"
-msgstr ""
+msgstr "B"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "E"
-msgstr ""
+msgstr "D"
 
 #: ../extensions/map_view/gth-map-view.c:205
 #: ../extensions/map_view/map_view.extension.in.in.h:1
 msgid "Map"
-msgstr ""
+msgstr "Harita"
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
 msgid ""
 "The geographical position information is not available for this image."
-msgstr ""
+msgstr "Bu resim için coğrafi konum bilgisi mevcut değil."
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
-msgstr ""
+msgstr "Resim konumunu harita üstünde göster"
 
 #: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
 msgid "A_ccounts:"
-msgstr ""
+msgstr "Hesa_plar:"
 
 #: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
 #: ../pix/gth-folder-tree.c:1067
@@ -3794,7 +3807,7 @@ msgstr "Yükleniyor..."
 
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:200
 msgid "New authentication..."
-msgstr ""
+msgstr "Yeni kimlik doğrulama..."
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
@@ -3802,7 +3815,7 @@ msgstr "Yetkilendirme Gerekiyor"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
-msgstr ""
+msgstr "Hesa_p Seç..."
 
 #: ../extensions/oauth/web-service.c:660
 msgid "Choose Account"
@@ -3814,31 +3827,31 @@ msgstr "Hesapları Düzenle"
 
 #: ../extensions/oauth/web-service.c:795 ../extensions/oauth/web-service.c:812
 msgid "Connecting to the server"
-msgstr ""
+msgstr "Sunucuya bağlanılıyor"
 
 #: ../extensions/oauth/web-service.c:796
 msgid "Asking authorization"
-msgstr ""
+msgstr "Yetkilendirme sor"
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
-msgstr ""
+msgstr "Hesap bilgisi alınıyor"
 
 #: ../extensions/photobucket/callbacks.c:54
 msgid "Photobucket..."
-msgstr ""
+msgstr "Photobucket..."
 
 #: ../extensions/photobucket/callbacks.c:55
 msgid "Upload photos to Photobucket"
-msgstr ""
+msgstr "Resimleri Photobucket adresine yükle"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:9
 msgid "_Scramble filenames"
-msgstr ""
+msgstr "_Karışık dosya adları:"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:10
 msgid "Tiny ( 100 x 75 )"
-msgstr ""
+msgstr "Minik ( 100 x 75 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:11
 msgid "Small ( 160 x 120 )"
@@ -3867,11 +3880,11 @@ msgstr "1 megabayt dosya boyutu"
 
 #: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:2
 msgid "_Container:"
-msgstr ""
+msgstr "_Kapsayıcı:"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:290
 msgid "Tiny ( 100 × 75 )"
-msgstr ""
+msgstr "Minik ( 100 x 75 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:291
 msgid "Small ( 160 × 120 )"
@@ -3899,11 +3912,11 @@ msgstr "2 megabayt dosya boyutu"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:1
 msgid "PhotoBucket"
-msgstr ""
+msgstr "PhotoBucket"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:2
 msgid "Upload images to PhotoBucket"
-msgstr ""
+msgstr "Resimleri PhotoBucket alanına yükle"
 
 #: ../extensions/photo_importer/actions.c:71
 msgid "Import"
@@ -3911,65 +3924,65 @@ msgstr "İçe aktar"
 
 #: ../extensions/photo_importer/callbacks.c:52
 msgid "_Removable Device..."
-msgstr ""
+msgstr "_Çıkarılabilir Aygıt..."
 
 #: ../extensions/photo_importer/callbacks.c:53
 msgid "Import photos and other files from a removable device"
-msgstr ""
+msgstr "Resimler ve diğer dosyaları çıkarılabilir aygıttan içe aktar"
 
 #: ../extensions/photo_importer/callbacks.c:56
 msgid "F_older..."
-msgstr ""
+msgstr "_Dizin..."
 
 #: ../extensions/photo_importer/callbacks.c:57
 msgid "Import photos and other files from a folder"
-msgstr ""
+msgstr "Resim ve diğer dosyaları bir dizinden içe aktar"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
 msgid "_Rotate the images physically"
-msgstr ""
+msgstr "Resimleri fiziksel olarak _döndür"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
 msgid "After importing from a device:"
-msgstr ""
+msgstr "Bir aygıttan içe aktardıktan sonra:"
 
 #. view label
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
 #: ../pix/gth-filterbar.c:421
 msgid "S_how:"
-msgstr ""
+msgstr "Gö_ster"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
 msgid "_Tags:"
-msgstr ""
+msgstr "_Etiketler:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
 msgid "_Event:"
-msgstr ""
+msgstr "_Durum:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:7
 msgid "_Delete the imported files from the source"
-msgstr ""
+msgstr "Dışa aktarılan dosyaları kaynaktan _sil"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:227
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:149
 msgid "Could not import the files"
-msgstr ""
+msgstr "Dosyalar içe aktarılamadı"
 
 #. translators: %d is the number of files, %s the total size
 #: ../extensions/photo_importer/dlg-photo-importer.c:299
 #, c-format
 msgid "Files to import: %d (%s)"
-msgstr ""
+msgstr "İçe aktarılacak dosyalar: %d (%s)"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:339
 msgid "Could not load the folder"
-msgstr ""
+msgstr "Dizn yüklenemedi"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:369
 #: ../pix/gth-browser.c:2090
 msgid "Getting folder listing..."
-msgstr ""
+msgstr "Dizin listesi alınıyor..."
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:415
 msgid "Empty"
@@ -3977,11 +3990,11 @@ msgstr "Boş"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:586
 msgid "Import from Removable Device"
-msgstr ""
+msgstr "Çıkarılabilir Aygıttan İçe Aktar"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:618
 msgid "Import from Folder"
-msgstr ""
+msgstr "Dizinden İçe Aktar"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:1
 msgid "Import photos"
@@ -3989,16 +4002,16 @@ msgstr "Fotoğraf içe aktar"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:2
 msgid "Import photos from removable devices."
-msgstr ""
+msgstr "Resimleri çıkarılabilir aygıttan içe aktar."
 
 #: ../extensions/picasaweb/callbacks.c:59
 #: ../extensions/picasaweb/callbacks.c:64
 msgid "_Picasa Web Album..."
-msgstr ""
+msgstr "_Picasa Web Albümü..."
 
 #: ../extensions/picasaweb/callbacks.c:60
 msgid "Download photos from Picasa Web Album"
-msgstr ""
+msgstr "Picasa Web Albümünden resimler indir"
 
 #: ../extensions/picasaweb/callbacks.c:65
 msgid "Upload photos to Picasa Web Album"
@@ -4014,7 +4027,7 @@ msgstr "_Albümler:"
 
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:4
 msgid "Public"
-msgstr ""
+msgstr "Halka Açık"
 
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:458
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:469
@@ -4023,11 +4036,11 @@ msgstr "Albüm listesi alınamadı"
 
 #: ../extensions/picasaweb/picasaweb.extension.in.in.h:1
 msgid "Picasa Web Albums"
-msgstr ""
+msgstr "Picasa Web Albümleri"
 
 #: ../extensions/picasaweb/picasaweb.extension.in.in.h:2
 msgid "Upload images to Picasa Web Albums"
-msgstr ""
+msgstr "Picasa Web Albümlerine resimler yükle"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
@@ -4067,7 +4080,7 @@ msgstr "Fotoğraftan kırmızı-göz etkisini silmek için araç."
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:1
 msgid "digits"
-msgstr ""
+msgstr "rakamlar"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:2
 msgid "format:"
@@ -4088,7 +4101,7 @@ msgstr "Yeniden isimledir"
 #. Translators: this is the text case (upper or lower case).
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:6
 msgid "Cas_e:"
-msgstr ""
+msgstr "Karakter"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:7
 msgid "Edit template"
@@ -4105,7 +4118,7 @@ msgstr "Asıl eklenti"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:13
 msgid "The original enumerator"
-msgstr ""
+msgstr "Orjinal numaralandırıcı"
 
 #. translate only the text in the curly brackets
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:16
@@ -4137,7 +4150,7 @@ msgstr "_Ters Düzen"
 
 #: ../extensions/rename_series/dlg-rename-series.c:58
 msgid "Enumerator"
-msgstr ""
+msgstr "Numaralandırıcı"
 
 #: ../extensions/rename_series/dlg-rename-series.c:59
 msgid "Original filename"
@@ -4149,7 +4162,7 @@ msgstr "Asıl eklenti"
 
 #: ../extensions/rename_series/dlg-rename-series.c:61
 msgid "Original enumerator"
-msgstr ""
+msgstr "Orjinal numaralandırıcı"
 
 #: ../extensions/rename_series/dlg-rename-series.c:62
 msgid "Modification date"
@@ -4161,7 +4174,7 @@ msgstr "Sayısallaştırma tarihi"
 
 #: ../extensions/rename_series/dlg-rename-series.c:64
 msgid "File attribute"
-msgstr ""
+msgstr "Dosya özelliği"
 
 #: ../extensions/rename_series/dlg-rename-series.c:558
 #: ../extensions/rename_series/dlg-rename-series.c:689
@@ -4186,7 +4199,7 @@ msgstr "Yeni İsim"
 
 #: ../extensions/rename_series/dlg-rename-series.c:951
 msgid "Keep original case"
-msgstr ""
+msgstr "Asıl hali koru"
 
 #: ../extensions/rename_series/dlg-rename-series.c:952
 msgid "Convert to lower-case"
@@ -4293,7 +4306,7 @@ msgstr "Aşağıdaki kuralların hiçbiri"
 #: ../extensions/search/gth-search-task.c:181
 #, c-format
 msgid "Files found until now: %s"
-msgstr ""
+msgstr "Şimdiye kadar bulunan dosyalar: %s"
 
 #: ../extensions/search/gth-search-task.c:271
 msgid "Searching..."
@@ -4328,6 +4341,8 @@ msgstr "Seçim 3"
 msgid ""
 "Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."
 msgstr ""
+"Bu seçime dosya eklemek için Alt-%d kullanın, bu seçimi görmek için Ctrl-%d "
+"kullanın."
 
 #: ../extensions/selections/gth-selections-manager.c:239
 #, c-format
@@ -4364,7 +4379,7 @@ msgstr "_Kişiselleştir"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
 msgid "_Transition effect:"
-msgstr ""
+msgstr "_Geçiş efekti:"
 
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
@@ -4409,23 +4424,23 @@ msgstr "Rastgele"
 
 #: ../extensions/slideshow/main.c:283
 msgid "Push from right"
-msgstr ""
+msgstr "Sağdan it"
 
 #: ../extensions/slideshow/main.c:289
 msgid "Push from bottom"
-msgstr ""
+msgstr "Soldan it"
 
 #: ../extensions/slideshow/main.c:295
 msgid "Slide from right"
-msgstr ""
+msgstr "Sağdan kaydır"
 
 #: ../extensions/slideshow/main.c:301
 msgid "Slide from bottom"
-msgstr ""
+msgstr "Alttan kaydır"
 
 #: ../extensions/slideshow/main.c:307
 msgid "Fade in"
-msgstr ""
+msgstr "Soldurma"
 
 #: ../extensions/slideshow/main.c:313
 msgid "Flip page"
@@ -4433,11 +4448,11 @@ msgstr "Kapak sayfası"
 
 #: ../extensions/slideshow/main.c:319
 msgid "Cube from right"
-msgstr ""
+msgstr "Sağdan küp"
 
 #: ../extensions/slideshow/main.c:325
 msgid "Cube from bottom"
-msgstr ""
+msgstr "Alttan küp"
 
 #: ../extensions/slideshow/slideshow.extension.in.in.h:2
 msgid "View images as a slideshow."
@@ -4445,7 +4460,7 @@ msgstr "Resimleri slayt gösterisi şeklinde görüntüle"
 
 #: ../extensions/webalbums/callbacks.c:71
 msgid "_Web Album..."
-msgstr ""
+msgstr "_Web Albümü..."
 
 #: ../extensions/webalbums/callbacks.c:72
 msgid "Create a static web album"
@@ -4457,16 +4472,16 @@ msgstr "Resmi görüntülemek için tıkla"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:27
 msgid "Go back to the index"
-msgstr ""
+msgstr "İçerik dizinine geri dön"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:28
 #, c-format
 msgid "Image %d of %d"
-msgstr ""
+msgstr "Resim %d  /  %d"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:29
 msgid "Index"
-msgstr ""
+msgstr "İçerik dizini"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:30
 #: ../pix/gth-browser-actions-entries.h:125
@@ -4481,7 +4496,7 @@ msgstr "Önceki"
 #: ../extensions/webalbums/data/albumthemes/text.h:33
 #, c-format
 msgid "View page %d"
-msgstr ""
+msgstr "Gösterim sayfası %d"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:34
 msgid "View the next image"
@@ -4526,15 +4541,15 @@ msgstr "Pencere _genişliğini uyarla "
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:30
 msgid "Index Page"
-msgstr ""
+msgstr "İçerik dizini sayfası"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:31
 msgid "Thumbnail Caption"
-msgstr ""
+msgstr "Önizleme Resmi Başlığı"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
 msgid "The current image number"
-msgstr ""
+msgstr "Mevcut resim sayısı"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:33
 msgid "The total number of images"
@@ -4554,11 +4569,11 @@ msgstr "Eğer mümkünse, açıklamayı göster"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:38
 msgid "Show the following attributes:"
-msgstr ""
+msgstr "Aşağıdaki özellikleri göster:"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:39
 msgid "Image Attributes"
-msgstr ""
+msgstr "Resim Özellikleri"
 
 #: ../extensions/webalbums/gth-web-exporter.c:1802
 msgid "Could not show the destination"
@@ -4579,7 +4594,7 @@ msgstr "HTML sayfaları kaydediliyor: Resimler"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2220
 msgid "Saving HTML pages: Indexes"
-msgstr "HTML sayfaları kaydediliyor: Dizinler"
+msgstr "HTML sayfaları kaydediliyor: İçerik dizinleri"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2505
 msgid "Copying original images"
@@ -4587,7 +4602,7 @@ msgstr "Asıl resimler kopyalanıyor"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2965
 msgid "Could not find the style folder"
-msgstr ""
+msgstr "Biçim dizini bulunamadı"
 
 #: ../extensions/webalbums/gth-web-exporter.c:3003
 msgid "Could not create a temporary folder"
@@ -4606,15 +4621,15 @@ msgstr "Statik web albümleri oluştur."
 #: ../pix/gth-browser.c:6236 ../pix/gth-browser.c:6260
 #, c-format
 msgid "Could not load the position \"%s\""
-msgstr ""
+msgstr "Konum \"%s\" yüklenemedi"
 
 #: ../pix/dlg-personalize-filters.c:237
 msgid "Filter"
-msgstr ""
+msgstr "Süzgeç"
 
 #: ../pix/dlg-personalize-filters.c:315
 msgid "Could not save the filter"
-msgstr ""
+msgstr "Süzgeç kaydedilemedi"
 
 #: ../pix/dlg-personalize-filters.c:358
 msgid "New Filter"
@@ -4626,19 +4641,19 @@ msgstr "Süzgeci Düzenle"
 
 #: ../pix/dlg-preferences-extensions.c:67 ../pix/gth-filterbar.c:277
 msgid "All"
-msgstr ""
+msgstr "Tümü"
 
 #: ../pix/dlg-preferences-extensions.c:68
 msgid "Enabled"
-msgstr ""
+msgstr "Etkin"
 
 #: ../pix/dlg-preferences-extensions.c:69
 msgid "Disabled"
-msgstr ""
+msgstr "Pasif"
 
 #: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
-msgstr ""
+msgstr "Görüntüleyiciler"
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
@@ -4654,19 +4669,19 @@ msgstr "Liste araçları"
 
 #: ../pix/dlg-preferences-extensions.c:76
 msgid "Importers"
-msgstr ""
+msgstr "İçe aktarıcılar"
 
 #: ../pix/dlg-preferences-extensions.c:77
 msgid "Exporters"
-msgstr ""
+msgstr "Dışa aktarıcılar"
 
 #: ../pix/dlg-preferences-extensions.c:216
 msgid "Could not activate the extension"
-msgstr ""
+msgstr "Eklenti etkinleştirilemedi"
 
 #: ../pix/dlg-preferences-extensions.c:226
 msgid "Could not deactivate the extension"
-msgstr ""
+msgstr "Ekelenti pasifleştirilemedi"
 
 #. add the page to the preferences dialog
 #: ../pix/dlg-preferences-extensions.c:777
@@ -4675,11 +4690,13 @@ msgstr "Eklentiler"
 
 #: ../pix/dlg-preferences-extensions.c:824
 msgid "Restart required"
-msgstr ""
+msgstr "Yeniden başlatma gerekiyor"
 
 #: ../pix/dlg-preferences-extensions.c:825
 msgid "You need to restart pix for these changes to take effect"
 msgstr ""
+"Değişikliklerin etkili olabilmesi için Pix yeniden başlatılmaya ihtiyaç "
+"duyuyor"
 
 #: ../pix/dlg-preferences-extensions.c:826
 msgid "_Continue"
@@ -4687,35 +4704,35 @@ msgstr "_Devam et"
 
 #: ../pix/dlg-preferences-extensions.c:827
 msgid "_Restart"
-msgstr ""
+msgstr "_Yeniden Başlat"
 
 #. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
 #: ../pix/gio-utils.c:1351
 #, c-format
 msgid "%s of %s"
-msgstr ""
+msgstr "%s / %s"
 
 #: ../pix/gio-utils.c:1386
 #, c-format
 msgid "Moving \"%s\" to \"%s\""
-msgstr ""
+msgstr "\"%s\" taşınıyor \"%s\" kısmına"
 
 #: ../pix/gio-utils.c:1388
 #, c-format
 msgid "Copying \"%s\" to \"%s\""
-msgstr ""
+msgstr "\"%s\" kopyalanıyor \"%s\" kısmına"
 
 #: ../pix/gio-utils.c:1750
 msgid "Moving files"
-msgstr ""
+msgstr "Dosyalar taşınıyor"
 
 #: ../pix/gio-utils.c:1750
 msgid "Copying files"
-msgstr ""
+msgstr "Dosyalar kopyalanıyor"
 
 #: ../pix/gio-utils.c:1751
 msgid "Getting file information"
-msgstr ""
+msgstr "Dosya bilgisi alınıyor"
 
 #. hour:minutes:seconds
 #. Translators: This is a time format, like "9:05:02" for 9
@@ -4727,7 +4744,7 @@ msgstr ""
 #, c-format
 msgctxt "long time format"
 msgid "%d:%02d:%02d"
-msgstr ""
+msgstr "%d:%02d:%02d"
 
 #. minutes:seconds
 #. Translators: This is a time format, like "5:02" for 5
@@ -4739,7 +4756,7 @@ msgstr ""
 #, c-format
 msgctxt "short time format"
 msgid "%d:%02d"
-msgstr ""
+msgstr "%d:%02d"
 
 #: ../pix/gth-browser-actions-callbacks.c:414
 msgid ""
@@ -4748,6 +4765,9 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Pix özgür bir yazılımdır; onu Özgür Yazılım Vakfı tarafından yayınlanan "
+"Genel Kamu Lisans (GPL) koşulları altında yeniden dağıtabilirsiniz; Lisansı "
+"2. sürümü, ya da (sizin isteğinize göre) herhangi sonraki sürümüyle."
 
 #: ../pix/gth-browser-actions-callbacks.c:418
 msgid ""
@@ -4756,12 +4776,18 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Pix faydalı olacağı beklentisi ile, açık ya da dolaylı olarak, "
+"satılabilirliği ve bir amaca uygunluğu da dahil olmak üzere herhangi bir "
+"GARANTİsi olmadan dağıtılmaktadır.  Daha fazla detay için GNU Genel Kamu "
+"Lisansına bakınız."
 
 #: ../pix/gth-browser-actions-callbacks.c:422
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
+"Pix ile birlikte GNU Genel Kamu Lisansı'nın bir kopyasını almalısınız. Eğer "
+"yoksa, bakınız http://www.gnu.org/licenses/."
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
@@ -4774,11 +4800,11 @@ msgstr ""
 "\n"
 "Launchpad Contributions:\n"
 "  Ali Kömesöğütlü https://launchpad.net/~byzlo685\n"
+"  Butterfly https://launchpad.net/~kelebek333\n"
 "  Clement Lefebvre https://launchpad.net/~clementlefebvre\n"
 "  Hasan Yılmaz https://launchpad.net/~hasanyilmaz\n"
 "  Mustafa124563 https://launchpad.net/~mustafaicten12-deactivatedaccount\n"
-"  karakartala https://launchpad.net/~karakartala1\n"
-"  kelebek333 https://launchpad.net/~kelebek333"
+"  karakartala https://launchpad.net/~karakartala1"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -4802,11 +4828,11 @@ msgstr "_Birlikte Aç"
 
 #: ../pix/gth-browser-actions-entries.h:37
 msgid "I_mport From"
-msgstr ""
+msgstr "İ_çe Aktar"
 
 #: ../pix/gth-browser-actions-entries.h:38
 msgid "E_xport To"
-msgstr ""
+msgstr "Dı_şa Aktar"
 
 #: ../pix/gth-browser-actions-entries.h:41
 msgid "New _Window"
@@ -4814,7 +4840,7 @@ msgstr "Yeni _Pencere"
 
 #: ../pix/gth-browser-actions-entries.h:42
 msgid "Open another window"
-msgstr ""
+msgstr "Başka bir pencerede aç"
 
 #: ../pix/gth-browser-actions-entries.h:71
 msgid "Open"
@@ -4854,11 +4880,11 @@ msgstr "Sonraki resmi göster"
 
 #: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
-msgstr ""
+msgstr "Tam ekrana geç"
 
 #: ../pix/gth-browser-actions-entries.h:138
 msgid "Leave Fullscreen"
-msgstr ""
+msgstr "Tam Ekrandan Çık"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
@@ -4878,7 +4904,7 @@ msgstr "_Konum..."
 
 #: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
-msgstr ""
+msgstr "Açmak için bir konum belirtin"
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
@@ -4894,15 +4920,15 @@ msgstr "Klasörleri göster"
 
 #: ../pix/gth-browser-actions-entries.h:186
 msgid "Show information about pix"
-msgstr ""
+msgstr "Pix hakkında bilgi göster"
 
 #: ../pix/gth-browser-actions-entries.h:191
 msgid "Contents"
-msgstr ""
+msgstr "İçindekiler"
 
 #: ../pix/gth-browser-actions-entries.h:192
 msgid "Display the pix Manual"
-msgstr ""
+msgstr "Pix rehberini görüntüle"
 
 #: ../pix/gth-browser-actions-entries.h:197
 msgid "_Keyboard Shortcuts"
@@ -4940,23 +4966,23 @@ msgstr "_Süzgeç çubuğu"
 
 #: ../pix/gth-browser-actions-entries.h:223
 msgid "View or hide the filterbar of this window"
-msgstr ""
+msgstr "Bu pencerede süzgeç çubuğunu göster ya da gizle"
 
 #: ../pix/gth-browser-actions-entries.h:227
 msgid "_Sidebar"
-msgstr ""
+msgstr "_Kenar Çubuğu"
 
 #: ../pix/gth-browser-actions-entries.h:228
 msgid "View or hide the sidebar of this window"
-msgstr ""
+msgstr "Bu pencerenin kenar çubuğunu göster ya da gizle"
 
 #: ../pix/gth-browser-actions-entries.h:232
 msgid "_Thumbnail Pane"
-msgstr ""
+msgstr "Önizleme Resmi Bölmesi"
 
 #: ../pix/gth-browser-actions-entries.h:233
 msgid "View or hide the thumbnail pane in viewer mode"
-msgstr ""
+msgstr "Gösterim kipinde önizleme resmi bölmesini göster ya da gizle"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
@@ -4981,16 +5007,16 @@ msgstr "Dosya özelliklerini görüntüle"
 
 #: ../pix/gth-browser-actions-entries.h:262
 msgid "_Fit Window to Image"
-msgstr ""
+msgstr "Penceyi Görüntüye _Sığdır"
 
 #: ../pix/gth-browser-actions-entries.h:263
 msgid "Resize the window to the size of the image"
-msgstr ""
+msgstr "Pencereyi resmin boyutuna göre yeniden boyutlandır"
 
 #: ../pix/gth-browser.c:419
 #, c-format
 msgid "Open %s"
-msgstr ""
+msgstr "%s dosyasını aç"
 
 #: ../pix/gth-browser.c:559
 msgid "[modified]"
@@ -5000,35 +5026,36 @@ msgstr "[değiştirildi]"
 #, c-format
 msgid "%d file selected (%s)"
 msgid_plural "%d files selected (%s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d dosya seçildi (%s)"
+msgstr[1] "%d dosya seçildi (%s)"
 
 #: ../pix/gth-browser.c:1153
 #, c-format
 msgid "%s of free space"
-msgstr ""
+msgstr "Boş alanın %s"
 
 #: ../pix/gth-browser.c:2074 ../pix/gth-browser.c:2101
 #, c-format
 msgid "No suitable module found for %s"
-msgstr ""
+msgstr "%s için uygun bir modül bulunamadı"
 
 #: ../pix/gth-browser.c:2220
 #, c-format
 msgid "Save changes to file '%s'?"
-msgstr ""
+msgstr "Değişiklikleri '%s' dosyasına kaydet?"
 
 #: ../pix/gth-browser.c:2225
 msgid "If you don't save, changes to the file will be permanently lost."
 msgstr ""
+"Eğer kaydetmezseniz, dosyadaki değişiklikler kalıcı olarak kaybolabilir."
 
 #: ../pix/gth-browser.c:2226
 msgid "Do _Not Save"
-msgstr ""
+msgstr "Kaydet_me"
 
 #: ../pix/gth-browser.c:3021 ../pix/gth-source-tree.c:182
 msgid "Could not change name"
-msgstr ""
+msgstr "İsim değiştirilemedi"
 
 #: ../pix/gth-browser.c:3452 ../pix/gth-main-default-metadata.c:41
 msgid "Modified"
@@ -5036,35 +5063,35 @@ msgstr "Değiştirildi"
 
 #: ../pix/gth-browser.c:3843 ../pix/gth-browser.c:3861
 msgid "View the list of visited locations"
-msgstr ""
+msgstr "Ziyaret edilen konumların listesini göster"
 
 #: ../pix/gth-browser.c:3879
 msgid "View the list of upper locations"
-msgstr ""
+msgstr "Üst konumların listesini göster"
 
 #: ../pix/gth-browser.c:6218
 #, c-format
 msgid "File type not supported"
-msgstr ""
+msgstr "Dosya türü desteklenmiyor"
 
 #: ../pix/gth-browser.c:6261
 #, c-format
 msgid "No suitable module found"
-msgstr ""
+msgstr "Uygun modül bulunamadı"
 
 #: ../pix/gth-extensions.c:203
 #, c-format
 msgid "Could not open the module `%s`: %s"
-msgstr ""
+msgstr "`%s`modülü açılamadı : %s"
 
 #: ../pix/gth-extensions.c:754
 #, c-format
 msgid "The extension '%1$s' is required by the extension '%2$s'"
-msgstr ""
+msgstr "Eklenti '%1$s' eklenti '%2$s' için gerekiyor"
 
 #: ../pix/gth-file-chooser-dialog.c:144
 msgid "All Supported Files"
-msgstr ""
+msgstr "Desteklenen Tüm Dosyalar"
 
 #: ../pix/gth-file-source-vfs.c:121
 msgid "Home Folder"
@@ -5079,22 +5106,23 @@ msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
+"Dosyalar Çöpe taşınamadı. Bunları kalıcı olarak silmek ister misiniz?"
 
 #: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
-msgstr ""
+msgstr "Dosyalar çöp kutusuna taşınamıyor"
 
 #: ../pix/gth-file-source-vfs.c:797
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
-msgstr ""
+msgstr "\"%s\" öğesini çöpe taşımak istediğinize emin misiniz?"
 
 #: ../pix/gth-file-source-vfs.c:801
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Seçilen %'d dosyayı çöpe taşımak istediğinize emin misiniz?"
+msgstr[1] "Seçilen %'d dosyayı çöpe taşımak istediğinize emin misiniz?"
 
 #: ../pix/gth-file-source-vfs.c:844
 #, c-format
@@ -5102,7 +5130,9 @@ msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
 msgstr[0] ""
+"Seçilen %'d dosyayı kalıcı olarak silmek istediğinize emin misiniz?"
 msgstr[1] ""
+"Seçilen %'d dosyayı kalıcı olarak silmek istediğinize emin misiniz?"
 
 #: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
@@ -5143,7 +5173,7 @@ msgstr "Belirtilen limit yok"
 
 #: ../pix/gth-folder-tree.c:1369
 msgid "(Open Parent)"
-msgstr ""
+msgstr "(Üst Dizini Aç)"
 
 #: ../pix/gth-histogram-view.c:825
 msgid "Linear scale"
@@ -5151,7 +5181,7 @@ msgstr "Doğrusal ölçek"
 
 #: ../pix/gth-histogram-view.c:837
 msgid "Logarithmic scale"
-msgstr ""
+msgstr "Logaritmik ölçek"
 
 #: ../pix/gth-histogram-view.c:857
 msgid "Channel:"
@@ -5192,7 +5222,7 @@ msgstr "Bu dosya türü için mevcut seçenek bulunamadı"
 #: ../pix/gth-image-saver.c:185
 #, c-format
 msgid "Could not find a suitable module to save the image as \"%s\""
-msgstr ""
+msgstr "Resmi \"%s\" olarak kaydetmek için uygun bir modül bulunamadı"
 
 #: ../pix/gth-load-file-data-task.c:108
 msgid "Reading file information"
@@ -5287,7 +5317,7 @@ msgstr "'%s' kaydediliyor"
 #: ../pix/gth-tags-entry.c:390
 #, c-format
 msgid "Create tag «%s»"
-msgstr ""
+msgstr "Etiket oluştur «%s»"
 
 #: ../pix/gth-tags-entry.c:814
 msgid "Show all the tags"
@@ -5311,7 +5341,7 @@ msgstr "Bilim"
 
 #: ../pix/gth-tags-file.c:239
 msgid "Favorite"
-msgstr ""
+msgstr "Favori"
 
 #: ../pix/gth-tags-file.c:240
 msgid "Important"
