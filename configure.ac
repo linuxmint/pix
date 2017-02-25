@@ -440,7 +440,7 @@ AC_DEFINE(WEBP_IS_UNKNOWN_TO_GLIB, 1, [Define to 1 if webp images area not recog
 
 dnl ===========================================================================
 
-AC_MSG_CHECKING(liboperaw)
+AC_MSG_CHECKING(libopenraw)
 AC_ARG_ENABLE([libopenraw],
 	      [AS_HELP_STRING([--enable-libopenraw],[use the libopenraw library to read raw files [default=no]])],,
 	      [enable_libopenraw=no])
