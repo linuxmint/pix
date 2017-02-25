@@ -11,7 +11,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--disable-clutter \
-		--disable-brasero \
+		--disable-libbrasero \
 		--enable-libwebp \
 		--disable-silent-rules
 
