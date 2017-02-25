@@ -541,7 +541,7 @@ AC_ARG_ENABLE([webkit2],
 
 if test x$enable_webkit2 = xyes ; then
 	PKG_CHECK_MODULES(WEBKIT2,
-			  [webkit2gtk-3.0 >= $WEBKIT2_REQUIRED],
+			  [webkit2gtk-4.0 >= $WEBKIT2_REQUIRED],
 			  [AC_DEFINE(HAVE_WEBKIT2, 1, [Have webkit2gtk])
 			   enable_webkit2=yes],
 			  [enable_webkit2=no])
