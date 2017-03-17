@@ -440,7 +440,7 @@ AC_DEFINE(WEBP_IS_UNKNOWN_TO_GLIB, 1, [Define to 1 if webp images area not recog
 
 dnl ===========================================================================
 
-AC_MSG_CHECKING(liboperaw)
+AC_MSG_CHECKING(libopenraw)
 AC_ARG_ENABLE([libopenraw],
 	      [AS_HELP_STRING([--enable-libopenraw],[use the libopenraw library to read raw files [default=no]])],,
 	      [enable_libopenraw=no])
@@ -541,7 +541,7 @@ AC_ARG_ENABLE([webkit2],
 
 if test x$enable_webkit2 = xyes ; then
 	PKG_CHECK_MODULES(WEBKIT2,
-			  [webkit2gtk-3.0 >= $WEBKIT2_REQUIRED],
+			  [webkit2gtk-4.0 >= $WEBKIT2_REQUIRED],
 			  [AC_DEFINE(HAVE_WEBKIT2, 1, [Have webkit2gtk])
 			   enable_webkit2=yes],
 			  [enable_webkit2=no])
