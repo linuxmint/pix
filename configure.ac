@@ -1,6 +1,6 @@
 m4_define([pix_major_version], [1])
-m4_define([pix_minor_version], [2])
-m4_define([pix_micro_version], [1])
+m4_define([pix_minor_version], [4])
+m4_define([pix_micro_version], [0])
 m4_define([pix_version],
           [pix_major_version.pix_minor_version.pix_micro_version])
 m4_define([pix_api_version],
