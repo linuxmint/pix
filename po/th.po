@@ -13,15 +13,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&component=general\n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-07-24 15:53+0000\n"
+"PO-Revision-Date: 2017-03-27 04:46+0000\n"
 "Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-12-12 12:17+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2017-05-06 12:41+0000\n"
+"X-Generator: Launchpad (build 18366)\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
-msgstr ""
+msgstr "เลือกว่าต้องการให้ปรับขนาดของหน้าต่างให้พอดีกับขนาดของรูปภาพหรือไม่"
 
 #: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
@@ -148,24 +148,27 @@ msgstr "ค่าที่เป็นไปได้คือ: white, black, ch
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
 msgstr ""
+"เลือกว่าต้องการให้รีเซ็ตตำแหน่งของแถบเลื่อนหลังจากที่เปลี่ยนรูปภาพแล้วหรือไม่"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
-msgstr ""
+msgstr "ค่าที่ใช้ได้คือ: jpeg, jpg"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:2
 msgid "Possible values are: tiff, tif."
-msgstr ""
+msgstr "ค่าที่ใช้ได้คือ: tiff, tif"
 
 #: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
 "Possible values include: general::unsorted, file::name, file::size, "
 "file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
+"ค่าที่ใช้ได้ประกอบด้วย: general::unsorted, file::name, file::size, "
+"file::mtime, exif::photo::datetimeoriginal"
 
 #: ../data/ui/extensions-preferences.ui.h:1
 msgid "_Extensions:"
-msgstr ""
+msgstr "_ส่วนขยาย:"
 
 #: ../data/ui/extensions-preferences.ui.h:2
 msgid "More extensions..."
@@ -173,7 +176,7 @@ msgstr "ส่วนขยายเพิ่มเติม..."
 
 #: ../data/ui/extensions-preferences.ui.h:3
 msgid "Some extensions are configurable."
-msgstr ""
+msgstr "ส่วนขยายบางตัวสามารถกำหนดค่าได้"
 
 #: ../data/ui/filter-editor.ui.h:1
 msgid "Filter _Name:"
@@ -196,33 +199,33 @@ msgstr "เลือกตาม"
 
 #: ../data/ui/histogram-info.ui.h:1
 msgid "Mean:"
-msgstr ""
+msgstr "ค่าเฉลี่ย:"
 
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsizied at the end.
 #: ../data/ui/histogram-info.ui.h:3
 msgid "Std dev:"
-msgstr ""
+msgstr "สบบ. มาตรฐาน"
 
 #: ../data/ui/histogram-info.ui.h:4
 msgid "Median:"
-msgstr ""
+msgstr "มัธยฐาน:"
 
 #. After the colon there is the total number of pixels
 #: ../data/ui/histogram-info.ui.h:6
 msgid "Pixels:"
-msgstr ""
+msgstr "พิกเซล:"
 
 #. After the colon there is a percentile.
 #: ../data/ui/histogram-info.ui.h:8
 msgctxt "Pixels"
 msgid "Max:"
-msgstr ""
+msgstr "สูงสุด:"
 
 #. After the colon there is the percentile of selected pixels.
 #: ../data/ui/histogram-info.ui.h:10
 msgctxt "Pixels"
 msgid "Selected:"
-msgstr ""
+msgstr "ที่เลือกไว้:"
 
 #: ../data/ui/location.ui.h:1
 msgid "_Location:"
@@ -287,15 +290,15 @@ msgstr "ตัวกรองอื่_น:"
 
 #: ../data/ui/preferences.ui.h:1
 msgid "below the folder list"
-msgstr ""
+msgstr "ด้านล่างรายชื่อโฟลเดอร์"
 
 #: ../data/ui/preferences.ui.h:2
 msgid "on the right"
-msgstr ""
+msgstr "ด้านขวา"
 
 #: ../data/ui/preferences.ui.h:3
 msgid "Pix Preferences"
-msgstr ""
+msgstr "การตั้งค่าขั้นสูงของ Pix"
 
 #: ../data/ui/preferences.ui.h:4
 msgid "_Toolbar style:"
@@ -303,7 +306,7 @@ msgstr "รูปแบบแ_ถบเครื่องมือ:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "T_humbnails in viewer:"
-msgstr ""
+msgstr "_ภาพตัวอย่างในตัวแสดง:"
 
 #: ../data/ui/preferences.ui.h:6
 msgid "System settings"
@@ -327,15 +330,15 @@ msgstr "ข้อความเท่านั้น"
 
 #: ../data/ui/preferences.ui.h:11
 msgid "on the bottom"
-msgstr ""
+msgstr "ด้านล่าง"
 
 #: ../data/ui/preferences.ui.h:12
 msgid "on the side"
-msgstr ""
+msgstr "ด้านข้าง"
 
 #: ../data/ui/preferences.ui.h:13
 msgid "File _properties in browser:"
-msgstr ""
+msgstr "_คุณสมบัติแฟ้มในเบราว์เซอร์:"
 
 #: ../data/ui/preferences.ui.h:14
 msgid "Appearance"
@@ -359,7 +362,7 @@ msgstr "ใช้โฟลเดอร์_ปัจจุบัน"
 
 #: ../data/ui/preferences.ui.h:19
 msgid "_Reuse the active window to open files"
-msgstr ""
+msgstr "ใ_ช้หน้าต่างที่ใช้งานอยู่อีกครั้งในการเปิดแฟ้ม"
 
 #: ../data/ui/preferences.ui.h:20
 msgid "On startup:"
@@ -463,19 +466,19 @@ msgstr "เรียงย้อน_กลับ"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:1
 msgid "23"
-msgstr ""
+msgstr "23"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:2
 msgid "Upload images to 23hq.com"
-msgstr ""
+msgstr "อัปโหลดรูปภาพไปยัง 23hq.com"
 
 #: ../extensions/23hq/callbacks.c:68
 msgid "_23..."
-msgstr ""
+msgstr "_23..."
 
 #: ../extensions/23hq/callbacks.c:69
 msgid "Upload photos to 23"
-msgstr ""
+msgstr "อัปโหลดรูปภาพไปที่ 23"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
@@ -601,17 +604,17 @@ msgstr "เขียนลงแผ่น"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดในการแปลงแฟ้มภาพ JPEG: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr ""
+msgstr "ไม่รู้จักพื้นที่สี JPEG (%d)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
 msgid "_Default extension:"
-msgstr ""
+msgstr "_ส่วนขยายเริ่มต้น:"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
@@ -678,11 +681,11 @@ msgstr "จุดต่อนิ้ว"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
-msgstr ""
+msgstr "_รูปแบบ:"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr ""
+msgstr "แบบไ_ม่สูญเสียข้อมูล"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
@@ -698,7 +701,7 @@ msgstr "PNG"
 #: ../extensions/cairo_io/gth-image-saver-tiff.c:435
 #: ../pix/gth-buffer-data.c:84
 msgid "Insufficient memory"
-msgstr ""
+msgstr "หน่วยความจำไม่เพียงพอ"
 
 #: ../extensions/cairo_io/gth-image-saver-tga.c:344
 msgid "TGA"
@@ -711,7 +714,7 @@ msgstr "TIFF"
 #: ../extensions/cairo_io/gth-image-saver-webp.c:382
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:165
 msgid "WebP"
-msgstr ""
+msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
@@ -736,7 +739,7 @@ msgstr "ไม่ได้ระบุชื่อ"
 #: ../extensions/file_manager/actions.c:75
 #, c-format
 msgid "Invalid name. The following characters are not allowed: %s"
-msgstr ""
+msgstr "ชื่อที่ใช้ไม่ถูกต้อง ไม่อนุญาตให้ป้อนอักขระต่อไปนี้: %s"
 
 #: ../extensions/catalogs/actions.c:155 ../extensions/catalogs/actions.c:267
 #: ../extensions/catalogs/dlg-add-to-catalog.c:338
@@ -744,17 +747,17 @@ msgstr ""
 #: ../extensions/catalogs/gth-file-source-catalogs.c:508
 #: ../extensions/file_manager/actions.c:106
 msgid "Name already used"
-msgstr ""
+msgstr "ชื่อถูกใช้ไปแล้ว"
 
 #: ../extensions/catalogs/actions.c:178
 #: ../extensions/catalogs/dlg-add-to-catalog.c:359
 msgid "New catalog"
-msgstr ""
+msgstr "แคตตาล็อกใหม่"
 
 #: ../extensions/catalogs/actions.c:179
 #: ../extensions/catalogs/dlg-add-to-catalog.c:360
 msgid "Enter the catalog name:"
-msgstr ""
+msgstr "ป้อนขื่อแค็ตตาล็อก:"
 
 #: ../extensions/catalogs/actions.c:181 ../extensions/catalogs/actions.c:293
 #: ../extensions/catalogs/dlg-add-to-catalog.c:362
@@ -766,12 +769,12 @@ msgstr "_สร้าง"
 #: ../extensions/catalogs/actions.c:290
 #: ../extensions/catalogs/dlg-add-to-catalog.c:471
 msgid "New library"
-msgstr ""
+msgstr "ไลบรารีใหม่"
 
 #: ../extensions/catalogs/actions.c:291
 #: ../extensions/catalogs/dlg-add-to-catalog.c:472
 msgid "Enter the library name:"
-msgstr ""
+msgstr "ป้อนชื่อไลบรารี:"
 
 #: ../extensions/catalogs/actions.c:326
 msgid "Could not remove the catalog"
@@ -780,7 +783,7 @@ msgstr "ไม่สามารถลบแค็ตตาล็อก"
 #: ../extensions/catalogs/actions.c:363
 #, c-format
 msgid "Are you sure you want to remove \"%s\"?"
-msgstr ""
+msgstr "คุณแน่ใจหรือไม่ว่าคุณต้องการลบ \"%s\""
 
 #: ../extensions/catalogs/callbacks.c:102
 msgid "_Add to Catalog"
@@ -867,11 +870,11 @@ msgstr "แค็ตตาล็อก"
 
 #: ../extensions/catalogs/catalogs.extension.in.in.h:2
 msgid "Create file collections."
-msgstr ""
+msgstr "สร้างคอลเลกชันแฟ้ม"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
 msgid "Add to Catalog"
-msgstr ""
+msgstr "เพิ่มลงในแค็ตตาล็อก"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
 msgid "C_atalogs:"
@@ -994,7 +997,7 @@ msgstr "วันที่ถ่ายภาพ"
 #: ../extensions/catalogs/dlg-organize-files.c:139
 #: ../pix/gth-main-default-tests.c:292
 msgid "File modified date"
-msgstr ""
+msgstr "วันที่ปรับเปลี่ยนแฟ้ม"
 
 #: ../extensions/catalogs/dlg-organize-files.c:146
 #: ../extensions/comments/main.c:182
@@ -1004,7 +1007,7 @@ msgstr "ป้ายกำกับ"
 #: ../extensions/catalogs/dlg-organize-files.c:153
 #: ../pix/gth-main-default-tests.c:324
 msgid "Tag (embedded)"
-msgstr ""
+msgstr "แท็ก (ฝังตัว)"
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:45
 #: ../extensions/edit_metadata/callbacks.c:106
@@ -1015,28 +1018,28 @@ msgstr "ป้ายกำกับ"
 #: ../extensions/catalogs/gth-file-source-catalogs.c:953
 #, c-format
 msgid "The catalog '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "มีแค็ตตาล็อก '%s' อยู่แล้ว คุณต้องการเขียนทับแฟ้มเก่าหรือไม่"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:955
 #, c-format
 msgid "The library '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "มีไลบรารี '%s' อยู่แล้ว คุณต้องการเขียนทับแฟ้มเก่าหรือไม่"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:963
 msgid "Over_write"
-msgstr ""
+msgstr "เ_ขียนทับ"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1081
 msgid "Cannot move the files"
-msgstr ""
+msgstr "ไม่สามารถย้ายแฟ้มได้"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1083
 msgid "Cannot copy the files"
-msgstr ""
+msgstr "ไม่สามารถคัดลอกแฟ้มได้"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1088
 msgid "Invalid destination."
-msgstr ""
+msgstr "ปลายทางไม่ถูกต้อง"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1135
 #, c-format
@@ -1059,7 +1062,7 @@ msgstr "ฟอร์แมตของแฟ้มไม่ถูกต้อง
 #: ../extensions/catalogs/gth-organize-task.c:202
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr ""
+msgstr "การดำเนินการเสร็จสมบูรณ์ แค็ตตาล็อก: %d รูปภาพ: %d"
 
 #: ../extensions/change_date/callbacks.c:44
 msgid "Change _Date..."
@@ -1079,11 +1082,11 @@ msgstr "เปลี่ยนวันเวลาของแฟ้ม"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:1
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:2
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:3
 msgid "Change Date"
@@ -1131,7 +1134,7 @@ msgstr "ชั่วโมง"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:14
 msgid "minutes"
-msgstr ""
+msgstr "นาที"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:15
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
@@ -1140,11 +1143,11 @@ msgstr "วินาที"
 
 #: ../extensions/comments/callbacks.c:46
 msgid "Import Embedded Metadata"
-msgstr ""
+msgstr "นำเข้าข้อมูลเมตาที่ฝังตัว"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
-msgstr ""
+msgstr "นำเข้าข้อมูลเมตาที่เก็บไว้ภายในแฟ้มลงในระบบความคิดเห็นของ Pix"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1161,7 +1164,7 @@ msgstr "ปรับแต่ง"
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:2
 msgid "_Synchronize with the embedded metadata"
-msgstr ""
+msgstr "_ทำข้อมูลให้ตรงกับข้อมูลเมตาที่ฝังตัว"
 
 #: ../extensions/comments/main.c:35 ../extensions/edit_metadata/callbacks.c:100
 msgid "Comment"
@@ -1194,37 +1197,37 @@ msgstr "วันที่"
 
 #: ../extensions/comments/main.c:46 ../pix/gth-main-default-metadata.c:54
 msgid "Rating"
-msgstr ""
+msgstr "การจัดอันดับ"
 
 #: ../extensions/contact_sheet/callbacks.c:59
 msgid "Contact _Sheet"
-msgstr ""
+msgstr "แ_ผ่นรวมรูปขนาดย่อ"
 
 #: ../extensions/contact_sheet/callbacks.c:61
 msgid "Contact _Sheet..."
-msgstr ""
+msgstr "แผ่น_รวมรูปขนาดย่อ..."
 
 #: ../extensions/contact_sheet/callbacks.c:62
 msgid "Create a contact sheet"
-msgstr ""
+msgstr "สร้างแผ่นรวมรูปขนาดย่อ"
 
 #: ../extensions/contact_sheet/callbacks.c:65
 msgid "Image _Wall..."
-msgstr ""
+msgstr "_กำแพงรูปภาพ..."
 
 #: ../extensions/contact_sheet/callbacks.c:66
 msgid "Create an image-wall"
-msgstr ""
+msgstr "สร้างกำแพงรูปภาพ"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:1
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
 msgid "Contact Sheet"
-msgstr ""
+msgstr "แผ่นรวมรูปขนาดย่อ"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
-msgstr ""
+msgstr "สร้างรูปภาพดัชนีที่แสดงภาพตัวอย่างของแฟ้มที่เลือกไว้"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1238,7 +1241,7 @@ msgstr "ไม่มี"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
 msgid "Simple"
-msgstr ""
+msgstr "แบบง่าย"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
 msgid "Simple with shadow"
@@ -1254,15 +1257,15 @@ msgstr "ภาพนิ่ง"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
 msgid "Inward Shadow"
-msgstr ""
+msgstr "เงาที่เข้าด้านใน"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
 msgid "Outward Shadow"
-msgstr ""
+msgstr "เงาที่ออกด้านนอก"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
 msgid "Background"
-msgstr ""
+msgstr "ภาพพื้นหลัง"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
 msgid "_Solid color"
@@ -1278,20 +1281,20 @@ msgstr "เลือกสี"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
 msgid "Frame"
-msgstr ""
+msgstr "กรอบ"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
 msgid "_Style:"
-msgstr ""
+msgstr "รูปแ_บบ:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
 msgid "C_olor:"
-msgstr ""
+msgstr "_สี:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
 #: ../extensions/rename_series/dlg-rename-series.c:57
 msgid "Text"
-msgstr ""
+msgstr "ข้อความ"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
@@ -1303,7 +1306,7 @@ msgstr "_หัวกระดาษ:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
 msgid "Select a font"
-msgstr ""
+msgstr "เลือกแบบอักษร"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
@@ -1317,19 +1320,19 @@ msgstr "_ท้ายกระดาษ:"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:32
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:1
 msgid "Caption:"
-msgstr ""
+msgstr "คำอธิบายภาพ:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
 #: ../extensions/image_print/data/ui/print-layout.ui.h:5
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "The current page number"
-msgstr ""
+msgstr "หมายเลขหน้าปัจจุบัน"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
 #: ../extensions/image_print/data/ui/print-layout.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
 msgid "The total number of pages"
-msgstr ""
+msgstr "จำนวนหน้าทั้งหมด"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
@@ -1339,7 +1342,7 @@ msgstr ""
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
 msgid "Special code"
-msgstr ""
+msgstr "โค้ดพิเศษ"
 
 #. translate only the text in the curly brackets
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
@@ -1348,13 +1351,13 @@ msgstr ""
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
 #, no-c-format
 msgid "%D{ format }"
-msgstr ""
+msgstr "%D{ รูปแบบ }"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
 #: ../extensions/image_print/data/ui/print-layout.ui.h:12
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
 msgid "The current date"
-msgstr ""
+msgstr "วันที่ปัจจุบัน"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
@@ -1379,13 +1382,13 @@ msgstr "เลือกโฟลเดอร์ปลายทาง"
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
 msgid "File_name:"
-msgstr ""
+msgstr "ชื่อแ_ฟ้ม:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:8
 msgid "New enumerator digit"
-msgstr ""
+msgstr "เลขตัวระบุใหม่"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
 msgid "Create _HTML image map"
@@ -1393,27 +1396,27 @@ msgstr "สร้าง _HTML image map"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
 msgid "Create a new theme"
-msgstr ""
+msgstr "สร้างชุดรูปแบบใหม่"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
 msgid "Edit the selected theme"
-msgstr ""
+msgstr "แก้ไขชุดรูปแบบที่เลือก"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
 msgid "Delete the selected theme"
-msgstr ""
+msgstr "ลบชุดรูปแบบที่เลือก"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
 msgid "Theme"
-msgstr ""
+msgstr "ชุดรูปแบบ"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
 #: ../extensions/image_print/data/ui/print-layout.ui.h:16
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:26
 msgid "Columns:"
-msgstr ""
+msgstr "คอลัมน์:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
@@ -1425,7 +1428,7 @@ msgstr "จำนวนภาพในหนึ่งหน้า:"
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:28
 msgid "All images on a single page"
-msgstr ""
+msgstr "รูปภาพทั้งหมดในหน้าเดียว"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
 msgid "_All pages with the same size"
@@ -1447,43 +1450,43 @@ msgstr "เ_รียง:"
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:14
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
 msgid "Re_verse order"
-msgstr ""
+msgstr "เรียงย้อน_กลับ"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:30
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:15
 msgid "_Size:"
-msgstr ""
+msgstr "_ขนาด:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:31
 msgid "Sq_uared"
-msgstr ""
+msgstr "_วางเป็นรูปสี่เหลี่ยม"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:33
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:16
 msgid "Thumbnails"
-msgstr ""
+msgstr "ภาพตัวอย่าง"
 
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
 msgid "Image Wall"
-msgstr ""
+msgstr "กำแพงรูปภาพ"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:482
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:493
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:507
 msgid "Could not save the theme"
-msgstr ""
+msgstr "ไม่สามารถบันทึกชุดรูปแบบได้"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:652
 msgid "Could not delete the theme"
-msgstr ""
+msgstr "ไม่สามารถลบชุดรูปแบบได้"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:247
 msgid "Creating images"
-msgstr ""
+msgstr "กำลังสร้างรูปภาพ"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:896
 msgid "Generating thumbnails"
-msgstr ""
+msgstr "กำลังสร้างภาพตัวอย่าง"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:32
 msgid "Header"
@@ -1491,19 +1494,19 @@ msgstr "หัวกระดาษ"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:33
 msgid "Footer"
-msgstr ""
+msgstr "ส่วนท้าย"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:193
 msgid "Theme Properties"
-msgstr ""
+msgstr "คุณสมบัติชุดรูปแบบ"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:208
 msgid "Copy _From"
-msgstr ""
+msgstr "_คัดลอกจาก"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:316
 msgid "New theme"
-msgstr ""
+msgstr "ชุดรูปแบบใหม่"
 
 #: ../extensions/convert_format/callbacks.c:45
 msgid "Convert Format..."
@@ -1537,7 +1540,7 @@ msgstr "ตำแหน่งปลายทาง"
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:5
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:8
 msgid "_Use the original image folder"
-msgstr ""
+msgstr "ใ_ช้โฟลเดอร์รูปภาพต้นฉบับ"
 
 #: ../extensions/convert_format/dlg-convert-format.c:95
 msgid "Converting images"
@@ -1550,7 +1553,7 @@ msgstr "ไม่สามารถแสดงคุณสมบัติภา
 #: ../extensions/desktop_background/actions.c:287
 #: ../extensions/desktop_background/actions.c:305
 msgid "Could not set the desktop background"
-msgstr ""
+msgstr "ไม่สามารถตั้งค่าภาพพื้นหลังของเดสก์ท็อปได้"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
@@ -1569,31 +1572,31 @@ msgstr "พื้นหลังพื้นโต๊ะ"
 msgid ""
 "Are you sure you want to permanently delete the metadata of the selected "
 "files?"
-msgstr ""
+msgstr "คุณแน่ใจหรือไม่ว่าคุณต้องการลบข้อมูลเมตาของแฟ้มที่เลือกไว้"
 
 #: ../extensions/edit_metadata/actions.c:73
 msgid "If you delete the metadata, it will be permanently lost."
-msgstr ""
+msgstr "ถ้าคุณลบข้อมูลเมตา ข้อมูลเหล่านั้นจะสูญหายอย่างถาวร"
 
 #: ../extensions/edit_metadata/callbacks.c:97
 msgid "T_ags"
-msgstr ""
+msgstr "แ_ท็ก"
 
 #: ../extensions/edit_metadata/callbacks.c:101
 msgid "Edit the comment and other information of the selected files"
-msgstr ""
+msgstr "แก้ไขคำอธิบายและข้อมูลอื่นๆ ของแฟ้มที่เลือกไว้"
 
 #: ../extensions/edit_metadata/callbacks.c:107
 msgid "Set the tags of the selected files"
-msgstr ""
+msgstr "ตั้งค่าแท็กของแฟ้มที่เลือกไว้"
 
 #: ../extensions/edit_metadata/callbacks.c:112
 msgid "Delete Metadata"
-msgstr ""
+msgstr "ลบข้อมูลเมตา"
 
 #: ../extensions/edit_metadata/callbacks.c:113
 msgid "Delete the comment and the embedded metadata of the selected files"
-msgstr ""
+msgstr "ลบคำอธิบายและข้อมูลเมตาที่ฝังตัวของแฟ้มที่เลือกไว้"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:6
@@ -1633,7 +1636,7 @@ msgstr "แก้ไขข้อมูลกำกับ"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
 msgid "Allow to edit files metadata."
-msgstr ""
+msgstr "อนุญาตให้แก้ไขข้อมูลเมตาของแฟ้มได้"
 
 #. Translators: the %s symbol in the string is a file name
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:63
@@ -1648,17 +1651,16 @@ msgstr "ข้อมูลกำกับ %s"
 #, c-format
 msgid "%d file"
 msgid_plural "%d files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "แฟ้ม %d รายการ"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:144
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:197
 msgid "Sa_ve and Close"
-msgstr ""
+msgstr "_บันทึกและปิด"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:156
 msgid "Save only cha_nged fields"
-msgstr ""
+msgstr "บันทึกเฉพาะเขตข้อมูลที่ทำการเ_ปลี่ยนแปลง"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:555
 msgid "No date"
@@ -1689,24 +1691,24 @@ msgstr "ไม่เปลี่ยนแปลง"
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:80
 #, c-format
 msgid "%s Tags"
-msgstr ""
+msgstr "แท็กของ %s"
 
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:189
 msgid "Assign Tags"
-msgstr ""
+msgstr "กำหนดแท็ก"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 #: ../extensions/edit_metadata/gth-tag-task.c:136
 msgid "Assigning tags to the selected files"
-msgstr ""
+msgstr "กำลังกำหนดแท็กให้กับแฟ้มที่เลือกไว้"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 msgid "Writing files"
-msgstr ""
+msgstr "กำลังเขียนแฟ้ม"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:136
 msgid "Reading files"
-msgstr ""
+msgstr "กำลังอ่านแฟ้ม"
 
 #: ../extensions/example/src/example.extension.in.in.h:1
 msgid "Example"
@@ -1747,7 +1749,7 @@ msgstr "ชื่อ_อ็อบเจกต์:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
 msgid "Byline _Title:"
-msgstr ""
+msgstr "_หัวเรื่องของชื่อผู้เขียน:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
 msgid "_Byline:"
@@ -1763,7 +1765,7 @@ msgstr "_ภาษา:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
 msgid "State/Province:"
-msgstr ""
+msgstr "รัฐ/จังหวัด:"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
 msgid "EXIF, IPTC, XMP support"
@@ -1823,7 +1825,7 @@ msgstr "วันที่ถ่ายภาพ"
 
 #: ../extensions/export_tools/callbacks.c:99
 msgid "Share"
-msgstr ""
+msgstr "แบ่งปัน"
 
 #: ../extensions/facebook/callbacks.c:59 ../extensions/facebook/callbacks.c:64
 msgid "Face_book..."
@@ -1831,7 +1833,7 @@ msgstr "Face_book..."
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr ""
+msgstr "ดาวน์โหลดรูปภาพจาก Facebook"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
@@ -1876,7 +1878,7 @@ msgstr "เพิ่มอัลบั้มใหม่"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:7
 msgid "Resize the images if larger than this size"
-msgstr ""
+msgstr "ปรับขนาดรูปภาพใหม่ถ้ามีขนาดใหญ่กว่านี้"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:8
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
@@ -1888,7 +1890,7 @@ msgstr "_ลดขนาดถ้ารูปใหญ่เกิน:"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:9
 msgid "720 x 720"
-msgstr ""
+msgstr "720 x 720"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:10
 msgid "1024 x 1024"
@@ -1900,11 +1902,11 @@ msgstr "1280 x 1280"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:12
 msgid "1600 x 1600"
-msgstr ""
+msgstr "1600 x 1600"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:13
 msgid "2048 x 2048"
-msgstr ""
+msgstr "2048 x 2048"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:1
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
@@ -2006,7 +2008,7 @@ msgstr "อัลบั้มใหม่"
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:607
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:597
 msgid "No valid file selected."
-msgstr ""
+msgstr "ไม่ได้เลือกแฟ้มที่ใช้ได้"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:558
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:584
@@ -2070,7 +2072,7 @@ msgstr "อัปโหลดรูปภาพไปยัง Facebook"
 #: ../extensions/photobucket/photobucket-service.c:310
 #: ../extensions/picasaweb/picasa-web-service.c:711
 msgid "Getting the album list"
-msgstr ""
+msgstr "กำลังรับรายชื่ออัลบั้ม"
 
 #: ../extensions/facebook/facebook-service.c:616
 #: ../extensions/flicker_utils/flickr-service.c:965
@@ -2109,15 +2111,15 @@ msgstr "กำลังอัปโหลดแฟ้มไปยังเซิ
 #: ../extensions/flicker_utils/flickr-service.c:1651
 #: ../extensions/picasaweb/picasa-web-service.c:1257
 msgid "Getting the photo list"
-msgstr ""
+msgstr "กำลังรับรายชื่อรูปภาพ"
 
 #: ../extensions/file_manager/actions.c:133
 msgid "New folder"
-msgstr ""
+msgstr "โฟลเดอร์ใหม่"
 
 #: ../extensions/file_manager/actions.c:134
 msgid "Enter the folder name:"
-msgstr ""
+msgstr "ป้อนชื่อโฟลเดอร์:"
 
 #: ../extensions/file_manager/actions.c:400
 #: ../extensions/file_manager/callbacks.c:380
@@ -2171,19 +2173,19 @@ msgstr "ถ้าคุณลบแฟ้ม แฟ้มก็จะสูญ�
 
 #: ../extensions/file_manager/actions.c:919
 msgid "Move To"
-msgstr ""
+msgstr "ย้ายไปที่"
 
 #: ../extensions/file_manager/actions.c:919
 msgid "Copy To"
-msgstr ""
+msgstr "คัดลอกไปที่"
 
 #: ../extensions/file_manager/actions.c:923
 msgid "Move"
-msgstr ""
+msgstr "ย้าย"
 
 #: ../extensions/file_manager/actions.c:923
 msgid "Copy"
-msgstr ""
+msgstr "คัดลอก"
 
 #: ../extensions/file_manager/callbacks.c:163
 #: ../extensions/file_manager/callbacks.c:199
@@ -2244,28 +2246,28 @@ msgstr "แ_ปะลงในโฟลเดอร์"
 #: ../extensions/file_manager/callbacks.c:227
 #: ../extensions/file_manager/callbacks.c:236
 msgid "Copy to..."
-msgstr ""
+msgstr "คัดลอกไปที่..."
 
 #: ../extensions/file_manager/callbacks.c:228
 msgid "Copy the selected folder to another folder"
-msgstr ""
+msgstr "คัดลอกโฟลเดอร์ที่เลือกไปยังอีกโฟลเดอร์หนึ่ง"
 
 #: ../extensions/file_manager/callbacks.c:231
 #: ../extensions/file_manager/callbacks.c:240
 msgid "Move to..."
-msgstr ""
+msgstr "ย้ายไปที่..."
 
 #: ../extensions/file_manager/callbacks.c:232
 msgid "Move the selected folder to another folder"
-msgstr ""
+msgstr "ย้ายโฟลเดอร์ที่เลือกไปยังอีกโฟลเดอร์หนึ่ง"
 
 #: ../extensions/file_manager/callbacks.c:237
 msgid "Copy the selected files to another folder"
-msgstr ""
+msgstr "คัดลอกแฟ้มที่เลือกไปยังอีกโฟลเดอร์หนึ่ง"
 
 #: ../extensions/file_manager/callbacks.c:241
 msgid "Move the selected files to another folder"
-msgstr ""
+msgstr "ย้ายแฟ้มที่เลือกไปยังอีกโฟลเดอร์หนึ่ง"
 
 #: ../extensions/file_manager/callbacks.c:999
 #: ../extensions/find_duplicates/gth-find-duplicates.c:766
@@ -2280,7 +2282,7 @@ msgstr "โปรแกรมจัดการแฟ้ม"
 
 #: ../extensions/file_manager/file_manager.extension.in.in.h:2
 msgid "File manager operations."
-msgstr ""
+msgstr "การดำเนินการของตัวจัดการแฟ้ม"
 
 #: ../extensions/file_manager/gth-delete-task.c:62
 msgid "Deleting files"
@@ -2289,7 +2291,7 @@ msgstr "กำลังลบแฟ้ม"
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:5
 msgid "_Preview"
-msgstr ""
+msgstr "แ_สดงตัวอย่าง"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
 msgid "B_rightness:"
@@ -2346,15 +2348,15 @@ msgstr "ควา_มสูง:"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:4
 msgid "_Position:"
-msgstr ""
+msgstr "_ตำแหน่ง:"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:5
 msgid "Maximize"
-msgstr ""
+msgstr "ขยายใหญ่สุด"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:6
 msgid "Center"
-msgstr ""
+msgstr "กึ่งกลาง"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:7
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:5
@@ -2369,12 +2371,12 @@ msgstr "กลั_บค่าสัดส่วนของรูปภาพ"
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "_ผลคูณของ:"
 
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
 msgid "px"
-msgstr ""
+msgstr "พิกเซล"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:13
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:7
@@ -2393,19 +2395,19 @@ msgstr "ค_รอบตัด"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:1
 msgid "Method"
-msgstr ""
+msgstr "วิธีการ"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:2
 msgid "_Brightness"
-msgstr ""
+msgstr "_ความสว่าง"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:3
 msgid "_Saturation"
-msgstr ""
+msgstr "ค_วามเข้ม"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:4
 msgid "_Average"
-msgstr ""
+msgstr "ค่าเ_ฉลี่ย"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
 #: ../pix/gth-main-default-metadata.c:47
@@ -2414,7 +2416,7 @@ msgstr "ขนาดกว้างยาว"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:4
 msgid "Set the image size to this value"
-msgstr ""
+msgstr "ตั้งค่าขนาดของรูปภาพเป็นค่านี้"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:8
 msgid "High _quality"
@@ -2422,15 +2424,15 @@ msgstr "คุณ_ภาพสูง"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:9
 msgid "Original dimensions:"
-msgstr ""
+msgstr "ขนาดดั้งเดิม:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:10
 msgid "Scale factor:"
-msgstr ""
+msgstr "ตัวคูณสเกล:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:11
 msgid "New dimensions:"
-msgstr ""
+msgstr "ขนาดใหม่:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:12
 #: ../extensions/image_print/data/ui/print-layout.ui.h:29
@@ -2445,77 +2447,79 @@ msgstr "%"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
 msgid "Angle"
-msgstr ""
+msgstr "มุม"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
 msgid "Align"
-msgstr ""
+msgstr "การจัดเรียง"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
 msgid "Image size"
-msgstr ""
+msgstr "ขนาดรูปภาพ"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
 msgid "Point 1:"
-msgstr ""
+msgstr "จุด 1:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
 msgid "Point 2:"
-msgstr ""
+msgstr "จุด 2:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "คงสัดส่วนเดิมของภาพไว้"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
 msgid "Grid:"
-msgstr ""
+msgstr "เส้นตาราง:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
 msgid "_Background:"
-msgstr ""
+msgstr "_พื้นหลัง:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
 msgid "Pick a background color"
-msgstr ""
+msgstr "เลือกสีพื้นหลัง"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
 msgid "_Transparent"
-msgstr ""
+msgstr "ความโ_ปร่งใส"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
 msgid "Reset"
-msgstr ""
+msgstr "รีเซ็ต"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
 msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
 msgstr ""
+"วาดเส้นบนรูปภาพ \n"
+"เพื่อตั้งค่าการจัดเรียง"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
 msgid "Parallel"
-msgstr ""
+msgstr "ขนาน"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:16
 msgid "Perpendicular"
-msgstr ""
+msgstr "ตั้งฉาก"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
 msgid "Alignment"
-msgstr ""
+msgstr "การจัดเรียง"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
 msgid "Original size"
-msgstr ""
+msgstr "ขนาดดั้งเดิม"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
 msgid "Bounding box"
-msgstr ""
+msgstr "กล่องแสดงขอบเขต"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
 msgid "Crop borders"
-msgstr ""
+msgstr "ขอบครอบตัด"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:28
@@ -2524,15 +2528,15 @@ msgstr "ดู_ตัวอย่าง:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
 msgid "Threshold:"
-msgstr ""
+msgstr "จุดเริ่มต้น:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
 msgid "Radius:"
-msgstr ""
+msgstr "รัศมี:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
 msgid "Amount:"
-msgstr ""
+msgstr "ผลรวม:"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
@@ -2559,7 +2563,7 @@ msgstr "ปรับสี"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr ""
+msgstr "เปลี่ยนความสว่าง ความเปรียบต่าง ความเข้ม และระดับแกมมาของรูปภาพ"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"

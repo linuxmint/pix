@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-08-17 19:43+0000\n"
+"PO-Revision-Date: 2017-03-30 11:13+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <Unknown>\n"
 "Language-Team: catalan <tradgnome@softcatala.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-12 12:17+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2017-05-06 12:42+0000\n"
+"X-Generator: Launchpad (build 18366)\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -147,8 +147,8 @@ msgstr "Els valors possibles són: white, black, checked, none."
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
 msgstr ""
-"Indica si cal restablir la posició de les barres de desplaçament al canviar "
-"la imatge"
+"Indica si cal restablir la posició de les barres de desplaçament després del "
+"canvi d'imatge"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
@@ -250,7 +250,7 @@ msgstr "Mida:"
 
 #: ../data/ui/overwrite-dialog.ui.h:5
 msgid "Modified:"
-msgstr "Modificat:"
+msgstr "Modificació:"
 
 #: ../data/ui/overwrite-dialog.ui.h:6
 msgid "New File:"
@@ -306,11 +306,11 @@ msgstr "Estil de la _barra d'eines:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "T_humbnails in viewer:"
-msgstr "Miniatures en el visor:"
+msgstr "Minia_tures al visualitzador:"
 
 #: ../data/ui/preferences.ui.h:6
 msgid "System settings"
-msgstr "Paràmetres de configuració del sistema"
+msgstr "Ajusts del sistema"
 
 #: ../data/ui/preferences.ui.h:7
 msgid "Text below icons"
@@ -338,7 +338,7 @@ msgstr "al costat"
 
 #: ../data/ui/preferences.ui.h:13
 msgid "File _properties in browser:"
-msgstr "_Propietats de l'arixu en el visor:"
+msgstr "_Propietats del fitxer al navegador:"
 
 #: ../data/ui/preferences.ui.h:14
 msgid "Appearance"
@@ -358,15 +358,15 @@ msgstr "Seleccioneu la carpeta que es mostrarà a l'inici"
 
 #: ../data/ui/preferences.ui.h:18
 msgid "Set to C_urrent"
-msgstr "Ajusta a l'act_ual"
+msgstr "Estableix a l'act_ual"
 
 #: ../data/ui/preferences.ui.h:19
 msgid "_Reuse the active window to open files"
-msgstr "_Reutilitzar la finestra activa per obrir fitxers"
+msgstr "_Reutilitza la finestra activa per obrir fitxers"
 
 #: ../data/ui/preferences.ui.h:20
 msgid "On startup:"
-msgstr "En iniciar:"
+msgstr "A l'inici:"
 
 #: ../data/ui/preferences.ui.h:21
 msgid "As_k confirmation before deleting files or catalogs"
@@ -444,7 +444,7 @@ msgstr "256"
 
 #: ../data/ui/preferences.ui.h:37
 msgid "D_etermine image type from content (slower)"
-msgstr "D_etermina el tipus d'imatge en funció dels continguts (més lent)"
+msgstr "D_etermina el tipus d'imatge en funció del contingut (més lent)"
 
 #: ../data/ui/preferences.ui.h:38 ../pix/dlg-preferences-extensions.c:71
 #: ../pix/gth-browser-actions-entries.h:179
@@ -487,7 +487,7 @@ msgstr "Marcadors"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:2
 msgid "Add bookmarks support."
-msgstr "Afegeix suport per a marcadors."
+msgstr "Afegeix compatibilitat per als marcadors."
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:3
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:3
@@ -529,7 +529,7 @@ msgstr "Marcadors del _sistema"
 
 #: ../extensions/bookmarks/callbacks.c:58
 msgid "_Add Bookmark"
-msgstr "_Afegeix marcador"
+msgstr "_Afegeix el marcador"
 
 #: ../extensions/bookmarks/callbacks.c:59
 msgid "Add current location to bookmarks"
@@ -573,7 +573,7 @@ msgstr "Disc _òptic"
 
 #: ../extensions/burn_disc/callbacks.c:56
 msgid "Write files to an optical disc"
-msgstr "Escriu fitxer a un disc òptic."
+msgstr "Escriu fitxers a un disc òptic."
 
 #: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
 msgid "Disc Name"
@@ -685,7 +685,7 @@ msgstr "_Mètode:"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr "_Sense pèrdues"
+msgstr "_Sense pèrdua"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
@@ -925,7 +925,7 @@ msgstr "Organitza els fitxers"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
 msgid "Organizing files"
-msgstr "Organitzar fitxers"
+msgstr "Organització dels fitxers"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
 msgid "Organization:"
@@ -1057,7 +1057,7 @@ msgstr "No s'han pogut treure els fitxers del catàleg"
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
-msgstr "Format de fitxers incorrecte"
+msgstr "El format de fitxer no és vàlid"
 
 #: ../extensions/catalogs/gth-organize-task.c:202
 #, c-format
@@ -1078,7 +1078,7 @@ msgstr "Canvia la data"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:2
 msgid "Change the files date"
-msgstr "Canvia la data dels fitxerr"
+msgstr "Canvia la data dels fitxers"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:1
 msgid "+"
@@ -1122,7 +1122,7 @@ msgstr "Darta de c_reació del fitxer"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:11
 msgid "Date p_hoto was taken"
-msgstr "Data en que es va _fer la foto"
+msgstr "Data en què es va _fer la foto"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:12
 msgid "A_djust by"
@@ -1148,7 +1148,7 @@ msgstr "Importa les metadades incrustades"
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
 msgstr ""
-"Importaa les metadades emmagatzemats dins dels fitxers cap al sistema de "
+"Importa les metadades emmagatzemats dins dels fitxers cap al sistema de "
 "comentaris de Pix"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
@@ -1560,7 +1560,7 @@ msgstr "No s'ha pogut establir el fons d'escriptori"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
-msgstr "Estableix un fons d'escriptori"
+msgstr "Estableix com a fons d'escriptori"
 
 #: ../extensions/desktop_background/callbacks.c:50
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
@@ -1642,7 +1642,7 @@ msgstr "Edita les metadades"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
 msgid "Allow to edit files metadata."
-msgstr "Permet editar les metadades dels arxius."
+msgstr "Permet editar les metadades dels fitxers."
 
 #. Translators: the %s symbol in the string is a file name
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:63
@@ -1744,7 +1744,7 @@ msgstr "Cr_èdit:"
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
 msgid "_Source:"
-msgstr "_Font:"
+msgstr "Ori_gen:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
 msgid "_Urgency:"
@@ -1768,7 +1768,7 @@ msgstr "Pobla_ció:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
 msgid "_Language:"
-msgstr "_Llengua:"
+msgstr "_Idioma:"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
 msgid "State/Province:"
@@ -1776,7 +1776,7 @@ msgstr "Estat/província:"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
 msgid "EXIF, IPTC, XMP support"
-msgstr "Suport EXIF, IPTC, XMP"
+msgstr "Compatibilitat per EXIF, IPTC, XMP"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:2
 msgid "Read and write exif, iptc and xmp metadata."
@@ -1948,7 +1948,7 @@ msgstr "S'han pujat amb èxit els fitxers al servidor."
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:2
 #: ../extensions/webalbums/gth-web-exporter.c:1841
 msgid "_Open in the Browser"
-msgstr "_Obre el navegador"
+msgstr "_Obre-ho al navegador"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:1
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
@@ -2133,7 +2133,7 @@ msgstr "Entreu el nom de la carpeta:"
 #: ../extensions/file_manager/callbacks.c:380
 #: ../extensions/file_manager/callbacks.c:838
 msgid "Could not move the files"
-msgstr "No s'ha pogut moure els fitxers"
+msgstr "No s'han pogut moure els fitxers"
 
 #: ../extensions/file_manager/actions.c:401
 #: ../extensions/file_manager/callbacks.c:381
@@ -2175,7 +2175,7 @@ msgstr "No s'ha pogut moure la carpeta a la paperera"
 #: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Segur que voleu suprimir \"%s\" definitivament?"
+msgstr "Esteu segur que voleu suprimir permanentment «%s»?"
 
 #: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
 msgid "If you delete a file, it will be permanently lost."
@@ -2477,7 +2477,7 @@ msgstr "Punt 2:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
 msgid "Keep aspect ratio"
-msgstr "Manté la relació d'aspecte"
+msgstr "Mantén la relació d'aspecte"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
 msgid "Grid:"
@@ -2565,11 +2565,11 @@ msgstr "Aplicant els canvis"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:618
 msgid "Adjust Colors..."
-msgstr "Ajusta colors..."
+msgstr "Ajusta els colors..."
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:618
 msgid "Adjust Colors"
-msgstr "Ajusta colors"
+msgstr "Ajusta els colors"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
@@ -2578,7 +2578,7 @@ msgstr ""
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
-msgstr "Ajusta contrast"
+msgstr "Ajusta el contrast"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:305
 msgid "Automatic contrast adjustment"
@@ -2706,7 +2706,7 @@ msgstr "Escala de grisos"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:87
 msgid "Mirror"
-msgstr "Reflecteix en un mirall"
+msgstr "Reflecteix"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:88
 msgid "Mirror the image horizontally"
@@ -2837,7 +2837,7 @@ msgstr "_Filtre:"
 
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:2
 msgid "Find duplicated files."
-msgstr "Troba fitxers duplicats."
+msgstr "Troba els fitxers duplicats."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
@@ -3066,11 +3066,11 @@ msgstr "Trieu una carpeta"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:1
 msgid "Audio/Video support"
-msgstr "Suport d'audio/video"
+msgstr "Compatibilitat per àudio/vídeo"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:2
 msgid "Play audio and video files."
-msgstr "Reprodueix fitxer d'audio i vídeo"
+msgstr "Reprodueix els fitxers d'audio i de vídeo"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:104
 msgid "Screenshot"
@@ -3221,19 +3221,19 @@ msgstr "polzades"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:4
 msgid "Select Caption Font"
-msgstr "Trieu la font del text"
+msgstr "Seleccioneu el tipus de lletra de l'etiqueta"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:5
 msgid "Select Header Font"
-msgstr "Trieu la font de la capçalera"
+msgstr "Seleccioneu el tipus de lletra de la capçalera"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:6
 msgid "Select Footer Font"
-msgstr "Trieu la font del peu"
+msgstr "Seleccioneu el tipus de lletra del peu"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:7
 msgid "Fonts"
-msgstr "Tipus de lletra"
+msgstr "Tipus de lletres"
 
 #: ../extensions/image_print/gth-image-print-job.c:914
 #: ../extensions/webalbums/data/albumthemes/text.h:31
@@ -3364,7 +3364,7 @@ msgstr "Posa amb la mida actual"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
 msgid "Keep previous zoom"
-msgstr "Conserva l'ampliació anterior"
+msgstr "Mantén el zoom anterior"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
 msgid "Fit to window"
@@ -3380,7 +3380,7 @@ msgstr "Ajusta a l'amplada"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
 msgid "Fit to width if larger"
-msgstr "Si és més gran ajusta a l'ample de pàgina"
+msgstr "Si és més gran ajusta a l'amplada de la pàgina"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
 msgid "Reset scrollbar positions"
@@ -3440,19 +3440,19 @@ msgstr "Enganxa la imatge del porta-retalls"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:189
 msgid "In"
-msgstr "A dins"
+msgstr "Apropa"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:190
 msgid "Zoom in"
-msgstr "Apropa"
+msgstr "Augmenta el zoom"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:194
 msgid "Out"
-msgstr "Fora"
+msgstr "Allunya"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:195
 msgid "Zoom out"
-msgstr "Allunya"
+msgstr "Redueix el zoom"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:199
 msgid "1:1"
@@ -3468,19 +3468,19 @@ msgstr "Ajusta"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:205
 msgid "Zoom to fit window"
-msgstr "Amplia per ajustar a la finestra"
+msgstr "Zoom per ajustar a la finestra"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:210
 msgid "Zoom to fit width"
-msgstr "Amplia per ajustar a la finestra"
+msgstr "Zoom per ajustar a l'amplada"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
 msgid "Image viewer"
-msgstr "Visor d'imatges"
+msgstr "Visualitzador d'imatges"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
 msgid "Basic image viewing."
-msgstr "Vista d'imatge bàsica."
+msgstr "Visualització bàsica d'imatges."
 
 #: ../extensions/image_viewer/preferences.c:125
 msgid "Viewer"
@@ -3575,7 +3575,7 @@ msgstr "No s'han pogut esborrar els fitxers"
 
 #: ../extensions/importer/gth-import-task.c:645
 msgid "Delete operation not supported."
-msgstr "Operació d'esborrat no suportada."
+msgstr "L'operació de supressió no està suportada."
 
 #: ../extensions/importer/gth-import-task.c:732
 msgid "Last imported"
@@ -3731,7 +3731,7 @@ msgstr "Edita l’ordre"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:461
 msgid "Are you sure you want to delete the selected command?"
-msgstr "Segur que voleu suprimir permanentment l'ordre seleccionada?"
+msgstr "Esteu segur que voleu suprimir permanentment l'ordre seleccionada?"
 
 #: ../extensions/list_tools/gth-script.c:610
 msgid "Enter a value:"
@@ -4054,7 +4054,7 @@ msgstr "Puja imatges a àlbums web de Picasa"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
-msgstr "Suport per a formats raw"
+msgstr "Compatibilitat per als formats raw"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:2
 msgid "Allow to load raw format images."
@@ -4070,11 +4070,11 @@ msgstr "_Y:"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal..."
-msgstr "Elimina ulls vermells..."
+msgstr "Eliminació dels ulls vermells..."
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal"
-msgstr "Elimina ulls vermells"
+msgstr "Eliminació dels ulls vermells"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:511
 msgid "Remove the red eye effect caused by camera flashes"
@@ -4083,11 +4083,11 @@ msgstr ""
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
 msgid "Red-eye removal"
-msgstr "Elimina ulls vermells"
+msgstr "Eliminació dels ulls vermells"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
 msgid "Tool to remove the red-eye effect from a photo."
-msgstr "Eina per eliminar els ulls vermells en una foto"
+msgstr "Eina per eliminar els ulls vermells d'una foto"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:1
 msgid "digits"
@@ -4139,11 +4139,11 @@ msgstr "%M{ format }"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:17
 msgid "The modification date"
-msgstr "Data de modificació"
+msgstr "La data de modificació"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:21
 msgid "The digitalization date"
-msgstr "Data de digitalització"
+msgstr "La data de digitalització"
 
 #. translate only the text in the curly brackets
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:24
@@ -4210,7 +4210,7 @@ msgstr "Nom nou"
 
 #: ../extensions/rename_series/dlg-rename-series.c:951
 msgid "Keep original case"
-msgstr "Manté majúscules originals"
+msgstr "Mantén les majúscules originals"
 
 #: ../extensions/rename_series/dlg-rename-series.c:952
 msgid "Convert to lower-case"
@@ -4267,7 +4267,7 @@ msgstr "píxel"
 
 #: ../extensions/resize_images/dlg-resize-images.c:423
 msgid "Keep the original format"
-msgstr "Manté el format original:"
+msgstr "Mantén el format original:"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:1
 msgid "Resize images"
@@ -4333,7 +4333,7 @@ msgstr "Eina de cerca de fitxers"
 
 #: ../extensions/selections/callbacks.c:77
 msgid "Add to _Selection"
-msgstr "Afegeix a la _Selecció"
+msgstr "Afegeix a la _selecció"
 
 #: ../extensions/selections/callbacks.c:86
 msgid "Selection 1"
@@ -4374,14 +4374,14 @@ msgstr "Pre_sentació"
 
 #: ../extensions/slideshow/callbacks.c:57
 msgid "View as a slideshow"
-msgstr "Veure com a presentació"
+msgstr "Visualitza-ho com una presentació de diapositives"
 
 #: ../extensions/slideshow/callbacks.c:410
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
 #: ../extensions/slideshow/preferences.c:162
 #: ../extensions/slideshow/slideshow.extension.in.in.h:1
 msgid "Slideshow"
-msgstr "Presentació"
+msgstr "Presentació de diapositives"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
 msgid "_Personalize"
@@ -4418,7 +4418,7 @@ msgstr "Elimina els archius sel·leccionats"
 
 #: ../extensions/slideshow/gth-slideshow.c:233
 msgid "Playing slideshow"
-msgstr "Mostrant presentació"
+msgstr "Reproducció de la presentació de diapositives"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:184
 msgid "Choose the files to play"
@@ -4466,7 +4466,7 @@ msgstr "Cub des de baix"
 
 #: ../extensions/slideshow/slideshow.extension.in.in.h:2
 msgid "View images as a slideshow."
-msgstr "Veure imatges com a presentació de diapositives"
+msgstr "Visualitza les imatges com una presentació de diapositives"
 
 #: ../extensions/webalbums/callbacks.c:71
 msgid "_Web Album..."
@@ -4663,7 +4663,7 @@ msgstr "Desactivat"
 
 #: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
-msgstr "Visors"
+msgstr "Visualitzadors"
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
@@ -4888,11 +4888,11 @@ msgstr "Visualitza la imatge següent"
 
 #: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
-msgstr "Canvia a pantalla sencera"
+msgstr "Canvia a pantalla completa"
 
 #: ../pix/gth-browser-actions-entries.h:138
 msgid "Leave Fullscreen"
-msgstr "Surt de pantalla sencera"
+msgstr "Abandona la pantalla completa"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
@@ -4932,7 +4932,7 @@ msgstr "Mostrar informació sobre pix"
 
 #: ../pix/gth-browser-actions-entries.h:191
 msgid "Contents"
-msgstr "Continguts"
+msgstr "Contingut"
 
 #: ../pix/gth-browser-actions-entries.h:192
 msgid "Display the pix Manual"
@@ -4986,11 +4986,11 @@ msgstr "Mostra o amaga la barra lateral d'aquesta finestra"
 
 #: ../pix/gth-browser-actions-entries.h:232
 msgid "_Thumbnail Pane"
-msgstr "Panell de minia_tures"
+msgstr "Plafó de minia_tures"
 
 #: ../pix/gth-browser-actions-entries.h:233
 msgid "View or hide the thumbnail pane in viewer mode"
-msgstr "Mostrar o amagar el panell de miniatures en mode visor"
+msgstr "Mostra o oculta el plafó de miniatures al mode visualitzador"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
@@ -5066,7 +5066,7 @@ msgstr "No s'ha pogut canviar el nom"
 
 #: ../pix/gth-browser.c:3452 ../pix/gth-main-default-metadata.c:41
 msgid "Modified"
-msgstr "Modificat"
+msgstr "Modificació"
 
 #: ../pix/gth-browser.c:3843 ../pix/gth-browser.c:3861
 msgid "View the list of visited locations"
@@ -5123,7 +5123,7 @@ msgstr "No s'han pogut moure els fitxers a la paperera"
 #: ../pix/gth-file-source-vfs.c:797
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
-msgstr "Segur que voleu moure \"%s\" a la paperera?"
+msgstr "Esteu segur que voleu moure «%s» a la paperera?"
 
 #: ../pix/gth-file-source-vfs.c:801
 #, c-format
@@ -5139,9 +5139,9 @@ msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
 msgstr[0] ""
-"Esteu segur que voleu esborrar permanentment el fitxer seleccionat?"
+"Esteu segur que voleu suprimir permanentment el fitxer seleccionat?"
 msgstr[1] ""
-"Esteu segur que voleu esborrar permanentment els fitxers seleccionats?"
+"Esteu segur que voleu suprimir permanentment els fitxers seleccionats?"
 
 #: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
@@ -5291,7 +5291,7 @@ msgstr "Tots els fitxers"
 
 #: ../pix/gth-main-default-tests.c:261
 msgid "Media"
-msgstr "Suport"
+msgstr "Mitjà"
 
 #: ../pix/gth-main-default-tests.c:268
 msgid "Text Files"
@@ -5511,4 +5511,4 @@ msgstr "Mostra la versió"
 
 #: ../pix/main.c:483
 msgid "- Image browser and viewer"
-msgstr "- Explorador d'imatges i visor"
+msgstr "- Navegador d'imatges i visualitzador"

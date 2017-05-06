@@ -21,21 +21,21 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-06-22 19:43+0000\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"PO-Revision-Date: 2017-05-05 10:35+0000\n"
+"Last-Translator: Jean-Marc <Unknown>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-12-12 12:18+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2017-05-06 12:42+0000\n"
+"X-Generator: Launchpad (build 18366)\n"
 "Language: \n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "Le fichier n'est pas un fichier .desktop valable"
+msgstr "Le fichier n'est pas un fichier .desktop valide"
 
 #. translators: 'Version' is from a desktop file, and
 #. * should not be translated. '%s' would probably be a
@@ -141,9 +141,9 @@ msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr ""
-"Les images supérieures à cette taille (en octets) ne posséderont pas de "
-"vignette. Utilisez 0 si vous voulez que des vignettes soient générées pour "
-"toutes les images."
+"Les images de taille supérieure à cette valeur (en octets) ne posséderont "
+"pas de vignette. Utilisez 0 si vous voulez que des vignettes soient générées "
+"pour toutes les images."
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
@@ -501,11 +501,11 @@ msgstr "Envoyer des photos vers 23"
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
 msgid "Bookmarks"
-msgstr "Signets"
+msgstr "Favoris"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:2
 msgid "Add bookmarks support."
-msgstr "Ajoute la prise en charge des signets."
+msgstr "Ajoute la prise en charge des favoris."
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:3
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:3
@@ -539,7 +539,7 @@ msgstr "Équipe de développement de Pix"
 
 #: ../extensions/bookmarks/callbacks.c:54
 msgid "_Bookmarks"
-msgstr "_Signets"
+msgstr "_Favoris"
 
 #: ../extensions/bookmarks/callbacks.c:55
 msgid "_System Bookmarks"
@@ -547,23 +547,23 @@ msgstr "Si_gnets du système"
 
 #: ../extensions/bookmarks/callbacks.c:58
 msgid "_Add Bookmark"
-msgstr "A_jouter un signet"
+msgstr "A_jouter un favori"
 
 #: ../extensions/bookmarks/callbacks.c:59
 msgid "Add current location to bookmarks"
-msgstr "Ajoute l'emplacement actuel aux signets"
+msgstr "Ajouter l'emplacement actuel aux favoris"
 
 #: ../extensions/bookmarks/callbacks.c:63
 msgid "_Edit Bookmarks..."
-msgstr "_Éditer les signets..."
+msgstr "_Éditer les favoris..."
 
 #: ../extensions/bookmarks/callbacks.c:64
 msgid "Edit bookmarks"
-msgstr "Édite les signets"
+msgstr "Éditer les favoris"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
 msgid "_Bookmarks:"
-msgstr "_Signets :"
+msgstr "_Favoris :"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
 msgid "_Name"
@@ -575,7 +575,7 @@ msgstr "Emp_lacement"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:191
 msgid "Could not remove the bookmark"
-msgstr "Impossible de supprimer le signet"
+msgstr "Impossible de supprimer le favori"
 
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:1
 msgid "Burn CD/DVD"
@@ -815,7 +815,7 @@ msgstr "Ouvrir le _dossier"
 #: ../extensions/catalogs/callbacks.c:106
 #: ../extensions/selections/callbacks.c:81
 msgid "Go to the folder that contains the selected file"
-msgstr "Va au dossier qui contient le fichier sélectionné"
+msgstr "Aller au dossier qui contient le fichier sélectionné"
 
 #: ../extensions/catalogs/callbacks.c:110
 msgid "Other..."
@@ -973,7 +973,7 @@ msgstr "_Inclure les sous-dossiers"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
-msgstr "Ignorer les catalogues qui ne contiennent qu'un fichier"
+msgstr "Ignorer les catalogues ne contenant qu'un fichier"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
 msgid "Put single files in the catalog:"
@@ -1162,7 +1162,7 @@ msgstr "secondes"
 
 #: ../extensions/comments/callbacks.c:46
 msgid "Import Embedded Metadata"
-msgstr "Importer les métadonnées incorporées"
+msgstr "Importer les métadonnées intégrées"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
@@ -1249,7 +1249,7 @@ msgstr "Planche contact"
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
 msgstr ""
-"Créer une image index contenant des vignettes des fichiers sélectionnés."
+"Créer une image index contenant les vignettes des fichiers sélectionnés."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1584,7 +1584,7 @@ msgstr "Définir comme arrière-plan du bureau"
 #: ../extensions/desktop_background/callbacks.c:50
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
 msgid "Set the image as desktop background"
-msgstr "Définit l'image comme arrière-plan du bureau"
+msgstr "Définir l'image comme arrière-plan du bureau"
 
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
 msgid "Desktop background"
@@ -1623,8 +1623,8 @@ msgstr "Supprimer les métadonnées"
 #: ../extensions/edit_metadata/callbacks.c:113
 msgid "Delete the comment and the embedded metadata of the selected files"
 msgstr ""
-"Supprimer le commentaire et les autres métadonnées contenues dans les "
-"fichiers sélectionnés"
+"Supprimer le commentaire et les autres métadonnées intégrées des fichiers "
+"sélectionnés"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:6
@@ -1651,7 +1651,7 @@ msgstr "T_itre :"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:121
 msgid "Could not save the file metadata"
-msgstr "Impossible d'enregistrer les méta-données du fichier"
+msgstr "Impossible d'enregistrer les métadonnées du fichier"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:234
 #: ../pix/gth-overwrite-dialog.c:136
@@ -1660,17 +1660,17 @@ msgstr "Impossible de lire les informations du fichier"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:1
 msgid "Edit metadata"
-msgstr "Modifier les méta-données"
+msgstr "Modifier les métadonnées"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
 msgid "Allow to edit files metadata."
-msgstr "Permettre la modification des méta-données des fichiers."
+msgstr "Permettre la modification des métadonnées des fichiers."
 
 #. Translators: the %s symbol in the string is a file name
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:63
 #, c-format
 msgid "%s Metadata"
-msgstr "Méta-données %s"
+msgstr "Métadonnées %s"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:66
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:83
@@ -1799,11 +1799,11 @@ msgstr "État/province :"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
 msgid "EXIF, IPTC, XMP support"
-msgstr "Prise en charge EXIF, IPTC, XMP"
+msgstr "Prise en charge d'EXIF, IPTC, XMP"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:2
 msgid "Read and write exif, iptc and xmp metadata."
-msgstr "Lire et écrire les méta-données exif, iptc et xmp."
+msgstr "Lire et écrire les métadonnées exif, iptc et xmp."
 
 #: ../extensions/exiv2_tools/main.c:33
 msgid "Exif General"
@@ -1909,7 +1909,7 @@ msgstr "Ajouter un nouvel album"
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:7
 msgid "Resize the images if larger than this size"
 msgstr ""
-"Redimensionne les images quand elles sont plus grandes que cette taille"
+"Redimensionner les images si elles sont plus grandes que cette taille"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:8
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
@@ -1947,7 +1947,7 @@ msgstr "Photos publiques"
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:2
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
 msgid "Private photos, visible to friends"
-msgstr "Photos privées, visible pour les amis"
+msgstr "Photos privées, visibles pour les amis"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:3
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:5
@@ -4697,7 +4697,7 @@ msgstr "Visionneurs"
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
-msgstr "Méta-données"
+msgstr "Métadonnées"
 
 #: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
@@ -4848,7 +4848,10 @@ msgstr ""
 "Bruno Brouard <annoa.b@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
-"  Claude Paroz https://launchpad.net/~paroz"
+"  Claude Paroz https://launchpad.net/~paroz\n"
+"  Clement Lefebvre https://launchpad.net/~clementlefebvre\n"
+"  Jean-Marc https://launchpad.net/~m-balthazar\n"
+"  Phan Hoang https://launchpad.net/~phahoatho"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"

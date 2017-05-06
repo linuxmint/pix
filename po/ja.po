@@ -11,21 +11,21 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
 "POT-Creation-Date: 2016-06-22 17:53+0100\n"
-"PO-Revision-Date: 2016-06-22 18:56+0000\n"
-"Last-Translator: OKANO Takayoshi <Unknown>\n"
+"PO-Revision-Date: 2017-02-15 16:19+0000\n"
+"Last-Translator: yasum <nyma5a@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-12-12 12:17+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2017-05-06 12:42+0000\n"
+"X-Generator: Launchpad (build 18366)\n"
 "Language: ja\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "妥当な .desktop ファイルではありません"
+msgstr "ファイルは無効な .desktop ファイルです"
 
 #. translators: 'Version' is from a desktop file, and
 #. * should not be translated. '%s' would probably be a
@@ -33,22 +33,22 @@ msgstr "妥当な .desktop ファイルではありません"
 #: ../copy-n-paste/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "バージョン '%s' の .desktop ファイルはサポートしていません"
+msgstr "desktop ファイルのバージョン '%s' を認識できません"
 
 #: ../copy-n-paste/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
-msgstr "%sの起動中です"
+msgstr "%s の起動中"
 
 #: ../copy-n-paste/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "コマンドラインからドキュメントにはアクセスできません"
+msgstr "コマンドラインからドキュメントを指定できません"
 
 #: ../copy-n-paste/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "不明な起動オプションです: %d"
+msgstr "起動オプションが認識できません: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
@@ -678,11 +678,11 @@ msgstr "dpi"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
-msgstr ""
+msgstr "方式(_M):"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr ""
+msgstr "ロスレス(_L)"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
@@ -711,7 +711,7 @@ msgstr "TIFF"
 #: ../extensions/cairo_io/gth-image-saver-webp.c:382
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:165
 msgid "WebP"
-msgstr ""
+msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
@@ -1830,7 +1830,7 @@ msgstr "Facebook(_B)..."
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr ""
+msgstr "Facebookから写真をダウンロード"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
@@ -2389,19 +2389,19 @@ msgstr "切り抜く(_R)"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:1
 msgid "Method"
-msgstr ""
+msgstr "方式"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:2
 msgid "_Brightness"
-msgstr ""
+msgstr "明るさ(_B)"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:3
 msgid "_Saturation"
-msgstr ""
+msgstr "彩度(_S)"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:4
 msgid "_Average"
-msgstr ""
+msgstr "平均(_A)"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
 #: ../pix/gth-main-default-metadata.c:47
@@ -2561,11 +2561,11 @@ msgstr "画像の輝度やコントラスト、彩度、ガンマレベルを変
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
-msgstr ""
+msgstr "コントラスト調整"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:305
 msgid "Automatic contrast adjustment"
-msgstr ""
+msgstr "コントラストの自動調整"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
@@ -2681,11 +2681,11 @@ msgstr "画像を垂直方向にひっくり返します"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale..."
-msgstr ""
+msgstr "グレースケール…"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale"
-msgstr ""
+msgstr "グレースケール"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:87
 msgid "Mirror"
@@ -2977,7 +2977,7 @@ msgstr "完了したら、この下にある [続行する] ボタンをクリ�
 #: ../extensions/flicker_utils/flickr-service.c:571
 #, c-format
 msgid "Pix requires your authorization to upload the photos to %s"
-msgstr ""
+msgstr "%s に写真をアップロードするためにあなたの認証が必要です"
 
 #: ../extensions/flicker_utils/flickr-service.c:572
 #, c-format
@@ -3796,7 +3796,7 @@ msgstr "新しい認証..."
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
-msgstr ""
+msgstr "認証権限が必要です"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
@@ -3816,7 +3816,7 @@ msgstr "サーバーへ接続中"
 
 #: ../extensions/oauth/web-service.c:796
 msgid "Asking authorization"
-msgstr ""
+msgstr "認証を問合せ中"
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
@@ -4780,7 +4780,8 @@ msgstr ""
 "日本GNOMEユーザー会 http://www.gnome.gr.jp\n"
 "\n"
 "Launchpad Contributions:\n"
-"  OKANO Takayoshi https://launchpad.net/~kano"
+"  OKANO Takayoshi https://launchpad.net/~kano\n"
+"  yasum https://launchpad.net/~nyma5a"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -5281,7 +5282,7 @@ msgstr "ファイル情報の保存中"
 #: ../pix/gth-save-image-task.c:160
 #, c-format
 msgid "Saving '%s'"
-msgstr ""
+msgstr "'%s' を保存しています"
 
 #: ../pix/gth-tags-entry.c:390
 #, c-format
