@@ -3765,6 +3765,8 @@ gth_grid_view_class_init (GthGridViewClass *grid_view_class)
 				      "activate-cursor-item", 0);
 	gtk_binding_entry_add_signal (binding_set, GDK_KEY_KP_Enter, 0,
 				      "activate-cursor-item", 0);
+	gtk_binding_entry_add_signal (binding_set, GDK_KEY_space, 0,
+				      "activate-cursor-item", 0);
 
 #if GTK_CHECK_VERSION(3,20,0)
 	gtk_widget_class_set_css_name (widget_class, "iconview");
