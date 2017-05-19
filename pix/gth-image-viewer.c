@@ -986,37 +986,29 @@ gth_image_viewer_scroll_event (GtkWidget      *widget,
 	g_return_val_if_fail (GTH_IS_IMAGE_VIEWER (widget), FALSE);
 	g_return_val_if_fail (event != NULL, FALSE);
 
-	/* Control + Scroll-Up / Control + Scroll-Down ==> Zoom In / Zoom Out */
-
+	/* Control + Scroll-Up / Down ==> used by browser to load previous/next image */
 	if (event->state & GDK_CONTROL_MASK) {
-		if  (self->priv->zoom_enabled) {
-			double new_zoom_level;
-
-			switch (event->direction) {
-			case GDK_SCROLL_UP:
-			case GDK_SCROLL_DOWN:
-				if (event->direction == GDK_SCROLL_UP)
-					new_zoom_level = get_next_zoom (self->priv->zoom_level);
-				else
-					new_zoom_level = get_prev_zoom (self->priv->zoom_level);
-				set_zoom_centered_at (self, new_zoom_level, FALSE, (int) event->x, (int) event->y);
-				gtk_widget_queue_resize (GTK_WIDGET (self));
-				retval = TRUE;
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		return retval;
+		return FALSE;
 	}
 
-	/* Scroll Left / Scroll Right ==> Scroll the image horizontally */
-
 	switch (event->direction) {
+	case GDK_SCROLL_UP:
+	case GDK_SCROLL_DOWN:
+		/* Scroll Up/Down ==> Zoom In/Out */
+		if  (self->priv->zoom_enabled) {
+			double new_zoom_level;
+			if (event->direction == GDK_SCROLL_UP)
+				new_zoom_level = get_next_zoom (self->priv->zoom_level);
+			else
+				new_zoom_level = get_prev_zoom (self->priv->zoom_level);
+			set_zoom_centered_at (self, new_zoom_level, FALSE, (int) event->x, (int) event->y);
+			gtk_widget_queue_resize (GTK_WIDGET (self));
+			retval = TRUE;
+		}
+		break;
 	case GDK_SCROLL_LEFT:
 	case GDK_SCROLL_RIGHT:
+		/* Scroll Left/Right ==> Scroll the image horizontally */
 		if (event->direction == GDK_SCROLL_LEFT)
 			new_value = gtk_adjustment_get_value (self->hadj) - gtk_adjustment_get_page_increment (self->hadj) / 2;
 		else
@@ -1400,19 +1392,19 @@ gth_image_viewer_class_init (GthImageViewerClass *class)
 
 	/* For scrolling */
 
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Right, 0,
+	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Right, GDK_CONTROL_MASK,
 			      "scroll", 2,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_RIGHT,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_NONE);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Left, 0,
+	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Left, GDK_CONTROL_MASK,
 			      "scroll", 2,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_LEFT,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_NONE);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Down, 0,
+	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Down, GDK_CONTROL_MASK,
 			      "scroll", 2,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_NONE,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_DOWN);
-	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Up, 0,
+	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Up, GDK_CONTROL_MASK,
 			      "scroll", 2,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_NONE,
 			      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_UP);
