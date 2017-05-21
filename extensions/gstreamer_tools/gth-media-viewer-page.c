@@ -100,7 +100,7 @@ static const char *media_viewer_ui_info =
 
 
 static GtkActionEntry media_viewer_action_entries[] = {
-	{ "MediaViewer_Screenshot", "camera-photo",
+	{ "MediaViewer_Screenshot", "camera-photo-symbolic",
 	  N_("Screenshot"), NULL,
 	  N_("Take a screenshot"),
 	  G_CALLBACK (media_viewer_activate_action_screenshot) },
