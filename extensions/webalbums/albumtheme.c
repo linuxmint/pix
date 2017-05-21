@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.0.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "3.0"
+#define YYBISON_VERSION "3.0.4"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -70,7 +70,7 @@
 #define yychar          gth_albumtheme_yychar
 
 /* Copy the first part of user declarations.  */
-#line 1 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:339  */
+#line 1 "albumtheme.y" /* yacc.c:339  */
 
 /*
  *  Pix
@@ -108,11 +108,11 @@ int   gth_albumtheme_yywrap  (void);
 
 #line 110 "albumtheme.c" /* yacc.c:339  */
 
-# ifndef YY_NULL
+# ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
-#   define YY_NULL nullptr
+#   define YY_NULLPTR nullptr
 #  else
-#   define YY_NULL 0
+#   define YY_NULLPTR 0
 #  endif
 # endif
 
@@ -162,10 +162,10 @@ extern int gth_albumtheme_yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE YYSTYPE;
+
 union YYSTYPE
 {
-#line 37 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:355  */
+#line 37 "albumtheme.y" /* yacc.c:355  */
 
 	char         *text;
 	int           ivalue;
@@ -178,6 +178,8 @@ union YYSTYPE
 
 #line 180 "albumtheme.c" /* yacc.c:355  */
 };
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
@@ -191,7 +193,7 @@ int gth_albumtheme_yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 195 "albumtheme.c" /* yacc.c:358  */
+#line 197 "albumtheme.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -248,11 +250,30 @@ typedef short int yytype_int16;
 # endif
 #endif
 
-#ifndef __attribute__
-/* This feature is available in gcc versions 2.5 and later.  */
-# if (! defined __GNUC__ || __GNUC__ < 2 \
-      || (__GNUC__ == 2 && __GNUC_MINOR__ < 5))
-#  define __attribute__(Spec) /* empty */
+#ifndef YY_ATTRIBUTE
+# if (defined __GNUC__                                               \
+      && (2 < __GNUC__ || (__GNUC__ == 2 && 96 <= __GNUC_MINOR__)))  \
+     || defined __SUNPRO_C && 0x5110 <= __SUNPRO_C
+#  define YY_ATTRIBUTE(Spec) __attribute__(Spec)
+# else
+#  define YY_ATTRIBUTE(Spec) /* empty */
+# endif
+#endif
+
+#ifndef YY_ATTRIBUTE_PURE
+# define YY_ATTRIBUTE_PURE   YY_ATTRIBUTE ((__pure__))
+#endif
+
+#ifndef YY_ATTRIBUTE_UNUSED
+# define YY_ATTRIBUTE_UNUSED YY_ATTRIBUTE ((__unused__))
+#endif
+
+#if !defined _Noreturn \
+     && (!defined __STDC_VERSION__ || __STDC_VERSION__ < 201112)
+# if defined _MSC_VER && 1200 <= _MSC_VER
+#  define _Noreturn __declspec (noreturn)
+# else
+#  define _Noreturn YY_ATTRIBUTE ((__noreturn__))
 # endif
 #endif
 
@@ -491,7 +512,7 @@ static const char *const yytname[] =
   "','", "UNARY_OP", "'\"'", "'='", "'\\''", "'('", "')'", "$accept",
   "all", "document", "tag_loop", "tag_if", "opt_tag_else_if",
   "tag_else_if", "opt_tag_else", "tag_else", "tag_end", "tag_command",
-  "tag_print", "attribute_list", "attribute", "expr_list", "expr", YY_NULL
+  "tag_print", "attribute_list", "attribute", "expr_list", "expr", YY_NULLPTR
 };
 #endif
 
@@ -943,11 +964,11 @@ static int
 yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
                 yytype_int16 *yyssp, int yytoken)
 {
-  YYSIZE_T yysize0 = yytnamerr (YY_NULL, yytname[yytoken]);
+  YYSIZE_T yysize0 = yytnamerr (YY_NULLPTR, yytname[yytoken]);
   YYSIZE_T yysize = yysize0;
   enum { YYERROR_VERBOSE_ARGS_MAXIMUM = 5 };
   /* Internationalized format string. */
-  const char *yyformat = YY_NULL;
+  const char *yyformat = YY_NULLPTR;
   /* Arguments of yyformat. */
   char const *yyarg[YYERROR_VERBOSE_ARGS_MAXIMUM];
   /* Number of reported tokens (one for the "unexpected", one per
@@ -1004,7 +1025,7 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
                   }
                 yyarg[yycount++] = yytname[yyx];
                 {
-                  YYSIZE_T yysize1 = yysize + yytnamerr (YY_NULL, yytname[yyx]);
+                  YYSIZE_T yysize1 = yysize + yytnamerr (YY_NULLPTR, yytname[yyx]);
                   if (! (yysize <= yysize1
                          && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
                     return 2;
@@ -1336,7 +1357,7 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 77 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 77 "albumtheme.y" /* yacc.c:1646  */
     {
 			yy_parsed_doc = (yyvsp[0].list);
 			if (yy_parsed_doc == NULL)
@@ -1344,36 +1365,36 @@ yyreduce:
 			else
 				YYACCEPT;
 		}
-#line 1348 "albumtheme.c" /* yacc.c:1646  */
+#line 1369 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 86 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 86 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), gth_tag_new_html ((yyvsp[-1].text)));
 			g_free ((yyvsp[-1].text));
 		}
-#line 1357 "albumtheme.c" /* yacc.c:1646  */
+#line 1378 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 91 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 91 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), (yyvsp[-1].tag));
 		}
-#line 1365 "albumtheme.c" /* yacc.c:1646  */
+#line 1386 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 95 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 95 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), (yyvsp[-1].tag));
 		}
-#line 1373 "albumtheme.c" /* yacc.c:1646  */
+#line 1394 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 99 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 99 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthTag *tag;
 
@@ -1381,11 +1402,11 @@ yyreduce:
 			tag = gth_tag_new_loop ((yyvsp[-3].loop));
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), tag);
 		}
-#line 1385 "albumtheme.c" /* yacc.c:1646  */
+#line 1406 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 107 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 107 "albumtheme.y" /* yacc.c:1646  */
     {
 			GList  *cond_list;
 			GthTag *tag;
@@ -1398,29 +1419,29 @@ yyreduce:
 			tag = gth_tag_new_condition (cond_list);
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), tag);
 		}
-#line 1402 "albumtheme.c" /* yacc.c:1646  */
+#line 1423 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 120 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 120 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = NULL;
 		}
-#line 1410 "albumtheme.c" /* yacc.c:1646  */
+#line 1431 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 124 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 124 "albumtheme.y" /* yacc.c:1646  */
     {
 			/*if ($2 != NULL)
 				gth_parsed_doc_free ($2);*/
 			(yyval.list) = NULL;
 		}
-#line 1420 "albumtheme.c" /* yacc.c:1646  */
+#line 1441 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 131 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 131 "albumtheme.y" /* yacc.c:1646  */
     {
 			if (g_str_equal ((yyvsp[-1].text), "thumbnail_caption")) {
 				(yyval.loop) = gth_loop_new (GTH_TAG_FOR_EACH_THUMBNAIL_CAPTION);
@@ -1433,11 +1454,11 @@ yyreduce:
 				YYERROR;
 			}
 		}
-#line 1437 "albumtheme.c" /* yacc.c:1646  */
+#line 1458 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 144 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 144 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.loop) = gth_range_loop_new ();
 			gth_range_loop_set_range (GTH_RANGE_LOOP ((yyval.loop)), (yyvsp[-5].text), (yyvsp[-3].expr), (yyvsp[-1].expr));
@@ -1446,60 +1467,60 @@ yyreduce:
 			gth_expr_unref ((yyvsp[-3].expr));
 			gth_expr_unref ((yyvsp[-1].expr));
 		}
-#line 1450 "albumtheme.c" /* yacc.c:1646  */
+#line 1471 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 154 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 154 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.cond) = gth_condition_new ((yyvsp[-1].expr));
 		}
-#line 1458 "albumtheme.c" /* yacc.c:1646  */
+#line 1479 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 158 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 158 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.cond) = gth_condition_new ((yyvsp[-2].expr));
 		}
-#line 1466 "albumtheme.c" /* yacc.c:1646  */
+#line 1487 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 163 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 163 "albumtheme.y" /* yacc.c:1646  */
     {
 			gth_condition_add_document ((yyvsp[-2].cond), (yyvsp[-1].list));
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), (yyvsp[-2].cond));
 		}
-#line 1475 "albumtheme.c" /* yacc.c:1646  */
+#line 1496 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 168 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 168 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = NULL;
 		}
-#line 1483 "albumtheme.c" /* yacc.c:1646  */
+#line 1504 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 173 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 173 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.cond) = gth_condition_new ((yyvsp[-1].expr));
 		}
-#line 1491 "albumtheme.c" /* yacc.c:1646  */
+#line 1512 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 177 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 177 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.cond) = gth_condition_new ((yyvsp[-2].expr));
 		}
-#line 1499 "albumtheme.c" /* yacc.c:1646  */
+#line 1520 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 182 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 182 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr      *else_expr;
 			GthCondition *cond;
@@ -1511,27 +1532,27 @@ yyreduce:
 
 			(yyval.cond) = cond;
 		}
-#line 1515 "albumtheme.c" /* yacc.c:1646  */
+#line 1536 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 194 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 194 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.cond) = NULL;
 		}
-#line 1523 "albumtheme.c" /* yacc.c:1646  */
+#line 1544 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 205 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 205 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.tag) = gth_tag_new (GTH_TAG_SET_VAR, (yyvsp[-1].list));
 		}
-#line 1531 "albumtheme.c" /* yacc.c:1646  */
+#line 1552 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 210 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 210 "albumtheme.y" /* yacc.c:1646  */
     {
 			if (gth_tag_get_type_from_name ((yyvsp[-2].text)) == GTH_TAG_EVAL) {
 				GthExpr *e;
@@ -1579,11 +1600,11 @@ yyreduce:
 				YYERROR;
 			}
 		}
-#line 1583 "albumtheme.c" /* yacc.c:1646  */
+#line 1604 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 258 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 258 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthTagType tag_type = gth_tag_get_type_from_name ((yyvsp[-2].text));
 			if (tag_type == GTH_TAG_INVALID) {
@@ -1592,89 +1613,89 @@ yyreduce:
 			}
 			(yyval.tag) = gth_tag_new (tag_type, (yyvsp[-1].list));
 		}
-#line 1596 "albumtheme.c" /* yacc.c:1646  */
+#line 1617 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 268 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 268 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), (yyvsp[-1].attribute));
 		}
-#line 1604 "albumtheme.c" /* yacc.c:1646  */
+#line 1625 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 272 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 272 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = NULL;
 		}
-#line 1612 "albumtheme.c" /* yacc.c:1646  */
+#line 1633 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 277 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 277 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.attribute) = gth_attribute_new_expression ((yyvsp[-4].text), (yyvsp[-1].expr));
 			g_free ((yyvsp[-4].text));
 		}
-#line 1621 "albumtheme.c" /* yacc.c:1646  */
+#line 1642 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 282 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 282 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.attribute) = gth_attribute_new_string ((yyvsp[-4].text), (yyvsp[-1].text));
 			g_free ((yyvsp[-4].text));
 			g_free ((yyvsp[-1].text));
 		}
-#line 1631 "albumtheme.c" /* yacc.c:1646  */
+#line 1652 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 288 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 288 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 			gth_expr_push_integer (e, 1);
 			(yyval.attribute) = gth_attribute_new_expression ((yyvsp[0].text), e);
 			g_free ((yyvsp[0].text));
 		}
-#line 1642 "albumtheme.c" /* yacc.c:1646  */
+#line 1663 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 296 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 296 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = g_list_prepend ((yyvsp[0].list), (yyvsp[-2].expr));
 		}
-#line 1650 "albumtheme.c" /* yacc.c:1646  */
+#line 1671 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 300 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 300 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = g_list_prepend (NULL, (yyvsp[0].expr));
 		}
-#line 1658 "albumtheme.c" /* yacc.c:1646  */
+#line 1679 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 304 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 304 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.list) = NULL;
 		}
-#line 1666 "albumtheme.c" /* yacc.c:1646  */
+#line 1687 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 309 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 309 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.expr) = (yyvsp[-1].expr);
 		}
-#line 1674 "albumtheme.c" /* yacc.c:1646  */
+#line 1695 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 313 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 313 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 
@@ -1687,11 +1708,11 @@ yyreduce:
 
 			(yyval.expr) = e;
 		}
-#line 1691 "albumtheme.c" /* yacc.c:1646  */
+#line 1712 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 326 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 326 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 
@@ -1704,11 +1725,11 @@ yyreduce:
 
 			(yyval.expr) = e;
 		}
-#line 1708 "albumtheme.c" /* yacc.c:1646  */
+#line 1729 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 339 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 339 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 
@@ -1721,11 +1742,11 @@ yyreduce:
 
 			(yyval.expr) = e;
 		}
-#line 1725 "albumtheme.c" /* yacc.c:1646  */
+#line 1746 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 352 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 352 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 
@@ -1738,11 +1759,11 @@ yyreduce:
 
 			(yyval.expr) = e;
 		}
-#line 1742 "albumtheme.c" /* yacc.c:1646  */
+#line 1763 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 365 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 365 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 
@@ -1755,11 +1776,11 @@ yyreduce:
 
 			(yyval.expr) = e;
 		}
-#line 1759 "albumtheme.c" /* yacc.c:1646  */
+#line 1780 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 378 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 378 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 
@@ -1772,37 +1793,37 @@ yyreduce:
 
 			(yyval.expr) = e;
 		}
-#line 1776 "albumtheme.c" /* yacc.c:1646  */
+#line 1797 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 391 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 391 "albumtheme.y" /* yacc.c:1646  */
     {
 			(yyval.expr) = (yyvsp[0].expr);
 		}
-#line 1784 "albumtheme.c" /* yacc.c:1646  */
+#line 1805 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 395 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 395 "albumtheme.y" /* yacc.c:1646  */
     {
 			gth_expr_push_op ((yyvsp[0].expr), GTH_OP_NEG);
 			(yyval.expr) = (yyvsp[0].expr);
 		}
-#line 1793 "albumtheme.c" /* yacc.c:1646  */
+#line 1814 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 400 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 400 "albumtheme.y" /* yacc.c:1646  */
     {
 			gth_expr_push_op ((yyvsp[0].expr), GTH_OP_NOT);
 			(yyval.expr) = (yyvsp[0].expr);
 		}
-#line 1802 "albumtheme.c" /* yacc.c:1646  */
+#line 1823 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 405 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 405 "albumtheme.y" /* yacc.c:1646  */
     { /* function call */
 			GthExpr *e = gth_expr_new ();
 			gth_expr_push_var (e, (yyvsp[-3].text));
@@ -1819,43 +1840,43 @@ yyreduce:
 			g_free ((yyvsp[-3].text));
 			(yyval.expr) = e;
 		}
-#line 1823 "albumtheme.c" /* yacc.c:1646  */
+#line 1844 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 422 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 422 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 			gth_expr_push_var (e, (yyvsp[0].text));
 			g_free ((yyvsp[0].text));
 			(yyval.expr) = e;
 		}
-#line 1834 "albumtheme.c" /* yacc.c:1646  */
+#line 1855 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 429 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 429 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 			gth_expr_push_string (e, (yyvsp[-1].text));
 			g_free ((yyvsp[-1].text));
 			(yyval.expr) = e;
 		}
-#line 1845 "albumtheme.c" /* yacc.c:1646  */
+#line 1866 "albumtheme.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 436 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1646  */
+#line 436 "albumtheme.y" /* yacc.c:1646  */
     {
 			GthExpr *e = gth_expr_new ();
 			gth_expr_push_integer (e, (yyvsp[0].ivalue));
 			(yyval.expr) = e;
 		}
-#line 1855 "albumtheme.c" /* yacc.c:1646  */
+#line 1876 "albumtheme.c" /* yacc.c:1646  */
     break;
 
 
-#line 1859 "albumtheme.c" /* yacc.c:1646  */
+#line 1880 "albumtheme.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2083,7 +2104,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 443 "../../../extensions/webalbums/albumtheme.y" /* yacc.c:1906  */
+#line 443 "albumtheme.y" /* yacc.c:1906  */
 
 
 

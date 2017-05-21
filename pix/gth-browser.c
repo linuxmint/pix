@@ -3838,7 +3838,7 @@ _gth_browser_add_custom_actions (GthBrowser     *browser,
 	browser->priv->back_history_menu = gtk_menu_new ();
 	action = g_object_new (GTH_TYPE_MENU_ACTION,
 			       "name", "Toolbar_Go_Back",
-			       "stock-id", GTK_STOCK_GO_BACK,
+			       "icon-name", "go-previous-symbolic",
 			       "button-tooltip", _("Go to the previous visited location"),
 			       "arrow-tooltip", _("View the list of visited locations"),
 			       "is-important", TRUE,
@@ -3856,7 +3856,7 @@ _gth_browser_add_custom_actions (GthBrowser     *browser,
 	browser->priv->forward_history_menu = gtk_menu_new ();
 	action = g_object_new (GTH_TYPE_MENU_ACTION,
 			       "name", "Toolbar_Go_Forward",
-			       "stock-id", GTK_STOCK_GO_FORWARD,
+			       "icon-name", "go-next-symbolic",
 			       "button-tooltip", _("Go to the next visited location"),
 			       "arrow-tooltip", _("View the list of visited locations"),
 			       "is-important", TRUE,
@@ -3874,7 +3874,7 @@ _gth_browser_add_custom_actions (GthBrowser     *browser,
 	browser->priv->go_parent_menu = gtk_menu_new ();
 	action = g_object_new (GTH_TYPE_MENU_ACTION,
 			       "name", "Toolbar_Go_Up",
-			       "stock-id", GTK_STOCK_GO_UP,
+			       "icon-name", "go-up-symbolic",
 			       "button-tooltip", _("Go up one level"),
 			       "arrow-tooltip", _("View the list of upper locations"),
 			       "is-important", FALSE,
@@ -3926,45 +3926,6 @@ _gth_browser_construct_step2 (gpointer user_data)
 		gth_browser_load_location (browser, data->location);
 
 	new_window_data_free (data);
-}
-
-
-static void
-_gth_browser_update_toolbar_style (GthBrowser *browser)
-{
-	GthToolbarStyle toolbar_style;
-	GtkToolbarStyle prop = GTK_TOOLBAR_BOTH;
-
-	toolbar_style = gth_pref_get_real_toolbar_style ();
-	switch (toolbar_style) {
-	case GTH_TOOLBAR_STYLE_TEXT_BELOW:
-		prop = GTK_TOOLBAR_BOTH;
-		break;
-	case GTH_TOOLBAR_STYLE_TEXT_BESIDE:
-		prop = GTK_TOOLBAR_BOTH_HORIZ;
-		break;
-	case GTH_TOOLBAR_STYLE_ICONS:
-		prop = GTK_TOOLBAR_ICONS;
-		break;
-	case GTH_TOOLBAR_STYLE_TEXT:
-		prop = GTK_TOOLBAR_TEXT;
-		break;
-	default:
-		break;
-	}
-
-	gtk_toolbar_set_style (GTK_TOOLBAR (browser->priv->browser_toolbar), prop);
-	gtk_toolbar_set_style (GTK_TOOLBAR (browser->priv->viewer_toolbar), prop);
-}
-
-
-static void
-pref_ui_toolbar_style_changed (GSettings  *settings,
-			       const char *key,
-			       gpointer    user_data)
-{
-	GthBrowser *browser = user_data;
-	_gth_browser_update_toolbar_style (browser);
 }
 
 
@@ -4786,7 +4747,10 @@ gth_browser_init (GthBrowser *browser)
 
 	_gth_browser_set_sidebar_visibility (browser, g_settings_get_boolean (browser->priv->browser_settings, PREF_BROWSER_SIDEBAR_VISIBLE));
 	_gth_browser_set_toolbar_visibility (browser, g_settings_get_boolean (browser->priv->browser_settings, PREF_BROWSER_TOOLBAR_VISIBLE));
-	_gth_browser_update_toolbar_style (browser);
+	gtk_toolbar_set_style (GTK_TOOLBAR (browser->priv->browser_toolbar), GTK_TOOLBAR_ICONS);
+	gtk_toolbar_set_style (GTK_TOOLBAR (browser->priv->viewer_toolbar), GTK_TOOLBAR_ICONS);
+	gtk_toolbar_set_icon_size (GTK_TOOLBAR (browser->priv->browser_toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
+	gtk_toolbar_set_icon_size (GTK_TOOLBAR (browser->priv->viewer_toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
 
 	browser->priv->show_hidden_files = g_settings_get_boolean (browser->priv->browser_settings, PREF_BROWSER_SHOW_HIDDEN_FILES);
 	_gth_browser_set_action_active (browser, "View_ShowHiddenFiles", browser->priv->show_hidden_files);
@@ -4822,20 +4786,12 @@ gth_browser_init (GthBrowser *browser)
 			  G_CALLBACK (pref_general_filter_changed),
 			  browser);
 	g_signal_connect (browser->priv->browser_settings,
-			  "changed::" PREF_BROWSER_TOOLBAR_STYLE,
-			  G_CALLBACK (pref_ui_toolbar_style_changed),
-			  browser);
-	g_signal_connect (browser->priv->browser_settings,
 			  "changed::" PREF_BROWSER_VIEWER_THUMBNAILS_ORIENT,
 			  G_CALLBACK (pref_ui_viewer_thumbnails_orient_changed),
 			  browser);
 	g_signal_connect (browser->priv->browser_settings,
 			  "changed::" PREF_BROWSER_PROPERTIES_ON_THE_RIGHT,
 			  G_CALLBACK (pref_browser_properties_on_the_right_changed),
-			  browser);
-	g_signal_connect (browser->priv->desktop_interface_settings,
-			  "changed::" PREF_BROWSER_TOOLBAR_STYLE,
-			  G_CALLBACK (pref_ui_toolbar_style_changed),
 			  browser);
 	g_signal_connect (browser->priv->browser_settings,
 			  "changed::" PREF_BROWSER_TOOLBAR_VISIBLE,

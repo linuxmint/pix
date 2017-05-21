@@ -63,5 +63,5 @@ gth_file_tool_save_class_init (GthFileToolSaveClass *klass)
 static void
 gth_file_tool_save_init (GthFileToolSave *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), GTK_STOCK_SAVE, _("Save"), _("Save"), FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-symbolic", _("Save"), _("Save"), FALSE);
 }

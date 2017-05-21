@@ -27,12 +27,12 @@
 #include "gth-window-actions-callbacks.h"
 
 static GtkActionEntry gth_window_action_entries[] = {
-	{ "File_CloseWindow", GTK_STOCK_CLOSE,
-	  NULL, NULL,
+	{ "File_CloseWindow", "window-close-symbolic",
+	  N_("Close"), NULL,
 	  N_("Close this window"),
 	  G_CALLBACK (gth_window_activate_action_file_close_window) },
 
-	{ "File_Quit", GTK_STOCK_QUIT,
+	{ "File_Quit", "application-exit-symbolic",
 	  N_("Close _All Windows"), NULL,
 	  NULL,
 	  G_CALLBACK (gth_window_activate_action_file_quit_application) }

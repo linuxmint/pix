@@ -140,41 +140,6 @@ gth_pref_get_wallpaper_options (void)
 }
 
 
-GthToolbarStyle
-gth_pref_get_real_toolbar_style (void)
-{
-	GSettings       *settings;
-	GthToolbarStyle  toolbar_style;
-
-	settings = g_settings_new (PIX_BROWSER_SCHEMA);
-	toolbar_style = g_settings_get_enum (settings, PREF_BROWSER_TOOLBAR_STYLE);
-	if (toolbar_style == GTH_TOOLBAR_STYLE_SYSTEM) {
-		char *system_style;
-
-		toolbar_style = GTH_TOOLBAR_STYLE_TEXT_BELOW; /* default value */
-
-		g_object_unref (settings);
-		settings = g_settings_new (GNOME_DESKTOP_INTERFACE_SCHEMA);
-
-		system_style = g_settings_get_string (settings, "toolbar-style");
-		if (g_strcmp0 (system_style, "both") == 0)
-			toolbar_style = GTH_TOOLBAR_STYLE_TEXT_BELOW;
-		else if (g_strcmp0 (system_style, "both-horiz") == 0)
-			toolbar_style = GTH_TOOLBAR_STYLE_TEXT_BESIDE;
-		else if (g_strcmp0 (system_style, "icons") == 0)
-			toolbar_style = GTH_TOOLBAR_STYLE_ICONS;
-		else if (g_strcmp0 (system_style, "text") == 0)
-			toolbar_style = GTH_TOOLBAR_STYLE_TEXT;
-
-		g_free (system_style);
-	}
-
-	g_object_unref (settings);
-
-	return toolbar_style;
-}
-
-
 void
 gth_pref_save_window_geometry (GtkWindow  *window,
                                const char *schema)

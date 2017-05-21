@@ -95,9 +95,8 @@ export_tools__gth_browser_construct_cb (GthBrowser *browser)
 
 	action = g_object_new (GTH_TYPE_TOGGLE_MENU_ACTION,
 			       "name", "ExportTools",
-			       "icon-name", "share",
-			       "label", _("Share"),
-			       /*"tooltip",  _("Export files"),*/
+			       "icon-name", "send-to-symbolic",
+			       "tooltip",  _("Share"),
 			       "is-important", TRUE,
 			       NULL);
 	gth_toggle_menu_action_set_show_menu_func (GTH_TOGGLE_MENU_ACTION (action),

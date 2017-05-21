@@ -74,9 +74,9 @@ static const char *vfs_ui_info =
 
 
 static GthActionEntryExt selections_action_entries[] = {
-	{ "Edit_AddToSelection", GTK_STOCK_ADD, N_("Add to _Selection") },
+	{ "Edit_AddToSelection", "list-add-symbolic", N_("Add to _Selection") },
 
-        { "Go_FileContainer", GTK_STOCK_JUMP_TO,
+        { "Go_FileContainer", "go-jump-symbolic",
           N_("Open _Folder"), "<alt>End",
           N_("Go to the folder that contains the selected file"),
        	  GTH_ACTION_FLAG_NONE,

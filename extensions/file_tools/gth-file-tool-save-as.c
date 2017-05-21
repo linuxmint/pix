@@ -67,5 +67,5 @@ gth_file_tool_save_as_class_init (GthFileToolSaveAsClass *klass)
 static void
 gth_file_tool_save_as_init (GthFileToolSaveAs *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), GTK_STOCK_SAVE_AS, _("Save As"), NULL, FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-as-symbolic", _("Save As"), NULL, FALSE);
 }

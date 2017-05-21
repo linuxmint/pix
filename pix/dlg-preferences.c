@@ -147,14 +147,6 @@ set_to_current_cb (GtkWidget  *widget,
 
 
 static void
-toolbar_style_changed_cb (GtkWidget  *widget,
-			  DialogData *data)
-{
-	g_settings_set_enum (data->browser_settings, PREF_BROWSER_TOOLBAR_STYLE, gtk_combo_box_get_active (GTK_COMBO_BOX (GET_WIDGET ("toolbar_style_combobox"))));
-}
-
-
-static void
 thumbnails_pane_orientation_changed_cb (GtkWidget  *widget,
 					DialogData *data)
 {
@@ -295,8 +287,6 @@ dlg_preferences (GthBrowser *browser)
 				      g_settings_get_boolean (data->messages_settings, PREF_MSG_CONFIRM_DELETION));
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("ask_to_save_checkbutton")),
 				      g_settings_get_boolean (data->messages_settings, PREF_MSG_SAVE_MODIFIED_IMAGE));
-	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("toolbar_style_combobox")),
-				  g_settings_get_enum (data->browser_settings, PREF_BROWSER_TOOLBAR_STYLE));
 	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("thumbnails_pane_orient_combobox")),
 				  g_settings_get_enum (data->browser_settings, PREF_BROWSER_VIEWER_THUMBNAILS_ORIENT));
 
@@ -331,10 +321,6 @@ dlg_preferences (GthBrowser *browser)
 
 	/* general */
 
-	g_signal_connect (G_OBJECT (GET_WIDGET ("toolbar_style_combobox")),
-			  "changed",
-			  G_CALLBACK (toolbar_style_changed_cb),
-			  data);
 	g_signal_connect (GET_WIDGET ("thumbnails_pane_orient_combobox"),
 			  "changed",
 			  G_CALLBACK (thumbnails_pane_orientation_changed_cb),

@@ -72,5 +72,5 @@ gth_file_tool_redo_class_init (GthFileToolRedoClass *klass)
 static void
 gth_file_tool_redo_init (GthFileToolRedo *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "redo", _("Redo"), _("Redo"), FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "edit-redo-symbolic", _("Redo"), _("Redo"), FALSE);
 }

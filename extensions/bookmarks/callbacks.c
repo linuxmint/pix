@@ -54,7 +54,7 @@ static GtkActionEntry bookmarks_action_entries[] = {
 	{ "BookmarksMenu", NULL, N_("_Bookmarks") },
 	{ "SystemBookmarksMenu", NULL, N_("_System Bookmarks") },
 
-	{ "Bookmarks_Add", GTK_STOCK_ADD,
+	{ "Bookmarks_Add", "bookmark-new-symbolic",
 	  N_("_Add Bookmark"), "<control>D",
 	  N_("Add current location to bookmarks"),
 	  G_CALLBACK (gth_browser_activate_action_bookmarks_add) },

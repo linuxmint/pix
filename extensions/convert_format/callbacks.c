@@ -41,7 +41,7 @@ static const char *fixed_ui_info =
 
 
 static GtkActionEntry action_entries[] = {
-	{ "Tool_ConvertFormat", GTK_STOCK_CONVERT,
+	{ "Tool_ConvertFormat", NULL,
 	  N_("Convert Format..."), NULL,
 	  N_("Convert image format"),
 	  G_CALLBACK (gth_browser_activate_action_tool_convert_format) },

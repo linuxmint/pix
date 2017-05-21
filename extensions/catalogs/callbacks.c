@@ -99,9 +99,9 @@ static const gchar *folder_popup_ui_info =
 
 
 static GtkActionEntry catalog_action_entries[] = {
-	{ "Edit_QuickAddToCatalog", GTK_STOCK_ADD, N_("_Add to Catalog") },
+	{ "Edit_QuickAddToCatalog", "list-add-symbolic", N_("_Add to Catalog") },
 
-        { "Go_FileContainer", GTK_STOCK_JUMP_TO,
+        { "Go_FileContainer", "go-jump-symbolic",
           N_("Open _Folder"), "<alt>End",
           N_("Go to the folder that contains the selected file"),
           G_CALLBACK (gth_browser_activate_action_go_to_container) },
@@ -111,12 +111,12 @@ static GtkActionEntry catalog_action_entries[] = {
 	  N_("Choose another catalog"),
 	  G_CALLBACK (gth_browser_activate_action_edit_add_to_catalog) },
 
-	{ "Edit_AddToCatalog", GTK_STOCK_ADD,
+	{ "Edit_AddToCatalog", "list-add-symbolic",
 	  N_("_Add to Catalog..."), NULL,
 	  N_("Add selected images to a catalog"),
 	  G_CALLBACK (gth_browser_activate_action_edit_add_to_catalog) },
 
-	{ "Edit_RemoveFromCatalog", GTK_STOCK_REMOVE,
+	{ "Edit_RemoveFromCatalog", "list-remove-symbolic",
 	  N_("Remo_ve from Catalog"), NULL,
 	  N_("Remove selected images from the catalog"),
 	  G_CALLBACK (gth_browser_activate_action_edit_remove_from_catalog) },
@@ -131,8 +131,8 @@ static GtkActionEntry catalog_action_entries[] = {
 	  NULL,
 	  G_CALLBACK (gth_browser_activate_action_catalog_new_library) },
 
-	{ "Catalog_Remove", GTK_STOCK_REMOVE,
-	  NULL, NULL,
+	{ "Catalog_Remove", "list-remove-symbolic",
+	  N_("Remove"), NULL,
 	  NULL,
 	  G_CALLBACK (gth_browser_activate_action_catalog_remove) },
 
@@ -141,8 +141,8 @@ static GtkActionEntry catalog_action_entries[] = {
 	  NULL,
 	  G_CALLBACK (gth_browser_activate_action_catalog_rename) },
 
-	{ "Catalog_Properties", GTK_STOCK_PROPERTIES,
-	  NULL, NULL,
+	{ "Catalog_Properties", "document-properties-symbolic",
+	  N_("Properties"), NULL,
 	  NULL,
 	  G_CALLBACK (gth_browser_activate_action_catalog_properties) }
 };
@@ -694,7 +694,7 @@ catalogs__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 	{
 		if (data->properties_button == NULL) {
 			data->properties_button = gtk_button_new ();
-			gtk_container_add (GTK_CONTAINER (data->properties_button), gtk_image_new_from_stock (GTK_STOCK_PROPERTIES, GTK_ICON_SIZE_MENU));
+			gtk_container_add (GTK_CONTAINER (data->properties_button), gtk_image_new_from_icon_name ("document-properties-symbolic", GTK_ICON_SIZE_MENU));
 			g_object_add_weak_pointer (G_OBJECT (data->properties_button), (gpointer *)&data->properties_button);
 			gtk_button_set_relief (GTK_BUTTON (data->properties_button), GTK_RELIEF_NONE);
 			gtk_widget_set_tooltip_text (data->properties_button, _("Catalog Properties"));

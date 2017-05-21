@@ -45,13 +45,13 @@ static const char *fixed_ui_info =
 
 
 static GthActionEntryExt action_entries[] = {
-	{ "Tool_RotateRight", "object-rotate-right",
+	{ "Tool_RotateRight", "object-rotate-right-symbolic",
 	  N_("Rotate Right"), "<control><alt>R",
 	  N_("Rotate the selected images 90° to the right"),
 	  GTH_ACTION_FLAG_ALWAYS_SHOW_IMAGE,
 	  G_CALLBACK (gth_browser_activate_action_tool_rotate_right) },
 
-	{ "Tool_RotateLeft", "object-rotate-left",
+	{ "Tool_RotateLeft", "object-rotate-left-symbolic",
 	  N_("Rotate Left"), "<control><alt>L",
 	  N_("Rotate the selected images 90° to the left"),
 	  GTH_ACTION_FLAG_ALWAYS_SHOW_IMAGE,

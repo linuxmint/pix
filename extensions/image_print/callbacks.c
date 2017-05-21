@@ -60,8 +60,8 @@ static const char *fixed_ui_info =
 
 
 static GthActionEntryExt action_entries[] = {
-	{ "File_Print", GTK_STOCK_PRINT,
-	  NULL, "<control>P",
+	{ "File_Print", "document-print-symbolic",
+	  N_("Print"), "<control>P",
 	  N_("Print the selected images"),
 	  GTH_ACTION_FLAG_IS_IMPORTANT,
 	  G_CALLBACK (gth_browser_activate_action_file_print) },

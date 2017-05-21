@@ -96,7 +96,7 @@ static const char *viewer_ui_info =
 static GthActionEntryExt edit_metadata_action_entries[] = {
 	{ "Edit_QuickTag", "tag", N_("T_ags") },
 
-	{ "Edit_Metadata", GTK_STOCK_EDIT,
+	{ "Edit_Metadata", "document-properties-symbolic",
 	  N_("Comment"), "<control>M",
 	  N_("Edit the comment and other information of the selected files"),
 	  GTH_ACTION_FLAG_IS_IMPORTANT,

@@ -65,7 +65,6 @@ G_BEGIN_DECLS
 #define PREF_BROWSER_CLICK_POLICY             "click-policy"
 #define PREF_BROWSER_SORT_TYPE                "sort-type"
 #define PREF_BROWSER_SORT_INVERSE             "sort-inverse"
-#define PREF_BROWSER_TOOLBAR_STYLE            "toolbar-style"
 #define PREF_BROWSER_WINDOW_WIDTH             "window-width"
 #define PREF_BROWSER_WINDOW_HEIGHT            "window-height"
 #define PREF_BROWSER_WINDOW_MAXIMIZED         "maximized"
@@ -115,7 +114,6 @@ void             gth_pref_set_startup_location    (const char *location);
 const char *     gth_pref_get_startup_location    (void);
 const char *     gth_pref_get_wallpaper_filename  (void);
 const char *     gth_pref_get_wallpaper_options   (void);
-GthToolbarStyle  gth_pref_get_real_toolbar_style  (void);
 void             gth_pref_save_window_geometry    (GtkWindow  *window,
                                	       	       	   const char *schema);
 void             gth_pref_restore_window_geometry (GtkWindow  *window,

@@ -47,15 +47,6 @@ typedef enum {
 } GthDirection;
 
 
-typedef enum {
-	GTH_TOOLBAR_STYLE_SYSTEM,
-	GTH_TOOLBAR_STYLE_TEXT_BELOW,
-	GTH_TOOLBAR_STYLE_TEXT_BESIDE,
-	GTH_TOOLBAR_STYLE_ICONS,
-	GTH_TOOLBAR_STYLE_TEXT
-} GthToolbarStyle;
-
-
 /* The GthTransform numeric values range from 1 to 8, corresponding to
  * the valid range of Exif orientation tags.  The name associated with each
  * numeric valid describes the data transformation required that will allow

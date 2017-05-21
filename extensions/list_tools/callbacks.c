@@ -72,7 +72,7 @@ static const char *fixed_ui_info =
 static GtkActionEntry action_entries[] = {
 	/*{ "ExecWithMenu", GTK_STOCK_EXECUTE, N_("_Tools") },*/
 
-	{ "ListTools_EditScripts", GTK_STOCK_EDIT,
+	{ "ListTools_EditScripts", NULL,
 	  N_("Personalize..."), NULL,
 	  NULL,
 	  G_CALLBACK (gth_browser_action_edit_scripts) }
@@ -316,9 +316,8 @@ list_tools__gth_browser_construct_cb (GthBrowser *browser)
 
 	action = g_object_new (GTH_TYPE_TOGGLE_MENU_ACTION,
 			       "name", "ListTools",
-			       "stock-id", GTK_STOCK_EXECUTE,
-			       "label", _("Tools"),
-			       "tooltip",  _("Batch tools for multiple files"),
+			       "icon-name", "open-menu-symbolic",
+			       "tooltip",  _("Tools"),
 			       "is-important", TRUE,
 			       NULL);
 	gth_toggle_menu_action_set_show_menu_func (GTH_TOGGLE_MENU_ACTION (action),

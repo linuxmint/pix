@@ -84,6 +84,6 @@ gth_file_tool_rotate_left_class_init (GthFileToolRotateLeftClass *klass)
 static void
 gth_file_tool_rotate_left_init (GthFileToolRotateLeft *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "tool-rotate-270", _("Rotate Left"), NULL, FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "object-rotate-left-symbolic", _("Rotate Left"), NULL, FALSE);
 	gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Rotate the image by 90 degrees counterclockwise"));
 }

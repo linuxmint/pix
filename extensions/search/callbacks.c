@@ -54,8 +54,8 @@ static const char *find_ui_info =
 
 
 static GtkActionEntry find_action_entries[] = {
-	{ "Edit_Find", GTK_STOCK_FIND,
-	  NULL, NULL,
+	{ "Edit_Find", "edit-find-symbolic",
+	  N_("Find"), NULL,
 	  N_("Find files"),
 	  G_CALLBACK (gth_browser_activate_action_edit_find) }
 };

@@ -52,7 +52,7 @@ static const char *ui_info =
 
 
 static GtkActionEntry action_entries[] = {
-	{ "View_Slideshow", "x-office-presentation",
+	{ "View_Slideshow", "display-projector-symbolic",
 	  N_("_Slideshow"), "F5",
 	  N_("View as a slideshow"),
 	  G_CALLBACK (gth_browser_activate_action_view_slideshow) }

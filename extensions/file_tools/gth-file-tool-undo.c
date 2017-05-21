@@ -72,5 +72,5 @@ gth_file_tool_undo_class_init (GthFileToolUndoClass *klass)
 static void
 gth_file_tool_undo_init (GthFileToolUndo *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "undo", _("Undo"), _("Undo"), TRUE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "edit-undo-symbolic", _("Undo"), _("Undo"), TRUE);
 }

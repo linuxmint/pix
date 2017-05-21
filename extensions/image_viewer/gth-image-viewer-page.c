@@ -165,47 +165,47 @@ image_viewer_activate_action_edit_paste_image (GtkAction          *action,
 
 
 static GtkActionEntry image_viewer_action_entries[] = {
-	{ "ImageViewer_Edit_Undo", GTK_STOCK_UNDO,
-	  NULL, "<control>z",
+	{ "ImageViewer_Edit_Undo", "edit-undo-symbolic",
+	  N_("Undo"), "<control>z",
 	  NULL,
 	  G_CALLBACK (image_viewer_activate_action_edit_undo) },
 
-	{ "ImageViewer_Edit_Redo", GTK_STOCK_REDO,
-	  NULL, "<shift><control>z",
+	{ "ImageViewer_Edit_Redo", "edit-redo-symbolic",
+	  N_("Redo"), "<shift><control>z",
 	  NULL,
 	  G_CALLBACK (image_viewer_activate_action_edit_redo) },
 
-	{ "ImageViewer_Edit_Copy_Image", GTK_STOCK_COPY,
+	{ "ImageViewer_Edit_Copy_Image", "edit-copy-symbolic",
 	  N_("Copy Image"), "<control>c",
 	  N_("Copy the image to the clipboard"),
 	  G_CALLBACK (image_viewer_activate_action_edit_copy_image) },
 
-	{ "ImageViewer_Edit_Paste_Image", GTK_STOCK_PASTE,
+	{ "ImageViewer_Edit_Paste_Image", "edit-paste-symbolic",
 	  N_("Paste Image"), "<control>p",
 	  N_("Paste the image from the clipboard"),
 	  G_CALLBACK (image_viewer_activate_action_edit_paste_image) },
 
-	{ "ImageViewer_View_ZoomIn", GTK_STOCK_ZOOM_IN,
+	{ "ImageViewer_View_ZoomIn", "zoom-in-symbolic",
 	  N_("In"), "<control>plus",
 	  N_("Zoom in"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_in) },
 
-	{ "ImageViewer_View_ZoomOut", GTK_STOCK_ZOOM_OUT,
+	{ "ImageViewer_View_ZoomOut", "zoom-out-symbolic",
 	  N_("Out"), "<control>minus",
 	  N_("Zoom out"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_out) },
 
-	{ "ImageViewer_View_Zoom100", GTK_STOCK_ZOOM_100,
+	{ "ImageViewer_View_Zoom100", "zoom-original-symbolic",
 	  N_("1:1"), "<control>0",
 	  N_("Actual size"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_100) },
 
-	{ "ImageViewer_View_ZoomFit", GTK_STOCK_ZOOM_FIT,
+	{ "ImageViewer_View_ZoomFit", "zoom-fit-best-symbolic",
 	  N_("Fit"), "",
 	  N_("Zoom to fit window"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_fit) },
 
-	{ "ImageViewer_View_ZoomFitWidth", GTH_STOCK_ZOOM_FIT_WIDTH,
+	{ "ImageViewer_View_ZoomFitWidth", "zoom-fit-best-symbolic",
 	  N_("Width"), "",
 	  N_("Zoom to fit width"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_fit_width) },
@@ -617,7 +617,7 @@ paint_comment_over_image_func (GthImageViewer *image_viewer,
         if (icon == NULL) {
         	GIcon *gicon;
 
-        	gicon = g_themed_icon_new (GTK_STOCK_PROPERTIES);
+        	gicon = g_themed_icon_new ("document-properties-symbolic");
         	icon = _g_icon_get_pixbuf (gicon, 24, _gtk_widget_get_icon_theme (GTK_WIDGET (image_viewer)));
 
         	g_object_unref (gicon);

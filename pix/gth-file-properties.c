@@ -213,7 +213,7 @@ gth_file_properties_real_get_name (GthMultipageChild *self)
 const char *
 gth_file_properties_real_get_icon (GthMultipageChild *self)
 {
-	return GTK_STOCK_PROPERTIES;
+	return "document-properties-symbolic";
 }
 
 
