@@ -421,6 +421,16 @@ openraw_pixbuf_animation_new_from_file (GInputStream  *istream,
 
 	pixbuf = gdk_pixbuf_new_from_file (cache_file, NULL);
 
+	if (pixbuf != NULL) {
+		GdkPixbuf *rotated;
+
+		rotated = gdk_pixbuf_apply_embedded_orientation (pixbuf);
+		if (rotated != NULL) {
+			g_object_unref (pixbuf);
+			pixbuf = rotated;
+		}
+	}
+
 	/* Thumbnail files are already cached, so delete the conversion cache copies */
 	if (is_thumbnail) {
 		GFile *file;
