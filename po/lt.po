@@ -12,7 +12,7 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
 "POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2017-05-21 20:12+0000\n"
+"PO-Revision-Date: 2017-06-26 15:41+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-05-23 10:36+0000\n"
-"X-Generator: Launchpad (build 18387)\n"
+"X-Launchpad-Export-Date: 2017-06-28 07:54+0000\n"
+"X-Generator: Launchpad (build 18416)\n"
 "Language: lt\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -100,15 +100,15 @@ msgstr "Pix"
 
 #: ../data/pix.desktop.in.in.h:2
 msgid "Image Viewer"
-msgstr "Paveikslėlių peržiūros programa"
+msgstr "Paveikslų žiūryklė"
 
 #: ../data/pix.desktop.in.in.h:3
 msgid "Pix Image Viewer"
-msgstr "Paveikslėlių peržiūros programa Pix"
+msgstr "Pix paveikslų žiūryklė"
 
 #: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
-msgstr "Peržiūrėti ir tvarkyti paveikslėlius"
+msgstr "Peržiūrėti ir tvarkyti paveikslus"
 
 #: ../data/pix-import.desktop.in.in.h:1
 msgid "Import with Pix"
@@ -131,12 +131,12 @@ msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr ""
-"Paveikslėlių, viršijančių šį dydį (baitais), miniatiūros nebus rodomos. "
-"Naudokite 0, jeigu norite matyti visų paveikslėlių miniatiūras."
+"Paveikslų, viršijančių šį dydį (baitais), miniatiūros nebus rodomos. "
+"Naudokite 0, jeigu norite matyti visų paveikslų miniatiūras."
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
-msgstr "Ar keisti lango dydį pagal paveikslėlio dydį"
+msgstr "Ar keisti lango dydį pagal paveikslo dydį"
 
 #: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
@@ -148,7 +148,7 @@ msgstr "Galimos reikšmės yra: white, black, checked, none."
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
-msgstr "Ar pakeitus paveikslėlį atstatyti slinkties juostų pozicijas"
+msgstr "Ar pakeitus paveikslą atstatyti slankjuosčių pozicijas"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
@@ -213,7 +213,7 @@ msgstr "Mediana:"
 #. After the colon there is the total number of pixels
 #: ../data/ui/histogram-info.ui.h:6
 msgid "Pixels:"
-msgstr "Pikseliai:"
+msgstr "Pikselių:"
 
 #. After the colon there is a percentile.
 #: ../data/ui/histogram-info.ui.h:8
@@ -262,7 +262,7 @@ msgstr "Per_rašyti senąjį failą"
 
 #: ../data/ui/overwrite-dialog.ui.h:8
 msgid "Do not overwrite _the old file"
-msgstr "Neperrašyti _senojo paveikslėlio"
+msgstr "Neperrašyti _senojo paveikslo"
 
 #: ../data/ui/overwrite-dialog.ui.h:9
 msgid "Overwrite _all files"
@@ -346,7 +346,7 @@ msgstr "Paleidimo metu:"
 
 #: ../data/ui/preferences.ui.h:15
 msgid "As_k confirmation before deleting files or catalogs"
-msgstr "Pakla_usti patvirtinimo prieš trinant paveikslėlius ar katalogus"
+msgstr "Kla_usti patvirtinimo prieš ištrinant paveikslus ar katalogus"
 
 #: ../data/ui/preferences.ui.h:16
 msgid "Ask whether to save _modified files"
@@ -420,7 +420,7 @@ msgstr "256"
 
 #: ../data/ui/preferences.ui.h:31
 msgid "D_etermine image type from content (slower)"
-msgstr "Nustat_yti paveikslėlio tipą pagal turinį (lėčiau)"
+msgstr "Nustat_yti paveikslo tipą pagal turinį (lėčiau)"
 
 #: ../data/ui/preferences.ui.h:32 ../pix/dlg-preferences-extensions.c:71
 #: ../pix/gth-browser-actions-entries.h:179
@@ -446,7 +446,7 @@ msgstr "23"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:2
 msgid "Upload images to 23hq.com"
-msgstr "Įkelti paveikslėlius į 23hq.com"
+msgstr "Įkelti paveikslus į 23hq.com"
 
 #: ../extensions/23hq/callbacks.c:68
 msgid "_23..."
@@ -580,7 +580,7 @@ msgstr "Rašyti į diską"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr "Klaida interpretuojant JPEG paveikslėlio failą: %s"
+msgstr "Klaida interpretuojant JPEG paveikslo failą: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
 #, c-format
@@ -789,7 +789,7 @@ msgstr "Į_dėti į katalogą..."
 
 #: ../extensions/catalogs/callbacks.c:116
 msgid "Add selected images to a catalog"
-msgstr "Įdėti pasirinktus paveikslėlius į katalogą"
+msgstr "Įdėti pasirinktus paveikslus į katalogą"
 
 #: ../extensions/catalogs/callbacks.c:120
 msgid "Remo_ve from Catalog"
@@ -797,7 +797,7 @@ msgstr "Pašalin_ti iš katalogo"
 
 #: ../extensions/catalogs/callbacks.c:121
 msgid "Remove selected images from the catalog"
-msgstr "Iš katalogo pašalinti pasirinktus paveikslėlius"
+msgstr "Iš katalogo pašalinti pasirinktus paveikslus"
 
 #: ../extensions/catalogs/callbacks.c:125
 msgid "Create _Catalog"
@@ -1044,7 +1044,7 @@ msgstr "Netinkamas failo formatas"
 #: ../extensions/catalogs/gth-organize-task.c:202
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr "Operacija baigta. Katalogų: %d. Paveikslėlių: %d."
+msgstr "Operacija baigta. Katalogų: %d. Paveikslų: %d."
 
 #: ../extensions/change_date/callbacks.c:44
 msgid "Change _Date..."
@@ -1052,7 +1052,7 @@ msgstr "Pakeisti _datą..."
 
 #: ../extensions/change_date/callbacks.c:45
 msgid "Change images last modified date"
-msgstr "Pakeisti paveikslėlio paskutinio pakeitimo datą"
+msgstr "Pakeisti paveikslo paskutinio pakeitimo datą"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:1
 msgid "Change date"
@@ -1196,11 +1196,11 @@ msgstr "Sukurti kontaktų lapą"
 
 #: ../extensions/contact_sheet/callbacks.c:65
 msgid "Image _Wall..."
-msgstr "Paveikslėlių _siena..."
+msgstr "Paveikslų _siena..."
 
 #: ../extensions/contact_sheet/callbacks.c:66
 msgid "Create an image-wall"
-msgstr "Sukurti paveikslėlių sieną"
+msgstr "Sukurti paveikslų sieną"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:1
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
@@ -1210,7 +1210,7 @@ msgstr "Kontaktų lapas"
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
-msgstr "Sukurti indekso paveikslėlį, rodantį pasirinktų failų miniatiūras."
+msgstr "Sukurti indekso paveikslą, rodantį pasirinktų failų miniatiūras."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1375,7 +1375,7 @@ msgstr "Naujas išskaičiavimo skaitmuo"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
 msgid "Create _HTML image map"
-msgstr "Sukurti _HTML paveikslėlių žemėlapį"
+msgstr "Sukurti _HTML paveikslų žemėlapį"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
 msgid "Create a new theme"
@@ -1383,7 +1383,7 @@ msgstr "Sukurti naują temą"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
 msgid "Edit the selected theme"
-msgstr "Keisti pasirinktą temą"
+msgstr "Taisyti pasirinktą temą"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
 msgid "Delete the selected theme"
@@ -1405,13 +1405,13 @@ msgstr "Stulpeliai:"
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:29
 msgid "Images per page:"
-msgstr "Paveikslėlių puslapyje:"
+msgstr "Paveikslų puslapyje:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:28
 msgid "All images on a single page"
-msgstr "Visus paveikslėlius viename puslapyje"
+msgstr "Visus paveikslus viename puslapyje"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
 msgid "_All pages with the same size"
@@ -1451,7 +1451,7 @@ msgstr "Miniatiūros"
 
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
 msgid "Image Wall"
-msgstr "Paveikslėlių siena"
+msgstr "Paveikslų siena"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:482
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:493
@@ -1465,7 +1465,7 @@ msgstr "Nepavyko ištrinti temos"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:247
 msgid "Creating images"
-msgstr "Kuriami paveikslėliai"
+msgstr "Kuriami paveikslai"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:896
 msgid "Generating thumbnails"
@@ -1497,7 +1497,7 @@ msgstr "Konvertuoti formatą..."
 
 #: ../extensions/convert_format/callbacks.c:46
 msgid "Convert image format"
-msgstr "Konvertuoti paveikslėlio formatą"
+msgstr "Konvertuoti paveikslo formatą"
 
 #: ../extensions/convert_format/convert_format.extension.in.in.h:1
 msgid "Convert format"
@@ -1505,7 +1505,7 @@ msgstr "Konvertuoti formatą"
 
 #: ../extensions/convert_format/convert_format.extension.in.in.h:2
 msgid "Save images in a different format"
-msgstr "Įrašyti paveikslėlius kitu formatu"
+msgstr "Įrašyti paveikslus kitu formatu"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:1
 msgid "Convert Format"
@@ -1523,11 +1523,11 @@ msgstr "Tikslas"
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:5
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:8
 msgid "_Use the original image folder"
-msgstr "Na_udoti originalų paveikslėlio aplanką"
+msgstr "Na_udoti pradinį paveikslo aplanką"
 
 #: ../extensions/convert_format/dlg-convert-format.c:95
 msgid "Converting images"
-msgstr "Konvertuojami paveikslėliai"
+msgstr "Konvertuojami paveikslai"
 
 #: ../extensions/desktop_background/actions.c:240
 msgid "Could not show the desktop background properties"
@@ -1540,12 +1540,12 @@ msgstr "Nepavyko nustatyti darbastalio fono"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
-msgstr "Padaryti paveikslėlį darbalaukio fonu"
+msgstr "Nustatyti kaip darbalaukio foną"
 
 #: ../extensions/desktop_background/callbacks.c:50
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
 msgid "Set the image as desktop background"
-msgstr "Padaryti paveikslėlį darbalaukio fonu"
+msgstr "Nustatyti paveikslą kaip darbalaukio foną"
 
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
 msgid "Desktop background"
@@ -2053,7 +2053,7 @@ msgstr "Facebook"
 
 #: ../extensions/facebook/facebook.extension.in.in.h:2
 msgid "Upload images to Facebook"
-msgstr "Įkelti paveikslėlius į Facebook"
+msgstr "Įkelti paveikslus į Facebook"
 
 #: ../extensions/facebook/facebook-service.c:498
 #: ../extensions/flicker_utils/flickr-service.c:863
@@ -2144,8 +2144,7 @@ msgid ""
 "The folder cannot be moved to the Trash. Do you want to delete it "
 "permanently?"
 msgstr ""
-"Paveikslėlių negalima perkelti į šiukšlinę. Ar norite juos ištrinti "
-"negrįžtamai?"
+"Paveikslų negalima perkelti į šiukšlinę. Ar norite juos ištrinti negrįžtamai?"
 
 #: ../extensions/file_manager/actions.c:780
 msgid "Could not move the folder to the Trash"
@@ -2352,7 +2351,7 @@ msgstr "_Pozicija:"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:5
 msgid "Maximize"
-msgstr "Išdidinti"
+msgstr "Išskleisti"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:6
 msgid "Center"
@@ -2416,7 +2415,7 @@ msgstr "Matmenys"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:4
 msgid "Set the image size to this value"
-msgstr "Nustatyti paveikslėlio dydį į šią vertę"
+msgstr "Nustatyti paveikslo dydį į šią vertę"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:8
 msgid "High _quality"
@@ -2455,7 +2454,7 @@ msgstr "Lygiuoti"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
 msgid "Image size"
-msgstr "Paveikslėlio dydis"
+msgstr "Paveikslo dydis"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
 msgid "Point 1:"
@@ -2494,7 +2493,7 @@ msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
 msgstr ""
-"Piešti liniją ant paveikslėlio \n"
+"Piešti liniją ant paveikslo \n"
 "lygiavimui nustatyti."
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
@@ -2540,11 +2539,11 @@ msgstr "Kiekis:"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
-msgstr "Paveikslėlių įrankiai"
+msgstr "Paveikslų įrankiai"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:2
 msgid "Basic tools to modify images."
-msgstr "Baziniai įrankiai paveikslėliams redaguoti."
+msgstr "Baziniai įrankiai paveikslams redaguoti."
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:372
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:272
@@ -2563,7 +2562,7 @@ msgstr "Koreguoti spalvas"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr "Keisti paveikslėlio skaistį, kontrastą, grynį ir gamą lygį"
+msgstr "Keisti paveikslo skaistį, kontrastą, grynį ir gamą lygį"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
@@ -2582,7 +2581,7 @@ msgstr "Kvadratas"
 #: ../extensions/file_tools/gth-file-tool-resize.c:590
 #, c-format
 msgid "%d x %d (Image)"
-msgstr "%d x %d (paveikslėlis)"
+msgstr "%d x %d (paveikslas)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:420
 #: ../extensions/file_tools/gth-file-tool-resize.c:594
@@ -2667,7 +2666,7 @@ msgstr "Apkirpti"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:45
 msgid "Equalizing image histogram"
-msgstr "Išlyginama paveikslėlio histograma"
+msgstr "Išlyginama paveikslo histograma"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:230
 msgid "Equalize"
@@ -2675,7 +2674,7 @@ msgstr "Išlyginti"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:231
 msgid "Equalize image histogram"
-msgstr "Išlyginti paveikslėlio histogramą"
+msgstr "Išlyginti paveikslo histogramą"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:87
 msgid "Flip"
@@ -2683,7 +2682,7 @@ msgstr "Apversti"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:88
 msgid "Flip the image vertically"
-msgstr "apversti paveikslėlį vertikaliai"
+msgstr "apversti paveikslą vertikaliai"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale..."
@@ -2699,7 +2698,7 @@ msgstr "Atspindėti"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:88
 msgid "Mirror the image horizontally"
-msgstr "Apsukti paveikslėlį horizontaliai"
+msgstr "Apsukti paveikslą horizontaliai"
 
 #: ../extensions/file_tools/gth-file-tool-negative.c:197
 msgid "Negative"
@@ -2713,7 +2712,7 @@ msgstr "Pakartoti"
 #: ../extensions/file_tools/gth-file-tool-resize.c:214
 #: ../extensions/resize_images/dlg-resize-images.c:180
 msgid "Resizing images"
-msgstr "Keičiamas paveikslėlių dydis"
+msgstr "Keičiamas paveikslų dydis"
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:808
 msgid "Resize..."
@@ -2733,7 +2732,7 @@ msgstr "Pasukti"
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:629
 msgid "Freely rotate the image"
-msgstr "Laisvai pasukti paveikslėlį"
+msgstr "Laisvai pasukti paveikslą"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:87
 #: ../extensions/image_rotation/callbacks.c:55
@@ -2742,7 +2741,7 @@ msgstr "Pasukti į kairę"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr "Pasukti paveikslėlį 90 laipsnių prieš laikrodžio rodyklę"
+msgstr "Pasukti paveikslą 90 laipsnių prieš laikrodžio rodyklę"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
 #: ../extensions/image_rotation/callbacks.c:49
@@ -2751,7 +2750,7 @@ msgstr "Pasukti į dešinę"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr "Pasukti paveikslėlį 90 laipsnių pagal laikrodžio rodyklę"
+msgstr "Pasukti paveikslą 90 laipsnių pagal laikrodžio rodyklę"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
 msgid "Save As"
@@ -2764,7 +2763,7 @@ msgstr "Įrašyti"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:101
 msgid "Sharpening image"
-msgstr "Paveikslėlio sodrinimas"
+msgstr "Paveikslo sodrinimas"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus..."
@@ -2907,7 +2906,7 @@ msgstr "Flickr"
 
 #: ../extensions/flicker/flicker.extension.in.in.h:2
 msgid "Upload images to Flickr"
-msgstr "Išsiųsti pasirinktus paveikslėlius į Flickr"
+msgstr "Išsiųsti pasirinktus paveikslus į Flickr"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:5
@@ -3012,17 +3011,17 @@ msgstr "Nepavyko įrašyti failo"
 
 #: ../extensions/gstreamer_tools/actions.c:131
 msgid "Could not take a screenshot"
-msgstr "Nepavyko nufotografuoti ekrano"
+msgstr "Nepavyko padaryti ekrano kopijos"
 
 #: ../extensions/gstreamer_tools/actions.c:137
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1215
 msgid "Save Image"
-msgstr "Įrašyti paveikslėlį"
+msgstr "Įrašyti paveikslą"
 
 #: ../extensions/gstreamer_tools/actions.c:165
 msgctxt "Filename"
 msgid "Screenshot"
-msgstr "Ekrano nuotrauka"
+msgstr "Ekrano kopija"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
 msgid "Slower"
@@ -3065,15 +3064,15 @@ msgstr "Garso / vaizdo palaikymas"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:2
 msgid "Play audio and video files."
-msgstr "Groti garso ir vaizdo įrašus."
+msgstr "Groti garso ir vaizdo failus."
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:104
 msgid "Screenshot"
-msgstr "Ekrano nuotrauka"
+msgstr "Ekrano kopija"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:105
 msgid "Take a screenshot"
-msgstr "Daryti ekrano nuotrauką"
+msgstr "Padaryti ekrano kopiją"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
@@ -3164,7 +3163,7 @@ msgstr "Spausdinti"
 
 #: ../extensions/image_print/callbacks.c:65
 msgid "Print the selected images"
-msgstr "Spausdinti pasirinktus paveikslėlius"
+msgstr "Spausdinti pasirinktus paveikslus"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:1
 msgid "Centered"
@@ -3185,7 +3184,7 @@ msgstr "_Eilutės:"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:19
 msgid "Image"
-msgstr "Paveikslėlis"
+msgstr "Paveikslas"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:20
 msgid "Position:"
@@ -3250,7 +3249,7 @@ msgstr "Nepavyko išspausdinti"
 #: ../extensions/image_print/gth-image-print-job.c:1746
 #: ../pix/gth-main-default-tests.c:240
 msgid "Images"
-msgstr "Paveikslėliai"
+msgstr "Paveikslai"
 
 #: ../extensions/image_print/gth-image-print-job.c:1847
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
@@ -3267,23 +3266,23 @@ msgstr "Įkeliama „%s“"
 #: ../extensions/image_print/gth-load-image-info-task.c:166
 #: ../extensions/webalbums/gth-web-exporter.c:2721
 msgid "Loading images"
-msgstr "Įkeliami paveikslėliai"
+msgstr "Įkeliami paveikslai"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:1
 msgid "Image print"
-msgstr "Paveikslėlio spausdinimas"
+msgstr "Paveikslo spausdinimas"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:2
 msgid "Allow to print images choosing the page layout."
-msgstr "Leisti spausdinti paveikslėlius pasirenkant puslapio išdėstymą."
+msgstr "Leisti spausdinti paveikslus pasirenkant puslapio išdėstymą."
 
 #: ../extensions/image_rotation/callbacks.c:50
 msgid "Rotate the selected images 90° to the right"
-msgstr "Pasukti pasirinktus paveikslėlius 90° į dešinę"
+msgstr "Pasukti pasirinktus paveikslus 90° į dešinę"
 
 #: ../extensions/image_rotation/callbacks.c:56
 msgid "Rotate the selected images 90° to the left"
-msgstr "Pasukti pasirinktus paveikslėlius 90° į kairę"
+msgstr "Pasukti pasirinktus paveikslus 90° į kairę"
 
 #: ../extensions/image_rotation/callbacks.c:61
 msgid "Rotate Physically"
@@ -3291,7 +3290,7 @@ msgstr "Pasukti fiziškai"
 
 #: ../extensions/image_rotation/callbacks.c:62
 msgid "Rotate the selected images according to the embedded orientation"
-msgstr "Pasukti pasirinktus paveikslėlius pagal įtaisytą padėtį"
+msgstr "Pasukti pasirinktus paveikslus pagal įtaisytą padėtį"
 
 #: ../extensions/image_rotation/callbacks.c:67
 msgid "Reset the EXIF Orientation"
@@ -3299,27 +3298,27 @@ msgstr "Atstatyti EXIF padėtį"
 
 #: ../extensions/image_rotation/callbacks.c:68
 msgid "Reset the embedded orientation without rotating the images"
-msgstr "Atstatyti įtaisytą padėtį nepasukant paveikslėlių"
+msgstr "Atstatyti įtaisytą padėtį nepasukant paveikslų"
 
 #: ../extensions/image_rotation/gth-reset-orientation-task.c:111
 #: ../extensions/image_rotation/gth-transform-task.c:143
 #: ../extensions/webalbums/gth-web-exporter.c:2340
 #: ../extensions/webalbums/gth-web-exporter.c:2425
 msgid "Saving images"
-msgstr "Įrašomi paveikslėliai"
+msgstr "Įrašomi paveikslai"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
 msgid "Image rotation"
-msgstr "Paveikslėlio pasukimas"
+msgstr "Paveikslo pasukimas"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
 msgid "Rotate images without data loss."
-msgstr "Pasukti paveikslėlius neprarandant kokybės."
+msgstr "Pasukti paveikslus neprarandant kokybės."
 
 #: ../extensions/image_rotation/rotation-utils.c:105
 #, c-format
 msgid "Problem transforming the image: %s"
-msgstr "Klaida transformuojant paveikslėlį: %s"
+msgstr "Klaida transformuojant paveikslą: %s"
 
 #: ../extensions/image_rotation/rotation-utils.c:110
 msgid ""
@@ -3334,16 +3333,16 @@ msgid ""
 "For practical use, this mode gives the best looking results, but the "
 "transformation is not strictly lossless anymore."
 msgstr ""
-"Dėl šios transformacijos gali atsirasti nedidelių paveikslėlių iškraipymų "
-"viename ar daugiau kraštų, kadangi paveikslėlio matmenys nesidalija iš 8.\n"
+"Dėl šios transformacijos gali atsirasti nedidelių paveikslų iškraipymų "
+"viename ar daugiau kraštų, kadangi paveikslo matmenys nesidalija iš 8.\n"
 "\n"
-"Tačiau šie iškraipymai yra atstatomi. Jeigu gautasis paveikslėlis "
+"Tačiau šie iškraipymai yra atstatomi. Jeigu gautasis paveikslas "
 "nepriimtinas, paprasčiausiai pritaikykite atvirkštinę transformaciją ir "
-"gausite pradinį paveikslėlį.\n"
+"gausite pradinį paveikslą.\n"
 "\n"
 "Galite taip pat panaikinti (ar padailinti) netransformuojamus kraštinius "
-"taškelius. Praktiškai naudojant šią transformaciją gaunamas geriausiai "
-"atrodantis paveikslėlis, tačiau ši transformacija neatšaukiama."
+"pikselius. Praktiškai naudojant šią transformaciją gaunamas geriausiai "
+"atrodantis paveikslas, tačiau ši transformacija neatšaukiama."
 
 #: ../extensions/image_rotation/rotation-utils.c:116
 msgid "_Trim"
@@ -3383,7 +3382,7 @@ msgstr "Atstatyti slankjuosčių pozicijas"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
 msgid "After loading an image:"
-msgstr "Įkėlus paveikslėlį:"
+msgstr "Įkėlus paveikslą:"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
 msgid "_Zoom quality:"
@@ -3419,19 +3418,19 @@ msgstr "Histograma"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:179
 msgid "Copy Image"
-msgstr "Kopijuoti paveikslėlį"
+msgstr "Kopijuoti paveikslą"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:180
 msgid "Copy the image to the clipboard"
-msgstr "Kopijuoti paveikslėlį į iškarpinę"
+msgstr "Kopijuoti paveikslą į iškarpinę"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:184
 msgid "Paste Image"
-msgstr "Įdėti paveikslėlį"
+msgstr "Įdėti paveikslą"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:185
 msgid "Paste the image from the clipboard"
-msgstr "Įdėti paveikslėlį iš iškarpinės"
+msgstr "Įdėti paveikslą iš iškarpinės"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:189
 msgid "In"
@@ -3471,11 +3470,11 @@ msgstr "Pakeisti mastelį, kad atitiktų plotį"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
 msgid "Image viewer"
-msgstr "Paveikslėlių peržiūros programa"
+msgstr "Paveikslų žiūryklė"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
 msgid "Basic image viewing."
-msgstr "Paprasta paveikslėlio peržiūra."
+msgstr "Paprasta paveikslo peržiūra."
 
 #: ../extensions/image_viewer/preferences.c:125
 msgid "Viewer"
@@ -3791,7 +3790,7 @@ msgstr "Žemėlapis"
 #: ../extensions/map_view/gth-map-view.c:276
 msgid ""
 "The geographical position information is not available for this image."
-msgstr "Geografinė informacija neprieinama šiam paveikslėliui."
+msgstr "Geografinė informacija neprieinama šiam paveikslui."
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
@@ -3917,7 +3916,7 @@ msgstr "PhotoBucket"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:2
 msgid "Upload images to PhotoBucket"
-msgstr "Išsiųsti paveikslėlius į PhotoBucket"
+msgstr "Išsiųsti paveikslus į PhotoBucket"
 
 #: ../extensions/photo_importer/actions.c:71
 msgid "Import"
@@ -3941,7 +3940,7 @@ msgstr "Importuoti fotografijas ir kitus failus iš aplanko"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
 msgid "_Rotate the images physically"
-msgstr "Pasukti paveikslėlius _fiziškai"
+msgstr "Pasukti paveikslus _fiziškai"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
 msgid "After importing from a device:"
@@ -4041,7 +4040,7 @@ msgstr "Picasa internetiniai albumai"
 
 #: ../extensions/picasaweb/picasaweb.extension.in.in.h:2
 msgid "Upload images to Picasa Web Albums"
-msgstr "Nusiųsti paveikslėlius į Picasa internetinius albumus"
+msgstr "Išsiųsti paveikslus į Picasa internetinius albumus"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
@@ -4049,7 +4048,7 @@ msgstr "Raw formato palaikymas"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:2
 msgid "Allow to load raw format images."
-msgstr "Leisti įkelti raw formato paveikslėlius."
+msgstr "Leisti įkelti raw formato paveikslus."
 
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
 msgid "_X:"
@@ -4224,15 +4223,15 @@ msgstr "Pervadinti failų sekas."
 
 #: ../extensions/resize_images/callbacks.c:45
 msgid "Resize Images..."
-msgstr "Keisti paveikslėlių dydį..."
+msgstr "Keisti paveikslų dydį..."
 
 #: ../extensions/resize_images/callbacks.c:46
 msgid "Resize the selected images"
-msgstr "Keisti pasirinktų paveikslėlių didį"
+msgstr "Keisti pasirinktų paveikslų didį"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:1
 msgid "Resize Images"
-msgstr "Keisti paveikslėlių dydį"
+msgstr "Keisti paveikslų dydį"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:2
 msgid "New dimensions"
@@ -4261,11 +4260,11 @@ msgstr "Palikti originalų formatą"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:1
 msgid "Resize images"
-msgstr "Keisti paveikslėlių dydį"
+msgstr "Keisti paveikslų dydį"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:2
 msgid "Resize series of images."
-msgstr "Keisti paveikslėlių sekų dydį."
+msgstr "Keisti paveikslų sekų dydį."
 
 #: ../extensions/search/actions.c:49 ../extensions/search/actions.c:117
 #: ../extensions/search/actions.c:123
@@ -4282,7 +4281,7 @@ msgstr "Ieškoti"
 
 #: ../extensions/search/callbacks.c:59
 msgid "Find files"
-msgstr "Ieškoti paveikslėlių"
+msgstr "Ieškoti paveikslų"
 
 #: ../extensions/search/callbacks.c:132
 msgid "Search again"
@@ -4456,7 +4455,7 @@ msgstr "Kubas iš apačios"
 
 #: ../extensions/slideshow/slideshow.extension.in.in.h:2
 msgid "View images as a slideshow."
-msgstr "Rodyti paveikslėlius kaip skaidres."
+msgstr "Rodyti paveikslus kaip skaidres."
 
 #: ../extensions/webalbums/callbacks.c:71
 msgid "_Web Album..."
@@ -4468,7 +4467,7 @@ msgstr "Sukurti statinį žiniatinklio albumą"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:26
 msgid "Click to view the image"
-msgstr "Spustelėkite norėdami peržiūrėti paveikslėlį"
+msgstr "Spustelėkite norėdami peržiūrėti paveikslą"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:27
 msgid "Go back to the index"
@@ -4477,7 +4476,7 @@ msgstr "Grįžti į rodyklę"
 #: ../extensions/webalbums/data/albumthemes/text.h:28
 #, c-format
 msgid "Image %d of %d"
-msgstr "%d paveikslėlis iš %d"
+msgstr "%d paveikslas iš %d"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:29
 msgid "Index"
@@ -4500,7 +4499,7 @@ msgstr "Žiūrėti puslapį %d"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:34
 msgid "View the next image"
-msgstr "Žiūrėti kitą paveikslėlį"
+msgstr "Žiūrėti kitą paveikslą"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:35
 msgid "View the next page"
@@ -4508,7 +4507,7 @@ msgstr "Žiūrėti kitą puslapį"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:36
 msgid "View the previous image"
-msgstr "Žiūrėti ankstesnį paveikslėlį"
+msgstr "Žiūrėti ankstesnį paveikslą"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:37
 msgid "View the previous page"
@@ -4516,7 +4515,7 @@ msgstr "Žiūrėti ankstesnį puslapį"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
 msgid "All images on  a single image"
-msgstr "Visus paveikslėlius viename paveikslėlyje"
+msgstr "Visus paveikslus viename paveiksle"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
 msgid "Adapts to the window width"
@@ -4549,11 +4548,11 @@ msgstr "Miniatiūros antraštė"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
 msgid "The current image number"
-msgstr "Dabartinio paveikslėlio numeris"
+msgstr "Dabartinio paveikslo numeris"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:33
 msgid "The total number of images"
-msgstr "Iš viso paveikslėlių"
+msgstr "Iš viso paveikslų"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:35
 msgid "The file comment"
@@ -4561,7 +4560,7 @@ msgstr "Failo komentaras"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:36
 msgid "Image Page"
-msgstr "Paveikslėlio puslapis"
+msgstr "Paveikslo puslapis"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:37
 msgid "Show the description, if available"
@@ -4573,7 +4572,7 @@ msgstr "Rodyti šiuos atributus:"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:39
 msgid "Image Attributes"
-msgstr "Paveikslėlio atributai"
+msgstr "Paveikslo atributai"
 
 #: ../extensions/webalbums/gth-web-exporter.c:1802
 msgid "Could not show the destination"
@@ -4590,7 +4589,7 @@ msgstr "Įrašomos miniatiūros"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2162
 msgid "Saving HTML pages: Images"
-msgstr "Įrašomi HTML puslapiai: paveikslėliai"
+msgstr "Įrašomi HTML puslapiai: paveikslai"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2220
 msgid "Saving HTML pages: Indexes"
@@ -4598,7 +4597,7 @@ msgstr "Įrašomi HTML puslapiai: rodyklės"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2505
 msgid "Copying original images"
-msgstr "Kopijuojami originalūs paveikslėliai"
+msgstr "Kopijuojami pradiniai paveikslai"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2965
 msgid "Could not find the style folder"
@@ -4789,7 +4788,7 @@ msgstr ""
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
-msgstr "Paveikslėlių peržiūros ir naršymo programa."
+msgstr "Paveikslų žiūryklė ir naršyklė."
 
 #: ../pix/gth-browser-actions-callbacks.c:444
 msgid "translator_credits"
@@ -4884,11 +4883,11 @@ msgstr "Iš naujo įkelti esamą vietą"
 
 #: ../pix/gth-browser-actions-entries.h:120
 msgid "View previous image"
-msgstr "Žiūrėti ankstesnį paveikslėlį"
+msgstr "Žiūrėti ankstesnį paveikslą"
 
 #: ../pix/gth-browser-actions-entries.h:126
 msgid "View next image"
-msgstr "Žiūrėti kitą paveikslėlį"
+msgstr "Žiūrėti kitą paveikslą"
 
 #: ../pix/gth-browser-actions-entries.h:131
 msgid "Fullscreen"
@@ -5015,7 +5014,7 @@ msgstr "_Miniatiūrų polangis"
 
 #: ../pix/gth-browser-actions-entries.h:233
 msgid "View or hide the thumbnail pane in viewer mode"
-msgstr "Rodyti ar slėpti miniatiūrų polangį rodymo veiksenoje"
+msgstr "Rodyti ar slėpti miniatiūrų polangį žiūryklės veiksenoje"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
@@ -5041,11 +5040,11 @@ msgstr "Rodyti failo savybes"
 
 #: ../pix/gth-browser-actions-entries.h:262
 msgid "_Fit Window to Image"
-msgstr "_Pritaikyti langą prie paveikslėlio"
+msgstr "_Pritaikyti langą prie paveikslo"
 
 #: ../pix/gth-browser-actions-entries.h:263
 msgid "Resize the window to the size of the image"
-msgstr "Keisti lango dydį pagal paveikslėlio dydį"
+msgstr "Keisti lango dydį pagal paveikslo dydį"
 
 #: ../pix/gth-browser.c:419
 #, c-format
@@ -5140,8 +5139,7 @@ msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
-"Paveikslėlių negalima perkelti į šiukšlinę. Ar norite juos ištrinti "
-"negrįžtamai?"
+"Paveikslų negalima perkelti į šiukšlinę. Ar norite juos ištrinti negrįžtamai?"
 
 #: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
@@ -5257,7 +5255,7 @@ msgstr "Nėra parametrų šiam failo tipui"
 #: ../pix/gth-image-saver.c:185
 #, c-format
 msgid "Could not find a suitable module to save the image as \"%s\""
-msgstr "Nepavyko rasti tinkamo modulio paveikslėliui įrašyti kaip „%s“"
+msgstr "Nepavyko rasti tinkamo modulio, skirto įrašyti paveikslą kaip „%s“"
 
 #: ../pix/gth-load-file-data-task.c:108
 msgid "Reading file information"
@@ -5369,7 +5367,7 @@ msgstr "Laikina"
 
 #: ../pix/gth-tags-file.c:237
 msgid "Screenshots"
-msgstr "Ekrano nuotraukos"
+msgstr "Ekrano kopijos"
 
 #: ../pix/gth-tags-file.c:238
 msgid "Science"
@@ -5377,7 +5375,7 @@ msgstr "Mokslas"
 
 #: ../pix/gth-tags-file.c:239
 msgid "Favorite"
-msgstr "Mėgstamiausi"
+msgstr "Mėgstami"
 
 #: ../pix/gth-tags-file.c:240
 msgid "Important"
@@ -5542,4 +5540,4 @@ msgstr "Rodyti versiją"
 
 #: ../pix/main.c:483
 msgid "- Image browser and viewer"
-msgstr "– Paveikslėlių naršymo ir peržiūros programa"
+msgstr "– Paveikslų žiūryklė ir naršyklė"
