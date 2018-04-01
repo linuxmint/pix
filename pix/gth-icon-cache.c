@@ -20,6 +20,8 @@
  */
 
 #include <config.h>
+#include <cairo.h>
+#include "cairo-utils.h"
 #include "glib-utils.h"
 #include "gth-icon-cache.h"
 #include "gtk-utils.h"
@@ -28,7 +30,8 @@
 struct _GthIconCache {
 	GtkIconTheme *icon_theme;
 	int           icon_size;
-	GHashTable   *cache;
+	GHashTable   *pixbuf_cache;
+	GHashTable   *surface_cache;
 	GIcon        *fallback_icon;
 };
 
@@ -44,7 +47,8 @@ gth_icon_cache_new (GtkIconTheme *icon_theme,
 	icon_cache = g_new0 (GthIconCache, 1);
 	icon_cache->icon_theme = icon_theme;
 	icon_cache->icon_size = icon_size;
-	icon_cache->cache = g_hash_table_new_full (g_icon_hash, (GEqualFunc) g_icon_equal, g_object_unref, g_object_unref);
+	icon_cache->pixbuf_cache = g_hash_table_new_full (g_icon_hash, (GEqualFunc) g_icon_equal, g_object_unref, g_object_unref);
+	icon_cache->surface_cache = g_hash_table_new_full (g_icon_hash, (GEqualFunc) g_icon_equal, g_object_unref, (GDestroyNotify) cairo_surface_destroy);
 
 	return icon_cache;
 }
@@ -79,7 +83,8 @@ gth_icon_cache_free (GthIconCache *icon_cache)
 {
 	if (icon_cache == NULL)
 		return;
-	g_hash_table_destroy (icon_cache->cache);
+	g_hash_table_destroy (icon_cache->pixbuf_cache);
+	g_hash_table_destroy (icon_cache->surface_cache);
 	if (icon_cache->fallback_icon != NULL)
 		g_object_unref (icon_cache->fallback_icon);
 	g_free (icon_cache);
@@ -89,8 +94,10 @@ gth_icon_cache_free (GthIconCache *icon_cache)
 void
 gth_icon_cache_clear (GthIconCache *icon_cache)
 {
-	if (icon_cache != NULL)
-		g_hash_table_remove_all (icon_cache->cache);
+	if (icon_cache == NULL)
+		return;
+	g_hash_table_remove_all (icon_cache->pixbuf_cache);
+	g_hash_table_remove_all (icon_cache->surface_cache);
 }
 
 
@@ -104,7 +111,7 @@ gth_icon_cache_get_pixbuf (GthIconCache *icon_cache,
 		icon = icon_cache->fallback_icon;
 
 	if (icon != NULL)
-		pixbuf = g_hash_table_lookup (icon_cache->cache, icon);
+		pixbuf = g_hash_table_lookup (icon_cache->pixbuf_cache, icon);
 
 	if (pixbuf != NULL)
 		return g_object_ref (pixbuf);
@@ -116,7 +123,34 @@ gth_icon_cache_get_pixbuf (GthIconCache *icon_cache,
 		pixbuf = _g_icon_get_pixbuf (icon_cache->fallback_icon, icon_cache->icon_size, icon_cache->icon_theme);
 
 	if ((icon != NULL) && (pixbuf != NULL))
-		g_hash_table_insert (icon_cache->cache, g_object_ref (icon), g_object_ref (pixbuf));
+		g_hash_table_insert (icon_cache->pixbuf_cache, g_object_ref (icon), g_object_ref (pixbuf));
 
 	return pixbuf;
+}
+
+cairo_surface_t *
+gth_icon_cache_get_surface (GthIconCache *icon_cache,
+			    GIcon        *icon)
+{
+	cairo_surface_t *surface = NULL;
+	GdkPixbuf       *pixbuf;
+
+	if (icon == NULL)
+		icon = icon_cache->fallback_icon;
+
+	if (icon != NULL)
+		surface = g_hash_table_lookup (icon_cache->surface_cache, icon);
+
+	if (surface != NULL)
+		return cairo_surface_reference (surface);
+
+	pixbuf = gth_icon_cache_get_pixbuf (icon_cache, icon);
+	surface = _cairo_image_surface_create_from_pixbuf (pixbuf);
+
+	if ((icon != NULL) && (surface != NULL))
+		g_hash_table_insert (icon_cache->surface_cache, g_object_ref (icon), cairo_surface_reference (surface));
+
+	g_object_unref (pixbuf);
+
+	return surface;
 }

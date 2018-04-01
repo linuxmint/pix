@@ -100,12 +100,12 @@ gboolean        gth_file_store_get_prev_visible  (GthFileStore         *file_sto
 					          GtkTreeIter          *iter);
 void            gth_file_store_add               (GthFileStore         *file_store,
 					          GthFileData          *file,
-					          GdkPixbuf            *thumbnail,
+					          cairo_surface_t      *thumbnail,
 					          gboolean              is_icon,
 						  int                   position);
 void            gth_file_store_queue_add         (GthFileStore         *file_store,
 					          GthFileData          *file,
-					          GdkPixbuf            *thumbnail,
+					          cairo_surface_t      *thumbnail,
 					          gboolean              is_icon);
 void            gth_file_store_exec_add          (GthFileStore         *file_store,
 						  int                   position);

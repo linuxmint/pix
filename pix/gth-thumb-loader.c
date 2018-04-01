@@ -29,6 +29,8 @@
 #define GDK_PIXBUF_ENABLE_BACKEND
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
+#include "cairo-scale.h"
+#include "cairo-utils.h"
 #include "gio-utils.h"
 #include "glib-utils.h"
 #define GNOME_DESKTOP_USE_UNSTABLE_API
@@ -212,9 +214,9 @@ load_cached_thumbnail (GInputStream  *istream,
 		       GCancellable  *cancellable,
 		       GError       **error)
 {
-	GthImage  *image = NULL;
-	char      *filename;
-	GdkPixbuf *pixbuf;
+	GthImage        *image = NULL;
+	char            *filename;
+	cairo_surface_t *surface;
 
 	if (file_data == NULL) {
 		if (error != NULL)
@@ -223,12 +225,13 @@ load_cached_thumbnail (GInputStream  *istream,
 	}
 
 	filename = g_file_get_path (file_data->file);
-	pixbuf = gdk_pixbuf_new_from_file (filename, error);
-	if (pixbuf != NULL) {
-		image = gth_image_new_for_pixbuf (pixbuf);
-		g_object_unref (pixbuf);
-	}
+	surface = cairo_image_surface_create_from_png (filename);
+	if (cairo_surface_status (surface) == CAIRO_STATUS_SUCCESS)
+		image = gth_image_new_for_surface (surface);
+	else
+		g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_FAILED, cairo_status_to_string (cairo_surface_status (surface)));
 
+	cairo_surface_destroy (surface);
 	g_free (filename);
 
 	return image;
@@ -367,8 +370,8 @@ load_data_unref (LoadData *load_data)
 
 
 typedef struct {
-	GthFileData *file_data;
-	GdkPixbuf   *pixbuf;
+	GthFileData     *file_data;
+	cairo_surface_t *image;
 } LoadResult;
 
 
@@ -376,7 +379,7 @@ static void
 load_result_unref (LoadResult *load_result)
 {
 	g_object_unref (load_result->file_data);
-	_g_object_unref (load_result->pixbuf);
+	cairo_surface_destroy (load_result->image);
 	g_free (load_result);
 }
 
@@ -420,20 +423,28 @@ normalize_thumb (int *width,
 	return modified;
 }
 
+static cairo_surface_t *
+_cairo_image_surface_scale_for_thumbnail (cairo_surface_t *image,
+					  int              new_width,
+					  int              new_height)
+{
+	return _cairo_image_surface_scale (image, new_width, new_height, SCALE_FILTER_BOX, NULL);
+}
+
 
 static void
 cache_image_ready_cb (GObject      *source_object,
 		      GAsyncResult *res,
 		      gpointer      user_data)
 {
-	LoadData       *load_data = user_data;
-	GthThumbLoader *self = load_data->thumb_loader;
-	GthImage       *image = NULL;
-	GdkPixbuf      *pixbuf;
-	int             width;
-	int             height;
-	gboolean        modified;
-	LoadResult     *load_result;
+	LoadData        *load_data = user_data;
+	GthThumbLoader  *self = load_data->thumb_loader;
+	GthImage        *image = NULL;
+	cairo_surface_t *surface;
+	int              width;
+	int              height;
+	gboolean         modified;
+	LoadResult      *load_result;
 
 	if (! gth_image_loader_load_finish (GTH_IMAGE_LOADER (source_object),
 					    res,
@@ -459,25 +470,25 @@ cache_image_ready_cb (GObject      *source_object,
 	/* Thumbnail correctly loaded from the cache. Scale if the user wants
 	 * a different size. */
 
-	pixbuf = gth_image_get_pixbuf (image);
+	surface = gth_image_get_cairo_surface (image);
 
-	g_return_if_fail (pixbuf != NULL);
+	g_return_if_fail (surface != NULL);
 
-	width = gdk_pixbuf_get_width (pixbuf);
-	height = gdk_pixbuf_get_height (pixbuf);
+	width = cairo_image_surface_get_width (surface);
+	height = cairo_image_surface_get_height (surface);
 	modified = normalize_thumb (&width,
 				    &height,
 				    self->priv->requested_size,
 				    self->priv->cache_max_size);
 	if (modified) {
-		GdkPixbuf *tmp = pixbuf;
-		pixbuf = _gdk_pixbuf_scale_simple_safe (tmp, width, height, GDK_INTERP_BILINEAR);
-		g_object_unref (tmp);
+		cairo_surface_t *tmp = surface;
+		surface = _cairo_image_surface_scale_for_thumbnail (tmp, width, height);
+		cairo_surface_destroy (tmp);
 	}
 
 	load_result = g_new0 (LoadResult, 1);
 	load_result->file_data = g_object_ref (load_data->file_data);
-	load_result->pixbuf = pixbuf;
+	load_result->image = surface;
 	g_simple_async_result_set_op_res_gpointer (load_data->simple, load_result, (GDestroyNotify) load_result_unref);
 	g_simple_async_result_complete_in_idle (load_data->simple);
 
@@ -510,13 +521,14 @@ is_a_cache_file (const char *uri)
 
 
 static gboolean
-_gth_thumb_loader_save_to_cache (GthThumbLoader *self,
-				 GthFileData    *file_data,
-				 GdkPixbuf      *pixbuf)
+_gth_thumb_loader_save_to_cache (GthThumbLoader  *self,
+				 GthFileData     *file_data,
+				 cairo_surface_t *image)
 {
-	char  *uri;
+	char      *uri;
+	GdkPixbuf *pixbuf;
 
-	if ((self == NULL) || (pixbuf == NULL))
+	if ((self == NULL) || (image == NULL))
 		return FALSE;
 
 	uri = g_file_get_uri (file_data->file);
@@ -529,10 +541,16 @@ _gth_thumb_loader_save_to_cache (GthThumbLoader *self,
 		return FALSE;
 	}
 
+	pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
+	if (pixbuf == NULL)
+		return FALSE;
+
 	gnome_desktop_thumbnail_factory_save_thumbnail (self->priv->thumb_factory,
 							pixbuf,
 							uri,
 							gth_file_data_get_mtime (file_data));
+
+	g_object_unref (pixbuf);
 
 	return TRUE;
 }
@@ -541,18 +559,18 @@ _gth_thumb_loader_save_to_cache (GthThumbLoader *self,
 static void
 original_image_loaded_correctly (GthThumbLoader *self,
 				 LoadData        *load_data,
-				 GdkPixbuf       *pixbuf)
+				 cairo_surface_t *image)
 {
-	GdkPixbuf  *local_pixbuf;
-	int         width;
-	int         height;
-	gboolean    modified;
-	LoadResult *load_result;
+	cairo_surface_t *local_image;
+	int              width;
+	int              height;
+	gboolean         modified;
+	LoadResult      *load_result;
 
-	local_pixbuf = g_object_ref (pixbuf);
+	local_image = cairo_surface_reference (image);
 
-	width = gdk_pixbuf_get_width (local_pixbuf);
-	height = gdk_pixbuf_get_height (local_pixbuf);
+	width = cairo_image_surface_get_width (local_image);
+	height = cairo_image_surface_get_height (local_image);
 
 	if (self->priv->save_thumbnails) {
 		gboolean modified;
@@ -567,12 +585,12 @@ original_image_loaded_correctly (GthThumbLoader *self,
 						self->priv->cache_max_size,
 						FALSE);
 		if (modified) {
-			GdkPixbuf *tmp = local_pixbuf;
-			local_pixbuf = _gdk_pixbuf_scale_simple_safe (tmp, width, height, GDK_INTERP_BILINEAR);
-			g_object_unref (tmp);
+			cairo_surface_t *tmp = local_image;
+			local_image = _cairo_image_surface_scale_for_thumbnail (tmp, width, height);
+			cairo_surface_destroy (tmp);
 		}
 
-		_gth_thumb_loader_save_to_cache (self, load_data->file_data, local_pixbuf);
+		_gth_thumb_loader_save_to_cache (self, load_data->file_data, local_image);
 	}
 
 	/* Scale if the user wants a different size. */
@@ -582,18 +600,18 @@ original_image_loaded_correctly (GthThumbLoader *self,
 				    self->priv->requested_size,
 				    self->priv->cache_max_size);
 	if (modified) {
-		GdkPixbuf *tmp = local_pixbuf;
-		local_pixbuf = _gdk_pixbuf_scale_simple_safe (tmp, width, height, GDK_INTERP_BILINEAR);
-		g_object_unref (tmp);
+		cairo_surface_t *tmp = local_image;
+		local_image = _cairo_image_surface_scale_for_thumbnail (tmp, width, height);
+		cairo_surface_destroy (tmp);
 	}
 
 	load_result = g_new0 (LoadResult, 1);
 	load_result->file_data = g_object_ref (load_data->file_data);
-	load_result->pixbuf = g_object_ref (local_pixbuf);
+	load_result->image = cairo_surface_reference (local_image);
 	g_simple_async_result_set_op_res_gpointer (load_data->simple, load_result, (GDestroyNotify) load_result_unref);
 	g_simple_async_result_complete_in_idle (load_data->simple);
 
-	g_object_unref (local_pixbuf);
+	cairo_surface_destroy (local_image);
 }
 
 
@@ -702,7 +720,12 @@ watch_thumbnailer_cb (GPid     pid,
 									     &load_data->thumbnailer_tmpfile);
 
 	if (pixbuf != NULL) {
-		original_image_loaded_correctly (self, load_data, pixbuf);
+		cairo_surface_t *surface;
+
+		surface = _cairo_image_surface_create_from_pixbuf (pixbuf);
+		original_image_loaded_correctly (self, load_data, surface);
+
+		cairo_surface_destroy (surface);
 		g_object_unref (pixbuf);
 	}
 	else
@@ -715,11 +738,11 @@ original_image_ready_cb (GObject      *source_object,
 		         GAsyncResult *res,
 		         gpointer      user_data)
 {
-	LoadData       *load_data = user_data;
-	GthThumbLoader *self = load_data->thumb_loader;
-	GthImage       *image = NULL;
-	GdkPixbuf      *pixbuf = NULL;
-	GError         *error = NULL;
+	LoadData        *load_data = user_data;
+	GthThumbLoader  *self = load_data->thumb_loader;
+	GthImage        *image = NULL;
+	cairo_surface_t *surface = NULL;
+	GError          *error = NULL;
 
 	if (! gth_image_loader_load_finish (GTH_IMAGE_LOADER (source_object),
 					    res,
@@ -770,10 +793,10 @@ original_image_ready_cb (GObject      *source_object,
 		return;
 	}
 
-	pixbuf = gth_image_get_pixbuf (image);
-	original_image_loaded_correctly (self, load_data, pixbuf);
+	surface = gth_image_get_cairo_surface (image);
+	original_image_loaded_correctly (self, load_data, surface);
 
-	g_object_unref (pixbuf);
+	cairo_surface_destroy (surface);
 	g_object_unref (image);
 	load_data_unref (load_data);
 }
@@ -879,10 +902,10 @@ gth_thumb_loader_load (GthThumbLoader      *self,
 
 
 gboolean
-gth_thumb_loader_load_finish (GthThumbLoader  *self,
-			      GAsyncResult    *result,
-			      GdkPixbuf      **pixbuf,
-			      GError         **error)
+gth_thumb_loader_load_finish (GthThumbLoader   *self,
+			      GAsyncResult     *result,
+			      cairo_surface_t **image,
+			      GError          **error)
 {
 	GSimpleAsyncResult *simple;
 	LoadResult         *load_result;
@@ -895,8 +918,8 @@ gth_thumb_loader_load_finish (GthThumbLoader  *self,
 		return FALSE;
 
 	load_result = g_simple_async_result_get_op_res_gpointer (simple);
-	if (pixbuf != NULL)
-		*pixbuf = _g_object_ref (load_result->pixbuf);
+	if (image != NULL)
+		*image = cairo_surface_reference (load_result->image);
 
 	return TRUE;
 }

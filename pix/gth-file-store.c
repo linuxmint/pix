@@ -21,6 +21,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
+#include "cairo-utils.h"
 #include "glib-utils.h"
 #include "gth-file-store.h"
 #include "gth-marshal.h"
@@ -44,11 +45,10 @@ static guint gth_file_store_signals[LAST_SIGNAL] = { 0 };
 
 
 typedef struct {
-	int          ref_count;
-
-	GthFileData *file_data;
-	GdkPixbuf   *thumbnail;
-	gboolean     is_icon : 1;
+	int              ref_count;
+	GthFileData     *file_data;
+	cairo_surface_t *thumbnail;
+	gboolean         is_icon : 1;
 
 	/*< private >*/
 
@@ -115,13 +115,13 @@ _gth_file_row_set_file (GthFileRow  *row,
 
 
 static void
-_gth_file_row_set_thumbnail (GthFileRow *row,
-			     GdkPixbuf  *thumbnail)
+_gth_file_row_set_thumbnail (GthFileRow      *row,
+			     cairo_surface_t *thumbnail)
 {
 	if (thumbnail != NULL) {
-		g_object_ref (thumbnail);
+		cairo_surface_reference (thumbnail);
 		if (row->thumbnail != NULL)
-			g_object_unref (row->thumbnail);
+			cairo_surface_destroy (row->thumbnail);
 		row->thumbnail = thumbnail;
 	}
 }
@@ -162,7 +162,7 @@ _gth_file_row_unref (GthFileRow *row)
 	if (row->file_data != NULL)
 		g_object_unref (row->file_data);
 	if (row->thumbnail != NULL)
-		g_object_unref (row->thumbnail);
+		cairo_surface_destroy (row->thumbnail);
 	g_free (row);
 }
 
@@ -263,7 +263,7 @@ gth_file_store_init (GthFileStore *file_store)
 
 	if (column_type[0] == G_TYPE_INVALID) {
 		column_type[GTH_FILE_STORE_FILE_DATA_COLUMN] = GTH_TYPE_FILE_DATA;
-		column_type[GTH_FILE_STORE_THUMBNAIL_COLUMN] = GDK_TYPE_PIXBUF;
+		column_type[GTH_FILE_STORE_THUMBNAIL_COLUMN] = GTH_TYPE_CAIRO_SURFACE;
 		column_type[GTH_FILE_STORE_IS_ICON_COLUMN] = G_TYPE_BOOLEAN;
 		column_type[GTH_FILE_STORE_EMBLEMS_COLUMN] = GTH_TYPE_STRING_LIST;
 	}
@@ -370,8 +370,8 @@ gth_file_store_get_value (GtkTreeModel *tree_model,
 		g_value_set_object (value, row->file_data);
 		break;
 	case GTH_FILE_STORE_THUMBNAIL_COLUMN:
-		g_value_init (value, GDK_TYPE_PIXBUF);
-		g_value_set_object (value, row->thumbnail);
+		g_value_init (value, GTH_TYPE_CAIRO_SURFACE);
+		g_value_set_boxed (value, row->thumbnail);
 		break;
 	case GTH_FILE_STORE_IS_ICON_COLUMN:
 		g_value_init (value, G_TYPE_BOOLEAN);
@@ -1350,11 +1350,11 @@ gth_file_store_get_prev_visible (GthFileStore *file_store,
 
 
 void
-gth_file_store_add (GthFileStore *file_store,
-		    GthFileData  *file,
-		    GdkPixbuf    *thumbnail,
-		    gboolean      is_icon,
-		    int           position)
+gth_file_store_add (GthFileStore    *file_store,
+		    GthFileData     *file,
+		    cairo_surface_t *thumbnail,
+		    gboolean         is_icon,
+		    int              position)
 {
 	gth_file_store_queue_add (file_store, file, thumbnail, is_icon);
 	gth_file_store_exec_add (file_store, position);
@@ -1362,10 +1362,10 @@ gth_file_store_add (GthFileStore *file_store,
 
 
 void
-gth_file_store_queue_add (GthFileStore *file_store,
-			  GthFileData  *file,
-			  GdkPixbuf    *thumbnail,
-			  gboolean      is_icon)
+gth_file_store_queue_add (GthFileStore    *file_store,
+			  GthFileData     *file,
+			  cairo_surface_t *thumbnail,
+			  gboolean         is_icon)
 {
 	GthFileRow *row;
 
@@ -1403,9 +1403,9 @@ gth_file_store_queue_set_valist (GthFileStore *file_store,
 
  	column = va_arg (var_args, int);
   	while (column != -1) {
-  		GthFileData   *file_data;
-  		GdkPixbuf     *thumbnail;
-  		GthStringList *string_list;
+  		GthFileData     *file_data;
+  		cairo_surface_t *thumbnail;
+  		GthStringList   *string_list;
 
   		switch (column) {
   		case GTH_FILE_STORE_FILE_DATA_COLUMN:
@@ -1416,8 +1416,7 @@ gth_file_store_queue_set_valist (GthFileStore *file_store,
   			file_store->priv->update_filter = TRUE;
   			break;
   		case GTH_FILE_STORE_THUMBNAIL_COLUMN:
-  			thumbnail = va_arg (var_args, GdkPixbuf *);
-  			g_return_if_fail (GDK_IS_PIXBUF (thumbnail));
+  			thumbnail = va_arg (var_args, cairo_surface_t *);
   			_gth_file_row_set_thumbnail (row, thumbnail);
   			row->changed = TRUE;
   			break;

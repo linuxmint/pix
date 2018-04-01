@@ -28,16 +28,18 @@ G_BEGIN_DECLS
 
 typedef struct _GthIconCache GthIconCache;
 
-GthIconCache * gth_icon_cache_new            (GtkIconTheme *icon_theme,
-			                      int           icon_size);
-GthIconCache * gth_icon_cache_new_for_widget (GtkWidget    *widget,
-			                      GtkIconSize   icon_size);
-void           gth_icon_cache_set_fallback   (GthIconCache *icon_cache,
-					      GIcon        *icon);
-void           gth_icon_cache_free           (GthIconCache *icon_cache);
-void           gth_icon_cache_clear          (GthIconCache *icon_cache);
-GdkPixbuf *    gth_icon_cache_get_pixbuf     (GthIconCache *icon_cache,
-				              GIcon        *icon);
+GthIconCache *          gth_icon_cache_new             (GtkIconTheme *icon_theme,
+                                                        int           icon_size);
+GthIconCache *         gth_icon_cache_new_for_widget   (GtkWidget    *widget,
+                                                        GtkIconSize   icon_size);
+void                   gth_icon_cache_set_fallback     (GthIconCache *icon_cache,
+                                                        GIcon        *icon);
+void                   gth_icon_cache_free             (GthIconCache *icon_cache);
+void                   gth_icon_cache_clear            (GthIconCache *icon_cache);
+GdkPixbuf *            gth_icon_cache_get_pixbuf       (GthIconCache *icon_cache,
+                                                        GIcon        *icon);
+cairo_surface_t *      gth_icon_cache_get_surface      (GthIconCache *icon_cache,
+                                                        GIcon        *icon);
 
 G_END_DECLS
 

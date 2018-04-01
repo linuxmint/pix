@@ -24,6 +24,10 @@
 #include <string.h>
 #include "cairo-utils.h"
 
+G_DEFINE_BOXED_TYPE (GthCairoSurface,
+		     		 gth_cairo_surface,
+		     		 (GBoxedCopyFunc) cairo_surface_reference,
+		     		 (GBoxedFreeFunc) cairo_surface_destroy)
 
 const unsigned char cairo_channel[4] = { CAIRO_RED, CAIRO_GREEN, CAIRO_BLUE, CAIRO_ALPHA };
 
