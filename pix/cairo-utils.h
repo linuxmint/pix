@@ -118,6 +118,11 @@
 
 /* types */
 
+typedef cairo_surface_t GthCairoSurface;
+
+GType gth_cairo_surface_get_type (void);
+#define GTH_TYPE_CAIRO_SURFACE (gth_cairo_surface_get_type ())
+
 typedef struct {
 	guchar r;
 	guchar g;

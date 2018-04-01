@@ -108,7 +108,7 @@ typedef struct {
 
 	guint                  ref;
 	GthFileData           *file_data;
-	GdkPixbuf             *thumbnail;
+	cairo_surface_t       *thumbnail;
 	gboolean               is_icon : 1;
 	char                  *caption;
 	gboolean               is_image : 1;
@@ -230,14 +230,14 @@ gth_grid_view_item_set_file_data (GthGridViewItem *item,
 
 static void
 gth_grid_view_item_set_thumbnail (GthGridViewItem *item,
-			          GdkPixbuf       *thumbnail)
+			          cairo_surface_t *thumbnail)
 {
-	_g_object_unref (item->thumbnail);
-	item->thumbnail = _g_object_ref (thumbnail);
+	cairo_surface_destroy (item->thumbnail);
+	item->thumbnail = cairo_surface_reference (thumbnail);
 
 	if (item->thumbnail != NULL) {
-		item->pixbuf_area.width = gdk_pixbuf_get_width (item->thumbnail);
-		item->pixbuf_area.height = gdk_pixbuf_get_height (item->thumbnail);
+		item->pixbuf_area.width = cairo_image_surface_get_width (item->thumbnail);
+		item->pixbuf_area.height = cairo_image_surface_get_height (item->thumbnail);
 	}
 	else {
 		item->pixbuf_area.width = 0;
@@ -312,11 +312,11 @@ gth_grid_view_item_update_caption (GthGridViewItem  *item,
 
 
 static GthGridViewItem *
-gth_grid_view_item_new (GthGridView  *grid_view,
-			GthFileData  *file_data,
-			GdkPixbuf    *thumbnail,
-			gboolean      is_icon,
-			char        **attributes_v)
+gth_grid_view_item_new (GthGridView      *grid_view,
+			GthFileData      *file_data,
+			cairo_surface_t  *thumbnail,
+			gboolean          is_icon,
+			char            **attributes_v)
 {
 	GthGridViewItem *item;
 
@@ -347,7 +347,7 @@ gth_grid_view_item_unref (GthGridViewItem *item)
 		return;
 
 	g_free (item->caption);
-	_g_object_unref (item->thumbnail);
+	cairo_surface_destroy (item->thumbnail);
 	_g_object_unref (item->file_data);
 	g_free (item);
 }
@@ -1270,18 +1270,18 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 				    GtkStateFlags    item_state,
 				    GthGridView     *grid_view)
 {
-	GdkPixbuf             *pixbuf;
+	cairo_surface_t       *image;
 	GtkStyleContext       *style_context;
 	cairo_rectangle_int_t  frame_rect;
 	GdkRGBA                background_color;
 	GdkRGBA                lighter_color;
 	GdkRGBA                darker_color;
 
-	pixbuf = item->thumbnail;
-	if (pixbuf == NULL)
+	image = item->thumbnail;
+	if (image == NULL)
 		return;
 
-	g_object_ref (pixbuf);
+	cairo_surface_reference (image);
 
 	cairo_save (cr);
 	style_context = gtk_widget_get_style_context (widget);
@@ -1460,7 +1460,7 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 
 	/* thumbnail */
 
-	gdk_cairo_set_source_pixbuf (cr, pixbuf, item->pixbuf_area.x, item->pixbuf_area.y);
+	cairo_set_source_surface (cr, image, item->pixbuf_area.x, item->pixbuf_area.y);
 	cairo_rectangle (cr, item->pixbuf_area.x, item->pixbuf_area.y, item->pixbuf_area.width, item->pixbuf_area.height);
 	cairo_fill (cr);
 
@@ -1480,7 +1480,7 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 	gtk_style_context_restore (style_context);
 	cairo_restore (cr);
 
-	g_object_unref (pixbuf);
+	cairo_surface_destroy (image);
 }
 
 
@@ -1538,21 +1538,25 @@ _gth_grid_view_item_draw_emblems (GthGridViewItem *item,
 	emblem_offset = 0;
 	emblems = (GthStringList *) g_file_info_get_attribute_object (item->file_data->info, GTH_FILE_ATTRIBUTE_EMBLEMS);
 	for (scan = gth_string_list_get_list (emblems); scan; scan = scan->next) {
-		char      *emblem = scan->data;
-		GIcon     *icon;
-		GdkPixbuf *pixbuf;
+		char            *emblem = scan->data;
+		GIcon           *icon;
+		cairo_surface_t *image;
 
 		if (grid_view->priv->icon_cache == NULL)
 			grid_view->priv->icon_cache = gth_icon_cache_new (gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (grid_view))), EMBLEM_SIZE);
 
 		icon = g_themed_icon_new (emblem);
-		pixbuf = gth_icon_cache_get_pixbuf (grid_view->priv->icon_cache, icon);
-		if (pixbuf != NULL) {
-			gdk_cairo_set_source_pixbuf (cr, pixbuf, item->thumbnail_area.x + emblem_offset + 1, item->thumbnail_area.y + 1);
-			cairo_rectangle (cr, item->thumbnail_area.x + emblem_offset + 1, item->thumbnail_area.y + 1, gdk_pixbuf_get_width (pixbuf), gdk_pixbuf_get_height (pixbuf));
+		image = gth_icon_cache_get_surface (grid_view->priv->icon_cache, icon);
+		if (image != NULL) {
+			cairo_set_source_surface (cr, image, item->thumbnail_area.x + emblem_offset + 1, item->thumbnail_area.y + 1);
+			cairo_rectangle (cr,
+					 item->thumbnail_area.x + emblem_offset + 1,
+					 item->thumbnail_area.y + 1,
+					 cairo_image_surface_get_width (image),
+					 cairo_image_surface_get_height (image));
 			cairo_fill (cr);
 
-			g_object_unref (pixbuf);
+			cairo_surface_destroy (image);
 
 			emblem_offset += EMBLEM_SIZE + (EMBLEM_SIZE / 2);
 		}
@@ -2151,7 +2155,7 @@ model_row_changed_cb (GtkTreeModel *tree_model,
 	int              pos;
 	GList           *link;
 	GthFileData     *file_data;
-	GdkPixbuf       *thumbnail;
+	cairo_surface_t *thumbnail;
 	gboolean         is_icon;
 	GthGridViewItem *item;
 
@@ -2175,7 +2179,7 @@ model_row_changed_cb (GtkTreeModel *tree_model,
 	_gth_grid_view_queue_relayout_from_position (self, pos);
 
 	g_object_unref (file_data);
-	g_object_unref (thumbnail);
+	cairo_surface_destroy (thumbnail);
 }
 
 
@@ -2228,7 +2232,7 @@ model_row_inserted_cb (GtkTreeModel *tree_model,
 {
 	GthGridView     *self = user_data;
 	GthFileData     *file_data;
-	GdkPixbuf       *thumbnail;
+	cairo_surface_t *thumbnail;
 	gboolean         is_icon;
 	GthGridViewItem *item;
 	int              pos;
@@ -2262,7 +2266,7 @@ model_row_inserted_cb (GtkTreeModel *tree_model,
 	_gth_grid_view_queue_relayout_from_position (self, pos);
 
 	g_object_unref (file_data);
-	g_object_unref (thumbnail);
+	cairo_surface_destroy (thumbnail);
 }
 
 
@@ -2331,7 +2335,7 @@ model_thumbnail_changed_cb (GtkTreeModel *tree_model,
 	GthGridView     *self = user_data;
 	int              pos;
 	GList           *link;
-	GdkPixbuf       *thumbnail;
+	cairo_surface_t *thumbnail;
 	gboolean         is_icon;
 	GthGridViewItem *item;
 
@@ -2353,7 +2357,7 @@ model_thumbnail_changed_cb (GtkTreeModel *tree_model,
 	_gth_grid_view_place_item_at (self, item, item->area.x, item->area.y);
 	_gth_grid_view_queue_draw_item (self, item);
 
-	g_object_unref (thumbnail);
+	cairo_surface_destroy (thumbnail);
 }
 
 

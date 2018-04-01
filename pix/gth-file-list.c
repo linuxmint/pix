@@ -86,7 +86,7 @@ typedef struct {
 				  * image. */
 	guint thumb_created : 1; /* Whether a thumb has been
 				  * created for this image. */
-	GdkPixbuf *pixbuf;
+	cairo_surface_t *image;
 } ThumbData;
 
 
@@ -416,7 +416,7 @@ thumb_data_unref (ThumbData *data)
 	data->ref--;
 	if (data->ref > 0)
 		return;
-	_g_object_unref (data->pixbuf);
+	cairo_surface_destroy (data->image);
 	g_free (data);
 }
 
@@ -894,11 +894,11 @@ gfl_add_files (GthFileList *file_list,
 
 	cache_base_uri = g_strconcat (get_home_uri (), "/.thumbnails", NULL);
 	for (scan = files; scan; scan = scan->next) {
-		GthFileData *file_data = scan->data;
-		char        *uri;
-		ThumbData   *thumb_data;
-		GIcon       *icon;
-		GdkPixbuf   *pixbuf = NULL;
+		GthFileData     *file_data = scan->data;
+		char            *uri;
+		ThumbData       *thumb_data;
+		GIcon           *icon;
+		cairo_surface_t *image = NULL;
 
 		if (g_file_info_get_file_type (file_data->info) != G_FILE_TYPE_REGULAR)
 			continue;
@@ -918,14 +918,13 @@ gfl_add_files (GthFileList *file_list,
 				     thumb_data);
 
 		icon = g_file_info_get_icon (file_data->info);
-		pixbuf = gth_icon_cache_get_pixbuf (file_list->priv->icon_cache, icon);
+		image = gth_icon_cache_get_surface (file_list->priv->icon_cache, icon);
 		gth_file_store_queue_add (file_store,
 					  file_data,
-					  pixbuf,
+					  image,
 					  TRUE);
 
-		if (pixbuf != NULL)
-			g_object_unref (pixbuf);
+		cairo_surface_destroy (image);
 		g_free (uri);
 	}
 	g_free (cache_base_uri);
@@ -1245,10 +1244,10 @@ gfl_enable_thumbs (GthFileList *file_list,
 	file_store = (GthFileStore*) gth_file_view_get_model (GTH_FILE_VIEW (file_list->priv->view));
 	if (gth_file_store_get_first (file_store, &iter)) {
 		do {
-			GthFileData *file_data;
-			ThumbData   *thumb_data;
-			GIcon       *icon;
-			GdkPixbuf   *pixbuf;
+			GthFileData     *file_data;
+			ThumbData       *thumb_data;
+			GIcon           *icon;
+			cairo_surface_t *image;
 
 			file_data = gth_file_store_get_file (file_store, &iter);
 
@@ -1257,14 +1256,14 @@ gfl_enable_thumbs (GthFileList *file_list,
 			thumb_data->thumb_loaded = FALSE;
 
 			icon = g_file_info_get_icon (file_data->info);
-			pixbuf = gth_icon_cache_get_pixbuf (file_list->priv->icon_cache, icon);
+			image = gth_icon_cache_get_surface (file_list->priv->icon_cache, icon);
 			gth_file_store_queue_set (file_store,
 						  &iter,
-						  GTH_FILE_STORE_THUMBNAIL_COLUMN, pixbuf,
+						  GTH_FILE_STORE_THUMBNAIL_COLUMN, image,
 						  GTH_FILE_STORE_IS_ICON_COLUMN, TRUE,
 						  -1);
 
-			_g_object_unref (pixbuf);
+			cairo_surface_destroy (image);
 		}
 		while (gth_file_store_get_next (file_store, &iter));
 
@@ -1482,12 +1481,12 @@ update_thumb_in_file_view (GthFileList *file_list,
 	if (thumb_data == NULL)
 		return;
 
-	if (thumb_data->pixbuf == NULL)
+	if (thumb_data->image == NULL)
 		return;
 
 	gth_file_store_queue_set (file_store,
 				  &iter,
-				  GTH_FILE_STORE_THUMBNAIL_COLUMN, thumb_data->pixbuf,
+				  GTH_FILE_STORE_THUMBNAIL_COLUMN, thumb_data->image,
 				  GTH_FILE_STORE_IS_ICON_COLUMN, FALSE,
 				  -1);
 	queue_flash_updates (file_list);
@@ -1499,25 +1498,25 @@ set_mime_type_icon (GthFileList *file_list,
 		    GthFileData *file_data,
 		    int          try_pos)
 {
-	GthFileStore *file_store;
-	GtkTreeIter   iter;
-	GIcon        *icon;
-	GdkPixbuf    *pixbuf;
+	GthFileStore    *file_store;
+	GtkTreeIter      iter;
+	GIcon           *icon;
+	cairo_surface_t *image;
 
 	file_store = (GthFileStore *) gth_file_view_get_model (GTH_FILE_VIEW (file_list->priv->view));
 	if (! get_file_data_iter_with_suggested_pos (file_store, file_data, try_pos, &iter))
 		return;
 
 	icon = g_file_info_get_icon (file_data->info);
-	pixbuf = gth_icon_cache_get_pixbuf (file_list->priv->icon_cache, icon);
+	image = gth_icon_cache_get_surface (file_list->priv->icon_cache, icon);
 	gth_file_store_queue_set (file_store,
 				  &iter,
-				  GTH_FILE_STORE_THUMBNAIL_COLUMN, pixbuf,
+				  GTH_FILE_STORE_THUMBNAIL_COLUMN, image,
 				  GTH_FILE_STORE_IS_ICON_COLUMN, TRUE,
 				  -1);
 	queue_flash_updates (file_list);
 
-	_g_object_unref (pixbuf);
+	cairo_surface_destroy (image);
 }
 
 
@@ -1526,37 +1525,37 @@ thumbnail_job_ready_cb (GObject      *source_object,
 		        GAsyncResult *result,
 		        gpointer      user_data)
 {
-	ThumbnailJob *job = user_data;
-	GthFileList  *file_list = job->file_list;
-	gboolean      success;
-	GdkPixbuf    *pixbuf = NULL;
-	GError       *error = NULL;
-	ThumbData    *thumb_data;
+	ThumbnailJob    *job = user_data;
+	GthFileList     *file_list = job->file_list;
+	gboolean         success;
+	cairo_surface_t *image = NULL;
+	GError          *error = NULL;
+	ThumbData       *thumb_data;
 
 	success = gth_thumb_loader_load_finish (GTH_THUMB_LOADER (source_object),
 						result,
-						&pixbuf,
+						&image,
 						&error);
 	job->started = FALSE;
 
 	if ((! success && g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
 	    || file_list->priv->cancelling)
 	{
-		_g_object_unref (pixbuf);
+		cairo_surface_destroy (image);
 		thumbnail_job_free (job);
 		return;
 	}
 
 	thumb_data = g_hash_table_lookup (file_list->priv->thumb_data, job->file_data->file);
 	if (thumb_data == NULL) {
-		_g_object_unref (pixbuf);
+		cairo_surface_destroy (image);
 		thumbnail_job_free (job);
 		_gth_file_list_update_next_thumb (file_list);
 		return;
 	}
 
-	_g_object_unref (thumb_data->pixbuf);
-	thumb_data->pixbuf = NULL;
+	cairo_surface_destroy (thumb_data->image);
+	thumb_data->image = NULL;
 
 	if (! success) {
 		thumb_data->thumb_created = FALSE;
@@ -1567,7 +1566,7 @@ thumbnail_job_ready_cb (GObject      *source_object,
 		thumb_data->error = TRUE;
 	}
 	else {
-		thumb_data->pixbuf = g_object_ref (pixbuf);
+		thumb_data->image = cairo_surface_reference (image);
 		thumb_data->thumb_created = TRUE;
 		thumb_data->error = FALSE;
 		if (job->update_in_view) {
@@ -1576,7 +1575,7 @@ thumbnail_job_ready_cb (GObject      *source_object,
 		}
 	}
 
-	_g_object_unref (pixbuf);
+	cairo_surface_destroy (image);
 	thumbnail_job_free (job);
 
 	_gth_file_list_update_next_thumb (file_list);
@@ -1588,25 +1587,25 @@ set_loading_icon (GthFileList *file_list,
 		  GthFileData *file_data,
 		  int          try_pos)
 {
-	GthFileStore *file_store;
-	GtkTreeIter   iter;
-	GIcon        *icon;
-	GdkPixbuf    *pixbuf;
+	GthFileStore    *file_store;
+	GtkTreeIter      iter;
+	GIcon           *icon;
+	cairo_surface_t *image;
 
 	file_store = (GthFileStore *) gth_file_view_get_model (GTH_FILE_VIEW (file_list->priv->view));
 	if (! get_file_data_iter_with_suggested_pos (file_store, file_data, try_pos, &iter))
 		return;
 
 	icon = g_themed_icon_new ("image-loading");
-	pixbuf = gth_icon_cache_get_pixbuf (file_list->priv->icon_cache, icon);
+	image = gth_icon_cache_get_surface (file_list->priv->icon_cache, icon);
 	gth_file_store_queue_set (file_store,
 				  &iter,
-				  GTH_FILE_STORE_THUMBNAIL_COLUMN, pixbuf,
+				  GTH_FILE_STORE_THUMBNAIL_COLUMN, image,
 				  GTH_FILE_STORE_IS_ICON_COLUMN, TRUE,
 				  -1);
 	queue_flash_updates (file_list);
 
-	_g_object_unref (pixbuf);
+	cairo_surface_destroy (image);
 	g_object_unref (icon);
 }
 

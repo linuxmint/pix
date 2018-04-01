@@ -220,19 +220,26 @@ thumb_loader_ready_cb (GObject      *source_object,
 	ViewData          *view_data = user_data;
 	GthFileViewerPage *self = view_data->self;
 	gboolean           success;
-	GdkPixbuf         *pixbuf = NULL;
+	cairo_surface_t   *image = NULL;
 
 	success = gth_thumb_loader_load_finish (GTH_THUMB_LOADER (source_object),
 						result,
-						&pixbuf,
+						&image,
 						NULL);
 	if (g_file_equal (self->priv->file_data->file, view_data->file_data->file)) {
-		if (success)
+		if (success) {
+			GdkPixbuf *pixbuf;
+
+			pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
 			gtk_image_set_from_pixbuf (GTK_IMAGE (self->priv->icon), pixbuf);
+
+			_g_object_unref (pixbuf);
+		}
+
 		gth_viewer_page_file_loaded (GTH_VIEWER_PAGE (self), self->priv->file_data, TRUE);
 	}
 
-	_g_object_unref (pixbuf);
+	cairo_surface_destroy (image);
 	view_data_free (view_data);
 }
 

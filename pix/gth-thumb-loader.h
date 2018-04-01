@@ -72,7 +72,7 @@ void              gth_thumb_loader_load                 (GthThumbLoader       *s
 						         gpointer              user_data);
 gboolean          gth_thumb_loader_load_finish          (GthThumbLoader       *self,
 						  	 GAsyncResult         *res,
-							 GdkPixbuf           **pixbuf,
+							 cairo_surface_t     **image,
 							 GError              **error);
 gboolean          gth_thumb_loader_has_valid_thumbnail  (GthThumbLoader       *self,
 				      	      	         GthFileData          *file_data);

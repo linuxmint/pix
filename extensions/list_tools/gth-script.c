@@ -562,20 +562,25 @@ thumb_loader_ready_cb (GObject      *source_object,
 		       GAsyncResult *result,
 		       gpointer      user_data)
 {
-	GtkBuilder *builder = user_data;
-	GdkPixbuf  *pixbuf;
+	GtkBuilder      *builder = user_data;
+	cairo_surface_t *image;
 
 	if (! gth_thumb_loader_load_finish (GTH_THUMB_LOADER (source_object),
 		  	 	 	    result,
-		  	 	 	    &pixbuf,
+		  	 	 	    &image,
 		  	 	 	    NULL))
 	{
 		return;
 	}
 
-	if (pixbuf != NULL) {
+	if (image != NULL) {
+		GdkPixbuf *pixbuf;
+
+		pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
 		gtk_image_set_from_pixbuf (GTK_IMAGE (_gtk_builder_get_widget (builder, "request_image")), pixbuf);
+
 		g_object_unref (pixbuf);
+		cairo_surface_destroy (image);
 	}
 
 	g_object_unref (builder);
