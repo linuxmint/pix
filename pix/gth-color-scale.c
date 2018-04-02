@@ -26,7 +26,8 @@
 
 
 #define _GTK_STYLE_CLASS_COLOR "color"
-
+#define FOCUS_LINE_WIDTH 1
+#define FOCUS_PADDING 4
 
 enum {
         PROP_0,
@@ -108,65 +109,19 @@ gth_color_scale_get_property (GObject    *object,
 
 
 static void
-_gth_color_scale_get_surface_size (GthColorScale *self,
-				   int           *x_out,
-				   int           *y_out,
-				   int           *width_out,
-				   int           *height_out,
-				   int           *slider_width_out,
-				   int           *slider_length_out,
-				   int           *slider_spacing_out)
+_gth_color_scale_get_range_rect (GthColorScale *self,
+			         GdkRectangle  *range_rect)
 {
-	GtkWidget             *widget = GTK_WIDGET (self);
-	int                    focus_line_width;
-	int                    focus_padding;
-	int                    slider_width;
-	int                    slider_length;
-	cairo_rectangle_int_t  bounding_box;
-	cairo_rectangle_int_t  trough_rect;
-
-	gtk_widget_style_get (widget,
-			      "focus-line-width", &focus_line_width,
-			      "focus-padding", &focus_padding,
-			      "slider-width", &slider_width,
-			      "slider-length", &slider_length,
-			      NULL);
-
-	bounding_box.width = gtk_widget_get_allocated_width (widget) - 2 * (focus_line_width + focus_padding);
-	bounding_box.height = gtk_widget_get_allocated_height (widget) - 2 * (focus_line_width + focus_padding);
-	bounding_box.x = focus_line_width + focus_padding;
-	bounding_box.y = focus_line_width + focus_padding;
-
-	if (gtk_orientable_get_orientation (GTK_ORIENTABLE (widget)) == GTK_ORIENTATION_HORIZONTAL) {
-		trough_rect.x = bounding_box.x;
-		trough_rect.width = bounding_box.width;
-		trough_rect.height = bounding_box.height / 2;
-		trough_rect.y = bounding_box.y;
-	}
-	else {
-		trough_rect.y = bounding_box.y;
-		trough_rect.height = bounding_box.height;
-		trough_rect.width = bounding_box.width / 2;
-		trough_rect.x = bounding_box.x;
-	}
-
-	if (x_out) *x_out = trough_rect.x;
-	if (y_out) *y_out = trough_rect.y;
-	if (width_out) *width_out = trough_rect.width;
-	if (height_out) *height_out = trough_rect.height;
-	if (slider_width_out) *slider_width_out = slider_width;
-	if (slider_length_out) *slider_length_out = slider_length;
-	if (slider_spacing_out) *slider_spacing_out = focus_line_width + focus_padding;
+	gtk_range_get_range_rect (GTK_RANGE (self), range_rect);
 }
 
 
 static void
 _gth_color_scale_update_surface (GthColorScale *self)
 {
-	int              width;
-	int              height;
-	cairo_pattern_t *pattern;
-	cairo_t         *cr;
+	cairo_rectangle_int_t  range_rect;
+	cairo_pattern_t       *pattern;
+	cairo_t               *cr;
 
 	if (! gtk_widget_get_realized (GTK_WIDGET (self)))
 		return;
@@ -174,11 +129,11 @@ _gth_color_scale_update_surface (GthColorScale *self)
 	if (self->priv->scale_type == GTH_COLOR_SCALE_DEFAULT)
 		return;
 
-	_gth_color_scale_get_surface_size (self, NULL, NULL, &width, &height, NULL, NULL, NULL);
+	_gth_color_scale_get_range_rect (self, &range_rect);
 
 	if ((self->priv->surface != NULL)
-	    && (self->priv->width == width)
-	    && (self->priv->height == height))
+	    && (self->priv->width == range_rect.width)
+	    && (self->priv->height == range_rect.height))
 	{
 		return;
 	}
@@ -186,7 +141,7 @@ _gth_color_scale_update_surface (GthColorScale *self)
 	cairo_surface_destroy (self->priv->surface);
 	self->priv->surface = NULL;
 
-	pattern = cairo_pattern_create_linear (0.0, 0.0, width, 0.0);
+	pattern = cairo_pattern_create_linear (0.0, 0.0, range_rect.width, 0.0);
 
 	switch (self->priv->scale_type) {
 	case GTH_COLOR_SCALE_DEFAULT:
@@ -229,10 +184,10 @@ _gth_color_scale_update_surface (GthColorScale *self)
 		break;
 	}
 
-	self->priv->surface = cairo_image_surface_create (CAIRO_FORMAT_RGB24, width, height);
+	self->priv->surface = cairo_image_surface_create (CAIRO_FORMAT_RGB24, range_rect.width, range_rect.height);
 	cr = cairo_create (self->priv->surface);
 	cairo_set_source (cr, pattern);
-	cairo_rectangle (cr, 0, 0, width, height);
+	cairo_rectangle (cr, 0, 0, range_rect.width, range_rect.height);
 	cairo_paint (cr);
 
 	cairo_pattern_destroy (pattern);
@@ -243,10 +198,10 @@ _gth_color_scale_update_surface (GthColorScale *self)
 static void
 _gth_color_scale_update_slider_position (GthColorScale *self)
 {
-	int focus_line_width;
-	int focus_padding;
+	int focus_line_width = FOCUS_LINE_WIDTH;
+	int focus_padding = FOCUS_PADDING;
 	int slider_width;
-	int slider_length;
+ 	int slider_length;
 	int slider_start;
 	int slider_end;
 
@@ -254,8 +209,6 @@ _gth_color_scale_update_slider_position (GthColorScale *self)
 		return;
 
 	gtk_widget_style_get (GTK_WIDGET (self),
-			      "focus-line-width", &focus_line_width,
-			      "focus-padding", &focus_padding,
 			      "slider-width", &slider_width,
 			      "slider-length", &slider_length,
 			      NULL);
@@ -264,7 +217,7 @@ _gth_color_scale_update_slider_position (GthColorScale *self)
 	if (gtk_orientable_get_orientation (GTK_ORIENTABLE (self)) == GTK_ORIENTATION_HORIZONTAL) {
 		self->priv->slider.x = slider_start;
 		self->priv->slider.y = focus_line_width + focus_padding;
-		self->priv->slider.width = slider_length;
+		self->priv->slider.width = slider_end - slider_start;
 		self->priv->slider.height = slider_width;
 	}
 
@@ -277,7 +230,6 @@ gth_color_scale_draw (GtkWidget *widget,
 		      cairo_t   *cr)
 {
 	GthColorScale         *self;
-	cairo_rectangle_int_t  surface_rect;
 	cairo_pattern_t       *pattern;
 	GtkStyleContext       *context;
 	GtkOrientation         orientation;
@@ -300,32 +252,30 @@ gth_color_scale_draw (GtkWidget *widget,
 	context = gtk_widget_get_style_context (widget);
 	orientation = gtk_orientable_get_orientation (GTK_ORIENTABLE (widget));
 	widget_state = gtk_widget_get_state_flags (widget);
-	gtk_range_get_range_rect (GTK_RANGE (self), &range_rect);
+	_gth_color_scale_get_range_rect (self, &range_rect);
 	gtk_range_get_slider_range (GTK_RANGE (self), &slider_start, &slider_end);
 
 	/* background */
 
 	_gth_color_scale_update_surface (self);
-	_gth_color_scale_get_surface_size (self,
-					   &surface_rect.x,
-					   &surface_rect.y,
-					   &surface_rect.width,
-					   &surface_rect.height,
-					   &slider_width,
-					   &slider_length,
-					   &slider_spacing);
 
 	cairo_save (cr);
-	cairo_translate (cr, surface_rect.x, surface_rect.y);
+	cairo_translate (cr, range_rect.x, range_rect.y);
 	pattern = cairo_pattern_create_for_surface (self->priv->surface);
-	cairo_rectangle (cr, 0.0, 0.0, surface_rect.width, surface_rect.height);
+
+	cairo_rectangle (cr,
+			 0,
+			 0,
+			 range_rect.width,
+			 range_rect.height);
+
 	if ((orientation == GTK_ORIENTATION_HORIZONTAL)
 	    && (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL))
 	{
 		cairo_matrix_t matrix;
 
 		cairo_matrix_init_scale (&matrix, -1, 1);
-		cairo_matrix_translate (&matrix, -surface_rect.width, 0);
+		cairo_matrix_translate (&matrix, -range_rect.width, 0);
 		cairo_pattern_set_matrix (pattern, &matrix);
 	}
 	cairo_set_source (cr, pattern);
@@ -333,14 +283,37 @@ gth_color_scale_draw (GtkWidget *widget,
 	cairo_pattern_destroy (pattern);
 	cairo_restore (cr);
 
+	/* border */
+
+	cairo_save (cr);
+	cairo_set_line_width (cr, 0.5);
+	cairo_set_source_rgba (cr, 0.0, 0.0, 0.0, 0.75);
+	cairo_rectangle (cr,
+			 range_rect.x,
+			 range_rect.y,
+			 range_rect.width,
+			 range_rect.height);
+	cairo_stroke (cr);
+	cairo_restore (cr);
+
 	/* focus */
 
-	if (! (widget_state & GTK_STATE_FLAG_INSENSITIVE) && gtk_widget_has_visible_focus (widget))
-	          gtk_render_focus (context, cr,
-	                            range_rect.x,
-	                            range_rect.y,
-	                            range_rect.width,
-	                            range_rect.height);
+	if (! (widget_state & GTK_STATE_FLAG_INSENSITIVE) && gtk_widget_has_visible_focus (widget)) {
+		int                    focus_line_width = FOCUS_LINE_WIDTH;
+		int                    focus_padding = FOCUS_PADDING;
+		cairo_rectangle_int_t  focus_box;
+
+		focus_box.width = range_rect.width + 2 * (focus_line_width + focus_padding);
+		focus_box.height = range_rect.height + 2 * (focus_line_width + focus_padding);
+		focus_box.x = range_rect.x - (focus_line_width + focus_padding);
+		focus_box.y = range_rect.y - (focus_line_width + focus_padding);
+
+		gtk_render_focus (context, cr,
+				  focus_box.x,
+				  focus_box.y,
+				  focus_box.width,
+				  focus_box.height);
+	}
 
 	/* slider */
 
@@ -354,15 +327,22 @@ gth_color_scale_draw (GtkWidget *widget,
 	_gth_color_scale_update_slider_position (self);
 
 	gtk_style_context_save (context);
-	gtk_style_context_add_class (context, GTK_STYLE_CLASS_SLIDER);
 	gtk_style_context_set_state (context, slider_state);
-	gtk_render_slider (context,
-			   cr,
-			   self->priv->slider.x,
-			   self->priv->slider.y,
-			   self->priv->slider.width,
-			   self->priv->slider.height,
-			   orientation);
+	if (orientation == GTK_ORIENTATION_HORIZONTAL) {
+		cairo_save (cr);
+		cairo_move_to (cr, self->priv->slider.x + (self->priv->slider.width / 2), range_rect.y);
+		cairo_rel_line_to (cr, 0, range_rect.height);
+		cairo_set_source_rgba (cr, 0, 0, 0, 0.5);
+		cairo_stroke (cr);
+		cairo_restore (cr);
+
+		gtk_render_arrow (context,
+				  cr,
+				  G_PI,
+				  self->priv->slider.x - (self->priv->slider.height / 2) + (self->priv->slider.width / 2),
+				  self->priv->slider.y,
+				  self->priv->slider.height);
+	}
 	gtk_style_context_restore (context);
 
 	return FALSE;
