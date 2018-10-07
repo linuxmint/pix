@@ -193,7 +193,7 @@ static GthActionEntryExt gth_browser_action_entries[] = {
 	  GTH_ACTION_FLAG_NONE,
 	  G_CALLBACK (gth_browser_activate_action_help_help) },
 
-	{ "Help_Shortcuts", NULL,
+	{ "Help_Shortcuts", "preferences-desktop-keyboard-shortcuts-symbolic",
 	  N_("_Keyboard Shortcuts"), NULL,
 	  " ",
 	  GTH_ACTION_FLAG_NONE,
