@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pix 2.13.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2016-06-22 19:50+0000\n"
-"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"PO-Revision-Date: 2018-08-28 09:26+0000\n"
+"Last-Translator: Thomas Olsen <Unknown>\n"
 "Language-Team: Norwegian/Bokmaal <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2018-06-26 10:16+0000\n"
-"X-Generator: Launchpad (build 18688)\n"
+"X-Launchpad-Export-Date: 2018-11-27 17:52+0000\n"
+"X-Generator: Launchpad (build 18826)\n"
 "Language: \n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -30,7 +30,7 @@ msgstr "Filen er ikke en gyldig .desktop-fil"
 #: ../copy-n-paste/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "«%s» er en ukjent versjon i .desktop-fil"
 
 #: ../copy-n-paste/eggdesktopfile.c:974
 #, c-format
@@ -40,12 +40,12 @@ msgstr "Starter %s"
 #: ../copy-n-paste/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Programmet godtar ikke dokumenter på kommandolinjen"
 
 #: ../copy-n-paste/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Oppstartsvalget «%d» er ukjent"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../copy-n-paste/eggsmclient.c:253
 msgid "Session management options:"
-msgstr ""
+msgstr "Valg for sesjonshåndtering:"
 
 #: ../copy-n-paste/eggsmclient.c:254
 msgid "Show session management options"
@@ -107,7 +107,7 @@ msgstr "Vis og organiser dine bilder"
 
 #: ../data/pix-import.desktop.in.in.h:1
 msgid "Import with Pix"
-msgstr ""
+msgstr "Importer med Pix"
 
 #: ../data/pix-import.desktop.in.in.h:2
 msgid "Photo Import Tool"
@@ -144,6 +144,8 @@ msgstr "Mulige verdier er: white, black, checked, none."
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
 msgstr ""
+"Enten du skal endre størrelsen på vinduet for å passe til størrelsen på "
+"bildet"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
@@ -299,11 +301,11 @@ msgstr "Miniatyrer i _visning:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "on the bottom"
-msgstr ""
+msgstr "på bunn"
 
 #: ../data/ui/preferences.ui.h:6
 msgid "on the side"
-msgstr ""
+msgstr "på siden"
 
 #: ../data/ui/preferences.ui.h:7
 msgid "File _properties in browser:"
@@ -486,7 +488,7 @@ msgstr "Legg til støtte for bokmerker."
 #: ../extensions/slideshow/slideshow.extension.in.in.h:3
 #: ../extensions/webalbums/webalbums.extension.in.in.h:3
 msgid "pix development team"
-msgstr ""
+msgstr "utviklingsteamet til pix"
 
 #: ../extensions/bookmarks/callbacks.c:54
 msgid "_Bookmarks"
@@ -542,7 +544,7 @@ msgstr ""
 
 #: ../extensions/burn_disc/callbacks.c:56
 msgid "Write files to an optical disc"
-msgstr ""
+msgstr "Skriv filer til en optisk plate"
 
 #: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
 msgid "Disc Name"
@@ -554,7 +556,7 @@ msgstr "A_ktiv mappe"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
 msgid "Current folder and its s_ub-folders"
-msgstr ""
+msgstr "Gjeldende mappe og dens _undermapper"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
 msgid "_Selected files"
@@ -573,12 +575,12 @@ msgstr "Skriv til plate"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr ""
+msgstr "Feil ved tolkning av JPEG-bildefilen: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr ""
+msgstr "Ukjent JPEG fargerom (%d)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
@@ -650,11 +652,11 @@ msgstr "dpi"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
-msgstr ""
+msgstr "_Metode:"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr ""
+msgstr "_Tapsfri"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
@@ -683,7 +685,7 @@ msgstr "TIFF"
 #: ../extensions/cairo_io/gth-image-saver-webp.c:382
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:165
 msgid "WebP"
-msgstr ""
+msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
@@ -802,7 +804,7 @@ msgstr "_Lag bibliotek"
 
 #: ../extensions/catalogs/callbacks.c:135
 msgid "Remove"
-msgstr ""
+msgstr "Slett"
 
 #: ../extensions/catalogs/callbacks.c:140
 msgid "Rena_me"
@@ -1233,11 +1235,11 @@ msgstr "Lysbilde"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
 msgid "Inward Shadow"
-msgstr ""
+msgstr "Innover-skygge"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
 msgid "Outward Shadow"
-msgstr ""
+msgstr "Utover-skygge"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
 msgid "Background"
@@ -1811,7 +1813,7 @@ msgstr "Face_book …"
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr ""
+msgstr "Last ned bilder fra Facebook"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
@@ -1856,7 +1858,7 @@ msgstr "Legg til et nytt album"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:7
 msgid "Resize the images if larger than this size"
-msgstr ""
+msgstr "Endre størrelsen på bildene dersom de er mindre enn denne størrelsen"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:8
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
@@ -1864,7 +1866,7 @@ msgstr ""
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
 msgid "_Resize if larger than:"
-msgstr ""
+msgstr "_Endre størrelsen hvis større enn:"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:9
 msgid "720 x 720"
@@ -1911,7 +1913,7 @@ msgstr "_Synlighet:"
 #: ../extensions/photobucket/data/ui/photobucket-export-completed.ui.h:1
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:1
 msgid "Files successfully uploaded to the server."
-msgstr ""
+msgstr "Filene ble vellykket lastet opp til serveren."
 
 #: ../extensions/facebook/data/ui/facebook-export-completed.ui.h:2
 #: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:2
@@ -1924,7 +1926,7 @@ msgstr "_Åpne i bildevisning"
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:1
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
 msgid "Import from Picasa Web Album"
-msgstr ""
+msgstr "Importer fra Picasa Web Album"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:2
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
@@ -2044,7 +2046,7 @@ msgstr "Facebook"
 
 #: ../extensions/facebook/facebook.extension.in.in.h:2
 msgid "Upload images to Facebook"
-msgstr ""
+msgstr "Last opp bilder til Facebook"
 
 #: ../extensions/facebook/facebook-service.c:498
 #: ../extensions/flicker_utils/flickr-service.c:863
@@ -2084,7 +2086,7 @@ msgstr "Laster opp «%s»"
 #: ../extensions/photobucket/photobucket-service.c:714
 #: ../extensions/picasaweb/picasa-web-service.c:1138
 msgid "Uploading the files to the server"
-msgstr ""
+msgstr "Laster opp filene til serveren"
 
 #: ../extensions/facebook/facebook-service.c:1058
 #: ../extensions/flicker_utils/flickr-service.c:1651
@@ -2113,6 +2115,8 @@ msgid ""
 "Files cannot be moved to the current location, as alternative you can choose "
 "to copy them."
 msgstr ""
+"Filer kan ikke bli flyttet til den gjeldende lokasjonen, som et alternativ "
+"kan du velge å kopiere de."
 
 #: ../extensions/file_manager/actions.c:563
 msgid "Could not open the location"
@@ -2133,7 +2137,7 @@ msgid ""
 "The folder cannot be moved to the Trash. Do you want to delete it "
 "permanently?"
 msgstr ""
-"Mappen kan ikke flyttes til søppelkurven. Vil du slette den permanent?"
+"Mappen kan ikke flyttes til papirkurven. Vil du slette den permanent?"
 
 #: ../extensions/file_manager/actions.c:780
 msgid "Could not move the folder to the Trash"
@@ -2179,11 +2183,11 @@ msgstr "Opprett en ny tom mappe i denne mappen"
 #: ../extensions/file_manager/callbacks.c:167
 #: ../extensions/file_manager/callbacks.c:207
 msgid "Cut"
-msgstr ""
+msgstr "Klipp ut"
 
 #: ../extensions/file_manager/callbacks.c:175
 msgid "Paste"
-msgstr ""
+msgstr "Lim inn"
 
 #: ../extensions/file_manager/callbacks.c:179
 msgid "D_uplicate"
@@ -2196,7 +2200,7 @@ msgstr "Dupliser valgte filer"
 #: ../extensions/file_manager/callbacks.c:183
 #: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
 msgid "Mo_ve to Trash"
-msgstr "Flytt til papirkur_ven"
+msgstr "Flytt til _papirkurven"
 
 #: ../extensions/file_manager/callbacks.c:184
 msgid "Move the selected files to the Trash"
@@ -2359,7 +2363,7 @@ msgstr "I_nverter aspektraten"
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "_Multiplum av:"
 
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
@@ -2383,19 +2387,19 @@ msgstr "Beskjæ_r"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:1
 msgid "Method"
-msgstr ""
+msgstr "Metode"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:2
 msgid "_Brightness"
-msgstr ""
+msgstr "_Lysstyrke"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:3
 msgid "_Saturation"
-msgstr ""
+msgstr "_Metning"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:4
 msgid "_Average"
-msgstr ""
+msgstr "_Gjennomsnitt"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
 #: ../pix/gth-main-default-metadata.c:47
@@ -2482,6 +2486,8 @@ msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
 msgstr ""
+"Tegn en linje på bildet \n"
+"for å bestemme justeringen."
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
 msgid "Parallel"
@@ -2489,7 +2495,7 @@ msgstr "Paralell"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:16
 msgid "Perpendicular"
-msgstr ""
+msgstr "Vinkelrett"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
 msgid "Alignment"
@@ -2501,7 +2507,7 @@ msgstr "Opprinnelig størrelse"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
 msgid "Bounding box"
-msgstr ""
+msgstr "Avgrensningsboks"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
 msgid "Crop borders"
@@ -2549,15 +2555,15 @@ msgstr "Juster farger"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr ""
+msgstr "Endre lysstyrke, kontrast, metning og gammanivå til bildet"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
-msgstr ""
+msgstr "Juster kontrast"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:305
 msgid "Automatic contrast adjustment"
-msgstr ""
+msgstr "Automatisk justering av kontrasten"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
@@ -2626,7 +2632,7 @@ msgstr "Tilpasset"
 #: ../extensions/file_tools/gth-file-tool-crop.c:447
 #: ../extensions/file_tools/gth-file-tool-rotate.c:398
 msgid "Rule of Thirds"
-msgstr ""
+msgstr "Tredjedeler"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:448
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
@@ -2636,7 +2642,7 @@ msgstr "Gylne utsnitt"
 #: ../extensions/file_tools/gth-file-tool-crop.c:449
 #: ../extensions/file_tools/gth-file-tool-rotate.c:400
 msgid "Center Lines"
-msgstr ""
+msgstr "Midtlinjer"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:450
 #: ../extensions/file_tools/gth-file-tool-rotate.c:401
@@ -2673,11 +2679,11 @@ msgstr "Roter bildet vertikalt"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale..."
-msgstr ""
+msgstr "Gråtoner ..."
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale"
-msgstr ""
+msgstr "Gråtoner"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:87
 msgid "Mirror"
@@ -2728,7 +2734,7 @@ msgstr "Roter til venstre"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr ""
+msgstr "Roter bildet 90 grader mot klokken"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
 #: ../extensions/image_rotation/callbacks.c:49
@@ -2737,7 +2743,7 @@ msgstr "Roter til høyre"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr ""
+msgstr "Roter bildet 90 grader med klokken"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
 msgid "Save As"
@@ -2906,7 +2912,7 @@ msgstr ""
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
 msgid "_Privacy:"
-msgstr ""
+msgstr "_Personvern:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
 msgid "Hi_de from public searches"
@@ -2914,15 +2920,15 @@ msgstr ""
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
 msgid "_Safety:"
-msgstr ""
+msgstr "_Sikkerhet:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
 msgid "Private photos, visible to family and friends"
-msgstr ""
+msgstr "Private bilder- synlig for familie og venner"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
 msgid "Private photos, visible to family"
-msgstr ""
+msgstr "Private bilder- synlig for familie"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
 msgid "Private photos"
@@ -2959,22 +2965,23 @@ msgstr "_Autoriser …"
 #: ../extensions/photobucket/photobucket-consumer.c:149
 #: ../extensions/photobucket/photobucket-service.c:132
 msgid "Unknown error"
-msgstr ""
+msgstr "Ukjent feil"
 
 #: ../extensions/flicker_utils/flickr-service.c:502
 #, c-format
 msgid ""
 "Return to this window when you have finished the authorization process on %s"
 msgstr ""
+"Kom tilbake til dette vinduet når du har fullført innloggingsprosessen på %s"
 
 #: ../extensions/flicker_utils/flickr-service.c:503
 msgid "Once you're done, click the 'Continue' button below."
-msgstr ""
+msgstr "Når du er ferdig, trykk på «Fortsett»-knappen nedenfor."
 
 #: ../extensions/flicker_utils/flickr-service.c:571
 #, c-format
 msgid "Pix requires your authorization to upload the photos to %s"
-msgstr ""
+msgstr "Pix krever din autorisasjon for å laste opp bildene til %s"
 
 #: ../extensions/flicker_utils/flickr-service.c:572
 #, c-format
@@ -3031,7 +3038,7 @@ msgstr "Slå av/på volum"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
 msgid "Change volume level"
-msgstr ""
+msgstr "Endre volum"
 
 #: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:3
 #: ../extensions/photo_importer/actions.c:67
@@ -3114,7 +3121,7 @@ msgstr "Kanaler"
 
 #: ../extensions/gstreamer_tools/main.c:51
 msgid "Sample rate"
-msgstr ""
+msgstr "Samplingsrate"
 
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:368
 msgid "Stereo"
@@ -3140,7 +3147,7 @@ msgstr "Kunne ikke skrive ut valgte filer"
 #: ../extensions/image_print/callbacks.c:64
 #: ../extensions/image_print/preferences.c:79
 msgid "Print"
-msgstr ""
+msgstr "Skriv ut"
 
 #: ../extensions/image_print/callbacks.c:65
 msgid "Print the selected images"
@@ -3314,6 +3321,16 @@ msgid ""
 "For practical use, this mode gives the best looking results, but the "
 "transformation is not strictly lossless anymore."
 msgstr ""
+"Denne transformasjonen kan muligens introdusere små forvrengninger langs en "
+"eller flere kanter, fordi bildedimensjonene ikke er et multiplum av 8.\n"
+"\n"
+"Forvrengningen er imidlertid reverserbar. Hvis det resulterende bildet er "
+"uakseptabelt kan du bare påføre den motsatte transformasjonen for å gå "
+"tilbake til det originale bildet.\n"
+"\n"
+"Du kan også velge å forkaste (eller trimme) kantpiksler som ikke kan "
+"transformeres. For praktisk bruk vil denne modusen gi resultatet med best "
+"utseende, men transformasjonen er da ikke fullstendig tapsfri lenger."
 
 #: ../extensions/image_rotation/rotation-utils.c:116
 msgid "_Trim"
@@ -3321,7 +3338,7 @@ msgstr "_Juster"
 
 #: ../extensions/image_rotation/rotation-utils.c:118
 msgid "_Accept distortion"
-msgstr ""
+msgstr "_Aksepter forvregning"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
 msgid "Set to actual size"
@@ -3557,6 +3574,8 @@ msgid ""
 "Not enough free space in '%s'.\n"
 "%s of space is required but only %s is available."
 msgstr ""
+"Ikke nok ledig plass i «%s».\n"
+"%s med plass kreves, men kun %s er tilgjengelig."
 
 #: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
 msgid "Personalize..."
@@ -3580,11 +3599,11 @@ msgstr "Ko_mmandoer:"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:2
 msgid "_Wait for the command to finish"
-msgstr ""
+msgstr "_La kommandoen gjøre seg ferdig"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:3
 msgid "E_xecute command once for every file"
-msgstr ""
+msgstr "Kjør kommandoen _en gang pr fil"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:4
 msgid "_Terminal command (shell script)"
@@ -3760,10 +3779,12 @@ msgstr "Kart"
 msgid ""
 "The geographical position information is not available for this image."
 msgstr ""
+"Informasjon om den geografiske posisjonen er ikke tilgjengelig for dette "
+"bildet."
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
-msgstr ""
+msgstr "Vis posisjonen til bildet på kartet"
 
 #: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
 msgid "A_ccounts:"
@@ -3780,7 +3801,7 @@ msgstr "Ny autentisering …"
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
-msgstr ""
+msgstr "Autorisering er nødvendig"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
@@ -3800,7 +3821,7 @@ msgstr "Kobler til tjener"
 
 #: ../extensions/oauth/web-service.c:796
 msgid "Asking authorization"
-msgstr ""
+msgstr "Forespør autorisering"
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
@@ -3812,7 +3833,7 @@ msgstr ""
 
 #: ../extensions/photobucket/callbacks.c:55
 msgid "Upload photos to Photobucket"
-msgstr ""
+msgstr "Last opp bilder til Photobucket"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:9
 msgid "_Scramble filenames"
@@ -3820,27 +3841,27 @@ msgstr ""
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:10
 msgid "Tiny ( 100 x 75 )"
-msgstr ""
+msgstr "Bitte liten ( 100 x 75 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:11
 msgid "Small ( 160 x 120 )"
-msgstr ""
+msgstr "Liten ( 160 x 120 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:12
 msgid "Medium ( 320 x 240 )"
-msgstr ""
+msgstr "Middels ( 320 x 240 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:13
 msgid "Large ( 640 x 480 )"
-msgstr ""
+msgstr "Stor ( 640 x 480 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:14
 msgid "15ʺ screen ( 800 x 600 )"
-msgstr ""
+msgstr "15\" skjerm ( 800 x 600 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:15
 msgid "17ʺ screen ( 1024 x 768 )"
-msgstr ""
+msgstr "17\" skjerm ( 1024 x 768 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:16
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:296
@@ -3853,31 +3874,31 @@ msgstr ""
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:290
 msgid "Tiny ( 100 × 75 )"
-msgstr ""
+msgstr "Bitte liten ( 100 x 75 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:291
 msgid "Small ( 160 × 120 )"
-msgstr ""
+msgstr "Liten ( 160 x 120 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:292
 msgid "Medium ( 320 × 240 )"
-msgstr ""
+msgstr "Middels ( 320 x 240 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:293
 msgid "Large ( 640 × 480 )"
-msgstr ""
+msgstr "Stor ( 640 x 480 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:294
 msgid "15ʺ screen ( 800 × 600 )"
-msgstr ""
+msgstr "15\" skjerm ( 800 x 600 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:295
 msgid "17ʺ screen ( 1024 × 768 )"
-msgstr ""
+msgstr "17\" skjerm ( 1024 x 768 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:303
 msgid "2 megabyte file size"
-msgstr ""
+msgstr "2 megabyte filstørrelse"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:1
 msgid "PhotoBucket"
@@ -3885,7 +3906,7 @@ msgstr ""
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:2
 msgid "Upload images to PhotoBucket"
-msgstr ""
+msgstr "Last opp bilder til PhotoBucket"
 
 #: ../extensions/photo_importer/actions.c:71
 msgid "Import"
@@ -3897,7 +3918,7 @@ msgstr "Ekste_rn enhet …"
 
 #: ../extensions/photo_importer/callbacks.c:53
 msgid "Import photos and other files from a removable device"
-msgstr ""
+msgstr "Importer bilder og andre filer fra en flyttbar enhet"
 
 #: ../extensions/photo_importer/callbacks.c:56
 msgid "F_older..."
@@ -3980,15 +4001,15 @@ msgstr "_Picasa nettalbum …"
 
 #: ../extensions/picasaweb/callbacks.c:60
 msgid "Download photos from Picasa Web Album"
-msgstr ""
+msgstr "Last ned bilder fra Picasa Web Album"
 
 #: ../extensions/picasaweb/callbacks.c:65
 msgid "Upload photos to Picasa Web Album"
-msgstr ""
+msgstr "Last opp bilder til Picasa Web Album"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:1
 msgid "Export to Picasa Web Albums"
-msgstr ""
+msgstr "Eksporter til Picasa Web Albums"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:5
 msgid "_Albums:"
@@ -4013,11 +4034,11 @@ msgstr "Last opp bilder til Picasa nettalbum"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
-msgstr ""
+msgstr "Støtte for råformat"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:2
 msgid "Allow to load raw format images."
-msgstr ""
+msgstr "Tillat å laste inn bilder i råformat."
 
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
 msgid "_X:"
@@ -4037,7 +4058,7 @@ msgstr "Fjerning av røde øyne"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:511
 msgid "Remove the red eye effect caused by camera flashes"
-msgstr ""
+msgstr "Fjern røde øyne-effekten skapt av kamerablitsen"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
 msgid "Red-eye removal"
@@ -4045,7 +4066,7 @@ msgstr "Fjerning av røde øyne"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
 msgid "Tool to remove the red-eye effect from a photo."
-msgstr ""
+msgstr "Verktøy for å fjerne røde øyne-effekten fra et bilde."
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:1
 msgid "digits"
@@ -4188,7 +4209,7 @@ msgstr "Endre navn på filer"
 
 #: ../extensions/rename_series/rename_series.extension.in.in.h:2
 msgid "Rename series of files."
-msgstr ""
+msgstr "Endre navn på flere filer."
 
 #: ../extensions/resize_images/callbacks.c:45
 msgid "Resize Images..."
@@ -4212,7 +4233,7 @@ msgstr "_Høyde:"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:5
 msgid "_Preserve original aspect ratios"
-msgstr ""
+msgstr "_Behold originale høyde/bredde-forhold"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:9
 #: ../pix/gth-main-default-metadata.c:49
@@ -4287,7 +4308,7 @@ msgstr "Avbryt operasjonen"
 
 #: ../extensions/search/search.extension.in.in.h:2
 msgid "File search tool."
-msgstr ""
+msgstr "Verktøy for å søke etter filer."
 
 #: ../extensions/selections/callbacks.c:77
 msgid "Add to _Selection"
@@ -4310,6 +4331,8 @@ msgstr "Utvalg 3"
 msgid ""
 "Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."
 msgstr ""
+"Bruk Alt-%d for å legge til filer i dette utvalget, og Ctrl-%d for å vise "
+"dette utvalget."
 
 #: ../extensions/selections/gth-selections-manager.c:239
 #, c-format
@@ -4346,12 +4369,12 @@ msgstr "_Personliggjør"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
 msgid "_Transition effect:"
-msgstr ""
+msgstr "_Overgangseffekt:"
 
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
 msgid "_Change automatically, every"
-msgstr ""
+msgstr "Bytt automatisk, hvert"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
 msgid "_Restart when finished"
@@ -4367,7 +4390,7 @@ msgstr "Spilleliste"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
 msgid "Add files to the playlist"
-msgstr ""
+msgstr "Legg til filer i spillelisten"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
 msgid "Remove the selected files"
@@ -4391,23 +4414,23 @@ msgstr "Tilfeldig"
 
 #: ../extensions/slideshow/main.c:283
 msgid "Push from right"
-msgstr ""
+msgstr "Dytt inn fra høyre"
 
 #: ../extensions/slideshow/main.c:289
 msgid "Push from bottom"
-msgstr ""
+msgstr "Dytt inn fra bunn"
 
 #: ../extensions/slideshow/main.c:295
 msgid "Slide from right"
-msgstr ""
+msgstr "Gli inn fra høyre"
 
 #: ../extensions/slideshow/main.c:301
 msgid "Slide from bottom"
-msgstr ""
+msgstr "Gli inn fra bunn"
 
 #: ../extensions/slideshow/main.c:307
 msgid "Fade in"
-msgstr ""
+msgstr "Ton inn"
 
 #: ../extensions/slideshow/main.c:313
 msgid "Flip page"
@@ -4487,7 +4510,7 @@ msgstr ""
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
 msgid "Adapts to the window width"
-msgstr ""
+msgstr "Tilpasser seg bredden til vinduet"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
 msgid "Web Album"
@@ -4504,23 +4527,23 @@ msgstr "_Kopier originalfiler til mål"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:27
 msgid "_Adapt to the window width "
-msgstr ""
+msgstr "_Tilpass vinduets bredde "
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:30
 msgid "Index Page"
-msgstr ""
+msgstr "Indeksside"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:31
 msgid "Thumbnail Caption"
-msgstr ""
+msgstr "Bildetekst til miniatyrbildene"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
 msgid "The current image number"
-msgstr ""
+msgstr "Gjeldende bildenummer"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:33
 msgid "The total number of images"
-msgstr ""
+msgstr "Totalt antall bilder"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:35
 msgid "The file comment"
@@ -4528,19 +4551,19 @@ msgstr ""
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:36
 msgid "Image Page"
-msgstr ""
+msgstr "Bildeside"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:37
 msgid "Show the description, if available"
-msgstr ""
+msgstr "Vil beskrivelsen, hvis tilgjengelig"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:38
 msgid "Show the following attributes:"
-msgstr ""
+msgstr "Vis følgende attributter:"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:39
 msgid "Image Attributes"
-msgstr ""
+msgstr "Bildeattributter"
 
 #: ../extensions/webalbums/gth-web-exporter.c:1802
 msgid "Could not show the destination"
@@ -4548,7 +4571,7 @@ msgstr "Kunne ikke vise målet"
 
 #: ../extensions/webalbums/gth-web-exporter.c:1838
 msgid "The album has been created successfully."
-msgstr ""
+msgstr "Opprettelsen av albumet var vellykket."
 
 #: ../extensions/webalbums/gth-web-exporter.c:2106
 #: ../extensions/webalbums/gth-web-exporter.c:2134
@@ -4557,11 +4580,11 @@ msgstr "Lagrer miniatyrer"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2162
 msgid "Saving HTML pages: Images"
-msgstr ""
+msgstr "Lagrer HTML-sider: Bilder"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2220
 msgid "Saving HTML pages: Indexes"
-msgstr ""
+msgstr "Lagrer HTML-sider: Indekser"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2505
 msgid "Copying original images"
@@ -4569,7 +4592,7 @@ msgstr "Kopier originalbilder"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2965
 msgid "Could not find the style folder"
-msgstr ""
+msgstr "Fant ikke stil-mappen"
 
 #: ../extensions/webalbums/gth-web-exporter.c:3003
 msgid "Could not create a temporary folder"
@@ -4581,7 +4604,7 @@ msgstr "Nettalbum"
 
 #: ../extensions/webalbums/webalbums.extension.in.in.h:2
 msgid "Create static web albums."
-msgstr ""
+msgstr "Lag statiske nettalbum."
 
 #: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1397
 #: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6173
@@ -4661,7 +4684,7 @@ msgstr "Omstart kreves"
 
 #: ../pix/dlg-preferences-extensions.c:825
 msgid "You need to restart pix for these changes to take effect"
-msgstr ""
+msgstr "Du må restarte pix for at endringene skal få effekt"
 
 #: ../pix/dlg-preferences-extensions.c:826
 msgid "_Continue"
@@ -4675,12 +4698,12 @@ msgstr "Sta_rt på nytt"
 #: ../pix/gio-utils.c:1351
 #, c-format
 msgid "%s of %s"
-msgstr ""
+msgstr "%s av %s"
 
 #: ../pix/gio-utils.c:1386
 #, c-format
 msgid "Moving \"%s\" to \"%s\""
-msgstr ""
+msgstr "Flytter «%s» to «%s»"
 
 #: ../pix/gio-utils.c:1388
 #, c-format
@@ -4730,6 +4753,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"pix er fri programvare; du kan distribuere den og/eller endre den under "
+"vilkårene til GNU General Public Lisensen publisert av Free Software "
+"Foundation; enten versjon 2 av lisensen, eller (etter eget valg) enhver "
+"senere versjon."
 
 #: ../pix/gth-browser-actions-callbacks.c:418
 msgid ""
@@ -4744,6 +4771,8 @@ msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
+"Du bør ha mottatt en kopi av GNU General Public-Lisensen sammen med pix. "
+"Hvis ikke, se  http://www.gnu.org/licenses/."
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
@@ -4755,7 +4784,9 @@ msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "\n"
 "Launchpad Contributions:\n"
-"  Kjartan Maraas https://launchpad.net/~kmaraas"
+"  Erlend Østlie https://launchpad.net/~erlendandreas12368\n"
+"  Kjartan Maraas https://launchpad.net/~kmaraas\n"
+"  Thomas Olsen https://launchpad.net/~lavahd"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -4800,7 +4831,7 @@ msgstr "Åpne"
 
 #: ../pix/gth-browser-actions-entries.h:59
 msgid "Save As..."
-msgstr ""
+msgstr "Lagre som …"
 
 #: ../pix/gth-browser-actions-entries.h:65
 msgid "Revert"
@@ -4824,19 +4855,19 @@ msgstr "_Filtrer …"
 
 #: ../pix/gth-browser-actions-entries.h:107
 msgid "Stop"
-msgstr ""
+msgstr "Stopp"
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
-msgstr ""
+msgstr "Stopp innlasting av gjeldende plassering"
 
 #: ../pix/gth-browser-actions-entries.h:113
 msgid "Reload"
-msgstr ""
+msgstr "Last inn på nytt"
 
 #: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
-msgstr ""
+msgstr "Last inn gjeldende plassering på nytt"
 
 #: ../pix/gth-browser-actions-entries.h:120
 msgid "View previous image"
@@ -4848,7 +4879,7 @@ msgstr "Vis neste bilde"
 
 #: ../pix/gth-browser-actions-entries.h:131
 msgid "Fullscreen"
-msgstr ""
+msgstr "Fullskjerm"
 
 #: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
@@ -4861,7 +4892,7 @@ msgstr "Forlat fullskjerm"
 
 #: ../pix/gth-browser-actions-entries.h:143
 msgid "Back"
-msgstr ""
+msgstr "Tilbake"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
@@ -4869,7 +4900,7 @@ msgstr "Gå til sist besøkte lokasjon"
 
 #: ../pix/gth-browser-actions-entries.h:149
 msgid "Forward"
-msgstr ""
+msgstr "Frem"
 
 #: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3860
 msgid "Go to the next visited location"
@@ -4877,7 +4908,7 @@ msgstr "Gå til neste besøkte lokasjon"
 
 #: ../pix/gth-browser-actions-entries.h:155
 msgid "Up"
-msgstr ""
+msgstr "Oppover"
 
 #: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3878
 msgid "Go up one level"
@@ -4889,7 +4920,7 @@ msgstr "_Lokasjon …"
 
 #: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
-msgstr ""
+msgstr "Velg en plassering som skal åpnes"
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
@@ -4905,7 +4936,7 @@ msgstr "Vis mapper"
 
 #: ../pix/gth-browser-actions-entries.h:185
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: ../pix/gth-browser-actions-entries.h:186
 msgid "Show information about pix"
@@ -4971,7 +5002,7 @@ msgstr "_Miniatyrområde"
 
 #: ../pix/gth-browser-actions-entries.h:233
 msgid "View or hide the thumbnail pane in viewer mode"
-msgstr ""
+msgstr "Vis eller skjul panelet for miniatyrbilder i visningsmodus"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
@@ -5001,7 +5032,7 @@ msgstr "Til_pass vinduet til bildet"
 
 #: ../pix/gth-browser-actions-entries.h:263
 msgid "Resize the window to the size of the image"
-msgstr ""
+msgstr "Tilpass vindus-størrelsen til bildet"
 
 #: ../pix/gth-browser.c:419
 #, c-format
@@ -5037,6 +5068,7 @@ msgstr "Lagre endringer i fil «%s»?"
 #: ../pix/gth-browser.c:2225
 msgid "If you don't save, changes to the file will be permanently lost."
 msgstr ""
+"Hvis du ikke lagrer, vil endringer gjort på filen bli permanent tapt."
 
 #: ../pix/gth-browser.c:2226
 msgid "Do _Not Save"
@@ -5076,7 +5108,7 @@ msgstr "Kan ikke åpne modulen «%s»: %s"
 #: ../pix/gth-extensions.c:754
 #, c-format
 msgid "The extension '%1$s' is required by the extension '%2$s'"
-msgstr ""
+msgstr "Utvidelsen «%1$s» kreves av utvidelsen «%2$s»"
 
 #: ../pix/gth-file-chooser-dialog.c:144
 msgid "All Supported Files"
@@ -5095,6 +5127,8 @@ msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
+"Filene kan ikke bli flyttet til papirkurven. Ønsker du å slette dem "
+"permanent?"
 
 #: ../pix/gth-file-source-vfs.c:750
 msgid "Could not move the files to the Trash"
@@ -5122,7 +5156,7 @@ msgstr[1] ""
 
 #: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
-msgstr ""
+msgstr "Skjul linjen for filtrering"
 
 #: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
 #: ../pix/gth-test-simple.c:75
@@ -5191,7 +5225,7 @@ msgstr "Blå"
 
 #: ../pix/gth-histogram-view.c:898
 msgid "Alpha"
-msgstr ""
+msgstr "Gjennomsiktighet"
 
 #: ../pix/gth-histogram-view.c:904
 msgid "RGB"
@@ -5298,7 +5332,7 @@ msgstr "Lagrer filinformasjon"
 #: ../pix/gth-save-image-task.c:160
 #, c-format
 msgid "Saving '%s'"
-msgstr ""
+msgstr "Lagrer «%s»"
 
 #: ../pix/gth-tags-entry.c:390
 #, c-format
@@ -5436,7 +5470,7 @@ msgstr "Nå"
 
 #: ../pix/gth-window-actions-entries.h:31
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #: ../pix/gth-window-actions-entries.h:32
 msgid "Close this window"
