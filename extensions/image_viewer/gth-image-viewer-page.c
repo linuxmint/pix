@@ -181,7 +181,7 @@ static GtkActionEntry image_viewer_action_entries[] = {
 	  G_CALLBACK (image_viewer_activate_action_edit_copy_image) },
 
 	{ "ImageViewer_Edit_Paste_Image", "edit-paste-symbolic",
-	  N_("Paste Image"), "<control>p",
+	  N_("Paste Image"), "<control>v",
 	  N_("Paste the image from the clipboard"),
 	  G_CALLBACK (image_viewer_activate_action_edit_paste_image) },
 
