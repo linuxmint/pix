@@ -28,12 +28,12 @@
 
 static GtkActionEntry gth_window_action_entries[] = {
 	{ "File_CloseWindow", "window-close-symbolic",
-	  N_("Close"), NULL,
+	  N_("Close"), "<control>W",
 	  N_("Close this window"),
 	  G_CALLBACK (gth_window_activate_action_file_close_window) },
 
 	{ "File_Quit", "application-exit-symbolic",
-	  N_("Close _All Windows"), NULL,
+	  N_("Close _All Windows"), "<control>Q",
 	  NULL,
 	  G_CALLBACK (gth_window_activate_action_file_quit_application) }
 };
