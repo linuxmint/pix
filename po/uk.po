@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2018-02-24 16:36+0000\n"
-"Last-Translator: Maxim Dziumanenko <Unknown>\n"
+"PO-Revision-Date: 2019-07-19 16:11+0000\n"
+"Last-Translator: Myk <Stuartlittle1970@gmail.com>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2019-06-23 10:23+0000\n"
-"X-Generator: Launchpad (build 18989)\n"
+"X-Launchpad-Export-Date: 2019-07-28 09:36+0000\n"
+"X-Generator: Launchpad (build 19010)\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -289,7 +289,7 @@ msgstr "_Інші фільтри:"
 
 #: ../data/ui/preferences.ui.h:1
 msgid "below the folder list"
-msgstr "під списком папок"
+msgstr "під переліком тек"
 
 #: ../data/ui/preferences.ui.h:2
 msgid "on the right"
@@ -313,7 +313,7 @@ msgstr "збоку"
 
 #: ../data/ui/preferences.ui.h:7
 msgid "File _properties in browser:"
-msgstr "_Властивості файлу у браузері:"
+msgstr "_Властивості файлу у бровзері:"
 
 #: ../data/ui/preferences.ui.h:8
 msgid "Appearance"
@@ -325,11 +325,11 @@ msgstr "Перейти до _останнього відвіданого міс�
 
 #: ../data/ui/preferences.ui.h:10
 msgid "Go to this _folder:"
-msgstr "Перейти до вказаної _папки:"
+msgstr "Перейти до вказаної _теки:"
 
 #: ../data/ui/preferences.ui.h:11
 msgid "Choose startup folder"
-msgstr "Виберіть початкову папку"
+msgstr "Виберіть початковий каталог"
 
 #: ../data/ui/preferences.ui.h:12
 msgid "Set to C_urrent"
@@ -508,7 +508,7 @@ msgstr "_Додати закладку"
 
 #: ../extensions/bookmarks/callbacks.c:59
 msgid "Add current location to bookmarks"
-msgstr "Додати закладку на поточну папку"
+msgstr "Додати закладку на поточну теку"
 
 #: ../extensions/bookmarks/callbacks.c:63
 msgid "_Edit Bookmarks..."
@@ -556,11 +556,11 @@ msgstr "Назва диску"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
 msgid "Current _folder"
-msgstr "Поточну _папку"
+msgstr "Поточну _теку"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
 msgid "Current folder and its s_ub-folders"
-msgstr "Поточну папку та _вкладені папки"
+msgstr "Поточну теку та _вкладені теки"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
 msgid "_Selected files"
@@ -767,12 +767,12 @@ msgstr "_Додати до альбому"
 #: ../extensions/catalogs/callbacks.c:105
 #: ../extensions/selections/callbacks.c:80
 msgid "Open _Folder"
-msgstr "Відкрити _папку"
+msgstr "Відкрити _теку"
 
 #: ../extensions/catalogs/callbacks.c:106
 #: ../extensions/selections/callbacks.c:81
 msgid "Go to the folder that contains the selected file"
-msgstr "Перейти до папки, що містить вибраний файл"
+msgstr "Перейти до теки, що містить вибраний файл"
 
 #: ../extensions/catalogs/callbacks.c:110
 msgid "Other..."
@@ -877,7 +877,7 @@ msgstr "Нова _колекція"
 #: ../extensions/file_manager/actions.c:944
 #: ../extensions/webalbums/gth-web-exporter.c:1842
 msgid "_View the destination"
-msgstr "_Виберіть папку призначення"
+msgstr "_Виберіть теку призначення"
 
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
@@ -932,7 +932,7 @@ msgstr "_Групувати за:"
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
 #: ../extensions/search/data/ui/search-editor.ui.h:2
 msgid "_Include sub-folders"
-msgstr "_Включати підпапки"
+msgstr "_Включати підтеки"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
@@ -983,18 +983,18 @@ msgstr "Дата змінювання файлу"
 #: ../extensions/catalogs/dlg-organize-files.c:146
 #: ../extensions/comments/main.c:182
 msgid "Tag"
-msgstr "Тег"
+msgstr "Теґ"
 
 #: ../extensions/catalogs/dlg-organize-files.c:153
 #: ../pix/gth-main-default-tests.c:324
 msgid "Tag (embedded)"
-msgstr "Тег (вбудований)"
+msgstr "Теґ (вбудований)"
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:45
 #: ../extensions/edit_metadata/callbacks.c:106
 #: ../pix/gth-main-default-metadata.c:53
 msgid "Tags"
-msgstr "Теги"
+msgstr "Теґи"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:953
 #, c-format
@@ -1132,11 +1132,11 @@ msgstr "Імпортувати метадані із файлів до сист�
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
-msgstr "Коментарі та теги"
+msgstr "Коментарі та теґи"
 
 #: ../extensions/comments/comments.extension.in.in.h:2
 msgid "Add comments and tags to any file type."
-msgstr "Додати коментар чи теги до будь-якого типу файлу."
+msgstr "Додати коментар чи теґи до будь-якого типу файлу."
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:1
 #: ../extensions/importer/gth-import-preferences-dialog.c:318
@@ -1195,7 +1195,7 @@ msgstr "Створити контактний лист"
 
 #: ../extensions/contact_sheet/callbacks.c:65
 msgid "Image _Wall..."
-msgstr "_Галерея фото…"
+msgstr "_Галерея світлин…"
 
 #: ../extensions/contact_sheet/callbacks.c:66
 msgid "Create an image-wall"
@@ -1247,7 +1247,7 @@ msgstr "Зовнішня тінь"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
 msgid "Background"
-msgstr "Фон"
+msgstr "Тло"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
 msgid "_Solid color"
@@ -1255,7 +1255,7 @@ msgstr "_Суцільний колір"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
 msgid "_Gradient"
-msgstr "_Градієнт"
+msgstr "_Ґрадієнт"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
 msgid "Select a color"
@@ -1324,7 +1324,7 @@ msgstr "Усього сторінок"
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
 msgid "Special code"
-msgstr "Спеціальний код"
+msgstr "Спеціяльний код"
 
 #. translate only the text in the curly brackets
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
@@ -1359,7 +1359,7 @@ msgstr "_Призначення:"
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:7
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
 msgid "Choose destination folder"
-msgstr "Виберіть папку призначення"
+msgstr "Виберіть теку призначення"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
@@ -1522,7 +1522,7 @@ msgstr "Призначення"
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:5
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:8
 msgid "_Use the original image folder"
-msgstr "_Використовувати папку початкового зображення"
+msgstr "_Використовувати теку початкового зображення"
 
 #: ../extensions/convert_format/dlg-convert-format.c:95
 msgid "Converting images"
@@ -1530,25 +1530,25 @@ msgstr "Перетворення зображень"
 
 #: ../extensions/desktop_background/actions.c:240
 msgid "Could not show the desktop background properties"
-msgstr "Не вдається відкрити властивості фону стільниці"
+msgstr "Не вдається відкрити властивості тла стільниці"
 
 #: ../extensions/desktop_background/actions.c:305
 #: ../extensions/desktop_background/actions.c:323
 msgid "Could not set the desktop background"
-msgstr "Не вдалося встановити фон стільниці"
+msgstr "Не вдалося встановити тло стільниці"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
-msgstr "Встановити як фон стільниці"
+msgstr "Зробити тлом стільниці"
 
 #: ../extensions/desktop_background/callbacks.c:50
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
 msgid "Set the image as desktop background"
-msgstr "Встановити зображення як фон стільниці"
+msgstr "Встановити зображення як тло"
 
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
 msgid "Desktop background"
-msgstr "Фон стільниці"
+msgstr "Тло стільниці"
 
 #: ../extensions/edit_metadata/actions.c:66
 msgid ""
@@ -1562,7 +1562,7 @@ msgstr "Якщо вилучити метадані, їх буде назавжд
 
 #: ../extensions/edit_metadata/callbacks.c:97
 msgid "T_ags"
-msgstr "Т_еги"
+msgstr "Т_еґи"
 
 #: ../extensions/edit_metadata/callbacks.c:101
 msgid "Edit the comment and other information of the selected files"
@@ -1570,7 +1570,7 @@ msgstr "Змінити коментар та іншу інформацію у в
 
 #: ../extensions/edit_metadata/callbacks.c:107
 msgid "Set the tags of the selected files"
-msgstr "Встановити теги виділеним файлам"
+msgstr "Встановити теґи виділеним файлам"
 
 #: ../extensions/edit_metadata/callbacks.c:112
 msgid "Delete Metadata"
@@ -1593,11 +1593,11 @@ msgstr "Міс_це:"
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
 #: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
 msgid "T_ags:"
-msgstr "_Теги:"
+msgstr "_Теґи:"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
 msgid "_Rating:"
-msgstr "_Рейтинг:"
+msgstr "_Рейтинґ:"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
 msgid "_Title:"
@@ -1675,16 +1675,16 @@ msgstr "Не змінювати"
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:80
 #, c-format
 msgid "%s Tags"
-msgstr "%s Теги"
+msgstr "%s Теґи"
 
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:189
 msgid "Assign Tags"
-msgstr "Призначити теги"
+msgstr "Призначити теґи"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 #: ../extensions/edit_metadata/gth-tag-task.c:136
 msgid "Assigning tags to the selected files"
-msgstr "Призначення тегів для виділених файлів"
+msgstr "Призначення теґів для виділених файлів"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 msgid "Writing files"
@@ -1817,11 +1817,11 @@ msgstr "Face_book..."
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr "Завантажити фото з Facebook"
+msgstr "Завантажити світлини з Facebook"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
-msgstr "Вивантажити фото в Facebook"
+msgstr "Вивантажити світлини в Facebook"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:1
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:1
@@ -1895,12 +1895,12 @@ msgstr "2048 x 2048"
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:1
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
 msgid "Public photos"
-msgstr "Загальнодоступні фото"
+msgstr "Загальнодоступні світлини"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:2
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
 msgid "Private photos, visible to friends"
-msgstr "Приватні фото, видимі друзям"
+msgstr "Приватні світлини, видимі друзям"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:3
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:5
@@ -1925,7 +1925,7 @@ msgstr "Файли успішно відвантажено на сервер."
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:2
 #: ../extensions/webalbums/gth-web-exporter.c:1841
 msgid "_Open in the Browser"
-msgstr "_Відкрити в Інтернет браузері"
+msgstr "_Відкрити в Інтернет бровзері"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:1
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
@@ -1945,7 +1945,7 @@ msgstr "_Імпортувати"
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:3
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:4
 msgid "A_ccount:"
-msgstr "Обліков_ка:"
+msgstr "Обліків_ка:"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:5
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:5
@@ -2027,7 +2027,7 @@ msgstr "Експортувати в %s"
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:349
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:279
 msgid "Could not get the photo list"
-msgstr "Не вдається отримати перелік фото"
+msgstr "Не вдається отримати перелік світлин"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:378
 #: ../extensions/facebook/dlg-import-from-facebook.c:533
@@ -2097,15 +2097,15 @@ msgstr "Вивантаження файлів на сервер"
 #: ../extensions/flicker_utils/flickr-service.c:1651
 #: ../extensions/picasaweb/picasa-web-service.c:1257
 msgid "Getting the photo list"
-msgstr "Отримання переліку фото"
+msgstr "Отримання переліку світлин"
 
 #: ../extensions/file_manager/actions.c:133
 msgid "New folder"
-msgstr "Нова папка"
+msgstr "Нова тека"
 
 #: ../extensions/file_manager/actions.c:134
 msgid "Enter the folder name:"
-msgstr "Введіть ім’я папки:"
+msgstr "Введіть ім’я теки:"
 
 #: ../extensions/file_manager/actions.c:400
 #: ../extensions/file_manager/callbacks.c:380
@@ -2130,11 +2130,11 @@ msgstr "Не вдається відкрити адресу"
 msgid ""
 "The folder is not empty, do you want to delete the folder and its content "
 "permanently?"
-msgstr "Папка не порожня, вилучити папку та її вміст?"
+msgstr "Тека не порожня, вилучити теку та її вміст?"
 
 #: ../extensions/file_manager/actions.c:712
 msgid "Could not delete the folder"
-msgstr "Не вдається вилучити папку"
+msgstr "Не вдається вилучити теку"
 
 #: ../extensions/file_manager/actions.c:773
 msgid ""
@@ -2145,7 +2145,7 @@ msgstr ""
 
 #: ../extensions/file_manager/actions.c:780
 msgid "Could not move the folder to the Trash"
-msgstr "Не вдається перемістити папку до Смітника"
+msgstr "Не вдається перемістити теку до Смітника"
 
 #: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
 #, c-format
@@ -2177,12 +2177,12 @@ msgstr "Копіювати"
 #: ../extensions/file_manager/callbacks.c:163
 #: ../extensions/file_manager/callbacks.c:199
 msgid "Create _Folder"
-msgstr "Створити _папку"
+msgstr "Створити _теку"
 
 #: ../extensions/file_manager/callbacks.c:164
 #: ../extensions/file_manager/callbacks.c:200
 msgid "Create a new empty folder inside this folder"
-msgstr "Створити нову порожню папку всередині цієї папки"
+msgstr "Створити нову порожню теку у цій теці"
 
 #: ../extensions/file_manager/callbacks.c:167
 #: ../extensions/file_manager/callbacks.c:207
@@ -2208,18 +2208,18 @@ msgstr "Перемістити у см_ітник"
 
 #: ../extensions/file_manager/callbacks.c:184
 msgid "Move the selected files to the Trash"
-msgstr "Перемістити виділені зображення в смітник"
+msgstr "Перемістити виділені зображення у смітник"
 
 #: ../extensions/file_manager/callbacks.c:187
 #: ../extensions/file_manager/callbacks.c:223
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:5
 #: ../pix/gth-tags-entry.c:871
 msgid "_Delete"
-msgstr "В_идалити"
+msgstr "В_илучити"
 
 #: ../extensions/file_manager/callbacks.c:188
 msgid "Delete the selected files"
-msgstr "Видалити виділені файли"
+msgstr "Вилучити виділені файли"
 
 #: ../extensions/file_manager/callbacks.c:191
 #: ../extensions/file_manager/callbacks.c:203
@@ -2237,7 +2237,7 @@ msgstr "Відкрити у менеджері _файлів"
 
 #: ../extensions/file_manager/callbacks.c:215
 msgid "_Paste Into Folder"
-msgstr "Вст_авити у папку"
+msgstr "Вст_авити у теку"
 
 #: ../extensions/file_manager/callbacks.c:227
 #: ../extensions/file_manager/callbacks.c:236
@@ -2246,7 +2246,7 @@ msgstr "Копіювати до..."
 
 #: ../extensions/file_manager/callbacks.c:228
 msgid "Copy the selected folder to another folder"
-msgstr "Копіювати виділену папку до іншої папки"
+msgstr "Копіювати виділену теку до іншої теки"
 
 #: ../extensions/file_manager/callbacks.c:231
 #: ../extensions/file_manager/callbacks.c:240
@@ -2255,15 +2255,15 @@ msgstr "Перемістити до..."
 
 #: ../extensions/file_manager/callbacks.c:232
 msgid "Move the selected folder to another folder"
-msgstr "Перемістити виділену папку до іншої папки"
+msgstr "Перемістити виділену теку до іншої теки"
 
 #: ../extensions/file_manager/callbacks.c:237
 msgid "Copy the selected files to another folder"
-msgstr "Копіювати виділені файли до іншої папки"
+msgstr "Копіювати виділені файли до іншої теки"
 
 #: ../extensions/file_manager/callbacks.c:241
 msgid "Move the selected files to another folder"
-msgstr "Перемістити виділені файли до іншої папки"
+msgstr "Перемістити виділені файли до іншої теки"
 
 #: ../extensions/file_manager/callbacks.c:999
 #: ../extensions/find_duplicates/gth-find-duplicates.c:766
@@ -2303,7 +2303,7 @@ msgstr "_Насиченість:"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
 msgid "G_amma:"
-msgstr "_Гамма:"
+msgstr "_Ґамма:"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
 msgid "Cyan-_Red:"
@@ -2362,7 +2362,7 @@ msgstr "Співвідношення сторін"
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:8
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:6
 msgid "I_nvert aspect ratio"
-msgstr "_Інвертувати відношення сторін"
+msgstr "_Спротилежнити відношення сторін"
 
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
@@ -2467,15 +2467,15 @@ msgstr "Зберігати пропорції"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
 msgid "Grid:"
-msgstr "Сітка:"
+msgstr "Ґратка:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
 msgid "_Background:"
-msgstr "_Фон"
+msgstr "_Тло:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
 msgid "Pick a background color"
-msgstr "Взяти колір фону"
+msgstr "Взяти колір тла"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
 msgid "_Transparent"
@@ -2520,7 +2520,7 @@ msgstr "Прибирати межі"
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:28
 msgid "_Preview:"
-msgstr "_Попередній перегляд:"
+msgstr "_Передогляд:"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
 msgid "Threshold:"
@@ -2536,11 +2536,11 @@ msgstr "Величина:"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
-msgstr "Інструменти для роботи із зображеннями"
+msgstr "Знадоби для роботи із зображеннями"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:2
 msgid "Basic tools to modify images."
-msgstr "Основні інструменти для роботи із зображеннями."
+msgstr "Основні знадоби для роботи із зображеннями."
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:372
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:272
@@ -2559,7 +2559,7 @@ msgstr "Коригування кольорів"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr "Змінити яскравість, контраст, насиченість та гаму зображення"
+msgstr "Змінити яскравість, контраст, насиченість та ґаму зображення"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
@@ -2785,7 +2785,7 @@ msgstr "Знайти дубльовані файли у поточному ка�
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
 msgid "_Folders:"
-msgstr "_Папки"
+msgstr "_Теки"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
 msgid "Search for Duplicates"
@@ -2837,11 +2837,11 @@ msgstr "залишити найстаріші дублі"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
-msgstr "за папкою..."
+msgstr "за текою..."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:68
 msgid "all files"
-msgstr "всі файли"
+msgstr "усі файли"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:69
 msgid "no file"
@@ -2891,11 +2891,11 @@ msgstr "_Flickr..."
 
 #: ../extensions/flicker/callbacks.c:60
 msgid "Download photos from Flickr"
-msgstr "Отримати фото з Flickr"
+msgstr "Отримати світлини з Flickr"
 
 #: ../extensions/flicker/callbacks.c:65
 msgid "Upload photos to Flickr"
-msgstr "Надсилання фотографій на Flickr"
+msgstr "Надсилання світлин на Flickr"
 
 #: ../extensions/flicker/flicker.extension.in.in.h:1
 msgid "Flicker"
@@ -2930,15 +2930,15 @@ msgstr "_Безпека:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
 msgid "Private photos, visible to family and friends"
-msgstr "Приватні фото, видимі родині та друзям"
+msgstr "Приватні світлини, видимі родині та друзям"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
 msgid "Private photos, visible to family"
-msgstr "Приватні фото, видимі лише родині"
+msgstr "Приватні світлини, видимі лише родині"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
 msgid "Private photos"
-msgstr "Приватні фото"
+msgstr "Приватні світлини"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
 msgid "Safe content"
@@ -2987,7 +2987,7 @@ msgstr "По закінченню, натисніть на кнопку 'Про�
 #: ../extensions/flicker_utils/flickr-service.c:571
 #, c-format
 msgid "Pix requires your authorization to upload the photos to %s"
-msgstr "Для вивантаження фото на %s потрібна авторизація"
+msgstr "Для вивантаження світлин на %s потрібна авторизація"
 
 #: ../extensions/flicker_utils/flickr-service.c:572
 #, c-format
@@ -2996,8 +2996,8 @@ msgid ""
 "photos to %s. When you're finished, return to this window to complete the "
 "authorization."
 msgstr ""
-"Натисніть «Авторизувати», щоб відкрити web-браузер й авторизувати pix для "
-"відвантаження фото в %s. По завершенню поверніться до цього вікна, щоб "
+"Натисніть «Авторизувати», щоб відкрити web-бровзер й авторизувати pix для "
+"відвантаження світлин в %s. По завершенню поверніться до цього вікна, щоб "
 "завершити авторизацію."
 
 #: ../extensions/gstreamer_tools/actions.c:66
@@ -3008,7 +3008,7 @@ msgstr "Не вдається зберегти файл"
 
 #: ../extensions/gstreamer_tools/actions.c:131
 msgid "Could not take a screenshot"
-msgstr "Не вдається зробити знімок екрану"
+msgstr "Не вдається зробити зняток екрану"
 
 #: ../extensions/gstreamer_tools/actions.c:137
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1215
@@ -3018,7 +3018,7 @@ msgstr "Зберегти зображення"
 #: ../extensions/gstreamer_tools/actions.c:165
 msgctxt "Filename"
 msgid "Screenshot"
-msgstr "Знімок екрану"
+msgstr "Зняток екрану"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
 msgid "Slower"
@@ -3053,7 +3053,7 @@ msgstr "Змінити рівень гучності"
 #: ../extensions/photo_importer/actions.c:67
 #: ../extensions/photo_importer/dlg-photo-importer.c:620
 msgid "Choose a folder"
-msgstr "Виберіть папку"
+msgstr "Оберіть теку"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:1
 msgid "Audio/Video support"
@@ -3065,11 +3065,11 @@ msgstr "Відтворення звукових та відео файлів"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:104
 msgid "Screenshot"
-msgstr "Знімок екрану"
+msgstr "Зняток екрану"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:105
 msgid "Take a screenshot"
-msgstr "Зробити знімок екрану"
+msgstr "Зробити зняток екрану"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
@@ -3077,7 +3077,7 @@ msgstr "Відтворення відео"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:694
 msgid "Pause"
-msgstr "Пауза"
+msgstr "Павза"
 
 #: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:247
 msgid "Video"
@@ -3205,7 +3205,7 @@ msgstr "Одиниці:"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Preview"
-msgstr "Попередній  перегляд"
+msgstr "Передогляд"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:30
 msgid "millimeters"
@@ -3336,8 +3336,8 @@ msgstr ""
 "Проте спотворення зворотнє. Якщо зображення після перетворення неприйнятне, "
 "щоб повернути початкове зображення просто застосуйте зворотнє перетворення.\n"
 "\n"
-"Також можна відкинути (чи усікти) будь-які не перетворювані  точки на межах. "
-"Для практичного використання, цей режим дає найкращий вигляд, але "
+"Також можна відкинути (чи відтяти) будь-які не перетворювані  точки на "
+"межах. Для практичного використання, цей режим дає найкращий вигляд, але "
 "перетворення не є перетворенням повністю без втрат."
 
 #: ../extensions/image_rotation/rotation-utils.c:116
@@ -3482,11 +3482,11 @@ msgstr "_Призначення:"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:2
 msgid "_Automatic subfolder"
-msgstr "_Автоматичні підпапки"
+msgstr "_Автоматичні підтеки"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:3
 msgid "as _single subfolder"
-msgstr "як _одну підпапку"
+msgstr "як _одну підтеку"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:7
 msgid "The year"
@@ -3556,7 +3556,7 @@ msgstr "Немає файлу для імпорту"
 
 #: ../extensions/importer/gth-import-task.c:621
 msgid "The selected files are already present in the destination."
-msgstr "Обрані файли вже присутні у цільовій папці."
+msgstr "Обрані файли вже присутні у цільовій теці."
 
 #: ../extensions/importer/gth-import-task.c:644
 #: ../pix/gth-file-source-vfs.c:694
@@ -3635,7 +3635,7 @@ msgstr "Назва без розширення"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:9
 msgid "The parent folder path"
-msgstr "Шлях до батьківської папки"
+msgstr "Шлях до батьківської теки"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:14
@@ -3795,7 +3795,7 @@ msgstr "Показати місце знімку на мапі"
 
 #: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
 msgid "A_ccounts:"
-msgstr "О_бліковки:"
+msgstr "О_бліківки:"
 
 #: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
 #: ../pix/gth-folder-tree.c:1067
@@ -3812,15 +3812,15 @@ msgstr "Потрібна авторизація"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
-msgstr "Вибрати _обліковку…"
+msgstr "Вибрати _обліківку…"
 
 #: ../extensions/oauth/web-service.c:660
 msgid "Choose Account"
-msgstr "Вибрати обліковку"
+msgstr "Вибрати обліківку"
 
 #: ../extensions/oauth/web-service.c:777
 msgid "Edit Accounts"
-msgstr "Редагувати обліковки"
+msgstr "Редагувати обліківки"
 
 #: ../extensions/oauth/web-service.c:795 ../extensions/oauth/web-service.c:812
 msgid "Connecting to the server"
@@ -3832,7 +3832,7 @@ msgstr "Запит авторизації"
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
-msgstr "Отримання інформації про обліковку"
+msgstr "Отримання інформації про обліківку"
 
 #: ../extensions/photobucket/callbacks.c:54
 msgid "Photobucket..."
@@ -3840,7 +3840,7 @@ msgstr "Photobucket..."
 
 #: ../extensions/photobucket/callbacks.c:55
 msgid "Upload photos to Photobucket"
-msgstr "Вивантажити фото на Photobucket"
+msgstr "Вивантажити світлини на Photobucket"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:9
 msgid "_Scramble filenames"
@@ -3925,15 +3925,15 @@ msgstr "_Змінний носій..."
 
 #: ../extensions/photo_importer/callbacks.c:53
 msgid "Import photos and other files from a removable device"
-msgstr "Імпорт фото та інших файлів із змінних носіїв"
+msgstr "Імпорт світлин та інших файлів із змінних носіїв"
 
 #: ../extensions/photo_importer/callbacks.c:56
 msgid "F_older..."
-msgstr "_Папка..."
+msgstr "_Тека..."
 
 #: ../extensions/photo_importer/callbacks.c:57
 msgid "Import photos and other files from a folder"
-msgstr "Імпортувати фото та інші файли із папки"
+msgstr "Імпортувати світлини та інші файли з теки"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
 msgid "_Rotate the images physically"
@@ -3951,7 +3951,7 @@ msgstr "По_казувати:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
 msgid "_Tags:"
-msgstr "_Теги:"
+msgstr "_Теґи:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
 msgid "_Event:"
@@ -3974,12 +3974,12 @@ msgstr "Файли для імпорту: %d (%s)"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:339
 msgid "Could not load the folder"
-msgstr "Не вдається завантажити папку"
+msgstr "Не вдається завантажити теку"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:369
 #: ../pix/gth-browser.c:2090
 msgid "Getting folder listing..."
-msgstr "Читання папки..."
+msgstr "Читання теки..."
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:415
 msgid "Empty"
@@ -3991,15 +3991,15 @@ msgstr "Імпорт зі змінних носіїв"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:618
 msgid "Import from Folder"
-msgstr "Імпортувати із папки"
+msgstr "Імпортувати з теки"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:1
 msgid "Import photos"
-msgstr "Імпорт фото"
+msgstr "Імпорт світлин"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:2
 msgid "Import photos from removable devices."
-msgstr "Імпорт фото зі змінних носіїв."
+msgstr "Імпорт світлин зі змінних носіїв."
 
 #: ../extensions/picasaweb/callbacks.c:59
 #: ../extensions/picasaweb/callbacks.c:64
@@ -4008,11 +4008,11 @@ msgstr "Веб-альбом _Picasa..."
 
 #: ../extensions/picasaweb/callbacks.c:60
 msgid "Download photos from Picasa Web Album"
-msgstr "Завантажити фото з веб-альбому Picasa"
+msgstr "Завантажити світлини з веб-альбому Picasa"
 
 #: ../extensions/picasaweb/callbacks.c:65
 msgid "Upload photos to Picasa Web Album"
-msgstr "Запис фото до веб-альбому Picasa"
+msgstr "Запис світлин до веб-альбому Picasa"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:1
 msgid "Export to Picasa Web Albums"
@@ -4029,7 +4029,7 @@ msgstr "Публічне"
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:458
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:469
 msgid "Could not get the album list"
-msgstr "Не вдається отримати список альбомів"
+msgstr "Не вдається отримати перелік альбомів"
 
 #: ../extensions/picasaweb/picasaweb.extension.in.in.h:1
 msgid "Picasa Web Albums"
@@ -4391,11 +4391,11 @@ msgstr "_У випадковому порядку"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
 msgid "Playlist"
-msgstr "Плейлист"
+msgstr "Грайлист"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
 msgid "Add files to the playlist"
-msgstr "Додати файли до плейлиста"
+msgstr "Додати файли до грайлиста"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
 msgid "Remove the selected files"
@@ -4411,7 +4411,7 @@ msgstr "Виберіть файли для відтворення"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:193
 msgid "Audio files"
-msgstr "Аудіо-файли"
+msgstr "Звукові файли"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:259
 msgid "Random"
@@ -4528,7 +4528,7 @@ msgstr "%P"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
 msgid "_Copy originals to destination"
-msgstr "_Копіювати зображення в папку призначення"
+msgstr "_Копіювати зображення у теку призначення"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:27
 msgid "_Adapt to the window width "
@@ -4597,11 +4597,11 @@ msgstr "Копіювання початкових зображень"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2965
 msgid "Could not find the style folder"
-msgstr "Не вдалося знайти папку зі стилями"
+msgstr "Не вдалося знайти теку зі стилями"
 
 #: ../extensions/webalbums/gth-web-exporter.c:3003
 msgid "Could not create a temporary folder"
-msgstr "Не вдається створити тимчасову папку"
+msgstr "Не вдається створити тимчасову теку"
 
 #: ../extensions/webalbums/webalbums.extension.in.in.h:1
 msgid "Web Albums"
@@ -4656,11 +4656,11 @@ msgstr "Метадані"
 
 #: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
-msgstr "Інструменти для роботи з файлами"
+msgstr "Знадоби для роботи з файлами"
 
 #: ../pix/dlg-preferences-extensions.c:75
 msgid "List tools"
-msgstr "Інструменти для роботи зі списками"
+msgstr "Знадоби для роботи з переліками"
 
 #: ../pix/dlg-preferences-extensions.c:76
 msgid "Importers"
@@ -4890,7 +4890,7 @@ msgstr "Наступне зображення"
 
 #: ../pix/gth-browser-actions-entries.h:131
 msgid "Fullscreen"
-msgstr "На весь екран"
+msgstr "На увесь екран"
 
 #: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
@@ -4935,7 +4935,7 @@ msgstr "Вкажіть місцерозташування, яке треба в�
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
-msgstr "О_чистити історію"
+msgstr "О_чистити дієпис"
 
 #: ../pix/gth-browser-actions-entries.h:174
 msgid "Delete the list of visited locations"
@@ -4943,7 +4943,7 @@ msgstr "Вилучити перелік відвіданих адрес"
 
 #: ../pix/gth-browser-actions-entries.h:180
 msgid "View the folders"
-msgstr "Показати папки"
+msgstr "Показати теки"
 
 #: ../pix/gth-browser-actions-entries.h:185
 msgid "About"
@@ -4963,7 +4963,7 @@ msgstr "Вивести посібник pix"
 
 #: ../pix/gth-browser-actions-entries.h:197
 msgid "_Keyboard Shortcuts"
-msgstr "_Комбінації вклавіш..."
+msgstr "_Сполучення клавіш"
 
 #: ../pix/gth-browser-actions-entries.h:203
 #: ../pix/gth-browser-actions-entries.h:257
@@ -4977,11 +4977,11 @@ msgstr "Редагувати файл"
 
 #: ../pix/gth-browser-actions-entries.h:212
 msgid "_Toolbar"
-msgstr "_Панель інструментів"
+msgstr "_Панель знарядь"
 
 #: ../pix/gth-browser-actions-entries.h:213
 msgid "View or hide the toolbar of this window"
-msgstr "Показати чи сховати панель інструментів цього вікна"
+msgstr "Показати чи сховати панель знарядь цього вікна"
 
 #: ../pix/gth-browser-actions-entries.h:217
 msgid "_Statusbar"
@@ -5029,7 +5029,7 @@ msgstr "_Приховані файли"
 
 #: ../pix/gth-browser-actions-entries.h:243
 msgid "Show hidden files and folders"
-msgstr "Показувати приховані файли та папки"
+msgstr "Показувати приховані файли та теки"
 
 #: ../pix/gth-browser-actions-entries.h:248
 #: ../pix/gth-browser-actions-entries.h:252
@@ -5127,7 +5127,7 @@ msgstr "Усі підтримувані файли"
 
 #: ../pix/gth-file-source-vfs.c:121
 msgid "Home Folder"
-msgstr "Домашня папка"
+msgstr "Домашня тека"
 
 #: ../pix/gth-file-source-vfs.c:126
 msgid "File System"
@@ -5182,7 +5182,7 @@ msgstr "МБ"
 #: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
 #: ../pix/gth-test-simple.c:77
 msgid "GB"
-msgstr "ГБ"
+msgstr "ҐБ"
 
 #. "files" label
 #: ../pix/gth-filter.c:286 ../pix/gth-filter-editor-dialog.c:177
@@ -5311,7 +5311,7 @@ msgstr "розміри"
 
 #: ../pix/gth-main-default-tests.c:233
 msgid "All Files"
-msgstr "Всі файли"
+msgstr "Усі файли"
 
 #: ../pix/gth-main-default-tests.c:261
 msgid "Media"
@@ -5350,11 +5350,11 @@ msgstr "Збереження \"%s\""
 #: ../pix/gth-tags-entry.c:390
 #, c-format
 msgid "Create tag «%s»"
-msgstr "Створити тег «%s»"
+msgstr "Створити теґ «%s»"
 
 #: ../pix/gth-tags-entry.c:814
 msgid "Show all the tags"
-msgstr "Показати усі теги"
+msgstr "Показати усі теґи"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
@@ -5366,7 +5366,7 @@ msgstr "Тимчасове"
 
 #: ../pix/gth-tags-file.c:237
 msgid "Screenshots"
-msgstr "Знімки екрану"
+msgstr "Знятки екрану"
 
 #: ../pix/gth-tags-file.c:238
 msgid "Science"
@@ -5495,7 +5495,7 @@ msgstr "Закрити ус_і вікна"
 
 #: ../pix/gtk-utils.c:490
 msgid "Could not display help"
-msgstr "Не вдається відобразити довідку"
+msgstr "Не вдалося показати довідку"
 
 #: ../pix/gtk-utils.c:810 ../pix/gtk-utils.c:817
 msgid "Could not launch the application"
@@ -5523,7 +5523,7 @@ msgstr "Відкрити у новому вікні"
 
 #: ../pix/main.c:65
 msgid "Start in fullscreen mode"
-msgstr "Запустити у повноекранному режимі"
+msgstr "Запустити повноекранно"
 
 #: ../pix/main.c:69
 msgid "Automatically start a slideshow"
@@ -5531,7 +5531,7 @@ msgstr "Автоматично запускати перегляд слайді�
 
 #: ../pix/main.c:73
 msgid "Automatically import digital camera photos"
-msgstr "Автоматично імпортувати знімки з цифрової камери"
+msgstr "Автоматично імпортувати знятки з цифрової камери"
 
 #: ../pix/main.c:77
 msgid "Show version"
