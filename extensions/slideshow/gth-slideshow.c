@@ -32,6 +32,7 @@
 #endif /* HAVE_GSTREAMER */
 #include "gth-slideshow.h"
 #include "gth-transition.h"
+#include <extensions/image_viewer/preferences.h>
 
 #define HIDE_CURSOR_DELAY 1
 #define HIDE_PAUSED_SIGN_DELAY 1
@@ -722,6 +723,9 @@ default_projector_pause_painter (GthImageViewer *image_viewer,
 static void
 default_projector_construct (GthSlideshow *self)
 {
+
+	GSettings         *viewer_settings;
+
 	self->priv->hide_paused_sign = 0;
 	self->priv->paint_paused = FALSE;
 
@@ -731,7 +735,12 @@ default_projector_construct (GthSlideshow *self)
 	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_FIT_SIZE);
 	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_ZOOM_CHANGE_FIT_SIZE);
 	gth_image_viewer_set_transp_type (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_TRANSP_TYPE_BLACK);
-	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_ZOOM_QUALITY_LOW);
+
+	viewer_settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
+	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (self->priv->viewer),
+			g_settings_get_enum (viewer_settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
+	g_object_unref (viewer_settings);
+
 	gth_image_viewer_add_painter (GTH_IMAGE_VIEWER (self->priv->viewer), default_projector_pause_painter, self);
 
 	g_signal_connect (self->priv->viewer, "button-press-event", G_CALLBACK (viewer_event_cb), self);
