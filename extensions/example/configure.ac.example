@@ -31,7 +31,6 @@ PIX_EXTENSION_INIT(2.12)
 
 GLIB_REQUIRED=2.16.0
 GTK_REQUIRED=2.16.0
-GCONF_REQUIRED=2.6.0
 PIX_REQUIRED=2.11.1
 
 dnl ===========================================================================
@@ -61,7 +60,6 @@ PKG_CHECK_MODULES(EXTENSION, [
 	gmodule-2.0
 	gio-unix-2.0
 	gtk+-2.0 		>= $GTK_REQUIRED
-	gconf-2.0 		>= $GCONF_REQUIRED
 	pix-2.12		>= $PIX_REQUIRED
 ])
 AC_SUBST(EXTENSION_LIBS)
@@ -86,14 +84,6 @@ if test "x${prefix}" = "xNONE"; then
 else
 	AC_DEFINE_UNQUOTED(LOCALEDIR, "${prefix}/${DATADIRNAME}/locale", [Locale directory])
 fi
-
-dnl ===========================================================================
-
-AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
-if test x"$GCONFTOOL" = xno; then
-	AC_MSG_ERROR([gconftool-2 executable not found in your path - should be installed with GConf])
-fi
-AM_GCONF_SOURCE_2
 
 dnl ===========================================================================
 
