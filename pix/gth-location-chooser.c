@@ -631,7 +631,7 @@ gth_location_chooser_init (GthLocationChooser *self)
 	/**/
 
 	gtk_widget_show (self->priv->combo);
-	gtk_box_pack_start (GTK_BOX (self), self->priv->combo, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (self), self->priv->combo, TRUE, TRUE, 6);
 }
 
 
