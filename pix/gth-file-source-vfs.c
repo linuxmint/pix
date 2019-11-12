@@ -812,6 +812,7 @@ gth_file_mananger_trash_files (GtkWindow *window,
 					     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 					     _("Mo_ve to Trash"), GTK_RESPONSE_YES,
 					     NULL);
+		gtk_dialog_set_default_response (d, GTK_RESPONSE_YES);
 		g_signal_connect (d, "response",
 				  G_CALLBACK (trash_files_response_cb),
 				  gth_file_data_list_dup (file_list));
@@ -855,6 +856,9 @@ gth_file_mananger_delete_files (GtkWindow *window,
 				     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 				     GTK_STOCK_DELETE, GTK_RESPONSE_YES,
 				     NULL);
+
+	gtk_dialog_set_default_response (d, GTK_RESPONSE_YES);
+
 	g_signal_connect (d, "response", G_CALLBACK (delete_permanently_response_cb), file_list);
 	gtk_widget_show (d);
 
