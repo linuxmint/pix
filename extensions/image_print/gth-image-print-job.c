@@ -819,7 +819,6 @@ from_unit_to_pixels (GthMetric unit,
 		value = value * 25.4;
 		break;
 	case GTH_METRIC_MILLIMETERS:
-	case GTH_METRIC_PIXELS:
 		break;
 	}
 
@@ -836,7 +835,6 @@ from_pixels_to_unit (GthMetric unit,
 		value = value / 25.4;
 		break;
 	case GTH_METRIC_MILLIMETERS:
-	case GTH_METRIC_PIXELS:
 		break;
 	}
 
@@ -1206,10 +1204,7 @@ unit_combobox_changed_cb (GtkComboBox *combo_box,
 		digits = 1;
 		break;
 	case GTH_METRIC_MILLIMETERS:
-		digits = 0;
-		break;
-	case GTH_METRIC_PIXELS:
-	default:
+    default:
 		digits = 0;
 		break;
 	}
