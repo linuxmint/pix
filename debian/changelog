@@ -1,3 +1,12 @@
+pix (2.4.2) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * print settings: Fix inch-to-metric conversion
+  * print settings: Remove 'pixel' option in units selector. It is confusing because it's treated *exactly* the same as millimeters, and doesn't make much sense as a physical unit of measure even if it was properly calculated.
+  * print settings: Keep images centered until explicitly moved off center (or Custom is explicitly selected).  It makes no sense to have the center combobox revert to Custom when adjusting the image size.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 09 Dec 2019 09:58:17 +0000
+
 pix (2.4.1) tricia; urgency=medium
 
   * l10n: Update translations
