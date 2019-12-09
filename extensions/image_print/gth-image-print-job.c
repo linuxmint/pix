@@ -816,7 +816,7 @@ from_unit_to_pixels (GthMetric unit,
 {
 	switch (unit) {
 	case GTH_METRIC_INCHES:
-		value = value * 2.54;
+		value = value * 25.4;
 		break;
 	case GTH_METRIC_MILLIMETERS:
 	case GTH_METRIC_PIXELS:
@@ -833,7 +833,7 @@ from_pixels_to_unit (GthMetric unit,
 {
 	switch (unit) {
 	case GTH_METRIC_INCHES:
-		value = value / 2.54;
+		value = value / 25.4;
 		break;
 	case GTH_METRIC_MILLIMETERS:
 	case GTH_METRIC_PIXELS:
