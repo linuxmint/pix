@@ -76,7 +76,6 @@ typedef enum {
 
 
 typedef enum {
-	GTH_METRIC_PIXELS,
         GTH_METRIC_MILLIMETERS,
         GTH_METRIC_INCHES
 } GthMetric;
