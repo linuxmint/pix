@@ -60,6 +60,7 @@ struct _GthImagePrintJobPrivate {
 	gulong              height_adjustment_value_changed_event;
 	gulong              position_combobox_changed_event;
 	GthMetric           unit;
+    gboolean            centered;
 
 	/* settings */
 
@@ -167,6 +168,7 @@ gth_image_print_job_init (GthImagePrintJob *self)
 	self->priv->header = NULL;
 	self->priv->footer = NULL;
 	self->priv->printing = FALSE;
+    self->priv->centered = TRUE;
 }
 
 
@@ -897,9 +899,7 @@ gth_image_print_job_update_image_controls (GthImagePrintJob *self)
 	g_signal_handler_unblock (GET_WIDGET ("height_adjustment"), self->priv->height_adjustment_value_changed_event);
 
 	g_signal_handler_block (GET_WIDGET ("position_combobox"), self->priv->position_combobox_changed_event);
-	centered = (self->priv->selected->image_box.x == ((self->priv->selected->boundary_box.width - self->priv->selected->image_box.width) / 2.0))
-		    && (self->priv->selected->image_box.y == ((self->priv->selected->boundary_box.height - self->priv->selected->comment_box.height - self->priv->selected->image_box.height) / 2.0));
-	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("position_combobox")), centered ? 0 : 1);
+	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("position_combobox")), self->priv->centered ? 0 : 1);
 	g_signal_handler_unblock (GET_WIDGET ("position_combobox"), self->priv->position_combobox_changed_event);
 }
 
@@ -1309,6 +1309,14 @@ edit_footer_button_clicked_cb (GtkButton *button,
 	gtk_widget_show (dialog);
 }
 
+static void
+center_image (GthImagePrintJob *self)
+{
+        self->priv->selected->image_box.x = (self->priv->selected->boundary_box.width - self->priv->selected->image_box.width) / 2.0;
+        self->priv->selected->image_box.y = (self->priv->selected->boundary_box.height - self->priv->selected->comment_box.height - self->priv->selected->image_box.height) / 2.0;
+        self->priv->selected->transformation.x = self->priv->selected->image_box.x / self->priv->max_image_width;
+        self->priv->selected->transformation.y = self->priv->selected->image_box.y / self->priv->max_image_height;
+}
 
 static void
 rotation_combobox_changed_cb (GtkComboBox *combo_box,
@@ -1351,6 +1359,10 @@ gth_image_print_job_set_selected_zoom (GthImagePrintJob *self,
 	self->priv->selected->transformation.x = x / self->priv->max_image_width;
 	self->priv->selected->transformation.y = y / self->priv->max_image_height;
 
+    if (self->priv->centered) {
+        center_image (self);
+    }
+
 	gth_image_print_job_update_image_preview (self, self->priv->selected);
 }
 
@@ -1377,6 +1389,8 @@ left_adjustment_value_changed_cb (GtkAdjustment *adjustment,
 	if (self->priv->selected == NULL)
 		return;
 
+    self->priv->centered = FALSE;
+
 	self->priv->selected->transformation.x = TO_PIXELS (gtk_adjustment_get_value (adjustment)) / self->priv->max_image_width;
 	gth_image_print_job_update_preview (self);
 }
@@ -1390,6 +1404,8 @@ top_adjustment_value_changed_cb (GtkAdjustment *adjustment,
 
 	if (self->priv->selected == NULL)
 		return;
+
+    self->priv->centered = FALSE;
 
 	self->priv->selected->transformation.y = TO_PIXELS (gtk_adjustment_get_value (adjustment)) / self->priv->max_image_height;
 	gth_image_print_job_update_preview (self);
@@ -1432,12 +1448,12 @@ position_combobox_changed_cb (GtkComboBox *combo_box,
 		return;
 
 	if (gtk_combo_box_get_active (combo_box) == 0) {
-		self->priv->selected->image_box.x = (self->priv->selected->boundary_box.width - self->priv->selected->image_box.width) / 2.0;
-		self->priv->selected->image_box.y = (self->priv->selected->boundary_box.height - self->priv->selected->comment_box.height - self->priv->selected->image_box.height) / 2.0;
-		self->priv->selected->transformation.x = self->priv->selected->image_box.x / self->priv->max_image_width;
-		self->priv->selected->transformation.y = self->priv->selected->image_box.y / self->priv->max_image_height;
+        self->priv->centered = TRUE;
+        center_image (self);
 		gth_image_print_job_update_preview (self);
-	}
+	} else {
+        self->priv->centered = FALSE;
+    }
 }
 
 
