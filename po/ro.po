@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2019-11-26 15:46+0000\n"
+"PO-Revision-Date: 2019-12-10 17:06+0000\n"
 "Last-Translator: Clement Lefebvre <root@linuxmint.com>\n"
 "Language-Team: Gnome Romanian Team <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2019-11-26 16:02+0000\n"
+"X-Launchpad-Export-Date: 2019-12-11 11:57+0000\n"
 "X-Generator: Launchpad (build c597c3229eb023b1e626162d5947141bf7befb13)\n"
 "Language: ro\n"
 
@@ -31,7 +31,7 @@ msgstr "Fișierul nu este valid ca fișier .desktop"
 #: ../copy-n-paste/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Fișier desktop nerecunoscut Versiunea „%s”"
+msgstr "Versiunea „%s” a fișierului desktop este nerecunoscută"
 
 #: ../copy-n-paste/eggdesktopfile.c:974
 #, c-format
@@ -67,7 +67,7 @@ msgstr "Dezactivează conexiunea la administratorul sesiunii"
 
 #: ../copy-n-paste/eggsmclient.c:229
 msgid "Specify file containing saved configuration"
-msgstr "Specificaţi fișierul care conține configurarea salvată"
+msgstr "Specifică fișierul conținând configurarea salvată"
 
 #: ../copy-n-paste/eggsmclient.c:229
 msgid "FILE"
@@ -75,7 +75,7 @@ msgstr "FIȘIER"
 
 #: ../copy-n-paste/eggsmclient.c:232
 msgid "Specify session management ID"
-msgstr "Specifică ID-ul managerului de sesiune"
+msgstr "Specificați ID-ul administratorului de sesiune"
 
 #: ../copy-n-paste/eggsmclient.c:232
 msgid "ID"
@@ -97,7 +97,7 @@ msgstr "Pix"
 
 #: ../data/pix.desktop.in.in.h:2
 msgid "Image Viewer"
-msgstr "Vizualizator imagini"
+msgstr ""
 
 #: ../data/pix.desktop.in.in.h:3
 msgid "Pix Image Viewer"
@@ -105,7 +105,7 @@ msgstr "Pix vizualizator de imagini"
 
 #: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
-msgstr "Vizualizează și organizează imagini"
+msgstr "Vizualizează și organizează imaginile tale"
 
 #: ../data/pix-import.desktop.in.in.h:1
 msgid "Import with Pix"
@@ -121,21 +121,20 @@ msgstr "Unealta de importare fotografii Pix"
 
 #: ../data/pix-import.desktop.in.in.h:4
 msgid "Import the photos on your camera card"
-msgstr "Importa fotografiile pe cardul camerei tale"
+msgstr "Importă fotografiile pe cardul camerei tale"
 
 #: ../data/org.x.pix.gschema.xml.in.h:1
 msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr ""
-"Imaginile cu dimensiune mai mare decât aceasta (in octeți) nu vor avea "
-"pictograme. Folosește 0 daca vrei sa generezi pictograme pentru toate "
-"imaginile."
+"Imaginile cu dimensiune mai mare de (în octeți) nu vor avea pictograme. "
+"Folosește 0 dacă vrei să generezi pictograme pentru toate imaginile."
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
 msgstr ""
-"Dacă se redimensionează fereastra pentru a se încadra în dimensiunea imaginii"
+"Dacă redimensionați fereastra pentru a se potrivi cu dimensiunea imaginii"
 
 #: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
@@ -201,7 +200,7 @@ msgstr "Medie:"
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsizied at the end.
 #: ../data/ui/histogram-info.ui.h:3
 msgid "Std dev:"
-msgstr "Deviaţie standard:"
+msgstr "Abatere normală"
 
 #: ../data/ui/histogram-info.ui.h:4
 msgid "Median:"
@@ -230,7 +229,7 @@ msgstr "_Locație:"
 
 #: ../data/ui/overwrite-dialog.ui.h:1
 msgid "Overwrite the old file with the new one?"
-msgstr "Suprascrii fișierul vechi cu cel nou?"
+msgstr "Suprascrieți fișierul vechi cu cel nou?"
 
 #: ../data/ui/overwrite-dialog.ui.h:2
 msgid "Old File:"
@@ -303,7 +302,7 @@ msgstr "Vizualizator miniaturi:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "on the bottom"
-msgstr "pe marginea de jos"
+msgstr "în partea de jos"
 
 #: ../data/ui/preferences.ui.h:6
 msgid "on the side"
@@ -315,7 +314,7 @@ msgstr ""
 
 #: ../data/ui/preferences.ui.h:8
 msgid "Appearance"
-msgstr "Înfățișare"
+msgstr "Aspect"
 
 #: ../data/ui/preferences.ui.h:9
 msgid "Go to last _visited location"
@@ -327,7 +326,7 @@ msgstr "Mergi la acest _dosar:"
 
 #: ../data/ui/preferences.ui.h:11
 msgid "Choose startup folder"
-msgstr "Alege directorul de pornire"
+msgstr "Alege dosarul de pornire"
 
 #: ../data/ui/preferences.ui.h:12
 msgid "Set to C_urrent"
@@ -367,7 +366,7 @@ msgstr "Altele"
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
 #: ../pix/gth-main-default-metadata.c:33
 msgid "General"
-msgstr "Generale"
+msgstr "General"
 
 #: ../data/ui/preferences.ui.h:20
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
@@ -377,7 +376,7 @@ msgstr "Titlu"
 
 #: ../data/ui/preferences.ui.h:21
 msgid "Thumbnail _size:"
-msgstr ""
+msgstr "_Mărimea miniaturii:"
 
 #: ../data/ui/preferences.ui.h:22
 msgid "48"
@@ -530,7 +529,7 @@ msgstr "_Locație"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:191
 msgid "Could not remove the bookmark"
-msgstr "Nu s-a putut elimina marcajul"
+msgstr ""
 
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:1
 msgid "Burn CD/DVD"
@@ -538,7 +537,7 @@ msgstr "Scrie CD/DVD"
 
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:2
 msgid "Save files to an optical disc."
-msgstr ""
+msgstr "Salvați fișierele pe un disc optic."
 
 #: ../extensions/burn_disc/callbacks.c:55
 msgid "_Optical Disc..."
@@ -577,12 +576,12 @@ msgstr "Scrie pe disc"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr "Eroare la interpretarea: %s fișierel JPEG"
+msgstr "Eroare la interpretarea fișierului de imagine JPEG: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr ""
+msgstr "Spațiu de culoare JPEG necunoscut (%d)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
@@ -608,7 +607,7 @@ msgstr "_Progresiv"
 
 #: ../extensions/cairo_io/data/ui/png-options.ui.h:1
 msgid "Compression _level:"
-msgstr "Nive_l de compresie:"
+msgstr "_Nivel de compresie:"
 
 #: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
 msgid "Default options:"
@@ -624,7 +623,7 @@ msgstr "Comprimare"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:3
 msgid "_No compression"
-msgstr "Fără comp-resie"
+msgstr "_Fără compresie"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:4
 msgid "No_rmal (Deflate)"
@@ -632,7 +631,7 @@ msgstr "No_rmal (Dezumflat)"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:5
 msgid "_Loss compression (JPEG)"
-msgstr "_Pierde compresie (JPEG)"
+msgstr "_Compresie cu pierdere de date (JPEG)"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:6
 msgid "Resolution"
@@ -650,7 +649,7 @@ msgstr "_Vertical:"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:9
 msgid "dpi"
-msgstr "dpi"
+msgstr "puncte/inch"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
@@ -806,7 +805,7 @@ msgstr "Creează _Biblioteca"
 
 #: ../extensions/catalogs/callbacks.c:135
 msgid "Remove"
-msgstr "Elimina"
+msgstr "Elimină"
 
 #: ../extensions/catalogs/callbacks.c:140
 msgid "Rena_me"
@@ -907,7 +906,7 @@ msgstr "Aranjarea fișierelor"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
 msgid "Organization:"
-msgstr ""
+msgstr "Organizare:"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
 #: ../pix/gth-browser-actions-entries.h:89
@@ -920,17 +919,17 @@ msgstr "Deselectare"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
 msgid "Catalog _Preview:"
-msgstr ""
+msgstr "_Previzualizare Catalog"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:2
 msgid "_Group files by:"
-msgstr ""
+msgstr "_Grupează fișierele după:"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:3
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
 #: ../extensions/search/data/ui/search-editor.ui.h:2
 msgid "_Include sub-folders"
-msgstr "_Include dosare copil"
+msgstr "_Include sub-dosare"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
@@ -942,7 +941,7 @@ msgstr "Pune un singur fișier în catalog:"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:6
 msgid "Singles"
-msgstr ""
+msgstr "Singuri(Singure)"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:105
 #: ../extensions/catalogs/dlg-add-to-catalog.c:136
@@ -972,7 +971,7 @@ msgstr ""
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
 #: ../pix/gth-main-default-tests.c:300
 msgid "Date photo was taken"
-msgstr ""
+msgstr "Data în care a fost făcută fotografia"
 
 #: ../extensions/catalogs/dlg-organize-files.c:139
 #: ../pix/gth-main-default-tests.c:292
@@ -987,7 +986,7 @@ msgstr "Etichetă"
 #: ../extensions/catalogs/dlg-organize-files.c:153
 #: ../pix/gth-main-default-tests.c:324
 msgid "Tag (embedded)"
-msgstr ""
+msgstr "Etichetă (încorporată)"
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:45
 #: ../extensions/edit_metadata/callbacks.c:106
@@ -1003,32 +1002,32 @@ msgstr "Catalogul „%s” există deja, doriți să îl suprascrieți?"
 #: ../extensions/catalogs/gth-file-source-catalogs.c:955
 #, c-format
 msgid "The library '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "Biblioteca '%s' există deja, doriți să o suprascrieți?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:963
 msgid "Over_write"
-msgstr ""
+msgstr "Supra_scrie"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1081
 msgid "Cannot move the files"
-msgstr ""
+msgstr "Nu se pot muta fișierele"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1083
 msgid "Cannot copy the files"
-msgstr ""
+msgstr "Nu se pot copia fișierele"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1088
 msgid "Invalid destination."
-msgstr ""
+msgstr "Destinație invalidă"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1135
 #, c-format
 msgid "Copying files to '%s'"
-msgstr ""
+msgstr "Copierea fișierelor în „%s”"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1322
 msgid "Could not remove the files from the catalog"
-msgstr ""
+msgstr "Imposibil de șters fișierele din catalog"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:747
@@ -1037,12 +1036,12 @@ msgstr ""
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
-msgstr ""
+msgstr "Format fișier nevalid"
 
 #: ../extensions/catalogs/gth-organize-task.c:202
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr ""
+msgstr "Operațiunea finalizată. Cataloage: %d. Imagini: %d."
 
 #: ../extensions/change_date/callbacks.c:44
 msgid "Change _Date..."
@@ -1054,19 +1053,19 @@ msgstr "Schimbă data ultimei modificări a imaginilor"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:1
 msgid "Change date"
-msgstr ""
+msgstr "Schimbă data"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:2
 msgid "Change the files date"
-msgstr ""
+msgstr "Modificați data fișierelor"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:1
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:2
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:3
 msgid "Change Date"
@@ -1074,7 +1073,7 @@ msgstr "Schimbă data"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:4
 msgid "Change the following values:"
-msgstr ""
+msgstr "Modificați următoarele valori:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:5
 msgid "_Last modified date"
@@ -1086,7 +1085,7 @@ msgstr "Dată co_mentariu"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:7
 msgid "Change to:"
-msgstr ""
+msgstr "Schimbă în:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:8
 msgid "The _following date:"
@@ -1094,19 +1093,19 @@ msgstr "_Următoarea dată:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:9
 msgid "File _modified date"
-msgstr ""
+msgstr "Data _modificării fișierului"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:10
 msgid "File c_reation date"
-msgstr ""
+msgstr "Data _creări fișierului"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:11
 msgid "Date p_hoto was taken"
-msgstr ""
+msgstr "Data în care a fost făcută _fotografia"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:12
 msgid "A_djust by"
-msgstr ""
+msgstr "Reglați prin"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:13
 msgid "hours"
@@ -1123,19 +1122,20 @@ msgstr "secunde"
 
 #: ../extensions/comments/callbacks.c:46
 msgid "Import Embedded Metadata"
-msgstr ""
+msgstr "Importați metadate încorporate"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
 msgstr ""
+"Importați metadatele stocate în fișierele din sistemul de comentarii Pix"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
-msgstr ""
+msgstr "Comentarii și etichete"
 
 #: ../extensions/comments/comments.extension.in.in.h:2
 msgid "Add comments and tags to any file type."
-msgstr ""
+msgstr "Adăugați comentarii și etichete la orice tip de fișier."
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:1
 #: ../extensions/importer/gth-import-preferences-dialog.c:318
