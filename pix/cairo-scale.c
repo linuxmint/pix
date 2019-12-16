@@ -384,6 +384,9 @@ _cairo_image_surface_scale_filter (cairo_surface_t *image,
 	if ((src_width == new_width) && (src_height == new_height))
 		return _cairo_image_surface_copy (image);
 
+	if ((src_width <= 0) || (src_height <= 0))
+		return NULL;
+
 	scaled = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
 					     new_width,
 					     new_height);
