@@ -188,8 +188,6 @@ gth_image_set_cairo_surface (GthImage        *image,
 			     cairo_surface_t *value)
 {
 	_gth_image_free_data (image);
-	if (value == NULL)
-		return;
 
 	image->priv->format = GTH_IMAGE_FORMAT_CAIRO_SURFACE;
 	image->priv->data.surface = cairo_surface_reference (value);
@@ -252,11 +250,9 @@ gth_image_set_pixbuf (GthImage  *image,
 		      GdkPixbuf *value)
 {
 	_gth_image_free_data (image);
-	if (value == NULL)
-		return;
 
 	image->priv->format = GTH_IMAGE_FORMAT_GDK_PIXBUF;
-	image->priv->data.pixbuf = g_object_ref (value);
+	image->priv->data.pixbuf = _g_object_ref (value);
 }
 
 
@@ -300,11 +296,9 @@ gth_image_set_pixbuf_animation (GthImage           *image,
 				GdkPixbufAnimation *value)
 {
 	_gth_image_free_data (image);
-	if (value == NULL)
-		return;
 
 	image->priv->format = GTH_IMAGE_FORMAT_GDK_PIXBUF_ANIMATION;
-	image->priv->data.pixbuf_animation = g_object_ref (value);
+	image->priv->data.pixbuf_animation = _g_object_ref (value);
 }
 
 
