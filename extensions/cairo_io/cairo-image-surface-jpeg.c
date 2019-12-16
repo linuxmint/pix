@@ -274,7 +274,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 			CMYK_table_init ();
 			cmyk_tab = CMYK_Tab;
 
-			while (srcinfo.output_scanline < srcinfo.output_height) {
+			while (srcinfo.output_scanline < destination_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -285,7 +285,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < srcinfo.output_width; x++) {
+					for (x = 0; x < destination_width; x++) {
 						if (srcinfo.saw_Adobe_marker) {
 							c = p_buffer[0];
 							m = p_buffer[1];
@@ -319,7 +319,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 	case JCS_GRAYSCALE:
 		{
-			while (srcinfo.output_scanline < srcinfo.output_height) {
+			while (srcinfo.output_scanline < destination_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -330,7 +330,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < srcinfo.output_width; x++) {
+					for (x = 0; x < destination_width; x++) {
 						r = g = b = p_buffer[0];
 						pixel = CAIRO_RGBA_TO_UINT32 (r, g, b, 0xff);
 						memcpy (p_surface, &pixel, sizeof (guint32));
@@ -348,7 +348,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 	case JCS_RGB:
 		{
-			while (srcinfo.output_scanline < srcinfo.output_height) {
+			while (srcinfo.output_scanline < destination_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -359,7 +359,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < srcinfo.output_width; x++) {
+					for (x = 0; x < destination_width; x++) {
 						r = p_buffer[0];
 						g = p_buffer[1];
 						b = p_buffer[2];
@@ -392,7 +392,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 			g_cr_tab = YCbCr_G_Cr_Tab;
 			b_cb_tab = YCbCr_B_Cb_Tab;
 
-			while (srcinfo.output_scanline < srcinfo.output_height) {
+			while (srcinfo.output_scanline < destination_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -403,7 +403,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < srcinfo.output_width; x++) {
+					for (x = 0; x < destination_width; x++) {
 						Y = p_buffer[0];
 						Cb = p_buffer[1];
 						Cr = p_buffer[2];
@@ -444,7 +444,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 			CMYK_table_init ();
 			cmyk_tab = CMYK_Tab;
 
-			while (srcinfo.output_scanline < srcinfo.output_height) {
+			while (srcinfo.output_scanline < destination_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -455,7 +455,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < srcinfo.output_width; x++) {
+					for (x = 0; x < destination_width; x++) {
 						Y = p_buffer[0];
 						Cb = p_buffer[1];
 						Cr = p_buffer[2];
