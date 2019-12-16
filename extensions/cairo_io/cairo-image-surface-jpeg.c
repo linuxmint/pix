@@ -172,6 +172,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 	unsigned char                 *surface_row;
 	JSAMPARRAY                     buffer;
 	int                            buffer_stride;
+	int                            scanned_lines;
 	JDIMENSION                     n_lines;
 	JSAMPARRAY                     buffer_row;
 	int                            l;
@@ -268,6 +269,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 	metadata->has_alpha = FALSE;
 	cairo_surface_flush (surface);
 	surface_row = cairo_image_surface_get_data (surface) + line_start;
+	scanned_lines = 0;
 
 	switch (srcinfo.out_color_space) {
 	case JCS_CMYK:
@@ -283,6 +285,8 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					break;
 
 				n_lines = jpeg_read_scanlines (&srcinfo, buffer, srcinfo.rec_outbuf_height);
+				if (scanned_lines + n_lines > output_height)
+					n_lines = output_height - scanned_lines;
 
 				buffer_row = buffer;
 				for (l = 0; l < n_lines; l++) {
@@ -316,6 +320,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 					surface_row += line_step;
 					buffer_row += buffer_stride;
+					scanned_lines += 1;
 				}
 			}
 		}
@@ -328,6 +333,8 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					break;
 
 				n_lines = jpeg_read_scanlines (&srcinfo, buffer, srcinfo.rec_outbuf_height);
+				if (scanned_lines + n_lines > output_height)
+					n_lines = output_height - scanned_lines;
 
 				buffer_row = buffer;
 				for (l = 0; l < n_lines; l++) {
@@ -345,6 +352,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 					surface_row += line_step;
 					buffer_row += buffer_stride;
+					scanned_lines += 1;
 				}
 			}
 		}
@@ -357,6 +365,8 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					break;
 
 				n_lines = jpeg_read_scanlines (&srcinfo, buffer, srcinfo.rec_outbuf_height);
+                if (scanned_lines + n_lines > output_height)
+                    n_lines = output_height - scanned_lines;
 
 				buffer_row = buffer;
 				for (l = 0; l < n_lines; l++) {
@@ -376,6 +386,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 					surface_row += line_step;
 					buffer_row += buffer_stride;
+					scanned_lines += 1;
 				}
 			}
 		}
@@ -401,6 +412,8 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					break;
 
 				n_lines = jpeg_read_scanlines (&srcinfo, buffer, srcinfo.rec_outbuf_height);
+                if (scanned_lines + n_lines > output_height)
+                    n_lines = output_height - scanned_lines;
 
 				buffer_row = buffer;
 				for (l = 0; l < n_lines; l++) {
@@ -424,6 +437,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 					surface_row += line_step;
 					buffer_row += buffer_stride;
+					scanned_lines += 1;
 				}
 			}
 		}
@@ -453,6 +467,8 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					break;
 
 				n_lines = jpeg_read_scanlines (&srcinfo, buffer, srcinfo.rec_outbuf_height);
+                if (scanned_lines + n_lines > output_height)
+                    n_lines = output_height - scanned_lines;
 
 				buffer_row = buffer;
 				for (l = 0; l < n_lines; l++) {
@@ -483,6 +499,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 					surface_row += line_step;
 					buffer_row += buffer_stride;
+					scanned_lines += 1;
 				}
 			}
 		}
