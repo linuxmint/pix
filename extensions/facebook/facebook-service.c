@@ -840,8 +840,11 @@ upload_photo_file_buffer_ready_cb (void     **buffer,
 			cairo_surface_t *scaled;
 
 			scaled = _cairo_image_surface_scale (surface, width, height, SCALE_FILTER_BEST, NULL);
-			cairo_surface_destroy (surface);
-			surface = scaled;
+			if (scaled != NULL) {
+				cairo_surface_destroy (surface);
+				surface = scaled;
+			}
+
 		}
 
 		g_free (*buffer);

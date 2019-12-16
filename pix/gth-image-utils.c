@@ -161,6 +161,13 @@ _g_buffer_resize_image (void          *buffer,
 
 	surface = gth_image_get_cairo_surface (image);
 	scaled = _cairo_image_surface_scale (surface, width, height, SCALE_FILTER_BEST, NULL);
+    if (scaled == NULL) {
+        cairo_surface_destroy (surface);
+        g_object_unref (image);
+        g_object_unref (istream);
+        return FALSE;
+    }
+
 	gth_image_set_cairo_surface (image, scaled);
 	result = gth_image_save_to_buffer (image,
 					   mime_type,
