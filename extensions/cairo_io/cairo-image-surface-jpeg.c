@@ -156,6 +156,8 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 	GthImage                      *image;
 	gboolean                       load_scaled;
 	GthTransform                   orientation;
+	int                            output_width;
+	int                            output_height;
 	int                            destination_width;
 	int                            destination_height;
 	int                            line_start;
@@ -231,9 +233,11 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 	jpeg_start_decompress (&srcinfo);
 
 	orientation = _jpeg_exif_orientation (in_buffer, in_buffer_size);
+	output_width = MIN (srcinfo.output_width, CAIRO_MAX_IMAGE_SIZE);
+	output_height = MIN (srcinfo.output_height, CAIRO_MAX_IMAGE_SIZE);
 	_cairo_image_surface_transform_get_steps (CAIRO_FORMAT_ARGB32,
-						  MIN (srcinfo.output_width, CAIRO_MAX_IMAGE_SIZE),
-						  MIN (srcinfo.output_height, CAIRO_MAX_IMAGE_SIZE),
+						  output_width,
+						  output_height,
 						  orientation,
 						  &destination_width,
 						  &destination_height,
@@ -274,7 +278,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 			CMYK_table_init ();
 			cmyk_tab = CMYK_Tab;
 
-			while (srcinfo.output_scanline < destination_height) {
+			while (srcinfo.output_scanline < output_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -285,7 +289,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < destination_width; x++) {
+					for (x = 0; x < output_width; x++) {
 						if (srcinfo.saw_Adobe_marker) {
 							c = p_buffer[0];
 							m = p_buffer[1];
@@ -319,7 +323,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 	case JCS_GRAYSCALE:
 		{
-			while (srcinfo.output_scanline < destination_height) {
+			while (srcinfo.output_scanline < output_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -330,7 +334,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < destination_width; x++) {
+					for (x = 0; x < output_width; x++) {
 						r = g = b = p_buffer[0];
 						pixel = CAIRO_RGBA_TO_UINT32 (r, g, b, 0xff);
 						memcpy (p_surface, &pixel, sizeof (guint32));
@@ -348,7 +352,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 
 	case JCS_RGB:
 		{
-			while (srcinfo.output_scanline < destination_height) {
+			while (srcinfo.output_scanline < output_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -359,7 +363,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < destination_width; x++) {
+					for (x = 0; x < output_width; x++) {
 						r = p_buffer[0];
 						g = p_buffer[1];
 						b = p_buffer[2];
@@ -392,7 +396,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 			g_cr_tab = YCbCr_G_Cr_Tab;
 			b_cb_tab = YCbCr_B_Cb_Tab;
 
-			while (srcinfo.output_scanline < destination_height) {
+			while (srcinfo.output_scanline < output_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -403,7 +407,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < destination_width; x++) {
+					for (x = 0; x < output_width; x++) {
 						Y = p_buffer[0];
 						Cb = p_buffer[1];
 						Cr = p_buffer[2];
@@ -444,7 +448,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 			CMYK_table_init ();
 			cmyk_tab = CMYK_Tab;
 
-			while (srcinfo.output_scanline < destination_height) {
+			while (srcinfo.output_scanline < output_height) {
 				if (g_cancellable_is_cancelled (cancellable))
 					break;
 
@@ -455,7 +459,7 @@ _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 					p_surface = surface_row;
 					p_buffer = buffer_row[l];
 
-					for (x = 0; x < destination_width; x++) {
+					for (x = 0; x < output_width; x++) {
 						Y = p_buffer[0];
 						Cb = p_buffer[1];
 						Cr = p_buffer[2];
