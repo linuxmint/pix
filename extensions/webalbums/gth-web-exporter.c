@@ -2597,14 +2597,16 @@ image_loader_ready_cb (GObject      *source_object,
 		{
 			cairo_surface_t *scaled;
 
-			g_object_ref (idata->image);
-
 			scaled = _cairo_image_surface_scale (surface, w, h, SCALE_FILTER_BEST, NULL);
-			idata->image = gth_image_new_for_surface (scaled);
-			idata->image_width = cairo_image_surface_get_width (scaled);
-			idata->image_height = cairo_image_surface_get_height (scaled);
+			if (scaled != NULL) {
+				g_object_unref (idata->image);
 
-			cairo_surface_destroy (scaled);
+				idata->image = gth_image_new_for_surface (scaled);
+				idata->image_width = cairo_image_surface_get_width (scaled);
+				idata->image_height = cairo_image_surface_get_height (scaled);
+
+				cairo_surface_destroy (scaled);
+			}
 		}
 	}
 
@@ -2627,14 +2629,16 @@ image_loader_ready_cb (GObject      *source_object,
 		{
 			cairo_surface_t *scaled;
 
-			g_object_ref (idata->preview);
-
 			scaled = _cairo_image_surface_scale (surface, w, h, SCALE_FILTER_BEST, NULL);
-			idata->preview = gth_image_new_for_surface (scaled);
-			idata->preview_width = cairo_image_surface_get_width (scaled);
-			idata->preview_height = cairo_image_surface_get_height (scaled);
+			if (scaled != NULL) {
+				g_object_unref (idata->preview);
 
-			cairo_surface_destroy (scaled);
+				idata->preview = gth_image_new_for_surface (scaled);
+				idata->preview_width = cairo_image_surface_get_width (scaled);
+				idata->preview_height = cairo_image_surface_get_height (scaled);
+
+				cairo_surface_destroy (scaled);
+			}
 		}
 	}
 
@@ -2675,14 +2679,16 @@ image_loader_ready_cb (GObject      *source_object,
 		{
 			cairo_surface_t *scaled;
 
-			g_object_unref (idata->thumb);
-
 			scaled = _cairo_image_surface_scale (surface, w, h, SCALE_FILTER_BEST, NULL);
-			idata->thumb = gth_image_new_for_surface (scaled);
-			idata->thumb_width = cairo_image_surface_get_width (scaled);
-			idata->thumb_height = cairo_image_surface_get_height (scaled);
+			if (scaled != NULL) {
+				g_object_unref (idata->thumb);
 
-			cairo_surface_destroy (scaled);
+				idata->thumb = gth_image_new_for_surface (scaled);
+				idata->thumb_width = cairo_image_surface_get_width (scaled);
+				idata->thumb_height = cairo_image_surface_get_height (scaled);
+
+				cairo_surface_destroy (scaled);
+			}
 		}
 	}
 

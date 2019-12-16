@@ -126,10 +126,7 @@ exec_resize (GthAsyncTask *task,
 		new_h = max_h;
 	}
 
-	if ((new_w > 1) && (new_h > 1))
-		destination = _cairo_image_surface_scale (source, new_w, new_h, SCALE_FILTER_BEST, task);
-	else
-		destination = NULL;
+	destination = _cairo_image_surface_scale (source, new_w, new_h, SCALE_FILTER_BEST, task);
 	destination_image = gth_image_new_for_surface (destination);
 	gth_image_task_set_destination (GTH_IMAGE_TASK (task), destination_image);
 
