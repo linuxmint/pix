@@ -2525,6 +2525,7 @@ gth_image_viewer_paint (GthImageViewer  *self,
 			cairo_filter_t   filter)
 {
 	int    original_width;
+	int    surface_width;
 	double zoom_level;
 	double src_dx;
 	double src_dy;
@@ -2535,14 +2536,21 @@ gth_image_viewer_paint (GthImageViewer  *self,
 
 	cairo_save (cr);
 
+    surface_width = cairo_image_surface_get_width (surface);
+    if (surface_width <= 0)
+        return;
+
 	gth_image_viewer_get_original_size (self, &original_width, NULL);
-	zoom_level = self->priv->zoom_level * ((double) original_width / cairo_image_surface_get_width (surface));
+	zoom_level = self->priv->zoom_level * ((double) original_width / surface_width);
 	src_dx = (double) src_x / zoom_level;
 	src_dy = (double) src_y / zoom_level;
 	dest_dx = (double) dest_x / zoom_level;
 	dest_dy = (double) dest_y / zoom_level;
 	dwidth = (double) width / zoom_level;
 	dheight = (double) height / zoom_level;
+
+   if ((dwidth < 1) || (dheight < 1))
+       return;
 
 	cairo_scale (cr, zoom_level, zoom_level);
 
