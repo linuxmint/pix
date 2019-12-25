@@ -1190,6 +1190,20 @@ caption_chooser_changed_cb (GthMetadataChooser *chooser,
 		gth_image_print_job_update_preview (self);
 }
 
+static void
+update_spinbutton_props (GtkWidget *spin_button,
+                         gint       digits,
+                         gdouble    step,
+                         gdouble    climb_rate)
+{
+    GtkAdjustment *adjust = gtk_spin_button_get_adjustment (GTK_SPIN_BUTTON (spin_button));
+
+    gtk_spin_button_configure (GTK_SPIN_BUTTON (spin_button),
+                               adjust,
+                               climb_rate,
+                               digits);
+    gtk_adjustment_set_step_increment (adjust, step);
+}
 
 static void
 unit_combobox_changed_cb (GtkComboBox *combo_box,
@@ -1197,22 +1211,27 @@ unit_combobox_changed_cb (GtkComboBox *combo_box,
 {
 	GthImagePrintJob *self = user_data;
 	int               digits;
+    gdouble           step, climb_rate;
 
 	self->priv->unit = gtk_combo_box_get_active (combo_box);
 	switch (self->priv->unit) {
 	case GTH_METRIC_INCHES:
-		digits = 1;
+		digits = 2;
+        step = 0.01;
+        climb_rate = .1;
 		break;
 	case GTH_METRIC_MILLIMETERS:
     default:
 		digits = 0;
+        step = 1.0;
+        climb_rate = 1.0;
 		break;
 	}
 
-	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_left_spinbutton")), digits);
-	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_top_spinbutton")), digits);
-	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_width_spinbutton")), digits);
-	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_height_spinbutton")), digits);
+    update_spinbutton_props (GET_WIDGET ("img_left_spinbutton"), digits, step, climb_rate);
+    update_spinbutton_props (GET_WIDGET ("img_top_spinbutton"), digits, step, climb_rate);
+    update_spinbutton_props (GET_WIDGET ("img_width_spinbutton"), digits, step, climb_rate);
+    update_spinbutton_props (GET_WIDGET ("img_height_spinbutton"), digits, step, climb_rate);
 
 	gth_image_print_job_update_image_controls (self);
 }
