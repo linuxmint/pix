@@ -1549,6 +1549,7 @@ operation_create_custom_widget_cb (GtkPrintOperation *operation,
 		for (i = 0; i < self->priv->n_images; i++)
 			gth_image_info_reset (self->priv->images[i]);
 		gth_image_print_job_update_preview (self);
+        unit_combobox_changed_cb (GTK_COMBO_BOX (GET_WIDGET ("unit_combobox")), self);
 	}
 
 	return gtk_builder_get_object (self->priv->builder, "print_layout");
