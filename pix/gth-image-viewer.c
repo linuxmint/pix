@@ -2759,6 +2759,11 @@ gth_image_viewer_paint_background (GthImageViewer *self,
 				double           color2;
 
 				surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, self->priv->check_size * 2, self->priv->check_size * 2);
+				if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
+					cairo_surface_destroy (surface);
+					goto fail;
+				}
+
 				cr_surface = cairo_create (surface);
 
 		                switch (self->priv->check_type) {
@@ -2796,6 +2801,7 @@ gth_image_viewer_paint_background (GthImageViewer *self,
 				cairo_destroy (cr_surface);
 			}
 
+fail:
 			cairo_set_source (cr, self->priv->checked_pattern);
 			cairo_rectangle (cr,
 					 self->image_area.x + 0.5,

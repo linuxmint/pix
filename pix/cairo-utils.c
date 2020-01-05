@@ -123,6 +123,8 @@ _cairo_image_surface_get_metadata (cairo_surface_t *surface)
 {
 	cairo_surface_metadata_t *metadata;
 
+    g_return_val_if_fail (surface != NULL, metadata);
+
 	metadata = cairo_surface_get_user_data (surface, &surface_metadata_key);
 	if (metadata == NULL) {
 		metadata = g_new0 (cairo_surface_metadata_t, 1);
@@ -285,6 +287,12 @@ _cairo_image_surface_create_from_pixbuf (GdkPixbuf *pixbuf)
 		      "pixels", &p_pixels,
 		      NULL );
 	surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, width, height);
+
+	if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
+		cairo_surface_destroy (surface);
+		return NULL;
+	}
+
 	cairo_surface_flush (surface);
 	s_stride = cairo_image_surface_get_stride (surface);
 	s_pixels = cairo_image_surface_get_data (surface);
@@ -505,6 +513,12 @@ _cairo_image_surface_transform (cairo_surface_t *source,
 						  &pixel_step);
 
 	destination = cairo_image_surface_create (format, destination_width, destination_height);
+
+	if (cairo_surface_status (destination) != CAIRO_STATUS_SUCCESS) {
+		cairo_surface_destroy (destination);
+		return NULL;
+	}
+
 	cairo_surface_flush (destination);
 	p_source_line = cairo_image_surface_get_data (source);
 	p_destination_line = cairo_image_surface_get_data (destination) + line_start;

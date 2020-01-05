@@ -255,6 +255,12 @@ gth_contact_sheet_theme_paint_background (GthContactSheetTheme *theme,
 
 	case GTH_CONTACT_SHEET_BACKGROUND_TYPE_FULL:
 		surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, width, height);
+
+		if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
+			cairo_surface_destroy (surface);
+			break;
+		}
+
 		_cairo_paint_full_gradient (surface,
 					    &theme->background_color1,
 					    &theme->background_color2,

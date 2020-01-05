@@ -193,6 +193,12 @@ _cairo_image_surface_box_blur (cairo_surface_t *source,
 		div_kernel_size[i] = (guchar) (i / kernel_size);
 
 	tmp = _cairo_image_surface_create_compatible (source);
+
+    if (cairo_surface_status (tmp) != CAIRO_STATUS_SUCCESS) {
+        cairo_surface_destroy (tmp);
+        return;
+    }
+
 	while (iterations-- > 0)
 		box_blur (source, tmp, radius, div_kernel_size);
 
@@ -228,6 +234,11 @@ _cairo_image_surface_sharpen (cairo_surface_t *source,
 	int              tmp;
 
 	blurred = _cairo_image_surface_copy (source);
+	if (cairo_surface_status (blurred) != CAIRO_STATUS_SUCCESS) {
+		cairo_surface_destroy (blurred);
+		return;
+	}
+
 	_cairo_image_surface_blur (blurred, radius);
 
 	width = cairo_image_surface_get_width (source);
