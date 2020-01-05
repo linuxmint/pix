@@ -408,6 +408,12 @@ _cairo_image_surface_create_from_rgba (const guchar *pixels,
 		return NULL;
 
 	surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, width, height);
+
+	if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
+		cairo_surface_destroy (surface);
+		return NULL;
+	}
+
 	s_stride = cairo_image_surface_get_stride (surface);
 	s_pixels = _cairo_image_surface_flush_and_get_data (surface);
 
@@ -651,6 +657,12 @@ _cairo_image_surface_transform (cairo_surface_t *source,
 						  &pixel_step);
 
 	destination = cairo_image_surface_create (format, destination_width, destination_height);
+
+	if (cairo_surface_status (destination) != CAIRO_STATUS_SUCCESS) {
+		cairo_surface_destroy (destination);
+		return NULL;
+	}
+
 	p_source_line = _cairo_image_surface_flush_and_get_data (source);
 	p_destination_line = _cairo_image_surface_flush_and_get_data (destination) + line_start;
 	while (height-- > 0) {

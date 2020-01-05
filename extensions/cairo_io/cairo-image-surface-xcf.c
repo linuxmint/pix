@@ -566,6 +566,11 @@ _cairo_image_surface_create_from_layers (int                canvas_width,
 
 	image = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, canvas_width, canvas_height);
 
+	if (cairo_surface_status (image) != CAIRO_STATUS_SUCCESS) {
+		cairo_surface_destroy (image);
+		return NULL;
+	}
+
 	for (scan = layers; scan; scan = scan->next) {
 		GimpLayer *layer = scan->data;
 
@@ -1280,9 +1285,13 @@ _cairo_image_surface_create_from_xcf (GInputStream  *istream,
 
 	performance (DEBUG_INFO, "end read layers");
 
+    image = gth_image_new ();
 	surface = _cairo_image_surface_create_from_layers (canvas_width, canvas_height, base_type, layers);
-	image = gth_image_new_for_surface (surface);
-	cairo_surface_destroy (surface);
+
+	if (surface != NULL) {
+		gth_image_set_cairo_surface (image, surface);
+		cairo_surface_destroy (surface);
+	}
 
 	performance (DEBUG_INFO, "end rendering");
 
