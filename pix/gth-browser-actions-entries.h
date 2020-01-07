@@ -199,7 +199,7 @@ static GthActionEntryExt gth_browser_action_entries[] = {
 	  GTH_ACTION_FLAG_NONE,
 	  G_CALLBACK (gth_browser_activate_action_help_shortcuts) },
 
-	{ "Browser_Tools", "document-edit-symbolic",
+	{ "Browser_Tools", "image-x-generic-symbolic",
 	  N_("Edit"), NULL,
 	  N_("Edit file"),
 	  GTH_ACTION_FLAG_NONE,
@@ -253,7 +253,7 @@ static GtkToggleActionEntry gth_browser_action_toggle_entries[] = {
 	  N_("View file properties"),
 	  G_CALLBACK (gth_browser_activate_action_viewer_properties),
 	  FALSE },
-	{ "Viewer_Tools", "document-edit-symbolic",
+	{ "Viewer_Tools", "image-x-generic-symbolic",
 	  N_("Edit"), NULL,
 	  N_("Edit file"),
 	  G_CALLBACK (gth_browser_activate_action_viewer_tools),
