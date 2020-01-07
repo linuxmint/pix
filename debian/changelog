@@ -1,3 +1,20 @@
+pix (2.4.5) tricia; urgency=medium
+
+  [ Paolo Bacchilega ]
+  * jpeg loader: crash when the original size is too big for a cairo surface
+  * jpeg loader: call alloc_sarray before jpeg_start_decompress
+  * jpeg loader: error if the orientation swaps width and height
+  * jpeg loader: do not scan more than output_height lines
+  * cairo scale: do not create images with invalid dimensions
+  * check whether the scaled surface is null before using it
+  * gth-image: allow to set null surfaces
+  * image viewer: do not try do paint surfaces with invalid size
+
+  [ Michael Webster ]
+  * various: check for valid surfaces after creating them.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 07 Jan 2020 09:43:08 +0000
+
 pix (2.4.4) tricia; urgency=medium
 
   [ Michael Webster ]
