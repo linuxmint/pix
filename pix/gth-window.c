@@ -227,10 +227,9 @@ gth_window_realize (GtkWidget *widget)
 	}
 	gtk_style_context_add_provider_for_screen (screen,
 						   GTK_STYLE_PROVIDER (css_provider),
-						   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+						   GTK_STYLE_PROVIDER_PRIORITY_THEME);
 
 	g_object_unref (css_provider);
-	g_bytes_unref (bytes);
 }
 
 
