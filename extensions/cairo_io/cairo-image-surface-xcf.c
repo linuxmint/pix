@@ -581,6 +581,8 @@ _cairo_image_surface_paint_layer (cairo_surface_t *image,
 
 	mask_row = layer->alpha_mask + (y * layer_width) + x;
 
+    rand_gen = NULL;
+
 	if (layer->mode == GIMP_LAYER_MODE_DISSOLVE)
 		rand_gen = g_rand_new_with_seed (DISSOLVE_SEED);
 
@@ -1190,6 +1192,11 @@ _cairo_image_surface_create_from_xcf (GInputStream  *istream,
 
 	performance (DEBUG_INFO, "end init");
 
+    compression = GIMP_COMPRESSION_RLE;
+    layers = NULL;
+    layer_offsets = NULL;
+    colormap = NULL;
+
 	data_stream = g_data_input_stream_new (istream);
 	g_data_input_stream_set_byte_order (data_stream, G_DATA_STREAM_BYTE_ORDER_BIG_ENDIAN);
 
@@ -1229,10 +1236,6 @@ _cairo_image_surface_create_from_xcf (GInputStream  *istream,
 		goto out;
 
 	/* properties */
-
-	compression = GIMP_COMPRESSION_RLE;
-	layers = NULL;
-	colormap = NULL;
 
 	read_properties = TRUE;
 	n_properties = 0;
