@@ -16,15 +16,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
 "POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2017-06-07 00:39+0000\n"
-"Last-Translator: Gabriel Martins <gabrielmartins@hotmail.com.br>\n"
+"PO-Revision-Date: 2020-03-06 21:27+0000\n"
+"Last-Translator: Wellington Oliveira dos Santos <welblade@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2020-01-06 10:06+0000\n"
-"X-Generator: Launchpad (build bceb5ef013b87ef7aafe0755545ceb689ca7ac60)\n"
+"X-Launchpad-Export-Date: 2020-05-11 11:02+0000\n"
+"X-Generator: Launchpad (build fbdff7602bd10fb883bf7e2ddcc7fd5a16f60398)\n"
 "Language: pt_BR\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -38,7 +38,7 @@ msgstr "O arquivo não é um arquivo .desktop válido"
 #: ../copy-n-paste/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Versão \"%s\" desconhecida de arquivo desktop"
+msgstr "Versão do arquivo da área de trabalho \"%s\" não reconhecida"
 
 #: ../copy-n-paste/eggdesktopfile.c:974
 #, c-format
@@ -75,7 +75,7 @@ msgstr "Desabilitar conexão com gerenciador de sessão"
 
 #: ../copy-n-paste/eggsmclient.c:229
 msgid "Specify file containing saved configuration"
-msgstr "Especificar arquivo contendo configuração salva"
+msgstr "Especificar o arquivo que contém a configuração salva"
 
 #: ../copy-n-paste/eggsmclient.c:229
 msgid "FILE"
@@ -300,7 +300,7 @@ msgstr "embaixo da lista de pastas"
 
 #: ../data/ui/preferences.ui.h:2
 msgid "on the right"
-msgstr "na direita"
+msgstr "à direita"
 
 #: ../data/ui/preferences.ui.h:3
 msgid "Pix Preferences"
@@ -312,11 +312,11 @@ msgstr "_Miniaturas no visualizador:"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "on the bottom"
-msgstr "embaixo"
+msgstr "abaixo"
 
 #: ../data/ui/preferences.ui.h:6
 msgid "on the side"
-msgstr "lateral"
+msgstr "ao lado"
 
 #: ../data/ui/preferences.ui.h:7
 msgid "File _properties in browser:"
@@ -328,7 +328,7 @@ msgstr "Aparência"
 
 #: ../data/ui/preferences.ui.h:9
 msgid "Go to last _visited location"
-msgstr "_Vai para a última localização visitada"
+msgstr "Ir para o última local _visitado"
 
 #: ../data/ui/preferences.ui.h:10
 msgid "Go to this _folder:"
@@ -780,7 +780,7 @@ msgstr "Abrir _pasta"
 #: ../extensions/catalogs/callbacks.c:106
 #: ../extensions/selections/callbacks.c:81
 msgid "Go to the folder that contains the selected file"
-msgstr "Vai para a pasta que contém a imagem selecionada"
+msgstr "Ir para a pasta que contém a imagem selecionada"
 
 #: ../extensions/catalogs/callbacks.c:110
 msgid "Other..."
@@ -3606,7 +3606,6 @@ msgstr "Última importação"
 msgid "No file specified."
 msgstr "Nenhum arquivo especificado."
 
-# "300MB is available" is wrong, as it should be in plural.
 #. Translators: For example: Not enough free space in '/home/user/Images'.\n1.3 GB of space is required but only 300 MB is available.
 #: ../extensions/importer/gth-import-task.c:875
 #, c-format
@@ -3615,7 +3614,7 @@ msgid ""
 "%s of space is required but only %s is available."
 msgstr ""
 "Sem espaço suficiente em \"%s\".\n"
-"Precisa de %s, mas há apenas %s."
+"Precisa de %s, mas existe apenas %s."
 
 #: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
 msgid "Personalize..."
@@ -4848,7 +4847,8 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Alberlan Lopes https://launchpad.net/~alberlan\n"
 "  Gabriel Martins https://launchpad.net/~gabrielmartins\n"
-"  Rafael Ferreira https://launchpad.net/~rafael-f-f1-s"
+"  Rafael Ferreira https://launchpad.net/~rafael-f-f1-s\n"
+"  Wellington Oliveira dos Santos https://launchpad.net/~welblade"
 
 #: ../pix/gth-browser-actions-entries.h:31
 msgid "_File"
@@ -4958,7 +4958,7 @@ msgstr "Voltar"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
-msgstr "Vai para o local visitado anteriormente"
+msgstr "Ir para o local visitado anteriormente"
 
 #: ../pix/gth-browser-actions-entries.h:149
 msgid "Forward"
@@ -4966,7 +4966,7 @@ msgstr "Avançar"
 
 #: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3860
 msgid "Go to the next visited location"
-msgstr "Vai para o próximo local visitado"
+msgstr "Ir para o próximo local visitado"
 
 #: ../pix/gth-browser-actions-entries.h:155
 msgid "Up"
@@ -4974,7 +4974,7 @@ msgstr "Acima"
 
 #: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3878
 msgid "Go up one level"
-msgstr "Vai para um nível acima"
+msgstr "Subir um nível"
 
 #: ../pix/gth-browser-actions-entries.h:161
 msgid "_Location..."
@@ -5302,7 +5302,7 @@ msgstr "Não foi possível renomear o arquivo"
 
 #: ../pix/gth-image-saver.c:39
 msgid "No options available for this file type"
-msgstr "Nenhum opção disponível para esse tipo de arquivo"
+msgstr "Nenhuma opção disponível para esse tipo de arquivo"
 
 #: ../pix/gth-image-saver.c:185
 #, c-format
@@ -5365,7 +5365,7 @@ msgstr "dimensões"
 
 #: ../pix/gth-main-default-tests.c:233
 msgid "All Files"
-msgstr "Todos arquivos"
+msgstr "Todos os arquivos"
 
 #: ../pix/gth-main-default-tests.c:261
 msgid "Media"
@@ -5408,7 +5408,7 @@ msgstr "Criar a etiqueta \"%s\""
 
 #: ../pix/gth-tags-entry.c:814
 msgid "Show all the tags"
-msgstr "Mostra todas as etiquetas"
+msgstr "Mostrar todas as etiquetas"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
@@ -5481,11 +5481,11 @@ msgstr "A definição de teste está incompleta"
 
 #: ../pix/gth-test-selector.c:252
 msgid "Add a new rule"
-msgstr "Adiciona uma nova regra"
+msgstr "Adicionar uma nova regra"
 
 #: ../pix/gth-test-selector.c:263
 msgid "Remove this rule"
-msgstr "Remove esta regra"
+msgstr "Remover esta regra"
 
 #: ../pix/gth-test-simple.c:46
 msgid "contains"
@@ -5545,7 +5545,7 @@ msgstr "Fecha esta janela"
 
 #: ../pix/gth-window-actions-entries.h:36
 msgid "Close _All Windows"
-msgstr "Fechar _todas janelas"
+msgstr "Fechar Tod_as as Janelas"
 
 #: ../pix/gtk-utils.c:490
 msgid "Could not display help"
@@ -5565,7 +5565,7 @@ msgstr "_Mover aqui"
 
 #: ../pix/gtk-utils.c:930
 msgid "_Link Here"
-msgstr "Criar _link aqui"
+msgstr "Criar ata_lho aqui"
 
 #: ../pix/gtk-utils.c:939
 msgid "Cancel"
@@ -5573,19 +5573,19 @@ msgstr "Cancelar"
 
 #: ../pix/main.c:61
 msgid "Open a new window"
-msgstr "Abre uma nova janela"
+msgstr "Abrir uma nova janela"
 
 #: ../pix/main.c:65
 msgid "Start in fullscreen mode"
-msgstr "Inicia em modo tela cheia"
+msgstr "Iniciar no modo de tela cheia"
 
 #: ../pix/main.c:69
 msgid "Automatically start a slideshow"
-msgstr "Inicia apresentação de slides automaticamente"
+msgstr "Iniciar apresentação de slides automaticamente"
 
 #: ../pix/main.c:73
 msgid "Automatically import digital camera photos"
-msgstr "Importa fotos de câmeras digitais automaticamente"
+msgstr "Importar fotos de câmeras digitais automaticamente"
 
 #: ../pix/main.c:77
 msgid "Show version"
