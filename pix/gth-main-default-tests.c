@@ -223,23 +223,6 @@ get_embedded_description_for_test (GthTest        *test,
 	return 0;
 }
 
-static gint64
-get_embedded_rating_for_test (GthTest        *test,
-				   GthFileData    *file,
-				   gconstpointer  *data,
-				   GDestroyNotify *data_destroy_func)
-{
-	GthMetadata *metadata;
-    
-	metadata = (GthMetadata *) g_file_info_get_attribute_object (file->info, "general::rating");
-	if (metadata != NULL)
-		*data = gth_metadata_get_formatted (metadata);
-	else
-		*data = NULL;
-
-	return 0;
-}
-
 
 void
 gth_main_register_default_tests (void)
@@ -339,13 +322,5 @@ gth_main_register_default_tests (void)
 				  GTH_TYPE_TEST_CATEGORY,
 				  "attributes", "general::tags",
 				  "display-name", _("Tag (embedded)"),
-				  NULL);
-	gth_main_register_object (GTH_TYPE_TEST,
-				  "general::rating",
-				  GTH_TYPE_TEST_SIMPLE,
-				  "attributes", "general::rating",
-				  "display-name", _("Rating (embedded)"),
-				  "data-type", GTH_TEST_DATA_TYPE_STRING,
-				  "get-data-func", get_embedded_rating_for_test,
 				  NULL);
 }
