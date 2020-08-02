@@ -64,6 +64,7 @@ void          gth_time_selector_set_exif_date  (GthTimeSelector *self,
 					        const char      *exif_date);
 void          gth_time_selector_get_value      (GthTimeSelector *self,
 						GthDateTime     *date_time);
+void          gth_time_selector_focus          (GthTimeSelector *self);
 
 G_END_DECLS
 
