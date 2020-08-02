@@ -72,6 +72,15 @@ gth_time_selector_finalize (GObject *object)
 	G_OBJECT_CLASS (gth_time_selector_parent_class)->finalize (object);
 }
 
+static gboolean
+gth_time_selector_real_focus (GtkWidget        *base,
+			      GtkDirectionType  direction)
+{
+	GthTimeSelector *self = GTH_TIME_SELECTOR (base);
+	gtk_widget_grab_focus (self->priv->date_entry);
+	return TRUE;
+}
+
 
 static void
 gth_time_selector_class_init (GthTimeSelectorClass *class)
@@ -619,4 +628,10 @@ gth_time_selector_get_value (GthTimeSelector *self,
 		*date_time->time = *self->priv->date_time->time;
 	else
 		gth_time_clear (date_time->time);
+}
+
+void 
+gth_time_selector_focus (GthTimeSelector *self)
+{
+    gth_time_selector_real_focus (GTK_WIDGET (self), GTK_DIR_RIGHT);
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -19,6 +19,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <math.h>
 #include <config.h>
 #include <stdlib.h>
 #include <string.h>
@@ -55,7 +56,9 @@ GthOpData text_op_data[] = {
 GthOpData int_op_data[] = {
 	{ N_("is lower than"), GTH_TEST_OP_LOWER, FALSE },
 	{ N_("is greater than"), GTH_TEST_OP_GREATER, FALSE },
-	{ N_("is equal to"), GTH_TEST_OP_EQUAL, FALSE }
+	{ N_("is equal to"), GTH_TEST_OP_EQUAL, FALSE },
+	{ N_("is greater than or equal to"), GTH_TEST_OP_LOWER, TRUE },
+	{ N_("is lower than or equal to"), GTH_TEST_OP_GREATER, TRUE }
 };
 
 GthOpData date_op_data[] = {
@@ -79,28 +82,35 @@ static GthSizeData size_data[] = {
 
 
 enum {
-        PROP_0,
-        PROP_DATA_TYPE,
-        PROP_DATA_AS_STRING,
-        PROP_DATA_AS_INT,
-        PROP_DATA_AS_DATE,
-        PROP_GET_DATA,
-        PROP_OP,
-        PROP_NEGATIVE
+	PROP_0,
+	PROP_DATA_TYPE,
+	PROP_DATA_AS_STRING,
+	PROP_DATA_AS_INT,
+	PROP_DATA_AS_SIZE,
+	PROP_DATA_AS_DOUBLE,
+	PROP_DATA_AS_DATE,
+	PROP_GET_DATA,
+	PROP_OP,
+	PROP_NEGATIVE,
+	PROP_MAX_INT,
+	PROP_MAX_DOUBLE
 };
 
 
-struct _GthTestSimplePrivate
-{
+struct _GthTestSimplePrivate {
 	GthTestDataType  data_type;
 	union {
-		char   *s;
-		gint64  i;
-		GDate  *date;
+		char    *s;
+		int      i;
+		guint64  size;
+		GDate   *date;
+		gdouble  f;
 	} data;
 	GthTestGetData   get_data;
 	GthTestOp        op;
 	gboolean         negative;
+	gint64           max_int;
+	double           max_double;
 	GPatternSpec    *pattern;
 	gboolean         has_focus;
 	GtkWidget       *text_entry;
@@ -109,24 +119,26 @@ struct _GthTestSimplePrivate
 	GtkWidget       *date_op_combo_box;
 	GtkWidget       *size_combo_box;
 	GtkWidget       *time_selector;
+	GtkWidget       *spinbutton;
 };
 
 
-static DomDomizableInterface* dom_domizable_parent_iface = NULL;
+static DomDomizableInterface *dom_domizable_parent_iface = NULL;
 static GthDuplicableInterface *gth_duplicable_parent_iface = NULL;
 
 
-static void gth_test_simple_dom_domizable_interface_init (DomDomizableInterface * iface);
+static void gth_test_simple_dom_domizable_interface_init (DomDomizableInterface *iface);
 static void gth_test_simple_gth_duplicable_interface_init (GthDuplicableInterface *iface);
 
 
 G_DEFINE_TYPE_WITH_CODE (GthTestSimple,
 			 gth_test_simple,
 			 GTH_TYPE_TEST,
+			 G_ADD_PRIVATE (GthTestSimple)
 			 G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
-					 	gth_test_simple_dom_domizable_interface_init)
+						gth_test_simple_dom_domizable_interface_init)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_DUPLICABLE,
-					 	gth_test_simple_gth_duplicable_interface_init))
+						gth_test_simple_gth_duplicable_interface_init))
 
 
 static void
@@ -162,22 +174,11 @@ gth_test_simple_finalize (GObject *object)
 
 	test = GTH_TEST_SIMPLE (object);
 
-	if (test->priv != NULL) {
-		_gth_test_simple_free_data (test);
-		if (test->priv->pattern != NULL)
-			g_pattern_spec_free (test->priv->pattern);
-		g_free (test->priv);
-		test->priv = NULL;
-	}
+	_gth_test_simple_free_data (test);
+	if (test->priv->pattern != NULL)
+		g_pattern_spec_free (test->priv->pattern);
 
 	G_OBJECT_CLASS (gth_test_simple_parent_class)->finalize (object);
-}
-
-
-static GtkWidget *
-create_control_for_integer (GthTestSimple *test)
-{
-	return NULL;
 }
 
 
@@ -227,6 +228,129 @@ size_combo_box_changed_cb (GtkComboBox   *combo_box,
 	gth_test_changed (GTH_TEST (test));
 }
 
+
+static void
+spinbutton_changed_cb (GtkSpinButton *spinbutton,
+                       GthTestSimple *test)
+{
+	gth_test_update_from_control (GTH_TEST (test), NULL);
+	gth_test_changed (GTH_TEST (test));
+}
+
+
+static void
+focus_event_cb (GtkWidget     *widget,
+                GdkEvent      *event,
+                GthTestSimple *test)
+{
+	gth_test_update_from_control (GTH_TEST (test), NULL);
+	gth_test_changed (GTH_TEST (test));
+}
+
+
+static GtkWidget *
+create_control_for_integer (GthTestSimple *test)
+{
+	GtkWidget *control;
+	int        i, op_idx;
+
+	control = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+
+	/* text operation combo box */
+
+	test->priv->text_op_combo_box = gtk_combo_box_text_new ();
+	gtk_widget_show (test->priv->text_op_combo_box);
+
+	op_idx = 0;
+	for (i = 0; i < G_N_ELEMENTS (int_op_data); i++) {
+		gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (test->priv->text_op_combo_box),
+						_(int_op_data[i].name));
+		if ((int_op_data[i].op == test->priv->op) && (int_op_data[i].negative == test->priv->negative))
+			op_idx = i;
+	}
+	gtk_combo_box_set_active (GTK_COMBO_BOX (test->priv->text_op_combo_box), op_idx);
+
+	g_signal_connect (G_OBJECT (test->priv->text_op_combo_box),
+			  "changed",
+			  G_CALLBACK (size_op_combo_box_changed_cb),
+			  test);
+
+	/* spin button */
+
+	test->priv->spinbutton = gtk_spin_button_new_with_range (0, test->priv->max_int, 1);
+	gtk_spin_button_set_value (GTK_SPIN_BUTTON (test->priv->spinbutton), 0);
+	gtk_widget_show (test->priv->spinbutton);
+
+	g_signal_connect (G_OBJECT (test->priv->spinbutton),
+			  "value-changed",
+			  G_CALLBACK (spinbutton_changed_cb),
+			  test);
+	g_signal_connect (G_OBJECT (test->priv->spinbutton),
+			  "activate",
+			  G_CALLBACK (size_text_entry_activate_cb),
+			  test);
+	g_signal_connect (G_OBJECT (test->priv->spinbutton),
+			  "focus-in-event",
+			  G_CALLBACK (focus_event_cb),
+			  test);
+	g_signal_connect (G_OBJECT (test->priv->spinbutton),
+			  "focus-out-event",
+			  G_CALLBACK (focus_event_cb),
+			  test);
+
+	/**/
+
+	gtk_box_pack_start (GTK_BOX (control), test->priv->text_op_combo_box, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (control), test->priv->spinbutton, FALSE, FALSE, 0);
+
+	return control;
+}
+
+static GtkWidget *
+create_control_for_double (GthTestSimple *test)
+{
+	GtkWidget *control;
+	int        i, op_idx;
+
+	control = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+
+	/* text operation combo box */
+
+	test->priv->text_op_combo_box = gtk_combo_box_text_new ();
+	gtk_widget_show (test->priv->text_op_combo_box);
+
+	op_idx = 0;
+	for (i = 0; i < G_N_ELEMENTS (int_op_data); i++) {
+		gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (test->priv->text_op_combo_box),
+						_(int_op_data[i].name));
+		if ((int_op_data[i].op == test->priv->op) && (int_op_data[i].negative == test->priv->negative))
+			op_idx = i;
+	}
+	gtk_combo_box_set_active (GTK_COMBO_BOX (test->priv->text_op_combo_box), op_idx);
+
+	g_signal_connect (G_OBJECT (test->priv->text_op_combo_box),
+			  "changed",
+			  G_CALLBACK (size_op_combo_box_changed_cb),
+			  test);
+
+	/* spin button */
+
+	test->priv->spinbutton = gtk_spin_button_new_with_range (0, test->priv->max_double, 0.01);
+	gtk_spin_button_set_value (GTK_SPIN_BUTTON (test->priv->spinbutton), test->priv->data.f);
+	gtk_widget_show (test->priv->spinbutton);
+
+	g_signal_connect (G_OBJECT (test->priv->spinbutton),
+			  "value-changed",
+			  G_CALLBACK (spinbutton_changed_cb),
+			  test);
+
+	/**/
+
+	gtk_box_pack_start (GTK_BOX (control), test->priv->text_op_combo_box, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (control), test->priv->spinbutton, FALSE, FALSE, 0);
+
+	return control;
+}
 
 static GtkWidget *
 create_control_for_size (GthTestSimple *test)
@@ -284,11 +408,11 @@ create_control_for_size (GthTestSimple *test)
 	for (i = 0; i < G_N_ELEMENTS (size_data); i++) {
 		gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (test->priv->size_combo_box),
 						_(size_data[i].name));
-		if (! size_set && ((i == G_N_ELEMENTS (size_data) - 1) || (test->priv->data.i < size_data[i + 1].size))) {
+		if (! size_set && ((i == G_N_ELEMENTS (size_data) - 1) || (test->priv->data.size < size_data[i + 1].size))) {
 			char *value;
 
 			size_idx = i;
-			value = g_strdup_printf ("%.2f", (double) test->priv->data.i / size_data[i].size);
+			value = g_strdup_printf ("%.2f", (double) test->priv->data.size / size_data[i].size);
 			gtk_entry_set_text (GTK_ENTRY (test->priv->text_entry), value);
 			g_free (value);
 			size_set = TRUE;
@@ -487,6 +611,10 @@ gth_test_simple_real_create_control (GthTest *test)
 	case GTH_TEST_DATA_TYPE_DATE:
 		control = create_control_for_date (GTH_TEST_SIMPLE (test));
 		break;
+
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		control = create_control_for_double (GTH_TEST_SIMPLE (test));
+		break;
 	}
 
 	return control;
@@ -577,6 +705,59 @@ test_integer (GthTestSimple *test,
 
 
 static gboolean
+test_size (GthTestSimple *test,
+	   guint64        value)
+{
+	gboolean result = FALSE;
+
+	switch (test->priv->op) {
+	case GTH_TEST_OP_EQUAL:
+		result = (value == test->priv->data.size);
+		break;
+
+	case GTH_TEST_OP_LOWER:
+		result = (value < test->priv->data.size);
+		break;
+
+	case GTH_TEST_OP_GREATER:
+		result = (value > test->priv->data.size);
+		break;
+
+	default:
+		break;
+	}
+
+	return result;
+}
+
+
+static gboolean
+test_double (GthTestSimple *test,
+             gdouble        value)
+{
+	gboolean result = FALSE;
+
+	switch (test->priv->op) {
+	case GTH_TEST_OP_EQUAL:
+		result = FLOAT_EQUAL (value, test->priv->data.f);
+		break;
+
+	case GTH_TEST_OP_LOWER:
+		result = (value < test->priv->data.f);
+		break;
+
+	case GTH_TEST_OP_GREATER:
+		result = (value > test->priv->data.f);
+		break;
+
+	default:
+		break;
+	}
+	return result;
+}
+
+
+static gboolean
 test_date (GthTestSimple *test,
            GDate         *date)
 {
@@ -629,6 +810,30 @@ _gth_test_simple_get_int (GthTestSimple *test,
 }
 
 
+static guint64
+_gth_test_simple_get_size (GthTestSimple *test,
+			   GthFileData   *file)
+{
+	guint64 value;
+
+	test->priv->get_data (GTH_TEST (test), file, (gpointer)&value, NULL);
+
+	return value;
+}
+
+
+static gdouble
+_gth_test_simple_get_double (GthTestSimple *test,
+			     GthFileData   *file)
+{
+	gdouble value;
+
+	test->priv->get_data (GTH_TEST (test), file, (gpointer)&value, NULL);
+
+	return value;
+}
+
+
 static GthMatch
 gth_test_simple_real_match (GthTest   *test,
 			    GthFileData   *file)
@@ -646,8 +851,15 @@ gth_test_simple_real_match (GthTest   *test,
 		break;
 
 	case GTH_TEST_DATA_TYPE_INT:
-	case GTH_TEST_DATA_TYPE_SIZE:
 		result = test_integer (test_simple, _gth_test_simple_get_int (test_simple, file));
+		break;
+
+	case GTH_TEST_DATA_TYPE_SIZE:
+		result = test_size (test_simple, _gth_test_simple_get_size (test_simple, file));
+		break;
+
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		result = test_double (test_simple, _gth_test_simple_get_double (test_simple, file));
 		break;
 
 	case GTH_TEST_DATA_TYPE_STRING:
@@ -665,7 +877,7 @@ gth_test_simple_real_match (GthTest   *test,
 		break;
 	}
 
-        if (test_simple->priv->negative)
+	if (test_simple->priv->negative)
 		result = ! result;
 
 	return result ? GTH_MATCH_YES : GTH_MATCH_NO;
@@ -696,12 +908,33 @@ gth_test_simple_real_create_element (DomDomizable *base,
 		break;
 
 	case GTH_TEST_DATA_TYPE_INT:
+		dom_element_set_attribute (element, "op", _g_enum_type_get_value (GTH_TYPE_TEST_OP, self->priv->op)->value_nick);
+		if (self->priv->op != GTH_TEST_OP_NONE) {
+			if (self->priv->negative)
+				dom_element_set_attribute (element, "negative", self->priv->negative ? "true" : "false");
+			value = g_strdup_printf ("%d", self->priv->data.i);
+			dom_element_set_attribute (element, "value", value);
+			g_free (value);
+		}
+		break;
+
 	case GTH_TEST_DATA_TYPE_SIZE:
 		dom_element_set_attribute (element, "op", _g_enum_type_get_value (GTH_TYPE_TEST_OP, self->priv->op)->value_nick);
 		if (self->priv->op != GTH_TEST_OP_NONE) {
 			if (self->priv->negative)
 				dom_element_set_attribute (element, "negative", self->priv->negative ? "true" : "false");
-			value = g_strdup_printf ("%" G_GINT64_FORMAT, self->priv->data.i);
+			value = g_strdup_printf ("%" G_GUINT64_FORMAT, self->priv->data.size);
+			dom_element_set_attribute (element, "value", value);
+			g_free (value);
+		}
+		break;
+
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		dom_element_set_attribute (element, "op", _g_enum_type_get_value (GTH_TYPE_TEST_OP, self->priv->op)->value_nick);
+		if (self->priv->op != GTH_TEST_OP_NONE) {
+			if (self->priv->negative)
+				dom_element_set_attribute (element, "negative", self->priv->negative ? "true" : "false");
+			value = g_strdup_printf ("%f", self->priv->data.f);
 			dom_element_set_attribute (element, "value", value);
 			g_free (value);
 		}
@@ -770,6 +1003,10 @@ gth_test_simple_real_load_from_element (DomDomizable *base,
 		gth_test_simple_set_data_as_int (self, atol (value));
 		break;
 
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		gth_test_simple_set_data_as_double (self, atof (value));
+		break;
+
 	case GTH_TEST_DATA_TYPE_SIZE:
 		gth_test_simple_set_data_as_size (self, atol (value));
 		break;
@@ -805,13 +1042,22 @@ update_from_control_for_integer (GthTestSimple  *self,
 	op_data = int_op_data[gtk_combo_box_get_active (GTK_COMBO_BOX (self->priv->text_op_combo_box))];
 	self->priv->op = op_data.op;
 	self->priv->negative = op_data.negative;
-	gth_test_simple_set_data_as_int (self, atol (gtk_entry_get_text (GTK_ENTRY (self->priv->text_entry))));
+	gth_test_simple_set_data_as_int (self, gtk_spin_button_get_value_as_int  (GTK_SPIN_BUTTON (self->priv->spinbutton)));
 
-	if (self->priv->data.i == 0) {
-		if (error != NULL)
-			*error = g_error_new (GTH_TEST_ERROR, 0, _("The test definition is incomplete"));
-		return FALSE;
-	}
+	return TRUE;
+}
+
+
+static gboolean
+update_from_control_for_double (GthTestSimple  *self,
+				GError        **error)
+{
+	GthOpData op_data;
+
+	op_data = int_op_data[gtk_combo_box_get_active (GTK_COMBO_BOX (self->priv->text_op_combo_box))];
+	self->priv->op = op_data.op;
+	self->priv->negative = op_data.negative;
+	gth_test_simple_set_data_as_double (self, gtk_spin_button_get_value  (GTK_SPIN_BUTTON (self->priv->spinbutton)));
 
 	return TRUE;
 }
@@ -833,7 +1079,7 @@ update_from_control_for_size (GthTestSimple  *self,
 	size = value * size_data[gtk_combo_box_get_active (GTK_COMBO_BOX (self->priv->size_combo_box))].size;
 	gth_test_simple_set_data_as_size (self, size);
 
-	if ((self->priv->data.i == 0) && (self->priv->op == GTH_TEST_OP_LOWER)) {
+	if ((self->priv->data.size == 0) && (self->priv->op == GTH_TEST_OP_LOWER)) {
 		if (error != NULL)
 			*error = g_error_new (GTH_TEST_ERROR, 0, _("The test definition is incomplete"));
 		return FALSE;
@@ -904,6 +1150,10 @@ gth_test_simple_real_update_from_control (GthTest  *base,
 		retval = update_from_control_for_integer (self, error);
 		break;
 
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		retval = update_from_control_for_double (self, error);
+		break;
+
 	case GTH_TEST_DATA_TYPE_SIZE:
 		retval = update_from_control_for_size (self, error);
 		break;
@@ -923,6 +1173,34 @@ gth_test_simple_real_update_from_control (GthTest  *base,
 	}
 
 	return retval;
+}
+
+
+static void
+gth_test_simple_real_focus_control (GthTest *base)
+{
+	GthTestSimple *self;
+
+	self = GTH_TEST_SIMPLE (base);
+
+	switch (self->priv->data_type) {
+	case GTH_TEST_DATA_TYPE_INT:
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		gtk_widget_grab_focus (self->priv->spinbutton);
+		break;
+
+	case GTH_TEST_DATA_TYPE_STRING:
+	case GTH_TEST_DATA_TYPE_SIZE:
+		gtk_widget_grab_focus (self->priv->text_entry);
+		break;
+
+	case GTH_TEST_DATA_TYPE_DATE:
+		gth_time_selector_focus (GTH_TIME_SELECTOR (self->priv->time_selector));
+		break;
+
+	default:
+		break;
+	}
 }
 
 
@@ -947,8 +1225,12 @@ gth_test_simple_real_duplicate (GthDuplicable *duplicable)
 		gth_test_simple_set_data_as_int (new_test, test->priv->data.i);
 		break;
 
+	case GTH_TEST_DATA_TYPE_DOUBLE:
+		gth_test_simple_set_data_as_double (new_test, test->priv->data.f);
+		break;
+
 	case GTH_TEST_DATA_TYPE_SIZE:
-		gth_test_simple_set_data_as_size (new_test, test->priv->data.i);
+		gth_test_simple_set_data_as_size (new_test, test->priv->data.size);
 		break;
 
 	case GTH_TEST_DATA_TYPE_STRING:
@@ -963,6 +1245,8 @@ gth_test_simple_real_duplicate (GthDuplicable *duplicable)
 	new_test->priv->get_data = test->priv->get_data;
 	new_test->priv->op = test->priv->op;
 	new_test->priv->negative = test->priv->negative;
+	new_test->priv->max_int = test->priv->max_int;
+	new_test->priv->max_double = test->priv->max_double;
 
 	return (GObject *) new_test;
 }
@@ -993,6 +1277,16 @@ gth_test_simple_set_property (GObject      *object,
 		test->priv->data.i = g_value_get_int (value);
 		break;
 
+	case PROP_DATA_AS_SIZE:
+		_gth_test_simple_free_data (test);
+		test->priv->data.size = g_value_get_uint64 (value);
+		break;
+
+	case PROP_DATA_AS_DOUBLE:
+		_gth_test_simple_free_data (test);
+		test->priv->data.f = g_value_get_double (value);
+		break;
+
 	case PROP_DATA_AS_DATE:
 		_gth_test_simple_free_data (test);
 		test->priv->data.date = g_value_dup_boxed (value);
@@ -1008,6 +1302,14 @@ gth_test_simple_set_property (GObject      *object,
 
 	case PROP_NEGATIVE:
 		test->priv->negative = g_value_get_boolean (value);
+		break;
+
+	case PROP_MAX_INT:
+		test->priv->max_int = g_value_get_int (value);
+		break;
+
+	case PROP_MAX_DOUBLE:
+		test->priv->max_double = g_value_get_double (value);
 		break;
 
 	default:
@@ -1039,6 +1341,14 @@ gth_test_simple_get_property (GObject    *object,
 		g_value_set_int (value, test->priv->data.i);
 		break;
 
+	case PROP_DATA_AS_SIZE:
+		g_value_set_uint64 (value, test->priv->data.size);
+		break;
+
+	case PROP_DATA_AS_DOUBLE:
+		g_value_set_double (value, test->priv->data.f);
+		break;
+
 	case PROP_DATA_AS_DATE:
 		g_value_set_boxed (value, test->priv->data.date);
 		break;
@@ -1053,6 +1363,14 @@ gth_test_simple_get_property (GObject    *object,
 
 	case PROP_NEGATIVE:
 		g_value_set_boolean (value, test->priv->negative);
+		break;
+
+	case PROP_MAX_INT:
+		g_value_set_int (value, test->priv->max_int);
+		break;
+
+	case PROP_MAX_DOUBLE:
+		g_value_set_double (value, test->priv->max_double);
 		break;
 
 	default:
@@ -1076,6 +1394,7 @@ gth_test_simple_class_init (GthTestSimpleClass *class)
 	test_class = (GthTestClass *) class;
 	test_class->create_control = gth_test_simple_real_create_control;
 	test_class->update_from_control = gth_test_simple_real_update_from_control;
+	test_class->focus_control = gth_test_simple_real_focus_control;
 	test_class->match = gth_test_simple_real_match;
 
 	/* properties */
@@ -1105,6 +1424,24 @@ gth_test_simple_class_init (GthTestSimpleClass *class)
                                                            0,
                                                            G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
+					 PROP_DATA_AS_SIZE,
+					 g_param_spec_uint64 ("data-as-size",
+                                                              "Data as size",
+							      "The data value as an unsigned long integer",
+							      0,
+							      G_MAXUINT64,
+							      0,
+							      G_PARAM_READWRITE));
+	g_object_class_install_property (object_class,
+					 PROP_DATA_AS_DOUBLE,
+					 g_param_spec_double ("data-as-double",
+                                                              "Data as double",
+							      "The data value as a double precision real number",
+							      G_MINDOUBLE,
+							      G_MAXDOUBLE,
+							      1.0,
+							      G_PARAM_READWRITE));
+	g_object_class_install_property (object_class,
 					 PROP_DATA_AS_DATE,
 					 g_param_spec_boxed ("data-as-date",
                                                              "Data as date",
@@ -1132,6 +1469,24 @@ gth_test_simple_class_init (GthTestSimpleClass *class)
                                                                "Whether to negate the test result",
                                                                FALSE,
                                                                G_PARAM_READWRITE));
+	g_object_class_install_property (object_class,
+					 PROP_MAX_INT,
+					 g_param_spec_int ("max-int",
+                                                           "Max integer",
+                                                           "Max value for integers",
+                                                           G_MININT,
+                                                           G_MAXINT,
+                                                           0,
+                                                           G_PARAM_READWRITE));
+	g_object_class_install_property (object_class,
+					 PROP_MAX_DOUBLE,
+					 g_param_spec_int ("max-double",
+                                                           "Max double",
+                                                           "Max value for doubles",
+                                                           G_MININT,
+                                                           G_MAXINT,
+                                                           0.0,
+                                                           G_PARAM_READWRITE));
 }
 
 
@@ -1155,7 +1510,22 @@ gth_test_simple_gth_duplicable_interface_init (GthDuplicableInterface *iface)
 static void
 gth_test_simple_init (GthTestSimple *test)
 {
-	test->priv = g_new0 (GthTestSimplePrivate, 1);
+	test->priv = gth_test_simple_get_instance_private (test);
+	test->priv->data_type = GTH_TEST_DATA_TYPE_NONE;
+	test->priv->get_data = NULL;
+	test->priv->op = GTH_TEST_OP_NONE;
+	test->priv->negative = FALSE;
+	test->priv->max_int = 0;
+	test->priv->max_double = 0;
+	test->priv->pattern = NULL;
+	test->priv->has_focus = FALSE;
+	test->priv->text_entry = NULL;
+	test->priv->text_op_combo_box = NULL;
+	test->priv->size_op_combo_box = NULL;
+	test->priv->date_op_combo_box = NULL;
+	test->priv->size_combo_box = NULL;
+	test->priv->time_selector = NULL;
+	test->priv->spinbutton = NULL;
 }
 
 
@@ -1171,11 +1541,21 @@ gth_test_simple_set_data_as_string (GthTestSimple *test,
 
 void
 gth_test_simple_set_data_as_int (GthTestSimple *test,
-			         guint64        i)
+			         guint64         i)
 {
 	_gth_test_simple_free_data (test);
 	test->priv->data_type = GTH_TEST_DATA_TYPE_INT;
 	test->priv->data.i = i;
+}
+
+
+void
+gth_test_simple_set_data_as_double (GthTestSimple *test,
+			            gdouble        f)
+{
+	_gth_test_simple_free_data (test);
+	test->priv->data_type = GTH_TEST_DATA_TYPE_DOUBLE;
+	test->priv->data.f = f;
 }
 
 
@@ -1185,7 +1565,7 @@ gth_test_simple_set_data_as_size (GthTestSimple *test,
 {
 	_gth_test_simple_free_data (test);
 	test->priv->data_type = GTH_TEST_DATA_TYPE_SIZE;
-	test->priv->data.i = i;
+	test->priv->data.size = i;
 }
 
 
@@ -1201,3 +1581,4 @@ gth_test_simple_set_data_as_date (GthTestSimple *test,
 	else
 		g_date_clear (test->priv->data.date, 1);
 }
+

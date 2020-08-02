@@ -69,6 +69,7 @@ static void gth_test_gth_duplicable_interface_init (GthDuplicableInterface *ifac
 G_DEFINE_TYPE_WITH_CODE (GthTest,
 		         gth_test,
 		         G_TYPE_OBJECT,
+                 G_ADD_PRIVATE (GthTest)
 		         G_IMPLEMENT_INTERFACE (GTH_TYPE_DUPLICABLE,
 		        		        gth_test_gth_duplicable_interface_init))
 
@@ -112,7 +113,7 @@ base_update_from_control (GthTest   *self,
 
 
 static void
-base_reset (GthTest *self)
+base_focus_control (GthTest *self)
 {
 	/* void */
 }
@@ -196,13 +197,13 @@ gth_test_real_duplicate (GthDuplicable *duplicable)
 
 static void
 gth_test_set_property (GObject      *object,
-		       guint         property_id,
-		       const GValue *value,
-		       GParamSpec   *pspec)
+                       guint         property_id,
+                       const GValue *value,
+                       GParamSpec   *pspec)
 {
 	GthTest *self;
 
-        self = GTH_TEST (object);
+    self = GTH_TEST (object);
 
 	switch (property_id) {
 	case PROP_ID:
@@ -234,13 +235,13 @@ gth_test_set_property (GObject      *object,
 
 static void
 gth_test_get_property (GObject    *object,
-		       guint       property_id,
-		       GValue     *value,
-		       GParamSpec *pspec)
+                       guint       property_id,
+                       GValue     *value,
+                       GParamSpec *pspec)
 {
 	GthTest *self;
 
-        self = GTH_TEST (object);
+    self = GTH_TEST (object);
 
 	switch (property_id) {
 	case PROP_ID:
@@ -277,7 +278,7 @@ gth_test_class_init (GthTestClass *klass)
 	klass->get_attributes = base_get_attributes;
 	klass->create_control = base_create_control;
 	klass->update_from_control = base_update_from_control;
-	klass->reset = base_reset;
+    klass->focus_control = base_focus_control;
 	klass->match = base_match;
 	klass->set_file_list = base_set_file_list;
 	klass->get_next = base_get_next;
@@ -287,31 +288,31 @@ gth_test_class_init (GthTestClass *klass)
 	g_object_class_install_property (object_class,
 					 PROP_ID,
 					 g_param_spec_string ("id",
-                                                              "ID",
-                                                              "The object id",
-                                                              NULL,
-                                                              G_PARAM_READWRITE));
+                                          "ID",
+                                          "The object id",
+                                          NULL,
+                                          G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_ATTRIBUTES,
 					 g_param_spec_string ("attributes",
-                                                              "Attributes",
-                                                              "The attributes required to perform this test",
-                                                              NULL,
-                                                              G_PARAM_READWRITE));
+                                          "Attributes",
+                                          "The attributes required to perform this test",
+                                          NULL,
+                                          G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_DISPLAY_NAME,
 					 g_param_spec_string ("display-name",
-                                                              "Display name",
-                                                              "The user visible name",
-                                                              NULL,
-                                                              G_PARAM_READWRITE));
+                                          "Display name",
+                                          "The user visible name",
+                                          NULL,
+                                          G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_VISIBLE,
 					 g_param_spec_boolean ("visible",
-							       "Visible",
-							       "Whether this test should be visible in the filter bar",
-							       FALSE,
-							       G_PARAM_READWRITE));
+                                           "Visible",
+                                           "Whether this test should be visible in the filter bar",
+                                           FALSE,
+                                           G_PARAM_READWRITE));
 
 	/* signals */
 
@@ -395,20 +396,17 @@ gth_test_update_from_control (GthTest   *self,
 	return GTH_TEST_GET_CLASS (self)->update_from_control (self, error);
 }
 
+void
+gth_test_focus_control (GthTest *self)
+{
+    GTH_TEST_GET_CLASS (self)->focus_control (self);
+}
 
 void
 gth_test_changed (GthTest *self)
 {
 	g_signal_emit (self, gth_test_signals[CHANGED], 0);
 }
-
-
-void
-gth_test_reset (GthTest *self)
-{
-	GTH_TEST_GET_CLASS (self)->reset (self);
-}
-
 
 GthMatch
 gth_test_match (GthTest     *self,
