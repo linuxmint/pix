@@ -1,19 +1,22 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-21 12:27+0100\n"
+"POT-Creation-Date: 2020-08-02 00:03-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Launchpad-Export-Date: 2017-05-23 10:37+0000\n"
-"X-Generator: Launchpad (build 18387)\n"
-"Language: \n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -149,8 +152,8 @@ msgstr ""
 
 #: ../data/org.x.pix.rename-series.gschema.xml.in.h:1
 msgid ""
-"Possible values include: general::unsorted, file::name, file::size, "
-"file::mtime, exif::photo::datetimeoriginal"
+"Possible values include: general::unsorted, file::name, file::size, file::"
+"mtime, exif::photo::datetimeoriginal"
 msgstr ""
 
 #: ../data/ui/extensions-preferences.ui.h:1
@@ -569,7 +572,7 @@ msgstr ""
 msgid "Error interpreting JPEG image file: %s"
 msgstr ""
 
-#: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
+#: ../extensions/cairo_io/cairo-image-surface-jpeg.c:513
 #, c-format
 msgid "Unknown JPEG color space (%d)"
 msgstr ""
@@ -958,12 +961,12 @@ msgstr ""
 
 #: ../extensions/catalogs/dlg-organize-files.c:132
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
-#: ../pix/gth-main-default-tests.c:300
+#: ../pix/gth-main-default-tests.c:317
 msgid "Date photo was taken"
 msgstr ""
 
 #: ../extensions/catalogs/dlg-organize-files.c:139
-#: ../pix/gth-main-default-tests.c:292
+#: ../pix/gth-main-default-tests.c:309
 msgid "File modified date"
 msgstr ""
 
@@ -973,7 +976,7 @@ msgid "Tag"
 msgstr ""
 
 #: ../extensions/catalogs/dlg-organize-files.c:153
-#: ../pix/gth-main-default-tests.c:324
+#: ../pix/gth-main-default-tests.c:341
 msgid "Tag (embedded)"
 msgstr ""
 
@@ -1019,10 +1022,10 @@ msgid "Could not remove the files from the catalog"
 msgstr ""
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:747
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:756
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:786
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:752
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:761
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:791
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:1326
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
 msgstr ""
@@ -1194,8 +1197,7 @@ msgid "Contact Sheet"
 msgstr ""
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
-msgid ""
-"Create an index image displaying the thumbnails of the selected files."
+msgid "Create an index image displaying the thumbnails of the selected files."
 msgstr ""
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
@@ -1974,7 +1976,7 @@ msgstr ""
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:557
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:583
-#: ../extensions/image_print/gth-image-print-job.c:1739
+#: ../extensions/image_print/gth-image-print-job.c:1770
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:607
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:597
 msgid "No valid file selected."
@@ -2071,14 +2073,14 @@ msgstr ""
 msgid "Uploading '%s'"
 msgstr ""
 
-#: ../extensions/facebook/facebook-service.c:959
+#: ../extensions/facebook/facebook-service.c:962
 #: ../extensions/flicker_utils/flickr-service.c:1482
 #: ../extensions/photobucket/photobucket-service.c:714
 #: ../extensions/picasaweb/picasa-web-service.c:1138
 msgid "Uploading the files to the server"
 msgstr ""
 
-#: ../extensions/facebook/facebook-service.c:1058
+#: ../extensions/facebook/facebook-service.c:1061
 #: ../extensions/flicker_utils/flickr-service.c:1651
 #: ../extensions/picasaweb/picasa-web-service.c:1257
 msgid "Getting the photo list"
@@ -2130,12 +2132,12 @@ msgstr ""
 msgid "Could not move the folder to the Trash"
 msgstr ""
 
-#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
+#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:842
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr ""
 
-#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
+#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:855
 msgid "If you delete a file, it will be permanently lost."
 msgstr ""
 
@@ -2414,7 +2416,6 @@ msgid "New dimensions:"
 msgstr ""
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:12
-#: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "pixels"
 msgstr ""
 
@@ -2688,7 +2689,7 @@ msgid "Redo"
 msgstr ""
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:214
-#: ../extensions/resize_images/dlg-resize-images.c:180
+#: ../extensions/resize_images/dlg-resize-images.c:177
 msgid "Resizing images"
 msgstr ""
 
@@ -3054,11 +3055,11 @@ msgstr ""
 msgid "Pause"
 msgstr ""
 
-#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:247
+#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:264
 msgid "Video"
 msgstr ""
 
-#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:254
+#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:271
 msgid "Audio"
 msgstr ""
 
@@ -3182,11 +3183,11 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "millimeters"
 msgstr ""
 
-#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
 msgid "inches"
 msgstr ""
 
@@ -3206,24 +3207,24 @@ msgstr ""
 msgid "Fonts"
 msgstr ""
 
-#: ../extensions/image_print/gth-image-print-job.c:914
+#: ../extensions/image_print/gth-image-print-job.c:912
 #: ../extensions/webalbums/data/albumthemes/text.h:31
 #, c-format
 msgid "Page %d of %d"
 msgstr ""
 
-#: ../extensions/image_print/gth-image-print-job.c:1680
-#: ../extensions/image_print/gth-image-print-job.c:1845
-#: ../extensions/image_print/gth-image-print-job.c:1888
+#: ../extensions/image_print/gth-image-print-job.c:1711
+#: ../extensions/image_print/gth-image-print-job.c:1876
+#: ../extensions/image_print/gth-image-print-job.c:1919
 msgid "Could not print"
 msgstr ""
 
-#: ../extensions/image_print/gth-image-print-job.c:1746
-#: ../pix/gth-main-default-tests.c:240
+#: ../extensions/image_print/gth-image-print-job.c:1777
+#: ../pix/gth-main-default-tests.c:257
 msgid "Images"
 msgstr ""
 
-#: ../extensions/image_print/gth-image-print-job.c:1847
+#: ../extensions/image_print/gth-image-print-job.c:1878
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
@@ -3236,7 +3237,7 @@ msgid "Loading \"%s\""
 msgstr ""
 
 #: ../extensions/image_print/gth-load-image-info-task.c:166
-#: ../extensions/webalbums/gth-web-exporter.c:2721
+#: ../extensions/webalbums/gth-web-exporter.c:2727
 msgid "Loading images"
 msgstr ""
 
@@ -3287,12 +3288,12 @@ msgstr ""
 msgid "Rotate images without data loss."
 msgstr ""
 
-#: ../extensions/image_rotation/rotation-utils.c:105
+#: ../extensions/image_rotation/rotation-utils.c:95
 #, c-format
 msgid "Problem transforming the image: %s"
 msgstr ""
 
-#: ../extensions/image_rotation/rotation-utils.c:110
+#: ../extensions/image_rotation/rotation-utils.c:100
 msgid ""
 "This transformation may introduce small image distortions along one or more "
 "edges, because the image dimensions are not multiples of 8.\n"
@@ -3306,11 +3307,11 @@ msgid ""
 "transformation is not strictly lossless anymore."
 msgstr ""
 
-#: ../extensions/image_rotation/rotation-utils.c:116
+#: ../extensions/image_rotation/rotation-utils.c:106
 msgid "_Trim"
 msgstr ""
 
-#: ../extensions/image_rotation/rotation-utils.c:118
+#: ../extensions/image_rotation/rotation-utils.c:108
 msgid "_Accept distortion"
 msgstr ""
 
@@ -3683,11 +3684,11 @@ msgstr ""
 msgid "Are you sure you want to delete the selected command?"
 msgstr ""
 
-#: ../extensions/list_tools/gth-script.c:610
+#: ../extensions/list_tools/gth-script.c:615
 msgid "Enter a value:"
 msgstr ""
 
-#: ../extensions/list_tools/gth-script.c:745
+#: ../extensions/list_tools/gth-script.c:750
 #: ../extensions/webalbums/gth-web-exporter.c:558
 #: ../extensions/webalbums/gth-web-exporter.c:570
 #: ../extensions/webalbums/gth-web-exporter.c:578
@@ -3748,8 +3749,7 @@ msgstr ""
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
-msgid ""
-"The geographical position information is not available for this image."
+msgid "The geographical position information is not available for this image."
 msgstr ""
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
@@ -4214,7 +4214,7 @@ msgstr ""
 msgid "pixel"
 msgstr ""
 
-#: ../extensions/resize_images/dlg-resize-images.c:423
+#: ../extensions/resize_images/dlg-resize-images.c:420
 msgid "Keep the original format"
 msgstr ""
 
@@ -4364,7 +4364,7 @@ msgstr ""
 msgid "Remove the selected files"
 msgstr ""
 
-#: ../extensions/slideshow/gth-slideshow.c:233
+#: ../extensions/slideshow/gth-slideshow.c:234
 msgid "Playing slideshow"
 msgstr ""
 
@@ -4558,11 +4558,11 @@ msgstr ""
 msgid "Copying original images"
 msgstr ""
 
-#: ../extensions/webalbums/gth-web-exporter.c:2965
+#: ../extensions/webalbums/gth-web-exporter.c:2971
 msgid "Could not find the style folder"
 msgstr ""
 
-#: ../extensions/webalbums/gth-web-exporter.c:3003
+#: ../extensions/webalbums/gth-web-exporter.c:3009
 msgid "Could not create a temporary folder"
 msgstr ""
 
@@ -4695,7 +4695,7 @@ msgstr ""
 #. * hours, 5 minutes, and 2 seconds. You may change ":" to
 #. * the separator that your locale uses or use "%Id" instead
 #. * of "%d" if your locale uses localized digits.
-#. 
+#.
 #: ../pix/glib-utils.c:3068
 #, c-format
 msgctxt "long time format"
@@ -4707,7 +4707,7 @@ msgstr ""
 #. * minutes and 2 seconds. You may change ":" to the
 #. * separator that your locale uses or use "%Id" instead of
 #. * "%d" if your locale uses localized digits.
-#. 
+#.
 #: ../pix/glib-utils.c:3077
 #, c-format
 msgctxt "short time format"
@@ -5099,7 +5099,7 @@ msgid_plural "Are you sure you want to move to trash the %'d selected files?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pix/gth-file-source-vfs.c:844
+#: ../pix/gth-file-source-vfs.c:845
 #, c-format
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
@@ -5209,7 +5209,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:301
 msgid "Size"
 msgstr ""
 
@@ -5249,28 +5249,32 @@ msgstr ""
 msgid "dimensions"
 msgstr ""
 
-#: ../pix/gth-main-default-tests.c:233
+#: ../pix/gth-main-default-tests.c:250
 msgid "All Files"
 msgstr ""
 
-#: ../pix/gth-main-default-tests.c:261
+#: ../pix/gth-main-default-tests.c:278
 msgid "Media"
 msgstr ""
 
-#: ../pix/gth-main-default-tests.c:268
+#: ../pix/gth-main-default-tests.c:285
 msgid "Text Files"
 msgstr ""
 
-#: ../pix/gth-main-default-tests.c:276
+#: ../pix/gth-main-default-tests.c:293
 msgid "Filename"
 msgstr ""
 
-#: ../pix/gth-main-default-tests.c:308
+#: ../pix/gth-main-default-tests.c:325
 msgid "Title (embedded)"
 msgstr ""
 
-#: ../pix/gth-main-default-tests.c:316
+#: ../pix/gth-main-default-tests.c:333
 msgid "Description (embedded)"
+msgstr ""
+
+#: ../pix/gth-main-default-tests.c:347
+msgid "Rating (embedded)"
 msgstr ""
 
 #: ../pix/gth-progress-dialog.c:146

@@ -8,11 +8,17 @@
 
 #define yy_create_buffer gth_albumtheme_yy_create_buffer
 #define yy_delete_buffer gth_albumtheme_yy_delete_buffer
-#define yy_flex_debug gth_albumtheme_yy_flex_debug
+#define yy_scan_buffer gth_albumtheme_yy_scan_buffer
+#define yy_scan_string gth_albumtheme_yy_scan_string
+#define yy_scan_bytes gth_albumtheme_yy_scan_bytes
 #define yy_init_buffer gth_albumtheme_yy_init_buffer
 #define yy_flush_buffer gth_albumtheme_yy_flush_buffer
 #define yy_load_buffer_state gth_albumtheme_yy_load_buffer_state
 #define yy_switch_to_buffer gth_albumtheme_yy_switch_to_buffer
+#define yypush_buffer_state gth_albumtheme_yypush_buffer_state
+#define yypop_buffer_state gth_albumtheme_yypop_buffer_state
+#define yyensure_buffer_stack gth_albumtheme_yyensure_buffer_stack
+#define yy_flex_debug gth_albumtheme_yy_flex_debug
 #define yyin gth_albumtheme_yyin
 #define yyleng gth_albumtheme_yyleng
 #define yylex gth_albumtheme_yylex
@@ -28,9 +34,243 @@
 #define FLEX_SCANNER
 #define YY_FLEX_MAJOR_VERSION 2
 #define YY_FLEX_MINOR_VERSION 6
-#define YY_FLEX_SUBMINOR_VERSION 0
+#define YY_FLEX_SUBMINOR_VERSION 4
 #if YY_FLEX_SUBMINOR_VERSION > 0
 #define FLEX_BETA
+#endif
+
+#ifdef yy_create_buffer
+#define gth_albumtheme_yy_create_buffer_ALREADY_DEFINED
+#else
+#define yy_create_buffer gth_albumtheme_yy_create_buffer
+#endif
+
+#ifdef yy_delete_buffer
+#define gth_albumtheme_yy_delete_buffer_ALREADY_DEFINED
+#else
+#define yy_delete_buffer gth_albumtheme_yy_delete_buffer
+#endif
+
+#ifdef yy_scan_buffer
+#define gth_albumtheme_yy_scan_buffer_ALREADY_DEFINED
+#else
+#define yy_scan_buffer gth_albumtheme_yy_scan_buffer
+#endif
+
+#ifdef yy_scan_string
+#define gth_albumtheme_yy_scan_string_ALREADY_DEFINED
+#else
+#define yy_scan_string gth_albumtheme_yy_scan_string
+#endif
+
+#ifdef yy_scan_bytes
+#define gth_albumtheme_yy_scan_bytes_ALREADY_DEFINED
+#else
+#define yy_scan_bytes gth_albumtheme_yy_scan_bytes
+#endif
+
+#ifdef yy_init_buffer
+#define gth_albumtheme_yy_init_buffer_ALREADY_DEFINED
+#else
+#define yy_init_buffer gth_albumtheme_yy_init_buffer
+#endif
+
+#ifdef yy_flush_buffer
+#define gth_albumtheme_yy_flush_buffer_ALREADY_DEFINED
+#else
+#define yy_flush_buffer gth_albumtheme_yy_flush_buffer
+#endif
+
+#ifdef yy_load_buffer_state
+#define gth_albumtheme_yy_load_buffer_state_ALREADY_DEFINED
+#else
+#define yy_load_buffer_state gth_albumtheme_yy_load_buffer_state
+#endif
+
+#ifdef yy_switch_to_buffer
+#define gth_albumtheme_yy_switch_to_buffer_ALREADY_DEFINED
+#else
+#define yy_switch_to_buffer gth_albumtheme_yy_switch_to_buffer
+#endif
+
+#ifdef yypush_buffer_state
+#define gth_albumtheme_yypush_buffer_state_ALREADY_DEFINED
+#else
+#define yypush_buffer_state gth_albumtheme_yypush_buffer_state
+#endif
+
+#ifdef yypop_buffer_state
+#define gth_albumtheme_yypop_buffer_state_ALREADY_DEFINED
+#else
+#define yypop_buffer_state gth_albumtheme_yypop_buffer_state
+#endif
+
+#ifdef yyensure_buffer_stack
+#define gth_albumtheme_yyensure_buffer_stack_ALREADY_DEFINED
+#else
+#define yyensure_buffer_stack gth_albumtheme_yyensure_buffer_stack
+#endif
+
+#ifdef yylex
+#define gth_albumtheme_yylex_ALREADY_DEFINED
+#else
+#define yylex gth_albumtheme_yylex
+#endif
+
+#ifdef yyrestart
+#define gth_albumtheme_yyrestart_ALREADY_DEFINED
+#else
+#define yyrestart gth_albumtheme_yyrestart
+#endif
+
+#ifdef yylex_init
+#define gth_albumtheme_yylex_init_ALREADY_DEFINED
+#else
+#define yylex_init gth_albumtheme_yylex_init
+#endif
+
+#ifdef yylex_init_extra
+#define gth_albumtheme_yylex_init_extra_ALREADY_DEFINED
+#else
+#define yylex_init_extra gth_albumtheme_yylex_init_extra
+#endif
+
+#ifdef yylex_destroy
+#define gth_albumtheme_yylex_destroy_ALREADY_DEFINED
+#else
+#define yylex_destroy gth_albumtheme_yylex_destroy
+#endif
+
+#ifdef yyget_debug
+#define gth_albumtheme_yyget_debug_ALREADY_DEFINED
+#else
+#define yyget_debug gth_albumtheme_yyget_debug
+#endif
+
+#ifdef yyset_debug
+#define gth_albumtheme_yyset_debug_ALREADY_DEFINED
+#else
+#define yyset_debug gth_albumtheme_yyset_debug
+#endif
+
+#ifdef yyget_extra
+#define gth_albumtheme_yyget_extra_ALREADY_DEFINED
+#else
+#define yyget_extra gth_albumtheme_yyget_extra
+#endif
+
+#ifdef yyset_extra
+#define gth_albumtheme_yyset_extra_ALREADY_DEFINED
+#else
+#define yyset_extra gth_albumtheme_yyset_extra
+#endif
+
+#ifdef yyget_in
+#define gth_albumtheme_yyget_in_ALREADY_DEFINED
+#else
+#define yyget_in gth_albumtheme_yyget_in
+#endif
+
+#ifdef yyset_in
+#define gth_albumtheme_yyset_in_ALREADY_DEFINED
+#else
+#define yyset_in gth_albumtheme_yyset_in
+#endif
+
+#ifdef yyget_out
+#define gth_albumtheme_yyget_out_ALREADY_DEFINED
+#else
+#define yyget_out gth_albumtheme_yyget_out
+#endif
+
+#ifdef yyset_out
+#define gth_albumtheme_yyset_out_ALREADY_DEFINED
+#else
+#define yyset_out gth_albumtheme_yyset_out
+#endif
+
+#ifdef yyget_leng
+#define gth_albumtheme_yyget_leng_ALREADY_DEFINED
+#else
+#define yyget_leng gth_albumtheme_yyget_leng
+#endif
+
+#ifdef yyget_text
+#define gth_albumtheme_yyget_text_ALREADY_DEFINED
+#else
+#define yyget_text gth_albumtheme_yyget_text
+#endif
+
+#ifdef yyget_lineno
+#define gth_albumtheme_yyget_lineno_ALREADY_DEFINED
+#else
+#define yyget_lineno gth_albumtheme_yyget_lineno
+#endif
+
+#ifdef yyset_lineno
+#define gth_albumtheme_yyset_lineno_ALREADY_DEFINED
+#else
+#define yyset_lineno gth_albumtheme_yyset_lineno
+#endif
+
+#ifdef yywrap
+#define gth_albumtheme_yywrap_ALREADY_DEFINED
+#else
+#define yywrap gth_albumtheme_yywrap
+#endif
+
+#ifdef yyalloc
+#define gth_albumtheme_yyalloc_ALREADY_DEFINED
+#else
+#define yyalloc gth_albumtheme_yyalloc
+#endif
+
+#ifdef yyrealloc
+#define gth_albumtheme_yyrealloc_ALREADY_DEFINED
+#else
+#define yyrealloc gth_albumtheme_yyrealloc
+#endif
+
+#ifdef yyfree
+#define gth_albumtheme_yyfree_ALREADY_DEFINED
+#else
+#define yyfree gth_albumtheme_yyfree
+#endif
+
+#ifdef yytext
+#define gth_albumtheme_yytext_ALREADY_DEFINED
+#else
+#define yytext gth_albumtheme_yytext
+#endif
+
+#ifdef yyleng
+#define gth_albumtheme_yyleng_ALREADY_DEFINED
+#else
+#define yyleng gth_albumtheme_yyleng
+#endif
+
+#ifdef yyin
+#define gth_albumtheme_yyin_ALREADY_DEFINED
+#else
+#define yyin gth_albumtheme_yyin
+#endif
+
+#ifdef yyout
+#define gth_albumtheme_yyout_ALREADY_DEFINED
+#else
+#define yyout gth_albumtheme_yyout
+#endif
+
+#ifdef yy_flex_debug
+#define gth_albumtheme_yy_flex_debug_ALREADY_DEFINED
+#else
+#define yy_flex_debug gth_albumtheme_yy_flex_debug
+#endif
+
+#ifdef yylineno
+#define gth_albumtheme_yylineno_ALREADY_DEFINED
+#else
+#define yylineno gth_albumtheme_yylineno
 #endif
 
 /* First, we deal with  platform-specific or compiler-specific issues. */
@@ -103,60 +343,48 @@ typedef unsigned int flex_uint32_t;
 #define UINT32_MAX             (4294967295U)
 #endif
 
+#ifndef SIZE_MAX
+#define SIZE_MAX               (~(size_t)0)
+#endif
+
 #endif /* ! C99 */
 
 #endif /* ! FLEXINT_H */
 
-#ifdef __cplusplus
+/* begin standard C++ headers. */
 
-/* The "const" storage-class-modifier is valid. */
-#define YY_USE_CONST
-
-#else	/* ! __cplusplus */
-
-/* C99 requires __STDC__ to be defined as 1. */
-#if defined (__STDC__)
-
-#define YY_USE_CONST
-
-#endif	/* defined (__STDC__) */
-#endif	/* ! __cplusplus */
-
-#ifdef YY_USE_CONST
+/* TODO: this is always defined, so inline it */
 #define yyconst const
+
+#if defined(__GNUC__) && __GNUC__ >= 3
+#define yynoreturn __attribute__((__noreturn__))
 #else
-#define yyconst
+#define yynoreturn
 #endif
 
 /* Returned upon end-of-file. */
 #define YY_NULL 0
 
-/* Promotes a possibly negative, possibly signed char to an unsigned
- * integer for use as an array index.  If the signed char is negative,
- * we want to instead treat it as an 8-bit unsigned char, hence the
- * double cast.
+/* Promotes a possibly negative, possibly signed char to an
+ *   integer in range [0..255] for use as an array index.
  */
-#define YY_SC_TO_UI(c) ((unsigned int) (unsigned char) c)
+#define YY_SC_TO_UI(c) ((YY_CHAR) (c))
 
 /* Enter a start condition.  This macro really ought to take a parameter,
  * but we do it the disgusting crufty way forced on us by the ()-less
  * definition of BEGIN.
  */
 #define BEGIN (yy_start) = 1 + 2 *
-
 /* Translate the current start state into a value that can be later handed
  * to BEGIN to return to the state.  The YYSTATE alias is for lex
  * compatibility.
  */
 #define YY_START (((yy_start) - 1) / 2)
 #define YYSTATE YY_START
-
 /* Action number for EOF rule of a given start state. */
 #define YY_STATE_EOF(state) (YY_END_OF_BUFFER + state + 1)
-
 /* Special action meaning "start processing a new file". */
-#define YY_NEW_FILE gth_albumtheme_yyrestart(gth_albumtheme_yyin  )
-
+#define YY_NEW_FILE yyrestart( yyin  )
 #define YY_END_OF_BUFFER_CHAR 0
 
 /* Size of default input buffer. */
@@ -186,14 +414,14 @@ typedef struct yy_buffer_state *YY_BUFFER_STATE;
 typedef size_t yy_size_t;
 #endif
 
-extern yy_size_t gth_albumtheme_yyleng;
+extern int yyleng;
 
-extern FILE *gth_albumtheme_yyin, *gth_albumtheme_yyout;
+extern FILE *yyin, *yyout;
 
 #define EOB_ACT_CONTINUE_SCAN 0
 #define EOB_ACT_END_OF_FILE 1
 #define EOB_ACT_LAST_MATCH 2
-
+    
     #define YY_LESS_LINENO(n)
     #define YY_LINENO_REWIND_TO(ptr)
     
@@ -201,16 +429,15 @@ extern FILE *gth_albumtheme_yyin, *gth_albumtheme_yyout;
 #define yyless(n) \
 	do \
 		{ \
-		/* Undo effects of setting up gth_albumtheme_yytext. */ \
+		/* Undo effects of setting up yytext. */ \
         int yyless_macro_arg = (n); \
         YY_LESS_LINENO(yyless_macro_arg);\
 		*yy_cp = (yy_hold_char); \
 		YY_RESTORE_YY_MORE_OFFSET \
 		(yy_c_buf_p) = yy_cp = yy_bp + yyless_macro_arg - YY_MORE_ADJ; \
-		YY_DO_BEFORE_ACTION; /* set up gth_albumtheme_yytext again */ \
+		YY_DO_BEFORE_ACTION; /* set up yytext again */ \
 		} \
 	while ( 0 )
-
 #define unput(c) yyunput( c, (yytext_ptr)  )
 
 #ifndef YY_STRUCT_YY_BUFFER_STATE
@@ -225,7 +452,7 @@ struct yy_buffer_state
 	/* Size of input buffer in bytes, not including room for EOB
 	 * characters.
 	 */
-	yy_size_t yy_buf_size;
+	int yy_buf_size;
 
 	/* Number of characters read into yy_ch_buf, not including EOB
 	 * characters.
@@ -253,7 +480,7 @@ struct yy_buffer_state
 
     int yy_bs_lineno; /**< The line count. */
     int yy_bs_column; /**< The column count. */
-    
+
 	/* Whether to try to fill the input buffer when we reach the
 	 * end of it.
 	 */
@@ -270,8 +497,8 @@ struct yy_buffer_state
 	 * possible backing-up.
 	 *
 	 * When we actually see the EOF, we change the status to "new"
-	 * (via gth_albumtheme_yyrestart()), so that the user can continue scanning by
-	 * just pointing gth_albumtheme_yyin at a new input file.
+	 * (via yyrestart()), so that the user can continue scanning by
+	 * just pointing yyin at a new input file.
 	 */
 #define YY_BUFFER_EOF_PENDING 2
 
@@ -281,7 +508,7 @@ struct yy_buffer_state
 /* Stack of input buffers. */
 static size_t yy_buffer_stack_top = 0; /**< index of top of stack. */
 static size_t yy_buffer_stack_max = 0; /**< capacity of stack. */
-static YY_BUFFER_STATE * yy_buffer_stack = 0; /**< Stack as an array. */
+static YY_BUFFER_STATE * yy_buffer_stack = NULL; /**< Stack as an array. */
 
 /* We provide macros for accessing buffer states in case in the
  * future we want to put the buffer states in a more general
@@ -292,109 +519,98 @@ static YY_BUFFER_STATE * yy_buffer_stack = 0; /**< Stack as an array. */
 #define YY_CURRENT_BUFFER ( (yy_buffer_stack) \
                           ? (yy_buffer_stack)[(yy_buffer_stack_top)] \
                           : NULL)
-
 /* Same as previous macro, but useful when we know that the buffer stack is not
  * NULL or when we need an lvalue. For internal use only.
  */
 #define YY_CURRENT_BUFFER_LVALUE (yy_buffer_stack)[(yy_buffer_stack_top)]
 
-/* yy_hold_char holds the character lost when gth_albumtheme_yytext is formed. */
+/* yy_hold_char holds the character lost when yytext is formed. */
 static char yy_hold_char;
 static int yy_n_chars;		/* number of characters read into yy_ch_buf */
-yy_size_t gth_albumtheme_yyleng;
+int yyleng;
 
 /* Points to current character in buffer. */
-static char *yy_c_buf_p = (char *) 0;
+static char *yy_c_buf_p = NULL;
 static int yy_init = 0;		/* whether we need to initialize */
 static int yy_start = 0;	/* start state number */
 
-/* Flag which is used to allow gth_albumtheme_yywrap()'s to do buffer switches
- * instead of setting up a fresh gth_albumtheme_yyin.  A bit of a hack ...
+/* Flag which is used to allow yywrap()'s to do buffer switches
+ * instead of setting up a fresh yyin.  A bit of a hack ...
  */
 static int yy_did_buffer_switch_on_eof;
 
-void gth_albumtheme_yyrestart (FILE *input_file  );
-void gth_albumtheme_yy_switch_to_buffer (YY_BUFFER_STATE new_buffer  );
-YY_BUFFER_STATE gth_albumtheme_yy_create_buffer (FILE *file,int size  );
-void gth_albumtheme_yy_delete_buffer (YY_BUFFER_STATE b  );
-void gth_albumtheme_yy_flush_buffer (YY_BUFFER_STATE b  );
-void gth_albumtheme_yypush_buffer_state (YY_BUFFER_STATE new_buffer  );
-void gth_albumtheme_yypop_buffer_state (void );
+void yyrestart ( FILE *input_file  );
+void yy_switch_to_buffer ( YY_BUFFER_STATE new_buffer  );
+YY_BUFFER_STATE yy_create_buffer ( FILE *file, int size  );
+void yy_delete_buffer ( YY_BUFFER_STATE b  );
+void yy_flush_buffer ( YY_BUFFER_STATE b  );
+void yypush_buffer_state ( YY_BUFFER_STATE new_buffer  );
+void yypop_buffer_state ( void );
 
-static void gth_albumtheme_yyensure_buffer_stack (void );
-static void gth_albumtheme_yy_load_buffer_state (void );
-static void gth_albumtheme_yy_init_buffer (YY_BUFFER_STATE b,FILE *file  );
+static void yyensure_buffer_stack ( void );
+static void yy_load_buffer_state ( void );
+static void yy_init_buffer ( YY_BUFFER_STATE b, FILE *file  );
+#define YY_FLUSH_BUFFER yy_flush_buffer( YY_CURRENT_BUFFER )
 
-#define YY_FLUSH_BUFFER gth_albumtheme_yy_flush_buffer(YY_CURRENT_BUFFER )
+YY_BUFFER_STATE yy_scan_buffer ( char *base, yy_size_t size  );
+YY_BUFFER_STATE yy_scan_string ( const char *yy_str  );
+YY_BUFFER_STATE yy_scan_bytes ( const char *bytes, int len  );
 
-YY_BUFFER_STATE gth_albumtheme_yy_scan_buffer (char *base,yy_size_t size  );
-YY_BUFFER_STATE gth_albumtheme_yy_scan_string (yyconst char *yy_str  );
-YY_BUFFER_STATE gth_albumtheme_yy_scan_bytes (yyconst char *bytes,yy_size_t len  );
+void *yyalloc ( yy_size_t  );
+void *yyrealloc ( void *, yy_size_t  );
+void yyfree ( void *  );
 
-void *gth_albumtheme_yyalloc (yy_size_t  );
-void *gth_albumtheme_yyrealloc (void *,yy_size_t  );
-void gth_albumtheme_yyfree (void *  );
-
-#define yy_new_buffer gth_albumtheme_yy_create_buffer
-
+#define yy_new_buffer yy_create_buffer
 #define yy_set_interactive(is_interactive) \
 	{ \
 	if ( ! YY_CURRENT_BUFFER ){ \
-        gth_albumtheme_yyensure_buffer_stack (); \
+        yyensure_buffer_stack (); \
 		YY_CURRENT_BUFFER_LVALUE =    \
-            gth_albumtheme_yy_create_buffer(gth_albumtheme_yyin,YY_BUF_SIZE ); \
+            yy_create_buffer( yyin, YY_BUF_SIZE ); \
 	} \
 	YY_CURRENT_BUFFER_LVALUE->yy_is_interactive = is_interactive; \
 	}
-
 #define yy_set_bol(at_bol) \
 	{ \
 	if ( ! YY_CURRENT_BUFFER ){\
-        gth_albumtheme_yyensure_buffer_stack (); \
+        yyensure_buffer_stack (); \
 		YY_CURRENT_BUFFER_LVALUE =    \
-            gth_albumtheme_yy_create_buffer(gth_albumtheme_yyin,YY_BUF_SIZE ); \
+            yy_create_buffer( yyin, YY_BUF_SIZE ); \
 	} \
 	YY_CURRENT_BUFFER_LVALUE->yy_at_bol = at_bol; \
 	}
-
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
 /* Begin user sect3 */
+typedef flex_uint8_t YY_CHAR;
 
-typedef unsigned char YY_CHAR;
-
-FILE *gth_albumtheme_yyin = (FILE *) 0, *gth_albumtheme_yyout = (FILE *) 0;
+FILE *yyin = NULL, *yyout = NULL;
 
 typedef int yy_state_type;
 
-extern int gth_albumtheme_yylineno;
+extern int yylineno;
+int yylineno = 1;
 
-int gth_albumtheme_yylineno = 1;
-
-extern char *gth_albumtheme_yytext;
+extern char *yytext;
 #ifdef yytext_ptr
 #undef yytext_ptr
 #endif
-#define yytext_ptr gth_albumtheme_yytext
+#define yytext_ptr yytext
 
-static yy_state_type yy_get_previous_state (void );
-static yy_state_type yy_try_NUL_trans (yy_state_type current_state  );
-static int yy_get_next_buffer (void );
-#if defined(__GNUC__) && __GNUC__ >= 3
-__attribute__((__noreturn__))
-#endif
-static void yy_fatal_error (yyconst char msg[]  );
+static yy_state_type yy_get_previous_state ( void );
+static yy_state_type yy_try_NUL_trans ( yy_state_type current_state  );
+static int yy_get_next_buffer ( void );
+static void yynoreturn yy_fatal_error ( const char* msg  );
 
 /* Done after the current pattern has been matched and before the
- * corresponding action - sets up gth_albumtheme_yytext.
+ * corresponding action - sets up yytext.
  */
 #define YY_DO_BEFORE_ACTION \
 	(yytext_ptr) = yy_bp; \
-	gth_albumtheme_yyleng = (size_t) (yy_cp - yy_bp); \
+	yyleng = (int) (yy_cp - yy_bp); \
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-
 #define YY_NUM_RULES 41
 #define YY_END_OF_BUFFER 42
 /* This struct is not used in this scanner,
@@ -404,7 +620,7 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[186] =
+static const flex_int16_t yy_accept[186] =
     {   0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
        11,   11,   42,   40,   39,   41,    8,   38,   12,   41,
@@ -428,7 +644,7 @@ static yyconst flex_int16_t yy_accept[186] =
        40,   40,   40,   40,    0
     } ;
 
-static yyconst YY_CHAR yy_ec[256] =
+static const YY_CHAR yy_ec[256] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    2,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -460,7 +676,7 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst YY_CHAR yy_meta[39] =
+static const YY_CHAR yy_meta[39] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    2,    1,    1,
         1,    1,    1,    3,    4,    1,    4,    4,    5,    1,
@@ -468,7 +684,7 @@ static yyconst YY_CHAR yy_meta[39] =
         4,    4,    4,    4,    4,    4,    4,    1
     } ;
 
-static yyconst flex_uint16_t yy_base[291] =
+static const flex_int16_t yy_base[291] =
     {   0,
       558,  557,    0,    0,   38,    0,   76,    0,  110,  112,
       567,  566,  573,    0,  566,  578,    0,  578,  578,  550,
@@ -503,7 +719,7 @@ static yyconst flex_uint16_t yy_base[291] =
       511,  515,  519,  523,  527,  531,  535,  539,  543,  547
     } ;
 
-static yyconst flex_int16_t yy_def[291] =
+static const flex_int16_t yy_def[291] =
     {   0,
       186,  186,  185,    3,  185,    5,  185,    7,    7,    7,
       187,  187,  185,  188,  185,  185,  189,  185,  185,  185,
@@ -538,7 +754,7 @@ static yyconst flex_int16_t yy_def[291] =
       185,  185,  185,  185,  185,  185,  185,  185,  185,  185
     } ;
 
-static yyconst flex_uint16_t yy_nxt[617] =
+static const flex_int16_t yy_nxt[617] =
     {   0,
        16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
        16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
@@ -610,7 +826,7 @@ static yyconst flex_uint16_t yy_nxt[617] =
       185,  185,  185,  185,  185,  185
     } ;
 
-static yyconst flex_int16_t yy_chk[617] =
+static const flex_int16_t yy_chk[617] =
     {   0,
         3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
         3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
@@ -685,8 +901,8 @@ static yyconst flex_int16_t yy_chk[617] =
 static yy_state_type yy_last_accepting_state;
 static char *yy_last_accepting_cpos;
 
-extern int gth_albumtheme_yy_flex_debug;
-int gth_albumtheme_yy_flex_debug = 0;
+extern int yy_flex_debug;
+int yy_flex_debug = 0;
 
 /* The intent behind this definition is that it'll catch
  * any uses of REJECT which flex missed.
@@ -695,7 +911,7 @@ int gth_albumtheme_yy_flex_debug = 0;
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-char *gth_albumtheme_yytext;
+char *yytext;
 #line 1 "albumtheme.l"
 #line 2 "albumtheme.l"
 /*
@@ -732,9 +948,10 @@ GFileInputStream *yy_istream;
 
 static int before_string = 0; /* the start condition before entering in STRING */
 
+#line 952 "albumtheme-lex.c"
 #define YY_NO_INPUT 1
 
-#line 738 "albumtheme-lex.c"
+#line 955 "albumtheme-lex.c"
 
 #define INITIAL 0
 #define FUNCTION 1
@@ -755,36 +972,36 @@ static int before_string = 0; /* the start condition before entering in STRING *
 #define YY_EXTRA_TYPE void *
 #endif
 
-static int yy_init_globals (void );
+static int yy_init_globals ( void );
 
 /* Accessor methods to globals.
    These are made visible to non-reentrant scanners for convenience. */
 
-int gth_albumtheme_yylex_destroy (void );
+int yylex_destroy ( void );
 
-int gth_albumtheme_yyget_debug (void );
+int yyget_debug ( void );
 
-void gth_albumtheme_yyset_debug (int debug_flag  );
+void yyset_debug ( int debug_flag  );
 
-YY_EXTRA_TYPE gth_albumtheme_yyget_extra (void );
+YY_EXTRA_TYPE yyget_extra ( void );
 
-void gth_albumtheme_yyset_extra (YY_EXTRA_TYPE user_defined  );
+void yyset_extra ( YY_EXTRA_TYPE user_defined  );
 
-FILE *gth_albumtheme_yyget_in (void );
+FILE *yyget_in ( void );
 
-void gth_albumtheme_yyset_in  (FILE * _in_str  );
+void yyset_in  ( FILE * _in_str  );
 
-FILE *gth_albumtheme_yyget_out (void );
+FILE *yyget_out ( void );
 
-void gth_albumtheme_yyset_out  (FILE * _out_str  );
+void yyset_out  ( FILE * _out_str  );
 
-yy_size_t gth_albumtheme_yyget_leng (void );
+			int yyget_leng ( void );
 
-char *gth_albumtheme_yyget_text (void );
+char *yyget_text ( void );
 
-int gth_albumtheme_yyget_lineno (void );
+int yyget_lineno ( void );
 
-void gth_albumtheme_yyset_lineno (int _line_number  );
+void yyset_lineno ( int _line_number  );
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -792,9 +1009,9 @@ void gth_albumtheme_yyset_lineno (int _line_number  );
 
 #ifndef YY_SKIP_YYWRAP
 #ifdef __cplusplus
-extern "C" int gth_albumtheme_yywrap (void );
+extern "C" int yywrap ( void );
 #else
-extern int gth_albumtheme_yywrap (void );
+extern int yywrap ( void );
 #endif
 #endif
 
@@ -803,19 +1020,18 @@ extern int gth_albumtheme_yywrap (void );
 #endif
 
 #ifndef yytext_ptr
-static void yy_flex_strncpy (char *,yyconst char *,int );
+static void yy_flex_strncpy ( char *, const char *, int );
 #endif
 
 #ifdef YY_NEED_STRLEN
-static int yy_flex_strlen (yyconst char * );
+static int yy_flex_strlen ( const char * );
 #endif
 
 #ifndef YY_NO_INPUT
-
 #ifdef __cplusplus
-static int yyinput (void );
+static int yyinput ( void );
 #else
-static int input (void );
+static int input ( void );
 #endif
 
 #endif
@@ -835,7 +1051,7 @@ static int input (void );
 /* This used to be an fputs(), but since the string might contain NUL's,
  * we now use fwrite().
  */
-#define ECHO do { if (fwrite( gth_albumtheme_yytext, gth_albumtheme_yyleng, 1, gth_albumtheme_yyout )) {} } while (0)
+#define ECHO do { if (fwrite( yytext, (size_t) yyleng, 1, yyout )) {} } while (0)
 #endif
 
 /* Gets input and stuffs it into "buf".  number of characters read, or YY_NULL,
@@ -846,20 +1062,20 @@ static int input (void );
 	if ( YY_CURRENT_BUFFER_LVALUE->yy_is_interactive ) \
 		{ \
 		int c = '*'; \
-		size_t n; \
+		int n; \
 		for ( n = 0; n < max_size && \
-			     (c = getc( gth_albumtheme_yyin )) != EOF && c != '\n'; ++n ) \
+			     (c = getc( yyin )) != EOF && c != '\n'; ++n ) \
 			buf[n] = (char) c; \
 		if ( c == '\n' ) \
 			buf[n++] = (char) c; \
-		if ( c == EOF && ferror( gth_albumtheme_yyin ) ) \
+		if ( c == EOF && ferror( yyin ) ) \
 			YY_FATAL_ERROR( "input in flex scanner failed" ); \
 		result = n; \
 		} \
 	else \
 		{ \
 		errno=0; \
-		while ( (result = fread(buf, 1, max_size, gth_albumtheme_yyin))==0 && ferror(gth_albumtheme_yyin)) \
+		while ( (result = (int) fread(buf, 1, (yy_size_t) max_size, yyin)) == 0 && ferror(yyin)) \
 			{ \
 			if( errno != EINTR) \
 				{ \
@@ -867,7 +1083,7 @@ static int input (void );
 				break; \
 				} \
 			errno=0; \
-			clearerr(gth_albumtheme_yyin); \
+			clearerr(yyin); \
 			} \
 		}\
 \
@@ -900,12 +1116,12 @@ static int input (void );
 #ifndef YY_DECL
 #define YY_DECL_IS_OURS 1
 
-extern int gth_albumtheme_yylex (void);
+extern int yylex (void);
 
-#define YY_DECL int gth_albumtheme_yylex (void)
+#define YY_DECL int yylex (void)
 #endif /* !YY_DECL */
 
-/* Code executed at the beginning of each rule, after gth_albumtheme_yytext and gth_albumtheme_yyleng
+/* Code executed at the beginning of each rule, after yytext and yyleng
  * have been set up.
  */
 #ifndef YY_USER_ACTION
@@ -939,32 +1155,32 @@ YY_DECL
 		if ( ! (yy_start) )
 			(yy_start) = 1;	/* first start state */
 
-		if ( ! gth_albumtheme_yyin )
-			gth_albumtheme_yyin = stdin;
+		if ( ! yyin )
+			yyin = stdin;
 
-		if ( ! gth_albumtheme_yyout )
-			gth_albumtheme_yyout = stdout;
+		if ( ! yyout )
+			yyout = stdout;
 
 		if ( ! YY_CURRENT_BUFFER ) {
-			gth_albumtheme_yyensure_buffer_stack ();
+			yyensure_buffer_stack ();
 			YY_CURRENT_BUFFER_LVALUE =
-				gth_albumtheme_yy_create_buffer(gth_albumtheme_yyin,YY_BUF_SIZE );
+				yy_create_buffer( yyin, YY_BUF_SIZE );
 		}
 
-		gth_albumtheme_yy_load_buffer_state( );
+		yy_load_buffer_state(  );
 		}
 
 	{
 #line 47 "albumtheme.l"
 
 
-#line 962 "albumtheme-lex.c"
+#line 1178 "albumtheme-lex.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
 		yy_cp = (yy_c_buf_p);
 
-		/* Support of gth_albumtheme_yytext. */
+		/* Support of yytext. */
 		*yy_cp = (yy_hold_char);
 
 		/* yy_bp points to the position in yy_ch_buf of the start of
@@ -986,9 +1202,9 @@ yy_match:
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
 				if ( yy_current_state >= 186 )
-					yy_c = yy_meta[(unsigned int) yy_c];
+					yy_c = yy_meta[yy_c];
 				}
-			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
+			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
 		while ( yy_base[yy_current_state] != 578 );
@@ -1076,11 +1292,11 @@ case 8:
 YY_RULE_SETUP
 #line 78 "albumtheme.l"
 {
-					if (g_str_equal (gth_albumtheme_yytext, "eval") || g_str_equal (gth_albumtheme_yytext, "translate")) 
+					if (g_str_equal (yytext, "eval") || g_str_equal (yytext, "translate")) 
 						BEGIN (CONDITION);
 					else
 						BEGIN (ATTRIBUTES);
-					yylval.text = g_strdup (gth_albumtheme_yytext);
+					yylval.text = g_strdup (yytext);
 					return FUNCTION_NAME;
 				}
 	YY_BREAK
@@ -1106,7 +1322,7 @@ case 11:
 YY_RULE_SETUP
 #line 95 "albumtheme.l"
 {
-					yylval.text = g_strdup (gth_albumtheme_yytext);
+					yylval.text = g_strdup (yytext);
 					return QUOTED_STRING;
 				}
 	YY_BREAK
@@ -1138,7 +1354,7 @@ case 15:
 YY_RULE_SETUP
 #line 111 "albumtheme.l"
 {
-					yylval.text = g_strdup (gth_albumtheme_yytext);
+					yylval.text = g_strdup (yytext);
 					return ATTRIBUTE_NAME;
 				}
 	YY_BREAK
@@ -1294,7 +1510,7 @@ case 36:
 YY_RULE_SETUP
 #line 183 "albumtheme.l"
 {
-					yylval.ivalue = atoi (gth_albumtheme_yytext);
+					yylval.ivalue = atoi (yytext);
 					return NUMBER;
 				}
 	YY_BREAK
@@ -1302,7 +1518,7 @@ case 37:
 YY_RULE_SETUP
 #line 187 "albumtheme.l"
 {
-					yylval.text = g_strdup (gth_albumtheme_yytext);
+					yylval.text = g_strdup (yytext);
 					return VARIABLE;
 				}		
 	YY_BREAK
@@ -1318,7 +1534,7 @@ case 39:
 YY_RULE_SETUP
 #line 194 "albumtheme.l"
 {
-					yylval.text = g_strdup (gth_albumtheme_yytext);
+					yylval.text = g_strdup (yytext);
 					return HTML;
 				}
 	YY_BREAK
@@ -1327,7 +1543,7 @@ case 40:
 YY_RULE_SETUP
 #line 198 "albumtheme.l"
 {
-					yylval.text = g_strdup (gth_albumtheme_yytext);
+					yylval.text = g_strdup (yytext);
 					return HTML;
 				}
 	YY_BREAK
@@ -1349,7 +1565,7 @@ YY_RULE_SETUP
 #line 208 "albumtheme.l"
 ECHO;
 	YY_BREAK
-#line 1353 "albumtheme-lex.c"
+#line 1569 "albumtheme-lex.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1364,15 +1580,15 @@ ECHO;
 			{
 			/* We're scanning a new file or input source.  It's
 			 * possible that this happened because the user
-			 * just pointed gth_albumtheme_yyin at a new source and called
-			 * gth_albumtheme_yylex().  If so, then we have to assure
+			 * just pointed yyin at a new source and called
+			 * yylex().  If so, then we have to assure
 			 * consistency between YY_CURRENT_BUFFER and our
 			 * globals.  Here is the right place to do so, because
 			 * this is the first action (other than possibly a
 			 * back-up) that will match for the new input source.
 			 */
 			(yy_n_chars) = YY_CURRENT_BUFFER_LVALUE->yy_n_chars;
-			YY_CURRENT_BUFFER_LVALUE->yy_input_file = gth_albumtheme_yyin;
+			YY_CURRENT_BUFFER_LVALUE->yy_input_file = yyin;
 			YY_CURRENT_BUFFER_LVALUE->yy_buffer_status = YY_BUFFER_NORMAL;
 			}
 
@@ -1425,11 +1641,11 @@ ECHO;
 				{
 				(yy_did_buffer_switch_on_eof) = 0;
 
-				if ( gth_albumtheme_yywrap( ) )
+				if ( yywrap(  ) )
 					{
 					/* Note: because we've taken care in
 					 * yy_get_next_buffer() to have set up
-					 * gth_albumtheme_yytext, we can now set up
+					 * yytext, we can now set up
 					 * yy_c_buf_p so that if some total
 					 * hoser (like flex itself) wants to
 					 * call the scanner after we return the
@@ -1479,7 +1695,7 @@ ECHO;
 	} /* end of action switch */
 		} /* end of scanning one token */
 	} /* end of user's declarations */
-} /* end of gth_albumtheme_yylex */
+} /* end of yylex */
 
 /* yy_get_next_buffer - try to read in a new buffer
  *
@@ -1492,7 +1708,7 @@ static int yy_get_next_buffer (void)
 {
     	char *dest = YY_CURRENT_BUFFER_LVALUE->yy_ch_buf;
 	char *source = (yytext_ptr);
-	yy_size_t number_to_move, i;
+	int number_to_move, i;
 	int ret_val;
 
 	if ( (yy_c_buf_p) > &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[(yy_n_chars) + 1] )
@@ -1521,7 +1737,7 @@ static int yy_get_next_buffer (void)
 	/* Try to read more data. */
 
 	/* First move last chars to start of buffer. */
-	number_to_move = (yy_size_t) ((yy_c_buf_p) - (yytext_ptr)) - 1;
+	number_to_move = (int) ((yy_c_buf_p) - (yytext_ptr) - 1);
 
 	for ( i = 0; i < number_to_move; ++i )
 		*(dest++) = *(source++);
@@ -1534,7 +1750,7 @@ static int yy_get_next_buffer (void)
 
 	else
 		{
-			yy_size_t num_to_read =
+			int num_to_read =
 			YY_CURRENT_BUFFER_LVALUE->yy_buf_size - number_to_move - 1;
 
 		while ( num_to_read <= 0 )
@@ -1548,7 +1764,7 @@ static int yy_get_next_buffer (void)
 
 			if ( b->yy_is_our_buffer )
 				{
-				yy_size_t new_size = b->yy_buf_size * 2;
+				int new_size = b->yy_buf_size * 2;
 
 				if ( new_size <= 0 )
 					b->yy_buf_size += b->yy_buf_size / 8;
@@ -1557,11 +1773,12 @@ static int yy_get_next_buffer (void)
 
 				b->yy_ch_buf = (char *)
 					/* Include room in for 2 EOB chars. */
-					gth_albumtheme_yyrealloc((void *) b->yy_ch_buf,b->yy_buf_size + 2  );
+					yyrealloc( (void *) b->yy_ch_buf,
+							 (yy_size_t) (b->yy_buf_size + 2)  );
 				}
 			else
 				/* Can't grow it, we don't own it. */
-				b->yy_ch_buf = 0;
+				b->yy_ch_buf = NULL;
 
 			if ( ! b->yy_ch_buf )
 				YY_FATAL_ERROR(
@@ -1589,7 +1806,7 @@ static int yy_get_next_buffer (void)
 		if ( number_to_move == YY_MORE_ADJ )
 			{
 			ret_val = EOB_ACT_END_OF_FILE;
-			gth_albumtheme_yyrestart(gth_albumtheme_yyin  );
+			yyrestart( yyin  );
 			}
 
 		else
@@ -1603,12 +1820,15 @@ static int yy_get_next_buffer (void)
 	else
 		ret_val = EOB_ACT_CONTINUE_SCAN;
 
-	if ((int) ((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+	if (((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
 		/* Extend the array by 50%, plus the number we really need. */
 		int new_size = (yy_n_chars) + number_to_move + ((yy_n_chars) >> 1);
-		YY_CURRENT_BUFFER_LVALUE->yy_ch_buf = (char *) gth_albumtheme_yyrealloc((void *) YY_CURRENT_BUFFER_LVALUE->yy_ch_buf,new_size  );
+		YY_CURRENT_BUFFER_LVALUE->yy_ch_buf = (char *) yyrealloc(
+			(void *) YY_CURRENT_BUFFER_LVALUE->yy_ch_buf, (yy_size_t) new_size  );
 		if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
 			YY_FATAL_ERROR( "out of dynamic memory in yy_get_next_buffer()" );
+		/* "- 2" to take care of EOB's */
+		YY_CURRENT_BUFFER_LVALUE->yy_buf_size = (int) (new_size - 2);
 	}
 
 	(yy_n_chars) += number_to_move;
@@ -1641,9 +1861,9 @@ static int yy_get_next_buffer (void)
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
 			if ( yy_current_state >= 186 )
-				yy_c = yy_meta[(unsigned int) yy_c];
+				yy_c = yy_meta[yy_c];
 			}
-		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
+		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 		}
 
 	return yy_current_state;
@@ -1669,9 +1889,9 @@ static int yy_get_next_buffer (void)
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
 		if ( yy_current_state >= 186 )
-			yy_c = yy_meta[(unsigned int) yy_c];
+			yy_c = yy_meta[yy_c];
 		}
-	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
+	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 	yy_is_jam = (yy_current_state == 185);
 
 		return yy_is_jam ? 0 : yy_current_state;
@@ -1705,7 +1925,7 @@ static int yy_get_next_buffer (void)
 
 		else
 			{ /* need more input */
-			yy_size_t offset = (yy_c_buf_p) - (yytext_ptr);
+			int offset = (int) ((yy_c_buf_p) - (yytext_ptr));
 			++(yy_c_buf_p);
 
 			switch ( yy_get_next_buffer(  ) )
@@ -1722,14 +1942,14 @@ static int yy_get_next_buffer (void)
 					 */
 
 					/* Reset buffer status. */
-					gth_albumtheme_yyrestart(gth_albumtheme_yyin );
+					yyrestart( yyin );
 
 					/*FALLTHROUGH*/
 
 				case EOB_ACT_END_OF_FILE:
 					{
-					if ( gth_albumtheme_yywrap( ) )
-						return EOF;
+					if ( yywrap(  ) )
+						return 0;
 
 					if ( ! (yy_did_buffer_switch_on_eof) )
 						YY_NEW_FILE;
@@ -1748,7 +1968,7 @@ static int yy_get_next_buffer (void)
 		}
 
 	c = *(unsigned char *) (yy_c_buf_p);	/* cast for 8-bit char's */
-	*(yy_c_buf_p) = '\0';	/* preserve gth_albumtheme_yytext */
+	*(yy_c_buf_p) = '\0';	/* preserve yytext */
 	(yy_hold_char) = *++(yy_c_buf_p);
 
 	return c;
@@ -1760,32 +1980,32 @@ static int yy_get_next_buffer (void)
  * 
  * @note This function does not reset the start condition to @c INITIAL .
  */
-    void gth_albumtheme_yyrestart  (FILE * input_file )
+    void yyrestart  (FILE * input_file )
 {
     
 	if ( ! YY_CURRENT_BUFFER ){
-        gth_albumtheme_yyensure_buffer_stack ();
+        yyensure_buffer_stack ();
 		YY_CURRENT_BUFFER_LVALUE =
-            gth_albumtheme_yy_create_buffer(gth_albumtheme_yyin,YY_BUF_SIZE );
+            yy_create_buffer( yyin, YY_BUF_SIZE );
 	}
 
-	gth_albumtheme_yy_init_buffer(YY_CURRENT_BUFFER,input_file );
-	gth_albumtheme_yy_load_buffer_state( );
+	yy_init_buffer( YY_CURRENT_BUFFER, input_file );
+	yy_load_buffer_state(  );
 }
 
 /** Switch to a different input buffer.
  * @param new_buffer The new input buffer.
  * 
  */
-    void gth_albumtheme_yy_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )
+    void yy_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )
 {
     
 	/* TODO. We should be able to replace this entire function body
 	 * with
-	 *		gth_albumtheme_yypop_buffer_state();
-	 *		gth_albumtheme_yypush_buffer_state(new_buffer);
+	 *		yypop_buffer_state();
+	 *		yypush_buffer_state(new_buffer);
      */
-	gth_albumtheme_yyensure_buffer_stack ();
+	yyensure_buffer_stack ();
 	if ( YY_CURRENT_BUFFER == new_buffer )
 		return;
 
@@ -1798,21 +2018,21 @@ static int yy_get_next_buffer (void)
 		}
 
 	YY_CURRENT_BUFFER_LVALUE = new_buffer;
-	gth_albumtheme_yy_load_buffer_state( );
+	yy_load_buffer_state(  );
 
 	/* We don't actually know whether we did this switch during
-	 * EOF (gth_albumtheme_yywrap()) processing, but the only time this flag
-	 * is looked at is after gth_albumtheme_yywrap() is called, so it's safe
+	 * EOF (yywrap()) processing, but the only time this flag
+	 * is looked at is after yywrap() is called, so it's safe
 	 * to go ahead and always set it.
 	 */
 	(yy_did_buffer_switch_on_eof) = 1;
 }
 
-static void gth_albumtheme_yy_load_buffer_state  (void)
+static void yy_load_buffer_state  (void)
 {
     	(yy_n_chars) = YY_CURRENT_BUFFER_LVALUE->yy_n_chars;
 	(yytext_ptr) = (yy_c_buf_p) = YY_CURRENT_BUFFER_LVALUE->yy_buf_pos;
-	gth_albumtheme_yyin = YY_CURRENT_BUFFER_LVALUE->yy_input_file;
+	yyin = YY_CURRENT_BUFFER_LVALUE->yy_input_file;
 	(yy_hold_char) = *(yy_c_buf_p);
 }
 
@@ -1822,35 +2042,35 @@ static void gth_albumtheme_yy_load_buffer_state  (void)
  * 
  * @return the allocated buffer state.
  */
-    YY_BUFFER_STATE gth_albumtheme_yy_create_buffer  (FILE * file, int  size )
+    YY_BUFFER_STATE yy_create_buffer  (FILE * file, int  size )
 {
 	YY_BUFFER_STATE b;
     
-	b = (YY_BUFFER_STATE) gth_albumtheme_yyalloc(sizeof( struct yy_buffer_state )  );
+	b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
 	if ( ! b )
-		YY_FATAL_ERROR( "out of dynamic memory in gth_albumtheme_yy_create_buffer()" );
+		YY_FATAL_ERROR( "out of dynamic memory in yy_create_buffer()" );
 
-	b->yy_buf_size = (yy_size_t)size;
+	b->yy_buf_size = size;
 
 	/* yy_ch_buf has to be 2 characters longer than the size given because
 	 * we need to put in 2 end-of-buffer characters.
 	 */
-	b->yy_ch_buf = (char *) gth_albumtheme_yyalloc(b->yy_buf_size + 2  );
+	b->yy_ch_buf = (char *) yyalloc( (yy_size_t) (b->yy_buf_size + 2)  );
 	if ( ! b->yy_ch_buf )
-		YY_FATAL_ERROR( "out of dynamic memory in gth_albumtheme_yy_create_buffer()" );
+		YY_FATAL_ERROR( "out of dynamic memory in yy_create_buffer()" );
 
 	b->yy_is_our_buffer = 1;
 
-	gth_albumtheme_yy_init_buffer(b,file );
+	yy_init_buffer( b, file );
 
 	return b;
 }
 
 /** Destroy the buffer.
- * @param b a buffer created with gth_albumtheme_yy_create_buffer()
+ * @param b a buffer created with yy_create_buffer()
  * 
  */
-    void gth_albumtheme_yy_delete_buffer (YY_BUFFER_STATE  b )
+    void yy_delete_buffer (YY_BUFFER_STATE  b )
 {
     
 	if ( ! b )
@@ -1860,27 +2080,27 @@ static void gth_albumtheme_yy_load_buffer_state  (void)
 		YY_CURRENT_BUFFER_LVALUE = (YY_BUFFER_STATE) 0;
 
 	if ( b->yy_is_our_buffer )
-		gth_albumtheme_yyfree((void *) b->yy_ch_buf  );
+		yyfree( (void *) b->yy_ch_buf  );
 
-	gth_albumtheme_yyfree((void *) b  );
+	yyfree( (void *) b  );
 }
 
 /* Initializes or reinitializes a buffer.
  * This function is sometimes called more than once on the same buffer,
- * such as during a gth_albumtheme_yyrestart() or at EOF.
+ * such as during a yyrestart() or at EOF.
  */
-    static void gth_albumtheme_yy_init_buffer  (YY_BUFFER_STATE  b, FILE * file )
+    static void yy_init_buffer  (YY_BUFFER_STATE  b, FILE * file )
 
 {
 	int oerrno = errno;
     
-	gth_albumtheme_yy_flush_buffer(b );
+	yy_flush_buffer( b );
 
 	b->yy_input_file = file;
 	b->yy_fill_buffer = 1;
 
-    /* If b is the current buffer, then gth_albumtheme_yy_init_buffer was _probably_
-     * called from gth_albumtheme_yyrestart() or through yy_get_next_buffer.
+    /* If b is the current buffer, then yy_init_buffer was _probably_
+     * called from yyrestart() or through yy_get_next_buffer.
      * In that case, we don't want to reset the lineno or column.
      */
     if (b != YY_CURRENT_BUFFER){
@@ -1897,7 +2117,7 @@ static void gth_albumtheme_yy_load_buffer_state  (void)
  * @param b the buffer state to be flushed, usually @c YY_CURRENT_BUFFER.
  * 
  */
-    void gth_albumtheme_yy_flush_buffer (YY_BUFFER_STATE  b )
+    void yy_flush_buffer (YY_BUFFER_STATE  b )
 {
     	if ( ! b )
 		return;
@@ -1917,7 +2137,7 @@ static void gth_albumtheme_yy_load_buffer_state  (void)
 	b->yy_buffer_status = YY_BUFFER_NEW;
 
 	if ( b == YY_CURRENT_BUFFER )
-		gth_albumtheme_yy_load_buffer_state( );
+		yy_load_buffer_state(  );
 }
 
 /** Pushes the new state onto the stack. The new state becomes
@@ -1926,14 +2146,14 @@ static void gth_albumtheme_yy_load_buffer_state  (void)
  *  @param new_buffer The new state.
  *  
  */
-void gth_albumtheme_yypush_buffer_state (YY_BUFFER_STATE new_buffer )
+void yypush_buffer_state (YY_BUFFER_STATE new_buffer )
 {
     	if (new_buffer == NULL)
 		return;
 
-	gth_albumtheme_yyensure_buffer_stack();
+	yyensure_buffer_stack();
 
-	/* This block is copied from gth_albumtheme_yy_switch_to_buffer. */
+	/* This block is copied from yy_switch_to_buffer. */
 	if ( YY_CURRENT_BUFFER )
 		{
 		/* Flush out information for old buffer. */
@@ -1947,8 +2167,8 @@ void gth_albumtheme_yypush_buffer_state (YY_BUFFER_STATE new_buffer )
 		(yy_buffer_stack_top)++;
 	YY_CURRENT_BUFFER_LVALUE = new_buffer;
 
-	/* copied from gth_albumtheme_yy_switch_to_buffer. */
-	gth_albumtheme_yy_load_buffer_state( );
+	/* copied from yy_switch_to_buffer. */
+	yy_load_buffer_state(  );
 	(yy_did_buffer_switch_on_eof) = 1;
 }
 
@@ -1956,18 +2176,18 @@ void gth_albumtheme_yypush_buffer_state (YY_BUFFER_STATE new_buffer )
  *  The next element becomes the new top.
  *  
  */
-void gth_albumtheme_yypop_buffer_state (void)
+void yypop_buffer_state (void)
 {
     	if (!YY_CURRENT_BUFFER)
 		return;
 
-	gth_albumtheme_yy_delete_buffer(YY_CURRENT_BUFFER );
+	yy_delete_buffer(YY_CURRENT_BUFFER );
 	YY_CURRENT_BUFFER_LVALUE = NULL;
 	if ((yy_buffer_stack_top) > 0)
 		--(yy_buffer_stack_top);
 
 	if (YY_CURRENT_BUFFER) {
-		gth_albumtheme_yy_load_buffer_state( );
+		yy_load_buffer_state(  );
 		(yy_did_buffer_switch_on_eof) = 1;
 	}
 }
@@ -1975,7 +2195,7 @@ void gth_albumtheme_yypop_buffer_state (void)
 /* Allocates the stack if it does not exist.
  *  Guarantees space for at least one push.
  */
-static void gth_albumtheme_yyensure_buffer_stack (void)
+static void yyensure_buffer_stack (void)
 {
 	yy_size_t num_to_alloc;
     
@@ -1985,15 +2205,15 @@ static void gth_albumtheme_yyensure_buffer_stack (void)
 		 * scanner will even need a stack. We use 2 instead of 1 to avoid an
 		 * immediate realloc on the next call.
          */
-		num_to_alloc = 1; /* After all that talk, this was set to 1 anyways... */
-		(yy_buffer_stack) = (struct yy_buffer_state**)gth_albumtheme_yyalloc
+      num_to_alloc = 1; /* After all that talk, this was set to 1 anyways... */
+		(yy_buffer_stack) = (struct yy_buffer_state**)yyalloc
 								(num_to_alloc * sizeof(struct yy_buffer_state*)
 								);
 		if ( ! (yy_buffer_stack) )
-			YY_FATAL_ERROR( "out of dynamic memory in gth_albumtheme_yyensure_buffer_stack()" );
-								  
+			YY_FATAL_ERROR( "out of dynamic memory in yyensure_buffer_stack()" );
+
 		memset((yy_buffer_stack), 0, num_to_alloc * sizeof(struct yy_buffer_state*));
-				
+
 		(yy_buffer_stack_max) = num_to_alloc;
 		(yy_buffer_stack_top) = 0;
 		return;
@@ -2005,12 +2225,12 @@ static void gth_albumtheme_yyensure_buffer_stack (void)
 		yy_size_t grow_size = 8 /* arbitrary grow size */;
 
 		num_to_alloc = (yy_buffer_stack_max) + grow_size;
-		(yy_buffer_stack) = (struct yy_buffer_state**)gth_albumtheme_yyrealloc
+		(yy_buffer_stack) = (struct yy_buffer_state**)yyrealloc
 								((yy_buffer_stack),
 								num_to_alloc * sizeof(struct yy_buffer_state*)
 								);
 		if ( ! (yy_buffer_stack) )
-			YY_FATAL_ERROR( "out of dynamic memory in gth_albumtheme_yyensure_buffer_stack()" );
+			YY_FATAL_ERROR( "out of dynamic memory in yyensure_buffer_stack()" );
 
 		/* zero only the new slots.*/
 		memset((yy_buffer_stack) + (yy_buffer_stack_max), 0, grow_size * sizeof(struct yy_buffer_state*));
@@ -2022,9 +2242,9 @@ static void gth_albumtheme_yyensure_buffer_stack (void)
  * @param base the character buffer
  * @param size the size in bytes of the character buffer
  * 
- * @return the newly allocated buffer state object. 
+ * @return the newly allocated buffer state object.
  */
-YY_BUFFER_STATE gth_albumtheme_yy_scan_buffer  (char * base, yy_size_t  size )
+YY_BUFFER_STATE yy_scan_buffer  (char * base, yy_size_t  size )
 {
 	YY_BUFFER_STATE b;
     
@@ -2032,69 +2252,69 @@ YY_BUFFER_STATE gth_albumtheme_yy_scan_buffer  (char * base, yy_size_t  size )
 	     base[size-2] != YY_END_OF_BUFFER_CHAR ||
 	     base[size-1] != YY_END_OF_BUFFER_CHAR )
 		/* They forgot to leave room for the EOB's. */
-		return 0;
+		return NULL;
 
-	b = (YY_BUFFER_STATE) gth_albumtheme_yyalloc(sizeof( struct yy_buffer_state )  );
+	b = (YY_BUFFER_STATE) yyalloc( sizeof( struct yy_buffer_state )  );
 	if ( ! b )
-		YY_FATAL_ERROR( "out of dynamic memory in gth_albumtheme_yy_scan_buffer()" );
+		YY_FATAL_ERROR( "out of dynamic memory in yy_scan_buffer()" );
 
-	b->yy_buf_size = size - 2;	/* "- 2" to take care of EOB's */
+	b->yy_buf_size = (int) (size - 2);	/* "- 2" to take care of EOB's */
 	b->yy_buf_pos = b->yy_ch_buf = base;
 	b->yy_is_our_buffer = 0;
-	b->yy_input_file = 0;
+	b->yy_input_file = NULL;
 	b->yy_n_chars = b->yy_buf_size;
 	b->yy_is_interactive = 0;
 	b->yy_at_bol = 1;
 	b->yy_fill_buffer = 0;
 	b->yy_buffer_status = YY_BUFFER_NEW;
 
-	gth_albumtheme_yy_switch_to_buffer(b  );
+	yy_switch_to_buffer( b  );
 
 	return b;
 }
 
-/** Setup the input buffer state to scan a string. The next call to gth_albumtheme_yylex() will
+/** Setup the input buffer state to scan a string. The next call to yylex() will
  * scan from a @e copy of @a str.
  * @param yystr a NUL-terminated string to scan
  * 
  * @return the newly allocated buffer state object.
  * @note If you want to scan bytes that may contain NUL values, then use
- *       gth_albumtheme_yy_scan_bytes() instead.
+ *       yy_scan_bytes() instead.
  */
-YY_BUFFER_STATE gth_albumtheme_yy_scan_string (yyconst char * yystr )
+YY_BUFFER_STATE yy_scan_string (const char * yystr )
 {
     
-	return gth_albumtheme_yy_scan_bytes(yystr,strlen(yystr) );
+	return yy_scan_bytes( yystr, (int) strlen(yystr) );
 }
 
-/** Setup the input buffer state to scan the given bytes. The next call to gth_albumtheme_yylex() will
+/** Setup the input buffer state to scan the given bytes. The next call to yylex() will
  * scan from a @e copy of @a bytes.
  * @param yybytes the byte buffer to scan
  * @param _yybytes_len the number of bytes in the buffer pointed to by @a bytes.
  * 
  * @return the newly allocated buffer state object.
  */
-YY_BUFFER_STATE gth_albumtheme_yy_scan_bytes  (yyconst char * yybytes, yy_size_t  _yybytes_len )
+YY_BUFFER_STATE yy_scan_bytes  (const char * yybytes, int  _yybytes_len )
 {
 	YY_BUFFER_STATE b;
 	char *buf;
 	yy_size_t n;
-	yy_size_t i;
+	int i;
     
 	/* Get memory for full buffer, including space for trailing EOB's. */
-	n = _yybytes_len + 2;
-	buf = (char *) gth_albumtheme_yyalloc(n  );
+	n = (yy_size_t) (_yybytes_len + 2);
+	buf = (char *) yyalloc( n  );
 	if ( ! buf )
-		YY_FATAL_ERROR( "out of dynamic memory in gth_albumtheme_yy_scan_bytes()" );
+		YY_FATAL_ERROR( "out of dynamic memory in yy_scan_bytes()" );
 
 	for ( i = 0; i < _yybytes_len; ++i )
 		buf[i] = yybytes[i];
 
 	buf[_yybytes_len] = buf[_yybytes_len+1] = YY_END_OF_BUFFER_CHAR;
 
-	b = gth_albumtheme_yy_scan_buffer(buf,n );
+	b = yy_scan_buffer( buf, n );
 	if ( ! b )
-		YY_FATAL_ERROR( "bad buffer in gth_albumtheme_yy_scan_bytes()" );
+		YY_FATAL_ERROR( "bad buffer in yy_scan_bytes()" );
 
 	/* It's okay to grow etc. this buffer, and we should throw it
 	 * away when we're done.
@@ -2108,9 +2328,9 @@ YY_BUFFER_STATE gth_albumtheme_yy_scan_bytes  (yyconst char * yybytes, yy_size_t
 #define YY_EXIT_FAILURE 2
 #endif
 
-static void yy_fatal_error (yyconst char* msg )
+static void yynoreturn yy_fatal_error (const char* msg )
 {
-			(void) fprintf( stderr, "%s\n", msg );
+			fprintf( stderr, "%s\n", msg );
 	exit( YY_EXIT_FAILURE );
 }
 
@@ -2120,14 +2340,14 @@ static void yy_fatal_error (yyconst char* msg )
 #define yyless(n) \
 	do \
 		{ \
-		/* Undo effects of setting up gth_albumtheme_yytext. */ \
+		/* Undo effects of setting up yytext. */ \
         int yyless_macro_arg = (n); \
         YY_LESS_LINENO(yyless_macro_arg);\
-		gth_albumtheme_yytext[gth_albumtheme_yyleng] = (yy_hold_char); \
-		(yy_c_buf_p) = gth_albumtheme_yytext + yyless_macro_arg; \
+		yytext[yyleng] = (yy_hold_char); \
+		(yy_c_buf_p) = yytext + yyless_macro_arg; \
 		(yy_hold_char) = *(yy_c_buf_p); \
 		*(yy_c_buf_p) = '\0'; \
-		gth_albumtheme_yyleng = yyless_macro_arg; \
+		yyleng = yyless_macro_arg; \
 		} \
 	while ( 0 )
 
@@ -2136,126 +2356,126 @@ static void yy_fatal_error (yyconst char* msg )
 /** Get the current line number.
  * 
  */
-int gth_albumtheme_yyget_lineno  (void)
+int yyget_lineno  (void)
 {
-        
-    return gth_albumtheme_yylineno;
+    
+    return yylineno;
 }
 
 /** Get the input stream.
  * 
  */
-FILE *gth_albumtheme_yyget_in  (void)
+FILE *yyget_in  (void)
 {
-        return gth_albumtheme_yyin;
+        return yyin;
 }
 
 /** Get the output stream.
  * 
  */
-FILE *gth_albumtheme_yyget_out  (void)
+FILE *yyget_out  (void)
 {
-        return gth_albumtheme_yyout;
+        return yyout;
 }
 
 /** Get the length of the current token.
  * 
  */
-yy_size_t gth_albumtheme_yyget_leng  (void)
+int yyget_leng  (void)
 {
-        return gth_albumtheme_yyleng;
+        return yyleng;
 }
 
 /** Get the current token.
  * 
  */
 
-char *gth_albumtheme_yyget_text  (void)
+char *yyget_text  (void)
 {
-        return gth_albumtheme_yytext;
+        return yytext;
 }
 
 /** Set the current line number.
  * @param _line_number line number
  * 
  */
-void gth_albumtheme_yyset_lineno (int  _line_number )
+void yyset_lineno (int  _line_number )
 {
     
-    gth_albumtheme_yylineno = _line_number;
+    yylineno = _line_number;
 }
 
 /** Set the input stream. This does not discard the current
  * input buffer.
  * @param _in_str A readable stream.
  * 
- * @see gth_albumtheme_yy_switch_to_buffer
+ * @see yy_switch_to_buffer
  */
-void gth_albumtheme_yyset_in (FILE *  _in_str )
+void yyset_in (FILE *  _in_str )
 {
-        gth_albumtheme_yyin = _in_str ;
+        yyin = _in_str ;
 }
 
-void gth_albumtheme_yyset_out (FILE *  _out_str )
+void yyset_out (FILE *  _out_str )
 {
-        gth_albumtheme_yyout = _out_str ;
+        yyout = _out_str ;
 }
 
-int gth_albumtheme_yyget_debug  (void)
+int yyget_debug  (void)
 {
-        return gth_albumtheme_yy_flex_debug;
+        return yy_flex_debug;
 }
 
-void gth_albumtheme_yyset_debug (int  _bdebug )
+void yyset_debug (int  _bdebug )
 {
-        gth_albumtheme_yy_flex_debug = _bdebug ;
+        yy_flex_debug = _bdebug ;
 }
 
 static int yy_init_globals (void)
 {
         /* Initialization is the same as for the non-reentrant scanner.
-     * This function is called from gth_albumtheme_yylex_destroy(), so don't allocate here.
+     * This function is called from yylex_destroy(), so don't allocate here.
      */
 
-    (yy_buffer_stack) = 0;
+    (yy_buffer_stack) = NULL;
     (yy_buffer_stack_top) = 0;
     (yy_buffer_stack_max) = 0;
-    (yy_c_buf_p) = (char *) 0;
+    (yy_c_buf_p) = NULL;
     (yy_init) = 0;
     (yy_start) = 0;
 
 /* Defined in main.c */
 #ifdef YY_STDINIT
-    gth_albumtheme_yyin = stdin;
-    gth_albumtheme_yyout = stdout;
+    yyin = stdin;
+    yyout = stdout;
 #else
-    gth_albumtheme_yyin = (FILE *) 0;
-    gth_albumtheme_yyout = (FILE *) 0;
+    yyin = NULL;
+    yyout = NULL;
 #endif
 
     /* For future reference: Set errno on error, since we are called by
-     * gth_albumtheme_yylex_init()
+     * yylex_init()
      */
     return 0;
 }
 
-/* gth_albumtheme_yylex_destroy is for both reentrant and non-reentrant scanners. */
-int gth_albumtheme_yylex_destroy  (void)
+/* yylex_destroy is for both reentrant and non-reentrant scanners. */
+int yylex_destroy  (void)
 {
     
     /* Pop the buffer stack, destroying each element. */
 	while(YY_CURRENT_BUFFER){
-		gth_albumtheme_yy_delete_buffer(YY_CURRENT_BUFFER  );
+		yy_delete_buffer( YY_CURRENT_BUFFER  );
 		YY_CURRENT_BUFFER_LVALUE = NULL;
-		gth_albumtheme_yypop_buffer_state();
+		yypop_buffer_state();
 	}
 
 	/* Destroy the stack itself. */
-	gth_albumtheme_yyfree((yy_buffer_stack) );
+	yyfree((yy_buffer_stack) );
 	(yy_buffer_stack) = NULL;
 
     /* Reset the globals. This is important in a non-reentrant scanner so the next time
-     * gth_albumtheme_yylex() is called, initialization will occur. */
+     * yylex() is called, initialization will occur. */
     yy_init_globals( );
 
     return 0;
@@ -2266,7 +2486,7 @@ int gth_albumtheme_yylex_destroy  (void)
  */
 
 #ifndef yytext_ptr
-static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )
+static void yy_flex_strncpy (char* s1, const char * s2, int n )
 {
 		
 	int i;
@@ -2276,7 +2496,7 @@ static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )
 #endif
 
 #ifdef YY_NEED_STRLEN
-static int yy_flex_strlen (yyconst char * s )
+static int yy_flex_strlen (const char * s )
 {
 	int n;
 	for ( n = 0; s[n]; ++n )
@@ -2286,12 +2506,12 @@ static int yy_flex_strlen (yyconst char * s )
 }
 #endif
 
-void *gth_albumtheme_yyalloc (yy_size_t  size )
+void *yyalloc (yy_size_t  size )
 {
-			return (void *) malloc( size );
+			return malloc(size);
 }
 
-void *gth_albumtheme_yyrealloc  (void * ptr, yy_size_t  size )
+void *yyrealloc  (void * ptr, yy_size_t  size )
 {
 		
 	/* The cast to (char *) in the following accommodates both
@@ -2301,17 +2521,16 @@ void *gth_albumtheme_yyrealloc  (void * ptr, yy_size_t  size )
 	 * any pointer type to void*, and deal with argument conversions
 	 * as though doing an assignment.
 	 */
-	return (void *) realloc( (char *) ptr, size );
+	return realloc(ptr, size);
 }
 
-void gth_albumtheme_yyfree (void * ptr )
+void yyfree (void * ptr )
 {
-			free( (char *) ptr );	/* see gth_albumtheme_yyrealloc() for (char *) cast */
+			free( (char *) ptr );	/* see yyrealloc() for (char *) cast */
 }
 
 #define YYTABLES_NAME "yytables"
 
 #line 208 "albumtheme.l"
-
 
 
