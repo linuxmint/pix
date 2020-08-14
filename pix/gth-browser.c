@@ -5362,6 +5362,7 @@ gth_browser_viewer_key_press_cb (GthBrowser  *browser,
 		case GDK_KEY_Up:
 		case GDK_KEY_Left:
 		case GDK_KEY_Page_Up:
+        case GDK_KEY_BackSpace:
 			gth_browser_show_prev_image (browser, FALSE, FALSE);
 			return TRUE;
 
