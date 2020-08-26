@@ -282,7 +282,7 @@ selections__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 	gth_embedded_dialog_set_gicon (GTH_EMBEDDED_DIALOG (extra_widget), g_file_info_get_icon (location_data->info), GTK_ICON_SIZE_DIALOG);
 	gth_embedded_dialog_set_primary_text (GTH_EMBEDDED_DIALOG (extra_widget), g_file_info_get_display_name (location_data->info));
 	if (n_selection > 0)
-		msg = g_strdup_printf (_("Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."), n_selection, n_selection);
+		msg = g_strdup_printf (_("Use Alt-%d to add files to this selection, Ctrl-%d to view this selection, Alt+Shift+%d to remove files from this selection"), n_selection, n_selection, n_selection);
 	else
 		msg = NULL;
 	gth_embedded_dialog_set_secondary_text (GTH_EMBEDDED_DIALOG (extra_widget), msg);
