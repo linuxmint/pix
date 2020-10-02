@@ -2692,7 +2692,6 @@ _gth_grid_view_select_single (GthGridView     *self,
 		self->priv->last_selected_item = item;
 	}
 
-	gth_file_view_set_cursor (GTH_FILE_VIEW (self), pos);
 }
 
 
