@@ -5736,16 +5736,7 @@ file_metadata_ready_cb (GList    *files,
 
 		basic_viewer_page = g_list_last (browser->priv->viewer_pages)->data;
 
-		/* If after reading the metadata we got a different mime type
-		 * and the current viewer is the default file viewer it's likely
-		 * that we have an image with a wrong extension.  Try to
-		 * load the file again to see if the mime type can be viewed by
-		 * a different viewer_page. */
-
-		if (different_mime_type && (G_OBJECT_TYPE (browser->priv->viewer_page) == G_OBJECT_TYPE (basic_viewer_page)))
-			_gth_browser_load_file (browser, data->file_data, data->view);
-		else
-			gth_viewer_page_update_info (browser->priv->viewer_page, browser->priv->current_file);
+        gth_viewer_page_update_info (browser->priv->viewer_page, browser->priv->current_file);
 	}
 
 	/* location is NULL if the file has been loaded because requested
