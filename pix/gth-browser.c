@@ -6139,6 +6139,18 @@ load_location_data_free (LoadLocationData *data)
 	g_free (data);
 }
 
+static void
+go_home_on_error (GthBrowser *browser)
+{
+        GFile *home;
+
+        home = g_file_new_for_uri (get_home_uri ());
+
+        gth_window_set_current_page (GTH_WINDOW (browser), GTH_BROWSER_PAGE_BROWSER);
+        _gth_browser_load (browser, home, NULL, NULL, 0, GTH_ACTION_GO_TO, TRUE);
+
+        g_object_unref (home);
+}
 
 static void
 load_file_attributes_ready_cb (GObject  *object,
@@ -6189,6 +6201,8 @@ load_file_attributes_ready_cb (GObject  *object,
 	}
 	else {
 		char *title;
+
+        go_home_on_error (browser);
 
 		title =  file_format (_("Could not load the position \"%s\""), data->location_data->file);
 		_gth_browser_show_error (browser, title, error);
