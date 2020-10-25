@@ -126,8 +126,18 @@ gth_file_source_vfs_get_entry_points (GthFileSource *file_source)
 	GList          *mounts;
 	GList          *volumes;
 	GList          *scan;
+	const gchar * const *schemes;
 
 	list = NULL;
+
+	// Put favorites first - if the home folder is first, it automatically expands the first
+    // level of its tree off the window.
+    GVfs *vfs = g_vfs_get_default ();
+    schemes = g_vfs_get_supported_uri_schemes (vfs);
+    if (g_strv_contains (schemes, "favorites"))
+    {
+        list = gth_file_source_vfs_add_uri (list, file_source, "favorites:///");
+    }
 
 	list = gth_file_source_vfs_add_uri (list, file_source, _g_uri_get_home ());
 	list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_PICTURES);
