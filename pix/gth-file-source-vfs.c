@@ -834,35 +834,44 @@ gth_file_mananger_delete_files (GtkWindow *window,
 	int        file_count;
 	char      *prompt;
 	GtkWidget *d;
+    GSettings *settings;
+    settings = g_settings_new (PIX_MESSAGES_SCHEMA);
 
-	file_list = _g_object_list_ref (file_list);
-	file_count = g_list_length (file_list);
-	if (file_count == 1) {
-		GthFileData *file_data = file_list->data;
-		prompt = g_strdup_printf (_("Are you sure you want to permanently delete \"%s\"?"), g_file_info_get_display_name (file_data->info));
-	}
-	else
-		prompt = g_strdup_printf (ngettext("Are you sure you want to permanently delete "
-						   "the %'d selected file?",
-						   "Are you sure you want to permanently delete "
-					  	   "the %'d selected files?", file_count),
-					  file_count);
+    if (g_settings_get_boolean (settings, PREF_MSG_CONFIRM_DELETION)){
 
-	d = _gtk_message_dialog_new (window,
-				     GTK_DIALOG_MODAL,
-				     GTK_STOCK_DIALOG_QUESTION,
-				     prompt,
-				     _("If you delete a file, it will be permanently lost."),
-				     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-				     GTK_STOCK_DELETE, GTK_RESPONSE_YES,
-				     NULL);
+        file_list = _g_object_list_ref (file_list);
+        file_count = g_list_length (file_list);
+        if (file_count == 1) {
+            GthFileData *file_data = file_list->data;
+            prompt = g_strdup_printf (_("Are you sure you want to permanently delete \"%s\"?"), g_file_info_get_display_name (file_data->info));
+        }
+        else
+            prompt = g_strdup_printf (ngettext("Are you sure you want to permanently delete "
+                               "the %'d selected file?",
+                               "Are you sure you want to permanently delete "
+                               "the %'d selected files?", file_count),
+                          file_count);
 
-	gtk_dialog_set_default_response (d, GTK_RESPONSE_YES);
+        d = _gtk_message_dialog_new (window,
+                         GTK_DIALOG_MODAL,
+                         GTK_STOCK_DIALOG_QUESTION,
+                         prompt,
+                         _("If you delete a file, it will be permanently lost."),
+                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                         GTK_STOCK_DELETE, GTK_RESPONSE_YES,
+                         NULL);
 
-	g_signal_connect (d, "response", G_CALLBACK (delete_permanently_response_cb), file_list);
-	gtk_widget_show (d);
+        gtk_dialog_set_default_response (d, GTK_RESPONSE_YES);
 
-	g_free (prompt);
+        g_signal_connect (d, "response", G_CALLBACK (delete_permanently_response_cb), file_list);
+        gtk_widget_show (d);
+
+        g_free (prompt);
+    }
+    else 
+       delete_file_permanently (window, file_list);
+
+    g_object_unref (settings);
 }
 
 
