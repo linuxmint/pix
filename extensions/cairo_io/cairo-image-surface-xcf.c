@@ -903,6 +903,7 @@ read_pixels_from_hierarchy (GDataInputStream  *data_stream,
 	if (is_gimp_channel && in_bpp != 1){
 		printf("Error: in_bpp = %d and is_gimp_channel is true. Expected in_bpp = 1 when is_gimp_channel is true.\n", in_bpp);
 		goto read_error;
+	}
 
 	if (! is_gimp_channel)
 		layer->bpp = in_bpp;
