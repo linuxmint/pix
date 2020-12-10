@@ -10,16 +10,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
-"POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2018-03-17 08:06+0000\n"
-"Last-Translator: Rockworld <sumoisrock@gmail.com>\n"
+"POT-Creation-Date: 2020-12-01 16:28+0000\n"
+"PO-Revision-Date: 2020-12-03 04:59+0000\n"
+"Last-Translator: vega m57 <Unknown>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2020-06-24 10:11+0000\n"
-"X-Generator: Launchpad (build 1cbd0aa39df153c901321817f9b57cf3f232b507)\n"
+"X-Launchpad-Export-Date: 2020-12-10 10:30+0000\n"
+"X-Generator: Launchpad (build 4853cb86c14c5a9e513816c8a61121c639b30835)\n"
 "Language: ja\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -579,7 +579,7 @@ msgstr "ディスクへの書き込み"
 msgid "Error interpreting JPEG image file: %s"
 msgstr "JPEG 形式の画像ファイルの処理エラー: %s"
 
-#: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
+#: ../extensions/cairo_io/cairo-image-surface-jpeg.c:513
 #, c-format
 msgid "Unknown JPEG color space (%d)"
 msgstr "JPEG の色空間 (%d) が不明です"
@@ -968,12 +968,12 @@ msgstr "ファイルをカタログに登録しますが、ファイル本体は
 
 #: ../extensions/catalogs/dlg-organize-files.c:132
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
-#: ../pix/gth-main-default-tests.c:300
+#: ../pix/gth-main-default-tests.c:319
 msgid "Date photo was taken"
 msgstr "写真の撮影日"
 
 #: ../extensions/catalogs/dlg-organize-files.c:139
-#: ../pix/gth-main-default-tests.c:292
+#: ../pix/gth-main-default-tests.c:311
 msgid "File modified date"
 msgstr "ファイルの変更日時"
 
@@ -983,7 +983,7 @@ msgid "Tag"
 msgstr "タグ"
 
 #: ../extensions/catalogs/dlg-organize-files.c:153
-#: ../pix/gth-main-default-tests.c:324
+#: ../pix/gth-main-default-tests.c:343
 msgid "Tag (embedded)"
 msgstr "(埋め込まれた) タグ"
 
@@ -1029,10 +1029,10 @@ msgid "Could not remove the files from the catalog"
 msgstr "カタログからファイルを削除できませんでした"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:747
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:756
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:786
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:752
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:761
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:791
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:1326
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
 msgstr "ファイル形式が間違っています"
@@ -1176,6 +1176,7 @@ msgid "Date"
 msgstr "日付"
 
 #: ../extensions/comments/main.c:46 ../pix/gth-main-default-metadata.c:54
+#: ../pix/gth-main-default-tests.c:349
 msgid "Rating"
 msgstr "評価"
 
@@ -1984,7 +1985,7 @@ msgstr "新しいアルバム"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:557
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:583
-#: ../extensions/image_print/gth-image-print-job.c:1739
+#: ../extensions/image_print/gth-image-print-job.c:1770
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:607
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:597
 msgid "No valid file selected."
@@ -2080,14 +2081,14 @@ msgstr "'%s' をアップロードできませんでした: %s"
 msgid "Uploading '%s'"
 msgstr "'%s' のアップロード中"
 
-#: ../extensions/facebook/facebook-service.c:959
+#: ../extensions/facebook/facebook-service.c:962
 #: ../extensions/flicker_utils/flickr-service.c:1482
 #: ../extensions/photobucket/photobucket-service.c:714
 #: ../extensions/picasaweb/picasa-web-service.c:1138
 msgid "Uploading the files to the server"
 msgstr "サーバーにファイルのアップロード中"
 
-#: ../extensions/facebook/facebook-service.c:1058
+#: ../extensions/facebook/facebook-service.c:1061
 #: ../extensions/flicker_utils/flickr-service.c:1651
 #: ../extensions/picasaweb/picasa-web-service.c:1257
 msgid "Getting the photo list"
@@ -2139,12 +2140,12 @@ msgstr "そのフォルダーをゴミ箱へ移動できませんが、代わり
 msgid "Could not move the folder to the Trash"
 msgstr "フォルダーをゴミ箱へ移動できませんでした"
 
-#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
+#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:856
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "本当に \"%s\" を完全に消去しますか?"
 
-#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
+#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:869
 msgid "If you delete a file, it will be permanently lost."
 msgstr "ファイルを削除すると元に戻すことはできません。"
 
@@ -2194,7 +2195,7 @@ msgid "Duplicate the selected files"
 msgstr "選択したファイルの複製を作成します"
 
 #: ../extensions/file_manager/callbacks.c:183
-#: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
+#: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:823
 msgid "Mo_ve to Trash"
 msgstr "ゴミ箱へ移動する(_V)"
 
@@ -2423,7 +2424,6 @@ msgid "New dimensions:"
 msgstr "新しい寸法:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:12
-#: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "pixels"
 msgstr "ピクセル"
 
@@ -2699,7 +2699,7 @@ msgid "Redo"
 msgstr "やり直す"
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:214
-#: ../extensions/resize_images/dlg-resize-images.c:180
+#: ../extensions/resize_images/dlg-resize-images.c:177
 msgid "Resizing images"
 msgstr "画像サイズの変更中"
 
@@ -3065,11 +3065,11 @@ msgstr "動画を再生します"
 msgid "Pause"
 msgstr "一時停止します"
 
-#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:247
+#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:266
 msgid "Video"
 msgstr "動画"
 
-#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:254
+#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:273
 msgid "Audio"
 msgstr "オーディオ"
 
@@ -3193,11 +3193,11 @@ msgstr "単位:"
 msgid "Preview"
 msgstr "プレビュー"
 
-#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "millimeters"
 msgstr "ミリ"
 
-#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
 msgid "inches"
 msgstr "インチ"
 
@@ -3217,24 +3217,24 @@ msgstr "フッターのフォント"
 msgid "Fonts"
 msgstr "フォント"
 
-#: ../extensions/image_print/gth-image-print-job.c:914
+#: ../extensions/image_print/gth-image-print-job.c:912
 #: ../extensions/webalbums/data/albumthemes/text.h:31
 #, c-format
 msgid "Page %d of %d"
 msgstr "%d / %d ページ"
 
-#: ../extensions/image_print/gth-image-print-job.c:1680
-#: ../extensions/image_print/gth-image-print-job.c:1845
-#: ../extensions/image_print/gth-image-print-job.c:1888
+#: ../extensions/image_print/gth-image-print-job.c:1711
+#: ../extensions/image_print/gth-image-print-job.c:1876
+#: ../extensions/image_print/gth-image-print-job.c:1919
 msgid "Could not print"
 msgstr "印刷できませんでした"
 
-#: ../extensions/image_print/gth-image-print-job.c:1746
-#: ../pix/gth-main-default-tests.c:240
+#: ../extensions/image_print/gth-image-print-job.c:1777
+#: ../pix/gth-main-default-tests.c:259
 msgid "Images"
 msgstr "画像"
 
-#: ../extensions/image_print/gth-image-print-job.c:1847
+#: ../extensions/image_print/gth-image-print-job.c:1878
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
@@ -3247,7 +3247,7 @@ msgid "Loading \"%s\""
 msgstr "\"%s\" の読み込み中"
 
 #: ../extensions/image_print/gth-load-image-info-task.c:166
-#: ../extensions/webalbums/gth-web-exporter.c:2721
+#: ../extensions/webalbums/gth-web-exporter.c:2727
 msgid "Loading images"
 msgstr "画像の読み込み中"
 
@@ -3298,12 +3298,12 @@ msgstr "画像の回転"
 msgid "Rotate images without data loss."
 msgstr "品質を維持したまま画像を回転します"
 
-#: ../extensions/image_rotation/rotation-utils.c:105
+#: ../extensions/image_rotation/rotation-utils.c:95
 #, c-format
 msgid "Problem transforming the image: %s"
 msgstr "画像を変換する際に問題が発生しました: %s"
 
-#: ../extensions/image_rotation/rotation-utils.c:110
+#: ../extensions/image_rotation/rotation-utils.c:100
 msgid ""
 "This transformation may introduce small image distortions along one or more "
 "edges, because the image dimensions are not multiples of 8.\n"
@@ -3323,11 +3323,11 @@ msgstr ""
 "さらに、変換できない端のピクセルを切り取って端を揃えておくことも可能です。実際の使用では、このモードは最良の結果を提供してくれますが、変換についてはそれほ"
 "ど厳しく品質を維持するようなことはしていません。"
 
-#: ../extensions/image_rotation/rotation-utils.c:116
+#: ../extensions/image_rotation/rotation-utils.c:106
 msgid "_Trim"
 msgstr "角度(_T)"
 
-#: ../extensions/image_rotation/rotation-utils.c:118
+#: ../extensions/image_rotation/rotation-utils.c:108
 msgid "_Accept distortion"
 msgstr "歪みを受け入れる(_A)"
 
@@ -3542,7 +3542,7 @@ msgid "The selected files are already present in the destination."
 msgstr "選択したファイルは既に格納場所に存在していました。"
 
 #: ../extensions/importer/gth-import-task.c:644
-#: ../pix/gth-file-source-vfs.c:694
+#: ../pix/gth-file-source-vfs.c:704
 msgid "Could not delete the files"
 msgstr "このファイルを削除できませんでした"
 
@@ -3702,11 +3702,11 @@ msgstr "コマンドの編集"
 msgid "Are you sure you want to delete the selected command?"
 msgstr "本当に選択したコマンドを削除しますか?"
 
-#: ../extensions/list_tools/gth-script.c:610
+#: ../extensions/list_tools/gth-script.c:615
 msgid "Enter a value:"
 msgstr "値の入力:"
 
-#: ../extensions/list_tools/gth-script.c:745
+#: ../extensions/list_tools/gth-script.c:750
 #: ../extensions/webalbums/gth-web-exporter.c:558
 #: ../extensions/webalbums/gth-web-exporter.c:570
 #: ../extensions/webalbums/gth-web-exporter.c:578
@@ -4233,7 +4233,7 @@ msgstr "フォーマット"
 msgid "pixel"
 msgstr "ピクセル"
 
-#: ../extensions/resize_images/dlg-resize-images.c:423
+#: ../extensions/resize_images/dlg-resize-images.c:420
 msgid "Keep the original format"
 msgstr "オリジナルと同じ形式にする"
 
@@ -4318,8 +4318,10 @@ msgstr "セレクション 3"
 #: ../extensions/selections/callbacks.c:285
 #, c-format
 msgid ""
-"Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."
-msgstr "セレクションにファイルを追加するには Alt-%d 、確認するには Ctrl-%d を使います。"
+"Use Alt-%d to add files to this selection, Ctrl-%d to view this selection, "
+"Alt+Shift+%d to remove files from this selection"
+msgstr ""
+"Alt-%d でこのセレクションにファイル追加, Ctrl-%d でこのセレクションを閲覧, Alt+Shift+%d でこのセレクションからファイル削除"
 
 #: ../extensions/selections/gth-selections-manager.c:239
 #, c-format
@@ -4383,7 +4385,7 @@ msgstr "ファイルを演奏一覧に追加します"
 msgid "Remove the selected files"
 msgstr "選択したファイルを演奏一覧から削除します"
 
-#: ../extensions/slideshow/gth-slideshow.c:233
+#: ../extensions/slideshow/gth-slideshow.c:234
 msgid "Playing slideshow"
 msgstr "スライドショーを実行する"
 
@@ -4577,11 +4579,11 @@ msgstr "HTML ページの保存中: 目録"
 msgid "Copying original images"
 msgstr "オリジナルの画像をコピーする"
 
-#: ../extensions/webalbums/gth-web-exporter.c:2965
+#: ../extensions/webalbums/gth-web-exporter.c:2971
 msgid "Could not find the style folder"
 msgstr "スタイルのフォルダーが見つかりませんでした"
 
-#: ../extensions/webalbums/gth-web-exporter.c:3003
+#: ../extensions/webalbums/gth-web-exporter.c:3009
 msgid "Could not create a temporary folder"
 msgstr "作業フォルダーを作成できませんでした"
 
@@ -4594,8 +4596,8 @@ msgid "Create static web albums."
 msgstr "ローカルのウェブアルバムを作成します"
 
 #: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1397
-#: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6173
-#: ../pix/gth-browser.c:6192 ../pix/gth-browser.c:6216
+#: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6186
+#: ../pix/gth-browser.c:6207 ../pix/gth-browser.c:6231
 #, c-format
 msgid "Could not load the position \"%s\""
 msgstr "\"%s\" を読み込めませんでした"
@@ -4776,6 +4778,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  OKANO Takayoshi https://launchpad.net/~kano\n"
 "  Rockworld https://launchpad.net/~rockrock2222222\n"
+"  vega m57 https://launchpad.net/~vegam57\n"
 "  yasum https://launchpad.net/~nyma5a"
 
 #: ../pix/gth-browser-actions-entries.h:31
@@ -5078,12 +5081,12 @@ msgstr "最近訪れた場所の一覧を表示します"
 msgid "View the list of upper locations"
 msgstr "上にある場所の一覧を表示します"
 
-#: ../pix/gth-browser.c:6174
+#: ../pix/gth-browser.c:6187
 #, c-format
 msgid "File type not supported"
 msgstr "サポートしていない種類のファイルです"
 
-#: ../pix/gth-browser.c:6217
+#: ../pix/gth-browser.c:6232
 #, c-format
 msgid "No suitable module found"
 msgstr "妥当なモジュールが見つかりませんでした"
@@ -5102,36 +5105,40 @@ msgstr "拡張機能の '%2$s' にはこの '%1$s' が必要です。"
 msgid "All Supported Files"
 msgstr "サポートしている全ファイル"
 
-#: ../pix/gth-file-source-vfs.c:121
+#: ../pix/gth-file-source-vfs.c:128
+msgid "Favorites"
+msgstr "お気に入り"
+
+#: ../pix/gth-file-source-vfs.c:131
 msgid "Home Folder"
 msgstr "ホームフォルダー"
 
-#: ../pix/gth-file-source-vfs.c:126
+#: ../pix/gth-file-source-vfs.c:136
 msgid "File System"
 msgstr "ファイルシステム"
 
-#: ../pix/gth-file-source-vfs.c:739
+#: ../pix/gth-file-source-vfs.c:749
 msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr "ファイルをゴミ箱へ移動できませんが、代わりにそれらを完全に消去しますか?"
 
-#: ../pix/gth-file-source-vfs.c:750
+#: ../pix/gth-file-source-vfs.c:760
 msgid "Could not move the files to the Trash"
 msgstr "ファイルをゴミ箱へ移動できませんでした"
 
-#: ../pix/gth-file-source-vfs.c:797
+#: ../pix/gth-file-source-vfs.c:807
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
 msgstr "本当に \"%s\" をゴミ箱に移動しますか?"
 
-#: ../pix/gth-file-source-vfs.c:801
+#: ../pix/gth-file-source-vfs.c:811
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
 msgstr[0] "本当に選択した%'d個のファイルをゴミ箱へ移動しますか?"
 
-#: ../pix/gth-file-source-vfs.c:844
+#: ../pix/gth-file-source-vfs.c:859
 #, c-format
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
@@ -5143,17 +5150,17 @@ msgid "Hide the filterbar"
 msgstr "フィルターバーを隠します"
 
 #: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
-#: ../pix/gth-test-simple.c:75
+#: ../pix/gth-test-simple.c:78
 msgid "kB"
 msgstr "KB"
 
 #: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
-#: ../pix/gth-test-simple.c:76
+#: ../pix/gth-test-simple.c:79
 msgid "MB"
 msgstr "MB"
 
 #: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
-#: ../pix/gth-test-simple.c:77
+#: ../pix/gth-test-simple.c:80
 msgid "GB"
 msgstr "GB"
 
@@ -5240,7 +5247,7 @@ msgstr "ファイル"
 msgid "Name"
 msgstr "名前"
 
-#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:303
 msgid "Size"
 msgstr "サイズ"
 
@@ -5280,27 +5287,27 @@ msgstr "並べ替えない"
 msgid "dimensions"
 msgstr "画像の寸法"
 
-#: ../pix/gth-main-default-tests.c:233
+#: ../pix/gth-main-default-tests.c:252
 msgid "All Files"
 msgstr "全てのファイル"
 
-#: ../pix/gth-main-default-tests.c:261
+#: ../pix/gth-main-default-tests.c:280
 msgid "Media"
 msgstr "メディア"
 
-#: ../pix/gth-main-default-tests.c:268
+#: ../pix/gth-main-default-tests.c:287
 msgid "Text Files"
 msgstr "通常のファイル"
 
-#: ../pix/gth-main-default-tests.c:276
+#: ../pix/gth-main-default-tests.c:295
 msgid "Filename"
 msgstr "ファイル名"
 
-#: ../pix/gth-main-default-tests.c:308
+#: ../pix/gth-main-default-tests.c:327
 msgid "Title (embedded)"
 msgstr "(埋め込まれた) タイトル"
 
-#: ../pix/gth-main-default-tests.c:316
+#: ../pix/gth-main-default-tests.c:335
 msgid "Description (embedded)"
 msgstr "(埋め込まれた) 説明"
 
@@ -5375,8 +5382,8 @@ msgstr "宇宙"
 msgid "Family"
 msgstr "家族"
 
-#: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:49
-#: ../pix/gth-test-simple.c:64
+#: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:50
+#: ../pix/gth-test-simple.c:67
 msgid "is"
 msgstr "が次である"
 
@@ -5384,14 +5391,13 @@ msgstr "が次である"
 msgid "is only"
 msgstr "が次だけである"
 
-#: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:50
-#: ../pix/gth-test-simple.c:65
+#: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:51
+#: ../pix/gth-test-simple.c:68
 msgid "is not"
 msgstr "が次ではない"
 
-#: ../pix/gth-test-category.c:407 ../pix/gth-test-simple.c:812
-#: ../pix/gth-test-simple.c:838 ../pix/gth-test-simple.c:859
-#: ../pix/gth-test-simple.c:885
+#: ../pix/gth-test-category.c:407 ../pix/gth-test-simple.c:1084
+#: ../pix/gth-test-simple.c:1105 ../pix/gth-test-simple.c:1131
 #, c-format
 msgid "The test definition is incomplete"
 msgstr "テストする定義が足りません。"
@@ -5404,51 +5410,59 @@ msgstr "新しい条件を追加します"
 msgid "Remove this rule"
 msgstr "この条件を削除します"
 
-#: ../pix/gth-test-simple.c:46
+#: ../pix/gth-test-simple.c:47
 msgid "contains"
 msgstr "が次を含む"
 
-#: ../pix/gth-test-simple.c:47
+#: ../pix/gth-test-simple.c:48
 msgid "starts with"
 msgstr "が次で始まる"
 
-#: ../pix/gth-test-simple.c:48
+#: ../pix/gth-test-simple.c:49
 msgid "ends with"
 msgstr "が次で終わる"
 
-#: ../pix/gth-test-simple.c:51
+#: ../pix/gth-test-simple.c:52
 msgid "does not contain"
 msgstr "が次を含まない"
 
-#: ../pix/gth-test-simple.c:52
+#: ../pix/gth-test-simple.c:53
 msgid "matches"
 msgstr "が次のパターンにマッチする"
 
-#: ../pix/gth-test-simple.c:56
+#: ../pix/gth-test-simple.c:57
 msgid "is lower than"
 msgstr "が次より小さい"
 
-#: ../pix/gth-test-simple.c:57
+#: ../pix/gth-test-simple.c:58
 msgid "is greater than"
 msgstr "が次より大きい"
 
-#: ../pix/gth-test-simple.c:58
+#: ../pix/gth-test-simple.c:59
 msgid "is equal to"
 msgstr "が次と同じ"
 
-#: ../pix/gth-test-simple.c:62
+#: ../pix/gth-test-simple.c:60
+msgid "is greater than or equal to"
+msgstr "以上"
+
+#: ../pix/gth-test-simple.c:61
+msgid "is lower than or equal to"
+msgstr "以下"
+
+#: ../pix/gth-test-simple.c:65
 msgid "is before"
 msgstr "が次より前"
 
-#: ../pix/gth-test-simple.c:63
+#: ../pix/gth-test-simple.c:66
 msgid "is after"
 msgstr "が次より後"
 
-#: ../pix/gth-time-selector.c:478
+#: ../pix/gth-time-selector.c:487
 msgid "Today"
 msgstr "今日"
 
-#: ../pix/gth-time-selector.c:486
+#: ../pix/gth-time-selector.c:495
 msgid "Now"
 msgstr "現在日時"
 

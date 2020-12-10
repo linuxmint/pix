@@ -13,16 +13,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: "
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
-"POT-Creation-Date: 2017-05-21 12:27+0100\n"
-"PO-Revision-Date: 2017-11-12 08:45+0000\n"
+"POT-Creation-Date: 2020-12-01 16:28+0000\n"
+"PO-Revision-Date: 2020-12-05 18:24+0000\n"
 "Last-Translator: KAMI <kami911@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2020-06-24 10:11+0000\n"
-"X-Generator: Launchpad (build 1cbd0aa39df153c901321817f9b57cf3f232b507)\n"
+"X-Launchpad-Export-Date: 2020-12-10 10:30+0000\n"
+"X-Generator: Launchpad (build 4853cb86c14c5a9e513816c8a61121c639b30835)\n"
 "Language: hu\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -584,7 +584,7 @@ msgstr "Lemezre írás"
 msgid "Error interpreting JPEG image file: %s"
 msgstr "Hiba a JPEG képfájl értelmezésekor: %s"
 
-#: ../extensions/cairo_io/cairo-image-surface-jpeg.c:492
+#: ../extensions/cairo_io/cairo-image-surface-jpeg.c:513
 #, c-format
 msgid "Unknown JPEG color space (%d)"
 msgstr "Ismeretlen JPEG színtér (%d)"
@@ -975,12 +975,12 @@ msgstr ""
 
 #: ../extensions/catalogs/dlg-organize-files.c:132
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
-#: ../pix/gth-main-default-tests.c:300
+#: ../pix/gth-main-default-tests.c:319
 msgid "Date photo was taken"
 msgstr "Fényképkészítés dátuma"
 
 #: ../extensions/catalogs/dlg-organize-files.c:139
-#: ../pix/gth-main-default-tests.c:292
+#: ../pix/gth-main-default-tests.c:311
 msgid "File modified date"
 msgstr "Fájlmódosítás dátuma"
 
@@ -990,7 +990,7 @@ msgid "Tag"
 msgstr "Címke"
 
 #: ../extensions/catalogs/dlg-organize-files.c:153
-#: ../pix/gth-main-default-tests.c:324
+#: ../pix/gth-main-default-tests.c:343
 msgid "Tag (embedded)"
 msgstr "Címke (beágyazott)"
 
@@ -1036,10 +1036,10 @@ msgid "Could not remove the files from the catalog"
 msgstr "Nem lehet eltávolítani a fájlokat a katalógusból"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:747
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:756
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:786
-#: ../extensions/exiv2_tools/exiv2-utils.cpp:1317
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:752
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:761
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:791
+#: ../extensions/exiv2_tools/exiv2-utils.cpp:1326
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
 msgstr "Érvénytelen fájlformátum"
@@ -1183,6 +1183,7 @@ msgid "Date"
 msgstr "Dátum"
 
 #: ../extensions/comments/main.c:46 ../pix/gth-main-default-metadata.c:54
+#: ../pix/gth-main-default-tests.c:349
 msgid "Rating"
 msgstr "Értékelés"
 
@@ -1995,7 +1996,7 @@ msgstr "Új album"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:557
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:583
-#: ../extensions/image_print/gth-image-print-job.c:1739
+#: ../extensions/image_print/gth-image-print-job.c:1770
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:607
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:597
 msgid "No valid file selected."
@@ -2092,14 +2093,14 @@ msgstr "Nem sikerült feltölteni a(z) „%s” fájlt: %s"
 msgid "Uploading '%s'"
 msgstr "„%s” feltöltése"
 
-#: ../extensions/facebook/facebook-service.c:959
+#: ../extensions/facebook/facebook-service.c:962
 #: ../extensions/flicker_utils/flickr-service.c:1482
 #: ../extensions/photobucket/photobucket-service.c:714
 #: ../extensions/picasaweb/picasa-web-service.c:1138
 msgid "Uploading the files to the server"
 msgstr "Fájlok feltöltése a kiszolgálóra"
 
-#: ../extensions/facebook/facebook-service.c:1058
+#: ../extensions/facebook/facebook-service.c:1061
 #: ../extensions/flicker_utils/flickr-service.c:1651
 #: ../extensions/picasaweb/picasa-web-service.c:1257
 msgid "Getting the photo list"
@@ -2155,12 +2156,12 @@ msgstr ""
 msgid "Could not move the folder to the Trash"
 msgstr "Nem sikerült áthelyezni a mappát a Kukába"
 
-#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:841
+#: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:856
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Biztos benne, hogy véglegesen törli ezt a fájlt: „%s”?"
 
-#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:854
+#: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:869
 msgid "If you delete a file, it will be permanently lost."
 msgstr "Ha törli a fájlt, az véglegesen elvész."
 
@@ -2210,7 +2211,7 @@ msgid "Duplicate the selected files"
 msgstr "A kijelölt fájlok megkettőzése"
 
 #: ../extensions/file_manager/callbacks.c:183
-#: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:813
+#: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:823
 msgid "Mo_ve to Trash"
 msgstr "Áthelyezés a _Kukába"
 
@@ -2439,7 +2440,6 @@ msgid "New dimensions:"
 msgstr "Új méretek:"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:12
-#: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "pixels"
 msgstr "képpont"
 
@@ -2715,7 +2715,7 @@ msgid "Redo"
 msgstr "Újra"
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:214
-#: ../extensions/resize_images/dlg-resize-images.c:180
+#: ../extensions/resize_images/dlg-resize-images.c:177
 msgid "Resizing images"
 msgstr "Képek átméretezése"
 
@@ -3086,11 +3086,11 @@ msgstr "Videó lejátszása"
 msgid "Pause"
 msgstr "Szünet"
 
-#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:247
+#: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:266
 msgid "Video"
 msgstr "Videó"
 
-#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:254
+#: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:273
 msgid "Audio"
 msgstr "Hang"
 
@@ -3214,11 +3214,11 @@ msgstr "Egység:"
 msgid "Preview"
 msgstr "Előnézet"
 
-#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "millimeters"
 msgstr "milliméter"
 
-#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
 msgid "inches"
 msgstr "hüvelyk"
 
@@ -3238,24 +3238,24 @@ msgstr "Válassza ki a lábléc betűkészletét"
 msgid "Fonts"
 msgstr "Betűkészletek"
 
-#: ../extensions/image_print/gth-image-print-job.c:914
+#: ../extensions/image_print/gth-image-print-job.c:912
 #: ../extensions/webalbums/data/albumthemes/text.h:31
 #, c-format
 msgid "Page %d of %d"
 msgstr "%d / %d oldal"
 
-#: ../extensions/image_print/gth-image-print-job.c:1680
-#: ../extensions/image_print/gth-image-print-job.c:1845
-#: ../extensions/image_print/gth-image-print-job.c:1888
+#: ../extensions/image_print/gth-image-print-job.c:1711
+#: ../extensions/image_print/gth-image-print-job.c:1876
+#: ../extensions/image_print/gth-image-print-job.c:1919
 msgid "Could not print"
 msgstr "Nem lehet nyomtatni"
 
-#: ../extensions/image_print/gth-image-print-job.c:1746
-#: ../pix/gth-main-default-tests.c:240
+#: ../extensions/image_print/gth-image-print-job.c:1777
+#: ../pix/gth-main-default-tests.c:259
 msgid "Images"
 msgstr "Képek"
 
-#: ../extensions/image_print/gth-image-print-job.c:1847
+#: ../extensions/image_print/gth-image-print-job.c:1878
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
@@ -3268,7 +3268,7 @@ msgid "Loading \"%s\""
 msgstr "„%s” betöltése"
 
 #: ../extensions/image_print/gth-load-image-info-task.c:166
-#: ../extensions/webalbums/gth-web-exporter.c:2721
+#: ../extensions/webalbums/gth-web-exporter.c:2727
 msgid "Loading images"
 msgstr "Képek betöltése"
 
@@ -3319,12 +3319,12 @@ msgstr "Képelforgatás"
 msgid "Rotate images without data loss."
 msgstr "Képek elforgatása adatvesztés nélkül."
 
-#: ../extensions/image_rotation/rotation-utils.c:105
+#: ../extensions/image_rotation/rotation-utils.c:95
 #, c-format
 msgid "Problem transforming the image: %s"
 msgstr "Hiba a(z) „%s” kép átalakítása közben"
 
-#: ../extensions/image_rotation/rotation-utils.c:110
+#: ../extensions/image_rotation/rotation-utils.c:100
 msgid ""
 "This transformation may introduce small image distortions along one or more "
 "edges, because the image dimensions are not multiples of 8.\n"
@@ -3348,11 +3348,11 @@ msgstr ""
 "szempontból ez a mód adja a legszebb eredményt, de az átalakítás már nem "
 "teljesen veszteségmentes."
 
-#: ../extensions/image_rotation/rotation-utils.c:116
+#: ../extensions/image_rotation/rotation-utils.c:106
 msgid "_Trim"
 msgstr "_Levágás"
 
-#: ../extensions/image_rotation/rotation-utils.c:118
+#: ../extensions/image_rotation/rotation-utils.c:108
 msgid "_Accept distortion"
 msgstr "_Torzítás elfogadása"
 
@@ -3567,7 +3567,7 @@ msgid "The selected files are already present in the destination."
 msgstr "A kiválasztott fájlok már szerepelnek a célban."
 
 #: ../extensions/importer/gth-import-task.c:644
-#: ../pix/gth-file-source-vfs.c:694
+#: ../pix/gth-file-source-vfs.c:704
 msgid "Could not delete the files"
 msgstr "Nem sikerült törölni a fájlokat"
 
@@ -3727,11 +3727,11 @@ msgstr "Parancs szerkesztése"
 msgid "Are you sure you want to delete the selected command?"
 msgstr "Biztosan törölni szeretné a kijelölt parancsot?"
 
-#: ../extensions/list_tools/gth-script.c:610
+#: ../extensions/list_tools/gth-script.c:615
 msgid "Enter a value:"
 msgstr "Írjon be egy értéket:"
 
-#: ../extensions/list_tools/gth-script.c:745
+#: ../extensions/list_tools/gth-script.c:750
 #: ../extensions/webalbums/gth-web-exporter.c:558
 #: ../extensions/webalbums/gth-web-exporter.c:570
 #: ../extensions/webalbums/gth-web-exporter.c:578
@@ -4259,7 +4259,7 @@ msgstr "Formátum"
 msgid "pixel"
 msgstr "pixel"
 
-#: ../extensions/resize_images/dlg-resize-images.c:423
+#: ../extensions/resize_images/dlg-resize-images.c:420
 msgid "Keep the original format"
 msgstr "Az eredeti formátum megtartása"
 
@@ -4344,10 +4344,9 @@ msgstr "3. kijelölés"
 #: ../extensions/selections/callbacks.c:285
 #, c-format
 msgid ""
-"Use Alt-%d to add files to this selection, Ctrl-%d to view this selection."
+"Use Alt-%d to add files to this selection, Ctrl-%d to view this selection, "
+"Alt+Shift+%d to remove files from this selection"
 msgstr ""
-"Az Alt-%d használatával adhatók hozzá fájlok a kijelöléshez, a Ctrl-%d "
-"használatával nézhető meg a kijelölés."
 
 #: ../extensions/selections/gth-selections-manager.c:239
 #, c-format
@@ -4411,7 +4410,7 @@ msgstr "Fájlok hozzáadása a lejátszólistához"
 msgid "Remove the selected files"
 msgstr "A kijelölt fájlok eltávolítása"
 
-#: ../extensions/slideshow/gth-slideshow.c:233
+#: ../extensions/slideshow/gth-slideshow.c:234
 msgid "Playing slideshow"
 msgstr "Diavetítés indítása"
 
@@ -4605,11 +4604,11 @@ msgstr "HTML-oldalak mentése: mutatók"
 msgid "Copying original images"
 msgstr "Eredeti képek másolása"
 
-#: ../extensions/webalbums/gth-web-exporter.c:2965
+#: ../extensions/webalbums/gth-web-exporter.c:2971
 msgid "Could not find the style folder"
 msgstr "Nem található a stílus mappa"
 
-#: ../extensions/webalbums/gth-web-exporter.c:3003
+#: ../extensions/webalbums/gth-web-exporter.c:3009
 msgid "Could not create a temporary folder"
 msgstr "Nem lehet létrehozni az átmeneti könyvtárat"
 
@@ -4622,8 +4621,8 @@ msgid "Create static web albums."
 msgstr "Statikus webalbumok létrehozása."
 
 #: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1397
-#: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6173
-#: ../pix/gth-browser.c:6192 ../pix/gth-browser.c:6216
+#: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6186
+#: ../pix/gth-browser.c:6207 ../pix/gth-browser.c:6231
 #, c-format
 msgid "Could not load the position \"%s\""
 msgstr "Nem lehet betölteni a(z) „%s” pozíciót"
@@ -5112,12 +5111,12 @@ msgstr "A meglátogatott helyek listájának megtekintése"
 msgid "View the list of upper locations"
 msgstr "A felső helyek listájának megtekintése"
 
-#: ../pix/gth-browser.c:6174
+#: ../pix/gth-browser.c:6187
 #, c-format
 msgid "File type not supported"
 msgstr "A fájltípus nem támogatott"
 
-#: ../pix/gth-browser.c:6217
+#: ../pix/gth-browser.c:6232
 #, c-format
 msgid "No suitable module found"
 msgstr "Nem található megfelelő modul"
@@ -5136,38 +5135,42 @@ msgstr "A(z) „%1$s” kiterjesztés szükséges a(z) „%2$s” kiterjesztésh
 msgid "All Supported Files"
 msgstr "Minden támogatott fájl"
 
-#: ../pix/gth-file-source-vfs.c:121
+#: ../pix/gth-file-source-vfs.c:128
+msgid "Favorites"
+msgstr "Kedvencek"
+
+#: ../pix/gth-file-source-vfs.c:131
 msgid "Home Folder"
 msgstr "Saját mappa"
 
-#: ../pix/gth-file-source-vfs.c:126
+#: ../pix/gth-file-source-vfs.c:136
 msgid "File System"
 msgstr "Fájlrendszer"
 
-#: ../pix/gth-file-source-vfs.c:739
+#: ../pix/gth-file-source-vfs.c:749
 msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
 "A fájlokat nem sikerült áthelyezni a Kukába. Szeretné véglegesen törölni azt?"
 
-#: ../pix/gth-file-source-vfs.c:750
+#: ../pix/gth-file-source-vfs.c:760
 msgid "Could not move the files to the Trash"
 msgstr "Nem sikerült áthelyezni a fájlokat a Kukába"
 
-#: ../pix/gth-file-source-vfs.c:797
+#: ../pix/gth-file-source-vfs.c:807
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
 msgstr "Biztos benne, hogy áthelyezi a Kukába ezt a fájlt: „%s”?"
 
-#: ../pix/gth-file-source-vfs.c:801
+#: ../pix/gth-file-source-vfs.c:811
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
 msgstr[0] "Biztos benne, hogy áthelyezi a Kukába a kijelölt %'d fájlt?"
 msgstr[1] "Biztos benne, hogy áthelyezi a Kukába a kijelölt %'d fájlt?"
 
-#: ../pix/gth-file-source-vfs.c:844
+#: ../pix/gth-file-source-vfs.c:859
 #, c-format
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
@@ -5180,17 +5183,17 @@ msgid "Hide the filterbar"
 msgstr "Szűrősor elrejtése"
 
 #: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
-#: ../pix/gth-test-simple.c:75
+#: ../pix/gth-test-simple.c:78
 msgid "kB"
 msgstr "kB"
 
 #: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
-#: ../pix/gth-test-simple.c:76
+#: ../pix/gth-test-simple.c:79
 msgid "MB"
 msgstr "MB"
 
 #: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
-#: ../pix/gth-test-simple.c:77
+#: ../pix/gth-test-simple.c:80
 msgid "GB"
 msgstr "GB"
 
@@ -5277,7 +5280,7 @@ msgstr "Fájl"
 msgid "Name"
 msgstr "Név"
 
-#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:284
+#: ../pix/gth-main-default-metadata.c:40 ../pix/gth-main-default-tests.c:303
 msgid "Size"
 msgstr "Méret"
 
@@ -5317,27 +5320,27 @@ msgstr "nincs rendezés"
 msgid "dimensions"
 msgstr "méretek"
 
-#: ../pix/gth-main-default-tests.c:233
+#: ../pix/gth-main-default-tests.c:252
 msgid "All Files"
 msgstr "Minden fájl"
 
-#: ../pix/gth-main-default-tests.c:261
+#: ../pix/gth-main-default-tests.c:280
 msgid "Media"
 msgstr "Média"
 
-#: ../pix/gth-main-default-tests.c:268
+#: ../pix/gth-main-default-tests.c:287
 msgid "Text Files"
 msgstr "Szövegfájlok"
 
-#: ../pix/gth-main-default-tests.c:276
+#: ../pix/gth-main-default-tests.c:295
 msgid "Filename"
 msgstr "Fájlnév"
 
-#: ../pix/gth-main-default-tests.c:308
+#: ../pix/gth-main-default-tests.c:327
 msgid "Title (embedded)"
 msgstr "Cím (beágyazott)"
 
-#: ../pix/gth-main-default-tests.c:316
+#: ../pix/gth-main-default-tests.c:335
 msgid "Description (embedded)"
 msgstr "Leírás (beágyazott)"
 
@@ -5413,8 +5416,8 @@ msgstr "Csillagászat"
 msgid "Family"
 msgstr "Család"
 
-#: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:49
-#: ../pix/gth-test-simple.c:64
+#: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:50
+#: ../pix/gth-test-simple.c:67
 msgid "is"
 msgstr "="
 
@@ -5422,14 +5425,13 @@ msgstr "="
 msgid "is only"
 msgstr "csak"
 
-#: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:50
-#: ../pix/gth-test-simple.c:65
+#: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:51
+#: ../pix/gth-test-simple.c:68
 msgid "is not"
 msgstr "nem"
 
-#: ../pix/gth-test-category.c:407 ../pix/gth-test-simple.c:812
-#: ../pix/gth-test-simple.c:838 ../pix/gth-test-simple.c:859
-#: ../pix/gth-test-simple.c:885
+#: ../pix/gth-test-category.c:407 ../pix/gth-test-simple.c:1084
+#: ../pix/gth-test-simple.c:1105 ../pix/gth-test-simple.c:1131
 #, c-format
 msgid "The test definition is incomplete"
 msgstr "A teszt meghatározása nem teljes"
@@ -5442,51 +5444,59 @@ msgstr "Új szabály hozzáadása"
 msgid "Remove this rule"
 msgstr "Szabály eltávolítása"
 
-#: ../pix/gth-test-simple.c:46
+#: ../pix/gth-test-simple.c:47
 msgid "contains"
 msgstr "tartalmazza"
 
-#: ../pix/gth-test-simple.c:47
+#: ../pix/gth-test-simple.c:48
 msgid "starts with"
 msgstr "a kezdete"
 
-#: ../pix/gth-test-simple.c:48
+#: ../pix/gth-test-simple.c:49
 msgid "ends with"
 msgstr "a vége"
 
-#: ../pix/gth-test-simple.c:51
+#: ../pix/gth-test-simple.c:52
 msgid "does not contain"
 msgstr "nem tartalmazza"
 
-#: ../pix/gth-test-simple.c:52
+#: ../pix/gth-test-simple.c:53
 msgid "matches"
 msgstr "illeszkedik"
 
-#: ../pix/gth-test-simple.c:56
+#: ../pix/gth-test-simple.c:57
 msgid "is lower than"
 msgstr "kisebb mint"
 
-#: ../pix/gth-test-simple.c:57
+#: ../pix/gth-test-simple.c:58
 msgid "is greater than"
 msgstr "nagyobb mint"
 
-#: ../pix/gth-test-simple.c:58
+#: ../pix/gth-test-simple.c:59
 msgid "is equal to"
 msgstr "pontosan"
 
-#: ../pix/gth-test-simple.c:62
+#: ../pix/gth-test-simple.c:60
+msgid "is greater than or equal to"
+msgstr ""
+
+#: ../pix/gth-test-simple.c:61
+msgid "is lower than or equal to"
+msgstr ""
+
+#: ../pix/gth-test-simple.c:65
 msgid "is before"
 msgstr "ez előtt"
 
-#: ../pix/gth-test-simple.c:63
+#: ../pix/gth-test-simple.c:66
 msgid "is after"
 msgstr "ez után"
 
-#: ../pix/gth-time-selector.c:478
+#: ../pix/gth-time-selector.c:487
 msgid "Today"
 msgstr "Ma"
 
-#: ../pix/gth-time-selector.c:486
+#: ../pix/gth-time-selector.c:495
 msgid "Now"
 msgstr "Most"
 
