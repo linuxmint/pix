@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pix.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-01 16:28+0000\n"
-"PO-Revision-Date: 2020-12-27 16:59+0000\n"
+"PO-Revision-Date: 2021-01-24 06:53+0000\n"
 "Last-Translator: Panwar <Unknown>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2021-01-02 14:17+0000\n"
-"X-Generator: Launchpad (build 34b3ffd45c9543b7f7aa5aa313925241e9e7ca3f)\n"
+"X-Launchpad-Export-Date: 2021-06-09 14:20+0000\n"
+"X-Generator: Launchpad (build b45bdbe3a00b6b668fa7f2069bd545c35c41f7f4)\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
 #, c-format
@@ -103,7 +103,7 @@ msgstr "पिक्स चित्र प्रदर्शक"
 
 #: ../data/pix.desktop.in.in.h:4
 msgid "View and organize your images"
-msgstr "चित्र प्रदर्शन व प्रबंधन"
+msgstr "चित्र प्रदर्शन व संयोजन"
 
 #: ../data/pix-import.desktop.in.in.h:1
 msgid "Import with Pix"
@@ -126,10 +126,12 @@ msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr ""
+"इस आकार (बाइट में) से अधिक के चित्र हेतु लघुछवि प्रदर्शित नहीं होगी। सभी "
+"चित्रों हेतु लघुछवि प्रदर्शित करने हेतु शून्य दर्ज करें।"
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
-msgstr ""
+msgstr "चित्र अनुसार विंडो आकार परिवर्तन करें या नहीं"
 
 #: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
@@ -141,7 +143,7 @@ msgstr "संभव मान : श्वेत, श्याम व चेक�
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
-msgstr ""
+msgstr "चित्र परिवर्तन उपरांत स्क्रॉल पट्टी स्थिति पुनः सेट करें या नहीं"
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
@@ -156,6 +158,8 @@ msgid ""
 "Possible values include: general::unsorted, file::name, file::size, "
 "file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
+"संभावित मान : general::unsorted, file::name, file::size, file::mtime, "
+"exif::photo::datetimeoriginal"
 
 #: ../data/ui/extensions-preferences.ui.h:1
 msgid "_Extensions:"
@@ -199,7 +203,7 @@ msgstr "मानक विचलन :"
 
 #: ../data/ui/histogram-info.ui.h:4
 msgid "Median:"
-msgstr ""
+msgstr "माध्यिका :"
 
 #. After the colon there is the total number of pixels
 #: ../data/ui/histogram-info.ui.h:6
@@ -210,7 +214,7 @@ msgstr "पिक्सेल :"
 #: ../data/ui/histogram-info.ui.h:8
 msgctxt "Pixels"
 msgid "Max:"
-msgstr ""
+msgstr "अधिकतम :"
 
 #. After the colon there is the percentile of selected pixels.
 #: ../data/ui/histogram-info.ui.h:10
@@ -265,7 +269,7 @@ msgstr "कोई भी फाइल अधिलिखित न करें 
 
 #: ../data/ui/overwrite-dialog.ui.h:11
 msgid "_Save the new file as:"
-msgstr ""
+msgstr "इस रूप में नई फाइल संचित करें (_S):"
 
 #: ../data/ui/personalize-filters.ui.h:1
 msgid "Filters"
@@ -285,7 +289,7 @@ msgstr "फोल्डर सूची के नीचे"
 
 #: ../data/ui/preferences.ui.h:2
 msgid "on the right"
-msgstr ""
+msgstr "दायीं ओर"
 
 #: ../data/ui/preferences.ui.h:3
 msgid "Pix Preferences"
@@ -293,19 +297,19 @@ msgstr "पिक्स सेटिंग्स"
 
 #: ../data/ui/preferences.ui.h:4
 msgid "T_humbnails in viewer:"
-msgstr ""
+msgstr "प्रदर्शक में लघुछवि (_T):"
 
 #: ../data/ui/preferences.ui.h:5
 msgid "on the bottom"
-msgstr ""
+msgstr "नीचे की ओर"
 
 #: ../data/ui/preferences.ui.h:6
 msgid "on the side"
-msgstr ""
+msgstr "साइड की ओर"
 
 #: ../data/ui/preferences.ui.h:7
 msgid "File _properties in browser:"
-msgstr ""
+msgstr "ब्राउज़र में फाइल विशेषताएँ (_p):"
 
 #: ../data/ui/preferences.ui.h:8
 msgid "Appearance"
@@ -313,39 +317,39 @@ msgstr "स्वरूप"
 
 #: ../data/ui/preferences.ui.h:9
 msgid "Go to last _visited location"
-msgstr ""
+msgstr "अंतिम बार प्रयुक्त स्थान पर जाएँ (_v)"
 
 #: ../data/ui/preferences.ui.h:10
 msgid "Go to this _folder:"
-msgstr ""
+msgstr "इस फोल्डर पर जाएँ (_f):"
 
 #: ../data/ui/preferences.ui.h:11
 msgid "Choose startup folder"
-msgstr ""
+msgstr "आरंभिक फोल्डर चुनें"
 
 #: ../data/ui/preferences.ui.h:12
 msgid "Set to C_urrent"
-msgstr ""
+msgstr "वर्तमान पर ही सेट करें (_C)"
 
 #: ../data/ui/preferences.ui.h:13
 msgid "_Reuse the active window to open files"
-msgstr ""
+msgstr "फाइलें खोलने हेतु सक्रिय विंडो पुनः उपयोग करें (_R)"
 
 #: ../data/ui/preferences.ui.h:14
 msgid "On startup:"
-msgstr ""
+msgstr "आरंभ पर :"
 
 #: ../data/ui/preferences.ui.h:15
 msgid "As_k confirmation before deleting files or catalogs"
-msgstr ""
+msgstr "फाइलें या सूची हटाने से पूर्व पुष्टिकरण आवश्यक (_k)"
 
 #: ../data/ui/preferences.ui.h:16
 msgid "Ask whether to save _modified files"
-msgstr ""
+msgstr "परिवर्तित फाइल संचय पूर्व पुष्टिकरण आवश्यक (_m)"
 
 #: ../data/ui/preferences.ui.h:17
 msgid "_Store metadata inside files if possible"
-msgstr ""
+msgstr "संभव होने पर मेटाडेटा फाइल में ही संचित करें (_S)"
 
 #: ../data/ui/preferences.ui.h:18
 #: ../extensions/exiv2_tools/gth-edit-iptc-page.c:198
@@ -367,11 +371,11 @@ msgstr "सामान्य"
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
 #: ../extensions/image_print/data/ui/print-layout.ui.h:18
 msgid "Caption"
-msgstr ""
+msgstr "अनुशीर्षक"
 
 #: ../data/ui/preferences.ui.h:21
 msgid "Thumbnail _size:"
-msgstr ""
+msgstr "लघुछवि आकार (_s):"
 
 #: ../data/ui/preferences.ui.h:22
 msgid "48"
@@ -411,7 +415,7 @@ msgstr "256"
 
 #: ../data/ui/preferences.ui.h:31
 msgid "D_etermine image type from content (slower)"
-msgstr ""
+msgstr "सामग्री से चित्र प्रकार प्राप्त करें (धीमी प्रक्रिया) (_e)"
 
 #: ../data/ui/preferences.ui.h:32 ../pix/dlg-preferences-extensions.c:71
 #: ../pix/gth-browser-actions-entries.h:179
@@ -420,16 +424,16 @@ msgstr "ब्राउज़र"
 
 #: ../data/ui/sort-order.ui.h:1
 msgid "Sort By"
-msgstr ""
+msgstr "अनुक्रमण प्रकार"
 
 #: ../data/ui/sort-order.ui.h:2
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:4
 msgid "_Sort by:"
-msgstr ""
+msgstr "अनुक्रमण प्रकार (_S):"
 
 #: ../data/ui/sort-order.ui.h:3
 msgid "_Inverse order"
-msgstr ""
+msgstr "विपरीत क्रम (_I):"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:1
 msgid "23"
@@ -437,15 +441,15 @@ msgstr "23"
 
 #: ../extensions/23hq/23hq.extension.in.in.h:2
 msgid "Upload images to 23hq.com"
-msgstr ""
+msgstr "23hq.com पर चित्र अपलोड करें"
 
 #: ../extensions/23hq/callbacks.c:68
 msgid "_23..."
-msgstr ""
+msgstr "_23..."
 
 #: ../extensions/23hq/callbacks.c:69
 msgid "Upload photos to 23"
-msgstr ""
+msgstr "23 पर चित्र अपलोड करें"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:1
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
@@ -454,7 +458,7 @@ msgstr "पसंद"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:2
 msgid "Add bookmarks support."
-msgstr ""
+msgstr "स्मृति-चिन्ह समर्थन जोड़ें।"
 
 #: ../extensions/bookmarks/bookmarks.extension.in.in.h:3
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:3
@@ -484,7 +488,7 @@ msgstr ""
 #: ../extensions/slideshow/slideshow.extension.in.in.h:3
 #: ../extensions/webalbums/webalbums.extension.in.in.h:3
 msgid "pix development team"
-msgstr ""
+msgstr "पिक्स सॉफ्टवेयर विकासकर्ता टीम"
 
 #: ../extensions/bookmarks/callbacks.c:54
 msgid "_Bookmarks"
@@ -492,7 +496,7 @@ msgstr "पसंद (_B)"
 
 #: ../extensions/bookmarks/callbacks.c:55
 msgid "_System Bookmarks"
-msgstr ""
+msgstr "सिस्टम स्मृति-चिन्ह (_S)"
 
 #: ../extensions/bookmarks/callbacks.c:58
 msgid "_Add Bookmark"
@@ -500,147 +504,147 @@ msgstr "पसंद जोड़ें (_A)"
 
 #: ../extensions/bookmarks/callbacks.c:59
 msgid "Add current location to bookmarks"
-msgstr ""
+msgstr "वर्तमान स्थान को स्मृति-चिन्ह में जोड़ें"
 
 #: ../extensions/bookmarks/callbacks.c:63
 msgid "_Edit Bookmarks..."
-msgstr ""
+msgstr "स्मृति-चिन्ह संपादन (_E)..."
 
 #: ../extensions/bookmarks/callbacks.c:64
 msgid "Edit bookmarks"
-msgstr ""
+msgstr "स्मृति-चिन्ह संपादन"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
 msgid "_Bookmarks:"
-msgstr ""
+msgstr "स्मृति-चिन्ह (_B):"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
 msgid "_Name"
-msgstr ""
+msgstr "नाम (_N)"
 
 #: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
 msgid "_Location"
-msgstr ""
+msgstr "स्थान (_L)"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:191
 msgid "Could not remove the bookmark"
-msgstr ""
+msgstr "स्मृति-चिन्ह हटाना विफल"
 
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:1
 msgid "Burn CD/DVD"
-msgstr ""
+msgstr "सीडी/डीवीडी बर्न करना"
 
 #: ../extensions/burn_disc/burn_disc.extension.in.in.h:2
 msgid "Save files to an optical disc."
-msgstr ""
+msgstr "सीडी पर फाइलें संचित करें।"
 
 #: ../extensions/burn_disc/callbacks.c:55
 msgid "_Optical Disc..."
-msgstr ""
+msgstr "सीडी (_O)..."
 
 #: ../extensions/burn_disc/callbacks.c:56
 msgid "Write files to an optical disc"
-msgstr ""
+msgstr "सीडी पर फाइलें राइट करें"
 
 #: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
 msgid "Disc Name"
-msgstr ""
+msgstr "सीडी नाम"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
 msgid "Current _folder"
-msgstr ""
+msgstr "वर्तमान फोल्डर (_f)"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
 msgid "Current folder and its s_ub-folders"
-msgstr ""
+msgstr "वर्तमान फोल्डर व उप-फोल्डर (_u)"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
 msgid "_Selected files"
-msgstr ""
+msgstr "चयनित फाइलें (_S)"
 
 #: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
 msgid "Source"
-msgstr ""
+msgstr "स्रोत"
 
 #: ../extensions/burn_disc/gth-burn-task.c:238
 #: ../extensions/burn_disc/gth-burn-task.c:259
 #: ../extensions/burn_disc/gth-burn-task.c:397
 msgid "Write to Disc"
-msgstr ""
+msgstr "डिस्क पर राइट करें"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr ""
+msgstr "JPEG चित्र फाइल प्रस्तुतिकरण हेतु त्रुटि : %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:513
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr ""
+msgstr "अज्ञात JPEG रंग स्पेस (%d)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
 msgid "_Default extension:"
-msgstr ""
+msgstr "डिफ़ॉल्ट एक्सटेंशन (_D):"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
 msgid "_Quality:"
-msgstr ""
+msgstr "गुणवत्ता (_Q):"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:3
 msgid "_Smoothing:"
-msgstr ""
+msgstr "मृदु प्रभाव (_S):"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:4
 msgid "Opti_mize"
-msgstr ""
+msgstr "इष्टतम करें (_m)"
 
 #: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:5
 msgid "_Progressive"
-msgstr ""
+msgstr "प्रगतिशील (_P)"
 
 #: ../extensions/cairo_io/data/ui/png-options.ui.h:1
 msgid "Compression _level:"
-msgstr ""
+msgstr "संपीड़न स्तर (_l):"
 
 #: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
 msgid "Default options:"
-msgstr ""
+msgstr "डिफ़ॉल्ट विकल्प :"
 
 #: ../extensions/cairo_io/data/ui/tga-options.ui.h:1
 msgid "_RLE compression"
-msgstr ""
+msgstr "RLE संपीड़न (_R)"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:2
 msgid "Compression"
-msgstr ""
+msgstr "संपीड़न"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:3
 msgid "_No compression"
-msgstr ""
+msgstr "संपीड़न रहित (_N)"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:4
 msgid "No_rmal (Deflate)"
-msgstr ""
+msgstr "सामान्य (अपस्फीत) (_r)"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:5
 msgid "_Loss compression (JPEG)"
-msgstr ""
+msgstr "संपीडन हानि (JPEG) (_L)"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:6
 msgid "Resolution"
-msgstr ""
+msgstr "रेजोलुशन"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:7
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:12
 msgid "_Horizontal:"
-msgstr ""
+msgstr "क्षैतिज (_H):"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:8
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:13
 msgid "_Vertical:"
-msgstr ""
+msgstr "लंबवत (_V):"
 
 #: ../extensions/cairo_io/data/ui/tiff-options.ui.h:9
 msgid "dpi"
@@ -648,47 +652,47 @@ msgstr "डीपीआई"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
 msgid "_Method:"
-msgstr ""
+msgstr "विधि (_M):"
 
 #: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
 msgid "_Lossless"
-msgstr ""
+msgstr "हानि रहित (_L)"
 
 #: ../extensions/cairo_io/gth-image-saver-jpeg.c:516
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:140
 msgid "JPEG"
-msgstr ""
+msgstr "JPEG"
 
 #: ../extensions/cairo_io/gth-image-saver-png.c:353
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:110
 msgid "PNG"
-msgstr ""
+msgstr "PNG"
 
 #: ../extensions/cairo_io/gth-image-saver-tga.c:257
 #: ../extensions/cairo_io/gth-image-saver-tiff.c:435
 #: ../pix/gth-buffer-data.c:84
 msgid "Insufficient memory"
-msgstr ""
+msgstr "अपर्याप्त मेमोरी"
 
 #: ../extensions/cairo_io/gth-image-saver-tga.c:344
 msgid "TGA"
-msgstr ""
+msgstr "TGA"
 
 #: ../extensions/cairo_io/gth-image-saver-tiff.c:559
 msgid "TIFF"
-msgstr ""
+msgstr "TIFF"
 
 #: ../extensions/cairo_io/gth-image-saver-webp.c:382
 #: ../extensions/image_viewer/gth-metadata-provider-image.c:165
 msgid "WebP"
-msgstr ""
+msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
 msgid "Saving"
-msgstr ""
+msgstr "संचय जारी"
 
 #: ../extensions/catalogs/actions.c:92 ../extensions/catalogs/actions.c:213
 #: ../extensions/catalogs/dlg-add-to-catalog.c:274
@@ -698,7 +702,7 @@ msgstr ""
 #: ../pix/gth-filter-editor-dialog.c:461
 #, c-format
 msgid "No name specified"
-msgstr ""
+msgstr "कोई नाम निर्दिष्ट नहीं"
 
 #: ../extensions/catalogs/actions.c:99 ../extensions/catalogs/actions.c:220
 #: ../extensions/catalogs/dlg-add-to-catalog.c:281
@@ -706,7 +710,7 @@ msgstr ""
 #: ../extensions/file_manager/actions.c:75
 #, c-format
 msgid "Invalid name. The following characters are not allowed: %s"
-msgstr ""
+msgstr "अमान्य नाम। निम्नलिखित अक्षर स्वीकार्य नहीं हैं : %s"
 
 #: ../extensions/catalogs/actions.c:155 ../extensions/catalogs/actions.c:267
 #: ../extensions/catalogs/dlg-add-to-catalog.c:338
@@ -714,17 +718,17 @@ msgstr ""
 #: ../extensions/catalogs/gth-file-source-catalogs.c:508
 #: ../extensions/file_manager/actions.c:106
 msgid "Name already used"
-msgstr ""
+msgstr "नाम पहले से प्रयुक्त"
 
 #: ../extensions/catalogs/actions.c:178
 #: ../extensions/catalogs/dlg-add-to-catalog.c:359
 msgid "New catalog"
-msgstr ""
+msgstr "नई सूची"
 
 #: ../extensions/catalogs/actions.c:179
 #: ../extensions/catalogs/dlg-add-to-catalog.c:360
 msgid "Enter the catalog name:"
-msgstr ""
+msgstr "सूची नाम दर्ज करें :"
 
 #: ../extensions/catalogs/actions.c:181 ../extensions/catalogs/actions.c:293
 #: ../extensions/catalogs/dlg-add-to-catalog.c:362
@@ -736,81 +740,81 @@ msgstr "बनाएँ (_r)"
 #: ../extensions/catalogs/actions.c:290
 #: ../extensions/catalogs/dlg-add-to-catalog.c:471
 msgid "New library"
-msgstr ""
+msgstr "नया संग्रह"
 
 #: ../extensions/catalogs/actions.c:291
 #: ../extensions/catalogs/dlg-add-to-catalog.c:472
 msgid "Enter the library name:"
-msgstr ""
+msgstr "संग्रह नाम दर्ज करें :"
 
 #: ../extensions/catalogs/actions.c:326
 msgid "Could not remove the catalog"
-msgstr ""
+msgstr "संग्रह हटाना विफल"
 
 #: ../extensions/catalogs/actions.c:363
 #, c-format
 msgid "Are you sure you want to remove \"%s\"?"
-msgstr ""
+msgstr "क्या आप निश्चित ही \"%s\" को हटाना चाहते हैं?"
 
 #: ../extensions/catalogs/callbacks.c:102
 msgid "_Add to Catalog"
-msgstr ""
+msgstr "सूची में जोड़ें (_A)"
 
 #: ../extensions/catalogs/callbacks.c:105
 #: ../extensions/selections/callbacks.c:80
 msgid "Open _Folder"
-msgstr ""
+msgstr "फोल्डर खोलें (_F)"
 
 #: ../extensions/catalogs/callbacks.c:106
 #: ../extensions/selections/callbacks.c:81
 msgid "Go to the folder that contains the selected file"
-msgstr ""
+msgstr "चयनित फाइल युक्त फोल्डर खोलें"
 
 #: ../extensions/catalogs/callbacks.c:110
 msgid "Other..."
-msgstr ""
+msgstr "अन्य..."
 
 #: ../extensions/catalogs/callbacks.c:111
 msgid "Choose another catalog"
-msgstr ""
+msgstr "अन्य सूची चुनें"
 
 #: ../extensions/catalogs/callbacks.c:115
 msgid "_Add to Catalog..."
-msgstr ""
+msgstr "सूची में जोड़ें (_A)..."
 
 #: ../extensions/catalogs/callbacks.c:116
 msgid "Add selected images to a catalog"
-msgstr ""
+msgstr "चयनित चित्रों को सूची में जोड़ें"
 
 #: ../extensions/catalogs/callbacks.c:120
 msgid "Remo_ve from Catalog"
-msgstr ""
+msgstr "सूची से हटाएँ (_v)"
 
 #: ../extensions/catalogs/callbacks.c:121
 msgid "Remove selected images from the catalog"
-msgstr ""
+msgstr "चयनित चित्रों को सूची से हटाएँ"
 
 #: ../extensions/catalogs/callbacks.c:125
 msgid "Create _Catalog"
-msgstr ""
+msgstr "सूची बनाएँ (_C)"
 
 #: ../extensions/catalogs/callbacks.c:130
 msgid "Create _Library"
-msgstr ""
+msgstr "संग्रह बनाएँ (_L)"
 
 #: ../extensions/catalogs/callbacks.c:135
 msgid "Remove"
-msgstr ""
+msgstr "हटाएँ"
 
 #: ../extensions/catalogs/callbacks.c:140
 msgid "Rena_me"
-msgstr ""
+msgstr "नाम बदलें (_m)"
 
 #: ../extensions/catalogs/callbacks.c:145
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
 #: ../pix/gth-browser-actions-entries.h:247 ../pix/gth-file-properties.c:209
 msgid "Properties"
-msgstr ""
+msgstr "विशेषताएँ"
 
 #: ../extensions/catalogs/callbacks.c:281
 #: ../extensions/catalogs/callbacks.c:284
@@ -823,19 +827,19 @@ msgstr "कमांड लाइन"
 #: ../extensions/photo_importer/dlg-photo-importer.c:404
 #: ../pix/gth-file-list.c:43 ../pix/gth-folder-tree.c:1093
 msgid "(Empty)"
-msgstr ""
+msgstr "(रिक्त)"
 
 #: ../extensions/catalogs/callbacks.c:700
 msgid "Catalog Properties"
-msgstr ""
+msgstr "सूची विशेषताएँ"
 
 #: ../extensions/catalogs/callbacks.c:714
 msgid "Organize"
-msgstr ""
+msgstr "संयोजन"
 
 #: ../extensions/catalogs/callbacks.c:715
 msgid "Automatically organize files by date"
-msgstr ""
+msgstr "फाइलें दिनांक अनुसार स्वतः संयोजित करें"
 
 #: ../extensions/catalogs/catalogs.extension.in.in.h:1
 #: ../extensions/catalogs/gth-catalog.c:611
@@ -843,33 +847,33 @@ msgstr ""
 #: ../extensions/catalogs/gth-catalog.c:1016
 #: ../extensions/catalogs/gth-catalog.c:1017
 msgid "Catalogs"
-msgstr ""
+msgstr "सूची"
 
 #: ../extensions/catalogs/catalogs.extension.in.in.h:2
 msgid "Create file collections."
-msgstr ""
+msgstr "फाइल संग्रह बनाएँ।"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
 msgid "Add to Catalog"
-msgstr ""
+msgstr "सूची में जोड़ें"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
 msgid "C_atalogs:"
-msgstr ""
+msgstr "सूची (_C):"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
 msgid "_New Catalog"
-msgstr ""
+msgstr "नवीन सूची (_N):"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
 msgid "New _Library"
-msgstr ""
+msgstr "नवीन संग्रह (_L):"
 
 #: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:5
 #: ../extensions/file_manager/actions.c:944
 #: ../extensions/webalbums/gth-web-exporter.c:1842
 msgid "_View the destination"
-msgstr ""
+msgstr "लक्षित स्थान देखें (_V)"
 
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
@@ -879,7 +883,7 @@ msgstr ""
 #: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:1
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:1
 msgid "_Name:"
-msgstr ""
+msgstr "नाम (_N):"
 
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
@@ -888,139 +892,139 @@ msgstr "तारीख़ (D)"
 
 #: ../extensions/catalogs/data/ui/catalog-properties.ui.h:5
 msgid "Catalog"
-msgstr ""
+msgstr "सूची"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:1
 msgid "Organize Files"
-msgstr ""
+msgstr "फाइल संयोजन"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
 msgid "Organizing files"
-msgstr ""
+msgstr "फाइल संयोजन"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
 msgid "Organization:"
-msgstr ""
+msgstr "संयोजन :"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
 #: ../pix/gth-browser-actions-entries.h:89
 msgid "Select All"
-msgstr ""
+msgstr "सभी चुनें"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
 msgid "Select None"
-msgstr ""
+msgstr "कोई भी न चुनें"
 
 #: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
 msgid "Catalog _Preview:"
-msgstr ""
+msgstr "सूची पूर्वावलोकन (_P):"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:2
 msgid "_Group files by:"
-msgstr ""
+msgstr "फाइल अनुक्रमण प्रकार (_G):"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:3
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
 #: ../extensions/search/data/ui/search-editor.ui.h:2
 msgid "_Include sub-folders"
-msgstr ""
+msgstr "उप-फोल्डर युक्त (_I)"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:4
 msgid "Ignore catalogs with a single file"
-msgstr ""
+msgstr "एकल फाइल युक्त सूची अनदेखी करें"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:5
 msgid "Put single files in the catalog:"
-msgstr ""
+msgstr "एकल फाइलों हेतु सूची :"
 
 #: ../extensions/catalogs/data/ui/organize-files.ui.h:6
 msgid "Singles"
-msgstr ""
+msgstr "एकल"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:105
 #: ../extensions/catalogs/dlg-add-to-catalog.c:136
 msgid "Could not add the files to the catalog"
-msgstr ""
+msgstr "सूची में फाइलें जोड़ना विफल"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:217
 #: ../extensions/search/gth-search-task.c:356
 msgid "Could not create the catalog"
-msgstr ""
+msgstr "सूची बनाना विफल"
 
 #: ../extensions/catalogs/dlg-catalog-properties.c:80
 msgid "Could not save the catalog"
-msgstr ""
+msgstr "सूची संचय विफल"
 
 #: ../extensions/catalogs/dlg-catalog-properties.c:159
 msgid "Could not load the catalog"
-msgstr ""
+msgstr "सूची लोड करना विफल"
 
 #: ../extensions/catalogs/dlg-organize-files.c:120
 msgid "Files will be organized in catalogs. No file will be moved on disk."
-msgstr ""
+msgstr "फाइलें सूची में संयोजित होंगी। कोई फाइल डिस्क पर अंतरित नहीं होगी।"
 
 #: ../extensions/catalogs/dlg-organize-files.c:132
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
 #: ../pix/gth-main-default-tests.c:319
 msgid "Date photo was taken"
-msgstr ""
+msgstr "चित्र सृजन दिनांक"
 
 #: ../extensions/catalogs/dlg-organize-files.c:139
 #: ../pix/gth-main-default-tests.c:311
 msgid "File modified date"
-msgstr ""
+msgstr "फाइल परिवर्तन दिनांक"
 
 #: ../extensions/catalogs/dlg-organize-files.c:146
 #: ../extensions/comments/main.c:182
 msgid "Tag"
-msgstr ""
+msgstr "उपनाम"
 
 #: ../extensions/catalogs/dlg-organize-files.c:153
 #: ../pix/gth-main-default-tests.c:343
 msgid "Tag (embedded)"
-msgstr ""
+msgstr "उपनाम (सम्मिलित)"
 
 #: ../extensions/catalogs/gth-catalog.c:1114 ../extensions/comments/main.c:45
 #: ../extensions/edit_metadata/callbacks.c:106
 #: ../pix/gth-main-default-metadata.c:53
 msgid "Tags"
-msgstr ""
+msgstr "उपनाम"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:953
 #, c-format
 msgid "The catalog '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "'%s' सूची पहले से मौजूद है, क्या आप इसे अधिलेखित करना चाहते हैं?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:955
 #, c-format
 msgid "The library '%s' already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "'%s' संग्रह पहले से मौजूद है, क्या आप इसे अधिलेखित करना चाहते हैं"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:963
 msgid "Over_write"
-msgstr ""
+msgstr "अधिलेखित करें (_w)"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1081
 msgid "Cannot move the files"
-msgstr ""
+msgstr "फाइलें अंतरित करना विफल"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1083
 msgid "Cannot copy the files"
-msgstr ""
+msgstr "फाइलें कॉपी करना विफल"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1088
 msgid "Invalid destination."
-msgstr ""
+msgstr "अमान्य लक्ष्य।"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1135
 #, c-format
 msgid "Copying files to '%s'"
-msgstr ""
+msgstr "'%s' पर फाइलें कॉपी करना जारी"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1322
 msgid "Could not remove the files from the catalog"
-msgstr ""
+msgstr "सूची से फाइलें हटाना विफल"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1380
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:752
@@ -1029,84 +1033,84 @@ msgstr ""
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:1326
 #: ../extensions/search/gth-search.c:265
 msgid "Invalid file format"
-msgstr ""
+msgstr "अमान्य फाइल प्रारूप"
 
 #: ../extensions/catalogs/gth-organize-task.c:202
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr ""
+msgstr "प्रक्रिया पूर्ण। सूची : %d। चित्र : %d।"
 
 #: ../extensions/change_date/callbacks.c:44
 msgid "Change _Date..."
-msgstr ""
+msgstr "दिनांक बदलें (_D)..."
 
 #: ../extensions/change_date/callbacks.c:45
 msgid "Change images last modified date"
-msgstr ""
+msgstr "चित्र हेतु अंतिम बार परिवर्तित दिनांक बदलें"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:1
 msgid "Change date"
-msgstr ""
+msgstr "दिनांक बदलें"
 
 #: ../extensions/change_date/change_date.extension.in.in.h:2
 msgid "Change the files date"
-msgstr ""
+msgstr "चित्र हेतु दिनांक बदलें"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:1
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:2
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:3
 msgid "Change Date"
-msgstr ""
+msgstr "दिनांक बदलें"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:4
 msgid "Change the following values:"
-msgstr ""
+msgstr "निम्नलिखित मान बदलें :"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:5
 msgid "_Last modified date"
-msgstr ""
+msgstr "अंतिम बार परिवर्तित दिनांक (_L)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:6
 msgid "Co_mment date"
-msgstr ""
+msgstr "टिप्पणी दिनांक (_m)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:7
 msgid "Change to:"
-msgstr ""
+msgstr "इसमें बदलें:"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:8
 msgid "The _following date:"
-msgstr ""
+msgstr "निम्नलिखित दिनांक (_f):"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:9
 msgid "File _modified date"
-msgstr ""
+msgstr "फाइल परिवर्तन दिनांक (_m)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:10
 msgid "File c_reation date"
-msgstr ""
+msgstr "फाइल सृजन दिनांक (_c)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:11
 msgid "Date p_hoto was taken"
-msgstr ""
+msgstr "चित्र सृजन दिनांक (_p)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:12
 msgid "A_djust by"
-msgstr ""
+msgstr "अनुकूलन (_d)"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:13
 msgid "hours"
-msgstr ""
+msgstr "घंटे"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:14
 msgid "minutes"
-msgstr ""
+msgstr "मिनट"
 
 #: ../extensions/change_date/data/ui/change-date.ui.h:15
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
@@ -1115,29 +1119,29 @@ msgstr "सेकण्ड"
 
 #: ../extensions/comments/callbacks.c:46
 msgid "Import Embedded Metadata"
-msgstr ""
+msgstr "सम्मिलित मेटाडेटा आयात"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
-msgstr ""
+msgstr "पिक्स टिप्पणी में फाइलों का संचित मेटाडेटा आयात करें"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
-msgstr ""
+msgstr "टिप्पणी व उपनाम"
 
 #: ../extensions/comments/comments.extension.in.in.h:2
 msgid "Add comments and tags to any file type."
-msgstr ""
+msgstr "हर फाइल प्रकार हेतु टिप्पणी व उपनाम जोड़ें।"
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:1
 #: ../extensions/importer/gth-import-preferences-dialog.c:318
 #: ../pix/gth-browser-actions-entries.h:83
 msgid "Preferences"
-msgstr ""
+msgstr "सेटिंग्स"
 
 #: ../extensions/comments/data/ui/comments-preferences.ui.h:2
 msgid "_Synchronize with the embedded metadata"
-msgstr ""
+msgstr "सम्मिलित मेटाडेटा अनुसार समकालीन करें (_S)"
 
 #: ../extensions/comments/main.c:35 ../extensions/edit_metadata/callbacks.c:100
 msgid "Comment"
@@ -1157,12 +1161,12 @@ msgstr "शीर्षक"
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
 #: ../pix/gth-main-default-metadata.c:52
 msgid "Description"
-msgstr ""
+msgstr "विवरण"
 
 #: ../extensions/comments/main.c:43 ../extensions/comments/main.c:174
 #: ../pix/gth-main-default-metadata.c:50
 msgid "Place"
-msgstr ""
+msgstr "स्थान"
 
 #: ../extensions/comments/main.c:44 ../pix/gth-main-default-metadata.c:51
 msgid "Date"
@@ -1171,37 +1175,37 @@ msgstr "तारीख़"
 #: ../extensions/comments/main.c:46 ../pix/gth-main-default-metadata.c:54
 #: ../pix/gth-main-default-tests.c:349
 msgid "Rating"
-msgstr ""
+msgstr "मूल्यांकन"
 
 #: ../extensions/contact_sheet/callbacks.c:59
 msgid "Contact _Sheet"
-msgstr ""
+msgstr "संपर्क पत्र  (_S)"
 
 #: ../extensions/contact_sheet/callbacks.c:61
 msgid "Contact _Sheet..."
-msgstr ""
+msgstr "संपर्क पत्र (_S)..."
 
 #: ../extensions/contact_sheet/callbacks.c:62
 msgid "Create a contact sheet"
-msgstr ""
+msgstr "संपर्क पत्र बनाएँ"
 
 #: ../extensions/contact_sheet/callbacks.c:65
 msgid "Image _Wall..."
-msgstr ""
+msgstr "चित्र प्राचीर (_W)..."
 
 #: ../extensions/contact_sheet/callbacks.c:66
 msgid "Create an image-wall"
-msgstr ""
+msgstr "चित्र प्राचीर बनाएँ"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:1
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
 msgid "Contact Sheet"
-msgstr ""
+msgstr "संपर्क पत्र"
 
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
-msgstr ""
+msgstr "चयनित फाइलों की लघुछवि युक्त अनुक्रमणिका पृष्ठ बनाएँ।"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1219,56 +1223,56 @@ msgstr "सादा"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
 msgid "Simple with shadow"
-msgstr ""
+msgstr "सामान्य छाया"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
 msgid "Shadow only"
-msgstr ""
+msgstr "केवल छाया"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
 msgid "Slide"
-msgstr ""
+msgstr "स्लाइड"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
 msgid "Inward Shadow"
-msgstr ""
+msgstr "आंतरिक छाया"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
 msgid "Outward Shadow"
-msgstr ""
+msgstr "बाह्य छाया"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
 msgid "Background"
-msgstr ""
+msgstr "बैकग्राउंड"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
 msgid "_Solid color"
-msgstr ""
+msgstr "संपूर्ण रंग (_S)"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
 msgid "_Gradient"
-msgstr ""
+msgstr "प्रवणता (_G)"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
 msgid "Select a color"
-msgstr ""
+msgstr "रंग चुनें"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
 msgid "Frame"
-msgstr ""
+msgstr "फ्रेम"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
 msgid "_Style:"
-msgstr ""
+msgstr "शैली (_S):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
 msgid "C_olor:"
-msgstr ""
+msgstr "रंग (_o):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
 #: ../extensions/rename_series/dlg-rename-series.c:57
 msgid "Text"
-msgstr ""
+msgstr "टेक्स्ट"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
@@ -1276,11 +1280,11 @@ msgstr ""
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:2
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
 msgid "_Header:"
-msgstr ""
+msgstr "शीर्ष लेख (_H):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
 msgid "Select a font"
-msgstr ""
+msgstr "मुद्रलिपि चुनें"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
@@ -1288,25 +1292,25 @@ msgstr ""
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:3
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
 msgid "_Footer:"
-msgstr ""
+msgstr "अंत लेख (_F):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:32
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:1
 msgid "Caption:"
-msgstr ""
+msgstr "अनुशीर्षक :"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
 #: ../extensions/image_print/data/ui/print-layout.ui.h:5
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "The current page number"
-msgstr ""
+msgstr "वर्तमान पृष्ठ संख्या"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
 #: ../extensions/image_print/data/ui/print-layout.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
 msgid "The total number of pages"
-msgstr ""
+msgstr "कुल पृष्ठ संख्या"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
@@ -1316,7 +1320,7 @@ msgstr ""
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
 msgid "Special code"
-msgstr ""
+msgstr "विशिष्ट कोड"
 
 #. translate only the text in the curly brackets
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
@@ -1325,13 +1329,13 @@ msgstr ""
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
 #, no-c-format
 msgid "%D{ format }"
-msgstr ""
+msgstr "%D{ प्रारूप }"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
 #: ../extensions/image_print/data/ui/print-layout.ui.h:12
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
 msgid "The current date"
-msgstr ""
+msgstr "वर्तमान दिनांक"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
@@ -1343,7 +1347,7 @@ msgstr ""
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:17
 msgid "_Destination:"
-msgstr ""
+msgstr "लक्ष्य (_D):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:13
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:3
@@ -1351,62 +1355,62 @@ msgstr ""
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:7
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
 msgid "Choose destination folder"
-msgstr ""
+msgstr "लक्षित फोल्डर चुनें"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
 msgid "File_name:"
-msgstr ""
+msgstr "फाइल नाम (_n):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:8
 msgid "New enumerator digit"
-msgstr ""
+msgstr "नवीन गणनाकार अंक"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
 msgid "Create _HTML image map"
-msgstr ""
+msgstr "एचटीएमएल चित्र मानचित्र बनाएँ (_H)"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
 msgid "Create a new theme"
-msgstr ""
+msgstr "नवीन थीम बनाएँ"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
 msgid "Edit the selected theme"
-msgstr ""
+msgstr "चयनित थीम संपादित करें"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
 msgid "Delete the selected theme"
-msgstr ""
+msgstr "चयनित थीम हटाएँ"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
 msgid "Theme"
-msgstr ""
+msgstr "थीम"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
 #: ../extensions/image_print/data/ui/print-layout.ui.h:16
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:26
 msgid "Columns:"
-msgstr ""
+msgstr "पंक्ति :"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:29
 msgid "Images per page:"
-msgstr ""
+msgstr "चित्र प्रति पृष्ठ :"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:28
 msgid "All images on a single page"
-msgstr ""
+msgstr "सभी चित्र एक पृष्ठ पर"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
 msgid "_All pages with the same size"
-msgstr ""
+msgstr "सभी समान आकार वाले चित्र (_A)"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
@@ -1418,49 +1422,49 @@ msgstr "ले-आउट"
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:13
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:24
 msgid "S_ort:"
-msgstr ""
+msgstr "अनुक्रम (_S):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:29
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:14
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
 msgid "Re_verse order"
-msgstr ""
+msgstr "विपरीत क्रम (_v)"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:30
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:15
 msgid "_Size:"
-msgstr ""
+msgstr "आकार (_S):"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:31
 msgid "Sq_uared"
-msgstr ""
+msgstr "वर्गाकार (_u)"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:33
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:16
 msgid "Thumbnails"
-msgstr ""
+msgstr "लघुछवि"
 
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
 msgid "Image Wall"
-msgstr ""
+msgstr "चित्र प्राचीर"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:482
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:493
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:507
 msgid "Could not save the theme"
-msgstr ""
+msgstr "थीम संचय विफल"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:652
 msgid "Could not delete the theme"
-msgstr ""
+msgstr "थीम हटाना विफल"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:247
 msgid "Creating images"
-msgstr ""
+msgstr "चित्र सृजन"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:896
 msgid "Generating thumbnails"
-msgstr ""
+msgstr "लघुछवि सृजन"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:32
 msgid "Header"
@@ -1468,155 +1472,156 @@ msgstr "शीर्ष"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme.c:33
 msgid "Footer"
-msgstr ""
+msgstr "अंत लेख"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:193
 msgid "Theme Properties"
-msgstr ""
+msgstr "थीम विशेषता"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:208
 msgid "Copy _From"
-msgstr ""
+msgstr "यहाँ से कॉपी करें (_F)"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:316
 msgid "New theme"
-msgstr ""
+msgstr "नवीन थीम"
 
 #: ../extensions/convert_format/callbacks.c:45
 msgid "Convert Format..."
-msgstr ""
+msgstr "प्रारूप परिवर्तन..."
 
 #: ../extensions/convert_format/callbacks.c:46
 msgid "Convert image format"
-msgstr ""
+msgstr "चित्र प्रारूप परिवर्तन"
 
 #: ../extensions/convert_format/convert_format.extension.in.in.h:1
 msgid "Convert format"
-msgstr ""
+msgstr "प्रारूप परिवर्तन"
 
 #: ../extensions/convert_format/convert_format.extension.in.in.h:2
 msgid "Save images in a different format"
-msgstr ""
+msgstr "चित्रों को भिन्न प्रारूप में संचित करें"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:1
 msgid "Convert Format"
-msgstr ""
+msgstr "प्रारूप परिवर्तन"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:2
 msgid "New format"
-msgstr ""
+msgstr "नवीन प्रारूप"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:3
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:6
 msgid "Destination"
-msgstr ""
+msgstr "लक्ष्य"
 
 #: ../extensions/convert_format/data/ui/convert-format.ui.h:5
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:8
 msgid "_Use the original image folder"
-msgstr ""
+msgstr "वास्तविक चित्र फोल्डर उपयोग करें (_U)"
 
 #: ../extensions/convert_format/dlg-convert-format.c:95
 msgid "Converting images"
-msgstr ""
+msgstr "चित्र परिवर्तन"
 
 #: ../extensions/desktop_background/actions.c:240
 msgid "Could not show the desktop background properties"
-msgstr ""
+msgstr "डेस्कटॉप बैकग्राउंड ग्राफ़िक्स प्रदर्शन विफल"
 
 #: ../extensions/desktop_background/actions.c:305
 #: ../extensions/desktop_background/actions.c:323
 msgid "Could not set the desktop background"
-msgstr ""
+msgstr "डेस्कटॉप बैकग्राउंड सेट करना विफल"
 
 #: ../extensions/desktop_background/callbacks.c:49
 msgid "Set as Desktop Background"
-msgstr ""
+msgstr "डेस्कटॉप बैकग्राउंड के तौर पर सेट करें"
 
 #: ../extensions/desktop_background/callbacks.c:50
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:2
 msgid "Set the image as desktop background"
-msgstr ""
+msgstr "चित्र को डेस्कटॉप बैकग्राउंड सेट करें"
 
 #: ../extensions/desktop_background/desktop_background.extension.in.in.h:1
 msgid "Desktop background"
-msgstr ""
+msgstr "डेस्कटॉप बैकग्राउंड"
 
 #: ../extensions/edit_metadata/actions.c:66
 msgid ""
 "Are you sure you want to permanently delete the metadata of the selected "
 "files?"
 msgstr ""
+"क्या आप निश्चित ही चयनित फाइलों का मेटाडेटा स्थायी रूप से हटाना चाहते हैं?"
 
 #: ../extensions/edit_metadata/actions.c:73
 msgid "If you delete the metadata, it will be permanently lost."
-msgstr ""
+msgstr "मेटाडेटा हटाने के उपरांत वह स्थायी रूप से अनुपलब्ध होगा।"
 
 #: ../extensions/edit_metadata/callbacks.c:97
 msgid "T_ags"
-msgstr ""
+msgstr "उपनाम (_a)"
 
 #: ../extensions/edit_metadata/callbacks.c:101
 msgid "Edit the comment and other information of the selected files"
-msgstr ""
+msgstr "चयनित फाइलों हेतु टिप्पणी व सूचना संपादन"
 
 #: ../extensions/edit_metadata/callbacks.c:107
 msgid "Set the tags of the selected files"
-msgstr ""
+msgstr "चयनित फाइलों हेतु उपनाम सेट करें"
 
 #: ../extensions/edit_metadata/callbacks.c:112
 msgid "Delete Metadata"
-msgstr ""
+msgstr "मेटाडेटा हटाएँ"
 
 #: ../extensions/edit_metadata/callbacks.c:113
 msgid "Delete the comment and the embedded metadata of the selected files"
-msgstr ""
+msgstr "चयनित फाइलों हेतु टिप्पणी व सम्मिलित मेटाडेटा हटाएँ"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:6
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:3
 msgid "D_escription:"
-msgstr ""
+msgstr "विवरण (_e):"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
 msgid "_Place:"
-msgstr ""
+msgstr "स्थान (_P):"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
 #: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
 msgid "T_ags:"
-msgstr ""
+msgstr "उपनाम (_a):"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
 msgid "_Rating:"
-msgstr ""
+msgstr "मूल्यांकन (_R):"
 
 #: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
 msgid "_Title:"
-msgstr ""
+msgstr "शीर्षक (_T):"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:121
 msgid "Could not save the file metadata"
-msgstr ""
+msgstr "फाइल मेटाडेटा संचय विफल"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:234
 #: ../pix/gth-overwrite-dialog.c:136
 msgid "Cannot read file information"
-msgstr ""
+msgstr "फाइल सूचना रीड करना विफल"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:1
 msgid "Edit metadata"
-msgstr ""
+msgstr "मेटाडेटा संपादन"
 
 #: ../extensions/edit_metadata/edit_metadata.extension.in.in.h:2
 msgid "Allow to edit files metadata."
-msgstr ""
+msgstr "फाइल मेटाडेटा संपादन सक्रिय करें।"
 
 #. Translators: the %s symbol in the string is a file name
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:63
 #, c-format
 msgid "%s Metadata"
-msgstr ""
+msgstr "%s मेटाडेटा"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:66
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:83
@@ -1625,212 +1630,212 @@ msgstr ""
 #, c-format
 msgid "%d file"
 msgid_plural "%d files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d फाइल"
+msgstr[1] "%d फाइलें"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:144
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:197
 msgid "Sa_ve and Close"
-msgstr ""
+msgstr "संचित कर बंद करें (_v)"
 
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:156
 msgid "Save only cha_nged fields"
-msgstr ""
+msgstr "केवल परिवर्तन युक्त पंक्ति संचित करें (_n)"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:555
 msgid "No date"
-msgstr ""
+msgstr "दिनांक रहित"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:556
 msgid "The following date"
-msgstr ""
+msgstr "आगामी दिनांक"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:557
 #: ../extensions/importer/gth-import-preferences-dialog.c:331
 msgid "Current date"
-msgstr ""
+msgstr "वर्तमान दिनांक"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:559
 msgid "Last modified date"
-msgstr ""
+msgstr "अंतिम परिवर्तन दिनांक"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:560
 msgid "File creation date"
-msgstr ""
+msgstr "फाइल सृजन दिनांक"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:561
 msgid "Do not modify"
-msgstr ""
+msgstr "परिवर्तन न करें"
 
 #. Translators: the %s symbol in the string is a file name
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:80
 #, c-format
 msgid "%s Tags"
-msgstr ""
+msgstr "%s उपनाम"
 
 #: ../extensions/edit_metadata/gth-edit-tags-dialog.c:189
 msgid "Assign Tags"
-msgstr ""
+msgstr "उपनाम निर्दिष्ट करें"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 #: ../extensions/edit_metadata/gth-tag-task.c:136
 msgid "Assigning tags to the selected files"
-msgstr ""
+msgstr "चयनित फाइलों हेतु उपनाम निर्दिष्ट करें"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:119
 msgid "Writing files"
-msgstr ""
+msgstr "फाइल राइट करना"
 
 #: ../extensions/edit_metadata/gth-tag-task.c:136
 msgid "Reading files"
-msgstr ""
+msgstr "फाइल रीड करना"
 
 #: ../extensions/example/src/example.extension.in.in.h:1
 msgid "Example"
-msgstr ""
+msgstr "उदाहरण"
 
 #: ../extensions/example/src/example.extension.in.in.h:2
 msgid "Extension example."
-msgstr ""
+msgstr "एक्सटेंशन उदाहरण।"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
 msgid "C_opyright:"
-msgstr ""
+msgstr "कॉपीराइट (_o):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
 msgid "Co_untry:"
-msgstr ""
+msgstr "देश (_u):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
 msgid "_Code:"
-msgstr ""
+msgstr "कोड (_C):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
 msgid "Cr_edit:"
-msgstr ""
+msgstr "श्रेय (_e):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
 msgid "_Source:"
-msgstr ""
+msgstr "स्रोत (_S):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
 msgid "_Urgency:"
-msgstr ""
+msgstr "महत्त्व (_U):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
 msgid "_Object Name:"
-msgstr ""
+msgstr "वस्तु नाम (_O):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
 msgid "Byline _Title:"
-msgstr ""
+msgstr "नाम पंक्ति शीर्षक (_T):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
 msgid "_Byline:"
-msgstr ""
+msgstr "नाम पंक्ति (_B):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
 msgid "_City:"
-msgstr ""
+msgstr "नगर (_C):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
 msgid "_Language:"
-msgstr ""
+msgstr "भाषा (_L):"
 
 #: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
 msgid "State/Province:"
-msgstr ""
+msgstr "प्रदेश/प्रांत :"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:1
 msgid "EXIF, IPTC, XMP support"
-msgstr ""
+msgstr "EXIF, IPTC, XMP समर्थन"
 
 #: ../extensions/exiv2_tools/exiv2_tools.extension.in.in.h:2
 msgid "Read and write exif, iptc and xmp metadata."
-msgstr ""
+msgstr "exif, iptc व xmp मेटाडेटा रीड व राइट करें।"
 
 #: ../extensions/exiv2_tools/main.c:33
 msgid "Exif General"
-msgstr ""
+msgstr "Exif सामान्य"
 
 #: ../extensions/exiv2_tools/main.c:34
 msgid "Exif Conditions"
-msgstr ""
+msgstr "Exif शर्तें"
 
 #: ../extensions/exiv2_tools/main.c:35
 msgid "Exif Structure"
-msgstr ""
+msgstr "Exif संरचना"
 
 #: ../extensions/exiv2_tools/main.c:36
 msgid "Exif Thumbnail"
-msgstr ""
+msgstr "Exif लघुछवि"
 
 #: ../extensions/exiv2_tools/main.c:37
 msgid "Exif GPS"
-msgstr ""
+msgstr "Exif जीपीएस"
 
 #: ../extensions/exiv2_tools/main.c:38
 msgid "Exif Maker Notes"
-msgstr ""
+msgstr "Exif निर्माण नोट्स"
 
 #: ../extensions/exiv2_tools/main.c:39
 msgid "Exif Versions"
-msgstr ""
+msgstr "Exif संस्करण"
 
 #: ../extensions/exiv2_tools/main.c:40
 msgid "Exif Other"
-msgstr ""
+msgstr "Exif अन्य"
 
 #: ../extensions/exiv2_tools/main.c:41
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: ../extensions/exiv2_tools/main.c:42
 msgid "XMP Embedded"
-msgstr ""
+msgstr "XMP सम्मिलित"
 
 #: ../extensions/exiv2_tools/main.c:43
 msgid "XMP Attached"
-msgstr ""
+msgstr "XMP संलग्न"
 
 #: ../extensions/exiv2_tools/main.c:272
 msgid "date photo was taken"
-msgstr ""
+msgstr "चित्र सृजन दिनांक"
 
 #: ../extensions/export_tools/callbacks.c:99
 msgid "Share"
-msgstr ""
+msgstr "सहभाजन"
 
 #: ../extensions/facebook/callbacks.c:59 ../extensions/facebook/callbacks.c:64
 msgid "Face_book..."
-msgstr ""
+msgstr "फेसबुक (_b)..."
 
 #: ../extensions/facebook/callbacks.c:60
 msgid "Download photos from Facebook"
-msgstr ""
+msgstr "फेसबुक से चित्र डाउनलोड करें"
 
 #: ../extensions/facebook/callbacks.c:65
 msgid "Upload photos to Facebook"
-msgstr ""
+msgstr "फेसबुक पर चित्र अपलोड करें"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:1
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:1
 msgid "Export to Flickr"
-msgstr ""
+msgstr "Flickr पर निर्यात"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:2
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:2
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:2
 msgid "_Upload"
-msgstr ""
+msgstr "अपलोड (_U)"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:3
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:2
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:3
 msgid "_Account:"
-msgstr ""
+msgstr "अकाउंट (_A):"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:4
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:3
@@ -1839,21 +1844,21 @@ msgstr ""
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:4
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:3
 msgid "Edit accounts"
-msgstr ""
+msgstr "अकाउंट संपादन"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:5
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:6
 msgid "A_lbum:"
-msgstr ""
+msgstr "एल्बम (_l):"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:6
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:7
 msgid "Add a new album"
-msgstr ""
+msgstr "नवीन एल्बम जोड़ें"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:7
 msgid "Resize the images if larger than this size"
-msgstr ""
+msgstr "चित्र आकार इससे अधिक होने पर आकार बदलें"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:8
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
@@ -1861,54 +1866,54 @@ msgstr ""
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:6
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
 msgid "_Resize if larger than:"
-msgstr ""
+msgstr "इससे अधिक होने पर आकार बदलें (_R):"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:9
 msgid "720 x 720"
-msgstr ""
+msgstr "720 x 720"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:10
 msgid "1024 x 1024"
-msgstr ""
+msgstr "1024 x 1024"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:11
 msgid "1280 x 1280"
-msgstr ""
+msgstr "1280 x 1280"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:12
 msgid "1600 x 1600"
-msgstr ""
+msgstr "1600 x 1600"
 
 #: ../extensions/facebook/data/ui/export-to-facebook.ui.h:13
 msgid "2048 x 2048"
-msgstr ""
+msgstr "2048 x 2048"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:1
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
 msgid "Public photos"
-msgstr ""
+msgstr "सार्वजानिक चित्र"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:2
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
 msgid "Private photos, visible to friends"
-msgstr ""
+msgstr "निजी चित्र, केवल मित्रों को दृश्यमान"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:3
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:5
 msgid "Private"
-msgstr ""
+msgstr "निजी"
 
 #: ../extensions/facebook/data/ui/facebook-album-properties.ui.h:5
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:2
 msgid "_Visibility:"
-msgstr ""
+msgstr "दृश्यता (_V):"
 
 #: ../extensions/facebook/data/ui/facebook-export-completed.ui.h:1
 #: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:1
 #: ../extensions/photobucket/data/ui/photobucket-export-completed.ui.h:1
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:1
 msgid "Files successfully uploaded to the server."
-msgstr ""
+msgstr "सर्वर पर फाइल अपलोड सफल।"
 
 #: ../extensions/facebook/data/ui/facebook-export-completed.ui.h:2
 #: ../extensions/flicker_utils/data/ui/flicker-export-completed.ui.h:2
@@ -1916,12 +1921,12 @@ msgstr ""
 #: ../extensions/picasaweb/data/ui/picasa-web-export-completed.ui.h:2
 #: ../extensions/webalbums/gth-web-exporter.c:1841
 msgid "_Open in the Browser"
-msgstr ""
+msgstr "ब्राउज़र में खोलें (_O)"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:1
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:1
 msgid "Import from Picasa Web Album"
-msgstr ""
+msgstr "Picasa वेब एल्बम से आयात करें"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:2
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
@@ -1936,12 +1941,12 @@ msgstr "आयात करें (_I)"
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:3
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:4
 msgid "A_ccount:"
-msgstr ""
+msgstr "अकाउंट (_A):"
 
 #: ../extensions/facebook/data/ui/import-from-facebook.ui.h:5
 #: ../extensions/picasaweb/data/ui/import-from-picasaweb.ui.h:5
 msgid "_Album:"
-msgstr ""
+msgstr "एल्बम (_A):"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:123
 #: ../extensions/facebook/dlg-export-to-facebook.c:326
@@ -1954,14 +1959,14 @@ msgstr ""
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:375
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:124
 msgid "Could not connect to the server"
-msgstr ""
+msgstr "सर्वर से कनेक्ट करना विफल"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:175
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:246
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:182
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:176
 msgid "Could not upload the files"
-msgstr ""
+msgstr "फाइल अपलोड विफल"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:397
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:188
@@ -1969,13 +1974,13 @@ msgstr ""
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:457
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:309
 msgid "Could not create the album"
-msgstr ""
+msgstr "एल्बम बनाना विफल"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:465
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:528
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:375
 msgid "New Album"
-msgstr ""
+msgstr "नवीन एल्बम"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:557
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:583
@@ -1983,14 +1988,14 @@ msgstr ""
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:607
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:597
 msgid "No valid file selected."
-msgstr ""
+msgstr "कोई मान्य फाइल चयनित नहीं है।"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:558
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:584
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:608
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:598
 msgid "Could not export the files"
-msgstr ""
+msgstr "फाइल नियत विफल"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:566
 #: ../extensions/find_duplicates/gth-find-duplicates.c:277
@@ -2003,21 +2008,21 @@ msgstr ""
 #, c-format
 msgid "%d file (%s)"
 msgid_plural "%d files (%s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d फाइल (%s)"
+msgstr[1] "%d फाइलें (%s)"
 
 #: ../extensions/facebook/dlg-export-to-facebook.c:587
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:615
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:635
 #, c-format
 msgid "Export to %s"
-msgstr ""
+msgstr "%s पर निर्यात करें"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:344
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:349
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:279
 msgid "Could not get the photo list"
-msgstr ""
+msgstr "चित्र सूची प्राप्ति विफल"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:378
 #: ../extensions/facebook/dlg-import-from-facebook.c:533
@@ -2026,29 +2031,29 @@ msgstr ""
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:313
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:586
 msgid "No album selected"
-msgstr ""
+msgstr "कोई एल्बम चयनित नहीं"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:551
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:569
 #, c-format
 msgid "Import from %s"
-msgstr ""
+msgstr "%s से आयात करें"
 
 #: ../extensions/facebook/dlg-import-from-facebook.c:551
 #: ../extensions/facebook/facebook.extension.in.in.h:1
 msgid "Facebook"
-msgstr ""
+msgstr "फेसबुक"
 
 #: ../extensions/facebook/facebook.extension.in.in.h:2
 msgid "Upload images to Facebook"
-msgstr ""
+msgstr "फेसबुक पर चित्र अपलोड करें"
 
 #: ../extensions/facebook/facebook-service.c:498
 #: ../extensions/flicker_utils/flickr-service.c:863
 #: ../extensions/photobucket/photobucket-service.c:310
 #: ../extensions/picasaweb/picasa-web-service.c:711
 msgid "Getting the album list"
-msgstr ""
+msgstr "एल्बम सूची प्राप्ति जारी"
 
 #: ../extensions/facebook/facebook-service.c:620
 #: ../extensions/flicker_utils/flickr-service.c:965
@@ -2057,7 +2062,7 @@ msgstr ""
 #: ../extensions/photobucket/photobucket-service.c:423
 #: ../extensions/picasaweb/picasa-web-service.c:805
 msgid "Creating the new album"
-msgstr ""
+msgstr "नवीन एल्बम बनाना जारी"
 
 #: ../extensions/facebook/facebook-service.c:681
 #: ../extensions/flicker_utils/flickr-service.c:1176
@@ -2065,7 +2070,7 @@ msgstr ""
 #: ../extensions/picasaweb/picasa-web-service.c:860
 #, c-format
 msgid "Could not upload '%s': %s"
-msgstr ""
+msgstr "अपलोड विफल '%s':%s"
 
 #. Translators: %s is a filename
 #: ../extensions/facebook/facebook-service.c:746
@@ -2074,34 +2079,34 @@ msgstr ""
 #: ../extensions/picasaweb/picasa-web-service.c:917
 #, c-format
 msgid "Uploading '%s'"
-msgstr ""
+msgstr "'%s' अपलोड जारी"
 
 #: ../extensions/facebook/facebook-service.c:962
 #: ../extensions/flicker_utils/flickr-service.c:1482
 #: ../extensions/photobucket/photobucket-service.c:714
 #: ../extensions/picasaweb/picasa-web-service.c:1138
 msgid "Uploading the files to the server"
-msgstr ""
+msgstr "सर्वर पर फाइल अपलोड जारी"
 
 #: ../extensions/facebook/facebook-service.c:1061
 #: ../extensions/flicker_utils/flickr-service.c:1651
 #: ../extensions/picasaweb/picasa-web-service.c:1257
 msgid "Getting the photo list"
-msgstr ""
+msgstr "चित्र सूची प्राप्ति जारी"
 
 #: ../extensions/file_manager/actions.c:133
 msgid "New folder"
-msgstr ""
+msgstr "नवीन फोल्डर"
 
 #: ../extensions/file_manager/actions.c:134
 msgid "Enter the folder name:"
-msgstr ""
+msgstr "फोल्डर नाम दर्ज करें :"
 
 #: ../extensions/file_manager/actions.c:400
 #: ../extensions/file_manager/callbacks.c:380
 #: ../extensions/file_manager/callbacks.c:838
 msgid "Could not move the files"
-msgstr ""
+msgstr "फाइल अंतरण विफल"
 
 #: ../extensions/file_manager/actions.c:401
 #: ../extensions/file_manager/callbacks.c:381
@@ -2110,76 +2115,82 @@ msgid ""
 "Files cannot be moved to the current location, as alternative you can choose "
 "to copy them."
 msgstr ""
+"वर्तमान स्थान पर फाइल अंतरण विफल, आप विकल्प के रूप उन्हें कॉपी करने का "
+"प्रयास करें।"
 
 #: ../extensions/file_manager/actions.c:563
 msgid "Could not open the location"
-msgstr ""
+msgstr "स्थान खोलना विफल"
 
 #: ../extensions/file_manager/actions.c:696
 msgid ""
 "The folder is not empty, do you want to delete the folder and its content "
 "permanently?"
 msgstr ""
+"यह फोल्डर रिक्त नहीं है, क्या आप फोल्डर व सामग्री को स्थायी रूप से हटाना "
+"चाहते हैं?"
 
 #: ../extensions/file_manager/actions.c:712
 msgid "Could not delete the folder"
-msgstr ""
+msgstr "फोल्डर हटाना विफल"
 
 #: ../extensions/file_manager/actions.c:773
 msgid ""
 "The folder cannot be moved to the Trash. Do you want to delete it "
 "permanently?"
 msgstr ""
+"फोल्डर को ट्रैश में भेजना संभव नहीं है। क्या आप इसे स्थायी रूप से हटाना "
+"चाहते हैं?"
 
 #: ../extensions/file_manager/actions.c:780
 msgid "Could not move the folder to the Trash"
-msgstr ""
+msgstr "फोल्डर को ट्रैश में भेजना विफल"
 
 #: ../extensions/file_manager/actions.c:816 ../pix/gth-file-source-vfs.c:856
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr ""
+msgstr "क्या आप निश्चित ही \"%s\"को स्थायी रूप से हटाना चाहते हैं?"
 
 #: ../extensions/file_manager/actions.c:826 ../pix/gth-file-source-vfs.c:869
 msgid "If you delete a file, it will be permanently lost."
-msgstr ""
+msgstr "फाइल हटने के उपरांत अनुपलब्ध होगी।"
 
 #: ../extensions/file_manager/actions.c:919
 msgid "Move To"
-msgstr ""
+msgstr "यहाँ अंतरित करें"
 
 #: ../extensions/file_manager/actions.c:919
 msgid "Copy To"
-msgstr ""
+msgstr "यहाँ कॉपी करें"
 
 #: ../extensions/file_manager/actions.c:923
 msgid "Move"
-msgstr ""
+msgstr "अंतरित करें"
 
 #: ../extensions/file_manager/actions.c:923
 #: ../extensions/file_manager/callbacks.c:171
 #: ../extensions/file_manager/callbacks.c:211
 msgid "Copy"
-msgstr ""
+msgstr "कॉपी करें"
 
 #: ../extensions/file_manager/callbacks.c:163
 #: ../extensions/file_manager/callbacks.c:199
 msgid "Create _Folder"
-msgstr ""
+msgstr "फोल्डर बनाएँ (_F)"
 
 #: ../extensions/file_manager/callbacks.c:164
 #: ../extensions/file_manager/callbacks.c:200
 msgid "Create a new empty folder inside this folder"
-msgstr ""
+msgstr "इस फोल्डर में एक नवीन रिक्त फोल्डर बनाएँ"
 
 #: ../extensions/file_manager/callbacks.c:167
 #: ../extensions/file_manager/callbacks.c:207
 msgid "Cut"
-msgstr ""
+msgstr "कट"
 
 #: ../extensions/file_manager/callbacks.c:175
 msgid "Paste"
-msgstr ""
+msgstr "पेस्ट"
 
 #: ../extensions/file_manager/callbacks.c:179
 msgid "D_uplicate"
@@ -2187,16 +2198,16 @@ msgstr "अनुकृति (_u)"
 
 #: ../extensions/file_manager/callbacks.c:180
 msgid "Duplicate the selected files"
-msgstr ""
+msgstr "चयनित फाइलों की प्रतिलिपि बनाएँ"
 
 #: ../extensions/file_manager/callbacks.c:183
 #: ../extensions/file_manager/callbacks.c:219 ../pix/gth-file-source-vfs.c:823
 msgid "Mo_ve to Trash"
-msgstr ""
+msgstr "ट्रैश में भेजें (_v)"
 
 #: ../extensions/file_manager/callbacks.c:184
 msgid "Move the selected files to the Trash"
-msgstr ""
+msgstr "चयनित फाइलें ट्रैश में भेजें"
 
 #: ../extensions/file_manager/callbacks.c:187
 #: ../extensions/file_manager/callbacks.c:223
@@ -2207,7 +2218,7 @@ msgstr "मिटाएँ (_D)"
 
 #: ../extensions/file_manager/callbacks.c:188
 msgid "Delete the selected files"
-msgstr ""
+msgstr "चयनित फाइलें हटाएँ"
 
 #: ../extensions/file_manager/callbacks.c:191
 #: ../extensions/file_manager/callbacks.c:203
@@ -2217,97 +2228,97 @@ msgstr "नाम बदलें (_R)"
 
 #: ../extensions/file_manager/callbacks.c:192
 msgid "Rename the selected files"
-msgstr ""
+msgstr "चयनित फाइलों का नाम बदलें"
 
 #: ../extensions/file_manager/callbacks.c:195
 msgid "Open with the _File Manager"
-msgstr ""
+msgstr "फाइल प्रबंधक द्वारा खोलें (_F)"
 
 #: ../extensions/file_manager/callbacks.c:215
 msgid "_Paste Into Folder"
-msgstr ""
+msgstr "फोल्डर में पेस्ट करें (_P)"
 
 #: ../extensions/file_manager/callbacks.c:227
 #: ../extensions/file_manager/callbacks.c:236
 msgid "Copy to..."
-msgstr ""
+msgstr "इसमें कॉपी करें..."
 
 #: ../extensions/file_manager/callbacks.c:228
 msgid "Copy the selected folder to another folder"
-msgstr ""
+msgstr "चयनित फोल्डर को अन्य फोल्डर में कॉपी करें"
 
 #: ../extensions/file_manager/callbacks.c:231
 #: ../extensions/file_manager/callbacks.c:240
 msgid "Move to..."
-msgstr ""
+msgstr "इसमें अंतरित करें..."
 
 #: ../extensions/file_manager/callbacks.c:232
 msgid "Move the selected folder to another folder"
-msgstr ""
+msgstr "चयनित फोल्डर को अन्य फोल्डर में अंतरित करें"
 
 #: ../extensions/file_manager/callbacks.c:237
 msgid "Copy the selected files to another folder"
-msgstr ""
+msgstr "चयनित फाइलों को अन्य फोल्डर में कॉपी करें"
 
 #: ../extensions/file_manager/callbacks.c:241
 msgid "Move the selected files to another folder"
-msgstr ""
+msgstr "चयनित फाइलों को अन्य फोल्डर में अंतरित करें"
 
 #: ../extensions/file_manager/callbacks.c:999
 #: ../extensions/find_duplicates/gth-find-duplicates.c:766
 #: ../pix/gth-browser.c:5193 ../pix/gth-browser.c:5227
 #: ../pix/gth-progress-dialog.c:406
 msgid "Could not perform the operation"
-msgstr ""
+msgstr "कार्य पूर्ण करना विफल"
 
 #: ../extensions/file_manager/file_manager.extension.in.in.h:1
 msgid "File manager"
-msgstr ""
+msgstr "फाइल प्रबंधक"
 
 #: ../extensions/file_manager/file_manager.extension.in.in.h:2
 msgid "File manager operations."
-msgstr ""
+msgstr "फाइल प्रबंधक कार्य।"
 
 #: ../extensions/file_manager/gth-delete-task.c:62
 msgid "Deleting files"
-msgstr ""
+msgstr "फाइलें हटाना जारी"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:5
 msgid "_Preview"
-msgstr ""
+msgstr "पूर्वावलोकन (_P)"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
 msgid "B_rightness:"
-msgstr ""
+msgstr "आभा (_r):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
 msgid "Con_trast:"
-msgstr ""
+msgstr "कंट्रास्ट (_t):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
 msgid "_Saturation:"
-msgstr ""
+msgstr "रंग संतृप्ति (_S):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
 msgid "G_amma:"
-msgstr ""
+msgstr "गामा (_a):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
 msgid "Cyan-_Red:"
-msgstr ""
+msgstr "हरित नीला-लाल (_R):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
 msgid "_Magenta-Green:"
-msgstr ""
+msgstr "गुलाबी-हरा (_M):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
 msgid "_Yellow-Blue:"
-msgstr ""
+msgstr "पीला-नीला (_Y):"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
 msgid "Color Levels"
-msgstr ""
+msgstr "रंग स्तर"
 
 #: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:10
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:5
@@ -2317,7 +2328,7 @@ msgstr "रीसेट करें (_R)"
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:1
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
 msgid "Selection"
-msgstr ""
+msgstr "चयन"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:2
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:2
@@ -2328,70 +2339,70 @@ msgstr "चौड़ाई (_W):"
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:3
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:3
 msgid "Heigh_t:"
-msgstr ""
+msgstr "ऊँचाई (_t):"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:4
 msgid "_Position:"
-msgstr ""
+msgstr "स्थिति (_P):"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:5
 msgid "Maximize"
-msgstr ""
+msgstr "विस्तृत करें"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:6
 msgid "Center"
-msgstr ""
+msgstr "केंद्र"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:7
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:5
 msgid "Aspect ratio"
-msgstr ""
+msgstr "दृश्य अनुपात"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:8
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:6
 msgid "I_nvert aspect ratio"
-msgstr ""
+msgstr "दृश्य अनुपात विपरीत करें (_I)"
 
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "इसके गुणक (_u):"
 
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
 msgid "px"
-msgstr ""
+msgstr "पिक्सेल"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:13
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:7
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
 #: ../pix/gth-file-chooser-dialog.c:252
 msgid "Options"
-msgstr ""
+msgstr "विकल्प"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:14
 msgid "_Grid:"
-msgstr ""
+msgstr "ग्रिड (_G):"
 
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:15
 msgid "C_rop"
-msgstr ""
+msgstr "संक्षिप्त साधन (_r)"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:1
 msgid "Method"
-msgstr ""
+msgstr "विधि"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:2
 msgid "_Brightness"
-msgstr ""
+msgstr "आभा (_B)"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:3
 msgid "_Saturation"
-msgstr ""
+msgstr "रंग संतृप्ति (_S)"
 
 #: ../extensions/file_tools/data/ui/grayscale-options.ui.h:4
 msgid "_Average"
-msgstr ""
+msgstr "औसत (_A)"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:1
 #: ../pix/gth-main-default-metadata.c:47
@@ -2400,23 +2411,23 @@ msgstr "आयाम"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:4
 msgid "Set the image size to this value"
-msgstr ""
+msgstr "इस मान पर चित्र आकार सेट करें"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:8
 msgid "High _quality"
-msgstr ""
+msgstr "उच्च गुणवत्ता (_q)"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:9
 msgid "Original dimensions:"
-msgstr ""
+msgstr "वास्तविक आयाम :"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:10
 msgid "Scale factor:"
-msgstr ""
+msgstr "अनुमाप परिवर्तन गुणक :"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:11
 msgid "New dimensions:"
-msgstr ""
+msgstr "नवीन आयाम :"
 
 #: ../extensions/file_tools/data/ui/resize-options.ui.h:12
 msgid "pixels"
@@ -2430,129 +2441,131 @@ msgstr "%"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
 msgid "Angle"
-msgstr ""
+msgstr "कोण"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
 msgid "Align"
-msgstr ""
+msgstr "संरेखण"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
 msgid "Image size"
-msgstr ""
+msgstr "चित्र आकार"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
 msgid "Point 1:"
-msgstr ""
+msgstr "बिंदु 1:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
 msgid "Point 2:"
-msgstr ""
+msgstr "बिंदु 2:"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "दृश्य अनुपात अनुरक्षित"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
 msgid "Grid:"
-msgstr ""
+msgstr "ग्रिड :"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
 msgid "_Background:"
-msgstr ""
+msgstr "बैकग्राउंड (_B):"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
 msgid "Pick a background color"
-msgstr ""
+msgstr "बैकग्राउंड रंग चुनें"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
 msgid "_Transparent"
-msgstr ""
+msgstr "पारदर्शी (_T)"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
 msgid "Reset"
-msgstr ""
+msgstr "पुन: सेट करें"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
 msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
 msgstr ""
+"संरेखण सेट करने हेतु \n"
+"चित्र पर एक रेखा खींचें।"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
 msgid "Parallel"
-msgstr ""
+msgstr "समानांतर"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:16
 msgid "Perpendicular"
-msgstr ""
+msgstr "लंबवत"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
 msgid "Alignment"
-msgstr ""
+msgstr "संरेखण"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
 msgid "Original size"
-msgstr ""
+msgstr "वास्तविक आकार"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
 msgid "Bounding box"
-msgstr ""
+msgstr "सीमांकन क्षेत्र"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
 msgid "Crop borders"
-msgstr ""
+msgstr "चित्र सीमांत हटाएँ"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:28
 msgid "_Preview:"
-msgstr ""
+msgstr "पूर्वावलोकन (_P):"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
 msgid "Threshold:"
-msgstr ""
+msgstr "सीमा रेखा :"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
 msgid "Radius:"
-msgstr ""
+msgstr "त्रिज्या :"
 
 #: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
 msgid "Amount:"
-msgstr ""
+msgstr "मात्रा :"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:1
 msgid "Image tools"
-msgstr ""
+msgstr "चित्र साधन"
 
 #: ../extensions/file_tools/file_tools.extension.in.in.h:2
 msgid "Basic tools to modify images."
-msgstr ""
+msgstr "चित्र परिवर्तन हेतु सामान्य साधन।"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:372
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:272
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:248
 #: ../extensions/file_tools/gth-file-tool-negative.c:68
 msgid "Applying changes"
-msgstr ""
+msgstr "परिवर्तन लागू करना जारी"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:618
 msgid "Adjust Colors..."
-msgstr ""
+msgstr "रंग सेट करें..."
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:618
 msgid "Adjust Colors"
-msgstr ""
+msgstr "रंग सेट करें"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:619
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr ""
+msgstr "चित्र की आभा, कंट्रास्ट, रंग संतृप्ति व गामा स्तर बदलें"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:304
 msgid "Adjust Contrast"
-msgstr ""
+msgstr "कंट्रास्ट सेट करें"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:305
 msgid "Automatic contrast adjustment"
-msgstr ""
+msgstr "स्वतः कंट्रास्ट सेट करें"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
@@ -2563,53 +2576,53 @@ msgstr "वर्ग"
 #: ../extensions/file_tools/gth-file-tool-resize.c:590
 #, c-format
 msgid "%d x %d (Image)"
-msgstr ""
+msgstr "%d x %d (चित्र)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:420
 #: ../extensions/file_tools/gth-file-tool-resize.c:594
 #, c-format
 msgid "%d x %d (Screen)"
-msgstr ""
+msgstr "%d x %d (स्क्रीन)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:424
 #: ../extensions/file_tools/gth-file-tool-resize.c:599
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:425
 #: ../extensions/file_tools/gth-file-tool-resize.c:600
 msgid "4:3 (DVD, Book)"
-msgstr ""
+msgstr "4:3 (डीवीडी, बुक)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:426
 #: ../extensions/file_tools/gth-file-tool-resize.c:601
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:427
 #: ../extensions/file_tools/gth-file-tool-resize.c:602
 msgid "3:2 (Postcard)"
-msgstr ""
+msgstr "3:2 (पोस्टकार्ड)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:428
 #: ../extensions/file_tools/gth-file-tool-resize.c:603
 msgid "16:10"
-msgstr ""
+msgstr "16:10"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:429
 #: ../extensions/file_tools/gth-file-tool-resize.c:604
 msgid "16:9 (DVD)"
-msgstr ""
+msgstr "16:9 (डीवीडी)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:430
 #: ../extensions/file_tools/gth-file-tool-resize.c:605
 msgid "1.85:1"
-msgstr ""
+msgstr "1.85:1"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:431
 #: ../extensions/file_tools/gth-file-tool-resize.c:606
 msgid "2.39:1"
-msgstr ""
+msgstr "2.39:1"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:432
 #: ../extensions/file_tools/gth-file-tool-resize.c:607
@@ -2621,92 +2634,92 @@ msgstr "मनपसंद"
 #: ../extensions/file_tools/gth-file-tool-crop.c:447
 #: ../extensions/file_tools/gth-file-tool-rotate.c:398
 msgid "Rule of Thirds"
-msgstr ""
+msgstr "तिहाई का नियम"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:448
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
 msgid "Golden Sections"
-msgstr ""
+msgstr "वैदिक अनुपात"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:449
 #: ../extensions/file_tools/gth-file-tool-rotate.c:400
 msgid "Center Lines"
-msgstr ""
+msgstr "केंद्रीय रेखाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:450
 #: ../extensions/file_tools/gth-file-tool-rotate.c:401
 msgid "Uniform"
-msgstr ""
+msgstr "समरूप"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:608
 msgid "Crop..."
-msgstr ""
+msgstr "आकार संक्षिप्त..."
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:608
 msgid "Crop"
-msgstr ""
+msgstr "आकार संक्षिप्त"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:45
 msgid "Equalizing image histogram"
-msgstr ""
+msgstr "चित्र आयतचित्र समीकरण जारी"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:230
 msgid "Equalize"
-msgstr ""
+msgstr "समीकरण"
 
 #: ../extensions/file_tools/gth-file-tool-equalize.c:231
 msgid "Equalize image histogram"
-msgstr ""
+msgstr "चित्र आयतचित्र समीकरण"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:87
 msgid "Flip"
-msgstr ""
+msgstr "उलटें"
 
 #: ../extensions/file_tools/gth-file-tool-flip.c:88
 msgid "Flip the image vertically"
-msgstr ""
+msgstr "चित्र को लंबवत उलटें"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale..."
-msgstr ""
+msgstr "ग्रे स्केल..."
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:507
 msgid "Grayscale"
-msgstr ""
+msgstr "ग्रे स्केल"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:87
 msgid "Mirror"
-msgstr ""
+msgstr "प्रतिबिंब"
 
 #: ../extensions/file_tools/gth-file-tool-mirror.c:88
 msgid "Mirror the image horizontally"
-msgstr ""
+msgstr "चित्र का क्षैतिज प्रतिबिंब बनाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-negative.c:197
 msgid "Negative"
-msgstr ""
+msgstr "नेगेटिव चित्र"
 
 #: ../extensions/file_tools/gth-file-tool-redo.c:75
 #: ../extensions/image_viewer/gth-image-viewer-page.c:174
 msgid "Redo"
-msgstr ""
+msgstr "पुनः करें"
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:214
 #: ../extensions/resize_images/dlg-resize-images.c:177
 msgid "Resizing images"
-msgstr ""
+msgstr "चित्र आकार परिवर्तन जारी"
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:808
 msgid "Resize..."
-msgstr ""
+msgstr "आकार परिवर्तन..."
 
 #: ../extensions/file_tools/gth-file-tool-resize.c:808
 msgid "Resize"
-msgstr ""
+msgstr "आकार परिवर्तन"
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:628
 msgid "Rotate..."
-msgstr ""
+msgstr "घुमाएँ..."
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:628
 msgid "Rotate"
@@ -2714,75 +2727,75 @@ msgstr "घुमाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-rotate.c:629
 msgid "Freely rotate the image"
-msgstr ""
+msgstr "विमुक्त रूप से चित्र घुमाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:87
 #: ../extensions/image_rotation/callbacks.c:55
 msgid "Rotate Left"
-msgstr ""
+msgstr "बाएँ घुमाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr ""
+msgstr "चित्र को 90 डिग्री वामावर्त घुमाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
 #: ../extensions/image_rotation/callbacks.c:49
 msgid "Rotate Right"
-msgstr ""
+msgstr "दाएँ घुमाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr ""
+msgstr "चित्र को ९० डिग्री दक्षिणावर्त घुमाएँ"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
 msgid "Save As"
-msgstr ""
+msgstr "इस रूप से संचित करें"
 
 #: ../extensions/file_tools/gth-file-tool-save.c:66
 #: ../pix/gth-browser-actions-entries.h:53
 msgid "Save"
-msgstr ""
+msgstr "संचित करें"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:101
 msgid "Sharpening image"
-msgstr ""
+msgstr "चित्र परिष्कृत करें"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus..."
-msgstr ""
+msgstr "किरण-केंद्र सुधारें..."
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:484
 msgid "Enhance Focus"
-msgstr ""
+msgstr "किरण-केंद्र सुधारें"
 
 #: ../extensions/file_tools/gth-file-tool-undo.c:75
 #: ../extensions/image_viewer/gth-image-viewer-page.c:169
 msgid "Undo"
-msgstr ""
+msgstr "पूर्ववत करें"
 
 #: ../extensions/find_duplicates/callbacks.c:48
 msgid "Find _Duplicates..."
-msgstr ""
+msgstr "प्रतिलिपियाँ खोजें (_D)..."
 
 #: ../extensions/find_duplicates/callbacks.c:49
 msgid "Find duplicated files in the current location"
-msgstr ""
+msgstr "वर्तमान स्थान पर फाइल प्रतिलिपियाँ खोजें"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
 msgid "_Folders:"
-msgstr ""
+msgstr "फोल्डर (_F):"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
 msgid "Search for Duplicates"
-msgstr ""
+msgstr "प्रतिलिपियाँ खोजें"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
 msgid "Duplicates:"
-msgstr ""
+msgstr "प्रतिलिपियाँ :"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
 msgid "Files:"
-msgstr ""
+msgstr "फाइलें :"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
 #: ../pix/gth-browser-actions-entries.h:33
@@ -2791,157 +2804,157 @@ msgstr "देखें (_V)"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
 msgid "No duplicates found."
-msgstr ""
+msgstr "कोई प्रतिलिपि नहीं मिली।"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:1
 msgid "Find Duplicates"
-msgstr ""
+msgstr "प्रतिलिपियाँ खोजें"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:3
 #: ../extensions/search/data/ui/search-editor.ui.h:1
 msgid "Start _at:"
-msgstr ""
+msgstr "यहाँ से आरंभ (_a):"
 
 #: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:4
 msgid "_Filter:"
-msgstr ""
+msgstr "निस्पंदन (_F):"
 
 #: ../extensions/find_duplicates/find_duplicates.extension.in.in.h:2
 msgid "Find duplicated files."
-msgstr ""
+msgstr "फाइल प्रतिलिपियाँ खोजें।"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
-msgstr ""
+msgstr "नवीनतम प्रतिलिपियाँ अनदेखी करें"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:66
 msgid "leave the oldest duplicates"
-msgstr ""
+msgstr "पुरानी प्रतिलिपियाँ अनदेखी करें"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
-msgstr ""
+msgstr "फोल्डर से..."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:68
 msgid "all files"
-msgstr ""
+msgstr "सभी फाइलें"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:69
 msgid "no file"
-msgstr ""
+msgstr "कोई फाइल नहीं"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:560
 #: ../extensions/find_duplicates/gth-find-duplicates.c:668
 #, c-format
 msgid "%d duplicate"
 msgid_plural "%d duplicates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d प्रतिलिपि"
+msgstr[1] "%d प्रतिलिपियाँ"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:712
 msgid "Search completed"
-msgstr ""
+msgstr "खोज पूर्ण"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:725
 msgid "Searching for duplicates"
-msgstr ""
+msgstr "प्रतिलिपियों की खोज जारी"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:728
 #: ../pix/gth-load-file-data-task.c:106 ../pix/gth-save-file-data-task.c:100
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d फाइल शेष"
+msgstr[1] "%d फाइलें शेष"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:830
 msgid "Getting the file list"
-msgstr ""
+msgstr "फाइल सूची प्राप्ति जारी"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1016
 msgid "Duplicates"
-msgstr ""
+msgstr "प्रतिलिपियाँ"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1308
 msgid "Select"
-msgstr ""
+msgstr "चुनें"
 
 #: ../extensions/flicker/callbacks.c:59 ../extensions/flicker/callbacks.c:64
 msgid "_Flickr..."
-msgstr ""
+msgstr "_Flickr..."
 
 #: ../extensions/flicker/callbacks.c:60
 msgid "Download photos from Flickr"
-msgstr ""
+msgstr "Flickr से फोटो डाउनलोड करें"
 
 #: ../extensions/flicker/callbacks.c:65
 msgid "Upload photos to Flickr"
-msgstr ""
+msgstr "Flickr पर फोटो अपलोड करें"
 
 #: ../extensions/flicker/flicker.extension.in.in.h:1
 msgid "Flicker"
-msgstr ""
+msgstr "Flickr"
 
 #: ../extensions/flicker/flicker.extension.in.in.h:2
 msgid "Upload images to Flickr"
-msgstr ""
+msgstr "Flickr पर चित्र अपलोड करें"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:5
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:4
 msgid "Free space:"
-msgstr ""
+msgstr "अप्रयुक्त स्पेस :"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
 #: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
 msgid "Ph_otoset:"
-msgstr ""
+msgstr "फोटो संग्रह (_o):"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
 msgid "_Privacy:"
-msgstr ""
+msgstr "निजता (_P):"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
 msgid "Hi_de from public searches"
-msgstr ""
+msgstr "सामग्री की सार्वजनिक खोज अस्वीकृत करें (_d)"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
 msgid "_Safety:"
-msgstr ""
+msgstr "सुरक्षा (_S):"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
 msgid "Private photos, visible to family and friends"
-msgstr ""
+msgstr "निजी फोटो, केवल परिवार व मित्रों को दृश्यमान"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
 msgid "Private photos, visible to family"
-msgstr ""
+msgstr "निजी फोटो, केवल परिवार को दृश्यमान"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
 msgid "Private photos"
-msgstr ""
+msgstr "निजी फोटो"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
 msgid "Safe content"
-msgstr ""
+msgstr "सुरक्षित सामग्री"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
 msgid "Moderate content"
-msgstr ""
+msgstr "सामान्य सामग्री"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:17
 msgid "Restricted content"
-msgstr ""
+msgstr "निषेध सामग्री"
 
 #: ../extensions/flicker_utils/data/ui/flickr-ask-authorization-old.ui.h:1
 msgid "C_ontinue"
-msgstr ""
+msgstr "जारी रखें (_C)"
 
 #: ../extensions/flicker_utils/data/ui/flickr-ask-authorization-old.ui.h:2
 msgid "_Authorize..."
-msgstr ""
+msgstr "पुष्टिकरण (_A)..."
 
 #: ../extensions/flicker_utils/flickr-consumer.c:124
 #: ../extensions/flicker_utils/flickr-service.c:237
@@ -2954,22 +2967,23 @@ msgstr ""
 #: ../extensions/photobucket/photobucket-consumer.c:149
 #: ../extensions/photobucket/photobucket-service.c:132
 msgid "Unknown error"
-msgstr ""
+msgstr "अज्ञात त्रुटि"
 
 #: ../extensions/flicker_utils/flickr-service.c:502
 #, c-format
 msgid ""
 "Return to this window when you have finished the authorization process on %s"
-msgstr ""
+msgstr "%s पर पुष्टिकरण प्रक्रिया पूर्ण होने के उपरांत इस विंडो पर वापस आएँ"
 
 #: ../extensions/flicker_utils/flickr-service.c:503
 msgid "Once you're done, click the 'Continue' button below."
 msgstr ""
+"प्रक्रिया पूर्ण होने के उपरांत नीचे दिए 'जारी रखें' बटन पर क्लिक करें।"
 
 #: ../extensions/flicker_utils/flickr-service.c:571
 #, c-format
 msgid "Pix requires your authorization to upload the photos to %s"
-msgstr ""
+msgstr "पिक्स द्वारा %s पर चित्र अपलोड हेतु पुष्टिकरण आवश्यक है"
 
 #: ../extensions/flicker_utils/flickr-service.c:572
 #, c-format
@@ -2978,16 +2992,19 @@ msgid ""
 "photos to %s. When you're finished, return to this window to complete the "
 "authorization."
 msgstr ""
+"'पुष्टिकरण' पर क्लिक कर वेब ब्राउज़र खोलें व पिक्स द्वारा %s पर चित्र अपलोड "
+"की पुष्टि करें। प्रक्रिया के उपरांत इस विंडो पर वापस आकर पुष्टिकरण पूर्ण "
+"करें।"
 
 #: ../extensions/gstreamer_tools/actions.c:66
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1042
 #: ../pix/gth-browser.c:2176
 msgid "Could not save the file"
-msgstr ""
+msgstr "फाइल संचय विफल"
 
 #: ../extensions/gstreamer_tools/actions.c:131
 msgid "Could not take a screenshot"
-msgstr ""
+msgstr "स्क्रीनशॉट लेना विफल"
 
 #: ../extensions/gstreamer_tools/actions.c:137
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1215
@@ -2997,127 +3014,127 @@ msgstr "छवि सहेजें"
 #: ../extensions/gstreamer_tools/actions.c:165
 msgctxt "Filename"
 msgid "Screenshot"
-msgstr ""
+msgstr "स्क्रीनशॉट"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
 msgid "Slower"
-msgstr ""
+msgstr "मंद"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:704
 msgid "Play"
-msgstr ""
+msgstr "चलाएँ"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:3
 msgid "Faster"
-msgstr ""
+msgstr "तीव्र"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
 msgid "Time:"
-msgstr ""
+msgstr "समय :"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
 msgid "--:--"
-msgstr ""
+msgstr "--:--"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
 msgid "Toggle volume"
-msgstr ""
+msgstr "ध्वनि चालू/बंद"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
 msgid "Change volume level"
-msgstr ""
+msgstr "ध्वनि स्तर बदलें"
 
 #: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:3
 #: ../extensions/photo_importer/actions.c:67
 #: ../extensions/photo_importer/dlg-photo-importer.c:620
 msgid "Choose a folder"
-msgstr ""
+msgstr "फोल्डर चुनें"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:1
 msgid "Audio/Video support"
-msgstr ""
+msgstr "ऑडियो/वीडियो समर्थन"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:2
 msgid "Play audio and video files."
-msgstr ""
+msgstr "ऑडियो व वीडियो फाइल चलाएँ।"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:104
 msgid "Screenshot"
-msgstr ""
+msgstr "स्क्रीनशॉट"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:105
 msgid "Take a screenshot"
-msgstr ""
+msgstr "स्क्रीनशॉट लें"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
-msgstr ""
+msgstr "वीडियो कार्यरत है"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:694
 msgid "Pause"
-msgstr ""
+msgstr "रोकें"
 
 #: ../extensions/gstreamer_tools/main.c:31 ../pix/gth-main-default-tests.c:266
 msgid "Video"
-msgstr ""
+msgstr "वीडियो"
 
 #: ../extensions/gstreamer_tools/main.c:32 ../pix/gth-main-default-tests.c:273
 msgid "Audio"
-msgstr ""
+msgstr "ऑडियो"
 
 #: ../extensions/gstreamer_tools/main.c:39
 msgid "Artist"
-msgstr ""
+msgstr "कलाकार"
 
 #: ../extensions/gstreamer_tools/main.c:40
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:16
 msgid "Album"
-msgstr ""
+msgstr "एल्बम"
 
 #: ../extensions/gstreamer_tools/main.c:41
 msgid "Bitrate"
-msgstr ""
+msgstr "बिट दर"
 
 #: ../extensions/gstreamer_tools/main.c:42
 msgid "Encoder"
-msgstr ""
+msgstr "एनकोडर"
 
 #: ../extensions/gstreamer_tools/main.c:44
 #: ../extensions/gstreamer_tools/main.c:49
 msgid "Codec"
-msgstr ""
+msgstr "कोडेक्स"
 
 #: ../extensions/gstreamer_tools/main.c:45
 msgid "Framerate"
-msgstr ""
+msgstr "फ्रेम दर"
 
 #: ../extensions/gstreamer_tools/main.c:46
 #: ../extensions/image_print/data/ui/print-layout.ui.h:24
 #: ../extensions/image_viewer/gth-image-viewer-page.c:209
 msgid "Width"
-msgstr ""
+msgstr "चौड़ाई"
 
 #: ../extensions/gstreamer_tools/main.c:47
 #: ../extensions/image_print/data/ui/print-layout.ui.h:25
 msgid "Height"
-msgstr ""
+msgstr "ऊँचाई"
 
 #: ../extensions/gstreamer_tools/main.c:50
 msgid "Channels"
-msgstr ""
+msgstr "चैनल"
 
 #: ../extensions/gstreamer_tools/main.c:51
 msgid "Sample rate"
-msgstr ""
+msgstr "सैंपल दर"
 
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:368
 msgid "Stereo"
-msgstr ""
+msgstr "स्टीरियो"
 
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:368
 msgid "Mono"
-msgstr ""
+msgstr "मोनो"
 
 #. Translators: this is an image size, such as 1024 × 768
 #: ../extensions/gstreamer_utils/gstreamer-utils.c:401
@@ -3126,11 +3143,11 @@ msgstr ""
 #: ../extensions/webalbums/gth-web-exporter.c:2448 ../pix/gtk-utils.c:1037
 #, c-format
 msgid "%d × %d"
-msgstr ""
+msgstr "%d × %d"
 
 #: ../extensions/image_print/actions.c:68
 msgid "Could not print the selected files"
-msgstr ""
+msgstr "चयनित फाइलें प्रदर्शित करना विफल"
 
 #: ../extensions/image_print/callbacks.c:64
 #: ../extensions/image_print/preferences.c:79
@@ -3139,24 +3156,24 @@ msgstr "मुद्रण"
 
 #: ../extensions/image_print/callbacks.c:65
 msgid "Print the selected images"
-msgstr ""
+msgstr "चयनित चित्र प्रदर्शित करें"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:1
 msgid "Centered"
-msgstr ""
+msgstr "केंद्रित"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:13
 msgid "The total number of files"
-msgstr ""
+msgstr "फाइलों की कुल संख्या"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:14
 #: ../extensions/importer/data/ui/import-preferences.ui.h:4
 msgid "The event description"
-msgstr ""
+msgstr "घटना वर्णन"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:17
 msgid "_Rows:"
-msgstr ""
+msgstr "पंक्ति (_R):"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:19
 msgid "Image"
@@ -3164,23 +3181,23 @@ msgstr "छवि"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:20
 msgid "Position:"
-msgstr ""
+msgstr "स्थिति :"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:21
 msgid "Left"
-msgstr ""
+msgstr "बाएँ"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:22
 msgid "Top"
-msgstr ""
+msgstr "शीर्ष"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:26
 msgid "Rotation:"
-msgstr ""
+msgstr "परिक्रमण :"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:27
 msgid "Unit:"
-msgstr ""
+msgstr "इकाई :"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Preview"
@@ -3188,27 +3205,27 @@ msgstr "पूर्वावलोकन"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:29
 msgid "millimeters"
-msgstr ""
+msgstr "मिलीमीटर"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:30
 msgid "inches"
-msgstr ""
+msgstr "इंच"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:4
 msgid "Select Caption Font"
-msgstr ""
+msgstr "अनुशीर्षक मुद्रलिपि चयन"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:5
 msgid "Select Header Font"
-msgstr ""
+msgstr "शीर्ष लेख मुद्रलिपि चयन"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:6
 msgid "Select Footer Font"
-msgstr ""
+msgstr "अंत लेख मुद्रलिपि चयन"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:7
 msgid "Fonts"
-msgstr ""
+msgstr "मुद्रलिपियाँ"
 
 #: ../extensions/image_print/gth-image-print-job.c:912
 #: ../extensions/webalbums/data/albumthemes/text.h:31
@@ -3220,7 +3237,7 @@ msgstr "%d का %d पृष्ठ"
 #: ../extensions/image_print/gth-image-print-job.c:1876
 #: ../extensions/image_print/gth-image-print-job.c:1919
 msgid "Could not print"
-msgstr ""
+msgstr "प्रदर्शन विफल"
 
 #: ../extensions/image_print/gth-image-print-job.c:1777
 #: ../pix/gth-main-default-tests.c:259
@@ -3231,70 +3248,70 @@ msgstr "छवियाँ"
 #: ../pix/gth-image-loader.c:197 ../pix/gth-image-loader.c:304
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
-msgstr ""
+msgstr "इस फाइल प्रकार हेतु कोई उपयुक्त लोड साधन उपलब्ध नहीं है"
 
 #. translators: %s is a filename
 #: ../extensions/image_print/gth-load-image-info-task.c:164
 #, c-format
 msgid "Loading \"%s\""
-msgstr ""
+msgstr "\"%s\" लोड करना जारी"
 
 #: ../extensions/image_print/gth-load-image-info-task.c:166
 #: ../extensions/webalbums/gth-web-exporter.c:2727
 msgid "Loading images"
-msgstr ""
+msgstr "चित्र लोड करना जारी"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:1
 msgid "Image print"
-msgstr ""
+msgstr "चित्र प्रिंट"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:2
 msgid "Allow to print images choosing the page layout."
-msgstr ""
+msgstr "पृष्ठ अभिन्यास चयनकर चित्र प्रिंट करना स्वीकृत करें।"
 
 #: ../extensions/image_rotation/callbacks.c:50
 msgid "Rotate the selected images 90° to the right"
-msgstr ""
+msgstr "चयनित चित्रों को 90° दाएँ घुमाएँ"
 
 #: ../extensions/image_rotation/callbacks.c:56
 msgid "Rotate the selected images 90° to the left"
-msgstr ""
+msgstr "चयनित चित्रों को 90° बाएँ घुमाएँ"
 
 #: ../extensions/image_rotation/callbacks.c:61
 msgid "Rotate Physically"
-msgstr ""
+msgstr "स्वयं ही घुमाएँ"
 
 #: ../extensions/image_rotation/callbacks.c:62
 msgid "Rotate the selected images according to the embedded orientation"
-msgstr ""
+msgstr "चयनित चित्रों को सम्मिलित अभिविन्यास अनुसार घुमाएँ"
 
 #: ../extensions/image_rotation/callbacks.c:67
 msgid "Reset the EXIF Orientation"
-msgstr ""
+msgstr "EXIF अभिविन्यास पुनः सेट करें"
 
 #: ../extensions/image_rotation/callbacks.c:68
 msgid "Reset the embedded orientation without rotating the images"
-msgstr ""
+msgstr "चित्रों को घुमाएँ बिना ही सम्मिलित अभिविन्यास पुनः सेट करें"
 
 #: ../extensions/image_rotation/gth-reset-orientation-task.c:111
 #: ../extensions/image_rotation/gth-transform-task.c:143
 #: ../extensions/webalbums/gth-web-exporter.c:2340
 #: ../extensions/webalbums/gth-web-exporter.c:2425
 msgid "Saving images"
-msgstr ""
+msgstr "चित्र संचय जारी"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
 msgid "Image rotation"
-msgstr ""
+msgstr "चित्र परिक्रमण"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
 msgid "Rotate images without data loss."
-msgstr ""
+msgstr "बिना डेटा हानि के चित्र घुमाएँ।"
 
 #: ../extensions/image_rotation/rotation-utils.c:95
 #, c-format
 msgid "Problem transforming the image: %s"
-msgstr ""
+msgstr "चित्र परिवर्तन हेतु त्रुटि : %s"
 
 #: ../extensions/image_rotation/rotation-utils.c:100
 msgid ""
@@ -3309,54 +3326,63 @@ msgid ""
 "For practical use, this mode gives the best looking results, but the "
 "transformation is not strictly lossless anymore."
 msgstr ""
+"चित्र आयाम 8 के गुणक न होने के कारण इस परिवर्तन से एक या एकाधिक किनारों पर "
+"लघु विकृतियाँ उत्पन्न हो सकती हैं।\n"
+"\n"
+"हालाँकि, यह परिवर्तनीय है। परिवर्तन के परिणाम अस्वीकार्य होने की स्थिति में "
+"विपरीत परिवर्तन लागू कर वास्तविक चित्र प्राप्त करें।\n"
+"\n"
+"आप अपरिवर्तनीय किनारों के पिक्सेल हटा भी सकते हैं। व्यावहारिक उपयोग हेतु यह "
+"मोड श्रेष्ठतम परिणाम प्रदान करता है परंतु परिवर्तन पूर्णतया गुणवत्ता हानि "
+"रहित नहीं है।"
 
 #: ../extensions/image_rotation/rotation-utils.c:106
 msgid "_Trim"
-msgstr ""
+msgstr "हटाएँ (_T)"
 
 #: ../extensions/image_rotation/rotation-utils.c:108
 msgid "_Accept distortion"
-msgstr ""
+msgstr "विकृति स्वीकारें (_A)"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
 msgid "Set to actual size"
-msgstr ""
+msgstr "वास्तविक आकार पर सेट करें"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
 msgid "Keep previous zoom"
-msgstr ""
+msgstr "पूर्व आकार वर्धन अनुरक्षित"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
 msgid "Fit to window"
-msgstr ""
+msgstr "विंडो अनुसार विस्तृत"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
 msgid "Fit to window if larger"
-msgstr ""
+msgstr "विशाल होने पर विंडो अनुसार विस्तृत"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
 msgid "Fit to width"
-msgstr ""
+msgstr "चौड़ाई अनुसार विस्तृत"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
 msgid "Fit to width if larger"
-msgstr ""
+msgstr "विशाल होने पर चौड़ाई अनुसार विस्तृत"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
 msgid "Reset scrollbar positions"
-msgstr ""
+msgstr "स्क्रॉल पट्टी स्थिति पुनः सेट करें"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
 msgid "After loading an image:"
-msgstr ""
+msgstr "चित्र लोड करने के उपरांत :"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
 msgid "_Zoom quality:"
-msgstr ""
+msgstr "आकार वर्धन गुणवत्ता (_Z):"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:10
 msgid "Transparency _type:"
-msgstr ""
+msgstr "पारदर्शिता प्रकार (_t):"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
 msgid "High"
@@ -3376,27 +3402,27 @@ msgstr "काला"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:16
 msgid "Checked"
-msgstr ""
+msgstr "वर्गाकार प्रतिमान"
 
 #: ../extensions/image_viewer/gth-image-histogram.c:84
 msgid "Histogram"
-msgstr ""
+msgstr "आयतचित्र"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:179
 msgid "Copy Image"
-msgstr ""
+msgstr "चित्र कॉपी करें"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:180
 msgid "Copy the image to the clipboard"
-msgstr ""
+msgstr "क्लिपबोर्ड पर चित्र कॉपी करें"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:184
 msgid "Paste Image"
-msgstr ""
+msgstr "चित्र पेस्ट करें"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:185
 msgid "Paste the image from the clipboard"
-msgstr ""
+msgstr "क्लिपबोर्ड से चित्र पेस्ट करें"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:189
 msgid "In"
@@ -3420,7 +3446,7 @@ msgstr "१:१"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:200
 msgid "Actual size"
-msgstr ""
+msgstr "वास्तविक आकार"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:204
 msgid "Fit"
@@ -3428,19 +3454,19 @@ msgstr "अनुरूप"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:205
 msgid "Zoom to fit window"
-msgstr ""
+msgstr "विंडो अनुसार आकार वर्धन"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:210
 msgid "Zoom to fit width"
-msgstr ""
+msgstr "चौड़ाई अनुसार आकार वर्धन"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
 msgid "Image viewer"
-msgstr ""
+msgstr "चित्र प्रदर्शक"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
 msgid "Basic image viewing."
-msgstr ""
+msgstr "सामान्य चित्र प्रदर्शन।"
 
 #: ../extensions/image_viewer/preferences.c:125
 msgid "Viewer"
@@ -3448,102 +3474,102 @@ msgstr "प्रदर्शक"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:1
 msgid "_Destination"
-msgstr ""
+msgstr "लक्ष्य (_D)"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:2
 msgid "_Automatic subfolder"
-msgstr ""
+msgstr "स्वतः उप-फोल्डर (_A)"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:3
 msgid "as _single subfolder"
-msgstr ""
+msgstr "एकल उप-फोल्डर के रूप में (_a)"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:7
 msgid "The year"
-msgstr ""
+msgstr "वर्ष"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:8
 msgid "The month"
-msgstr ""
+msgstr "माह"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:9
 msgid "The day of the month"
-msgstr ""
+msgstr "माह का दिन"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:10
 msgid "The hour"
-msgstr ""
+msgstr "घंटा"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:11
 msgid "The minutes"
-msgstr ""
+msgstr "मिनट"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:12
 msgid "The seconds"
-msgstr ""
+msgstr "सेकंड"
 
 #: ../extensions/importer/gth-import-destination-button.c:183
 msgid "Invalid Destination"
-msgstr ""
+msgstr "अमान्य लक्ष्य"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:198
 #, c-format
 msgid "example: %s"
-msgstr ""
+msgstr "उदाहरण : %s"
 
 #. subfolder type
 #: ../extensions/importer/gth-import-preferences-dialog.c:330
 msgid "File date"
-msgstr ""
+msgstr "फाइल दिनांक"
 
 #. gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("subfolder_label")), self->priv->subfolder_type_list);
 #. subfolder format
 #: ../extensions/importer/gth-import-preferences-dialog.c:340
 msgid "year-month-day"
-msgstr ""
+msgstr "वर्ष-माह-दिन"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:341
 msgid "year-month"
-msgstr ""
+msgstr "वर्ष-माह"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:342
 msgid "year"
-msgstr ""
+msgstr "वर्ष"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:343
 msgid "custom format"
-msgstr ""
+msgstr "अनुकूलित प्रारूप"
 
 #: ../extensions/importer/gth-import-task.c:426
 #: ../extensions/importer/gth-import-task.c:461
 #: ../extensions/importer/gth-import-task.c:671
 msgid "Importing files"
-msgstr ""
+msgstr "फाइल आयात जारी"
 
 #: ../extensions/importer/gth-import-task.c:620
 msgid "No file imported"
-msgstr ""
+msgstr "कोई फाइल आयात नहीं हुई"
 
 #: ../extensions/importer/gth-import-task.c:621
 msgid "The selected files are already present in the destination."
-msgstr ""
+msgstr "चयनित फाइलें लक्ष्य पर पहले से मौजूद हैं।"
 
 #: ../extensions/importer/gth-import-task.c:644
 #: ../pix/gth-file-source-vfs.c:704
 msgid "Could not delete the files"
-msgstr ""
+msgstr "फाइलें हटाना विफल"
 
 #: ../extensions/importer/gth-import-task.c:645
 msgid "Delete operation not supported."
-msgstr ""
+msgstr "हटाना समर्थित नहीं है।"
 
 #: ../extensions/importer/gth-import-task.c:732
 msgid "Last imported"
-msgstr ""
+msgstr "अंतिम आयात"
 
 #: ../extensions/importer/gth-import-task.c:838
 msgid "No file specified."
-msgstr ""
+msgstr "कोई फाइल निर्दिष्ट नहीं।"
 
 #. Translators: For example: Not enough free space in '/home/user/Images'.\n1.3 GB of space is required but only 300 MB is available.
 #: ../extensions/importer/gth-import-task.c:875
@@ -3552,511 +3578,513 @@ msgid ""
 "Not enough free space in '%s'.\n"
 "%s of space is required but only %s is available."
 msgstr ""
+"'%s' का अप्रयुक्त स्पेस अपर्याप्त है।\n"
+"%s स्पेस आवश्यक परंतु केवल %s उपलब्ध है।"
 
 #: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
 msgid "Personalize..."
-msgstr ""
+msgstr "अनुकूलन..."
 
 #: ../extensions/list_tools/callbacks.c:320
 msgid "Tools"
-msgstr ""
+msgstr "साधन"
 
 #: ../extensions/list_tools/data/ui/ask-value.ui.h:1
 msgid "_Skip"
-msgstr ""
+msgstr "निरस्त (_S)"
 
 #: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
 msgid "Commands"
-msgstr ""
+msgstr "कमांड"
 
 #: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:2
 msgid "Co_mmands:"
-msgstr ""
+msgstr "कमांड (_C):"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:2
 msgid "_Wait for the command to finish"
-msgstr ""
+msgstr "कमांड पूर्ण होने तक प्रतीक्षा करें (_W)"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:3
 msgid "E_xecute command once for every file"
-msgstr ""
+msgstr "प्रत्येक फाइल हेतु एक बार कमांड निष्पादित करें (_x)"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:4
 msgid "_Terminal command (shell script)"
-msgstr ""
+msgstr "टर्मिनल कमांड (शैल स्क्रिप्ट) (_T)"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:5
 msgid "Sh_ortcut:"
-msgstr ""
+msgstr "शॉर्टकट (o):"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:6
 msgid "The file uri"
-msgstr ""
+msgstr "फाइल यूआरआई"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:7
 msgid "The file path"
-msgstr ""
+msgstr "फाइल पथ"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:8
 msgid "The file basename"
-msgstr ""
+msgstr "फाइल स्रोत नाम"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:9
 msgid "The parent folder path"
-msgstr ""
+msgstr "स्रोत फोल्डर पथ"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:14
 #, no-c-format
 msgid "%ask{ message }{ default value }"
-msgstr ""
+msgstr "%ask{ संदेश }{ डिफ़ॉल्ट मान }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:15
 msgid "Ask an input value"
-msgstr ""
+msgstr "इनपुट मान दर्ज करने हेतु अनुरोध"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:18
 #, no-c-format
 msgid "%attr{ attribute name }"
-msgstr ""
+msgstr "%attr{ विशेषता नाम }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:19
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:25
 msgid "A file attribute"
-msgstr ""
+msgstr "फाइल विशेषता"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:21
 #, no-c-format
 msgid "%N"
-msgstr ""
+msgstr "%N"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:22
 msgid "The file basename without extension"
-msgstr ""
+msgstr "एक्सटेंशन रहित फाइल स्रोत नाम"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:24
 #, no-c-format
 msgid "%E"
-msgstr ""
+msgstr "%E"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:25
 msgid "The file extension"
-msgstr ""
+msgstr "फाइल एक्सटेंशन"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:28
 #, no-c-format
 msgid "%quote{ text }"
-msgstr ""
+msgstr "%quote{ टेक्स्ट }"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:29
 msgid "Quote the text "
-msgstr ""
+msgstr "टेक्स्ट प्रदर्शित करें "
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:30
 msgid "_Command:"
-msgstr ""
+msgstr "कमांड (_C):"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:257
 msgid "Script"
-msgstr ""
+msgstr "स्क्रिप्ट"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:271
 msgid "Shortcut"
-msgstr ""
+msgstr "शॉर्टकट"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:285
 #: ../pix/dlg-personalize-filters.c:252
 msgid "Show"
-msgstr ""
+msgstr "दिखाएँ"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:355
 msgid "Could not save the script"
-msgstr ""
+msgstr "स्क्रिप्ट संचय विफल"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:406
 msgid "New Command"
-msgstr ""
+msgstr "नई कमांड"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:433
 msgid "Edit Command"
-msgstr ""
+msgstr "कमांड संपादन"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:461
 msgid "Are you sure you want to delete the selected command?"
-msgstr ""
+msgstr "क्या आप निश्चित ही चयनित कमांड हटाना चाहते हैं?"
 
 #: ../extensions/list_tools/gth-script.c:615
 msgid "Enter a value:"
-msgstr ""
+msgstr "मान दर्ज करें :"
 
 #: ../extensions/list_tools/gth-script.c:750
 #: ../extensions/webalbums/gth-web-exporter.c:558
 #: ../extensions/webalbums/gth-web-exporter.c:570
 #: ../extensions/webalbums/gth-web-exporter.c:578
 msgid "Malformed command"
-msgstr ""
+msgstr "विकृत कमांड"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:147
 msgid "none"
-msgstr ""
+msgstr "कुछ नहीं"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:153
 #, c-format
 msgid "key %d on the numeric keypad"
-msgstr ""
+msgstr "अंकीय कुंजीपटल की %d कुंजी"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:296
 #, c-format
 msgid "No command specified"
-msgstr ""
+msgstr "कोई कमांड निर्दिष्ट नहीं"
 
 #: ../extensions/list_tools/gth-script-task.c:83
 #, c-format
 msgid "Command exited abnormally with status %d"
-msgstr ""
+msgstr "कमांड अनियमित रूप से बंद, स्थिति %d"
 
 #: ../extensions/list_tools/list_tools.extension.in.in.h:1
 msgid "File list tools"
-msgstr ""
+msgstr "फाइल सूची साधन"
 
 #: ../extensions/list_tools/list_tools.extension.in.in.h:2
 msgid "Scripting and batch manipulation of files."
-msgstr ""
+msgstr "फाइलों हेतु स्क्रिप्ट व एकाधिक प्रक्रियाएँ।"
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "W"
-msgstr ""
+msgstr "W"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: ../extensions/map_view/gth-map-view.c:205
 #: ../extensions/map_view/map_view.extension.in.in.h:1
 msgid "Map"
-msgstr ""
+msgstr "मानचित्र"
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
 msgid ""
 "The geographical position information is not available for this image."
-msgstr ""
+msgstr "इस चित्र हेतु भूगोलिक स्थिति सूचना अनुपलब्ध है।"
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
-msgstr ""
+msgstr "मानचित्र पर चित्र स्थिति देखें"
 
 #: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
 msgid "A_ccounts:"
-msgstr ""
+msgstr "अकाउंट (_c):"
 
 #: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
 #: ../pix/gth-folder-tree.c:1067
 msgid "Loading..."
-msgstr ""
+msgstr "लोड होना जारी..."
 
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:200
 msgid "New authentication..."
-msgstr ""
+msgstr "नया पुष्टिकरण..."
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
-msgstr ""
+msgstr "पुष्टिकरण आवश्यक"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
-msgstr ""
+msgstr "अकाउंट चुनें (_A)..."
 
 #: ../extensions/oauth/web-service.c:660
 msgid "Choose Account"
-msgstr ""
+msgstr "अकाउंट चुनें"
 
 #: ../extensions/oauth/web-service.c:777
 msgid "Edit Accounts"
-msgstr ""
+msgstr "अकाउंट संपादन"
 
 #: ../extensions/oauth/web-service.c:795 ../extensions/oauth/web-service.c:812
 msgid "Connecting to the server"
-msgstr ""
+msgstr "सर्वर से कनेक्शन प्रयास जारी"
 
 #: ../extensions/oauth/web-service.c:796
 msgid "Asking authorization"
-msgstr ""
+msgstr "पुष्टिकरण सूचना प्राप्ति जारी"
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
-msgstr ""
+msgstr "अकाउंट सूचना प्राप्ति जारी"
 
 #: ../extensions/photobucket/callbacks.c:54
 msgid "Photobucket..."
-msgstr ""
+msgstr "Photobucket..."
 
 #: ../extensions/photobucket/callbacks.c:55
 msgid "Upload photos to Photobucket"
-msgstr ""
+msgstr "Photobucket पर चित्र अपलोड करें"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:9
 msgid "_Scramble filenames"
-msgstr ""
+msgstr "फाइल नाम मिश्रण (_S)"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:10
 msgid "Tiny ( 100 x 75 )"
-msgstr ""
+msgstr "अति लघु ( 100 x 75 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:11
 msgid "Small ( 160 x 120 )"
-msgstr ""
+msgstr "लघु ( 160 x 120 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:12
 msgid "Medium ( 320 x 240 )"
-msgstr ""
+msgstr "सामान्य ( 320 x 240 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:13
 msgid "Large ( 640 x 480 )"
-msgstr ""
+msgstr "विशाल ( 640 x 480 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:14
 msgid "15ʺ screen ( 800 x 600 )"
-msgstr ""
+msgstr "15ʺ स्क्रीन ( 800 x 600 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:15
 msgid "17ʺ screen ( 1024 x 768 )"
-msgstr ""
+msgstr "17ʺ स्क्रीन ( 1024 x 768 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:16
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:296
 msgid "1 megabyte file size"
-msgstr ""
+msgstr "1 मेगाबाइट फाइल आकार"
 
 #: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:2
 msgid "_Container:"
-msgstr ""
+msgstr "कंटेनर (_C):"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:290
 msgid "Tiny ( 100 × 75 )"
-msgstr ""
+msgstr "अति लघु ( 100 × 75 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:291
 msgid "Small ( 160 × 120 )"
-msgstr ""
+msgstr "लघु ( 160 × 120 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:292
 msgid "Medium ( 320 × 240 )"
-msgstr ""
+msgstr "सामान्य ( 320 × 240 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:293
 msgid "Large ( 640 × 480 )"
-msgstr ""
+msgstr "विशाल ( 640 × 480 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:294
 msgid "15ʺ screen ( 800 × 600 )"
-msgstr ""
+msgstr "15ʺ स्क्रीन ( 800 × 600 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:295
 msgid "17ʺ screen ( 1024 × 768 )"
-msgstr ""
+msgstr "17ʺ स्क्रीन ( 1024 × 768 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:303
 msgid "2 megabyte file size"
-msgstr ""
+msgstr "2 मेगाबाइट फाइल आकार"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:1
 msgid "PhotoBucket"
-msgstr ""
+msgstr "PhotoBucket"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:2
 msgid "Upload images to PhotoBucket"
-msgstr ""
+msgstr "PhotoBucket पर चित्र अपलोड करें"
 
 #: ../extensions/photo_importer/actions.c:71
 msgid "Import"
-msgstr ""
+msgstr "आयात करें"
 
 #: ../extensions/photo_importer/callbacks.c:52
 msgid "_Removable Device..."
-msgstr ""
+msgstr "हटाने योग्य उपकरण (_R)..."
 
 #: ../extensions/photo_importer/callbacks.c:53
 msgid "Import photos and other files from a removable device"
-msgstr ""
+msgstr "हटाने योग्य उपकरण से चित्र व अन्य फाइलें आयात करें"
 
 #: ../extensions/photo_importer/callbacks.c:56
 msgid "F_older..."
-msgstr ""
+msgstr "फोल्डर (_F)..."
 
 #: ../extensions/photo_importer/callbacks.c:57
 msgid "Import photos and other files from a folder"
-msgstr ""
+msgstr "फोल्डर से चित्र व अन्य फाइलें आयात करें"
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
 msgid "_Rotate the images physically"
-msgstr ""
+msgstr "स्वयं ही चित्र घुमाएँ (_R)..."
 
 #: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
 msgid "After importing from a device:"
-msgstr ""
+msgstr "उपकरण से आयात उपरांत :"
 
 #. view label
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
 #: ../pix/gth-filterbar.c:421
 msgid "S_how:"
-msgstr ""
+msgstr "दिखाएँ (_h):"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
 msgid "_Tags:"
-msgstr ""
+msgstr "उपनाम (_T):"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
 msgid "_Event:"
-msgstr ""
+msgstr "घटना (_E):"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:7
 msgid "_Delete the imported files from the source"
-msgstr ""
+msgstr "आयात की गई फाइलों को स्रोत से हटाएँ (_D)"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:227
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:149
 msgid "Could not import the files"
-msgstr ""
+msgstr "फाइल आयात विफल"
 
 #. translators: %d is the number of files, %s the total size
 #: ../extensions/photo_importer/dlg-photo-importer.c:299
 #, c-format
 msgid "Files to import: %d (%s)"
-msgstr ""
+msgstr "आयात हेतु फाइलें : %d (%s)"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:339
 msgid "Could not load the folder"
-msgstr ""
+msgstr "फोल्डर लोड करना विफल"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:369
 #: ../pix/gth-browser.c:2090
 msgid "Getting folder listing..."
-msgstr ""
+msgstr "फोल्डर सूची प्राप्ति जारी..."
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:415
 msgid "Empty"
-msgstr ""
+msgstr "रिक्त"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:586
 msgid "Import from Removable Device"
-msgstr ""
+msgstr "हटाने योग्य उपकरण से आयात करें"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:618
 msgid "Import from Folder"
-msgstr ""
+msgstr "फोल्डर से आयात करें"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:1
 msgid "Import photos"
-msgstr ""
+msgstr "चित्र आयात करें"
 
 #: ../extensions/photo_importer/photo_importer.extension.in.in.h:2
 msgid "Import photos from removable devices."
-msgstr ""
+msgstr "हटाने योग्य उपकरण से चित्र आयात करें।"
 
 #: ../extensions/picasaweb/callbacks.c:59
 #: ../extensions/picasaweb/callbacks.c:64
 msgid "_Picasa Web Album..."
-msgstr ""
+msgstr "पिकासा वेब एल्बम (_P)..."
 
 #: ../extensions/picasaweb/callbacks.c:60
 msgid "Download photos from Picasa Web Album"
-msgstr ""
+msgstr "पिकासा वेब एल्बम से चित्र डाउनलोड करें"
 
 #: ../extensions/picasaweb/callbacks.c:65
 msgid "Upload photos to Picasa Web Album"
-msgstr ""
+msgstr "पिकासा वेब एल्बम पर चित्र अपलोड करें"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:1
 msgid "Export to Picasa Web Albums"
-msgstr ""
+msgstr "पिकासा वेब एल्बम पर निर्यात करें"
 
 #: ../extensions/picasaweb/data/ui/export-to-picasaweb.ui.h:5
 msgid "_Albums:"
-msgstr ""
+msgstr "एल्बम (_A):"
 
 #: ../extensions/picasaweb/data/ui/picasa-web-album-properties.ui.h:4
 msgid "Public"
-msgstr ""
+msgstr "सार्वजनिक"
 
 #: ../extensions/picasaweb/dlg-export-to-picasaweb.c:458
 #: ../extensions/picasaweb/dlg-import-from-picasaweb.c:469
 msgid "Could not get the album list"
-msgstr ""
+msgstr "एल्बम सूची प्राप्ति विफल"
 
 #: ../extensions/picasaweb/picasaweb.extension.in.in.h:1
 msgid "Picasa Web Albums"
-msgstr ""
+msgstr "पिकासा वेब एल्बम"
 
 #: ../extensions/picasaweb/picasaweb.extension.in.in.h:2
 msgid "Upload images to Picasa Web Albums"
-msgstr ""
+msgstr "पिकासा वेब एल्बम पर चित्र अपलोड करें"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
-msgstr ""
+msgstr "Raw प्रारूप समर्थन"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:2
 msgid "Allow to load raw format images."
-msgstr ""
+msgstr "Raw प्रारूप चित्र लोड करना स्वीकार्य।"
 
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
 msgid "_X:"
-msgstr ""
+msgstr "_X:"
 
 #: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
 msgid "_Y:"
-msgstr ""
+msgstr "_Y:"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal..."
-msgstr ""
+msgstr "नेत्र लालिमा सुधार..."
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal"
-msgstr ""
+msgstr "नेत्र लालिमा सुधार"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:511
 msgid "Remove the red eye effect caused by camera flashes"
-msgstr ""
+msgstr "कैमरा फ़्लैश से उत्पन्न नेत्र लालिमा प्रभाव हटाएँ।"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
 msgid "Red-eye removal"
-msgstr ""
+msgstr "नेत्र लालिमा सुधार"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
 msgid "Tool to remove the red-eye effect from a photo."
-msgstr ""
+msgstr "चित्र से नेत्र लालिमा प्रभाव हटाने हेतु साधन।"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:1
 msgid "digits"
-msgstr ""
+msgstr "अंक"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:2
 msgid "format:"
-msgstr ""
+msgstr "प्रारूप :"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:3
 msgid "remove"
-msgstr ""
+msgstr "हटाएँ"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:4
 msgid "add"
-msgstr ""
+msgstr "जोड़ें"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:1
 msgid "Rename"
@@ -4065,93 +4093,93 @@ msgstr "नाम बदलें"
 #. Translators: this is the text case (upper or lower case).
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:6
 msgid "Cas_e:"
-msgstr ""
+msgstr "वर्तनी केस (_e):"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:7
 msgid "Edit template"
-msgstr ""
+msgstr "नमूना संपादन"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:9
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:34
 msgid "The original filename"
-msgstr ""
+msgstr "वास्तविक फाइल नाम"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:10
 msgid "The original extension"
-msgstr ""
+msgstr "वास्तविक एक्सटेंशन"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:13
 msgid "The original enumerator"
-msgstr ""
+msgstr "वास्तविक गणनाकार"
 
 #. translate only the text in the curly brackets
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:16
 #, no-c-format
 msgid "%M{ format }"
-msgstr ""
+msgstr "%M{ प्रारूप }"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:17
 msgid "The modification date"
-msgstr ""
+msgstr "परिवर्तन दिनांक"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:21
 msgid "The digitalization date"
-msgstr ""
+msgstr "अंकीकरण दिनांक"
 
 #. translate only the text in the curly brackets
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:24
 #, no-c-format
 msgid "%A{ identifier }"
-msgstr ""
+msgstr "%A{ पहचान साधन }"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:26
 msgid "_Template:"
-msgstr ""
+msgstr "नमूना (_T):"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:27
 msgid "Re_verse Order"
-msgstr ""
+msgstr "विपरीत क्रम (_v)"
 
 #: ../extensions/rename_series/dlg-rename-series.c:58
 msgid "Enumerator"
-msgstr ""
+msgstr "गणनाकार"
 
 #: ../extensions/rename_series/dlg-rename-series.c:59
 msgid "Original filename"
-msgstr ""
+msgstr "वास्तविक फाइल नाम"
 
 #: ../extensions/rename_series/dlg-rename-series.c:60
 msgid "Original extension"
-msgstr ""
+msgstr "वास्तविक एक्सटेंशन"
 
 #: ../extensions/rename_series/dlg-rename-series.c:61
 msgid "Original enumerator"
-msgstr ""
+msgstr "वास्तविक गणनाकार"
 
 #: ../extensions/rename_series/dlg-rename-series.c:62
 msgid "Modification date"
-msgstr ""
+msgstr "परिवर्तन दिनांक"
 
 #: ../extensions/rename_series/dlg-rename-series.c:63
 msgid "Digitalization date"
-msgstr ""
+msgstr "अंकीकरण दिनांक"
 
 #: ../extensions/rename_series/dlg-rename-series.c:64
 msgid "File attribute"
-msgstr ""
+msgstr "फाइल विशेषता"
 
 #: ../extensions/rename_series/dlg-rename-series.c:558
 #: ../extensions/rename_series/dlg-rename-series.c:689
 msgid "Could not rename the files"
-msgstr ""
+msgstr "फाइल नाम परिवर्तन विफल"
 
 #: ../extensions/rename_series/dlg-rename-series.c:786
 msgid "Could not save the template"
-msgstr ""
+msgstr "नमूना संचय विफल"
 
 #: ../extensions/rename_series/dlg-rename-series.c:804
 msgid "Edit Template"
-msgstr ""
+msgstr "नमूना संपादन"
 
 #: ../extensions/rename_series/dlg-rename-series.c:862
 msgid "Old Name"
@@ -4163,43 +4191,43 @@ msgstr "नया नाम"
 
 #: ../extensions/rename_series/dlg-rename-series.c:951
 msgid "Keep original case"
-msgstr ""
+msgstr "वास्तविक वर्तनी केस अनुरक्षित"
 
 #: ../extensions/rename_series/dlg-rename-series.c:952
 msgid "Convert to lower-case"
-msgstr ""
+msgstr "लोअरकेस में बदलें"
 
 #: ../extensions/rename_series/dlg-rename-series.c:953
 msgid "Convert to upper-case"
-msgstr ""
+msgstr "अपरकेस में बदलें"
 
 #: ../extensions/rename_series/gth-rename-task.c:167
 msgid "Renaming files"
-msgstr ""
+msgstr "फाइल नाम परिवर्तन जारी"
 
 #: ../extensions/rename_series/rename_series.extension.in.in.h:1
 msgid "Rename files"
-msgstr ""
+msgstr "फाइल नाम परिवर्तन"
 
 #: ../extensions/rename_series/rename_series.extension.in.in.h:2
 msgid "Rename series of files."
-msgstr ""
+msgstr "श्रृंखलाबद्ध फाइलों का नाम परिवर्तन।"
 
 #: ../extensions/resize_images/callbacks.c:45
 msgid "Resize Images..."
-msgstr ""
+msgstr "चित्र आकार परिवर्तन..."
 
 #: ../extensions/resize_images/callbacks.c:46
 msgid "Resize the selected images"
-msgstr ""
+msgstr "चयनित चित्रों का आकार परिवर्तन"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:1
 msgid "Resize Images"
-msgstr ""
+msgstr "चित्रों का आकार परिवर्तन करें"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:2
 msgid "New dimensions"
-msgstr ""
+msgstr "नवीन आयाम"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:4
 msgid "_Height:"
@@ -4207,37 +4235,37 @@ msgstr "ऊँचाई (_H):"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:5
 msgid "_Preserve original aspect ratios"
-msgstr ""
+msgstr "वास्तविक दृश्य अनुपात अनुरक्षित (_P)"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:9
 #: ../pix/gth-main-default-metadata.c:49
 msgid "Format"
-msgstr ""
+msgstr "प्रारूप"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:10
 msgid "pixel"
-msgstr ""
+msgstr "पिक्सेल"
 
 #: ../extensions/resize_images/dlg-resize-images.c:420
 msgid "Keep the original format"
-msgstr ""
+msgstr "वास्तविक प्रारूप अनुरक्षित"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:1
 msgid "Resize images"
-msgstr ""
+msgstr "चित्र आकार परिवर्तन"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:2
 msgid "Resize series of images."
-msgstr ""
+msgstr "श्रृंखलाबद्ध चित्रों का आकार परिवर्तन।"
 
 #: ../extensions/search/actions.c:49 ../extensions/search/actions.c:117
 #: ../extensions/search/actions.c:123
 msgid "Could not perform the search"
-msgstr ""
+msgstr "खोज प्रक्रिया विफल"
 
 #: ../extensions/search/actions.c:54
 msgid "Search Result"
-msgstr ""
+msgstr "खोज परिणाम"
 
 #: ../extensions/search/actions.c:76 ../extensions/search/callbacks.c:58
 msgid "Find"
@@ -4245,60 +4273,60 @@ msgstr "ढूंढें"
 
 #: ../extensions/search/callbacks.c:59
 msgid "Find files"
-msgstr ""
+msgstr "फाइल खोज"
 
 #: ../extensions/search/callbacks.c:132
 msgid "Search again"
-msgstr ""
+msgstr "पुनः खोजें"
 
 #. Translators: This is not a verb, it's a name as in "the search properties".
 #: ../extensions/search/callbacks.c:174
 #: ../extensions/search/search.extension.in.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "खोज"
 
 #: ../extensions/search/gth-search-editor.c:112
 #: ../pix/gth-filter-editor-dialog.c:165
 msgid "all the following rules"
-msgstr ""
+msgstr "सभी निम्नलिखित नियम"
 
 #: ../extensions/search/gth-search-editor.c:113
 #: ../pix/gth-filter-editor-dialog.c:166
 msgid "any of the following rules"
-msgstr ""
+msgstr "निम्नलिखित में से कोई नियम"
 
 #: ../extensions/search/gth-search-task.c:181
 #, c-format
 msgid "Files found until now: %s"
-msgstr ""
+msgstr "अब तक खोज से प्राप्त फाइलें : %s"
 
 #: ../extensions/search/gth-search-task.c:271
 msgid "Searching..."
-msgstr ""
+msgstr "खोज जारी..."
 
 #: ../extensions/search/gth-search-task.c:277
 msgid "Cancel the operation"
-msgstr ""
+msgstr "कार्य रद्द करें"
 
 #: ../extensions/search/search.extension.in.in.h:2
 msgid "File search tool."
-msgstr ""
+msgstr "फाइल खोज साधन।"
 
 #: ../extensions/selections/callbacks.c:77
 msgid "Add to _Selection"
-msgstr ""
+msgstr "चयन में जोड़ें (_S)"
 
 #: ../extensions/selections/callbacks.c:86
 msgid "Selection 1"
-msgstr ""
+msgstr "चयन 1"
 
 #: ../extensions/selections/callbacks.c:91
 msgid "Selection 2"
-msgstr ""
+msgstr "चयन 2"
 
 #: ../extensions/selections/callbacks.c:96
 msgid "Selection 3"
-msgstr ""
+msgstr "चयन 3"
 
 #: ../extensions/selections/callbacks.c:285
 #, c-format
@@ -4306,145 +4334,147 @@ msgid ""
 "Use Alt-%d to add files to this selection, Ctrl-%d to view this selection, "
 "Alt+Shift+%d to remove files from this selection"
 msgstr ""
+"इस चयन में फाइल जोड़ने हेतु Alt-%d, यह चयन देखने हेतु Ctrl-%d, इस चयन से "
+"फाइलें हटाने हेतु Alt+Shift+%d उपयोग करें"
 
 #: ../extensions/selections/gth-selections-manager.c:239
 #, c-format
 msgid "Selection %d"
-msgstr ""
+msgstr "चयन %d"
 
 #: ../extensions/selections/gth-selections-manager.c:242
 #: ../extensions/selections/selections.extension.in.in.h:1
 msgid "Selections"
-msgstr ""
+msgstr "चयन"
 
 #: ../extensions/selections/selections.extension.in.in.h:2
 msgid "Advanced file selection."
-msgstr ""
+msgstr "विस्तृत फाइल चयन।"
 
 #: ../extensions/slideshow/callbacks.c:56
 msgid "_Slideshow"
-msgstr ""
+msgstr "स्लाइड-शो (_S)"
 
 #: ../extensions/slideshow/callbacks.c:57
 msgid "View as a slideshow"
-msgstr ""
+msgstr "स्लाइडशो के रूप में देखें"
 
 #: ../extensions/slideshow/callbacks.c:410
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
 #: ../extensions/slideshow/preferences.c:162
 #: ../extensions/slideshow/slideshow.extension.in.in.h:1
 msgid "Slideshow"
-msgstr ""
+msgstr "स्लाइड-शो"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
 msgid "_Personalize"
-msgstr ""
+msgstr "अनुकूलन (_P)"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
 msgid "_Transition effect:"
-msgstr ""
+msgstr "रूपांतरण प्रभाव (_T):"
 
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
 msgid "_Change automatically, every"
-msgstr ""
+msgstr "इस अवधि उपरांत स्वतः बदलें (_C)"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
 msgid "_Restart when finished"
-msgstr ""
+msgstr "पूर्ण होने पर पुनः आरंभ करें (_R)"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
 msgid "R_andom order"
-msgstr ""
+msgstr "क्रमरहित (_a)"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
 msgid "Playlist"
-msgstr ""
+msgstr "संग्रह-सूची"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
 msgid "Add files to the playlist"
-msgstr ""
+msgstr "संग्रह-सूची में फाइलें जोड़ें"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
 msgid "Remove the selected files"
-msgstr ""
+msgstr "चयनित फाइलें हटाएँ"
 
 #: ../extensions/slideshow/gth-slideshow.c:234
 msgid "Playing slideshow"
-msgstr ""
+msgstr "स्लाइड-शो कार्यरत है"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:184
 msgid "Choose the files to play"
-msgstr ""
+msgstr "उपयोग हेतु फाइल चुनें"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:193
 msgid "Audio files"
-msgstr ""
+msgstr "ऑडियो फाइलें"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:259
 msgid "Random"
-msgstr ""
+msgstr "क्रमरहित"
 
 #: ../extensions/slideshow/main.c:283
 msgid "Push from right"
-msgstr ""
+msgstr "स्क्रीन के दायीं ओर से संचालन"
 
 #: ../extensions/slideshow/main.c:289
 msgid "Push from bottom"
-msgstr ""
+msgstr "स्क्रीन के निचले भाग से संचालन"
 
 #: ../extensions/slideshow/main.c:295
 msgid "Slide from right"
-msgstr ""
+msgstr "स्क्रीन के दायीं ओर से प्रस्तुत"
 
 #: ../extensions/slideshow/main.c:301
 msgid "Slide from bottom"
-msgstr ""
+msgstr "स्क्रीन के निचले भाग से प्रस्तुत"
 
 #: ../extensions/slideshow/main.c:307
 msgid "Fade in"
-msgstr ""
+msgstr "मंद दृश्य"
 
 #: ../extensions/slideshow/main.c:313
 msgid "Flip page"
-msgstr ""
+msgstr "पृष्ठ उलटें"
 
 #: ../extensions/slideshow/main.c:319
 msgid "Cube from right"
-msgstr ""
+msgstr "स्क्रीन के दायीं ओर से घनाकार"
 
 #: ../extensions/slideshow/main.c:325
 msgid "Cube from bottom"
-msgstr ""
+msgstr "स्क्रीन के निचले भाग से घनाकार"
 
 #: ../extensions/slideshow/slideshow.extension.in.in.h:2
 msgid "View images as a slideshow."
-msgstr ""
+msgstr "चित्रों को स्लाइड-शो रूप में देखें।"
 
 #: ../extensions/webalbums/callbacks.c:71
 msgid "_Web Album..."
-msgstr ""
+msgstr "वेब एल्बम (_W)..."
 
 #: ../extensions/webalbums/callbacks.c:72
 msgid "Create a static web album"
-msgstr ""
+msgstr "स्थैतिक वेब एल्बम बनाएँ"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:26
 msgid "Click to view the image"
-msgstr ""
+msgstr "चित्र देखने हेतु क्लिक करें"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:27
 msgid "Go back to the index"
-msgstr ""
+msgstr "अनुक्रमणिका पर वापस जाएँ"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:28
 #, c-format
 msgid "Image %d of %d"
-msgstr ""
+msgstr "%d चित्र %d में से"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:29
 msgid "Index"
-msgstr ""
+msgstr "अनुक्रमणिका"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:30
 #: ../pix/gth-browser-actions-entries.h:125
@@ -4459,205 +4489,205 @@ msgstr "पिछला"
 #: ../extensions/webalbums/data/albumthemes/text.h:33
 #, c-format
 msgid "View page %d"
-msgstr ""
+msgstr "पृष्ठ %d देखें"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:34
 msgid "View the next image"
-msgstr ""
+msgstr "आगामी चित्र देखें"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:35
 msgid "View the next page"
-msgstr ""
+msgstr "आगामी पृष्ठ देखें"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:36
 msgid "View the previous image"
-msgstr ""
+msgstr "पूर्व चित्र देखें"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:37
 msgid "View the previous page"
-msgstr ""
+msgstr "पूर्व पृष्ठ देखें"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
 msgid "All images on  a single image"
-msgstr ""
+msgstr "सभी चित्र एक ही चित्र में"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
 msgid "Adapts to the window width"
-msgstr ""
+msgstr "विंडो चौड़ाई अनुसार"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
 msgid "Web Album"
-msgstr ""
+msgstr "वेब एल्बम"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
 #, no-c-format
 msgid "%P"
-msgstr ""
+msgstr "%P"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
 msgid "_Copy originals to destination"
-msgstr ""
+msgstr "वास्तविक को लक्ष्य पर कॉपी करें (_C)"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:27
 msgid "_Adapt to the window width "
-msgstr ""
+msgstr "विंडो चौड़ाई अनुसार (_A) "
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:30
 msgid "Index Page"
-msgstr ""
+msgstr "अनुक्रमणिका पृष्ठ"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:31
 msgid "Thumbnail Caption"
-msgstr ""
+msgstr "लघुछवि अनुशीर्षक"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
 msgid "The current image number"
-msgstr ""
+msgstr "वर्तमान चित्र संख्या"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:33
 msgid "The total number of images"
-msgstr ""
+msgstr "कुल चित्र संख्या"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:35
 msgid "The file comment"
-msgstr ""
+msgstr "फाइल टिप्पणी"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:36
 msgid "Image Page"
-msgstr ""
+msgstr "चित्र पृष्ठ"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:37
 msgid "Show the description, if available"
-msgstr ""
+msgstr "उपलब्ध होने पर, विवरण दिखाएँ"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:38
 msgid "Show the following attributes:"
-msgstr ""
+msgstr "निम्नलिखित विशेषताएँ दिखाएँ :"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:39
 msgid "Image Attributes"
-msgstr ""
+msgstr "चित्र विशेषताएँ"
 
 #: ../extensions/webalbums/gth-web-exporter.c:1802
 msgid "Could not show the destination"
-msgstr ""
+msgstr "लक्ष्य दिखाना विफल"
 
 #: ../extensions/webalbums/gth-web-exporter.c:1838
 msgid "The album has been created successfully."
-msgstr ""
+msgstr "एल्बम निर्माण सफल।"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2106
 #: ../extensions/webalbums/gth-web-exporter.c:2134
 msgid "Saving thumbnails"
-msgstr ""
+msgstr "लघुछवि संचय जारी"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2162
 msgid "Saving HTML pages: Images"
-msgstr ""
+msgstr "एचटीएमएल पृष्ठ संचय जारी : चित्र"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2220
 msgid "Saving HTML pages: Indexes"
-msgstr ""
+msgstr "एचटीएमएल पृष्ठ संचय जारी : अनुक्रमणिका"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2505
 msgid "Copying original images"
-msgstr ""
+msgstr "वास्तविक चित्र कॉपी करना जारी"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2971
 msgid "Could not find the style folder"
-msgstr ""
+msgstr "शैली फोल्डर कॉपी करना विफल"
 
 #: ../extensions/webalbums/gth-web-exporter.c:3009
 msgid "Could not create a temporary folder"
-msgstr ""
+msgstr "अस्थायी फोल्डर बनाना विफल"
 
 #: ../extensions/webalbums/webalbums.extension.in.in.h:1
 msgid "Web Albums"
-msgstr ""
+msgstr "वेब एल्बम"
 
 #: ../extensions/webalbums/webalbums.extension.in.in.h:2
 msgid "Create static web albums."
-msgstr ""
+msgstr "स्थैतिक वेब एल्बम बनाएँ।"
 
 #: ../pix/dlg-location.c:200 ../pix/gth-browser.c:1397
 #: ../pix/gth-browser.c:1970 ../pix/gth-browser.c:6186
 #: ../pix/gth-browser.c:6207 ../pix/gth-browser.c:6231
 #, c-format
 msgid "Could not load the position \"%s\""
-msgstr ""
+msgstr "\"%s\" स्थिति लोड करना विफल"
 
 #: ../pix/dlg-personalize-filters.c:237
 msgid "Filter"
-msgstr ""
+msgstr "निस्पंदक"
 
 #: ../pix/dlg-personalize-filters.c:315
 msgid "Could not save the filter"
-msgstr ""
+msgstr "निस्पंदक संचय विफल"
 
 #: ../pix/dlg-personalize-filters.c:358
 msgid "New Filter"
-msgstr ""
+msgstr "नया निस्पंदक"
 
 #: ../pix/dlg-personalize-filters.c:387
 msgid "Edit Filter"
-msgstr ""
+msgstr "निस्पंदक संपादन"
 
 #: ../pix/dlg-preferences-extensions.c:67 ../pix/gth-filterbar.c:277
 msgid "All"
-msgstr ""
+msgstr "सभी"
 
 #: ../pix/dlg-preferences-extensions.c:68
 msgid "Enabled"
-msgstr ""
+msgstr "सक्रिय"
 
 #: ../pix/dlg-preferences-extensions.c:69
 msgid "Disabled"
-msgstr ""
+msgstr "निष्क्रिय"
 
 #: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
-msgstr ""
+msgstr "प्रदर्शक"
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
-msgstr ""
+msgstr "मेटाडेटा"
 
 #: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
-msgstr ""
+msgstr "फाइल साधन"
 
 #: ../pix/dlg-preferences-extensions.c:75
 msgid "List tools"
-msgstr ""
+msgstr "सूची साधन"
 
 #: ../pix/dlg-preferences-extensions.c:76
 msgid "Importers"
-msgstr ""
+msgstr "आयात साधन"
 
 #: ../pix/dlg-preferences-extensions.c:77
 msgid "Exporters"
-msgstr ""
+msgstr "निर्यात साधन"
 
 #: ../pix/dlg-preferences-extensions.c:216
 msgid "Could not activate the extension"
-msgstr ""
+msgstr "एक्सटेंशन सक्रिय करना विफल"
 
 #: ../pix/dlg-preferences-extensions.c:226
 msgid "Could not deactivate the extension"
-msgstr ""
+msgstr "एक्सटेंशन निष्क्रिय करना विफल"
 
 #. add the page to the preferences dialog
 #: ../pix/dlg-preferences-extensions.c:777
 msgid "Extensions"
-msgstr ""
+msgstr "एक्‍सटेंशन"
 
 #: ../pix/dlg-preferences-extensions.c:824
 msgid "Restart required"
-msgstr ""
+msgstr "पुनः आरंभ आवश्यक"
 
 #: ../pix/dlg-preferences-extensions.c:825
 msgid "You need to restart pix for these changes to take effect"
-msgstr ""
+msgstr "यह परिवर्तन लागू करने हेतु पिक्स पुनः आरंभ करना आवश्यक है"
 
 #: ../pix/dlg-preferences-extensions.c:826
 msgid "_Continue"
@@ -4665,35 +4695,35 @@ msgstr "जारी रखें"
 
 #: ../pix/dlg-preferences-extensions.c:827
 msgid "_Restart"
-msgstr ""
+msgstr "पुन: आरंभ करें (_R)"
 
 #. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
 #: ../pix/gio-utils.c:1351
 #, c-format
 msgid "%s of %s"
-msgstr ""
+msgstr "%s पूर्ण %s में से"
 
 #: ../pix/gio-utils.c:1386
 #, c-format
 msgid "Moving \"%s\" to \"%s\""
-msgstr ""
+msgstr "\"%s\" को \"%s\" में अंतरित करना जारी"
 
 #: ../pix/gio-utils.c:1388
 #, c-format
 msgid "Copying \"%s\" to \"%s\""
-msgstr ""
+msgstr "\"%s\" को \"%s\" में कॉपी करना जारी"
 
 #: ../pix/gio-utils.c:1750
 msgid "Moving files"
-msgstr ""
+msgstr "फाइलें अंतरित करना जारी"
 
 #: ../pix/gio-utils.c:1750
 msgid "Copying files"
-msgstr ""
+msgstr "फाइलें कॉपी करना जारी"
 
 #: ../pix/gio-utils.c:1751
 msgid "Getting file information"
-msgstr ""
+msgstr "फाइल सूचना प्राप्ति जारी"
 
 #. hour:minutes:seconds
 #. Translators: This is a time format, like "9:05:02" for 9
@@ -4705,7 +4735,7 @@ msgstr ""
 #, c-format
 msgctxt "long time format"
 msgid "%d:%02d:%02d"
-msgstr ""
+msgstr "%d:%02d:%02d"
 
 #. minutes:seconds
 #. Translators: This is a time format, like "5:02" for 5
@@ -4717,7 +4747,7 @@ msgstr ""
 #, c-format
 msgctxt "short time format"
 msgid "%d:%02d"
-msgstr ""
+msgstr "%d:%02d"
 
 #: ../pix/gth-browser-actions-callbacks.c:414
 msgid ""
@@ -4726,6 +4756,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"पिक्स - निःशुल्क सॉफ्टवेयर है; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
 
 #: ../pix/gth-browser-actions-callbacks.c:418
 msgid ""
@@ -4734,16 +4768,21 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"पिक्स - सदुपयोग की आशा से वितरित है, but WITHOUT ANY WARRANTY; without even "
+"the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. "
+" See the GNU General Public License for more details."
 
 #: ../pix/gth-browser-actions-callbacks.c:422
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
+"पिक्स के साथ GNU जनरल पब्लिक लाइसेंस की प्रतिलिपि संलग्न है। यदि नहीं तो "
+"http://www.gnu.org/licenses/ पर देखें।"
 
 #: ../pix/gth-browser-actions-callbacks.c:441
 msgid "An image viewer and browser."
-msgstr ""
+msgstr "चित्र प्रदर्शक व ब्राउज़र।"
 
 #: ../pix/gth-browser-actions-callbacks.c:444
 msgid "translator_credits"
@@ -4772,15 +4811,15 @@ msgstr "मदद (_H)"
 
 #: ../pix/gth-browser-actions-entries.h:36
 msgid "Open _With"
-msgstr ""
+msgstr "इसके साथ खोलें (_W)"
 
 #: ../pix/gth-browser-actions-entries.h:37
 msgid "I_mport From"
-msgstr ""
+msgstr "यहाँ से आयात करें (_m)"
 
 #: ../pix/gth-browser-actions-entries.h:38
 msgid "E_xport To"
-msgstr ""
+msgstr "यहाँ निर्यात करें (_x)"
 
 #: ../pix/gth-browser-actions-entries.h:41
 msgid "New _Window"
@@ -4788,7 +4827,7 @@ msgstr "नया विंडो (_W)"
 
 #: ../pix/gth-browser-actions-entries.h:42
 msgid "Open another window"
-msgstr ""
+msgstr "अन्य विंडो खोलें"
 
 #: ../pix/gth-browser-actions-entries.h:47
 #: ../pix/gth-browser-actions-entries.h:71
@@ -4797,11 +4836,11 @@ msgstr "खोलें"
 
 #: ../pix/gth-browser-actions-entries.h:59
 msgid "Save As..."
-msgstr ""
+msgstr "इस रूप में संचित करें..."
 
 #: ../pix/gth-browser-actions-entries.h:65
 msgid "Revert"
-msgstr ""
+msgstr "पूर्ववत करें"
 
 #: ../pix/gth-browser-actions-entries.h:77
 msgid "Open in New Window"
@@ -4809,56 +4848,56 @@ msgstr "नए विंडो में खोलें."
 
 #: ../pix/gth-browser-actions-entries.h:84
 msgid "Edit various preferences"
-msgstr ""
+msgstr "विभिन्न सेटिंग्स संपादन"
 
 #: ../pix/gth-browser-actions-entries.h:95
 msgid "_Sort By..."
-msgstr ""
+msgstr "अनुक्रमण (_S)..."
 
 #: ../pix/gth-browser-actions-entries.h:101
 msgid "_Filter..."
-msgstr ""
+msgstr "निस्पंदन (_F)..."
 
 #: ../pix/gth-browser-actions-entries.h:107
 msgid "Stop"
-msgstr ""
+msgstr "पूर्णतया रोकें"
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
-msgstr ""
+msgstr "वर्तमान स्थान लोड करना रोकें"
 
 #: ../pix/gth-browser-actions-entries.h:113
 msgid "Reload"
-msgstr ""
+msgstr "पुन: लोड करें"
 
 #: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
-msgstr ""
+msgstr "वर्तमान स्थान पुनः लोड करें"
 
 #: ../pix/gth-browser-actions-entries.h:120
 msgid "View previous image"
-msgstr ""
+msgstr "पूर्व चित्र देखें"
 
 #: ../pix/gth-browser-actions-entries.h:126
 msgid "View next image"
-msgstr ""
+msgstr "आगामी चित्र देखें"
 
 #: ../pix/gth-browser-actions-entries.h:131
 msgid "Fullscreen"
-msgstr ""
+msgstr "पूर्ण स्क्रीन"
 
 #: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
-msgstr ""
+msgstr "पूर्ण स्क्रीन पर प्रदर्शित करें"
 
 #: ../pix/gth-browser-actions-entries.h:137
 #: ../pix/gth-browser-actions-entries.h:138
 msgid "Leave Fullscreen"
-msgstr ""
+msgstr "पूर्ण स्क्रीन बंद करें"
 
 #: ../pix/gth-browser-actions-entries.h:143
 msgid "Back"
-msgstr ""
+msgstr "वापस"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
@@ -4866,7 +4905,7 @@ msgstr "पिछले सैर किए स्थान पर जाएँ"
 
 #: ../pix/gth-browser-actions-entries.h:149
 msgid "Forward"
-msgstr ""
+msgstr "आगे"
 
 #: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3860
 msgid "Go to the next visited location"
@@ -4874,7 +4913,7 @@ msgstr "अगले सैर किए स्थान पर जाएँ"
 
 #: ../pix/gth-browser-actions-entries.h:155
 msgid "Up"
-msgstr ""
+msgstr "ऊपर"
 
 #: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3878
 msgid "Go up one level"
@@ -4886,49 +4925,49 @@ msgstr "स्थान... (_L)"
 
 #: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
-msgstr ""
+msgstr "खोलने हेतु स्थान निर्दिष्ट करें"
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
-msgstr ""
+msgstr "वृतांत हटाएँ (_D)"
 
 #: ../pix/gth-browser-actions-entries.h:174
 msgid "Delete the list of visited locations"
-msgstr ""
+msgstr "प्रयुक्त स्थानों की सूची हटाएँ"
 
 #: ../pix/gth-browser-actions-entries.h:180
 msgid "View the folders"
-msgstr ""
+msgstr "फोल्डर देखें"
 
 #: ../pix/gth-browser-actions-entries.h:185
 msgid "About"
-msgstr ""
+msgstr "बारे में"
 
 #: ../pix/gth-browser-actions-entries.h:186
 msgid "Show information about pix"
-msgstr ""
+msgstr "पिक्स के बारे में सूचना दिखाएँ"
 
 #: ../pix/gth-browser-actions-entries.h:191
 msgid "Contents"
-msgstr ""
+msgstr "सामग्री"
 
 #: ../pix/gth-browser-actions-entries.h:192
 msgid "Display the pix Manual"
-msgstr ""
+msgstr "पिक्स उपयोग गाइड दिखाएँ"
 
 #: ../pix/gth-browser-actions-entries.h:197
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "कुंजीपटल शॉर्टकट (_K)"
 
 #: ../pix/gth-browser-actions-entries.h:203
 #: ../pix/gth-browser-actions-entries.h:257
 msgid "Edit"
-msgstr ""
+msgstr "संपादन"
 
 #: ../pix/gth-browser-actions-entries.h:204
 #: ../pix/gth-browser-actions-entries.h:258
 msgid "Edit file"
-msgstr ""
+msgstr "फाइल संपादन"
 
 #: ../pix/gth-browser-actions-entries.h:212
 msgid "_Toolbar"
@@ -4936,7 +4975,7 @@ msgstr "उपकरण-पट्टी (_T)"
 
 #: ../pix/gth-browser-actions-entries.h:213
 msgid "View or hide the toolbar of this window"
-msgstr ""
+msgstr "इस विंडो की साधन पट्टी दृश्य/अदृश्य करें"
 
 #: ../pix/gth-browser-actions-entries.h:217
 msgid "_Statusbar"
@@ -4944,104 +4983,104 @@ msgstr "स्थिति-पट्टी (_S)"
 
 #: ../pix/gth-browser-actions-entries.h:218
 msgid "View or hide the statusbar of this window"
-msgstr ""
+msgstr "इस विंडो की स्थिति पट्टी दृश्य/अदृश्य करें"
 
 #: ../pix/gth-browser-actions-entries.h:222
 msgid "_Filterbar"
-msgstr ""
+msgstr "निस्पंदन पट्टी (_F)"
 
 #: ../pix/gth-browser-actions-entries.h:223
 msgid "View or hide the filterbar of this window"
-msgstr ""
+msgstr "इस विंडो की निस्पंदन पट्टी दृश्य/अदृश्य करें"
 
 #: ../pix/gth-browser-actions-entries.h:227
 msgid "_Sidebar"
-msgstr ""
+msgstr "साइड पट्टी (_S)"
 
 #: ../pix/gth-browser-actions-entries.h:228
 msgid "View or hide the sidebar of this window"
-msgstr ""
+msgstr "इस विंडो की साइड पट्टी दृश्य/अदृश्य करें"
 
 #: ../pix/gth-browser-actions-entries.h:232
 msgid "_Thumbnail Pane"
-msgstr ""
+msgstr "लघुछवि फलक (_T)"
 
 #: ../pix/gth-browser-actions-entries.h:233
 msgid "View or hide the thumbnail pane in viewer mode"
-msgstr ""
+msgstr "दृश्य मोड में लघुछवि फलक दृश्य/अदृश्य करें"
 
 #: ../pix/gth-browser-actions-entries.h:237
 msgid "_Thumbnails"
-msgstr ""
+msgstr "लघुछवि (_T)"
 
 #: ../pix/gth-browser-actions-entries.h:238
 msgid "View thumbnails"
-msgstr ""
+msgstr "लघुछवियाँ देखें"
 
 #: ../pix/gth-browser-actions-entries.h:242
 msgid "_Hidden Files"
-msgstr ""
+msgstr "अदृश्य फाइलें (_H)"
 
 #: ../pix/gth-browser-actions-entries.h:243
 msgid "Show hidden files and folders"
-msgstr ""
+msgstr "अदृश्य फाइल व फोल्डर दिखाएँ"
 
 #: ../pix/gth-browser-actions-entries.h:248
 #: ../pix/gth-browser-actions-entries.h:252
 #: ../pix/gth-browser-actions-entries.h:253
 msgid "View file properties"
-msgstr ""
+msgstr "फाइल विशेषताएँ देखें"
 
 #: ../pix/gth-browser-actions-entries.h:262
 msgid "_Fit Window to Image"
-msgstr ""
+msgstr "चित्र अनुसार विंडो विस्तृत (_F)"
 
 #: ../pix/gth-browser-actions-entries.h:263
 msgid "Resize the window to the size of the image"
-msgstr ""
+msgstr "चित्र आकार अनुसार विंडो आकार परिवर्तन"
 
 #: ../pix/gth-browser.c:419
 #, c-format
 msgid "Open %s"
-msgstr ""
+msgstr "%s खोलें"
 
 #: ../pix/gth-browser.c:559
 msgid "[modified]"
-msgstr ""
+msgstr "[परिवर्तित]"
 
 #: ../pix/gth-browser.c:1118
 #, c-format
 msgid "%d file selected (%s)"
 msgid_plural "%d files selected (%s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d फाइल चयनित (%s)"
+msgstr[1] "%d फाइलें चयनित (%s)"
 
 #: ../pix/gth-browser.c:1153
 #, c-format
 msgid "%s of free space"
-msgstr ""
+msgstr "अप्रयुक्त स्पेस का %s"
 
 #: ../pix/gth-browser.c:2074 ../pix/gth-browser.c:2101
 #, c-format
 msgid "No suitable module found for %s"
-msgstr ""
+msgstr "%s हेतु कोई उपयुक्त अनुखंड प्राप्त नहीं हुआ"
 
 #: ../pix/gth-browser.c:2220
 #, c-format
 msgid "Save changes to file '%s'?"
-msgstr ""
+msgstr "'%s' फाइल संबंधी परिवर्तन संचित करें?"
 
 #: ../pix/gth-browser.c:2225
 msgid "If you don't save, changes to the file will be permanently lost."
-msgstr ""
+msgstr "संचित न करने पर फाइल संबंधी परिवर्तन स्थायी रूप से अनुपलब्ध होंगे।"
 
 #: ../pix/gth-browser.c:2226
 msgid "Do _Not Save"
-msgstr ""
+msgstr "संचित न करें (_N)"
 
 #: ../pix/gth-browser.c:3021 ../pix/gth-source-tree.c:182
 msgid "Could not change name"
-msgstr ""
+msgstr "नाम परिवर्तन विफल"
 
 #: ../pix/gth-browser.c:3452 ../pix/gth-main-default-metadata.c:41
 msgid "Modified"
@@ -5049,69 +5088,71 @@ msgstr "परिवर्तित"
 
 #: ../pix/gth-browser.c:3843 ../pix/gth-browser.c:3861
 msgid "View the list of visited locations"
-msgstr ""
+msgstr "प्रयुक्त स्थानों की सूची देखें"
 
 #: ../pix/gth-browser.c:3879
 msgid "View the list of upper locations"
-msgstr ""
+msgstr "ऊपरी स्थानों की सूची देखें"
 
 #: ../pix/gth-browser.c:6187
 #, c-format
 msgid "File type not supported"
-msgstr ""
+msgstr "असमर्थित फाइल प्रकार"
 
 #: ../pix/gth-browser.c:6232
 #, c-format
 msgid "No suitable module found"
-msgstr ""
+msgstr "कोई उपयुक्त अनुखंड नहीं मिला"
 
 #: ../pix/gth-extensions.c:203
 #, c-format
 msgid "Could not open the module `%s`: %s"
-msgstr ""
+msgstr "अनुखंड '%s' खोलना विफल : %s"
 
 #: ../pix/gth-extensions.c:754
 #, c-format
 msgid "The extension '%1$s' is required by the extension '%2$s'"
-msgstr ""
+msgstr "एक्सटेंशन '%2$s' हेतु एक्सटेंशन '%1$s' आवश्यक है"
 
 #: ../pix/gth-file-chooser-dialog.c:144
 msgid "All Supported Files"
-msgstr ""
+msgstr "सभी समर्थित फाइलें"
 
 #: ../pix/gth-file-source-vfs.c:128
 msgid "Favorites"
-msgstr ""
+msgstr "पसंदीदा"
 
 #: ../pix/gth-file-source-vfs.c:131
 msgid "Home Folder"
-msgstr ""
+msgstr "होम फोल्डर"
 
 #: ../pix/gth-file-source-vfs.c:136
 msgid "File System"
-msgstr ""
+msgstr "फाइल सिस्टम"
 
 #: ../pix/gth-file-source-vfs.c:749
 msgid ""
 "The files cannot be moved to the Trash. Do you want to delete them "
 "permanently?"
 msgstr ""
+"फाइलों को ट्रैश में अंतरित करना संभव नहीं है। क्या आप इन्हें स्थायी रूप से "
+"हटाना चाहते हैं?"
 
 #: ../pix/gth-file-source-vfs.c:760
 msgid "Could not move the files to the Trash"
-msgstr ""
+msgstr "फाइलों का ट्रैश में अंतरण विफल"
 
 #: ../pix/gth-file-source-vfs.c:807
 #, c-format
 msgid "Are you sure you want to move \"%s\" to trash?"
-msgstr ""
+msgstr "क्या आप निश्चित ही \"%s\" को ट्रैश में भेजना चाहते हैं?"
 
 #: ../pix/gth-file-source-vfs.c:811
 #, c-format
 msgid "Are you sure you want to move to trash the %'d selected file?"
 msgid_plural "Are you sure you want to move to trash the %'d selected files?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "क्या आप निश्चित ही %'d चयनित फाइल को ट्रैश में भेजना चाहते हैं?"
+msgstr[1] "क्या आप निश्चित ही %'dचयनित फाइलों को ट्रैश में भेजना चाहते हैं?"
 
 #: ../pix/gth-file-source-vfs.c:859
 #, c-format
@@ -5119,60 +5160,62 @@ msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
 msgstr[0] ""
+"क्या आप निश्चित ही %'d चयनित फाइल को स्थायी रूप से हटाना चाहते हैं?"
 msgstr[1] ""
+"क्या आप निश्चित ही %'d चयनित फाइलों को स्थायी रूप से हटाना चाहते हैं?"
 
 #: ../pix/gth-filterbar.c:413
 msgid "Hide the filterbar"
-msgstr ""
+msgstr "निस्पंदन पट्टी अदृश्य करें"
 
 #: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
 #: ../pix/gth-test-simple.c:78
 msgid "kB"
-msgstr ""
+msgstr "केबी"
 
 #: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
 #: ../pix/gth-test-simple.c:79
 msgid "MB"
-msgstr ""
+msgstr "एमबी"
 
 #: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
 #: ../pix/gth-test-simple.c:80
 msgid "GB"
-msgstr ""
+msgstr "जीबी"
 
 #. "files" label
 #: ../pix/gth-filter.c:286 ../pix/gth-filter-editor-dialog.c:177
 msgid "files"
-msgstr ""
+msgstr "फाइलें"
 
 #: ../pix/gth-filter-editor-dialog.c:224
 msgid "ascending"
-msgstr ""
+msgstr "आरोही"
 
 #: ../pix/gth-filter-editor-dialog.c:225
 msgid "descending"
-msgstr ""
+msgstr "अवरोही"
 
 #: ../pix/gth-filter-editor-dialog.c:515
 #, c-format
 msgid "No limit specified"
-msgstr ""
+msgstr "कोई सीमा निर्दिष्ट नहीं"
 
 #: ../pix/gth-folder-tree.c:1369
 msgid "(Open Parent)"
-msgstr ""
+msgstr "(स्रोत खोलें)"
 
 #: ../pix/gth-histogram-view.c:825
 msgid "Linear scale"
-msgstr ""
+msgstr "रेखाकार मापन"
 
 #: ../pix/gth-histogram-view.c:837
 msgid "Logarithmic scale"
-msgstr ""
+msgstr "लघुगणकीय मापन"
 
 #: ../pix/gth-histogram-view.c:857
 msgid "Channel:"
-msgstr ""
+msgstr "चैनल :"
 
 #: ../pix/gth-histogram-view.c:878
 msgid "Value"
@@ -5196,28 +5239,28 @@ msgstr "अल्फा"
 
 #: ../pix/gth-histogram-view.c:904
 msgid "RGB"
-msgstr ""
+msgstr "RGB"
 
 #: ../pix/gth-image-list-task.c:141
 msgid "Could not rename the file"
-msgstr ""
+msgstr "फाइल नाम परिवर्तन विफल"
 
 #: ../pix/gth-image-saver.c:39
 msgid "No options available for this file type"
-msgstr ""
+msgstr "इस फाइल प्रकार हेतु कोई विकल्प उपलब्ध नहीं है"
 
 #: ../pix/gth-image-saver.c:185
 #, c-format
 msgid "Could not find a suitable module to save the image as \"%s\""
-msgstr ""
+msgstr "चित्र का \"%s\" के रूप में संचय हेतु उचित अनुखंड प्राप्ति विफल"
 
 #: ../pix/gth-load-file-data-task.c:108
 msgid "Reading file information"
-msgstr ""
+msgstr "फाइल सूचना रीड करना जारी"
 
 #: ../pix/gth-main-default-metadata.c:32
 msgid "File"
-msgstr ""
+msgstr "फाइल"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -5233,47 +5276,47 @@ msgstr "क़िस्म"
 
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Full Name"
-msgstr ""
+msgstr "पूर्ण नाम"
 
 #: ../pix/gth-main-default-metadata.c:48
 msgid "Duration"
-msgstr ""
+msgstr "अवधि"
 
 #: ../pix/gth-main-default-sort-types.c:131
 msgid "file name"
-msgstr ""
+msgstr "फाइल नाम"
 
 #: ../pix/gth-main-default-sort-types.c:132
 msgid "file path"
-msgstr ""
+msgstr "फाइल पथ"
 
 #: ../pix/gth-main-default-sort-types.c:133
 msgid "file size"
-msgstr ""
+msgstr "फाइल आकार"
 
 #: ../pix/gth-main-default-sort-types.c:134
 msgid "file modified date"
-msgstr ""
+msgstr "फाइल परिवर्तन दिनांक"
 
 #: ../pix/gth-main-default-sort-types.c:135
 msgid "no sorting"
-msgstr ""
+msgstr "अनुक्रम रहित"
 
 #: ../pix/gth-main-default-sort-types.c:136
 msgid "dimensions"
-msgstr ""
+msgstr "आयाम"
 
 #: ../pix/gth-main-default-tests.c:252
 msgid "All Files"
-msgstr ""
+msgstr "सभी फाइलें"
 
 #: ../pix/gth-main-default-tests.c:280
 msgid "Media"
-msgstr ""
+msgstr "मीडिया"
 
 #: ../pix/gth-main-default-tests.c:287
 msgid "Text Files"
-msgstr ""
+msgstr "टेक्स्ट फाइलें"
 
 #: ../pix/gth-main-default-tests.c:295
 msgid "Filename"
@@ -5281,38 +5324,38 @@ msgstr "फ़ाइलनाम"
 
 #: ../pix/gth-main-default-tests.c:327
 msgid "Title (embedded)"
-msgstr ""
+msgstr "शीर्षक (सम्मिलित)"
 
 #: ../pix/gth-main-default-tests.c:335
 msgid "Description (embedded)"
-msgstr ""
+msgstr "विवरण (सम्मिलित)"
 
 #: ../pix/gth-progress-dialog.c:146
 msgid "Cancel operation"
-msgstr ""
+msgstr "कार्य रद्द करें"
 
 #: ../pix/gth-save-file-data-task.c:102
 msgid "Saving file information"
-msgstr ""
+msgstr "फाइल सूचना संचय जारी"
 
 #. Translators: %s is a filename
 #: ../pix/gth-save-image-task.c:160
 #, c-format
 msgid "Saving '%s'"
-msgstr ""
+msgstr "'%s' संचय जारी"
 
 #: ../pix/gth-tags-entry.c:390
 #, c-format
 msgid "Create tag «%s»"
-msgstr ""
+msgstr "«%s» उपनाम सृजन"
 
 #: ../pix/gth-tags-entry.c:814
 msgid "Show all the tags"
-msgstr ""
+msgstr "सभी उपनाम दिखाएँ"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
-msgstr ""
+msgstr "अवकाश"
 
 #: ../pix/gth-tags-file.c:236
 msgid "Temporary"
@@ -5320,7 +5363,7 @@ msgstr "अस्थायी"
 
 #: ../pix/gth-tags-file.c:237
 msgid "Screenshots"
-msgstr ""
+msgstr "स्क्रीनशॉट"
 
 #: ../pix/gth-tags-file.c:238
 msgid "Science"
@@ -5328,7 +5371,7 @@ msgstr "विज्ञान"
 
 #: ../pix/gth-tags-file.c:239
 msgid "Favorite"
-msgstr ""
+msgstr "पसंदीदा"
 
 #: ../pix/gth-tags-file.c:240
 msgid "Important"
@@ -5344,7 +5387,7 @@ msgstr "खेल"
 
 #: ../pix/gth-tags-file.c:243
 msgid "Party"
-msgstr ""
+msgstr "पार्टी"
 
 #: ../pix/gth-tags-file.c:244
 msgid "Birthday"
@@ -5352,7 +5395,7 @@ msgstr "जन्मदिन"
 
 #: ../pix/gth-tags-file.c:245
 msgid "Astronomy"
-msgstr ""
+msgstr "खगोल"
 
 #: ../pix/gth-tags-file.c:246
 msgid "Family"
@@ -5361,90 +5404,90 @@ msgstr "परिवार"
 #: ../pix/gth-test-category.c:46 ../pix/gth-test-simple.c:50
 #: ../pix/gth-test-simple.c:67
 msgid "is"
-msgstr ""
+msgstr "है"
 
 #: ../pix/gth-test-category.c:47
 msgid "is only"
-msgstr ""
+msgstr "केवल यही है"
 
 #: ../pix/gth-test-category.c:48 ../pix/gth-test-simple.c:51
 #: ../pix/gth-test-simple.c:68
 msgid "is not"
-msgstr ""
+msgstr "नहीं है"
 
 #: ../pix/gth-test-category.c:407 ../pix/gth-test-simple.c:1084
 #: ../pix/gth-test-simple.c:1105 ../pix/gth-test-simple.c:1131
 #, c-format
 msgid "The test definition is incomplete"
-msgstr ""
+msgstr "जाँच परिभाषा पूर्ण नहीं है"
 
 #: ../pix/gth-test-selector.c:252
 msgid "Add a new rule"
-msgstr ""
+msgstr "नया नियम जोड़ें"
 
 #: ../pix/gth-test-selector.c:263
 msgid "Remove this rule"
-msgstr ""
+msgstr "यह नियम हटाएँ"
 
 #: ../pix/gth-test-simple.c:47
 msgid "contains"
-msgstr ""
+msgstr "में युक्त है"
 
 #: ../pix/gth-test-simple.c:48
 msgid "starts with"
-msgstr ""
+msgstr "इससे आरंभ"
 
 #: ../pix/gth-test-simple.c:49
 msgid "ends with"
-msgstr ""
+msgstr "इससे समाप्त"
 
 #: ../pix/gth-test-simple.c:52
 msgid "does not contain"
-msgstr ""
+msgstr "में युक्त नहीं है"
 
 #: ../pix/gth-test-simple.c:53
 msgid "matches"
-msgstr ""
+msgstr "मिलान"
 
 #: ../pix/gth-test-simple.c:57
 msgid "is lower than"
-msgstr ""
+msgstr "इससे कम है"
 
 #: ../pix/gth-test-simple.c:58
 msgid "is greater than"
-msgstr ""
+msgstr "इससे अधिक है"
 
 #: ../pix/gth-test-simple.c:59
 msgid "is equal to"
-msgstr ""
+msgstr "इससे समान है"
 
 #: ../pix/gth-test-simple.c:60
 msgid "is greater than or equal to"
-msgstr ""
+msgstr "इससे अधिक या समान है"
 
 #: ../pix/gth-test-simple.c:61
 msgid "is lower than or equal to"
-msgstr ""
+msgstr "इससे कम या समान है"
 
 #: ../pix/gth-test-simple.c:65
 msgid "is before"
-msgstr ""
+msgstr "इससे पहले है"
 
 #: ../pix/gth-test-simple.c:66
 msgid "is after"
-msgstr ""
+msgstr "इसके बाद है"
 
 #: ../pix/gth-time-selector.c:487
 msgid "Today"
-msgstr ""
+msgstr "आज"
 
 #: ../pix/gth-time-selector.c:495
 msgid "Now"
-msgstr ""
+msgstr "अभी"
 
 #: ../pix/gth-window-actions-entries.h:31
 msgid "Close"
-msgstr ""
+msgstr "बंद करें"
 
 #: ../pix/gth-window-actions-entries.h:32
 msgid "Close this window"
@@ -5452,35 +5495,35 @@ msgstr "इस विंडो को बन्द करें"
 
 #: ../pix/gth-window-actions-entries.h:36
 msgid "Close _All Windows"
-msgstr ""
+msgstr "सभी विंडो बंद करें (_A)"
 
 #: ../pix/gtk-utils.c:490
 msgid "Could not display help"
-msgstr ""
+msgstr "सहायता प्रदर्शित करना विफल"
 
 #: ../pix/gtk-utils.c:810 ../pix/gtk-utils.c:817
 msgid "Could not launch the application"
-msgstr ""
+msgstr "अनुप्रयोग आरंभ करना विफल"
 
 #: ../pix/gtk-utils.c:920
 msgid "_Copy Here"
-msgstr ""
+msgstr "यहाँ कॉपी करें (_C)"
 
 #: ../pix/gtk-utils.c:925
 msgid "_Move Here"
-msgstr ""
+msgstr "यहाँ अंतरित करें (_M)"
 
 #: ../pix/gtk-utils.c:930
 msgid "_Link Here"
-msgstr ""
+msgstr "यहाँ लिंक करें (_L)"
 
 #: ../pix/gtk-utils.c:939
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करें"
 
 #: ../pix/main.c:61
 msgid "Open a new window"
-msgstr ""
+msgstr "नई विंडो खोलें"
 
 #: ../pix/main.c:65
 msgid "Start in fullscreen mode"
@@ -5488,11 +5531,11 @@ msgstr "पूर्ण स्क्रीन मोड में प्रा�
 
 #: ../pix/main.c:69
 msgid "Automatically start a slideshow"
-msgstr ""
+msgstr "स्लाइडशो स्वतः आरंभ करें"
 
 #: ../pix/main.c:73
 msgid "Automatically import digital camera photos"
-msgstr ""
+msgstr "डिजिटल कैमरा फोटो स्वतः आयात करें"
 
 #: ../pix/main.c:77
 msgid "Show version"
