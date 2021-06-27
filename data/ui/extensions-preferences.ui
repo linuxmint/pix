@@ -106,34 +106,6 @@
         <property name="can_focus">False</property>
         <property name="spacing">12</property>
         <child>
-          <object class="GtkHBox" id="hbox7">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <object class="GtkLinkButton" id="linkbutton1">
-                <property name="label" translatable="yes">More extensions...</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="has_tooltip">True</property>
-                <property name="use_action_appearance">False</property>
-                <property name="relief">none</property>
-                <property name="uri">http://github.com/linuxmint/pix/extensions/README</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkButton" id="preferences_button">
             <property name="label">gtk-preferences</property>
             <property name="visible">True</property>
