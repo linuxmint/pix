@@ -703,12 +703,19 @@ exiv2_read_metadata (Exiv2::Image::AutoPtr  image,
 				description << md->groupName() << "." << md->tagName();
 
 			GthMetadata *metadata;
-			metadata = create_metadata (md->key().c_str(),
-						    description.str().c_str(),
-						    md->print().c_str(),
-						    raw_value.str().c_str(),
-						    "Xmp::Embedded",
-						    md->typeName());
+                      const char *formatted_value;
+                      try {
+                          formatted_value = md->print().c_str();
+                      } catch (std::out_of_range) {
+                          formatted_value = NULL;
+                      }
+                    
+                      metadata = create_metadata (md->key().c_str(),
+                                    description.str().c_str(),
+                                    formatted_value,
+                                    raw_value.str().c_str(),
+                                    "Xmp::Embedded",
+                                    md->typeName());
 			if (metadata != NULL) {
 				if ((g_strcmp0 (md->typeName(), "XmpBag") == 0)
 				    || (g_strcmp0 (md->typeName(), "XmpSeq") == 0))
