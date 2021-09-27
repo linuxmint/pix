@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.2 -->
 <interface>
-  <requires lib="gtk+" version="2.16"/>
+  <requires lib="gtk+" version="3.0"/>
   <object class="GtkListStore" id="category_liststore">
     <columns>
       <!-- column-name id -->
@@ -34,9 +35,9 @@
               <object class="GtkLabel" id="label5">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
                 <property name="label" translatable="yes">_Extensions:</property>
                 <property name="use_underline">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -74,7 +75,6 @@
                 <property name="height_request">350</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-		<property name="hscrollbar_policy">automatic</property>
                 <property name="shadow_type">in</property>
                 <child>
                   <placeholder/>
@@ -110,21 +110,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkLinkButton" id="linkbutton1">
-                <property name="label" translatable="yes">More extensions...</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="has_tooltip">True</property>
-                <property name="use_action_appearance">False</property>
-                <property name="relief">none</property>
-                <property name="uri">http://github.com/linuxmint/pix/extensions/README</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
+              <placeholder/>
             </child>
           </object>
           <packing>
@@ -136,6 +122,7 @@
         <child>
           <object class="GtkButton" id="preferences_button">
             <property name="label">gtk-preferences</property>
+            <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="sensitive">False</property>
             <property name="can_focus">True</property>
@@ -143,7 +130,6 @@
             <property name="has_tooltip">True</property>
             <property name="tooltip_markup">Some extensions are configurable.</property>
             <property name="tooltip_text" translatable="yes">Some extensions are configurable.</property>
-            <property name="use_action_appearance">False</property>
             <property name="use_stock">True</property>
           </object>
           <packing>
@@ -156,11 +142,11 @@
         <child>
           <object class="GtkButton" id="about_button">
             <property name="label">gtk-about</property>
+            <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="sensitive">False</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="use_action_appearance">False</property>
             <property name="use_stock">True</property>
           </object>
           <packing>
