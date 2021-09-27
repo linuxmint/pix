@@ -82,6 +82,7 @@ G_BEGIN_DECLS
 #define PREF_BROWSER_VIEWER_THUMBNAILS_ORIENT "viewer-thumbnails-orientation"
 #define PREF_BROWSER_SHRINK_WRAP_VIEWER       "shrink-wrap-viewer"
 #define PREF_BROWSER_REUSE_ACTIVE_WINDOW      "reuse-active-window"
+#define PREF_BROWSER_USE_DARK_THEME           "use-dark-theme"
 
 /* keys: add to catalog */
 

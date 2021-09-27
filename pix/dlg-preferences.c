@@ -70,6 +70,7 @@ apply_changes (DialogData *data)
 	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_GO_TO_LAST_LOCATION, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("go_to_last_location_radiobutton"))));
 	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_USE_STARTUP_LOCATION, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_startup_location_radiobutton"))));
 	g_settings_set_boolean (data->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("embed_metadata_checkbutton"))));
+	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_USE_DARK_THEME, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_dark_theme_checkbutton"))));
 
 	if (g_settings_get_boolean (data->browser_settings, PREF_BROWSER_USE_STARTUP_LOCATION)) {
 		char *location;
@@ -292,6 +293,9 @@ dlg_preferences (GthBrowser *browser)
 
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("embed_metadata_checkbutton")),
 				      g_settings_get_boolean (data->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES));
+
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_dark_theme_checkbutton")),
+				      g_settings_get_boolean (data->browser_settings, PREF_BROWSER_USE_DARK_THEME));
 
 	/* * browser */
 

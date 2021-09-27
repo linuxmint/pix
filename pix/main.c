@@ -457,7 +457,15 @@ _gth_application_initialize_app_menu (GApplication *application)
 static void
 gth_application_startup (GApplication *application)
 {
+	GSettings *settings;
+	gboolean use_dark_theme;
+	settings = g_settings_new (PIX_BROWSER_SCHEMA);
+	use_dark_theme = g_settings_get_boolean (settings, PREF_BROWSER_USE_DARK_THEME);
+	g_object_unref (settings);
+
 	G_APPLICATION_CLASS (gth_application_parent_class)->startup (application);
+
+	g_object_set (gtk_settings_get_default (), "gtk-application-prefer-dark-theme", use_dark_theme, NULL);
 
 	_gth_application_initialize_app_menu (application);
 	gth_pref_initialize ();
