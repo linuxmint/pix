@@ -82,6 +82,7 @@ G_BEGIN_DECLS
 #define PREF_FULLSCREEN_SIDEBAR		      "fullscreen-sidebar"
 #define PREF_VIEWER_SCROLL_ACTION             "scroll-action"
 #define PREF_BROWSER_FAVORITE_PROPERTIES      "favorite-properties"
+#define PREF_BROWSER_USE_DARK_THEME           "use-dark-theme"
 
 /* keys: add to catalog */
 
