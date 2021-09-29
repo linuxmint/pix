@@ -464,8 +464,9 @@ gth_application_startup (GApplication *application)
 	g_object_unref (settings);
 
 	G_APPLICATION_CLASS (gth_application_parent_class)->startup (application);
-
-	g_object_set (gtk_settings_get_default (), "gtk-application-prefer-dark-theme", use_dark_theme, NULL);
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") != 0) {
+		g_object_set (gtk_settings_get_default (), "gtk-application-prefer-dark-theme", use_dark_theme, NULL);
+	}
 
 	_gth_application_initialize_app_menu (application);
 	gth_pref_initialize ();

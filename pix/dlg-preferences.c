@@ -297,6 +297,10 @@ dlg_preferences (GthBrowser *browser)
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_dark_theme_checkbutton")),
 				      g_settings_get_boolean (data->browser_settings, PREF_BROWSER_USE_DARK_THEME));
 
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0) {
+		gtk_widget_hide (GET_WIDGET ("use_dark_theme_checkbutton"));
+	}
+
 	/* * browser */
 
 	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("thumbnail_size_combobox")),

@@ -4832,10 +4832,12 @@ gth_browser_init (GthBrowser *browser)
 			  "changed::" PREF_BROWSER_THUMBNAIL_CAPTION,
 			  G_CALLBACK (pref_thumbnail_caption_changed),
 			  browser);
-	g_signal_connect (browser->priv->browser_settings,
-			  "changed::" PREF_BROWSER_USE_DARK_THEME,
-			  G_CALLBACK (pref_use_dark_theme_changed),
-			  browser);
+	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") != 0) {
+		g_signal_connect (browser->priv->browser_settings,
+				  "changed::" PREF_BROWSER_USE_DARK_THEME,
+				  G_CALLBACK (pref_use_dark_theme_changed),
+				  browser);
+	}
 
 	browser->priv->constructed = TRUE;
 }
