@@ -223,21 +223,23 @@ apply_cb (gpointer user_data)
 		/* FIXME: use a cairo sub-surface when cairo 1.10 will be requiered */
 
 		preview_surface = _cairo_image_surface_copy_subsurface (self->priv->destination, x, y, w, h);
-		_cairo_image_surface_sharpen (preview_surface,
-					      sharpen_data->radius,
-					      sharpen_data->amount,
-					      sharpen_data->threshold);
+        if (preview_surface != NULL) {
+            _cairo_image_surface_sharpen (preview_surface,
+                              sharpen_data->radius,
+                              sharpen_data->amount,
+                              sharpen_data->threshold);
 
-		cr = cairo_create (self->priv->destination);
-		cairo_set_source_surface (cr, preview_surface, x, y);
-		cairo_rectangle (cr, x, y, w, h);
-		cairo_fill (cr);
-		cairo_destroy (cr);
+            cr = cairo_create (self->priv->destination);
+            cairo_set_source_surface (cr, preview_surface, x, y);
+            cairo_rectangle (cr, x, y, w, h);
+            cairo_fill (cr);
+            cairo_destroy (cr);
 
-		gth_image_viewer_set_surface (preview, self->priv->destination, -1, -1);
+            gth_image_viewer_set_surface (preview, self->priv->destination, -1, -1);
 
-		cairo_surface_destroy (preview_surface);
-		sharpen_data_free (sharpen_data);
+            cairo_surface_destroy (preview_surface);
+            sharpen_data_free (sharpen_data);
+        }
 	}
 	else
 		gth_image_viewer_set_surface (preview, self->priv->source, -1, -1);
