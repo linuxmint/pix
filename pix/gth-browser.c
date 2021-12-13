@@ -396,15 +396,26 @@ _gth_browser_add_file_menu_item_full (GthBrowser *browser,
 {
 	GdkPixbuf *pixbuf;
 	GtkWidget *menu_item;
+    cairo_surface_t *surface;
 
 	pixbuf = gth_icon_cache_get_pixbuf (browser->priv->menu_icon_cache, icon);
+    if (pixbuf != NULL) {
+        surface = gdk_cairo_surface_create_from_pixbuf (pixbuf,
+                                                        global_ui_scale,
+                                                        NULL);
+    }
 
 	menu_item = gtk_image_menu_item_new_with_label (display_name);
 	gtk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menu_item), TRUE);
-	if (pixbuf != NULL)
-		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), gtk_image_new_from_pixbuf (pixbuf));
+
+    // gdk_cairo_surface.. will return a surface even if it fails, so continue to use pixbuf
+    // to determine success here.
+	if (pixbuf != NULL) {
+		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), gtk_image_new_from_surface (surface));
+        cairo_surface_destroy (surface);
+    }
 	else
-		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU));
+		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), gtk_image_new_from_icon_name ("folder-open", GTK_ICON_SIZE_MENU));
 	gtk_widget_show (menu_item);
 	if (position == -1)
 		gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);

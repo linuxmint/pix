@@ -44,6 +44,8 @@ typedef struct {
 	GCallback       callback;
 } GthActionEntryExt;
 
+extern gint *global_ui_scale;
+
 void            _gtk_action_group_add_actions_with_flags   (GtkActionGroup   *action_group,
 							    const GthActionEntryExt
 									     *entries,

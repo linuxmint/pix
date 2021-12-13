@@ -310,6 +310,29 @@ text_renderer_editing_canceled_cb (GtkCellRenderer *renderer,
 		      NULL);
 }
 
+static void
+icon_renderer_func (GtkTreeViewColumn *column,
+                    GtkCellRenderer   *cell,
+                    GtkTreeModel      *model,
+                    GtkTreeIter       *iter,
+                    gpointer          *data)
+{
+    GdkPixbuf *pixbuf;
+    GthFolderTree *folder_tree = GTH_FOLDER_TREE (data);
+    gtk_tree_model_get (model, iter, COLUMN_ICON, &pixbuf, -1);
+
+    if (pixbuf != NULL) {
+        cairo_surface_t *surface;
+
+        surface = gdk_cairo_surface_create_from_pixbuf (pixbuf,
+                                                        global_ui_scale,
+                                                        NULL);
+
+        g_object_set (cell, "surface", surface, NULL);
+        cairo_surface_destroy (surface);
+        g_object_unref (pixbuf);
+    }
+}
 
 static void
 add_columns (GthFolderTree *folder_tree,
@@ -322,9 +345,7 @@ add_columns (GthFolderTree *folder_tree,
 
 	renderer = gtk_cell_renderer_pixbuf_new ();
 	gtk_tree_view_column_pack_start (column, renderer, FALSE);
-	gtk_tree_view_column_set_attributes (column, renderer,
-					     "pixbuf", COLUMN_ICON,
-					     NULL);
+    gtk_tree_view_column_set_cell_data_func (column, renderer, icon_renderer_func, folder_tree, NULL);
 
 	folder_tree->priv->text_renderer = renderer = gtk_cell_renderer_text_new ();
 	g_object_set (renderer,
@@ -1258,8 +1279,10 @@ gth_folder_tree_init (GthFolderTree *folder_tree)
 	folder_tree->priv->monitor.locations = g_hash_table_new_full (g_file_hash, (GEqualFunc) g_file_equal, g_object_unref, NULL);
 	folder_tree->priv->monitor.sources = NULL;
 	folder_tree->priv->monitor.update_id = 0;
+
+    gint icon_size = _gtk_widget_lookup_for_size (GTK_WIDGET (folder_tree), GTK_ICON_SIZE_MENU);
 	folder_tree->priv->icon_cache = gth_icon_cache_new (gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (folder_tree))),
-							    _gtk_widget_lookup_for_size (GTK_WIDGET (folder_tree), GTK_ICON_SIZE_MENU));
+                                                        icon_size);
 
 	folder_tree->priv->tree_store = gtk_tree_store_new (NUM_COLUMNS,
 							    PANGO_TYPE_STYLE,
@@ -1355,11 +1378,14 @@ gth_folder_tree_set_list (GthFolderTree *folder_tree,
 
 	if (open_parent) {
 		char        *sort_key;
+        GIcon       *icon;
 		GdkPixbuf   *pixbuf;
 		GtkTreeIter  iter;
 
 		sort_key = g_utf8_collate_key_for_filename (PARENT_URI, -1);
-		pixbuf = gtk_widget_render_icon_pixbuf (GTK_WIDGET (folder_tree), GTK_STOCK_GO_UP, GTK_ICON_SIZE_MENU);
+
+        icon = g_themed_icon_new ("go-up");
+        pixbuf = gth_icon_cache_get_pixbuf (folder_tree->priv->icon_cache, icon);
 
 		gtk_tree_store_append (folder_tree->priv->tree_store, &iter, NULL);
 		gtk_tree_store_set (folder_tree->priv->tree_store, &iter,
@@ -1372,6 +1398,7 @@ gth_folder_tree_set_list (GthFolderTree *folder_tree,
 				    -1);
 
 		g_object_unref (pixbuf);
+        g_object_unref (icon);
 		g_free (sort_key);
 	}
 

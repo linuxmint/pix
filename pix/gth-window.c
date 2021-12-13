@@ -196,6 +196,14 @@ gth_window_real_set_current_page (GthWindow *window,
 			gtk_widget_hide (window->priv->contents[i]);
 }
 
+/* extern */
+gint *global_ui_scale;
+
+static void
+ui_scale_changed (GtkWidget *widget)
+{
+    global_ui_scale = gtk_widget_get_scale_factor (widget);
+}
 
 static void
 gth_window_realize (GtkWidget *widget)
@@ -206,6 +214,16 @@ gth_window_realize (GtkWidget *widget)
 	gsize           css_data_size;
 	GtkCssProvider *css_provider;
 	GError         *error = NULL;
+
+    static gboolean scale_set = FALSE;
+
+    if (!scale_set) {
+        global_ui_scale = gtk_widget_get_scale_factor (widget);
+
+        g_signal_connect_swapped (widget, "notify::scale-factor", G_CALLBACK (ui_scale_changed), widget);
+
+        scale_set = TRUE;
+    }
 
 	GTK_WIDGET_CLASS (gth_window_parent_class)->realize (widget);
 

@@ -433,9 +433,10 @@ _g_icon_get_pixbuf (GIcon        *icon,
 	if (icon_theme == NULL)
 		icon_theme = gtk_icon_theme_get_default ();
 
-	icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme,
+	icon_info = gtk_icon_theme_lookup_by_gicon_for_scale (icon_theme,
 						    icon,
 						    icon_size,
+                            global_ui_scale,
 						    GTK_ICON_LOOKUP_USE_BUILTIN);
 
 	if (icon_info != NULL) {

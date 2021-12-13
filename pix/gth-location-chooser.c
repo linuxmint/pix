@@ -573,6 +573,30 @@ get_combo_box_button (GtkWidget *widget,
 }
 
 static void
+icon_renderer_func (GtkCellLayout *cell_layout,
+                    GtkCellRenderer   *cell,
+                    GtkTreeModel      *model,
+                    GtkTreeIter       *iter,
+                    gpointer          *data)
+{
+    GdkPixbuf *pixbuf;
+
+    gtk_tree_model_get (model, iter, ICON_COLUMN, &pixbuf, -1);
+
+    if (pixbuf != NULL) {
+        cairo_surface_t *surface;
+
+        surface = gdk_cairo_surface_create_from_pixbuf (pixbuf,
+                                                        global_ui_scale,
+                                                        NULL);
+
+        g_object_set (cell, "surface", surface, NULL);
+        cairo_surface_destroy (surface);
+        g_object_unref (pixbuf);
+    }
+}
+
+static void
 gth_location_chooser_init (GthLocationChooser *self)
 {
 	GtkCellRenderer *renderer;
@@ -611,10 +635,7 @@ gth_location_chooser_init (GthLocationChooser *self)
 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (self->priv->combo),
 				    renderer,
 				    FALSE);
-	gtk_cell_layout_set_attributes  (GTK_CELL_LAYOUT (self->priv->combo),
-					 renderer,
-					 "pixbuf", ICON_COLUMN,
-					 NULL);
+    gtk_cell_layout_set_cell_data_func (GTK_CELL_LAYOUT (self->priv->combo), renderer, icon_renderer_func, self, NULL);
 
 	/* path column */
 
