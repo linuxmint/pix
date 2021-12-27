@@ -205,7 +205,7 @@ static GtkActionEntry image_viewer_action_entries[] = {
 	  N_("Zoom to fit window"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_fit) },
 
-	{ "ImageViewer_View_ZoomFitWidth", "zoom-fit-best-symbolic",
+	{ "ImageViewer_View_ZoomFitWidth", "xapp-view-fit-width-symbolic",
 	  N_("Width"), "",
 	  N_("Zoom to fit width"),
 	  G_CALLBACK (image_viewer_activate_action_view_zoom_fit_width) },
