@@ -5,7 +5,7 @@ source_files = files(
   'main.c'
 )
 
-shared_module('flicker',
+shared_library('flicker',
   sources : source_files,
   dependencies : [
     extension_common_deps,
@@ -25,6 +25,7 @@ shared_module('flicker',
     export_tools_mod,
     importer_mod
   ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

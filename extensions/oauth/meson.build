@@ -10,7 +10,7 @@ source_files = files(
   'web-service.c'
 )
 
-oauth_mod = shared_module('oauth',
+oauth_mod = shared_library('oauth',
   sources : source_files,
   dependencies : [
     extension_common_deps,
@@ -21,6 +21,7 @@ oauth_mod = shared_module('oauth',
   ],
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

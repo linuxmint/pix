@@ -6,11 +6,12 @@ source_files = files(
   'main.c'
 )
 
-shared_module('convert_format',
+shared_library('convert_format',
   sources : source_files,
   dependencies : extension_common_deps,
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

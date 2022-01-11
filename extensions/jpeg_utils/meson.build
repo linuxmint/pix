@@ -12,7 +12,7 @@ else
   source_files += files('transupp-62.c')
 endif
 
-jpeg_utils_mod = shared_module('jpeg_utils',
+jpeg_utils_mod = shared_library('jpeg_utils',
   sources : source_files,
   dependencies : [
     extension_common_deps,
@@ -20,6 +20,7 @@ jpeg_utils_mod = shared_module('jpeg_utils',
   ],
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

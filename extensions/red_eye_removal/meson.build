@@ -3,7 +3,7 @@ source_files = files(
   'main.c'
 )
 
-shared_module('red_eye_removal',
+shared_library('red_eye_removal',
   sources : source_files,
   dependencies : [
     extension_common_deps,
@@ -19,6 +19,7 @@ shared_module('red_eye_removal',
     file_tools_mod,
     image_viewer_mod
   ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

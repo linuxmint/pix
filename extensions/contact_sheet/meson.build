@@ -22,7 +22,7 @@ source_files = files(
   'main.c'
 )
 
-shared_module('contact_sheet',
+shared_library('contact_sheet',
   sources : [ source_files, enum_files ],
   dependencies : [
     extension_common_deps,
@@ -31,6 +31,7 @@ shared_module('contact_sheet',
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with: [ image_rotation_mod, export_tools_mod ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

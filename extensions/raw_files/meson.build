@@ -3,11 +3,12 @@ source_files = files(
   'gth-metadata-provider-raw.c'
 )
 
-shared_module('raw_files',
+shared_library('raw_files',
   sources : source_files,
   dependencies : [ extension_common_deps, libraw_dep ],
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

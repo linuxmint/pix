@@ -8,7 +8,7 @@ source_files = files(
   'preferences.c'
 )
 
-shared_module('slideshow',
+shared_library('slideshow',
   sources : source_files,
   dependencies : [
     extension_common_deps,
@@ -21,6 +21,7 @@ shared_module('slideshow',
     catalogs_mod,
     use_gstreamer ? gstreamer_utils_mod : []
   ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

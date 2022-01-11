@@ -8,7 +8,7 @@ source_files = files(
 
 gresource_files = gnome.compile_resources('photo-importer-resources', 'resources.xml', c_name : 'gth')
 
-photo_importer_mod = shared_module('photo_importer',
+photo_importer_mod = shared_library('photo_importer',
   sources : [ source_files, gresource_files ],
   dependencies : [
     extension_common_deps,
@@ -25,6 +25,7 @@ photo_importer_mod = shared_module('photo_importer',
     importer_mod,
     image_rotation_mod,
   ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

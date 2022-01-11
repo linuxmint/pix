@@ -5,13 +5,14 @@ source_files = files(
   'main.c'
 )
 
-exiv2_tools_mod = shared_module('exiv2_tools',
+exiv2_tools_mod = shared_library('exiv2_tools',
   sources : source_files,
   dependencies : [ extension_common_deps, exiv2_dep ],
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   cpp_args : cpp_args,
   link_with : [ edit_metadata_mod ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

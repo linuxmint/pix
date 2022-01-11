@@ -5,11 +5,12 @@ source_files = files(
 
 gresource_files = gnome.compile_resources('export-tools-resources', 'resources.xml', c_name : 'gth')
 
-export_tools_mod = shared_module('export_tools',
+export_tools_mod = shared_library('export_tools',
   sources : [ source_files, gresource_files ],
   dependencies : extension_common_deps,
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

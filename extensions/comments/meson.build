@@ -8,12 +8,13 @@ source_files = files(
   'main.c'
 )
 
-shared_module('comments',
+shared_library('comments',
   sources : source_files,
   dependencies : [ extension_common_deps ],
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : use_exiv2 ? exiv2_tools_mod : [],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

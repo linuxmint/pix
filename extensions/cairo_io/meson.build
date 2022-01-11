@@ -32,7 +32,7 @@ endif
 
 enum_files = gnome.mkenums_simple('cairo-io-enum-types', sources: [ 'preferences.h' ])
 
-shared_module('cairo_io',
+shared_library('cairo_io',
   sources : [ source_files, enum_files ],
   dependencies : [
     extension_common_deps,
@@ -46,6 +46,7 @@ shared_module('cairo_io',
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : jpeg_utils_mod,
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir

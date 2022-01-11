@@ -16,7 +16,7 @@ header_files = [
 
 enum_files = gnome.mkenums_simple('gth-import-enum-types', sources: header_files)
 
-importer_mod = shared_module('importer',
+importer_mod = shared_library('importer',
   sources : [ source_files, enum_files ],
   dependencies : extension_common_deps,
   include_directories : [ config_inc, pix_inc ],
@@ -26,6 +26,7 @@ importer_mod = shared_module('importer',
     image_rotation_mod,
     use_exiv2 ? exiv2_tools_mod : []
   ],
+  override_options : [ 'b_lundef=false' ],
   install : true,
   install_dir : extensions_install_dir,
   install_rpath : extensions_install_dir
