@@ -1785,10 +1785,24 @@ volume_mount_ready_cb (GObject      *source_object,
 		return;
 	}
 
+	GMount *mount = g_volume_get_mount (G_VOLUME (source_object));
+	if (mount == NULL) {
+		load_data_done (load_data, g_error_new_literal (G_IO_ERROR, G_IO_ERROR_NOT_MOUNTED, ""));
+		load_data_free (load_data);
+		return;
+	}
+
+	GFile *root = g_mount_get_root (mount);
+	if (root == NULL) {
+		load_data_done (load_data, g_error_new_literal (G_IO_ERROR, G_IO_ERROR_NOT_MOUNTED, ""));
+		load_data_free (load_data);
+		return;
+	}
+
 	_gth_browser_remove_activity (load_data->browser);
 
 	_gth_browser_load (load_data->browser,
-			   load_data->requested_folder->file,
+			   root,
 			   load_data->file_to_select,
 			   NULL,
 			   0,
