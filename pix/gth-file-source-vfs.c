@@ -132,7 +132,8 @@ gth_file_source_vfs_get_entry_points (GthFileSource *file_source)
 	list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_PICTURES);
 	list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_VIDEOS);
 	list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_DESKTOP);
-	list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_DOCUMENTS);
+    list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_DOCUMENTS);
+	list = gth_file_source_vfs_add_special_dir (list, file_source, G_USER_DIRECTORY_DOWNLOAD);
         list = gth_file_source_vfs_add_uri (list, file_source, "file:///", _("File System"));
 
 	mounts = g_volume_monitor_get_mounts (g_volume_monitor_get ());
