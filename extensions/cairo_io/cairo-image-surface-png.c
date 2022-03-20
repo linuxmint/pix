@@ -306,7 +306,7 @@ _cairo_image_surface_create_from_png (GInputStream  *istream,
 				       cairo_png_data->png_info_ptr,
 				       &gamma))
 		{
-			profile = gth_icc_profile_new_rgb_with_gamma (1.0 / gamma);
+			profile = gth_icc_profile_new_srgb_with_gamma (1.0 / gamma);
 		}
 
 		if (profile != NULL) {

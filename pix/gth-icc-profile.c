@@ -206,7 +206,7 @@ gth_icc_profile_new_srgb (void)
 
 
 GthICCProfile *
-gth_icc_profile_new_rgb_with_gamma (double gamma)
+gth_icc_profile_new_srgb_with_gamma (double gamma)
 {
 #ifdef HAVE_LCMS2
 
