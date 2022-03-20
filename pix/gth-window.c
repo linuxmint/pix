@@ -684,12 +684,11 @@ gth_window_set_title (GthWindow  *window,
 		      const char *title,
 		      GList	 *emblems)
 {
+	gtk_window_set_title (GTK_WINDOW (window), title);
 	if (window->priv->use_header_bar) {
 		gth_window_title_set_title (GTH_WINDOW_TITLE (window->priv->title), title);
 		gth_window_title_set_emblems (GTH_WINDOW_TITLE (window->priv->title), emblems);
 	}
-	else
-		gtk_window_set_title (GTK_WINDOW (window), title);
 }
 
 
