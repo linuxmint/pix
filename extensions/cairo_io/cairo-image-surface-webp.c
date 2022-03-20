@@ -105,9 +105,9 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 #endif
 
 #if G_BYTE_ORDER == G_LITTLE_ENDIAN
-	config.output.colorspace = MODE_BGRA;
+	config.output.colorspace = MODE_bgrA;
 #elif G_BYTE_ORDER == G_BIG_ENDIAN
-	config.output.colorspace = MODE_ARGB;
+	config.output.colorspace = MODE_Argb;
 #endif
 	config.output.u.RGBA.rgba = (uint8_t *) _cairo_image_surface_flush_and_get_data (surface);
 	config.output.u.RGBA.stride = cairo_image_surface_get_stride (surface);
