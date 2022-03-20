@@ -142,6 +142,7 @@ struct _GthFileListPrivate {
 	ThumbnailerState  thumbnailer_state;
 	int               max_loaders;
 	int               started_loaders;
+	gboolean          allow_empty_view;
 };
 
 
@@ -389,6 +390,7 @@ gth_file_list_init (GthFileList *file_list)
 	file_list->priv->thumbnailer_state.phase = THUMBNAILER_PHASE_INITIALIZE;
 	file_list->priv->started_loaders = 0;
 	file_list->priv->max_loaders = _get_max_loaders ();
+	file_list->priv->allow_empty_view = TRUE;
 }
 
 
@@ -647,7 +649,7 @@ _gth_file_list_update_pane (GthFileList *file_list)
 
 	file_store = gth_file_list_get_model (file_list);
 
-	if (gth_file_store_n_visibles (file_store) > 0) {
+	if ((gth_file_store_n_visibles (file_store) > 0) || ! file_list->priv->allow_empty_view) {
 		gtk_stack_set_visible_child_name (GTK_STACK (file_list->priv->notebook), _FILE_VIEW);
 	}
 	else {
@@ -823,7 +825,7 @@ gfl_clear_list (GthFileList *file_list,
 	gth_file_store_clear (file_store);
 
 	gth_empty_list_set_text (GTH_EMPTY_LIST (file_list->priv->message), message);
-	gtk_stack_set_visible_child_name (GTK_STACK (file_list->priv->notebook), _EMPTY_VIEW);
+	gtk_stack_set_visible_child_name (GTK_STACK (file_list->priv->notebook), file_list->priv->allow_empty_view ? _EMPTY_VIEW : _FILE_VIEW);
 }
 
 
@@ -2121,4 +2123,15 @@ gth_file_list_focus (GthFileList *file_list)
 	if (GTK_IS_BIN (child))
 		child = gtk_bin_get_child (GTK_BIN (child));
 	gtk_widget_grab_focus ((child != NULL) ? child : GTK_WIDGET (file_list));
+}
+
+
+void
+gth_file_list_enable_empty_view (GthFileList *file_list,
+				 gboolean     allow)
+{
+	if (file_list->priv->allow_empty_view == allow)
+		return;
+	file_list->priv->allow_empty_view = allow;
+	_gth_file_list_update_pane (file_list);
 }

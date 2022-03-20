@@ -179,7 +179,7 @@ browser_data_free (BrowserData *data)
 
 
 static void
-gth_file_list_drag_data_received (GtkWidget        *file_view,
+gth_file_list_drag_data_received (GtkWidget        *widget,
 				  GdkDragContext   *context,
 				  int               x,
 				  int               y,
@@ -189,10 +189,13 @@ gth_file_list_drag_data_received (GtkWidget        *file_view,
 				  gpointer          user_data)
 {
 	GthBrowser     *browser = user_data;
+	GtkWidget      *file_view;
 	gboolean        success = FALSE;
 	char          **uris;
 	GList          *selected_files;
 	GdkDragAction   action;
+
+	file_view = gth_browser_get_file_list_view (browser);
 
 	action = gdk_drag_context_get_suggested_action (context);
 	if (action == GDK_ACTION_COPY || action == GDK_ACTION_MOVE) {
@@ -411,6 +414,12 @@ gth_file_list_drag_motion (GtkWidget      *file_view,
 	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
 	data->drop_pos = -1;
 
+	if (GTH_IS_EMPTY_LIST (file_view)) {
+		gth_file_list_enable_empty_view (GTH_FILE_LIST (gth_browser_get_file_list (browser)), FALSE);
+		gdk_drag_status (context, 0, time);
+		return FALSE;
+	}
+
 	if ((gtk_drag_get_source_widget (context) == file_view) && ! gth_file_source_is_reorderable (gth_browser_get_location_source (browser))) {
 		gdk_drag_status (context, 0, time);
 		return FALSE;
@@ -481,9 +490,10 @@ gth_file_list_drag_leave (GtkWidget      *file_view,
 			  guint           time,
 			  gpointer        extra_data)
 {
+	GthBrowser *browser = extra_data;
 	if (gtk_drag_get_source_widget (context) == file_view)
 		gth_file_view_set_drag_dest_pos (GTH_FILE_VIEW (file_view), context, -1, -1, time, NULL);
-
+	gth_file_list_enable_empty_view (GTH_FILE_LIST (gth_browser_get_file_list (browser)), TRUE);
 	return TRUE;
 }
 
@@ -738,25 +748,25 @@ fm__gth_browser_construct_cb (GthBrowser *browser)
 
 	file_view = gth_file_list_get_view (GTH_FILE_LIST (gth_browser_get_file_list (browser)));
 	g_signal_connect (file_view,
-                          "drag_data_received",
-                          G_CALLBACK (gth_file_list_drag_data_received),
-                          browser);
+			  "drag_data_received",
+			  G_CALLBACK (gth_file_list_drag_data_received),
+			  browser);
 	g_signal_connect (file_view,
-	                  "drag_drop",
-	                  G_CALLBACK (gth_file_list_drag_drop),
-	                  browser);
+			  "drag_drop",
+			  G_CALLBACK (gth_file_list_drag_drop),
+			  browser);
 	g_signal_connect (file_view,
 			  "drag_motion",
 			  G_CALLBACK (gth_file_list_drag_motion),
 			  browser);
 	g_signal_connect (file_view,
-	                  "drag_leave",
-	                  G_CALLBACK (gth_file_list_drag_leave),
-	                  browser);
+			  "drag_leave",
+			  G_CALLBACK (gth_file_list_drag_leave),
+			  browser);
 	g_signal_connect (file_view,
-	                  "drag_end",
-	                  G_CALLBACK (gth_file_list_drag_end),
-	                  browser);
+			  "drag_end",
+			  G_CALLBACK (gth_file_list_drag_end),
+			  browser);
 	g_signal_connect (file_view,
 			  "file-selection-changed",
 			  G_CALLBACK (file_selection_changed_cb),
@@ -764,25 +774,17 @@ fm__gth_browser_construct_cb (GthBrowser *browser)
 
 	file_view = gth_file_list_get_empty_view (GTH_FILE_LIST (gth_browser_get_file_list (browser)));
 	g_signal_connect (file_view,
-                          "drag_data_received",
-                          G_CALLBACK (gth_file_list_drag_data_received),
-                          browser);
-	g_signal_connect (file_view,
-	                  "drag_drop",
-	                  G_CALLBACK (gth_file_list_drag_drop),
-	                  browser);
-	g_signal_connect (file_view,
-			  "drag_motion",
+			  "drag-motion",
 			  G_CALLBACK (gth_file_list_drag_motion),
 			  browser);
 	g_signal_connect (file_view,
-	                  "drag_leave",
-	                  G_CALLBACK (gth_file_list_drag_leave),
-	                  browser);
+			  "drag_data_received",
+			  G_CALLBACK (gth_file_list_drag_data_received),
+			  browser);
 	g_signal_connect (file_view,
-	                  "drag_end",
-	                  G_CALLBACK (gth_file_list_drag_end),
-	                  browser);
+			  "drag_drop",
+			  G_CALLBACK (gth_file_list_drag_drop),
+			  browser);
 
 	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 }

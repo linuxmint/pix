@@ -135,6 +135,8 @@ void              gth_file_list_enable_drag_source (GthFileList         *file_li
 						    GdkDragAction        actions);
 void              gth_file_list_unset_drag_source  (GthFileList         *file_list);
 void              gth_file_list_focus              (GthFileList         *file_list);
+void              gth_file_list_enable_empty_view  (GthFileList         *file_list,
+						    gboolean             enable);
 
 G_END_DECLS
 
