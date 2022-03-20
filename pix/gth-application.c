@@ -68,8 +68,7 @@ static const GOptionEntry options[] = {
 	  N_("Show version"), NULL },
 
 	{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_STRING_ARRAY, &remaining_args,
-	  NULL,
-	  NULL },
+	  NULL, N_("[FILE…] [DIRECTORY…]") },
 
 	{ NULL }
 };
