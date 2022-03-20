@@ -113,6 +113,8 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 	config.output.u.RGBA.stride = cairo_image_surface_get_stride (surface);
 	config.output.u.RGBA.size = cairo_image_surface_get_stride (surface) * height;
 	config.output.is_external_memory = 1;
+	config.output.width = width;
+	config.output.height = height;
 
 	idec = WebPINewDecoder (&config.output);
 	if (idec == NULL) {
