@@ -32,6 +32,7 @@
 struct _GthICCProfilePrivate {
 	GthCMSProfile cms_profile;
 	char *id;
+	char *description;
 };
 
 
@@ -85,6 +86,7 @@ gth_icc_profile_finalize (GObject *object)
 	icc_profile = GTH_ICC_PROFILE (object);
 	gth_cms_profile_free (icc_profile->priv->cms_profile);
 	g_free (icc_profile->priv->id);
+	g_free (icc_profile->priv->description);
 
 	/* Chain up */
 	G_OBJECT_CLASS (gth_icc_profile_parent_class)->finalize (object);
@@ -107,6 +109,7 @@ gth_icc_profile_init (GthICCProfile *self)
 	self->priv = gth_icc_profile_get_instance_private (self);
 	self->priv->cms_profile = NULL;
 	self->priv->id = NULL;
+	self->priv->description = NULL;
 }
 
 
@@ -202,6 +205,42 @@ gth_icc_profile_new_srgb (void)
 }
 
 
+GthICCProfile *
+gth_icc_profile_new_rgb_with_gamma (double gamma)
+{
+#ifdef HAVE_LCMS2
+
+	cmsCIExyY        WhitePoint;
+	cmsCIExyYTRIPLE  Rec709Primaries = { {0.6400, 0.3300, 1.0}, {0.3000, 0.6000, 1.0}, {0.1500, 0.0600, 1.0} };
+	cmsToneCurve*    Gamma[3];
+	cmsHPROFILE      hProfile;
+	GthICCProfile   *icc_profile;
+
+	if (! cmsWhitePointFromTemp (&WhitePoint, 6500))
+		return NULL;
+
+	Gamma[0] = Gamma[1] = Gamma[2] = cmsBuildGamma (NULL, gamma);
+	if (Gamma[0] == NULL)
+		return NULL;
+
+	hProfile = cmsCreateRGBProfile (&WhitePoint, &Rec709Primaries, Gamma);
+	cmsFreeToneCurve (Gamma[0]);
+	if (hProfile == NULL)
+		return NULL;
+
+	icc_profile = gth_icc_profile_new (NULL, (GthCMSProfile) hProfile);
+	icc_profile->priv->description = g_strdup_printf ("RGB Gamma=1/%.1f", gamma);
+
+	return icc_profile;
+
+#else
+
+	return NULL;
+
+#endif
+}
+
+
 const char *
 gth_icc_profile_get_id (GthICCProfile *self)
 {
@@ -213,6 +252,9 @@ gth_icc_profile_get_id (GthICCProfile *self)
 char *
 gth_icc_profile_get_description	(GthICCProfile *self)
 {
+	if (self->priv->description != NULL)
+		return g_strdup (self->priv->description);
+
 #ifdef HAVE_LCMS2
 
 	GString         *color_profile;

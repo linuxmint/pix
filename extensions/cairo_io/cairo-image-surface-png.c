@@ -188,6 +188,9 @@ _cairo_image_surface_create_from_png (GInputStream  *istream,
 	}
 
 	png_set_read_fn (cairo_png_data->png_ptr, cairo_png_data, cairo_png_read_data_func);
+#ifndef HAVE_LCMS2
+	png_set_gamma (cairo_png_data->png_ptr, PNG_DEFAULT_sRGB, PNG_DEFAULT_sRGB);
+#endif
 	png_read_info (cairo_png_data->png_ptr, cairo_png_data->png_info_ptr);
 	png_get_IHDR (cairo_png_data->png_ptr,
 		      cairo_png_data->png_info_ptr,
@@ -281,6 +284,7 @@ _cairo_image_surface_create_from_png (GInputStream  *istream,
 		int            compression_type;
 		png_bytep      icc_data;
 		png_uint_32    icc_data_size;
+		double         gamma;
 
 		if (png_get_sRGB (cairo_png_data->png_ptr,
 				  cairo_png_data->png_info_ptr,
@@ -297,6 +301,12 @@ _cairo_image_surface_create_from_png (GInputStream  *istream,
 		{
 			if ((icc_data_size > 0) && (icc_data != NULL))
 				profile = gth_icc_profile_new (GTH_ICC_PROFILE_ID_UNKNOWN, cmsOpenProfileFromMem (icc_data, icc_data_size));
+		}
+		else if (png_get_gAMA (cairo_png_data->png_ptr,
+				       cairo_png_data->png_info_ptr,
+				       &gamma))
+		{
+			profile = gth_icc_profile_new_rgb_with_gamma (1.0 / gamma);
 		}
 
 		if (profile != NULL) {
