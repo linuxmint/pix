@@ -429,6 +429,7 @@ _jpeg_info_get_from_stream (GInputStream	 *stream,
 			g_input_stream_skip (stream, size - 7, cancellable, error);
 
 			segment_data_consumed = TRUE;
+			data->valid |= _JPEG_INFO_IMAGE_SIZE;
 		}
 
 		if (((flags & _JPEG_INFO_EXIF_ORIENTATION)
