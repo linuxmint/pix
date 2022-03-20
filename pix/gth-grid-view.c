@@ -1650,10 +1650,21 @@ _gth_grid_view_draw_drop_target (GthGridView *self,
 	GthGridViewItem *item;
 	int              x;
 
+	style_context = gtk_widget_get_style_context (GTK_WIDGET (self));
+
+	/* Special case: dropping on an empty list. */
+	if ((self->priv->drop_item == 0) && (self->priv->n_items == 0)) {
+		gtk_render_focus (style_context,
+				  cr,
+				  self->priv->cell_padding,
+				  self->priv->cell_padding,
+				  2,
+				  self->priv->cell_size - (self->priv->cell_padding * 2));
+		return;
+	}
+
 	if ((self->priv->drop_item < 0) || (self->priv->drop_item >= self->priv->n_items))
 		return;
-
-	style_context = gtk_widget_get_style_context (GTK_WIDGET (self));
 
 	item = g_ptr_array_index (self->priv->itemv, self->priv->drop_item);
 
@@ -1718,10 +1729,10 @@ gth_grid_view_draw (GtkWidget *widget,
 
 		if (self->priv->selecting || self->priv->multi_selecting_with_keyboard)
 			_gth_grid_view_draw_rubberband (self, cr);
-
-		if (self->priv->drop_pos != GTH_DROP_POSITION_NONE)
-			_gth_grid_view_draw_drop_target (self, cr);
 	}
+
+	if (self->priv->drop_pos != GTH_DROP_POSITION_NONE)
+		_gth_grid_view_draw_drop_target (self, cr);
 
 	cairo_restore (cr);
 
@@ -2542,7 +2553,7 @@ gth_grid_view_set_drag_dest_pos (GthFileView    *file_view,
 			drop_pos = GTH_DROP_POSITION_LEFT;
 		}
 		else if (drop_image >= self->priv->n_items) {
-			drop_image = self->priv->n_items - 1;
+			drop_image = (self->priv->n_items > 0) ? self->priv->n_items - 1 : 0;
 			drop_pos = GTH_DROP_POSITION_RIGHT;
 		}
 		else {
