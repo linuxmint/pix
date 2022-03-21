@@ -229,7 +229,7 @@ gth_icc_profile_new_srgb_with_gamma (double gamma)
 		return NULL;
 
 	icc_profile = gth_icc_profile_new (NULL, (GthCMSProfile) hProfile);
-	icc_profile->priv->description = g_strdup_printf ("RGB Gamma=1/%.1f", gamma);
+	icc_profile->priv->description = g_strdup_printf ("sRGB Gamma=1/%.1f", gamma);
 
 	return icc_profile;
 
