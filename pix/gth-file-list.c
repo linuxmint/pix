@@ -821,6 +821,7 @@ gfl_clear_list (GthFileList *file_list,
 
 	gth_file_selection_unselect_all (GTH_FILE_SELECTION (file_list->priv->view));
 
+	file_list->priv->thumbnailer_state.phase = THUMBNAILER_PHASE_INITIALIZE;
 	file_store = gth_file_list_get_model (file_list);
 	gth_file_store_clear (file_store);
 
@@ -1532,6 +1533,13 @@ _gth_file_list_thumbnailer_iterate (GthFileList *file_list,
 	GthFileData  *file_data;
 
 	file_store = gth_file_list_get_model (file_list);
+
+	if ((file_list->priv->thumbnailer_state.phase != THUMBNAILER_PHASE_INITIALIZE)
+	    && (file_list->priv->thumbnailer_state.phase != THUMBNAILER_PHASE_COMPLETED)
+	    && ! gth_file_store_iter_is_valid (file_store, &file_list->priv->thumbnailer_state.current))
+	{
+		file_list->priv->thumbnailer_state.phase = THUMBNAILER_PHASE_INITIALIZE;
+	}
 
 	switch (file_list->priv->thumbnailer_state.phase) {
 	case THUMBNAILER_PHASE_INITIALIZE:
