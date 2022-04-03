@@ -424,6 +424,40 @@ get_thumbnailers_dirs (void)
   return g_once (&once_init, init_thumbnailers_dirs, NULL);
 }
 
+static const char *
+gnome_desktop_thumbnail_size_to_dirname (GnomeDesktopThumbnailSize size)
+{
+  switch (size) {
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL:
+    return "normal";
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE:
+    return "large";
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_XLARGE:
+    return "x-large";
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_XXLARGE:
+    return "xx-large";
+  default:
+    g_assert_not_reached ();
+  }
+}
+
+guint
+gnome_desktop_thumbnail_size_to_size (GnomeDesktopThumbnailSize size)
+{
+  switch (size) {
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL:
+    return 128;
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE:
+    return 256;
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_XLARGE:
+    return 512;
+  case GNOME_DESKTOP_THUMBNAIL_SIZE_XXLARGE:
+    return 1024;
+  default:
+    g_assert_not_reached ();
+  }
+}
+
 
 /* These should be called with the lock held */
 static void
@@ -909,9 +943,9 @@ gnome_desktop_thumbnail_factory_lookup (GnomeDesktopThumbnailFactory *factory,
 
 	file = g_strconcat (g_checksum_get_string (checksum), ".png", NULL);
 	path = thumbnail_factory_build_filename (factory,
-							       (factory->priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL)?"normal":"large",
-							       file,
-							       NULL);
+						 gnome_desktop_thumbnail_size_to_dirname (factory->priv->size),
+						 file,
+						 NULL);
 
 	if (! gnome_desktop_thumbnail_is_valid (path, uri, mtime)) {
 		g_free (path);
@@ -1061,9 +1095,7 @@ gnome_desktop_thumbnail_factory_generate_no_script (GnomeDesktopThumbnailFactory
 
   /* Doesn't access any volatile fields in factory, so it's threadsafe */
 
-  size = 128;
-  if (factory->priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE)
-    size = 256;
+  size = gnome_desktop_thumbnail_size_to_size (factory->priv->size);
 
   /* Check for preview::icon first */
   pixbuf = _gdk_pixbuf_new_from_uri_at_scale (uri, size, size, TRUE, TRUE, cancellable);
@@ -1166,9 +1198,7 @@ gnome_desktop_thumbnail_factory_generate_from_script (GnomeDesktopThumbnailFacto
 	g_return_val_if_fail (uri != NULL, FALSE);
 	g_return_val_if_fail (mime_type != NULL, FALSE);
 
-	size = 128;
-	if (factory->priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE)
-		size = 256;
+	size = gnome_desktop_thumbnail_size_to_size (factory->priv->size);
 
 	script = NULL;
 	g_mutex_lock (&factory->priv->lock);
@@ -1246,7 +1276,7 @@ make_thumbnail_dirs (GnomeDesktopThumbnailFactory *factory)
     }
 
   image_dir = g_build_filename (thumbnail_dir,
-				(factory->priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL)?"normal":"large",
+				gnome_desktop_thumbnail_size_to_dirname (factory->priv->size),
 				NULL);
   if (!g_file_test (image_dir, G_FILE_TEST_IS_DIR))
     {
@@ -1342,7 +1372,7 @@ gnome_desktop_thumbnail_factory_save_thumbnail (GnomeDesktopThumbnailFactory *fa
 
   file = g_strconcat (g_checksum_get_string (checksum), ".png", NULL);
   path = thumbnail_factory_build_filename (factory,
-		  	  	  	   (priv->size == GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL ? "normal" : "large"),
+		  	  	  	   gnome_desktop_thumbnail_size_to_dirname (priv->size),
 		  	  	  	   file,
 		  	  	  	   NULL);
 
@@ -1643,4 +1673,17 @@ gnome_desktop_thumbnail_is_valid (const char *thumbnail_filename,
 	g_hash_table_unref (png_options);
 
 	return is_valid;
+}
+
+
+GnomeDesktopThumbnailSize
+gnome_desktop_thumbnail_size_for_size (int size)
+{
+	if (size <= 128)
+		return GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL;
+	if (size <= 256)
+		return GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE;
+	if (size <= 512)
+		return GNOME_DESKTOP_THUMBNAIL_SIZE_XLARGE;
+	return GNOME_DESKTOP_THUMBNAIL_SIZE_XXLARGE;
 }

@@ -44,7 +44,7 @@ typedef struct {
 } BrowserData;
 
 
-static int thumb_size[] = { 48, 64, 85, 95, 112, 128, 164, 200, 256 };
+static int thumb_size[] = { 48, 64, 85, 95, 112, 128, 164, 200, 256, 512, 768, 1024 };
 static int thumb_sizes = sizeof (thumb_size) / sizeof (int);
 
 

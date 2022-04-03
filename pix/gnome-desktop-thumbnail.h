@@ -55,7 +55,9 @@ G_BEGIN_DECLS
 
 typedef enum {
   GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL,
-  GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE
+  GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE,
+  GNOME_DESKTOP_THUMBNAIL_SIZE_XLARGE,
+  GNOME_DESKTOP_THUMBNAIL_SIZE_XXLARGE,
 } GnomeDesktopThumbnailSize;
 
 #define GNOME_DESKTOP_TYPE_THUMBNAIL_FACTORY		(gnome_desktop_thumbnail_factory_get_type ())
@@ -114,6 +116,8 @@ char *     gnome_desktop_thumbnail_md5      (const char *uri);
 gboolean   gnome_desktop_thumbnail_is_valid (const char *thumbnail_filename,
 					     const char *uri,
 					     time_t      mtime);
+GnomeDesktopThumbnailSize gnome_desktop_thumbnail_size_for_size (int size);
+guint gnome_desktop_thumbnail_size_to_size (GnomeDesktopThumbnailSize size);
 
 /* Pixbuf utils */
 

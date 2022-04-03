@@ -44,8 +44,6 @@
 #include "pixbuf-utils.h"
 #include "typedefs.h"
 
-#define THUMBNAIL_LARGE_SIZE	  256
-#define THUMBNAIL_NORMAL_SIZE	  128
 #define THUMBNAIL_DIR_PERMISSIONS 0700
 #define MAX_THUMBNAILER_LIFETIME  4000   /* kill the thumbnailer after this amount of time*/
 #define CHECK_CANCELLABLE_DELAY   200
@@ -296,14 +294,8 @@ gth_thumb_loader_set_requested_size (GthThumbLoader *self,
 	GnomeDesktopThumbnailSize thumb_size;
 
 	self->priv->requested_size = size;
-	if (self->priv->requested_size <= THUMBNAIL_NORMAL_SIZE) {
-		self->priv->cache_max_size = THUMBNAIL_NORMAL_SIZE;
-		thumb_size = GNOME_DESKTOP_THUMBNAIL_SIZE_NORMAL;
-	}
-	else {
-		self->priv->cache_max_size = THUMBNAIL_LARGE_SIZE;
-		thumb_size = GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE;
-	}
+	thumb_size = gnome_desktop_thumbnail_size_for_size (size);
+	self->priv->cache_max_size = gnome_desktop_thumbnail_size_to_size (thumb_size);
 
 	if ((self->priv->thumb_size != thumb_size) || (self->priv->thumb_factory == NULL)) {
 		self->priv->thumb_size = thumb_size;
