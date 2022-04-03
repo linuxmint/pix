@@ -869,7 +869,7 @@ gnome_desktop_thumbnail_factory_new (GnomeDesktopThumbnailSize size)
 
   if (!factory->priv->use_xdg_dir) {
     char *old_cache_dir = g_build_filename (g_get_home_dir (), ".thumbnails", NULL);
-    factory->priv->use_xdg_dir = !g_file_test (xdg_directory, G_FILE_TEST_EXISTS);
+    factory->priv->use_xdg_dir = !g_file_test (old_cache_dir, G_FILE_TEST_EXISTS);
   }
 
 #endif
