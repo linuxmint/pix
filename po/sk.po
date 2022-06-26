@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: pix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-23 10:21+0000\n"
-"PO-Revision-Date: 2021-06-08 10:50+0000\n"
-"Last-Translator: Vendelín Slezák <Unknown>\n"
+"PO-Revision-Date: 2022-06-25 19:33+0000\n"
+"Last-Translator: Adrián Bíro <biroadrian@protonmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Launchpad-Export-Date: 2021-12-31 12:24+0000\n"
-"X-Generator: Launchpad (build adb364d6a74a28e7b95d51cd30446ec16160de6c)\n"
+"X-Launchpad-Export-Date: 2022-06-26 11:28+0000\n"
+"X-Generator: Launchpad (build 51a2e4fa2e9b8e45f00904ad7f53546f45ac48a5)\n"
 "Language: sk_SK\n"
 
 #: ../copy-n-paste/eggdesktopfile.c:165
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ../data/org.x.pix.gschema.xml.in.h:2
 msgid "Whether to resize the window to fit the size of the image"
-msgstr ""
+msgstr "Zmeniť veľkosť okna, aby odpovedala veľkosti obrázka"
 
 #: ../data/org.x.pix.gschema.xml.in.h:3
 msgid "Open files in the active window"
@@ -147,7 +147,7 @@ msgstr "Prípustné hodnoty sú: white, black, checked, none."
 
 #: ../data/org.x.pix.image-viewer.gschema.xml.in.h:2
 msgid "Whether to reset the scrollbars position after changing image"
-msgstr ""
+msgstr "Vrátiť posuvnú lištu do pôvodnej pozície po zmene obrázka."
 
 #: ../data/org.x.pix.pixbuf-savers.gschema.xml.in.h:1
 msgid "Possible values are: jpeg, jpg."
@@ -162,6 +162,9 @@ msgid ""
 "Possible values include: general::unsorted, file::name, file::size, "
 "file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
+"Možné hodnoty sú: general::unsorted (všeobecné, nezaradené), file::name "
+"(názov súboru), file::size (veľkosť súboru), file::mtime (čas ), "
+"exif::photo::datetimeoriginal (čas vytvorenia fotografie podľa exif)"
 
 #: ../data/ui/extensions-preferences.ui.h:1
 msgid "_Extensions:"
@@ -311,11 +314,12 @@ msgstr "_Vlastnosti súboru v prehliadači:"
 
 #: ../data/ui/preferences.ui.h:8
 msgid "Prefer dark mode"
-msgstr ""
+msgstr "Uprednostniť zobrazenie v tmavom móde"
 
 #: ../data/ui/preferences.ui.h:9
 msgid "This option only works with light themes which support dark mode."
 msgstr ""
+"Táto možnosť funguje iba so svetlou variantou tém, ktoré podporujú tmavý mód."
 
 #: ../data/ui/preferences.ui.h:10
 msgid "Appearance"
@@ -1130,7 +1134,7 @@ msgstr "Importovať vložené Metadáta"
 
 #: ../extensions/comments/callbacks.c:47
 msgid "Import the metadata stored inside files into the Pix comment system"
-msgstr ""
+msgstr "Importovať metadata zo súborov do Pix comment system"
 
 #: ../extensions/comments/comments.extension.in.in.h:1
 msgid "Comments and tags"
@@ -1212,7 +1216,7 @@ msgstr "Kontaktný list"
 #: ../extensions/contact_sheet/contact_sheet.extension.in.in.h:2
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
-msgstr ""
+msgstr "Vytvorenie indexu obrázkov v podobe náhľadov zvolených súborov."
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
 #: ../extensions/file_tools/gth-file-tool-crop.c:416
@@ -1444,7 +1448,7 @@ msgstr "_Veľkosť:"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:31
 msgid "Sq_uared"
-msgstr ""
+msgstr "Hra_natý"
 
 #: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:33
 #: ../extensions/contact_sheet/data/ui/image-wall.ui.h:16
@@ -2369,7 +2373,7 @@ msgstr "_Obrátiť pomer strán"
 #. after the colon there is a control to select the size in pixels
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:10
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "Ná_sobok"
 
 #. abbreviation of pixel
 #: ../extensions/file_tools/data/ui/crop-options.ui.h:12
@@ -2512,7 +2516,7 @@ msgstr "Originálna veľkosť"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
 msgid "Bounding box"
-msgstr ""
+msgstr "Ohraničenie"
 
 #: ../extensions/file_tools/data/ui/rotate-options.ui.h:20
 msgid "Crop borders"
@@ -2739,7 +2743,7 @@ msgstr "Otočiť doľava"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-left.c:88
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr ""
+msgstr "Otočiť obrázok o 90 stupňov proti smeru hodinových ručičiek"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:87
 #: ../extensions/image_rotation/callbacks.c:49
@@ -2748,7 +2752,7 @@ msgstr "Otočiť doprava"
 
 #: ../extensions/file_tools/gth-file-tool-rotate-right.c:88
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr ""
+msgstr "Otočiť obrázok o 90 stupňov v smere hodinových ručičiek"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
 msgid "Save As"
@@ -2765,11 +2769,11 @@ msgstr "Zaostrenie obrázku"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:486
 msgid "Enhance Focus..."
-msgstr ""
+msgstr "Zvýšiť ostrosť"
 
 #: ../extensions/file_tools/gth-file-tool-sharpen.c:486
 msgid "Enhance Focus"
-msgstr ""
+msgstr "Zvýšiť ostrosť"
 
 #: ../extensions/file_tools/gth-file-tool-undo.c:75
 #: ../extensions/image_viewer/gth-image-viewer-page.c:169
@@ -2830,11 +2834,11 @@ msgstr "Nájdené duplikované súbory."
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
-msgstr ""
+msgstr "Nechať najnovšiou duplicitnú kópiu"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:66
 msgid "leave the oldest duplicates"
-msgstr ""
+msgstr "Nechať najstaršiu duplicitnú kópiu"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder..."
@@ -2869,12 +2873,12 @@ msgstr "Hľadám duplikáty"
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zostáva %d súborov"
+msgstr[1] "Zostáva %d súbor"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:830
 msgid "Getting the file list"
-msgstr ""
+msgstr "Získava sa zoznam súborov"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1016
 msgid "Duplicates"
@@ -2917,7 +2921,7 @@ msgstr ""
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
 msgid "_Privacy:"
-msgstr ""
+msgstr "_Súkromie:"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
 msgid "Hi_de from public searches"
@@ -2941,15 +2945,15 @@ msgstr "Súkromné fotky"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
 msgid "Safe content"
-msgstr ""
+msgstr "Bezpečný obsah"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
 msgid "Moderate content"
-msgstr ""
+msgstr "Moderovať obsah"
 
 #: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:17
 msgid "Restricted content"
-msgstr ""
+msgstr "Obmedzený obsah"
 
 #: ../extensions/flicker_utils/data/ui/flickr-ask-authorization-old.ui.h:1
 msgid "C_ontinue"
@@ -2957,7 +2961,7 @@ msgstr "P_okračovať"
 
 #: ../extensions/flicker_utils/data/ui/flickr-ask-authorization-old.ui.h:2
 msgid "_Authorize..."
-msgstr ""
+msgstr "_Autorizovať..."
 
 #: ../extensions/flicker_utils/flickr-consumer.c:124
 #: ../extensions/flicker_utils/flickr-service.c:237
@@ -2976,16 +2980,17 @@ msgstr "Neznáma chyba"
 #, c-format
 msgid ""
 "Return to this window when you have finished the authorization process on %s"
-msgstr ""
+msgstr "Vrátiť sa na toto okno po ukončení autorizačného procesu na %s."
 
 #: ../extensions/flicker_utils/flickr-service.c:503
 msgid "Once you're done, click the 'Continue' button below."
 msgstr ""
+"Ako náhle ste hotoví, kliknite na tlačidlo 'Pokračovať' umiestnené nižšie."
 
 #: ../extensions/flicker_utils/flickr-service.c:571
 #, c-format
 msgid "Pix requires your authorization to upload the photos to %s"
-msgstr ""
+msgstr "Pix potrebuje Vaše schválenie pre nahranie fotografií do %s"
 
 #: ../extensions/flicker_utils/flickr-service.c:572
 #, c-format
@@ -2994,6 +2999,9 @@ msgid ""
 "photos to %s. When you're finished, return to this window to complete the "
 "authorization."
 msgstr ""
+"Ťuknite tlačidlo 'Autorizovať' pre otvorenie v internetovom prehliadači, aby "
+"mohol pix nahrať fotografie do %s. Keď budete hotoví, vráťte sa k tomuto "
+"oknu, pre dokončenie autorizácie."
 
 #: ../extensions/gstreamer_tools/actions.c:66
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1042
@@ -3042,29 +3050,29 @@ msgstr "Prepínanie hlasitosti"
 
 #: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
 msgid "Change volume level"
-msgstr ""
+msgstr "Zmeniť úroveň hlasitosti"
 
 #: ../extensions/gstreamer_tools/data/ui/save-screenshot.ui.h:3
 #: ../extensions/photo_importer/actions.c:67
 #: ../extensions/photo_importer/dlg-photo-importer.c:620
 msgid "Choose a folder"
-msgstr ""
+msgstr "Výber priečinka"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:1
 msgid "Audio/Video support"
-msgstr ""
+msgstr "Podpora pre Audio a Video"
 
 #: ../extensions/gstreamer_tools/gstreamer_tools.extension.in.in.h:2
 msgid "Play audio and video files."
-msgstr ""
+msgstr "Prehraj audio a video súbory."
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:104
 msgid "Screenshot"
-msgstr ""
+msgstr "Snímka obrazovky"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:105
 msgid "Take a screenshot"
-msgstr ""
+msgstr "Urobiť snímku obrazovky"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:681
 msgid "Playing video"
@@ -3159,16 +3167,16 @@ msgstr "Vytlačiť vybrané súbory"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:1
 msgid "Centered"
-msgstr ""
+msgstr "Centrovať"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:13
 msgid "The total number of files"
-msgstr ""
+msgstr "Celkový počet súborov"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:14
 #: ../extensions/importer/data/ui/import-preferences.ui.h:4
 msgid "The event description"
-msgstr ""
+msgstr "Popis udalosti"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:17
 msgid "_Rows:"
@@ -3208,7 +3216,7 @@ msgstr "milimetre"
 
 #: ../extensions/image_print/data/ui/print-layout.ui.h:30
 msgid "inches"
-msgstr ""
+msgstr "palcov"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:4
 msgid "Select Caption Font"
@@ -3216,7 +3224,7 @@ msgstr ""
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:5
 msgid "Select Header Font"
-msgstr ""
+msgstr "Zvoliť font pre nadpis"
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:6
 msgid "Select Footer Font"
@@ -3224,7 +3232,7 @@ msgstr ""
 
 #: ../extensions/image_print/data/ui/print-preferences.ui.h:7
 msgid "Fonts"
-msgstr ""
+msgstr "Fonty"
 
 #: ../extensions/image_print/gth-image-print-job.c:912
 #: ../extensions/webalbums/data/albumthemes/text.h:31
@@ -3236,7 +3244,7 @@ msgstr "Stránka %d z %d"
 #: ../extensions/image_print/gth-image-print-job.c:1876
 #: ../extensions/image_print/gth-image-print-job.c:1919
 msgid "Could not print"
-msgstr ""
+msgstr "Nie je možné vytlačiť"
 
 #: ../extensions/image_print/gth-image-print-job.c:1777
 #: ../pix/gth-main-default-tests.c:259
@@ -3248,12 +3256,13 @@ msgstr "Obrázky"
 #: ../pix/gth-image-utils.c:131 ../pix/gth-image-utils.c:137
 msgid "No suitable loader available for this file type"
 msgstr ""
+"Pre otvorenie tohoto typu súboru, nie je dostupný žiadnz vhodný program"
 
 #. translators: %s is a filename
 #: ../extensions/image_print/gth-load-image-info-task.c:164
 #, c-format
 msgid "Loading \"%s\""
-msgstr ""
+msgstr "Načítava sa „%s“"
 
 #: ../extensions/image_print/gth-load-image-info-task.c:166
 #: ../extensions/webalbums/gth-web-exporter.c:2727
@@ -3262,27 +3271,27 @@ msgstr "Načítavajú sa obrázky"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:1
 msgid "Image print"
-msgstr ""
+msgstr "Tlač obrázka"
 
 #: ../extensions/image_print/image_print.extension.in.in.h:2
 msgid "Allow to print images choosing the page layout."
-msgstr ""
+msgstr "Dovoliť tlačenie obrázkov na vybraný formát"
 
 #: ../extensions/image_rotation/callbacks.c:50
 msgid "Rotate the selected images 90° to the right"
-msgstr ""
+msgstr "Otoč vybrané obrázky o 90° doprava"
 
 #: ../extensions/image_rotation/callbacks.c:56
 msgid "Rotate the selected images 90° to the left"
-msgstr ""
+msgstr "Otoč vybrané obrázky o 90° doľava"
 
 #: ../extensions/image_rotation/callbacks.c:61
 msgid "Rotate Physically"
-msgstr ""
+msgstr "Otoč fyzicky"
 
 #: ../extensions/image_rotation/callbacks.c:62
 msgid "Rotate the selected images according to the embedded orientation"
-msgstr ""
+msgstr "Otočiť zvolené obrázky podľa ich vlastnej (prirodzenej) orientácie."
 
 #: ../extensions/image_rotation/callbacks.c:67
 msgid "Reset the EXIF Orientation"
@@ -3301,7 +3310,7 @@ msgstr "Ukladajú sa obrázky"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:1
 msgid "Image rotation"
-msgstr ""
+msgstr "Otočenie obrázka"
 
 #: ../extensions/image_rotation/image_rotation.extension.in.in.h:2
 msgid "Rotate images without data loss."
@@ -3354,7 +3363,7 @@ msgstr "Zachovať predchádzajúce zväčšenie"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
 msgid "Fit to window"
-msgstr ""
+msgstr "Prispôsobiť veľkosti okna"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
 msgid "Fit to window if larger"
@@ -3362,7 +3371,7 @@ msgstr "Prispôsobiť oknu, ak je obrázok väčší"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
 msgid "Fit to width"
-msgstr ""
+msgstr "Prispôsobiť šírke"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
 msgid "Fit to width if larger"
@@ -3374,7 +3383,7 @@ msgstr ""
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
 msgid "After loading an image:"
-msgstr ""
+msgstr "Po načítaní obrázka:"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
 msgid "_Zoom quality:"
@@ -3386,11 +3395,11 @@ msgstr "_Typ priesvitnosti:"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
 msgid "High"
-msgstr ""
+msgstr "Vysoká"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:12
 msgid "Low"
-msgstr ""
+msgstr "Nízká"
 
 #: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:13
 msgid "White"
@@ -3406,23 +3415,23 @@ msgstr "Začiarknuté"
 
 #: ../extensions/image_viewer/gth-image-histogram.c:84
 msgid "Histogram"
-msgstr ""
+msgstr "Histogram"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:179
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopírovat obrázok"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:180
 msgid "Copy the image to the clipboard"
-msgstr ""
+msgstr "Skopíruje obrázok do schránky"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:184
 msgid "Paste Image"
-msgstr ""
+msgstr "Vložiť obrázok"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:185
 msgid "Paste the image from the clipboard"
-msgstr ""
+msgstr "Vložiť obrázok zo schránky"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:189
 msgid "In"
@@ -3462,11 +3471,11 @@ msgstr "Prispôsobiť veľkosť oknu"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:1
 msgid "Image viewer"
-msgstr ""
+msgstr "Prehliadač obrázkov"
 
 #: ../extensions/image_viewer/image_viewer.extension.in.in.h:2
 msgid "Basic image viewing."
-msgstr ""
+msgstr "Základné prehliadanie obrázkov"
 
 #: ../extensions/image_viewer/preferences.c:125
 msgid "Viewer"
@@ -3474,11 +3483,11 @@ msgstr "Prehliadač"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:1
 msgid "_Destination"
-msgstr ""
+msgstr "Cieľové miesto"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:2
 msgid "_Automatic subfolder"
-msgstr ""
+msgstr "_Automatický podpriečinok"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:3
 msgid "as _single subfolder"
@@ -3486,31 +3495,31 @@ msgstr ""
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:7
 msgid "The year"
-msgstr ""
+msgstr "Rok"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:8
 msgid "The month"
-msgstr ""
+msgstr "Mesiac"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:9
 msgid "The day of the month"
-msgstr ""
+msgstr "Deň a miesiac"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:10
 msgid "The hour"
-msgstr ""
+msgstr "Hodina"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:11
 msgid "The minutes"
-msgstr ""
+msgstr "Minúta"
 
 #: ../extensions/importer/data/ui/import-preferences.ui.h:12
 msgid "The seconds"
-msgstr ""
+msgstr "Sekunda"
 
 #: ../extensions/importer/gth-import-destination-button.c:183
 msgid "Invalid Destination"
-msgstr ""
+msgstr "Neplatné umiestnenie"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:198
 #, c-format
@@ -3520,44 +3529,44 @@ msgstr ""
 #. subfolder type
 #: ../extensions/importer/gth-import-preferences-dialog.c:330
 msgid "File date"
-msgstr ""
+msgstr "Dátum súboru"
 
 #. gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("subfolder_label")), self->priv->subfolder_type_list);
 #. subfolder format
 #: ../extensions/importer/gth-import-preferences-dialog.c:340
 msgid "year-month-day"
-msgstr ""
+msgstr "rok-mesiac-deň"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:341
 msgid "year-month"
-msgstr ""
+msgstr "rok-mesiac"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:342
 msgid "year"
-msgstr ""
+msgstr "rok"
 
 #: ../extensions/importer/gth-import-preferences-dialog.c:343
 msgid "custom format"
-msgstr ""
+msgstr "Vlastný formát"
 
 #: ../extensions/importer/gth-import-task.c:426
 #: ../extensions/importer/gth-import-task.c:461
 #: ../extensions/importer/gth-import-task.c:671
 msgid "Importing files"
-msgstr ""
+msgstr "Importujem súbory"
 
 #: ../extensions/importer/gth-import-task.c:620
 msgid "No file imported"
-msgstr ""
+msgstr "Žiadny súbor nebol importovaný"
 
 #: ../extensions/importer/gth-import-task.c:621
 msgid "The selected files are already present in the destination."
-msgstr ""
+msgstr "Zvolené súbory už v danej lokalite existujú"
 
 #: ../extensions/importer/gth-import-task.c:644
 #: ../pix/gth-file-source-vfs.c:704
 msgid "Could not delete the files"
-msgstr ""
+msgstr "Nie je možné zmazať tieto súbory"
 
 #: ../extensions/importer/gth-import-task.c:645
 msgid "Delete operation not supported."
@@ -3565,11 +3574,11 @@ msgstr ""
 
 #: ../extensions/importer/gth-import-task.c:732
 msgid "Last imported"
-msgstr ""
+msgstr "Posledné importované"
 
 #: ../extensions/importer/gth-import-task.c:838
 msgid "No file specified."
-msgstr ""
+msgstr "Žiadny špacifikovaný súbor"
 
 #. Translators: For example: Not enough free space in '/home/user/Images'.\n1.3 GB of space is required but only 300 MB is available.
 #: ../extensions/importer/gth-import-task.c:875
@@ -3578,22 +3587,24 @@ msgid ""
 "Not enough free space in '%s'.\n"
 "%s of space is required but only %s is available."
 msgstr ""
+"Nedostatok miesta v '%s'.\n"
+"je potrebné aspoň %s ale dostupné je len %s."
 
 #: ../extensions/list_tools/callbacks.c:76 ../pix/gth-filterbar.c:311
 msgid "Personalize..."
-msgstr ""
+msgstr "Prispôsobiť"
 
 #: ../extensions/list_tools/callbacks.c:320
 msgid "Tools"
-msgstr ""
+msgstr "Nástroje"
 
 #: ../extensions/list_tools/data/ui/ask-value.ui.h:1
 msgid "_Skip"
-msgstr ""
+msgstr "_Preskočiť"
 
 #: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
 msgid "Commands"
-msgstr ""
+msgstr "Príkazy"
 
 #: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:2
 msgid "Co_mmands:"
@@ -3601,7 +3612,7 @@ msgstr ""
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:2
 msgid "_Wait for the command to finish"
-msgstr ""
+msgstr "Počkaje kým zadaný príkaz neskončí"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:3
 msgid "E_xecute command once for every file"
@@ -3655,7 +3666,7 @@ msgstr ""
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:21
 #, no-c-format
 msgid "%N"
-msgstr ""
+msgstr "%N"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:22
 msgid "The file basename without extension"
@@ -3664,11 +3675,11 @@ msgstr ""
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:24
 #, no-c-format
 msgid "%E"
-msgstr ""
+msgstr "%E"
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:25
 msgid "The file extension"
-msgstr ""
+msgstr "rozšírenie súboru"
 
 #. Translate only
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:28
@@ -3682,7 +3693,7 @@ msgstr ""
 
 #: ../extensions/list_tools/data/ui/script-editor.ui.h:30
 msgid "_Command:"
-msgstr ""
+msgstr "_Príkaz:"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:257
 msgid "Script"
@@ -3690,12 +3701,12 @@ msgstr "Skript"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:271
 msgid "Shortcut"
-msgstr ""
+msgstr "Skratka"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:285
 #: ../pix/dlg-personalize-filters.c:252
 msgid "Show"
-msgstr ""
+msgstr "Zobraziť"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:355
 msgid "Could not save the script"
@@ -3703,40 +3714,40 @@ msgstr ""
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:406
 msgid "New Command"
-msgstr ""
+msgstr "Nový príkaz"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:433
 msgid "Edit Command"
-msgstr ""
+msgstr "Upraviť príkaz"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:461
 msgid "Are you sure you want to delete the selected command?"
-msgstr ""
+msgstr "Naozaj chcete zmazať vybraný príkaz?"
 
 #: ../extensions/list_tools/gth-script.c:615
 msgid "Enter a value:"
-msgstr ""
+msgstr "Zadajte hodnotu:"
 
 #: ../extensions/list_tools/gth-script.c:750
 #: ../extensions/webalbums/gth-web-exporter.c:558
 #: ../extensions/webalbums/gth-web-exporter.c:570
 #: ../extensions/webalbums/gth-web-exporter.c:578
 msgid "Malformed command"
-msgstr ""
+msgstr "Chybný príkaz"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:147
 msgid "none"
-msgstr ""
+msgstr "Nič"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:153
 #, c-format
 msgid "key %d on the numeric keypad"
-msgstr ""
+msgstr "klávesa %d na numerickej klávesnici"
 
 #: ../extensions/list_tools/gth-script-editor-dialog.c:296
 #, c-format
 msgid "No command specified"
-msgstr ""
+msgstr "Neuvedený žiadny príkaz"
 
 #: ../extensions/list_tools/gth-script-task.c:83
 #, c-format
@@ -3754,33 +3765,33 @@ msgstr ""
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: ../extensions/map_view/gth-map-view.c:130
 msgctxt "Cardinal point"
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "W"
-msgstr ""
+msgstr "W"
 
 #: ../extensions/map_view/gth-map-view.c:132
 msgctxt "Cardinal point"
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: ../extensions/map_view/gth-map-view.c:205
 #: ../extensions/map_view/map_view.extension.in.in.h:1
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 #. No GPS label
 #: ../extensions/map_view/gth-map-view.c:276
 msgid ""
 "The geographical position information is not available for this image."
-msgstr ""
+msgstr "Pre tento obrázok nie je dostupná geografická poloha."
 
 #: ../extensions/map_view/map_view.extension.in.in.h:2
 msgid "View the photo position on the map"
@@ -3788,12 +3799,12 @@ msgstr ""
 
 #: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
 msgid "A_ccounts:"
-msgstr ""
+msgstr "Úč_ty"
 
 #: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
 #: ../pix/gth-folder-tree.c:1067
 msgid "Loading..."
-msgstr ""
+msgstr "Načítavam..."
 
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:200
 msgid "New authentication..."
@@ -3801,23 +3812,23 @@ msgstr ""
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:245
 msgid "Authorization Required"
-msgstr ""
+msgstr "Požadované overenie"
 
 #: ../extensions/oauth/web-service.c:382
 msgid "Choose _Account..."
-msgstr ""
+msgstr "Vybrať Ú_čet"
 
 #: ../extensions/oauth/web-service.c:660
 msgid "Choose Account"
-msgstr ""
+msgstr "Vybrať účet"
 
 #: ../extensions/oauth/web-service.c:777
 msgid "Edit Accounts"
-msgstr ""
+msgstr "Upraviť účty"
 
 #: ../extensions/oauth/web-service.c:795 ../extensions/oauth/web-service.c:812
 msgid "Connecting to the server"
-msgstr ""
+msgstr "Pripájanie na server"
 
 #: ../extensions/oauth/web-service.c:796
 msgid "Asking authorization"
@@ -3825,7 +3836,7 @@ msgstr ""
 
 #: ../extensions/oauth/web-service.c:813
 msgid "Getting account information"
-msgstr ""
+msgstr "Získavanie informácií o účte"
 
 #: ../extensions/photobucket/callbacks.c:54
 msgid "Photobucket..."
@@ -3841,32 +3852,32 @@ msgstr ""
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:10
 msgid "Tiny ( 100 x 75 )"
-msgstr ""
+msgstr "Drobný ( 100 x 75 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:11
 msgid "Small ( 160 x 120 )"
-msgstr ""
+msgstr "Malý ( 100 x 75 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:12
 msgid "Medium ( 320 x 240 )"
-msgstr ""
+msgstr "Stredný ( 320 x 240 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:13
 msgid "Large ( 640 x 480 )"
-msgstr ""
+msgstr "Veľký  640 x 480 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:14
 msgid "15ʺ screen ( 800 x 600 )"
-msgstr ""
+msgstr "15ʺ obrazovka ( 800 x 600 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:15
 msgid "17ʺ screen ( 1024 x 768 )"
-msgstr ""
+msgstr "17ʺ obrazovka ( 1024 x 768 )"
 
 #: ../extensions/photobucket/data/ui/export-to-photobucket.ui.h:16
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:296
 msgid "1 megabyte file size"
-msgstr ""
+msgstr "1 megabyte veľký súbor"
 
 #: ../extensions/photobucket/data/ui/photobucket-album-properties.ui.h:2
 msgid "_Container:"
@@ -3874,31 +3885,31 @@ msgstr ""
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:290
 msgid "Tiny ( 100 × 75 )"
-msgstr ""
+msgstr "Drobný ( 100 × 75 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:291
 msgid "Small ( 160 × 120 )"
-msgstr ""
+msgstr "Malý ( 160 × 120 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:292
 msgid "Medium ( 320 × 240 )"
-msgstr ""
+msgstr "Stredný ( 320 × 240 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:293
 msgid "Large ( 640 × 480 )"
-msgstr ""
+msgstr "Veľký ( 640 × 480 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:294
 msgid "15ʺ screen ( 800 × 600 )"
-msgstr ""
+msgstr "15ʺ obrazovka ( 800 × 600 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:295
 msgid "17ʺ screen ( 1024 × 768 )"
-msgstr ""
+msgstr "17ʺ obrazovka ( 1024 × 768 )"
 
 #: ../extensions/photobucket/dlg-export-to-photobucket.c:303
 msgid "2 megabyte file size"
-msgstr ""
+msgstr "2 megabyte veľký súbor"
 
 #: ../extensions/photobucket/photobucket.extension.in.in.h:1
 msgid "PhotoBucket"
@@ -3910,19 +3921,19 @@ msgstr ""
 
 #: ../extensions/photo_importer/actions.c:71
 msgid "Import"
-msgstr ""
+msgstr "Importovať"
 
 #: ../extensions/photo_importer/callbacks.c:52
 msgid "_Removable Device..."
-msgstr ""
+msgstr "_Odoberateľné zariadenia..."
 
 #: ../extensions/photo_importer/callbacks.c:53
 msgid "Import photos and other files from a removable device"
-msgstr ""
+msgstr "Importovať fotografie a iné súbory z odoberateľného zariadenia"
 
 #: ../extensions/photo_importer/callbacks.c:56
 msgid "F_older..."
-msgstr ""
+msgstr "Priečin_ok..."
 
 #: ../extensions/photo_importer/callbacks.c:57
 msgid "Import photos and other files from a folder"
@@ -3940,15 +3951,15 @@ msgstr ""
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
 #: ../pix/gth-filterbar.c:421
 msgid "S_how:"
-msgstr ""
+msgstr "_Zobraziť:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
 msgid "_Tags:"
-msgstr ""
+msgstr "_Tagy:"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
 msgid "_Event:"
-msgstr ""
+msgstr "_Udalosť"
 
 #: ../extensions/photo_importer/data/ui/photo-importer.ui.h:7
 msgid "_Delete the imported files from the source"
@@ -3976,7 +3987,7 @@ msgstr "Získavam zoznam súborov v priečinku..."
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:415
 msgid "Empty"
-msgstr ""
+msgstr "Prázdny"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:586
 msgid "Import from Removable Device"
@@ -4034,7 +4045,7 @@ msgstr ""
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:1
 msgid "Raw format support"
-msgstr ""
+msgstr "Podpora pre Raw formát"
 
 #: ../extensions/raw_files/raw_files.extension.in.in.h:2
 msgid "Allow to load raw format images."
@@ -4054,35 +4065,35 @@ msgstr ""
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:510
 msgid "Red Eye Removal"
-msgstr ""
+msgstr "Odstránenie červených očí"
 
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:511
 msgid "Remove the red eye effect caused by camera flashes"
-msgstr ""
+msgstr "Odstrániť efekt červených očí spôsobený bleskom"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:1
 msgid "Red-eye removal"
-msgstr ""
+msgstr "O_dstránenie červených očí"
 
 #: ../extensions/red_eye_removal/red_eye_removal.extension.in.in.h:2
 msgid "Tool to remove the red-eye effect from a photo."
-msgstr ""
+msgstr "Nástroj na odstránenie červených očí z fotografie."
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:1
 msgid "digits"
-msgstr ""
+msgstr "číslice"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:2
 msgid "format:"
-msgstr ""
+msgstr "formát:"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:3
 msgid "remove"
-msgstr ""
+msgstr "odstrániť"
 
 #: ../extensions/rename_series/data/ui/code-selector.ui.h:4
 msgid "add"
-msgstr ""
+msgstr "pridať"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:1
 msgid "Rename"
@@ -4095,12 +4106,12 @@ msgstr "_Veľkosť písma:"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:7
 msgid "Edit template"
-msgstr ""
+msgstr "Upraviť šablónu"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:9
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:34
 msgid "The original filename"
-msgstr ""
+msgstr "Pôvodný názov"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:10
 msgid "The original extension"
@@ -4114,7 +4125,7 @@ msgstr ""
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:16
 #, no-c-format
 msgid "%M{ format }"
-msgstr ""
+msgstr "%M{ format }"
 
 #: ../extensions/rename_series/data/ui/rename-series.ui.h:17
 msgid "The modification date"
@@ -4144,7 +4155,7 @@ msgstr ""
 
 #: ../extensions/rename_series/dlg-rename-series.c:59
 msgid "Original filename"
-msgstr ""
+msgstr "Pôvodný názov súboru"
 
 #: ../extensions/rename_series/dlg-rename-series.c:60
 msgid "Original extension"
@@ -4177,7 +4188,7 @@ msgstr ""
 
 #: ../extensions/rename_series/dlg-rename-series.c:804
 msgid "Edit Template"
-msgstr ""
+msgstr "Upraviť šablónu"
 
 #: ../extensions/rename_series/dlg-rename-series.c:862
 msgid "Old Name"
@@ -4197,19 +4208,19 @@ msgstr ""
 
 #: ../extensions/rename_series/dlg-rename-series.c:953
 msgid "Convert to upper-case"
-msgstr ""
+msgstr "Zmeniť na kapitálky"
 
 #: ../extensions/rename_series/gth-rename-task.c:167
 msgid "Renaming files"
-msgstr ""
+msgstr "Premenovávam súbory"
 
 #: ../extensions/rename_series/rename_series.extension.in.in.h:1
 msgid "Rename files"
-msgstr ""
+msgstr "Premenovať súbory"
 
 #: ../extensions/rename_series/rename_series.extension.in.in.h:2
 msgid "Rename series of files."
-msgstr ""
+msgstr "Premenovať sady súborov"
 
 #: ../extensions/resize_images/callbacks.c:45
 msgid "Resize Images..."
@@ -4221,7 +4232,7 @@ msgstr ""
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:1
 msgid "Resize Images"
-msgstr ""
+msgstr "Zmeniť veľkosť obrázkov"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:2
 msgid "New dimensions"
@@ -4238,11 +4249,11 @@ msgstr ""
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:9
 #: ../pix/gth-main-default-metadata.c:49
 msgid "Format"
-msgstr ""
+msgstr "Formát"
 
 #: ../extensions/resize_images/data/ui/resize-images.ui.h:10
 msgid "pixel"
-msgstr ""
+msgstr "pixel"
 
 #: ../extensions/resize_images/dlg-resize-images.c:420
 msgid "Keep the original format"
@@ -4250,7 +4261,7 @@ msgstr ""
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:1
 msgid "Resize images"
-msgstr ""
+msgstr "Zmeniť veľkosť obrázkov"
 
 #: ../extensions/resize_images/resize_images.extension.in.in.h:2
 msgid "Resize series of images."
@@ -4267,15 +4278,15 @@ msgstr "Výsledky hľadania"
 
 #: ../extensions/search/actions.c:76 ../extensions/search/callbacks.c:58
 msgid "Find"
-msgstr ""
+msgstr "Nájsť"
 
 #: ../extensions/search/callbacks.c:59
 msgid "Find files"
-msgstr ""
+msgstr "Hľadať súbory"
 
 #: ../extensions/search/callbacks.c:132
 msgid "Search again"
-msgstr ""
+msgstr "Hľadať znova"
 
 #. Translators: This is not a verb, it's a name as in "the search properties".
 #: ../extensions/search/callbacks.c:174
@@ -4300,7 +4311,7 @@ msgstr ""
 
 #: ../extensions/search/gth-search-task.c:271
 msgid "Searching..."
-msgstr ""
+msgstr "Hľadá sa..."
 
 #: ../extensions/search/gth-search-task.c:277
 msgid "Cancel the operation"
@@ -4364,11 +4375,11 @@ msgstr "Premietanie snímkov"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
 msgid "_Personalize"
-msgstr ""
+msgstr "_Prispôsobiť"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
 msgid "_Transition effect:"
-msgstr ""
+msgstr "_Efekt prechodu:"
 
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
@@ -4385,15 +4396,15 @@ msgstr ""
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
 msgid "Playlist"
-msgstr ""
+msgstr "Zoznamy skladieb"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
 msgid "Add files to the playlist"
-msgstr ""
+msgstr "Pridať súbory do playlistu"
 
 #: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
 msgid "Remove the selected files"
-msgstr ""
+msgstr "Odstrániť vybrané súbory"
 
 #: ../extensions/slideshow/gth-slideshow.c:234
 msgid "Playing slideshow"
@@ -4405,11 +4416,11 @@ msgstr ""
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:193
 msgid "Audio files"
-msgstr ""
+msgstr "Zvukové súbory"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:259
 msgid "Random"
-msgstr ""
+msgstr "Náhodné"
 
 #: ../extensions/slideshow/main.c:283
 msgid "Push from right"
@@ -4493,19 +4504,19 @@ msgstr ""
 
 #: ../extensions/webalbums/data/albumthemes/text.h:35
 msgid "View the next page"
-msgstr ""
+msgstr "Pozrieť nasledujúcu stranu"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:36
 msgid "View the previous image"
-msgstr ""
+msgstr "Pozrieť predchádzajúci obrázok"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:37
 msgid "View the previous page"
-msgstr ""
+msgstr "Pozrieť predchádzajúcu stranu"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
 msgid "All images on  a single image"
-msgstr ""
+msgstr "Všetky obrázky v jednom"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
 msgid "Adapts to the window width"
@@ -4518,7 +4529,7 @@ msgstr "Web album"
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
 #, no-c-format
 msgid "%P"
-msgstr ""
+msgstr "%P"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
 msgid "_Copy originals to destination"
@@ -4538,11 +4549,11 @@ msgstr ""
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:32
 msgid "The current image number"
-msgstr ""
+msgstr "Číslo akuálneho obrázka"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:33
 msgid "The total number of images"
-msgstr ""
+msgstr "Počet všetkých obrázkov"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:35
 msgid "The file comment"
@@ -4554,7 +4565,7 @@ msgstr ""
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:37
 msgid "Show the description, if available"
-msgstr ""
+msgstr "Ukáž popis ak je dostupný"
 
 #: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:38
 msgid "Show the following attributes:"
@@ -4614,7 +4625,7 @@ msgstr ""
 
 #: ../pix/dlg-personalize-filters.c:237
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #: ../pix/dlg-personalize-filters.c:315
 msgid "Could not save the filter"
@@ -4626,7 +4637,7 @@ msgstr ""
 
 #: ../pix/dlg-personalize-filters.c:387
 msgid "Edit Filter"
-msgstr ""
+msgstr "Nastavenie filtru"
 
 #: ../pix/dlg-preferences-extensions.c:67 ../pix/gth-filterbar.c:277
 msgid "All"
@@ -4634,11 +4645,11 @@ msgstr "Všetko"
 
 #: ../pix/dlg-preferences-extensions.c:68
 msgid "Enabled"
-msgstr ""
+msgstr "Povelené"
 
 #: ../pix/dlg-preferences-extensions.c:69
 msgid "Disabled"
-msgstr ""
+msgstr "Vypnuté"
 
 #: ../pix/dlg-preferences-extensions.c:72
 msgid "Viewers"
@@ -4646,7 +4657,7 @@ msgstr ""
 
 #: ../pix/dlg-preferences-extensions.c:73
 msgid "Metadata"
-msgstr ""
+msgstr "Metadáta"
 
 #: ../pix/dlg-preferences-extensions.c:74
 msgid "File tools"
@@ -4675,15 +4686,15 @@ msgstr ""
 #. add the page to the preferences dialog
 #: ../pix/dlg-preferences-extensions.c:777
 msgid "Extensions"
-msgstr ""
+msgstr "Rozšírenia"
 
 #: ../pix/dlg-preferences-extensions.c:824
 msgid "Restart required"
-msgstr ""
+msgstr "Je potrebný reštart"
 
 #: ../pix/dlg-preferences-extensions.c:825
 msgid "You need to restart pix for these changes to take effect"
-msgstr ""
+msgstr "Je potrebné reštartovať Pix, aby sa tieto zmeny prejavili."
 
 #: ../pix/dlg-preferences-extensions.c:826
 msgid "_Continue"
@@ -4691,31 +4702,31 @@ msgstr "_Pokračovať"
 
 #: ../pix/dlg-preferences-extensions.c:827
 msgid "_Restart"
-msgstr ""
+msgstr "_Reštartovať"
 
 #. For translators: This is a progress size indicator, for example: 230.4 MB of 512.8 MB
 #: ../pix/gio-utils.c:1351
 #, c-format
 msgid "%s of %s"
-msgstr ""
+msgstr "%s z %s"
 
 #: ../pix/gio-utils.c:1386
 #, c-format
 msgid "Moving \"%s\" to \"%s\""
-msgstr ""
+msgstr "Presúvam \"%s\" do \"%s\""
 
 #: ../pix/gio-utils.c:1388
 #, c-format
 msgid "Copying \"%s\" to \"%s\""
-msgstr ""
+msgstr "Kopírujem \"%s\" do \"%s\""
 
 #: ../pix/gio-utils.c:1750
 msgid "Moving files"
-msgstr ""
+msgstr "Presúvam súbory"
 
 #: ../pix/gio-utils.c:1750
 msgid "Copying files"
-msgstr ""
+msgstr "Kopírovanie súborov"
 
 #: ../pix/gio-utils.c:1751
 msgid "Getting file information"
@@ -4731,7 +4742,7 @@ msgstr ""
 #, c-format
 msgctxt "long time format"
 msgid "%d:%02d:%02d"
-msgstr ""
+msgstr "%d:%02d:%02d"
 
 #. minutes:seconds
 #. Translators: This is a time format, like "5:02" for 5
@@ -4743,7 +4754,7 @@ msgstr ""
 #, c-format
 msgctxt "short time format"
 msgid "%d:%02d"
-msgstr ""
+msgstr "%d:%02d"
 
 #: ../pix/gth-browser-actions-callbacks.c:414
 msgid ""
@@ -4778,6 +4789,7 @@ msgstr ""
 "Peter Tuhársky <tuharsky@misbb.sk>\n"
 "\n"
 "Launchpad Contributions:\n"
+"  Adrián Bíro https://launchpad.net/~biroadrian\n"
 "  Andrej https://launchpad.net/~5agent55\n"
 "  David https://launchpad.net/~medzernik\n"
 "  Jozef Lukacovic https://launchpad.net/~jezko\n"
@@ -4805,7 +4817,7 @@ msgstr "_Pomocník"
 
 #: ../pix/gth-browser-actions-entries.h:36
 msgid "Open _With"
-msgstr ""
+msgstr "Otvoriť _pomocou"
 
 #: ../pix/gth-browser-actions-entries.h:37
 msgid "I_mport From"
@@ -4830,11 +4842,11 @@ msgstr "Otvoriť"
 
 #: ../pix/gth-browser-actions-entries.h:59
 msgid "Save As..."
-msgstr ""
+msgstr "Uložiť ako..."
 
 #: ../pix/gth-browser-actions-entries.h:65
 msgid "Revert"
-msgstr ""
+msgstr "Obnoviť"
 
 #: ../pix/gth-browser-actions-entries.h:77
 msgid "Open in New Window"
@@ -4846,23 +4858,23 @@ msgstr "Upraviť rôzne predvoľby"
 
 #: ../pix/gth-browser-actions-entries.h:95
 msgid "_Sort By..."
-msgstr ""
+msgstr "U_sporiadať podľa..."
 
 #: ../pix/gth-browser-actions-entries.h:101
 msgid "_Filter..."
-msgstr ""
+msgstr "_Filtrovať..."
 
 #: ../pix/gth-browser-actions-entries.h:107
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Stop loading the current location"
-msgstr ""
+msgstr "Zastaviť načítavanie tohto umiestnenia"
 
 #: ../pix/gth-browser-actions-entries.h:113
 msgid "Reload"
-msgstr ""
+msgstr "Znovu načítať"
 
 #: ../pix/gth-browser-actions-entries.h:114
 msgid "Reload the current location"
@@ -4878,20 +4890,20 @@ msgstr "Zobraziť ďalší obrázok"
 
 #: ../pix/gth-browser-actions-entries.h:131
 msgid "Fullscreen"
-msgstr ""
+msgstr "Celá obrazovka"
 
 #: ../pix/gth-browser-actions-entries.h:132
 msgid "Switch to fullscreen"
-msgstr ""
+msgstr "Prepne na celú obrazovku"
 
 #: ../pix/gth-browser-actions-entries.h:137
 #: ../pix/gth-browser-actions-entries.h:138
 msgid "Leave Fullscreen"
-msgstr ""
+msgstr "Opustiť režim celej obrazovky"
 
 #: ../pix/gth-browser-actions-entries.h:143
 msgid "Back"
-msgstr ""
+msgstr "Dozadu"
 
 #: ../pix/gth-browser-actions-entries.h:144 ../pix/gth-browser.c:3842
 msgid "Go to the previous visited location"
@@ -4899,7 +4911,7 @@ msgstr "Prejsť na naposledy navštívené miesto"
 
 #: ../pix/gth-browser-actions-entries.h:149
 msgid "Forward"
-msgstr ""
+msgstr "Dopredu"
 
 #: ../pix/gth-browser-actions-entries.h:150 ../pix/gth-browser.c:3860
 msgid "Go to the next visited location"
@@ -4907,7 +4919,7 @@ msgstr "Prejsť na nasledujúce navštívené miesto"
 
 #: ../pix/gth-browser-actions-entries.h:155
 msgid "Up"
-msgstr ""
+msgstr "Hore"
 
 #: ../pix/gth-browser-actions-entries.h:156 ../pix/gth-browser.c:3878
 msgid "Go up one level"
@@ -4919,7 +4931,7 @@ msgstr "_Umiestnenie..."
 
 #: ../pix/gth-browser-actions-entries.h:162
 msgid "Specify a location to open"
-msgstr ""
+msgstr "Určí umiestnenie, ktoré sa má otvoriť"
 
 #: ../pix/gth-browser-actions-entries.h:173 ../pix/gth-browser.c:722
 msgid "_Delete History"
@@ -4935,7 +4947,7 @@ msgstr "Zobraziť priečinky"
 
 #: ../pix/gth-browser-actions-entries.h:185
 msgid "About"
-msgstr ""
+msgstr "O aplikácii"
 
 #: ../pix/gth-browser-actions-entries.h:186
 msgid "Show information about pix"
@@ -4956,7 +4968,7 @@ msgstr "_Klávesové skratky"
 #: ../pix/gth-browser-actions-entries.h:203
 #: ../pix/gth-browser-actions-entries.h:257
 msgid "Edit"
-msgstr ""
+msgstr "Upraviť"
 
 #: ../pix/gth-browser-actions-entries.h:204
 #: ../pix/gth-browser-actions-entries.h:258
@@ -4981,7 +4993,7 @@ msgstr "Zobraziť alebo skryť stavový riadok tohto okna"
 
 #: ../pix/gth-browser-actions-entries.h:222
 msgid "_Filterbar"
-msgstr ""
+msgstr "Panel _filtrov"
 
 #: ../pix/gth-browser-actions-entries.h:223
 msgid "View or hide the filterbar of this window"
@@ -4989,7 +5001,7 @@ msgstr "Zobraziť alebo skryť panel nástrojov v tomto okne"
 
 #: ../pix/gth-browser-actions-entries.h:227
 msgid "_Sidebar"
-msgstr ""
+msgstr "_Bočný panel"
 
 #: ../pix/gth-browser-actions-entries.h:228
 msgid "View or hide the sidebar of this window"
@@ -5013,7 +5025,7 @@ msgstr "Zobraziť náhľady"
 
 #: ../pix/gth-browser-actions-entries.h:242
 msgid "_Hidden Files"
-msgstr ""
+msgstr "_Skryté súbory"
 
 #: ../pix/gth-browser-actions-entries.h:243
 msgid "Show hidden files and folders"
@@ -5036,7 +5048,7 @@ msgstr ""
 #: ../pix/gth-browser.c:419
 #, c-format
 msgid "Open %s"
-msgstr ""
+msgstr "Otvoriť %s"
 
 #: ../pix/gth-browser.c:559
 msgid "[modified]"
@@ -5046,13 +5058,14 @@ msgstr "[zmenený]"
 #, c-format
 msgid "%d file selected (%s)"
 msgid_plural "%d files selected (%s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d vybraných súborov (%s)"
+msgstr[1] "%d vybraný súbor (%s)"
+msgstr[2] "%d vybrané súbory (%s)"
 
 #: ../pix/gth-browser.c:1153
 #, c-format
 msgid "%s of free space"
-msgstr ""
+msgstr "%s  voľného miesta"
 
 #: ../pix/gth-browser.c:2074 ../pix/gth-browser.c:2101
 #, c-format
@@ -5070,7 +5083,7 @@ msgstr ""
 
 #: ../pix/gth-browser.c:2226
 msgid "Do _Not Save"
-msgstr ""
+msgstr "Neukladať"
 
 #: ../pix/gth-browser.c:3021 ../pix/gth-source-tree.c:182
 msgid "Could not change name"
@@ -5114,11 +5127,11 @@ msgstr ""
 
 #: ../pix/gth-file-source-vfs.c:128
 msgid "Favorites"
-msgstr ""
+msgstr "Obľubené"
 
 #: ../pix/gth-file-source-vfs.c:131
 msgid "Home Folder"
-msgstr ""
+msgstr "Domovský priečinok"
 
 #: ../pix/gth-file-source-vfs.c:136
 msgid "File System"
@@ -5161,7 +5174,7 @@ msgstr ""
 #: ../pix/gth-filter.c:43 ../pix/gth-filter-editor-dialog.c:178
 #: ../pix/gth-test-simple.c:78
 msgid "kB"
-msgstr ""
+msgstr "kB"
 
 #: ../pix/gth-filter.c:44 ../pix/gth-filter-editor-dialog.c:179
 #: ../pix/gth-test-simple.c:79
@@ -5171,20 +5184,20 @@ msgstr "MB"
 #: ../pix/gth-filter.c:45 ../pix/gth-filter-editor-dialog.c:180
 #: ../pix/gth-test-simple.c:80
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #. "files" label
 #: ../pix/gth-filter.c:286 ../pix/gth-filter-editor-dialog.c:177
 msgid "files"
-msgstr ""
+msgstr "súbory"
 
 #: ../pix/gth-filter-editor-dialog.c:224
 msgid "ascending"
-msgstr ""
+msgstr "vzostupne"
 
 #: ../pix/gth-filter-editor-dialog.c:225
 msgid "descending"
-msgstr ""
+msgstr "zostupne"
 
 #: ../pix/gth-filter-editor-dialog.c:515
 #, c-format
@@ -5197,15 +5210,15 @@ msgstr ""
 
 #: ../pix/gth-histogram-view.c:825
 msgid "Linear scale"
-msgstr ""
+msgstr "Lineárne škálovanie"
 
 #: ../pix/gth-histogram-view.c:837
 msgid "Logarithmic scale"
-msgstr ""
+msgstr "Logaritmické škálovanie"
 
 #: ../pix/gth-histogram-view.c:857
 msgid "Channel:"
-msgstr ""
+msgstr "Kanál:"
 
 #: ../pix/gth-histogram-view.c:878
 msgid "Value"
@@ -5229,11 +5242,11 @@ msgstr "Alfa"
 
 #: ../pix/gth-histogram-view.c:904
 msgid "RGB"
-msgstr ""
+msgstr "RGB"
 
 #: ../pix/gth-image-list-task.c:141
 msgid "Could not rename the file"
-msgstr ""
+msgstr "Nepodarilo sa premenovať súbor"
 
 #: ../pix/gth-image-saver.c:39
 msgid "No options available for this file type"
@@ -5250,7 +5263,7 @@ msgstr ""
 
 #: ../pix/gth-main-default-metadata.c:32
 msgid "File"
-msgstr ""
+msgstr "Súbor"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -5266,27 +5279,27 @@ msgstr "Typ"
 
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Full Name"
-msgstr ""
+msgstr "Celé meno"
 
 #: ../pix/gth-main-default-metadata.c:48
 msgid "Duration"
-msgstr ""
+msgstr "Trvanie"
 
 #: ../pix/gth-main-default-sort-types.c:131
 msgid "file name"
-msgstr ""
+msgstr "názov súboru"
 
 #: ../pix/gth-main-default-sort-types.c:132
 msgid "file path"
-msgstr ""
+msgstr "file path tj. umiestnenie súboru"
 
 #: ../pix/gth-main-default-sort-types.c:133
 msgid "file size"
-msgstr ""
+msgstr "veľkosť súboru"
 
 #: ../pix/gth-main-default-sort-types.c:134
 msgid "file modified date"
-msgstr ""
+msgstr "dátum upravenia súboru"
 
 #: ../pix/gth-main-default-sort-types.c:135
 msgid "no sorting"
@@ -5294,19 +5307,19 @@ msgstr ""
 
 #: ../pix/gth-main-default-sort-types.c:136
 msgid "dimensions"
-msgstr ""
+msgstr "rozmery"
 
 #: ../pix/gth-main-default-tests.c:252
 msgid "All Files"
-msgstr ""
+msgstr "Všetky súbory"
 
 #: ../pix/gth-main-default-tests.c:280
 msgid "Media"
-msgstr ""
+msgstr "Média"
 
 #: ../pix/gth-main-default-tests.c:287
 msgid "Text Files"
-msgstr ""
+msgstr "Textové súbory"
 
 #: ../pix/gth-main-default-tests.c:295
 msgid "Filename"
@@ -5322,7 +5335,7 @@ msgstr ""
 
 #: ../pix/gth-progress-dialog.c:146
 msgid "Cancel operation"
-msgstr ""
+msgstr "Zrušiť operáciu"
 
 #: ../pix/gth-save-file-data-task.c:102
 msgid "Saving file information"
@@ -5332,7 +5345,7 @@ msgstr ""
 #: ../pix/gth-save-image-task.c:160
 #, c-format
 msgid "Saving '%s'"
-msgstr ""
+msgstr "Ukladá sa „%s“"
 
 #: ../pix/gth-tags-entry.c:390
 #, c-format
@@ -5361,7 +5374,7 @@ msgstr "Veda"
 
 #: ../pix/gth-tags-file.c:239
 msgid "Favorite"
-msgstr ""
+msgstr "Obľúbené"
 
 #: ../pix/gth-tags-file.c:240
 msgid "Important"
@@ -5437,7 +5450,7 @@ msgstr "neobsahuje"
 
 #: ../pix/gth-test-simple.c:53
 msgid "matches"
-msgstr ""
+msgstr "výsledky"
 
 #: ../pix/gth-test-simple.c:57
 msgid "is lower than"
@@ -5453,11 +5466,11 @@ msgstr "je rovnaký ako"
 
 #: ../pix/gth-test-simple.c:60
 msgid "is greater than or equal to"
-msgstr ""
+msgstr "je viac alebo rovné než"
 
 #: ../pix/gth-test-simple.c:61
 msgid "is lower than or equal to"
-msgstr ""
+msgstr "je menej alebo rovnako ako"
 
 #: ../pix/gth-test-simple.c:65
 msgid "is before"
@@ -5469,15 +5482,15 @@ msgstr "je po"
 
 #: ../pix/gth-time-selector.c:487
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: ../pix/gth-time-selector.c:495
 msgid "Now"
-msgstr ""
+msgstr "Teraz"
 
 #: ../pix/gth-window-actions-entries.h:31
 msgid "Close"
-msgstr ""
+msgstr "Zavrieť"
 
 #: ../pix/gth-window-actions-entries.h:32
 msgid "Close this window"
@@ -5485,7 +5498,7 @@ msgstr "Zatvoriť toto okno"
 
 #: ../pix/gth-window-actions-entries.h:36
 msgid "Close _All Windows"
-msgstr ""
+msgstr "Z_avrieť všetky okná"
 
 #: ../pix/gtk-utils.c:490
 msgid "Could not display help"
@@ -5493,19 +5506,19 @@ msgstr "Nepodarilo sa zobraziť pomocníka"
 
 #: ../pix/gtk-utils.c:810 ../pix/gtk-utils.c:817
 msgid "Could not launch the application"
-msgstr ""
+msgstr "Nie je možné otvoriť aplikáciu."
 
 #: ../pix/gtk-utils.c:920
 msgid "_Copy Here"
-msgstr ""
+msgstr "_Kopírovať sem"
 
 #: ../pix/gtk-utils.c:925
 msgid "_Move Here"
-msgstr ""
+msgstr "_Presunúť sem"
 
 #: ../pix/gtk-utils.c:930
 msgid "_Link Here"
-msgstr ""
+msgstr "_Tu vytvoriť odkaz"
 
 #: ../pix/gtk-utils.c:939
 msgid "Cancel"
@@ -5533,4 +5546,4 @@ msgstr "Ukázať verziu"
 
 #: ../pix/main.c:492
 msgid "- Image browser and viewer"
-msgstr ""
+msgstr "-Prehliadač a zobrazovač obrázkov"
