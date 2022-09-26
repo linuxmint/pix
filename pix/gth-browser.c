@@ -5767,7 +5767,7 @@ file_metadata_ready_cb (GList    *files,
 		 * a different viewer_page. */
 
 		if (different_mime_type && (G_OBJECT_TYPE (browser->priv->viewer_page) == G_OBJECT_TYPE (basic_viewer_page)))
-			_gth_browser_load_file (browser, data->file_data, data->view);
+			_gth_browser_load_file (browser, file_data, data->view);
 		else
 			gth_viewer_page_update_info (browser->priv->viewer_page, browser->priv->current_file);
 	}
