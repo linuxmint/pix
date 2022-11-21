@@ -1,3 +1,16 @@
+pix (2.8.8) vera; urgency=medium
+
+  [ Rick Calixte ]
+  * Fix .gitignore for builds (#154)
+
+  [ Michael Webster ]
+  * Build: Restore po/Makefile.in.in from previous commit - removing it breaks the LMDE5 build.
+  * Use github actions for CI builds.
+  * gth-browser.c: Don't continuously reload a single image.
+  * Disable 'fast' content detection by default.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 21 Nov 2022 14:47:35 +0000
+
 pix (2.8.7) vanessa; urgency=medium
 
   * l10n: Update translations
