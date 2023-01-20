@@ -54,7 +54,6 @@ gthumb_pc = pkg.generate(
 
 # Subdirectories
 
-subdir('appdata')
 subdir('gschemas')
 subdir('icons')
 subdir('ui')
