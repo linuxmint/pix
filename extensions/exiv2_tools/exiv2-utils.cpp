@@ -1227,7 +1227,7 @@ exiv2_write_metadata_private (Exiv2::Image::AutoPtr  image,
 					      NULL,
 					      NULL))
 		{
-			thumb.setJpePixnail ((Exiv2::byte *) buffer, buffer_size);
+			thumb.setJpegThumbnail ((Exiv2::byte *) buffer, buffer_size);
 			ed["Exif.Thumbnail.XResolution"] = 72;
 			ed["Exif.Thumbnail.YResolution"] = 72;
 			ed["Exif.Thumbnail.ResolutionUnit"] =  2;
