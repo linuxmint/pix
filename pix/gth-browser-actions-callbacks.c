@@ -131,7 +131,7 @@ gth_browser_activate_about (GSimpleAction *action,
 			       "translator-credits", _("translator-credits"),
 			       "license", license_text,
 			       "wrap-license", TRUE,
-			       "website", "https://wiki.gnome.org/Apps/Gthumb",
+			       "website", "https://github.com/linuxmint/pix",
 			       (logo != NULL ? "logo" : NULL), logo,
 			       NULL);
 

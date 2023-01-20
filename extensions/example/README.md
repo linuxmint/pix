@@ -22,4 +22,4 @@ After installing the extension, start gThumb and activate it from the
 Preferences dialog.
 
 If you think your extension can be useful to others as well, add it to
-the extensions list available at <https://wiki.gnome.org/Apps/Gthumb/extensions>.
+the extensions list available at <https://github.com/linuxmint/pix>.
