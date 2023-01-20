@@ -1,7 +1,7 @@
-Source: gthumb
+Source: pix
 Section: gnome
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
+Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
  bison,
  debhelper-compat (= 13),
@@ -25,11 +25,9 @@ Build-Depends:
  meson,
  yelp-tools,
 Standards-Version: 4.6.0
-Vcs-Git: https://salsa.debian.org/debian/gthumb.git
-Vcs-Browser: https://salsa.debian.org/debian/gthumb
-Homepage: https://wiki.gnome.org/Apps/Gthumb
+Homepage: https://github.com/linuxmint/pix
 
-Package: gthumb
+Package: pix
 Architecture: any
 Pre-Depends:
  ${misc:Pre-Depends},
@@ -39,61 +37,66 @@ Depends:
  libgl1-mesa-dri,
  ${misc:Depends},
  ${shlibs:Depends},
+ dcraw,
+ xapps-common (>= 2.2.7),
 Recommends:
  libgphoto2-6,
  libgphoto2-port12,
-Conflicts:
- gthumb2,
-Provides:
- gthumb2,
-Breaks:
- gthumb-data (<< 3:3.4.4.1-4~),
-Replaces:
- gthumb-data (<< 3:3.4.4.1-4~),
 Description: image viewer and browser
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
 
-Package: gthumb-data
+Package: pix-data
 Architecture: all
-Breaks:
- gthumb (<< 3:2.10.8-1),
-Replaces:
- gthumb (<< 3:2.10.8-1),
 Recommends:
  yelp,
 Depends:
  ${misc:Depends},
 Description: image viewer and browser - arch-independent files
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
  .
- This package contains the architecture-independent files needed by gthumb.
+ This package contains the architecture-independent files needed by pix.
 
-Package: gthumb-dev
+Package: pix-dev
 Architecture: any
 Multi-Arch: no
 Section: devel
 Depends:
- gthumb (= ${binary:Version}),
+ pix (= ${binary:Version}),
  ${misc:Depends},
 Description: image viewer and browser - development files
- gThumb is an advanced image viewer and browser. It has many useful
+ Pix is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- It's designed for GNOME desktop environment and uses its platform. For
- camera import feature, the gPhoto2 library is used.
+ For camera import feature, the gPhoto2 library is used.
  .
  This package contains the files needed to develop third-party extensions.
+
+Package: pix-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends:
+ ${misc:Depends},
+ pix (= ${binary:Version}),
+Description: image viewer and browser - debugging symbols
+ Pix is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ For camera import feature, the gPhoto2 library is used.
+ .
+ This package contains the debugging symbols for Pix.
+

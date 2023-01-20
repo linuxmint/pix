@@ -6,5 +6,8 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 include /usr/share/dpkg/architecture.mk
 
+override_dh_strip:
+	dh_strip --keep-debug -X*.la -X*.a --dbg-package=pix-dbg
+
 %:
 	dh $@

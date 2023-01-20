@@ -1,1778 +1,453 @@
-gthumb (3:3.12.0-2) unstable; urgency=medium
+pix (2.8.9) vera; urgency=medium
 
-  * QA upload.
-  * Cherry-pick patch to fix build with latest meson
-  * Use debian/gthumb.docs to install NEWS
+  * l10n: Update translations
 
- -- Jeremy Bicha <jeremy.bicha@canonical.com>  Mon, 07 Feb 2022 10:39:44 -0500
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 16 Dec 2022 13:12:50 +0000
 
-gthumb (3:3.12.0-1) unstable; urgency=medium
+pix (2.8.8) vera; urgency=medium
 
-  * QA upload.
-  * New upstream release.
+  [ Rick Calixte ]
+  * Fix .gitignore for builds (#154)
 
- -- Boyuan Yang <byang@debian.org>  Wed, 29 Sep 2021 21:10:16 -0400
+  [ Michael Webster ]
+  * Build: Restore po/Makefile.in.in from previous commit - removing it breaks the LMDE5 build.
+  * Use github actions for CI builds.
+  * gth-browser.c: Don't continuously reload a single image.
+  * Disable 'fast' content detection by default.
 
-gthumb (3:3.11.4-1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 21 Nov 2022 14:47:35 +0000
 
-  * QA upload.
-  * New upstream release.
-  * debian/control: Bump Standards-Version to 4.6.0.
-  * debian/control: Add new build-dependency libheif-dev (>= 1.11~).
+pix (2.8.7) vanessa; urgency=medium
 
- -- Boyuan Yang <byang@debian.org>  Thu, 09 Sep 2021 21:04:43 -0400
+  * l10n: Update translations
 
-gthumb (3:3.11.3-1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Jul 2022 12:26:41 +0200
 
-  * QA upload.
-  * Orphan the package.
-  * New upstream release.
-  * debian/: Apply wrap-and-sort -abst.
+pix (2.8.6) vanessa; urgency=medium
 
- -- Boyuan Yang <byang@debian.org>  Sun, 15 Aug 2021 12:19:11 -0400
+  * CI: Update targets
+  * l10n: Update translations
 
-gthumb (3:3.11.2-0.1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 26 Jun 2022 16:06:06 +0200
 
-  * Non-maintainer upload.
-  * New upstream release.
-  * debian/patches/backport/: Dropped, merged upstream.
-  * debian/source/options: Dropped, not needed.
+pix (2.8.5) vanessa; urgency=medium
 
- -- Boyuan Yang <byang@debian.org>  Sun, 10 Jan 2021 17:05:12 -0500
+  [ Michael Webster ]
+  * Add Downloads to the sidebar folder navigator.
 
-gthumb (3:3.11.1-0.1) unstable; urgency=medium
+ -- Clement Lefebvre <clem@macbook>  Sat, 11 Jun 2022 11:53:41 +0200
 
-  * Non-maintainer upload.
-  * New upstream release. (Closes: #953583)
-  * Drop unnecessary build-dependency on dbus-glib. (Closes: #955847)
-  * debian/patches/backport/:
-    + 0001: Add patch for upstream issue 147. (Fixed jump to bottom
-            when selecting thumbnails with mouse)
-    + 0002: Add patch for upstream issue 137. (exiv2: remove the
-            charset= prefix from strings). (Closes: #974608)
+pix (2.8.4) una; urgency=medium
 
- -- Boyuan Yang <byang@debian.org>  Sun, 03 Jan 2021 21:08:56 -0500
+  * l10n: Update translations
 
-gthumb (3:3.8.3-0.1) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 31 Dec 2021 12:55:29 +0000
 
-  * Non-maintainer upload.
-  * New upstream release.
-    - Includes the fix for CVE-2019-20326. (Closes: #948197)
+pix (2.8.3) una; urgency=medium
 
- -- Adrian Bunk <bunk@debian.org>  Mon, 26 Oct 2020 16:46:05 +0200
+  * Change zoom-to-fit-width icon
 
-gthumb (3:3.8.0-2.1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Dec 2021 13:59:46 +0000
 
-  * Non-maintainer upload.
-  * Source-only upload to allow testing migration.
-  * debian/control: Bump Standards-Version to 4.4.1.
+pix (2.8.2) una; urgency=medium
 
- -- Boyuan Yang <byang@debian.org>  Mon, 06 Jan 2020 13:33:46 -0500
+  [ Michael Webster ]
+  * Support hidpi in the folder tree and bookmark dropdown menu.
 
-gthumb (3:3.8.0-2) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 16 Dec 2021 10:11:15 +0000
 
-  * Upload to unstable
-  * Use 'debhelper-compat' in d/control rather than d/compat file
-  * Add gthumb.lintian-overrides file as blhc returns nothing
-  * debian/control:
-      -  Bump Standards-Version from 4.3.0 to 4.4.0
+pix (2.8.1) una; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Tue, 23 Jul 2019 13:36:16 -0300
+  * l10n: Update translations
 
-gthumb (3:3.8.0-1) experimental; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Dec 2021 15:44:57 +0000
 
-  * New upstream version 3.8.0
-  * DH_DEVEL: 12
-  * debian/control:
-      - Add meson to Build-Depends
-  * debian/copyright:
-      - A lot -f *.po files update
-      - Some changes based on 'debmake- k'
-      - One new entry
-  * debian/not-installed:
-      - Create file to silence dh_missing when
-        'dpkg-buildpackage -A'
-  * debian/patches/series:
-      - One patch only. help/C dir
-  * debian/rules:
-      - Remove overrides and compile flags:
-          - DEB_CXXFLAGS_MAINT_APPEND
-          - DEB_LDFLAGS_MAINT_APPEND
-          blhc returns nothing
-
-          - override_dh_auto_configure
-            meson.build file takes care of it
-          - override_dh_auto_build
-            For one extension - 23hq. Upstream should
-            know what he is doing.
-          - override_dh_strip
-            It was for static libs
-  * debian/gthumb-dev.install:
-      - No static libs
-  * debian/gthumb.install:
-      - Glob to /path/to/xml
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Tue, 04 Jun 2019 09:41:59 -0300
-
-gthumb (3:3.6.2-4) unstable; urgency=medium
-
-  * debian/control:
-      - Bump Standards-Version
-  * debian/rules:
-      - dh_auto_build: add '-lc' to 23hq extension
-  * debian/patches:
-      - Upstream fix for cve-2018-18718 (Bug #912290)
-        Add contact_sheet_theme_not_loaded.patch
-        Remove cve-2018-18718.patch
-      - Add fixed_crash_drag_file_middle_button.patch
-      - Add add_missing_attr_create_gdk_window.patch
+pix (2.8.0) una; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sun, 24 Feb 2019 18:17:43 -0300
-
-gthumb (3:3.6.2-3) unstable; urgency=medium
-
-  * debian/tests/control;
-      - Add CI tests
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sun, 25 Nov 2018 16:32:55 -0200
-
-gthumb (3:3.6.2-2) unstable; urgency=medium
+  [ Clement Lefebvre ]
+  * Add support for dark mode
+  * l10n: Update POT
+  * Extensions: Remove obsolete link
+  * Dark mode: Disable option in Xfce
 
-  * debian/patches/
-      - cve-2018-18718.patch file (Closes: #912290)
-        CVE-2018-18718 - CWE-415: Double Free
-        The product calls free() twice on the same memory address, potentially
-        leading to modification of unexpected memory locations.
-
-        There is a suspected double-free bug with
-        static void add_themes_from_dir() dlg-contact-sheet.c. This method
-        involves two successive calls of g_free(buffer) (line 354 and 373),
-        and is likely to cause double-free of the buffer. One possible fix
-        could be directly assigning the buffer to NULL after the first call
-        of g_free(buffer). Thanks Tianjun Wu
-        https://gitlab.gnome.org/GNOME/gthumb/issues/18
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Tue, 30 Oct 2018 09:06:29 -0300
-
-gthumb (3:3.6.2-1) unstable; urgency=medium
-
-  * New upstream version 3.6.2
-  * debian/control:
-      - Bump Standards-Version from 4.1.3 to 4.2.1. No changes
-  * debian/copyright:
-      - Update translators
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 20 Oct 2018 12:02:36 -0300
-
-gthumb (3:3.6.1-1) unstable; urgency=medium
-
-  * New upstream version 3.6.1
-  * debian/copyright:
-      - Update some 'year' fields
-  * debian/gbp.conf:
-      - Remove signs-tag from gbp.conf
-  * debian/upstream/metadata:
-      - Create
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 24 Mar 2018 09:24:43 -0300
-
-gthumb (3:3.6.0-4) unstable; urgency=medium
-
-  * debian/control:
-      - Add libgl1-mesa-dri to Gthumb Depends. (Closes: #888568)
-        Thanks Michelle Konzack
-  * debian/copyright:
-      - Secure copyright format uri
-  * debian/patches:
-      - Remove patches not in series
-  * debian/rules:
-      - Remove '--parallel' - dh default
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 17 Feb 2018 12:51:59 -0200
-
-gthumb (3:3.6.0-3) unstable; urgency=medium
-
-  * DH_LEVEL: 11
-  * debian/control:
-      - Bump Standards-Version from 4.1.2 to 4.1.3
-      - Update Vcs-* entries to salsa.debian.org
-      - Update homepage entry
-      - Remove libgnome-keyring-dev. (Closes: #886477)
-        Thanks Jeremy Bicha
-  * debian/copyright:
-      - Update
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sun, 07 Jan 2018 10:51:07 -0200
-
-gthumb (3:3.6.0-2) unstable; urgency=medium
-
-  * debian/control:
-      - Bump Standards-Version from 4.1.1 to 4.1.2
-      - gthumb-dev: Multi-Arch: no
+  [ Isaac Carter ]
+  * Fix crash with "Enhance Focus" (#136)
+  * Fix crash with Darktable jpg (#141)
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 23 Dec 2017 13:34:16 -0200
-
-gthumb (3:3.6.0-1) unstable; urgency=medium
-
-  * New upstream version 3.6.0
-  * debian/rules:
-      - Remove unrecognized options:
-          - --with-gconf-schema-file-dir
-          - --disable-brasero
-  * debian/watch:
-      - secure uri
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 25 Nov 2017 09:38:23 -0200
-
-gthumb (3:3.5.4-1) unstable; urgency=medium
-
-  * New upstream version 3.5.4
-  * debian/control:
-      - Build-Depends: remade
-  * debian/copyright:
-      - Update
-
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 11 Nov 2017 14:02:47 -0200
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 23 Nov 2021 10:22:26 +0000
 
-gthumb (3:3.5.3-1) unstable; urgency=medium
-
-  * New upstream version 3.5.3
-  * debian/control:
-      - Bump Standards-Version to 4.1.1
-      - Remove gvfs-bin from Recommends. (Closes: #877745)
-        Thanks Paul Wise.
-  * debian/copyright:
-      - Update.
-  * debian/gbp.conf:
-      - Created.
-  * debian/gthumb.install:
-      - Rename file to be installed.
-  * debian/patches:
-      - Remove help-C-strftime.patch. Upstream fix.
-      - Remove help-C-shortcuts.patch. Upstream fix.
-      - Remove gthumb_appdata_xml_fix.patch. Upstream fix.
-      - Remove 10-fix_POTFILES.skip.patch. It refers to files in .pc dir
-        that were lost when rebuilding the repo.
-  * Add .pc dir
+pix (2.6.5) uma; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 07 Oct 2017 11:03:19 -0300
+  * l10n: Update translations
 
-gthumb (3:3.5.2-2) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 25 Jun 2021 15:15:31 +0100
 
-  * debian/control:
-      - Remove bison and flex from Recommends. (Closes: #689006)
-        Thanks Yann Dirson and Jeremy Bicha.
+pix (2.6.4) uma; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Tue, 15 Aug 2017 07:49:36 -0300
+  * l10n: Update translations
 
-gthumb (3:3.5.2-1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Jun 2021 11:16:39 +0100
 
-  * New upstream version 3.5.2
-  * debian/copyright:
-      - Update
-  * debian/rules:
-      - Add override_dh_strip
-      - Using DEB_*_MAINT_APPEND instead of configure vars
+pix (2.6.3) ulyssa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 12 Aug 2017 16:36:47 -0300
+  * l10n: Update translations
 
-gthumb (3:3.5.1-3) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 02 Jan 2021 17:33:23 +0000
 
-  * debian/control:
-      - Remove dh-autoreconf from Build-Depends.
-      - Bump STD-Version to 4.0.0.
-  * debian/gthumb.install:
-      - .xml file goes to metainfo dir now instead of appdata dir.
-  * debian/patches:
-      - Create patch after ran 'appstreamcli validate'.
-      - Refresh help-C-shortcuts.patch because of
-        'Hunk #6 succeeded at 540 (offset 9 lines)'.
-      - Refresh series file.
+pix (2.6.2) ulyssa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Mon, 31 Jul 2017 10:55:03 -0300
+  * l10n: Update translations
 
-gthumb (3:3.5.1-2) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 13 Dec 2020 10:55:05 +0000
 
-  * Upload to unstable.
+pix (2.6.1) ulyssa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 24 Jun 2017 09:21:38 -0300
+  * l10n: Update translations
 
-gthumb (3:3.5.1-1) experimental; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Dec 2020 12:14:33 +0000
 
-  * New upstream version 3.5.1. (Closes: #829899)
-  * debian/copyright:
-      - Update.
-  * debian/patches:
-      - Update 10-fix_POTFILES.skip.patch.
+pix (2.6.0) ulyssa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sun, 14 May 2017 11:17:06 -0300
+  [ icarter09 ]
+  * Removed code causing issue73
+  * Added backspace to list of hot keys for fullscreen mode
+  * Added line on how to remove image from selection
+  * Added Rating to filter list for ticket #104
 
-gthumb (3:3.4.4.1-5) unstable; urgency=medium
+  [ Michael Webster ]
+  * gth-browser.c: Improve handling of invalid uris.
+  * Use debhelper 10 to allow parallel (-j) make jobs.
 
-  * debian/control:(gthumb package)
-      - Remove:
-          - Replaces gthumb2
-      - Add: (because of the previous revision)
-          - Breaks: gthumb-data (<< 3:3.4.4.1-4~)
-          - Replaces: gthumb-data (<< 3:3.4.4.1-4~)
-      (Closes: #857181)
-      Thanks Jeremy Bicha (previous revision too) and Sebastian Ramacher.
+  [ icarter09 ]
+  * Implements #74. Allow for override of permanent delete message
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Wed, 08 Mar 2017 15:48:41 -0300
+  [ Michael Webster ]
+  * Add favorites:/// to the sidebar file browser.
 
-gthumb (3:3.4.4.1-4) unstable; urgency=medium
+  [ brkeh ]
+  * Fix issue 28 (#123)
 
-  * debian/gthumb-data.install:
-      - Remove /usr/share/appdata
-  * debian/gthumb.install:
-      - Add /usr/share/appdata
-  (Closes: #857012)
+  [ Clement Lefebvre ]
+  * l10n: Update POT
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Wed, 08 Mar 2017 09:38:35 -0300
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 01 Dec 2020 16:31:40 +0000
 
-gthumb (3:3.4.4.1-3) unstable; urgency=medium
+pix (2.4.11) ulyana; urgency=medium
 
-  * debian/control:
-      - Remove gstreamer0.10-gnomevfs from Recommends. (Closes: #846013).
-  * debian/rules:
-      - dh_auto_configure:
-          - Add '-fPIE -pie' to LDFLAGS.
-          - Add '-fPIE' to CXXFLAGS.
+  * Fix app version
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Mon, 28 Nov 2016 09:13:26 -0200
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 24 Jun 2020 12:42:58 +0100
 
-gthumb (3:3.4.4.1-2) unstable; urgency=medium
+pix (2.4.10) ulyana; urgency=medium
 
-  * debian/compat:
-      - 10
+  * l10n: Update translations
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Mon, 24 Oct 2016 17:33:34 -0200
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 24 Jun 2020 12:03:54 +0100
 
-gthumb (3:3.4.4.1-1) unstable; urgency=medium
+pix (2.4.9) ulyana; urgency=medium
 
-  * New upstream release.
-  * debian/control:
-      - update my email.
-      - debhelper 10.
-  * debian/copyright:
-      - updated my email.
-  * debian/patches:
-      - 10-fix_POTFILES.skip.patch refreshed
+  [ icarter09 ]
+  * Added README for extensions. Changed extension link to point to the new README.
 
- -- Herbert Parentes Fortes Neto <hpfn@debian.org>  Sat, 22 Oct 2016 15:29:15 -0200
+  [ Clement Lefebvre ]
+  * CI: Target Mint 20 and LMDE 4
 
-gthumb (3:3.4.3-2) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 06 Jun 2020 14:36:10 +0100
 
-  * debian/control:
-      - Bump Standards-Version from 3.9.7 to 3.9.8.
-  * debian/gthumb-data.install:
-      - 'GConf' line removed, and so, removing gthumb.convert file from the
-        Debian package. (Closes: #825305)
-        Thanks Manuel Bilderbeek and Andreas Henriksson.
+pix (2.4.8) ulyana; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Mon, 30 May 2016 11:46:41 -0300
+  * Use the new xapp diaporama-symbolic icon
 
-gthumb (3:3.4.3-1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 11 May 2020 15:52:38 +0100
 
-  * New upstream release.
-  * debian/control:
-      - libraw-dev added to Build-Depends.
-  * debian/copyright updated.
+pix (2.4.7) ulyana; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Wed, 13 Apr 2016 13:50:59 -0300
+  * Packaging: Remove gnome-doc-utils
+  * l10n: Update translations
 
-gthumb (3:3.4.2-1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 11 May 2020 14:02:24 +0100
 
-  * New upstream release.
-  * debian/copyright updated.
-  * debian/patches:
-      - copy-delete.patch removed. Applied by the upstream. ( the patch
-        was wrong, by the way ).
-      - 05-fix_locales.patch unused. File kept.
+pix (2.4.6) tricia; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Thu, 07 Apr 2016 09:29:11 -0300
+  [ Michael Webster ]
+  * cairo_io/cairo-image-surface-xcf.c: Initialize some variables.
 
-gthumb (3:3.4.1-6) unstable; urgency=low
+  [ Clement Lefebvre ]
+  * Remove dependency on scrollkeeper
 
-  * debian/control:
-      - libfl-dev added to Build-Depends.
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 10 Jan 2020 11:51:59 +0000
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Fri, 11 Mar 2016 14:22:52 -0300
+pix (2.4.5) tricia; urgency=medium
 
-gthumb (3:3.4.1-5) unstable; urgency=low
+  [ Paolo Bacchilega ]
+  * jpeg loader: crash when the original size is too big for a cairo surface
+  * jpeg loader: call alloc_sarray before jpeg_start_decompress
+  * jpeg loader: error if the orientation swaps width and height
+  * jpeg loader: do not scan more than output_height lines
+  * cairo scale: do not create images with invalid dimensions
+  * check whether the scaled surface is null before using it
+  * gth-image: allow to set null surfaces
+  * image viewer: do not try do paint surfaces with invalid size
 
-  * debian/control:
-      - Bumped Standards-Version to 3.9.7
-      - Vcs-* fields using https.
-      - gthumb-dbg entry removed.
-  * debian/patches:
-      - copy-delete.patch created. (Closes: #789791).
-        Thanks Michael Chudobiak.
-  * debian/rules:
-      - override_dh_strip entry dropped. Used for dbg package. In favor of
-        dbgsym package.
-  * debian/watch:
-      - version 4.
+  [ Michael Webster ]
+  * various: check for valid surfaces after creating them.
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Wed, 17 Feb 2016 14:13:09 -0200
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 07 Jan 2020 09:43:08 +0000
 
-gthumb (3:3.4.1-4) unstable; urgency=low
+pix (2.4.4) tricia; urgency=medium
 
-  * debian/patches:
-      - privacy-breach-C-legal.patch created due privacy-breach-generic.
-        (lintian)
-      - help-*-strftime.patch removed. Only help-C-strftime.patch kept.
-        help-*-shortcuts.patch removed. Only help-C-shortcuts.patch kept.
-        help/C/* rules.
+  [ Michael Webster ]
+  * gth-image-print-job.c: Update spin button settings when the view is first created, not just when the units combobox is changed.
+  * gth-image-print-job.c: Use better spinbutton settings, and allow adjustment to two decimal places when inch units are selected.
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Sun, 10 Jan 2016 11:20:40 -0200
+  [ Clement Lefebvre ]
+  * l10n: Update translations
 
-gthumb (3:3.4.1-3) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Jan 2020 11:29:22 +0000
 
-  * debian/control:
-      - Build-Depends: libpng12-dev removed. Only libpng-dev.
-        (Closes: #809868, #809943). Thanks Tobias Frost.
-  * debian/copyright updated.
+pix (2.4.3) tricia; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Fri, 08 Jan 2016 18:01:22 -0200
+  * l10n: Update translations
 
-gthumb (3:3.4.1-2) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Dec 2019 14:52:21 +0000
 
-  * due command-in-menu-file-and-desktop-file
-      - debian/gthumb.menu removed.
-      - debian/gthumb.xpm removed.
-      - debian/gthumb-data.install:
-          - gthumb.xpm entry removed.
+pix (2.4.2) tricia; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Sat, 17 Oct 2015 10:53:16 -0300
+  [ Michael Webster ]
+  * print settings: Fix inch-to-metric conversion
+  * print settings: Remove 'pixel' option in units selector. It is confusing because it's treated *exactly* the same as millimeters, and doesn't make much sense as a physical unit of measure even if it was properly calculated.
+  * print settings: Keep images centered until explicitly moved off center (or Custom is explicitly selected).  It makes no sense to have the center combobox revert to Custom when adjusting the image size.
 
-gthumb (3:3.4.1-1) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 09 Dec 2019 09:58:17 +0000
 
-  * New upstream release
-  * debian/copyright updated.
-  * debian/patches:
-      - help-hu-*.patch created.
+pix (2.4.1) tricia; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Sat, 26 Sep 2015 10:16:15 -0300
+  * l10n: Update translations
 
-gthumb (3:3.4.0-4) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Nov 2019 17:13:12 +0000
 
-  * debian/control:
-      - rarian-compat removed from Build-Depends.
-        complete remove of rarian-compat.
-        Thanks João Eriberto Mota Filho.
+pix (2.4.0) tricia; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Tue, 15 Sep 2015 11:37:12 -0300
+  [ Mike Durso ]
+  * Make the slideshow feature respect the preferences zoom quality setting instead of always being low (#83)
 
-gthumb (3:3.4.0-3) unstable; urgency=medium
+  [ Clement Lefebvre ]
+  * Remove gconf usage
+  * Viewer: Switch to high zoom-quality by default
+  * Browser: Replace edit icon
+  * UI: Add a bit of padding around location combo
+  * Deletion dialogs: Highlight OK button by default
 
-  * debian/control:
-      - replace scrollkeeper -> rarian-compat on Builds-Depends.
-      - scrollkeeper removed from gthumb-data dependency.
-        Thanks Oleksandr Gavenko. (Closes: #798468, #652586)
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 Nov 2019 18:16:16 +0100
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Thu, 10 Sep 2015 12:14:33 -0300
+pix (2.2.1) tina; urgency=medium
 
-gthumb (3:3.4.0-2) unstable; urgency=medium
+  * l10n: Update translations
 
-  * debian/control: update Depends field. libwebkit2gtk (Closes: #786445).
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 28 Jul 2019 14:54:26 +0200
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Sat, 23 May 2015 10:54:06 -0300
+pix (2.2.0) tina; urgency=medium
 
-gthumb (3:3.4.0-1) unstable; urgency=medium
+  [ Leigh Scott ]
+  * Add autogen file and amend Install (#64)
 
-  * New upstream release.
-  * debian/copyright: updated.
-  * debian/control: updated Vcs* fields. Using collab-maint.
-  * debian/patches: Removed shlib-albumtheme-*.patch. Applied by the upstream.
-                    Remade all help-*.patch. They were totally wrong.
-  * (Closes: #783854, #760107)
+  [ Yury Martynov ]
+  * Fix exiv2 issues (https://github.com/linuxmint/pix/issues/70) (#71)
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Tue, 05 May 2015 10:51:06 -0300
+  [ Clement Lefebvre ]
+  * Add Ctrl+W and Ctrl+Q shortcuts
+  * l10n: Update translations
 
-gthumb (3:3.3.3-3) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 23 Jun 2019 14:11:27 +0200
 
-  * Upload to unstable.
+pix (2.0.3) tessa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Tue, 28 Apr 2015 13:43:45 -0300
+  * l10n: Update translations
+  * CI: Remove Mint 18
 
-gthumb (3:3.3.3-2) experimental; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Dec 2018 13:52:37 +0000
 
-  * (Closes: #780322). Thanks Guillem Jover.
-  * debian/control: Added Vcs* fields.
-                    Package gthumb:
-                         Depends and Recommends from 3.3.1 is back.
-                         Added libgphoto2-6 and libgphoto-port12 to Recommends.
-  * debian/rules cleaned.
-  * debian/gthumb-data.dirs removed.
-  * debian/gthumb.install: Removed comment line /usr/share/man.
-                           Added /usr/share/appdata
+pix (2.0.2) tessa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Sun, 15 Mar 2015 10:56:45 -0300
+  [ Michael Webster ]
+  * image_viewer/gth-image-viewer-page.c: Use ctrl-v for Paste Image shortcut.
 
-gthumb (3:3.3.3-1) experimental; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Dec 2018 11:28:31 +0000
 
-  * New upstream release
-  * New maintainer. (Closes: #759600)
-  * debian/control: Maintainer: put my name.
-                    Build-Depends: added libgphoto2-dev. (Closes: #612082)
-                                   added libgnome2-dev.
-                                   added libunique-dev
-                                   added libclutter-gtk-1.0-dev
-                    Standards-Version: 3.9.6
-                    gstreamer0.10-gnomevfs, bison, flex removed from Recommends.
-                    (Closes: #757908, #771120). Thanks Martin-Éric Racine.
-                    Added gvfs-bin libgphoto2-6 and libgphoto2-port12
-                    to Depends. (gthumb)
-  * debian/copyright: updated.
-                    Removed some entries: libgthumb
-                                          src
-                                          doc
-                    Debian entry. Added some people and set License to GPL-2+.
-                    Added help entry.
-                    Added po entry.
-                    Added extensions entry.
-  * debian/patches:
-                    03-add_missing_includes.patch applied by the upstream.
-                    07-fix_documentation_xml.patch split in several files.
-                    14-unity_control_center.patch applied by the upstream.
-                    shlib-albumtheme-l.patch. shlib-calls-exit lintian alert.
-                    shlib-albumtheme-y.patch. shlib-calls-exit lintian alert.
-                    The last two ones will not be necessary in the next
-                    release.
-  * Updated po/*
-  * debian/rules:
-                    enable-clutter.
-                    Enable parallel build. Thanks Pino Toscano
-                    (Closes: #759116).
-                    Added '-Wl, --as-needed'.
+pix (2.0.1) tessa; urgency=medium
 
- -- Herbert Parentes Fortes Neto <hpfn@ig.com.br>  Sun, 15 Feb 2015 10:16:13 -0200
+  * l10n: Update translations
 
-gthumb (3:3.3.1-2) unstable; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Dec 2018 11:28:15 +0000
 
-  * Upload to unstable
+pix (2.0.0) tessa; urgency=medium
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 23 Feb 2014 06:19:21 +1100
+  [ NikoKrause ]
+  * Use icon for keyboard shortcuts help entry (#55)
 
-gthumb (3:3.3.1-1) experimental; urgency=medium
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Nov 2018 10:32:47 +0000
 
-  [ Jackson Doak ]
-  * New upstream release
-  * Drop 25-fix_URL_in_About_and_copyright_year.patch, fixed upstream
-  * Drop 13-fix_Close_mismatch.patch, not longer works
-  * Add 14-unity_control_center.patch, use unity-control-center instead of
-    gnome-control-center while in unity
-  * Bump dependancy versions
+pix (1.8.2) tara; urgency=medium
 
-  [ Yves-Alexis Perez ]
-  * debian/control:
-    - update libgtk-3-dev build-dep to 3.10.
+  * l10n: Update translations
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Sat, 25 Jan 2014 11:24:27 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Jun 2018 13:29:36 +0200
 
-gthumb (3:3.2.6-1) unstable; urgency=medium
+pix (1.8.1) tara; urgency=medium
 
-  * New upstream release
-  * debian/watch: Bump version to 3
+  * l10n: Update translations
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Tue, 31 Dec 2013 09:32:40 +1100
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 22 May 2018 12:55:09 +0100
 
-gthumb (3:3.2.5-3) unstable; urgency=low
+pix (1.8.0) tara; urgency=medium
 
-  * debian/control:
-    - Update package descriptions
-    - Drop build-depend on hardening-wrapper
-    - Bump debhelper to 9
-    - Add Pre-Depends: ${misc:Pre-Depends} to gthumb binary
-  * Convert .install files to multiarch
-  * debian/rules:
-    - Use NEWS as the changelog since it is easier to read
-    - Drop $(shell dpkg-buildflags --export=configure), not needed
-    - Drop --enablle-debug
-  * debian/patches/:
-    - Fully delete 20-backport_comments_loss_fix.patch
-    - Add 25-fix_URL_in_About_and_copyright_year.patch. LP: #1262861
-    - Drop 01-fix_missing_linkage.patch, not needed
+  [ Clement Lefebvre ]
+  * Add CI configuration
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Thu, 26 Dec 2013 19:42:23 +1100
+  [ JosephMcc ]
+  * Use a cario_surface to store thumbnails
+  * Fix Gtk3.20+ issues
 
-gthumb (3:3.2.5-2) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 06 May 2018 16:36:12 +0100
 
-  * debian/control:
-    - Bump standards-version to 3.9.5
-    - Add build-depend on libwebkit2gtk-3.0-dev to re-enable webapps
-    - Update Homepage
-  * Drop README.source, not needed
-  * debian/copyright: Minor dep5 fixes
+pix (1.6.2) sylvia; urgency=medium
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Fri, 13 Dec 2013 05:55:45 +1100
+  * l10n: Update translations
 
-gthumb (3:3.2.5-1) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 23 Nov 2017 12:21:14 +0000
 
-  * New upstream release. Closes: #716729 LP: #1201073
-  * Set myself as maintainer. Closes: #711827
-  * debian/control:
-    - Build-depend on yelp-tools, libgstreamer1.0-dev, libsecret-1-dev,
-      libgstreamer-plugins-base1.0-dev, libwebp-dev
-    - Bump standards-version to 3.9.4
-    - Bump debhelper to 8
-    - Make git URLs canonical
-    - Drop depend on libiptcdata0-dev. Closes: #697087
-    - Drop depend on gnome keyring since libsecret replaces it
-  * debian/compat: Set as 8
-  * debian/rules:
-    - Add --enable-libwebp for WebP support
-    - Add --disable-silent-rules for verbose building
-    - Enable hardening
-  * Create debian/source/options
-  * Refresh all patches so they apply cleanly
+pix (1.6.1) sylvia; urgency=medium
 
- -- Jackson Doak <noskcaj@ubuntu.com>  Sat, 31 Aug 2013 06:24:51 +1000
+  * l10n: Update translations
 
-gthumb (3:3.0.1-2) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 03 Nov 2017 21:11:03 +0000
 
-  * Drop unused lintian override
-  * Add dependency on gsettings-desktop-schemas
-  * Add build-dependency on hardening-wrapper
+pix (1.6.0) sylvia; urgency=medium
 
- -- David Paleino <dapal@debian.org>  Mon, 18 Jun 2012 16:31:23 +0200
+  [ JosephMcc ]
+  * Create ISSUE_TEMPLATE.md
 
-gthumb (3:3.0.1-1) unstable; urgency=low
+  [ Cobinja ]
+  * Switch zoom buttons in toolbar (#37)
 
-  * New upstream version
-  * Install upstream-provided manpage instead of Debian one
-  * Updated debian/copyright
-  * Add B-D on gsettings-desktop-schemas-dev
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 26 Oct 2017 11:51:31 +0100
 
- -- David Paleino <dapal@debian.org>  Sun, 17 Jun 2012 21:31:00 +0200
+pix (1.4.5) sonya; urgency=medium
 
-gthumb (3:3.0.0-2) unstable; urgency=low
+  * l10n: Update translations
 
-  * Uploading to unstable
-  * Fixed debian/copyright
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 28 Jun 2017 10:29:45 +0200
 
- -- David Paleino <dapal@debian.org>  Thu, 10 May 2012 12:54:02 +0200
+pix (1.4.4) sonya; urgency=medium
 
-gthumb (3:3.0.0-1) experimental; urgency=low
+  * RAW images: Apply rotation to satisfy EXIF orientation
 
-  * New upstream version
-  * Patches refreshed to match new upstream code
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 10 Jun 2017 15:36:54 +0100
 
- -- David Paleino <dapal@debian.org>  Thu, 26 Apr 2012 22:43:35 +0200
+pix (1.4.3) sonya; urgency=medium
 
-gthumb (3:2.90.2-1) experimental; urgency=low
+  [ leigh123linux ]
+  * added support for image/x-fuji-raf raw files (#29)
 
-  * New upstream version
-  * Bump required versions of Build-Dependencies
-  * Patches refreshed to match new upstream code
-  * Standards-Version bump to 3.9.3, no changes needed
-  * Build-Depend on libpng12-dev | libpng-dev (Closes: #662366)
-  * Build-Depend on libexiv2 >= 0.21
-  * Update debian/copyright
+  [ Clement Lefebvre ]
+  * Packaging: Depend on dcraw
 
- -- David Paleino <dapal@debian.org>  Sun, 08 Apr 2012 01:13:17 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 09 Jun 2017 18:16:01 +0100
 
-gthumb (3:2.14.2-1) unstable; urgency=low
+pix (1.4.2) sonya; urgency=medium
 
-  * New upstream version
-  * Updated debian/copyright
+  * Grid view: Activate item when pressing Space
+  * Improve keyboard navigation
+  * Update help to reflect keybinding changes
+  * Switch to symbolic icons
+  * Change default layout of thumbs to vertical in viewer-mode.
+  * Make the screenshot button icon symbolic
+  * l10n: Update translations
 
- -- David Paleino <dapal@debian.org>  Wed, 22 Feb 2012 21:44:01 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 23 May 2017 13:51:48 +0100
 
-gthumb (3:2.14.1-1) unstable; urgency=low
+pix (1.4.1) sonya; urgency=medium
 
-  * New upstream version (Closes: #652692)
-  * Patches refreshed
-  * Bump build-dependencies requirements
-  * Fix FTBFS, added missing #include
-  * debian/watch fixed to point to new location (.xz tarballs)
+  * l10n: Update translations
 
- -- David Paleino <dapal@debian.org>  Thu, 22 Dec 2011 22:40:29 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 06 May 2017 15:02:40 +0100
 
-gthumb (3:2.13.1-2) unstable; urgency=low
+pix (1.4.0) sonya; urgency=medium
 
-  * Build-Depend on libjpeg-dev, not libjpeg62-dev | libjpeg-dev
-    (Closes: #639055, #642834)
-  * Temporarily disable brasero support (Closes: #645280)
-  * Standards-Version bump to 3.9.2, no changes needed
+  [ monsta ]
+  * configure.ac: fix typo in message
+  * build with webkit2gtk-4.0 instead of webkit2gtk-3.0
+  * debian/control: drop unused build-deps
+  * debian/rules: drop non-existent build option
+  * debian/rules: use correct build option name
 
- -- David Paleino <dapal@debian.org>  Fri, 14 Oct 2011 09:56:04 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 05 May 2017 08:46:34 +0100
 
-gthumb (3:2.13.1-1) unstable; urgency=low
+pix (1.2.1) serena; urgency=medium
 
-  * New upstream version
-  * Patches refreshed
-  * 01-PIC.patch removed, it's now put in configure.ac by upstream
-  * Fix FTBFS, missing linkage to libICE (01-fix_missing_linkage.patch)
-  * Added Build-Depends on libsm-dev and libice-dev
+  * l10n: Update translations
 
- -- David Paleino <dapal@debian.org>  Thu, 10 Mar 2011 20:23:40 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 12 Dec 2016 13:06:59 +0000
 
-gthumb (3:2.12.2-1) unstable; urgency=low
+pix (1.2.0) serena; urgency=medium
 
-  * New upstream version
-  * Patches refreshed
-  * Old patches removed; they're not useful anymore, and only clutter
-    debian/patches/.
+  * l10n: Update translations
 
- -- David Paleino <dapal@debian.org>  Mon, 07 Feb 2011 16:39:07 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Nov 2016 00:29:28 +0000
 
-gthumb (3:2.12.1-1) experimental; urgency=low
+pix (1.0.6) sarah; urgency=medium
 
-  * New upstream version
-  * Patches refreshed
-  * Add runtime dependency (as Recommends) on bison and flex,
-    needed by the webalbums plugin. They're Recommends because they
-    don't harm the core functionality of the program.
-  * Applied some patches from upstream's git:
-    - updated ja and eu translations
-    - fixed reading of ExifDatum's (improves previous
-      14-safe_exif_read.patch)
-    - correctly activate default extensions on first run
+  * Background extension: Added support for Xfce
 
- -- David Paleino <dapal@debian.org>  Thu, 09 Dec 2010 17:16:31 +0100
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 14 Jul 2016 15:42:40 +0200
 
-gthumb (3:2.12.0-2) experimental; urgency=low
+pix (1.0.5) sarah; urgency=medium
 
-  * debian/patches/14-safe_exif_read.patch: safely read Exif
-    orientation, since it seems like some cameras don't store it.
-    (Closes: #601137)
+  * Fixed pix crash in code selector
 
- -- David Paleino <dapal@debian.org>  Sat, 23 Oct 2010 22:07:37 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2016 10:41:18 +0100
 
-gthumb (3:2.12.0-1) experimental; urgency=low
+pix (1.0.4) sarah; urgency=medium
 
-  * New upstream version
+  * Fixed thumbnails not being generated in browser/thumblist in GTK 3.18
+  * [Paolo Bacchilega] Facebook: added permission to read the user albums and photos
+  * [Paolo Bacchilega] Facebook: fixed the authorization process
 
- -- David Paleino <dapal@debian.org>  Tue, 28 Sep 2010 09:39:51 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 26 Jun 2016 20:10:59 +0100
 
-gthumb (3:2.11.92-1) experimental; urgency=low
+pix (1.0.3) sarah; urgency=medium
 
-  * New upstream version
-  * debian/patches/:
-    - 04-fix_source_typo.patch, 05-fix_locales.patch,
-      07-fix_documentation_xml.patch refreshed
-    - 06-add_keybinding_DoNotSave.patch disabled, seems to be
-      applied upstream
+  * Updated translations
 
- -- David Paleino <dapal@debian.org>  Thu, 16 Sep 2010 09:49:13 +0200
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 25 Jun 2016 11:14:38 +0100
 
-gthumb (3:2.11.90-1) experimental; urgency=low
+pix (1.0.2) sarah; urgency=medium
 
-  * New upstream release
-  * debian/patches/:
-    - 18-build_with_gtk2.19.patch removed, merged upstream
-    - 19-backport_data_migration.patch removed, present in the new
-      version
-    - 04-fix_source_typo.patch, 07-fix_documentation_xml.patch,
-      13-fix_Close_mismatch.patch refreshed to cleanly apply
-  * debian/gthumb-dev.install: don't install *.la files anymore
-  * debian/control:
-    - Standards-Version bumped to 3.9.1
-      + don't install *.la files anymore in gthumb-dev
+  [ Clement Lefebvre ]
+  * Fixed wrong URL in about dialog
+  * Toolbar: Show text under icons by default
+  * Removed debian/patches
+  * Fixed setting background in MATE
+  * When setting backgrounds picture, don't mess with the options (picture aspect)
 
- -- David Paleino <dapal@debian.org>  Fri, 20 Aug 2010 18:11:06 +0200
+  [ JosephMcc ]
+  * Remove a couple sizes of the palette.png icon
+  * build: Fix a build warning
 
-gthumb (3:2.11.5-4) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 20 Jun 2016 10:30:48 +0100
 
-  * debian/patches/14-safe_exif_read.patch: safely read Exif
-    orientation, since it seems like some cameras don't store it.
-    (Closes: #601137)
+pix (1.0.1) sarah; urgency=medium
 
- -- David Paleino <dapal@debian.org>  Sun, 28 Nov 2010 21:17:54 +0100
+  * Removed ref to GNOME in help
+  * Changed icon
+  * Removed GNOME refs in help
+  * Make desktop background plugin work in Cinnamon and MATE
 
-gthumb (3:2.11.5-3) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 16 May 2016 17:44:14 +0100
 
-  * debian/patches/20-backport_comments_loss_fix.patch backported from
-    upstream git: support old-style (2.10.x) comments stored in Exif
-    tags (Closes: #593813)
+pix (1.0.0) sarah; urgency=medium
 
- -- David Paleino <dapal@debian.org>  Sat, 21 Aug 2010 11:57:27 +0200
+  * Initial version
 
-gthumb (3:2.11.5-2) unstable; urgency=low
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 16 May 2016 15:49:00 +0000
 
-  * debian/patches/19-backport_data_migration.patch backported from
-    upstream git: convert the old catalogs to the new format and
-    location (Closes: #584755)
-
- -- David Paleino <dapal@debian.org>  Thu, 22 Jul 2010 09:53:49 +0200
-
-gthumb (3:2.11.5-1) unstable; urgency=low
-
-  * New upstream version
-    - Facebook plugin fixed (Closes: #588154)
-  * debian/patches/:
-    - 04-fix_source_typo.patch, 07-fix_documentation_xml.patch
-      refreshed
-
- -- David Paleino <dapal@debian.org>  Tue, 20 Jul 2010 07:45:36 +0200
-
-gthumb (3:2.11.4-3) unstable; urgency=low
-
-  * Clutter support disabled once again, seems like the code used
-    to safely run gThumb still doesn't work. (Closes: #588713)
-
- -- David Paleino <dapal@debian.org>  Sun, 11 Jul 2010 20:10:19 +0200
-
-gthumb (3:2.11.4-2) unstable; urgency=low
-
-  * debian/patches/03-fix_paths.patch disabled, so that icons are
-    really installed under /usr/share/gthumb/icons/. (Closes: #588227)
-
- -- David Paleino <dapal@debian.org>  Tue, 06 Jul 2010 22:24:33 +0200
-
-gthumb (3:2.11.4-1) unstable; urgency=low
-
-  * New upstream version
-  * debian/control:
-    - added gstreamer0.10-gnomevfs to Recommends (Closes: #583479)
-    - minimum Build-Depends on GTK bumped to 2.18.0
-    - added Build-Depends on bison
-    - re-added Build-Depends on clutter things
-    - drop Build-Depends on quilt, since we're using 3.0 (quilt) format
-    - added Build-Depends on dh-autoreconf
-    - Standards-Version bumped to 3.9.0
-      + §7.6.1, use Breaks+Replaces instead of Conflicts+Replaces for
-                gthumb-data
-  * debian/rules:
-    - re-enable Clutter, since gThumb can now run even if Clutter
-      initialization fails
-    - don't call quilt anymore
-    - removed useless commented lines
-    - don't rename icons anymore, since 19-fix_extension_icon.patch has
-      been disabled
-    - autoreconf is now handled by dh_autoreconf (--with autoreconf)
-  * debian/patches/:
-    - *.patch refreshed, so that they cleanly apply
-    - 07-fix_documentation_xml.patch added, fixes XML so that it
-      validates during dh_auto_test
-    - 19-fix_extension_icon.patch disabled, icons are now installed
-      under /usr/share/gthumb/, so there's no risk of conflicting
-      with other packages
-  * debian/gthumb-data.install: removed usr/share/omf/, since that's not
-    the thing used for docs anymore (instead, Mallard is used)
-
- -- David Paleino <dapal@debian.org>  Mon, 05 Jul 2010 19:30:15 +0200
-
-gthumb (3:2.11.3-2) unstable; urgency=low
-
-  * debian/rules:
-    - rename flickr.png to gthumb-flickr.png, and facebook.png
-      to gthumb-facebook.png (Closes: #579161)
-  * debian/patches/19-fix_extension_icon.patch added, make the
-    Flickr extension point to gthumb-flickr, and the Facebook extension
-    to gthumb-facebook.
-
- -- David Paleino <dapal@debian.org>  Wed, 28 Apr 2010 18:58:50 +0200
-
-gthumb (3:2.11.3-1) unstable; urgency=low
-
-  * New upstream version
-  * debian/patches/* refreshed
-  * debian/control:
-    - added Build-Depends on libbrasero-media-dev
-    - added libjpeg-dev alternative to libjpeg62-dev (preparing for
-      libjpeg8 transition)
-    - re-formatted multiline fields
-  * debian/copyright: added new copyright stanzas, for
-    ./extensions/jpeg_utils
-
- -- David Paleino <dapal@debian.org>  Sun, 25 Apr 2010 09:34:13 +0200
-
-gthumb (3:2.11.2.1-2) unstable; urgency=low
-
-  * debian/patches/:
-    - 18-build_with_gtk2.19.patch added (Closes: #573424)
-  * debian/rules:
-    - disable clutter at configure time (Closes: #573700, #573723)
-  * debian/control:
-    - remove Build-Dependencies on clutter things
-
- -- David Paleino <dapal@debian.org>  Mon, 15 Mar 2010 07:43:28 +0100
-
-gthumb (3:2.11.2.1-1) unstable; urgency=low
-
-  * New upstream release
-    - warning displayed when resizing an image, so that it doesn't
-      get accidentally overwritten (Closes: #570033)
-    - doesn't crash anymore on View > Slideshow (Closes: #569787)
-    - slideshow transitions have been fixed already (Closes: #497579)
-    - easier navigation between directories (Closes: #572500)
-    - use exiv2 for metadata parsing (Closes: #470175)
-    - support Sony ARW files (Closes: #470176)
-  * Disabled libopenraw backend in favour of dcraw -- let's wait
-    until it's more mature.
-  * debian/control:
-    - added new Build-Dependencies, libsoup-gnome2.4-dev and
-      libgnome-keyring-dev
-  * debian/patches/:
-    - 03-fix_paths.patch and 06-add_keybinding_DoNotSave.patch
-      refreshed to apply to the new code
-  * debian/gthumb-dev.install:
-    - updated to work with the new code
-    - also install pkgconfig file
-  * debian/gthumb.install updated
-
- -- David Paleino <dapal@debian.org>  Thu, 04 Mar 2010 18:34:52 +0100
-
-gthumb (3:2.11.1-2) unstable; urgency=low
-
-  * debian/gthumb.install: only install *.extension and *.so
-
- -- David Paleino <dapal@debian.org>  Wed, 10 Feb 2010 14:56:49 +0100
-
-gthumb (3:2.11.1-1) unstable; urgency=low
-
-  * New upstream version
-  * debian/watch updated to correctly handle major releases
-  * debian/control:
-    - Build-Depends updated to current requirements
-    - bump quilt dependency to >= 0.46-7~, to use dh --with quilt
-    - add gthumb-dev and gthumb-dbg binary packages
-    - bump Standards-Version to 3.8.4, no changes needed
-  * debian/rules:
-    - rewritten to use dh7 with overrides
-    - pass --enable-debug, --enable-libopenraw to ./configure
-    - reflect changes in the directory structure
-  * debian/source/format: using 3.0 (quilt)
-  * debian/patches/:
-    - all patches refreshed to cleanly apply
-    - series: some patches temporarily disabled -- need to check
-      whether I can port them to the new code, whether they're still
-      needed or I can totally drop them.
-    - 02-preserve_gnome-doc-utils.make.patch renamed to
-      02-preserve_upstream_files.patch, also try to preserve ChangeLog
-    - 03-fix_paths.patch added, fixes wrong installation directories
-    - 04-fix_source_typo.patch added, fix typo in sourcecode signaled
-      by lintian
-  * debian/gthumb.install updated
-  * debian/gthumb.1 added, installed into gthumb package
-
- -- David Paleino <dapal@debian.org>  Wed, 10 Feb 2010 14:32:51 +0100
-
-gthumb (3:2.10.11-3) unstable; urgency=low
-
-  * debian/patches/:
-    - 04-fix_gvfs_umount.patch added from Ubuntu, fix import to work
-      with gvfs (Closes: #526452) (LP: #351122)
-    - 10-fix_POTFILES.skip.patch updated
-    - 15-suggest_new_name_on_overwrite_dialog.patch updated, fixes
-      SIGSEGV in overwrite dialog, thanks to Vincenzo Tibullo
-      (Closes: #555131)
-    - 17-dont_follow_symlinks_on_dups_search.patch added (Closes: #533641)
-  * debian/control:
-    - added gvfs-bin to Recommends, related to #526452
-    - fixed automake1.9 Build-Dependency to automake
-    - added libx11-dev to Build-Depends, related to #554749
-    - updated my e-mail address
-    - DMUA removed
-    - Standards-Version bumped to 3.8.3, no changes needed
-  * debian/rules:
-    - better use of CFLAGS
-    - add -lX11 to CFLAGS (Closes: #554749)
-
- -- David Paleino <dapal@debian.org>  Sun, 08 Nov 2009 21:47:07 +0100
-
-gthumb (3:2.10.11-2) unstable; urgency=low
-
-  * debian/patches:
-    - 10-fix_POTFILES.skip.patch refreshed
-    - 13-fix_Close_mismatch.patch added (Closes: #524412)
-    - 14-add_rotate_button_viewer.patch added (Closes: #326699)
-    - 15-suggest_new_name_on_overwrite_dialog.patch added, thanks
-      to Jack T Mudge III (Closes: #530996)
-    - 16-fix_crop_dialog_usability.patch added, taken from git's
-      d4a737f458f2cae9d16cbdbb62bd120b94a5605c (Closes: #441687)
-
- -- David Paleino <d.paleino@gmail.com>  Fri, 12 Jun 2009 19:56:08 +0200
-
-gthumb (3:2.10.11-1) unstable; urgency=low
-
-  * New Upstream Version:
-    - fix crasher bug in exif tag reading, caused by malformed tiff headers.
-      (LP: #316017)
-    - give the photo-import desktop file different name parameters, so that
-      users can distinguish it from the normal desktop file. (LP: #318694)
-    - fixes GtkSpinButton deprecated non-zero page size adjustment setting,
-      patch from Ubuntu merged upstream (LP: #319349)
-  * Forgot bugnumber to close in 3:2.10.10-1, added (mostly for
-    changelog reasons, closing it manually)
-  * debian/control:
-    - scrollkeeper moved from gthumb's Recommends to gthumb-data's
-      Depends (Closes: #508709)
-    - yelp Recommends moved from gthumb to gthumb-data
-    - Standards-Version bumped to 3.8.1 (no changes needed)
-  * debian/patches/:
-    - 05-fix_locales.patch, 06-add_keybinding_DoNotSave.patch.
-      10-fix_POTFILES.skip.patch refreshed
-    - 12-remove_Save_button_in_crop_dialog.patch added (Closes: #495444)
-
- -- David Paleino <d.paleino@gmail.com>  Sat, 11 Apr 2009 17:17:51 +0200
-
-gthumb (3:2.10.10-2) unstable; urgency=low
-
-  * Brown-paper-bag bug upload
-  * debian/patches/:
-    - 01-PIC.patch forwarded upstream, annotated.
-    - 06-add_keybinding_DoNotSave.patch forwarded upstream, annotated.
-    - 07-fix_zooms.patch, 08-fix_preferences.patch forwarded upstream,
-      annotated.
-    - 09-fix_infinite_loop_dragging_parent_dir.patch forwarded upstream,
-      annotated.
-    - 10-fix_POTFILES.skip.patch updated
-    - 11-fix_Film_on_import.patch added, thanks to Matijs van Zuijlen
-      (Closes: #510143)
-    - series updated: disable 03-libgthumb_moduledir.patch (i.e. let's
-      fix this bug before someone else notices :) )
-
- -- David Paleino <d.paleino@gmail.com>  Sat, 21 Feb 2009 23:24:50 +0100
-
-gthumb (3:2.10.10-1) unstable; urgency=low
-
-  * New Upstream Version
-  * debian/rules: use $(QUILT_STAMPFN) instead of "patch"
-  * debian/patches/:
-    - 00-fix_ltmain.sh.patch added
-    - 04-fix_gthumb.desktop.in.patch removed, merged upstream
-    - 06-add_keybinding_DoNotSave.patch refreshed to cleanly apply,
-      description added
-    - 08-fix_missing_include.patch removed, was only needed in 2.10.8
-    - 08-fix_preferences.patch added (Closes: #452932)
-    - 09-fix_infinite_loop_dragging_parent_dir.patch added: see
-      patch description for more info (Closes: #420195)
-    - 10-fix_POTFILES.skip.patch added: intltool-extract wrongly looks
-      at the original files patched by quilt, thus issuing an error
-      because of "unused translations"
-    - 01-PIC.patch, 02-preserve_gnome-doc-utils.make.patch,
-      03-libgthumb_moduledir.patch, 05-fix_locales.patch,
-      07-fix_zooms.patch: descriptions added
-  * debian/control:
-    - packaging moved to Git, updated Vcs-* fields
-    - dependency fields wrapped, for better readability in diffs
-    - added missing Build-Dependencies: libjpeg62-dev,
-      libglade2-dev (>= 2.4.0), libxrender-dev
-    - added support for libopenraw (B-D libopenrawgnome-dev) (Closes: #365060)
-    - debhelper dependency bumped to >= 7
-    - added ${misc:Depends} to gthumb-data
-    - Standards-Version bumped to 3.8.0:
-      + debian/README.source added
-    - DMUA set
-  * debian/compat bumped to 7
-  * debian/rules:
-    - using dh7
-    - pass --with-gconf-schema-file-dir to ./configure
-    - auto-generation of htaccess and README files for Album Themes
-    - moved scrollkeeper to Recommends (it's not essential)
-  * debian/gthumb.mime added (Closes: #469316)
-  * debian/gthumb.dirs removed
-  * debian/htaccess.tmpl added (Closes: #434111)
-  * debian/gthumb-data.dirs: also installing gconf.schemas now
-    (Closes: #502968)
-
- -- David Paleino <d.paleino@gmail.com>  Sat, 21 Feb 2009 18:55:37 +0100
-
-gthumb (3:2.10.8-1) unstable; urgency=low
-
-  * Package adopted by me (Closes: #457591)
-  * New upstream release (Closes: #457509):
-    - fixes crash trying to print (Closes: #457350, #454298, #446413)
-    - fixes command line options parsing (Closes: #298881)
-  * debian/compat bumped to 5
-  * debian/control:
-    - Standards-Version 3.7.3
-    - dependencies updated (and wrapped)
-    - depending on unversioned scrollkeeper (Closes: #456602, #457021)
-    - recommending yelp (Closes: #340820)
-    - changed the Maintainer field
-    - added Homepage field (removing old pseudo-field)
-    - added Vcs-Svn and Vcs-Browser fields
-    - added Conflicts: gthumb (<< 3:2.10.8-1) to gthumb-data because of
-      conflicting files with older packages.
-  * debian/patches: converted to quilt
-    - 02-preserve_gnome-doc-utils.make added (compilation failed otherwise)
-    - 04-fix_gnome.desktop.in added (removing Encoding line)
-    - 06-fix_locales.patch added (Closes: #403736, #404086)
-    - 07-add_keybinding_DoNotSave.patch added (Closes: #310095)
-    - 08-fix_zooms.patch added (Closes: #452929)
-  * debian/copyright fixed.
-
- -- David Paleino <d.paleino@gmail.com>  Sun, 27 Jan 2008 10:26:18 +0100
-
-gthumb (3:2.10.5-2) unstable; urgency=low
-
-  * Update debian/watch file for gthumb 2.10 series (closes: #404647)
-
- -- Remco van de Meent <remco@debian.org>  Wed, 15 Aug 2007 09:36:49 +0200
-
-gthumb (3:2.10.5-1) unstable; urgency=low
-
-  * New upstream release
-  * Enable libiptcdata (closes: #426909)
-
- -- Remco van de Meent <remco@debian.org>  Tue, 14 Aug 2007 11:14:16 +0200
-
-gthumb (3:2.10.2-4) unstable; urgency=low
-
-  * Rebuild scrollkeeper-db after upgrade from version in which
-    /var/lib/scrollkeeper files were provided (closes: #417593)
-
- -- Remco van de Meent <remco@debian.org>  Thu, 24 May 2007 09:22:51 +0200
-
-gthumb (3:2.10.2-3) unstable; urgency=low
-
-  * Disable install of scrollkeeper files (closes: #417593)
-
- -- Remco van de Meent <remco@debian.org>  Wed, 23 May 2007 22:27:23 +0200
-
-gthumb (3:2.10.2-2) unstable; urgency=low
-
-  * Upload to unstable instead of experimental.
-
- -- Remco van de Meent <remco@debian.org>  Fri, 04 May 2007 15:37:51 +0200
-
-gthumb (3:2.10.2-1) experimental; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Fri, 04 May 2007 13:40:14 +0200
-
-gthumb (3:2.10.0-1) experimental; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Tue, 20 Mar 2007 15:33:55 +0100
-
-gthumb (3:2.9.3-2) experimental; urgency=low
-
-  * Fix dependency on libcairo2 (closes: #414577)
-
- -- Remco van de Meent <remco@debian.org>  Wed, 14 Mar 2007 19:57:06 +0000
-
-gthumb (3:2.9.3-1) experimental; urgency=low
-
-  * New upstream release  (closes: #306189)
-
- -- Remco van de Meent <remco@debian.org>  Mon,  5 Mar 2007 09:29:05 +0100
-
-gthumb (3:2.9.2-2) experimental; urgency=low
-
-  * Adding versioned build-depends where necessary (closes: #412685)
-
- -- Remco van de Meent <remco@debian.org>  Tue, 27 Feb 2007 13:35:23 +0100
-
-gthumb (3:2.9.2-1) experimental; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Mon, 26 Feb 2007 13:03:54 +0100
-
-gthumb (3:2.9.1-1) experimental; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Thu, 25 Jan 2007 09:09:49 +0100
-
-gthumb (3:2.8.0-2) unstable; urgency=low
-
-  * Minor cleanups
-
- -- Remco van de Meent <remco@debian.org>  Mon,  4 Dec 2006 21:16:13 +0100
-
-gthumb (3:2.8.0-1) unstable; urgency=low
-
-  * New upstream release
-  * Acknowledge changes in previous NMU (closes: #372582)
-  * Bump standards version to 3.7.2
-
- -- Remco van de Meent <remco@debian.org>  Wed, 29 Nov 2006 09:34:09 +0100
-
-gthumb (3:2.6.9-3.1) unstable; urgency=low
-
-  * Non-maintainer upload.
-  * Drop the makefile-install-rule gconf snippet from the postinst completely
-    as it was never triggerred (since dh_gconf moved the schema out of /etc).
-    [debian/postinst]
-  * Add a makefile-uninstall-rule gconf snippet in postinst to remove cruft
-    left over from versions prior to this version. (Closes: #369866)
-
- -- Loic Minier <lool@dooz.org>  Sat, 10 Jun 2006 13:12:46 +0200
-
-gthumb (3:2.6.9-3) unstable; urgency=low
-
-  * Fix gthumb module dir location (closes: #360122)
-
- -- Remco van de Meent <remco@debian.org>  Thu, 30 Mar 2006 22:06:00 +0200
-
-gthumb (3:2.6.9-2) unstable; urgency=low
-
-  * Add libtool as Build-Depends, fixes compile problems
-
- -- Remco van de Meent <remco@debian.org>  Wed, 29 Mar 2006 10:29:36 +0200
-
-gthumb (3:2.6.9-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Tue, 28 Mar 2006 15:05:41 +0200
-
-gthumb (3:2.6.6-1) unstable; urgency=low
-
-  * New upstream release
-  * Depend on libexif >= 0.6.12 (closes: #321311)
-
- -- Remco van de Meent <remco@debian.org>  Wed, 10 Aug 2005 23:50:04 +0200
-
-gthumb (3:2.6.5-1) unstable; urgency=low
-
-  * New upstream release
-  * No more 05_libtool.dpatch at compile-time
-  * German PO file correction (closes: #314058, thanks to Jens Seidel)
-  * Various packaging fixes: updated menu label, xpm icon, new package
-    description, install gconf scheme correctly, use dh_desktop (closes:
-    #306166, thanks to Dan Korostelev)
-
- -- Remco van de Meent <remco@debian.org>  Thu, 23 Jun 2005 18:00:01 +0200
-
-gthumb (3:2.6.3-1.1) unstable; urgency=high
-
-  * Non-maintainer upload.
-  * High-urgency upload for sarge-targetted RC bugfix
-  * Rebuild debian/patches/05_libtool.dpatch after running automake, to
-    avoid macro skew when automake has to be run at build time
-    (closes: #300424).
-
- -- Steve Langasek <vorlon@debian.org>  Sat, 26 Mar 2005 16:28:59 -0800
-
-gthumb (3:2.6.3-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Thu, 10 Feb 2005 15:38:22 +0100
-
-gthumb (3:2.6.2-1) unstable; urgency=low
-
-  * New upstream release (closes: #286326)
-  * New upstream version resolves SVG bug (closes: #288242)
-
- -- Remco van de Meent <remco@debian.org>  Thu,  6 Jan 2005 11:45:06 +0100
-
-gthumb (3:2.6.1-3) unstable; urgency=high
-
-  * Automake-1.9. Run only once. Should fix build problems on ia64
-
- -- Remco van de Meent <remco@debian.org>  Wed,  1 Dec 2004 15:36:46 +0100
-
-gthumb (3:2.6.1-2) unstable; urgency=high
-
-  * Added Build-Dep on dpatch
-
- -- Remco van de Meent <remco@debian.org>  Wed,  1 Dec 2004 13:45:26 +0100
-
-gthumb (3:2.6.1-1) unstable; urgency=high
-
-  * New upstream release (fixes some crashes in previous versions)
-  * Build cleanup
-
- -- Remco van de Meent <remco@debian.org>  Wed,  1 Dec 2004 10:04:05 +0100
-
-gthumb (3:2.6.0.1-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sat, 13 Nov 2004 11:44:15 +0100
-
-gthumb (3:2.5.1-1) experimental; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Thu,  2 Sep 2004 22:14:43 +0200
-
-gthumb (3:2.4.1-5) unstable; urgency=high
-
-  * High-urgency because this is a release-critical bug
-  * Fix automake braindamage while building by adding AM_MAINTAINER_MODE
-    to configure.in (closes: #268303) (thanks to Steve Langasek for
-    providing a patch)
-
- -- Remco van de Meent <remco@debian.org>  Fri, 27 Aug 2004 17:27:21 +0200
-
-gthumb (3:2.4.1-4) unstable; urgency=low
-
-  * Minor build clean ups
-  * Move from libpng10 to libpng12
-
- -- Remco van de Meent <remco@debian.org>  Thu, 12 Aug 2004 16:43:13 +0200
-
-gthumb (3:2.4.1-3) unstable; urgency=medium
-
-  * Some fixes in build process.
-  * Priority medium because of the libtiff3->4 transition
-  * Added debian/watch file
-
- -- Remco van de Meent <remco@debian.org>  Thu,  5 Aug 2004 11:10:45 +0200
-
-gthumb (3:2.4.1-2) unstable; urgency=low
-
-  * gthumb now depends on libtiff4 instead of libtiff3
-  * Closes: #260156: addition to man page to mention --import-photos
-    option
-
- -- Remco van de Meent <remco@debian.org>  Thu, 29 Jul 2004 17:22:14 +0200
-
-gthumb (3:2.4.1-1) unstable; urgency=low
-
-  * New upstream release (closes: #230411)
-  * Add image/svg+xml to data/gthumb.applications, as gthumb can also
-    view SVG files (closes: #257207)
-
- -- Remco van de Meent <remco@debian.org>  Fri,  9 Jul 2004 13:22:00 +0200
-
-gthumb (3:2.4.0-3) unstable; urgency=low
-
-  * Rebuild with libexif10
-
- -- Remco van de Meent <remco@debian.org>  Sat, 19 Jun 2004 23:30:46 +0200
-
-gthumb (3:2.4.0-2) unstable; urgency=low
-
-  * png.h could not be found on various archs. resolve by setting
-    CPPFLAGS before ./configure is run in debian/rules
-
- -- Remco van de Meent <remco@debian.org>  Sat,  5 Jun 2004 11:20:20 +0200
-
-gthumb (3:2.4.0-1) unstable; urgency=low
-
-  * New upstream release
-  * depends on shared-mime-info, not gnome-mime-data (closes: #240804)
-  * accented character problem fixed in upstream version (closes:
-    #241800)
-  * Put libgthumb.so in /usr/lib/gthumb instead of /usr/lib (cf. policy
-    manual ch. 10)
-
- -- Remco van de Meent <remco@debian.org>  Thu,  3 Jun 2004 23:41:43 +0200
-
-gthumb (3:2.3.3-2) unstable; urgency=low
-
-  * Recompile for GNOME 2.6, and add dependency on gnome-mime-data
-
- -- Remco van de Meent <remco@debian.org>  Sun, 30 May 2004 13:18:55 +0200
-
-gthumb (3:2.3.3-1) unstable; urgency=low
-
-  * New upstream release
-  * Fixes problem when saving images (closes: #249938)
-  * Upgraded to Standards Version 3.6.1
-
- -- Remco van de Meent <remco@debian.org>  Fri, 21 May 2004 16:33:46 +0200
-
-gthumb (3:2.3.2-1) unstable; urgency=low
-
-  * New upstream release
-  * Quote strings in debian/menu
-  * Run ldconfig in post{inst,rm}
-  * Window layout options work in this version (closes: #234493)
-  * Moving multiple images works in this version (closes: #232901)
-  * Enable import photo feature (closes: #231943)
-
- -- Remco van de Meent <remco@debian.org>  Sun, 28 Mar 2004 15:46:23 +0200
-
-gthumb (3:2.3.0-1) unstable; urgency=low
-
-  * New upstream release
-  * Updated debian/copyright file with new upstream source location
-  * Thanks Christian Marillat for pointing out new upstream release
-    (closes: #229349)
-  * Fix French translation problem (closes: #226272)
-  * (Once again) reworked 02_fPIC patch
-
- -- Remco van de Meent <remco@debian.org>  Mon, 26 Jan 2004 20:42:30 +0100
-
-gthumb (3:2.2.0-1) unstable; urgency=low
-
-  * New upstream release
-  * Reworked -fPIC patch
-
- -- Remco van de Meent <remco@debian.org>  Mon, 29 Dec 2003 19:15:04 +0100
-
-gthumb (3:2.1.9-2) unstable; urgency=low
-
-  * Move libgthumb.so from /usr/lib/gthumb back to /usr/lib (closes:
-    #223559)
-
- -- Remco van de Meent <remco@debian.org>  Sat, 13 Dec 2003 11:05:45 +0100
-
-gthumb (3:2.1.9-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Mon,  8 Dec 2003 20:47:45 +0100
-
-gthumb (3:2.1.8-1) unstable; urgency=low
-
-  * New upstream release
-  * No more depends on liblincl (closes: #217669)
-  * Remove patches/03_gettext.dpatch (no longer necessary)
-
- -- Remco van de Meent <remco@debian.org>  Tue,  4 Nov 2003 15:10:49 +0100
-
-gthumb (3:2.1.6-1) unstable; urgency=low
-
-  * New upstream release (closes: #214762)
-  * Add a few words to Description of gthumb package
-
- -- Remco van de Meent <remco@debian.org>  Fri, 10 Oct 2003 09:51:23 +0200
-
-gthumb (3:2.1.5-1) unstable; urgency=low
-
-  * Accepting all changes by Christian Marillat (closes: #158437, #205605,
-    #204285, #176886, #201276, #204741, #204491, #205219, #205245, #176886)
-  * There is no much more to say about gthumb than a one-line description
-    (closes: #209621)
-
- -- Remco van de Meent <remco@debian.org>  Tue,  7 Oct 2003 14:16:34 +0200
-
-gthumb (3:2.1.5-0.1) unstable; urgency=low
-
-  * New patch 03_gettext, why .mo files are installed in /usr/lib/locale and
-    gthumb don' want to read these files in /usr/share/locale ?
-  * Toolbar can be displayed or not (Closes: #158437)
-
- -- Christian Marillat <marillat@debian.org>  Thu, 21 Aug 2003 13:01:16 +0200
-
-gthumb (3:2.1.5-0.0) unstable; urgency=low
-
-  * NMU
-  * New upstream release.
-  * Improve 02_fPIC patch to link against -lpng10 (Closes: #205605)
-  * Entries in the View menu are finally working (Closes: #204285)
-
- -- Christian Marillat <marillat@debian.org>  Tue, 19 Aug 2003 16:21:47 +0200
-
-gthumb (3:2.1.4-0.2) unstable; urgency=low
-
-  * NMU
-  * Improve 02_fPIC patch to fix linking problems
-  * Fix French translation (Closes: #176886)
-
- -- Christian Marillat <marillat@debian.org>  Fri, 15 Aug 2003 16:40:49 +0200
-
-gthumb (3:2.1.4-0.1) unstable; urgency=low
-
-  * NMU
-  * Apparently gthumb doesn't like libpng12-0-dev, then little hack to build
-    against libpng10-dev and change Build-Depends (patch 01_configure)
-  * Add scrollkeeper in Build-Depends (Closes: #205245)
-  * Build modules with -fPIC (patch 02_fPIC) (Closes: #205219)
-  * Remove broken entries in that file ?
-
- -- Christian Marillat <marillat@debian.org>  Thu, 14 Aug 2003 09:40:02 +0200
-
-gthumb (3:2.1.4-0.0) unstable; urgency=low
-
-  * NMU
-  * New upstream release (Closes: #201276)
-  * Build against latest libexif-dev (Closes: #204741, #204491)
-  * debian/control use dh_scrollkeeper and thus remove debian/postrm and
-    update debian/postinst and Build-Depends on debhelper (>= 4.1.54) (Closes: #202707)
-  * Package upstream changelog (Closes: #147548)
-  * Use debian/compat
-  * Upgraded standards version to 3.6.0
-  * Remove generated files, may be dangerous.
-
- -- Christian Marillat <marillat@debian.org>  Wed, 13 Aug 2003 11:50:44 +0200
-
-gthumb (3:2.1.2-2) unstable; urgency=low
-
-  * Changed section to gnome
-  * Add -fPIC to {src/jpegutils,libgthumb}/Makefile.in CFLAGS (shared lib)
-
- -- Remco van de Meent <remco@debian.org>  Sat, 21 Jun 2003 21:51:03 +0200
-
-gthumb (3:2.1.2-1) unstable; urgency=low
-
-  * New upstream release
-  * Updated to standards version 3.5.10
-  * Fix linking problems in libgthumb/Makefile.in LDFLAGS (closes: #193779)
-  * Fix problems with Nautilus embedding (closes: #191759)
-
- -- Remco van de Meent <remco@debian.org>  Sun,  8 Jun 2003 22:51:12 +0200
-
-gthumb (3:2.1.1-2) unstable; urgency=low
-
-  * Replace #!/bin/sh -e with the better #!/bin/sh; set -e  pair
-  * Do not mention schema as conffile twice
-
- -- Remco van de Meent <remco@debian.org>  Fri, 21 Mar 2003 23:09:45 +0100
-
-gthumb (3:2.1.1-1) unstable; urgency=low
-
-  * New upstream release
-  * Upgraded standards version to 3.5.9
-  * Removed config.guess and config.sub
-
- -- Remco van de Meent <remco@debian.org>  Fri, 21 Mar 2003 16:16:00 +0100
-
-gthumb (3:2.1.0-1) unstable; urgency=low
-
-  * New upstream release (closes: #174911)
-  * Fix (build-)dependencies (closes: #178199, #180359, #180167, #182139)
-  * Rename gthumb2 to gthumb, Debian GNOME policy (closes: #182813)
-
- -- Remco van de Meent <remco@debian.org>  Mon,  3 Mar 2003 10:59:38 +0100
-
-gthumb2 (2.0.1-4) unstable; urgency=low
-
-  * More fixes to overcome build problems...
-
- -- Remco van de Meent <remco@debian.org>  Fri,  7 Feb 2003 10:17:37 +0100
-
-gthumb2 (2.0.1-3) unstable; urgency=low
-
-  * More fixes in build-deps
-
- -- Remco van de Meent <remco@debian.org>  Wed,  5 Feb 2003 13:08:25 +0100
-
-gthumb2 (2.0.1-2) unstable; urgency=low
-
-  * Added build-deps (gnomeprint, makeinfo)
-
- -- Remco van de Meent <remco@debian.org>  Wed,  5 Feb 2003 11:50:59 +0100
-
-gthumb2 (2.0.1-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Tue,  4 Feb 2003 10:13:22 +0100
-
-gthumb2 (1.107-1) unstable; urgency=low
-
-  * New upstream release
-  * Changes to debian/rules to fix some building problems.
-  * Fix debian/copyright to include link to GPL etc.
-
- -- Remco van de Meent <remco@debian.org>  Thu,  2 Jan 2003 09:35:57 +0000
-
-gthumb2 (1.105-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Mon, 18 Nov 2002 19:32:32 +0000
-
-gthumb2 (1.104-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Tue,  1 Oct 2002 13:58:25 +0000
-
-gthumb2 (1.103-3) unstable; urgency=low
-
-  * Put gthumb-image-viewer in /usr/lib/gthumb (closes: #162687)
-
- -- Remco van de Meent <remco@debian.org>  Mon, 30 Sep 2002 10:55:38 +0000
-
-gthumb2 (1.103-2) unstable; urgency=low
-
-  * Convert LC_MESSAGES UTF-8 format (closes: #157981)
-  * ./usr/libexec/gthumb-image-viewer -> /usr/bin/gthumb-image-viewer
-    (closes: #162687, #160639)
-
- -- Remco van de Meent <remco@debian.org>  Mon, 30 Sep 2002 09:24:32 +0000
-
-gthumb2 (1.103-1) unstable; urgency=low
-
-  * New upstream release
-  * Rebuild for newer imlib/libpng (closes: #157126)
-
- -- Remco van de Meent <remco@debian.org>  Sun, 18 Aug 2002 10:42:06 +0000
-
-gthumb2 (1.102-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Tue, 16 Jul 2002 12:12:49 +0000
-
-gthumb2 (1.101-4) unstable; urgency=low
-
-  * Fixed yet another build depends problem (closes: #151447)
-
- -- Remco van de Meent <remco@debian.org>  Sun, 30 Jun 2002 16:05:34 +0000
-
-gthumb2 (1.101-3) unstable; urgency=low
-
-  * Fix build depends
-  * Fixed debian/dirs
-
- -- Remco van de Meent <remco@debian.org>  Sun, 30 Jun 2002 15:10:58 +0000
-
-gthumb2 (1.101-2) unstable; urgency=low
-
-  * Really fix docbook bug (closes: #149078)
-
- -- Remco van de Meent <remco@debian.org>  Sun, 23 Jun 2002 12:57:42 +0000
-
-gthumb2 (1.101-1) unstable; urgency=low
-
-  * New upstream release
-  * Fix menu file (closes: #149453)
-  * Catch possible scrollkeeper-rebuilddb error in postinst (closes:
-    #149078)
-  * Recompile to solve binary compatibility problems with libbonobo
-    (closes: #150563)
-
- -- Remco van de Meent <remco@debian.org>  Fri, 21 Jun 2002 18:52:41 +0000
-
-gthumb2 (1.100-2) unstable; urgency=low
-
-  * Renamed to gthumb2
-
- -- Remco van de Meent <remco@debian.org>  Sat, 25 May 2002 18:06:42 +0000
-
-gthumb (1.100-1) unstable; urgency=low
-
-  * New upstream release
-  * Updated build-depends; Gnome2 compatible (closes: #147467)
-
- -- Remco van de Meent <remco@debian.org>  Mon, 20 May 2002 11:41:00 +0000
-
-gthumb (0.13-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sat, 18 May 2002 20:35:49 +0200
-
-gthumb (0.12-3) unstable; urgency=low
-
-  * Added orbit build-dep
-
- -- Remco van de Meent <remco@debian.org>  Sun, 21 Apr 2002 22:42:08 +0200
-
-gthumb (0.12-2) unstable; urgency=low
-
-  * Added src dep for bison
-
- -- Remco van de Meent <remco@debian.org>  Sun, 21 Apr 2002 18:18:38 +0200
-
-gthumb (0.12-1) unstable; urgency=low
-
-  * New upstream release (closes: #142986, #119182, #112363)
-
- -- Remco van de Meent <remco@debian.org>  Mon, 15 Apr 2002 14:20:22 +0200
-
-gthumb (0.9.8-1) unstable; urgency=low
-
-  * New upstream release
-  * Added build-depends libgnomeprint-dev
-  * Upgraded to standards-version 3.5.6
-
- -- Remco van de Meent <remco@debian.org>  Mon, 17 Dec 2001 19:53:40 +0100
-
-gthumb (0.9.5-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sun, 14 Oct 2001 19:40:44 +0200
-
-gthumb (0.9.4-1) unstable; urgency=low
-
-  * New upstream release (closes: #109271)
-
- -- Remco van de Meent <remco@debian.org>  Tue,  4 Sep 2001 12:51:09 +0200
-
-gthumb (0.9-1) unstable; urgency=low
-
-  * New upstream release
-  * Removed build-depends on libc6-dev
-
- -- Remco van de Meent <remco@debian.org>  Mon,  9 Jul 2001 17:24:27 +0200
-
-gthumb (0.8.1-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Tue, 19 Jun 2001 19:44:56 +0200
-
-gthumb (0.8-2) unstable; urgency=low
-
-  * Added build-depends for libgnome-vfs-dev (closes: #100570)
-
- -- Remco van de Meent <remco@debian.org>  Tue, 12 Jun 2001 11:55:40 +0200
-
-gthumb (0.8-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sun, 10 Jun 2001 20:18:15 +0200
-
-gthumb (0.7.2-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sat,  2 Jun 2001 15:04:22 +0200
-
-gthumb (0.7.1-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sat, 19 May 2001 22:26:09 +0200
-
-gthumb (0.7-2) unstable; urgency=low
-
-  * Added build-depends for gettext (closes: #97843)
-
- -- Remco van de Meent <remco@debian.org>  Thu, 17 May 2001 22:27:19 +0200
-
-gthumb (0.7-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sat, 12 May 2001 23:57:31 +0200
-
-gthumb (0.6.4-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Sun, 29 Apr 2001 18:53:46 +0200
-
-gthumb (0.6-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Mon, 23 Apr 2001 23:08:08 +0200
-
-gthumb (0.5.1-2) unstable; urgency=low
-
-  * Fixed build-depends (closes: #94583)
-  * Added manual page gthumb.1 (closes: #92599)
-
- -- Remco van de Meent <remco@debian.org>  Fri, 20 Apr 2001 09:42:38 +0200
-
-gthumb (0.5.1-1) unstable; urgency=low
-
-  * New upstream release
-
- -- Remco van de Meent <remco@debian.org>  Wed, 18 Apr 2001 22:36:52 +0200
-
-gthumb (0.4-1) unstable; urgency=low
-
-  * New upstream release
-  * Added menu entry (closes: #92600)
-
- -- Remco van de Meent <remco@debian.org>  Sat,  7 Apr 2001 19:55:47 +0200
-
-gthumb (0.3-1) unstable; urgency=low
-
-  * New upstream release
-  * Added build-depends for libglade-gnome0-dev (closes: #92567)
-
- -- Remco van de Meent <remco@debian.org>  Mon,  2 Apr 2001 16:08:34 +0200
-
-gthumb (0.2-1) unstable; urgency=low
-
-  * Initial Release (closes: #91926)
-
- -- Remco van de Meent <remco@debian.org>  Tue, 27 Mar 2001 21:36:31 +0200
-
-Local variables:
-mode: debian-changelog
-End:
