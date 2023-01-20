@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008-2009 Free Software Foundation, Inc.
  *
@@ -923,7 +923,7 @@ gth_file_mananger_delete_files (GtkWindow *window,
 {
 	GSettings *settings;
 
-	settings = g_settings_new (GTHUMB_MESSAGES_SCHEMA);
+	settings = g_settings_new (PIX_MESSAGES_SCHEMA);
 	if (g_settings_get_boolean (settings, PREF_MSG_CONFIRM_DELETION)) {
 		int        file_count;
 		char      *prompt;

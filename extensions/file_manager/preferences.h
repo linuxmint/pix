@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -26,7 +26,7 @@ G_BEGIN_DECLS
 
 /* schema */
 
-#define GTHUMB_FILE_MANAGER_SCHEMA              GTHUMB_SCHEMA ".file-manager"
+#define PIX_FILE_MANAGER_SCHEMA              PIX_SCHEMA ".file-manager"
 
 /* keys */
 

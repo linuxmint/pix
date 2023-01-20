@@ -8,12 +8,12 @@ gnome = import('gnome')
 i18n = import('i18n')
 gettext_package = meson.project_name()
 
-extensions_install_dir = dependency('gthumb').get_pkgconfig_variable('extensionsdir')
+extensions_install_dir = dependency('pix').get_pkgconfig_variable('extensionsdir')
 extension_data = configuration_data()
-extension_data.set('GTHUMB_API', dependency('gthumb').get_pkgconfig_variable('apiversion'))
+extension_data.set('PIX_API', dependency('pix').get_pkgconfig_variable('apiversion'))
 
 extension_deps = [
-  dependency('gthumb'),
+  dependency('pix'),
 ]
 
 po_dir = join_paths(meson.source_root(), 'po')

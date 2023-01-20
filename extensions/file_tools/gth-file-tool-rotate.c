@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <math.h>
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/image-viewer.h>
 #include "cairo-rotate.h"
 #include "file-tools-enum-types.h"
@@ -677,7 +677,7 @@ static void
 gth_file_tool_rotate_init (GthFileToolRotate *self)
 {
 	self->priv = gth_file_tool_rotate_get_instance_private (self);
-	self->priv->settings = g_settings_new (GTHUMB_ROTATE_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_ROTATE_SCHEMA);
 
 	gth_file_tool_construct (GTH_FILE_TOOL (self), "image-rotate-symbolic", _("Rotate"), GTH_TOOLBOX_SECTION_ROTATION);
 }

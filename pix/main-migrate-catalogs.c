@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -430,7 +430,7 @@ migration_for_each_file (GFile     *file,
 
 	new_buffer = dom_document_dump (document, &new_buffer_size);
 
-	catalogs_dir = gth_user_dir_get_file_for_write (GTH_DIR_DATA, GTHUMB_DIR, "catalogs", NULL);
+	catalogs_dir = gth_user_dir_get_file_for_write (GTH_DIR_DATA, PIX_DIR, "catalogs", NULL);
 	catalogs_path = g_file_get_path (catalogs_dir);
 	relative_path = g_file_get_relative_path (data->collections_dir, file);
 	tmp_path = g_strconcat (catalogs_path, G_DIR_SEPARATOR_S, relative_path, NULL);
@@ -490,7 +490,7 @@ migrate_catalogs_from_2_10 (void)
 	GFile         *home_dir;
 
 	data = g_new0 (MigrationData, 1);
-	data->settings = g_settings_new (GTHUMB_DATA_MIGRATION_SCHEMA);
+	data->settings = g_settings_new (PIX_DATA_MIGRATION_SCHEMA);
 
 	if (g_settings_get_boolean (data->settings, PREF_DATA_MIGRATION_CATALOGS_2_10)) {
 		migration_data_free (data);
@@ -498,7 +498,7 @@ migrate_catalogs_from_2_10 (void)
 	}
 
 	home_dir = g_file_new_for_path (g_get_home_dir ());
-	data->collections_dir = _g_file_get_child (home_dir, ".gnome2", "gthumb", "collections", NULL);
+	data->collections_dir = _g_file_get_child (home_dir, ".gnome2", "pix", "collections", NULL);
 
 	_g_directory_foreach_child (data->collections_dir,
 				   TRUE,

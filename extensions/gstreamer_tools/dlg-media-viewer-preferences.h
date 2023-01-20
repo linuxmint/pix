@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2014 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_MEDIA_VIEWER_PREFERENCES_H
 #define DLG_MEDIA_VIEWER_PREFERENCES_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 void dlg_media_viewer_preferences (GtkWindow *parent);
 

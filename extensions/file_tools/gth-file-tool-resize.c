@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <math.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/image-viewer.h>
 #include "gth-file-tool-resize.h"
 #include "preferences.h"
@@ -533,7 +533,7 @@ gth_file_tool_resize_get_options (GthFileTool *base)
 		return NULL;
 
 	if (self->priv->settings == NULL)
-		self->priv->settings = g_settings_new (GTHUMB_RESIZE_SCHEMA);
+		self->priv->settings = g_settings_new (PIX_RESIZE_SCHEMA);
 
 	self->priv->original_width = cairo_image_surface_get_width (source);
 	self->priv->original_height = cairo_image_surface_get_height (source);
@@ -722,7 +722,7 @@ gth_file_tool_resize_destroy_options (GthFileTool *base)
 	/* restore the zoom quality */
 
 	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	viewer_settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	viewer_settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (viewer),
 					   g_settings_get_enum (viewer_settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
 

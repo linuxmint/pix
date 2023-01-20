@@ -1,5 +1,5 @@
 <!--
-  gThumb
+  Pix
 
   Copyright © 2011 Free Software Foundation, Inc.
 
@@ -27,7 +27,7 @@
     <child name="webp" schema="org.x.pix.pixbuf-savers.webp" />
   </schema>
 
-  <schema id="org.x.pix.pixbuf-savers.avif" path="/org/x/pix/pixbuf-savers/avif/" gettext-domain="gthumb">
+  <schema id="org.x.pix.pixbuf-savers.avif" path="/org/x/pix/pixbuf-savers/avif/" gettext-domain="pix">
     <key name="lossless" type="b">
       <default>false</default>
     </key>
@@ -36,7 +36,7 @@
     </key>
   </schema>
 
-  <schema id="org.x.pix.pixbuf-savers.jpeg" path="/org/x/pix/pixbuf-savers/jpeg/" gettext-domain="gthumb">
+  <schema id="org.x.pix.pixbuf-savers.jpeg" path="/org/x/pix/pixbuf-savers/jpeg/" gettext-domain="pix">
     <key name="default-ext" type="s">
       <default>'jpeg'</default>
       <description>Possible values are: jpeg, jpg.</description>
@@ -55,19 +55,19 @@
     </key>
   </schema>
 
-  <schema id="org.x.pix.pixbuf-savers.png" path="/org/x/pix/pixbuf-savers/png/" gettext-domain="gthumb">
+  <schema id="org.x.pix.pixbuf-savers.png" path="/org/x/pix/pixbuf-savers/png/" gettext-domain="pix">
     <key name="compression-level" type="i">
       <default>6</default>
     </key>
   </schema>
 
-  <schema id="org.x.pix.pixbuf-savers.tga" path="/org/x/pix/pixbuf-savers/tga/" gettext-domain="gthumb">
+  <schema id="org.x.pix.pixbuf-savers.tga" path="/org/x/pix/pixbuf-savers/tga/" gettext-domain="pix">
     <key name="rle-compression" type="b">
       <default>true</default>
     </key>
   </schema>
 
-  <schema id="org.x.pix.pixbuf-savers.tiff" path="/org/x/pix/pixbuf-savers/tiff/" gettext-domain="gthumb">
+  <schema id="org.x.pix.pixbuf-savers.tiff" path="/org/x/pix/pixbuf-savers/tiff/" gettext-domain="pix">
     <key name="default-ext" type="s">
       <default>'tiff'</default>
       <description>Possible values are: tiff, tif.</description>
@@ -83,7 +83,7 @@
     </key>
   </schema>
 
-  <schema id="org.x.pix.pixbuf-savers.webp" path="/org/x/pix/pixbuf-savers/webp/" gettext-domain="gthumb">
+  <schema id="org.x.pix.pixbuf-savers.webp" path="/org/x/pix/pixbuf-savers/webp/" gettext-domain="pix">
     <key name="lossless" type="b">
       <default>false</default>
     </key>

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2014 The Free Software Foundation, Inc.
  *
@@ -126,7 +126,7 @@ browser__dlg_preferences_construct_cb (GtkWidget  *dialog,
 
 	data = g_new0 (BrowserData, 1);
 	data->builder = _gtk_builder_new_from_file ("browser-preferences.ui", NULL);
-	data->browser_settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	data->browser_settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	data->dialog = dialog;
 
 	/* caption list */

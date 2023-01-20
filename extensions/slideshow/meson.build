@@ -15,7 +15,7 @@ shared_module('slideshow',
     use_clutter ? clutter_deps : [],
     use_gstreamer ? gstreamer_deps : []
   ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : [
     catalogs_mod,

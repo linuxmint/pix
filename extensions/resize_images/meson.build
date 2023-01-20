@@ -9,7 +9,7 @@ source_files = files(
 shared_module('resize_images',
   sources : source_files,
   dependencies : extension_common_deps,
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : image_viewer_mod,
   install : true,

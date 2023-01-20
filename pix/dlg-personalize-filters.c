@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 The Free Software Foundation, Inc.
  *
@@ -511,7 +511,7 @@ dlg_personalize_filters (GthBrowser *browser)
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("personalize-filters.ui", NULL);
-	data->settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	data->settings = g_settings_new (PIX_BROWSER_SCHEMA);
 
 	/* Get the widgets. */
 

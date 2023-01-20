@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/gth-image-viewer-page.h>
 #include "actions.h"
 
@@ -204,7 +204,7 @@ get_new_wallpaper_file_async (GCancellable        *cancellable,
 	GTask            *task;
 
 	nw_data = g_slice_new (NewWallpaperData);
-	nw_data->folder = gth_user_dir_get_dir_for_write (GTH_DIR_DATA, GTHUMB_DIR, NULL);
+	nw_data->folder = gth_user_dir_get_dir_for_write (GTH_DIR_DATA, PIX_DIR, NULL);
 	nw_data->max_n = 0;
 	nw_data->wallpaper_files = NULL;
 	nw_data->wallpaper_name_regex = g_regex_new ("wallpaper([0-9]+).jpeg", 0, 0, NULL);

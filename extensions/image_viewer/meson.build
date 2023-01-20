@@ -15,7 +15,7 @@ gresource_files = gnome.compile_resources('image-viewer-resources', 'resources.x
 image_viewer_mod = shared_module('image_viewer',
   sources : [ source_files, gresource_files ],
   dependencies : extension_common_deps,
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : jpeg_utils_mod,
   install : true,

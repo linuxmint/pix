@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -100,8 +100,8 @@ image_viewer__dlg_preferences_construct_cb (GtkWidget  *dialog,
 
 	data = g_new0 (BrowserData, 1);
 	data->builder = _gtk_builder_new_from_file ("image-viewer-preferences.ui", "image_viewer");
-	data->settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
-	data->browser_settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	data->settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
+	data->browser_settings = g_settings_new (PIX_BROWSER_SCHEMA);
 
 	notebook = _gtk_builder_get_widget (dialog_builder, "notebook");
 

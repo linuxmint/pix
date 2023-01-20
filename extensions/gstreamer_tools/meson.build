@@ -10,7 +10,7 @@ source_files = files(
 shared_module('gstreamer_tools',
   sources : source_files,
   dependencies : [ extension_common_deps, gstreamer_deps ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with: gstreamer_utils_mod,
   install : true,

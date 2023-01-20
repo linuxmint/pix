@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #define GDK_PIXBUF_ENABLE_BACKEND
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/importer/importer.h>
 #include "dlg-import-from-flickr.h"
 #include "flickr-account.h"
@@ -140,7 +140,7 @@ import_dialog_response_cb (GtkDialog *dialog,
 				char      *subfolder_template;
 				GthTask   *task;
 
-				settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
+				settings = g_settings_new (PIX_IMPORTER_SCHEMA);
 				destination = gth_import_preferences_get_destination ();
 				subfolder_template = g_settings_get_string (settings, PREF_IMPORTER_SUBFOLDER_TEMPLATE);
 

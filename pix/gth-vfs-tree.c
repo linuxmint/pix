@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2019 Free Software Foundation, Inc.
  *
@@ -149,7 +149,7 @@ load_data_new (GthVfsTree *vfs_tree,
 	g_object_unref (file);
 
 	if (vfs_tree->priv->tree_root_is_vfs_root)
-		load_data->list = g_list_prepend (load_data->list, g_file_new_for_uri ("gthumb-vfs:///"));
+		load_data->list = g_list_prepend (load_data->list, g_file_new_for_uri ("pix-vfs:///"));
 
 	load_data->current = NULL;
 
@@ -294,7 +294,7 @@ folder_is_vfs_root (GFile *folder)
 	gboolean  result;
 
 	uri = g_file_get_uri (folder);
-	result = g_strcmp0 (uri, "gthumb-vfs:///") == 0;
+	result = g_strcmp0 (uri, "pix-vfs:///") == 0;
 
 	g_free (uri);
 

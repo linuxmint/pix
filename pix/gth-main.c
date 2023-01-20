@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -914,7 +914,7 @@ gth_main_get_general_filter (void)
 	char      *filter_name;
 	GthTest   *filter;
 
-	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	filter_name = g_settings_get_string (settings, PREF_BROWSER_GENERAL_FILTER);
 	filter = gth_main_get_registered_object (GTH_TYPE_TEST, filter_name);
 
@@ -1173,7 +1173,7 @@ gth_main_get_default_bookmarks (void)
 
 	Main->priv->bookmarks = g_bookmark_file_new ();
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, BOOKMARKS_FILE, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, BOOKMARKS_FILE, NULL);
 	filename = g_file_get_path (file);
 	g_bookmark_file_load_from_file (Main->priv->bookmarks, filename, NULL);
 
@@ -1190,7 +1190,7 @@ gth_main_bookmarks_changed (void)
 	GFile *file;
 	char  *filename;
 
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, BOOKMARKS_FILE, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, BOOKMARKS_FILE, NULL);
 	filename = g_file_get_path (file);
 	g_bookmark_file_to_file (Main->priv->bookmarks, filename, NULL);
 
@@ -1218,7 +1218,7 @@ gth_main_get_default_filter_file (void)
 		return Main->priv->filters;
 
 	Main->priv->filters = gth_filter_file_new ();
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, FILTERS_FILE, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, FILTERS_FILE, NULL);
 	gth_filter_file_load_from_file (Main->priv->filters, file, NULL);
 
 	g_object_unref (file);
@@ -1275,7 +1275,7 @@ gth_main_filters_changed (void)
 {
 	GFile *file;
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, FILTERS_FILE, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, FILTERS_FILE, NULL);
 	gth_filter_file_to_file (Main->priv->filters, file, NULL);
 	gth_monitor_filters_changed (gth_main_get_default_monitor ());
 
@@ -1292,7 +1292,7 @@ gth_main_get_default_tag_file (void)
 		return Main->priv->tags;
 
 	Main->priv->tags = gth_tags_file_new ();
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, TAGS_FILE, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, TAGS_FILE, NULL);
 	gth_tags_file_load_from_file (Main->priv->tags, file, NULL);
 
 	g_object_unref (file);
@@ -1313,7 +1313,7 @@ gth_main_tags_changed (void)
 {
 	GFile *file;
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, TAGS_FILE, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, TAGS_FILE, NULL);
 	gth_tags_file_to_file (Main->priv->tags, file, NULL);
 	gth_monitor_tags_changed (gth_main_get_default_monitor ());
 
@@ -1407,7 +1407,7 @@ gth_main_activate_extensions (void)
 	if (Main->priv->extension_manager == NULL)
 		Main->priv->extension_manager = gth_extension_manager_new ();
 
-	settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
+	settings = g_settings_new (PIX_GENERAL_SCHEMA);
 	user_actived_extensions = g_settings_get_strv (settings, PREF_GENERAL_ACTIVE_EXTENSIONS);
 	if ((user_actived_extensions != NULL)
 	     && (user_actived_extensions[1] == NULL)

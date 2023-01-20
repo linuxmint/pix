@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2008 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_BOOKMARKS_H
 #define DLG_BOOKMARKS_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 void dlg_bookmarks (GthBrowser *browser);
 

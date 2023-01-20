@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -34,7 +34,7 @@
 #include "gth-request-dialog.h"
 
 
-#define DEFAULT_URI "gthumb-vfs:///"
+#define DEFAULT_URI "pix-vfs:///"
 #define EMPTY_URI   "..."
 #define LOADING_URI "."
 #define PARENT_URI  ".."
@@ -1220,7 +1220,7 @@ _gth_folder_tree_set_file_data (GthFolderTree *folder_tree,
 			    COLUMN_SORT_KEY, sort_key,
 			    COLUMN_SORT_ORDER, g_file_info_get_sort_order (file_data->info),
 			    COLUMN_SECONDARY_SORT_ORDER, _g_file_info_get_secondary_sort_order (file_data->info),
-			    COLUMN_NO_CHILD, g_file_info_get_attribute_boolean (file_data->info, "gthumb::no-child"),
+			    COLUMN_NO_CHILD, g_file_info_get_attribute_boolean (file_data->info, "pix::no-child"),
 			    COLUMN_LOADED, FALSE,
 			    -1);
 
@@ -1296,7 +1296,7 @@ _gth_folder_tree_is_entry_point_dup (GthFolderTree *folder_tree,
 	if (g_hash_table_lookup (folder_tree->priv->entry_points, file_data->file) == NULL)
 		return FALSE;
 
-	return ! g_file_info_get_attribute_boolean (file_data->info, "gthumb::entry-point");
+	return ! g_file_info_get_attribute_boolean (file_data->info, "pix::entry-point");
 }
 
 
@@ -1319,7 +1319,7 @@ _gth_folder_tree_add_file (GthFolderTree *folder_tree,
 		return FALSE;
 	}
 
-	if (g_file_info_get_attribute_boolean (fd->info, "gthumb::entry-point"))
+	if (g_file_info_get_attribute_boolean (fd->info, "pix::entry-point"))
 		gtk_tree_store_set (folder_tree->priv->tree_store, &iter,
 				    COLUMN_WEIGHT, PANGO_WEIGHT_BOLD,
 				    -1);
@@ -1328,7 +1328,7 @@ _gth_folder_tree_add_file (GthFolderTree *folder_tree,
 				    COLUMN_WEIGHT, PANGO_WEIGHT_NORMAL,
 				    -1);
 
-	if (! g_file_info_get_attribute_boolean (fd->info, "gthumb::no-child")
+	if (! g_file_info_get_attribute_boolean (fd->info, "pix::no-child")
 	    && ! _gth_folder_tree_is_entry_point_dup (folder_tree, &iter, fd))
 	{
 		_gth_folder_tree_add_loading_item (folder_tree, &iter, TRUE);

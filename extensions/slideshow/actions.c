@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "gth-slideshow.h"
 #include "gth-transition.h"
@@ -67,7 +67,7 @@ gth_browser_activate_slideshow (GSimpleAction *action,
 		return;
 	}
 
-	settings = g_settings_new (GTHUMB_SLIDESHOW_SCHEMA);
+	settings = g_settings_new (PIX_SLIDESHOW_SCHEMA);
 
 	location = gth_browser_get_location_data (browser);
 	if (g_file_info_get_attribute_boolean (location->info, "slideshow::personalize"))

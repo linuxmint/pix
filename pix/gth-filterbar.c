@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2006-2008 Free Software Foundation, Inc.
  *
@@ -444,7 +444,7 @@ gth_filterbar_save_filter (GthFilterbar *filterbar,
 		filter_description = g_strdup ("");
 		len = 0;
 	}
-	filter_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, filename, NULL);
+	filter_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, filename, NULL);
 	_g_file_write (filter_file, FALSE, 0, filter_description, len, NULL, NULL);
 
 	g_object_unref (filter_file);
@@ -462,7 +462,7 @@ gth_filterbar_load_filter (GthFilterbar *filterbar,
 	gsize        len;
 	DomDocument *doc;
 
-	filter_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, filename, NULL);
+	filter_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, filename, NULL);
 	if (! _g_file_load_in_buffer (filter_file, (void **) &buffer, &len, NULL, NULL)) {
 		g_object_unref (filter_file);
 		return loaded;

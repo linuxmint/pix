@@ -14,7 +14,7 @@ gresource_files = gnome.compile_resources('list-tools-resources', 'resources.xml
 list_tools_mod = shared_module('list_tools',
   sources : [ source_files, gresource_files ],
   dependencies : extension_common_deps,
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   install : true,
   install_dir : extensions_install_dir,

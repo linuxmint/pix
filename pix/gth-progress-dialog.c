@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -152,7 +152,7 @@ gth_task_progress_init (GthTaskProgress *self)
 	gtk_box_pack_start (GTK_BOX (self), vbox, FALSE, FALSE, 0);
 
 	self->cancel_button = gtk_button_new ();
-	gtk_style_context_add_class (gtk_widget_get_style_context (self->cancel_button), "gthumb-circular-button");
+	gtk_style_context_add_class (gtk_widget_get_style_context (self->cancel_button), "pix-circular-button");
 	gtk_widget_show (self->cancel_button);
 	g_signal_connect (self->cancel_button, "clicked", G_CALLBACK (cancel_button_clicked_cb), self);
 	gtk_widget_set_tooltip_text (self->cancel_button, _("Cancel operation"));
@@ -410,7 +410,7 @@ progress_dialog_task_progress_cb (GthTask    *task,
 	title = g_string_new ("");
 	g_string_append (title, description);
 	g_string_append (title, " - ");
-	g_string_append (title, _("gThumb"));
+	g_string_append (title, _("Pix"));
 	gtk_window_set_title (GTK_WINDOW (self), title->str);
 
 	g_string_free (title, TRUE);

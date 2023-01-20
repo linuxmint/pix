@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #ifdef HAVE_LIBSECRET
 #include <libsecret/secret.h>
 #endif /* HAVE_LIBSECRET */
-#include <gthumb.h>
+#include <pix.h>
 #include "oauth-account.h"
 
 
@@ -341,7 +341,7 @@ oauth_accounts_load_from_file (const char *service_name,
 		account_type = OAUTH_TYPE_ACCOUNT;
 
 	filename = g_strconcat (service_name, ".xml", NULL);
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "accounts", filename, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "accounts", filename, NULL);
 	if (! _g_file_load_in_buffer (file, (void **) &buffer, &len, NULL, &error)) {
 		g_error_free (error);
 		g_object_unref (file);
@@ -434,7 +434,7 @@ oauth_accounts_save_to_file (const char   *service_name,
 	}
 
 	filename = g_strconcat (service_name, ".xml", NULL);
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "accounts", filename, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "accounts", filename, NULL);
 	buffer = dom_document_dump (doc, &len);
 	_g_file_write (file, FALSE, G_FILE_CREATE_PRIVATE | G_FILE_CREATE_REPLACE_DESTINATION, buffer, len, NULL, NULL);
 

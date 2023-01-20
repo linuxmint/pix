@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2010 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-change-date.h"
 #include "gth-change-date-task.h"
 #include "preferences.h"
@@ -169,7 +169,7 @@ dlg_change_date (GthBrowser *browser,
 	data->browser = browser;
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("change-date.ui", "change_date");
-	data->settings = g_settings_new (GTHUMB_CHANGE_DATE_SCHEMA);
+	data->settings = g_settings_new (PIX_CHANGE_DATE_SCHEMA);
 
 	/* Get the widgets. */
 

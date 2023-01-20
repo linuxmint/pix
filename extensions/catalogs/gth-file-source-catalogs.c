@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-catalog.h"
 #include "gth-file-source-catalogs.h"
 
@@ -80,29 +80,29 @@ update_file_info (GthFileSource *file_source,
 
 	if (g_str_has_suffix (uri, ".gqv") || g_str_has_suffix (uri, ".catalog")) {
 		g_file_info_set_file_type (info, G_FILE_TYPE_DIRECTORY);
-		g_file_info_set_content_type (info, "gthumb/catalog");
+		g_file_info_set_content_type (info, "pix/catalog");
 		icon = g_themed_icon_new ("file-catalog-symbolic");
 		g_file_info_set_symbolic_icon (info, icon);
 		g_file_info_set_sort_order (info, 1);
-		g_file_info_set_attribute_boolean (info, "gthumb::no-child", TRUE);
+		g_file_info_set_attribute_boolean (info, "pix::no-child", TRUE);
 		gth_catalog_update_standard_attributes (catalog_file, info);
 	}
 	else if (g_str_has_suffix (uri, ".search")) {
 		g_file_info_set_file_type (info, G_FILE_TYPE_DIRECTORY);
-		g_file_info_set_content_type (info, "gthumb/search");
+		g_file_info_set_content_type (info, "pix/search");
 		icon = g_themed_icon_new ("file-search-symbolic");
 		g_file_info_set_symbolic_icon (info, icon);
 		g_file_info_set_sort_order (info, 1);
-		g_file_info_set_attribute_boolean (info, "gthumb::no-child", TRUE);
+		g_file_info_set_attribute_boolean (info, "pix::no-child", TRUE);
 		gth_catalog_update_standard_attributes (catalog_file, info);
 	}
 	else {
 		g_file_info_set_file_type (info, G_FILE_TYPE_DIRECTORY);
-		g_file_info_set_content_type (info, "gthumb/library");
+		g_file_info_set_content_type (info, "pix/library");
 		icon = g_themed_icon_new ("file-library-symbolic");
 		g_file_info_set_symbolic_icon (info, icon);
 		g_file_info_set_sort_order (info, 0);
-		g_file_info_set_attribute_boolean (info, "gthumb::no-child", FALSE);
+		g_file_info_set_attribute_boolean (info, "pix::no-child", FALSE);
 		gth_catalog_update_standard_attributes (catalog_file, info);
 	}
 
@@ -1072,7 +1072,7 @@ gth_file_source_catalogs_copy (GthFileSource    *file_source,
 
 	first_file = file_list->data;
 	if (g_file_has_uri_scheme (first_file, "catalog")) {
-		if (g_strcmp0 (g_file_info_get_content_type (destination->info), "gthumb/catalog") == 0) {
+		if (g_strcmp0 (g_file_info_get_content_type (destination->info), "pix/catalog") == 0) {
 			CopyCatalogData *ccd;
 			const char      *msg;
 			GtkWidget       *d;

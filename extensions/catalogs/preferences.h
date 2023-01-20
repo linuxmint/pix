@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2019 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 /* schema */
 
-#define GTHUMB_CATALOGS_SCHEMA     GTHUMB_SCHEMA ".catalogs"
+#define PIX_CATALOGS_SCHEMA     PIX_SCHEMA ".catalogs"
 
 /* keys */
 

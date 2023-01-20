@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <gst/gst.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/gstreamer_utils/gstreamer-utils.h>
 #include "actions.h"
 #include "gth-media-viewer-page.h"
@@ -182,7 +182,7 @@ gth_browser_activate_video_screenshot (GSimpleAction	*action,
 
 	save_data = g_new0 (SaveData, 1);
 	save_data->browser = gth_media_viewer_page_get_browser (page);
-	save_data->settings = g_settings_new (GTHUMB_GSTREAMER_TOOLS_SCHEMA);
+	save_data->settings = g_settings_new (PIX_GSTREAMER_TOOLS_SCHEMA);
 	save_data->page = page;
 	save_data->playing_before_screenshot = gth_media_viewer_page_is_playing (page);
 

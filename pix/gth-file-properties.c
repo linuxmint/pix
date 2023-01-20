@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -536,7 +536,7 @@ gth_file_properties_init (GthFileProperties *self)
 	self->priv = gth_file_properties_get_instance_private (self);
 	self->priv->show_details = FALSE;
 	self->priv->last_file_data = NULL;
-	self->priv->settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	self->priv->favorites = NULL;
 	self->priv->last_selected = NULL;
 

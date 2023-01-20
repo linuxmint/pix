@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2010 Free Software Foundation, Inc.
  *
@@ -48,7 +48,7 @@ main (int argc, char *argv[])
 
 	/* text domain */
 
-	bindtextdomain (GETTEXT_PACKAGE, GTHUMB_LOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, PIX_LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 

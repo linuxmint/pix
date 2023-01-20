@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -205,7 +205,7 @@ gth_selections_manager_update_file_info (GFile     *file,
 	n_selection = _g_file_get_n_selection (file);
 
 	g_file_info_set_file_type (info, G_FILE_TYPE_DIRECTORY);
-	g_file_info_set_content_type (info, "gthumb/selection");
+	g_file_info_set_content_type (info, "pix/selection");
 
 	g_file_info_set_sort_order (info, n_selection);
 	g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ, TRUE);
@@ -213,7 +213,7 @@ gth_selections_manager_update_file_info (GFile     *file,
 		g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE, TRUE);
 	g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE, FALSE);
 	g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME, FALSE);
-	g_file_info_set_attribute_int32 (info, "gthumb::n-selection", n_selection);
+	g_file_info_set_attribute_int32 (info, "pix::n-selection", n_selection);
 
 	/* icon */
 
@@ -224,7 +224,7 @@ gth_selections_manager_update_file_info (GFile     *file,
 	/* display name */
 
 	if (n_selection > 0) {
-		g_file_info_set_attribute_boolean (info, "gthumb::no-child", TRUE);
+		g_file_info_set_attribute_boolean (info, "pix::no-child", TRUE);
 		name = g_strdup_printf (_("Selection %d"), n_selection);
 	}
 	else if (n_selection == 0)

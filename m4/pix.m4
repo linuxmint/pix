@@ -1,4 +1,4 @@
-## gthumb.m4 - Help macros for gthumb extensions. -*-Shell-script-*-
+## pix.m4 - Help macros for pix extensions. -*-Shell-script-*-
 ## Copyright © Paolo Bacchilega <paobac@src.gnome.org>
 ##
 ## Started from epiphany.m4, which contains the following copyright note:
@@ -24,36 +24,36 @@
 ## the same distribution terms that you use for the rest of that program.
 
 # Usage:
-#   GTHUMB_EXTENSION_INIT(gthumb-api-version, [gthumb-minimum-version])
+#   PIX_EXTENSION_INIT(pix-api-version, [pix-minimum-version])
 #
-AC_DEFUN([GTHUMB_EXTENSION_INIT],
+AC_DEFUN([PIX_EXTENSION_INIT],
 [
 dnl Check we have an api-version
-ifelse([$1], [], [AC_MSG_ERROR([Required gthumb API version not supplied])], [])
+ifelse([$1], [], [AC_MSG_ERROR([Required pix API version not supplied])], [])
 
-_gthumb_api_version=$1
+_pix_api_version=$1
 
-AC_MSG_CHECKING([whether gthumb-$_gthumb_api_version is available])
-PKG_CHECK_EXISTS([gthumb-$_gthumb_api_version], [result=yes],[result=no])
+AC_MSG_CHECKING([whether pix-$_pix_api_version is available])
+PKG_CHECK_EXISTS([pix-$_pix_api_version], [result=yes],[result=no])
 AC_MSG_RESULT([$result])
 
 if test $result = "no" ; then
-    AC_MSG_ERROR([gthumb API version $_gthumb_api_version is required
+    AC_MSG_ERROR([pix API version $_pix_api_version is required
 
-This API version is used in the $_gthumb_api_version stable series, and
+This API version is used in the $_pix_api_version stable series, and
 the preceeding development series. Please ensure you have the appropriate
-gthumb version installed.])
+pix version installed.])
 fi
 
 dnl Check the minimum version
 ifelse([$2], [], [],
 [
-  AC_MSG_CHECKING([whether minimum gthumb version $2 is available])
-  PKG_CHECK_EXISTS([gthumb-$_gthumb_api_version >= $2], [result=yes], [result=no])
+  AC_MSG_CHECKING([whether minimum pix version $2 is available])
+  PKG_CHECK_EXISTS([pix-$_pix_api_version >= $2], [result=yes], [result=no])
   AC_MSG_RESULT([$result])
 
   if test $result = "no" ; then
-      AC_MSG_ERROR([The minimum gthumb version supported by this application is $2.
+      AC_MSG_ERROR([The minimum pix version supported by this application is $2.
 
 Please upgrade to at least $2. If you have compiled a later version it is
 possible pkg-config isn't finding it, in which case set the PKG_CONFIG_PATH
@@ -61,24 +61,24 @@ environment variable.])
   fi
 ])
 
-dnl set the GTHUMB_EXTENSIONS_DIR variable
-GTHUMB_EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir gthumb-$_gthumb_api_version`"
-AC_SUBST([GTHUMB_EXTENSIONS_DIR])
+dnl set the PIX_EXTENSIONS_DIR variable
+PIX_EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir pix-$_pix_api_version`"
+AC_SUBST([PIX_EXTENSIONS_DIR])
 
-AC_SUBST([GTHUMB_EXTENSION_RULES])
+AC_SUBST([PIX_EXTENSION_RULES])
 
 ])
 
 
-AC_DEFUN([GTHUMB_EXTENSION_RULES],
+AC_DEFUN([PIX_EXTENSION_RULES],
 [
 
 dnl Add a rule that auto-translates the .extension files
 dnl like the INTLTOOL_XML_RULE does for xml files
-GTHUMB_EXTENSION_RULE='%.extension: %.extension.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
-AC_SUBST(GTHUMB_EXTENSION_RULE)
+PIX_EXTENSION_RULE='%.extension: %.extension.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
+AC_SUBST(PIX_EXTENSION_RULE)
 
-GTHUMB_EXTENSION_IN_RULE='%.extension.in: %.extension.in.in $(extension_LTLIBRARIES) ; sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" -e "s|%VERSION%|$(VERSION)|" -e "s|%GTHUMB_API_VERSION%|$(GTHUMB_API_VERSION)|" $< > [$]@'
-AC_SUBST(GTHUMB_EXTENSION_IN_RULE)
+PIX_EXTENSION_IN_RULE='%.extension.in: %.extension.in.in $(extension_LTLIBRARIES) ; sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" -e "s|%VERSION%|$(VERSION)|" -e "s|%PIX_API_VERSION%|$(PIX_API_VERSION)|" $< > [$]@'
+AC_SUBST(PIX_EXTENSION_IN_RULE)
 
 ])

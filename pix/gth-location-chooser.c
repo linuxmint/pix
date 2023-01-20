@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2005-2009 Free Software Foundation, Inc.
  *
@@ -570,7 +570,7 @@ update_location_list (gpointer user_data)
 					    TYPE_COLUMN, ITEM_TYPE_LOCATION,
 					    ICON_COLUMN, icon,
 					    NAME_COLUMN, _("Locations"),
-					    URI_COLUMN, "gthumb-vfs:///",
+					    URI_COLUMN, "pix-vfs:///",
 					    -1);
 
 			_g_object_unref (icon);

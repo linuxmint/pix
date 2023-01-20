@@ -12,7 +12,7 @@ shared_module('23hq',
     libsoup_dep,
     use_libsecret ? libsecret_dep : [],
   ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : [
     flicker_utils_mod,

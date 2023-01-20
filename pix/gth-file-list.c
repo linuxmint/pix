@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -368,7 +368,7 @@ gth_file_list_init (GthFileList *file_list)
 	gtk_widget_set_can_focus (GTK_WIDGET (file_list), FALSE);
 
 	file_list->priv = gth_file_list_get_instance_private (file_list);
-	file_list->priv->settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	file_list->priv->settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	file_list->priv->type = GTH_FILE_LIST_MODE_NORMAL;
 	file_list->priv->vadj = NULL;
 	file_list->priv->notebook = NULL;

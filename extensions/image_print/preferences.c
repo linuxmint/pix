@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "preferences.h"
 
 
@@ -57,7 +57,7 @@ ip__dlg_preferences_construct_cb (GtkWidget  *dialog,
 
 	data = g_new0 (BrowserData, 1);
 	data->builder = _gtk_builder_new_from_file ("print-preferences.ui", "image_print");
-	data->settings = g_settings_new (GTHUMB_IMAGE_PRINT_SCHEMA);
+	data->settings = g_settings_new (PIX_IMAGE_PRINT_SCHEMA);
 
 	notebook = _gtk_builder_get_widget (dialog_builder, "notebook");
 

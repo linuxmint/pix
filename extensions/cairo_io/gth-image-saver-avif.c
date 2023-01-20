@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  gThumb
+ *  Pix
  *
  *  Copyright (C) 2021 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <libheif/heif.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-image-saver-avif.h"
 #include "preferences.h"
 
@@ -376,6 +376,6 @@ static void
 gth_image_saver_avif_init (GthImageSaverAvif *self)
 {
 	self->priv = gth_image_saver_avif_get_instance_private (self);
-	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_AVIF_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_AVIF_SCHEMA);
 	self->priv->builder = NULL;
 }

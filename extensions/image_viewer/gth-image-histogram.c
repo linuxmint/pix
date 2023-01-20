@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <math.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-image-histogram.h"
 #include "gth-image-viewer-page.h"
 #include "preferences.h"
@@ -137,7 +137,7 @@ histogram_view_notify_scale_type_cb (GObject    *gobject,
 	GthImageHistogram *self = user_data;
 	GSettings         *settings;
 
-	settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 	g_settings_set_enum (settings, PREF_IMAGE_VIEWER_HISTOGRAM_SCALE, gth_histogram_view_get_scale_type (GTH_HISTOGRAM_VIEW (self->priv->histogram_view)));
 	g_object_unref (settings);
 }
@@ -154,7 +154,7 @@ gth_image_histogram_init (GthImageHistogram *self)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (self), GTK_ORIENTATION_VERTICAL);
 	gtk_box_set_spacing (GTK_BOX (self), 6);
 
-	settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 
 	self->priv->histogram_view = gth_histogram_view_new (self->priv->histogram);
 	gth_histogram_view_show_info (GTH_HISTOGRAM_VIEW (self->priv->histogram_view), TRUE);

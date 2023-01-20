@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gst/gst.h>
 #include <gst/video/video.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/gstreamer_utils/gstreamer-utils.h>
 #include "actions.h"
 #include "gth-media-viewer-page.h"
@@ -438,7 +438,7 @@ update_playback_info (GthMediaViewerPage *self)
 	char *playback_info;
 
 	playback_info = g_strdup_printf ("@%2.2f", self->priv->rate);
-	g_file_info_set_attribute_string (gth_browser_get_current_file (self->priv->browser)->info, "gthumb::statusbar-extra-info", playback_info);
+	g_file_info_set_attribute_string (gth_browser_get_current_file (self->priv->browser)->info, "pix::statusbar-extra-info", playback_info);
 	gth_browser_update_statusbar_file_info (self->priv->browser);
 
 	g_free (playback_info);
@@ -1665,7 +1665,7 @@ static void
 gth_media_viewer_page_init (GthMediaViewerPage *self)
 {
 	self->priv = gth_media_viewer_page_get_instance_private (self);
-	self->priv->settings = g_settings_new (GTHUMB_GSTREAMER_TOOLS_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_GSTREAMER_TOOLS_SCHEMA);
 	self->priv->update_progress_id = 0;
 	self->priv->update_volume_id = 0;
 	self->priv->has_video = FALSE;

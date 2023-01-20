@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-catalog.h"
 
 
@@ -683,7 +683,7 @@ gth_catalog_get_size (GthCatalog *catalog)
 GFile *
 gth_catalog_get_base (void)
 {
-	return gth_user_dir_get_file_for_read (GTH_DIR_DATA, GTHUMB_DIR, "catalogs", NULL);
+	return gth_user_dir_get_file_for_read (GTH_DIR_DATA, PIX_DIR, "catalogs", NULL);
 }
 
 

@@ -15,7 +15,7 @@ shared_module('flicker',
   ],
   include_directories : [
     config_inc,
-    gthumb_inc,
+    pix_inc,
     importer_inc
   ],
   c_args : c_args,

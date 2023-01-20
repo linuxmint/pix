@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -103,7 +103,7 @@ ss__dlg_preferences_construct_cb (GtkWidget  *dialog,
 	notebook = _gtk_builder_get_widget (dialog_builder, "notebook");
 
 	data = g_new0 (BrowserData, 1);
-	data->settings = g_settings_new (GTHUMB_SLIDESHOW_SCHEMA);
+	data->settings = g_settings_new (PIX_SLIDESHOW_SCHEMA);
 
 	current_transition = g_settings_get_string (data->settings, PREF_SLIDESHOW_TRANSITION);
 	data->preferences_page = gth_slideshow_preferences_new (current_transition,

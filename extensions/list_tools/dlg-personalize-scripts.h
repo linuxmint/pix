@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_PERSONALIZE_SCRIPTS_H
 #define DLG_PERSONALIZE_SCRIPTS_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 void dlg_personalize_scripts (GthBrowser *browser);
 

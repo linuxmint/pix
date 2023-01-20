@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib-object.h>
 #include <gio/gio.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/catalogs/gth-catalog.h>
 
 #define GTH_TYPE_SEARCH         (gth_search_get_type ())

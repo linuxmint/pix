@@ -9,7 +9,7 @@ source_files = files(
 shared_module('burn_disc',
   sources : source_files,
   dependencies : [ extension_common_deps, libbrasero_dep ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : export_tools_mod,
   install : true,

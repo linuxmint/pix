@@ -1,6 +1,6 @@
 %{
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2003, 2010 Free Software Foundation, Inc.
  *

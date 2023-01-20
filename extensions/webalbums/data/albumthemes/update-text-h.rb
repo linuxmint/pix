@@ -13,7 +13,7 @@ puts <<EOF
 /* DO NOT EDIT.  This file is generated automatically. */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) #{ Time::now.year } Free Software Foundation, Inc.
  *

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "callbacks.h"
 #include "dlg-media-viewer-preferences.h"
 #include "gth-metadata-provider-gstreamer.h"
@@ -63,7 +63,7 @@ GthMetadataInfo gstreamer_metadata_info[] = {
 
 
 G_MODULE_EXPORT void
-gthumb_extension_activate (void)
+pix_extension_activate (void)
 {
 	gth_main_register_object (GTH_TYPE_VIEWER_PAGE, NULL, GTH_TYPE_MEDIA_VIEWER_PAGE, NULL);
 	gth_main_register_shortcut_category (shortcut_categories, G_N_ELEMENTS (shortcut_categories));
@@ -75,20 +75,20 @@ gthumb_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-gthumb_extension_deactivate (void)
+pix_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-gthumb_extension_is_configurable (void)
+pix_extension_is_configurable (void)
 {
 	return TRUE;
 }
 
 
 G_MODULE_EXPORT void
-gthumb_extension_configure (GtkWindow *parent)
+pix_extension_configure (GtkWindow *parent)
 {
 	dlg_media_viewer_preferences (parent);
 }

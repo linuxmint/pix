@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2019 The Free Software Foundation, Inc.
  *
@@ -306,7 +306,7 @@ gth_shortcuts_write_to_file (GPtrArray  *shortcuts_v,
 	dom_element_append_child (DOM_ELEMENT (doc), shortcuts);
 
 	buffer = dom_document_dump (doc, &size);
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, SHORTCUTS_FILE, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, SHORTCUTS_FILE, NULL);
 	result = _g_file_write (file, FALSE, G_FILE_CREATE_NONE, buffer, size, NULL, error);
 
 	g_object_unref (file);
@@ -327,7 +327,7 @@ gth_shortcuts_load_from_file (GPtrArray  *shortcuts_v,
 	void     *buffer;
 	gsize     size;
 
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, SHORTCUTS_FILE, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, SHORTCUTS_FILE, NULL);
 	if (_g_file_load_in_buffer (file, &buffer, &size, NULL, error)) {
 		DomDocument *doc;
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2020 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "preferences.h"
 
@@ -48,7 +48,7 @@ gth_browser_activate_folder_context_open_in_terminal (GSimpleAction *action,
 	}
 	file_list = g_list_prepend (NULL, file_data->file);
 
-	settings = g_settings_new (GTHUMB_TERMINAL_SCHEMA);
+	settings = g_settings_new (PIX_TERMINAL_SCHEMA);
 	command = g_settings_get_string (settings, PREF_TERMINAL_COMMAND);
 	_g_launch_command (GTK_WIDGET (browser), command, _("Terminal"), G_APP_INFO_CREATE_NONE, file_list);
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Reorderright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define GTH_REORDER_TASK_H
 
 #include <glib.h>
-#include <gthumb.h>
+#include <pix.h>
 
 G_BEGIN_DECLS
 

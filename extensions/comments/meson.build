@@ -11,7 +11,7 @@ source_files = files(
 shared_module('comments',
   sources : source_files,
   dependencies : [ extension_common_deps ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : use_exiv2 ? exiv2_tools_mod : [],
   install : true,

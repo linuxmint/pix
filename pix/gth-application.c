@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2010 Free Software Foundation, Inc.
  *
@@ -103,8 +103,8 @@ gth_application_init (GthApplication *app)
 	if (app_info == NULL) {
 		/* manually set name and icon */
 
-		g_set_application_name (_("gThumb"));
-		gtk_window_set_default_icon_name ("gthumb");
+		g_set_application_name (_("Pix"));
+		gtk_window_set_default_icon_name ("pix");
 
 		return;
 	}
@@ -200,7 +200,7 @@ open_browser_window (GFile    *location,
 	if (! force_new_window) {
 		GSettings *settings;
 
-		settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+		settings = g_settings_new (PIX_BROWSER_SCHEMA);
 		reuse_active_window = g_settings_get_boolean (settings, PREF_BROWSER_REUSE_ACTIVE_WINDOW);
 		g_object_unref (settings);
 	}
@@ -291,7 +291,7 @@ gth_application_command_line (GApplication            *application,
 		GFile     *file_to_select;
 
 		location = g_file_new_for_uri (gth_pref_get_startup_location ());
-		settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+		settings = g_settings_new (PIX_BROWSER_SCHEMA);
 		file_to_select_uri = _g_settings_get_uri (settings, PREF_BROWSER_STARTUP_CURRENT_FILE);
 		if (file_to_select_uri != NULL)
 			file_to_select = g_file_new_for_uri (file_to_select_uri);

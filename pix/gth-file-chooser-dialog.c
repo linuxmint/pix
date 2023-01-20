@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -30,7 +30,7 @@
 #include "gtk-utils.h"
 
 
-#define FORMAT_KEY "gthumb-format"
+#define FORMAT_KEY "pix-format"
 
 
 typedef struct {
@@ -82,7 +82,7 @@ gth_file_chooser_dialog_unmap (GtkWidget *widget)
 
 	self = GTH_FILE_CHOOSER_DIALOG (widget);
 
-	settings = g_settings_new (GTHUMB_SAVE_FILE_SCHEMA);
+	settings = g_settings_new (PIX_SAVE_FILE_SCHEMA);
 	g_settings_set_boolean (settings, PREF_SAVE_FILE_SHOW_OPTIONS, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (self->priv->options_checkbutton)));
 	g_object_unref (settings);
 
@@ -190,7 +190,7 @@ gth_file_chooser_dialog_construct (GthFileChooserDialog *self,
 
 	/* extra widget */
 
-	settings = g_settings_new (GTHUMB_SAVE_FILE_SCHEMA);
+	settings = g_settings_new (PIX_SAVE_FILE_SCHEMA);
 
 	self->priv->options_checkbutton = gtk_check_button_new_with_mnemonic (_("_Show Format Options"));
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (self->priv->options_checkbutton), g_settings_get_boolean (settings, PREF_SAVE_FILE_SHOW_OPTIONS));

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "gth-copy-task.h"
 #include "gth-duplicate-task.h"
@@ -734,7 +734,7 @@ copy_to_folder_dialog (GthBrowser *browser,
 	GtkWidget *box;
 	GtkWidget *view_destination_button;
 
-	settings = g_settings_new (GTHUMB_FILE_MANAGER_SCHEMA);
+	settings = g_settings_new (PIX_FILE_MANAGER_SCHEMA);
 
 	dialog = gtk_file_chooser_dialog_new (move ? _("Move To") : _("Copy To"),
 					      GTK_WINDOW (browser),

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-export-to-flickr.h"
 #include "flickr-account.h"
 #include "flickr-photoset.h"
@@ -516,7 +516,7 @@ dlg_export_to_flickr (FlickrServer *server,
 	data = g_new0 (DialogData, 1);
 	data->server = server;
 	data->browser = browser;
-	data->settings = g_settings_new (GTHUMB_FLICKR_SCHEMA);
+	data->settings = g_settings_new (PIX_FLICKR_SCHEMA);
 	data->location = gth_file_data_dup (gth_browser_get_location_data (browser));
 	data->builder = _gtk_builder_new_from_file ("export-to-flickr.ui", "flicker_utils");
 	data->cancellable = g_cancellable_new ();

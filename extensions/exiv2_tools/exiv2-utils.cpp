@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008-2009 Free Software Foundation, Inc.
  *
@@ -38,7 +38,7 @@
 #else
 #include <exiv2/xmp.hpp>
 #endif
-#include <gthumb.h>
+#include <pix.h>
 #include "exiv2-utils.h"
 
 using namespace std;
@@ -1227,7 +1227,7 @@ exiv2_write_metadata_private (Exiv2::Image::AutoPtr  image,
 					      NULL,
 					      NULL))
 		{
-			thumb.setJpegThumbnail ((Exiv2::byte *) buffer, buffer_size);
+			thumb.setJpePixnail ((Exiv2::byte *) buffer, buffer_size);
 			ed["Exif.Thumbnail.XResolution"] = 72;
 			ed["Exif.Thumbnail.YResolution"] = 72;
 			ed["Exif.Thumbnail.ResolutionUnit"] =  2;

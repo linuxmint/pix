@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/importer/importer.h>
 #include "dlg-photo-importer.h"
 #include "preferences.h"
@@ -107,7 +107,7 @@ destroy_dialog (gpointer user_data)
 		char      *subfolder_template;
 		GList     *file_list;
 
-		importer_settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
+		importer_settings = g_settings_new (PIX_IMPORTER_SCHEMA);
 		destination = gth_import_preferences_get_destination ();
 		subfolder_template = g_settings_get_string (importer_settings, PREF_IMPORTER_SUBFOLDER_TEMPLATE);
 
@@ -553,7 +553,7 @@ dlg_photo_importer (GthBrowser            *browser,
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = gtk_builder_new_from_resource ("/org/x/Pix/photo_importer/data/ui/photo-importer.ui");
-	data->settings = g_settings_new (GTHUMB_PHOTO_IMPORTER_SCHEMA);
+	data->settings = g_settings_new (PIX_PHOTO_IMPORTER_SCHEMA);
 	data->selector_type = selector_type;
 	data->source = _g_object_ref (source);
 	data->cancellable = g_cancellable_new ();

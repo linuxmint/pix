@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <png.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-image-saver-png.h"
 #include "preferences.h"
 
@@ -366,6 +366,6 @@ static void
 gth_image_saver_png_init (GthImageSaverPng *self)
 {
 	self->priv = gth_image_saver_png_get_instance_private (self);
-	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_PNG_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_PNG_SCHEMA);
 	self->priv->builder = NULL;
 }

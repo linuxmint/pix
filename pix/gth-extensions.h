@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -176,10 +176,10 @@ GList *                    gth_extension_manager_order_extensions  (GthExtension
 
 /* functions exported by modules */
 
-void		gthumb_extension_activate		 (void);
-void		gthumb_extension_deactivate		 (void);
-gboolean	gthumb_extension_is_configurable	 (void);
-void		gthumb_extension_configure		 (GtkWindow *parent);
+void		pix_extension_activate		 (void);
+void		pix_extension_deactivate		 (void);
+gboolean	pix_extension_is_configurable	 (void);
+void		pix_extension_configure		 (GtkWindow *parent);
 
 G_END_DECLS
 

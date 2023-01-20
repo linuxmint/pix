@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "callbacks.h"
 #include "shortcuts.h"
 
@@ -33,7 +33,7 @@ static GthShortcutCategory shortcut_categories[] = {
 
 
 G_MODULE_EXPORT void
-gthumb_extension_activate (void)
+pix_extension_activate (void)
 {
 	gth_main_register_shortcut_category (shortcut_categories, G_N_ELEMENTS (shortcut_categories));
 	gth_hook_add_callback ("gth-browser-construct", 5, G_CALLBACK (list_tools__gth_browser_construct_cb), NULL);
@@ -42,19 +42,19 @@ gthumb_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-gthumb_extension_deactivate (void)
+pix_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-gthumb_extension_is_configurable (void)
+pix_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-gthumb_extension_configure (GtkWindow *parent)
+pix_extension_configure (GtkWindow *parent)
 {
 }

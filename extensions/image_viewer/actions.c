@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2013 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "gth-image-viewer-page.h"
 #include "preferences.h"
@@ -310,7 +310,7 @@ gth_browser_activate_transparency_style (GSimpleAction	*action,
 	else
 		style = GTH_TRANSPARENCY_STYLE_CHECKERED;
 
-	settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 	g_settings_set_enum (settings, PREF_IMAGE_VIEWER_TRANSPARENCY_STYLE, style);
 
 	g_object_unref (settings);

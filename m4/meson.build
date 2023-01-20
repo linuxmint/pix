@@ -1,1 +1,1 @@
-install_data('gthumb.m4', install_dir : join_paths(datadir, 'aclocal'))
+install_data('pix.m4', install_dir : join_paths(datadir, 'aclocal'))

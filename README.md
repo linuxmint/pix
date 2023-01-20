@@ -71,7 +71,7 @@ Pix is part of the X-Apps project, which aims at producing cross-distribution an
   * libjpeg
   * gsettings-desktop-schemas
 
-  While not mandatory, the following libraries greatly increase gThumb's basic usefulness:
+  While not mandatory, the following libraries greatly increase Pix's basic usefulness:
 
   * exiv2 - embedded metadata support
   * gstreamer, gstreamer-plugins-base, gstreamer-video - audio/video support
@@ -101,5 +101,5 @@ Pix is part of the X-Apps project, which aims at producing cross-distribution an
 
 ## Credits
 
-  Pix is based on gThumb 3.12.0.
-  Many thanks to the original developers and to all the people who contributed to gThumb.
+  Pix is based on Pix 3.12.0.
+  Many thanks to the original developers and to all the people who contributed to Pix.

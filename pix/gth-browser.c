@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2005-2019 Free Software Foundation, Inc.
  *
@@ -425,7 +425,7 @@ gth_browser_update_title (GthBrowser *browser)
 	}
 
 	if (title->len == 0)
-		g_string_append (title, _("gThumb"));
+		g_string_append (title, _("Pix"));
 
 	gth_window_set_title (GTH_WINDOW (browser),
 			      title->str,
@@ -659,7 +659,7 @@ _gth_browser_history_save (GthBrowser *browser)
         _g_object_unref (privacy_settings);
 
 	if (! save_history) {
-		file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, HISTORY_FILE, NULL);
+		file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, HISTORY_FILE, NULL);
 		g_file_delete (file, NULL, NULL);
 		g_object_unref (file);
 		return;
@@ -675,7 +675,7 @@ _gth_browser_history_save (GthBrowser *browser)
 
 		g_free (uri);
 	}
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, HISTORY_FILE, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, HISTORY_FILE, NULL);
 	filename = g_file_get_path (file);
 	g_bookmark_file_to_file (bookmarks, filename, NULL);
 
@@ -706,7 +706,7 @@ _gth_browser_history_load (GthBrowser *browser)
 		return;
 
 	bookmarks = g_bookmark_file_new ();
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, HISTORY_FILE, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, HISTORY_FILE, NULL);
 	filename = g_file_get_path (file);
 	if (g_bookmark_file_load_from_file (bookmarks, filename, NULL)) {
 		char **uris;
@@ -747,7 +747,7 @@ _gth_browser_update_entry_point_list (GthBrowser *browser)
 	GFile *root;
 
 	entry_points = gth_main_get_all_entry_points ();
-	root = g_file_new_for_uri ("gthumb-vfs:///");
+	root = g_file_new_for_uri ("pix-vfs:///");
 	gth_folder_tree_set_children (GTH_FOLDER_TREE (browser->priv->folder_tree), root, entry_points);
 
 	g_object_unref (root);
@@ -3524,7 +3524,7 @@ gth_browser_update_statusbar_file_info (GthBrowser *browser)
 		return;
 	}
 
-	extra_info = g_file_info_get_attribute_string (browser->priv->current_file->info, "gthumb::statusbar-extra-info");
+	extra_info = g_file_info_get_attribute_string (browser->priv->current_file->info, "pix::statusbar-extra-info");
 	image_size = g_file_info_get_attribute_string (browser->priv->current_file->info, "general::dimensions");
 	file_size = g_file_info_get_attribute_string (browser->priv->current_file->info, "gth::file::display-size");
 
@@ -4491,8 +4491,8 @@ gth_browser_init (GthBrowser *browser)
 	browser->priv->last_mouse_y = 0.0;
 	browser->priv->history = NULL;
 	browser->priv->history_current = NULL;
-	browser->priv->browser_settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
-	browser->priv->messages_settings = g_settings_new (GTHUMB_MESSAGES_SCHEMA);
+	browser->priv->browser_settings = g_settings_new (PIX_BROWSER_SCHEMA);
+	browser->priv->messages_settings = g_settings_new (PIX_MESSAGES_SCHEMA);
 	browser->priv->desktop_interface_settings = g_settings_new (GNOME_DESKTOP_INTERFACE_SCHEMA);
 	browser->priv->file_properties_on_the_right = g_settings_get_boolean (browser->priv->browser_settings, PREF_BROWSER_PROPERTIES_ON_THE_RIGHT);
 	browser->priv->menu_managers = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_object_unref);
@@ -4924,7 +4924,7 @@ gth_browser_init (GthBrowser *browser)
 					     GTK_SHADOW_NONE);
 	gtk_widget_show (scrolled_window);
 
-	browser->priv->folder_tree = gth_folder_tree_new ("gthumb-vfs:///");
+	browser->priv->folder_tree = gth_folder_tree_new ("pix-vfs:///");
 	gtk_widget_show (browser->priv->folder_tree);
 
 	gtk_container_add (GTK_CONTAINER (scrolled_window), browser->priv->folder_tree);

@@ -1,5 +1,5 @@
 <!--
-  gThumb
+  Pix
 
   Copyright © 2011 Free Software Foundation, Inc.
 
@@ -30,7 +30,7 @@
     <child name="dialogs" schema="org.x.pix.dialogs" />
   </schema>
 
-  <schema id="org.x.pix.general" path="/org/x/pix/general/" gettext-domain="gthumb">
+  <schema id="org.x.pix.general" path="/org/x/pix/general/" gettext-domain="pix">
     <key name="active-extensions" type="as">
       <default>[ 'default' ]</default>
     </key>
@@ -39,13 +39,13 @@
     </key>
   </schema>
 
-  <schema id="org.x.pix.data-migration" path="/org/x/pix/data-migration/" gettext-domain="gthumb">
+  <schema id="org.x.pix.data-migration" path="/org/x/pix/data-migration/" gettext-domain="pix">
     <key name="catalogs-2-10" type="b">
       <default>false</default>
     </key>
   </schema>
 
-  <schema id="org.x.pix.browser" path="/org/x/pix/browser/" gettext-domain="gthumb">
+  <schema id="org.x.pix.browser" path="/org/x/pix/browser/" gettext-domain="pix">
     <key name="go-to-last-location" type="b">
       <default>true</default>
     </key>
@@ -152,7 +152,7 @@
     <child name="save-file" schema="org.x.pix.dialogs.save-file" />
   </schema>
 
-  <schema id="org.x.pix.dialogs.messages" path="/org/x/pix/dialogs/messages/" gettext-domain="gthumb">
+  <schema id="org.x.pix.dialogs.messages" path="/org/x/pix/dialogs/messages/" gettext-domain="pix">
     <key name="cannot-move-to-trash" type="b">
       <default>true</default>
     </key>
@@ -164,13 +164,13 @@
     </key>
   </schema>
 
-  <schema id="org.x.pix.dialogs.add-to-catalog" path="/org/x/pix/dialogs/add-to-catalog/" gettext-domain="gthumb">
+  <schema id="org.x.pix.dialogs.add-to-catalog" path="/org/x/pix/dialogs/add-to-catalog/" gettext-domain="pix">
     <key name="view" type="b">
       <default>false</default>
     </key>
   </schema>
 
-  <schema id="org.x.pix.dialogs.save-file" path="/org/x/pix/dialogs/save-file/" gettext-domain="gthumb">
+  <schema id="org.x.pix.dialogs.save-file" path="/org/x/pix/dialogs/save-file/" gettext-domain="pix">
     <key name="show-options" type="b">
       <default>true</default>
     </key>

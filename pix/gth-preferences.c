@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2003-2008 Free Software Foundation, Inc.
  *
@@ -54,7 +54,7 @@ gth_pref_initialize (void)
 
 	/* startup location */
 
-	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	Preferences->startup_location = NULL;
 	if (g_settings_get_boolean (settings, PREF_BROWSER_USE_STARTUP_LOCATION)
 	    || g_settings_get_boolean (settings, PREF_BROWSER_GO_TO_LAST_LOCATION))

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -26,7 +26,7 @@
 #include "gth-menu-manager.h"
 
 
-#define _G_MENU_ATTRIBUTE_DETAILED_ACTION "gthumb-detailed-action"
+#define _G_MENU_ATTRIBUTE_DETAILED_ACTION "pix-detailed-action"
 
 
 /* Properties */

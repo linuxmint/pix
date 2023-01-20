@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2013 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 DEF_ACTION_CALLBACK (gth_browser_activate_image_zoom_in)
 DEF_ACTION_CALLBACK (gth_browser_activate_image_zoom_out)

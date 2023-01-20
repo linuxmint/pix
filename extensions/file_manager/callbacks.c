@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gdk/gdkkeysyms.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "callbacks.h"
 #include "gth-copy-task.h"
@@ -34,7 +34,7 @@
 #define BROWSER_DATA_KEY             "file-manager-browser-data"
 #define URI_LIST_ATOM                (gdk_atom_intern_static_string ("text/uri-list"))
 #define XDND_ACTION_DIRECT_SAVE_ATOM (gdk_atom_intern_static_string ("XdndDirectSave0"))
-#define GTHUMB_REORDERABLE_LIST_ATOM (gdk_atom_intern_static_string ("gthumb/reorderable-list"))
+#define PIX_REORDERABLE_LIST_ATOM (gdk_atom_intern_static_string ("pix/reorderable-list"))
 #define TEXT_PLAIN_ATOM              (gdk_atom_intern_static_string ("text/plain"))
 #define SCROLL_TIMEOUT               30 /* autoscroll timeout in milliseconds */
 #define UPDATE_OPEN_MENU_DELAY       500
@@ -134,12 +134,12 @@ static const GthShortcut shortcuts[] = {
 static GtkTargetEntry reorderable_drag_dest_targets[] = {
         { "text/uri-list", 0, 0 },
         { "text/uri-list", GTK_TARGET_SAME_WIDGET, 0 },
-	{ "gthumb/reorderable-list", 0, 0 }
+	{ "pix/reorderable-list", 0, 0 }
 };
 
 
 static GtkTargetEntry reorderable_drag_source_targets[] = {
-	{ "gthumb/reorderable-list", 0, 0 }
+	{ "pix/reorderable-list", 0, 0 }
 };
 
 
@@ -462,7 +462,7 @@ gth_file_list_drag_motion (GtkWidget      *file_view,
 		for (scan = targets; scan; scan = scan->next) {
 			GdkAtom target = scan->data;
 
-			if (target == GTHUMB_REORDERABLE_LIST_ATOM) {
+			if (target == PIX_REORDERABLE_LIST_ATOM) {
 				source_is_reorderable = TRUE;
 				break;
 			}
@@ -619,7 +619,7 @@ _gth_browser_update_open_menu (GthBrowser *browser)
 		GIcon     *icon;
 		GMenuItem *item;
 
-		if (strstr (g_app_info_get_executable (appinfo), "gthumb") != NULL)
+		if (strstr (g_app_info_get_executable (appinfo), "pix") != NULL)
 			continue;
 		if (g_hash_table_lookup (used_apps, g_app_info_get_id (appinfo)) != NULL)
 			continue;

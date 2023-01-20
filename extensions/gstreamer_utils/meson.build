@@ -6,7 +6,7 @@ source_files = files(
 gstreamer_utils_mod = shared_module('gstreamer_utils',
   sources : source_files,
   dependencies : [ extension_common_deps, gstreamer_deps ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   install : true,
   install_dir : extensions_install_dir,

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2014 Free Software Foundation, Inc.
  *
@@ -703,7 +703,7 @@ gth_file_tool_curves_get_options (GthFileTool *base)
 
 		gtk_widget_show (header_bar);
 
-		file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, "gthumb", "curves.xml", NULL);
+		file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, "pix", "curves.xml", NULL);
 		self->priv->preset = gth_curve_preset_new_from_file (file);
 		g_object_unref (file);
 

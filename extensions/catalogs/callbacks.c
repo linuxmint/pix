@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <gth-catalog.h>
 #include "dlg-catalog-properties.h"
 #include "dlg-organize-files.h"
@@ -120,7 +120,7 @@ browser_data_free (BrowserData *data)
 void
 catalogs__initialize_cb (void)
 {
-	gth_user_dir_mkdir_with_parents (GTH_DIR_DATA, GTHUMB_DIR, "catalogs", NULL);
+	gth_user_dir_mkdir_with_parents (GTH_DIR_DATA, PIX_DIR, "catalogs", NULL);
 }
 
 
@@ -291,13 +291,13 @@ catalogs__gth_browser_folder_tree_popup_before_cb (GthBrowser    *browser,
 		gth_window_enable_action (GTH_WINDOW (browser), "remove-catalog", sensitive);
 
 		sensitive = ((folder != NULL)
-			     && (_g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/library")
-				 || _g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/catalog")
-				 || _g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/search"))
+			     && (_g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/library")
+				 || _g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/catalog")
+				 || _g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/search"))
 			     && g_file_info_get_attribute_boolean (folder->info, G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME));
 		gth_window_enable_action (GTH_WINDOW (browser), "rename-catalog", sensitive);
 
-		sensitive = (folder != NULL) && (! _g_content_type_is_a (g_file_info_get_content_type (folder->info), "gthumb/library"));
+		sensitive = (folder != NULL) && (! _g_content_type_is_a (g_file_info_get_content_type (folder->info), "pix/library"));
 		gth_window_enable_action (GTH_WINDOW (browser), "catalog-properties", sensitive);
 	}
 	else {
@@ -369,7 +369,7 @@ catalogs__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 
 	location_data = gth_browser_get_location_data (browser);
 	if (GTH_IS_FILE_SOURCE_CATALOGS (gth_browser_get_location_source (browser))
-	    && ! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "gthumb/library"))
+	    && ! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "pix/library"))
 	{
 		if (data->properties_button == NULL) {
 			data->properties_button = gtk_button_new ();

@@ -136,15 +136,15 @@ marshal_files = gnome.genmarshal('gth-marshal',
   install_dir : pkgincludedir,
 )
 
-gthumb_h = custom_target('gthumb.h',
-  input : [ 'gthumb.h.in' ],
-  output : 'gthumb.h',
-  command : [ find_program('make-gthumb-h.py'), '@INPUT@', '@OUTPUT@', 'gth-enum-types.h', 'gth-marshal.h', public_header_files ],
+pix_h = custom_target('pix.h',
+  input : [ 'pix.h.in' ],
+  output : 'pix.h',
+  command : [ find_program('make-pix-h.py'), '@INPUT@', '@OUTPUT@', 'gth-enum-types.h', 'gth-marshal.h', public_header_files ],
   install : true,
   install_dir : pkgincludedir
 )
 
-gthumb_h_dep = declare_dependency(sources : [ enum_files, marshal_files, gthumb_h ])
+pix_h_dep = declare_dependency(sources : [ enum_files, marshal_files, pix_h ])
 
 authors_tab = custom_target('authors.tab',
   input : join_paths(meson.source_root(), 'AUTHORS'),
@@ -153,7 +153,7 @@ authors_tab = custom_target('authors.tab',
 )
 authors_dep = declare_dependency(sources : [ authors_tab ])
 
-gresource_files = gnome.compile_resources('gth-resources', 'gthumb.gresource.xml', c_name : 'gth')
+gresource_files = gnome.compile_resources('gth-resources', 'pix.gresource.xml', c_name : 'gth')
 
 source_files = files(
   'cairo-scale.c',
@@ -299,11 +299,11 @@ external_files = files(
   'gnome-thumbnail-pixbuf-utils.c'
 )
 
-gthumb_inc = include_directories('.')
+pix_inc = include_directories('.')
 
 # Build targets
 
-gthumb_exe = executable('gthumb',
+pix_exe = executable('pix',
   sources : [
     config_file,
     marshal_files,
@@ -332,7 +332,7 @@ gthumb_exe = executable('gthumb',
     use_libsecret ? libsecret_dep : [],
     use_libbrasero ? libbrasero_dep : []
   ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   implib : true,
   install : true

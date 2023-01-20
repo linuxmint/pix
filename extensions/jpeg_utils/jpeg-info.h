@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2015 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef JPEG_INFO_H
 #define JPEG_INFO_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 #define JPEG_SEGMENT_MAX_SIZE (64 * 1024)
 

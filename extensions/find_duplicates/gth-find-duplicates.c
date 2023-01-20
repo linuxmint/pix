@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/catalogs/gth-catalog.h>
 #include <extensions/file_manager/actions.h>
 #include "gth-find-duplicates.h"
@@ -1325,7 +1325,7 @@ gth_find_duplicates_exec (GthBrowser *browser,
 
 	self = (GthFindDuplicates *) g_object_new (GTH_TYPE_FIND_DUPLICATES, NULL);
 
-	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	settings = g_settings_new (PIX_BROWSER_SCHEMA);
 
 	self->priv->browser = browser;
 	self->priv->location = g_object_ref (location);

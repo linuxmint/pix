@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 #include <tiffio.h>
 #endif /* HAVE_LIBTIFF */
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "cairo-io-enum-types.h"
 #include "gth-image-saver-tiff.h"
 #include "preferences.h"
@@ -576,7 +576,7 @@ static void
 gth_image_saver_tiff_init (GthImageSaverTiff *self)
 {
 	self->priv = gth_image_saver_tiff_get_instance_private (self);
-	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_TIFF_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_TIFF_SCHEMA);
 	self->priv->builder = NULL;
 	self->priv->default_ext = NULL;
 }

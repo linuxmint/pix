@@ -19,7 +19,7 @@ enum_files = gnome.mkenums_simple('gth-import-enum-types', sources: header_files
 importer_mod = shared_module('importer',
   sources : [ source_files, enum_files ],
   dependencies : extension_common_deps,
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : [
     catalogs_mod,

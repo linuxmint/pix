@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -33,7 +33,7 @@ typedef enum {
 	GTH_DIR_DATA
 } GthDir;
 
-#define GTHUMB_DIR "gthumb"
+#define PIX_DIR "pix"
 
 void    gth_user_dir_mkdir_with_parents     (GthDir      dir_type,
 					     const char *first_element,

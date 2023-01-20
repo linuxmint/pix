@@ -1,8 +1,8 @@
 extension_data = configuration_data()
-extension_data.set('GTHUMB_VERSION', meson.project_version())
-extension_data.set('GTHUMB_API_VERSION', api_version)
+extension_data.set('PIX_VERSION', meson.project_version())
+extension_data.set('PIX_API_VERSION', api_version)
 
-extension_common_deps = [ common_deps, gthumb_h_dep ]
+extension_common_deps = [ common_deps, pix_h_dep ]
 
 subdir('file_viewer')
 subdir('catalogs')

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <gth-catalog.h>
 #include "actions.h"
 #include "dlg-add-to-catalog.h"
@@ -109,7 +109,7 @@ catalog_new_dialog_response_cb (GtkWidget *dialog,
 
 		file_source = gth_main_get_file_source (selected_parent->file);
 		info = gth_file_source_get_file_info (file_source, selected_parent->file, GFILE_BASIC_ATTRIBUTES);
-		if (g_file_info_get_attribute_boolean (info, "gthumb::no-child"))
+		if (g_file_info_get_attribute_boolean (info, "pix::no-child"))
 			parent = g_file_get_parent (selected_parent->file);
 		else
 			parent = g_file_dup (selected_parent->file);
@@ -232,7 +232,7 @@ new_library_dialog_response_cb (GtkWidget *dialog,
 
 		file_source = gth_main_get_file_source (selected_parent->file);
 		info = gth_file_source_get_file_info (file_source, selected_parent->file, GFILE_BASIC_ATTRIBUTES);
-		if (g_file_info_get_attribute_boolean (info, "gthumb::no-child"))
+		if (g_file_info_get_attribute_boolean (info, "pix::no-child"))
 			parent = g_file_get_parent (selected_parent->file);
 		else
 			parent = g_file_dup (selected_parent->file);
@@ -358,7 +358,7 @@ gth_browser_activate_remove_catalog (GSimpleAction	 *action,
 
 	file_data = gth_browser_get_folder_popup_file_data (browser);
 
-	settings = g_settings_new (GTHUMB_MESSAGES_SCHEMA);
+	settings = g_settings_new (PIX_MESSAGES_SCHEMA);
 	if (g_settings_get_boolean (settings, PREF_MSG_CONFIRM_DELETION)) {
 		char      *prompt;
 		GtkWidget *d;

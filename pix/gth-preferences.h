@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright © 2001-2011 Free Software Foundation, Inc.
  *
@@ -30,14 +30,14 @@ G_BEGIN_DECLS
 
 /* schemas */
 
-#define GTHUMB_SCHEMA                         "org.x.pix"
-#define GTHUMB_GENERAL_SCHEMA                 GTHUMB_SCHEMA ".general"
-#define GTHUMB_DATA_MIGRATION_SCHEMA          GTHUMB_SCHEMA ".data-migration"
-#define GTHUMB_BROWSER_SCHEMA                 GTHUMB_SCHEMA ".browser"
-#define GTHUMB_DIALOGS_SCHEMA                 GTHUMB_SCHEMA ".dialogs"
-#define GTHUMB_MESSAGES_SCHEMA                GTHUMB_DIALOGS_SCHEMA ".messages"
-#define GTHUMB_ADD_TO_CATALOG_SCHEMA          GTHUMB_DIALOGS_SCHEMA ".add-to-catalog"
-#define GTHUMB_SAVE_FILE_SCHEMA               GTHUMB_DIALOGS_SCHEMA ".save-file"
+#define PIX_SCHEMA                         "org.x.pix"
+#define PIX_GENERAL_SCHEMA                 PIX_SCHEMA ".general"
+#define PIX_DATA_MIGRATION_SCHEMA          PIX_SCHEMA ".data-migration"
+#define PIX_BROWSER_SCHEMA                 PIX_SCHEMA ".browser"
+#define PIX_DIALOGS_SCHEMA                 PIX_SCHEMA ".dialogs"
+#define PIX_MESSAGES_SCHEMA                PIX_DIALOGS_SCHEMA ".messages"
+#define PIX_ADD_TO_CATALOG_SCHEMA          PIX_DIALOGS_SCHEMA ".add-to-catalog"
+#define PIX_SAVE_FILE_SCHEMA               PIX_DIALOGS_SCHEMA ".save-file"
 
 /* keys: general */
 

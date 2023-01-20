@@ -1,5 +1,5 @@
 <!--
-  gThumb
+  Pix
 
   Copyright © 2011 Free Software Foundation, Inc.
 
@@ -18,7 +18,7 @@
 -->
 <schemalist>
 
-  <schema id="org.x.pix.webalbums" path="/org/x/pix/webalbums/" gettext-domain="gthumb">
+  <schema id="org.x.pix.webalbums" path="/org/x/pix/webalbums/" gettext-domain="pix">
     <key name="index-file" type="s">
       <default>'index.html'</default>
     </key>
@@ -88,7 +88,7 @@
     <child name="directories" schema="org.x.pix.webalbums.directories" />
   </schema>
 
-  <schema id="org.x.pix.webalbums.directories" path="/org/x/pix/webalbums/directories/" gettext-domain="gthumb">
+  <schema id="org.x.pix.webalbums.directories" path="/org/x/pix/webalbums/directories/" gettext-domain="pix">
     <key name="previews" type="s">
       <default>'previews'</default>
     </key>

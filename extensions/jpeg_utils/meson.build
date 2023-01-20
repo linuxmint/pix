@@ -18,7 +18,7 @@ jpeg_utils_mod = shared_module('jpeg_utils',
     extension_common_deps,
     jpeg_deps
   ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   install : true,
   install_dir : extensions_install_dir,

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2020 Free Software Foundation, Inc.
  *
@@ -26,7 +26,7 @@ G_BEGIN_DECLS
 
 /* schema */
 
-#define GTHUMB_TERMINAL_SCHEMA GTHUMB_SCHEMA ".terminal"
+#define PIX_TERMINAL_SCHEMA PIX_SCHEMA ".terminal"
 
 /* keys */
 

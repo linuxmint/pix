@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -1331,7 +1331,7 @@ _cairo_film_pattern_create (void)
 		char            *filename;
 		cairo_surface_t *surface;
 
-		filename = g_build_filename (GTHUMB_ICON_DIR, "filmholes.png", NULL);
+		filename = g_build_filename (PIX_ICON_DIR, "filmholes.png", NULL);
 		surface = cairo_image_surface_create_from_png (filename);
 		film_pattern = cairo_pattern_create_for_surface (surface);
 		cairo_pattern_set_filter (film_pattern, CAIRO_FILTER_GOOD);

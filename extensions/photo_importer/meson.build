@@ -16,7 +16,7 @@ photo_importer_mod = shared_module('photo_importer',
   ],
   include_directories : [
     config_inc,
-    gthumb_inc,
+    pix_inc,
     importer_inc
   ],
   c_args : c_args,

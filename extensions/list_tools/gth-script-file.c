@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <string.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "gth-script.h"
 #include "gth-script-file.h"
 
@@ -256,7 +256,7 @@ _gth_script_file_load_if_needed (GthScriptFile *self)
 	if (self->priv->loaded)
 		return;
 
-	default_script_file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "scripts.xml", NULL);
+	default_script_file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "scripts.xml", NULL);
 	gth_script_file_load_from_file (self, default_script_file, NULL);
 	self->priv->loaded = TRUE;
 
@@ -349,7 +349,7 @@ gth_script_file_save (GthScriptFile  *self,
 
 	_gth_script_file_load_if_needed (self);
 
-	default_script_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "scripts.xml", NULL);
+	default_script_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "scripts.xml", NULL);
 	result = gth_script_file_to_file (self, default_script_file, error);
 	if (result)
 		g_signal_emit (G_OBJECT (self), gth_script_file_signals[CHANGED], 0);

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/image-viewer.h>
 #include "file-tools-enum-types.h"
 #include "gth-file-tool-crop.h"
@@ -426,7 +426,7 @@ gth_file_tool_crop_get_options (GthFileTool *base)
 	_gtk_widget_get_screen_size (window, &self->priv->screen_width, &self->priv->screen_height);
 
 	if (self->priv->settings == NULL)
-		self->priv->settings = g_settings_new (GTHUMB_CROP_SCHEMA);
+		self->priv->settings = g_settings_new (PIX_CROP_SCHEMA);
 	self->priv->builder = _gtk_builder_new_from_file ("crop-options.ui", "file_tools");
 
 	options = _gtk_builder_get_widget (self->priv->builder, "options");
@@ -608,7 +608,7 @@ gth_file_tool_crop_destroy_options (GthFileTool *base)
 	/* restore the zoom quality */
 
 	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	viewer_settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	viewer_settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (viewer),
 					   g_settings_get_enum (viewer_settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
 

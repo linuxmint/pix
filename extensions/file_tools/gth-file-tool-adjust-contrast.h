@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2014 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef GTH_FILE_TOOL_ADJUST_CONTRAST_H
 #define GTH_FILE_TOOL_ADJUST_CONTRAST_H
 
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/image_viewer/image-viewer.h>
 
 G_BEGIN_DECLS

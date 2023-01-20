@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gthumb.h>
+#include <pix.h>
 #include <extensions/catalogs/gth-catalog.h>
 #include "gth-search-source.h"
 #include "gth-search-task.h"
@@ -279,7 +279,7 @@ _gth_search_task_search_current_location (GthSearchTask *task)
 		return;
 	}
 
-	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	task->priv->show_hidden_files = g_settings_get_boolean (settings, PREF_BROWSER_SHOW_HIDDEN_FILES);
 
 	search_location = GTH_SEARCH_SOURCE (task->priv->current_location->data);

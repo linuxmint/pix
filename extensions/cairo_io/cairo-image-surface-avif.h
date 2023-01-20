@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2021 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define CAIRO_IMAGE_SURFACE_AVIF_H
 
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 
 G_BEGIN_DECLS
 

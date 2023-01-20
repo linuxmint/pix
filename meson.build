@@ -1,4 +1,4 @@
-project('gthumb', ['c', 'cpp'],
+project('pix', ['c', 'cpp'],
   license : 'GPL2+',
   version : '3.12.0',
   meson_version : '>=0.43'
@@ -243,12 +243,12 @@ config_data = configuration_data()
 config_data.set_quoted('GETTEXT_PACKAGE', gettext_package)
 config_data.set_quoted('PACKAGE_NAME', meson.project_name())
 config_data.set_quoted('PACKAGE_VERSION', meson.project_version())
-config_data.set_quoted('GTHUMB_API_VERSION', api_version)
-config_data.set_quoted('GTHUMB_LOCALEDIR', join_paths(prefix, get_option('localedir')))
-config_data.set_quoted('GTHUMB_UI_DIR', ui_data_dir)
-config_data.set_quoted('GTHUMB_ICON_DIR', icons_data_dir)
-config_data.set_quoted('GTHUMB_EXTENSIONS_UI_DIR', extensions_ui_data_dir)
-config_data.set_quoted('GTHUMB_EXTENSIONS_DIR', extensions_data_dir)
+config_data.set_quoted('PIX_API_VERSION', api_version)
+config_data.set_quoted('PIX_LOCALEDIR', join_paths(prefix, get_option('localedir')))
+config_data.set_quoted('PIX_UI_DIR', ui_data_dir)
+config_data.set_quoted('PIX_ICON_DIR', icons_data_dir)
+config_data.set_quoted('PIX_EXTENSIONS_UI_DIR', extensions_ui_data_dir)
+config_data.set_quoted('PIX_EXTENSIONS_DIR', extensions_data_dir)
 config_data.set_quoted('CONTACT_SHEET_DATADIR', contact_sheet_data_dir)
 config_data.set_quoted('WEBALBUM_DATADIR', webalbum_data_dir)
 if get_option('buildtype').contains('debug')
@@ -368,7 +368,7 @@ cpp_args += cpp_comp.get_supported_arguments(test_cpp_args)
 
 # Subdirectories
 
-subdir('gthumb')
+subdir('pix')
 subdir('extensions')
 subdir('data')
 subdir('help')

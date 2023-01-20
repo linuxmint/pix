@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2015 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_PHOTO_IMPORTER_PREFERENCES_H
 #define DLG_PHOTO_IMPORTER_PREFERENCES_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 void dlg_photo_importer_preferences (GtkWindow *parent);
 

@@ -80,7 +80,7 @@ file_tools_mod = shared_module('file_tools',
   dependencies : extension_common_deps,
   include_directories : [
     config_inc,
-    gthumb_inc
+    pix_inc
   ],
   c_args : c_args,
   link_with : image_viewer_mod,

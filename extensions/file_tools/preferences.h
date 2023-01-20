@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,15 +22,15 @@
 #ifndef FILE_TOOLS_PREFERENCES_H
 #define FILE_TOOLS_PREFERENCES_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 G_BEGIN_DECLS
 
 /* schemas */
 
-#define GTHUMB_CROP_SCHEMA              GTHUMB_SCHEMA ".crop"
-#define GTHUMB_RESIZE_SCHEMA            GTHUMB_SCHEMA ".resize"
-#define GTHUMB_ROTATE_SCHEMA            GTHUMB_SCHEMA ".rotate"
+#define PIX_CROP_SCHEMA              PIX_SCHEMA ".crop"
+#define PIX_RESIZE_SCHEMA            PIX_SCHEMA ".resize"
+#define PIX_ROTATE_SCHEMA            PIX_SCHEMA ".rotate"
 
 /* keys: crop */
 

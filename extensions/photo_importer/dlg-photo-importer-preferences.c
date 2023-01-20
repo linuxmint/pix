@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2015 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-photo-importer-preferences.h"
 #include "preferences.h"
 
@@ -70,7 +70,7 @@ dlg_photo_importer_preferences (GtkWindow *parent)
 
 	data = g_new0 (DialogData, 1);
 	data->builder = gtk_builder_new_from_resource ("/org/x/Pix/photo_importer/data/ui/photo-importer-options.ui");
-	data->settings = g_settings_new (GTHUMB_PHOTO_IMPORTER_SCHEMA);
+	data->settings = g_settings_new (PIX_PHOTO_IMPORTER_SCHEMA);
 
 	/* Get the widgets. */
 

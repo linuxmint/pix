@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 
 #include <config.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "gth-selections-manager.h"
 

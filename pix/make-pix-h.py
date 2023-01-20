@@ -4,7 +4,7 @@ import sys
 import re
 
 if len(sys.argv) <= 3:
-    print("Usage: make-gthumb-h.py INPUT_FILE OUTPUT_FILE HEADER_FILE [HEADER_FILE [..]]")
+    print("Usage: make-pix-h.py INPUT_FILE OUTPUT_FILE HEADER_FILE [HEADER_FILE [..]]")
     exit(1)
 
 infile = sys.argv[1]

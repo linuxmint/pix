@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -168,11 +168,11 @@ metadata_ready_cb (GObject      *source_object,
 		return;
 	}
 
-	settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
+	settings = g_settings_new (PIX_GENERAL_SCHEMA);
 	store_metadata_in_files = g_settings_get_boolean (settings, PREF_GENERAL_STORE_METADATA_IN_FILES);
 	g_object_unref (settings);
 
-	settings = g_settings_new (GTHUMB_COMMENTS_SCHEMA);
+	settings = g_settings_new (PIX_COMMENTS_SCHEMA);
 	synchronize = g_settings_get_boolean (settings, PREF_COMMENTS_SYNCHRONIZE);
 	g_object_unref (settings);
 

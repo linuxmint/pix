@@ -8,7 +8,7 @@ source_files = files(
 exiv2_tools_mod = shared_module('exiv2_tools',
   sources : source_files,
   dependencies : [ extension_common_deps, exiv2_dep ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   cpp_args : cpp_args,
   link_with : [ edit_metadata_mod ],

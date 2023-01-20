@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 void   utils_get_common_tags (GList       *file_list, /* GthFileData list */
 			      GHashTable **common_tags_out,

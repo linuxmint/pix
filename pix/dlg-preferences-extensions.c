@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -488,7 +488,7 @@ create_extensions_row (GthExtensionDescription	*description,
 				  row_data);
 		gtk_box_pack_start (GTK_BOX (row_box), button, FALSE, FALSE, 0);
 	}
-	if ((extension != NULL) && (g_strcmp0 (description->authors[0], _("gThumb Development Team")) != 0)) {
+	if ((extension != NULL) && (g_strcmp0 (description->authors[0], _("Pix Development Team")) != 0)) {
 		button = gtk_button_new_from_icon_name ("dialog-information-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
 		g_signal_connect (button,
@@ -559,7 +559,7 @@ extensions__dlg_preferences_construct_cb (GtkWidget  *dialog,
 
 	data = g_new0 (BrowserData, 1);
 	data->builder = _gtk_builder_new_from_file ("extensions-preferences.ui", NULL);
-	data->settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
+	data->settings = g_settings_new (PIX_GENERAL_SCHEMA);
 	data->dialog = dialog;
 	data->enabled_disabled_cardinality_changed = FALSE;
 
@@ -711,7 +711,7 @@ extensions__dlg_preferences_apply (GtkWidget  *dialog,
 						  GTK_DIALOG_MODAL,
 						  _GTK_ICON_NAME_DIALOG_WARNING,
 						  _("Restart required"),
-						  _("You need to restart gthumb for these changes to take effect"),
+						  _("You need to restart pix for these changes to take effect"),
 						  _("_Continue"), GTK_RESPONSE_CANCEL,
 						  _("_Restart"), GTK_RESPONSE_OK,
 						  NULL);

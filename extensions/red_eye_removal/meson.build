@@ -11,7 +11,7 @@ shared_module('red_eye_removal',
   ],
   include_directories : [
     config_inc,
-    gthumb_inc,
+    pix_inc,
     file_tools_inc
   ],
   c_args : c_args,

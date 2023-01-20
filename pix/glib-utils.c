@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2019 Free Software Foundation, Inc.
  *
@@ -280,7 +280,7 @@ debug (const char *file,
 
 	if (! first_time) {
 		first_time = 1;
-		if (g_getenv ("GTHUMB_DEBUG"))
+		if (g_getenv ("PIX_DEBUG"))
 			print_debug_info = 1;
 	}
 

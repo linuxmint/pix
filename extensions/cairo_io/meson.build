@@ -43,7 +43,7 @@ shared_module('cairo_io',
     use_libjxl ? libjxl_deps : [],
     use_libheif ? libheif_dep : []
   ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : jpeg_utils_mod,
   install : true,

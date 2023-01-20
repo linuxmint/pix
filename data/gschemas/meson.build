@@ -31,7 +31,7 @@ enums_schema = custom_target('enums_schema',
   output : 'org.x.pix.enums.xml',
   command : [
     find_program('make-enums.py'),
-    join_paths(meson.source_root(), 'gthumb'),
+    join_paths(meson.source_root(), 'pix'),
     join_paths(meson.source_root(), 'extensions'),
   ],
   capture : true,

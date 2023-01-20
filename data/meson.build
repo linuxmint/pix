@@ -1,5 +1,5 @@
 
-install_man('gthumb.1')
+install_man('pix.1')
 
 # .desktop files
 
@@ -38,9 +38,9 @@ i18n.merge_file(
 # .pc file
 
 pkg = import('pkgconfig')
-gthumb_pc = pkg.generate(
-  name : 'gThumb',
-  description : 'gThumb extensions',
+pix_pc = pkg.generate(
+  name : 'Pix',
+  description : 'Pix extensions',
   filebase : meson.project_name(),
   subdirs : meson.project_name(),
   requires : [ 'gtk+-3.0' ],

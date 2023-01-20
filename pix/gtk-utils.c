@@ -26,7 +26,7 @@
 
 
 #define REQUEST_ENTRY_WIDTH_IN_CHARS 40
-#define GTHUMB_RESOURCE_BASE_PATH "/org/x/Pix/resources/"
+#define PIX_RESOURCE_BASE_PATH "/org/x/Pix/resources/"
 
 
 SizeValue
@@ -360,7 +360,7 @@ show_help_dialog (GtkWindow  *parent,
 	char   *uri;
 	GError *error = NULL;
 
-	uri = g_strconcat ("help:gthumb", section ? "/" : NULL, section, NULL);
+	uri = g_strconcat ("help:pix", section ? "/" : NULL, section, NULL);
 	if (! gtk_show_uri_on_window (parent, uri, GDK_CURRENT_TIME, &error)) {
   		GtkWidget *dialog;
 
@@ -459,11 +459,11 @@ _gtk_builder_new_from_file (const char *ui_file,
 
 #ifdef RUN_IN_PLACE
 	if (extension == NULL)
-		filename = g_build_filename (GTHUMB_UI_DIR, ui_file, NULL);
+		filename = g_build_filename (PIX_UI_DIR, ui_file, NULL);
 	else
-		filename = g_build_filename (GTHUMB_EXTENSIONS_UI_DIR, extension, "data", "ui", ui_file, NULL);
+		filename = g_build_filename (PIX_EXTENSIONS_UI_DIR, extension, "data", "ui", ui_file, NULL);
 #else
-	filename = g_build_filename (GTHUMB_UI_DIR, ui_file, NULL);
+	filename = g_build_filename (PIX_UI_DIR, ui_file, NULL);
 #endif
 
 	builder = gtk_builder_new ();
@@ -485,7 +485,7 @@ _gtk_builder_new_from_resource (const char *resource_path)
 	GError     *error = NULL;
 
 	builder = gtk_builder_new ();
-	full_path = g_strconcat (GTHUMB_RESOURCE_BASE_PATH, resource_path, NULL);
+	full_path = g_strconcat (PIX_RESOURCE_BASE_PATH, resource_path, NULL);
         if (! gtk_builder_add_from_resource (builder, full_path, &error)) {
                 g_warning ("%s\n", error->message);
                 g_clear_error (&error);

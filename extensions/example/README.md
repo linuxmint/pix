@@ -18,7 +18,7 @@ To install:
 
     sudo ninja -C install
 
-After installing the extension, start gThumb and activate it from the
+After installing the extension, start Pix and activate it from the
 Preferences dialog.
 
 If you think your extension can be useful to others as well, add it to

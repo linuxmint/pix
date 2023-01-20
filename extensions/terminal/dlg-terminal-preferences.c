@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2020 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "dlg-terminal-preferences.h"
 #include "preferences.h"
 
@@ -75,7 +75,7 @@ dlg_terminal_preferences (GtkWindow *parent)
 
 	data = g_new0 (DialogData, 1);
 	data->builder = _gtk_builder_new_from_file ("terminal-preferences.ui", "terminal");
-	data->settings = g_settings_new (GTHUMB_TERMINAL_SCHEMA);
+	data->settings = g_settings_new (PIX_TERMINAL_SCHEMA);
 
 	/* Get the widgets. */
 

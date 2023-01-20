@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2020 Free Software Foundation, Inc.
  *
@@ -22,13 +22,13 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "callbacks.h"
 #include "dlg-terminal-preferences.h"
 
 
 G_MODULE_EXPORT void
-gthumb_extension_activate (void)
+pix_extension_activate (void)
 {
 	gth_hook_add_callback ("gth-browser-construct", 10, G_CALLBACK (terminal__gth_browser_construct_cb), NULL);
 	gth_hook_add_callback ("gth-browser-folder-tree-popup-before", 10, G_CALLBACK (terminal__gth_browser_folder_tree_popup_before_cb), NULL);
@@ -37,20 +37,20 @@ gthumb_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-gthumb_extension_deactivate (void)
+pix_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-gthumb_extension_is_configurable (void)
+pix_extension_is_configurable (void)
 {
 	return TRUE;
 }
 
 
 G_MODULE_EXPORT void
-gthumb_extension_configure (GtkWindow *parent)
+pix_extension_configure (GtkWindow *parent)
 {
 	dlg_terminal_preferences (parent);
 }

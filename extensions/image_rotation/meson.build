@@ -10,7 +10,7 @@ source_files = files(
 image_rotation_mod = shared_module('image_rotation',
   sources : source_files,
   dependencies : [ extension_common_deps, jpeg_deps ],
-  include_directories : [ config_inc, gthumb_inc ],
+  include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : jpeg_utils_mod,
   install : true,

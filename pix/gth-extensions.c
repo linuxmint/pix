@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -191,12 +191,12 @@ gth_extension_module_real_open (GthExtension  *base,
 	{
 		char *extension_dir;
 
-		extension_dir = g_build_filename (GTHUMB_EXTENSIONS_DIR, self->priv->module_name, NULL);
+		extension_dir = g_build_filename (PIX_EXTENSIONS_DIR, self->priv->module_name, NULL);
 		file_name = g_module_build_path (extension_dir, self->priv->module_name);
 		g_free (extension_dir);
 	}
 #else
-	file_name = g_module_build_path (GTHUMB_EXTENSIONS_DIR, self->priv->module_name);
+	file_name = g_module_build_path (PIX_EXTENSIONS_DIR, self->priv->module_name);
 #endif
 	self->priv->module = g_module_open (file_name, G_MODULE_BIND_LAZY);
 	g_free (file_name);
@@ -228,7 +228,7 @@ static char *
 get_module_function_name (GthExtensionModule *self,
 			  const char         *function_name)
 {
-	return g_strconcat ("gthumb_extension_", function_name, NULL);
+	return g_strconcat ("pix_extension_", function_name, NULL);
 }
 
 
@@ -462,7 +462,7 @@ gth_extension_description_load_from_file (GthExtensionDescription *desc,
 	}
 
 	api = g_key_file_get_string (key_file, "Loader", "API", NULL);
-	if (g_strcmp0 (api, GTHUMB_API_VERSION) != 0) {
+	if (g_strcmp0 (api, PIX_API_VERSION) != 0) {
 		g_free (api);
 		g_free (file_path);
 		g_key_file_free (key_file);
@@ -582,13 +582,13 @@ gth_extension_manager_load_extensions (GthExtensionManager *self)
 		char *path;
 
 		path = g_getenv ("PATH");
-		path = g_strconcat (path, G_SEARCHPATH_SEPARATOR_S GTHUMB_EXTENSIONS_DIR, NULL);
+		path = g_strconcat (path, G_SEARCHPATH_SEPARATOR_S PIX_EXTENSIONS_DIR, NULL);
 		g_setenv ("PATH", path, TRUE);
 		g_free (path);
 	}
 #endif
 
-	extensions_dir = g_file_new_for_path (GTHUMB_EXTENSIONS_DIR);
+	extensions_dir = g_file_new_for_path (PIX_EXTENSIONS_DIR);
 	enumerator = g_file_enumerate_children (extensions_dir, G_FILE_ATTRIBUTE_STANDARD_NAME, 0, NULL, NULL);
 	if (enumerator == NULL) {
 		g_critical ("Could not find the extensions folder: %s", g_file_get_uri (extensions_dir));
@@ -609,7 +609,7 @@ gth_extension_manager_load_extensions (GthExtensionManager *self)
 		char *path;
 
 		basename = g_strconcat (name, EXTENSION_SUFFIX, NULL);
-		path = g_build_filename (GTHUMB_EXTENSIONS_DIR, name, basename, NULL);
+		path = g_build_filename (PIX_EXTENSIONS_DIR, name, basename, NULL);
 		ext_file = g_file_new_for_path (path);
 		ext_name = g_strdup (name);
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <math.h>
 #include <gdk/gdkkeysyms.h>
-#include <gthumb.h>
+#include <pix.h>
 #include "actions.h"
 #include "gth-image-viewer-page.h"
 #include "preferences.h"
@@ -2033,7 +2033,7 @@ gth_image_viewer_page_init (GthImageViewerPage *self)
 	int i;
 
 	self->priv = gth_image_viewer_page_get_instance_private (self);
-	self->priv->settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	self->priv->settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
 	self->priv->preloader = NULL;
 	self->priv->file_popup_merge_id = 0;
 	self->priv->history = gth_image_history_new ();

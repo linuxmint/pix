@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2009 The Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define DLG_CATALOG_H
 
 #include <glib.h>
-#include <gthumb.h>
+#include <pix.h>
 
 void	dlg_add_to_catalog	(GthBrowser	*browser);
 void	add_to_catalog		(GthBrowser	*browser,

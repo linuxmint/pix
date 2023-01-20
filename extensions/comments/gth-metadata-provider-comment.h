@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <gthumb.h>
+#include <pix.h>
 
 #define GTH_TYPE_METADATA_PROVIDER_COMMENT         (gth_metadata_provider_comment_get_type ())
 #define GTH_METADATA_PROVIDER_COMMENT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_METADATA_PROVIDER_COMMENT, GthMetadataProviderComment))

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef GTH_FILE_SOURCE_SELECTIONS_H
 #define GTH_FILE_SOURCE_SELECTIONS_H
 
-#include <gthumb.h>
+#include <pix.h>
 
 #define GTH_TYPE_FILE_SOURCE_SELECTIONS         (gth_file_source_selections_get_type ())
 #define GTH_FILE_SOURCE_SELECTIONS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_FILE_SOURCE_SELECTIONS, GthFileSourceSelections))

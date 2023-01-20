@@ -1,4 +1,4 @@
-gnome.yelp('gthumb',
+gnome.yelp('pix',
   sources : [
     'index.page',
     'attributes.page',

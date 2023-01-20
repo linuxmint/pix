@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 G_BEGIN_DECLS
 
-#include <gthumb.h>
+#include <pix.h>
 
 GFile *   gth_import_preferences_get_destination  (void);
 GFile *   gth_import_utils_get_file_destination   (GthFileData *file_data,

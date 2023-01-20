@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  GThumb
+ *  Pix
  *
  *  Copyright (C) 2001-2020 The Free Software Foundation, Inc.
  *
@@ -94,7 +94,7 @@ dlg_favorite_properties (GthBrowser *browser)
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("favorite-properties.ui", NULL);
-	data->settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+	data->settings = g_settings_new (PIX_BROWSER_SCHEMA);
 	data->dialog = g_object_new (GTK_TYPE_DIALOG,
 				     "title", _("Preferences"),
 				     "transient-for", GTK_WINDOW (browser),
