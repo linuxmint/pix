@@ -18,21 +18,21 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.image-viewer" path="/org/gnome/gthumb/image-viewer/" gettext-domain="gthumb">
-    <key name="zoom-quality" enum="org.gnome.gthumb.GthZoomQuality">
+  <schema id="org.x.pix.image-viewer" path="/org/x/pix/image-viewer/" gettext-domain="gthumb">
+    <key name="zoom-quality" enum="org.x.pix.GthZoomQuality">
       <default>'high'</default>
     </key>
-    <key name="zoom-change" enum="org.gnome.gthumb.GthZoomChange">
+    <key name="zoom-change" enum="org.x.pix.GthZoomChange">
       <default>'fit-size-if-larger'</default>
     </key>
     <key name="reset-scrollbars" type="b">
       <default>true</default>
       <description>Whether to reset the scrollbars position after changing image</description>
     </key>
-    <key name="histogram-scale" enum="org.gnome.gthumb.GthHistogramScale">
+    <key name="histogram-scale" enum="org.x.pix.GthHistogramScale">
       <default>'linear'</default>
     </key>
-    <key name="transparency-style" enum="org.gnome.gthumb.GthTransparencyStyle">
+    <key name="transparency-style" enum="org.x.pix.GthTransparencyStyle">
       <default>'checkered'</default>
     </key>
   </schema>

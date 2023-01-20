@@ -18,8 +18,8 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.resize" path="/org/gnome/gthumb/resize/" gettext-domain="gthumb">
-    <key name="unit" enum="org.gnome.gthumb.GthUnit">
+  <schema id="org.x.pix.resize" path="/org/x/pix/resize/" gettext-domain="gthumb">
+    <key name="unit" enum="org.x.pix.GthUnit">
       <default>'percentage'</default>
     </key>
     <key name="width" type="d">
@@ -34,7 +34,7 @@
     <key name="aspect-ratio-height" type="i">
       <default>1</default>
     </key>
-    <key name="aspect-ratio" enum="org.gnome.gthumb.GthAspectRatio">
+    <key name="aspect-ratio" enum="org.x.pix.GthAspectRatio">
       <default>'image'</default>
     </key>
     <key name="aspect-ratio-invert" type="b">

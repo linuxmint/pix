@@ -18,7 +18,7 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.rename-series" path="/org/gnome/gthumb/rename-series/" gettext-domain="gthumb">
+  <schema id="org.x.pix.rename-series" path="/org/x/pix/rename-series/" gettext-domain="gthumb">
     <key name="template" type="s">
       <default>'####%E'</default>
     </key>
@@ -32,7 +32,7 @@
     <key name="reverse-order" type="b">
       <default>false</default>
     </key>
-    <key name="change-case" enum="org.gnome.gthumb.GthChangeCase">
+    <key name="change-case" enum="org.x.pix.GthChangeCase">
       <default>'none'</default>
     </key>
   </schema>

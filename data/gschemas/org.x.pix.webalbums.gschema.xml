@@ -18,7 +18,7 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.webalbums" path="/org/gnome/gthumb/webalbums/" gettext-domain="gthumb">
+  <schema id="org.x.pix.webalbums" path="/org/x/pix/webalbums/" gettext-domain="gthumb">
     <key name="index-file" type="s">
       <default>'index.html'</default>
     </key>
@@ -85,10 +85,10 @@
     <key name="image-attributes" type="s">
       <default>'gth::file::display-size,standard::fast-content-type,general::dimensions,general::format,general::location,general::datetime,general::rating,Exif::Image::Make,Exif::Image::Model,Exif::Image::Software,Exif::Image::Artist,Exif::Image::Copyright,Exif::Photo::ISOSpeedRatings,Exif::Photo::BrightnessValue,Exif::Photo::FNumber,Exif::Photo::ApertureValue,Exif::Photo::MaxApertureValue,Exif::Photo::ExposureTime,Exif::Photo::ExposureProgram,Exif::Photo::ExposureIndex,Exif::Photo::ExposureBiasValue,Exif::Photo::ExposureMode,Exif::Photo::ShutterSpeedValue,Exif::Photo::MeteringMode,Exif::Photo::LightSource,Exif::Photo::WhiteBalance,Exif::Photo::Flash,Exif::Photo::FocalLength,Exif::Photo::SubjectArea,Exif::Photo::Contrast,Exif::Photo::Saturation,Exif::Photo::Sharpness'</default>
     </key>
-    <child name="directories" schema="org.gnome.gthumb.webalbums.directories" />
+    <child name="directories" schema="org.x.pix.webalbums.directories" />
   </schema>
 
-  <schema id="org.gnome.gthumb.webalbums.directories" path="/org/gnome/gthumb/webalbums/directories/" gettext-domain="gthumb">
+  <schema id="org.x.pix.webalbums.directories" path="/org/x/pix/webalbums/directories/" gettext-domain="gthumb">
     <key name="previews" type="s">
       <default>'previews'</default>
     </key>

@@ -37,7 +37,7 @@ export_tools__gth_browser_construct_cb (GthBrowser *browser)
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/export_tools/data/ui/export-menu.ui");
+	builder = gtk_builder_new_from_resource ("/org/x/Pix/export_tools/data/ui/export-menu.ui");
 	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_WEB_EXPORTERS, G_MENU (gtk_builder_get_object (builder, "web-exporters")));
 	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_OTHER_EXPORTERS, G_MENU (gtk_builder_get_object (builder, "other-exporters")));
 	export_menu = G_MENU_MODEL (gtk_builder_get_object (builder, "export-menu"));

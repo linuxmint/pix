@@ -18,19 +18,19 @@
 -->
 <schemalist>
 
-  <enum id="org.gnome.gthumb.GtkOrientation">
+  <enum id="org.x.pix.GtkOrientation">
     <value nick="horizontal" value="0" />
     <value nick="vertical" value="1" />
   </enum>
 
-  <schema id="org.gnome.gthumb" path="/org/gnome/gthumb/">
-    <child name="general" schema="org.gnome.gthumb.general" />
-    <child name="data-migration" schema="org.gnome.gthumb.data-migration" />
-    <child name="browser" schema="org.gnome.gthumb.browser" />
-    <child name="dialogs" schema="org.gnome.gthumb.dialogs" />
+  <schema id="org.x.pix" path="/org/x/pix/">
+    <child name="general" schema="org.x.pix.general" />
+    <child name="data-migration" schema="org.x.pix.data-migration" />
+    <child name="browser" schema="org.x.pix.browser" />
+    <child name="dialogs" schema="org.x.pix.dialogs" />
   </schema>
 
-  <schema id="org.gnome.gthumb.general" path="/org/gnome/gthumb/general/" gettext-domain="gthumb">
+  <schema id="org.x.pix.general" path="/org/x/pix/general/" gettext-domain="gthumb">
     <key name="active-extensions" type="as">
       <default>[ 'default' ]</default>
     </key>
@@ -39,13 +39,13 @@
     </key>
   </schema>
 
-  <schema id="org.gnome.gthumb.data-migration" path="/org/gnome/gthumb/data-migration/" gettext-domain="gthumb">
+  <schema id="org.x.pix.data-migration" path="/org/x/pix/data-migration/" gettext-domain="gthumb">
     <key name="catalogs-2-10" type="b">
       <default>false</default>
     </key>
   </schema>
 
-  <schema id="org.gnome.gthumb.browser" path="/org/gnome/gthumb/browser/" gettext-domain="gthumb">
+  <schema id="org.x.pix.browser" path="/org/x/pix/browser/" gettext-domain="gthumb">
     <key name="go-to-last-location" type="b">
       <default>true</default>
     </key>
@@ -122,23 +122,23 @@
     <key name="browser-sidebar-width" type="i">
       <default>285</default>
     </key>
-    <key name="viewer-sidebar" enum="org.gnome.gthumb.GthSidebarState">
+    <key name="viewer-sidebar" enum="org.x.pix.GthSidebarState">
       <default>'hidden'</default>
     </key>
-    <key name="viewer-thumbnails-orientation" enum="org.gnome.gthumb.GtkOrientation">
+    <key name="viewer-thumbnails-orientation" enum="org.x.pix.GtkOrientation">
       <default>'horizontal'</default>
     </key>
     <key name="reuse-active-window" type="b">
       <default>false</default>
       <description>Open files in the active window</description>
     </key>
-    <key name="fullscreen-sidebar" enum="org.gnome.gthumb.GthSidebarState">
+    <key name="fullscreen-sidebar" enum="org.x.pix.GthSidebarState">
       <default>'hidden'</default>
     </key>
     <key name="fullscreen-thumbnails-visible" type="b">
       <default>false</default>
     </key>
-    <key name="scroll-action" enum="org.gnome.gthumb.GthScrollAction">
+    <key name="scroll-action" enum="org.x.pix.GthScrollAction">
       <default>'change-file'</default>
     </key>
     <key name="favorite-properties" type="s">
@@ -146,13 +146,13 @@
     </key>
   </schema>
 
-  <schema id="org.gnome.gthumb.dialogs" path="/org/gnome/gthumb/dialogs/">
-    <child name="messages" schema="org.gnome.gthumb.dialogs.messages" />
-    <child name="add-to-catalog" schema="org.gnome.gthumb.dialogs.add-to-catalog" />
-    <child name="save-file" schema="org.gnome.gthumb.dialogs.save-file" />
+  <schema id="org.x.pix.dialogs" path="/org/x/pix/dialogs/">
+    <child name="messages" schema="org.x.pix.dialogs.messages" />
+    <child name="add-to-catalog" schema="org.x.pix.dialogs.add-to-catalog" />
+    <child name="save-file" schema="org.x.pix.dialogs.save-file" />
   </schema>
 
-  <schema id="org.gnome.gthumb.dialogs.messages" path="/org/gnome/gthumb/dialogs/messages/" gettext-domain="gthumb">
+  <schema id="org.x.pix.dialogs.messages" path="/org/x/pix/dialogs/messages/" gettext-domain="gthumb">
     <key name="cannot-move-to-trash" type="b">
       <default>true</default>
     </key>
@@ -164,13 +164,13 @@
     </key>
   </schema>
 
-  <schema id="org.gnome.gthumb.dialogs.add-to-catalog" path="/org/gnome/gthumb/dialogs/add-to-catalog/" gettext-domain="gthumb">
+  <schema id="org.x.pix.dialogs.add-to-catalog" path="/org/x/pix/dialogs/add-to-catalog/" gettext-domain="gthumb">
     <key name="view" type="b">
       <default>false</default>
     </key>
   </schema>
 
-  <schema id="org.gnome.gthumb.dialogs.save-file" path="/org/gnome/gthumb/dialogs/save-file/" gettext-domain="gthumb">
+  <schema id="org.x.pix.dialogs.save-file" path="/org/x/pix/dialogs/save-file/" gettext-domain="gthumb">
     <key name="show-options" type="b">
       <default>true</default>
     </key>

@@ -26,7 +26,7 @@
 
 
 #define REQUEST_ENTRY_WIDTH_IN_CHARS 40
-#define GTHUMB_RESOURCE_BASE_PATH "/org/gnome/gThumb/resources/"
+#define GTHUMB_RESOURCE_BASE_PATH "/org/x/Pix/resources/"
 
 
 SizeValue

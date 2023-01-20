@@ -57,7 +57,7 @@ pi__gth_browser_construct_cb (GthBrowser *browser)
 					 G_N_ELEMENTS (actions),
 					 browser);
 
-	builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/photo_importer/data/ui/import-menu.ui");
+	builder = gtk_builder_new_from_resource ("/org/x/Pix/photo_importer/data/ui/import-menu.ui");
 	import_menu = G_MENU_MODEL (gtk_builder_get_object (builder, "import-menu"));
 	other_actions = gth_menu_manager_get_menu (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_GEARS_OTHER_ACTIONS));
 	g_menu_append_submenu (other_actions, _("I_mport From"), import_menu);

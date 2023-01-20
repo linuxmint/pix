@@ -21,7 +21,7 @@ for root_dir in dirs:
 subprocess.call(['glib-mkenums',
   '--comments', '<!-- @comment@ -->',
   '--fhead',    '<schemalist>',
-  '--vhead',    '  <@type@ id="org.gnome.gthumb.@EnumName@">',
+  '--vhead',    '  <@type@ id="org.x.pix.@EnumName@">',
   '--vprod',    '    <value nick="@valuenick@" value="@valuenum@"/>',
   '--vtail',    '  </@type@>',
   '--ftail',    '</schemalist>' 

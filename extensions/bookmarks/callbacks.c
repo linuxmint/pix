@@ -322,7 +322,7 @@ bookmarks__gth_browser_construct_cb (GthBrowser *browser)
 		button = _gtk_menu_button_new_for_header_bar ("user-bookmarks-symbolic");
 		gtk_widget_set_tooltip_text (button, _("Bookmarks"));
 
-		data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/bookmarks/data/ui/bookmarks-menu.ui");
+		data->builder = gtk_builder_new_from_resource ("/org/x/Pix/bookmarks/data/ui/bookmarks-menu.ui");
 		data->system_bookmarks_menu = G_MENU (gtk_builder_get_object (data->builder, "system-bookmarks"));
 		data->entry_points_menu = G_MENU (gtk_builder_get_object (data->builder, "entry-points"));
 		data->bookmarks_menu = G_MENU (gtk_builder_get_object (data->builder, "bookmarks"));

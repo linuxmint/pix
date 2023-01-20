@@ -69,7 +69,7 @@ dlg_photo_importer_preferences (GtkWindow *parent)
 	DialogData *data;
 
 	data = g_new0 (DialogData, 1);
-	data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/photo_importer/data/ui/photo-importer-options.ui");
+	data->builder = gtk_builder_new_from_resource ("/org/x/Pix/photo_importer/data/ui/photo-importer-options.ui");
 	data->settings = g_settings_new (GTHUMB_PHOTO_IMPORTER_SCHEMA);
 
 	/* Get the widgets. */

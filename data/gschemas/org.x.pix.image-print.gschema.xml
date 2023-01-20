@@ -18,7 +18,7 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.image-print" path="/org/gnome/gthumb/image-print/" gettext-domain="gthumb">
+  <schema id="org.x.pix.image-print" path="/org/x/pix/image-print/" gettext-domain="gthumb">
     <key name="caption" type="s">
       <default>''</default>
     </key>
@@ -43,7 +43,7 @@
     <key name="n-columns" type="i">
       <default>1</default>
     </key>
-    <key name="unit" enum="org.gnome.gthumb.GthMetric">
+    <key name="unit" enum="org.x.pix.GthMetric">
       <default>'pixels'</default>
     </key>
   </schema>

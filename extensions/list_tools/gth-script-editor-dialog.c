@@ -179,7 +179,7 @@ gth_script_editor_dialog_construct (GthScriptEditorDialog *self,
 				NULL);
 	_gtk_dialog_add_class_to_response (GTK_DIALOG (self), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 
-	self->priv->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/script-editor.ui");
+	self->priv->builder = gtk_builder_new_from_resource ("/org/x/Pix/list_tools/data/ui/script-editor.ui");
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), _gtk_builder_get_widget (self->priv->builder, "script_editor"), TRUE, TRUE, 0);
 
 	self->priv->accel_button = gth_accel_button_new ();

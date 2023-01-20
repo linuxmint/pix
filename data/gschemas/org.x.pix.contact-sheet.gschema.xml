@@ -18,12 +18,12 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.contact-sheet" path="/org/gnome/gthumb/contact-sheet/">
-    <child name="contact-sheet" schema="org.gnome.gthumb.contact-sheet.contact-sheet" />
-    <child name="image-wall" schema="org.gnome.gthumb.contact-sheet.image-wall" />
+  <schema id="org.x.pix.contact-sheet" path="/org/x/pix/contact-sheet/">
+    <child name="contact-sheet" schema="org.x.pix.contact-sheet.contact-sheet" />
+    <child name="image-wall" schema="org.x.pix.contact-sheet.image-wall" />
   </schema>
 
-  <schema id="org.gnome.gthumb.contact-sheet.contact-sheet" path="/org/gnome/gthumb/contact-sheet/contact-sheet/" gettext-domain="gthumb">
+  <schema id="org.x.pix.contact-sheet.contact-sheet" path="/org/x/pix/contact-sheet/contact-sheet/" gettext-domain="gthumb">
     <key name="header" type="s">
       <default>'%L'</default>
     </key>
@@ -74,7 +74,7 @@
     </key>
   </schema>
 
-  <schema id="org.gnome.gthumb.contact-sheet.image-wall" path="/org/gnome/gthumb/contact-sheet/image-wall/" gettext-domain="gthumb">
+  <schema id="org.x.pix.contact-sheet.image-wall" path="/org/x/pix/contact-sheet/image-wall/" gettext-domain="gthumb">
     <key name="destination" type="s">
       <default>''</default>
     </key>

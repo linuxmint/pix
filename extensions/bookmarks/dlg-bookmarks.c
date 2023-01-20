@@ -340,7 +340,7 @@ dlg_bookmarks (GthBrowser *browser)
 
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
-	data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/bookmarks/data/ui/bookmarks.ui");
+	data->builder = gtk_builder_new_from_resource ("/org/x/Pix/bookmarks/data/ui/bookmarks.ui");
 	data->last_selected_uri = NULL;
 	data->entry_changed = FALSE;
 

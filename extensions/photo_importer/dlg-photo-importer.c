@@ -552,7 +552,7 @@ dlg_photo_importer (GthBrowser            *browser,
 
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
-	data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/photo_importer/data/ui/photo-importer.ui");
+	data->builder = gtk_builder_new_from_resource ("/org/x/Pix/photo_importer/data/ui/photo-importer.ui");
 	data->settings = g_settings_new (GTHUMB_PHOTO_IMPORTER_SCHEMA);
 	data->selector_type = selector_type;
 	data->source = _g_object_ref (source);

@@ -30,7 +30,7 @@ G_BEGIN_DECLS
 
 /* schemas */
 
-#define GTHUMB_SCHEMA                         "org.gnome.gthumb"
+#define GTHUMB_SCHEMA                         "org.x.pix"
 #define GTHUMB_GENERAL_SCHEMA                 GTHUMB_SCHEMA ".general"
 #define GTHUMB_DATA_MIGRATION_SCHEMA          GTHUMB_SCHEMA ".data-migration"
 #define GTHUMB_BROWSER_SCHEMA                 GTHUMB_SCHEMA ".browser"

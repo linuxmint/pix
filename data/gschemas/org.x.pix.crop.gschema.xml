@@ -18,11 +18,11 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.crop" path="/org/gnome/gthumb/crop/" gettext-domain="gthumb">
-    <key name="grid-type" enum="org.gnome.gthumb.GthGridType">
+  <schema id="org.x.pix.crop" path="/org/x/pix/crop/" gettext-domain="gthumb">
+    <key name="grid-type" enum="org.x.pix.GthGridType">
       <default>'thirds'</default>
     </key>
-    <key name="aspect-ratio" enum="org.gnome.gthumb.GthAspectRatio">
+    <key name="aspect-ratio" enum="org.x.pix.GthAspectRatio">
       <default>'none'</default>
     </key>
     <key name="aspect-ratio-invert" type="b">

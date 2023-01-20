@@ -338,13 +338,13 @@ gth_window_realize (GtkWidget *widget)
 
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_for_screen (gtk_widget_get_screen (widget)), GTHUMB_ICON_DIR);
 
-	_gth_window_add_css_provider (widget, "/org/gnome/gThumb/resources/gthumb.css");
+	_gth_window_add_css_provider (widget, "/org/x/Pix/resources/gthumb.css");
 	if ((gtk_major_version >= 3) && (gtk_minor_version >= 20))
-		_gth_window_add_css_provider (widget, "/org/gnome/gThumb/resources/gthumb-gtk320.css");
+		_gth_window_add_css_provider (widget, "/org/x/Pix/resources/gthumb-gtk320.css");
 	else if ((gtk_major_version >= 3) && (gtk_minor_version >= 14))
-		_gth_window_add_css_provider (widget, "/org/gnome/gThumb/resources/gthumb-gtk314.css");
+		_gth_window_add_css_provider (widget, "/org/x/Pix/resources/gthumb-gtk314.css");
 	else if ((gtk_major_version >= 3) && (gtk_minor_version >= 10))
-		_gth_window_add_css_provider (widget, "/org/gnome/gThumb/resources/gthumb-gtk312.css");
+		_gth_window_add_css_provider (widget, "/org/x/Pix/resources/gthumb-gtk312.css");
 }
 
 

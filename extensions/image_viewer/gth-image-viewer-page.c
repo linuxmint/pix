@@ -1147,7 +1147,7 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 							   "win.image-zoom-fit-if-larger",
 							   NULL);
 
-	self->priv->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/image_viewer/data/ui/toolbar-zoom-menu.ui");
+	self->priv->builder = gtk_builder_new_from_resource ("/org/x/Pix/image_viewer/data/ui/toolbar-zoom-menu.ui");
 	self->priv->buttons[ZOOM_BUTTON] =
 			gth_browser_add_header_bar_menu_button (browser,
 								GTH_BROWSER_HEADER_SECTION_VIEWER_ZOOM,

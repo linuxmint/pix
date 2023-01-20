@@ -6,14 +6,14 @@ install_man('gthumb.1')
 desktop_data = configuration_data()
 desktop_data.set('VERSION', meson.project_version())
 desktop_in_file = configure_file(
-  input : 'org.gnome.gThumb.desktop.in.in',
-  output : 'org.gnome.gThumb.desktop.in',
+  input : 'org.x.Pix.desktop.in.in',
+  output : 'org.x.Pix.desktop.in',
   configuration : desktop_data
 )
 
 i18n.merge_file(
   input : desktop_in_file,
-  output : 'org.gnome.gThumb.desktop',
+  output : 'org.x.Pix.desktop',
   type : 'desktop',
   po_dir : po_dir,
   install : true,
@@ -21,14 +21,14 @@ i18n.merge_file(
 )
 
 desktop_import_in_file = configure_file(
-  input : 'org.gnome.gThumb.Import.desktop.in.in',
-  output : 'org.gnome.gThumb.Import.desktop.in',
+  input : 'org.x.Pix.Import.desktop.in.in',
+  output : 'org.x.Pix.Import.desktop.in',
   configuration : desktop_data
 )
 
 i18n.merge_file(
   input : desktop_import_in_file,
-  output : 'org.gnome.gThumb.Import.desktop',
+  output : 'org.x.Pix.Import.desktop',
   type : 'desktop',
   po_dir : po_dir,
   install : true,

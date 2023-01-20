@@ -598,7 +598,7 @@ dlg_personalize_scripts (GthBrowser *browser)
 
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
-	data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/personalize-scripts.ui");
+	data->builder = gtk_builder_new_from_resource ("/org/x/Pix/list_tools/data/ui/personalize-scripts.ui");
 
 	/* Get the widgets. */
 

@@ -135,7 +135,7 @@ list_tools__gth_browser_construct_cb (GthBrowser *browser)
 					 G_N_ELEMENTS (actions),
 					 browser);
 
-	builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/tools-menu.ui");
+	builder = gtk_builder_new_from_resource ("/org/x/Pix/list_tools/data/ui/tools-menu.ui");
 	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_TOOLS, G_MENU (gtk_builder_get_object (builder, "tools1")));
 	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_MORE_TOOLS, G_MENU (gtk_builder_get_object (builder, "tools2")));
 	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_TOOLS3, G_MENU (gtk_builder_get_object (builder, "tools3")));

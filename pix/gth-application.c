@@ -99,7 +99,7 @@ gth_application_init (GthApplication *app)
 {
 	GDesktopAppInfo *app_info;
 
-	app_info = g_desktop_app_info_new ("org.gnome.gThumb.desktop");
+	app_info = g_desktop_app_info_new ("org.x.Pix.desktop");
 	if (app_info == NULL) {
 		/* manually set name and icon */
 
@@ -422,7 +422,7 @@ GtkApplication *
 gth_application_new (void)
 {
         return g_object_new (gth_application_get_type (),
-                             "application-id", "org.gnome.gThumb",
+                             "application-id", "org.x.Pix",
                              "register-session", TRUE, /* required to call gtk_application_inhibit */
                              "flags", G_APPLICATION_HANDLES_COMMAND_LINE,
                              NULL);

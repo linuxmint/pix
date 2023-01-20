@@ -18,14 +18,14 @@
 -->
 <schemalist>
 
-  <schema id="org.gnome.gthumb.rotate" path="/org/gnome/gthumb/rotate/" gettext-domain="gthumb">
-    <key name="resize" enum="org.gnome.gthumb.GthTransformResize">
+  <schema id="org.x.pix.rotate" path="/org/x/pix/rotate/" gettext-domain="gthumb">
+    <key name="resize" enum="org.x.pix.GthTransformResize">
       <default>'crop'</default>
     </key>
     <key name="keep-aspect-ratio" type="b">
       <default>true</default>
     </key>
-    <key name="grid-type" enum="org.gnome.gthumb.GthGridType">
+    <key name="grid-type" enum="org.x.pix.GthGridType">
       <default>'thirds'</default>
     </key>
     <key name="background-color" type="s">

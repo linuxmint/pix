@@ -967,7 +967,7 @@ gth_script_get_command_line_async (GthScript           *script,
 
 	command_data->eval_data.asked_values = g_list_reverse (command_data->eval_data.asked_values);
 
-	command_data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/ask-values.ui");
+	command_data->builder = gtk_builder_new_from_resource ("/org/x/Pix/list_tools/data/ui/ask-values.ui");
 	dialog = g_object_new (GTK_TYPE_DIALOG,
 			       "title", "",
 			       "transient-for", GTK_WINDOW (command_data->parent),
