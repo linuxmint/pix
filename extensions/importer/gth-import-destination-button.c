@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -24,9 +24,6 @@
 #include "gth-import-destination-button.h"
 
 
-G_DEFINE_TYPE (GthImportDestinationButton, gth_import_destination_button, GTK_TYPE_BUTTON)
-
-
 struct _GthImportDestinationButtonPrivate {
 	GtkWidget *destination_icon;
 	GtkWidget *destination_label;
@@ -34,78 +31,16 @@ struct _GthImportDestinationButtonPrivate {
 };
 
 
-static void
-_update_subfolder_label_color (GthImportDestinationButton *self)
-{
-	if (! gtk_widget_get_realized (GTK_WIDGET (self)))
-		return;
-
-	if ((gtk_widget_get_state (self->priv->subfolder_label) & GTK_STATE_INSENSITIVE) == GTK_STATE_INSENSITIVE) {
-		gtk_label_set_attributes (GTK_LABEL (self->priv->subfolder_label), NULL);
-		gtk_widget_queue_resize (self->priv->subfolder_label);
-	}
-	else {
-		PangoAttrList  *attr_list;
-		PangoAttribute *attr;
-
-		attr_list = pango_attr_list_new ();
-		attr = pango_attr_foreground_new (45489, 13107, 1799);
-		pango_attr_list_insert (attr_list, attr);
-		gtk_label_set_attributes (GTK_LABEL (self->priv->subfolder_label), attr_list);
-		pango_attr_list_unref (attr_list);
-
-		/* FIXME: the color is NULL for some themes.
-		GdkColor *color;
-
-		color = NULL;
-		gtk_widget_style_get (GTK_WIDGET (self), "link-color", &color, NULL);
-		if (color != NULL) {
-			PangoAttrList  *attr_list;
-			PangoAttribute *attr;
-
-			g_print ("(%" G_GUINT16_FORMAT ", %" G_GUINT16_FORMAT ", %" G_GUINT16_FORMAT ")\n", color->red, color->green, color->blue);
-
-			attr_list = pango_attr_list_new ();
-			attr = pango_attr_foreground_new (color->red, color->green, color->blue);
-			pango_attr_list_insert (attr_list, attr);
-			gtk_label_set_attributes (GTK_LABEL (self->priv->subfolder_label), attr_list);
-			pango_attr_list_unref (attr_list);
-
-			gdk_color_free (color);
-		}
-		else
-			g_print ("no color\n");
-		*/
-	}
-}
-
-
-static void
-gth_import_destination_button_realize (GtkWidget *widget)
-{
-	GTK_WIDGET_CLASS (gth_import_destination_button_parent_class)->realize (widget);
-	_update_subfolder_label_color (GTH_IMPORT_DESTINATION_BUTTON (widget));
-}
+G_DEFINE_TYPE_WITH_CODE (GthImportDestinationButton,
+			 gth_import_destination_button,
+			 GTK_TYPE_BUTTON,
+			 G_ADD_PRIVATE (GthImportDestinationButton))
 
 
 static void
 gth_import_destination_button_class_init (GthImportDestinationButtonClass *klass)
 {
-	GtkWidgetClass *widget_class;
-
-	g_type_class_add_private (klass, sizeof (GthImportDestinationButtonPrivate));
-
-	widget_class = (GtkWidgetClass*) klass;
-	widget_class->realize = gth_import_destination_button_realize;
-}
-
-
-static void
-subfolder_label_state_flags_changed_cb (GtkWidget     *widget,
-					GtkStateFlags  flags,
-					gpointer       user_data)
-{
-	_update_subfolder_label_color (GTH_IMPORT_DESTINATION_BUTTON (user_data));
+	/* void */
 }
 
 
@@ -115,7 +50,7 @@ gth_import_destination_button_init (GthImportDestinationButton *self)
 	GtkWidget *box;
 	GtkWidget *label_box;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMPORT_DESTINATION_BUTTON, GthImportDestinationButtonPrivate);
+	self->priv = gth_import_destination_button_get_instance_private (self);
 
 	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	gtk_widget_show (box);
@@ -134,16 +69,13 @@ gth_import_destination_button_init (GthImportDestinationButton *self)
 	gtk_box_pack_start (GTK_BOX (label_box), self->priv->destination_label, FALSE, FALSE, 0);
 
 	self->priv->subfolder_label = gtk_label_new ("");
+	gtk_style_context_add_class (gtk_widget_get_style_context (self->priv->subfolder_label), "highlighted-text");
 	gtk_label_set_ellipsize (GTK_LABEL (self->priv->subfolder_label), PANGO_ELLIPSIZE_END);
-	gtk_misc_set_alignment (GTK_MISC (self->priv->subfolder_label), 0.0, 0.5);
+	gtk_label_set_xalign (GTK_LABEL (self->priv->subfolder_label), 0.0);
+	gtk_label_set_yalign (GTK_LABEL (self->priv->subfolder_label), 0.5);
 
 	gtk_widget_show (self->priv->subfolder_label);
 	gtk_box_pack_start (GTK_BOX (label_box), self->priv->subfolder_label, TRUE, TRUE, 0);
-
-	g_signal_connect (self->priv->subfolder_label,
-			  "state-flags-changed",
-			  G_CALLBACK (subfolder_label_state_flags_changed_cb),
-			  self);
 }
 
 
@@ -152,31 +84,29 @@ preferences_dialog_destination_changed_cb (GthImportPreferencesDialog *dialog,
 					   GthImportDestinationButton *self)
 {
 	GFile *destination;
-	GFile *destination_example;
+	GFile *subfolder_example;
 
 	destination = gth_import_preferences_dialog_get_destination (dialog);
-	destination_example = gth_import_preferences_dialog_get_destination_example (dialog);
-	if ((destination != NULL) && (destination_example != NULL)) {
-		char *name;
+	subfolder_example = gth_import_preferences_dialog_get_subfolder_example (dialog);
+	if (destination != NULL) {
+		char *destination_name;
+		char *subfolder_name;
 
-		name = g_file_get_parse_name (destination);
-		gtk_image_set_from_icon_name(GTK_IMAGE (self->priv->destination_icon), "folder", GTK_ICON_SIZE_MENU);
-		gtk_label_set_text (GTK_LABEL (self->priv->destination_label), name);
-		g_free (name);
+		gtk_image_set_from_icon_name (GTK_IMAGE (self->priv->destination_icon), "folder-symbolic", GTK_ICON_SIZE_MENU);
 
-		name = g_file_get_relative_path (destination, destination_example);
-		if ((name != NULL) && (strcmp (name, "") != 0)) {
-			char *example_path;
+		destination_name = g_file_get_parse_name (destination);
+		gtk_label_set_text (GTK_LABEL (self->priv->destination_label), destination_name);
 
-			example_path = g_strconcat (G_DIR_SEPARATOR_S, name, NULL);
-			gtk_label_set_text (GTK_LABEL (self->priv->subfolder_label), example_path);
-
-			g_free (example_path);
+		subfolder_name = g_file_get_parse_name (subfolder_example);
+		if (! _g_str_empty (subfolder_name) && ! _g_str_equal (subfolder_name, "/")) {
+			const char *name = g_str_has_suffix (destination_name, "/") ? subfolder_name + 1 : subfolder_name;
+			gtk_label_set_text (GTK_LABEL (self->priv->subfolder_label), name);
 		}
 		else
 			gtk_label_set_text (GTK_LABEL (self->priv->subfolder_label), "");
 
-		g_free (name);
+		g_free (subfolder_name);
+		g_free (destination_name);
 	}
 	else {
 		gtk_image_set_from_icon_name (GTK_IMAGE (self->priv->destination_icon), "dialog-error", GTK_ICON_SIZE_MENU);
@@ -184,7 +114,7 @@ preferences_dialog_destination_changed_cb (GthImportPreferencesDialog *dialog,
 		gtk_label_set_text (GTK_LABEL (self->priv->subfolder_label), "");
 	}
 
-	_g_object_unref (destination_example);
+	_g_object_unref (subfolder_example);
 	_g_object_unref (destination);
 }
 

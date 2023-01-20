@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -21,13 +21,14 @@
 
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "actions.h"
 #include "gth-selections-manager.h"
 
 
 void
-gth_browser_activate_action_show_selection (GthBrowser *browser,
-					    int         n_selection)
+gth_browser_show_selection (GthBrowser *browser,
+			    int         n_selection)
 {
 	char  *uri;
 	GFile *location;
@@ -35,7 +36,7 @@ gth_browser_activate_action_show_selection (GthBrowser *browser,
 	uri = g_strdup_printf ("selection:///%d", n_selection);
 	location = g_file_new_for_uri (uri);
 
-	if (_g_file_equal_uris (location, gth_browser_get_location (browser))) {
+	if (_g_file_equal (location, gth_browser_get_location (browser))) {
 		if (! gth_browser_restore_state (browser))
 			gth_browser_load_location (browser, location);
 	}
@@ -50,32 +51,18 @@ gth_browser_activate_action_show_selection (GthBrowser *browser,
 
 
 void
-gth_browser_activate_action_go_selection_1 (GtkAction  *action,
-					    GthBrowser *browser)
+gth_browser_activate_go_to_selection (GSimpleAction	 *action,
+				      GVariant		 *parameter,
+				      gpointer		  user_data)
 {
-	gth_browser_activate_action_show_selection (browser, 1);
+	gth_browser_show_selection (GTH_BROWSER (user_data),
+				    g_variant_get_int32 (parameter));
 }
 
 
 void
-gth_browser_activate_action_go_selection_2 (GtkAction  *action,
-					    GthBrowser *browser)
-{
-	gth_browser_activate_action_show_selection (browser, 2);
-}
-
-
-void
-gth_browser_activate_action_go_selection_3 (GtkAction  *action,
-					    GthBrowser *browser)
-{
-	gth_browser_activate_action_show_selection (browser, 3);
-}
-
-
-void
-gth_browser_activate_action_add_to_selection (GthBrowser *browser,
-					      int         n_selection)
+gth_browser_add_to_selection(GthBrowser *browser,
+			     int         n_selection)
 {
 	char  *uri;
 	GFile *folder;
@@ -99,59 +86,23 @@ gth_browser_activate_action_add_to_selection (GthBrowser *browser,
 
 
 void
-gth_browser_activate_action_add_to_selection_1 (GtkAction  *action,
-						GthBrowser *browser)
+gth_browser_activate_add_to_selection (GSimpleAction	 *action,
+				       GVariant		 *parameter,
+				       gpointer		  user_data)
 {
-	gth_browser_activate_action_add_to_selection (browser, 1);
-}
-
-void
-gth_browser_activate_action_add_to_selection_2 (GtkAction  *action,
-						GthBrowser *browser)
-{
-	gth_browser_activate_action_add_to_selection (browser, 2);
+	gth_browser_add_to_selection (GTH_BROWSER (user_data),
+				      g_variant_get_int32 (parameter));
 }
 
 
 void
-gth_browser_activate_action_add_to_selection_3 (GtkAction  *action,
-						GthBrowser *browser)
+gth_browser_activate_go_to_file_container (GSimpleAction *action,
+					   GVariant	 *parameter,
+					   gpointer	  user_data)
 {
-	gth_browser_activate_action_add_to_selection (browser, 3);
-}
-
-
-void
-gth_browser_activate_action_remove_from_selection (GthBrowser *browser,
-						   int         n_selection)
-{
-	char  *uri;
-	GFile *folder;
-	GList *items;
-	GList *file_list = NULL;
-	GList *files;
-
-	uri = g_strdup_printf ("selection:///%d", n_selection);
-	folder = g_file_new_for_uri (uri);
-	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
-	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
-	files = gth_file_data_list_to_file_list (file_list);
-	gth_selections_manager_remove_files (folder, files);
-
-	_g_object_list_unref (files);
-	_g_object_list_unref (file_list);
-	_gtk_tree_path_list_free (items);
-	g_object_unref (folder);
-	g_free (uri);
-}
-
-
-void
-gth_browser_activate_action_selection_go_to_container (GthBrowser *browser,
-						       int         n_selection)
-{
-	GList *items;
-	GList *file_list = NULL;
+	GthBrowser *browser = user_data;
+	GList      *items;
+	GList      *file_list = NULL;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
@@ -168,4 +119,53 @@ gth_browser_activate_action_selection_go_to_container (GthBrowser *browser,
 
 	_g_object_list_unref (file_list);
 	_gtk_tree_path_list_free (items);
+}
+
+
+void
+gth_browser_remove_from_selection (GthBrowser *browser,
+				   int         n_selection)
+{
+	char  *uri;
+	GFile *folder;
+	GList *items;
+	GList *file_list = NULL;
+	GList *files;
+
+	uri = g_strdup_printf ("selection:///%d", n_selection);
+	folder = g_file_new_for_uri (uri);
+	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
+	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
+	files = gth_file_data_list_to_file_list (file_list);
+	gth_selections_manager_remove_files (folder, files, TRUE);
+
+	_g_object_list_unref (files);
+	_g_object_list_unref (file_list);
+	_gtk_tree_path_list_free (items);
+	g_object_unref (folder);
+	g_free (uri);
+}
+
+
+void
+gth_browser_activate_remove_from_selection (GSimpleAction	 *action,
+					    GVariant		 *parameter,
+					    gpointer		  user_data)
+{
+	gth_browser_remove_from_selection (GTH_BROWSER (user_data),
+					   g_variant_get_int32 (parameter));
+}
+
+
+void
+gth_browser_activate_remove_from_current_selection (GSimpleAction *action,
+						    GVariant	  *parameter,
+						    gpointer	   user_data)
+{
+	GthBrowser *browser = user_data;
+	int         n_selection;
+
+	n_selection = _g_file_get_n_selection (gth_browser_get_location (browser));
+	if (n_selection >= 0)
+		gth_browser_remove_from_selection (browser, n_selection);
 }

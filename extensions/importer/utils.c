@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -32,7 +32,7 @@ gth_import_preferences_get_destination (void)
 	char      *last_destination;
 	GFile     *folder;
 
-	settings = g_settings_new (PIX_IMPORTER_SCHEMA);
+	settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
 	last_destination = g_settings_get_string (settings, PREF_IMPORTER_DESTINATION);
 	if ((last_destination == NULL) || (*last_destination == 0))
 		folder = g_file_new_for_path (g_get_user_special_dir (G_USER_DIRECTORY_PICTURES));
@@ -46,89 +46,99 @@ gth_import_preferences_get_destination (void)
 }
 
 
-GFile *
-gth_import_utils_get_file_destination (GthFileData        *file_data,
-				       GFile              *destination,
-				       GthSubfolderType    subfolder_type,
-				       GthSubfolderFormat  subfolder_format,
-				       gboolean            single_subfolder,
-				       const char         *custom_format,
-				       const char         *event_name,
-				       GTimeVal            import_start_time)
-{
-	GTimeVal  timeval;
-	char     *child;
-	GFile    *file_destination;
+typedef struct {
+	GthFileData *file_data;
+	const char  *event_name;
+	GTimeVal     import_time;
+	GTimeVal     file_time;
+} TemplateData;
 
-	if (subfolder_type == GTH_SUBFOLDER_TYPE_FILE_DATE) {
+
+static gboolean
+template_eval_cb (TemplateFlags   flags,
+		  gunichar        parent_code,
+		  gunichar        code,
+		  char          **args,
+		  GString        *result,
+		  gpointer        user_data)
+{
+	TemplateData *template_data = user_data;
+	char         *text = NULL;
+
+	if ((parent_code == 'D') || (parent_code == 'T')) {
+		/* strftime code, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		return FALSE;
+	}
+
+	switch (code) {
+	case 'D': /* File date */
+		text = _g_time_val_strftime (&template_data->file_time,
+					     (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		break;
+
+	case 'T': /* Timestamp */
+		text = _g_time_val_strftime (&template_data->import_time,
+					     (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		break;
+
+	case 'E': /* Event description */
+		if (template_data->event_name != NULL)
+			g_string_append (result, template_data->event_name);
+		break;
+
+	default:
+		break;
+	}
+
+	if (text != NULL) {
+		g_string_append (result, text);
+		g_free (text);
+	}
+
+	return FALSE;
+}
+
+
+GFile *
+gth_import_utils_get_file_destination (GthFileData *file_data,
+				       GFile       *destination,
+				       const char  *subfolder_template,
+				       const char  *event_name,
+				       GTimeVal     import_time)
+{
+	TemplateData  template_data;
+	char         *subfolder;
+	GFile        *file_destination;
+
+	template_data.file_data = file_data;
+	template_data.event_name = event_name;
+	template_data.import_time = import_time;
+
+	{
 		GthMetadata *metadata;
 
 		metadata = (GthMetadata *) g_file_info_get_attribute_object (file_data->info, "Embedded::Photo::DateTimeOriginal");
 		if (metadata != NULL)
-			_g_time_val_from_exif_date (gth_metadata_get_raw (metadata), &timeval);
+			_g_time_val_from_exif_date (gth_metadata_get_raw (metadata), &template_data.file_time);
 		else
-			g_file_info_get_modification_time (file_data->info, &timeval);
+			g_file_info_get_modification_time (file_data->info, &template_data.file_time);
 
-		if (timeval.tv_sec == 0)
-			subfolder_type = GTH_SUBFOLDER_TYPE_CURRENT_DATE;
+		if (template_data.file_time.tv_sec == 0)
+			template_data.file_time = import_time;
 	}
 
-	if (subfolder_type == GTH_SUBFOLDER_TYPE_CURRENT_DATE)
-		timeval = import_start_time;
-
-	switch (subfolder_type) {
-	case GTH_SUBFOLDER_TYPE_FILE_DATE:
-	case GTH_SUBFOLDER_TYPE_CURRENT_DATE:
-		if (subfolder_format != GTH_SUBFOLDER_FORMAT_CUSTOM) {
-			GDate  *date;
-			char  **parts;
-
-			date = g_date_new ();
-			g_date_set_time_val (date, &timeval);
-
-			parts = g_new0 (char *, 4);
-			parts[0] = g_strdup_printf ("%04d", g_date_get_year (date));
-			if (subfolder_format != GTH_SUBFOLDER_FORMAT_YYYY) {
-				parts[1] = g_strdup_printf ("%02d", g_date_get_month (date));
-				if (subfolder_format != GTH_SUBFOLDER_FORMAT_YYYYMM)
-					parts[2] = g_strdup_printf ("%02d", g_date_get_day (date));
-			}
-
-			if (single_subfolder)
-				child = g_strjoinv ("-", parts);
-			else
-				child = g_strjoinv ("/", parts);
-
-			g_strfreev (parts);
-			g_date_free (date);
-		}
-		else {
-			char *format = NULL;
-
-			if (event_name != NULL) {
-				GRegex *re;
-
-				re = g_regex_new ("%E", 0, 0, NULL);
-				format = g_regex_replace_literal (re, custom_format, -1, 0, event_name, 0, NULL);
-
-				g_regex_unref (re);
-			}
-			if (format == NULL)
-				format = g_strdup (custom_format);
-			child = _g_time_val_strftime (&timeval, format);
-
-			g_free (format);
-		}
-		break;
-
-	case GTH_SUBFOLDER_TYPE_NONE:
-	default:
-		child = NULL;
-		break;
+	subfolder = _g_template_eval (subfolder_template,
+				      TEMPLATE_FLAGS_NO_ENUMERATOR,
+				      template_eval_cb,
+				      &template_data);
+	if (subfolder != NULL) {
+		file_destination = _g_file_append_path (destination, subfolder);
+		g_free (subfolder);
 	}
-	file_destination = _g_file_append_path (destination, child);
-
-	g_free (child);
+	else
+		file_destination = g_file_dup (destination);
 
 	return file_destination;
+
 }

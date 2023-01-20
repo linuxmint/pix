@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -22,13 +22,13 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
 #include "gth-file-source-catalogs.h"
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
 	/**
 	 * Called to create the catalog class from the given file content.
@@ -38,6 +38,15 @@ pix_extension_activate (void)
 	 * handle the catalog data, or NULL if the data type doesn't match.
 	 **/
 	gth_hook_register ("gth-catalog-load-from-data", 1);
+
+	/**
+	 * Called to create the right catalog class for the given uri.
+	 *
+	 * @uri (const char *): the file uri.
+	 * @return (GthCatalog *): return a pointer to the object that can
+	 * handle the catalog uri, or NULL if the data type doesn't match.
+	 **/
+	gth_hook_register ("gth-catalog-new-for-uri", 1);
 
 	/**
 	 * Called to update the catalog data from a given file data.
@@ -109,13 +118,12 @@ pix_extension_activate (void)
 
 	gth_hook_add_callback ("command-line-files", 10, G_CALLBACK (catalogs__command_line_files_cb), NULL);
 	gth_hook_add_callback ("gth-catalog-load-from-data", 10, G_CALLBACK (catalogs__gth_catalog_load_from_data_cb), NULL);
+	gth_hook_add_callback ("gth-catalog-new-for-uri", 10, G_CALLBACK (catalogs__gth_catalog_new_for_uri_cb), NULL);
 
 	gth_main_register_file_source (GTH_TYPE_FILE_SOURCE_CATALOGS);
 	gth_hook_add_callback ("initialize", 10, G_CALLBACK (catalogs__initialize_cb), NULL);
 	gth_hook_add_callback ("gth-browser-construct", 10, G_CALLBACK (catalogs__gth_browser_construct_cb), NULL);
-	gth_hook_add_callback ("gth-browser-update-sensitivity", 10, G_CALLBACK (catalogs__gth_browser_update_sensitivity_cb), NULL);
-	gth_hook_add_callback ("gth-browser-file-list-popup-before", 10, G_CALLBACK (catalogs__gth_browser_file_list_popup_before_cb), NULL);
-	gth_hook_add_callback ("gth-browser-file-popup-before", 10, G_CALLBACK (catalogs__gth_browser_file_popup_before_cb), NULL);
+	gth_hook_add_callback ("gth-browser-selection-changed", 10, G_CALLBACK (catalogs__gth_browser_selection_changed_cb), NULL);
 	gth_hook_add_callback ("gth-browser-folder-tree-popup-before", 10, G_CALLBACK (catalogs__gth_browser_folder_tree_popup_before_cb), NULL);
 	gth_hook_add_callback ("gth-browser-load-location-after", 10, G_CALLBACK (catalogs__gth_browser_load_location_after_cb), NULL);
 	gth_hook_add_callback ("gth-browser-update-extra-widget", 10, G_CALLBACK (catalogs__gth_browser_update_extra_widget_cb), NULL);
@@ -124,19 +132,19 @@ pix_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

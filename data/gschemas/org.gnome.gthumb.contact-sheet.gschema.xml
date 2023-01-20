@@ -1,0 +1,107 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.contact-sheet" path="/org/gnome/gthumb/contact-sheet/">
+    <child name="contact-sheet" schema="org.gnome.gthumb.contact-sheet.contact-sheet" />
+    <child name="image-wall" schema="org.gnome.gthumb.contact-sheet.image-wall" />
+  </schema>
+
+  <schema id="org.gnome.gthumb.contact-sheet.contact-sheet" path="/org/gnome/gthumb/contact-sheet/contact-sheet/" gettext-domain="gthumb">
+    <key name="header" type="s">
+      <default>'%L'</default>
+    </key>
+    <key name="footer" type="s">
+      <default>''</default>
+    </key>
+    <key name="destination" type="s">
+      <default>''</default>
+    </key>
+    <key name="template" type="s">
+      <default>'###'</default>
+    </key>
+    <key name="mime-type" type="s">
+      <default>'image/jpeg'</default>
+    </key>
+    <key name="html-image-map" type="b">
+      <default>false</default>
+    </key>
+    <key name="theme" type="s">
+      <default>'default.cst'</default>
+    </key>
+    <key name="images-per-page" type="i">
+      <default>25</default>
+    </key>
+    <key name="single-page" type="b">
+      <default>false</default>
+    </key>
+    <key name="columns" type="i">
+      <default>5</default>
+    </key>
+    <key name="sort-type" type="s">
+      <default>'general::unsorted'</default>
+    </key>
+    <key name="sort-inverse" type="b">
+      <default>false</default>
+    </key>
+    <key name="same-size" type="b">
+      <default>true</default>
+    </key>
+    <key name="thumbnail-size" type="i">
+      <default>128</default>
+    </key>
+    <key name="squared-thumbnail" type="b">
+      <default>false</default>
+    </key>
+    <key name="thumbnail-caption" type="s">
+      <default>'general::datetime,general::dimensions,gth::file::display-size'</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.gthumb.contact-sheet.image-wall" path="/org/gnome/gthumb/contact-sheet/image-wall/" gettext-domain="gthumb">
+    <key name="destination" type="s">
+      <default>''</default>
+    </key>
+    <key name="template" type="s">
+      <default>'###'</default>
+    </key>
+    <key name="mime-type" type="s">
+      <default>'image/jpeg'</default>
+    </key>
+    <key name="images-per-page" type="i">
+      <default>25</default>
+    </key>
+    <key name="single-page" type="b">
+      <default>false</default>
+    </key>
+    <key name="columns" type="i">
+      <default>5</default>
+    </key>
+    <key name="sort-type" type="s">
+      <default>'general::unsorted'</default>
+    </key>
+    <key name="sort-inverse" type="b">
+      <default>false</default>
+    </key>
+    <key name="thumbnail-size" type="i">
+      <default>128</default>
+    </key>
+  </schema>
+
+</schemalist>

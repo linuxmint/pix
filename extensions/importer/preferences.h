@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,21 +22,18 @@
 #ifndef IMPORTER_PREFERENCES_H
 #define IMPORTER_PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
 /* schemas */
 
-#define PIX_IMPORTER_SCHEMA                 PIX_SCHEMA ".importer"
+#define GTHUMB_IMPORTER_SCHEMA                 GTHUMB_SCHEMA ".importer"
 
 /* keys: viewer */
 
 #define PREF_IMPORTER_DESTINATION              "destination"
-#define PREF_IMPORTER_SUBFOLDER_TYPE           "subfolder-type"
-#define PREF_IMPORTER_SUBFOLDER_FORMAT         "subfolder-format"
-#define PREF_IMPORTER_SUBFOLDER_SINGLE         "subfolder-single"
-#define PREF_IMPORTER_SUBFOLDER_CUSTOM_FORMAT  "subfolder-custom-format"
+#define PREF_IMPORTER_SUBFOLDER_TEMPLATE       "subfolder-template"
 #define PREF_IMPORTER_WARN_DELETE_UNSUPPORTED  "warn-delete-unsupported"
 
 G_END_DECLS

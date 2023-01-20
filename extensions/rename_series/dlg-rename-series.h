@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_RENAME_SERIES_H
 #define DLG_RENAME_SERIES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 void dlg_rename_series (GthBrowser *browser,
 		        GList      *file_list  /* GFile list */);

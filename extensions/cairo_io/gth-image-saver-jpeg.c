@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -30,12 +30,9 @@
 #include <extensions/jpeg_utils/jmemorydest.h>
 #endif /* HAVE_LIBJPEG */
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-image-saver-jpeg.h"
 #include "preferences.h"
-
-
-G_DEFINE_TYPE (GthImageSaverJpeg, gth_image_saver_jpeg, GTH_TYPE_IMAGE_SAVER)
 
 
 struct _GthImageSaverJpegPrivate {
@@ -43,6 +40,12 @@ struct _GthImageSaverJpegPrivate {
 	GSettings  *settings;
 	char       *default_ext;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthImageSaverJpeg,
+			 gth_image_saver_jpeg,
+			 GTH_TYPE_IMAGE_SAVER,
+			 G_ADD_PRIVATE (GthImageSaverJpeg))
 
 
 static void
@@ -234,7 +237,7 @@ _cairo_surface_write_as_jpeg (cairo_surface_t  *image,
 	struct jpeg_compress_struct cinfo;
 	struct error_handler_data jerr;
 	guchar            *buf = NULL;
-	guchar            *pixels = NULL;
+	guchar            *pixels;
 	volatile int       quality = 85; /* default; must be between 0 and 100 */
 	volatile int       smoothing = 0;
 	volatile gboolean  optimize = FALSE;
@@ -340,7 +343,7 @@ _cairo_surface_write_as_jpeg (cairo_surface_t  *image,
 	rowstride = cairo_image_surface_get_stride (image);
 	w = cairo_image_surface_get_width (image);
 	h = cairo_image_surface_get_height (image);
-	pixels = cairo_image_surface_get_data (image);
+	pixels = _cairo_image_surface_flush_and_get_data (image);
 	g_return_val_if_fail (pixels != NULL, FALSE);
 
 	/* allocate a small buffer to convert image data */
@@ -506,8 +509,6 @@ gth_image_saver_jpeg_class_init (GthImageSaverJpegClass *klass)
 	GObjectClass        *object_class;
 	GthImageSaverClass *image_saver_class;
 
-	g_type_class_add_private (klass, sizeof (GthImageSaverJpegPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_image_saver_jpeg_finalize;
 
@@ -527,8 +528,8 @@ gth_image_saver_jpeg_class_init (GthImageSaverJpegClass *klass)
 static void
 gth_image_saver_jpeg_init (GthImageSaverJpeg *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_SAVER_JPEG, GthImageSaverJpegPrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_JPEG_SCHEMA);
+	self->priv = gth_image_saver_jpeg_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_JPEG_SCHEMA);
 	self->priv->builder = NULL;
 	self->priv->default_ext = NULL;
 }

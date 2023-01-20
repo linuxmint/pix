@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,9 +24,6 @@
 #include "rotation-utils.h"
 
 
-G_DEFINE_TYPE (GthTransformTask, gth_transform_task, GTH_TYPE_TASK)
-
-
 struct _GthTransformTaskPrivate {
 	GthBrowser    *browser;
 	GList         *file_list;
@@ -37,6 +34,12 @@ struct _GthTransformTaskPrivate {
 	int            n_image;
 	int            n_images;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthTransformTask,
+			 gth_transform_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthTransformTask))
 
 
 static void
@@ -200,8 +203,6 @@ gth_transform_task_class_init (GthTransformTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthTransformTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_transform_task_finalize;
 
@@ -213,7 +214,7 @@ gth_transform_task_class_init (GthTransformTaskClass *klass)
 static void
 gth_transform_task_init (GthTransformTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_TRANSFORM_TASK, GthTransformTaskPrivate);
+	self->priv = gth_transform_task_get_instance_private (self);
 	self->priv->default_action = JPEG_MCU_ACTION_ABORT;
 	self->priv->file_data = NULL;
 }

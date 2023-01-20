@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -30,7 +30,10 @@ struct _GthTagTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthTagTask, gth_tag_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthTagTask,
+			 gth_tag_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthTagTask))
 
 
 static void
@@ -149,8 +152,6 @@ gth_tag_task_class_init (GthTagTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthTagTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_tag_task_finalize;
 
@@ -162,7 +163,7 @@ gth_tag_task_class_init (GthTagTaskClass *klass)
 static void
 gth_tag_task_init (GthTagTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_TAG_TASK, GthTagTaskPrivate);
+	self->priv = gth_tag_task_get_instance_private (self);
 	self->priv->file_list = NULL;
 	self->priv->file_data_list = NULL;
 }

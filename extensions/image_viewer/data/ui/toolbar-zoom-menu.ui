@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class ="GtkPopoverMenu" id="transparency_popover">
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="border_width">9</property>
+        <property name="orientation">vertical</property>
+        <property name="width_request">200</property>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Checkered</property>
+            <property name="action-name">win.transparency-style</property>
+            <property name="action-target">'checkered'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">White</property>
+            <property name="action-name">win.transparency-style</property>
+            <property name="action-target">'white'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Gray</property>
+            <property name="action-name">win.transparency-style</property>
+            <property name="action-target">'gray'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Black</property>
+            <property name="action-name">win.transparency-style</property>
+            <property name="action-target">'black'</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class ="GtkPopoverMenu" id="zoom_popover">
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="border_width">9</property>
+        <property name="orientation">vertical</property>
+        <property name="width_request">200</property>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Automatic</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'automatic'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Fit to window</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'fit'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Fit to width</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'fit-width'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">Fit to height</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'fit-height'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="orientation">horizontal</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">6</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">50%</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'50'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">100%</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'100'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">200%</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'200'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkModelButton">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">300%</property>
+            <property name="action-name">win.image-zoom</property>
+            <property name="action-target">'300'</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="orientation">horizontal</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">6</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale" id="zoom_level_scale">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="draw_value">False</property>
+            <property name="has_origin">False</property>
+            <property name="adjustment">zoom_adjustment</property>
+            <property name="round_digits">0</property>
+            <property name="restrict_to_fill_level">False</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAdjustment" id="zoom_adjustment">
+    <property name="lower">0</property>
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">1</property>
+    <property name="value">1</property>
+  </object>
+</interface>

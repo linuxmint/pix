@@ -1,9 +1,9 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
- *  Copyright (C) 2012 Free Software Foundation, Inc.
+ *  Copyright (C) 2014 Free Software Foundation, Inc.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,7 +22,8 @@
 #ifndef GTH_FILE_TOOL_ADJUST_CONTRAST_H
 #define GTH_FILE_TOOL_ADJUST_CONTRAST_H
 
-#include <pix.h>
+#include <gthumb.h>
+#include <extensions/image_viewer/image-viewer.h>
 
 G_BEGIN_DECLS
 
@@ -35,13 +36,15 @@ G_BEGIN_DECLS
 
 typedef struct _GthFileToolAdjustContrast GthFileToolAdjustContrast;
 typedef struct _GthFileToolAdjustContrastClass GthFileToolAdjustContrastClass;
+typedef struct _GthFileToolAdjustContrastPrivate GthFileToolAdjustContrastPrivate;
 
 struct _GthFileToolAdjustContrast {
-	GthFileTool parent_instance;
+	GthImageViewerPageTool parent_instance;
+	GthFileToolAdjustContrastPrivate *priv;
 };
 
 struct _GthFileToolAdjustContrastClass {
-	GthFileToolClass parent_class;
+	GthImageViewerPageToolClass parent_class;
 };
 
 GType  gth_file_tool_adjust_contrast_get_type  (void);

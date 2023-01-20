@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -98,12 +98,12 @@ ss__dlg_preferences_construct_cb (GtkWidget  *dialog,
 	BrowserData *data;
 	GtkWidget   *notebook;
 	char        *current_transition;
-	gboolean     image_viewer_page_found;
+	GtkWidget   *label;
 
 	notebook = _gtk_builder_get_widget (dialog_builder, "notebook");
 
 	data = g_new0 (BrowserData, 1);
-	data->settings = g_settings_new (PIX_SLIDESHOW_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_SLIDESHOW_SCHEMA);
 
 	current_transition = g_settings_get_string (data->settings, PREF_SLIDESHOW_TRANSITION);
 	data->preferences_page = gth_slideshow_preferences_new (current_transition,
@@ -139,30 +139,10 @@ ss__dlg_preferences_construct_cb (GtkWidget  *dialog,
 			  G_CALLBACK (change_delay_spinbutton_value_changed_cb),
 			  data);
 
-	image_viewer_page_found = FALSE;
-	if (gth_main_extension_is_active ("image_viewer")) {
-		GList *children;
-		GList *scan;
+	label = gtk_label_new (_("Presentation"));
+	gtk_widget_show (label);
 
-		children = gtk_container_get_children (GTK_CONTAINER (gtk_builder_get_object (dialog_builder, "notebook")));
-		for (scan = children; scan; scan = scan->next) {
-			GtkWidget *page = scan->data;
-
-			if (g_strcmp0 (g_object_get_data (G_OBJECT (page), "extension-name"), "image_viewer") == 0) {
-				image_viewer_page_found = TRUE;
-				gtk_widget_set_vexpand (data->preferences_page, FALSE);
-				gtk_box_pack_start (GTK_BOX (page), data->preferences_page, FALSE, FALSE, 0);
-			}
-		}
-	}
-
-	if (! image_viewer_page_found) { /* add the preferences in an ad-hoc page */
-		GtkWidget *label;
-
-		label = gtk_label_new (_("Slideshow"));
-		gtk_widget_show (label);
-		gtk_notebook_append_page (GTK_NOTEBOOK (notebook), data->preferences_page, label);
-	}
+	gtk_notebook_append_page (GTK_NOTEBOOK (notebook), data->preferences_page, label);
 
 	g_object_set_data_full (G_OBJECT (dialog), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 }

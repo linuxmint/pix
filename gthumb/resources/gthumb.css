@@ -1,0 +1,191 @@
+GthGridView.cell {
+	background-color: @theme_bg_color;
+	color: @theme_fg_color;
+}
+
+GthGridView.cell:selected,
+GthGridView.cell:selected:focus {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+GthEmptyList.frame {
+	border-style: solid;
+	border-color: @borders;
+	border-width: 1px;
+	border-radius: 2px;
+	padding: 0;
+}
+
+GthEmptyList.frame:backdrop {
+	border-color: @unfocused_borders;
+}
+
+.empty-view {
+	font-weight: 300;
+	font-size: 24pt;
+	opacity: 0.5;
+}
+
+/* -- histogram -- */
+
+.histogram {
+	background-color: #333333;
+	border-color: #282828;
+}
+
+.histogram:backdrop {
+	border-color: @theme_unfocused_fg_color;
+}
+
+.histogram:selected,
+.histogram:selected:focus {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+.histogram:backdrop:selected {
+	background-color: @theme_unfocused_selected_bg_color;
+	color: @theme_unfocused_selected_fg_color;
+}
+
+/* -- comment -- */
+
+@define-color comment_bg #f5fabf;
+@define-color comment_border #a3a684;
+@define-color comment_bg_backdrop #c5c6ba;
+@define-color comment_border_backdrop #a5a5a5;
+
+GtkScrolledWindow.comment {
+	background-color: @comment_bg;
+	padding: 5px 0 5px 5px;
+}
+
+GtkScrolledWindow.comment:backdrop {
+	background-color: @comment_bg_backdrop;
+}
+
+GtkScrolledWindow.comment.frame {
+	border-color: transparent;
+}
+
+GtkScrolledWindow.comment .scrollbar.trough {
+	background-color: @comment_bg;
+}
+
+GtkScrolledWindow.comment .scrollbar.trough:backdrop {
+	background-color: @comment_bg_backdrop;
+}
+
+GtkScrolledWindow.comment .scrollbar.slider {
+	background-color: @comment_border;
+}
+
+GtkScrolledWindow.comment .scrollbar.slider:backdrop {
+	background-color: @comment_border_backdrop;
+}
+
+GtkScrolledWindow.comment.overshoot {
+	background-color: transparent;
+}
+
+GtkScrolledWindow.comment.undershoot {
+	background-color: transparent;
+}
+
+.comment .view,
+.comment.view {
+	background-color: @comment_bg;
+	color: #000000;
+}
+
+.comment .view:backdrop,
+.comment.view:backdrop {
+	background-color: @comment_bg_backdrop;
+	color: #666666;
+}
+
+.comment .view:selected,
+.comment.view:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+.comment .view:backdrop:selected,
+.comment.view:backdrop:selected {
+	background-color: @theme_unfocused_selected_bg_color;
+	color: @theme_unfocused_selected_fg_color;
+}
+
+/* -- highlighed text on the destination button in the import dialog -- */
+
+.highlighted-text {
+	color: #8fb1e0;
+}
+
+.highlighted-text:backdrop {
+	color: darker(currentColor);
+}
+
+/* -- extension list in the preferences dialog -- */
+
+.extension-name {
+	font-weight: bold;
+}
+
+.extension-description {
+	font-size: 80%;
+	color: @theme_unfocused_fg_color;
+}
+
+/* -- video player -- */
+
+.video-player {
+	background-color: #000;
+}
+
+/* -- header-bar inside the toolbox -- */
+
+GthToolbox .header-bar,
+.toolbox headerbar {
+	border-radius: 0;
+	box-shadow: none;
+	background-image: none;
+}
+
+/* -- header-bar in fullscreen -- */
+
+.window-overlay .header-bar,
+.window-overlay headerbar {
+	border-radius: 0;
+	box-shadow: none;
+	background-image: none;
+}
+
+/* -- circular button for progress dialog -- */
+
+.gthumb-circular-button {
+	border-radius: 20px;
+	-gtk-outline-radius: 20px;
+}
+
+/* --  void sibebar section-- */
+
+.void-view {
+	opacity: 0.12;
+}
+
+/* -- revert shortcut button -- */
+
+.revert-shortcut-button {
+	padding: 0;
+}
+
+/* -- terminal-like label, used for the template preview -- */
+
+.terminal {
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+	font-family: monospace;
+}

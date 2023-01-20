@@ -1,5 +1,7 @@
-<page xmlns="http://projectmallard.org/1.0/" type="topic"
-id="pix-date-formats">
+<page xmlns="http://projectmallard.org/1.0/" 
+xmlns:its="http://www.w3.org/2005/11/its"
+type="topic"
+id="gthumb-date-formats">
   <info>
     <link type="guide" xref="index#reference" />
   </info>
@@ -12,7 +14,7 @@ id="pix-date-formats">
     <title>Valid format codes for custom subfolders</title>
     <tr>
       <td>
-        <p>%a</p>
+        <p its:translate="no">%a</p>
       </td>
       <td>
         <p>The abbreviated weekday name according to the current
@@ -21,7 +23,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%A</p>
+        <p its:translate="no">%A</p>
       </td>
       <td>
         <p>The full weekday name according to the current
@@ -30,7 +32,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%b</p>
+        <p its:translate="no">%b</p>
       </td>
       <td>
         <p>The abbreviated month name according to the current
@@ -39,7 +41,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%B</p>
+        <p its:translate="no">%B</p>
       </td>
       <td>
         <p>The full month name according to the current locale.</p>
@@ -47,7 +49,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%c</p>
+        <p its:translate="no">%c</p>
       </td>
       <td>
         <p>The preferred date and time representation for the
@@ -56,7 +58,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%C</p>
+        <p its:translate="no">%C</p>
       </td>
       <td>
         <p>The century number (year/100) as a 2-digit integer.</p>
@@ -64,7 +66,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%d</p>
+        <p its:translate="no">%d</p>
       </td>
       <td>
         <p>The day of the month as a decimal number (range 01 to
@@ -73,7 +75,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%D</p>
+        <p its:translate="no">%D</p>
       </td>
       <td>
         <p>Equivalent to %m/%d/%y. (Yecch -- for Americans only.
@@ -84,7 +86,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%e</p>
+        <p its:translate="no">%e</p>
       </td>
       <td>
         <p>Like %d, the day of the month as a decimal number, but a
@@ -93,7 +95,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%E</p>
+        <p its:translate="no">%E</p>
       </td>
       <td>
         <p>Modifier: use alternative format, see below.</p>
@@ -101,7 +103,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%F</p>
+        <p its:translate="no">%F</p>
       </td>
       <td>
         <p>Equivalent to %Y-%m-%d (the ISO 8601 date format).
@@ -110,7 +112,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%G</p>
+        <p its:translate="no">%G</p>
       </td>
       <td>
         <p>The ISO 8601 year with century as a decimal number. The
@@ -122,7 +124,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%g</p>
+        <p its:translate="no">%g</p>
       </td>
       <td>
         <p>Like %G, but without century, i.e., with a 2-digit year
@@ -131,7 +133,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%h</p>
+        <p its:translate="no">%h</p>
       </td>
       <td>
         <p>Equivalent to %b.</p>
@@ -139,7 +141,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%H</p>
+        <p its:translate="no">%H</p>
       </td>
       <td>
         <p>The hour as a decimal number using a 24-hour clock
@@ -148,7 +150,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%I</p>
+        <p its:translate="no">%I</p>
       </td>
       <td>
         <p>The hour as a decimal number using a 12-hour clock
@@ -157,7 +159,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%j</p>
+        <p its:translate="no">%j</p>
       </td>
       <td>
         <p>The day of the year as a decimal number (range 001 to
@@ -166,7 +168,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%k</p>
+        <p its:translate="no">%k</p>
       </td>
       <td>
         <p>The hour (24-hour clock) as a decimal number (range 0 to
@@ -176,7 +178,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%l</p>
+        <p its:translate="no">%l</p>
       </td>
       <td>
         <p>The hour (12-hour clock) as a decimal number (range 1 to
@@ -186,7 +188,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%m</p>
+        <p its:translate="no">%m</p>
       </td>
       <td>
         <p>The month as a decimal number (range 01 to 12).</p>
@@ -194,7 +196,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%M</p>
+        <p its:translate="no">%M</p>
       </td>
       <td>
         <p>The minute as a decimal number (range 00 to 59).</p>
@@ -202,7 +204,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%O</p>
+        <p its:translate="no">%O</p>
       </td>
       <td>
         <p>Modifier: use alternative format, see below.</p>
@@ -210,7 +212,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%p</p>
+        <p its:translate="no">%p</p>
       </td>
       <td>
         <p>Either 'AM' or 'PM' according to the given time value,
@@ -220,7 +222,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%P</p>
+        <p its:translate="no">%P</p>
       </td>
       <td>
         <p>Like %p but in lowercase: 'am' or 'pm' or a
@@ -229,7 +231,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%r</p>
+        <p its:translate="no">%r</p>
       </td>
       <td>
         <p>The time in a.m. or p.m. notation. In the POSIX locale
@@ -238,7 +240,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%R</p>
+        <p its:translate="no">%R</p>
       </td>
       <td>
         <p>The time in 24-hour notation (%H:%M). For a version
@@ -247,7 +249,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%s</p>
+        <p its:translate="no">%s</p>
       </td>
       <td>
         <p>The number of seconds since the Epoch, i.e., since
@@ -256,7 +258,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%S</p>
+        <p its:translate="no">%S</p>
       </td>
       <td>
         <p>The second as a decimal number (range 00 to 60). (The
@@ -266,7 +268,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%T</p>
+        <p its:translate="no">%T</p>
       </td>
       <td>
         <p>The time in 24-hour notation (%H:%M:%S).</p>
@@ -274,7 +276,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%u</p>
+        <p its:translate="no">%u</p>
       </td>
       <td>
         <p>The day of the week as a decimal number, range 1 to 7,
@@ -283,7 +285,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%U</p>
+        <p its:translate="no">%U</p>
       </td>
       <td>
         <p>The week number of the current year as a decimal number,
@@ -293,7 +295,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%V</p>
+        <p its:translate="no">%V</p>
       </td>
       <td>
         <p>The ISO 8601:1988 week number of the current year as a
@@ -305,7 +307,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%w</p>
+        <p its:translate="no">%w</p>
       </td>
       <td>
         <p>The day of the week as a decimal, range 0 to 6, Sunday
@@ -314,7 +316,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%W</p>
+        <p its:translate="no">%W</p>
       </td>
       <td>
         <p>The week number of the current year as a decimal number,
@@ -324,7 +326,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%x</p>
+        <p its:translate="no">%x</p>
       </td>
       <td>
         <p>The preferred date representation for the current locale
@@ -333,7 +335,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%X</p>
+        <p its:translate="no">%X</p>
       </td>
       <td>
         <p>The preferred time representation for the current locale
@@ -342,7 +344,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%y</p>
+        <p its:translate="no">%y</p>
       </td>
       <td>
         <p>The year as a decimal number without a century (range 00
@@ -351,7 +353,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%Y</p>
+        <p its:translate="no">%Y</p>
       </td>
       <td>
         <p>The year as a decimal number including the century.</p>
@@ -359,7 +361,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%z</p>
+        <p its:translate="no">%z</p>
       </td>
       <td>
         <p>The time-zone as hour offset from GMT. Required to emit
@@ -369,7 +371,7 @@ id="pix-date-formats">
     </tr>
     <tr>
       <td>
-        <p>%Z</p>
+        <p its:translate="no">%Z</p>
       </td>
       <td>
         <p>The time zone or name or abbreviation.</p>

@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
 <interface>
-  <requires lib="gtk+" version="2.16"/>
-  <object class="GtkVBox" id="overwrite_dialog_box">
+  <requires lib="gtk+" version="3.14"/>
+  <object class="GtkBox" id="overwrite_dialog_box">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="border_width">6</property>
+    <property name="border_width">15</property>
+    <property name="orientation">vertical</property>
     <property name="spacing">6</property>
     <child>
       <object class="GtkLabel" id="label124">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="xalign">0</property>
         <property name="label" translatable="yes">Overwrite the old file with the new one?</property>
         <property name="justify">center</property>
+        <property name="xalign">0</property>
         <attributes>
           <attribute name="weight" value="bold"/>
         </attributes>
@@ -25,14 +27,15 @@
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="hbox46">
+      <object class="GtkBox" id="hbox46">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="spacing">12</property>
+        <property name="spacing">24</property>
         <child>
-          <object class="GtkVBox" id="vbox57">
+          <object class="GtkBox" id="vbox57">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkFrame" id="frame2">
@@ -40,7 +43,7 @@
                 <property name="can_focus">False</property>
                 <property name="label_xalign">0</property>
                 <child>
-                  <object class="GtkHBox" id="hbox110">
+                  <object class="GtkBox" id="hbox110">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="border_width">6</property>
@@ -96,7 +99,7 @@
                     <property name="right_attach">2</property>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
-                    <property name="y_options"></property>
+                    <property name="y_options"/>
                   </packing>
                 </child>
                 <child>
@@ -110,7 +113,7 @@
                     <property name="right_attach">2</property>
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
-                    <property name="y_options"></property>
+                    <property name="y_options"/>
                   </packing>
                 </child>
                 <child>
@@ -121,8 +124,9 @@
                       <object class="GtkLabel" id="old_image_filename_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="ellipsize">end</property>
+                        <property name="single_line_mode">True</property>
                         <property name="xalign">0</property>
-                        <property name="wrap">True</property>
                       </object>
                     </child>
                   </object>
@@ -137,7 +141,7 @@
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Filename:</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -152,7 +156,7 @@
                   <object class="GtkLabel" id="label2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Size:</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -169,7 +173,7 @@
                   <object class="GtkLabel" id="label3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Modified:</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -197,9 +201,10 @@
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="vbox58">
+          <object class="GtkBox" id="vbox58">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkFrame" id="frame3">
@@ -207,7 +212,7 @@
                 <property name="can_focus">False</property>
                 <property name="label_xalign">0</property>
                 <child>
-                  <object class="GtkHBox" id="hbox111">
+                  <object class="GtkBox" id="hbox111">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="border_width">6</property>
@@ -263,7 +268,7 @@
                     <property name="right_attach">2</property>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
-                    <property name="y_options"></property>
+                    <property name="y_options"/>
                   </packing>
                 </child>
                 <child>
@@ -277,7 +282,7 @@
                     <property name="right_attach">2</property>
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
-                    <property name="y_options"></property>
+                    <property name="y_options"/>
                   </packing>
                 </child>
                 <child>
@@ -288,8 +293,9 @@
                       <object class="GtkLabel" id="new_image_filename_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="ellipsize">end</property>
+                        <property name="single_line_mode">True</property>
                         <property name="xalign">0</property>
-                        <property name="wrap">True</property>
                       </object>
                     </child>
                   </object>
@@ -304,7 +310,7 @@
                   <object class="GtkLabel" id="new_filename_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Filename:</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -319,7 +325,7 @@
                   <object class="GtkLabel" id="new_size_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Size:</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -336,7 +342,7 @@
                   <object class="GtkLabel" id="new_modified_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
+                    <property name="halign">start</property>
                     <property name="label" translatable="yes">Modified:</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -393,11 +399,9 @@
     <child>
       <object class="GtkRadioButton" id="overwrite_yes_radiobutton">
         <property name="label" translatable="yes">Over_write the old file</property>
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">False</property>
-        <property name="use_action_appearance">False</property>
         <property name="use_underline">True</property>
         <property name="xalign">0</property>
         <property name="active">True</property>
@@ -412,11 +416,9 @@
     <child>
       <object class="GtkRadioButton" id="overwrite_no_radiobutton">
         <property name="label" translatable="yes">Do not overwrite _the old file</property>
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">False</property>
-        <property name="use_action_appearance">False</property>
         <property name="use_underline">True</property>
         <property name="xalign">0</property>
         <property name="draw_indicator">True</property>
@@ -431,11 +433,9 @@
     <child>
       <object class="GtkRadioButton" id="overwrite_all_radiobutton">
         <property name="label" translatable="yes">Overwrite _all files</property>
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">False</property>
-        <property name="use_action_appearance">False</property>
         <property name="use_underline">True</property>
         <property name="xalign">0</property>
         <property name="draw_indicator">True</property>
@@ -450,11 +450,9 @@
     <child>
       <object class="GtkRadioButton" id="overwrite_none_radiobutton">
         <property name="label" translatable="yes">_Do not overwrite any file</property>
-        <property name="use_action_appearance">False</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">False</property>
-        <property name="use_action_appearance">False</property>
         <property name="use_underline">True</property>
         <property name="xalign">0</property>
         <property name="draw_indicator">True</property>
@@ -467,18 +465,16 @@
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="hbox112">
+      <object class="GtkBox" id="hbox112">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkRadioButton" id="overwrite_rename_radiobutton">
             <property name="label" translatable="yes">_Save the new file as:</property>
-            <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
-            <property name="use_action_appearance">False</property>
             <property name="use_underline">True</property>
             <property name="xalign">0</property>
             <property name="draw_indicator">True</property>

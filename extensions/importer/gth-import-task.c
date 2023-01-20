@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009-2010 Free Software Foundation, Inc.
  *
@@ -21,7 +21,9 @@
 
 #include <config.h>
 #include <extensions/catalogs/gth-catalog.h>
+#ifdef HAVE_EXIV2
 #include <extensions/exiv2_tools/exiv2-utils.h>
+#endif
 #include <extensions/image_rotation/rotation-utils.h>
 #include "gth-import-task.h"
 #include "preferences.h"
@@ -31,18 +33,12 @@
 #define IMPORTED_KEY "imported"
 
 
-G_DEFINE_TYPE (GthImportTask, gth_import_task, GTH_TYPE_TASK)
-
-
 struct _GthImportTaskPrivate {
 	GthBrowser          *browser;
 	GList               *files;
 	GFile               *destination;
 	GHashTable          *destinations;
-	GthSubfolderType     subfolder_type;
-	GthSubfolderFormat   subfolder_format;
-	gboolean             single_subfolder;
-	char                *custom_format;
+	char                *subfolder_template;;
 	char                *event_name;
 	char               **tags;
 	GTimeVal             import_start_time;
@@ -65,6 +61,12 @@ struct _GthImportTaskPrivate {
 };
 
 
+G_DEFINE_TYPE_WITH_CODE (GthImportTask,
+			 gth_import_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthImportTask))
+
+
 static void
 gth_import_task_finalize (GObject *object)
 {
@@ -72,7 +74,7 @@ gth_import_task_finalize (GObject *object)
 
 	self = GTH_IMPORT_TASK (object);
 
-	if (ImportPhotos)
+	if (gth_browser_get_close_with_task (self->priv->browser))
 		gtk_window_present (GTK_WINDOW (self->priv->browser));
 
 	g_free (self->priv->buffer);
@@ -80,7 +82,7 @@ gth_import_task_finalize (GObject *object)
 	_g_object_list_unref (self->priv->files);
 	g_object_unref (self->priv->destination);
 	_g_object_unref (self->priv->destination_file);
-	g_free (self->priv->custom_format);
+	g_free (self->priv->subfolder_template);
 	g_free (self->priv->event_name);
 	if (self->priv->tags != NULL)
 		g_strfreev (self->priv->tags);
@@ -280,10 +282,7 @@ overwrite_dialog_response_cb (GtkDialog *dialog,
 			file_data = self->priv->current->data;
 			destination_folder = gth_import_utils_get_file_destination (file_data,
 										    self->priv->destination,
-										    self->priv->subfolder_type,
-										    self->priv->subfolder_format,
-										    self->priv->single_subfolder,
-										    self->priv->custom_format,
+										    self->priv->subfolder_template,
 										    self->priv->event_name,
 										    self->priv->import_start_time);
 			new_destination = g_file_get_child_for_display_name (destination_folder, gth_overwrite_dialog_get_filename (GTH_OVERWRITE_DIALOG (dialog)), NULL);
@@ -529,10 +528,7 @@ get_destination_file (GthImportTask *self,
 
 	destination = gth_import_utils_get_file_destination (file_data,
 							     self->priv->destination,
-							     self->priv->subfolder_type,
-							     self->priv->subfolder_format,
-							     self->priv->single_subfolder,
-							     self->priv->custom_format,
+							     self->priv->subfolder_template,
 							     self->priv->event_name,
 							     self->priv->import_start_time);
 	if (! g_file_make_directory_with_parents (destination, gth_task_get_cancellable (GTH_TASK (self)), &error)) {
@@ -576,12 +572,14 @@ file_buffer_ready_cb (void     **buffer,
 
 	file_data = self->priv->current->data;
 
+#ifdef HAVE_EXIV2
 	if (gth_main_extension_is_active ("exiv2_tools"))
 		exiv2_read_metadata_from_buffer (*buffer,
 						 count,
 						 file_data->info,
 						 TRUE,
 						 NULL);
+#endif
 
 	destination_file = get_destination_file (self, file_data);
 	if (destination_file == NULL)
@@ -616,10 +614,10 @@ import_current_file (GthImportTask *self)
 
 			d =  _gtk_message_dialog_new (GTK_WINDOW (self->priv->browser),
 						      0,
-						      GTK_STOCK_DIALOG_WARNING,
+						      _GTK_ICON_NAME_DIALOG_WARNING,
 						      _("No file imported"),
 						      _("The selected files are already present in the destination."),
-						      GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
+						      _GTK_LABEL_CLOSE, GTK_RESPONSE_CANCEL,
 						      NULL);
 			g_signal_connect (G_OBJECT (d), "response",
 					  G_CALLBACK (gtk_widget_destroy),
@@ -629,21 +627,21 @@ import_current_file (GthImportTask *self)
 		else {
 			GSettings *settings;
 
-			if ((self->priv->subfolder_type != GTH_SUBFOLDER_TYPE_NONE) && (self->priv->imported_catalog != NULL))
+			if (! _g_str_empty (self->priv->subfolder_template) && (self->priv->imported_catalog != NULL))
 				gth_browser_go_to (self->priv->browser, self->priv->imported_catalog, NULL);
 			else
 				gth_browser_go_to (self->priv->browser, self->priv->destination, NULL);
 
-			settings = g_settings_new (PIX_IMPORTER_SCHEMA);
+			settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
 			if (self->priv->delete_not_supported && g_settings_get_boolean (settings, PREF_IMPORTER_WARN_DELETE_UNSUPPORTED)) {
 				GtkWidget *d;
 
 				d =  _gtk_message_dialog_new (GTK_WINDOW (self->priv->browser),
 							      0,
-							      GTK_STOCK_DIALOG_WARNING,
+							      _GTK_ICON_NAME_DIALOG_WARNING,
 							      _("Could not delete the files"),
 							      _("Delete operation not supported."),
-							      GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
+							      _GTK_LABEL_CLOSE, GTK_RESPONSE_CANCEL,
 							      NULL);
 				g_signal_connect (G_OBJECT (d), "response",
 						  G_CALLBACK (gtk_widget_destroy),
@@ -664,7 +662,7 @@ import_current_file (GthImportTask *self)
 	self->priv->current_file_size = g_file_info_get_size (file_data->info);
 
 	adjust_image_orientation = self->priv->adjust_orientation && gth_main_extension_is_active ("image_rotation");
-	need_image_metadata = (self->priv->subfolder_type == GTH_SUBFOLDER_TYPE_FILE_DATE) || adjust_image_orientation;
+	need_image_metadata = (_g_utf8_find_str (self->priv->subfolder_template, "%D") != NULL) || adjust_image_orientation;
 
 	if (_g_mime_type_is_image (gth_file_data_get_mime_type (file_data)) && need_image_metadata) {
 		gth_task_progress (GTH_TASK (self),
@@ -759,8 +757,6 @@ gth_import_task_class_init (GthImportTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthImportTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_import_task_finalize;
 
@@ -772,7 +768,7 @@ gth_import_task_class_init (GthImportTaskClass *klass)
 static void
 gth_import_task_init (GthImportTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMPORT_TASK, GthImportTaskPrivate);
+	self->priv = gth_import_task_get_instance_private (self);
 	self->priv->catalogs = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_object_unref);
 	self->priv->delete_not_supported = FALSE;
 	self->priv->destinations = g_hash_table_new_full (g_file_hash,
@@ -787,10 +783,7 @@ GthTask *
 gth_import_task_new (GthBrowser         *browser,
 		     GList              *files,
 		     GFile              *destination,
-		     GthSubfolderType    subfolder_type,
-		     GthSubfolderFormat  subfolder_format,
-		     gboolean            single_subfolder,
-		     const char         *custom_format,
+		     const char         *subfolder_template,
 		     const char         *event_name,
 		     char              **tags,
 		     gboolean            delete_imported,
@@ -803,13 +796,7 @@ gth_import_task_new (GthBrowser         *browser,
 	self->priv->browser = g_object_ref (browser);
 	self->priv->files = _g_object_list_ref (files);
 	self->priv->destination = g_file_dup (destination);
-	self->priv->subfolder_type = subfolder_type;
-	self->priv->subfolder_format = subfolder_format;
-	self->priv->single_subfolder = single_subfolder;
-	if (custom_format != NULL)
-		self->priv->custom_format = g_strdup (custom_format);
-	else
-		self->priv->custom_format = NULL;
+	self->priv->subfolder_template = g_strdup (subfolder_template);
 	self->priv->event_name = g_strdup (event_name);
 	self->priv->tags = g_strdupv (tags);
 	self->priv->delete_imported = delete_imported;
@@ -871,8 +858,8 @@ gth_import_task_check_free_space (GFile   *destination,
 
 		*error = g_error_new (G_IO_ERROR,
 				      G_IO_ERROR_NO_SPACE,
-				      /* Translators: For example: Not enough free space in '/home/user/Images'.\n1.3 GB of space is required but only 300 MB is available. */
-				      _("Not enough free space in '%s'.\n%s of space is required but only %s is available."),
+				      /* Translators: For example: Not enough free space in “/home/user/Images”.\n1.3 GB of space is required but only 300 MB is available. */
+				      _("Not enough free space in “%s”.\n%s of space is required but only %s is available."),
 				      destination_name,
 				      min_free_space_s,
 				      free_space_s);

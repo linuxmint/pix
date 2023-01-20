@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.2 -->
+<!-- Generated with glade 3.36.0 -->
 <interface>
-  <requires lib="gtk+" version="3.0"/>
+  <requires lib="gtk+" version="3.10"/>
   <object class="GtkListStore" id="category_liststore">
     <columns>
       <!-- column-name id -->
@@ -16,18 +16,19 @@
       <column type="gchararray"/>
     </columns>
   </object>
-  <object class="GtkVBox" id="preferences_page">
+  <object class="GtkBox" id="preferences_page">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="border_width">12</property>
+    <property name="orientation">vertical</property>
     <property name="spacing">6</property>
     <child>
-      <object class="GtkVBox" id="vbox4">
+      <object class="GtkBox" id="vbox4">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
-          <object class="GtkHBox" id="hbox6">
+          <object class="GtkBox" id="hbox6">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="spacing">6</property>
@@ -65,13 +66,14 @@
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="vbox6">
+          <object class="GtkBox" id="vbox6">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="spacing">3</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">6</property>
             <child>
-              <object class="GtkScrolledWindow" id="extensions_scrolledwindow">
-                <property name="width_request">400</property>
+              <object class="GtkScrolledWindow" id="extensions_list_scrolledwindow">
+                <property name="width_request">550</property>
                 <property name="height_request">350</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -101,59 +103,36 @@
       </packing>
     </child>
     <child>
-      <object class="GtkHBox" id="box1">
+      <object class="GtkBox" id="box1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="spacing">12</property>
         <child>
-          <object class="GtkHBox" id="hbox7">
+          <object class="GtkBox" id="hbox7">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <placeholder/>
+              <object class="GtkLinkButton" id="linkbutton1">
+                <property name="label" translatable="yes">More extensions…</property>
+                <property name="use_action_appearance">False</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="has_tooltip">True</property>
+                <property name="relief">none</property>
+                <property name="uri">https://wiki.gnome.org/Apps/Gthumb/extensions</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="preferences_button">
-            <property name="label">gtk-preferences</property>
-            <property name="use_action_appearance">False</property>
-            <property name="visible">True</property>
-            <property name="sensitive">False</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="has_tooltip">True</property>
-            <property name="tooltip_markup">Some extensions are configurable.</property>
-            <property name="tooltip_text" translatable="yes">Some extensions are configurable.</property>
-            <property name="use_stock">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="pack_type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="about_button">
-            <property name="label">gtk-about</property>
-            <property name="use_action_appearance">False</property>
-            <property name="visible">True</property>
-            <property name="sensitive">False</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="use_stock">True</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="pack_type">end</property>
-            <property name="position">2</property>
           </packing>
         </child>
       </object>

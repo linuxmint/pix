@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -21,14 +21,17 @@
 
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "dlg-bookmarks.h"
+#include "actions.h"
 
 
 void
-gth_browser_activate_action_bookmarks_add (GtkAction  *action,
-					   GthBrowser *browser)
+gth_browser_activate_bookmarks_add (GSimpleAction *action,
+				    GVariant      *parameter,
+				    gpointer       user_data)
 {
+	GthBrowser    *browser = GTH_BROWSER (user_data);
 	GBookmarkFile *bookmarks;
 	GFile         *location;
 	char          *uri;
@@ -47,8 +50,9 @@ gth_browser_activate_action_bookmarks_add (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_bookmarks_edit (GtkAction  *action,
-					    GthBrowser *browser)
+gth_browser_activate_bookmarks_edit (GSimpleAction *action,
+				     GVariant      *parameter,
+				     gpointer       user_data)
 {
-	dlg_bookmarks (browser);
+	dlg_bookmarks (GTH_BROWSER (user_data));
 }

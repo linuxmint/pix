@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2013 Free Software Foundation, Inc.
  *
@@ -22,42 +22,13 @@
 #include <config.h>
 #include <glib.h>
 #include <gio/gio.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "cairo-image-surface-xcf.h"
 
 
-/* Optimizations taken from xcftools 1.0.7 written by Henning Makholm
- *
- * xL : Layer color
- * xI : Image color
- * aL : Layer alpha
- * */
-
-
-#define TILE_WIDTH			64
-#define MAX_TILE_SIZE			(TILE_WIDTH * TILE_WIDTH * 4 * 1.5)
-#define ADD_ALPHA(v, a)			(add_alpha_table[v][a])
-#define MIN3(x,y,z)			((y) <= (z) ? MIN ((x), (y)) : MIN ((x), (z)))
-#define MAX3(x,y,z)			((y) >= (z) ? MAX ((x), (y)) : MAX ((x), (z)))
-#define DISSOLVE_SEED			737893334
-#define CLAMP_TEMP(x, min, max)		(temp = (x), CLAMP (temp, min, max))
-#define ABS_TEMP2(x)			(temp2 = (x), (temp2 < 0) ? -temp2: temp2)
-#define CLAMP_PIXEL(x)			CLAMP_TEMP (x, 0, 255)
-#define GIMP_OP_NORMAL(xL, xI, aL)	CLAMP_PIXEL (ADD_ALPHA (xL, aL) + ADD_ALPHA (xI, 255 - aL))
-#define GIMP_OP_LIGHTEN_ONLY(xL, xI)	MAX (xI, xL)
-#define GIMP_OP_SCREEN(xL, xI)		CLAMP_PIXEL (255 ^ ADD_ALPHA (255 - xI, 255 - xL))
-#define GIMP_OP_DODGE(xL, xI)		GIMP_OP_DIVIDE (255-xL, xI)
-#define GIMP_OP_ADDITION(xL, xI)	CLAMP_PIXEL (xI + xL)
-#define GIMP_OP_DARKEN_ONLY(xL, xI)	MIN (xI, xL)
-#define GIMP_OP_MULTIPLY(xL, xI)	CLAMP_PIXEL (ADD_ALPHA (xL, xI))
-#define GIMP_OP_BURN(xL, xI)		CLAMP_PIXEL (255 - GIMP_OP_DIVIDE (xL, 255 - xI))
-#define GIMP_OP_SOFT_LIGHT(xL, xI)	CLAMP_PIXEL (ADD_ALPHA (xI, xI) + 2 * ADD_ALPHA (xL, ADD_ALPHA (xI, 255 - xI)))
-#define GIMP_OP_HARD_LIGHT(xL, xI)	CLAMP_PIXEL (xL > 128 ? 255 ^ ADD_ALPHA (255 - xI, 2 * (255 - xL)) : ADD_ALPHA (xI, 2 * xL))
-#define GIMP_OP_DIFFERENCE(xL, xI)	CLAMP_PIXEL (ABS_TEMP2 (xI - xL))
-#define GIMP_OP_SUBTRACT(xL, xI)	CLAMP_PIXEL (xI - xL)
-#define GIMP_OP_GRAIN_EXTRACT(xL, xI)	CLAMP_PIXEL ((int) xI - xL + 128)
-#define GIMP_OP_GRAIN_MERGE(xL, xI)	CLAMP_PIXEL ((int) xI + xL - 128)
-#define GIMP_OP_DIVIDE(xL, xI)		CLAMP_PIXEL ((int) (xI) * 256 / (1 + (xL)))
+#define TILE_WIDTH	64
+#define MAX_TILE_SIZE	(TILE_WIDTH * TILE_WIDTH * 4 * 1.5)
+#define DISSOLVE_SEED	737893334
 
 
 typedef enum {
@@ -149,31 +120,6 @@ typedef struct {
 static int cairo_rgba[4]  = { CAIRO_RED, CAIRO_GREEN, CAIRO_BLUE, CAIRO_ALPHA };
 static int cairo_graya[2] = { 0, CAIRO_ALPHA };
 static int cairo_indexed[2] = { 0, CAIRO_ALPHA };
-static guchar add_alpha_table[256][256];
-static GOnce  xcf_init_once = G_ONCE_INIT;
-
-
-static gpointer
-xcf_init (gpointer data)
-{
-	int v;
-	int a;
-	int r;
-
-	/* add_alpha_table[v][a] = v * a / 255 */
-
-	for (v = 0; v < 128; v++) {
-		for (a = 0; a <= v; a++) {
-			r = (v * a + 127) / 255;
-			add_alpha_table[v][a] = add_alpha_table[a][v] = r;
-			add_alpha_table[255-v][a] = add_alpha_table[a][255-v] = a - r;
-			add_alpha_table[v][255-a] = add_alpha_table[255-a][v] = v - r;
-			add_alpha_table[255-v][255-a] = add_alpha_table[255-a][255-v] = (255 - a) - (v - r);
-		}
-	}
-
-	return NULL;
-}
 
 
 /* -- GDataInputStream functions -- */
@@ -186,12 +132,22 @@ _g_data_input_stream_read_c_string (GDataInputStream  *stream,
 				    GError           **error)
 {
 	char *string;
+	gsize bytes_read;
 
 	g_return_val_if_fail (size > 0, NULL);
 
 	string = g_new (char, size + 1);
-	g_input_stream_read (G_INPUT_STREAM (stream), string, size, cancellable, error);
-	string[size] = 0;
+	if (g_input_stream_read_all (G_INPUT_STREAM (stream),
+				     string,
+				     size,
+				     &bytes_read,
+				     cancellable,
+				     error))
+	{
+		string[bytes_read] = 0;
+	}
+	else
+		string[0] = 0;
 
 	return string;
 }
@@ -313,200 +269,6 @@ gimp_layer_free (GimpLayer *layer)
 /* -- _cairo_image_surface_create_from_xcf -- */
 
 
-/* RGB <-> HSV */
-
-
-static void
-gimp_rgb_to_hsv (guchar  red,
-		 guchar  green,
-		 guchar  blue,
-		 guchar *hue,
-		 guchar *sat,
-		 guchar *val)
-{
-	guchar min, max;
-
-	min = MIN3 (red, green, blue);
-	max = MAX3 (red, green, blue);
-
-	*val = max;
-	if (*val == 0) {
-		*hue = *sat = 0;
-		return;
-	}
-
-	*sat = 255 * (long)(max - min) / *val;
-	if (*sat == 0) {
-		*hue = 0;
-		return;
-	}
-
-	if (max == min)
-		*hue = 0;
-	else if (max == red)
-		*hue = 0 + 43 * (green - blue) / (max - min);
-	else if (max == green)
-		*hue = 85 + 43 * (blue - red) / (max - min);
-	else if (max == blue)
-		*hue = 171 + 43 * (red - green) / (max - min);
-}
-
-
-static void
-gimp_hsv_to_rgb (guchar  hue,
-		 guchar  sat,
-		 guchar  val,
-		 guchar *red,
-		 guchar *green,
-		 guchar *blue)
-{
-	guchar region, remainder, p, q, t;
-
-	if (sat == 0) {
-		*red = *green = *blue = val;
-		return;
-	}
-
-	region = hue / 43;
-	remainder = (hue - (region * 43)) * 6;
-
-	p = (val * (255 - sat)) >> 8;
-	q = (val * (255 - ((sat * remainder) >> 8))) >> 8;
-	t = (val * (255 - ((sat * (255 - remainder)) >> 8))) >> 8;
-
-	switch (region) {
-	case 0:
-		*red = val;
-		*green = t;
-		*blue = p;
-		break;
-	case 1:
-		*red = q;
-		*green = val;
-		*blue = p;
-		break;
-	case 2:
-		*red = p;
-		*green = val;
-		*blue = t;
-		break;
-	case 3:
-		*red = p;
-		*green = q;
-		*blue = val;
-		break;
-	case 4:
-		*red = t;
-		*green = p;
-		*blue = val;
-		break;
-	default:
-		*red = val;
-		*green = p;
-		*blue = q;
-		break;
-	}
-}
-
-
-/* RGB <-> HSL */
-
-
-static void
-gimp_rgb_to_hsl (guchar  red,
-		 guchar  green,
-		 guchar  blue,
-		 guchar *hue,
-		 guchar *sat,
-		 guchar *lum)
-{
-	guchar min, max;
-
-	min = MIN3 (red, green, blue);
-	max = MAX3 (red, green, blue);
-
-	*lum = (max + min) / 2;
-
-	if (max == min) {
-		*hue = *sat = 0;
-		return;
-	}
-
-	if (*lum < 128)
-		*sat = 255 * (long) (max - min) / (max + min);
-	else
-		*sat = 255 * (long) (max - min) / (512 - max - min);
-
-	if (max == min)
-		*hue = 0;
-	else if (max == red)
-		*hue = 0 + 43 * (green - blue) / (max - min);
-	else if (max == green)
-		*hue = 85 + 43 * (blue - red) / (max - min);
-	else if (max == blue)
-		*hue = 171 + 43 * (red - green) / (max - min);
-}
-
-
-static inline gint
-gimp_hsl_value (gdouble n1,
-                gdouble n2,
-                gdouble hue)
-{
-	gdouble value;
-
-	if (hue > 255)
-		hue -= 255;
-	else if (hue < 0)
-		hue += 255;
-
-	if (hue < 42.5)
-		value = n1 + (n2 - n1) * (hue / 42.5);
-	else if (hue < 127.5)
-		value = n2;
-	else if (hue < 170)
-		value = n1 + (n2 - n1) * ((170 - hue) / 42.5);
-	else
-		value = n1;
-
-	return value * 255.0;
-}
-
-
-static void
-gimp_hsl_to_rgb (guchar  hue,
-		 guchar  sat,
-		 guchar  lum,
-		 guchar *red,
-		 guchar *green,
-		 guchar *blue)
-{
-	if (sat == 0) {
-		*red = lum;
-		*green = lum;
-		*blue = lum;
-	}
-	else {
-		gdouble h, s, l, m1, m2;
-
-		h = hue;
-		s = sat;
-		l = lum;
-
-		if (l < 128)
-		        m2 = (l * (255 + s)) / 65025.0;
-		else
-			m2 = (l + s - (l * s) / 255.0) / 255.0;
-
-		m1 = (l / 127.5) - m2;
-
-		*red = gimp_hsl_value (m1, m2, h + 85);
-		*green = gimp_hsl_value (m1, m2, h);
-		*blue  = gimp_hsl_value (m1, m2, h - 85);
-	}
-}
-
-
 static void
 _cairo_image_surface_paint_layer (cairo_surface_t *image,
 				  GimpLayer       *layer)
@@ -533,8 +295,6 @@ _cairo_image_surface_paint_layer (cairo_surface_t *image,
 
 	if ((image == NULL) || (layer->pixels == NULL))
 		return;
-
-	cairo_surface_flush (image);
 
 	image_width = cairo_image_surface_get_width (image);
 	image_height = cairo_image_surface_get_height (image);
@@ -573,7 +333,7 @@ _cairo_image_surface_paint_layer (cairo_surface_t *image,
 		height = rect.height;
 	}
 
-	image_row = cairo_image_surface_get_data (image) + (y * image_row_stride) + (x * 4);
+	image_row = _cairo_image_surface_flush_and_get_data (image) + (y * image_row_stride) + (x * 4);
 
 	x = (layer->h_offset < 0) ? -layer->h_offset : 0;
 	y = (layer->v_offset < 0) ? -layer->v_offset : 0;
@@ -581,8 +341,7 @@ _cairo_image_surface_paint_layer (cairo_surface_t *image,
 
 	mask_row = layer->alpha_mask + (y * layer_width) + x;
 
-    rand_gen = NULL;
-
+	rand_gen = NULL;
 	if (layer->mode == GIMP_LAYER_MODE_DISSOLVE)
 		rand_gen = g_rand_new_with_seed (DISSOLVE_SEED);
 
@@ -807,11 +566,6 @@ _cairo_image_surface_create_from_layers (int                canvas_width,
 
 	image = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, canvas_width, canvas_height);
 
-	if (cairo_surface_status (image) != CAIRO_STATUS_SUCCESS) {
-		cairo_surface_destroy (image);
-		return NULL;
-	}
-
 	for (scan = layers; scan; scan = scan->next) {
 		GimpLayer *layer = scan->data;
 
@@ -900,10 +654,8 @@ read_pixels_from_hierarchy (GDataInputStream  *data_stream,
 	if (*error != NULL)
 		goto read_error;
 
-	if (is_gimp_channel && in_bpp != 1){
-		printf("Error: in_bpp = %d and is_gimp_channel is true. Expected in_bpp = 1 when is_gimp_channel is true.\n", in_bpp);
-		goto read_error;
-	}
+	if (is_gimp_channel)
+		g_assert (in_bpp == 1);
 
 	if (! is_gimp_channel)
 		layer->bpp = in_bpp;
@@ -985,9 +737,15 @@ read_pixels_from_hierarchy (GDataInputStream  *data_stream,
 			if (tile_data_size <= 0)
 				continue;
 
-			data_read = g_input_stream_read (G_INPUT_STREAM (data_stream), tile_data, tile_data_size, cancellable, error);
-			if (*error != NULL)
+			if (! g_input_stream_read_all (G_INPUT_STREAM (data_stream),
+						       tile_data,
+						       tile_data_size,
+						       &data_read,
+						       cancellable,
+						       error))
+			{
 				goto rle_error;
+			}
 
 			/* decompress the channel streams */
 
@@ -1161,6 +919,7 @@ _cairo_image_surface_create_from_xcf (GInputStream  *istream,
 				      int            requested_size,
 				      int           *original_width,
 				      int           *original_height,
+				      gboolean      *loaded_original,
 				      gpointer       user_data,
 				      GCancellable  *cancellable,
 				      GError       **error)
@@ -1190,14 +949,14 @@ _cairo_image_surface_create_from_xcf (GInputStream  *istream,
 
 	performance (DEBUG_INFO, "start loading");
 
-	g_once (&xcf_init_once, xcf_init, NULL);
+	gimp_op_init ();
 
 	performance (DEBUG_INFO, "end init");
 
-    compression = GIMP_COMPRESSION_RLE;
-    layers = NULL;
-    layer_offsets = NULL;
-    colormap = NULL;
+	compression = GIMP_COMPRESSION_RLE;
+	layers = NULL;
+	layer_offsets = NULL;
+	colormap = NULL;
 
 	data_stream = g_data_input_stream_new (istream);
 	g_data_input_stream_set_byte_order (data_stream, G_DATA_STREAM_BYTE_ORDER_BIG_ENDIAN);
@@ -1519,13 +1278,9 @@ _cairo_image_surface_create_from_xcf (GInputStream  *istream,
 
 	performance (DEBUG_INFO, "end read layers");
 
-    image = gth_image_new ();
 	surface = _cairo_image_surface_create_from_layers (canvas_width, canvas_height, base_type, layers);
-
-	if (surface != NULL) {
-		gth_image_set_cairo_surface (image, surface);
-		cairo_surface_destroy (surface);
-	}
+	image = gth_image_new_for_surface (surface);
+	cairo_surface_destroy (surface);
 
 	performance (DEBUG_INFO, "end rendering");
 

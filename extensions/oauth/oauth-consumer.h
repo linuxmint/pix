@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -24,11 +24,7 @@
 
 
 #include <glib.h>
-#ifdef HAVE_LIBSOUP_GNOME
-#include <libsoup/soup-gnome.h>
-#else
 #include <libsoup/soup.h>
-#endif /* HAVE_LIBSOUP_GNOME */
 #include "oauth-account.h"
 #include "oauth-service.h"
 
@@ -36,7 +32,7 @@
 typedef void   (*OAuthResponseFunc)	(OAuthService       *self,
 				 	 SoupMessage        *msg,
 				 	 SoupBuffer         *body,
-				 	 GSimpleAsyncResult *result);
+				 	 GTask              *task);
 typedef char * (*OAuthStringFunc)      (OAuthService        *self);
 
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,9 +23,6 @@
 #include "gth-reset-orientation-task.h"
 
 
-G_DEFINE_TYPE (GthResetOrientationTask, gth_reset_orientation_task, GTH_TYPE_TASK)
-
-
 struct _GthResetOrientationTaskPrivate {
 	GthBrowser    *browser;
 	GList         *file_list;
@@ -34,6 +31,12 @@ struct _GthResetOrientationTaskPrivate {
 	int            n_image;
 	int            n_images;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthResetOrientationTask,
+			 gth_reset_orientation_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthResetOrientationTask))
 
 
 static void
@@ -173,8 +176,6 @@ gth_reset_orientation_task_class_init (GthResetOrientationTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthResetOrientationTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_reset_orientation_task_finalize;
 
@@ -186,7 +187,7 @@ gth_reset_orientation_task_class_init (GthResetOrientationTaskClass *klass)
 static void
 gth_reset_orientation_task_init (GthResetOrientationTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_RESET_ORIENTATION_TASK, GthResetOrientationTaskPrivate);
+	self->priv = gth_reset_orientation_task_get_instance_private (self);
 	self->priv->file_data = NULL;
 }
 

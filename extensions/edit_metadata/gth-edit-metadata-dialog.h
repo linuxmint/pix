@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -37,10 +37,10 @@ typedef struct _GthEditMetadataDialogInterface GthEditMetadataDialogInterface;
 struct _GthEditMetadataDialogInterface {
 	GTypeInterface parent_iface;
 
-	void  (*set_file_list)  (GthEditMetadataDialog *dialog,
-				 GList                 *file_list /* GthFileData list */);
-	void  (*update_info)    (GthEditMetadataDialog *dialog,
-				 GList                 *file_list /* GthFileData list */);
+	void		(*set_file_list)	(GthEditMetadataDialog *dialog,
+						 GList                 *file_list /* GthFileData list */);
+	void		(*update_info)		(GthEditMetadataDialog *dialog,
+						 GList                 *file_list /* GthFileData list */);
 };
 
 /* GthEditMetadataDialog */

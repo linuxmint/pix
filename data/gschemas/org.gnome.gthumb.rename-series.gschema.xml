@@ -1,0 +1,40 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.rename-series" path="/org/gnome/gthumb/rename-series/" gettext-domain="gthumb">
+    <key name="template" type="s">
+      <default>'####%E'</default>
+    </key>
+    <key name="start-at" type="i">
+      <default>1</default>
+    </key>
+    <key name="sort-by" type="s">
+      <default>'general::unsorted'</default>
+      <summary>Possible values include: general::unsorted, file::name, file::size, file::mtime, exif::photo::datetimeoriginal</summary>
+    </key>
+    <key name="reverse-order" type="b">
+      <default>false</default>
+    </key>
+    <key name="change-case" enum="org.gnome.gthumb.GthChangeCase">
+      <default>'none'</default>
+    </key>
+  </schema>
+
+</schemalist>

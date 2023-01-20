@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2001-2010 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,8 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "dlg-change-date.h"
 #include "gth-change-date-task.h"
 #include "preferences.h"
 
@@ -120,7 +121,7 @@ ok_button_clicked (GtkWidget  *button,
 					 change_type,
 					 date_time,
 					 time_adjustment);
-	gth_browser_exec_task (data->browser, task, FALSE);
+	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 	gtk_widget_destroy (data->dialog);
 
 	g_object_unref (task);
@@ -129,19 +130,12 @@ ok_button_clicked (GtkWidget  *button,
 
 
 static void
-help_button_cb (GtkWidget  *widget,
-		DialogData *data)
-{
-	show_help_dialog (GTK_WINDOW (data->dialog), "pix-batch-change-date");
-}
-
-
-static void
 update_sensitivity (DialogData *data)
 {
-	gtk_widget_set_sensitive (GET_WIDGET ("ok_button"),
-				  (IS_ACTIVE (GET_WIDGET ("change_last_modified_checkbutton"))
-				   || IS_ACTIVE (GET_WIDGET ("change_comment_checkbutton"))));
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog),
+					   GTK_RESPONSE_OK,
+					   (IS_ACTIVE (GET_WIDGET ("change_last_modified_checkbutton"))
+					    || IS_ACTIVE (GET_WIDGET ("change_comment_checkbutton"))));
 	gtk_widget_set_sensitive (data->date_selector, IS_ACTIVE (GET_WIDGET ("to_following_date_radiobutton")));
 	gtk_widget_set_sensitive (GET_WIDGET ("time_box"), IS_ACTIVE (GET_WIDGET ("adjust_time_radiobutton")));
 
@@ -175,11 +169,25 @@ dlg_change_date (GthBrowser *browser,
 	data->browser = browser;
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("change-date.ui", "change_date");
-	data->settings = g_settings_new (PIX_CHANGE_DATE_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_CHANGE_DATE_SCHEMA);
 
 	/* Get the widgets. */
 
-	data->dialog = GET_WIDGET ("change_date_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Change Date"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_EXECUTE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	data->date_selector = gth_time_selector_new ();
 	gth_time_selector_show_time (GTH_TIME_SELECTOR (data->date_selector), TRUE, TRUE);
 	gtk_widget_show (data->date_selector);
@@ -256,17 +264,13 @@ dlg_change_date (GthBrowser *browser,
 			  "destroy",
 			  G_CALLBACK (dialog_destroy_cb),
 			  data);
-	g_signal_connect_swapped (GET_WIDGET ("close_button"),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  G_OBJECT (data->dialog));
-	g_signal_connect (GET_WIDGET ("ok_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (ok_button_clicked),
-			  data);
-	g_signal_connect (GET_WIDGET ("help_button"),
-			  "clicked",
-			  G_CALLBACK (help_button_cb),
 			  data);
 	g_signal_connect (GET_WIDGET ("change_last_modified_checkbutton"),
 			  "clicked",
@@ -299,8 +303,5 @@ dlg_change_date (GthBrowser *browser,
 
 	/* run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog),
-				      GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), FALSE);
 	gtk_widget_show (data->dialog);
 }

@@ -1,9 +1,9 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
- *  Copyright (C) 2010 Free Software Foundation, Inc.
+ *  Copyright (C) 2010-2021 Free Software Foundation, Inc.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,11 +22,11 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
 	bindtextdomain (GETTEXT_PACKAGE, EXTENSION_LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -34,19 +34,19 @@ pix_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

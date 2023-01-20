@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,25 +22,12 @@
 #include "gth-file-viewer-page.h"
 
 
-#define GTH_FILE_VIEWER_PAGE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GTH_TYPE_FILE_VIEWER_PAGE, GthFileViewerPagePrivate))
-
-
-static const char *file_viewer_ui_info =
-"<ui>"
-"  <toolbar name='ViewerToolBar'>"
-"    <placeholder name='ViewerCommands'>"
-"    </placeholder>"
-"  </toolbar>"
-"</ui>";
-
-
 struct _GthFileViewerPagePrivate {
 	GthBrowser     *browser;
 	GtkWidget      *viewer;
 	GtkWidget      *icon;
 	GtkWidget      *label;
 	GthFileData    *file_data;
-	guint           merge_id;
 	GthThumbLoader *thumb_loader;
 };
 
@@ -51,8 +38,9 @@ static void gth_viewer_page_interface_init (GthViewerPageInterface *iface);
 G_DEFINE_TYPE_WITH_CODE (GthFileViewerPage,
 			 gth_file_viewer_page,
 			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthFileViewerPage)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_VIEWER_PAGE,
-					 	gth_viewer_page_interface_init))
+						gth_viewer_page_interface_init))
 
 
 static gboolean
@@ -61,15 +49,6 @@ viewer_scroll_event_cb (GtkWidget 	     *widget,
 			GthFileViewerPage   *self)
 {
 	return gth_browser_viewer_scroll_event_cb (self->priv->browser, event);
-}
-
-
-static gboolean
-viewer_key_press_cb (GtkWidget         *widget,
-		     GdkEventKey       *event,
-		     GthFileViewerPage *self)
-{
-	return gth_browser_viewer_key_press_cb (self->priv->browser, event);
 }
 
 
@@ -121,7 +100,7 @@ gth_file_viewer_page_real_activate (GthViewerPage *base,
 	gtk_widget_show (self->priv->icon);
 	gtk_box_pack_start (GTK_BOX (vbox2), self->priv->icon, FALSE, FALSE, 0);
 
-	self->priv->label = gtk_label_new ("...");
+	self->priv->label = gtk_label_new ("…");
 	gtk_label_set_selectable (GTK_LABEL (self->priv->label), TRUE);
 	gtk_widget_show (self->priv->label);
 	gtk_box_pack_start (GTK_BOX (vbox2), self->priv->label, FALSE, FALSE, 0);
@@ -137,10 +116,6 @@ gth_file_viewer_page_real_activate (GthViewerPage *base,
 	g_signal_connect (G_OBJECT (self->priv->viewer),
 			  "popup-menu",
 			  G_CALLBACK (viewer_popup_menu_cb),
-			  self);
-	g_signal_connect (G_OBJECT (self->priv->label),
-			  "key_press_event",
-			  G_CALLBACK (viewer_key_press_cb),
 			  self);
 
 	gth_browser_set_viewer_widget (browser, self->priv->viewer);
@@ -160,30 +135,14 @@ gth_file_viewer_page_real_deactivate (GthViewerPage *base)
 static void
 gth_file_viewer_page_real_show (GthViewerPage *base)
 {
-	GthFileViewerPage *self;
-	GError            *error = NULL;
-
-	self = (GthFileViewerPage*) base;
-
-	self->priv->merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (self->priv->browser), file_viewer_ui_info, -1, &error);
-	if (self->priv->merge_id == 0) {
-		g_warning ("ui building failed: %s", error->message);
-		g_error_free (error);
-	}
+	/* void */
 }
 
 
 static void
 gth_file_viewer_page_real_hide (GthViewerPage *base)
 {
-	GthFileViewerPage *self;
-
-	self = (GthFileViewerPage*) base;
-
-	if (self->priv->merge_id != 0) {
-		gtk_ui_manager_remove_ui (gth_browser_get_ui_manager (self->priv->browser), self->priv->merge_id);
-		self->priv->merge_id = 0;
-	}
+	/* void */
 }
 
 
@@ -236,7 +195,7 @@ thumb_loader_ready_cb (GObject      *source_object,
 			_g_object_unref (pixbuf);
 		}
 
-		gth_viewer_page_file_loaded (GTH_VIEWER_PAGE (self), self->priv->file_data, TRUE);
+		gth_viewer_page_file_loaded (GTH_VIEWER_PAGE (self), self->priv->file_data, NULL, TRUE);
 	}
 
 	cairo_surface_destroy (image);
@@ -256,7 +215,7 @@ gth_file_viewer_page_real_view (GthViewerPage *base,
 	g_return_if_fail (file_data != NULL);
 
 	gtk_label_set_text (GTK_LABEL (self->priv->label), g_file_info_get_display_name (file_data->info));
-	icon = g_file_info_get_icon (file_data->info);
+	icon = g_file_info_get_symbolic_icon (file_data->info);
 	if (icon != NULL)
 		gtk_image_set_from_gicon (GTK_IMAGE (self->priv->icon), icon, GTK_ICON_SIZE_DIALOG);
 
@@ -330,16 +289,6 @@ gth_file_viewer_page_real_update_info (GthViewerPage *base,
 
 
 static void
-gth_file_viewer_page_real_shrink_wrap (GthViewerPage *base,
-				       gboolean       value,
-				       int           *other_width,
-				       int           *other_height)
-{
-	/* void */
-}
-
-
-static void
 gth_file_viewer_page_finalize (GObject *obj)
 {
 	GthFileViewerPage *self;
@@ -356,7 +305,6 @@ gth_file_viewer_page_finalize (GObject *obj)
 static void
 gth_file_viewer_page_class_init (GthFileViewerPageClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (GthFileViewerPagePrivate));
 	G_OBJECT_CLASS (klass)->finalize = gth_file_viewer_page_finalize;
 }
 
@@ -376,14 +324,13 @@ gth_viewer_page_interface_init (GthViewerPageInterface *iface)
 	iface->update_sensitivity = gth_file_viewer_page_real_update_sensitivity;
 	iface->can_save = gth_file_viewer_page_real_can_save;
 	iface->update_info = gth_file_viewer_page_real_update_info;
-	iface->shrink_wrap = gth_file_viewer_page_real_shrink_wrap;
 }
 
 
 static void
 gth_file_viewer_page_init (GthFileViewerPage *self)
 {
-	self->priv = GTH_FILE_VIEWER_PAGE_GET_PRIVATE (self);
+	self->priv = gth_file_viewer_page_get_instance_private (self);
 	self->priv->thumb_loader = NULL;
 	self->priv->file_data = NULL;
 }

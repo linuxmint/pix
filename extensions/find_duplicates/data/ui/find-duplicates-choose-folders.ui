@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
 <interface>
-  <requires lib="gtk+" version="2.24"/>
-  <object class="GtkVBox" id="folder_chooser">
+  <requires lib="gtk+" version="3.14"/>
+  <object class="GtkListStore" id="folders_liststore">
+    <columns>
+      <!-- column-name file -->
+      <column type="GObject"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+      <!-- column-name selected -->
+      <column type="gboolean"/>
+    </columns>
+  </object>
+  <object class="GtkBox" id="folder_chooser">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="border_width">15</property>
+    <property name="orientation">vertical</property>
     <property name="spacing">6</property>
     <child>
       <object class="GtkLabel" id="label1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="xalign">0</property>
+        <property name="halign">start</property>
         <property name="label" translatable="yes">_Folders:</property>
         <property name="use_underline">True</property>
         <property name="mnemonic_widget">folders_treeview</property>
@@ -27,8 +40,6 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="shadow_type">in</property>
-        <property name="hscrollbar_policy">automatic</property>
-        <property name="vscrollbar_policy">automatic</property>
         <child>
           <object class="GtkTreeView" id="folders_treeview">
             <property name="visible">True</property>
@@ -52,11 +63,7 @@
             </child>
             <child>
               <object class="GtkTreeViewColumn" id="treeviewcolumn2">
-                <child>
-                  <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf1">
-                    <property name="icon_name">folder</property>
-                  </object>
-                </child>
+                <property name="spacing">3</property>
                 <child>
                   <object class="GtkCellRendererText" id="cellrenderertext1"/>
                   <attributes>
@@ -74,15 +81,5 @@
         <property name="position">1</property>
       </packing>
     </child>
-  </object>
-  <object class="GtkListStore" id="folders_liststore">
-    <columns>
-      <!-- column-name file -->
-      <column type="GObject"/>
-      <!-- column-name name -->
-      <column type="gchararray"/>
-      <!-- column-name selected -->
-      <column type="gboolean"/>
-    </columns>
   </object>
 </interface>

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,194 +22,107 @@
 #include <config.h>
 #include <math.h>
 #include <gdk/gdkkeysyms.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "actions.h"
 #include "gth-image-viewer-page.h"
 #include "preferences.h"
+#include "shortcuts.h"
+
+
+#define UPDATE_QUALITY_DELAY 200
+#define UPDATE_VISIBILITY_DELAY 100
+#define N_HEADER_BAR_BUTTONS 7
+#define HIDE_OVERVIEW_TIMEOUT 2 /* in seconds */
+#define OVERLAY_MARGIN 10
+#define ZOOM_BUTTON 2
+#define APPLY_ICC_PROFILE_BUTTON 3
+#define TOGGLE_ANIMATION_BUTTON 4
+#define STEP_ANIMATION_BUTTON 5
+#define TRANSPARENCY_STYLE_BUTTON 6
+#undef ALWAYS_LOAD_ORIGINAL_SIZE
+#define N_FORWARD_PRELOADERS 2
+#define N_BACKWARD_PRELOADERS 2
 
 
 static void gth_viewer_page_interface_init (GthViewerPageInterface *iface);
 
 
-G_DEFINE_TYPE_WITH_CODE (GthImageViewerPage,
-			 gth_image_viewer_page,
-			 G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (GTH_TYPE_VIEWER_PAGE,
-					        gth_viewer_page_interface_init))
+static const GActionEntry actions[] = {
+	{ "image-zoom-in", gth_browser_activate_image_zoom_in },
+	{ "image-zoom-out", gth_browser_activate_image_zoom_out },
+	{ "image-zoom-100", gth_browser_activate_image_zoom_100 },
+	{ "image-zoom-200", gth_browser_activate_image_zoom_200 },
+	{ "image-zoom-300", gth_browser_activate_image_zoom_300 },
+	{ "image-zoom-fit", gth_browser_activate_image_zoom_fit },
+	{ "image-zoom-fit-if-larger", gth_browser_activate_image_zoom_fit_if_larger },
+	{ "image-zoom-fit-width", gth_browser_activate_image_zoom_fit_width },
+	{ "image-zoom-fit-width-if-larger", gth_browser_activate_image_zoom_fit_width_if_larger },
+	{ "image-zoom-fit-height", gth_browser_activate_image_zoom_fit_height },
+	{ "image-zoom-fit-height-if-larger", gth_browser_activate_image_zoom_fit_height_if_larger },
+	{ "image-undo", gth_browser_activate_image_undo },
+	{ "image-redo", gth_browser_activate_image_redo },
+	{ "copy-image", gth_browser_activate_copy_image },
+	{ "paste-image", gth_browser_activate_paste_image },
+	{ "apply-icc-profile", toggle_action_activated, NULL, "true", gth_browser_activate_apply_icc_profile },
+	{ "toggle-animation", toggle_action_activated, NULL, "true", gth_browser_activate_toggle_animation },
+	{ "step-animation", gth_browser_activate_step_animation },
+	{ "image-zoom", gth_browser_activate_image_zoom, "s", "''", NULL },
+	{ "transparency-style", gth_browser_activate_transparency_style, "s", "''", NULL },
+	{ "scroll-step-left", gth_browser_activate_scroll_step_left },
+	{ "scroll-step-right", gth_browser_activate_scroll_step_right },
+	{ "scroll-step-up", gth_browser_activate_scroll_step_up },
+	{ "scroll-step-down", gth_browser_activate_scroll_step_down },
+	{ "scroll-page-left", gth_browser_activate_scroll_page_left },
+	{ "scroll-page-right", gth_browser_activate_scroll_page_right },
+	{ "scroll-page-up", gth_browser_activate_scroll_page_up },
+	{ "scroll-page-down", gth_browser_activate_scroll_page_down },
+	{ "scroll-to-center", gth_browser_activate_scroll_to_center },
+};
+
+
+static const GthMenuEntry file_popup_entries[] = {
+	{ N_("Copy Image"), "win.copy-image" },
+	{ N_("Paste Image"), "win.paste-image" },
+};
 
 
 struct _GthImageViewerPagePrivate {
 	GthBrowser        *browser;
 	GSettings         *settings;
 	GtkWidget         *image_navigator;
+	GtkWidget         *overview_revealer;
+	GtkWidget         *overview;
 	GtkWidget         *viewer;
 	GthImagePreloader *preloader;
-	GtkActionGroup    *actions;
-	guint              viewer_merge_id;
-	guint              browser_merge_id;
+	guint              file_popup_merge_id;
 	GthImageHistory   *history;
 	GthFileData       *file_data;
-	gulong             requested_ready_id;
-	gulong             original_size_ready_id;
-	guint              hide_mouse_timeout;
-	guint              motion_signal;
+	GFileInfo         *updated_info;
+	gboolean           active;
 	gboolean           image_changed;
+	gboolean           loading_image;
 	GFile             *last_loaded;
 	gboolean           can_paste;
+	guint              update_quality_id;
+	guint		   update_visibility_id;
+	GtkWidget         *buttons[N_HEADER_BAR_BUTTONS];
+	GtkBuilder        *builder;
+	gboolean           pointer_on_viewer;
+	gboolean           pointer_on_overview;
+	guint              hide_overview_id;
+	gboolean           apply_icc_profile;
+	GthFileData       *next_file_data[N_FORWARD_PRELOADERS];
+	GthFileData       *prev_file_data[N_BACKWARD_PRELOADERS];
+	gulong             drag_data_get_event;
 };
 
 
-static const char *image_viewer_ui_info =
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='Edit' action='EditMenu'>"
-"      <placeholder name='File_Actions_1'>"
-"        <menuitem action='ImageViewer_Edit_Undo'/>"
-"        <menuitem action='ImageViewer_Edit_Redo'/>"
-"        <separator />"
-"        <menuitem action='ImageViewer_Edit_Copy_Image'/>"
-"        <menuitem action='ImageViewer_Edit_Paste_Image'/>"
-"      </placeholder>"
-"    </menu>"
-"  </menubar>"
-"  <toolbar name='ViewerToolBar'>"
-"    <placeholder name='ViewerCommands'>"
-"      <toolitem action='ImageViewer_View_ZoomOut'/>"
-"      <toolitem action='ImageViewer_View_ZoomIn'/>"
-"      <toolitem action='ImageViewer_View_Zoom100'/>"
-"      <toolitem action='ImageViewer_View_ZoomFit'/>"
-"      <toolitem action='ImageViewer_View_ZoomFitWidth'/>"
-"    </placeholder>"
-"  </toolbar>"
-"  <toolbar name='Fullscreen_ToolBar'>"
-"    <placeholder name='ViewerCommands'>"
-"      <toolitem action='ImageViewer_View_ZoomOut'/>"
-"      <toolitem action='ImageViewer_View_ZoomIn'/>"
-"      <toolitem action='ImageViewer_View_Zoom100'/>"
-"      <toolitem action='ImageViewer_View_ZoomFit'/>"
-"      <toolitem action='ImageViewer_View_ZoomFitWidth'/>"
-"    </placeholder>"
-"  </toolbar>"
-"</ui>";
-
-
-static void
-image_viewer_activate_action_view_zoom_in (GtkAction          *action,
-					   GthImageViewerPage *self)
-{
-	gth_image_viewer_zoom_in (GTH_IMAGE_VIEWER (self->priv->viewer));
-}
-
-
-static void
-image_viewer_activate_action_view_zoom_out (GtkAction          *action,
-					    GthImageViewerPage *self)
-{
-	gth_image_viewer_zoom_out (GTH_IMAGE_VIEWER (self->priv->viewer));
-}
-
-
-static void
-image_viewer_activate_action_view_zoom_100 (GtkAction          *action,
-					    GthImageViewerPage *self)
-{
-	gth_image_viewer_set_zoom (GTH_IMAGE_VIEWER (self->priv->viewer), 1.0);
-}
-
-
-static void
-image_viewer_activate_action_view_zoom_fit (GtkAction          *action,
-					    GthImageViewerPage *self)
-{
-	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_FIT_SIZE);
-}
-
-
-static void
-image_viewer_activate_action_view_zoom_fit_width (GtkAction          *action,
-						  GthImageViewerPage *self)
-{
-	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_FIT_WIDTH);
-}
-
-
-static void
-image_viewer_activate_action_edit_undo (GtkAction          *action,
-					GthImageViewerPage *self)
-{
-	gth_image_viewer_page_undo (self);
-}
-
-
-static void
-image_viewer_activate_action_edit_redo (GtkAction          *action,
-					GthImageViewerPage *self)
-{
-	gth_image_viewer_page_redo (self);
-}
-
-
-static void
-image_viewer_activate_action_edit_copy_image (GtkAction          *action,
-					      GthImageViewerPage *self)
-{
-	gth_image_viewer_page_copy_image (self);
-}
-
-
-static void
-image_viewer_activate_action_edit_paste_image (GtkAction          *action,
-					       GthImageViewerPage *self)
-{
-	gth_image_viewer_page_paste_image (self);
-}
-
-
-static GtkActionEntry image_viewer_action_entries[] = {
-	{ "ImageViewer_Edit_Undo", "edit-undo-symbolic",
-	  N_("Undo"), "<control>z",
-	  NULL,
-	  G_CALLBACK (image_viewer_activate_action_edit_undo) },
-
-	{ "ImageViewer_Edit_Redo", "edit-redo-symbolic",
-	  N_("Redo"), "<shift><control>z",
-	  NULL,
-	  G_CALLBACK (image_viewer_activate_action_edit_redo) },
-
-	{ "ImageViewer_Edit_Copy_Image", "edit-copy-symbolic",
-	  N_("Copy Image"), "<control>c",
-	  N_("Copy the image to the clipboard"),
-	  G_CALLBACK (image_viewer_activate_action_edit_copy_image) },
-
-	{ "ImageViewer_Edit_Paste_Image", "edit-paste-symbolic",
-	  N_("Paste Image"), "<control>v",
-	  N_("Paste the image from the clipboard"),
-	  G_CALLBACK (image_viewer_activate_action_edit_paste_image) },
-
-	{ "ImageViewer_View_ZoomIn", "zoom-in-symbolic",
-	  N_("In"), "<control>plus",
-	  N_("Zoom in"),
-	  G_CALLBACK (image_viewer_activate_action_view_zoom_in) },
-
-	{ "ImageViewer_View_ZoomOut", "zoom-out-symbolic",
-	  N_("Out"), "<control>minus",
-	  N_("Zoom out"),
-	  G_CALLBACK (image_viewer_activate_action_view_zoom_out) },
-
-	{ "ImageViewer_View_Zoom100", "zoom-original-symbolic",
-	  N_("1:1"), "<control>0",
-	  N_("Actual size"),
-	  G_CALLBACK (image_viewer_activate_action_view_zoom_100) },
-
-	{ "ImageViewer_View_ZoomFit", "zoom-fit-best-symbolic",
-	  N_("Fit"), "",
-	  N_("Zoom to fit window"),
-	  G_CALLBACK (image_viewer_activate_action_view_zoom_fit) },
-
-	{ "ImageViewer_View_ZoomFitWidth", "xapp-view-fit-width-symbolic",
-	  N_("Width"), "",
-	  N_("Zoom to fit width"),
-	  G_CALLBACK (image_viewer_activate_action_view_zoom_fit_width) },
-};
+G_DEFINE_TYPE_WITH_CODE (GthImageViewerPage,
+			 gth_image_viewer_page,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthImageViewerPage)
+			 G_IMPLEMENT_INTERFACE (GTH_TYPE_VIEWER_PAGE,
+						gth_viewer_page_interface_init))
 
 
 static void
@@ -224,26 +137,581 @@ gth_image_viewer_page_file_loaded (GthImageViewerPage *self,
 
 	gth_viewer_page_file_loaded (GTH_VIEWER_PAGE (self),
 				     self->priv->file_data,
+				     self->priv->updated_info,
 				     success);
 }
 
 
+static int
+get_viewer_size (GthImageViewerPage *self)
+{
+	GtkAllocation allocation;
+	int           size;
+
+	gtk_widget_get_allocation (GTK_WIDGET (self->priv->viewer), &allocation);
+	size = MAX (allocation.width, allocation.height);
+	if (size <= 1) {
+		int window_width;
+		int window_height;
+		gtk_window_get_size (GTK_WINDOW (self->priv->browser),
+				     &window_width,
+				     &window_height);
+		size = MAX (window_width, window_height);;
+	}
+
+	return size;
+}
+
+
+static int
+_gth_image_preloader_get_requested_size_for_next_images (GthImageViewerPage *self)
+{
+	int requested_size;
+
+	requested_size = -1;
+
+	switch (gth_image_viewer_get_zoom_change (GTH_IMAGE_VIEWER (self->priv->viewer))) {
+	case GTH_ZOOM_CHANGE_ACTUAL_SIZE:
+		requested_size = -1;
+		break;
+	default:
+		requested_size = (int) floor ((double) get_viewer_size (self) * 0.5);
+		break;
+	}
+
+	return requested_size * gtk_widget_get_scale_factor (GTK_WIDGET (self->priv->viewer));
+}
+
+
+static int
+_gth_image_preloader_get_requested_size_for_current_image (GthImageViewerPage *self)
+{
+	int	requested_size;
+	double	zoom;
+
+	requested_size = -1;
+
+	switch (gth_image_viewer_get_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer))) {
+	case GTH_FIT_NONE:
+		zoom = gth_image_viewer_get_zoom (GTH_IMAGE_VIEWER (self->priv->viewer));
+		if (zoom < 1.0) {
+			int original_width;
+			int original_height;
+
+			gth_image_viewer_get_original_size (GTH_IMAGE_VIEWER (self->priv->viewer), &original_width, &original_height);
+			requested_size = MAX (original_width * zoom, original_height * zoom);
+		}
+		else
+			requested_size = -1;
+		break;
+
+	default:
+		requested_size = get_viewer_size (self);
+		break;
+	}
+
+	return requested_size * gtk_widget_get_scale_factor (GTK_WIDGET (self->priv->viewer));
+}
+
+
+/* -- _gth_image_viewer_page_load_with_preloader -- */
+
+
+typedef struct {
+	GthImageViewerPage  *self;
+	GthFileData         *file_data;
+	int                  requested_size;
+	GCancellable        *cancellable;
+	GAsyncReadyCallback  callback;
+	gpointer	     user_data;
+} ProfileData;
+
+
+static void
+profile_data_free (ProfileData *profile_data)
+{
+	_g_object_unref (profile_data->cancellable);
+	_g_object_unref (profile_data->file_data);
+	_g_object_unref (profile_data->self);
+	g_free (profile_data);
+}
+
+
+static void
+_gth_image_viewer_page_load_with_preloader_step2 (GthImageViewerPage  *self,
+						  GthFileData         *file_data,
+						  int                  requested_size,
+						  GCancellable        *cancellable,
+						  GAsyncReadyCallback  callback,
+						  gpointer	       user_data)
+{
+	g_object_ref (self);
+
+	gth_image_preloader_load (self->priv->preloader,
+				  file_data,
+				  requested_size,
+				  cancellable,
+				  callback,
+				  user_data,
+				  N_FORWARD_PRELOADERS + N_BACKWARD_PRELOADERS,
+				  self->priv->next_file_data[0],
+				  self->priv->next_file_data[1],
+				  self->priv->prev_file_data[0],
+				  self->priv->prev_file_data[1]);
+}
+
+
+static void
+profile_ready_cb (GObject      *source_object,
+                  GAsyncResult *res,
+                  gpointer      user_data)
+{
+	ProfileData        *profile_data = user_data;
+	GthImageViewerPage *self = profile_data->self;
+
+	if (self->priv->active && ! self->priv->image_changed && _g_file_equal (self->priv->file_data->file, profile_data->file_data->file)) {
+		GthICCProfile *profile;
+
+		profile = gth_color_manager_get_profile_finish (GTH_COLOR_MANAGER (source_object), res, NULL);
+		if (profile == NULL)
+			profile = _g_object_ref (gth_browser_get_monitor_profile (self->priv->browser));
+		gth_image_preloader_set_out_profile (self->priv->preloader, profile);
+
+		_gth_image_viewer_page_load_with_preloader_step2 (profile_data->self,
+								  profile_data->file_data,
+								  profile_data->requested_size,
+								  profile_data->cancellable,
+								  profile_data->callback,
+								  profile_data->user_data);
+
+		_g_object_unref (profile);
+	}
+
+	profile_data_free (profile_data);
+}
+
+
+static void
+_gth_image_viewer_page_load_with_preloader (GthImageViewerPage  *self,
+					    GthFileData         *file_data,
+					    int                  requested_size,
+					    GCancellable        *cancellable,
+					    GAsyncReadyCallback  callback,
+					    gpointer		 user_data)
+{
+	if ((file_data != NULL) && self->priv->apply_icc_profile) {
+		char *monitor_name = NULL;
+
+		if (_gtk_window_get_monitor_info (GTK_WINDOW (self->priv->browser), NULL, NULL, &monitor_name)) {
+			ProfileData *profile_data;
+
+			profile_data = g_new (ProfileData, 1);
+			profile_data->self = g_object_ref (self);
+			profile_data->file_data = g_object_ref (file_data);
+			profile_data->requested_size = requested_size;
+			profile_data->cancellable = _g_object_ref (cancellable);
+			profile_data->callback = callback;
+			profile_data->user_data = user_data;
+
+			gth_color_manager_get_profile_async (gth_main_get_default_color_manager(),
+							     monitor_name,
+							     cancellable,
+							     profile_ready_cb,
+							     profile_data);
+
+			return;
+		}
+	}
+
+	gth_image_preloader_set_out_profile (self->priv->preloader, NULL);
+	_gth_image_viewer_page_load_with_preloader_step2 (self, file_data, requested_size, cancellable, callback, user_data);
+}
+
+
 static gboolean
-viewer_zoom_changed_cb (GtkWidget          *widget,
-			GthImageViewerPage *self)
+_gth_image_viewer_page_load_with_preloader_finish (GthImageViewerPage  *self)
+{
+	gboolean active = self->priv->active;
+	g_object_unref (self);
+
+	return active;
+}
+
+
+static void
+different_quality_ready_cb (GObject		*source_object,
+			    GAsyncResult	*result,
+			    gpointer	 	 user_data)
+{
+	GthImageViewerPage *self = user_data;
+	GthFileData	   *requested;
+	GthImage	   *image;
+	int		    requested_size;
+	int		    original_width;
+	int		    original_height;
+	GError		   *error = NULL;
+	cairo_surface_t    *s1 = NULL;
+	cairo_surface_t    *s2;
+	int                 w1, h1, w2, h2;
+	gboolean            got_better_quality;
+
+	if (! _gth_image_viewer_page_load_with_preloader_finish (self))
+		return;
+
+	if (! gth_image_preloader_load_finish (GTH_IMAGE_PRELOADER (source_object),
+					       result,
+					       &requested,
+					       &image,
+					       &requested_size,
+					       &original_width,
+					       &original_height,
+					       &error))
+	{
+		g_clear_error (&error);
+		return;
+	}
+
+	if (! (self->priv->image_changed && requested == NULL) && ! _g_file_equal (requested->file, self->priv->file_data->file))
+		goto clear_data;
+
+	if (image == NULL)
+		goto clear_data;
+
+	/* check whether the image is of different quality */
+
+	s1 = gth_image_get_cairo_surface (image);
+	if (s1 == NULL)
+		goto clear_data;
+
+	s2 = gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer));
+	if (s2 == NULL) {
+		got_better_quality = TRUE;
+	}
+	else {
+		w1 = cairo_image_surface_get_width (s1);
+		h1 = cairo_image_surface_get_height (s1);
+		w2 = cairo_image_surface_get_width (s2);
+		h2 = cairo_image_surface_get_height (s2);
+		got_better_quality = ((w1 > w2) || (h1 > h2));
+	}
+
+	if (got_better_quality) {
+		gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
+		gth_image_viewer_set_better_quality (GTH_IMAGE_VIEWER (self->priv->viewer),
+						     image,
+						     original_width,
+						     original_height);
+		gth_image_viewer_set_requested_size (GTH_IMAGE_VIEWER (self->priv->viewer), requested_size);
+		gtk_widget_queue_draw (self->priv->viewer);
+	}
+
+clear_data:
+
+	if (s1 != NULL)
+		cairo_surface_destroy (s1);
+	_g_object_unref (requested);
+	_g_object_unref (image);
+	g_clear_error (&error);
+
+	return;
+}
+
+
+static gboolean
+_g_mime_type_can_load_different_quality (const char *mime_type)
+{
+	static const char *supported[] = {
+		"image/jpeg",
+		"image/x-portable-pixmap"
+	};
+
+	int i;
+	for (i = 0; i < G_N_ELEMENTS (supported); i++)
+		if (g_strcmp0 (mime_type, supported[i]) == 0)
+			return TRUE;
+
+	if (_g_mime_type_is_raw (mime_type))
+		return TRUE;
+
+	return FALSE;
+}
+
+
+typedef struct {
+	GthImageViewerPage *self;
+	GthFileData *file_data;
+} UpdateQualityData;
+
+
+static void
+update_quality_data_free (UpdateQualityData *data)
+{
+	_g_object_unref (data->file_data);
+	g_free (data);
+}
+
+
+static gboolean
+update_quality_cb (gpointer user_data)
+{
+	UpdateQualityData  *data = user_data;
+	GthImageViewerPage *self = data->self;
+	gboolean            file_changed;
+
+	if (! _gth_image_viewer_page_load_with_preloader_finish (self)) {
+		update_quality_data_free (data);
+		return FALSE;
+	}
+
+	if (self->priv->update_quality_id != 0) {
+		g_source_remove (self->priv->update_quality_id);
+		self->priv->update_quality_id = 0;
+	}
+
+	file_changed = ! _g_file_equal (data->file_data->file, self->priv->file_data->file);
+	update_quality_data_free (data);
+
+	if (file_changed)
+		return FALSE;
+
+	if (! self->priv->active)
+		return FALSE;
+
+	if (self->priv->viewer == NULL)
+		return FALSE;
+
+	if (self->priv->loading_image)
+		return FALSE;
+
+	if (! self->priv->image_changed && ! _g_mime_type_can_load_different_quality (gth_file_data_get_mime_type (self->priv->file_data)))
+		return FALSE;
+
+	_gth_image_viewer_page_load_with_preloader (self,
+						    self->priv->image_changed ? GTH_MODIFIED_IMAGE : self->priv->file_data,
+						    _gth_image_preloader_get_requested_size_for_current_image (self),
+						    NULL,
+						    different_quality_ready_cb,
+						    self);
+
+	return FALSE;
+}
+
+
+static void
+update_image_quality_if_required (GthImageViewerPage *self)
+{
+#ifndef ALWAYS_LOAD_ORIGINAL_SIZE
+	GthImage *image;
+
+	if (self->priv->loading_image || gth_sidebar_tool_is_active (GTH_SIDEBAR (gth_browser_get_viewer_sidebar (self->priv->browser))))
+		return;
+
+	image = gth_image_viewer_get_image (GTH_IMAGE_VIEWER (self->priv->viewer));
+	if ((image != NULL) && (gth_image_get_is_zoomable (image) || gth_image_get_is_animation (image)))
+		return;
+
+	if (self->priv->update_quality_id != 0) {
+		g_source_remove (self->priv->update_quality_id);
+		self->priv->update_quality_id = 0;
+	}
+
+	UpdateQualityData *data;
+
+	data = g_new0 (UpdateQualityData, 1);
+	data->self = self;
+	data->file_data = _g_object_ref (self->priv->file_data);
+
+	_g_object_ref (self);
+	self->priv->update_quality_id = g_timeout_add (UPDATE_QUALITY_DELAY,
+						       update_quality_cb,
+						       data);
+#endif
+}
+
+
+static gboolean
+hide_overview_after_timeout (gpointer data)
+{
+	GthImageViewerPage *self = data;
+
+	if (self->priv->hide_overview_id != 0)
+		g_source_remove (self->priv->hide_overview_id);
+	self->priv->hide_overview_id = 0;
+
+	if (! self->priv->pointer_on_overview)
+		gtk_revealer_set_reveal_child (GTK_REVEALER (self->priv->overview_revealer), FALSE);
+
+	return FALSE;
+}
+
+
+static gboolean
+update_overview_visibility_now (gpointer user_data)
+{
+	GthImageViewerPage *self;
+	gboolean            overview_visible;
+
+	self = GTH_IMAGE_VIEWER_PAGE (user_data);
+
+	if (self->priv->update_visibility_id != 0) {
+		g_source_remove (self->priv->update_visibility_id);
+		self->priv->update_visibility_id = 0;
+	}
+
+	if (! self->priv->active)
+		return FALSE;
+
+	overview_visible = self->priv->pointer_on_overview || (self->priv->pointer_on_viewer && gth_image_viewer_has_scrollbars (GTH_IMAGE_VIEWER (self->priv->viewer)));
+	gtk_revealer_set_reveal_child (GTK_REVEALER (self->priv->overview_revealer), overview_visible);
+
+	if (overview_visible) {
+		if (self->priv->hide_overview_id != 0)
+			g_source_remove (self->priv->hide_overview_id);
+		self->priv->hide_overview_id = g_timeout_add_seconds (HIDE_OVERVIEW_TIMEOUT, hide_overview_after_timeout, self);
+	}
+
+	return FALSE;
+}
+
+
+static void
+update_overview_visibility (GthImageViewerPage *self)
+{
+	if (self->priv->update_visibility_id != 0) {
+		g_source_remove (self->priv->update_visibility_id);
+		self->priv->update_visibility_id = 0;
+	}
+
+	self->priv->update_visibility_id = g_timeout_add (UPDATE_VISIBILITY_DELAY,
+							  update_overview_visibility_now,
+							  self);
+}
+
+
+#define MIN_ZOOM_LEVEL 0.3
+#define MAX_ZOOM_LEVEL 3.0
+
+
+static void
+zoom_scale_value_changed_cb (GtkScale *scale,
+			     gpointer  user_data)
+{
+	GthImageViewerPage *self = user_data;
+	double              x, zoom;
+
+	x = gtk_range_get_value (GTK_RANGE (scale));
+	zoom = MIN_ZOOM_LEVEL + (x / 100.0 * (MAX_ZOOM_LEVEL - MIN_ZOOM_LEVEL));
+	gth_image_viewer_set_zoom (GTH_IMAGE_VIEWER (self->priv->viewer), zoom);
+}
+
+
+static void
+zoom_button_toggled_cb (GtkToggleButton *togglebutton,
+	                gpointer         user_data)
+{
+	GthImageViewerPage *self = user_data;
+
+	if (! gtk_toggle_button_get_active (togglebutton))
+		return;
+
+	gth_browser_keep_mouse_visible (self->priv->browser, TRUE);
+}
+
+
+static void
+zoom_popover_closed_cb (GtkPopover *popover,
+			gpointer    user_data)
+{
+	GthImageViewerPage *self = user_data;
+
+	gth_browser_keep_mouse_visible (self->priv->browser, FALSE);
+	call_when_idle ((DataFunc) gth_viewer_page_focus, self);
+}
+
+
+#define ZOOM_EQUAL(a,b) (fabs (a - b) < 1e-3)
+
+
+static void
+update_zoom_info (GthImageViewerPage *self)
 {
 	double  zoom;
 	char   *text;
+	double  x;
 
-	gth_viewer_page_update_sensitivity (GTH_VIEWER_PAGE (self));
+	/* status bar */
 
 	zoom = gth_image_viewer_get_zoom (GTH_IMAGE_VIEWER (self->priv->viewer));
 	text = g_strdup_printf ("  %d%%  ", (int) (zoom * 100));
 	gth_statusbar_set_secondary_text (GTH_STATUSBAR (gth_browser_get_statusbar (self->priv->browser)), text);
-
 	g_free (text);
 
-	return TRUE;
+	/* zoom menu */
+
+	gboolean    zoom_enabled;
+	GthFit      fit_mode;
+	GAction    *action;
+	const char *state;
+
+	zoom_enabled = gth_image_viewer_get_zoom_enabled (GTH_IMAGE_VIEWER (self->priv->viewer));
+	fit_mode = gth_image_viewer_get_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer));
+
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "image-zoom", zoom_enabled);
+
+	state = "";
+	if (fit_mode == GTH_FIT_SIZE)
+		state = "fit";
+	else if (fit_mode == GTH_FIT_WIDTH)
+		state = "fit-width";
+	else if (fit_mode == GTH_FIT_HEIGHT)
+		state = "fit-height";
+	else if (fit_mode == GTH_FIT_SIZE_IF_LARGER)
+		state = "automatic";
+	else if (ZOOM_EQUAL (zoom, 0.5))
+		state = "50";
+	else if (ZOOM_EQUAL (zoom, 1.0))
+		state = "100";
+	else if (ZOOM_EQUAL (zoom, 2.0))
+		state = "200";
+	else if (ZOOM_EQUAL (zoom, 3.0))
+		state = "300";
+
+	action = g_action_map_lookup_action (G_ACTION_MAP (self->priv->browser), "image-zoom");
+	g_simple_action_set_state (G_SIMPLE_ACTION (action), g_variant_new_string (state));
+
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "image-zoom-100", ! ZOOM_EQUAL (zoom, 1.0));
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "image-zoom-fit-if-larger", fit_mode != GTH_FIT_SIZE_IF_LARGER);
+
+	/* zoom menu scale */
+
+	GtkWidget *scale = _gtk_builder_get_widget (self->priv->builder, "zoom_level_scale");
+
+	_g_signal_handlers_block_by_data (scale, self);
+	x = (zoom - MIN_ZOOM_LEVEL) / (MAX_ZOOM_LEVEL - MIN_ZOOM_LEVEL) * 100.0;
+	gtk_range_set_value (GTK_RANGE (scale), CLAMP (x, 0, 100));
+	_g_signal_handlers_unblock_by_data (scale, self);
+}
+
+
+static void
+viewer_zoom_changed_cb (GtkWidget          *widget,
+			GthImageViewerPage *self)
+{
+	update_image_quality_if_required (self);
+	self->priv->pointer_on_viewer = TRUE;
+	update_overview_visibility (self);
+	update_zoom_info (self);
+}
+
+
+static void
+viewer_image_changed_cb (GtkWidget          *widget,
+			 GthImageViewerPage *self)
+{
+	gth_viewer_page_update_sensitivity (GTH_VIEWER_PAGE (self));
+	update_image_quality_if_required (self);
+	update_overview_visibility (self);
+	update_zoom_info (self);
 }
 
 
@@ -267,8 +735,8 @@ viewer_popup_menu_cb (GtkWidget          *widget,
 
 static gboolean
 viewer_scroll_event_cb (GtkWidget 	   *widget,
-		        GdkEventScroll      *event,
-		        GthImageViewerPage  *self)
+		        GdkEventScroll     *event,
+		        GthImageViewerPage *self)
 {
 	return gth_browser_viewer_scroll_event_cb (self->priv->browser, event);
 }
@@ -281,29 +749,6 @@ viewer_image_map_event_cb (GtkWidget          *widget,
 {
 	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
 	return FALSE;
-}
-
-
-static gboolean
-viewer_key_press_cb (GtkWidget          *widget,
-		     GdkEventKey        *event,
-		     GthImageViewerPage *self)
-{
-	return gth_browser_viewer_key_press_cb (self->priv->browser, event);
-}
-
-
-static void
-_set_action_sensitive (GthImageViewerPage *self,
-		       const char         *action_name,
-		       gboolean            sensitive)
-{
-	GtkAction *action;
-
-	if (self->priv->actions == NULL)
-		return;
-	action = gtk_action_group_get_action (self->priv->actions, action_name);
-	g_object_set (action, "sensitive", sensitive, NULL);
 }
 
 
@@ -321,7 +766,7 @@ clipboard_targets_received_cb (GtkClipboard *clipboard,
 		if (atoms[i] == gdk_atom_intern_static_string ("image/png"))
 			self->priv->can_paste = TRUE;
 
-	_set_action_sensitive (self, "ImageViewer_Edit_Paste_Image", self->priv->can_paste);
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "paste-image", self->priv->can_paste);
 
 	g_object_unref (self);
 }
@@ -332,7 +777,7 @@ _gth_image_viewer_page_update_paste_command_sensitivity (GthImageViewerPage *sel
 							 GtkClipboard       *clipboard)
 {
 	self->priv->can_paste = FALSE;
-        _set_action_sensitive (self, "ImageViewer_Edit_Paste_Image", FALSE);
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "paste-image", self->priv->can_paste);
 
 	if (clipboard == NULL)
 		clipboard = gtk_widget_get_clipboard (GTK_WIDGET (self->priv->viewer), GDK_SELECTION_CLIPBOARD);
@@ -358,7 +803,7 @@ viewer_realize_cb (GtkWidget *widget,
 	GthImageViewerPage *self = user_data;
 	GtkClipboard       *clipboard;
 
-	clipboard = gtk_widget_get_clipboard (self->priv->viewer, GDK_SELECTION_CLIPBOARD);
+	clipboard = gtk_widget_get_clipboard (widget, GDK_SELECTION_CLIPBOARD);
 	g_signal_connect (clipboard,
 	                  "owner_change",
 	                  G_CALLBACK (clipboard_owner_change_cb),
@@ -373,82 +818,71 @@ viewer_unrealize_cb (GtkWidget *widget,
 	GthImageViewerPage *self = user_data;
 	GtkClipboard       *clipboard;
 
-	clipboard = gtk_widget_get_clipboard (self->priv->viewer, GDK_SELECTION_CLIPBOARD);
+	clipboard = gtk_widget_get_clipboard (widget, GDK_SELECTION_CLIPBOARD);
 	g_signal_handlers_disconnect_by_func (clipboard,
 	                                      G_CALLBACK (clipboard_owner_change_cb),
 	                                      self);
 }
 
 
-static void
-image_preloader_requested_ready_cb (GthImagePreloader  *preloader,
-				    GthFileData        *requested,
-				    GthImage           *image,
-				    int                 original_width,
-				    int                 original_height,
-				    GError             *error,
-				    GthImageViewerPage *self)
+static gboolean
+image_navigator_get_child_position_cb	(GtkOverlay   *overlay,
+					 GtkWidget    *widget,
+					 GdkRectangle *allocation,
+					 gpointer      user_data)
 {
-	if (! _g_file_equal (requested->file, self->priv->file_data->file))
-		return;
+	GthImageViewerPage *self = GTH_IMAGE_VIEWER_PAGE (user_data);
+	GtkAllocation       main_alloc;
+	gboolean            allocation_filled = FALSE;
 
-	if ((error != NULL) || (image == NULL)) {
-		gth_image_viewer_page_file_loaded (self, FALSE);
-		return;
+	gtk_widget_get_allocation (gtk_bin_get_child (GTK_BIN (overlay)), &main_alloc);
+	gtk_widget_get_preferred_width (widget, NULL, &allocation->width);
+	gtk_widget_get_preferred_height (widget, NULL, &allocation->height);
+
+	if (widget == self->priv->overview_revealer) {
+		allocation->x = main_alloc.width - allocation->width - OVERLAY_MARGIN;
+		allocation->y = OVERLAY_MARGIN;
+		if (gth_browser_get_is_fullscreen (self->priv->browser))
+			allocation->y += gtk_widget_get_allocated_height (gth_browser_get_fullscreen_headerbar (self->priv->browser));
+		allocation_filled = TRUE;
 	}
 
-	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
-
-	gth_image_viewer_set_image (GTH_IMAGE_VIEWER (self->priv->viewer),
-				    image,
-				    original_width,
-				    original_height);
-
-	gth_image_history_clear (self->priv->history);
-	gth_image_history_add_image (self->priv->history,
-				     gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer)),
-				     FALSE);
-
-	if ((original_width == -1) || (original_height == -1))
-		/* In this case the image was loaded at its original size,
-		 * so we get the original size from the image surface size. */
-		gth_image_viewer_get_original_size (GTH_IMAGE_VIEWER (self->priv->viewer),
-						    &original_width,
-						    &original_height);
-	g_file_info_set_attribute_int32 (self->priv->file_data->info,
-					 "frame::width",
-					 original_width);
-	g_file_info_set_attribute_int32 (self->priv->file_data->info,
-					 "frame::height",
-					 original_height);
-
-	gth_image_viewer_page_file_loaded (self, TRUE);
+	return allocation_filled;
 }
 
 
-static void
-image_preloader_original_size_ready_cb (GthImagePreloader  *preloader,
-				        GthFileData        *requested,
-				        GthImage           *image,
-				        int                 original_width,
-				        int                 original_height,
-				        GError             *error,
-				        GthImageViewerPage *self)
+static gboolean
+overview_motion_notify_event_cb (GtkWidget      *widget,
+				 GdkEventMotion *event,
+				 gpointer        data)
 {
-	if (! _g_file_equal (requested->file, self->priv->file_data->file))
-		return;
+	GthImageViewerPage *self = data;
 
-	if (error != NULL)
-		return;
+	if (self->priv->hide_overview_id != 0) {
+		g_source_remove (self->priv->hide_overview_id);
+		self->priv->hide_overview_id = 0;
+	}
 
-	gth_image_viewer_set_better_quality (GTH_IMAGE_VIEWER (self->priv->viewer),
-					     image,
-					     original_width,
-					     original_height);
-	gth_image_history_clear (self->priv->history);
-	gth_image_history_add_image (self->priv->history,
-				     gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer)),
-				     FALSE);
+	self->priv->pointer_on_viewer = TRUE;
+	if (widget == self->priv->overview)
+		self->priv->pointer_on_overview = TRUE;
+	update_overview_visibility (data);
+
+	return FALSE;
+}
+
+
+static gboolean
+overview_leave_notify_event_cb (GtkWidget *widget,
+				GdkEvent  *event,
+				gpointer   data)
+{
+	GthImageViewerPage *self = data;
+
+	if (widget == self->priv->overview)
+		self->priv->pointer_on_overview = gth_image_overview_get_scrolling_is_active (GTH_IMAGE_OVERVIEW (self->priv->overview));
+
+	return FALSE;
 }
 
 
@@ -458,6 +892,9 @@ pref_zoom_quality_changed (GSettings *settings,
 			   gpointer   user_data)
 {
 	GthImageViewerPage *self = user_data;
+
+	if (! self->priv->active || (self->priv->viewer == NULL))
+		return;
 
 	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (self->priv->viewer),
 					   g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
@@ -472,47 +909,11 @@ pref_zoom_change_changed (GSettings *settings,
 {
 	GthImageViewerPage *self = user_data;
 
+	if (! self->priv->active || (self->priv->viewer == NULL))
+		return;
+
 	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (self->priv->viewer),
 					  g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_ZOOM_CHANGE));
-	gtk_widget_queue_draw (self->priv->viewer);
-}
-
-
-static void
-pref_transp_type_changed (GSettings *settings,
-			  char      *key,
-			  gpointer   user_data)
-{
-	GthImageViewerPage *self = user_data;
-
-	gth_image_viewer_set_transp_type (GTH_IMAGE_VIEWER (self->priv->viewer),
-					  g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_TRANSP_TYPE));
-	gtk_widget_queue_draw (self->priv->viewer);
-}
-
-
-static void
-pref_check_type_changed (GSettings *settings,
-		   	 char      *key,
-		   	 gpointer   user_data)
-{
-	GthImageViewerPage *self = user_data;
-
-	gth_image_viewer_set_check_type (GTH_IMAGE_VIEWER (self->priv->viewer),
-					 g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_CHECK_TYPE));
-	gtk_widget_queue_draw (self->priv->viewer);
-}
-
-
-static void
-pref_check_size_changed (GSettings *settings,
-		   	 char      *key,
-		   	 gpointer   user_data)
-{
-	GthImageViewerPage *self = user_data;
-
-	gth_image_viewer_set_check_size (GTH_IMAGE_VIEWER (self->priv->viewer),
-					 g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_CHECK_SIZE));
 	gtk_widget_queue_draw (self->priv->viewer);
 }
 
@@ -524,8 +925,48 @@ pref_reset_scrollbars_changed (GSettings *settings,
 {
 	GthImageViewerPage *self = user_data;
 
+	if (! self->priv->active || (self->priv->viewer == NULL))
+		return;
+
 	gth_image_viewer_set_reset_scrollbars (GTH_IMAGE_VIEWER (self->priv->viewer),
 					       g_settings_get_boolean (self->priv->settings, PREF_IMAGE_VIEWER_RESET_SCROLLBARS));
+}
+
+
+static void
+pref_transparency_style_changed (GSettings *settings,
+				 char      *key,
+				 gpointer   user_data)
+{
+	GthImageViewerPage   *self = user_data;
+	GthTransparencyStyle  style;
+	GAction              *action;
+	const char           *state;
+
+	if (! self->priv->active || (self->priv->viewer == NULL))
+		return;
+
+	style = g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_TRANSPARENCY_STYLE);
+	state = "";
+	switch (style) {
+	case GTH_TRANSPARENCY_STYLE_CHECKERED:
+		state = "checkered";
+		break;
+	case GTH_TRANSPARENCY_STYLE_WHITE:
+		state = "white";
+		break;
+	case GTH_TRANSPARENCY_STYLE_GRAY:
+		state = "gray";
+		break;
+	case GTH_TRANSPARENCY_STYLE_BLACK:
+		state = "black";
+		break;
+	}
+	action = g_action_map_lookup_action (G_ACTION_MAP (self->priv->browser), "transparency-style");
+	if (action != NULL)
+		g_simple_action_set_state (G_SIMPLE_ACTION (action), g_variant_new_string (state));
+
+	gth_image_viewer_set_transparency_style (GTH_IMAGE_VIEWER (self->priv->viewer), style);
 }
 
 
@@ -554,8 +995,8 @@ paint_comment_over_image_func (GthImageViewer *image_viewer,
 	int                 icon_height;
 	int                 image_width;
 	int                 image_height;
-	const int           x_padding = 10;
-	const int           y_padding = 10;
+	const int           x_padding = 20;
+	const int           y_padding = 20;
 	int                 max_text_width;
 	PangoRectangle      bounds;
 	int                 text_x;
@@ -617,7 +1058,7 @@ paint_comment_over_image_func (GthImageViewer *image_viewer,
         if (icon == NULL) {
         	GIcon *gicon;
 
-        	gicon = g_themed_icon_new ("document-properties-symbolic");
+        	gicon = g_themed_icon_new ("dialog-information-symbolic");
         	icon = _g_icon_get_pixbuf (gicon, 24, _gtk_widget_get_icon_theme (GTK_WIDGET (image_viewer)));
 
         	g_object_unref (gicon);
@@ -647,7 +1088,7 @@ paint_comment_over_image_func (GthImageViewer *image_viewer,
 	/* background */
 
 	_cairo_draw_rounded_box (cr, bounds.x, bounds.y, bounds.width, bounds.height, 8.0);
-	cairo_set_source_rgba (cr, 0.94, 0.94, 0.94, 0.81);
+	cairo_set_source_rgba (cr, 0.0, 0.0, 0.0, 0.80);
 	cairo_fill (cr);
 	cairo_set_line_width (cr, 1.0);
 	cairo_set_source_rgb (cr, 0.0, 0.0, 0.0);
@@ -661,7 +1102,7 @@ paint_comment_over_image_func (GthImageViewer *image_viewer,
 
 	/* text */
 
-	cairo_set_source_rgb (cr, 0.0, 0.0, 0.0);
+	cairo_set_source_rgb (cr, 1.0, 1.0, 1.0);
 	pango_cairo_update_layout (cr, layout);
 	cairo_move_to (cr, text_x, text_y);
 	pango_cairo_show_layout (cr, layout);
@@ -684,44 +1125,92 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 	self = (GthImageViewerPage*) base;
 
 	self->priv->browser = browser;
+	self->priv->active = TRUE;
 
-	self->priv->actions = gtk_action_group_new ("Image Viewer Actions");
-	gtk_action_group_set_translation_domain (self->priv->actions, NULL);
-	gtk_action_group_add_actions (self->priv->actions,
-				      image_viewer_action_entries,
-				      G_N_ELEMENTS (image_viewer_action_entries),
-				      self);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), self->priv->actions, 0);
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
+
+	self->priv->buttons[0] =
+			gth_browser_add_header_bar_button (browser,
+							   GTH_BROWSER_HEADER_SECTION_VIEWER_ZOOM,
+							   "view-zoom-original-symbolic",
+							   _("Set to actual size"),
+							   "win.image-zoom-100",
+							   NULL);
+	self->priv->buttons[1] =
+			gth_browser_add_header_bar_button (browser,
+							   GTH_BROWSER_HEADER_SECTION_VIEWER_ZOOM,
+							   "view-zoom-fit-symbolic",
+							   _("Fit to window if larger"),
+							   "win.image-zoom-fit-if-larger",
+							   NULL);
+
+	self->priv->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/image_viewer/data/ui/toolbar-zoom-menu.ui");
+	self->priv->buttons[ZOOM_BUTTON] =
+			gth_browser_add_header_bar_menu_button (browser,
+								GTH_BROWSER_HEADER_SECTION_VIEWER_ZOOM,
+								"view-zoom-in-symbolic",
+								NULL,
+								_gtk_builder_get_widget (self->priv->builder, "zoom_popover"));
+	g_signal_connect (_gtk_builder_get_widget (self->priv->builder, "zoom_level_scale"),
+			  "value-changed",
+			  G_CALLBACK (zoom_scale_value_changed_cb),
+			  self);
+	g_signal_connect (self->priv->buttons[ZOOM_BUTTON],
+			  "toggled",
+			  G_CALLBACK (zoom_button_toggled_cb),
+			  self);
+	g_signal_connect (_gtk_builder_get_widget (self->priv->builder, "zoom_popover"),
+			  "closed",
+			  G_CALLBACK (zoom_popover_closed_cb),
+			  self);
+
+	self->priv->buttons[APPLY_ICC_PROFILE_BUTTON] =
+			gth_browser_add_header_bar_toggle_button (browser,
+							   	  GTH_BROWSER_HEADER_SECTION_VIEWER_OTHER_COMMANDS,
+								  "color-profile",
+								  _("Apply the embedded color profile"),
+								  "win.apply-icc-profile",
+								  NULL);
+
+	self->priv->buttons[TOGGLE_ANIMATION_BUTTON] =
+			gth_browser_add_header_bar_toggle_button (browser,
+							   	  GTH_BROWSER_HEADER_SECTION_VIEWER_COMMANDS,
+								  "media-playback-start-symbolic",
+								  _("Play"),
+								  "win.toggle-animation",
+								  NULL);
+	self->priv->buttons[STEP_ANIMATION_BUTTON] =
+			gth_browser_add_header_bar_button (browser,
+							   GTH_BROWSER_HEADER_SECTION_VIEWER_COMMANDS,
+							   "media-skip-forward-symbolic",
+							   _("Next frame"),
+							   "win.step-animation",
+							   NULL);
+	self->priv->buttons[TRANSPARENCY_STYLE_BUTTON] =
+			gth_browser_add_header_bar_menu_button (browser,
+								GTH_BROWSER_HEADER_SECTION_VIEWER_OTHER_COMMANDS,
+								"transparency-symbolic",
+								_("Transparency"),
+								_gtk_builder_get_widget (self->priv->builder, "transparency_popover"));
 
 	self->priv->preloader = gth_browser_get_image_preloader (browser);
-	self->priv->requested_ready_id = g_signal_connect (G_OBJECT (self->priv->preloader),
-							   "requested_ready",
-							   G_CALLBACK (image_preloader_requested_ready_cb),
-							   self);
-	self->priv->original_size_ready_id = g_signal_connect (G_OBJECT (self->priv->preloader),
-							       "original_size_ready",
-							       G_CALLBACK (image_preloader_original_size_ready_cb),
-							       self);
 
 	self->priv->viewer = gth_image_viewer_new ();
-	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (self->priv->viewer),
-					   g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
-	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (self->priv->viewer),
-					  g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_ZOOM_CHANGE));
-	gth_image_viewer_set_transp_type (GTH_IMAGE_VIEWER (self->priv->viewer),
-					  g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_TRANSP_TYPE));
-	gth_image_viewer_set_check_type (GTH_IMAGE_VIEWER (self->priv->viewer),
-					 g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_CHECK_TYPE));
-	gth_image_viewer_set_check_size (GTH_IMAGE_VIEWER (self->priv->viewer),
-					 g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_CHECK_SIZE));
-	gth_image_viewer_set_reset_scrollbars (GTH_IMAGE_VIEWER (self->priv->viewer),
-					       g_settings_get_boolean (self->priv->settings, PREF_IMAGE_VIEWER_RESET_SCROLLBARS));
-
+	g_object_add_weak_pointer (G_OBJECT (self->priv->viewer), (gpointer *) &self->priv->viewer);
+	gtk_widget_add_events (self->priv->viewer, GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
+	gth_image_viewer_page_reset_viewer_tool (self);
 	gtk_widget_show (self->priv->viewer);
 
 	g_signal_connect (G_OBJECT (self->priv->viewer),
-			  "zoom_changed",
+			  "zoom-changed",
 			  G_CALLBACK (viewer_zoom_changed_cb),
+			  self);
+	g_signal_connect (G_OBJECT (self->priv->viewer),
+			  "image-changed",
+			  G_CALLBACK (viewer_image_changed_cb),
 			  self);
 	g_signal_connect (G_OBJECT (self->priv->viewer),
 			  "popup-menu",
@@ -740,10 +1229,6 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 				G_CALLBACK (viewer_image_map_event_cb),
 				self);
 	g_signal_connect (G_OBJECT (self->priv->viewer),
-			  "key_press_event",
-			  G_CALLBACK (viewer_key_press_cb),
-			  self);
-	g_signal_connect (G_OBJECT (self->priv->viewer),
 			  "realize",
 			  G_CALLBACK (viewer_realize_cb),
 			  self);
@@ -752,38 +1237,36 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 			  G_CALLBACK (viewer_unrealize_cb),
 			  self);
 
-	self->priv->image_navigator = gth_image_navigator_new (GTH_IMAGE_VIEWER (self->priv->viewer));
+	self->priv->image_navigator = gtk_overlay_new ();
+	g_signal_connect (self->priv->image_navigator,
+			  "get-child-position",
+			  G_CALLBACK (image_navigator_get_child_position_cb),
+			  self);
+	gtk_container_add (GTK_CONTAINER (self->priv->image_navigator), self->priv->viewer);
 	gtk_widget_show (self->priv->image_navigator);
+
+	self->priv->overview_revealer = gtk_revealer_new ();
+	gtk_revealer_set_transition_duration (GTK_REVEALER (self->priv->overview_revealer), 200);
+	gtk_revealer_set_transition_type (GTK_REVEALER (self->priv->overview_revealer), GTK_REVEALER_TRANSITION_TYPE_SLIDE_DOWN);
+	gtk_widget_show (self->priv->overview_revealer);
+	gtk_overlay_add_overlay (GTK_OVERLAY (self->priv->image_navigator), self->priv->overview_revealer);
+
+	self->priv->overview = gth_image_overview_new (GTH_IMAGE_VIEWER (self->priv->viewer));
+	gtk_widget_add_events (self->priv->overview, GDK_POINTER_MOTION_HINT_MASK | GDK_LEAVE_NOTIFY_MASK);
+	gtk_widget_show (self->priv->overview);
+	gtk_container_add (GTK_CONTAINER (self->priv->overview_revealer), self->priv->overview);
+
+	g_signal_connect_after (G_OBJECT (self->priv->overview),
+				"motion-notify-event",
+				G_CALLBACK (overview_motion_notify_event_cb),
+				self);
+	g_signal_connect_after (G_OBJECT (self->priv->overview),
+				"leave-notify-event",
+				G_CALLBACK (overview_leave_notify_event_cb),
+				self);
 
 	gth_browser_set_viewer_widget (browser, self->priv->image_navigator);
 	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
-
-	/* settings notifications */
-
-	g_signal_connect (self->priv->settings,
-			  "changed::" PREF_IMAGE_VIEWER_ZOOM_QUALITY,
-			  G_CALLBACK (pref_zoom_quality_changed),
-			  self);
-	g_signal_connect (self->priv->settings,
-			  "changed::" PREF_IMAGE_VIEWER_ZOOM_CHANGE,
-			  G_CALLBACK (pref_zoom_change_changed),
-			  self);
-	g_signal_connect (self->priv->settings,
-			  "changed::" PREF_IMAGE_VIEWER_TRANSP_TYPE,
-			  G_CALLBACK (pref_transp_type_changed),
-			  self);
-	g_signal_connect (self->priv->settings,
-			  "changed::" PREF_IMAGE_VIEWER_CHECK_TYPE,
-			  G_CALLBACK (pref_check_type_changed),
-			  self);
-	g_signal_connect (self->priv->settings,
-			  "changed::" PREF_IMAGE_VIEWER_CHECK_SIZE,
-			  G_CALLBACK (pref_check_size_changed),
-			  self);
-	g_signal_connect (self->priv->settings,
-			  "changed::" PREF_IMAGE_VIEWER_RESET_SCROLLBARS,
-			  G_CALLBACK (pref_reset_scrollbars_changed),
-			  self);
 }
 
 
@@ -791,25 +1274,22 @@ static void
 gth_image_viewer_page_real_deactivate (GthViewerPage *base)
 {
 	GthImageViewerPage *self;
+	int                 i;
 
 	self = (GthImageViewerPage*) base;
 
-	if (self->priv->browser_merge_id != 0) {
-		gtk_ui_manager_remove_ui (gth_browser_get_ui_manager (self->priv->browser), self->priv->browser_merge_id);
-		self->priv->browser_merge_id = 0;
+	for (i = 0; i < N_HEADER_BAR_BUTTONS; i++) {
+		if (self->priv->buttons[i] != NULL) {
+			gtk_widget_destroy (self->priv->buttons[i]);
+			self->priv->buttons[i] = NULL;
+		}
 	}
 
-	gtk_ui_manager_remove_action_group (gth_browser_get_ui_manager (self->priv->browser), self->priv->actions);
-	g_object_unref (self->priv->actions);
-	self->priv->actions = NULL;
-
-	g_signal_handler_disconnect (self->priv->preloader, self->priv->requested_ready_id);
-	g_signal_handler_disconnect (self->priv->preloader, self->priv->original_size_ready_id);
-	self->priv->requested_ready_id = 0;
-	self->priv->original_size_ready_id = 0;
-
-	g_object_unref (self->priv->preloader);
+	_g_object_unref (self->priv->builder);
+	self->priv->builder = NULL;
+	_g_object_unref (self->priv->preloader);
 	self->priv->preloader = NULL;
+	self->priv->active = FALSE;
 
 	gth_browser_set_viewer_widget (self->priv->browser, NULL);
 }
@@ -818,20 +1298,13 @@ gth_image_viewer_page_real_deactivate (GthViewerPage *base)
 static void
 gth_image_viewer_page_real_show (GthViewerPage *base)
 {
-	GthImageViewerPage *self;
-	GError             *error = NULL;
+	GthImageViewerPage *self = (GthImageViewerPage*) base;
 
-	self = (GthImageViewerPage*) base;
-
-	if (self->priv->viewer_merge_id != 0)
-		return;
-
-	self->priv->viewer_merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (self->priv->browser), image_viewer_ui_info, -1, &error);
-	if (self->priv->viewer_merge_id == 0) {
-		g_warning ("ui building failed: %s", error->message);
-		g_error_free (error);
-	}
-
+	if (self->priv->file_popup_merge_id == 0)
+		self->priv->file_popup_merge_id =
+				gth_menu_manager_append_entries (gth_browser_get_menu_manager (self->priv->browser, GTH_BROWSER_MENU_MANAGER_FILE_EDIT_ACTIONS),
+								 file_popup_entries,
+								 G_N_ELEMENTS (file_popup_entries));
 	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
 }
 
@@ -839,14 +1312,10 @@ gth_image_viewer_page_real_show (GthViewerPage *base)
 static void
 gth_image_viewer_page_real_hide (GthViewerPage *base)
 {
-	GthImageViewerPage *self;
+	GthImageViewerPage *self = (GthImageViewerPage*) base;
 
-	self = (GthImageViewerPage*) base;
-
-	if (self->priv->viewer_merge_id != 0) {
-		gtk_ui_manager_remove_ui (gth_browser_get_ui_manager (self->priv->browser), self->priv->viewer_merge_id);
-		self->priv->viewer_merge_id = 0;
-	}
+	gth_menu_manager_remove_entries (gth_browser_get_menu_manager (self->priv->browser, GTH_BROWSER_MENU_MANAGER_FILE_EDIT_ACTIONS), self->priv->file_popup_merge_id);
+	self->priv->file_popup_merge_id = 0;
 }
 
 
@@ -855,12 +1324,161 @@ gth_image_viewer_page_real_can_view (GthViewerPage *base,
 				     GthFileData   *file_data)
 {
 	g_return_val_if_fail (file_data != NULL, FALSE);
-
 	return _g_mime_type_is_image (gth_file_data_get_mime_type (file_data));
 }
 
 
-#define N_PRELOADERS 4
+static void
+preloader_load_ready_cb (GObject	*source_object,
+			 GAsyncResult	*result,
+			 gpointer	 user_data)
+{
+	GthImageViewerPage *self = user_data;
+	GthFileData	   *requested;
+	GthImage	   *image;
+	int		    requested_size;
+	int		    original_width;
+	int		    original_height;
+	GError		   *error = NULL;
+
+	self->priv->loading_image = FALSE;
+	if (! _gth_image_viewer_page_load_with_preloader_finish (self))
+		return;
+
+	if (! gth_image_preloader_load_finish (GTH_IMAGE_PRELOADER (source_object),
+					       result,
+					       &requested,
+					       &image,
+					       &requested_size,
+					       &original_width,
+					       &original_height,
+					       &error))
+	{
+		if (! g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+			gth_image_viewer_page_file_loaded (self, FALSE);
+		g_clear_error (&error);
+		return;
+	}
+
+	if (! _g_file_equal (requested->file, self->priv->file_data->file))
+		goto clear_data;
+
+	if (image == NULL) {
+		gth_image_viewer_page_file_loaded (self, FALSE);
+		goto clear_data;
+	}
+
+	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
+
+	gth_image_viewer_set_image (GTH_IMAGE_VIEWER (self->priv->viewer),
+				    image,
+				    original_width,
+				    original_height);
+	gth_image_viewer_set_requested_size (GTH_IMAGE_VIEWER (self->priv->viewer), requested_size);
+	gtk_widget_queue_draw (self->priv->viewer);
+
+	gth_image_history_clear (self->priv->history);
+	gth_image_history_add_image (self->priv->history,
+				     image,
+				     requested_size,
+				     FALSE);
+
+	if ((original_width == -1) || (original_height == -1))
+		/* In this case the image was loaded at its original size,
+		 * so we get the original size from the image surface size. */
+		gth_image_viewer_get_original_size (GTH_IMAGE_VIEWER (self->priv->viewer),
+						    &original_width,
+						    &original_height);
+	g_file_info_set_attribute_int32 (self->priv->updated_info,
+					 "frame::width",
+					 original_width);
+	g_file_info_set_attribute_int32 (self->priv->updated_info,
+					 "frame::height",
+					 original_height);
+
+	{
+		GthICCProfile *profile;
+
+		profile = gth_image_get_icc_profile (image);
+		if (profile != NULL) {
+			char *desc = gth_icc_profile_get_description (profile);
+
+			if (desc != NULL) {
+				g_file_info_set_attribute_string (self->priv->updated_info,
+								  "Loaded::Image::ColorProfile",
+								  desc);
+				g_free (desc);
+			}
+		}
+	}
+
+	gth_image_viewer_page_file_loaded (self, TRUE);
+	update_image_quality_if_required (self);
+
+clear_data:
+
+	_g_object_unref (requested);
+	_g_object_unref (image);
+	g_clear_error (&error);
+
+	return;
+}
+
+
+static void
+_gth_image_viewer_page_load (GthImageViewerPage *self,
+		             GthFileData        *file_data)
+{
+	GthFileStore *file_store;
+	GtkTreeIter   iter;
+	int           i;
+
+	if (self->priv->file_data != file_data) {
+		_g_object_unref (self->priv->file_data);
+		self->priv->file_data = gth_file_data_dup (file_data);
+		_g_object_unref (self->priv->updated_info);
+		self->priv->updated_info = g_file_info_new ();
+	}
+	self->priv->image_changed = FALSE;
+	self->priv->loading_image = TRUE;
+
+	for (i = 0; i < N_FORWARD_PRELOADERS; i++)
+		_g_clear_object (&self->priv->next_file_data[i]);
+	for (i = 0; i < N_BACKWARD_PRELOADERS; i++)
+		_g_clear_object (&self->priv->prev_file_data[i]);
+
+	file_store = gth_browser_get_file_store (self->priv->browser);
+	if (gth_file_store_find_visible (file_store, self->priv->file_data->file, &iter)) {
+		GtkTreeIter next_iter;
+
+		next_iter = iter;
+		for (i = 0; i < N_FORWARD_PRELOADERS; i++) {
+			if (! gth_file_store_get_next_visible (file_store, &next_iter))
+				break;
+			self->priv->next_file_data[i] = g_object_ref (gth_file_store_get_file (file_store, &next_iter));
+		}
+
+		next_iter = iter;
+		for (i = 0; i < N_BACKWARD_PRELOADERS; i++) {
+			if (! gth_file_store_get_prev_visible (file_store, &next_iter))
+				break;
+			self->priv->prev_file_data[i] = g_object_ref (gth_file_store_get_file (file_store, &next_iter));
+		}
+
+		gth_image_viewer_set_void (GTH_IMAGE_VIEWER (self->priv->viewer));
+	}
+
+	_gth_image_viewer_page_load_with_preloader (self,
+						    self->priv->file_data,
+#ifdef ALWAYS_LOAD_ORIGINAL_SIZE
+						    GTH_ORIGINAL_SIZE,
+#else
+						    _gth_image_preloader_get_requested_size_for_next_images (self),
+#endif
+						    NULL,
+						    preloader_load_ready_cb,
+						    self);
+}
 
 
 static void
@@ -868,16 +1486,10 @@ gth_image_viewer_page_real_view (GthViewerPage *base,
 				 GthFileData   *file_data)
 {
 	GthImageViewerPage *self;
-	GthFileStore       *file_store;
-	GtkTreeIter         iter;
-	int                 i;
-	GthFileData        *next_file_data[N_PRELOADERS];
-	GthFileData        *prev_file_data[N_PRELOADERS];
-	int                 window_width;
-	int                 window_height;
 
 	self = (GthImageViewerPage*) base;
 	g_return_if_fail (file_data != NULL);
+	g_return_if_fail (self->priv->active);
 
 	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
 
@@ -892,50 +1504,7 @@ gth_image_viewer_page_real_view (GthViewerPage *base,
 		return;
 	}
 
-	_g_object_unref (self->priv->file_data);
-	self->priv->file_data = gth_file_data_dup (file_data);
-	self->priv->image_changed = FALSE;
-
-	for (i = 0; i < N_PRELOADERS; i++) {
-		next_file_data[i] = NULL;
-		prev_file_data[i] = NULL;
-	}
-
-	file_store = gth_browser_get_file_store (self->priv->browser);
-	if (gth_file_store_find_visible (file_store, self->priv->file_data->file, &iter)) {
-		GtkTreeIter next_iter;
-
-		next_iter = iter;
-		for (i = 0; i < N_PRELOADERS; i++) {
-			if (! gth_file_store_get_next_visible (file_store, &next_iter))
-				break;
-			next_file_data[i] = gth_file_store_get_file (file_store, &next_iter);
-		}
-
-		next_iter = iter;
-		for (i = 0; i < N_PRELOADERS; i++) {
-			if (! gth_file_store_get_prev_visible (file_store, &next_iter))
-				break;
-			prev_file_data[i] = gth_file_store_get_file (file_store, &next_iter);
-		}
-	}
-
-	gtk_window_get_size (GTK_WINDOW (self->priv->browser),
-			     &window_width,
-			     &window_height);
-
-	gth_image_preloader_load (self->priv->preloader,
-				  self->priv->file_data,
-				  (gth_image_prelaoder_get_load_policy (self->priv->preloader) == GTH_LOAD_POLICY_TWO_STEPS) ? MAX (window_width, window_height) : -1,
-				  next_file_data[0],
-				  next_file_data[1],
-				  next_file_data[2],
-				  next_file_data[3],
-				  prev_file_data[0],
-				  prev_file_data[1],
-				  prev_file_data[2],
-				  prev_file_data[3],
-				  NULL);
+	_gth_image_viewer_page_load (self, file_data);
 }
 
 
@@ -954,8 +1523,16 @@ static void
 gth_image_viewer_page_real_fullscreen (GthViewerPage *base,
 				       gboolean       active)
 {
-	GthImageViewerPage *self = GTH_IMAGE_VIEWER_PAGE (base);
-	gth_image_navigator_set_automatic_scrollbars (GTH_IMAGE_NAVIGATOR (self->priv->image_navigator), ! active);
+	GthImageViewerPage *self;
+	GthImageViewerTool *tool;
+
+	self = (GthImageViewerPage *) base;
+	tool = gth_image_viewer_get_tool (GTH_IMAGE_VIEWER (self->priv->viewer));
+
+	if (! GTH_IS_IMAGE_DRAGGER (tool))
+		return;
+
+	g_object_set (tool, "show-frame", ! active, NULL);
 }
 
 
@@ -969,8 +1546,16 @@ gth_image_viewer_page_real_show_pointer (GthViewerPage *base,
 
 	if (show)
 		gth_image_viewer_show_cursor (GTH_IMAGE_VIEWER (self->priv->viewer));
-	else
+	else if (gth_browser_get_is_fullscreen (self->priv->browser))
 		gth_image_viewer_hide_cursor (GTH_IMAGE_VIEWER (self->priv->viewer));
+
+	if (self->priv->hide_overview_id != 0) {
+		g_source_remove (self->priv->hide_overview_id);
+		self->priv->hide_overview_id = 0;
+	}
+
+	self->priv->pointer_on_viewer = show;
+	update_overview_visibility (self);
 }
 
 
@@ -978,27 +1563,32 @@ static void
 gth_image_viewer_page_real_update_sensitivity (GthViewerPage *base)
 {
 	GthImageViewerPage *self;
-	gboolean            zoom_enabled;
-	double              zoom;
-	GthFit              fit_mode;
+	GthImage           *image;
+	gboolean            enable_action;
+	gboolean            is_animation;
 
 	self = (GthImageViewerPage*) base;
 
-	_set_action_sensitive (self, "ImageViewer_Edit_Undo", gth_image_history_can_undo (self->priv->history));
-	_set_action_sensitive (self, "ImageViewer_Edit_Redo", gth_image_history_can_redo (self->priv->history));
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "image-undo", gth_image_history_can_undo (self->priv->history));
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "image-redo", gth_image_history_can_redo (self->priv->history));
 
-	zoom_enabled = gth_image_viewer_get_zoom_enabled (GTH_IMAGE_VIEWER (self->priv->viewer));
-	zoom = gth_image_viewer_get_zoom (GTH_IMAGE_VIEWER (self->priv->viewer));
+	image = gth_image_viewer_get_image (GTH_IMAGE_VIEWER (self->priv->viewer));
+	enable_action = (image != NULL) && (gth_image_get_icc_profile (image) != NULL);
+	gtk_widget_set_visible (self->priv->buttons[APPLY_ICC_PROFILE_BUTTON], enable_action);
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "apply-icc-profile", enable_action);
 
-	_set_action_sensitive (self, "ImageViewer_View_Zoom100", zoom_enabled && ! FLOAT_EQUAL (zoom, 1.0));
-	_set_action_sensitive (self, "ImageViewer_View_ZoomOut", zoom_enabled && (zoom > 0.05));
-	_set_action_sensitive (self, "ImageViewer_View_ZoomIn", zoom_enabled && (zoom < 100.0));
+	enable_action = (self->priv->file_data != NULL) && _g_mime_type_has_transparency (gth_file_data_get_mime_type (self->priv->file_data));
+	gtk_widget_set_visible (self->priv->buttons[TRANSPARENCY_STYLE_BUTTON], enable_action);
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "transparency-style", enable_action);
 
-	fit_mode = gth_image_viewer_get_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer));
-	_set_action_sensitive (self, "ImageViewer_View_ZoomFit", zoom_enabled && (fit_mode != GTH_FIT_SIZE));
-	_set_action_sensitive (self, "ImageViewer_View_ZoomFitWidth", zoom_enabled && (fit_mode != GTH_FIT_WIDTH));
+	is_animation = gth_image_viewer_is_animation (GTH_IMAGE_VIEWER (self->priv->viewer));
+	gtk_widget_set_visible (self->priv->buttons[TOGGLE_ANIMATION_BUTTON], is_animation);
+	gtk_widget_set_visible (self->priv->buttons[STEP_ANIMATION_BUTTON], is_animation);
+	gth_window_enable_action (GTH_WINDOW (self->priv->browser), "step-animation", ! gth_image_viewer_is_playing_animation (GTH_IMAGE_VIEWER (self->priv->viewer)));
 
 	_gth_image_viewer_page_update_paste_command_sensitivity (self, NULL);
+
+	update_zoom_info (self);
 }
 
 
@@ -1057,6 +1647,7 @@ save_image_task_completed_cb (GthTask *task,
 	}
 
 	save_data_free (data);
+	_g_object_unref (task);
 }
 
 
@@ -1070,7 +1661,6 @@ _gth_image_viewer_page_real_save (GthViewerPage *base,
 	GthImageViewerPage *self;
 	SaveData           *data;
 	GthFileData        *current_file;
-	GthImage           *image;
 	GthTask            *task;
 
 	self = (GthImageViewerPage *) base;
@@ -1110,16 +1700,15 @@ _gth_image_viewer_page_real_save (GthViewerPage *base,
 	 * wants to save (see load_file_delayed_cb in gth-browser.c). */
 	g_file_info_set_attribute_boolean (data->file_to_save->info, "gth::file::is-modified", FALSE);
 
-	image = gth_image_new_for_surface (gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer)));
-	task = gth_save_image_task_new (image, mime_type, data->file_to_save, GTH_OVERWRITE_RESPONSE_YES);
+	task = gth_image_task_chain_new (_("Saving"),
+					 gth_original_image_task_new (self),
+					 gth_save_image_task_new (NULL, mime_type, data->file_to_save, GTH_OVERWRITE_RESPONSE_YES),
+					 NULL);
 	g_signal_connect (task,
 			  "completed",
 			  G_CALLBACK (save_image_task_completed_cb),
 			  data);
-	gth_browser_exec_task (GTH_BROWSER (self->priv->browser), task, FALSE);
-
-	_g_object_unref (task);
-	_g_object_unref (image);
+	gth_browser_exec_task (GTH_BROWSER (self->priv->browser), task, GTH_TASK_FLAGS_DEFAULT);
 }
 
 
@@ -1215,6 +1804,7 @@ gth_image_viewer_page_real_save_as (GthViewerPage *base,
 	file_sel = gth_file_chooser_dialog_new (_("Save Image"),
 						GTK_WINDOW (self->priv->browser),
 						"image-saver");
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 
 	uri = g_file_get_uri (self->priv->file_data->file);
 	gtk_file_chooser_set_uri (GTK_FILE_CHOOSER (file_sel), uri);
@@ -1245,34 +1835,56 @@ gth_image_viewer_page_real_save_as (GthViewerPage *base,
 
 static void
 _gth_image_viewer_page_set_image (GthImageViewerPage *self,
-				  cairo_surface_t    *image,
+				  GthImage           *image,
+				  int                 requested_size,
 				  gboolean            modified)
 {
 	GthFileData *file_data;
 	int          width;
 	int          height;
-	char        *size;
 
 	if (image == NULL)
 		return;
 
-	gth_image_viewer_set_surface (GTH_IMAGE_VIEWER (self->priv->viewer), image, -1, -1);
+	if (modified)
+		gth_image_preloader_set_modified_image (self->priv->preloader, image);
+	gth_image_viewer_set_image (GTH_IMAGE_VIEWER (self->priv->viewer), image, -1, -1);
+	gth_image_viewer_set_requested_size (GTH_IMAGE_VIEWER (self->priv->viewer), requested_size);
 
 	file_data = gth_browser_get_current_file (GTH_BROWSER (self->priv->browser));
 
+	self->priv->image_changed = modified;
 	g_file_info_set_attribute_boolean (file_data->info, "gth::file::is-modified", modified);
 
-	width = cairo_image_surface_get_width (image);
-	height = cairo_image_surface_get_height (image);
-	g_file_info_set_attribute_int32 (file_data->info, "image::width", width);
-	g_file_info_set_attribute_int32 (file_data->info, "image::height", height);
+	if (gth_image_get_original_size (image, &width, &height)) {
+		char *size;
 
-	size = g_strdup_printf (_("%d × %d"), width, height);
-	g_file_info_set_attribute_string (file_data->info, "general::dimensions", size);
+		g_file_info_set_attribute_int32 (file_data->info, "image::width", width);
+		g_file_info_set_attribute_int32 (file_data->info, "image::height", height);
+
+		size = g_strdup_printf (_("%d × %d"), width, height);
+		g_file_info_set_attribute_string (file_data->info, "general::dimensions", size);
+		g_free (size);
+	}
 
 	gth_monitor_metadata_changed (gth_main_get_default_monitor (), file_data);
 
-	g_free (size);
+	update_image_quality_if_required (self);
+}
+
+
+static void
+_gth_image_viewer_page_set_surface (GthImageViewerPage *self,
+				    cairo_surface_t    *surface,
+				    int                 requested_size,
+				    gboolean            modified)
+{
+	GthImage *image;
+
+	image = gth_image_new_for_surface (surface);
+	_gth_image_viewer_page_set_image (self, image, requested_size, modified);
+
+	g_object_unref (image);
 }
 
 
@@ -1280,13 +1892,22 @@ static void
 gth_image_viewer_page_real_revert (GthViewerPage *base)
 {
 	GthImageViewerPage *self = GTH_IMAGE_VIEWER_PAGE (base);
-	GthImageData       *idata;
+	GthImageData       *last_saved;
 
-	idata = gth_image_history_revert (self->priv->history);
-	if (idata != NULL) {
-		_gth_image_viewer_page_set_image (self, idata->image, idata->unsaved);
-		gth_image_data_unref (idata);
-	}
+	last_saved = gth_image_history_revert (self->priv->history);
+	if (last_saved == NULL)
+		return;
+
+	gth_image_history_add_image (self->priv->history,
+				     last_saved->image,
+				     last_saved->requested_size,
+				     last_saved->unsaved);
+	_gth_image_viewer_page_set_image (self,
+					  last_saved->image,
+					  last_saved->requested_size,
+					  last_saved->unsaved);
+
+	gth_image_data_unref (last_saved);
 }
 
 
@@ -1308,6 +1929,15 @@ gth_image_viewer_page_real_update_info (GthViewerPage *base,
 }
 
 
+static gboolean
+gth_image_viewer_page_real_zoom_from_scroll (GthViewerPage  *base,
+					     GdkEventScroll *event)
+{
+	GthImageViewerPage *self = GTH_IMAGE_VIEWER_PAGE (base);
+	return gth_image_viewer_zoom_from_scroll (GTH_IMAGE_VIEWER (self->priv->viewer), event);
+}
+
+
 static void
 gth_image_viewer_page_real_show_properties (GthViewerPage *base,
 					    gboolean       show)
@@ -1324,14 +1954,10 @@ gth_image_viewer_page_real_show_properties (GthViewerPage *base,
 }
 
 
-static void
-gth_image_viewer_page_real_shrink_wrap (GthViewerPage *base,
-					gboolean       activate,
-					int           *other_width,
-					int           *other_height)
+static const char *
+gth_image_viewer_page_shortcut_context (GthViewerPage *base)
 {
-	GthImageViewerPage *self = GTH_IMAGE_VIEWER_PAGE (base);
-	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_FIT_SIZE_IF_LARGER);
+	return GTH_SHORTCUT_VIEWER_CONTEXT_IMAGE;
 }
 
 
@@ -1339,13 +1965,32 @@ static void
 gth_image_viewer_page_finalize (GObject *obj)
 {
 	GthImageViewerPage *self;
+	int                 i;
 
 	self = GTH_IMAGE_VIEWER_PAGE (obj);
+
+	if (self->priv->update_quality_id != 0) {
+		g_source_remove (self->priv->update_quality_id);
+		self->priv->update_quality_id = 0;
+	}
+	if (self->priv->update_visibility_id != 0) {
+		g_source_remove (self->priv->update_visibility_id);
+		self->priv->update_visibility_id = 0;
+	}
+	if (self->priv->hide_overview_id != 0) {
+		g_source_remove (self->priv->hide_overview_id);
+		self->priv->hide_overview_id = 0;
+	}
 
 	g_object_unref (self->priv->settings);
 	g_object_unref (self->priv->history);
 	_g_object_unref (self->priv->file_data);
 	_g_object_unref (self->priv->last_loaded);
+
+	for (i = 0; i < N_FORWARD_PRELOADERS; i++)
+		_g_clear_object (&self->priv->next_file_data[i]);
+	for (i = 0; i < N_BACKWARD_PRELOADERS; i++)
+		_g_clear_object (&self->priv->prev_file_data[i]);
 
 	G_OBJECT_CLASS (gth_image_viewer_page_parent_class)->finalize (obj);
 }
@@ -1354,8 +1999,6 @@ gth_image_viewer_page_finalize (GObject *obj)
 static void
 gth_image_viewer_page_class_init (GthImageViewerPageClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (GthImageViewerPagePrivate));
-
 	G_OBJECT_CLASS (klass)->finalize = gth_image_viewer_page_finalize;
 }
 
@@ -1378,22 +2021,64 @@ gth_viewer_page_interface_init (GthViewerPageInterface *iface)
 	iface->save_as = gth_image_viewer_page_real_save_as;
 	iface->revert = gth_image_viewer_page_real_revert;
 	iface->update_info = gth_image_viewer_page_real_update_info;
+	iface->zoom_from_scroll = gth_image_viewer_page_real_zoom_from_scroll;
 	iface->show_properties = gth_image_viewer_page_real_show_properties;
-	iface->shrink_wrap = gth_image_viewer_page_real_shrink_wrap;
+	iface->shortcut_context = gth_image_viewer_page_shortcut_context;
 }
 
 
 static void
 gth_image_viewer_page_init (GthImageViewerPage *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_VIEWER_PAGE, GthImageViewerPagePrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
+	int i;
+
+	self->priv = gth_image_viewer_page_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	self->priv->preloader = NULL;
+	self->priv->file_popup_merge_id = 0;
 	self->priv->history = gth_image_history_new ();
-	self->priv->last_loaded = NULL;
+	self->priv->file_data = NULL;
+	self->priv->updated_info = NULL;
+	self->priv->active = FALSE;
 	self->priv->image_changed = FALSE;
+	self->priv->loading_image = FALSE;
+	self->priv->last_loaded = NULL;
 	self->priv->can_paste = FALSE;
-	self->priv->viewer_merge_id = 0;
-	self->priv->browser_merge_id = 0;
+	self->priv->update_quality_id = 0;
+	self->priv->update_visibility_id = 0;
+	for (i = 0; i < N_HEADER_BAR_BUTTONS; i++)
+		self->priv->buttons[i] = NULL;
+	self->priv->builder = NULL;
+	self->priv->pointer_on_overview = FALSE;
+	self->priv->pointer_on_viewer = FALSE;
+	self->priv->hide_overview_id = 0;
+	self->priv->apply_icc_profile = TRUE;
+
+	for (i = 0; i < N_FORWARD_PRELOADERS; i++)
+		self->priv->next_file_data[i] = NULL;
+	for (i = 0; i < N_BACKWARD_PRELOADERS; i++)
+		self->priv->prev_file_data[i] = NULL;
+
+	self->priv->drag_data_get_event = 0;
+
+	/* settings notifications */
+
+	g_signal_connect (self->priv->settings,
+			  "changed::" PREF_IMAGE_VIEWER_ZOOM_QUALITY,
+			  G_CALLBACK (pref_zoom_quality_changed),
+			  self);
+	g_signal_connect (self->priv->settings,
+			  "changed::" PREF_IMAGE_VIEWER_ZOOM_CHANGE,
+			  G_CALLBACK (pref_zoom_change_changed),
+			  self);
+	g_signal_connect (self->priv->settings,
+			  "changed::" PREF_IMAGE_VIEWER_RESET_SCROLLBARS,
+			  G_CALLBACK (pref_reset_scrollbars_changed),
+			  self);
+	g_signal_connect (self->priv->settings,
+			  "changed::" PREF_IMAGE_VIEWER_TRANSPARENCY_STYLE,
+			  G_CALLBACK (pref_transparency_style_changed),
+			  self);
 }
 
 
@@ -1426,9 +2111,16 @@ gth_image_viewer_page_set_pixbuf (GthImageViewerPage *self,
 
 
 cairo_surface_t *
-gth_image_viewer_page_get_image (GthImageViewerPage *self)
+gth_image_viewer_page_get_current_image (GthImageViewerPage *self)
 {
 	return gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer));
+}
+
+
+cairo_surface_t *
+gth_image_viewer_page_get_modified_image (GthImageViewerPage *self)
+{
+	return gth_image_preloader_get_modified_image (self->priv->preloader);
 }
 
 
@@ -1437,14 +2129,13 @@ gth_image_viewer_page_set_image (GthImageViewerPage *self,
 			 	 cairo_surface_t    *image,
 			 	 gboolean            add_to_history)
 {
-	if (gth_image_viewer_page_get_image (self) == image)
+	if (gth_image_viewer_page_get_current_image (self) == image)
 		return;
 
 	if (add_to_history)
-		gth_image_history_add_image (self->priv->history, image, TRUE);
+		gth_image_history_add_surface (self->priv->history, image, -1, TRUE);
 
-	_gth_image_viewer_page_set_image (self, image, TRUE);
-	self->priv->image_changed = TRUE;
+	_gth_image_viewer_page_set_surface (self, image, -1, TRUE);
 
 	if (add_to_history)
 		gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
@@ -1458,7 +2149,7 @@ gth_image_viewer_page_undo (GthImageViewerPage *self)
 
 	idata = gth_image_history_undo (self->priv->history);
 	if (idata != NULL)
-		_gth_image_viewer_page_set_image (self, idata->image, idata->unsaved);
+		_gth_image_viewer_page_set_image (self, idata->image, idata->requested_size, idata->unsaved);
 }
 
 
@@ -1469,7 +2160,7 @@ gth_image_viewer_page_redo (GthImageViewerPage *self)
 
 	idata = gth_image_history_redo (self->priv->history);
 	if (idata != NULL)
-		_gth_image_viewer_page_set_image (self, idata->image, idata->unsaved);
+		_gth_image_viewer_page_set_image (self, idata->image, idata->requested_size, idata->unsaved);
 }
 
 
@@ -1489,26 +2180,142 @@ gth_image_viewer_page_reset (GthImageViewerPage *self)
 	if (last_image == NULL)
 		return;
 
-	_gth_image_viewer_page_set_image (self, last_image->image, last_image->unsaved);
+	_gth_image_viewer_page_set_image (self, last_image->image, last_image->requested_size, last_image->unsaved);
+}
+
+
+static void
+viewer_drag_data_get_cb (GtkWidget        *widget,
+			 GdkDragContext   *context,
+			 GtkSelectionData *data,
+			 guint             info,
+			 guint             time,
+			 gpointer          user_data)
+{
+	GthImageViewerPage *self = user_data;
+	char               *uris[2];
+
+	if (self->priv->file_data == NULL)
+		return;
+
+	uris[0] = g_file_get_uri (self->priv->file_data->file);
+	uris[1] = NULL;
+	gtk_selection_data_set_uris (data, (char **) uris);
+
+	g_free (uris[0]);
+}
+
+
+static void
+_gth_image_viewer_page_enable_drag_source (GthImageViewerPage *self,
+					   gboolean            enable)
+{
+	GthImageViewerTool *dragger;
+	GtkTargetList      *source_target_list;
+	GtkTargetEntry     *source_targets;
+	int                 n_source_targets;
+
+	dragger = gth_image_viewer_get_tool (GTH_IMAGE_VIEWER (self->priv->viewer));
+	if (! GTH_IS_IMAGE_DRAGGER (dragger))
+		return;
+
+	if (! enable) {
+		if (self->priv->drag_data_get_event > 0) {
+			g_signal_handler_disconnect (self->priv->viewer, self->priv->drag_data_get_event);
+			self->priv->drag_data_get_event = 0;
+		}
+		gth_image_dragger_disable_drag_source (GTH_IMAGE_DRAGGER (dragger));
+		return;
+	}
+
+	source_target_list = gtk_target_list_new (NULL, 0);
+	gtk_target_list_add_uri_targets (source_target_list, 0);
+	gtk_target_list_add_text_targets (source_target_list, 0);
+	source_targets = gtk_target_table_new_from_list (source_target_list, &n_source_targets);
+	gth_image_dragger_enable_drag_source (GTH_IMAGE_DRAGGER (dragger),
+					      GDK_BUTTON1_MASK,
+					      source_targets,
+					      n_source_targets,
+					      GDK_ACTION_COPY | GDK_ACTION_MOVE);
+	gtk_target_table_free (source_targets, n_source_targets);
+	gtk_target_list_unref (source_target_list);
+
+	if (self->priv->drag_data_get_event == 0)
+		self->priv->drag_data_get_event = g_signal_connect (self->priv->viewer,
+				  "drag-data-get",
+				  G_CALLBACK (viewer_drag_data_get_cb),
+				  self);
+}
+
+
+void
+gth_image_viewer_page_reset_viewer_tool	(GthImageViewerPage *self)
+{
+	GthImageViewerTool *dragger;
+
+	dragger = gth_image_dragger_new (TRUE);
+	gth_image_viewer_set_tool (GTH_IMAGE_VIEWER (self->priv->viewer), dragger);
+	g_object_unref (dragger);
+
+	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_FIT_SIZE_IF_LARGER);
+	gth_image_viewer_set_zoom_quality (GTH_IMAGE_VIEWER (self->priv->viewer),
+					   g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
+	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (self->priv->viewer),
+					  g_settings_get_enum (self->priv->settings, PREF_IMAGE_VIEWER_ZOOM_CHANGE));
+	gth_image_viewer_set_reset_scrollbars (GTH_IMAGE_VIEWER (self->priv->viewer),
+					       g_settings_get_boolean (self->priv->settings, PREF_IMAGE_VIEWER_RESET_SCROLLBARS));
+	gth_image_viewer_enable_key_bindings (GTH_IMAGE_VIEWER (self->priv->viewer), FALSE);
+	pref_transparency_style_changed (self->priv->settings, NULL, self);
+	_gth_image_viewer_page_enable_drag_source (self, TRUE);
+}
+
+
+gboolean
+gth_image_viewer_page_get_is_modified (GthImageViewerPage *self)
+{
+	return self->priv->image_changed;
+}
+
+
+/* -- gth_image_viewer_page_copy_image -- */
+
+
+static void
+copy_image_original_image_ready_cb (GthTask  *task,
+				    GError   *error,
+				    gpointer  user_data)
+{
+	GthImageViewerPage *self = user_data;
+	cairo_surface_t    *image;
+
+	image = gth_original_image_task_get_image (task);
+	if (image != NULL) {
+		GtkClipboard *clipboard;
+		GdkPixbuf    *pixbuf;
+
+		clipboard = gtk_clipboard_get_for_display (gtk_widget_get_display (self->priv->viewer), GDK_SELECTION_CLIPBOARD);
+		pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
+		gtk_clipboard_set_image (clipboard, pixbuf);
+
+		g_object_unref (pixbuf);
+	}
+
+	cairo_surface_destroy (image);
+	g_object_unref (task);
 }
 
 
 void
 gth_image_viewer_page_copy_image (GthImageViewerPage *self)
 {
-	cairo_surface_t *image;
-	GtkClipboard    *clipboard;
-	GdkPixbuf       *pixbuf;
+	GthTask *task;
 
-	image = gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer));
-	if (image == NULL)
-		return;
-
-	clipboard = gtk_clipboard_get_for_display (gtk_widget_get_display (self->priv->viewer), GDK_SELECTION_CLIPBOARD);
-	pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
-	gtk_clipboard_set_image (clipboard, pixbuf);
-
-	g_object_unref (pixbuf);
+	task = gth_original_image_task_new (self);
+	g_signal_connect (task,
+			  "completed",
+			  G_CALLBACK (copy_image_original_image_ready_cb),
+			  self);
+	gth_browser_exec_task (self->priv->browser, task, GTH_TASK_FLAGS_DEFAULT);
 }
 
 
@@ -1534,4 +2341,256 @@ gth_image_viewer_page_paste_image (GthImageViewerPage *self)
 	gtk_clipboard_request_image (clipboard,
 				     clipboard_image_received_cb,
 				     g_object_ref (self));
+}
+
+
+/* -- gth_image_viewer_page_get_original -- */
+
+
+typedef struct {
+	GthImageViewerPage *viewer_page;
+	GTask              *task;
+	GCancellable       *cancellable;
+} OriginalImageData;
+
+
+static OriginalImageData *
+get_original_data_new (void)
+{
+	OriginalImageData *data;
+
+	data = g_new0 (OriginalImageData, 1);
+	data->cancellable = NULL;
+	data->task = NULL;
+
+	return data;
+}
+
+
+static void
+get_original_data_free (OriginalImageData *data)
+{
+	if (data == NULL)
+		return;
+
+	_g_object_unref (data->viewer_page);
+	_g_object_unref (data->cancellable);
+	_g_object_unref (data->task);
+	g_free (data);
+}
+
+
+static void
+original_image_ready_cb (GObject	*source_object,
+			 GAsyncResult	*result,
+			 gpointer	 user_data)
+{
+	OriginalImageData *data = user_data;
+	GthImage          *image = NULL;
+	GError            *error = NULL;
+
+	if (! _gth_image_viewer_page_load_with_preloader_finish (data->viewer_page)) {
+		g_task_return_error (data->task, g_error_new_literal (G_IO_ERROR, G_IO_ERROR_CANCELLED, ""));
+		get_original_data_free (data);
+		return;
+	}
+
+	if (! gth_image_preloader_load_finish (GTH_IMAGE_PRELOADER (source_object),
+					       result,
+					       NULL,
+					       &image,
+					       NULL,
+					       NULL,
+					       NULL,
+					       &error))
+	{
+		g_task_return_error (data->task, error);
+	}
+	else
+		g_task_return_pointer (data->task, image, (GDestroyNotify) g_object_unref);
+
+	get_original_data_free (data);
+}
+
+
+void
+gth_image_viewer_page_get_original (GthImageViewerPage	 *self,
+				    GCancellable	 *cancellable,
+				    GAsyncReadyCallback	  ready_callback,
+				    gpointer		  user_data)
+{
+	OriginalImageData *data;
+
+	data = get_original_data_new ();
+	data->viewer_page = g_object_ref (self);
+	data->cancellable = (cancellable != NULL) ? g_object_ref (cancellable) : g_cancellable_new ();
+	data->task = g_task_new (G_OBJECT (self),
+				 data->cancellable,
+				 ready_callback,
+				 user_data);
+
+	if (gth_image_viewer_is_animation (GTH_IMAGE_VIEWER (self->priv->viewer))) {
+		GthImage *image;
+
+		image = gth_image_new_for_surface (gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer)));
+		g_task_return_pointer (data->task, image, (GDestroyNotify) g_object_unref);
+
+		get_original_data_free (data);
+	}
+	else {
+		_gth_image_viewer_page_load_with_preloader (self,
+							    self->priv->image_changed ? GTH_MODIFIED_IMAGE : self->priv->file_data,
+							    GTH_ORIGINAL_SIZE,
+							    data->cancellable,
+							    original_image_ready_cb,
+							    data);
+	}
+}
+
+
+gboolean
+gth_image_viewer_page_get_original_finish (GthImageViewerPage	 *self,
+					   GAsyncResult		 *result,
+					   cairo_surface_t	**image_p,
+					   GError		**error)
+{
+	GthImage *image;
+
+	g_return_val_if_fail (g_task_is_valid (G_TASK (result), G_OBJECT (self)), FALSE);
+
+	image = g_task_propagate_pointer (G_TASK (result), error);
+	if (image == NULL)
+		return FALSE;
+
+	if (image_p != NULL)
+		*image_p = gth_image_get_cairo_surface (image);
+
+	g_object_unref (image);
+
+	return TRUE;
+}
+
+
+/* -- GthOriginalImageTask -- */
+
+
+#define GTH_TYPE_ORIGINAL_IMAGE_TASK	(gth_original_image_task_get_type ())
+#define GTH_ORIGINAL_IMAGE_TASK(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_ORIGINAL_IMAGE_TASK, GthOriginalImageTask))
+
+
+typedef struct _GthOriginalImageTask        GthOriginalImageTask;
+typedef struct _GthOriginalImageTaskClass   GthOriginalImageTaskClass;
+
+
+struct _GthOriginalImageTask {
+	GthImageTask __parent;
+	GthImageViewerPage *viewer_page;
+};
+
+
+struct _GthOriginalImageTaskClass {
+	GthImageTaskClass __parent;
+};
+
+GType gth_original_image_task_get_type (void);
+
+G_DEFINE_TYPE (GthOriginalImageTask, gth_original_image_task, GTH_TYPE_IMAGE_TASK)
+
+
+static void
+get_original_image_ready_cb (GObject		*source_object,
+			    GAsyncResult	*result,
+			    gpointer		 user_data)
+{
+	GthOriginalImageTask *self = user_data;
+	cairo_surface_t      *image = NULL;
+	GError               *error = NULL;
+
+	if (gth_image_viewer_page_get_original_finish (self->viewer_page,
+						       result,
+						       &image,
+						       &error))
+	{
+		gth_image_task_set_destination_surface (GTH_IMAGE_TASK (self), image);
+	}
+	gth_task_completed (GTH_TASK (self), error);
+
+	cairo_surface_destroy (image);
+	_g_error_free (error);
+}
+
+
+static void
+gth_original_image_task_exec (GthTask *base)
+{
+	GthOriginalImageTask *self = GTH_ORIGINAL_IMAGE_TASK (base);
+
+	gth_task_progress (base, _("Loading the original image"), NULL, TRUE, 0.0);
+	gth_image_viewer_page_get_original (self->viewer_page,
+					    gth_task_get_cancellable (base),
+					    get_original_image_ready_cb,
+					    self);
+}
+
+
+static void
+gth_original_image_task_class_init (GthOriginalImageTaskClass *class)
+{
+	GthTaskClass *task_class;
+
+	task_class = GTH_TASK_CLASS (class);
+	task_class->exec = gth_original_image_task_exec;
+}
+
+
+static void
+gth_original_image_task_init (GthOriginalImageTask *self)
+{
+	self->viewer_page = NULL;
+	gth_task_set_for_viewer (GTH_TASK (self), TRUE);
+}
+
+
+GthTask *
+gth_original_image_task_new (GthImageViewerPage *self)
+{
+	GthOriginalImageTask *task;
+
+	task = g_object_new (GTH_TYPE_ORIGINAL_IMAGE_TASK, NULL);
+	task->viewer_page = self;
+
+	return GTH_TASK (task);
+}
+
+
+cairo_surface_t *
+gth_original_image_task_get_image (GthTask *task)
+{
+	return gth_image_task_get_destination_surface (GTH_IMAGE_TASK (task));
+}
+
+
+void
+gth_image_viewer_page_apply_icc_profile	(GthImageViewerPage *self,
+					 gboolean            apply)
+{
+	GthFileData *file_data;
+
+	g_return_if_fail (self->priv->active);
+
+	self->priv->apply_icc_profile = apply;
+	gth_image_preloader_clear_cache (self->priv->preloader);
+
+	file_data = gth_browser_get_current_file (self->priv->browser);
+	if (file_data == NULL)
+		return;
+
+	/* force a complete reload */
+	_g_object_unref (self->priv->last_loaded);
+	self->priv->last_loaded = NULL;
+
+	g_object_ref (file_data);
+	_gth_image_viewer_page_load (self, file_data);
+
+	g_object_unref (file_data);
 }

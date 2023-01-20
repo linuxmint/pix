@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -21,46 +21,43 @@
 
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <gth-catalog.h>
+#include "actions.h"
 #include "dlg-add-to-catalog.h"
 #include "dlg-catalog-properties.h"
 #include "gth-file-source-catalogs.h"
 
 
 void
-gth_browser_activate_action_edit_add_to_catalog (GtkAction  *action,
-						 GthBrowser *browser)
+gth_browser_activate_add_to_catalog (GSimpleAction 	*action,
+				     GVariant		*parameter,
+				     gpointer		 user_data)
 {
-	GList *items;
-	GList *file_list = NULL;
-	GList *files;
-
-	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
-	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
-	files = gth_file_data_list_to_file_list (file_list);
-	dlg_add_to_catalog (browser, files);
-
-	_g_object_list_unref (files);
-	_g_object_list_unref (file_list);
-	_gtk_tree_path_list_free (items);
+	dlg_add_to_catalog (GTH_BROWSER (user_data));
 }
 
 
 void
-gth_browser_activate_action_edit_remove_from_catalog (GtkAction  *action,
-						      GthBrowser *browser)
+gth_browser_activate_remove_from_catalog (GSimpleAction	 *action,
+					  GVariant	 *parameter,
+					  gpointer	  user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GList *items;
 	GList *file_data_list;
+	GList *file_list;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
+	file_list = gth_file_data_list_to_file_list (file_data_list);
 
 	gth_catalog_manager_remove_files (GTK_WINDOW (browser),
 					  gth_browser_get_location_data (browser),
-					  file_data_list);
+					  file_list,
+					  TRUE);
 
+	_g_object_list_unref (file_list);
 	_g_object_list_unref (file_data_list);
 	_gtk_tree_path_list_free (items);
 }
@@ -112,7 +109,7 @@ catalog_new_dialog_response_cb (GtkWidget *dialog,
 
 		file_source = gth_main_get_file_source (selected_parent->file);
 		info = gth_file_source_get_file_info (file_source, selected_parent->file, GFILE_BASIC_ATTRIBUTES);
-		if (g_file_info_get_attribute_boolean (info, "pix::no-child"))
+		if (g_file_info_get_attribute_boolean (info, "gthumb::no-child"))
 			parent = g_file_get_parent (selected_parent->file);
 		else
 			parent = g_file_dup (selected_parent->file);
@@ -168,16 +165,18 @@ catalog_new_dialog_response_cb (GtkWidget *dialog,
 
 
 void
-gth_browser_activate_action_catalog_new (GtkAction  *action,
-					 GthBrowser *browser)
+gth_browser_activate_create_catalog (GSimpleAction	 *action,
+				  GVariant	 *parameter,
+				  gpointer	 user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GtkWidget *dialog;
 
 	dialog = gth_request_dialog_new (GTK_WINDOW (browser),
 					 GTK_DIALOG_MODAL,
 					 _("New catalog"),
 					 _("Enter the catalog name:"),
-					 GTK_STOCK_CANCEL,
+					 _GTK_LABEL_CANCEL,
 					 _("C_reate"));
 	g_signal_connect (dialog,
 			  "response",
@@ -233,7 +232,7 @@ new_library_dialog_response_cb (GtkWidget *dialog,
 
 		file_source = gth_main_get_file_source (selected_parent->file);
 		info = gth_file_source_get_file_info (file_source, selected_parent->file, GFILE_BASIC_ATTRIBUTES);
-		if (g_file_info_get_attribute_boolean (info, "pix::no-child"))
+		if (g_file_info_get_attribute_boolean (info, "gthumb::no-child"))
 			parent = g_file_get_parent (selected_parent->file);
 		else
 			parent = g_file_dup (selected_parent->file);
@@ -280,16 +279,18 @@ new_library_dialog_response_cb (GtkWidget *dialog,
 
 
 void
-gth_browser_activate_action_catalog_new_library (GtkAction  *action,
-						 GthBrowser *browser)
+gth_browser_activate_create_library (GSimpleAction	 *action,
+					  GVariant	 *parameter,
+					  gpointer	  user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GtkWidget *dialog;
 
 	dialog = gth_request_dialog_new (GTK_WINDOW (browser),
 					 GTK_DIALOG_MODAL,
 					 _("New library"),
 					 _("Enter the library name:"),
-					 GTK_STOCK_CANCEL,
+					 _GTK_LABEL_CANCEL,
 					 _("C_reate"));
 	g_signal_connect (dialog,
 			  "response",
@@ -347,27 +348,29 @@ remove_catalog_response_cb (GtkDialog *dialog,
 
 
 void
-gth_browser_activate_action_catalog_remove (GtkAction  *action,
-					    GthBrowser *browser)
+gth_browser_activate_remove_catalog (GSimpleAction	 *action,
+				     GVariant		 *parameter,
+				     gpointer		  user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GthFileData *file_data;
 	GSettings   *settings;
 
 	file_data = gth_browser_get_folder_popup_file_data (browser);
 
-	settings = g_settings_new (PIX_MESSAGES_SCHEMA);
+	settings = g_settings_new (GTHUMB_MESSAGES_SCHEMA);
 	if (g_settings_get_boolean (settings, PREF_MSG_CONFIRM_DELETION)) {
 		char      *prompt;
 		GtkWidget *d;
 
-		prompt = g_strdup_printf (_("Are you sure you want to remove \"%s\"?"), g_file_info_get_display_name (file_data->info));
+		prompt = g_strdup_printf (_("Are you sure you want to remove “%s”?"), g_file_info_get_display_name (file_data->info));
 		d = _gtk_message_dialog_new (GTK_WINDOW (browser),
 					     GTK_DIALOG_MODAL,
-					     GTK_STOCK_DIALOG_QUESTION,
+					     _GTK_ICON_NAME_DIALOG_QUESTION,
 					     prompt,
 					     NULL,
-					     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-					     GTK_STOCK_REMOVE, GTK_RESPONSE_YES,
+					     _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+					     _GTK_LABEL_REMOVE, GTK_RESPONSE_YES,
 					     NULL);
 		g_signal_connect (d, "response", G_CALLBACK (remove_catalog_response_cb), file_data);
 		gtk_widget_show (d);
@@ -384,9 +387,11 @@ gth_browser_activate_action_catalog_remove (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_catalog_rename (GtkAction  *action,
-					    GthBrowser *browser)
+gth_browser_activate_rename_catalog (GSimpleAction	 *action,
+				     GVariant		 *parameter,
+				     gpointer		  user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GthFileData *file_data;
 
 	file_data = gth_browser_get_folder_popup_file_data (browser);
@@ -397,9 +402,11 @@ gth_browser_activate_action_catalog_rename (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_catalog_properties (GtkAction  *action,
-						GthBrowser *browser)
+gth_browser_activate_catalog_properties (GSimpleAction	 *action,
+					 GVariant	 *parameter,
+					 gpointer	  user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GthFileData *file_data;
 
 	file_data = gth_browser_get_folder_popup_file_data (browser);
@@ -410,9 +417,11 @@ gth_browser_activate_action_catalog_properties (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_go_to_container (GtkAction  *action,
-					     GthBrowser *browser)
+gth_browser_activate_go_to_container_from_catalog (GSimpleAction	 *action,
+						   GVariant		 *parameter,
+						   gpointer		  user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
 	GList *items;
 	GList *file_list = NULL;
 

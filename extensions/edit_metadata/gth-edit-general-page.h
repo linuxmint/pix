@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 
 #define GTH_TYPE_EDIT_GENERAL_PAGE         (gth_edit_general_page_get_type ())
 #define GTH_EDIT_GENERAL_PAGE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_EDIT_GENERAL_PAGE, GthEditGeneralPage))

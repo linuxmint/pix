@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -41,8 +41,9 @@ static void gth_edit_tags_dialog_gth_edit_metadata_dialog_interface_init (GthEdi
 G_DEFINE_TYPE_WITH_CODE (GthEditTagsDialog,
 			 gth_edit_tags_dialog,
 			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (GthEditTagsDialog)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_EDIT_METADATA_DIALOG,
-					 	gth_edit_tags_dialog_gth_edit_metadata_dialog_interface_init))
+						gth_edit_tags_dialog_gth_edit_metadata_dialog_interface_init))
 
 
 static void
@@ -62,28 +63,10 @@ gth_edit_tags_dialog_set_file_list (GthEditMetadataDialog *base,
 				    GList                 *file_list)
 {
 	GthEditTagsDialog *self = GTH_EDIT_TAGS_DIALOG (base);
-	int                n_files;
-	char              *title;
 	GHashTable        *common_tags;
 	GHashTable        *no_common_tags;
 	GList             *common_tags_list;
 	GList             *no_common_tags_list;
-
-	n_files = g_list_length (file_list);
-
-	/* update the title */
-
-	if (n_files == 1) {
-		GthFileData *file_data = file_list->data;
-
-		/* Translators: the %s symbol in the string is a file name */
-		title = g_strdup_printf (_("%s Tags"), g_file_info_get_display_name (file_data->info));
-	}
-	else
-		title = g_strdup_printf (g_dngettext (NULL, "%d file", "%d files", n_files), n_files);
-	gtk_window_set_title (GTK_WINDOW (self), title);
-
-	g_free (title);
 
 	/* update the tag entry */
 
@@ -173,8 +156,6 @@ gth_edit_tags_dialog_class_init (GthEditTagsDialogClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthEditTagsDialogPrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_edit_tags_dialog_finalize;
 }
@@ -183,24 +164,20 @@ gth_edit_tags_dialog_class_init (GthEditTagsDialogClass *klass)
 static void
 gth_edit_tags_dialog_init (GthEditTagsDialog *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_EDIT_TAGS_DIALOG, GthEditTagsDialogPrivate);
+	self->priv = gth_edit_tags_dialog_get_instance_private (self);
 	self->priv->builder = _gtk_builder_new_from_file ("tag-chooser.ui", "edit_metadata");
 
-	gtk_window_set_title (GTK_WINDOW (self), _("Assign Tags"));
+	gtk_window_set_title (GTK_WINDOW (self), _("Tags"));
 	gtk_window_set_resizable (GTK_WINDOW (self), TRUE);
 	gtk_window_set_default_size (GTK_WINDOW (self), -1, 500);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
 	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
 
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_SAVE, GTK_RESPONSE_APPLY);
-	gtk_dialog_add_button (GTK_DIALOG (self), _("Sa_ve and Close"), GTK_RESPONSE_OK);
-
-	self->priv->tags_entry = gth_tags_entry_new ();
-	gth_tags_entry_set_expanded (GTH_TAGS_ENTRY (self->priv->tags_entry), TRUE);
+	self->priv->tags_entry = gth_tags_entry_new (GTH_TAGS_ENTRY_MODE_INLINE);
+	gth_tags_entry_set_list_visible (GTH_TAGS_ENTRY (self->priv->tags_entry), TRUE);
+	gtk_widget_set_size_request (self->priv->tags_entry, 400, -1);
 	gtk_widget_show (self->priv->tags_entry);
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("tag_entry_box")), self->priv->tags_entry, TRUE, TRUE, 0);
 
-	gtk_container_set_border_width (GTK_CONTAINER (GET_WIDGET ("content")), 5);
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), GET_WIDGET ("content"), TRUE, TRUE, 0);
+	gtk_box_pack_end (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), GET_WIDGET ("content"), TRUE, TRUE, 0);
 }

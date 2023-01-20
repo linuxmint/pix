@@ -1,0 +1,36 @@
+This patch makes --as-needed work correctly.
+Please see the patch in #347650 provided by Josselin Mouette <joss@debian.org>.
+---
+ ltmain.sh |   14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+--- gthumb.orig/ltmain.sh
++++ gthumb/ltmain.sh
+@@ -4716,6 +4716,11 @@ func_mode_link ()
+ 	arg=$func_stripname_result
+ 	;;
+ 
++      -Wl,--as-needed)
++    deplibs="$deplibs $arg"
++    continue
++    ;;
++
+       -Wl,*)
+ 	func_stripname '-Wl,' '' "$arg"
+ 	args=$func_stripname_result
+@@ -5070,6 +5075,15 @@ func_mode_link ()
+ 	lib=
+ 	found=no
+ 	case $deplib in
++	-Wl,--as-needed)
++	  if test "$linkmode,$pass" = "prog,link"; then
++	    compile_deplibs="$deplib $compile_deplibs"
++	    finalize_deplibs="$deplib $finalize_deplibs"
++	  else
++	    deplibs="$deplib $deplibs"
++	  fi
++	  continue
++	  ;;
+ 	-mt|-mthreads|-kthread|-Kthread|-pthread|-pthreads|--thread-safe|-threads)
+ 	  if test "$linkmode,$pass" = "prog,link"; then
+ 	    compile_deplibs="$deplib $compile_deplibs"

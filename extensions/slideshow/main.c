@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -22,10 +22,11 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
 #include "gth-transition.h"
 #include "preferences.h"
+#include "shortcuts.h"
 
 
 #ifdef HAVE_CLUTTER
@@ -101,7 +102,7 @@ slide_from_right_transition (GthSlideshow *self,
 	if (self->first_frame) {
 		if (self->current_image != NULL) {
 			clutter_actor_show (self->current_image);
-			clutter_actor_raise (self->next_image, self->current_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->next_image, self->current_image);
 		}
 		clutter_actor_show (self->next_image);
 	}
@@ -124,7 +125,7 @@ slide_from_bottom_transition (GthSlideshow *self,
 	if (self->first_frame) {
 		if (self->current_image != NULL) {
 			clutter_actor_show (self->current_image);
-			clutter_actor_raise (self->next_image, self->current_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->next_image, self->current_image);
 		}
 		clutter_actor_show (self->next_image);
 	}
@@ -142,10 +143,24 @@ fade_transition (GthSlideshow *self,
 	if (self->first_frame) {
 		if (self->current_image != NULL) {
 			clutter_actor_show (self->current_image);
-			clutter_actor_raise (self->next_image, self->current_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->next_image, self->current_image);
 		}
 		clutter_actor_show (self->next_image);
 	}
+}
+
+
+static void
+_clutter_actor_set_rotation (ClutterActor *self,
+			     ClutterRotateAxis axis,
+			     gdouble angle,
+			     gfloat x,
+			     gfloat y,
+			     gfloat z)
+{
+	clutter_actor_set_pivot_point (self, x, y);
+	clutter_actor_set_pivot_point_z (self, z);
+	clutter_actor_set_rotation_angle (self, axis, angle);
 }
 
 
@@ -164,26 +179,26 @@ flip_transition (GthSlideshow *self,
 			clutter_actor_show (self->current_image);
 	}
 
-	clutter_actor_set_rotation (self->next_image,
-				    CLUTTER_Y_AXIS,
-				    VALUE_AT_PROGRESS (180.0, 1.0 - progress),
-				    0.0,
-				    0.0,
-				    0.0);
+	_clutter_actor_set_rotation (self->next_image,
+				     CLUTTER_Y_AXIS,
+				     VALUE_AT_PROGRESS (180.0, 1.0 - progress),
+				     0.5,
+				     0.5,
+				     0.0);
 	if (self->current_image != NULL)
-		clutter_actor_set_rotation (self->current_image,
-					    CLUTTER_Y_AXIS,
-					    VALUE_AT_PROGRESS (180.0, - progress),
-					    0.0,
-					    0.0,
-					    0.0);
+		_clutter_actor_set_rotation (self->current_image,
+					     CLUTTER_Y_AXIS,
+					     VALUE_AT_PROGRESS (180.0, - progress),
+					     0.5,
+					     0.5,
+					     0.0);
 
 	if (self->first_frame) {
 		if (self->current_image != NULL) {
-			clutter_actor_raise (self->next_image, self->current_image);
-			clutter_actor_move_anchor_point_from_gravity (self->current_image, CLUTTER_GRAVITY_CENTER);
+			clutter_actor_set_child_above_sibling (self->stage, self->next_image, self->current_image);
+			clutter_actor_set_pivot_point (self->current_image, 0.5, 0.5);
 		}
-		clutter_actor_move_anchor_point_from_gravity (self->next_image, CLUTTER_GRAVITY_CENTER);
+		clutter_actor_set_pivot_point (self->next_image, 0.5, 0.5);
 	}
 }
 
@@ -198,30 +213,30 @@ cube_from_right_transition (GthSlideshow *self,
 
 	if (self->current_image != NULL) {
 		if (progress >= 0.5)
-			clutter_actor_raise (self->next_image, self->current_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->next_image, self->current_image);
 		else
-			clutter_actor_raise (self->current_image, self->next_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->current_image, self->next_image);
 	}
 
-	clutter_actor_set_rotation (self->next_image,
-				    CLUTTER_Y_AXIS,
-				    VALUE_AT_PROGRESS (90.0, - progress) - 270.0,
-				    0.0,
-				    0.0,
-				    - stage_w / 2.0);
+	_clutter_actor_set_rotation (self->next_image,
+				     CLUTTER_Y_AXIS,
+				     VALUE_AT_PROGRESS (90.0, - progress) - 270.0,
+				     0.5,
+				     0.5,
+				     - stage_w / 2.0);
 	if (self->current_image != NULL)
-		clutter_actor_set_rotation (self->current_image,
-					    CLUTTER_Y_AXIS,
-					    VALUE_AT_PROGRESS (90.0, - progress),
-					    0.0,
-					    0.0,
-					    - stage_w / 2.0);
+		_clutter_actor_set_rotation (self->current_image,
+					     CLUTTER_Y_AXIS,
+					     VALUE_AT_PROGRESS (90.0, - progress),
+					     0.5,
+					     0.5,
+					     - stage_w / 2.0);
 
 	if (self->first_frame) {
 		if (self->current_image != NULL)
-			clutter_actor_move_anchor_point_from_gravity (self->current_image, CLUTTER_GRAVITY_CENTER);
+			clutter_actor_set_pivot_point (self->current_image, 0.5, 0.5);
 		clutter_actor_show (self->next_image);
-		clutter_actor_move_anchor_point_from_gravity (self->next_image, CLUTTER_GRAVITY_CENTER);
+		clutter_actor_set_pivot_point (self->next_image, 0.5, 0.5);
 	}
 }
 
@@ -236,30 +251,30 @@ cube_from_bottom_transition (GthSlideshow *self,
 
 	if (self->current_image != NULL) {
 		if (progress >= 0.5)
-			clutter_actor_raise (self->next_image, self->current_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->next_image, self->current_image);
 		else
-			clutter_actor_raise (self->current_image, self->next_image);
+			clutter_actor_set_child_above_sibling (self->stage, self->current_image, self->next_image);
 	}
 
-	clutter_actor_set_rotation (self->next_image,
-				    CLUTTER_X_AXIS,
-				    VALUE_AT_PROGRESS (90.0, progress) + 270.0,
-				    0.0,
-				    0.0,
-				    - stage_w / 2.0);
+	_clutter_actor_set_rotation (self->next_image,
+				     CLUTTER_X_AXIS,
+				     VALUE_AT_PROGRESS (90.0, progress) + 270.0,
+				     0.5,
+				     0.5,
+				     - stage_w / 2.0);
 	if (self->current_image != NULL)
-		clutter_actor_set_rotation (self->current_image,
-					    CLUTTER_X_AXIS,
-					    VALUE_AT_PROGRESS (90.0, progress),
-					    0.0,
-					    0.0,
-					    - stage_w / 2.0);
+		_clutter_actor_set_rotation (self->current_image,
+					     CLUTTER_X_AXIS,
+					     VALUE_AT_PROGRESS (90.0, progress),
+					     0.5,
+					     0.5,
+					     - stage_w / 2.0);
 
 	if (self->first_frame) {
 		if (self->current_image != NULL)
-			clutter_actor_move_anchor_point_from_gravity (self->current_image, CLUTTER_GRAVITY_CENTER);
+			clutter_actor_set_pivot_point (self->current_image, 0.5, 0.5);
 		clutter_actor_show (self->next_image);
-		clutter_actor_move_anchor_point_from_gravity (self->next_image, CLUTTER_GRAVITY_CENTER);
+		clutter_actor_set_pivot_point (self->next_image, 0.5, 0.5);
 	}
 }
 
@@ -267,8 +282,13 @@ cube_from_bottom_transition (GthSlideshow *self,
 #endif /* HAVE_CLUTTER */
 
 
+static GthShortcutCategory shortcut_categories[] = {
+	{ GTH_SHORTCUT_CATEGORY_SLIDESHOW, N_("Presentation"), 40 },
+};
+
+
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
 #ifdef HAVE_CLUTTER
 	gth_main_register_object (GTH_TYPE_TRANSITION,
@@ -327,6 +347,7 @@ pix_extension_activate (void)
 				  NULL);
 #endif /* HAVE_CLUTTER */
 
+	gth_main_register_shortcut_category (shortcut_categories, G_N_ELEMENTS (shortcut_categories));
 	gth_hook_add_callback ("slideshow", 10, G_CALLBACK (ss__slideshow_cb), NULL);
 	gth_hook_add_callback ("gth-browser-construct", 10, G_CALLBACK (ss__gth_browser_construct_cb), NULL);
 	gth_hook_add_callback ("gth-browser-update-sensitivity", 10, G_CALLBACK (ss__gth_browser_update_sensitivity_cb), NULL);
@@ -341,19 +362,19 @@ pix_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

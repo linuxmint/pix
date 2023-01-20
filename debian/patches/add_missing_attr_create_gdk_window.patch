@@ -1,0 +1,20 @@
+Description: Upstream fix for version 3.7.1i
+             image viewer: added missing attribute when 
+             creating the gdk window.
+             3d30e4c2e1c4e4c27ab60a3f1e04648c722d5c29
+Author: Paolo Bacchilega (upstream)
+Reviewed-by: Herbert Parentes Fortes Neto <hpfn@debian.org>
+Last-Update: 2019-02-24
+Index: gthumb/gthumb/gth-image-viewer.c
+===================================================================
+--- gthumb.orig/gthumb/gth-image-viewer.c
++++ gthumb/gthumb/gth-image-viewer.c
+@@ -442,7 +442,7 @@ gth_image_viewer_realize (GtkWidget *wid
+ 				  | GDK_BUTTON_MOTION_MASK
+ 				  | GDK_SCROLL_MASK
+ 				  | GDK_STRUCTURE_MASK);
+-	attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL;
++	attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_WMCLASS;
+ 	window = gdk_window_new (gtk_widget_get_parent_window (widget),
+ 				 &attributes,
+ 				 attributes_mask);

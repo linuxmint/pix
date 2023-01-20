@@ -1,6 +1,6 @@
 %{
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2003, 2010 Free Software Foundation, Inc.
  *
@@ -15,8 +15,7 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02111-1307, USA.
+ *  along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <string.h>
@@ -25,8 +24,9 @@
 #include <gio/gio.h>
 #include "albumtheme-private.h"
 
-int   gth_albumtheme_yylex   ();
+int   gth_albumtheme_yylex   (void);
 void  gth_albumtheme_yyerror (const char *fmt, ...);
+void  gth_albumtheme_yyfatalerror (const char *msg);
 int   gth_albumtheme_yywrap  (void);
 
 #define YY_NO_UNPUT
@@ -461,5 +461,11 @@ gth_albumtheme_yyerror (const char *fmt, ...)
 	va_end (ap);
 }
 
+
+void
+gth_albumtheme_yyfatalerror (const char *msg)
+{
+	g_error ("%s", msg);
+}
 
 #include "albumtheme-lex.c"

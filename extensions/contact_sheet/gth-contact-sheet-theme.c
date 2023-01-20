@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,8 +22,8 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <pix.h>
-#include "enum-types.h"
+#include <gthumb.h>
+#include "contact-sheet-enum-types.h"
 #include "gth-contact-sheet-theme.h"
 
 
@@ -255,12 +255,6 @@ gth_contact_sheet_theme_paint_background (GthContactSheetTheme *theme,
 
 	case GTH_CONTACT_SHEET_BACKGROUND_TYPE_FULL:
 		surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, width, height);
-
-		if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
-			cairo_surface_destroy (surface);
-			break;
-		}
-
 		_cairo_paint_full_gradient (surface,
 					    &theme->background_color1,
 					    &theme->background_color2,

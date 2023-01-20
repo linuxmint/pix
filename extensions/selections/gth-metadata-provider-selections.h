@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 
 #define GTH_TYPE_METADATA_PROVIDER_SELECTIONS         (gth_metadata_provider_selections_get_type ())
 #define GTH_METADATA_PROVIDER_SELECTIONS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_METADATA_PROVIDER_SELECTIONS, GthMetadataProviderSelections))
@@ -43,7 +43,7 @@ struct _GthMetadataProviderSelections
 
 struct _GthMetadataProviderSelectionsClass
 {
-	GthMetadataProviderClass __parent_class;	
+	GthMetadataProviderClass __parent_class;
 };
 
 GType gth_metadata_provider_selections_get_type (void) G_GNUC_CONST;

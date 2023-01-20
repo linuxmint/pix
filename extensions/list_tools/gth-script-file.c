@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,17 +21,19 @@
 
 #include <config.h>
 #include <string.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-script.h"
 #include "gth-script-file.h"
 
 
-#define SCRIPT_FORMAT "1.0"
+/* version 1.0: Original version
+   version 1.1: Changed command special codes to a single character. */
+#define SCRIPT_FORMAT "1.1"
 
 
 enum {
-        CHANGED,
-        LAST_SIGNAL
+	CHANGED,
+	LAST_SIGNAL
 };
 
 
@@ -48,7 +50,10 @@ static guint gth_script_file_signals[LAST_SIGNAL] = { 0 };
 static GType gth_script_file_get_type (void);
 
 
-G_DEFINE_TYPE (GthScriptFile, gth_script_file, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_CODE (GthScriptFile,
+			 gth_script_file,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthScriptFile))
 
 
 static void
@@ -68,8 +73,6 @@ gth_script_file_class_init (GthScriptFileClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthScriptFilePrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_script_file_finalize;
 
@@ -88,7 +91,7 @@ gth_script_file_class_init (GthScriptFileClass *klass)
 static void
 gth_script_file_init (GthScriptFile *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_SCRIPT_FILE, GthScriptFilePrivate);
+	self->priv = gth_script_file_get_instance_private (self);
 	self->priv->items = NULL;
 	self->priv->loaded = FALSE;
 }
@@ -103,6 +106,51 @@ gth_script_file_get (void)
 		script_file = g_object_new (GTH_TYPE_SCRIPT_FILE, NULL);
 
   	return script_file;
+}
+
+
+/* -- convert_command_attributes_1_0 -- */
+
+
+static gboolean
+convert_command_attributes_1_0_cb (const GMatchInfo *match_info,
+				   GString          *result,
+				   gpointer          user_data)
+{
+	char *match;
+
+	g_string_append_c (result, '%');
+	match = g_match_info_fetch (match_info, 0);
+	if (strcmp (match, "%ask") == 0)
+		g_string_append_c (result, GTH_SCRIPT_CODE_ASK_VALUE);
+	else if (strcmp (match, "%quote") == 0)
+		g_string_append_c (result, GTH_SCRIPT_CODE_QUOTE);
+	if (strcmp (match, "%attr") == 0)
+		g_string_append_c (result, GTH_SCRIPT_CODE_FILE_ATTRIBUTE);
+
+	return FALSE;
+}
+
+
+static char *
+convert_command_attributes_1_0 (const char *command)
+{
+	GRegex *re;
+	char   *new_command;
+
+	re = g_regex_new ("%ask|%quote|%attr", 0, 0, NULL);
+	new_command = g_regex_replace_eval (re,
+					    command,
+					    -1,
+					    0,
+					    0,
+					    convert_command_attributes_1_0_cb,
+					    NULL,
+					    NULL);
+
+	g_regex_unref (re);
+
+	return new_command;
 }
 
 
@@ -124,6 +172,10 @@ gth_script_file_load_from_data (GthScriptFile  *self,
 
 		scripts_node = DOM_ELEMENT (doc)->first_child;
 		if ((scripts_node != NULL) && (g_strcmp0 (scripts_node->tag_name, "scripts") == 0)) {
+			gboolean convert_format_1_0;
+
+			convert_format_1_0 = _g_str_equal (dom_element_get_attribute (DOM_ELEMENT (scripts_node), "version"), "1.0");
+
 			for (child = scripts_node->first_child;
 			     child != NULL;
 			     child = child->next_sibling)
@@ -133,6 +185,14 @@ gth_script_file_load_from_data (GthScriptFile  *self,
 				if (strcmp (child->tag_name, "script") == 0) {
 					script = gth_script_new ();
 					dom_domizable_load_from_element (DOM_DOMIZABLE (script), child);
+					if (convert_format_1_0) {
+						char *new_command;
+
+						new_command = convert_command_attributes_1_0 (gth_script_get_command (script));
+						g_object_set (script, "command", new_command, NULL);
+
+						g_free (new_command);
+					}
 				}
 
 				if (script == NULL)
@@ -196,7 +256,7 @@ _gth_script_file_load_if_needed (GthScriptFile *self)
 	if (self->priv->loaded)
 		return;
 
-	default_script_file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "scripts.xml", NULL);
+	default_script_file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "scripts.xml", NULL);
 	gth_script_file_load_from_file (self, default_script_file, NULL);
 	self->priv->loaded = TRUE;
 
@@ -289,7 +349,7 @@ gth_script_file_save (GthScriptFile  *self,
 
 	_gth_script_file_load_if_needed (self);
 
-	default_script_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "scripts.xml", NULL);
+	default_script_file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "scripts.xml", NULL);
 	result = gth_script_file_to_file (self, default_script_file, error);
 	if (result)
 		g_signal_emit (G_OBJECT (self), gth_script_file_signals[CHANGED], 0);

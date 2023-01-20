@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2003-2010 Free Software Foundation, Inc.
  *
@@ -31,6 +31,23 @@
 #define STRING_IS_VOID(x) (((x) == NULL) || (*(x) == 0))
 
 
+static GthTemplateCode Album_Header_Special_Codes[] = {
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Current page number"), 'p', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Total number of pages"), 'P', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Location"), 'L', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Current date"), 'D', 1 },
+};
+
+
+static GthTemplateCode Image_Header_Special_Codes[] = {
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Current image number"), 'i', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Total number of images"), 'I', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original filename"), 'F', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Comment"), 'C', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Current date"), 'D', 1 },
+};
+
+
 enum {
 	THEME_COLUMN_ID,
 	THEME_COLUMN_NAME,
@@ -43,13 +60,14 @@ enum {
 };
 
 typedef struct {
-	GthBrowser *browser;
-	GSettings  *settings;
-	GList      *file_list;
-	GtkBuilder *builder;
-	GtkWidget  *dialog;
-	GtkWidget  *thumbnail_caption_chooser;
-	GtkWidget  *image_attributes_chooser;
+	GthBrowser  *browser;
+	GthFileData *location;
+	GSettings   *settings;
+	GList       *file_list;
+	GtkBuilder  *builder;
+	GtkWidget   *dialog;
+	GtkWidget   *thumbnail_caption_chooser;
+	GtkWidget   *image_attributes_chooser;
 } DialogData;
 
 
@@ -60,16 +78,9 @@ destroy_cb (GtkWidget  *widget,
 	gth_browser_set_dialog (data->browser, "web_exporter", NULL);
 	_g_object_list_unref (data->file_list);
 	g_object_unref (data->settings);
+	g_object_unref (data->location);
 	g_object_unref (data->builder);
 	g_free (data);
-}
-
-
-static void
-help_clicked_cb (GtkWidget  *widget,
-		 DialogData *data)
-{
-	show_help_dialog (GTK_WINDOW (data->dialog), "webalbums");
 }
 
 
@@ -206,7 +217,7 @@ ok_clicked_cb (GtkWidget  *widget,
 					       gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("image_description_checkbutton"))),
 					       gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("image_attributes_checkbutton"))) ? image_attributes : "");
 
-	gth_browser_exec_task (data->browser, task, FALSE);
+	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 	gtk_widget_destroy (data->dialog);
 
 	g_object_unref (task);
@@ -229,24 +240,156 @@ update_sensitivity (DialogData *data)
 }
 
 
-static void
-footer_entry_icon_press_cb (GtkEntry             *entry,
-			    GtkEntryIconPosition  icon_pos,
-			    GdkEvent             *event,
-			    gpointer              user_data)
+static gboolean
+text_preview_cb (TemplateFlags   flags,
+		 gunichar        parent_code,
+		 gunichar        code,
+		 char          **args,
+		 GString        *result,
+		 gpointer        user_data)
 {
 	DialogData *data = user_data;
-	GtkWidget  *help_box;
+	GDateTime  *timestamp;
+	char       *text;
 
-	if ((GTK_WIDGET (entry) == GET_WIDGET ("header_entry")) || (GTK_WIDGET (entry) == GET_WIDGET ("footer_entry")))
-		help_box = GET_WIDGET ("page_footer_help_table");
-	else
-		help_box = GET_WIDGET ("image_footer_help_table");
+	if (parent_code == 'D') {
+		/* strftime code, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		return FALSE;
+	}
 
-	if (gtk_widget_get_visible (help_box))
-		gtk_widget_hide (help_box);
-	else
-		gtk_widget_show (help_box);
+	if (code != 0)
+		g_string_append (result, "<span foreground=\"#4696f8\">");
+
+	switch (code) {
+	case 'p':
+		g_string_append (result, "1");
+		break;
+
+	case 'P':
+		g_string_append (result, "5");
+		break;
+
+	case 'D':
+		timestamp = g_date_time_new_now_local ();
+		text = g_date_time_format (timestamp,
+					   (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		g_string_append (result, text);
+
+		g_free (text);
+		g_date_time_unref (timestamp);
+		break;
+
+	case 'i':
+		g_string_append (result, "1");
+		break;
+
+	case 'I':
+		g_string_append_printf (result, "%d", g_list_length (data->file_list));
+		break;
+
+	case 'F':
+		_g_string_append_markup_escaped (result, "%s", "filename.jpeg");
+		break;
+
+	case 'C':
+		_g_string_append_markup_escaped (result, "%s", _("Comment"));
+		break;
+
+	case 'L':
+		_g_string_append_markup_escaped (result, "%s", g_file_info_get_edit_name (data->location->info));
+		break;
+
+	default:
+		break;
+	}
+
+	if (code != 0)
+		g_string_append (result, "</span>");
+
+	return FALSE;
+}
+
+
+static void
+album_header_button_clicked_cb (DialogData *data,
+				const char *entry_name)
+{
+	GtkWidget *dialog;
+
+	dialog = gth_template_editor_dialog_new (Album_Header_Special_Codes,
+						 G_N_ELEMENTS (Album_Header_Special_Codes),
+						 0,
+						 _("Edit Template"),
+						 GTK_WINDOW (data->dialog));
+	gth_template_editor_dialog_set_preview_cb (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						   text_preview_cb,
+						   data);
+	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET (entry_name))));
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET (entry_name));
+	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	gtk_window_present (GTK_WINDOW (dialog));
+}
+
+
+static void
+edit_header_button_clicked_cb (GtkButton *button,
+			       gpointer   user_data)
+{
+	album_header_button_clicked_cb ((DialogData *) user_data, "header_entry");
+}
+
+
+static void
+edit_footer_button_clicked_cb (GtkButton *button,
+			       gpointer   user_data)
+{
+	album_header_button_clicked_cb ((DialogData *) user_data, "footer_entry");
+}
+
+
+static void
+album_image_page_header_button_clicked_cb (DialogData *data,
+					   const char *entry_name)
+{
+	GtkWidget *dialog;
+
+	dialog = gth_template_editor_dialog_new (Image_Header_Special_Codes,
+						 G_N_ELEMENTS (Image_Header_Special_Codes),
+						 0,
+						 _("Edit Template"),
+						 GTK_WINDOW (data->dialog));
+	gth_template_editor_dialog_set_preview_cb (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						   text_preview_cb,
+						   data);
+	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET (entry_name))));
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET (entry_name));
+	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	gtk_window_present (GTK_WINDOW (dialog));
+}
+
+
+static void
+edit_image_page_header_button_clicked_cb (GtkButton *button,
+					  gpointer   user_data)
+{
+	album_image_page_header_button_clicked_cb ((DialogData *) user_data, "image_page_header_entry");
+}
+
+
+static void
+edit_image_page_footer_button_clicked_cb (GtkButton *button,
+					  gpointer   user_data)
+{
+	album_image_page_header_button_clicked_cb ((DialogData *) user_data, "image_page_footer_entry");
 }
 
 
@@ -312,7 +455,7 @@ load_themes (DialogData *data)
 
 	/* local themes */
 
-	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, PIX_DIR, "albumthemes", NULL);
+	style_dir = gth_user_dir_get_file_for_read (GTH_DIR_DATA, GTHUMB_DIR, "albumthemes", NULL);
 	add_themes_from_dir (data, style_dir);
 	g_object_unref (style_dir);
 
@@ -379,19 +522,34 @@ dlg_web_exporter (GthBrowser *browser,
 
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
+	data->location = gth_file_data_dup (gth_browser_get_location_data (browser));
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("web-album-exporter.ui", "webalbums");
-	data->settings = g_settings_new (PIX_WEBALBUMS_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_WEBALBUMS_SCHEMA);
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "web_album_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Web Album"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_SAVE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	gth_browser_set_dialog (browser, "web_exporter", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
 
-	data->thumbnail_caption_chooser = gth_metadata_chooser_new (GTH_METADATA_ALLOW_IN_FILE_LIST);
+	data->thumbnail_caption_chooser = gth_metadata_chooser_new (GTH_METADATA_ALLOW_IN_FILE_LIST, TRUE);
 	gtk_widget_show (data->thumbnail_caption_chooser);
 	gtk_container_add (GTK_CONTAINER (GET_WIDGET ("thumbnail_caption_scrolledwindow")), data->thumbnail_caption_chooser);
 
-	data->image_attributes_chooser = gth_metadata_chooser_new (GTH_METADATA_ALLOW_IN_PROPERTIES_VIEW);
+	data->image_attributes_chooser = gth_metadata_chooser_new (GTH_METADATA_ALLOW_IN_PROPERTIES_VIEW, TRUE);
 	gtk_widget_show (data->image_attributes_chooser);
 	gtk_container_add (GTK_CONTAINER (GET_WIDGET ("image_caption_scrolledwindow")), data->image_attributes_chooser);
 
@@ -436,11 +594,16 @@ dlg_web_exporter (GthBrowser *browser,
 
 	g_free (default_sort_type);
 
-	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("header_entry")),
-			    g_file_info_get_edit_name (gth_browser_get_location_data (browser)->info));
+	s_value = g_settings_get_string (data->settings, PREF_WEBALBUMS_HEADER);
+	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("header_entry")), s_value);
+	g_free (s_value);
 
 	s_value = g_settings_get_string (data->settings, PREF_WEBALBUMS_FOOTER);
 	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("footer_entry")), s_value);
+	g_free (s_value);
+
+	s_value = g_settings_get_string (data->settings, PREF_WEBALBUMS_IMAGE_PAGE_HEADER);
+	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("image_page_header_entry")), s_value);
 	g_free (s_value);
 
 	s_value = g_settings_get_string (data->settings, PREF_WEBALBUMS_IMAGE_PAGE_FOOTER);
@@ -473,7 +636,7 @@ dlg_web_exporter (GthBrowser *browser,
 
 		destination = _g_settings_get_uri (data->settings, PREF_WEBALBUMS_DESTINATION);
 		if (destination == NULL)
-			destination = g_strdup (get_home_uri ());
+			destination = g_strdup (_g_uri_get_home ());
 		gtk_file_chooser_set_uri (GTK_FILE_CHOOSER (GET_WIDGET ("destination_filechooserbutton")), destination);
 
 		g_free (destination);
@@ -485,15 +648,11 @@ dlg_web_exporter (GthBrowser *browser,
 			  "destroy",
 			  G_CALLBACK (destroy_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("ok_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (ok_clicked_cb),
 			  data);
-        g_signal_connect (GET_WIDGET ("help_button"),
-                          "clicked",
-                          G_CALLBACK (help_clicked_cb),
-                          data);
-	g_signal_connect_swapped (GET_WIDGET ("cancel_button"),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  data->dialog);
@@ -505,22 +664,6 @@ dlg_web_exporter (GthBrowser *browser,
 				  "clicked",
 				  G_CALLBACK (update_sensitivity),
 				  data);
-	g_signal_connect (GET_WIDGET ("header_entry"),
-			  "icon-press",
-			  G_CALLBACK (footer_entry_icon_press_cb),
-			  data);
-	g_signal_connect (GET_WIDGET ("footer_entry"),
-			  "icon-press",
-			  G_CALLBACK (footer_entry_icon_press_cb),
-			  data);
-	g_signal_connect (GET_WIDGET ("image_page_header_entry"),
-			  "icon-press",
-			  G_CALLBACK (footer_entry_icon_press_cb),
-			  data);
-	g_signal_connect (GET_WIDGET ("image_page_footer_entry"),
-			  "icon-press",
-			  G_CALLBACK (footer_entry_icon_press_cb),
-			  data);
 	g_signal_connect_swapped (GET_WIDGET ("single_index_checkbutton"),
 				  "toggled",
 				  G_CALLBACK (update_sensitivity),
@@ -537,10 +680,24 @@ dlg_web_exporter (GthBrowser *browser,
 				  "toggled",
 				  G_CALLBACK (update_sensitivity),
 				  data);
+	g_signal_connect (GET_WIDGET ("edit_header_button"),
+			  "clicked",
+			  G_CALLBACK (edit_header_button_clicked_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("edit_footer_button"),
+			  "clicked",
+			  G_CALLBACK (edit_footer_button_clicked_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("edit_image_page_header_button"),
+			  "clicked",
+			  G_CALLBACK (edit_image_page_header_button_clicked_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("edit_image_page_footer_button"),
+			  "clicked",
+			  G_CALLBACK (edit_image_page_footer_button_clicked_cb),
+			  data);
 
 	/* Run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), FALSE);
 	gtk_widget_show (data->dialog);
 }

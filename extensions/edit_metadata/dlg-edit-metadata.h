@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_EDIT_METADATA_H
 #define DLG_EDIT_METADATA_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 void dlg_edit_metadata (GthBrowser *browser,
 			GType       dialog_type,

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 The Free Software Foundation, Inc.
  *
@@ -43,7 +43,8 @@ double             _cairo_image_surface_rotate_get_align_angle         (gboolean
 cairo_surface_t *  _cairo_image_surface_rotate                         (cairo_surface_t       *image,
 		    	     	     	     	     	     	        double                 angle,
 		    	     	     	     	     	     	        gboolean               high_quality,
-		    	     	     	     	     	     	        GdkRGBA               *background_color);
+		    	     	     	     	     	     	        GdkRGBA               *background_color,
+		    	     	     	     	     	     	        GthAsyncTask          *task);
 
 G_END_DECLS
 

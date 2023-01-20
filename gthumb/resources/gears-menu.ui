@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">New Window</attribute>
+        <attribute name="action">win.new-window</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Open Location…</attribute>
+        <attribute name="action">win.open-location</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Save</attribute>
+        <attribute name="action">win.save</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Save As…</attribute>
+        <attribute name="action">win.save-as</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Revert</attribute>
+        <attribute name="action">win.revert-to-saved</attribute>
+      </item>
+    </section>
+    <section id="view-actions">
+      <item>
+        <attribute name="label" translatable="yes">Sort By…</attribute>
+        <attribute name="action">win.sort-by</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Hidden Files</attribute>
+        <attribute name="action">win.show-hidden-files</attribute>
+      </item>
+    </section>
+    <section id="folder-actions">
+    </section>
+    <section id="other-actions">
+    </section>
+    <section id="app-actions">
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">win.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Keyboard Shortcuts</attribute>
+        <attribute name="action">win.shortcuts</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Help</attribute>
+        <attribute name="action">win.help</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About gThumb</attribute>
+        <attribute name="action">win.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

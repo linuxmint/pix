@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkListStore" id="preset_liststore">
+    <columns>
+      <!-- column-name id -->
+      <column type="gint"/>
+      <!-- column-name name -->
+      <column type="gchararray"/>
+      <!-- column-name icon-name -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkBox" id="curve_preset_editor">
+    <property name="width_request">300</property>
+    <property name="height_request">300</property>
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="border_width">15</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledwindow1">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="shadow_type">in</property>
+        <child>
+          <object class="GtkTreeView" id="preset_treeview">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="model">preset_liststore</property>
+            <property name="headers_visible">False</property>
+            <property name="reorderable">True</property>
+            <child internal-child="selection">
+              <object class="GtkTreeSelection" id="treeview-selection1"/>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="treeviewcolumn1">
+                <child>
+                  <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf1">
+                    <property name="xpad">5</property>
+                  </object>
+                  <attributes>
+                    <attribute name="icon-name">2</attribute>
+                  </attributes>
+                </child>
+                <child>
+                  <object class="GtkCellRendererText" id="preset_name_cellrenderertext">
+                    <property name="editable">True</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">1</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkToolbar" id="toolbar1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_size">2</property>
+        <child>
+          <object class="GtkToolButton" id="delete_toolbutton">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="use_underline">True</property>
+            <property name="icon_name">list-remove-symbolic</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <style>
+          <class name="inline-toolbar"/>
+        </style>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+</interface>

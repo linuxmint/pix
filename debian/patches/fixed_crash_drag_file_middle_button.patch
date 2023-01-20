@@ -1,0 +1,19 @@
+Description: Upstream fix for  version 3.7.1
+             fixed crash when dragging files using the middle button
+             9bf0ae1da01cc12639a51bc55bd23c7d2867773e
+Author: Paolo Bacchilega (upstream)
+Reviewed-by: Herbert Parentes Fortes Neto <hpfn@debian.org>
+Last-Update: 2019-02-24
+Index: gthumb/gthumb/gth-grid-view.c
+===================================================================
+--- gthumb.orig/gthumb/gth-grid-view.c
++++ gthumb/gthumb/gth-grid-view.c
+@@ -3167,8 +3167,6 @@ gth_grid_view_motion_notify (GtkWidget
+ 								   (GdkEvent *) event,
+ 								   -1,
+ 								   -1);
+-			if (self->priv->drag_button == 2)
+-				gdk_drag_status (context, GDK_ACTION_ASK, event->time);
+ 
+ 			/* FIXME: create a cool drag icon here */
+ 			multi_dnd = self->priv->selection->next != NULL;

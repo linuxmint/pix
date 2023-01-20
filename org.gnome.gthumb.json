@@ -1,0 +1,42 @@
+{
+    "app-id": "org.gnome.gthumb",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "master",
+    "sdk": "org.gnome.Sdk",
+    "command": "gthumb",
+    "tags": [
+        "nightly"
+    ],
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--socket=session-bus",
+        "--share=network",
+        "--filesystem=host"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
+        "/share/aclocal",
+        "/man",
+        "/share/man",
+        "/share/gtk-doc",
+        "*.la",
+        "*.a"
+    ],
+    "modules": [
+        {
+            "name": "gthumb",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gthumb.git"
+                }
+            ]
+        }
+    ]
+}

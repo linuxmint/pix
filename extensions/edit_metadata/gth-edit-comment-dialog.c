@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -37,8 +37,9 @@ static void gth_edit_comment_dialog_gth_edit_metadata_dialog_interface_init (Gth
 G_DEFINE_TYPE_WITH_CODE (GthEditCommentDialog,
 			 gth_edit_comment_dialog,
 			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (GthEditCommentDialog)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_EDIT_METADATA_DIALOG,
-					 	gth_edit_comment_dialog_gth_edit_metadata_dialog_interface_init))
+						gth_edit_comment_dialog_gth_edit_metadata_dialog_interface_init))
 
 
 
@@ -48,27 +49,12 @@ gth_edit_comment_dialog_set_file_list (GthEditMetadataDialog *base,
 {
 	GthEditCommentDialog *self = GTH_EDIT_COMMENT_DIALOG (base);
 	int                   n_files;
-	char                 *title;
 	GList                *pages;
 	GList                *scan;
 
-	n_files = g_list_length (file_list);
-
-	/* update the title */
-
-	if (n_files == 1) {
-		GthFileData *file_data = file_list->data;
-
-		/* Translators: the %s symbol in the string is a file name */
-		title = g_strdup_printf (_("%s Metadata"), g_file_info_get_display_name (file_data->info));
-	}
-	else
-		title = g_strdup_printf (g_dngettext (NULL, "%d file", "%d files", n_files), n_files);
-	gtk_window_set_title (GTK_WINDOW (self), title);
-	g_free (title);
-
 	/* update the widgets */
 
+	n_files = g_list_length (file_list);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (self->priv->save_changed_checkbutton), n_files > 1);
 	gtk_widget_set_sensitive (self->priv->save_changed_checkbutton, n_files > 1);
 
@@ -122,7 +108,7 @@ gth_edit_comment_dialog_gth_edit_metadata_dialog_interface_init (GthEditMetadata
 static void
 gth_edit_comment_dialog_class_init (GthEditCommentDialogClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (GthEditCommentDialogPrivate));
+	/* void */
 }
 
 
@@ -133,21 +119,17 @@ gth_edit_comment_dialog_init (GthEditCommentDialog *self)
 	GArray    *pages;
 	int        i;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_EDIT_COMMENT_DIALOG, GthEditCommentDialogPrivate);
+	self->priv = gth_edit_comment_dialog_get_instance_private (self);
 
+	gtk_window_set_title (GTK_WINDOW (self), _("Comment"));
 	gtk_window_set_resizable (GTK_WINDOW (self), TRUE);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
 	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
 
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_SAVE, GTK_RESPONSE_APPLY);
-	gtk_dialog_add_button (GTK_DIALOG (self), _("Sa_ve and Close"), GTK_RESPONSE_OK);
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_HELP, GTK_RESPONSE_HELP);
-
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
+	gtk_container_set_border_width (GTK_CONTAINER (vbox), 0);
 	gtk_widget_show (vbox);
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), vbox, TRUE, TRUE, 0);
+	gtk_box_pack_end (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), vbox, TRUE, TRUE, 0);
 
 	self->priv->notebook = gtk_notebook_new ();
 	gtk_widget_show (self->priv->notebook);

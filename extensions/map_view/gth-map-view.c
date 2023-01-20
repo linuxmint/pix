@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -25,32 +25,30 @@
 #include <champlain/champlain.h>
 #include <champlain-gtk/champlain-gtk.h>
 #include <clutter-gtk/clutter-gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-map-view.h"
 
-#define GTH_MAP_VIEW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GTH_TYPE_MAP_VIEW, GthMapViewPrivate))
-#define LABEL_MAX_WIDTH 200
+
+#define MAP_HEIGHT 300
 
 
-static void gth_map_view_gth_multipage_child_interface_init (GthMultipageChildInterface *iface);
 static void gth_map_view_gth_property_view_interface_init (GthPropertyViewInterface *iface);
-
-G_DEFINE_TYPE_WITH_CODE (GthMapView,
-			 gth_map_view,
-			 GTK_TYPE_BOX,
-			 G_IMPLEMENT_INTERFACE (GTH_TYPE_MULTIPAGE_CHILD,
-					        gth_map_view_gth_multipage_child_interface_init)
-		         G_IMPLEMENT_INTERFACE (GTH_TYPE_PROPERTY_VIEW,
-		        		        gth_map_view_gth_property_view_interface_init))
 
 
 struct _GthMapViewPrivate {
-	GtkWidget            *no_gps_label;
 	GtkWidget            *embed;
 	ChamplainView        *map_view;
 	ChamplainMarkerLayer *marker_layer;
 	ClutterActor         *marker;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthMapView,
+			 gth_map_view,
+			 GTK_TYPE_BOX,
+			 G_ADD_PRIVATE (GthMapView)
+			 G_IMPLEMENT_INTERFACE (GTH_TYPE_PROPERTY_VIEW,
+						gth_map_view_gth_property_view_interface_init))
 
 
 /* Exif format: %d/%d %d/%d %d/%d */
@@ -138,14 +136,15 @@ decimal_coordinates_to_string (double latitude,
 }
 
 
-void
-gth_map_view_real_set_file (GthPropertyView *base,
-		 	    GthFileData     *file_data)
+static int
+gth_map_view_get_coordinates (GthMapView  *self,
+		 	      GthFileData *file_data,
+			      double      *out_latitude,
+			      double      *out_longitude)
 {
-	GthMapView *self = GTH_MAP_VIEW (base);
 	int         coordinates_available;
-	double      latitude;
-	double      longitude;
+	double      latitude = 0.0;
+	double      longitude = 0.0;
 
 	coordinates_available = 0;
 
@@ -179,11 +178,36 @@ gth_map_view_real_set_file (GthPropertyView *base,
 		}
 	}
 
+	if (out_latitude != NULL)
+		*out_latitude = latitude;
+	if (out_longitude != NULL)
+		*out_longitude = longitude;
+
+	return coordinates_available;
+}
+
+
+static gboolean
+gth_map_view_real_can_view (GthPropertyView *base,
+			   GthFileData     *file_data)
+{
+	GthMapView *self = GTH_MAP_VIEW (base);
+	return gth_map_view_get_coordinates (self, file_data, NULL, NULL) == 2;
+}
+
+
+static void
+gth_map_view_real_set_file (GthPropertyView *base,
+		 	    GthFileData     *file_data)
+{
+	GthMapView *self = GTH_MAP_VIEW (base);
+	int         coordinates_available;
+	double      latitude;
+	double      longitude;
+
+	coordinates_available = gth_map_view_get_coordinates (self, file_data, &latitude, &longitude);
 	if (coordinates_available == 2) {
 		char *position;
-
-		gtk_widget_hide (self->priv->no_gps_label);
-		gtk_widget_show (self->priv->embed);
 
 		position = decimal_coordinates_to_string (latitude, longitude);
 		champlain_label_set_text (CHAMPLAIN_LABEL (self->priv->marker), position);
@@ -192,24 +216,20 @@ gth_map_view_real_set_file (GthPropertyView *base,
 		champlain_location_set_location (CHAMPLAIN_LOCATION (self->priv->marker), latitude, longitude);
 		champlain_view_center_on (CHAMPLAIN_VIEW (self->priv->map_view), latitude, longitude);
 	}
-	else {
-		gtk_widget_hide (self->priv->embed);
-		gtk_widget_show (self->priv->no_gps_label);
-	}
 }
 
 
-const char *
-gth_map_view_real_get_name (GthMultipageChild *self)
+static const char *
+gth_map_view_real_get_name (GthPropertyView *self)
 {
 	return _("Map");
 }
 
 
-const char *
-gth_map_view_real_get_icon (GthMultipageChild *self)
+static const char *
+gth_map_view_real_get_icon (GthPropertyView *self)
 {
-	return "map";
+	return "map-symbolic";
 }
 
 
@@ -221,42 +241,9 @@ gth_map_view_finalize (GObject *base)
 
 
 static void
-gth_map_view_realize (GtkWidget *widget)
-{
-	GthMapView *self;
-
-	self = GTH_MAP_VIEW (widget);
-
-	GTK_WIDGET_CLASS (gth_map_view_parent_class)->realize (widget);
-	if (! gtk_widget_get_visible (self->priv->no_gps_label))
-		gtk_widget_show (self->priv->embed);
-}
-
-
-static void
-gth_map_view_unrealize (GtkWidget *widget)
-{
-	GthMapView *self;
-
-	self = GTH_MAP_VIEW (widget);
-
-	GTK_WIDGET_CLASS (gth_map_view_parent_class)->unrealize (widget);
-	gtk_widget_hide (self->priv->embed);
-}
-
-
-static void
 gth_map_view_class_init (GthMapViewClass *klass)
 {
-	GtkWidgetClass *widget_class;
-
-	g_type_class_add_private (klass, sizeof (GthMapViewPrivate));
-
 	G_OBJECT_CLASS (klass)->finalize = gth_map_view_finalize;
-
-	widget_class = GTK_WIDGET_CLASS (klass);
-	widget_class->realize = gth_map_view_realize;
-	widget_class->unrealize = gth_map_view_unrealize;
 }
 
 
@@ -265,28 +252,16 @@ gth_map_view_init (GthMapView *self)
 {
 	ClutterActor *scale;
 
-	self->priv = GTH_MAP_VIEW_GET_PRIVATE (self);
+	self->priv = gth_map_view_get_instance_private (self);
 
 	gtk_box_set_spacing (GTK_BOX (self), 6);
 	gtk_container_set_border_width (GTK_CONTAINER (self), 2);
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (self), GTK_ORIENTATION_VERTICAL);
 
-	/* No GPS label */
-
-	self->priv->no_gps_label = gtk_label_new (_("The geographical position information is not available for this image."));
-	g_object_set (G_OBJECT (self->priv->no_gps_label),
-		      "wrap", TRUE,
-		      "wrap-mode", PANGO_WRAP_WORD_CHAR,
-		      "single-line-mode", FALSE,
-		      "justify", GTK_JUSTIFY_CENTER,
-		      "width-request", LABEL_MAX_WIDTH,
-		      NULL);
-	gtk_widget_show (self->priv->no_gps_label);
-	gtk_box_pack_start (GTK_BOX (self), self->priv->no_gps_label, TRUE, TRUE, 0);
-
 	/* The map widget */
 
 	self->priv->embed = gtk_champlain_embed_new ();
+	gtk_widget_set_size_request (self->priv->embed, -1, MAP_HEIGHT);
 
 	self->priv->map_view = gtk_champlain_embed_get_view (GTK_CHAMPLAIN_EMBED (self->priv->embed));
 	g_object_set (G_OBJECT (self->priv->map_view),
@@ -297,11 +272,12 @@ gth_map_view_init (GthMapView *self)
 		      NULL);
 
 	scale = champlain_scale_new ();
+	g_object_set (scale,
+		      "x-align", CLUTTER_ACTOR_ALIGN_START,
+		      "y-align", CLUTTER_ACTOR_ALIGN_END,
+		      NULL);
 	champlain_scale_connect_view (CHAMPLAIN_SCALE (scale), self->priv->map_view);
-	champlain_view_bin_layout_add (self->priv->map_view,
-				       scale,
-				       CLUTTER_BIN_ALIGNMENT_START,
-				       CLUTTER_BIN_ALIGNMENT_END);
+	clutter_actor_add_child (CLUTTER_ACTOR (self->priv->map_view), scale);
 
 	self->priv->marker_layer = champlain_marker_layer_new ();
 	champlain_view_add_layer (self->priv->map_view, CHAMPLAIN_LAYER (self->priv->marker_layer));
@@ -312,22 +288,16 @@ gth_map_view_init (GthMapView *self)
 	champlain_marker_layer_add_marker (self->priv->marker_layer, CHAMPLAIN_MARKER (self->priv->marker));
 
 	gtk_widget_show_all (self->priv->embed);
-	gtk_widget_hide (self->priv->embed);
 
 	gtk_box_pack_start (GTK_BOX (self), self->priv->embed, TRUE, TRUE, 0);
 }
 
 
 static void
-gth_map_view_gth_multipage_child_interface_init (GthMultipageChildInterface *iface)
+gth_map_view_gth_property_view_interface_init (GthPropertyViewInterface *iface)
 {
 	iface->get_name = gth_map_view_real_get_name;
 	iface->get_icon = gth_map_view_real_get_icon;
-}
-
-
-static void
-gth_map_view_gth_property_view_interface_init (GthPropertyViewInterface *iface)
-{
+	iface->can_view = gth_map_view_real_can_view;
 	iface->set_file = gth_map_view_real_set_file;
 }

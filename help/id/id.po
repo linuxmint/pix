@@ -1,0 +1,2565 @@
+# Indonesian translation for gthumb.
+# Copyright (C) 2020 gthumb's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gthumb package.
+# Andika Triwidada <atriwidada@gnome.org>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gthumb gthumb-3-10\n"
+"POT-Creation-Date: 2020-11-06 01:30+0000\n"
+"PO-Revision-Date: 2020-11-13 18:16+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2020"
+
+#. (itstool) path: credit/name
+#: C/index.page:7
+msgid "Paolo Bacchilega"
+msgstr "Paolo Bacchilega"
+
+#. (itstool) path: credit/name
+#: C/index.page:12
+msgid "Michael J. Chudobiak"
+msgstr "Michael J. Chudobiak"
+
+#. (itstool) path: page/title
+#: C/index.page:20
+msgid "gThumb Help"
+msgstr "Bantuan gThumb"
+
+#. (itstool) path: section/title
+#: C/index.page:23
+msgid "Welcome"
+msgstr "Selamat Datang"
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "File Management"
+msgstr "Manajemen Berkas"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Editing Mode"
+msgstr "Mode Penyuntingan"
+
+#. (itstool) path: p/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:33 C/edit-save-undo-redo.page:8 C/edit-colors.page:8
+#: C/edit-rotate.page:8 C/edit-resize-crop.page:8 C/edit-redeye.page:7
+msgctxt "_"
+msgid ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+msgstr ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+
+#. (itstool) path: section/p
+#: C/index.page:32
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
+"Numerous editing tools are provided for touching-up individual photos. Undo "
+"and redo functions are provided, up until the photo is saved. To access the "
+"editing tools, open an image and then click the <gui>Edit File</gui> toolbar "
+"button (the palette icon), or press <keyseq><key>e</key></keyseq>."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
+"Banyak alat penyuntingan disediakan untuk memperbaiki foto individu. Fungsi "
+"tak jadi dan jadi lagi disediakan, sampai foto disimpan. Untuk mengakses "
+"alat penyuntingan, buka citra lalu klik tombol bilah alat <gui>Sunting "
+"Berkas</gui> (ikon palet), atau tekan <keyseq><key>e</key></keyseq>."
+
+#. (itstool) path: section/title
+#: C/index.page:42
+msgid "Batch Tools"
+msgstr "Alat Batch"
+
+#. (itstool) path: section/p
+#: C/index.page:43
+msgid ""
+"Batch tools are provided to modify multiple images simultaneously. Changes "
+"are written immediately, and are not undoable."
+msgstr ""
+"Alat Batch disediakan untuk memodifikasi beberapa citra secara simultan. "
+"Perubahan ditulis dengan seketika, dan tidak bisa dibatalkan."
+
+#. (itstool) path: section/title
+#: C/index.page:49
+msgid "Slideshows"
+msgstr "Tayangan Salindia"
+
+#. (itstool) path: section/title
+#: C/index.page:53
+msgid "Importing"
+msgstr "Mengimpor"
+
+#. (itstool) path: section/title
+#: C/index.page:57
+msgid "Sharing"
+msgstr "Berbagi"
+
+#. (itstool) path: section/title
+#: C/index.page:61
+msgid "Organizing"
+msgstr "Pengorganisasian"
+
+#. (itstool) path: section/title
+#: C/index.page:65
+msgid "Other Tools"
+msgstr "Alat Lain"
+
+#. (itstool) path: section/title
+#: C/index.page:69
+msgid "Reference"
+msgstr "Referensi"
+
+#. (itstool) path: page/title
+#: C/attributes.page:6
+msgid "Attribute Codes"
+msgstr "Kode Atribut"
+
+#. (itstool) path: page/p
+#: C/attributes.page:7
+msgid ""
+"<app>gThumb</app> stores many different attributes for each file. Extensions "
+"may add more. The list below is a summary of some of the more common "
+"attributes:"
+msgstr ""
+"<app>gThumb</app> menyimpan banyak atribut yang berbeda untuk setiap berkas. "
+"Ekstensi dapat menambahkan lebih banyak. Daftar di bawah ini adalah "
+"ringkasan dari beberapa atribut yang lebih umum:"
+
+#. (itstool) path: item/p
+#: C/attributes.page:12
+msgid "gth::file::display-size"
+msgstr "gth::file::display-size"
+
+#. (itstool) path: item/p
+#: C/attributes.page:15
+msgid "standard::fast-content-type"
+msgstr "standard::fast-content-type"
+
+#. (itstool) path: item/p
+#: C/attributes.page:18
+msgid "general::dimensions"
+msgstr "general::dimensions"
+
+#. (itstool) path: item/p
+#: C/attributes.page:21
+msgid "general::format"
+msgstr "general::format"
+
+#. (itstool) path: item/p
+#: C/attributes.page:24
+msgid "general::location"
+msgstr "general::location"
+
+#. (itstool) path: item/p
+#: C/attributes.page:27
+msgid "general::datetime"
+msgstr "general::datetime"
+
+#. (itstool) path: item/p
+#: C/attributes.page:30
+msgid "general::rating"
+msgstr "general::rating"
+
+#. (itstool) path: item/p
+#: C/attributes.page:33
+msgid "Exif::Image::Make"
+msgstr "Exif::Image::Make"
+
+#. (itstool) path: item/p
+#: C/attributes.page:36
+msgid "Exif::Image::Model"
+msgstr "Exif::Image::Model"
+
+#. (itstool) path: item/p
+#: C/attributes.page:39
+msgid "Exif::Image::Software"
+msgstr "Exif::Image::Software"
+
+#. (itstool) path: item/p
+#: C/attributes.page:42
+msgid "Exif::Image::Artist"
+msgstr "Exif::Image::Artist"
+
+#. (itstool) path: item/p
+#: C/attributes.page:45
+msgid "Exif::Image::Copyright"
+msgstr "Exif::Image::Copyright"
+
+#. (itstool) path: item/p
+#: C/attributes.page:48
+msgid "Exif::Photo::ISOSpeedRatings"
+msgstr "Exif::Photo::ISOSpeedRatings"
+
+#. (itstool) path: item/p
+#: C/attributes.page:51
+msgid "Exif::Photo::BrightnessValue"
+msgstr "Exif::Photo::BrightnessValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:54
+msgid "Exif::Photo::FNumber"
+msgstr "Exif::Photo::FNumber"
+
+#. (itstool) path: item/p
+#: C/attributes.page:57
+msgid "Exif::Photo::ApertureValue"
+msgstr "Exif::Photo::ApertureValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:60
+msgid "Exif::Photo::MaxApertureValue"
+msgstr "Exif::Photo::MaxApertureValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:63
+msgid "Exif::Photo::ExposureTime"
+msgstr "Exif::Photo::ExposureTime"
+
+#. (itstool) path: item/p
+#: C/attributes.page:66
+msgid "Exif::Photo::ExposureProgram"
+msgstr "Exif::Photo::ExposureProgram"
+
+#. (itstool) path: item/p
+#: C/attributes.page:69
+msgid "Exif::Photo::ExposureIndex"
+msgstr "Exif::Photo::ExposureIndex"
+
+#. (itstool) path: item/p
+#: C/attributes.page:72
+msgid "Exif::Photo::ExposureBiasValue"
+msgstr "Exif::Photo::ExposureBiasValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:75
+msgid "Exif::Photo::ExposureMode"
+msgstr "Exif::Photo::ExposureMode"
+
+#. (itstool) path: item/p
+#: C/attributes.page:78
+msgid "Exif::Photo::ShutterSpeedValue"
+msgstr "Exif::Photo::ShutterSpeedValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:81
+msgid "Exif::Photo::MeteringMode"
+msgstr "Exif::Photo::MeteringMode"
+
+#. (itstool) path: item/p
+#: C/attributes.page:84
+msgid "Exif::Photo::LightSource"
+msgstr "Exif::Photo::LightSource"
+
+#. (itstool) path: item/p
+#: C/attributes.page:87
+msgid "Exif::Photo::WhiteBalance"
+msgstr "Exif::Photo::WhiteBalance"
+
+#. (itstool) path: item/p
+#: C/attributes.page:90
+msgid "Exif::Photo::Flash"
+msgstr "Exif::Photo::Flash"
+
+#. (itstool) path: item/p
+#: C/attributes.page:93
+msgid "Exif::Photo::FocalLength"
+msgstr "Exif::Photo::FocalLength"
+
+#. (itstool) path: item/p
+#: C/attributes.page:96
+msgid "Exif::Photo::SubjectArea"
+msgstr "Exif::Photo::SubjectArea"
+
+#. (itstool) path: item/p
+#: C/attributes.page:99
+msgid "Exif::Photo::Contrast"
+msgstr "Exif::Photo::Contrast"
+
+#. (itstool) path: item/p
+#: C/attributes.page:102
+msgid "Exif::Photo::Saturation"
+msgstr "Exif::Photo::Saturation"
+
+#. (itstool) path: item/p
+#: C/attributes.page:105
+msgid "Exif::Photo::Sharpness"
+msgstr "Exif::Photo::Sharpness"
+
+#. (itstool) path: page/title
+#: C/strftime.page:8
+msgid "Date/Time Format Codes"
+msgstr "Kode Format Tanggal/Waktu"
+
+#. (itstool) path: page/p
+#: C/strftime.page:10
+msgid ""
+"This is a summary of standard date/time codes that may be used in format "
+"strings:"
+msgstr ""
+"Ini adalah ringkasan dari standar kode tanggal/waktu yang dapat digunakan "
+"dalam string format:"
+
+#. (itstool) path: table/title
+#: C/strftime.page:14
+msgid "Valid format codes for custom subfolders"
+msgstr "Kode format yang valid untuk subfolder ubahan"
+
+#. (itstool) path: td/p
+#: C/strftime.page:20
+msgid "The abbreviated weekday name according to the current locale."
+msgstr "Singkatan nama hari kerja menurut lokal saat ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:29
+msgid "The full weekday name according to the current locale."
+msgstr "Nama hari lengkap berdasarkan lokal saat ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:38
+msgid "The abbreviated month name according to the current locale."
+msgstr "Singkatan nama bulan berdasarkan lokal saat ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:47
+msgid "The full month name according to the current locale."
+msgstr "Nama bulan lengkap berdasarkan lokal saat ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:55
+msgid "The preferred date and time representation for the current locale."
+msgstr "Representasi tanggal dan waktu yang disukai untuk lokal saat ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:64
+msgid "The century number (year/100) as a 2-digit integer."
+msgstr "Angka abad (tahun/100) sebagai bilangan bulat 2 digit."
+
+#. (itstool) path: td/p
+#: C/strftime.page:72
+msgid "The day of the month as a decimal number (range 01 to 31)."
+msgstr "Hari dalam bulan sebagai angka desimal (berkisar 01 sampai 31)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:81
+msgid ""
+"Equivalent to %m/%d/%y. (Yecch -- for Americans only. Americans should note "
+"that in other countries %d/%m/%y is rather common. This means that in "
+"international context this format is ambiguous and should not be used.)"
+msgstr ""
+"Setara dengan %m/%d/%y. (Yecch -- hanya untuk orang Amerika. Amerika harus "
+"mencatat bahwa di negara lain %d/%m/%y agak umum. Ini berarti bahwa dalam "
+"konteks internasional format ini adalah ambigu dan tidak boleh digunakan.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:92
+msgid ""
+"Like %d, the day of the month as a decimal number, but a leading zero is "
+"replaced by a space."
+msgstr ""
+"Seperti %d, hari dalam sebulan sebagai angka desimal, namun nol terdepan "
+"digantikan oleh spasi."
+
+#. (itstool) path: td/p
+#: C/strftime.page:101 C/strftime.page:210
+msgid "Modifier: use alternative format, see below."
+msgstr "Modifier: menggunakan format alternatif, lihat di bawah."
+
+#. (itstool) path: td/p
+#: C/strftime.page:109
+msgid "Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)"
+msgstr "Setara dengan %Y-%m-%d (format tanggal ISO 8601). (C99)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:118
+msgid ""
+"The ISO 8601 year with century as a decimal number. The 4-digit year "
+"corresponding to the ISO week number (see %V). This has the same format and "
+"value as %y, except that if the ISO week number belongs to the previous or "
+"next year, that year is used instead."
+msgstr ""
+"ISO 8601 tahun dengan abad sebagai angka desimal. Tahun 4-digit yang sesuai "
+"dengan nomor minggu ISO (lihat% V). Ini memiliki format dan nilai yang sama "
+"seperti %y, kecuali bahwa jika nomor minggu ISO milik tahun sebelumnya atau "
+"berikutnya, tahun itu digunakan sebagai gantinya."
+
+#. (itstool) path: td/p
+#: C/strftime.page:130
+msgid "Like %G, but without century, i.e., with a 2-digit year (00-99)."
+msgstr "Seperti %G, tetapi tanpa abad, yaitu, dengan tahun 2-digit (00-99)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:139
+msgid "Equivalent to %b."
+msgstr "Setara dengan %b."
+
+#. (itstool) path: td/p
+#: C/strftime.page:147
+msgid "The hour as a decimal number using a 24-hour clock (range 00 to 23)."
+msgstr "Jam sebagai angka desimal menggunakan jam 24-jam (mulai 00 sampai 23)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:156
+msgid "The hour as a decimal number using a 12-hour clock (range 01 to 12)."
+msgstr "Jam sebagai angka desimal menggunakan 12 jam (berkisar 01 sampai 12)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:165
+msgid "The day of the year as a decimal number (range 001 to 366)."
+msgstr "Hari dalam setahun sebagai angka desimal (berkisar 001 sampai 366)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:174
+msgid ""
+"The hour (24-hour clock) as a decimal number (range 0 to 23); single digits "
+"are preceded by a blank. (See also %H.)"
+msgstr ""
+"Jam (jam 24-jam) sebagai angka desimal (berkisar 0 sampai 23); satu digit "
+"didahului oleh kosong. (Lihat juga %H.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:184
+msgid ""
+"The hour (12-hour clock) as a decimal number (range 1 to 12); single digits "
+"are preceded by a blank. (See also %I.)"
+msgstr ""
+"Jam (12-jam) sebagai angka desimal (kisaran 1 sampai 12); satu digit "
+"didahului oleh kosong. (Lihat juga %I.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:194
+msgid "The month as a decimal number (range 01 to 12)."
+msgstr "Bulan sebagai angka desimal (berkisar 01 sampai 12)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:202
+msgid "The minute as a decimal number (range 00 to 59)."
+msgstr "Menit sebagai angka desimal (berkisar 00 sampai 59)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:218
+msgid ""
+"Either 'AM' or 'PM' according to the given time value, or the corresponding "
+"strings for the current locale. Noon is treated as 'pm' and midnight as 'am'."
+msgstr ""
+"Baik 'AM' atau 'PM' sesuai dengan nilai waktu yang diberikan, atau string "
+"yang sesuai untuk lokal saat ini. Tengah hari diperlakukan sebagai 'PM' dan "
+"tengah malam sebagai 'AM'."
+
+#. (itstool) path: td/p
+#: C/strftime.page:228
+msgid ""
+"Like %p but in lowercase: 'am' or 'pm' or a corresponding string for the "
+"current locale."
+msgstr ""
+"Seperti %p tetapi dalam huruf kecil: 'am' atau 'pm' atau string yang sesuai "
+"untuk lokal saat ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:237
+msgid ""
+"The time in a.m. or p.m. notation. In the POSIX locale this is equivalent to "
+"'%I:%M:%S %p'."
+msgstr ""
+"Waktu dalam notasi a.m. atau p.m. Di lokal POSIX, ini setara dengan '%I:%M:"
+"%S %p'."
+
+#. (itstool) path: td/p
+#: C/strftime.page:246
+msgid ""
+"The time in 24-hour notation (%H:%M). For a version including the seconds, "
+"see %T below."
+msgstr ""
+"Waktu dalam notasi 24 jam (%H:%M). Untuk versi termasuk detik, lihat %T di "
+"bawah ini."
+
+#. (itstool) path: td/p
+#: C/strftime.page:255
+msgid ""
+"The number of seconds since the Epoch, i.e., since 1970-01-01 00:00:00 UTC."
+msgstr "Jumlah detik sejak epos, yaitu, sejak 1970-01-01 00:00:00 UTC."
+
+#. (itstool) path: td/p
+#: C/strftime.page:264
+msgid ""
+"The second as a decimal number (range 00 to 60). (The range is up to 60 to "
+"allow for occasional leap seconds.)"
+msgstr ""
+"Yang kedua sebagai angka desimal (berkisar 00 sampai 60). (Kisaran ini "
+"hingga 60 untuk memungkinkan detik leap sesekali.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:274
+msgid "The time in 24-hour notation (%H:%M:%S)."
+msgstr "Waktu dalam notasi 24 jam (%H:%M:%S)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:282
+msgid ""
+"The day of the week as a decimal number, range 1 to 7, Monday being 1. See "
+"also %w."
+msgstr ""
+"Hari dalam seminggu sebagai angka desimal, berkisar 1 sampai 7, hari Senin "
+"adalah 1. Lihat juga %w."
+
+#. (itstool) path: td/p
+#: C/strftime.page:291
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Sunday as the first day of week 01. See also %V and "
+"%W."
+msgstr ""
+"Jumlah minggu tahun saat ini sebagai angka desimal, berkisar 00 sampai 53, "
+"dimulai dengan hari Minggu pertama sebagai hari pertama minggu 01. Lihat "
+"juga %V dan %W."
+
+#. (itstool) path: td/p
+#: C/strftime.page:301
+msgid ""
+"The ISO 8601:1988 week number of the current year as a decimal number, range "
+"01 to 53, where week 1 is the first week that has at least 4 days in the "
+"current year, and with Monday as the first day of the week. See also %U and "
+"%W."
+msgstr ""
+"Nomor minggu tahun saat ini ISO 8601:1988 sebagai angka desimal, berkisar 01 "
+"sampai 53, di mana minggu 1 adalah minggu pertama yang memiliki setidaknya 4 "
+"hari di tahun sekarang, dan dengan Senin sebagai hari pertama minggu. Lihat "
+"juga %U dan %W."
+
+#. (itstool) path: td/p
+#: C/strftime.page:313
+msgid ""
+"The day of the week as a decimal, range 0 to 6, Sunday being 0. See also %u."
+msgstr ""
+"Hari dalam seminggu sebagai desimal, berkisar 0 sampai 6, hari Minggu "
+"menjadi 0. Lihat juga %u."
+
+#. (itstool) path: td/p
+#: C/strftime.page:322
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Monday as the first day of week 01."
+msgstr ""
+"Nomor minggu tahun saat ini sebagai angka desimal, berkisar 00 sampai 53, "
+"dimulai dengan Senin pertama sebagai hari pertama minggu 01."
+
+#. (itstool) path: td/p
+#: C/strftime.page:332
+msgid ""
+"The preferred date representation for the current locale without the time."
+msgstr "Representasi tanggal yang disukai untuk lokal saat ini tanpa waktu."
+
+#. (itstool) path: td/p
+#: C/strftime.page:341
+msgid ""
+"The preferred time representation for the current locale without the date."
+msgstr "Representasi waktu yang disukai untuk lokal saat ini tanpa tanggal."
+
+#. (itstool) path: td/p
+#: C/strftime.page:350
+msgid "The year as a decimal number without a century (range 00 to 99)."
+msgstr "Tahun sebagai angka desimal tanpa abad (berkisar 00 sampai 99)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:359
+msgid "The year as a decimal number including the century."
+msgstr "Tahun sebagai angka desimal termasuk abad."
+
+#. (itstool) path: td/p
+#: C/strftime.page:367
+msgid ""
+"The time-zone as hour offset from GMT. Required to emit RFC 822-conformant "
+"dates (using \"%a, %d %b %Y %H:%M:%S %z\")."
+msgstr ""
+"Zona waktu sebagai jam offset dari GMT. Diperlukan untuk memancarkan tanggal "
+"patuh RFC 822 (menggunakan \"%a, %d %b %Y %H:%M:%S %z\")."
+
+#. (itstool) path: td/p
+#: C/strftime.page:377
+msgid "The time zone or name or abbreviation."
+msgstr "Zona waktu atau nama atau singkatan."
+
+#. (itstool) path: page/p
+#: C/strftime.page:382
+msgid ""
+"Some conversion specifications can be modified by preceding the conversion "
+"specifier character by the E or O modifier to indicate that an alternative "
+"format should be used. If the alternative format or specification does not "
+"exist for the current locale, the behaviour will be as if the unmodified "
+"conversion specification were used. The Single Unix Specification mentions "
+"%Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, "
+"%OV, %Ow, %OW, %Oy, where the effect of the O modifier is to use alternative "
+"numeric symbols (say, roman numerals), and that of the E modifier is to use "
+"a locale-dependent alternative representation."
+msgstr ""
+"Beberapa spesifikasi konversi dapat dimodifikasi dengan mendahului karakter "
+"specifier konversi oleh pengubah E atau O untuk menunjukkan bahwa format "
+"alternatif harus digunakan. Jika format alternatif atau spesifikasi tidak "
+"ada untuk lokal saat ini, perilaku akan seolah-olah spesifikasi konversi "
+"yang tidak dimodifikasi yang digunakan. Spesifikasi tunggal Unix menyebutkan "
+"%Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, "
+"%OV, %Ow, %OW, %Oy, dimana efek dari pengubah O adalah dengan menggunakan "
+"simbol numerik alternatif (katakanlah, angka Romawi), dan bahwa pengubah E "
+"adalah dengan menggunakan representasi alternatif bergantung lokal."
+
+#. (itstool) path: page/title
+#: C/introduction.page:6
+msgid "About gThumb"
+msgstr "Tentang gThumb"
+
+#. (itstool) path: page/p
+#: C/introduction.page:8
+msgid ""
+"<app>gThumb</app> is an image viewer and browser written for the GNOME "
+"environment. It lets you browse your hard disk, showing you thumbnails of "
+"image files and view single images of many different formats."
+msgstr ""
+"<app>gThumb</app> adalah penampil dan peramban citra yang ditulis untuk "
+"lingkungan GNOME. Ini memungkinkan Anda menelusuri hard disk Anda, "
+"menampilkan gambar mini berkas-berkas citra dan melihat citra tunggal dari "
+"berbagai format."
+
+#. (itstool) path: page/p
+#: C/introduction.page:13
+msgid ""
+"<app>gThumb</app> supports the most common graphics formats, including JPEG, "
+"GIF, TIF, and PNG. <app>gThumb</app> will also display other less common "
+"image types if the supporting libraries are installed, including TGA, ICO, "
+"BMP, XPM, and others."
+msgstr ""
+"<app>gThumb</app> mendukung format grafis yang paling umum, termasuk JPEG, "
+"GIF, TIF, dan PNG. <app>gThumb</app> juga akan menampilkan jenis citra yang "
+"kurang umum jika pustaka pendukung dipasang, termasuk TGA, ICO, BMP, XPM, "
+"dan lainnya."
+
+#. (itstool) path: page/p
+#: C/introduction.page:18
+msgid ""
+"Some support for RAW image types is included, especially if the dcraw "
+"program is installed on your system."
+msgstr ""
+"Beberapa dukungan untuk jenis citra RAW disertakan, terutama jika program "
+"dcraw diinstal pada sistem Anda."
+
+#. (itstool) path: page/p
+#: C/introduction.page:21
+msgid ""
+"<app>gThumb</app> not only lets you view image files but has many other "
+"features such as adding comments to images, organizing images into catalogs, "
+"printing images, slideshows, setting your desktop background, and more."
+msgstr ""
+"<app>gThumb</app> tidak hanya memungkinkan Anda melihat berkas citra tetapi "
+"memiliki banyak fitur lain seperti menambahkan komentar ke citra, mengatur "
+"citra ke dalam katalog, mencetak citra, pertunjukan salindia, pengaturan "
+"latar belakang desktop Anda, dan banyak lagi."
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+msgid ""
+"<app>gThumb</app> includes a tool to import photos from attached cameras and "
+"memory card readers."
+msgstr ""
+"<app>gThumb</app> termasuk alat untuk mengimpor foto dari kamera yang "
+"tertancap dan pembaca kartu memori."
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"<app>gThumb</app> can read EXIF, XMP, and IPTC metadata that is commonly "
+"embedded in files."
+msgstr ""
+"<app>gThumb</app> dapat membaca metadata EXIF, XMP, dan IPTC yang umumnya "
+"tertanam dalam berkas."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"<app>gThumb</app> provides a systems of extensions (or plug-ins), to allow "
+"users to extend the functionality of <app>gThumb</app>."
+msgstr ""
+"<app>gThumb</app> menyediakan sistem ekstensi (atau plug-in), untuk "
+"memungkinkan pengguna untuk memperluas fungsi <app>gThumb</app>."
+
+#. (itstool) path: page/p
+#: C/introduction.page:34
+msgid ""
+"More information about these extensions, and about <app>gThumb</app> "
+"generally, is available at <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.gnome.org/Apps/gthumb</link>."
+msgstr ""
+"Informasi lebih lanjut tentang ekstensi ini, dan tentang <app>gThumb</app> "
+"umumnya, tersedia di <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.GNOME.org/Apps/gthumb</link>."
+
+#. (itstool) path: page/title
+#: C/browser.page:6
+msgid "Browsing Your Files"
+msgstr "Meramban Berkas-berkas Anda"
+
+#. (itstool) path: page/p
+#: C/browser.page:8
+msgid "When you start <app>gThumb</app> the following window is displayed:"
+msgstr "Ketika Anda memulai <app>gThumb</app> jendela berikut ditampilkan:"
+
+#. (itstool) path: figure/title
+#: C/browser.page:11
+msgid "The main window"
+msgstr "Jendela utama"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/browser.page:13
+msgctxt "_"
+msgid ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+msgstr ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+
+#. (itstool) path: page/p
+#: C/browser.page:16
+msgid "The <app>gThumb</app> browser contains the following elements:"
+msgstr "Peramban <app>gThumb</app> berisi elemen-elemen berikut:"
+
+#. (itstool) path: item/title
+#: C/browser.page:20
+msgid "Menubar"
+msgstr "Bilah Menu"
+
+#. (itstool) path: item/p
+#: C/browser.page:21
+msgid ""
+"The menus on the menubar contain all of the commands that you can use in "
+"<app>gThumb</app>"
+msgstr ""
+"Menu pada bilah menu berisi semua perintah yang dapat Anda gunakan dalam "
+"<app>gThumb</app>"
+
+#. (itstool) path: item/title
+#: C/browser.page:25
+msgid "Toolbar"
+msgstr "Bilah Alat"
+
+#. (itstool) path: item/p
+#: C/browser.page:26
+msgid ""
+"The toolbar contains a subset of the commands that you can access from the "
+"menubar. In particular, the Tools button contains functions for batch "
+"processing multiple images."
+msgstr ""
+"Bilah alat berisi subset perintah yang dapat Anda akses dari bilah menu. "
+"Secara khusus, tombol Alat berisi fungsi untuk pemrosesan batch beberapa "
+"citra."
+
+#. (itstool) path: item/title
+#: C/browser.page:31
+msgid "Locationbar"
+msgstr "Bilah Lokasi"
+
+#. (itstool) path: item/p
+#: C/browser.page:32
+msgid "The locationbar contains the current folder or catalog name."
+msgstr "Bilah lokasi berisi folder saat ini atau nama katalog."
+
+#. (itstool) path: item/title
+#: C/browser.page:36
+msgid "Folder Tree"
+msgstr "Pohon Folder"
+
+#. (itstool) path: item/p
+#: C/browser.page:37
+msgid ""
+"The folder tree allows you to navigate the filesystem. Single-clicking on a "
+"folder will load its images in the browser view. Double-clicking a folder, "
+"or clicking the expander arrow, will also list folder's subfolders in the "
+"tree."
+msgstr ""
+"Pohon folder memungkinkan Anda untuk menavigasi sistem berkas. Klik tunggal "
+"pada folder akan memuat citranya dalam tampilan peramban. Klik ganda folder, "
+"atau klik panah expander, juga akan mencantumkan subfolder folder di pohon."
+
+#. (itstool) path: item/title
+#: C/browser.page:44
+msgid "Browser View"
+msgstr "Tampilan peramban"
+
+#. (itstool) path: item/p
+#: C/browser.page:45
+msgid ""
+"The browser view shows the images in the current folder or catalog. Single-"
+"clicking an image will enable the Information Sidebar for that image. Double-"
+"clicking an image will open it in the viewer mode. Double-clicking with the "
+"middle mouse button will load the image in fullscreen viewer mode."
+msgstr ""
+"Tampilan peramban menampilkan citra dalam folder atau katalog saat ini. "
+"Mengklik satu citra akan mengaktifkan bilah sisi informasi untuk citra "
+"tersebut. Mengklik ganda citra akan membukanya dalam mode penampil. Mengklik "
+"ganda dengan tombol tengah tetikus akan memuat citra dalam mode penampil "
+"layar penuh."
+
+#. (itstool) path: item/title
+#: C/browser.page:52
+msgid "Organize Button"
+msgstr "Tombol Atur"
+
+#. (itstool) path: item/p
+#: C/browser.page:53
+msgid ""
+"The Organize button, just above the browser view, allows you to group images "
+"into catalogs."
+msgstr ""
+"Tombol Atur, tepat di atas tampilan peramban, memungkinkan Anda "
+"mengelompokkan citra ke dalam katalog-katalog."
+
+#. (itstool) path: item/title
+#: C/browser.page:57
+msgid "Statusbar"
+msgstr "Bilah Status"
+
+#. (itstool) path: item/p
+#: C/browser.page:58
+msgid "On the statusbar you can read:"
+msgstr "Pada bilah status Anda dapat membaca:"
+
+#. (itstool) path: item/p
+#: C/browser.page:61
+msgid ""
+"the total number of images contained in the current folder or catalog and "
+"their total size."
+msgstr ""
+"cacah total citra yang terdapat dalam folder atau katalog saat ini dan "
+"ukuran totalnya."
+
+#. (itstool) path: item/p
+#: C/browser.page:65
+msgid "the number of the selected images and their size."
+msgstr "cacah citra yang dipilih dan ukurannya."
+
+#. (itstool) path: item/p
+#: C/browser.page:68
+msgid "some properties of the currently focused image."
+msgstr "beberapa properti dari citra yang sedang difokuskan."
+
+#. (itstool) path: item/title
+#: C/browser.page:73
+msgid "Information Sidebar"
+msgstr "Bilah Sisi Informasi"
+
+#. (itstool) path: item/p
+#: C/browser.page:74
+msgid ""
+"If a single image is selected, the information sidebar (below the folder "
+"tree) will display detailed information (such as EXIF or XMP tags) about the "
+"selected image."
+msgstr ""
+"Jika satu citra dipilih, bilah sisi informasi (di bawah pohon folder) akan "
+"menampilkan informasi terperinci (seperti tag EXIF atau XMP) tentang citra "
+"yang dipilih."
+
+#. (itstool) path: item/title
+#: C/browser.page:79
+msgid "Filter Bar"
+msgstr "Bilah Filter"
+
+#. (itstool) path: item/p
+#: C/browser.page:80
+msgid ""
+"An image filtering tool is provided just below the browser view. This can be "
+"used to filter the displayed images. For example, the browser view can be "
+"limited to files of a certain size, date, or name pattern, or other "
+"characteristics."
+msgstr ""
+"Alat penyaringan citra disediakan tepat di bawah tampilan peramban. Ini "
+"dapat digunakan untuk menyaring citra yang ditampilkan. Misalnya, tampilan "
+"peramban dapat dibatasi ke berkas dengan ukuran, tanggal, atau pola nama "
+"tertentu, atau karakteristik lainnya."
+
+#. (itstool) path: page/title
+#: C/batch-rotate.page:6
+msgid "Rotating Images Losslessly"
+msgstr "Memutar Citra Tanpa Hilang Kualitas"
+
+#. (itstool) path: page/p
+#: C/batch-rotate.page:8
+msgid ""
+"To rotate one or more images, select the images in the browser view. Then "
+"click the <gui>Tools</gui> button on the main toolbar, and select either "
+"<guiseq><gui>Tools</gui><gui>Rotate Right</gui></guiseq> or "
+"<guiseq><gui>Tools</gui><gui>Rotate Left</gui></guiseq>. The images will be "
+"rotated."
+msgstr ""
+"Untuk memutar satu atau beberapa citra, pilih citra dalam tampilan peramban. "
+"Kemudian klik tombol <gui>Alat</gui> pada bilah alat utama, dan pilih salah "
+"satu <guiseq><gui>Alat</gui><gui>Putar Kanan</gui></guiseq> atau "
+"<guiseq><gui>Alat</gui><gui>Putar Kiri</gui></guiseq>. Citra akan diputar."
+
+#. (itstool) path: page/p
+#: C/batch-rotate.page:14
+msgid "Lossless rotation is used for jpeg images, when possible."
+msgstr ""
+"Rotasi tanpa hilang kualitas digunakan untuk citra JPEG, bila memungkinkan."
+
+#. (itstool) path: page/title
+#: C/batch-convert-format.page:6
+msgid "Converting File Formats"
+msgstr "Mengkonversi Format Berkas"
+
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:8
+msgid ""
+"To convert one or more images into a new file format, select the images in "
+"the browser view. Then click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Convert Format</gui></"
+"guiseq>."
+msgstr ""
+"Untuk mengonversi satu atau beberapa citra ke dalam format berkas baru, "
+"pilih citra dalam tampilan peramban. Kemudian klik tombol <gui>Alat</gui> "
+"pada bilah alat utama, dan pilih <guiseq><gui>Alat</gui><gui>Konversi "
+"Format</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:12
+msgid ""
+"Select the desired output format and destination folder. Click <gui>Execute</"
+"gui> to complete the process."
+msgstr ""
+"Pilih format keluaran yang diinginkan dan folder tujuan. Klik <gui>Eksekusi</"
+"gui> untuk menyelesaikan proses."
+
+#. (itstool) path: page/title
+#: C/batch-resize.page:6
+msgid "Resizing Images"
+msgstr "Mengubah Ukuran Gambar"
+
+#. (itstool) path: page/p
+#: C/batch-resize.page:8
+msgid ""
+"To resize one or more images using the same dimensions or scaling factors, "
+"select the images in the browser view. Then click the <gui>Tools</gui> "
+"button on the main toolbar, and select <guiseq><gui>Tools</gui><gui>Resize "
+"Images</gui></guiseq>."
+msgstr ""
+"Untuk mengubah ukuran satu atau beberapa citra menggunakan dimensi atau "
+"faktor penskalaan yang sama, pilih citra dalam tampilan peramban. Kemudian "
+"klik tombol <gui>Alat</gui> pada bilah alat utama, dan pilih "
+"<guiseq><gui>Alat</gui><gui>Ubah Ukuran Citra</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-resize.page:12
+msgid ""
+"Then select the desired maximum output dimensions, or the desired percentage "
+"scaling, and the destination folder. Click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Kemudian pilih dimensi keluaran maksimum yang diinginkan, atau persentase "
+"penskalaan yang diinginkan, dan folder tujuan. Klik <gui>Eksekusi</gui> "
+"untuk menyelesaikan proses."
+
+#. (itstool) path: page/title
+#: C/batch-change-date.page:6
+msgid "Changing Dates"
+msgstr "Mengubah Tanggal"
+
+#. (itstool) path: page/p
+#: C/batch-change-date.page:8
+msgid ""
+"To change the file modification times, the comment dates, or the Exif "
+"DateTimeOriginal tags of multiple files, select the files in the browser "
+"view. Then click the <gui>Tools</gui> button on the main toolbar, and select "
+"<guiseq><gui>Tools</gui><gui>Change Date</gui></guiseq>."
+msgstr ""
+"Untuk mengubah waktu modifikasi berkas, tanggal komentar, atau tag EXIF "
+"DateTimeOriginal dari beberapa berkas, pilih berkas dalam tampilan peramban. "
+"Kemudian klik tombol <gui>Alat</gui> pada bilah alat utama, dan pilih "
+"<guiseq><gui>Alat</gui><gui>Ubah Tanggal</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-change-date.page:13
+msgid ""
+"Select the desired date options, and click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Pilih opsi tanggal yang diinginkan, dan klik <gui>Eksekusi</gui> untuk "
+"menyelesaikan proses."
+
+#. (itstool) path: page/title
+#: C/batch-scripts.page:6
+msgid "User-Defined Scripts"
+msgstr "Skrip Tentuan Pengguna"
+
+#. (itstool) path: page/p
+#: C/batch-scripts.page:8
+msgid ""
+"To define a script (a command-line sequence that <app>gThumb</app> will "
+"execute on your files), click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Personalize</gui></guiseq>."
+msgstr ""
+"Untuk mendefinisikan sebuah skrip (urutan baris perintah yang akan "
+"dijalankan oleh <app>gThumb</app> pada berkas Anda), klik tombol <gui>Alat</"
+"gui> pada bilah alat utama, dan pilih <guiseq><gui>Alat</"
+"gui><gui>Personalisasi</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-scripts.page:12
+msgid "TODO: further documentation is needed here."
+msgstr "TODO: dokumentasi lebih lanjut diperlukan di sini."
+
+#. (itstool) path: page/title
+#: C/thumbnails.page:6
+msgid "Thumbnail Sources"
+msgstr "Sumber Gambar Mini"
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:8
+msgid ""
+"The browser window normally shows the thumbnails of the images and movies in "
+"the selected folder. Generic icons for other files (audio files, for "
+"instance) may also be shown."
+msgstr ""
+"Jendela peramban biasanya menunjukkan gambar mini citra-citra dan film-film "
+"di folder yang dipilih. Ikon generik untuk berkas lain (berkas audio, "
+"misalnya) mungkin juga ditampilkan."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:12
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui> </guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"Anda dapat memilih jenis berkas yang akan ditampilkan dalam tampilan "
+"peramban menggunakan dialog <guiseq><gui>Tampilan</gui><gui>Filter</gui></"
+"guiseq>. Default-nya adalah untuk menampilkan semua berkas media (citra, "
+"film, audio), tapi ini dapat dibuat lebih atau kurang restriktif."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:18
+msgid ""
+"The thumbnails may be generated by a number of different methods. "
+"<app>gThumb</app> will first check for existing thumbnails in the system "
+"cache."
+msgstr ""
+"Gambar mini dapat dihasilkan oleh sejumlah metode yang berbeda. <app>gThumb</"
+"app> akan terlebih dahulu memeriksa gambar mini yang ada di singgahan sistem."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:22
+msgid ""
+"If no cached thumbnail is found, and an image file contains an embedded "
+"thumbnail (jpeg files generated by digital cameras normally do), "
+"<app>gThumb</app> will attempt to use that. <app>gThumb</app> will confirm "
+"that the aspect ratio of the thumbnail is similar to that of the main image, "
+"and ignore thumbnails that do not appear to match the main image."
+msgstr ""
+"Jika tidak ada singgahan gambar mini ditemukan, dan berkas citra berisi "
+"gambar mini tertanam (berkas-berkas JPEG yang dihasilkan oleh kamera digital "
+"biasanya seperti itu), <app>gThumb</app> akan mencoba untuk menggunakannya. "
+"<app>gThumb</app> akan mengkonfirmasi bahwa rasio aspek gambar mini mirip "
+"dengan gambar utama, dan mengabaikan gambar mini yang tidak tampak sesuai "
+"dengan gambar utama."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:29
+msgid ""
+"If that doesn't work, <app>gThumb</app> will attempt to load the entire file "
+"and generate a scaled-down thumbnail."
+msgstr ""
+"Jika itu tidak berhasil, <app>gThumb</app> akan mencoba memuat seluruh "
+"berkas dan menghasilkan gambar mini yang diperkecil."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:32
+msgid ""
+"Lastly, <app>gThumb</app> will use any system-defined scripts for "
+"thumbnailing particular media types. For example, some systems may use "
+"<app>mplayer</app> or <app>totem</app> or other movie viewers to generate "
+"movie thumbnails."
+msgstr ""
+"Terakhir, <app>gThumb</app> akan menggunakan skrip yang ditentukan sistem "
+"untuk membuat gambar mini jenis-jenis media tertentu. Misalnya, beberapa "
+"sistem mungkin menggunakan <app>mplayer</app> atau <app>totem</app> atau "
+"penampil film lainnya untuk menghasilkan gambar mini film."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:37
+msgid ""
+"<app>gThumb</app> will save thumbnails to a system cache, to share them with "
+"other applications. By default, Gnome systems prune cached thumbnails when "
+"they are older than 180 days, or when the thumbnail cache exceeds 512 MB. "
+"Technically-inclined users can explore these settings with <app>dconf-"
+"editor</app>. See the org.gnome.desktop.thumbnail_cache.maximum_age and org."
+"gnome.desktop.thumbnail_cache.maximum_size keys in particular. Certain "
+"applications (like <app>F-Spot</app>) may automatically increase these "
+"settings greatly."
+msgstr ""
+"<app>gThumb</app> akan menyimpan gambar mini ke singgahan sistem, untuk "
+"berbagi dengan aplikasi lain. Secara default, sistem GNOME memangkas "
+"singgahan gambar mini ketika mereka berusia lebih dari 180 hari, atau ketika "
+"singgahan gambar mini melebihi 512 MB. Para pengguna teknis dapat "
+"menjelajahi pengaturan ini dengan <app>dconf-editor</app>. Lihat kunci org."
+"gnome.desktop.gambar mini_cache.maximum_age dan org.gnome.desktop.gambar "
+"mini_cache.maximum_size pada khususnya. Aplikasi tertentu (seperti <app>F-"
+"spot</app>) mungkin secara otomatis meningkatkan pengaturan ini secara "
+"sangat besar."
+
+#. (itstool) path: page/title
+#: C/thumbnail-pane.page:6
+msgid "Thumbnail Pane"
+msgstr "Panel Gambar Mini"
+
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:8
+msgid ""
+"When an image has been opened in the <app>gThumb</app> viewer, the user has "
+"the option of enabling or disabling a thumbnail pane, which shows the other "
+"images in the folder as thumbnails. This feature can be toggled with the "
+"<guiseq><gui>View</gui><gui>Thumbnail Pane</gui></guiseq> command, or by "
+"pressing <key>F8</key>."
+msgstr ""
+"Ketika citra telah dibuka di penampil <app>gThumb</app>, pengguna memiliki "
+"pilihan untuk mengaktifkan atau menonaktifkan panel gambar mini, yang "
+"menunjukkan citra lain dalam folder sebagai gambar mini. Fitur ini dapat "
+"dijungkitkan dengan perintah <guiseq><gui>Tampilan</gui><gui>Panel Gambar "
+"Mini</gui></guiseq>, atau dengan menekan <key>F8</key>."
+
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:14
+msgid ""
+"The thumbnail pane may be positioned along the bottom of the main image, or "
+"along the side. This is controlled by the settings in <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui><gui>General</gui><gui>Thumbnails in Viewer</gui></"
+"guiseq>."
+msgstr ""
+"Panel gambar mini mungkin diposisikan di sepanjang bagian bawah citra utama, "
+"atau di sepanjang sisi. Hal ini dikendalikan oleh pengaturan di "
+"<guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Umum</gui><gui>Gambar "
+"Mini di Penampil</gui></guiseq>."
+
+#. (itstool) path: figure/title
+#: C/thumbnail-pane.page:19
+msgid "Thumbnail Pane, Along Bottom of Main Image"
+msgstr "Panel Gambar Mini, Sepanjang Bawah Citra Utama"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/thumbnail-pane.page:21 C/viewer.page:23
+msgctxt "_"
+msgid ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+msgstr ""
+"external ref='figures/gambar mini-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+
+#. (itstool) path: page/title
+#: C/rename-series.page:8
+msgid "Renaming Files"
+msgstr "Mengubah Nama Berkas-berkas"
+
+#. (itstool) path: page/p
+#: C/rename-series.page:10
+msgid ""
+"To rename one or more images using a name template, select the files in the "
+"browser and choose <guiseq><gui>Edit</gui><gui>Rename</gui></guiseq>, or "
+"press <key>F2</key>."
+msgstr ""
+"Untuk mengubah nama satu atau lebih citra menggunakan template nama, pilih "
+"berkas di browser dan pilih <guiseq> <gui>Edit</gui><gui>rename</gui></"
+"guiseq>, atau tekan <key>F2</key>."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:15
+msgid ""
+"The name template is simply a pattern that is used for renaming all of the "
+"selected images. You can use some special characters to make the new names "
+"differ each other (this is essential if you are renaming more than one "
+"image, and optional if you are renaming a single image):"
+msgstr ""
+"Nama template hanyalah sebuah pola yang digunakan untuk mengganti nama semua "
+"gambar yang dipilih. Anda dapat menggunakan beberapa karakter khusus untuk "
+"membuat nama baru berbeda satu sama lain (ini penting jika Anda mengganti "
+"nama lebih dari satu citra, dan opsional jika Anda mengganti nama satu "
+"citra):"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:24
+msgid "Symbol"
+msgstr "Simbol"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:27
+msgid "Description"
+msgstr "Deskripsi"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:32
+msgid "<key>#</key>"
+msgstr "<key>#</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:37
+msgid ""
+"This symbol will be replaced with the value of a counter that increments "
+"itself by 1 passing from one image to another. If you specify this symbols "
+"in sequence you'll get leading zeros if the counter value has a lesser "
+"number of digits, for example ### will produce the sequence: 001, 002, 003, "
+"etc.."
+msgstr ""
+"Simbol ini akan digantikan dengan nilai pencacah yang bertambah satu sendiri "
+"dari satu citra ke yang lain. Jika Anda menentukan simbol ini secara "
+"berurutan Anda akan memperoleh angka nol di depan jika nilai pencacah "
+"memiliki cacah digit yang lebih sedikit, misalnya ### akan menghasilkan "
+"urutan: 001, 002, 003, dst.."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:47
+msgid "<key>%F</key>"
+msgstr "<key>%F</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:52
+msgid ""
+"This symbol will be replaced with the file's original name, excluding the "
+"original extension."
+msgstr ""
+"Simbol ini akan digantikan dengan nama asli berkas, tidak termasuk ekstensi "
+"asli."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:58
+msgid "<key>%E</key>"
+msgstr "<key>%E</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:63
+msgid ""
+"This symbol will be replaced with the file's original filename extension."
+msgstr "Simbol ini akan digantikan dengan ekstensi nama berkas asli."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:69
+msgid "<key>%N</key>"
+msgstr "<key>%N</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:74
+msgid ""
+"This symbol will be replaced with original image enumerator. For instance, "
+"if the original filename was IMG_9876.JPG, this extracts the \"9876\" "
+"portion. If the filename has more than one group of digits embedded in it "
+"(for example, IMG_123_456.JPG) only the first number will be used (\"123\" "
+"in this example)."
+msgstr ""
+"Simbol ini akan digantikan dengan enumerator citra asli. Misalnya, jika nama "
+"berkas asli adalah IMG_9876.JPG, ini mengekstrak bagian \"9876\". Jika nama "
+"berkas memiliki lebih dari satu kelompok digit yang disematkan di dalamnya "
+"(misalnya, IMG_123_456.JPG) hanya nomor pertama yang akan digunakan (\"123\" "
+"dalam contoh ini)."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:84
+msgid "<key>%M{format}</key>"
+msgstr "<key>%M{format}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:89
+msgid ""
+"This symbol will be replaced with the file modification date. The formatting "
+"of this date (and optionally time) can be specified by adding a standard "
+"formatting code in curly braces. For example, \"%M{%Y-%m-%d, %T}\" would be "
+"replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Simbol ini akan diganti dengan tanggal modifikasi berkas. Format tanggal ini "
+"(dan waktu opsional) dapat ditentukan dengan menambahkan kode format standar "
+"di kurung kurawal. Misalnya, \"%M{%Y-%m-%d, %T}\" akan diganti dengan "
+"tanggal dan waktu seperti \"2010-04-01, 15:02:01\"."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:98
+msgid "<key>%D{format}</key>"
+msgstr "<key>%D{format}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:103
+msgid ""
+"This symbol will be replaced with the date that the photo was original taken "
+"(normally determined from the EXIF datestamps embedded inside the photo). "
+"The formatting of this date (and optionally time) can be specified by adding "
+"a standard formatting code in curly braces. For example, \"%D{%Y-%m-%d, "
+"%T}\" would be replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Simbol ini akan diganti dengan tanggal foto itu diambil asli (biasanya "
+"ditentukan dari datestamps EXIF yang tertanam di dalam foto). Format tanggal "
+"ini (dan waktu opsional) dapat ditentukan dengan menambahkan kode format "
+"standar di kurung kurawal. Misalnya, \"%D{%Y-%m-%d, %T}\" akan diganti "
+"dengan tanggal dan waktu seperti \"2010-04-01, 15:02:01\"."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:114
+msgid "<key>%A{identifier}</key>"
+msgstr "<key>%A{identifier}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:119
+msgid ""
+"This symbol will be replaced with the data that has been specified by the "
+"identifier. For example, \"%A{ general::dimensions }\" would be replaced "
+"with a size like \"320 x 240\"."
+msgstr ""
+"Simbol ini akan diganti dengan data yang telah ditentukan oleh identifier. "
+"Misalnya, \"%A{ general::dimensions }\" akan digantikan dengan ukuran "
+"seperti \"320 x 240\"."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:127
+msgid ""
+"A summary of these special codes may be viewed by clicking on the Help icon "
+"inside the template field."
+msgstr ""
+"Ringkasan kode khusus ini dapat dilihat dengan mengklik ikon Bantuan di "
+"dalam bidang template."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:130
+msgid ""
+"The list at the bottom of the dialog displays how the filenames will be "
+"renamed."
+msgstr ""
+"Daftar di bagian bawah dialog menampilkan bagaimana nama berkas akan diubah "
+"namanya."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:133
+msgid "To rename the images click on <gui>Rename</gui>."
+msgstr "Untuk mengubah nama citra klik <gui>Ubah Nama</gui>."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:135
+msgid ""
+"If the renaming of an image can overwrite an already existing image you will "
+"be asked how to proceed, five options are available: overwrite the image; do "
+"not overwrite the image; always overwrite; never overwrite; specify a new "
+"name."
+msgstr ""
+"Jika penggantian nama citra dapat menimpa citra yang sudah ada Anda akan "
+"ditanya bagaimana untuk melanjutkan, lima pilihan yang tersedia: menimpa "
+"citra; tidak menimpa citra; selalu menimpa; tidak pernah menimpa; menentukan "
+"nama baru."
+
+#. (itstool) path: page/title
+#: C/edit-save-undo-redo.page:6
+msgid "File Save, Undo, Redo"
+msgstr "Simpan Berkas, Tak Jadi, Jadi Lagi"
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:8 C/edit-colors.page:8 C/edit-rotate.page:8
+#: C/edit-resize-crop.page:8 C/edit-redeye.page:7
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> To "
+"access the editing tools, open an image and then click the <gui>Edit File</"
+"gui> toolbar button (the palette icon)."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> Untuk "
+"mengakses alat penyuntingan, buka citra lalu klik tombol bilah alat "
+"<gui>Sunting Berkas</gui> (ikon palet)."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:12
+msgid ""
+"Multiple changes may be made to an image before saving it. <gui>Undo</gui> "
+"and <gui>Redo</gui> buttons are provided, and may be used up until the file "
+"is saved."
+msgstr ""
+"Beberapa perubahan dapat dilakukan pada citra sebelum menyimpannya. Tombol "
+"<gui>Tak Jadi</gui> dan <gui>Jadi Lagi</gui> disediakan, dan dapat digunakan "
+"sampai berkas disimpan."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:16
+msgid ""
+"A modified image may be saved by pressing <gui>Save</gui>. To save the "
+"modified image to a new location instead, leaving the original image "
+"unchanged, use <gui>Save As</gui>."
+msgstr ""
+"Citra yang dimodifikasi dapat disimpan dengan menekan <gui>Simpan</gui>. "
+"Untuk menyimpan citra yang dimodifikasi ke lokasi baru sebagai gantinya, "
+"biarkan citra asli tidak berubah, gunakan <gui>Simpan Sebagai</gui>."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:20
+msgid ""
+"If you exit the editing mode (by pressing <key>Esc</key> or the <gui>View "
+"the Folders</gui> toolbar button), or navigate away from the current image, "
+"you will be prompted to save or discard your changes."
+msgstr ""
+"Jika Anda keluar dari mode penyuntingan (dengan menekan <key>Esc</key> atau "
+"tombol bilah alat <gui>Tilik Folder</gui>), atau menavigasi menjauh dari "
+"citra saat ini, Anda akan diminta untuk menyimpan atau membuang perubahan."
+
+#. (itstool) path: page/title
+#: C/edit-colors.page:6
+msgid "Color Adjustments"
+msgstr "Penyesuaian Warna"
+
+#. (itstool) path: page/p
+#: C/edit-colors.page:12
+msgid "Several tools are provided to manipulate the colors in images."
+msgstr "Beberapa alat disediakan untuk memanipulasi warna dalam citra."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:17
+msgid "<gui>Enhance Colors</gui>"
+msgstr "<gui>Meningkatkan Warna</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:18
+msgid ""
+"This tool provides automatic white balance correction. No user adjustments "
+"are required."
+msgstr ""
+"Alat ini menyediakan koreksi white balance otomatis. Tidak diperlukan "
+"penyesuaian pengguna."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:22
+msgid "<gui>Adjust Colors</gui>"
+msgstr "<gui>Sesuaikan Warna</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:23
+msgid ""
+"This tool provides manual color adjustments. Adjustments to the gamma, "
+"brightness, contrast, saturation, and the cyan/red, magenta/green, and "
+"yellow/blue color balances may be made."
+msgstr ""
+"Alat ini menyediakan penyesuaian warna manual. Penyesuaian pada gamma, "
+"kecerahan, kontras, saturasi, dan warna sian/merah, magenta/hijau, dan "
+"kuning/biru dapat dilakukan."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:29
+msgid "<gui>Equalize</gui>"
+msgstr "<gui>Menyamakan</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:30
+msgid ""
+"This tool provides automatic histogram equalization. No user adjustments are "
+"required."
+msgstr ""
+"Alat ini menyediakan ekualisasi histogram otomatis. Tidak diperlukan "
+"penyesuaian pengguna."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:34
+msgid "<gui>Desaturate</gui>"
+msgstr "<gui>Desaturasi</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:35
+msgid ""
+"This tool converts the image colors into shades of grey. (This does not "
+"change this image storage format.)"
+msgstr ""
+"Alat ini mengubah warna citra menjadi nuansa abu-abu. (Ini tidak mengubah "
+"format penyimpanan citra ini.)"
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:39
+msgid "<gui>Negative</gui>"
+msgstr "<gui>Negatif</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:40
+msgid "This tool inverts the color levels, providing an image negative."
+msgstr "Alat ini membalikkan tingkat warna, memberikan citra negatif."
+
+#. (itstool) path: page/title
+#: C/edit-rotate.page:6
+msgid "Rotations and Flips"
+msgstr "Rotasi dan Membalik"
+
+#. (itstool) path: page/p
+#: C/edit-rotate.page:12
+msgid "Several tools are provided to manipulate the orientation of images."
+msgstr "Beberapa alat disediakan untuk memanipulasi orientasi citra."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:17
+msgid "<gui>Mirror</gui>"
+msgstr "<gui>Cermin</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:18
+msgid ""
+"This flips the image horizontally. The left and right sides are swapped."
+msgstr "Ini membalik gambar secara horizontal. Sisi kiri dan kanan bertukar."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:22
+msgid "<gui>Flip</gui>"
+msgstr "<gui>Balik</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:23
+msgid "This flips the image vertically. The top and bottom are swapped."
+msgstr "Ini membalik gambar secara vertikal. Bagian atas dan bawah ditukar."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:27
+msgid "<gui>Rotate Right</gui>"
+msgstr "<gui>Putar Kanan</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:28
+msgid "This rotates the image clockwise."
+msgstr "Ini memutar citra searah jarum jam."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:31
+msgid "<gui>Rotate Left</gui>"
+msgstr "<gui>Putar Kiri</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:32
+msgid "This rotates the image counter-clockwise."
+msgstr "Ini memutar citra berlawanan arah jarum jam."
+
+#. (itstool) path: page/p
+#: C/edit-rotate.page:36
+msgid ""
+"The rotations offered in the edit mode act on the image in memory. They are "
+"not direct file operations. For jpeg images, these means they are not "
+"lossless operations - the image will degrade slightly when it it is re-"
+"encoded and saved. However, <app>gThumb</app> does provide lossless rotation "
+"tools. See <link xref=\"gthumb-batch-rotate\"/>."
+msgstr ""
+"Rotasi yang ditawarkan dalam mode sunting bertindak pada citra dalam memori. "
+"Mereka bukan operasi berkas langsung. Untuk citra jpeg, ini berarti mereka "
+"bukan operasi lossless - kualitas citra akan menurun sedikit ketika itu "
+"kembali dikodekan dan disimpan. Namun, <app>gThumb</app> tidak menyediakan "
+"alat rotasi lossless. Lihat <link xref=\"gthumb-batch-rotate\"/>."
+
+#. (itstool) path: page/title
+#: C/edit-resize-crop.page:6
+msgid "Resizing and Cropping"
+msgstr "Mengubah Ukuran dan Memangkas"
+
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:12
+msgid "Two tools are provided to resize and crop images."
+msgstr "Dua alat disediakan untuk mengubah ukuran dan memangkas citra."
+
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:15
+msgid "<gui>Resize</gui>"
+msgstr "<gui>Ubah Ukuran</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:16
+msgid ""
+"This allows you to resize the image. The image may be scaled to a certain "
+"physical size, or to a certain percentage of the original size. The aspect "
+"ratio may be locked to a specific value, or freely adjusted."
+msgstr ""
+"Hal ini memungkinkan Anda untuk mengubah ukuran citra. Citra dapat "
+"diskalakan dengan ukuran fisik tertentu, atau ke persentase tertentu dari "
+"ukuran aslinya. Rasio aspek dapat dikunci dengan nilai tertentu, atau "
+"disesuaikan secara bebas."
+
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:22
+msgid "<gui>Crop</gui>"
+msgstr "<gui>Pangkas</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:23
+msgid ""
+"This allows you to crop the image. Click and drag the mouse over the desired "
+"area of the image. The area may be locked to a specific aspect ratio, or it "
+"may be freely adjusted. A rule-of-thirds grid or golden-sections grid may be "
+"superimposed over the image for composition guidance."
+msgstr ""
+"Ini memungkinkan Anda untuk memotong gambar. Klik dan seret tetikus di atas "
+"area citra yang diinginkan. Area ini mungkin dikunci dengan rasio aspek "
+"tertentu, atau dapat disesuaikan secara bebas. Kisi aturan-sepertiga atau "
+"golden section dapat ditumpangkan di atas citra untuk panduan komposisi."
+
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:31
+msgid ""
+"<app>gThumb</app> also offers a batch-mode tool for resizing multiple images "
+"simultaneously. See <link xref=\"gthumb-batch-resize\"/>."
+msgstr ""
+"<app>gThumb</app> juga menawarkan alat mode batch untuk mengubah ukuran "
+"beberapa citra secara bersamaan. Lihat <link xref=\"gthumb-batch-resize\"/>."
+
+#. (itstool) path: page/title
+#: C/edit-redeye.page:6
+msgid "Red Eye Removal"
+msgstr "Penghilang Mata Merah"
+
+#. (itstool) path: page/p
+#: C/edit-redeye.page:11
+msgid ""
+"<app>gThumb</app> provides a <gui>Red Eye Removal</gui> tool. To remove a "
+"red eye, position the mouse pointer over the red eye and click on it. "
+"<app>gThumb</app> will attempt to remove the red region and replace it with "
+"a more natural-looking gray region. If the results do not look correct, "
+"press <key>Escape</key> and click on the <gui>Undo</gui> item."
+msgstr ""
+"<app>gThumb</app> menyediakan alat <gui>Penghilang Mata Merah</gui>. Untuk "
+"menghapus mata merah, posisikan penunjuk tetikus ke atas mata merah dan klik "
+"di atasnya. <app>gThumb</app> akan mencoba untuk menghapus wilayah merah dan "
+"menggantinya dengan daerah abu-abu yang tampak lebih alami. Jika hasil tidak "
+"terlihat benar, tekan <key>Escape</key> dan klik pada item <gui>Tak Jadi</"
+"gui> ."
+
+#. (itstool) path: page/p
+#: C/edit-redeye.page:18
+msgid ""
+"This tool works best when there is a high color contrast between the red eye "
+"and the surrounding facial area. It does not work well for \"orange eye\" "
+"sometimes seen in photos of children, or if the surrounding skin has a "
+"reddish tinge. This tool could use improvement - if you are fiendishly "
+"clever, love matrix algebra and open source software, please <link href="
+"\"https://wiki.gnome.org/Apps/gthumb/development\">submit a patch!</link>"
+msgstr ""
+"Alat ini bekerja dengan sangat efektif apabila terdapat kontras warna yang "
+"tinggi antara mata merah dan area wajah di sekelilingnya. Hal ini tidak "
+"bekerja dengan baik untuk \"mata oranye\" yang kadang terlihat pada foto "
+"anak, atau jika kulit di sekitarnya memiliki nada kemerahan. Alat ini bisa "
+"menerima perbaikan - jika Anda pintar, cinta aljabar matriks, dan perangkat "
+"lunak open source, silakan <link href=\"https://wiki.gnome.org/Apps/gthumb/"
+"development\">kirim patch!</link>"
+
+#. (itstool) path: page/title
+#: C/extensions.page:6
+msgid "Extending gThumb"
+msgstr "Memperluas gThumb"
+
+#. (itstool) path: page/p
+#: C/extensions.page:8
+msgid ""
+"<app>gThumb</app> has a plug-in system for extensions. Some standard "
+"features are implemented as extensions and are supplied with the standard "
+"distribution. Users may write (and share) additional extensions."
+msgstr ""
+"<app>gThumb</app> memiliki sistem plug-in untuk ekstensi. Beberapa fitur "
+"standar diterapkan sebagai ekstensi dan disertakan dengan distribusi "
+"standar. Pengguna dapat menulis (dan berbagi) ekstensi tambahan."
+
+#. (itstool) path: page/p
+#: C/extensions.page:12
+msgid ""
+"You can enable or disable extensions using <guiseq><gui>Edit</"
+"gui><gui>Extensions</gui></guiseq>. Some extensions will have "
+"<gui>Preferences</gui> that can be modified from this dialog."
+msgstr ""
+"Anda dapat mengaktifkan atau menonaktifkan ekstensi menggunakan "
+"<guiseq><gui>Sunting</gui><gui>Ekstensi</gui></guiseq>. Beberapa ekstensi "
+"akan memiliki <gui>Preferensi</gui> yang dapat dimodifikasi dari dialog ini."
+
+#. (itstool) path: page/p
+#: C/extensions.page:16
+msgid ""
+"This manual is written with the assumption that the standard extensions are "
+"enabled. If you seem to be missing a feature, check to see which extensions "
+"are actually enabled."
+msgstr ""
+"Panduan ini ditulis dengan asumsi bahwa ekstensi standar diaktifkan. Jika "
+"Anda tampaknya kehilangan fitur, periksa untuk melihat ekstensi yang "
+"sebenarnya diaktifkan."
+
+#. (itstool) path: page/p
+#: C/extensions.page:20
+msgid ""
+"If you would like to write your own extension, please visit <link href="
+"\"https://wiki.gnome.org/Apps/Gthumb\">https://wiki.gnome.org/Apps/Gthumb</"
+"link> for development information. An example extension is provided in the "
+"source code, which you can base your own extension on."
+msgstr ""
+"Jika Anda ingin menulis ekstensi Anda sendiri, silakan kunjungi <link href="
+"\"https://wiki.gnome.org/Apps/Gthumb\">https://wiki.GNOME.org/Apps/Gthumb</"
+"link> untuk informasi pengembangan. Contoh ekstensi disediakan dalam kode "
+"sumber, yang Anda dapat jadikan dasar ekstensi Anda sendiri."
+
+#. (itstool) path: page/title
+#: C/gimp.page:6
+msgid "Launching GIMP"
+msgstr "Meluncurkan GIMP"
+
+#. (itstool) path: page/p
+#: C/gimp.page:7
+msgid ""
+"If you have files selected in the browser, or an image open in the viewer, "
+"you can open them in the <app>GNU Image Manipulation Program (GIMP)</app> by "
+"pressing <key>g</key>."
+msgstr ""
+"Jika Anda memiliki berkas yang dipilih di peramban, atau citra yang terbuka "
+"di penampil, Anda dapat membukanya di <app>GNU Image Manipulation Program "
+"(GIMP)</app> dengan menekan <key>g</key>."
+
+#. (itstool) path: page/p
+#: C/gimp.page:10
+msgid ""
+"<app>GIMP</app> provides a more sophisticated set of editing tools than that "
+"provided with <app>gThumb</app>."
+msgstr ""
+"<app>GIMP</app> menyediakan seperangkat alat penyuntingan yang lebih canggih "
+"daripada yang disediakan dengan <app>gThumb</app>."
+
+#. (itstool) path: page/title
+#: C/viewer.page:6
+msgid "Opening an Image"
+msgstr "Membuka Gambar"
+
+#. (itstool) path: page/p
+#: C/viewer.page:8
+msgid ""
+"The browser view shows the images in the current folder or catalog (see "
+"<link xref=\"gthumb-browser-view\"/>). Double-clicking an image (or pressing "
+"<key>Return</key>) in the browser will open it in the viewer mode."
+msgstr ""
+"Tampilan peramban menampilkan gambar dalam folder atau katalog saat ini "
+"(lihat <link xref=\"gthumb-browser-view\"/>). Mengklik ganda citra (atau "
+"menekan <key>Return</key>) di peramban akan membukanya dalam mode penampil."
+
+#. (itstool) path: page/p
+#: C/viewer.page:13
+msgid ""
+"Pressing <key>Escape</key> will exit the viewer mode, and return the user to "
+"the browser mode. A toolbar button (<gui>View the folders</gui>) is also "
+"provided for this purpose."
+msgstr ""
+"Menekan <key>Escape</key> akan keluar dari mode penampil, dan mengembalikan "
+"pengguna ke mode peramban. Tombol bilah alat (<gui>Lihat folder</gui>) juga "
+"disediakan untuk tujuan ini."
+
+#. (itstool) path: page/p
+#: C/viewer.page:17
+msgid ""
+"A <link xref=\"gthumb-thumbnail-pane\"/> may be displayed in the viewer "
+"mode, if desired."
+msgstr ""
+"Suatu <link xref=\"gthumb-thumbnail-pane\"/> mungkin ditampilkan dalam modus "
+"penampil, jika diinginkan."
+
+#. (itstool) path: figure/title
+#: C/viewer.page:21
+msgid "Viewer Mode with Thumbnail Pane"
+msgstr "Mode Penampil dengan Panel Gambar Mini"
+
+#. (itstool) path: page/p
+#: C/viewer.page:26
+msgid ""
+"In the viewer mode, you can advance to the next image by clicking the "
+"<gui>Next</gui> button, or by pressing <key>Space</key> or <key>Page Down</"
+"key>. You can go back to the previous image by clicking the <gui>Previous</"
+"gui> button, or by pressing <key>Backspace</key> or <key>Page Up</key>. You "
+"can go also click on thumbnails in the thumbnail pane to open a different "
+"image."
+msgstr ""
+"Dalam mode penampil, Anda dapat maju ke citra berikutnya dengan mengklik "
+"tombol <gui>Berikutnya</gui>, atau dengan menekan <key>Spasi</key> atau "
+"<key>Page Down</key>. Anda dapat kembali ke citra sebelumnya dengan mengklik "
+"tombol <gui>Sebelumnya</gui>, atau dengan menekan <key>Backspace</key> atau "
+"<key>Page Up</key>. Anda juga dapat mengklik gambar mini di panel gambar "
+"mini untuk membuka citra yang berbeda."
+
+#. (itstool) path: page/title
+#: C/fullscreen.page:8
+msgid "Manual Fullscreen Mode"
+msgstr "Mode Layar Penuh Manual"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:10
+msgid ""
+"Pressing <key>f</key> in the browser or viewer modes will display the "
+"current image in fullscreen mode. (In the browser mode, you can also double-"
+"click with the middle mouse button.)"
+msgstr ""
+"Menekan <key>f</key> di peramban atau mode penampil akan menampilkan citra "
+"saat ini dalam mode layar penuh. (Dalam mode peramban, Anda juga dapat "
+"mengklik ganda dengan tombol tengah tetikus.)"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:14
+msgid ""
+"Moving the mouse will activate a popup control panel briefly. This can be "
+"used to navigate to the next or previous image, or change zoom levels."
+msgstr ""
+"Menggerakkan tetikus akan mengaktifkan panel kontrol popup sebentar. Ini "
+"dapat digunakan untuk menavigasi ke citra berikutnya atau sebelumnya, atau "
+"mengubah tingkat zum."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:18
+msgid ""
+"You can also advance to the next image by pressing <key>PageDown</key> or "
+"<key>Space</key>."
+msgstr ""
+"Anda juga dapat maju ke citra berikutnya dengan menekan <key>PageDown</key> "
+"atau <key>Spasi</key>."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:21
+msgid ""
+"You can go back to the previous image by pressing <key>PageUp</key> or "
+"<key>Backspace</key>."
+msgstr ""
+"Anda dapat kembali ke citra sebelumnya dengan menekan <key>PageUp</key> atau "
+"<key>Backspace</key>."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:24
+msgid "This can be used to implement a manually-controlled slideshow."
+msgstr ""
+"Ini dapat digunakan untuk menerapkan pertunjukan salindia yang dikontrol "
+"secara manual."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:27
+msgid "To exit the fullscreen mode, press <key>f</key> or <key>Escape</key>."
+msgstr ""
+"Untuk keluar dari mode layar penuh, tekan <key>f</key> atau <key>Escape</"
+"key>."
+
+#. (itstool) path: page/title
+#: C/sorting.page:7
+msgid "Sorting Files"
+msgstr "Menyortir Berkas-berkas"
+
+#. (itstool) path: page/p
+#: C/sorting.page:9
+msgid ""
+"Use the <guiseq><gui>View</gui><gui>Sort By</gui></guiseq> menu to select "
+"the desired file-sorting method for the browser view. Files can be sorted on "
+"the basis of their name, the file size, the file modification date, or the "
+"date the photo was taken."
+msgstr ""
+"Gunakan menu <guiseq><gui>Tampilan</gui><gui>Urut Berdasarkan</gui></guiseq> "
+"untuk memilih metode pengurutan berkas yang diinginkan untuk tampilan "
+"peramban. Berkas dapat diurutkan berdasarkan nama, ukuran berkas, tanggal "
+"modifikasi berkas, atau tanggal foto diambil."
+
+#. (itstool) path: page/title
+#: C/filtering.page:7
+msgid "Filtering Files"
+msgstr "Menyaring Berkas-berkas"
+
+#. (itstool) path: page/p
+#: C/filtering.page:9
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui></guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"Anda dapat memilih jenis berkas yang akan ditampilkan dalam tampilan "
+"peramban menggunakan dialog <guiseq><gui>Tampilan</gui><gui>Filter</gui></"
+"guiseq>. Bakunya adalah untuk menampilkan semua berkas media (citra, film, "
+"audio), tapi ini dapat dibuat lebih atau kurang restriktif."
+
+#. (itstool) path: figure/title
+#: C/filtering.page:15
+msgid "Enabling Filters"
+msgstr "Mengaktifkan Penyaring"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:17
+msgctxt "_"
+msgid ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+msgstr ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:20
+msgid ""
+"The figure above shows how to configure <app>gThumb</app> to display media "
+"files only, by setting the <gui>General Filter</gui>."
+msgstr ""
+"Gambar di atas menunjukkan cara mengonfigurasi <app>gThumb</app> untuk "
+"menampilkan berkas media saja, dengan mengatur <gui>Filter Umum</gui>."
+
+#. (itstool) path: page/p
+#: C/filtering.page:23
+msgid ""
+"Also, by enabling <gui>Filename</gui> in <gui>Other Filters</gui>, a filter-"
+"by-filename ability is added to the filter bar at the bottom of the browser "
+"view:"
+msgstr ""
+"Selain itu, dengan mengaktifkan <gui>Nama Berkas</gui> di <gui>Filter Lain</"
+"gui>, kemampuan menyaring berdasarkan nama berkas ditambahkan ke bilah "
+"filter di bagian bawah tampilan peramban:"
+
+#. (itstool) path: figure/title
+#: C/filtering.page:28
+msgid "Browser Filter Bar"
+msgstr "Bilah Filter Peramban"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:30
+msgctxt "_"
+msgid ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+msgstr ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:33
+msgid ""
+"In the above figure, the filename filter has been configured to show only "
+"files with \"gen\" in the filename. The matching is case-insensitive."
+msgstr ""
+"Pada gambar di atas, filter nama berkas telah dikonfigurasi untuk hanya "
+"menampilkan berkas dengan \"gen\" dalam nama berkas. Pencocokan peka huruf "
+"besar kecil."
+
+#. (itstool) path: page/title
+#: C/printing.page:7
+msgid "Printing Images"
+msgstr "Mencetak Citra"
+
+#. (itstool) path: page/p
+#: C/printing.page:9
+msgid ""
+"To print the current image in the viewer mode, use <guiseq><gui>File</"
+"gui><gui>Print</gui></guiseq> or <keyseq><key>Ctrl</key><key>p</key></"
+"keyseq>."
+msgstr ""
+"Untuk mencetak citra saat ini dalam mode penampil, gunakan "
+"<guiseq><gui>Berkas</gui><gui>Cetak</gui></guiseq> atau <keyseq><key>Ctrl</"
+"key><key>p</key></keyseq>."
+
+#. (itstool) path: page/p
+#: C/printing.page:13
+msgid ""
+"To print one or more images from the browser mode, select the desired images "
+"and then use <guiseq><gui>File</gui><gui>Print</gui></guiseq> or "
+"<keyseq><key>Ctrl</key><key>p</key></keyseq>."
+msgstr ""
+"Untuk mencetak satu atau lebih citra dari mode peramban, pilih citra yang "
+"diinginkan dan kemudian gunakan <guiseq><gui>Berkas</gui><gui>Cetak</gui></"
+"guiseq> atau <keyseq><key>Ctrl</key><key>p</key></keyseq>."
+
+#. (itstool) path: page/p
+#: C/printing.page:18
+msgid ""
+"The printer to use can be selected from the <gui>General</gui> tab of the "
+"print dialog."
+msgstr ""
+"Pencetak yang akan digunakan dapat dipilih dari tab <gui>Umum</gui> pada "
+"dialog cetak."
+
+#. (itstool) path: page/p
+#: C/printing.page:21
+msgid ""
+"The type of paper to use can be selected from the <gui>Page Setup</gui> tab."
+msgstr ""
+"Jenis kertas yang akan digunakan dapat dipilih dari tab <gui>Penyiapan "
+"Halaman</gui>."
+
+#. (itstool) path: page/p
+#: C/printing.page:24
+msgid ""
+"The <gui>Layout</gui> tab provides some additional <app>gThumb</app>-"
+"specific options. You can set the number of images to include on each page "
+"here, and a preview pane is provided. Captions can also be added under the "
+"image, in a configurable font. The captions can be chosen from a selection "
+"of listed file attributes (like the file name, the date of the photo, camera "
+"shutter speed, and others). Each image can be repositioned inside its print "
+"area using the controls on this tab."
+msgstr ""
+"Tab <gui>Tata Letak</gui> menyediakan beberapa opsi khusus <app>gThumb</app> "
+"tambahan. Anda dapat mengatur banyaknya citra untuk disertakan pada setiap "
+"halaman di sini, dan panel pratinjau disediakan. Keterangan juga dapat "
+"ditambahkan di bawah citra, dengan fonta yang dapat dikonfigurasi. "
+"Keterangan dapat dipilih dari pilihan atribut berkas yang terdaftar (seperti "
+"nama berkas, tanggal foto, kecepatan rana kamera, dan lainnya). Setiap citra "
+"dapat diposisikan ulang di dalam area cetak menggunakan kontrol pada tab ini."
+
+#. (itstool) path: page/p
+#: C/printing.page:34
+msgid "When you are ready to print, press the <gui>Print</gui> button."
+msgstr "Ketika Anda siap untuk mencetak, tekan tombol <gui>Cetak</gui>."
+
+#. (itstool) path: page/title
+#: C/sharing-disc.page:6
+msgid "Creating a CD/DVD/ISO"
+msgstr "Membuat CD/DVD/ISO"
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:7
+msgid ""
+"To write a series of files to an optical disk (CD or DVD), or to create an "
+"ISO disk image file, use the <guiseq><gui>File</gui> <gui>Export To</"
+"gui><gui>Optical Disc</gui></guiseq> menu item."
+msgstr ""
+"Untuk menulis serangkaian berkas ke disk optik (CD atau DVD), atau untuk "
+"membuat berkas image disk ISO, gunakan butir menu <guiseq><gui>Berkas</gui> "
+"<gui>Ekspor Ke</gui><gui>Disk Optik</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:13
+msgid ""
+"You will be offered the choice of writing the currently selected files, the "
+"entire current folder, or the entire current folder and its subfolders. "
+"Click <gui>OK</gui> when you have made the appropriate selection."
+msgstr ""
+"Anda akan ditawarkan pilihan menulis berkas yang dipilih saat ini, seluruh "
+"folder saat ini, atau seluruh folder saat ini dan subfolder. Klik <gui>OK</"
+"gui> ketika Anda telah membuat pilihan yang sesuai."
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:19
+msgid ""
+"The next dialog will select the destination disk, or the ISO file to save. "
+"When you are ready to complete the process, click <gui>Create Image</gui>. "
+"The optical disk writing process will then commence, or the ISO file will be "
+"written, completing the process."
+msgstr ""
+"Dialog berikutnya akan memilih disk tujuan, atau berkas ISO untuk menyimpan. "
+"Ketika Anda siap untuk menyelesaikan proses, klik <gui>Buat Image</gui>. "
+"Proses penulisan disk optik kemudian akan dimulai, atau berkas ISO akan "
+"ditulis, menyelesaikan prosesnya."
+
+#. (itstool) path: page/title
+#: C/sharing-social.page:6
+msgid "Uploading to Photo-Sharing Web Sites"
+msgstr "Mengunggah ke Situs Web Berbagi Foto"
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:7
+msgid ""
+"gThumb is provided with a number of extensions for uploading photos to "
+"various \"social media\" web sites. By default, uploaders for Facebook, "
+"Flickr, Picasa, and Photobucket are enabled."
+msgstr ""
+"gThumb disediakan dengan sejumlah ekstensi untuk mengunggah foto ke berbagai "
+"situs web \"media sosial\". Secara baku, pengunggah untuk Facebook, Flickr, "
+"Picasa, dan Photobucket diaktifkan."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:13
+msgid ""
+"To upload a series of photos, select the images in the browser view, and "
+"click the <gui>Share</gui> button in the toolbar. Select the appropriate web "
+"site from the menu that appears."
+msgstr ""
+"Untuk mengunggah serangkaian foto, pilih citra dalam tampilan peramban, dan "
+"klik tombol <gui>Bagikan</gui> di bilah alat. Pilih situs web yang sesuai "
+"dari menu yang muncul."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:17
+msgid ""
+"You may be prompted for additional information specific to the destination "
+"site, like an album name. You may also be prompted for your user name and "
+"password for the site. It may be necessary for gThumb to open a web browser, "
+"where you complete the required authentication steps. Once you have "
+"completed the required authentication steps in the browser, return to gThumb "
+"and continue the upload."
+msgstr ""
+"Anda mungkin dimintai informasi tambahan khusus untuk situs tujuan, seperti "
+"nama album. Anda mungkin juga akan diminta untuk nama pengguna dan sandi "
+"untuk situs. gThumb mungkin perlu membuka peramban web, di mana Anda "
+"menyelesaikan langkah pengesahan yang diperlukan. Setelah Anda menyelesaikan "
+"langkah otentikasi yang diperlukan dalam peramban, kembali ke gThumb dan "
+"melanjutkan pengunggahan."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:26
+msgid ""
+"If you do not see the expected upload sites in the <gui>Share</gui> menu, "
+"check that the appropriate exporter extensions are enabled in "
+"<guiseq><gui>Edit</gui><gui>Extensions</gui></guiseq>."
+msgstr ""
+"Jika Anda tidak melihat situs unggahan yang diharapkan di menu <gui>Berbagi</"
+"gui>, pastikan ekstensi pengekspor yang sesuai diaktifkan di "
+"<guiseq><gui>Sunting</gui><gui>Ekstensi</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:31
+msgid ""
+"For some sites, gThumb also supports downloading photos from the site into "
+"gThumb. See the <guiseq><gui>File</gui><gui>Import From</gui></guiseq> menu "
+"for the available download options."
+msgstr ""
+"Untuk beberapa situs, gThumb juga mendukung pengunduhan foto dari situs ke "
+"gThumb. Lihat menu <guiseq><gui>Berkas</gui><gui>Impor Dari</gui></guiseq> "
+"untuk pilihan mengunduh yang tersedia."
+
+#. (itstool) path: page/title
+#: C/wallpaper.page:6
+msgid "Desktop Wallpaper"
+msgstr "Gambar Latar Desktop"
+
+#. (itstool) path: page/p
+#: C/wallpaper.page:7
+msgid ""
+"To set an image as the system desktop wallpaper, right-click on the image "
+"and select <guiseq><gui>Set as Desktop Background</gui></guiseq> from the "
+"pop-up menu. The desktop background will change, and the Gnome Appearance "
+"Preferences dialog will appear. You can use this dialog to make adjustments "
+"to the background settings (positioning, stretching, tiling, et cetera.)."
+msgstr ""
+"Untuk mengatur citra sebagai gambar latar desktop sistem, klik kanan pada "
+"citra dan pilih <guiseq><gui>Atur sebagai Latar Belakang Desktop</gui></"
+"guiseq> dari menu pop-up. Latar belakang desktop akan berubah, dan dialog "
+"preferensi penampilan GNOME akan muncul. Anda dapat menggunakan dialog ini "
+"untuk membuat penyesuaian pada pengaturan latar belakang (memposisikan, "
+"meregangkan, memiringkan, dan sebagainya.)."
+
+#. (itstool) path: page/title
+#: C/bookmarks.page:6
+msgid "Using Bookmarks"
+msgstr "Menggunakan Markah"
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:8
+msgid ""
+"Frequently-used folders can be added to the bookmark list for rapid access. "
+"To add the current folder to the bookmark list, press <keyseq><key>Ctrl</"
+"key><key>D</key></keyseq> or use the command <guiseq><gui>Bookmarks</"
+"gui><gui>Add Bookmark</gui></guiseq>."
+msgstr ""
+"Folder yang sering digunakan dapat ditambahkan ke daftar markah untuk akses "
+"cepat. Untuk menambahkan folder saat ini ke daftar markah, tekan "
+"<keyseq><key>Ctrl</key><key>D</key></keyseq> atau gunakan perintah "
+"<guiseq><gui>Markah</gui><gui>Tambahkan Markah</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:13
+msgid ""
+"To remove or rearrange bookmarks in a different order use the "
+"<guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq> command."
+msgstr ""
+"Untuk menghapus atau mengatur ulang markah dalam urutan yang berbeda, "
+"gunakan perintah <guiseq><gui>Markah</gui><gui>Sunting Markah</gui> </"
+"guiseq>."
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:16
+msgid ""
+"<guiseq><gui>Bookmarks</gui><gui>System Bookmarks</gui></guiseq> provides "
+"access to the system bookmarks that have been defined in <app>Nautilus</app> "
+"or the file-chooser dialog used in most Gnome applications."
+msgstr ""
+"<guiseq><gui>Markah</gui><gui>Markah Sistem</gui></guiseq> menyediakan akses "
+"ke markah sistem yang telah didefinisikan dalam <app>Nautilus</app> atau "
+"dialog pemilih berkas yang digunakan di sebagian besar aplikasi GNOME."
+
+#. (itstool) path: page/title
+#: C/import.page:8
+msgid "Importing From a Camera"
+msgstr "Mengimpor dari Kamera"
+
+#. (itstool) path: page/p
+#: C/import.page:10
+msgid ""
+"On most systems, <app>gThumb</app> will automatically launch the import "
+"dialog when a digital camera is connected to the computer, or a memory card "
+"with photos is plugged into a card reader. (It does this because it is "
+"registered as the default handler for x-content/image-dcf and x-content/"
+"image-picturecd mime types.)"
+msgstr ""
+"Pada kebanyakan sistem, <app>gThumb</app> akan secara otomatis meluncurkan "
+"dialog impor ketika kamera digital terhubung ke komputer, atau kartu memori "
+"dengan foto dicolokkan ke pembaca kartu. (Hal ini karena terdaftar sebagai "
+"handler default untuk jenis MIME x-content/image-dcf dan x-content/image-"
+"picturecd.)"
+
+#. (itstool) path: page/p
+#: C/import.page:16
+msgid ""
+"To manually launch the import dialog, use <guiseq><gui>File</gui><gui>Import "
+"From</gui><gui>Removable Device</gui></guiseq>."
+msgstr ""
+"Untuk secara manual meluncurkan dialog impor, gunakan <guiseq><gui>Berkas</"
+"gui><gui>Impor Dari</gui><gui>Perangkat Lepasan</gui></guiseq>."
+
+#. (itstool) path: figure/title
+#: C/import.page:20
+msgid "The Import Dialog"
+msgstr "Dialog Impor"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:21
+msgctxt "_"
+msgid ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+msgstr ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+
+#. (itstool) path: page/p
+#: C/import.page:24
+msgid ""
+"The import dialog shows thumbnails of the photos available on the selected "
+"device. The user can select one of more photos using normal keyboard or "
+"mouse techniques (for example, Ctrl+click to add a photo to the selection, "
+"or click and drag the mouse over the desired photos.) If no photos are "
+"explicitly selected, all will be imported."
+msgstr ""
+"Dialog impor menampilkan gambar mini foto yang tersedia pada perangkat yang "
+"dipilih. Pengguna dapat memilih salah satu dari lebih banyak foto "
+"menggunakan papan tik normal atau teknik tetikus (misalnya, Ctrl+klik untuk "
+"menambahkan foto ke pilihan, atau klik dan tarik tetikus di atas foto yang "
+"diinginkan.) Jika tidak ada foto yang dipilih secara eksplisit, semua akan "
+"diimpor."
+
+#. (itstool) path: page/p
+#: C/import.page:30
+msgid ""
+"Tags may optionally be associated with the imported photos, using the "
+"<gui>Tags</gui> control below the thumbnail window. Click the drop-down "
+"control to see the predefined tags."
+msgstr ""
+"Tag mungkin secara opsional dikaitkan dengan foto yang diimpor, menggunakan "
+"kontrol <gui>Tag</gui> di bawah jendela gambar mini. Klik kontrol tarik-"
+"turun untuk melihat tag yang telah ditentukan sebelumnya."
+
+#. (itstool) path: page/p
+#: C/import.page:34
+msgid ""
+"An event name may also be optionally associated with the photos. This event "
+"name can be used to generate an automatic subfolder name (possibly "
+"incorporating a date) as described below. For example, if the base "
+"destination folder is \"/photos\", and you enter \"Wedding-Jennifer\" in the "
+"<gui>Event</gui> field, you can configure generation of automatic subfolders "
+"like \"/photos/2010-07-31, Wedding-Jennifer\"."
+msgstr ""
+"Nama acara mungkin juga secara opsional terkait dengan foto. Nama acara ini "
+"dapat digunakan untuk membuat nama subfolder otomatis (mungkin memasukkan "
+"tanggal) seperti yang dijelaskan di bawah ini. Misalnya, jika folder tujuan "
+"dasar adalah \"/foto\", dan Anda memasukkan \"Pernikahan-Jennifer\" di "
+"bidang <gui>Acara</gui>, Anda dapat mengonfigurasi pembuatan subfolder "
+"otomatis seperti \"/foto/2010-07-31, Pernikahan-Jennifer\"."
+
+#. (itstool) path: figure/title
+#: C/import.page:42
+msgid "Standard Date-Based Subfolders"
+msgstr "Subfolder Berbasis Tanggal Standar"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:43
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+msgstr ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+
+#. (itstool) path: page/p
+#: C/import.page:46
+msgid ""
+"As mentioned above, subfolders for imported photos can be automatically "
+"generated based on event names and dates. This is enabled or disabled by "
+"clicking on the destination foldername in the import dialog. This opens a "
+"second dialog, where the base folder for imports may be selected (the "
+"<gui>Destination</gui> folder). To generate automatic subfolders, select "
+"<gui>Automatic subfolder</gui>."
+msgstr ""
+"Seperti disebutkan di atas, subfolder untuk foto yang diimpor dapat dibuat "
+"secara otomatis berdasarkan nama acara dan tanggal. Ini diaktifkan atau "
+"dinonaktifkan dengan mengklik nama folder tujuan dalam dialog impor. Ini "
+"akan membuka dialog kedua, di mana folder dasar untuk impor dapat dipilih "
+"(folder <gui>Tujuan</gui>). Untuk membuat subfolder otomatis, pilih "
+"<gui>Subfolder otomatis</gui>."
+
+#. (itstool) path: page/p
+#: C/import.page:52
+msgid ""
+"You can select either the <gui>File Date</gui> or the <gui>Current Date</"
+"gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
+"examines the dates embedded in the file metadata to determine when the photo "
+"was taken.) A variety of standard date formats are available (<gui>year-"
+"month</gui> for example). The <gui>as single subfolder</gui> checkbox "
+"controls whether a \"deep\" or \"shallow\" hierarchy of files is made (for "
+"example, with <gui>year-month</gui>, you can have year subfolders with month "
+"subfolders under them, or all subfolders can be at the same level in the "
+"filesystem, with the year and name both the folder name."
+msgstr ""
+"Anda dapat memilih <gui>Tanggal Berkas</gui> atau <gui>Tanggal Kini</gui> "
+"untuk digunakan sebagai dasar untuk penamaan subfolder. (<gui>Tanggal "
+"Berkas</gui> memeriksa tanggal yang disematkan di metadata berkas untuk "
+"menentukan kapan foto diambil.) Berbagai format tanggal standar tersedia "
+"(<gui>tahun-bulan</gui> misalnya). Kotak centang <gui>sebagai subfolder "
+"tunggal</gui> mengontrol apakah hirarki berkas dibuat \"dalam\" atau "
+"\"dangkal\" (misalnya, dengan <gui>tahun-bulan</gui>, Anda dapat memiliki "
+"subfolder tahun dengan subfolder bulan di bawah mereka, atau semua subfolder "
+"dapat berada pada tingkat yang sama di sistem berkas, dengan tahun dan nama "
+"keduanya menjadi nama folder."
+
+#. (itstool) path: page/p
+#: C/import.page:61
+msgid ""
+"It is not necessary to use the predefined date formats. If you select "
+"<gui>custom format</gui>, standard date codes can be used. Click on the help "
+"icon to the right of the custom format field for a list of format codes. \"%E"
+"\" is a special code that will embed the <gui>Event</gui> name defined in "
+"the main import dialog."
+msgstr ""
+"Tidak perlu menggunakan format tanggal yang telah ditetapkan. Jika Anda "
+"memilih <gui>format ubahan</gui>, kode tanggal standar dapat digunakan. Klik "
+"ikon bantuan di sebelah kanan bidang format ubahan untuk daftar kode format. "
+"\"%E\" adalah kode khusus yang akan menanamkan nama <gui>Acara</gui> yang "
+"didefinisikan dalam dialog impor utama."
+
+#. (itstool) path: page/p
+#: C/import.page:67
+msgid "See <link xref=\"gthumb-date-formats\"/> for more date format codes."
+msgstr ""
+"Lihat <link xref=\"gthumb-date-formats\"/> kode format tanggal lainnya."
+
+#. (itstool) path: page/p
+#: C/import.page:69
+msgid ""
+"If you use automatic subfolder naming, the <gui>Destination</gui> field in "
+"the main import dialog will show the automatic portion of the folder in red. "
+"(For date-based formats, dummy data may be shown in the red portion.)"
+msgstr ""
+"Jika Anda menggunakan penamaan subfolder otomatis, bidang <gui>Tujuan</gui> "
+"di dialog impor utama akan menampilkan bagian otomatis folder dalam warna "
+"merah. (Untuk format berbasis tanggal, data dummy mungkin ditampilkan dalam "
+"porsi merah.)"
+
+#. (itstool) path: figure/title
+#: C/import.page:74
+msgid "Using Custom Formats"
+msgstr "Menggunakan Format Ubahan"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:75
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+msgstr ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+
+#. (itstool) path: page/title
+#: C/slideshow.page:7
+msgid "Automatic Slideshow"
+msgstr "Pertunjukan Salindia Otomatis"
+
+#. (itstool) path: page/p
+#: C/slideshow.page:9
+msgid ""
+"A slideshow of the currently selected images can be started from the image "
+"browser by pressing <key>F5</key>, by clicking the slideshow toolbar icon, "
+"or by clicking <guiseq><gui>View</gui><gui>Slideshow</gui></guiseq>. If no "
+"images are selected, all images in the folder will be included."
+msgstr ""
+"Tayangan salindia citra yang dipilih saat ini dapat dimulai dari peramban "
+"citra dengan menekan <key>F5</key>, dengan mengklik ikon bilah alat "
+"pertunjukan salindia, atau dengan mengeklik <guiseq><gui>Tampilan</"
+"gui><gui>Pertunjukan Salindia</gui></guiseq>. Jika tidak ada citra yang "
+"dipilih, semua citra dalam folder akan disertakan."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:15
+msgid ""
+"The transition effects and the time each image is shown can be modified from "
+"the <guiseq><gui>Edit</gui><gui>Preferences</gui><gui>Slideshow</gui></"
+"guiseq> dialog."
+msgstr ""
+"Efek transisi dan waktu setiap citra ditampilkan dapat dimodifikasi dari "
+"dialog <guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Pertunjukan "
+"Salindia</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:19
+msgid ""
+"Some graphics cards and drivers may experience problems (crashes) if "
+"transition effects are enabled. If you experience such difficulties, set the "
+"<gui>Transition effect</gui> preference to <gui>None</gui>."
+msgstr ""
+"Beberapa kartu grafis dan driver mungkin mengalami masalah (crash) jika efek "
+"transisi diaktifkan. Jika Anda mengalami kesulitan seperti itu, aturlah "
+"preferensi <gui>Efek transisi</gui> ke <gui>Nihil</gui>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:23
+msgid ""
+"You can advance manually to the next image by pressing <key>Down Arrow</"
+"key>, <key>Right Arrow</key>, <key>Page Down</key> or <key>Space</key>."
+msgstr ""
+"Anda dapat maju secara manual ke citra berikutnya dengan menekan <key>Panah "
+"Bawah</key>, <key>Panah Kanan</key>, <key>Page Down</key>, atau <key>Spasi</"
+"key>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:27
+msgid ""
+"You can go back to the previous image by pressing <key>Up Arrow</key>, "
+"<key>Left Arrow</key> or <key>Page Up</key>."
+msgstr ""
+"Anda dapat kembali ke citra sebelumnya dengan menekan <key>Panah Atas</key>, "
+"<key>Panah Kiri</key>, atau <key>Page Up</key>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:30
+msgid "You can pause or un-pause the slideshow by pressing <key>p</key>."
+msgstr ""
+"Anda dapat menjeda atau membatalkan jeda tayangan salindia dengan menekan "
+"<key>p</key>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:32
+msgid "To exit the slideshow, press <key>Escape</key> or <key>F5</key>."
+msgstr ""
+"Untuk keluar dari pertunjukan slide, tekan <key>Escape</key> atau <key>F5</"
+"key>."
+
+#. (itstool) path: page/title
+#: C/file-copy-move.page:6
+msgid "Copying and Moving Files"
+msgstr "Menyalin dan Memindahkan Berkas"
+
+#. (itstool) path: page/p
+#: C/file-copy-move.page:8
+msgid "There are three ways to copy or move files in <app>gThumb</app>."
+msgstr ""
+"Ada tiga cara untuk menyalin atau memindahkan berkas di <app>gThumb</app>."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:12
+msgid "Cut and Paste"
+msgstr "Potong dan Tempel"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:13
+msgid ""
+"To copy a file in the browser view, use <guiseq><gui>Edit</gui><gui>Copy</"
+"gui></guiseq>, or press <keyseq><key>Ctrl</key><key>C</key></keyseq>. To "
+"move a file, use <guiseq><gui>Edit</gui><gui>Cut</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>X</key></keyseq>. Then navigate to the "
+"destination folder using the folder tree. Use <guiseq><gui>Edit</"
+"gui><gui>Paste</gui></guiseq>, or press <keyseq><key>Ctrl</key><key>V</key></"
+"keyseq>, to complete the file transfer."
+msgstr ""
+"Untuk menyalin berkas dalam tampilan peramban, gunakan <guiseq><gui>Sunting</"
+"gui><gui>Salin</gui></guiseq>, atau tekan <keyseq><key>Ctrl</key><key>C</"
+"key></keyseq>. Untuk memindahkan berkas, gunakan <guiseq><gui>Sunting</"
+"gui><gui>Potong</gui></guiseq>, atau tekan <keyseq><key>Ctrl</key><key>X</"
+"key></keyseq>. Kemudian arahkan ke folder tujuan menggunakan pohon folder. "
+"Gunakan <guiseq><gui>Sunting</gui><gui>Tempel</gui></guiseq>, atau tekan "
+"<keyseq><key>Ctrl</key><key>V</key></keyseq>, untuk menyelesaikan transfer "
+"berkas."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:26
+msgid "Drag and Drop"
+msgstr "Seret dan Jatuhkan"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:27
+msgid ""
+"To copy a file to another folder, simply drag the file (with a sustained "
+"left-mouse click) to the destination folder visible in the folder tree. To "
+"move a file, hold down the <key>Shift</key> key while dragging."
+msgstr ""
+"Untuk menyalin berkas ke folder lain, cukup seret berkas (dengan klik kiri-"
+"mouse yang berkelanjutan) ke folder tujuan yang terlihat di pohon folder. "
+"Untuk memindahkan berkas, tahan tombol <key>Shift</key> sambil menyeret."
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:31
+msgid ""
+"You can also use the middle mouse button to drag files. In this case, "
+"<app>gThumb</app> will ask you if you wish to copy the files, move the "
+"files, or cancel the operation."
+msgstr ""
+"Anda juga dapat menggunakan tombol tengah tetikus untuk menyeret berkas. "
+"Dalam hal ini, <app>gThumb</app> akan menanyakan apakah Anda ingin menyalin "
+"berkas, memindahkan berkas, atau membatalkan operasi."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:37
+msgid "File Copy / Move Dialog"
+msgstr "Dialog Salin / Pindah Berkas"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:38
+msgid ""
+"Select the files to be transferred, right-click on the selection, and choose "
+"<guiseq><gui>Copy to...</gui></guiseq> or <guiseq><gui>Move to...</gui></"
+"guiseq>. This will open a folder-selection dialog, where you can choose the "
+"destination folder. At the bottom of the dialog, you can enable the "
+"<guiseq><gui>View the destination</gui></guiseq> option if you want to go to "
+"the destination folder after the file transfer is complete."
+msgstr ""
+"Pilih berkas yang akan ditransfer, klik kanan pada pilihan, dan pilih "
+"<guiseq><gui>Salin ke...</gui></guiseq> atau <guiseq><gui>Pindah ke...</"
+"gui></guiseq>. Ini akan membuka dialog pemilihan folder, di mana Anda dapat "
+"memilih folder tujuan. Di bagian bawah dialog, Anda dapat mengaktifkan opsi "
+"<guiseq><gui>Lihat tujuan</gui></guiseq> jika Anda ingin pergi ke folder "
+"tujuan setelah transfer berkas selesai."
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-Share Alike 3.0 Unported License"
+msgstr "Creative Commons Attribution-Share Alike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Karya ini dilisensikan di bawah <_:link-1/>."
+
+#. (itstool) path: license/p
+#: C/legal.xml:6
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Sebagai pengecualian khusus, para pemegang hak cipta mengijinkan Anda untuk "
+"menyalin, mengubah, dan menyebarluaskan kode contoh yang dimuat dalam "
+"dokumen ini di bawah persyaratan yang Anda pilih, tanpa batas."

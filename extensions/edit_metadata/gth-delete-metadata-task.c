@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -31,7 +31,10 @@ struct _GthDeleteMetadataTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthDeleteMetadataTask, gth_delete_metadata_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthDeleteMetadataTask,
+			 gth_delete_metadata_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthDeleteMetadataTask))
 
 
 static void
@@ -165,8 +168,6 @@ gth_delete_metadata_task_class_init (GthDeleteMetadataTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthDeleteMetadataTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_delete_metadata_task_finalize;
 
@@ -178,7 +179,7 @@ gth_delete_metadata_task_class_init (GthDeleteMetadataTaskClass *klass)
 static void
 gth_delete_metadata_task_init (GthDeleteMetadataTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_DELETE_METADATA_TASK, GthDeleteMetadataTaskPrivate);
+	self->priv = gth_delete_metadata_task_get_instance_private (self);
 	self->priv->file_data = NULL;
 }
 

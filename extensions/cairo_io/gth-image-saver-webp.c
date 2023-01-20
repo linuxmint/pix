@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <webp/encode.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-image-saver-webp.h"
 #include "preferences.h"
 
@@ -30,13 +30,16 @@
 #define GET_WIDGET(x) (_gtk_builder_get_widget (self->priv->builder, (x)))
 
 
-G_DEFINE_TYPE (GthImageSaverWebp, gth_image_saver_webp, GTH_TYPE_IMAGE_SAVER)
-
-
 struct _GthImageSaverWebpPrivate {
 	GtkBuilder *builder;
 	GSettings  *settings;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthImageSaverWebp,
+			 gth_image_saver_webp,
+			 GTH_TYPE_IMAGE_SAVER,
+			 G_ADD_PRIVATE (GthImageSaverWebp))
 
 
 static void
@@ -126,7 +129,7 @@ _WebPPictureImportCairoSurface (WebPPicture     *const picture,
 	int       stride;
 	guchar   *src_row;
 	uint32_t *dest_row;
-	int       y, x;
+	int       y, x, temp;
 	guchar    r, g, b, a;
 
 	if (_cairo_image_surface_get_has_alpha (image))
@@ -138,7 +141,7 @@ _WebPPictureImportCairoSurface (WebPPicture     *const picture,
 		return 0;
 
 	stride = cairo_image_surface_get_stride (image);
-	src_row = cairo_image_surface_get_data (image);
+	src_row = _cairo_image_surface_flush_and_get_data (image);
 	dest_row = picture->argb;
 
 	for (y= 0; y < cairo_image_surface_get_height (image); y++) {
@@ -372,8 +375,6 @@ gth_image_saver_webp_class_init (GthImageSaverWebpClass *klass)
 	GObjectClass       *object_class;
 	GthImageSaverClass *image_saver_class;
 
-	g_type_class_add_private (klass, sizeof (GthImageSaverWebpPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_image_saver_webp_finalize;
 
@@ -393,7 +394,7 @@ gth_image_saver_webp_class_init (GthImageSaverWebpClass *klass)
 static void
 gth_image_saver_webp_init (GthImageSaverWebp *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_SAVER_WEBP, GthImageSaverWebpPrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_WEBP_SCHEMA);
+	self->priv = gth_image_saver_webp_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_WEBP_SCHEMA);
 	self->priv->builder = NULL;
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,11 +22,9 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gtk/gtk.h>
+#include <gthumb.h>
 
-#define DEFINE_ACTION(x) void x (GtkAction *action, gpointer data);
-
-DEFINE_ACTION(gth_browser_activate_action_export_flicker)
-DEFINE_ACTION(gth_browser_activate_action_import_flicker)
+DEF_ACTION_CALLBACK (gth_browser_activate_export_flickr)
+DEF_ACTION_CALLBACK (gth_browser_activate_import_flickr)
 
 #endif /* ACTIONS_H */

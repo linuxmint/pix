@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -32,7 +32,10 @@ struct _GthLoadImageInfoTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthLoadImageInfoTask, gth_load_image_info_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthLoadImageInfoTask,
+			 gth_load_image_info_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthLoadImageInfoTask))
 
 
 static void
@@ -119,6 +122,7 @@ image_loader_ready_cb (GObject      *source_object,
 				      &image,
 				      NULL,
 				      NULL,
+				      NULL,
 				      &error);
 
 	if (error == NULL)
@@ -161,7 +165,7 @@ load_current_image (GthLoadImageInfoTask *self)
 	image_info = self->priv->images[self->priv->current];
 
 	/* translators: %s is a filename */
-	details = g_strdup_printf (_("Loading \"%s\""), g_file_info_get_display_name (image_info->file_data->info));
+	details = g_strdup_printf (_("Loading “%s”"), g_file_info_get_display_name (image_info->file_data->info));
 	gth_task_progress (GTH_TASK (self),
 			   _("Loading images"),
 			   details,
@@ -209,8 +213,6 @@ gth_load_image_info_task_class_init (GthLoadImageInfoTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthLoadImageInfoTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_load_image_info_task_finalize;
 
@@ -223,7 +225,7 @@ gth_load_image_info_task_class_init (GthLoadImageInfoTaskClass *klass)
 static void
 gth_load_image_info_task_init (GthLoadImageInfoTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_LOAD_IMAGE_INFO_TASK, GthLoadImageInfoTaskPrivate);
+	self->priv = gth_load_image_info_task_get_instance_private (self);
 	self->priv->loader = gth_image_loader_new (NULL, NULL);
 }
 

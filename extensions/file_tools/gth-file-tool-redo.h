@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef GTH_FILE_TOOL_REDO_H
 #define GTH_FILE_TOOL_REDO_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 

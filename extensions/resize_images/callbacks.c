@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,84 +23,40 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
+#include <extensions/list_tools/list-tools.h>
 #include "actions.h"
+#include "callbacks.h"
 
 
-#define BROWSER_DATA_KEY "resize-images-browser-data"
-
-
-static const char *fixed_ui_info =
-"<ui>"
-"  <popup name='ListToolsPopup'>"
-"    <placeholder name='Tools'>"
-"      <menuitem name='ResizeImages' action='Tool_ResizeImages'/>"
-"    </placeholder>"
-"  </popup>"
-"</ui>";
-
-
-static GtkActionEntry action_entries[] = {
-	{ "Tool_ResizeImages", NULL,
-	  N_("Resize Images..."), NULL,
-	  N_("Resize the selected images"),
-	  G_CALLBACK (gth_browser_activate_action_tool_resize_images) },
+static const GActionEntry actions[] = {
+	{ "resize-images", gth_browser_activate_resize_images }
 };
 
 
-typedef struct {
-	GtkActionGroup *action_group;
-} BrowserData;
-
-
-static void
-browser_data_free (BrowserData *data)
-{
-	g_free (data);
-}
+static const GthMenuEntry action_entries[] = {
+	{ N_("Resize Images…"), "win.resize-images", NULL, "image-resize-symbolic" }
+};
 
 
 void
 ri__gth_browser_construct_cb (GthBrowser *browser)
 {
-	BrowserData *data;
-	GError      *error = NULL;
-
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
-
-	data->action_group = gtk_action_group_new ("Resize Images Actions");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
-	gtk_action_group_add_actions (data->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
-
-	if (! gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), fixed_ui_info, -1, &error)) {
-		g_message ("building menus failed: %s", error->message);
-		g_clear_error (&error);
-	}
-
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
+	gth_menu_manager_append_entries (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_TOOLS),
+					 action_entries,
+					 G_N_ELEMENTS (action_entries));
 }
 
 
 void
-ri__gth_browser_update_sensitivity_cb (GthBrowser *browser)
+ri__gth_browser_selection_changed_cb (GthBrowser *browser,
+				      int         n_selected)
 {
-	BrowserData *data;
-	GtkAction   *action;
-	int          n_selected;
-	gboolean     sensitive;
-
-	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
-	n_selected = gth_file_selection_get_n_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
-	sensitive = n_selected > 0;
-
-	action = gtk_action_group_get_action (data->action_group, "Tool_ResizeImages");
-	g_object_set (action, "sensitive", sensitive, NULL);
+	gth_window_enable_action (GTH_WINDOW (browser), "resize-images", n_selected > 0);
 }

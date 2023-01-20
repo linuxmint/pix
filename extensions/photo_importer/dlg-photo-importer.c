@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/importer/importer.h>
 #include "dlg-photo-importer.h"
 #include "preferences.h"
@@ -102,20 +102,14 @@ destroy_dialog (gpointer user_data)
 	g_settings_set_boolean (data->settings, PREF_PHOTO_IMPORTER_DELETE_FROM_DEVICE, delete_imported);
 
 	if (data->import) {
-		GSettings          *importer_settings;
-		GFile              *destination;
-		gboolean            single_subfolder;
-		GthSubfolderType    subfolder_type;
-		GthSubfolderFormat  subfolder_format;
-		char               *custom_format;
-		GList              *file_list;
+		GSettings *importer_settings;
+		GFile     *destination;
+		char      *subfolder_template;
+		GList     *file_list;
 
-		importer_settings = g_settings_new (PIX_IMPORTER_SCHEMA);
+		importer_settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
 		destination = gth_import_preferences_get_destination ();
-		single_subfolder = g_settings_get_boolean (importer_settings, PREF_IMPORTER_SUBFOLDER_SINGLE);
-		subfolder_type = g_settings_get_enum (importer_settings, PREF_IMPORTER_SUBFOLDER_TYPE);
-		subfolder_format = g_settings_get_enum (importer_settings, PREF_IMPORTER_SUBFOLDER_FORMAT);
-		custom_format = g_settings_get_string (importer_settings, PREF_IMPORTER_SUBFOLDER_CUSTOM_FORMAT);
+		subfolder_template = g_settings_get_string (importer_settings, PREF_IMPORTER_SUBFOLDER_TEMPLATE);
 
 		file_list = get_selected_file_list (data);
 		if (file_list != NULL) {
@@ -126,23 +120,20 @@ destroy_dialog (gpointer user_data)
 			task = gth_import_task_new (data->browser,
 						    file_list,
 						    destination,
-						    subfolder_type,
-						    subfolder_format,
-						    single_subfolder,
-						    custom_format,
+						    subfolder_template,
 						    gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("event_entry"))),
 						    tags,
 						    delete_imported,
 						    FALSE,
 						    g_settings_get_boolean (data->settings, PREF_PHOTO_IMPORTER_ADJUST_ORIENTATION));
-			gth_browser_exec_task (data->browser, task, FALSE);
+			gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 			g_strfreev (tags);
 			g_object_unref (task);
 		}
 
 		_g_object_list_unref (file_list);
-		g_free (custom_format);
+		g_free (subfolder_template);
 		_g_object_unref (destination);
 		g_object_unref (importer_settings);
 	}
@@ -159,7 +150,7 @@ destroy_dialog (gpointer user_data)
 	_g_object_list_unref (data->files);
 	_g_string_list_free (data->general_tests);
 
-	if (! data->import && ImportPhotos)
+	if (! data->import && gth_browser_get_close_with_task (data->browser))
 		gth_window_close (GTH_WINDOW (data->browser));
 
 	g_free (data);
@@ -244,14 +235,6 @@ ok_clicked_cb (GtkWidget  *widget,
 
 
 static void
-help_clicked_cb (GtkWidget  *widget,
-                 DialogData *data)
-{
-        show_help_dialog (GTK_WINDOW (data->dialog), "pix-importing");
-}
-
-
-static void
 update_sensitivity (DialogData *data)
 {
 	gboolean can_import;
@@ -260,7 +243,7 @@ update_sensitivity (DialogData *data)
 		can_import = data->source != NULL;
 	else
 		can_import = TRUE;
-	gtk_widget_set_sensitive (GET_WIDGET ("ok_button"), can_import);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, can_import);
 	gtk_widget_set_sensitive (GET_WIDGET ("source_selector_box"), can_import);
 	gtk_widget_set_sensitive (GET_WIDGET ("tags_box"), can_import);
 	gtk_widget_set_sensitive (GET_WIDGET ("delete_checkbutton"), can_import);
@@ -361,12 +344,12 @@ list_source_files (gpointer user_data)
 	data->files = NULL;
 
 	if (data->source == NULL) {
-		gth_file_list_clear (GTH_FILE_LIST (data->file_list), _("(Empty)"));
+		gth_file_list_clear (GTH_FILE_LIST (data->file_list), NULL);
 		update_sensitivity (data);
 		return;
 	}
 
-	gth_file_list_clear (GTH_FILE_LIST (data->file_list), _("Getting folder listing..."));
+	gth_file_list_clear (GTH_FILE_LIST (data->file_list), _("Getting the folder content…"));
 
 	data->loading_list = TRUE;
 	list = g_list_prepend (NULL, data->source);
@@ -401,7 +384,7 @@ device_chooser_changed_cb (GtkWidget  *widget,
 	if (! gtk_combo_box_get_active_iter (GTK_COMBO_BOX (data->device_chooser), &iter)) {
 		_g_clear_object (&data->source);
 		_g_clear_object (&data->last_source);
-		gth_file_list_clear (GTH_FILE_LIST (data->file_list), _("(Empty)"));
+		gth_file_list_clear (GTH_FILE_LIST (data->file_list), NULL);
 		return;
 	}
 
@@ -412,7 +395,7 @@ device_chooser_changed_cb (GtkWidget  *widget,
 	if (mount == NULL) {
 		_g_clear_object (&data->source);
 		_g_clear_object (&data->last_source);
-		gth_file_list_clear (GTH_FILE_LIST (data->file_list), _("Empty"));
+		gth_file_list_clear (GTH_FILE_LIST (data->file_list), NULL);
 		return;
 	}
 
@@ -534,6 +517,8 @@ filter_combobox_changed_cb (GtkComboBox *widget,
 	test = gth_main_get_registered_object (GTH_TYPE_TEST, test_id);
 	gth_file_list_set_filter (GTH_FILE_LIST (data->file_list), test);
 
+	g_settings_set_string (data->settings, PREF_PHOTO_IMPORTER_FILTER, test_id);
+
 	g_object_unref (test);
 }
 
@@ -556,7 +541,7 @@ dlg_photo_importer (GthBrowser            *browser,
 	GtkCellRenderer  *renderer;
 	GthFileDataSort  *sort_type;
 	GList            *tests, *scan;
-	char             *general_filter;
+	char             *default_filter;
 	int               i, active_filter;
 	int               i_general;
 
@@ -567,8 +552,8 @@ dlg_photo_importer (GthBrowser            *browser,
 
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
-	data->builder = _gtk_builder_new_from_file ("photo-importer.ui", "photo_importer");
-	data->settings = g_settings_new (PIX_PHOTO_IMPORTER_SCHEMA);
+	data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/photo_importer/data/ui/photo-importer.ui");
+	data->settings = g_settings_new (GTHUMB_PHOTO_IMPORTER_SCHEMA);
 	data->selector_type = selector_type;
 	data->source = _g_object_ref (source);
 	data->cancellable = g_cancellable_new ();
@@ -577,7 +562,21 @@ dlg_photo_importer (GthBrowser            *browser,
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "photo_importer_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_("_Import"), GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
+
 	_gtk_window_resize_to_fit_screen_height (data->dialog, 580);
 	gth_browser_set_dialog (browser, "photo_importer", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
@@ -612,7 +611,7 @@ dlg_photo_importer (GthBrowser            *browser,
 			if (GTH_IS_FILE_SOURCE_VFS (gth_browser_get_location_source (browser)))
 				data->source = _g_object_ref (gth_browser_get_location (browser));
 			if (data->source == NULL)
-				data->source = g_file_new_for_uri (get_home_uri ());
+				data->source = g_file_new_for_uri (_g_uri_get_home ());
 		}
 
 		gtk_window_set_title (GTK_WINDOW (data->dialog), _("Import from Folder"));
@@ -637,7 +636,7 @@ dlg_photo_importer (GthBrowser            *browser,
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("filelist_box")), data->file_list, TRUE, TRUE, 0);
 
 	tests = gth_main_get_registered_objects_id (GTH_TYPE_TEST);
-	general_filter = "file::type::is_media"; /* default value */
+	default_filter = g_settings_get_string (data->settings, PREF_PHOTO_IMPORTER_FILTER); /* default value */
 	active_filter = 0;
 
 	data->filter_combobox = gtk_combo_box_text_new ();
@@ -650,7 +649,7 @@ dlg_photo_importer (GthBrowser            *browser,
 
 		i_general += 1;
 		test = gth_main_get_registered_object (GTH_TYPE_TEST, registered_test_id);
-		if (strcmp (registered_test_id, general_filter) == 0) {
+		if (strcmp (registered_test_id, default_filter) == 0) {
 			active_filter = i_general;
 			gth_file_list_set_filter (GTH_FILE_LIST (data->file_list), test);
 		}
@@ -670,8 +669,9 @@ dlg_photo_importer (GthBrowser            *browser,
 	gtk_label_set_use_underline (GTK_LABEL (GET_WIDGET ("filter_label")), TRUE);
 
 	_g_string_list_free (tests);
+	g_free (default_filter);
 
-	data->tags_entry = gth_tags_entry_new ();
+	data->tags_entry = gth_tags_entry_new (GTH_TAGS_ENTRY_MODE_POPUP);
 	gtk_widget_show (data->tags_entry);
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("tags_entry_box")), data->tags_entry, TRUE, TRUE, 0);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("tags_label")), data->tags_entry);
@@ -695,18 +695,14 @@ dlg_photo_importer (GthBrowser            *browser,
 			  "delete-event",
 			  G_CALLBACK (dialog_delete_event_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("ok_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (ok_clicked_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("cancel_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 			  "clicked",
 			  G_CALLBACK (close_dialog),
 			  data);
-        g_signal_connect (GET_WIDGET ("help_button"),
-                          "clicked",
-                          G_CALLBACK (help_clicked_cb),
-                          data);
         if (data->selector_type == DLG_IMPORTER_SOURCE_TYPE_DEVICE)
 		g_signal_connect (data->device_chooser,
 				  "changed",
@@ -740,8 +736,6 @@ dlg_photo_importer (GthBrowser            *browser,
 
 	/* Run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), FALSE);
 	gtk_widget_show (data->dialog);
 
 	gth_import_preferences_dialog_set_event (GTH_IMPORT_PREFERENCES_DIALOG (data->preferences_dialog),

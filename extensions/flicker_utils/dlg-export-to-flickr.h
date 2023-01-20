@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_EXPORT_TO_FLICKR_H
 #define DLG_EXPORT_TO_FLICKR_H
 
-#include <pix.h>
+#include <gthumb.h>
 #include "flickr-types.h"
 
 void dlg_export_to_flickr (FlickrServer *server,

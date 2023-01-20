@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,19 +22,32 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/image_viewer/gth-image-viewer-page.h>
-#include <stdlib.h>
+#include "actions.h"
 
 
-#define CINNAMON_DESKTOP_BACKGROUND_SCHEMA "org.cinnamon.desktop.background"
-#define MATE_DESKTOP_BACKGROUND_SCHEMA "org.mate.background"
-#define GNOME_DESKTOP_BACKGROUND_SCHEMA "org.gnome.desktop.background"
+#define DESKTOP_BACKGROUND_PROPERTIES_COMMAND "gnome-control-center background"
+#define DESKTOP_BACKGROUND_PROPERTIES_UNITY_COMMAND "unity-control-center appearance"
+#define DESKTOP_BACKGROUND_SCHEMA "org.gnome.desktop.background"
 #define DESKTOP_BACKGROUND_FILE_KEY "picture-uri"
-#define MATE_DESKTOP_BACKGROUND_FILE_KEY "picture-filename"
+#define DESKTOP_BACKGROUND_STYLE_KEY "picture-options"
+
+
+typedef enum {
+	BACKGROUND_STYLE_NONE,
+	BACKGROUND_STYLE_WALLPAPER,
+	BACKGROUND_STYLE_CENTERED,
+	BACKGROUND_STYLE_SCALED,
+	BACKGROUND_STYLE_STRETCHED,
+	BACKGROUND_STYLE_ZOOM,
+	BACKGROUND_STYLE_SPANNED
+} BackgroundStyle;
+
 
 typedef struct {
 	GFile           *file;
+	BackgroundStyle  background_style;
 } WallpaperStyle;
 
 
@@ -50,6 +63,7 @@ static void
 wallpaper_style_init (WallpaperStyle *style)
 {
 	style->file = NULL;
+	style->background_style = BACKGROUND_STYLE_WALLPAPER;
 }
 
 
@@ -57,33 +71,14 @@ static void
 wallpaper_style_init_from_current (WallpaperStyle *style)
 {
 	GSettings *settings;
-	char      *location;
+	char      *uri;
 
-	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0) {
-		// Don't support undo in Xfce
-		return;
-	}
+	settings = g_settings_new (DESKTOP_BACKGROUND_SCHEMA);
+	uri = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
+	style->file = (uri != NULL) ? g_file_new_for_uri (uri) : NULL;
+	style->background_style = g_settings_get_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY);
 
-	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
-		settings = g_settings_new (CINNAMON_DESKTOP_BACKGROUND_SCHEMA);
-	}
-	else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-		settings = g_settings_new (MATE_DESKTOP_BACKGROUND_SCHEMA);
-	}
-	else {
-		settings = g_settings_new (GNOME_DESKTOP_BACKGROUND_SCHEMA);
-	}
-
-	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-		location = g_settings_get_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY);
-		style->file = (location != NULL) ? g_file_new_for_path (location) : NULL;
-	}
-	else {
-		location = g_settings_get_string (settings, DESKTOP_BACKGROUND_FILE_KEY);
-		style->file = (location != NULL) ? g_file_new_for_uri (location) : NULL;
-	}
-
-	g_free (location);
+	g_free (uri);
 	g_object_unref (settings);
 }
 
@@ -91,51 +86,23 @@ wallpaper_style_init_from_current (WallpaperStyle *style)
 static void
 wallpaper_style_set_as_current (WallpaperStyle *style)
 {
-	char *location;
+	char *uri;
 
 	if (style->file == NULL)
 		return;
 
-	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0) {
-		location = g_file_get_path(style->file);
-		gchar *command = g_strdup_printf("xfce4-set-wallpaper '%s'", location);
-		system(command);
-		g_free(command);
-		g_free(location);
-		return;
-	}
-
-
-	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-		location = g_file_get_path (style->file);
-	}
-	else {
-		location = g_file_get_uri (style->file);
-	}
-	if (location != NULL) {
+	uri = g_file_get_uri (style->file);
+	if (uri != NULL) {
 		GSettings *settings;
 
-		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0) {
-			settings = g_settings_new (CINNAMON_DESKTOP_BACKGROUND_SCHEMA);
-		}
-		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-			settings = g_settings_new (MATE_DESKTOP_BACKGROUND_SCHEMA);
-		}
-		else {
-			settings = g_settings_new (GNOME_DESKTOP_BACKGROUND_SCHEMA);
-		}
-
-		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0) {
-			g_settings_set_string (settings, MATE_DESKTOP_BACKGROUND_FILE_KEY, location);
-		}
-		else {
-			g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, location);
-		}
+		settings = g_settings_new (DESKTOP_BACKGROUND_SCHEMA);
+		g_settings_set_string (settings, DESKTOP_BACKGROUND_FILE_KEY, uri);
+		g_settings_set_enum (settings, DESKTOP_BACKGROUND_STYLE_KEY, style->background_style);
 
 		g_object_unref (settings);
 	}
 
-	g_free (location);
+	g_free (uri);
 }
 
 
@@ -147,43 +114,127 @@ wallpaper_style_free (WallpaperStyle *style)
 }
 
 
-static GFile *
-get_wallpaper_file_n (int n)
+/* -- get_new_wallpaper_file_async -- */
+
+
+typedef struct {
+	GFile  *folder;
+	int     max_n;
+	GList  *wallpaper_files;
+	GRegex *wallpaper_name_regex;
+} NewWallpaperData;
+
+
+static void
+new_wallpaper_data_free (NewWallpaperData *data)
 {
-	char  *name;
-	GFile *file;
+	_g_object_unref (data->folder);
+	_g_string_list_free (data->wallpaper_files);
+	g_regex_unref (data->wallpaper_name_regex);
+	g_slice_free (NewWallpaperData, data);
+}
 
-	name = g_strdup_printf ("wallpaper%d.jpeg", n);
-	file = gth_user_dir_get_file_for_write (GTH_DIR_DATA, PIX_DIR, name, NULL);
 
-	g_free (name);
+static void
+nw_for_each_file_func (GFile     *file,
+		       GFileInfo *info,
+		       gpointer   user_data)
+{
+	GTask             *task = user_data;
+	NewWallpaperData  *nw_data = g_task_get_task_data (task);
+	const char        *filename;
+	char             **tokens;
 
-	return file;
+	filename = g_file_info_get_name (info);
+	tokens = g_regex_split (nw_data->wallpaper_name_regex, filename, 0);
+	if (g_strv_length (tokens) >= 2) {
+		int n = atoi (tokens[1]);
+		if (n > nw_data->max_n)
+			nw_data->max_n = n;
+		nw_data->wallpaper_files = g_list_prepend (nw_data->wallpaper_files, g_strdup (filename));
+	}
+
+	g_strfreev (tokens);
+}
+
+
+static void
+nw_done_func (GError     *error,
+	      gpointer    user_data)
+{
+	GTask            *task = user_data;
+	NewWallpaperData *nw_data = g_task_get_task_data (task);
+	GList            *scan;
+	char             *display_name;
+	GFile            *proposed_file;
+
+	if (error != NULL) {
+		g_task_return_error (task, error);
+		g_object_unref (task);
+		return;
+	}
+
+	/* delete the old wallpapers */
+	for (scan = nw_data->wallpaper_files; scan; scan = scan->next) {
+		char  *name = scan->data;
+		GFile *file;
+
+		file = g_file_get_child (nw_data->folder, name);
+		g_file_delete (file, NULL, NULL);
+
+		g_object_unref (file);
+	}
+
+	/* use a unique name to force a reload */
+	display_name = g_strdup_printf ("wallpaper%d.jpeg", nw_data->max_n + 1);
+	proposed_file = g_file_get_child_for_display_name (nw_data->folder, display_name, NULL);
+	g_task_return_pointer (task, proposed_file, g_object_unref);
+
+	g_free (display_name);
+	g_object_unref (task);
+}
+
+
+static void
+get_new_wallpaper_file_async (GCancellable        *cancellable,
+			      GAsyncReadyCallback  callback,
+			      gpointer             user_data)
+{
+	NewWallpaperData *nw_data;
+	GTask            *task;
+
+	nw_data = g_slice_new (NewWallpaperData);
+	nw_data->folder = gth_user_dir_get_dir_for_write (GTH_DIR_DATA, GTHUMB_DIR, NULL);
+	nw_data->max_n = 0;
+	nw_data->wallpaper_files = NULL;
+	nw_data->wallpaper_name_regex = g_regex_new ("wallpaper([0-9]+).jpeg", 0, 0, NULL);
+
+	task = g_task_new (NULL, cancellable, callback, user_data);
+	g_task_set_task_data (task, nw_data, (GDestroyNotify) new_wallpaper_data_free);
+
+	_g_directory_foreach_child (nw_data->folder,
+				   FALSE,
+				   FALSE,
+				   GFILE_NAME_TYPE_ATTRIBUTES,
+				   cancellable,
+				   NULL,
+				   nw_for_each_file_func,
+				   nw_done_func,
+				   task);
 }
 
 
 static GFile *
-get_new_wallpaper_file (void)
+get_new_wallpaper_file_finish (GAsyncResult  *result,
+                               GError       **error)
 {
-	GFile *wallpaper_file;
-
-	wallpaper_file = get_wallpaper_file_n (1);
-	if (g_file_query_exists (wallpaper_file, NULL)) {
-		/* Use a new filename to force an update. */
-
-		g_object_unref (wallpaper_file);
-
-		wallpaper_file = get_wallpaper_file_n (2);
-		if (g_file_query_exists (wallpaper_file, NULL))
-			g_file_delete (wallpaper_file, NULL, NULL);
-	}
-
-	return wallpaper_file;
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
 static WallpaperData *
-wallpaper_data_new (GthBrowser *browser)
+wallpaper_data_new (GthBrowser *browser,
+		    GFile      *wallpaper_file)
 {
 	WallpaperData *wdata;
 
@@ -191,7 +242,7 @@ wallpaper_data_new (GthBrowser *browser)
 	wdata->browser = browser;
 	wallpaper_style_init_from_current (&wdata->old_style);
 	wallpaper_style_init (&wdata->new_style);
-	wdata->new_style.file = get_new_wallpaper_file ();
+	wdata->new_style.file = g_object_ref (wallpaper_file);
 
 	return wdata;
 }
@@ -219,24 +270,21 @@ infobar_response_cb (GtkInfoBar *info_bar,
 		     gpointer    user_data)
 {
 	WallpaperData *wdata = user_data;
-	const gchar   *control_center_command = NULL;
+	gchar         *path;
+	const gchar   *control_center_command;
 	GError        *error = NULL;
 
 	g_return_if_fail (GTH_IS_BROWSER (wdata->browser));
 
 	switch (response_id) {
 	case _RESPONSE_PREFERENCES:
-		if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Cinnamon") == 0 || g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "X-Cinnamon") == 0)
-			control_center_command = "cinnamon-settings backgrounds";
-		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "MATE") == 0)
-			control_center_command = "mate-appearance-properties -p background";
-		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0)
-			control_center_command = "xfdesktop-settings";
-		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "GNOME") == 0)
-			control_center_command = "gnome-control-center appearance";
-		else if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0)
-			control_center_command = "unity-control-center appearance";
-		if (control_center_command != NULL && ! g_spawn_command_line_async (control_center_command, &error)) {
+		path = g_find_program_in_path ("unity-control-center");
+		if (path && g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "Unity") == 0)
+			control_center_command = DESKTOP_BACKGROUND_PROPERTIES_UNITY_COMMAND;
+		else
+			control_center_command = DESKTOP_BACKGROUND_PROPERTIES_COMMAND;
+		g_free (path);
+		if (! g_spawn_command_line_async (control_center_command, &error)) {
 			_gtk_error_dialog_from_gerror_run (GTK_WINDOW (wdata->browser), _("Could not show the desktop background properties"), error);
 			g_clear_error (&error);
 		}
@@ -253,14 +301,14 @@ infobar_response_cb (GtkInfoBar *info_bar,
 
 
 static void
-wallpaper_data_set (WallpaperData *wdata)
+wallpaper_data_set__step2 (WallpaperData *wdata)
 {
 	GtkWidget *infobar;
 
 	wallpaper_style_set_as_current (&wdata->new_style);
 
 	infobar = gth_browser_get_infobar (wdata->browser);
-	gth_info_bar_set_icon (GTH_INFO_BAR (infobar), GTK_STOCK_DIALOG_INFO);
+	gth_info_bar_set_icon_name (GTH_INFO_BAR (infobar), "dialog-information-symbolic", GTK_ICON_SIZE_DIALOG);
 
 	{
 		char *name;
@@ -278,9 +326,9 @@ wallpaper_data_set (WallpaperData *wdata)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (gtk_info_bar_get_action_area (GTK_INFO_BAR (infobar))), GTK_ORIENTATION_HORIZONTAL);
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (infobar), GTK_MESSAGE_INFO);
 	gtk_info_bar_add_buttons (GTK_INFO_BAR (infobar),
-				  GTK_STOCK_PREFERENCES, _RESPONSE_PREFERENCES,
-				  GTK_STOCK_UNDO, _RESPONSE_UNDO,
-				  GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE,
+				  _("_Preferences"), _RESPONSE_PREFERENCES,
+				  _("_Undo"), _RESPONSE_UNDO,
+				  _GTK_LABEL_CLOSE, GTK_RESPONSE_CLOSE,
 				  NULL);
 	gtk_info_bar_set_response_sensitive (GTK_INFO_BAR (infobar),
 					     _RESPONSE_UNDO,
@@ -295,6 +343,69 @@ wallpaper_data_set (WallpaperData *wdata)
 
 
 static void
+wallpaper_metadata_ready_cb (GObject      *source_object,
+			     GAsyncResult *result,
+			     gpointer      user_data)
+{
+	WallpaperData *wdata = user_data;
+	GList         *file_list;
+	GError        *error = NULL;
+	GthFileData   *file_data;
+	int            image_width;
+	int            image_height;
+	GdkRectangle   monitor_geometry;
+
+	file_list = _g_query_metadata_finish (result, &error);
+	if (error != NULL) {
+		_gtk_error_dialog_from_gerror_run (GTK_WINDOW (wdata->browser), _("Could not set the desktop background"), error);
+		wallpaper_data_free (wdata);
+		return;
+	}
+
+	/* WALLPAPER handles most of the cases correctly */
+
+	wdata->new_style.background_style = BACKGROUND_STYLE_WALLPAPER;
+
+	/* use ZOOM if the image has a size similar to the monitor's */
+
+#if GTK_CHECK_VERSION(3, 22, 0)
+
+	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (gtk_widget_get_display (GTK_WIDGET (wdata->browser)), gtk_widget_get_window (GTK_WIDGET (wdata->browser))), &monitor_geometry);
+
+#else
+
+	gdk_screen_get_monitor_geometry (gtk_widget_get_screen (GTK_WIDGET (wdata->browser)), 0, &monitor_geometry);
+
+#endif
+
+	file_data = file_list->data;
+	image_width = g_file_info_get_attribute_int32 (file_data->info, "image::width");
+	image_height = g_file_info_get_attribute_int32 (file_data->info, "image::height");
+
+	if ((image_width >= monitor_geometry.width / 2) && (image_height >= monitor_geometry.height / 2))
+		wdata->new_style.background_style = BACKGROUND_STYLE_ZOOM;
+
+	wallpaper_data_set__step2 (wdata);
+}
+
+
+static void
+wallpaper_data_set (WallpaperData *wdata)
+{
+	GList *file_list;
+
+	file_list = g_list_append (NULL, gth_file_data_new (wdata->new_style.file, NULL));
+	_g_query_metadata_async (file_list,
+			         "image::width,image::height",
+			         NULL,
+			         wallpaper_metadata_ready_cb,
+			         wdata);
+
+	_g_object_list_unref (file_list);
+}
+
+
+static void
 save_wallpaper_task_completed_cb (GthTask  *task,
 				  GError   *error,
 				  gpointer  user_data)
@@ -304,10 +415,11 @@ save_wallpaper_task_completed_cb (GthTask  *task,
 	if (error != NULL) {
 		_gtk_error_dialog_from_gerror_run (GTK_WINDOW (wdata->browser), _("Could not set the desktop background"), error);
 		wallpaper_data_free (wdata);
-		return;
 	}
+	else
+		wallpaper_data_set (wdata);
 
-	wallpaper_data_set (wdata);
+	_g_object_unref (task);
 }
 
 
@@ -330,18 +442,30 @@ copy_wallpaper_ready_cb (GObject      *source_object,
 }
 
 
-void
-gth_browser_activate_action_tool_desktop_background (GtkAction  *action,
-					             GthBrowser *browser)
+static void
+wallpaper_file_read_cb (GObject      *source_object,
+		        GAsyncResult *res,
+			gpointer      user_data)
 {
-	WallpaperData *wdata;
-	gboolean       saving_wallpaper = FALSE;
-	GList         *items;
-	GList         *file_list;
-	GthFileData   *file_data;
-	const char    *mime_type;
+	GthBrowser     *browser = GTH_BROWSER (user_data);
+	GFile          *wallpaper_file;
+	GError        **error = NULL;
+	WallpaperData  *wdata;
+	gboolean        saving_wallpaper = FALSE;
+	GList          *items;
+	GList          *file_list;
+	GthFileData    *file_data;
+	const char     *mime_type;
 
-	wdata = wallpaper_data_new (browser);
+	wallpaper_file = get_new_wallpaper_file_finish (res, error);
+	if (wallpaper_file == NULL) {
+		_gtk_error_dialog_from_gerror_show (GTK_WINDOW (browser),  _("Could not set the desktop background"), *error);
+		g_clear_error (error);
+		return;
+	}
+
+	wdata = wallpaper_data_new (browser, wallpaper_file);
+	g_object_unref (wallpaper_file);
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
@@ -351,14 +475,17 @@ gth_browser_activate_action_tool_desktop_background (GtkAction  *action,
 	if (gth_main_extension_is_active ("image_viewer")
 	    && (gth_browser_get_file_modified (browser) || ! _gdk_pixbuf_mime_type_is_readable (mime_type)))
 	{
-		GtkWidget *viewer_page;
+		GthViewerPage *viewer_page;
 
 		viewer_page = gth_browser_get_viewer_page (browser);
 		if (viewer_page != NULL) {
 			GthImage *image;
 			GthTask  *task;
 
-			image = gth_image_new_for_surface (gth_image_viewer_page_get_image (GTH_IMAGE_VIEWER_PAGE (viewer_page)));
+			if (gth_image_viewer_page_get_is_modified (GTH_IMAGE_VIEWER_PAGE (viewer_page)))
+				image = gth_image_new_for_surface (gth_image_viewer_page_get_modified_image (GTH_IMAGE_VIEWER_PAGE (viewer_page)));
+			else
+				image = gth_image_new_for_surface (gth_image_viewer_page_get_current_image (GTH_IMAGE_VIEWER_PAGE (viewer_page)));
 			file_data = gth_file_data_new (wdata->new_style.file, NULL);
 			task = gth_save_image_task_new (image,
 							"image/jpeg",
@@ -368,11 +495,10 @@ gth_browser_activate_action_tool_desktop_background (GtkAction  *action,
 					  "completed",
 					  G_CALLBACK (save_wallpaper_task_completed_cb),
 					  wdata);
-			gth_browser_exec_task (GTH_BROWSER (browser), task, FALSE);
+			gth_browser_exec_task (GTH_BROWSER (browser), task, GTH_TASK_FLAGS_IGNORE_ERROR);
 
 			saving_wallpaper = TRUE;
 
-			_g_object_unref (task);
 			g_object_unref (image);
 		}
 	}
@@ -401,4 +527,13 @@ gth_browser_activate_action_tool_desktop_background (GtkAction  *action,
 
 	_g_object_list_unref (file_list);
 	_gtk_tree_path_list_free (items);
+}
+
+
+void
+gth_browser_activate_set_desktop_background (GSimpleAction *action,
+					     GVariant      *parameter,
+					     gpointer       user_data)
+{
+	get_new_wallpaper_file_async (NULL, wallpaper_file_read_cb, user_data);
 }

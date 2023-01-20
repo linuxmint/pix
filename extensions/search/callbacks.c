@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/catalogs/gth-catalog.h>
 #include "actions.h"
 #include "callbacks.h"
@@ -33,39 +33,20 @@
 
 
 #define BROWSER_DATA_KEY "search-browser-data"
-#define _RESPONSE_REFRESH 2
 
 
-static const char *find_ui_info =
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='Edit' action='EditMenu'>"
-"      <placeholder name='Edit_Actions'>"
-"        <menuitem action='Edit_Find'/>"
-"      </placeholder>"
-"    </menu>"
-"  </menubar>"
-"  <toolbar name='ToolBar'>"
-"    <placeholder name='SourceCommands'>"
-"      <toolitem action='Edit_Find'/>"
-"    </placeholder>"
-"  </toolbar>"
-"</ui>";
-
-
-static GtkActionEntry find_action_entries[] = {
-	{ "Edit_Find", "edit-find-symbolic",
-	  N_("Find"), NULL,
-	  N_("Find files"),
-	  G_CALLBACK (gth_browser_activate_action_edit_find) }
+static const GActionEntry actions[] = {
+	{ "find", gth_browser_activate_find }
 };
-static guint find_action_entries_size = G_N_ELEMENTS (find_action_entries);
+
+
+static const GthShortcut shortcuts[] = {
+	{ "find", N_("Find files"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "<Primary>f" },
+};
 
 
 typedef struct {
-	GtkActionGroup *find_action;
-	guint           find_merge_id;
-	GtkWidget      *refresh_button;
+	GtkWidget *refresh_button;
 } BrowserData;
 
 
@@ -80,26 +61,26 @@ void
 search__gth_browser_construct_cb (GthBrowser *browser)
 {
 	BrowserData *data;
-	GError      *error = NULL;
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
+
+	gth_window_add_shortcuts (GTH_WINDOW (browser),
+				  shortcuts,
+				  G_N_ELEMENTS (shortcuts));
+
+	gth_browser_add_header_bar_button (browser,
+					   GTH_BROWSER_HEADER_SECTION_BROWSER_COMMANDS,
+					   "edit-find-symbolic",
+					   _("Find files"),
+					   "win.find",
+					   NULL);
+
 	data = g_new0 (BrowserData, 1);
-
-	data->find_action = gtk_action_group_new ("Find Action");
-	gtk_action_group_set_translation_domain (data->find_action, NULL);
-	gtk_action_group_add_actions (data->find_action,
-				      find_action_entries,
-				      find_action_entries_size,
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->find_action, 0);
-
-	data->find_merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), find_ui_info, -1, &error);
-	if (data->find_merge_id == 0) {
-		g_warning ("building menus failed: %s", error->message);
-		g_error_free (error);
-	}
-
 	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 }
 
@@ -108,7 +89,7 @@ static void
 refresh_button_clicked_cb (GtkButton  *button,
 			   GthBrowser *browser)
 {
-	gth_browser_activate_action_edit_search_update (NULL, browser);
+	gth_browser_update_search (browser);
 }
 
 
@@ -119,21 +100,23 @@ search__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 	BrowserData *data;
 
 	location_data = gth_browser_get_location_data (browser);
-	if (! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "pix/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (location_data->info), "gthumb/search"))
 		return;
 
 	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
 
 	if (data->refresh_button == NULL) {
 		data->refresh_button = gtk_button_new ();
-		gtk_container_add (GTK_CONTAINER (data->refresh_button), gtk_image_new_from_stock (GTK_STOCK_REFRESH, GTK_ICON_SIZE_MENU));
+		gtk_container_add (GTK_CONTAINER (data->refresh_button), gtk_image_new_from_icon_name ("view-refresh-symbolic", GTK_ICON_SIZE_MENU));
 		g_object_add_weak_pointer (G_OBJECT (data->refresh_button), (gpointer *)&data->refresh_button);
 		gtk_button_set_relief (GTK_BUTTON (data->refresh_button), GTK_RELIEF_NONE);
 		gtk_widget_set_tooltip_text (data->refresh_button, _("Search again"));
 		gtk_widget_show_all (data->refresh_button);
-		gedit_message_area_add_action_widget (GEDIT_MESSAGE_AREA (gth_browser_get_list_extra_widget (browser)),
-					              data->refresh_button,
-					              _RESPONSE_REFRESH);
+		gtk_box_pack_start (GTK_BOX (gth_location_bar_get_action_area (GTH_LOCATION_BAR (gth_browser_get_location_bar (browser)))),
+				    data->refresh_button,
+				    FALSE,
+				    FALSE,
+				    0);
 		g_signal_connect (data->refresh_button,
 				  "clicked",
 				  G_CALLBACK (refresh_button_clicked_cb),
@@ -142,10 +125,48 @@ search__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 }
 
 
+void
+search__gth_browser_load_location_before_cb (GthBrowser *browser,
+					     GFile      *next_location)
+{
+	GFile   *current_location;
+	GthTask *task;
+	GFile   *catalog;
+
+	/* Stop the search task if the user changes location. */
+
+	current_location = gth_browser_get_location (browser);
+	if (current_location == NULL)
+		return;
+
+	if (_g_file_equal (current_location, next_location))
+		return;
+
+	task = gth_browser_get_foreground_task (browser);
+	if ((task == NULL) || ! GTH_IS_SEARCH_TASK (task))
+		return;
+
+	catalog = gth_search_task_get_catalog (GTH_SEARCH_TASK (task));
+
+	if (_g_file_equal (current_location, catalog))
+		gth_task_cancel (task);
+}
+
+
 GthCatalog *
 search__gth_catalog_load_from_data_cb (const void *buffer)
 {
 	if ((buffer != NULL) && (strncmp (buffer, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<search ", 47) == 0))
+		return (GthCatalog *) gth_search_new ();
+	else
+		return NULL;
+}
+
+
+GthCatalog *
+search__gth_catalog_new_for_uri_cb (const char *uri)
+{
+	if (g_str_has_suffix (uri, ".search"))
 		return (GthCatalog *) gth_search_new ();
 	else
 		return NULL;
@@ -160,19 +181,23 @@ search__dlg_catalog_properties (GtkBuilder  *builder,
 	GtkWidget     *vbox;
 	GtkWidget     *label;
 	PangoAttrList *attrs;
-	GtkWidget     *alignment;
 	GtkWidget     *search_editor;
 
-	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "pix/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "gthumb/search"))
+		return;
+
+	if (! GTH_IS_SEARCH (catalog))
 		return;
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_widget_show (vbox);
-	gtk_box_pack_start (GTK_BOX (_gtk_builder_get_widget (builder, "general_vbox")), vbox, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (_gtk_builder_get_widget (builder, "general_page")), vbox, FALSE, FALSE, 0);
 
 	/* Translators: This is not a verb, it's a name as in "the search properties". */
 	label = gtk_label_new (_("Search"));
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+	gtk_widget_set_halign (label, GTK_ALIGN_START);
+	gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
+
 	attrs = pango_attr_list_new ();
 	pango_attr_list_insert (attrs, pango_attr_weight_new (PANGO_WEIGHT_BOLD));
 	gtk_label_set_attributes (GTK_LABEL (label), attrs);
@@ -180,14 +205,10 @@ search__dlg_catalog_properties (GtkBuilder  *builder,
 	gtk_widget_show (label);
 	gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
 
-	alignment = gtk_alignment_new (0.0, 0.0, 0.0, 0.0);
-	gtk_widget_show (alignment);
-	gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 0, 0, 12, 0);
-	gtk_box_pack_start (GTK_BOX (vbox), alignment, FALSE, FALSE, 0);
-
 	search_editor = gth_search_editor_new (GTH_SEARCH (catalog));
+	gtk_widget_set_margin_start (search_editor, 12);
 	gtk_widget_show (search_editor);
-	gtk_container_add (GTK_CONTAINER (alignment), search_editor);
+	gtk_box_pack_start (GTK_BOX (vbox), search_editor, FALSE, FALSE, 0);
 	g_object_set_data (G_OBJECT (builder), "search_editor", search_editor);
 }
 
@@ -199,16 +220,15 @@ search__dlg_catalog_properties_save (GtkBuilder  *builder,
 {
 	GthSearch *search;
 
-	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "pix/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "gthumb/search"))
 		return;
 
 	g_return_if_fail (GTH_IS_SEARCH (catalog));
 
 	search = gth_search_editor_get_search (GTH_SEARCH_EDITOR (g_object_get_data (G_OBJECT(builder), "search_editor")), NULL);
 	if (search != NULL) {
-		g_file_info_set_attribute_boolean (file_data->info, "pix::search-modified", ! gth_search_equal (GTH_SEARCH (catalog), search));
-		gth_search_set_folder (GTH_SEARCH (catalog), gth_search_get_folder (search));
-		gth_search_set_recursive (GTH_SEARCH (catalog), gth_search_is_recursive (search));
+		g_file_info_set_attribute_boolean (file_data->info, "gthumb::search-modified", ! gth_search_equal (GTH_SEARCH (catalog), search));
+		gth_search_set_sources (GTH_SEARCH (catalog), gth_search_get_sources (search));
 		gth_search_set_test (GTH_SEARCH (catalog), gth_search_get_test (search));
 	}
 }
@@ -221,15 +241,15 @@ search__dlg_catalog_properties_saved (GthBrowser  *browser,
 {
 	GthTask *task;
 
-	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "pix/search"))
+	if (! _g_content_type_is_a (g_file_info_get_content_type (file_data->info), "gthumb/search"))
 		return;
 
 	/* Search only if the search parameters changed */
-	if (! g_file_info_get_attribute_boolean (file_data->info, "pix::search-modified"))
+	if (! g_file_info_get_attribute_boolean (file_data->info, "gthumb::search-modified"))
 		return;
 
 	task = gth_search_task_new (browser, GTH_SEARCH (catalog), file_data->file);
-	gth_browser_exec_task (browser, task, TRUE);
+	gth_browser_exec_task (browser, task, GTH_TASK_FLAGS_FOREGROUND);
 
 	g_object_unref (task);
 }
@@ -280,8 +300,9 @@ search__gth_organize_task_create_catalog (GthGroupPolicyData *data)
 			GthTest *test_chain;
 
 			data->catalog = (GthCatalog *) gth_search_new ();
-			gth_search_set_folder (GTH_SEARCH (data->catalog), gth_organize_task_get_folder (data->task));
-			gth_search_set_recursive (GTH_SEARCH (data->catalog), gth_organize_task_get_recursive (data->task));
+			gth_search_set_source (GTH_SEARCH (data->catalog),
+					       gth_organize_task_get_folder (data->task),
+					       gth_organize_task_get_recursive (data->task));
 
 			date_test = gth_main_get_registered_object (GTH_TYPE_TEST, (policy == GTH_GROUP_POLICY_MODIFIED_DATE) ? "file::mtime" : "Embedded::Photo::DateTimeOriginal");
 			gth_test_simple_set_data_as_date (GTH_TEST_SIMPLE (date_test), data->date_time->date);
@@ -332,8 +353,9 @@ search__gth_organize_task_create_catalog (GthGroupPolicyData *data)
 			GthTest *test_chain;
 
 			data->catalog = (GthCatalog *) gth_search_new ();
-			gth_search_set_folder (GTH_SEARCH (data->catalog), gth_organize_task_get_folder (data->task));
-			gth_search_set_recursive (GTH_SEARCH (data->catalog), gth_organize_task_get_recursive (data->task));
+			gth_search_set_source (GTH_SEARCH (data->catalog),
+					       gth_organize_task_get_folder (data->task),
+					       gth_organize_task_get_recursive (data->task));
 
 			tag_test = gth_main_get_registered_object (GTH_TYPE_TEST, (policy == GTH_GROUP_POLICY_TAG) ? "comment::category" : "general::tags");
 			gth_test_category_set (GTH_TEST_CATEGORY (tag_test), GTH_TEST_OP_CONTAINS, FALSE, data->tag);

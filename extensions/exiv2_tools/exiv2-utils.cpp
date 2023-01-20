@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008-2009 Free Software Foundation, Inc.
  *
@@ -16,8 +16,7 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02111-1307, USA.
+ *  along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -28,25 +27,24 @@
 #include <exiv2/error.hpp>
 #include <exiv2/image.hpp>
 #include <exiv2/exif.hpp>
-#include <exiv2/exiv2.hpp>
 #include <iostream>
-#include <iomanip>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <iomanip>
+#include <exiv2/exiv2.hpp>
 #if EXIV2_TEST_VERSION(0, 27, 0)
 #include <exiv2/xmp_exiv2.hpp>
 #else
 #include <exiv2/xmp.hpp>
 #endif
-#include <pix.h>
+#include <gthumb.h>
 #include "exiv2-utils.h"
 
 using namespace std;
 
 
-#define INVALID_VALUE "---"
+#define INVALID_VALUE N_("(invalid value)")
 
 
 /* Some bits of information may be contained in more than one metadata tag.
@@ -182,29 +180,52 @@ const char *_RATING_TAG_NAMES[] = {
 	NULL
 };
 
+const char *_AUTHOR_TAG_NAMES[] = {
+	"Exif::Image::Artist",
+	"Iptc::Application2::Byline",
+	"Xmp::dc::creator",
+	"Xmp::xmpDM::artist",
+	"Xmp::tiff::Artist",
+	"Xmp::plus::ImageCreator",
+	"Xmp::plus::ImageCreatorName",
+	NULL
+};
 
-/* Some evil camera fill in the ImageDescription or UserComment fields
+const char *_COPYRIGHT_TAG_NAMES[] = {
+	"Exif::Image::Copyright",
+	"Iptc::Application2::Copyright",
+	"Xmp::dc::rights",
+	"Xmp::xmpDM::copyright",
+	"Xmp::tiff::Copyright",
+	"Xmp::plus::CopyrightOwner",
+	"Xmp::plus::CopyrightOwnerName",
+	NULL
+};
+
+/* Some cameras fill in the ImageDescription or UserComment fields
    with useless fluff. Try to filter these out, so they do not show up
-   as comments */
-const char *stupid_comment_filter[] = {
+   as comments. */
+const char *useless_comment_filter[] = {
 	"OLYMPUS DIGITAL CAMERA",
 	"SONY DSC",
 	"KONICA MINOLTA DIGITAL CAMERA",
 	"MINOLTA DIGITAL CAMERA",
-	NULL };
+	"binary comment",
+	NULL
+};
 
 
 inline static char *
 exiv2_key_from_attribute (const char *attribute)
 {
-	return _g_replace (attribute, "::", ".");
+	return _g_utf8_replace_str (attribute, "::", ".");
 }
 
 
 inline static char *
 exiv2_key_to_attribute (const char *key)
 {
-	return _g_replace (key, ".", "::");
+	return _g_utf8_replace_str (key, ".", "::");
 }
 
 
@@ -230,38 +251,38 @@ create_metadata (const char *key,
 		 const char *category,
 		 const char *type_name)
 {
+	char            *formatted_value_utf8;
 	char            *attribute;
 	GthMetadataInfo *metadata_info;
 	GthMetadata     *metadata;
 	char            *description_utf8;
-	char            *formatted_value_utf8;
 
-	if (_g_utf8_all_spaces (formatted_value))
+	formatted_value_utf8 = _g_utf8_from_any (formatted_value);
+	if (_g_utf8_all_spaces (formatted_value_utf8))
 		return NULL;
 
+	description_utf8 = _g_utf8_from_any (description);
+
 	attribute = exiv2_key_to_attribute (key);
-	description_utf8 = g_locale_to_utf8 (description, -1, NULL, NULL, NULL);
 	if (attribute_is_date (attribute)) {
 		GTimeVal time_;
+
+		g_free (formatted_value_utf8);
+		formatted_value_utf8 = NULL;
 
 		if (_g_time_val_from_exif_date (raw_value, &time_))
 			formatted_value_utf8 = _g_time_val_strftime (&time_, "%x %X");
 		else
 			formatted_value_utf8 = g_locale_to_utf8 (formatted_value, -1, NULL, NULL, NULL);
-		if (formatted_value_utf8 == NULL)
-			formatted_value_utf8 = g_strdup (INVALID_VALUE);
 	}
 	else {
-		const char *formatted_clean;
-
-		if (strncmp (formatted_value, "lang=", 5) == 0)
-			formatted_clean = strchr (formatted_value, ' ') + 1;
-		else
-			formatted_clean = formatted_value;
-		formatted_value_utf8 = g_locale_to_utf8 (formatted_clean, -1, NULL, NULL, NULL);
-		if (formatted_value_utf8 == NULL)
-			formatted_value_utf8 = g_strdup (INVALID_VALUE);
+		char *tmp = _g_utf8_remove_string_properties (formatted_value_utf8);
+		g_free (formatted_value_utf8);
+		formatted_value_utf8 = tmp;
 	}
+
+	if (formatted_value_utf8 == NULL)
+		formatted_value_utf8 = g_strdup (INVALID_VALUE);
 
 	metadata_info = gth_main_get_metadata_info (attribute);
 	if ((metadata_info == NULL) && (category != NULL)) {
@@ -463,9 +484,8 @@ set_attribute_from_metadata (GFileInfo  *info,
 }
 
 
-static void
-set_attribute_from_tagset (GFileInfo  *info,
-			   const char *attribute,
+static GObject *
+get_attribute_from_tagset (GFileInfo  *info,
 			   const char *tagset[])
 {
 	GObject *metadata;
@@ -475,9 +495,21 @@ set_attribute_from_tagset (GFileInfo  *info,
 	for (i = 0; tagset[i] != NULL; i++) {
 		metadata = g_file_info_get_attribute_object (info, tagset[i]);
 		if (metadata != NULL)
-			break;
+			return metadata;
 	}
 
+	return NULL;
+}
+
+
+static void
+set_attribute_from_tagset (GFileInfo  *info,
+			   const char *attribute,
+			   const char *tagset[])
+{
+	GObject *metadata;
+
+	metadata = get_attribute_from_tagset (info, tagset);
 	if (metadata != NULL)
 		set_attribute_from_metadata (info, attribute, metadata);
 }
@@ -503,11 +535,16 @@ set_string_list_attribute_from_tagset (GFileInfo  *info,
 
 	if (GTH_IS_METADATA (metadata) && (gth_metadata_get_data_type (GTH_METADATA (metadata)) != GTH_METADATA_TYPE_STRING_LIST)) {
 		char           *raw;
+		char           *utf8_raw;
 		char          **keywords;
 		GthStringList  *string_list;
 
 		g_object_get (metadata, "raw", &raw, NULL);
-		keywords = g_strsplit (raw, ",", -1);
+		utf8_raw = _g_utf8_try_from_any (raw);
+		if (utf8_raw == NULL)
+			return;
+
+		keywords = g_strsplit (utf8_raw, ",", -1);
 		string_list = gth_string_list_new_from_strv (keywords);
 		metadata = (GObject *) gth_metadata_new_for_string_list (string_list);
 		g_file_info_set_attribute_object (info, attribute, metadata);
@@ -516,6 +553,7 @@ set_string_list_attribute_from_tagset (GFileInfo  *info,
 		g_object_unref (string_list);
 		g_strfreev (keywords);
 		g_free (raw);
+		g_free (utf8_raw);
 	}
 	else
 		g_file_info_set_attribute_object (info, attribute, metadata);
@@ -523,7 +561,7 @@ set_string_list_attribute_from_tagset (GFileInfo  *info,
 
 
 static void
-clear_studip_comments_from_tagset (GFileInfo  *info,
+clear_useless_comments_from_tagset (GFileInfo  *info,
 				   const char *tagset[])
 {
 	int i;
@@ -538,8 +576,8 @@ clear_studip_comments_from_tagset (GFileInfo  *info,
 			continue;
 
 		value = gth_metadata_get_formatted (GTH_METADATA (metadata));
-		for (j = 0; stupid_comment_filter[j] != NULL; j++) {
-			if (strstr (value, stupid_comment_filter[j]) == value) {
+		for (j = 0; useless_comment_filter[j] != NULL; j++) {
+			if (strstr (value, useless_comment_filter[j]) == value) {
 				g_file_info_remove_attribute (info, tagset[i]);
 				break;
 			}
@@ -581,18 +619,102 @@ exiv2_update_general_attributes (GFileInfo *info)
 }
 
 
+#define EXPOSURE_SEPARATOR " · "
+
+
 static void
 set_attributes_from_tagsets (GFileInfo *info,
 			     gboolean   update_general_attributes)
 {
-	clear_studip_comments_from_tagset (info, _DESCRIPTION_TAG_NAMES);
-	clear_studip_comments_from_tagset (info, _TITLE_TAG_NAMES);
+	clear_useless_comments_from_tagset (info, _DESCRIPTION_TAG_NAMES);
+	clear_useless_comments_from_tagset (info, _TITLE_TAG_NAMES);
 
 	if (update_general_attributes)
 		exiv2_update_general_attributes (info);
 
 	set_attribute_from_tagset (info, "Embedded::Photo::DateTimeOriginal", _ORIGINAL_DATE_TAG_NAMES);
 	set_attribute_from_tagset (info, "Embedded::Image::Orientation", _ORIENTATION_TAG_NAMES);
+
+	set_attribute_from_tagset (info, "Embedded::Photo::Aperture", _APERTURE_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::ISOSpeed", _ISOSPEED_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::ExposureTime", _EXPOSURE_TIME_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::ShutterSpeed", _SHUTTER_SPEED_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::FocalLength", _FOCAL_LENGTH_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::Flash", _FLASH_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::CameraModel", _MODEL_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::Author", _AUTHOR_TAG_NAMES);
+	set_attribute_from_tagset (info, "Embedded::Photo::Copyright", _COPYRIGHT_TAG_NAMES);
+
+	/* Embedded::Photo::Exposure */
+
+	GObject *aperture;
+	GObject *iso_speed;
+	GObject *shutter_speed;
+	GObject *exposure_time;
+	GString *exposure;
+
+	aperture = get_attribute_from_tagset (info, _APERTURE_TAG_NAMES);
+	iso_speed = get_attribute_from_tagset (info, _ISOSPEED_TAG_NAMES);
+	shutter_speed = get_attribute_from_tagset (info, _SHUTTER_SPEED_TAG_NAMES);
+	exposure_time = get_attribute_from_tagset (info, _EXPOSURE_TIME_TAG_NAMES);
+
+	exposure = g_string_new ("");
+
+	if (aperture != NULL) {
+		char *formatted_value;
+
+		g_object_get (aperture, "formatted", &formatted_value, NULL);
+		if (formatted_value != NULL) {
+			g_string_append (exposure, formatted_value);
+			g_free (formatted_value);
+		}
+	}
+
+	if (iso_speed != NULL) {
+		char *formatted_value;
+
+		g_object_get (iso_speed, "formatted", &formatted_value, NULL);
+		if (formatted_value != NULL) {
+			if (exposure->len > 0)
+				g_string_append (exposure, EXPOSURE_SEPARATOR);
+			g_string_append (exposure, "ISO ");
+			g_string_append (exposure, formatted_value);
+			g_free (formatted_value);
+		}
+	}
+
+	if (shutter_speed != NULL) {
+		char *formatted_value;
+
+		g_object_get (shutter_speed, "formatted", &formatted_value, NULL);
+		if (formatted_value != NULL) {
+			if (exposure->len > 0)
+				g_string_append (exposure, EXPOSURE_SEPARATOR);
+			g_string_append (exposure, formatted_value);
+			g_free (formatted_value);
+		}
+	}
+	else if (exposure_time != NULL) {
+		char *formatted_value;
+
+		g_object_get (exposure_time, "formatted", &formatted_value, NULL);
+		if (formatted_value != NULL) {
+			if (exposure->len > 0)
+				g_string_append (exposure, EXPOSURE_SEPARATOR);
+			g_string_append (exposure, formatted_value);
+			g_free (formatted_value);
+		}
+	}
+
+	set_file_info (info,
+		       "Embedded::Photo::Exposure",
+		       _("Exposure"),
+		       exposure->str,
+		       NULL,
+		       NULL,
+		       NULL);
+
+	g_string_free (exposure, TRUE);
 }
 
 
@@ -703,19 +825,12 @@ exiv2_read_metadata (Exiv2::Image::AutoPtr  image,
 				description << md->groupName() << "." << md->tagName();
 
 			GthMetadata *metadata;
-                      const char *formatted_value;
-                      try {
-                          formatted_value = md->print().c_str();
-                      } catch (std::out_of_range) {
-                          formatted_value = NULL;
-                      }
-                    
-                      metadata = create_metadata (md->key().c_str(),
-                                    description.str().c_str(),
-                                    formatted_value,
-                                    raw_value.str().c_str(),
-                                    "Xmp::Embedded",
-                                    md->typeName());
+			metadata = create_metadata (md->key().c_str(),
+						    description.str().c_str(),
+						    md->print().c_str(),
+						    raw_value.str().c_str(),
+						    "Xmp::Embedded",
+						    md->typeName());
 			if (metadata != NULL) {
 				if ((g_strcmp0 (md->typeName(), "XmpBag") == 0)
 				    || (g_strcmp0 (md->typeName(), "XmpSeq") == 0))
@@ -951,6 +1066,9 @@ gth_main_get_metadata_type (gpointer    metadata,
 }
 
 
+#if 0
+
+
 static void
 dump_exif_data (Exiv2::ExifData &exifData,
 		const char      *prefix)
@@ -987,6 +1105,9 @@ dump_exif_data (Exiv2::ExifData &exifData,
 	    return;
 	}
 }
+
+
+#endif
 
 
 static Exiv2::DataBuf
@@ -1057,7 +1178,7 @@ exiv2_write_metadata_private (Exiv2::Image::AutoPtr  image,
 
 	if (g_file_info_get_attribute_boolean (info, "gth::file::image-changed")) {
 		if (software_name == NULL)
-			software_name = g_strconcat (g_get_application_name (), " ", VERSION, NULL);
+			software_name = g_strconcat (g_get_application_name (), " ", PACKAGE_VERSION, NULL);
 		ed["Exif.Image.ProcessingSoftware"] = software_name;
 	}
 
@@ -1257,9 +1378,7 @@ gboolean
 exiv2_supports_writes (const char *mime_type)
 {
 	return (g_content_type_equals (mime_type, "image/jpeg")
-#if HAVE_EXIV2_020
 		|| g_content_type_equals (mime_type, "image/tiff")
-#endif
 		|| g_content_type_equals (mime_type, "image/png"));
 }
 

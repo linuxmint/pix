@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,31 +22,31 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
 	gth_hook_add_callback ("gth-browser-file-list-rename", 10, G_CALLBACK (rs__gth_browser_file_list_rename_cb), NULL);
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

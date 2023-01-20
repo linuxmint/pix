@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2005-2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "dlg-find-duplicates.h"
 #include "gth-find-duplicates.h"
 
@@ -33,6 +33,7 @@ typedef struct {
 	GthBrowser *browser;
 	GtkBuilder *builder;
 	GtkWidget  *dialog;
+	GtkWidget  *location_chooser;
 	GList      *general_tests;
 } DialogData;
 
@@ -50,20 +51,12 @@ destroy_cb (GtkWidget  *widget,
 
 
 static void
-help_clicked_cb (GtkWidget  *widget,
-		 DialogData *data)
-{
-	show_help_dialog (GTK_WINDOW (data->dialog), "pix-find-duplicates");
-}
-
-
-static void
 ok_clicked_cb (GtkWidget  *widget,
 	       DialogData *data)
 {
 	GFile *folder;
 
-	folder = gtk_file_chooser_get_file (GTK_FILE_CHOOSER ( _gtk_builder_get_widget (data->builder, "location_filechooserbutton")));
+	folder = gth_location_chooser_get_current (GTH_LOCATION_CHOOSER (data->location_chooser));
 	if (folder == NULL)
 		return;
 
@@ -72,7 +65,6 @@ ok_clicked_cb (GtkWidget  *widget,
 				  gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("include_subfolder_checkbutton"))),
 				  g_list_nth_data (data->general_tests, gtk_combo_box_get_active (GTK_COMBO_BOX (GET_WIDGET ("file_type_combobox")))));
 
-	g_object_unref (folder);
 	gtk_widget_destroy (data->dialog);
 }
 
@@ -82,7 +74,6 @@ dlg_find_duplicates (GthBrowser *browser)
 {
 	DialogData *data;
 	GSettings  *settings;
-	GtkWidget  *file_chooser;
 	GList      *tests;
 	char       *general_filter;
 	int         active_filter;
@@ -99,21 +90,38 @@ dlg_find_duplicates (GthBrowser *browser)
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("find-duplicates.ui", "find_duplicates");
 
-	settings = g_settings_new (PIX_BROWSER_SCHEMA);
+	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "find_duplicates_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Find Duplicates"),
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     "resizable", FALSE,
+				     NULL);
+
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+	                   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_("_Find"), GTK_RESPONSE_OK,
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	gth_browser_set_dialog (browser, "find_duplicates", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
 
+	data->location_chooser = g_object_new (GTH_TYPE_LOCATION_CHOOSER,
+					       "show-entry-points", TRUE,
+					       "show-other", TRUE,
+					       "relief", GTK_RELIEF_NORMAL,
+					       NULL);
+	gtk_widget_show (data->location_chooser);
+	gtk_container_add (GTK_CONTAINER (GET_WIDGET ("location_chooser_container")), data->location_chooser);
+
 	/* Set widgets data. */
 
-	file_chooser = _gtk_builder_get_widget (data->builder, "location_filechooserbutton");
-	if (GTH_IS_FILE_SOURCE_VFS (gth_browser_get_location_source (browser)))
-		gtk_file_chooser_set_file (GTK_FILE_CHOOSER (file_chooser), gth_browser_get_location (browser), NULL);
-	else
-		gtk_file_chooser_set_uri (GTK_FILE_CHOOSER (file_chooser), get_home_uri ());
+	gth_location_chooser_set_current (GTH_LOCATION_CHOOSER (data->location_chooser), gth_browser_get_location (browser));
 
 	tests = gth_main_get_registered_objects_id (GTH_TYPE_TEST);
 	general_filter = g_settings_get_string (settings, PREF_BROWSER_GENERAL_FILTER);
@@ -155,15 +163,11 @@ dlg_find_duplicates (GthBrowser *browser)
 			  "destroy",
 			  G_CALLBACK (destroy_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("ok_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (ok_clicked_cb),
 			  data);
-        g_signal_connect (GET_WIDGET ("help_button"),
-                          "clicked",
-                          G_CALLBACK (help_clicked_cb),
-                          data);
-	g_signal_connect_swapped (GET_WIDGET ("cancel_button"),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  G_OBJECT (data->dialog));

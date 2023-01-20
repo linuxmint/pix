@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef PREFERENCES_H
 #define PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 
 typedef enum {
@@ -34,12 +34,18 @@ typedef enum {
 
 /* schemas */
 
-#define PIX_IMAGE_SAVERS               PIX_SCHEMA ".pixbuf-savers"
-#define PIX_IMAGE_SAVERS_JPEG_SCHEMA   PIX_IMAGE_SAVERS ".jpeg"
-#define PIX_IMAGE_SAVERS_PNG_SCHEMA    PIX_IMAGE_SAVERS ".png"
-#define PIX_IMAGE_SAVERS_TGA_SCHEMA    PIX_IMAGE_SAVERS ".tga"
-#define PIX_IMAGE_SAVERS_TIFF_SCHEMA   PIX_IMAGE_SAVERS ".tiff"
-#define PIX_IMAGE_SAVERS_WEBP_SCHEMA   PIX_IMAGE_SAVERS ".webp"
+#define GTHUMB_IMAGE_SAVERS               GTHUMB_SCHEMA ".pixbuf-savers"
+#define GTHUMB_IMAGE_SAVERS_AVIF_SCHEMA   GTHUMB_IMAGE_SAVERS ".avif"
+#define GTHUMB_IMAGE_SAVERS_JPEG_SCHEMA   GTHUMB_IMAGE_SAVERS ".jpeg"
+#define GTHUMB_IMAGE_SAVERS_PNG_SCHEMA    GTHUMB_IMAGE_SAVERS ".png"
+#define GTHUMB_IMAGE_SAVERS_TGA_SCHEMA    GTHUMB_IMAGE_SAVERS ".tga"
+#define GTHUMB_IMAGE_SAVERS_TIFF_SCHEMA   GTHUMB_IMAGE_SAVERS ".tiff"
+#define GTHUMB_IMAGE_SAVERS_WEBP_SCHEMA   GTHUMB_IMAGE_SAVERS ".webp"
+
+/* keys: avif */
+
+#define  PREF_AVIF_LOSSLESS               "lossless"
+#define  PREF_AVIF_QUALITY                "quality"
 
 /* keys: jpeg */
 

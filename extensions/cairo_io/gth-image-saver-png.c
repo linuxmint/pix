@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <png.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-image-saver-png.h"
 #include "preferences.h"
 
@@ -42,13 +42,16 @@
 #endif
 
 
-G_DEFINE_TYPE (GthImageSaverPng, gth_image_saver_png, GTH_TYPE_IMAGE_SAVER)
-
-
 struct _GthImageSaverPngPrivate {
 	GtkBuilder *builder;
 	GSettings  *settings;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthImageSaverPng,
+			 gth_image_saver_png,
+			 GTH_TYPE_IMAGE_SAVER,
+			 G_ADD_PRIVATE (GthImageSaverPng))
 
 
 static void
@@ -162,7 +165,7 @@ _cairo_surface_write_as_png (cairo_surface_t  *image,
 			     char            **values,
 			     GError          **error)
 {
-	int            compression_level;
+	volatile int   compression_level;
 	int            width, height;
 	gboolean       alpha;
 	guchar        *pixels, *ptr, *buf;
@@ -211,7 +214,7 @@ _cairo_surface_write_as_png (cairo_surface_t  *image,
 	width     = cairo_image_surface_get_width (image);
 	height    = cairo_image_surface_get_height (image);
 	alpha     = _cairo_image_surface_get_has_alpha (image);
-	pixels    = cairo_image_surface_get_data (image);
+	pixels    = _cairo_image_surface_flush_and_get_data (image);
 	rowstride = cairo_image_surface_get_stride (image);
 
 	cairo_png_data = g_new0 (CairoPngData, 1);
@@ -343,8 +346,6 @@ gth_image_saver_png_class_init (GthImageSaverPngClass *klass)
 	GObjectClass       *object_class;
 	GthImageSaverClass *image_saver_class;
 
-	g_type_class_add_private (klass, sizeof (GthImageSaverPngPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_image_saver_png_finalize;
 
@@ -364,7 +365,7 @@ gth_image_saver_png_class_init (GthImageSaverPngClass *klass)
 static void
 gth_image_saver_png_init (GthImageSaverPng *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_SAVER_PNG, GthImageSaverPngPrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_PNG_SCHEMA);
+	self->priv = gth_image_saver_png_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_PNG_SCHEMA);
 	self->priv->builder = NULL;
 }

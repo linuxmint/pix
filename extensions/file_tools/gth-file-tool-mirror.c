@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,52 +21,56 @@
 
 #include <config.h>
 #include <math.h>
-#include <pix.h>
-#include <extensions/image_viewer/gth-image-viewer-page.h>
+#include <gthumb.h>
+#include <extensions/image_viewer/image-viewer.h>
 #include "gth-file-tool-mirror.h"
 
 
-G_DEFINE_TYPE (GthFileToolMirror, gth_file_tool_mirror, GTH_TYPE_FILE_TOOL)
+G_DEFINE_TYPE (GthFileToolMirror, gth_file_tool_mirror, GTH_TYPE_IMAGE_VIEWER_PAGE_TOOL)
+
+
+static gpointer
+mirror_exec (GthAsyncTask *task,
+	     gpointer      user_data)
+{
+	cairo_surface_t *source;
+	cairo_surface_t *destination;
+
+	source = gth_image_task_get_source_surface (GTH_IMAGE_TASK (task));
+	destination = _cairo_image_surface_transform (source, GTH_TRANSFORM_FLIP_H);
+	gth_image_task_set_destination_surface (GTH_IMAGE_TASK (task), destination);
+
+	cairo_surface_destroy (destination);
+	cairo_surface_destroy (source);
+
+	return NULL;
+}
 
 
 static void
 gth_file_tool_mirror_activate (GthFileTool *base)
 {
-	GtkWidget       *window;
-	GtkWidget       *viewer_page;
-	GtkWidget       *viewer;
-	cairo_surface_t *old_image;
-	cairo_surface_t *new_image;
+	GtkWidget     *window;
+	GthViewerPage *viewer_page;
+	GthTask       *task;
 
 	window = gth_file_tool_get_window (base);
 	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
 	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
 		return;
 
-	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	old_image = gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (viewer));
-	if (old_image == NULL)
-		return;
-
-	new_image = _cairo_image_surface_transform (old_image, GTH_TRANSFORM_FLIP_H);
-	gth_image_viewer_page_set_image (GTH_IMAGE_VIEWER_PAGE (viewer_page), new_image, TRUE);
-
-	cairo_surface_destroy (new_image);
-}
-
-
-static void
-gth_file_tool_mirror_update_sensitivity (GthFileTool *base)
-{
-	GtkWidget *window;
-	GtkWidget *viewer_page;
-
-	window = gth_file_tool_get_window (base);
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
-		gtk_widget_set_sensitive (GTK_WIDGET (base), FALSE);
-	else
-		gtk_widget_set_sensitive (GTK_WIDGET (base), TRUE);
+	task = gth_image_viewer_task_new (GTH_IMAGE_VIEWER_PAGE (viewer_page),
+					  _("Applying changes"),
+					  NULL,
+					  mirror_exec,
+					  NULL,
+					  NULL,
+					  NULL);
+	g_signal_connect (task,
+			  "completed",
+			  G_CALLBACK (gth_image_viewer_task_set_destination),
+			  NULL);
+	gth_browser_exec_task (GTH_BROWSER (window), task, GTH_TASK_FLAGS_DEFAULT);
 }
 
 
@@ -76,7 +80,6 @@ gth_file_tool_mirror_class_init (GthFileToolMirrorClass *klass)
 	GthFileToolClass *file_tool_class;
 
 	file_tool_class = GTH_FILE_TOOL_CLASS (klass);
-	file_tool_class->update_sensitivity = gth_file_tool_mirror_update_sensitivity;
 	file_tool_class->activate = gth_file_tool_mirror_activate;
 }
 
@@ -84,6 +87,6 @@ gth_file_tool_mirror_class_init (GthFileToolMirrorClass *klass)
 static void
 gth_file_tool_mirror_init (GthFileToolMirror *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "tool-mirror", _("Mirror"), NULL, FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "image-flip-horizontal-symbolic", _("Mirror"), GTH_TOOLBOX_SECTION_ROTATION);
 	gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Mirror the image horizontally"));
 }

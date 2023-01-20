@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,20 +22,19 @@
 #ifndef PREFERENCES_H
 #define PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 /* schema */
 
-#define PIX_IMAGE_VIEWER_SCHEMA          PIX_SCHEMA ".image-viewer"
+#define GTHUMB_IMAGE_VIEWER_SCHEMA          GTHUMB_SCHEMA ".image-viewer"
 
 /* keys */
 
-#define PREF_IMAGE_VIEWER_ZOOM_QUALITY      "zoom-quality"
-#define PREF_IMAGE_VIEWER_ZOOM_CHANGE       "zoom-change"
-#define PREF_IMAGE_VIEWER_TRANSP_TYPE       "transparency-type"
-#define PREF_IMAGE_VIEWER_RESET_SCROLLBARS  "reset-scrollbars"
-#define PREF_IMAGE_VIEWER_CHECK_TYPE        "check-type"
-#define PREF_IMAGE_VIEWER_CHECK_SIZE        "check-size"
+#define PREF_IMAGE_VIEWER_ZOOM_QUALITY       "zoom-quality"
+#define PREF_IMAGE_VIEWER_ZOOM_CHANGE        "zoom-change"
+#define PREF_IMAGE_VIEWER_RESET_SCROLLBARS   "reset-scrollbars"
+#define PREF_IMAGE_VIEWER_HISTOGRAM_SCALE    "histogram-scale"
+#define PREF_IMAGE_VIEWER_TRANSPARENCY_STYLE "transparency-style"
 
 void image_viewer__dlg_preferences_construct_cb (GtkWidget  *dialog,
 						 GthBrowser *browser,

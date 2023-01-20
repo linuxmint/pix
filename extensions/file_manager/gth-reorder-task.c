@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -32,7 +32,10 @@ struct _GthReorderTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthReorderTask, gth_reorder_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthReorderTask,
+			 gth_reorder_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthReorderTask))
 
 
 static void
@@ -92,8 +95,6 @@ gth_reorder_task_class_init (GthReorderTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthReorderTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_reorder_task_finalize;
 
@@ -106,7 +107,7 @@ gth_reorder_task_class_init (GthReorderTaskClass *klass)
 static void
 gth_reorder_task_init (GthReorderTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_REORDER_TASK, GthReorderTaskPrivate);
+	self->priv = gth_reorder_task_get_instance_private (self);
 }
 
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
@@ -89,7 +89,8 @@ void                  gth_image_rotator_set_background  (GthImageRotator       *
 void                  gth_image_rotator_get_background  (GthImageRotator       *self,
 		 	 	 	 	 	 GdkRGBA               *color);
 cairo_surface_t *     gth_image_rotator_get_result      (GthImageRotator       *self,
-							 gboolean               high_quality);
+							 cairo_surface_t       *image,
+							 GthAsyncTask          *task);
 
 G_END_DECLS
 

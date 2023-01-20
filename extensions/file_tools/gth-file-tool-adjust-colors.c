@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,8 +21,6 @@
 
 #include <config.h>
 #include <math.h>
-#include <pix.h>
-#include <extensions/image_viewer/gth-image-viewer-page.h>
 #include "gth-file-tool-adjust-colors.h"
 #include "gth-preview-tool.h"
 
@@ -31,11 +29,8 @@
 #define APPLY_DELAY 150
 #define PREVIEW_SIZE 0.9
 
-G_DEFINE_TYPE (GthFileToolAdjustColors, gth_file_tool_adjust_colors, GTH_TYPE_FILE_TOOL)
-
 
 struct _GthFileToolAdjustColorsPrivate {
-	cairo_surface_t    *source;
 	cairo_surface_t    *destination;
 	cairo_surface_t    *preview;
 	GtkBuilder         *builder;
@@ -56,10 +51,15 @@ struct _GthFileToolAdjustColorsPrivate {
 };
 
 
+G_DEFINE_TYPE_WITH_CODE (GthFileToolAdjustColors,
+			 gth_file_tool_adjust_colors,
+			 GTH_TYPE_IMAGE_VIEWER_PAGE_TOOL,
+			 G_ADD_PRIVATE (GthFileToolAdjustColors))
+
+
 typedef struct {
 	GthFileToolAdjustColors *self;
-	cairo_surface_t         *source;
-	GtkWidget               *viewer_page;
+	GthViewerPage           *viewer_page;
 	double                   gamma;
 	double                   brightness;
 	double                   contrast;
@@ -84,7 +84,7 @@ adjust_colors_before (GthAsyncTask *task,
 
 
 static guchar
-gamma_correction (guchar original,
+gamma_correction (int    original,
 		  double gamma)
 {
 	double inten;
@@ -107,6 +107,7 @@ adjust_colors_exec (GthAsyncTask *task,
 		    gpointer      user_data)
 {
 	AdjustData      *adjust_data = user_data;
+	cairo_surface_t *source;
 	cairo_format_t   format;
 	int              width;
 	int              height;
@@ -118,23 +119,28 @@ adjust_colors_exec (GthAsyncTask *task,
 	unsigned char   *p_destination;
 	gboolean         cancelled;
 	double           progress;
-	int              x, y;
-	unsigned char    values[4];
+	int              x, y, temp;
+	int              values[4];
 	int              channel;
-	unsigned char    value;
+	int              value;
+	double           saturation;
 	cairo_surface_t *destination;
-	GthImage        *destination_image;
 
-	format = cairo_image_surface_get_format (adjust_data->source);
-	width = cairo_image_surface_get_width (adjust_data->source);
-	height = cairo_image_surface_get_height (adjust_data->source);
-	source_stride = cairo_image_surface_get_stride (adjust_data->source);
+	if (adjust_data->saturation < 0)
+		saturation = tan (adjust_data->saturation * G_PI_2);
+	else
+		saturation = adjust_data->saturation;
+
+	source = gth_image_task_get_source_surface (GTH_IMAGE_TASK (task));
+	format = cairo_image_surface_get_format (source);
+	width = cairo_image_surface_get_width (source);
+	height = cairo_image_surface_get_height (source);
+	source_stride = cairo_image_surface_get_stride (source);
 
 	destination = cairo_image_surface_create (format, width, height);
-	cairo_surface_flush (destination);
 	destination_stride = cairo_image_surface_get_stride (destination);
-	p_source_line = cairo_image_surface_get_data (adjust_data->source);
-	p_destination_line = cairo_image_surface_get_data (destination);
+	p_source_line = _cairo_image_surface_flush_and_get_data (source);
+	p_destination_line = _cairo_image_surface_flush_and_get_data (destination);
 	for (y = 0; y < height; y++) {
 		gth_async_task_get_data (task, NULL, &cancelled, NULL);
 		if (cancelled)
@@ -156,7 +162,8 @@ adjust_colors_exec (GthAsyncTask *task,
 				if (! pixbuf_cache_get (adjust_data->cache, channel + 1, &value)) {
 					int tmp;
 
-					value = gamma_correction (value, adjust_data->gamma);
+					if (adjust_data->gamma != 0.0)
+						value = gamma_correction (value, adjust_data->gamma);
 
 					if (adjust_data->brightness > 0)
 						tmp = interpolate_value (value, 0, adjust_data->brightness);
@@ -183,17 +190,11 @@ adjust_colors_exec (GthAsyncTask *task,
 
 			if (adjust_data->saturation != 0.0) {
 				guchar min, max, lightness;
-				double saturation;
 				int    tmp;
 
 				max = MAX (MAX (values[0], values[1]), values[2]);
 				min = MIN (MIN (values[0], values[1]), values[2]);
 				lightness = (max + min) / 2;
-
-				if (adjust_data->saturation < 0)
-					saturation = tan (adjust_data->saturation * G_PI_2);
-				else
-					saturation = adjust_data->saturation;
 
 				tmp = interpolate_value (values[0], lightness, saturation);
 				values[0] = CLAMP (tmp, 0, 255);
@@ -215,12 +216,10 @@ adjust_colors_exec (GthAsyncTask *task,
 	}
 
 	cairo_surface_mark_dirty (destination);
+	gth_image_task_set_destination_surface (GTH_IMAGE_TASK (task), destination);
 
-	destination_image = gth_image_new_for_surface (destination);
-	gth_image_task_set_destination (GTH_IMAGE_TASK (task), destination_image);
-
-	_g_object_unref (destination_image);
 	cairo_surface_destroy (destination);
+	cairo_surface_destroy (source);
 
 	return NULL;
 }
@@ -232,14 +231,28 @@ adjust_data_free (gpointer user_data)
 	AdjustData *adjust_data = user_data;
 
 	pixbuf_cache_free (adjust_data->cache);
-	cairo_surface_destroy (adjust_data->source);
 	g_object_unref (adjust_data->viewer_page);
 	g_free (adjust_data);
 }
 
 
+static void
+reset_button_clicked_cb (GtkButton *button,
+		  	 gpointer   user_data)
+{
+	GthFileToolAdjustColors *self = user_data;
+
+	gtk_adjustment_set_value (self->priv->gamma_adj, 0.0);
+	gtk_adjustment_set_value (self->priv->brightness_adj, 0.0);
+	gtk_adjustment_set_value (self->priv->contrast_adj, 0.0);
+	gtk_adjustment_set_value (self->priv->saturation_adj, 0.0);
+	gtk_adjustment_set_value (self->priv->cyan_red_adj, 0.0);
+	gtk_adjustment_set_value (self->priv->magenta_green_adj, 0.0);
+	gtk_adjustment_set_value (self->priv->yellow_blue_adj, 0.0);
+}
+
+
 static void apply_changes (GthFileToolAdjustColors *self);
-static void gth_file_tool_adjust_colors_cancel (GthFileTool *file_tool);
 
 
 static void
@@ -254,7 +267,7 @@ image_task_completed_cb (GthTask  *task,
 
 	if (self->priv->closing) {
 		g_object_unref (task);
-		gth_file_tool_adjust_colors_cancel (GTH_FILE_TOOL (self));
+		gth_image_viewer_page_tool_reset_image (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
 		return;
 	}
 
@@ -276,11 +289,9 @@ image_task_completed_cb (GthTask  *task,
 
 	if (self->priv->apply_to_original) {
 		if (self->priv->destination != NULL) {
-			GtkWidget *window;
-			GtkWidget *viewer_page;
+			GthViewerPage *viewer_page;
 
-			window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
-			viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
+			viewer_page = gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
 			gth_image_viewer_page_set_image (GTH_IMAGE_VIEWER_PAGE (viewer_page), self->priv->destination, TRUE);
 		}
 
@@ -293,48 +304,6 @@ image_task_completed_cb (GthTask  *task,
 	}
 
 	g_object_unref (task);
-}
-
-
-static void
-gth_file_tool_adjust_colors_update_sensitivity (GthFileTool *base)
-{
-	GtkWidget *window;
-	GtkWidget *viewer_page;
-
-	window = gth_file_tool_get_window (base);
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
-		gtk_widget_set_sensitive (GTK_WIDGET (base), FALSE);
-	else
-		gtk_widget_set_sensitive (GTK_WIDGET (base), TRUE);
-}
-
-
-static void
-ok_button_clicked_cb (GtkButton *button,
-		      gpointer   user_data)
-{
-	GthFileToolAdjustColors *self = user_data;
-
-	self->priv->apply_to_original = TRUE;
-	apply_changes (self);
-}
-
-
-static void
-reset_button_clicked_cb (GtkButton *button,
-		  	 gpointer   user_data)
-{
-	GthFileToolAdjustColors *self = user_data;
-
-	gtk_adjustment_set_value (self->priv->gamma_adj, 0.0);
-	gtk_adjustment_set_value (self->priv->brightness_adj, 0.0);
-	gtk_adjustment_set_value (self->priv->contrast_adj, 0.0);
-	gtk_adjustment_set_value (self->priv->saturation_adj, 0.0);
-	gtk_adjustment_set_value (self->priv->cyan_red_adj, 0.0);
-	gtk_adjustment_set_value (self->priv->magenta_green_adj, 0.0);
-	gtk_adjustment_set_value (self->priv->yellow_blue_adj, 0.0);
 }
 
 
@@ -360,7 +329,6 @@ apply_cb (gpointer user_data)
 	adjust_data = g_new0 (AdjustData, 1);
 	adjust_data->self = self;
 	adjust_data->viewer_page = g_object_ref (gth_browser_get_viewer_page (GTH_BROWSER (window)));
-	adjust_data->source = cairo_surface_reference (self->priv->apply_to_original ? self->priv->source : self->priv->preview);
 	adjust_data->gamma = pow (10, - (gtk_adjustment_get_value (self->priv->gamma_adj) / 100.0));
 	adjust_data->brightness = gtk_adjustment_get_value (self->priv->brightness_adj) / 100.0 * -1.0;
 	adjust_data->contrast = gtk_adjustment_get_value (self->priv->contrast_adj) / 100.0 * -1.0;
@@ -375,11 +343,16 @@ apply_cb (gpointer user_data)
 						     NULL,
 						     adjust_data,
 						     adjust_data_free);
+	if (self->priv->apply_to_original)
+		gth_image_task_set_source_surface (GTH_IMAGE_TASK (self->priv->image_task), gth_image_viewer_page_tool_get_source (GTH_IMAGE_VIEWER_PAGE_TOOL (self)));
+	else
+		gth_image_task_set_source_surface (GTH_IMAGE_TASK (self->priv->image_task), self->priv->preview);
+
 	g_signal_connect (self->priv->image_task,
 			  "completed",
 			  G_CALLBACK (image_task_completed_cb),
 			  self);
-	gth_browser_exec_task (GTH_BROWSER (window), self->priv->image_task, FALSE);
+	gth_browser_exec_task (GTH_BROWSER (window), self->priv->image_task, GTH_TASK_FLAGS_DEFAULT);
 
 	return FALSE;
 }
@@ -421,36 +394,34 @@ static GtkWidget *
 gth_file_tool_adjust_colors_get_options (GthFileTool *base)
 {
 	GthFileToolAdjustColors *self;
-	GtkWidget               *window;
-	GtkWidget               *viewer_page;
+	GthViewerPage           *viewer_page;
 	GtkWidget               *viewer;
+	cairo_surface_t         *source;
 	GtkWidget               *options;
 	int                      width, height;
 	GtkAllocation            allocation;
 
 	self = (GthFileToolAdjustColors *) base;
 
-	window = gth_file_tool_get_window (base);
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
+	viewer_page = gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
+	if (viewer_page == NULL)
 		return NULL;
 
-	cairo_surface_destroy (self->priv->source);
-	cairo_surface_destroy (self->priv->destination);
-	cairo_surface_destroy (self->priv->preview);
+	_cairo_clear_surface (&self->priv->destination);
+	_cairo_clear_surface (&self->priv->preview);
 
+	source = gth_image_viewer_page_tool_get_source (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
+	if (source == NULL)
+		return NULL;
+
+	width = cairo_image_surface_get_width (source);
+	height = cairo_image_surface_get_height (source);
 	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	self->priv->source = cairo_surface_reference (gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (viewer)));
-	if (self->priv->source == NULL)
-		return NULL;
-
-	width = cairo_image_surface_get_width (self->priv->source);
-	height = cairo_image_surface_get_height (self->priv->source);
 	gtk_widget_get_allocation (GTK_WIDGET (viewer), &allocation);
 	if (scale_keeping_ratio (&width, &height, PREVIEW_SIZE * allocation.width, PREVIEW_SIZE * allocation.height, FALSE))
-		self->priv->preview = _cairo_image_surface_scale_bilinear (self->priv->source, width, height);
+		self->priv->preview = _cairo_image_surface_scale_fast (source, width, height);
 	else
-		self->priv->preview = cairo_surface_reference (self->priv->source);
+		self->priv->preview = cairo_surface_reference (source);
 
 	self->priv->destination = cairo_surface_reference (self->priv->preview);
 	self->priv->apply_to_original = FALSE;
@@ -467,44 +438,32 @@ gth_file_tool_adjust_colors_get_options (GthFileTool *base)
 	self->priv->brightness_adj    = gth_color_scale_label_new (GET_WIDGET ("brightness_hbox"),
 								   GTK_LABEL (GET_WIDGET ("brightness_label")),
 								   GTH_COLOR_SCALE_BLACK_WHITE,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 	self->priv->contrast_adj      = gth_color_scale_label_new (GET_WIDGET ("contrast_hbox"),
 								   GTK_LABEL (GET_WIDGET ("contrast_label")),
 								   GTH_COLOR_SCALE_GRAY_BLACK,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 	self->priv->gamma_adj         = gth_color_scale_label_new (GET_WIDGET ("gamma_hbox"),
 								   GTK_LABEL (GET_WIDGET ("gamma_label")),
 								   GTH_COLOR_SCALE_WHITE_BLACK,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 	self->priv->saturation_adj    = gth_color_scale_label_new (GET_WIDGET ("saturation_hbox"),
 								   GTK_LABEL (GET_WIDGET ("saturation_label")),
 								   GTH_COLOR_SCALE_GRAY_WHITE,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 	self->priv->cyan_red_adj      = gth_color_scale_label_new (GET_WIDGET ("cyan_red_hbox"),
 								   GTK_LABEL (GET_WIDGET ("cyan_red_label")),
 								   GTH_COLOR_SCALE_CYAN_RED,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 	self->priv->magenta_green_adj = gth_color_scale_label_new (GET_WIDGET ("magenta_green_hbox"),
 								   GTK_LABEL (GET_WIDGET ("magenta_green_label")),
 								   GTH_COLOR_SCALE_MAGENTA_GREEN,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 	self->priv->yellow_blue_adj   = gth_color_scale_label_new (GET_WIDGET ("yellow_blue_hbox"),
 								   GTK_LABEL (GET_WIDGET ("yellow_blue_label")),
 								   GTH_COLOR_SCALE_YELLOW_BLUE,
-								   0.0, -100.0, 100.0, 1.0, 1.0, "%+.0f");
+								   0.0, -99.0, 99.0, 1.0, 1.0, "%+.0f");
 
-	g_signal_connect (GET_WIDGET ("ok_button"),
-			  "clicked",
-			  G_CALLBACK (ok_button_clicked_cb),
-			  self);
-	g_signal_connect_swapped (GET_WIDGET ("cancel_button"),
-				  "clicked",
-				  G_CALLBACK (gth_file_tool_cancel),
-				  self);
-	g_signal_connect (GET_WIDGET ("reset_button"),
-			  "clicked",
-			  G_CALLBACK (reset_button_clicked_cb),
-			  self);
 	g_signal_connect (G_OBJECT (self->priv->brightness_adj),
 			  "value-changed",
 			  G_CALLBACK (value_changed_cb),
@@ -551,9 +510,7 @@ static void
 gth_file_tool_adjust_colors_destroy_options (GthFileTool *base)
 {
 	GthFileToolAdjustColors *self;
-	GtkWidget               *window;
-	GtkWidget               *viewer_page;
-	GtkWidget               *viewer;
+	GthViewerPage           *viewer_page;
 
 	self = (GthFileToolAdjustColors *) base;
 
@@ -562,35 +519,59 @@ gth_file_tool_adjust_colors_destroy_options (GthFileTool *base)
 		self->priv->apply_event = 0;
 	}
 
-	window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	gth_image_viewer_set_tool (GTH_IMAGE_VIEWER (viewer), NULL);
-	gth_viewer_page_update_sensitivity (GTH_VIEWER_PAGE (viewer_page));
+	viewer_page = gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
+	gth_image_viewer_page_reset_viewer_tool (GTH_IMAGE_VIEWER_PAGE (viewer_page));
+	gth_viewer_page_update_sensitivity (viewer_page);
 
 	_cairo_clear_surface (&self->priv->preview);
-	_cairo_clear_surface (&self->priv->source);
 	_cairo_clear_surface (&self->priv->destination);
 	_g_clear_object (&self->priv->builder);
 }
 
 
 static void
-gth_file_tool_adjust_colors_activate (GthFileTool *base)
+gth_file_tool_adjust_colors_apply_options (GthFileTool *base)
 {
-	gth_file_tool_show_options (base);
+	GthFileToolAdjustColors *self;
+
+	self = (GthFileToolAdjustColors *) base;
+	self->priv->apply_to_original = TRUE;
+	apply_changes (self);
 }
 
 
 static void
-gth_file_tool_adjust_colors_cancel (GthFileTool *file_tool)
+gth_file_tool_adjust_colors_populate_headerbar (GthFileTool *base,
+						GthBrowser  *browser)
 {
-	GthFileToolAdjustColors *self = GTH_FILE_TOOL_ADJUST_COLORS (file_tool);
-	GtkWidget               *window;
-	GtkWidget               *viewer_page;
+	GthFileToolAdjustColors *self;
+	GtkWidget               *button;
+
+	self = (GthFileToolAdjustColors *) base;
+
+	/* reset button */
+
+	button = gth_browser_add_header_bar_button (browser,
+						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
+						    "edit-undo-symbolic",
+						    _("Reset"),
+						    NULL,
+						    NULL);
+	g_signal_connect (button,
+			  "clicked",
+			  G_CALLBACK (reset_button_clicked_cb),
+			  self);
+}
+
+
+static void
+gth_file_tool_sharpen_reset_image (GthImageViewerPageTool *base)
+{
+	GthFileToolAdjustColors *self = (GthFileToolAdjustColors *) base;
 
 	if (self->priv->image_task != NULL) {
 		self->priv->closing = TRUE;
+		gth_task_cancel (self->priv->image_task);
 		return;
 	}
 
@@ -599,23 +580,22 @@ gth_file_tool_adjust_colors_cancel (GthFileTool *file_tool)
 		self->priv->apply_event = 0;
 	}
 
-	window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	gth_image_viewer_page_reset (GTH_IMAGE_VIEWER_PAGE (viewer_page));
+	gth_image_viewer_page_reset (GTH_IMAGE_VIEWER_PAGE (gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self))));
+	gth_file_tool_hide_options (GTH_FILE_TOOL (self));
 }
 
 
 static void
 gth_file_tool_adjust_colors_init (GthFileToolAdjustColors *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_FILE_TOOL_ADJUST_COLORS, GthFileToolAdjustColorsPrivate);
+	self->priv = gth_file_tool_adjust_colors_get_instance_private (self);
 	self->priv->histogram = gth_histogram_new ();
 	self->priv->preview = NULL;
-	self->priv->source = NULL;
 	self->priv->destination = NULL;
 	self->priv->builder = NULL;
+	self->priv->image_task = NULL;
 
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "tool-adjust-colors", _("Adjust Colors..."), _("Adjust Colors"), FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "image-adjust-colors-symbolic", _("Adjust Colors"), GTH_TOOLBOX_SECTION_COLORS);
 	gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Change brightness, contrast, saturation and gamma level of the image"));
 }
 
@@ -631,7 +611,6 @@ gth_file_tool_adjust_colors_finalize (GObject *object)
 	self = (GthFileToolAdjustColors *) object;
 
 	cairo_surface_destroy (self->priv->preview);
-	cairo_surface_destroy (self->priv->source);
 	cairo_surface_destroy (self->priv->destination);
 	_g_object_unref (self->priv->builder);
 	_g_object_unref (self->priv->histogram);
@@ -641,20 +620,21 @@ gth_file_tool_adjust_colors_finalize (GObject *object)
 
 
 static void
-gth_file_tool_adjust_colors_class_init (GthFileToolAdjustColorsClass *class)
+gth_file_tool_adjust_colors_class_init (GthFileToolAdjustColorsClass *klass)
 {
-	GObjectClass     *gobject_class;
-	GthFileToolClass *file_tool_class;
+	GObjectClass                *gobject_class;
+	GthFileToolClass            *file_tool_class;
+	GthImageViewerPageToolClass *image_viewer_page_tool_class;
 
-	g_type_class_add_private (class, sizeof (GthFileToolAdjustColorsPrivate));
-
-	gobject_class = (GObjectClass*) class;
+	gobject_class = (GObjectClass*) klass;
 	gobject_class->finalize = gth_file_tool_adjust_colors_finalize;
 
-	file_tool_class = (GthFileToolClass *) class;
-	file_tool_class->update_sensitivity = gth_file_tool_adjust_colors_update_sensitivity;
-	file_tool_class->activate = gth_file_tool_adjust_colors_activate;
-	file_tool_class->cancel = gth_file_tool_adjust_colors_cancel;
+	file_tool_class = (GthFileToolClass *) klass;
 	file_tool_class->get_options = gth_file_tool_adjust_colors_get_options;
 	file_tool_class->destroy_options = gth_file_tool_adjust_colors_destroy_options;
+	file_tool_class->apply_options = gth_file_tool_adjust_colors_apply_options;
+	file_tool_class->populate_headerbar = gth_file_tool_adjust_colors_populate_headerbar;
+
+	image_viewer_page_tool_class = (GthImageViewerPageToolClass *) klass;
+	image_viewer_page_tool_class->reset_image = gth_file_tool_sharpen_reset_image;
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014-2017 Paolo Bacchilega <paobac@src.gnome.org> -->
+<component type="desktop-application">
+  <id>org.gnome.gThumb.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+
+  <name>gThumb Image Viewer</name>
+  <summary>View and organize your images</summary>
+  <description>
+    <p>
+      gThumb is an image viewer, editor, browser and organizer.  It is designed
+      to be well integrated with the GNOME 3 desktop.
+    </p>
+    <p>
+      As an image viewer gThumb allows to view common image file formats
+      such as BMP, JPEG, GIF (including the animations), PNG, TIFF, TGA and
+      RAW images.
+      It is also possible to view various metadata types embedded inside an
+      image such as EXIF, IPTC and XMP.
+    </p>
+    <p>
+      As an image editor gThumb allows to scale, rotate and crop the images;
+      change the saturation, lightness, contrast as well as other color
+      transformations.
+    </p>
+    <p>
+      As an image browser gThumb shows the thumbnails of the images saved on
+      your disk, allows to perform the common operations of a file manager such
+      as copy, move and delete files and folders.
+      Furthermore there is a series of image specific tools such as JPEG
+      lossless transformations; image resize; format conversion; slideshow;
+      setting an image as desktop background and several others.
+    </p>
+    <p>
+      As an image organizer gThumb allows to add comments and other metadata to
+      images; organize images in catalogs and catalogs in libraries; search
+      for images and save the result as a catalog.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">org.gnome.gThumb.desktop</launchable>
+  <url type="homepage">https://wiki.gnome.org/Apps/Gthumb</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://gitlab.gnome.org/GNOME/gthumb/raw/master/data/appdata/ss-browser.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://gitlab.gnome.org/GNOME/gthumb/raw/master/data/appdata/ss-viewer.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="3.8.2" date="2019-11-18"/>
+  </releases>
+
+  <update_contact>paobac_at_src.gnome.org</update_contact>
+  <kudos>
+    <kudo>AppMenu</kudo>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+    <kudo>UserDocs</kudo>
+  </kudos>
+  <project_group>GNOME</project_group>
+  <translation type="gettext">gthumb</translation>
+
+  <provides>
+    <id>org.gnome.gThumb.desktop</id>
+  </provides>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">mild</content_attribute>
+    <content_attribute id="social-audio">moderate</content_attribute>
+  </content_rating>
+</component>

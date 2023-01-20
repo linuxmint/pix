@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 /* schema */
 
-#define PIX_FLICKR_SCHEMA     PIX_SCHEMA ".flickr"
+#define GTHUMB_FLICKR_SCHEMA     GTHUMB_SCHEMA ".flickr"
 
 /* keys */
 

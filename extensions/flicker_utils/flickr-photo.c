@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "flickr-photo.h"
 
 
@@ -48,8 +48,9 @@ static void flickr_photo_dom_domizable_interface_init (DomDomizableInterface *if
 G_DEFINE_TYPE_WITH_CODE (FlickrPhoto,
 			 flickr_photo,
 			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (FlickrPhoto)
 			 G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
-					        flickr_photo_dom_domizable_interface_init))
+						flickr_photo_dom_domizable_interface_init))
 
 
 static void
@@ -77,7 +78,6 @@ flickr_photo_finalize (GObject *obj)
 static void
 flickr_photo_class_init (FlickrPhotoClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (FlickrPhotoPrivate));
 	G_OBJECT_CLASS (klass)->finalize = flickr_photo_finalize;
 }
 
@@ -150,7 +150,7 @@ flickr_photo_init (FlickrPhoto *self)
 {
 	int i;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, FLICKR_TYPE_PHOTO, FlickrPhotoPrivate);
+	self->priv = flickr_photo_get_instance_private (self);
 	self->priv->server = NULL;
 
 	self->id = NULL;
@@ -181,7 +181,7 @@ void
 flickr_photo_set_id (FlickrPhoto *self,
 		     const char  *value)
 {
-	_g_strset (&self->id, value);
+	_g_str_set (&self->id, value);
 }
 
 
@@ -189,7 +189,7 @@ void
 flickr_photo_set_secret (FlickrPhoto *self,
 			 const char  *value)
 {
-	_g_strset (&self->secret, value);
+	_g_str_set (&self->secret, value);
 }
 
 
@@ -197,7 +197,7 @@ void
 flickr_photo_set_server (FlickrPhoto *self,
 			 const char  *value)
 {
-	_g_strset (&self->server, value);
+	_g_str_set (&self->server, value);
 }
 
 
@@ -205,7 +205,7 @@ void
 flickr_photo_set_farm (FlickrPhoto *self,
 		       const char  *value)
 {
-	_g_strset (&self->farm, value);
+	_g_str_set (&self->farm, value);
 }
 
 
@@ -213,7 +213,7 @@ void
 flickr_photo_set_title (FlickrPhoto *self,
 			const char  *value)
 {
-	_g_strset (&self->title, value);
+	_g_str_set (&self->title, value);
 }
 
 
@@ -273,7 +273,7 @@ flickr_photo_set_url (FlickrPhoto *self,
 		      FlickrUrl    size,
 		      const char  *value)
 {
-	_g_strset (&(self->url[size]), value);
+	_g_str_set (&(self->url[size]), value);
 	if (self->url[size] == NULL)
 		self->url[size] = flickr_get_static_url (self, size);
 
@@ -281,7 +281,7 @@ flickr_photo_set_url (FlickrPhoto *self,
 		int other_size;
 		for (other_size = FLICKR_URL_O - 1; other_size >= 0; other_size--) {
 			if (self->url[other_size] != NULL) {
-				_g_strset (&(self->url[size]), self->url[other_size]);
+				_g_str_set (&(self->url[size]), self->url[other_size]);
 				break;
 			}
 		}
@@ -293,7 +293,7 @@ void
 flickr_photo_set_original_format (FlickrPhoto *self,
 				  const char  *value)
 {
-	_g_strset (&self->original_format, value);
+	_g_str_set (&self->original_format, value);
 
 	g_free (self->mime_type);
 	self->mime_type = NULL;
@@ -306,5 +306,5 @@ void
 flickr_photo_set_original_secret (FlickrPhoto *self,
 				  const char  *value)
 {
-	_g_strset (&self->original_secret, value);
+	_g_str_set (&self->original_secret, value);
 }

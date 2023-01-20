@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -36,9 +36,10 @@ struct _GthSelectionsManagerPrivate {
 };
 
 
-G_DEFINE_TYPE (GthSelectionsManager,
-	       gth_selections_manager,
-	       G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_CODE (GthSelectionsManager,
+			 gth_selections_manager,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthSelectionsManager))
 
 
 static GthSelectionsManager *the_manager = NULL;
@@ -86,19 +87,18 @@ gth_selections_manager_class_init (GthSelectionsManagerClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthSelectionsManagerPrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->constructor = gth_selections_manager_constructor;
 	object_class->finalize = gth_selections_manager_finalize;
 }
+
 
 static void
 gth_selections_manager_init (GthSelectionsManager *self)
 {
 	int i;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_SELECTIONS_MANAGER, GthSelectionsManagerPrivate);
+	self->priv = gth_selections_manager_get_instance_private (self);
 	g_mutex_init (&self->priv->mutex);
 	for (i = 0; i < GTH_SELECTIONS_MANAGER_N_SELECTIONS; i++) {
 		self->priv->files[i] = NULL;
@@ -198,13 +198,14 @@ void
 gth_selections_manager_update_file_info (GFile     *file,
 					 GFileInfo *info)
 {
-	int   n_selection;
-	char *name;
+	int    n_selection;
+	GIcon *icon;
+	char  *name;
 
 	n_selection = _g_file_get_n_selection (file);
 
 	g_file_info_set_file_type (info, G_FILE_TYPE_DIRECTORY);
-	g_file_info_set_content_type (info, "pix/selection");
+	g_file_info_set_content_type (info, "gthumb/selection");
 
 	g_file_info_set_sort_order (info, n_selection);
 	g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_READ, TRUE);
@@ -212,30 +213,18 @@ gth_selections_manager_update_file_info (GFile     *file,
 		g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE, TRUE);
 	g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE, FALSE);
 	g_file_info_set_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME, FALSE);
-	g_file_info_set_attribute_int32 (info, "pix::n-selection", n_selection);
+	g_file_info_set_attribute_int32 (info, "gthumb::n-selection", n_selection);
 
 	/* icon */
 
-	if (n_selection > 0) {
-		GIcon *icon;
-
-		name = g_strdup_printf ("selection%d", n_selection);
-		icon = g_themed_icon_new (name);
-		g_file_info_set_icon (info, icon);
-
-		g_object_unref (icon);
-		g_free (name);
-	}
-	else {
-		GIcon *icon = g_themed_icon_new ("selection");
-		g_file_info_set_icon (info, icon);
-		g_object_unref (icon);
-	}
+	icon = g_themed_icon_new (gth_selection_get_symbolic_icon_name (n_selection));
+	g_file_info_set_symbolic_icon (info, icon);
+	g_object_unref (icon);
 
 	/* display name */
 
 	if (n_selection > 0) {
-		g_file_info_set_attribute_boolean (info, "pix::no-child", TRUE);
+		g_file_info_set_attribute_boolean (info, "gthumb::no-child", TRUE);
 		name = g_strdup_printf (_("Selection %d"), n_selection);
 	}
 	else if (n_selection == 0)
@@ -267,8 +256,8 @@ gth_selections_manager_update_file_info (GFile     *file,
 			g_file_info_set_attribute_boolean (info, "sort::inverse", self->priv->order_inverse[n_selection - 1]);
 		}
 		else {
-			g_file_info_remove_attribute (info, "sort::type");
-			g_file_info_remove_attribute (info, "sort::inverse");
+			g_file_info_set_attribute_string (info, "sort::type", "general::unsorted");
+			g_file_info_set_attribute_boolean (info, "sort::inverse", FALSE);
 		}
 	}
 }
@@ -301,6 +290,40 @@ _gth_selections_manager_for_each_selection (gpointer user_data)
 				 data->user_data,
 				 NULL);
 	fec_data_free (data);
+}
+
+
+G_GNUC_UNUSED
+static void
+_gth_selections_manager_load_from_node (GthSelectionsManager *self,
+					DomElement           *node)
+{
+	DomElement *child;
+	int         n_selection;
+	GList      *file_list;
+
+	n_selection = atoi (dom_element_get_attribute (node, "n"));
+	if ((n_selection < 0) || (n_selection > GTH_SELECTIONS_MANAGER_N_SELECTIONS))
+		return;
+
+	g_hash_table_remove_all (self->priv->files_hash[n_selection - 1]);
+	_g_object_list_unref (self->priv->files[n_selection - 1]);
+	self->priv->files[n_selection - 1] = NULL;
+
+	file_list = NULL;
+	for (child = node->first_child; child; child = child->next_sibling) {
+		if (g_strcmp0 (child->tag_name, "file") == 0) {
+			const char *uri;
+
+			uri = dom_element_get_attribute (child, "uri");
+			if (uri != NULL) {
+				GFile *file = g_file_new_for_uri (uri);
+				file_list = g_list_prepend (file_list, file);
+				g_hash_table_insert (self->priv->files_hash[n_selection - 1], file, GINT_TO_POINTER (1));
+			}
+		}
+	}
+	self->priv->files[n_selection - 1] = g_list_reverse (file_list);
 }
 
 
@@ -404,8 +427,9 @@ gth_selections_manager_add_files (GFile *folder,
 
 
 void
-gth_selections_manager_remove_files (GFile *folder,
-				     GList *file_list)
+gth_selections_manager_remove_files (GFile    *folder,
+				     GList    *file_list,
+				     gboolean  notify)
 {
 	GthSelectionsManager *self;
 	int                   n_selection;
@@ -444,11 +468,26 @@ gth_selections_manager_remove_files (GFile *folder,
 
 	g_mutex_unlock (&self->priv->mutex);
 
-	gth_monitor_folder_changed (gth_main_get_default_monitor (),
-				    folder,
-				    file_list,
-				    GTH_MONITOR_EVENT_REMOVED);
+	if (notify)
+		gth_monitor_folder_changed (gth_main_get_default_monitor (),
+					    folder,
+					    file_list,
+					    GTH_MONITOR_EVENT_REMOVED);
 	gth_monitor_emblems_changed (gth_main_get_default_monitor (), file_list);
+}
+
+
+static void
+_gth_selections_manager_files_changed_for_selection (GthSelectionsManager *self,
+						     int                   n_selection)
+{
+	GList *scan;
+
+	g_hash_table_remove_all (self->priv->files_hash[n_selection - 1]);
+	for (scan = self->priv->files[n_selection - 1]; scan; scan = scan->next) {
+		GFile *file = scan->data;
+		g_hash_table_insert (self->priv->files_hash[n_selection - 1], file, GINT_TO_POINTER (1));
+	}
 }
 
 
@@ -480,6 +519,7 @@ gth_selections_manager_reorder (GFile *folder,
 			 &new_file_list);
 	_g_object_list_unref (self->priv->files[n_selection - 1]);
 	self->priv->files[n_selection - 1] = new_file_list;
+	_gth_selections_manager_files_changed_for_selection (self, n_selection);
 	g_mutex_unlock (&self->priv->mutex);
 
 	gth_selections_manager_set_sort_type (folder, "general::unsorted", FALSE);
@@ -536,6 +576,54 @@ gth_selections_manager_file_exists (int    n_selection,
 }
 
 
+gboolean
+gth_selections_manager_get_is_empty (int n_selection)
+{
+	GthSelectionsManager *self;
+	guint                 size;
+
+	if ((n_selection <= 0) || (n_selection > GTH_SELECTIONS_MANAGER_N_SELECTIONS))
+		return TRUE;
+
+	self = gth_selections_manager_get_default ();
+	g_mutex_lock (&self->priv->mutex);
+
+	size = g_hash_table_size (self->priv->files_hash[n_selection - 1]);
+
+	g_mutex_unlock (&self->priv->mutex);
+
+	return size == 0;
+}
+
+
+G_GNUC_UNUSED
+static DomElement *
+_gth_selections_manager_create_selection_node (GthSelectionsManager *self,
+					       int                   n_selection,
+					       DomDocument          *doc)
+{
+	char       *n_selection_txt;
+	DomElement *selection_node;
+	GList      *scan;
+
+	n_selection_txt = g_strdup_printf ("%d", n_selection);
+	selection_node = dom_document_create_element (doc, "selection", "n", n_selection_txt, NULL);
+	for (scan = self->priv->files[n_selection - 1]; scan; scan = scan->next) {
+		GFile *file = scan->data;
+		char  *uri;
+
+		uri = g_file_get_uri (file);
+		dom_element_append_child (selection_node, dom_document_create_element (doc, "file", "uri", uri, NULL));
+
+		g_free (uri);
+	}
+
+	g_free (n_selection_txt);
+
+	return selection_node;
+}
+
+
 int
 _g_file_get_n_selection (GFile *file)
 {
@@ -556,4 +644,36 @@ _g_file_get_n_selection (GFile *file)
 		n = -1;
 
 	return n;
+}
+
+
+static const char * selection_icons[] = {
+	"emblem-flag-gray",
+	"emblem-flag-green",
+	"emblem-flag-red",
+	"emblem-flag-blue"
+};
+
+
+const char *
+gth_selection_get_icon_name (int n_selection)
+{
+	g_return_val_if_fail (n_selection >= 0 && n_selection <= GTH_SELECTIONS_MANAGER_N_SELECTIONS, NULL);
+	return selection_icons[n_selection];
+}
+
+
+static const char * selection_symbolic_icons[] = {
+	"emblem-flag-symbolic",
+	"emblem-flag-symbolic",
+	"emblem-flag-symbolic",
+	"emblem-flag-symbolic"
+};
+
+
+const char *
+gth_selection_get_symbolic_icon_name (int n_selection)
+{
+	g_return_val_if_fail (n_selection >= 0 && n_selection <= GTH_SELECTIONS_MANAGER_N_SELECTIONS, NULL);
+	return selection_symbolic_icons[n_selection];
 }

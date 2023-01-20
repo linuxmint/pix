@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -57,11 +57,12 @@ static void gth_edit_general_page_gth_edit_general_page_interface_init (GthEditC
 G_DEFINE_TYPE_WITH_CODE (GthEditGeneralPage,
 			 gth_edit_general_page,
 			 GTK_TYPE_BOX,
+			 G_ADD_PRIVATE (GthEditGeneralPage)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_EDIT_COMMENT_PAGE,
-					 	gth_edit_general_page_gth_edit_general_page_interface_init))
+						gth_edit_general_page_gth_edit_general_page_interface_init))
 
 
-void
+static void
 gth_edit_general_page_real_set_file_list (GthEditCommentPage *base,
 		 			  GList              *file_list)
 {
@@ -280,7 +281,7 @@ get_date_from_option (GthEditGeneralPage *self,
 }
 
 
-void
+static void
 gth_edit_general_page_real_update_info (GthEditCommentPage *base,
 					GFileInfo          *info,
 					gboolean            only_modified_fields)
@@ -475,7 +476,7 @@ gth_edit_general_page_real_update_info (GthEditCommentPage *base,
 }
 
 
-const char *
+static const char *
 gth_edit_general_page_real_get_name (GthEditCommentPage *self)
 {
 	return _("General");
@@ -499,8 +500,6 @@ gth_edit_general_page_finalize (GObject *object)
 static void
 gth_edit_general_page_class_init (GthEditGeneralPageClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (GthEditGeneralPagePrivate));
-
 	G_OBJECT_CLASS (klass)->finalize = gth_edit_general_page_finalize;
 }
 
@@ -524,24 +523,24 @@ static void
 tags_entry_list_collapsed_cb (GthTagsEntry *widget,
 			      gpointer      user_data)
 {
-	GtkWidget *toplevel;
+	GtkWindow *toplevel;
 	int        width;
 
 	/* collapse the dialog height */
 
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (widget));
-	if (! gtk_widget_is_toplevel (toplevel))
+	toplevel = _gtk_widget_get_toplevel_if_window (GTK_WIDGET (widget));
+	if (toplevel == NULL)
 		return;
 
-	gtk_window_get_size (GTK_WINDOW (toplevel), &width, NULL);
-	gtk_window_resize (GTK_WINDOW (toplevel), width, 1);
+	gtk_window_get_size (toplevel, &width, NULL);
+	gtk_window_resize (toplevel, width, 1);
 }
 
 
 static void
 gth_edit_general_page_init (GthEditGeneralPage *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_EDIT_GENERAL_PAGE, GthEditGeneralPagePrivate);
+	self->priv = gth_edit_general_page_get_instance_private (self);
 	self->priv->info = NULL;
 
 	gtk_container_set_border_width (GTK_CONTAINER (self), 12);
@@ -573,7 +572,7 @@ gth_edit_general_page_init (GthEditGeneralPage *self)
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("date_selector_container")), self->priv->date_selector, FALSE, FALSE, 0);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("date_label")), self->priv->date_combobox);
 
-	self->priv->tags_entry = gth_tags_entry_new ();
+	self->priv->tags_entry = gth_tags_entry_new (GTH_TAGS_ENTRY_MODE_POPUP);
 	gtk_widget_show (self->priv->tags_entry);
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("tags_entry_container")), self->priv->tags_entry, TRUE, TRUE, 0);
 	gtk_label_set_mnemonic_widget (GTK_LABEL (GET_WIDGET ("tags_label")), self->priv->tags_entry);

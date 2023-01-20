@@ -1,0 +1,2649 @@
+# Ukrainian translation for gthumb.
+# Copyright (C) 2020 gthumb's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gthumb package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gthumb master\n"
+"POT-Creation-Date: 2020-07-19 10:09+0000\n"
+"PO-Revision-Date: 2020-07-19 13:31+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.07.70\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
+
+#. (itstool) path: credit/name
+#: C/index.page:7
+msgid "Paolo Bacchilega"
+msgstr "Paolo Bacchilega"
+
+#. (itstool) path: credit/name
+#: C/index.page:12
+msgid "Michael J. Chudobiak"
+msgstr "Michael J. Chudobiak"
+
+#. (itstool) path: page/title
+#: C/index.page:20
+msgid "gThumb Help"
+msgstr "Довідка з gThumb"
+
+#. (itstool) path: section/title
+#: C/index.page:23
+msgid "Welcome"
+msgstr "Вітаємо"
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "File Management"
+msgstr "Керування файлами"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Editing Mode"
+msgstr "Режим редагування"
+
+#. (itstool) path: p/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:33 C/edit-save-undo-redo.page:8 C/edit-colors.page:8
+#: C/edit-rotate.page:8 C/edit-resize-crop.page:8 C/edit-redeye.page:7
+msgctxt "_"
+msgid ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+msgstr ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+
+#. (itstool) path: section/p
+#: C/index.page:32
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
+"Numerous editing tools are provided for touching-up individual photos. Undo "
+"and redo functions are provided, up until the photo is saved. To access the "
+"editing tools, open an image and then click the <gui>Edit File</gui> toolbar "
+"button (the palette icon), or press <keyseq><key>e</key></keyseq>."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> Для "
+"коригування окремих фотографій передбачено численні засоби редагування. Ви "
+"зможете скористатися можливостями скасовування і повторення дій, аж доки "
+"фотографію не буде збережено. Щоб отримати доступ до засобів редагування, "
+"відкрийте зображення і натисніть кнопку <gui>Редагувати файл</gui> на панелі "
+"інструментів (піктограма із палітрою) або натисніть клавішу <keyseq><key>E</"
+"key></keyseq>."
+
+#. (itstool) path: section/title
+#: C/index.page:42
+msgid "Batch Tools"
+msgstr "Інструменти пакетної обробки"
+
+#. (itstool) path: section/p
+#: C/index.page:43
+msgid ""
+"Batch tools are provided to modify multiple images simultaneously. Changes "
+"are written immediately, and are not undoable."
+msgstr ""
+"Передбачено інструменти пакетної обробки для одночасного внесення змін до "
+"декількох зображень. Зміни буде записано до файлів негайно — їх не можна "
+"буде скасувати."
+
+#. (itstool) path: section/title
+#: C/index.page:49
+msgid "Slideshows"
+msgstr "Покази слайдів"
+
+#. (itstool) path: section/title
+#: C/index.page:53
+msgid "Importing"
+msgstr "Імпортування"
+
+#. (itstool) path: section/title
+#: C/index.page:57
+msgid "Sharing"
+msgstr "Оприлюднення"
+
+#. (itstool) path: section/title
+#: C/index.page:61
+msgid "Organizing"
+msgstr "Упорядковування"
+
+#. (itstool) path: section/title
+#: C/index.page:65
+msgid "Other Tools"
+msgstr "Інші інструменти"
+
+#. (itstool) path: section/title
+#: C/index.page:69
+msgid "Reference"
+msgstr "Довідник"
+
+#. (itstool) path: page/title
+#: C/attributes.page:6
+msgid "Attribute Codes"
+msgstr "Коди атрибутів"
+
+#. (itstool) path: page/p
+#: C/attributes.page:7
+msgid ""
+"<app>gThumb</app> stores many different attributes for each file. Extensions "
+"may add more. The list below is a summary of some of the more common "
+"attributes:"
+msgstr ""
+"<app>gThumb</app> зберігає для кожного файла багато різних атрибутів. За "
+"допомогою розширень можна зробити перелік атрибутів ширшим. Нижче наведено "
+"резюме деяких із найпоширеніших атрибутів:"
+
+#. (itstool) path: item/p
+#: C/attributes.page:12
+msgid "gth::file::display-size"
+msgstr "gth::file::display-size"
+
+#. (itstool) path: item/p
+#: C/attributes.page:15
+msgid "standard::fast-content-type"
+msgstr "standard::fast-content-type"
+
+#. (itstool) path: item/p
+#: C/attributes.page:18
+msgid "general::dimensions"
+msgstr "general::dimensions"
+
+#. (itstool) path: item/p
+#: C/attributes.page:21
+msgid "general::format"
+msgstr "general::format"
+
+#. (itstool) path: item/p
+#: C/attributes.page:24
+msgid "general::location"
+msgstr "general::location"
+
+#. (itstool) path: item/p
+#: C/attributes.page:27
+msgid "general::datetime"
+msgstr "general::datetime"
+
+#. (itstool) path: item/p
+#: C/attributes.page:30
+msgid "general::rating"
+msgstr "general::rating"
+
+#. (itstool) path: item/p
+#: C/attributes.page:33
+msgid "Exif::Image::Make"
+msgstr "Exif::Image::Make"
+
+#. (itstool) path: item/p
+#: C/attributes.page:36
+msgid "Exif::Image::Model"
+msgstr "Exif::Image::Model"
+
+#. (itstool) path: item/p
+#: C/attributes.page:39
+msgid "Exif::Image::Software"
+msgstr "Exif::Image::Software"
+
+#. (itstool) path: item/p
+#: C/attributes.page:42
+msgid "Exif::Image::Artist"
+msgstr "Exif::Image::Artist"
+
+#. (itstool) path: item/p
+#: C/attributes.page:45
+msgid "Exif::Image::Copyright"
+msgstr "Exif::Image::Copyright"
+
+#. (itstool) path: item/p
+#: C/attributes.page:48
+msgid "Exif::Photo::ISOSpeedRatings"
+msgstr "Exif::Photo::ISOSpeedRatings"
+
+#. (itstool) path: item/p
+#: C/attributes.page:51
+msgid "Exif::Photo::BrightnessValue"
+msgstr "Exif::Photo::BrightnessValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:54
+msgid "Exif::Photo::FNumber"
+msgstr "Exif::Photo::FNumber"
+
+#. (itstool) path: item/p
+#: C/attributes.page:57
+msgid "Exif::Photo::ApertureValue"
+msgstr "Exif::Photo::ApertureValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:60
+msgid "Exif::Photo::MaxApertureValue"
+msgstr "Exif::Photo::MaxApertureValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:63
+msgid "Exif::Photo::ExposureTime"
+msgstr "Exif::Photo::ExposureTime"
+
+#. (itstool) path: item/p
+#: C/attributes.page:66
+msgid "Exif::Photo::ExposureProgram"
+msgstr "Exif::Photo::ExposureProgram"
+
+#. (itstool) path: item/p
+#: C/attributes.page:69
+msgid "Exif::Photo::ExposureIndex"
+msgstr "Exif::Photo::ExposureIndex"
+
+#. (itstool) path: item/p
+#: C/attributes.page:72
+msgid "Exif::Photo::ExposureBiasValue"
+msgstr "Exif::Photo::ExposureBiasValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:75
+msgid "Exif::Photo::ExposureMode"
+msgstr "Exif::Photo::ExposureMode"
+
+#. (itstool) path: item/p
+#: C/attributes.page:78
+msgid "Exif::Photo::ShutterSpeedValue"
+msgstr "Exif::Photo::ShutterSpeedValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:81
+msgid "Exif::Photo::MeteringMode"
+msgstr "Exif::Photo::MeteringMode"
+
+#. (itstool) path: item/p
+#: C/attributes.page:84
+msgid "Exif::Photo::LightSource"
+msgstr "Exif::Photo::LightSource"
+
+#. (itstool) path: item/p
+#: C/attributes.page:87
+msgid "Exif::Photo::WhiteBalance"
+msgstr "Exif::Photo::WhiteBalance"
+
+#. (itstool) path: item/p
+#: C/attributes.page:90
+msgid "Exif::Photo::Flash"
+msgstr "Exif::Photo::Flash"
+
+#. (itstool) path: item/p
+#: C/attributes.page:93
+msgid "Exif::Photo::FocalLength"
+msgstr "Exif::Photo::FocalLength"
+
+#. (itstool) path: item/p
+#: C/attributes.page:96
+msgid "Exif::Photo::SubjectArea"
+msgstr "Exif::Photo::SubjectArea"
+
+#. (itstool) path: item/p
+#: C/attributes.page:99
+msgid "Exif::Photo::Contrast"
+msgstr "Exif::Photo::Contrast"
+
+#. (itstool) path: item/p
+#: C/attributes.page:102
+msgid "Exif::Photo::Saturation"
+msgstr "Exif::Photo::Saturation"
+
+#. (itstool) path: item/p
+#: C/attributes.page:105
+msgid "Exif::Photo::Sharpness"
+msgstr "Exif::Photo::Sharpness"
+
+#. (itstool) path: page/title
+#: C/strftime.page:8
+msgid "Date/Time Format Codes"
+msgstr "Коди форматування дати і часу"
+
+#. (itstool) path: page/p
+#: C/strftime.page:10
+msgid ""
+"This is a summary of standard date/time codes that may be used in format "
+"strings:"
+msgstr ""
+"Нижче наведено резюме щодо стандартних кодів дати і часу, якими можна "
+"скористатися у рядках форматування:"
+
+#. (itstool) path: table/title
+#: C/strftime.page:14
+msgid "Valid format codes for custom subfolders"
+msgstr "Коректні коди форматування для нетипових підтек"
+
+#. (itstool) path: td/p
+#: C/strftime.page:20
+msgid "The abbreviated weekday name according to the current locale."
+msgstr "Скорочення дня тижня відповідно до поточної локалі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:29
+msgid "The full weekday name according to the current locale."
+msgstr "Повна назва дня тижня відповідно до поточної локалі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:38
+msgid "The abbreviated month name according to the current locale."
+msgstr "Скорочення назви місяця відповідно до поточної локалі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:47
+msgid "The full month name according to the current locale."
+msgstr "Повна назва місяця відповідно до поточної локалі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:55
+msgid "The preferred date and time representation for the current locale."
+msgstr "Бажане представлення дати і часу для поточної локалі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:64
+msgid "The century number (year/100) as a 2-digit integer."
+msgstr "Номер сторіччя (рік/100) у двоцифровому форматі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:72
+msgid "The day of the month as a decimal number (range 01 to 31)."
+msgstr "День місяця у форматі десяткового числа (від 01 до 31)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:81
+msgid ""
+"Equivalent to %m/%d/%y. (Yecch -- for Americans only. Americans should note "
+"that in other countries %d/%m/%y is rather common. This means that in "
+"international context this format is ambiguous and should not be used.)"
+msgstr ""
+"Еквівалент %m/%d/%y. (так — лише для американської англійської. Американцям "
+"слід зауважити, що в інших країнах поширеним є формат запису %d/%m/%y. Це "
+"означає, що у міжнародному контексті цей формат не є однозначним — ним не "
+"слід користуватися.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:92
+msgid ""
+"Like %d, the day of the month as a decimal number, but a leading zero is "
+"replaced by a space."
+msgstr ""
+"Подібний до %d, день місяця у десятковому форматі, але початковий нуль "
+"замінюється пробілом."
+
+#. (itstool) path: td/p
+#: C/strftime.page:101 C/strftime.page:210
+msgid "Modifier: use alternative format, see below."
+msgstr "Модифікатор: використовувати альтернативний формат, див. нижче."
+
+#. (itstool) path: td/p
+#: C/strftime.page:109
+msgid "Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)"
+msgstr "Еквівалент %Y-%m-%d (формат дати ISO 8601). (C99)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:118
+msgid ""
+"The ISO 8601 year with century as a decimal number. The 4-digit year "
+"corresponding to the ISO week number (see %V). This has the same format and "
+"value as %y, except that if the ISO week number belongs to the previous or "
+"next year, that year is used instead."
+msgstr ""
+"Рік у форматі ISO 8601 із сторіччям у форматі десяткового числа. "
+"Чотирицифровий рік, що відповідає номеру тижня ISO (див. %V). Має той самий "
+"формат та значення, що і %y, за винятком випадків, коли номер тижня ISO "
+"належить попередньому або наступному року; тоді використовується цей рік."
+
+#. (itstool) path: td/p
+#: C/strftime.page:130
+msgid "Like %G, but without century, i.e., with a 2-digit year (00-99)."
+msgstr "Подібний до %G, але без сторіччя, тобто із двоцифровим роком (00-99)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:139
+msgid "Equivalent to %b."
+msgstr "Еквівалент %b."
+
+#. (itstool) path: td/p
+#: C/strftime.page:147
+msgid "The hour as a decimal number using a 24-hour clock (range 00 to 23)."
+msgstr ""
+"Години у форматі десяткового числа з використанням 24-годинного запису "
+"(діапазон від 00 до 23)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:156
+msgid "The hour as a decimal number using a 12-hour clock (range 01 to 12)."
+msgstr ""
+"Години у форматі десяткового числа з використанням 12-годинного запису "
+"(діапазон від 01 до 12)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:165
+msgid "The day of the year as a decimal number (range 001 to 366)."
+msgstr "День року у форматі десяткового числа (від 001 до 366)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:174
+msgid ""
+"The hour (24-hour clock) as a decimal number (range 0 to 23); single digits "
+"are preceded by a blank. (See also %H.)"
+msgstr ""
+"Години (у 24-годинному форматі) як десяткове число (у діапазоні від 0 до "
+"23); одноцифрові значення доповнюються пробілами. (див. також %H.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:184
+msgid ""
+"The hour (12-hour clock) as a decimal number (range 1 to 12); single digits "
+"are preceded by a blank. (See also %I.)"
+msgstr ""
+"Години (у 12-годинному форматі) як десяткове число (у діапазоні від 1 до "
+"12); одноцифрові значення доповнюються пробілами. (див. також %H.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:194
+msgid "The month as a decimal number (range 01 to 12)."
+msgstr "Місяць у десятковому форматі (діапазон від 01 до 12)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:202
+msgid "The minute as a decimal number (range 00 to 59)."
+msgstr "Хвилини у форматі десяткового числа (діапазон від 00 до 59)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:218
+msgid ""
+"Either 'AM' or 'PM' according to the given time value, or the corresponding "
+"strings for the current locale. Noon is treated as 'pm' and midnight as 'am'."
+msgstr ""
+"«AM» або «PM» відповідно до вказаного значення часу або відповідні рядки для "
+"поточної локалі. Південь вважається «pm», а північ — «am»."
+
+#. (itstool) path: td/p
+#: C/strftime.page:228
+msgid ""
+"Like %p but in lowercase: 'am' or 'pm' or a corresponding string for the "
+"current locale."
+msgstr ""
+"Подібне до %p, але літерами нижнього регістру: «am» або «pm», або "
+"відповідний рядок для поточної локалі."
+
+#. (itstool) path: td/p
+#: C/strftime.page:237
+msgid ""
+"The time in a.m. or p.m. notation. In the POSIX locale this is equivalent to "
+"'%I:%M:%S %p'."
+msgstr ""
+"Час у позначеннях з a.m. або p.m.. У локалі POSIX це еквівалент «%I:%M:%S "
+"%p»."
+
+#. (itstool) path: td/p
+#: C/strftime.page:246
+msgid ""
+"The time in 24-hour notation (%H:%M). For a version including the seconds, "
+"see %T below."
+msgstr ""
+"Час у 24-годинній формі запису (%H:%M). Якщо потрібна версія із секундами, "
+"див. %T нижче."
+
+#. (itstool) path: td/p
+#: C/strftime.page:255
+msgid ""
+"The number of seconds since the Epoch, i.e., since 1970-01-01 00:00:00 UTC."
+msgstr "Кількість секунд від початку епохи, тобто від 1970-01-01 00:00:00 UTC."
+
+#. (itstool) path: td/p
+#: C/strftime.page:264
+msgid ""
+"The second as a decimal number (range 00 to 60). (The range is up to 60 to "
+"allow for occasional leap seconds.)"
+msgstr ""
+"Секунди у форматі десяткового числа (діапазон від 00 до 60). (Діапазон до "
+"60, щоб уможливити додавання секунд, яке іноді виконується для вирівнювання "
+"часу.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:274
+msgid "The time in 24-hour notation (%H:%M:%S)."
+msgstr "Час у 24-годинній формі запису (%H:%M:%S)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:282
+msgid ""
+"The day of the week as a decimal number, range 1 to 7, Monday being 1. See "
+"also %w."
+msgstr ""
+"День тижня у форматі десяткового числа у діапазоні від 1 до 7, понеділок — "
+"1. Див. також %w."
+
+#. (itstool) path: td/p
+#: C/strftime.page:291
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Sunday as the first day of week 01. See also %V and "
+"%W."
+msgstr ""
+"Номер тижня поточного року у форматі десяткового числа у діапазоні від 00 до "
+"53, починаючи з першої неділі як першого дня тижня 01. Див. також %V і %W."
+
+#. (itstool) path: td/p
+#: C/strftime.page:301
+msgid ""
+"The ISO 8601:1988 week number of the current year as a decimal number, range "
+"01 to 53, where week 1 is the first week that has at least 4 days in the "
+"current year, and with Monday as the first day of the week. See also %U and "
+"%W."
+msgstr ""
+"Номер тижня поточного року за стандартом ISO 8601:1988 у форматі десяткового "
+"числа у діапазоні від 01 до 53, де тиждень 1 є першим тижнем, у якому "
+"принаймні 4 поточного року, а першим днем цього тижня є понеділок. Див. "
+"також %U і %W."
+
+#. (itstool) path: td/p
+#: C/strftime.page:313
+msgid ""
+"The day of the week as a decimal, range 0 to 6, Sunday being 0. See also %u."
+msgstr ""
+"День тижня у форматі десяткового числа, у діапазоні від 0 до 6, неділя — 0. "
+"Див. також %u."
+
+#. (itstool) path: td/p
+#: C/strftime.page:322
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Monday as the first day of week 01."
+msgstr ""
+"Номер тижня поточного року у форматі десяткового числа у діапазоні від 00 до "
+"53, починаючи з першого понеділка як першого дня тижня 01."
+
+#. (itstool) path: td/p
+#: C/strftime.page:332
+msgid ""
+"The preferred date representation for the current locale without the time."
+msgstr "Бажане представлення дати для поточної локалі без часу."
+
+#. (itstool) path: td/p
+#: C/strftime.page:341
+msgid ""
+"The preferred time representation for the current locale without the date."
+msgstr "Бажане представлення часу для поточної локалі без дати."
+
+#. (itstool) path: td/p
+#: C/strftime.page:350
+msgid "The year as a decimal number without a century (range 00 to 99)."
+msgstr ""
+"Рік у форматі десяткового числа без сторіччя (у діапазоні від 00 до 99)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:359
+msgid "The year as a decimal number including the century."
+msgstr "Рік у форматі десяткового числа разом із сторіччям."
+
+#. (itstool) path: td/p
+#: C/strftime.page:367
+msgid ""
+"The time-zone as hour offset from GMT. Required to emit RFC 822-conformant "
+"dates (using \"%a, %d %b %Y %H:%M:%S %z\")."
+msgstr ""
+"Часовий пояс у форматі зсуву за годинами від часу за Гринвічем. Потрібен для "
+"створення сумісних із RFC 822 записів дат (з використанням «%a, %d %b %Y %H:"
+"%M:%S %z»)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:377
+msgid "The time zone or name or abbreviation."
+msgstr "Часовий пояс, назва або абревіатура"
+
+#. (itstool) path: page/p
+#: C/strftime.page:382
+msgid ""
+"Some conversion specifications can be modified by preceding the conversion "
+"specifier character by the E or O modifier to indicate that an alternative "
+"format should be used. If the alternative format or specification does not "
+"exist for the current locale, the behaviour will be as if the unmodified "
+"conversion specification were used. The Single Unix Specification mentions "
+"%Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, "
+"%OV, %Ow, %OW, %Oy, where the effect of the O modifier is to use alternative "
+"numeric symbols (say, roman numerals), and that of the E modifier is to use "
+"a locale-dependent alternative representation."
+msgstr ""
+"Деякі специфікації перетворення можна змінити дописуванням до символу-"
+"специфікатора перетворення модифікатора E або O для позначення використання "
+"альтернативного формату. Якщо альтернативного формату або специфікації для "
+"поточної локалі не існує, поведінка буде такою самою, якою була б, якби було "
+"використано немодифіковану специфікацію перетворення. У «Єдиній специфікації "
+"Unix» згадано %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, "
+"%OS, %Ou, %OU, %OV, %Ow, %OW, %Oy, де використання модифікатора O спричиняє "
+"використання альтернативних числових символів (наприклад, римських чисел), а "
+"використання модифікатора E — до залежного від локалі альтернативного "
+"представлення."
+
+#. (itstool) path: page/title
+#: C/introduction.page:6
+msgid "About gThumb"
+msgstr "Про gThumb"
+
+#. (itstool) path: page/p
+#: C/introduction.page:8
+msgid ""
+"<app>gThumb</app> is an image viewer and browser written for the GNOME "
+"environment. It lets you browse your hard disk, showing you thumbnails of "
+"image files and view single images of many different formats."
+msgstr ""
+"<app>gThumb</app> — програма для перегляду зображень та навігації каталогом "
+"зображень, яку написано для середовища GNOME. За її допомогою ви можете "
+"здійснювати навігацію дисками системи — програма показуватиме вам мініатюри "
+"файлів зображень та надаватиме змогу переглядати окремі зображення у "
+"багатьох різних форматах."
+
+#. (itstool) path: page/p
+#: C/introduction.page:13
+msgid ""
+"<app>gThumb</app> supports the most common graphics formats, including JPEG, "
+"GIF, TIF, and PNG. <app>gThumb</app> will also display other less common "
+"image types if the supporting libraries are installed, including TGA, ICO, "
+"BMP, XPM, and others."
+msgstr ""
+"У <app>gThumb</app> передбачено підтримку більшості типових форматів "
+"графічних даних, зокрема JPEG, GIF, TIF та PNG. Крім того, <app>gThumb</app> "
+"може показувати інші менш поширені типи зображень, якщо встановлено "
+"відповідні бібліотеки. Серед цих форматів TGA, ICO, BMP, XPM та інші."
+
+#. (itstool) path: page/p
+#: C/introduction.page:18
+msgid ""
+"Some support for RAW image types is included, especially if the dcraw "
+"program is installed on your system."
+msgstr ""
+"У програмі передбачено часткову підтримку зображень цифрових негативів "
+"(RAW). Підтримку можна розширити встановленням до системи програми dcraw."
+
+#. (itstool) path: page/p
+#: C/introduction.page:21
+msgid ""
+"<app>gThumb</app> not only lets you view image files but has many other "
+"features such as adding comments to images, organizing images into catalogs, "
+"printing images, slideshows, setting your desktop background, and more."
+msgstr ""
+"<app>gThumb</app> надає вам змогу не лише переглядати зображення, а і "
+"виконувати багато інших дій, зокрема додавати до зображень коментарі, "
+"упорядковувати зображення за каталогами, друкувати зображення, створювати "
+"покази слайдів, використовувати зображення як фонове зображення стільниці "
+"тощо."
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+msgid ""
+"<app>gThumb</app> includes a tool to import photos from attached cameras and "
+"memory card readers."
+msgstr ""
+"До складу <app>gThumb</app> включено інструмент для імпортування фотографій "
+"зі з'єднаних із комп'ютером фотоапаратів, мобільних телефонів та зчитувачів "
+"карток пам'яті."
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"<app>gThumb</app> can read EXIF, XMP, and IPTC metadata that is commonly "
+"embedded in files."
+msgstr ""
+"<app>gThumb</app> може читати метадані у форматах EXIF, XMP і IPTC, які "
+"типово вбудовуються до файлів."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"<app>gThumb</app> provides a systems of extensions (or plug-ins), to allow "
+"users to extend the functionality of <app>gThumb</app>."
+msgstr ""
+"У <app>gThumb</app> передбачено систему розширень (або додатків), за "
+"допомогою яких користувачі можуть розширювати функціональні можливості "
+"<app>gThumb</app>."
+
+#. (itstool) path: page/p
+#: C/introduction.page:34
+msgid ""
+"More information about these extensions, and about <app>gThumb</app> "
+"generally, is available at <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.gnome.org/Apps/gthumb</link>."
+msgstr ""
+"Докладніші відомості щодо цих розширень та щодо <app>gThumb</app> загалом "
+"можна знайти на сторінці <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.gnome.org/Apps/gthumb</link>."
+
+#. (itstool) path: page/title
+#: C/browser.page:6
+msgid "Browsing Your Files"
+msgstr "Навігація файлами"
+
+#. (itstool) path: page/p
+#: C/browser.page:8
+msgid "When you start <app>gThumb</app> the following window is displayed:"
+msgstr "Після запуску <app>gThumb</app> має з'явитися таке вікно:"
+
+#. (itstool) path: figure/title
+#: C/browser.page:11
+msgid "The main window"
+msgstr "Головне вікно"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/browser.page:13
+msgctxt "_"
+msgid ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+msgstr ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+
+#. (itstool) path: page/p
+#: C/browser.page:16
+msgid "The <app>gThumb</app> browser contains the following elements:"
+msgstr "Вікно навігатора <app>gThumb</app> складається з таких елементів:"
+
+#. (itstool) path: item/title
+#: C/browser.page:20
+msgid "Menubar"
+msgstr "Панель меню"
+
+#. (itstool) path: item/p
+#: C/browser.page:21
+msgid ""
+"The menus on the menubar contain all of the commands that you can use in "
+"<app>gThumb</app>"
+msgstr ""
+"Меню на панелі меню містять усі команди, якими можна скористатися у "
+"<app>gThumb</app>"
+
+#. (itstool) path: item/title
+#: C/browser.page:25
+msgid "Toolbar"
+msgstr "Панель інструментів"
+
+#. (itstool) path: item/p
+#: C/browser.page:26
+msgid ""
+"The toolbar contains a subset of the commands that you can access from the "
+"menubar. In particular, the Tools button contains functions for batch "
+"processing multiple images."
+msgstr ""
+"Панель інструментів містить частину команд, до яких ви маєте доступ з "
+"головного меню. Зокрема, кнопка «Сервіс» відкриває список функціональних "
+"можливостей для пакетної обробки серій зображень."
+
+#. (itstool) path: item/title
+#: C/browser.page:31
+msgid "Locationbar"
+msgstr "Панель адреси"
+
+#. (itstool) path: item/p
+#: C/browser.page:32
+msgid "The locationbar contains the current folder or catalog name."
+msgstr "На панелі адреси буде показано назву поточної теки або каталогу."
+
+#. (itstool) path: item/title
+#: C/browser.page:36
+msgid "Folder Tree"
+msgstr "Ієрархія тек"
+
+#. (itstool) path: item/p
+#: C/browser.page:37
+msgid ""
+"The folder tree allows you to navigate the filesystem. Single-clicking on a "
+"folder will load its images in the browser view. Double-clicking a folder, "
+"or clicking the expander arrow, will also list folder's subfolders in the "
+"tree."
+msgstr ""
+"За допомогою панелі ієрархії тек ви зможете подорожувати файловою системою. "
+"У відповідь на одинарне клацання на теці програма завантажить усі зображення "
+"з теки на панель навігації. Подвійне клацання на пункті теки або клацання на "
+"стрілці розгортання відкриє список підтек теки на панелі ієрархії тек."
+
+#. (itstool) path: item/title
+#: C/browser.page:44
+msgid "Browser View"
+msgstr "Панель навігатора"
+
+#. (itstool) path: item/p
+#: C/browser.page:45
+msgid ""
+"The browser view shows the images in the current folder or catalog. Single-"
+"clicking an image will enable the Information Sidebar for that image. Double-"
+"clicking an image will open it in the viewer mode. Double-clicking with the "
+"middle mouse button will load the image in fullscreen viewer mode."
+msgstr ""
+"На панелі навігації буде показано зображення у поточній теці або каталозі. "
+"Одинарним клацанням на зображенні можна увімкнути інформаційну бічну панель "
+"зображення. Подвійне клацання на зображенні відкриває його у режимі "
+"перегляду. Подвійним клацанням середньою кнопкою миші можна завантажити "
+"зображення у режимі повноекранного перегляду."
+
+#. (itstool) path: item/title
+#: C/browser.page:52
+msgid "Organize Button"
+msgstr "Кнопка «Упорядкувати»"
+
+#. (itstool) path: item/p
+#: C/browser.page:53
+msgid ""
+"The Organize button, just above the browser view, allows you to group images "
+"into catalogs."
+msgstr ""
+"За допомогою кнопки «Впорядкування», яку розташовано одразу над панеллю "
+"навігації, ви зможете групувати зображення у каталоги."
+
+#. (itstool) path: item/title
+#: C/browser.page:57
+msgid "Statusbar"
+msgstr "Смужка стану"
+
+#. (itstool) path: item/p
+#: C/browser.page:58
+msgid "On the statusbar you can read:"
+msgstr "На смужці стану ви зможете прочитати такі відомості:"
+
+#. (itstool) path: item/p
+#: C/browser.page:61
+msgid ""
+"the total number of images contained in the current folder or catalog and "
+"their total size."
+msgstr ""
+"загальну кількість зображень, що містяться у поточній теці або каталозі та "
+"загальних розмір цих зображень."
+
+#. (itstool) path: item/p
+#: C/browser.page:65
+msgid "the number of the selected images and their size."
+msgstr "кількість позначених зображень та загальних розмір цих зображень."
+
+#. (itstool) path: item/p
+#: C/browser.page:68
+msgid "some properties of the currently focused image."
+msgstr "деякі з властивостей поточного фокусованого зображення."
+
+#. (itstool) path: item/title
+#: C/browser.page:73
+msgid "Information Sidebar"
+msgstr "Бічна панель відомостей"
+
+#. (itstool) path: item/p
+#: C/browser.page:74
+msgid ""
+"If a single image is selected, the information sidebar (below the folder "
+"tree) will display detailed information (such as EXIF or XMP tags) about the "
+"selected image."
+msgstr ""
+"Якщо позначено одне зображення, на інформаційній бічній панелі (під "
+"ієрархією тек) буде показано докладні дані (зокрема вміст міток EXIF або "
+"XMP) щодо позначеного зображення."
+
+#. (itstool) path: item/title
+#: C/browser.page:79
+msgid "Filter Bar"
+msgstr "Панель фільтрування"
+
+#. (itstool) path: item/p
+#: C/browser.page:80
+msgid ""
+"An image filtering tool is provided just below the browser view. This can be "
+"used to filter the displayed images. For example, the browser view can be "
+"limited to files of a certain size, date, or name pattern, or other "
+"characteristics."
+msgstr ""
+"Одразу під панеллю навігації розташовано панель фільтрування зображень. Нею "
+"можна скористатися для фільтрування списку показаних зображень. Наприклад, "
+"список зображень на панелі навігації можна обмежити файлами певного розміру, "
+"дати або взірця назв чи інших характеристик."
+
+#. (itstool) path: page/title
+#: C/batch-rotate.page:6
+msgid "Rotating Images Losslessly"
+msgstr "Обертання зображень без втрати якості"
+
+#. (itstool) path: page/p
+#: C/batch-rotate.page:8
+msgid ""
+"To rotate one or more images, select the images in the browser view. Then "
+"click the <gui>Tools</gui> button on the main toolbar, and select either "
+"<guiseq><gui>Tools</gui><gui>Rotate Right</gui></guiseq> or "
+"<guiseq><gui>Tools</gui><gui>Rotate Left</gui></guiseq>. The images will be "
+"rotated."
+msgstr ""
+"Щоб обернути одне або декілька зображень, позначте ці зображення на панелі "
+"навігації. Далі, натисніть кнопку <gui>Сервіс</gui> на головній панелі "
+"інструментів і виберіть або пункт <guiseq><gui>Сервіс</gui><gui>Обернути "
+"праворуч</gui></guiseq>, або пункт <guiseq><gui>Сервіс</gui><gui>Обернути "
+"ліворуч</gui></guiseq>. У відповідь зображення буде повернуто відповідним "
+"чином."
+
+#. (itstool) path: page/p
+#: C/batch-rotate.page:14
+msgid "Lossless rotation is used for jpeg images, when possible."
+msgstr ""
+"Для зображень jpeg використовується обертання без втрати якості, якщо це "
+"можливо."
+
+#. (itstool) path: page/title
+#: C/batch-convert-format.page:6
+msgid "Converting File Formats"
+msgstr "Перетворення між форматами файлів"
+
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:8
+msgid ""
+"To convert one or more images into a new file format, select the images in "
+"the browser view. Then click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Convert Format</gui></"
+"guiseq>."
+msgstr ""
+"Щоб перетворити одне або декілька зображень у інший формат, позначте ці "
+"зображення на панелі навігації. Далі, натисніть кнопку <gui>Сервіс</gui> на "
+"головній панелі інструментів і виберіть пункт <guiseq><gui>Сервіс</"
+"gui><gui>Перетворити формат</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:12
+msgid ""
+"Select the desired output format and destination folder. Click <gui>Execute</"
+"gui> to complete the process."
+msgstr ""
+"Виберіть бажаний формат результату та теку призначення. Натисніть кнопку "
+"<gui>Виконати</gui>, щоб завершити процедуру."
+
+#. (itstool) path: page/title
+#: C/batch-resize.page:6
+msgid "Resizing Images"
+msgstr "Зміна розміру зображень"
+
+#. (itstool) path: page/p
+#: C/batch-resize.page:8
+msgid ""
+"To resize one or more images using the same dimensions or scaling factors, "
+"select the images in the browser view. Then click the <gui>Tools</gui> "
+"button on the main toolbar, and select <guiseq><gui>Tools</gui><gui>Resize "
+"Images</gui></guiseq>."
+msgstr ""
+"Щоб змінити розміри одного або декількох зображення до однакових або з "
+"певним коефіцієнтом відносно початкового розміру, позначте ці зображення на "
+"панелі навігації. Далі, натисніть кнопку <gui>Сервіс</gui> на головній "
+"панелі інструментів і виберіть пункт <guiseq><gui>Сервіс</gui><gui>Змінити "
+"розмір зображень</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-resize.page:12
+msgid ""
+"Then select the desired maximum output dimensions, or the desired percentage "
+"scaling, and the destination folder. Click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Потім виберіть бажані максимальні розміри результатів або бажаний коефіцієнт "
+"масштабування та теку призначення. Натисніть кнопку <gui>Виконати</gui>, щоб "
+"завершити процедуру."
+
+#. (itstool) path: page/title
+#: C/batch-change-date.page:6
+msgid "Changing Dates"
+msgstr "Зміна дат"
+
+#. (itstool) path: page/p
+#: C/batch-change-date.page:8
+msgid ""
+"To change the file modification times, the comment dates, or the Exif "
+"DateTimeOriginal tags of multiple files, select the files in the browser "
+"view. Then click the <gui>Tools</gui> button on the main toolbar, and select "
+"<guiseq><gui>Tools</gui><gui>Change Date</gui></guiseq>."
+msgstr ""
+"Щоб змінити записи часу внесення змін до файла, дати у коментарях або мітки "
+"Exif DateTimeOriginal декількох файлів, позначте ці файли на панелі "
+"навігації. Потім натисніть кнопку <gui>Сервіс</gui> на головній панелі "
+"інструментів і виберіть пункт <guiseq><gui>Сервіс</gui><gui>Змінити дату</"
+"gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-change-date.page:13
+msgid ""
+"Select the desired date options, and click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Виберіть бажані параметри дати і натисніть кнопку <gui>Виконати</gui>, щоб "
+"завершити процедуру."
+
+#. (itstool) path: page/title
+#: C/batch-scripts.page:6
+msgid "User-Defined Scripts"
+msgstr "Визначені користувачем скрипти"
+
+#. (itstool) path: page/p
+#: C/batch-scripts.page:8
+msgid ""
+"To define a script (a command-line sequence that <app>gThumb</app> will "
+"execute on your files), click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Personalize</gui></guiseq>."
+msgstr ""
+"Щоб визначити скрипт (послідовність команд, які <app>gThumb</app> має "
+"виконати над вашими файлами), натисніть кнопку <gui>Сервіс</gui> на головній "
+"панелі інструментів і виберіть пункт <guiseq><gui>Сервіс</"
+"gui><gui>Персоналізувати</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/batch-scripts.page:12
+msgid "TODO: further documentation is needed here."
+msgstr "ЗАВДАННЯ: цей розділ потребує розширення."
+
+#. (itstool) path: page/title
+#: C/thumbnails.page:6
+msgid "Thumbnail Sources"
+msgstr "Джерела мініатюр"
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:8
+msgid ""
+"The browser window normally shows the thumbnails of the images and movies in "
+"the selected folder. Generic icons for other files (audio files, for "
+"instance) may also be shown."
+msgstr ""
+"У вікні навігатора зазвичай буде показано мініатюри зображень та відео у "
+"позначеній теці. Також може бути показати загальні піктограми для файлів "
+"інших типів (наприклад, файлів звукових даних)."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:12
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui> </guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"Ви можете вказати програмі, файли яких типів має бути показано на панелі "
+"навігації, за допомогою діалогового вікна <guiseq><gui>Перегляд</"
+"gui><gui>Фільтр</gui> </guiseq>. Типово буде показано усі файли "
+"мультимедійних даних (зображення, відео, звук), але обмеження можна зробити "
+"жорсткішими чи м'якшими."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:18
+msgid ""
+"The thumbnails may be generated by a number of different methods. "
+"<app>gThumb</app> will first check for existing thumbnails in the system "
+"cache."
+msgstr ""
+"Мініатюри може бути створено у багато різних способів. <app>gThumb</app> "
+"спочатку перевіряє, чи існують вже створені мініатюри у кеші системи."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:22
+msgid ""
+"If no cached thumbnail is found, and an image file contains an embedded "
+"thumbnail (jpeg files generated by digital cameras normally do), "
+"<app>gThumb</app> will attempt to use that. <app>gThumb</app> will confirm "
+"that the aspect ratio of the thumbnail is similar to that of the main image, "
+"and ignore thumbnails that do not appear to match the main image."
+msgstr ""
+"Якщо кешованої мініатюри знайдено не буде, а у файлі зображення "
+"міститиметься вбудована мініатюра (такі мініатюри зазвичай містяться у "
+"файлах jpeg, які створено цифровими камерами), <app>gThumb</app> спробує "
+"скористатися цією мініатюрою. <app>gThumb</app> визначить, чи є "
+"співвідношення сторін зображення рівним співвідношенню довжин сторін "
+"мініатюри, і не використовуватиме мініатюри, співвідношення довжин сторін "
+"яких є відмінним від співвідношення довжин сторін початкового зображення."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:29
+msgid ""
+"If that doesn't work, <app>gThumb</app> will attempt to load the entire file "
+"and generate a scaled-down thumbnail."
+msgstr ""
+"Якщо жоден із описаних вище варіантів не реалізується, <app>gThumb</app> "
+"спробує завантажити увесь файл зображення і створити на його основі зменшену "
+"мініатюру."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:32
+msgid ""
+"Lastly, <app>gThumb</app> will use any system-defined scripts for "
+"thumbnailing particular media types. For example, some systems may use "
+"<app>mplayer</app> or <app>totem</app> or other movie viewers to generate "
+"movie thumbnails."
+msgstr ""
+"Нарешті, <app>gThumb</app> використає будь-які визначені у системі скрипти "
+"для створення мініатюр для мультимедійних даних певного типу. Наприклад, у "
+"деяких системах може бути використано <app>mplayer</app>, <app>totem</app> "
+"або інші програми для перегляду відео для створення мініатюр для файлів "
+"відео."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:37
+msgid ""
+"<app>gThumb</app> will save thumbnails to a system cache, to share them with "
+"other applications. By default, Gnome systems prune cached thumbnails when "
+"they are older than 180 days, or when the thumbnail cache exceeds 512 MB. "
+"Technically-inclined users can explore these settings with <app>dconf-"
+"editor</app>. See the org.gnome.desktop.thumbnail_cache.maximum_age and org."
+"gnome.desktop.thumbnail_cache.maximum_size keys in particular. Certain "
+"applications (like <app>F-Spot</app>) may automatically increase these "
+"settings greatly."
+msgstr ""
+"<app>gThumb</app> зберігатиме мініатюри до загальносистемного кешу, щоб ними "
+"могли скористатися інші програми. Типово, у системах з GNOME усі дані, вік "
+"яких перевищує 180 днів, вилучаються з кешу мініатюр. Також вилучаються "
+"дані, якщо розмір кешу перевищує 512 МБ. Технічно грамотні користувачі "
+"можуть змінити значення відповідних параметрів за допомогою <app>dconf-"
+"editor</app>. Зокрема, слід звернути увагу на ключі org.gnome.desktop."
+"thumbnail_cache.maximum_age та org.gnome.desktop.thumbnail_cache."
+"maximum_size. Певні програми (зокрема <app>F-Spot</app>) можуть автоматично "
+"значно збільшувати значення цих параметрів."
+
+#. (itstool) path: page/title
+#: C/thumbnail-pane.page:6
+msgid "Thumbnail Pane"
+msgstr "Панель мініатюр"
+
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:8
+msgid ""
+"When an image has been opened in the <app>gThumb</app> viewer, the user has "
+"the option of enabling or disabling a thumbnail pane, which shows the other "
+"images in the folder as thumbnails. This feature can be toggled with the "
+"<guiseq><gui>View</gui><gui>Thumbnail Pane</gui></guiseq> command, or by "
+"pressing <key>F8</key>."
+msgstr ""
+"При відкритті зображення у <app>gThumb</app> користувач може увімкнути або "
+"вимкнути панель мініатюр, на якій буде показано інші зображення у теці як "
+"мініатюри. Зробити це можна за допомогою пункту меню <guiseq><gui>Перегляд</"
+"gui><gui>Панель мініатюр</gui></guiseq> або натискання клавіші <key>F8</key>."
+
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:14
+msgid ""
+"The thumbnail pane may be positioned along the bottom of the main image, or "
+"along the side. This is controlled by the settings in <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui><gui>General</gui><gui>Thumbnails in Viewer</gui></"
+"guiseq>."
+msgstr ""
+"Панель мініатюр може бути розташовано уздовж нижньої частини основного "
+"зображення або збоку від нього. Розташування панелі можна визначити за "
+"допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Загальне</"
+"gui><gui>Мініатюри на панелі перегляду</gui></guiseq>."
+
+#. (itstool) path: figure/title
+#: C/thumbnail-pane.page:19
+msgid "Thumbnail Pane, Along Bottom of Main Image"
+msgstr "Панель мініатюр уздовж нижньої частини головного зображення"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/thumbnail-pane.page:21 C/viewer.page:23
+msgctxt "_"
+msgid ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+msgstr ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+
+#. (itstool) path: page/title
+#: C/rename-series.page:8
+msgid "Renaming Files"
+msgstr "Перейменування файлів"
+
+#. (itstool) path: page/p
+#: C/rename-series.page:10
+msgid ""
+"To rename one or more images using a name template, select the files in the "
+"browser and choose <guiseq><gui>Edit</gui><gui>Rename</gui></guiseq>, or "
+"press <key>F2</key>."
+msgstr ""
+"Щоб перейменувати одне або декілька зображень на основі шаблону назви, "
+"позначте відповідні файли на панелі навігації і виберіть пункт меню "
+"<guiseq><gui>Зміни</gui><gui>Перейменувати</gui></guiseq> або натисніть "
+"клавішу <key>F2</key>."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:15
+msgid ""
+"The name template is simply a pattern that is used for renaming all of the "
+"selected images. You can use some special characters to make the new names "
+"differ each other (this is essential if you are renaming more than one "
+"image, and optional if you are renaming a single image):"
+msgstr ""
+"Шаблон назви — простий взірець, яким можна скористатися для перейменовування "
+"усіх позначених зображень. Ви можете скористатися спеціальними символами для "
+"встановлення різниці між назвами (це суттєво, якщо ви перейменовуєте "
+"декілька зображень, і несуттєво, якщо ви перейменовуєте одне зображення):"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:24
+msgid "Symbol"
+msgstr "Символ"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:27
+msgid "Description"
+msgstr "Опис:"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:32
+msgid "<key>#</key>"
+msgstr "<key>#</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:37
+#| msgid ""
+#| "This symbol will be replaced with the value of a counter that increments "
+#| "itself by 1 passing from one image to another. If you specify this "
+#| "symbols in sequence you'll get leading zeros if the counter value has a "
+#| "lesser number of digits, for example ### will produce the sequence: 001, "
+#| "002, 003, etc.."
+msgid ""
+"This symbol will be replaced with the value of a counter that increments "
+"itself by 1 passing from one image to another. If you specify this symbol in "
+"sequence you'll get leading zeros if the counter value has a lesser number "
+"of digits, for example ### will produce the sequence: 001, 002, 003, etc.."
+msgstr ""
+"Цей символ буде замінено значенням лічильника, який збільшуватиметься на 1 "
+"при переході до наступного зображення. Якщо ви вкажете цей символ у "
+"послідовності, ви отримаєте початкові нулі, якщо значення лічильника є "
+"меншим за кількість цифр, наприклад, ### дасть таку послідовність: 001, 002, "
+"003 тощо."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:47
+msgid "<key>%F</key>"
+msgstr "<key>%F</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:52
+msgid ""
+"This symbol will be replaced with the file's original name, excluding the "
+"original extension."
+msgstr ""
+"Цей символ буде замінено на початкову назву файла без початкового суфікса "
+"назви."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:58
+msgid "<key>%E</key>"
+msgstr "<key>%E</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:63
+msgid ""
+"This symbol will be replaced with the file's original filename extension."
+msgstr "Цей символ буде замінено на суфікс назви початкового файла."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:69
+msgid "<key>%N</key>"
+msgstr "<key>%N</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:74
+msgid ""
+"This symbol will be replaced with original image enumerator. For instance, "
+"if the original filename was IMG_9876.JPG, this extracts the \"9876\" "
+"portion. If the filename has more than one group of digits embedded in it "
+"(for example, IMG_123_456.JPG) only the first number will be used (\"123\" "
+"in this example)."
+msgstr ""
+"Цей символ буде замінено числовою частиною початкової назви зображення. "
+"Наприклад, якщо початкова назва файла була «IMG_9876.JPG», програма видобуде "
+"частину «9876». Якщо у назві файла декілька груп цифр (наприклад, "
+"«IMG_123_456.JPG»), буде використано лише перше число («123» у нашому "
+"прикладі)."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:84
+msgid "<key>%M{format}</key>"
+msgstr "<key>%M{формат}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:89
+msgid ""
+"This symbol will be replaced with the file modification date. The formatting "
+"of this date (and optionally time) can be specified by adding a standard "
+"formatting code in curly braces. For example, \"%M{%Y-%m-%d, %T}\" would be "
+"replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Цей символ буде замінено на дату внесення змін до файла. Форматування запису "
+"дати (і, якщо потрібно, часу) можна вказати за допомогою додавання "
+"стандартного коду форматування у фігурних дужках. Наприклад, «%M{%Y-%m-%d, "
+"%T}» буде замінено на дату і час ось так: «2010-04-01, 15:02:01»\"."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:98
+msgid "<key>%D{format}</key>"
+msgstr "<key>%D{формат}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:103
+msgid ""
+"This symbol will be replaced with the date that the photo was original taken "
+"(normally determined from the EXIF datestamps embedded inside the photo). "
+"The formatting of this date (and optionally time) can be specified by adding "
+"a standard formatting code in curly braces. For example, \"%D{%Y-%m-%d, "
+"%T}\" would be replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Цей символ буде замінено датою, коли було знято фотографію (зазвичай, "
+"визначається за часовими позначками EXIF, які вбудовано до фотографії). "
+"Форматування запису дати (і, можливо, часу) можна вказати за допомогою "
+"додавання стандартного коду форматування у фігурних дужках. Наприклад, "
+"«%D{%Y-%m-%d, %T}» буде замінено на дату і час, наприклад «2010-04-01, "
+"15:02:01»."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:114
+msgid "<key>%A{identifier}</key>"
+msgstr "<key>%A{ідентифікатор}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:119
+msgid ""
+"This symbol will be replaced with the data that has been specified by the "
+"identifier. For example, \"%A{ general::dimensions }\" would be replaced "
+"with a size like \"320 x 240\"."
+msgstr ""
+"Цей символ буде замінено даними, які було вказано ідентифікатором. "
+"Наприклад, «%A{ general::dimensions }» буде замінено розміром, наприклад "
+"«320 x 240»."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:127
+msgid ""
+"A summary of these special codes may be viewed by clicking on the Help icon "
+"inside the template field."
+msgstr ""
+"Резюме щодо цих спеціальних кодів можна переглянути після натискання "
+"піктограми «Довідка» у полі шаблона."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:130
+msgid ""
+"The list at the bottom of the dialog displays how the filenames will be "
+"renamed."
+msgstr ""
+"У списку у нижній частині діалогового вікна буде показано, як буде змінено "
+"назви файлів."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:133
+msgid "To rename the images click on <gui>Rename</gui>."
+msgstr ""
+"Щоб перейменувати зображення, натисніть кнопку <gui>Перейменувати</gui>."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:135
+msgid ""
+"If the renaming of an image can overwrite an already existing image you will "
+"be asked how to proceed, five options are available: overwrite the image; do "
+"not overwrite the image; always overwrite; never overwrite; specify a new "
+"name."
+msgstr ""
+"Якщо перейменування зображення може призвести до перезапису вже наявного "
+"файла зображення, програма спитає вас, чи слід його виконати. Доступно п'ять "
+"варіантів дій: перезаписати зображення; не перезаписувати зображення; завжди "
+"перезаписувати; ніколи не перезаписувати; вказати нову назву."
+
+#. (itstool) path: page/title
+#: C/edit-save-undo-redo.page:6
+msgid "File Save, Undo, Redo"
+msgstr "Збереження файлів, скасовування та повторення дій"
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:8 C/edit-colors.page:8 C/edit-rotate.page:8
+#: C/edit-resize-crop.page:8 C/edit-redeye.page:7
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> To "
+"access the editing tools, open an image and then click the <gui>Edit File</"
+"gui> toolbar button (the palette icon)."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> Щоб "
+"отримати доступ до засобів редагування, відкрийте зображення і натисніть "
+"кнопку <gui>Редагувати файл</gui> на панелі інструментів (піктограма із "
+"палітрою)."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:12
+msgid ""
+"Multiple changes may be made to an image before saving it. <gui>Undo</gui> "
+"and <gui>Redo</gui> buttons are provided, and may be used up until the file "
+"is saved."
+msgstr ""
+"До зображення може бути внесено декілька змін до його збереження. "
+"Передбачено кнопки <gui>Вернути</gui> і <gui>Повторити</gui>, якими можна "
+"скористатися до того, як файл буде збережено."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:16
+msgid ""
+"A modified image may be saved by pressing <gui>Save</gui>. To save the "
+"modified image to a new location instead, leaving the original image "
+"unchanged, use <gui>Save As</gui>."
+msgstr ""
+"Змінене зображення може бути збережено натисканням кнопки <gui>Зберегти</"
+"gui>. Щоб зберегти змінене зображення до іншого файла або каталогу, без "
+"внесення змін до початкового зображення, скористайтеся кнопкою <gui>Зберегти "
+"як</gui>."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:20
+msgid ""
+"If you exit the editing mode (by pressing <key>Esc</key> or the <gui>View "
+"the Folders</gui> toolbar button), or navigate away from the current image, "
+"you will be prompted to save or discard your changes."
+msgstr ""
+"Якщо ви вийдете з режиму редагування (натисканням клавіші <key>Esc</key> або "
+"кнопки <gui>Переглянути теки</gui> на панелі інструментів) або перейдете з "
+"поточного зображення до іншого, програма спитає вас про подальші дії — "
+"зберегти чи відкинути внесені вами зміни."
+
+#. (itstool) path: page/title
+#: C/edit-colors.page:6
+msgid "Color Adjustments"
+msgstr "Коригування кольорів"
+
+#. (itstool) path: page/p
+#: C/edit-colors.page:12
+msgid "Several tools are provided to manipulate the colors in images."
+msgstr "Для керування кольорами зображень передбачено декілька інструментів."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:17
+msgid "<gui>Enhance Colors</gui>"
+msgstr "<gui>Удосконалення кольорів</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:18
+msgid ""
+"This tool provides automatic white balance correction. No user adjustments "
+"are required."
+msgstr ""
+"За допомогою цього інструмента можна автоматично виправляти баланс білого "
+"кольору. Потреби у коригуванні з боку користувача немає."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:22
+msgid "<gui>Adjust Colors</gui>"
+msgstr "<gui>Коригування кольорів</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:23
+msgid ""
+"This tool provides manual color adjustments. Adjustments to the gamma, "
+"brightness, contrast, saturation, and the cyan/red, magenta/green, and "
+"yellow/blue color balances may be made."
+msgstr ""
+"За допомогою цього інструмента можна коригувати колір вручну. Можна вносити "
+"коригування гамми, яскравості, контрастності, насиченості та балансу "
+"блакитного/червоного, малинового/зеленого і жовтого/синього кольорів."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:29
+msgid "<gui>Equalize</gui>"
+msgstr "<gui>Вирівнювання</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:30
+msgid ""
+"This tool provides automatic histogram equalization. No user adjustments are "
+"required."
+msgstr ""
+"За допомогою цього інструмента можна автоматично виправляти вирівнювання "
+"гістограми. Потреби у коригуванні з боку користувача немає."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:34
+msgid "<gui>Desaturate</gui>"
+msgstr "<gui>Прибирання насичення</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:35
+msgid ""
+"This tool converts the image colors into shades of grey. (This does not "
+"change this image storage format.)"
+msgstr ""
+"Цей інструмент перетворює кольори зображення у відтінки сірого. (Це не "
+"змінює формат зберігання зображення.)"
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:39
+msgid "<gui>Negative</gui>"
+msgstr "<gui>Негатив</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:40
+msgid "This tool inverts the color levels, providing an image negative."
+msgstr ""
+"Цей інструмент інвертує кольори зображення, перетворюючи його на негатив."
+
+#. (itstool) path: page/title
+#: C/edit-rotate.page:6
+msgid "Rotations and Flips"
+msgstr "Обертання і перевертання."
+
+#. (itstool) path: page/p
+#: C/edit-rotate.page:12
+msgid "Several tools are provided to manipulate the orientation of images."
+msgstr "Для зміни орієнтації зображень передбачено декілька інструментів."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:17
+msgid "<gui>Mirror</gui>"
+msgstr "<gui>Віддзеркалення</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:18
+msgid ""
+"This flips the image horizontally. The left and right sides are swapped."
+msgstr ""
+"Використання цього пункту призведе до перевертання зображення горизонтально. "
+"При цьому ліво і право поміняються місцями."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:22
+msgid "<gui>Flip</gui>"
+msgstr "<gui>Перевертання</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:23
+msgid "This flips the image vertically. The top and bottom are swapped."
+msgstr ""
+"Використання цього пункту призведе до перевертання зображення вертикально. "
+"При цьому верх і низ поміняються місцями."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:27
+msgid "<gui>Rotate Right</gui>"
+msgstr "<gui>Обернути праворуч</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:28
+msgid "This rotates the image clockwise."
+msgstr ""
+"Використання цього пункту призведе до обертання зображення за годинниковою "
+"стрілкою."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:31
+msgid "<gui>Rotate Left</gui>"
+msgstr "<gui>Обернути ліворуч</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:32
+msgid "This rotates the image counter-clockwise."
+msgstr ""
+"Використання цього пункту призведе до обертання зображення проти "
+"годинникової стрілки."
+
+#. (itstool) path: page/p
+#: C/edit-rotate.page:36
+msgid ""
+"The rotations offered in the edit mode act on the image in memory. They are "
+"not direct file operations. For jpeg images, these means they are not "
+"lossless operations - the image will degrade slightly when it it is re-"
+"encoded and saved. However, <app>gThumb</app> does provide lossless rotation "
+"tools. See <link xref=\"gthumb-batch-rotate\"/>."
+msgstr ""
+"Обертання у режимі редагування працює із зображенням у пам'яті. Це не "
+"безпосередні дії з файлом. Для зображень jpeg це означає, що виконуються дії "
+"без втрати якості, — якість зображення дещо погіршиться під час повторного "
+"кодування та зберігання. Втім, у <app>gThumb</app> передбачено засоби для "
+"обертання зображення без втрати якості. Див. <link xref=\"gthumb-batch-rotate"
+"\"/>."
+
+#. (itstool) path: page/title
+#: C/edit-resize-crop.page:6
+msgid "Resizing and Cropping"
+msgstr "Зміна розмірів і обрізання"
+
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:12
+msgid "Two tools are provided to resize and crop images."
+msgstr "Для зміни розмірів і обрізання зображень передбачено два інструменти."
+
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:15
+msgid "<gui>Resize</gui>"
+msgstr "<gui>Змінити розмір</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:16
+msgid ""
+"This allows you to resize the image. The image may be scaled to a certain "
+"physical size, or to a certain percentage of the original size. The aspect "
+"ratio may be locked to a specific value, or freely adjusted."
+msgstr ""
+"За допомогою цього інструмента ви можете змінити розміри зображення. "
+"Зображення може бути масштабовано до певного фізичного розміру або до "
+"певного відсотку від початкового розміру. Співвідношення розмірів зображення "
+"можна зафіксувати або вказати довільним чином."
+
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:22
+msgid "<gui>Crop</gui>"
+msgstr "<gui>Обрізати</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:23
+msgid ""
+"This allows you to crop the image. Click and drag the mouse over the desired "
+"area of the image. The area may be locked to a specific aspect ratio, or it "
+"may be freely adjusted. A rule-of-thirds grid or golden-sections grid may be "
+"superimposed over the image for composition guidance."
+msgstr ""
+"За допомогою цього інструмента можна обрізати зображення. Натисніть ліву "
+"кнопку миші і перетягніть вказівник, щоб позначити бажану область "
+"зображення. Область можна зафіксувати до вказаного співвідношення розмірів "
+"або скоригувати довільним чином. На зображення може бути накладено сітку "
+"правила третин або «золотого» перерізу для створення гармонійної композиції."
+
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:31
+msgid ""
+"<app>gThumb</app> also offers a batch-mode tool for resizing multiple images "
+"simultaneously. See <link xref=\"gthumb-batch-resize\"/>."
+msgstr ""
+"Крім того, у <app>gThumb</app> передбачено режим пакетної обробки для "
+"одночасної зміни розмірів декількох зображень. Див. <link xref=\"gthumb-"
+"batch-resize\"/>."
+
+#. (itstool) path: page/title
+#: C/edit-redeye.page:6
+msgid "Red Eye Removal"
+msgstr "Видалення ефекту червоних очей"
+
+#. (itstool) path: page/p
+#: C/edit-redeye.page:11
+msgid ""
+"<app>gThumb</app> provides a <gui>Red Eye Removal</gui> tool. To remove a "
+"red eye, position the mouse pointer over the red eye and click on it. "
+"<app>gThumb</app> will attempt to remove the red region and replace it with "
+"a more natural-looking gray region. If the results do not look correct, "
+"press <key>Escape</key> and click on the <gui>Undo</gui> item."
+msgstr ""
+"У <app>gThumb</app> передбачено інструмент <gui>Видалення ефекту червоних "
+"очей</gui>. Щоб вилучити «червоні» очі, розташуйте вказівник миші на області "
+"«червоних» очей і клацніть лівою кнопкою миші. <app>gThumb</app> спробує "
+"вилучити червону область і замінити її сірою областю, яка виглядає "
+"природніше. Якщо результати виявляться некоректними, натисніть клавішу "
+"<key>Escape</key> і виберіть пункт <gui>Вернути</gui>."
+
+#. (itstool) path: page/p
+#: C/edit-redeye.page:18
+msgid ""
+"This tool works best when there is a high color contrast between the red eye "
+"and the surrounding facial area. It does not work well for \"orange eye\" "
+"sometimes seen in photos of children, or if the surrounding skin has a "
+"reddish tinge. This tool could use improvement - if you are fiendishly "
+"clever, love matrix algebra and open source software, please <link href="
+"\"https://wiki.gnome.org/Apps/gthumb/development\">submit a patch!</link>"
+msgstr ""
+"Цей інструмент працює найкращим чином там, де є висока контрастність між "
+"«червоними» очима та навколишньою областю обличчя. Результати можуть бути "
+"незадовільними для «помаранчевих» очей, які іноді можна спостерігати на "
+"дитячих фотографіях, або якщо шкіра обличчя має червоний відтінок. Роботу "
+"цього інструмента може бути удосконалено — якщо ви тямите на цьому, "
+"полюбляєте матричну алгебру та програмне забезпечення із відкритим кодом, "
+"будь ласка <link href=\"https://wiki.gnome.org/Apps/gthumb/development"
+"\">надсилайте латки!</link>"
+
+#. (itstool) path: page/title
+#: C/extensions.page:6
+msgid "Extending gThumb"
+msgstr "Розширення можливостей gThumb"
+
+#. (itstool) path: page/p
+#: C/extensions.page:8
+msgid ""
+"<app>gThumb</app> has a plug-in system for extensions. Some standard "
+"features are implemented as extensions and are supplied with the standard "
+"distribution. Users may write (and share) additional extensions."
+msgstr ""
+"У <app>gThumb</app> передбачено систему додатків для розширення можливостей. "
+"Деякі стандартні можливості реалізовано як розширення, які є частиною "
+"стандартного пакунка з програмою. Користувачі можуть писати (і поширювати) "
+"власні розширення."
+
+#. (itstool) path: page/p
+#: C/extensions.page:12
+msgid ""
+"You can enable or disable extensions using <guiseq><gui>Edit</"
+"gui><gui>Extensions</gui></guiseq>. Some extensions will have "
+"<gui>Preferences</gui> that can be modified from this dialog."
+msgstr ""
+"Увімкнути або вимкнути розширення можна за допомогою пункту "
+"<guiseq><gui>Зміни</gui><gui>Розширення</gui></guiseq>, який відкриває "
+"відповідне діалогове вікно. Для деяких розширень передбачено пункт "
+"<gui>Параметри</gui>, доступ до якого можна отримати за допомогою цього "
+"діалогового вікна."
+
+#. (itstool) path: page/p
+#: C/extensions.page:16
+msgid ""
+"This manual is written with the assumption that the standard extensions are "
+"enabled. If you seem to be missing a feature, check to see which extensions "
+"are actually enabled."
+msgstr ""
+"Цей підручник написано у припущенні, що стандартні розширення увімкнено. "
+"Якщо ви не бачите певної описаної тут можливості у інтерфейсі програми, "
+"перевірте, які саме розширення увімкнено у вашому екземплярі програми."
+
+#. (itstool) path: page/p
+#: C/extensions.page:20
+msgid ""
+"If you would like to write your own extension, please visit <link href="
+"\"https://wiki.gnome.org/Apps/Gthumb\">https://wiki.gnome.org/Apps/Gthumb</"
+"link> for development information. An example extension is provided in the "
+"source code, which you can base your own extension on."
+msgstr ""
+"Якщо ви хочете написати власне розширення, будь ласка, відвідайте сторінку "
+"<link href=\"https://wiki.gnome.org/Apps/Gthumb\">https://wiki.gnome.org/"
+"Apps/Gthumb</link>, де наведено дані для розробників. Приклад розширення "
+"можна знайти у початковому коді програми. Ви можете скористатися ним для "
+"написання власного розширення."
+
+#. (itstool) path: page/title
+#: C/gimp.page:6
+msgid "Launching GIMP"
+msgstr "Запуск GIMP"
+
+#. (itstool) path: page/p
+#: C/gimp.page:7
+msgid ""
+"If you have files selected in the browser, or an image open in the viewer, "
+"you can open them in the <app>GNU Image Manipulation Program (GIMP)</app> by "
+"pressing <key>g</key>."
+msgstr ""
+"Якщо на панелі навігації позначено якісь файли або на панелі перегляду "
+"відкрито якийсь файл, ви можете відкрити ці файли у <app>GNU Image "
+"Manipulation Program (GIMP)</app> за допомогою натискання клавіші <key>G</"
+"key>."
+
+#. (itstool) path: page/p
+#: C/gimp.page:10
+msgid ""
+"<app>GIMP</app> provides a more sophisticated set of editing tools than that "
+"provided with <app>gThumb</app>."
+msgstr ""
+"У <app>GIMP</app> можна знайти набагато більше інструментів редагування, ніж "
+"передбачено у <app>gThumb</app>."
+
+#. (itstool) path: page/title
+#: C/viewer.page:6
+msgid "Opening an Image"
+msgstr "Відкриття зображення"
+
+#. (itstool) path: page/p
+#: C/viewer.page:8
+msgid ""
+"The browser view shows the images in the current folder or catalog (see "
+"<link xref=\"gthumb-browser-view\"/>). Double-clicking an image (or pressing "
+"<key>Return</key>) in the browser will open it in the viewer mode."
+msgstr ""
+"На панелі навігації буде показано зображення у поточній теці або у поточному "
+"каталозі (див. <link xref=\"gthumb-browser-view\"/>). Подвійним клацанням на "
+"пункті (або натисканням клавіші <key>Enter</key>) можна відкрити зображення "
+"у режимі перегляду."
+
+#. (itstool) path: page/p
+#: C/viewer.page:13
+msgid ""
+"Pressing <key>Escape</key> will exit the viewer mode, and return the user to "
+"the browser mode. A toolbar button (<gui>View the folders</gui>) is also "
+"provided for this purpose."
+msgstr ""
+"Натисканням клавіші <key>Escape</key> можна вийти з режиму перегляду і "
+"повернутися до режиму навігації. Також з цією ж метою можна скористатися "
+"кнопкою панелі інструментів (<gui>Перегляд тек</gui>)."
+
+#. (itstool) path: page/p
+#: C/viewer.page:17
+msgid ""
+"A <link xref=\"gthumb-thumbnail-pane\"/> may be displayed in the viewer "
+"mode, if desired."
+msgstr ""
+"Якщо потрібно, <link xref=\"gthumb-thumbnail-pane\"/> може працювати у "
+"режимі перегляду."
+
+#. (itstool) path: figure/title
+#: C/viewer.page:21
+msgid "Viewer Mode with Thumbnail Pane"
+msgstr "Режим перегляду із панеллю мініатюр"
+
+#. (itstool) path: page/p
+#: C/viewer.page:26
+msgid ""
+"In the viewer mode, you can advance to the next image by clicking the "
+"<gui>Next</gui> button, or by pressing <key>Space</key> or <key>Page Down</"
+"key>. You can go back to the previous image by clicking the <gui>Previous</"
+"gui> button, or by pressing <key>Backspace</key> or <key>Page Up</key>. You "
+"can go also click on thumbnails in the thumbnail pane to open a different "
+"image."
+msgstr ""
+"У режимі перегляду ви можете перейти до наступного зображення натисканням "
+"кнопки <gui>Наступне</gui> або клавіш <key>Пробіл</key> та <key>Page Down</"
+"key>. Повернутися до попереднього зображення можна натисканням кнопки "
+"<gui>Попереднє</gui> або клавіші <key>Backspace</key> чи <key>Page Up</key>. "
+"Ви також можете просто клацнути на мініатюрі зображення на панелі мініатюр, "
+"щоб відкрити саме це зображення."
+
+#. (itstool) path: page/title
+#: C/fullscreen.page:8
+msgid "Manual Fullscreen Mode"
+msgstr "Вмикання повноекранного режиму вручну"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:10
+msgid ""
+"Pressing <key>f</key> in the browser or viewer modes will display the "
+"current image in fullscreen mode. (In the browser mode, you can also double-"
+"click with the middle mouse button.)"
+msgstr ""
+"Натискання клавіші <key>F</key> у режимі навігації або перегляду призведе до "
+"показу поточного зображення у повноекранному режимі. (У режимі навігації ви "
+"також можете двічі клацнути середньою кнопкою миші.)"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:14
+msgid ""
+"Moving the mouse will activate a popup control panel briefly. This can be "
+"used to navigate to the next or previous image, or change zoom levels."
+msgstr ""
+"Пересування вказівника миші активуватиме на певний час контекстну панель "
+"керування. Нею можна скористатися для переходу до наступного або "
+"попереднього зображення або зміни масштабу."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:18
+msgid ""
+"You can also advance to the next image by pressing <key>PageDown</key> or "
+"<key>Space</key>."
+msgstr ""
+"Крім того, ви можете перейти до наступного зображення натисканням клавіші "
+"<key>PageDown</key> або <key>Пробіл</key>."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:21
+msgid ""
+"You can go back to the previous image by pressing <key>PageUp</key> or "
+"<key>Backspace</key>."
+msgstr ""
+"Ви можете перейти до попереднього зображення натисканням клавіші "
+"<key>PageUp</key> або <key>Backspace</key>."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:24
+msgid "This can be used to implement a manually-controlled slideshow."
+msgstr "Цим можна скористатися для реалізації керованого вручну показу слайдів"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:27
+msgid "To exit the fullscreen mode, press <key>f</key> or <key>Escape</key>."
+msgstr ""
+"Щоб вийти з повноекранного режиму, натисніть клавішу <key>F</key> або "
+"<key>Escape</key>."
+
+#. (itstool) path: page/title
+#: C/sorting.page:7
+msgid "Sorting Files"
+msgstr "Упорядковування файлів"
+
+#. (itstool) path: page/p
+#: C/sorting.page:9
+msgid ""
+"Use the <guiseq><gui>View</gui><gui>Sort By</gui></guiseq> menu to select "
+"the desired file-sorting method for the browser view. Files can be sorted on "
+"the basis of their name, the file size, the file modification date, or the "
+"date the photo was taken."
+msgstr ""
+"Скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Критерій "
+"впорядкування</gui></guiseq> для вибору бажаного способу упорядковування "
+"файлів на панелі навігації. Файли можна упорядкувати за назвою, розміром "
+"файла, датою внесення змін або датою створення зображення."
+
+#. (itstool) path: page/title
+#: C/filtering.page:7
+msgid "Filtering Files"
+msgstr "Фільтрування файлів"
+
+#. (itstool) path: page/p
+#: C/filtering.page:9
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui></guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"Ви можете вказати програмі, файли яких типів має бути показано на панелі "
+"навігації, за допомогою діалогового вікна <guiseq><gui>Перегляд</"
+"gui><gui>Фільтр</gui> </guiseq>. Типово буде показано усі файли "
+"мультимедійних даних (зображення, відео, звук), але обмеження можна зробити "
+"жорсткішими чи м'якшими."
+
+#. (itstool) path: figure/title
+#: C/filtering.page:15
+msgid "Enabling Filters"
+msgstr "Вмикання фільтрів"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:17
+msgctxt "_"
+msgid ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+msgstr ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:20
+msgid ""
+"The figure above shows how to configure <app>gThumb</app> to display media "
+"files only, by setting the <gui>General Filter</gui>."
+msgstr ""
+"На наведеному вище знімку показано, як налаштувати <app>gThumb</app> на "
+"показ лише мультимедійних файлів встановленням відповідного <gui>Загального "
+"фільтра</gui>."
+
+#. (itstool) path: page/p
+#: C/filtering.page:23
+msgid ""
+"Also, by enabling <gui>Filename</gui> in <gui>Other Filters</gui>, a filter-"
+"by-filename ability is added to the filter bar at the bottom of the browser "
+"view:"
+msgstr ""
+"Крім того, позначенням пункту <gui>Назва файла</gui> у <gui>Інших фільтрах</"
+"gui> можна додати можливість фільтрування за назвою файла у нижній частині "
+"панелі навігації:"
+
+#. (itstool) path: figure/title
+#: C/filtering.page:28
+msgid "Browser Filter Bar"
+msgstr "Панель фільтрування навігатора"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:30
+msgctxt "_"
+msgid ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+msgstr ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:33
+msgid ""
+"In the above figure, the filename filter has been configured to show only "
+"files with \"gen\" in the filename. The matching is case-insensitive."
+msgstr ""
+"На наведеному вище знімку фільтр назв файлів було налаштовано так, щоб "
+"програма показували лише файли із рядком «gen» у назві. Регістр символів при "
+"встановленні відповідності до уваги не береться."
+
+#. (itstool) path: page/title
+#: C/printing.page:7
+msgid "Printing Images"
+msgstr "Друк зображень"
+
+#. (itstool) path: page/p
+#: C/printing.page:9
+msgid ""
+"To print the current image in the viewer mode, use <guiseq><gui>File</"
+"gui><gui>Print</gui></guiseq> or <keyseq><key>Ctrl</key><key>p</key></"
+"keyseq>."
+msgstr ""
+"Щоб надрукувати поточне зображення у режимі перегляду, скористайтеся пунктом "
+"меню <guiseq><gui>Файл</gui><gui>Друкувати</gui></guiseq> або комбінацією "
+"клавіш <keyseq><key>Ctrl</key><key>P</key></keyseq>."
+
+#. (itstool) path: page/p
+#: C/printing.page:13
+msgid ""
+"To print one or more images from the browser mode, select the desired images "
+"and then use <guiseq><gui>File</gui><gui>Print</gui></guiseq> or "
+"<keyseq><key>Ctrl</key><key>p</key></keyseq>."
+msgstr ""
+"Щоб надрукувати одне або декілька зображень у режимі навігації, позначте "
+"відповідні зображення і скористайтеся пунктом меню <guiseq><gui>Файл</"
+"gui><gui>Друкувати</gui></guiseq> або комбінацією клавіш <keyseq><key>Ctrl</"
+"key><key>P</key></keyseq>."
+
+#. (itstool) path: page/p
+#: C/printing.page:18
+msgid ""
+"The printer to use can be selected from the <gui>General</gui> tab of the "
+"print dialog."
+msgstr ""
+"Принтер, який буде використано, можна вибрати за допомогою вкладки "
+"<gui>Загальне</gui> діалогового вікна друку."
+
+#. (itstool) path: page/p
+#: C/printing.page:21
+msgid ""
+"The type of paper to use can be selected from the <gui>Page Setup</gui> tab."
+msgstr ""
+"Тип паперу, який буде використано для друку, можна вибрати за допомогою "
+"вкладки <gui>Параметри сторінки</gui>."
+
+#. (itstool) path: page/p
+#: C/printing.page:24
+msgid ""
+"The <gui>Layout</gui> tab provides some additional <app>gThumb</app>-"
+"specific options. You can set the number of images to include on each page "
+"here, and a preview pane is provided. Captions can also be added under the "
+"image, in a configurable font. The captions can be chosen from a selection "
+"of listed file attributes (like the file name, the date of the photo, camera "
+"shutter speed, and others). Each image can be repositioned inside its print "
+"area using the controls on this tab."
+msgstr ""
+"За допомогою вкладки <gui>Компонування</gui> можна налаштувати деякі "
+"додаткові параметри, які є специфічними для <app>gThumb</app>. Ви можете "
+"встановити кількість зображень, які буде надруковано на кожній зі сторінок і "
+"попередньо переглянути результати друку. Також можна додати підписи під "
+"зображеннями із використанням вказаного вами шрифту. Підписи можна вибрати "
+"зі списку атрибутів файлів (зокрема назви файла, дати створення зображення, "
+"швидкості затвору камери та інших). За допомогою цієї вкладки можна змінити "
+"розташування кожного із зображень у області його друку."
+
+#. (itstool) path: page/p
+#: C/printing.page:34
+msgid "When you are ready to print, press the <gui>Print</gui> button."
+msgstr "Коли ви будете готові до друку, натисніть кнопку <gui>Друкувати</gui>."
+
+#. (itstool) path: page/title
+#: C/sharing-disc.page:6
+msgid "Creating a CD/DVD/ISO"
+msgstr "Створення CD/DVD/ISO"
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:7
+msgid ""
+"To write a series of files to an optical disk (CD or DVD), or to create an "
+"ISO disk image file, use the <guiseq><gui>File</gui> <gui>Export To</"
+"gui><gui>Optical Disc</gui></guiseq> menu item."
+msgstr ""
+"Щоб записати набір зображень на оптичний диск (компакт-диск або DVD) або "
+"створити файл образу такого диска у форматі ISO, скористайтеся пунктом меню "
+"<guiseq><gui>Файл</gui> <gui>Експортувати до</gui><gui>Оптичний диск</gui></"
+"guiseq>."
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:13
+msgid ""
+"You will be offered the choice of writing the currently selected files, the "
+"entire current folder, or the entire current folder and its subfolders. "
+"Click <gui>OK</gui> when you have made the appropriate selection."
+msgstr ""
+"Програма запропонує вам записати на диск поточні позначені файли, усі файли "
+"з поточної теки або усі файли з поточної теки і її підтек. Виберіть бажаний "
+"варіант і натисніть кнопку <gui>Гаразд</gui>."
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:19
+msgid ""
+"The next dialog will select the destination disk, or the ISO file to save. "
+"When you are ready to complete the process, click <gui>Create Image</gui>. "
+"The optical disk writing process will then commence, or the ISO file will be "
+"written, completing the process."
+msgstr ""
+"За допомогою наступної сторінки ви зможете вибрати диск призначення або файл "
+"ISO для зберігання даних. Коли будете готові завершити процес, натисніть "
+"кнопку <gui>Створити образ</gui>. Далі, розпочнеться процедура запису на "
+"оптичний диск або буде записано файл ISO, що завершить потрібну вам "
+"процедуру."
+
+#. (itstool) path: page/title
+#: C/sharing-social.page:6
+msgid "Uploading to Photo-Sharing Web Sites"
+msgstr "Вивантаження зображень на сайти оприлюднення фотографій"
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:7
+msgid ""
+"gThumb is provided with a number of extensions for uploading photos to "
+"various \"social media\" web sites. By default, uploaders for Facebook, "
+"Flickr, Picasa, and Photobucket are enabled."
+msgstr ""
+"До складу пакунка gThumb включено декілька розширень для вивантаження "
+"фотографій до різноманітних сайтів соціальних медіа. Типово, увімкнено "
+"засоби вивантаження до Facebook, Flickr, Picasa та Photobucket."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:13
+msgid ""
+"To upload a series of photos, select the images in the browser view, and "
+"click the <gui>Share</gui> button in the toolbar. Select the appropriate web "
+"site from the menu that appears."
+msgstr ""
+"Щоб вивантажити набір фотографій, позначте фотографії на панелі навігації і "
+"натисніть кнопку <gui>Поділитися</gui> на панелі інструментів. Виберіть "
+"відповідний сайт з меню, яке буде показано."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:17
+msgid ""
+"You may be prompted for additional information specific to the destination "
+"site, like an album name. You may also be prompted for your user name and "
+"password for the site. It may be necessary for gThumb to open a web browser, "
+"where you complete the required authentication steps. Once you have "
+"completed the required authentication steps in the browser, return to gThumb "
+"and continue the upload."
+msgstr ""
+"Програма може запитати у вас додаткові відомості щодо сайта призначення, "
+"зокрема назву альбому. Також може надійти запит щодо вашого імені "
+"користувача та пароля до сайта. У gThumb може виникнути потреба у відкритті "
+"програми для перегляду інтернету, у вікні якої ви зможете завершити потрібні "
+"кроки із розпізнавання на сайті. Щойно розпізнавання за допомогою програми "
+"для перегляду інтернету буде завершено, ви зможете повернутися до gThumb і "
+"продовжити вивантаження даних."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:26
+msgid ""
+"If you do not see the expected upload sites in the <gui>Share</gui> menu, "
+"check that the appropriate exporter extensions are enabled in "
+"<guiseq><gui>Edit</gui><gui>Extensions</gui></guiseq>."
+msgstr ""
+"Якщо ви не бачите очікуваних пунктів сайтів для вивантаження даних у меню "
+"<gui>Поділитися</gui>, перевірте, чи увімкнено відповідні розширення для "
+"експортування у списку <guiseq><gui>Зміни</gui><gui>Розширення</gui></"
+"guiseq>."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:31
+msgid ""
+"For some sites, gThumb also supports downloading photos from the site into "
+"gThumb. See the <guiseq><gui>File</gui><gui>Import From</gui></guiseq> menu "
+"for the available download options."
+msgstr ""
+"Для деяких сайтів у gThumb передбачено також підтримку отримання фотографій "
+"з сайта до сховища gThumb. Із доступними варіантами отримання зображень "
+"можна ознайомитися за допомогою меню <guiseq><gui>Файл</gui><gui>Імпорт</"
+"gui></guiseq>."
+
+#. (itstool) path: page/title
+#: C/wallpaper.page:6
+msgid "Desktop Wallpaper"
+msgstr "Фонове зображення стільниці"
+
+#. (itstool) path: page/p
+#: C/wallpaper.page:7
+msgid ""
+"To set an image as the system desktop wallpaper, right-click on the image "
+"and select <guiseq><gui>Set as Desktop Background</gui></guiseq> from the "
+"pop-up menu. The desktop background will change, and the Gnome Appearance "
+"Preferences dialog will appear. You can use this dialog to make adjustments "
+"to the background settings (positioning, stretching, tiling, et cetera.)."
+msgstr ""
+"Щоб зробити зображення фоновим зображенням стільниці, клацніть правою "
+"кнопкою миші на пункті зображення і виберіть у контекстному меню пункт "
+"<guiseq><gui>Встановити зображення як тло робочого столу</gui></guiseq>. "
+"Буде змінено фонове зображення стільниці і відкрито діалогове вікно "
+"параметрів вигляду GNOME. Ви зможете скористатися цим діалоговим вікном для "
+"коригування параметрів фонового зображення (розташування, розтягування, "
+"використання мозаїки з зображення тощо)."
+
+#. (itstool) path: page/title
+#: C/bookmarks.page:6
+msgid "Using Bookmarks"
+msgstr "Користування закладками"
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:8
+msgid ""
+"Frequently-used folders can be added to the bookmark list for rapid access. "
+"To add the current folder to the bookmark list, press <keyseq><key>Ctrl</"
+"key><key>D</key></keyseq> or use the command <guiseq><gui>Bookmarks</"
+"gui><gui>Add Bookmark</gui></guiseq>."
+msgstr ""
+"Теки, якими ви часто користуєтеся, можна додати до списку закладок для "
+"пришвидшення доступу. Щоб додати поточну теку до списку закладок, натисніть "
+"комбінацію клавіш <keyseq><key>Ctrl</key><key>D</key></keyseq> або "
+"скористайтеся пунктом меню <guiseq><gui>Закладки</gui><gui>Додати закладку</"
+"gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:13
+msgid ""
+"To remove or rearrange bookmarks in a different order use the "
+"<guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq> command."
+msgstr ""
+"Щоб вилучити або переупорядкувати закладки, скористайтеся пунктом меню "
+"<guiseq><gui>Закладки</gui><gui>Редагувати закладки</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:16
+msgid ""
+"<guiseq><gui>Bookmarks</gui><gui>System Bookmarks</gui></guiseq> provides "
+"access to the system bookmarks that have been defined in <app>Nautilus</app> "
+"or the file-chooser dialog used in most Gnome applications."
+msgstr ""
+"За допомогою пункту меню <guiseq><gui>Закладки</gui><gui>Системні закладки</"
+"gui></guiseq> можна отримати доступ до загальносистемних закладок, які "
+"визначено у <app>Nautilus</app> або діалоговому вікні вибору файлів, яке "
+"використовується у більшості програм GNOME."
+
+#. (itstool) path: page/title
+#: C/import.page:8
+msgid "Importing From a Camera"
+msgstr "Імпортування даних з камери"
+
+#. (itstool) path: page/p
+#: C/import.page:10
+msgid ""
+"On most systems, <app>gThumb</app> will automatically launch the import "
+"dialog when a digital camera is connected to the computer, or a memory card "
+"with photos is plugged into a card reader. (It does this because it is "
+"registered as the default handler for x-content/image-dcf and x-content/"
+"image-picturecd mime types.)"
+msgstr ""
+"У більшості систем <app>gThumb</app> автоматично відкриватиме діалогове "
+"вікно імпортування, коли із комп'ютером буде з'єднано цифрову фотокамеру або "
+"пристрій зчитування карток із карткою пам'яті, на якій зберігаються "
+"фотографії. (Причиною цього є те, що програма реєструє себе як типовий "
+"обробник типів MIME x-content/image-dcf та x-content/image-picturecd.)"
+
+#. (itstool) path: page/p
+#: C/import.page:16
+msgid ""
+"To manually launch the import dialog, use <guiseq><gui>File</gui><gui>Import "
+"From</gui><gui>Removable Device</gui></guiseq>."
+msgstr ""
+"Щоб відкрити діалогове вікно імпортування вручну, скористайтеся пунктом меню "
+"<guiseq><gui>Файл</gui><gui>Імпорт</gui><gui>Портативний пристрій</gui></"
+"guiseq>."
+
+#. (itstool) path: figure/title
+#: C/import.page:20
+msgid "The Import Dialog"
+msgstr "Діалогове вікно імпортування"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:21
+msgctxt "_"
+msgid ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+msgstr ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+
+#. (itstool) path: page/p
+#: C/import.page:24
+msgid ""
+"The import dialog shows thumbnails of the photos available on the selected "
+"device. The user can select one of more photos using normal keyboard or "
+"mouse techniques (for example, Ctrl+click to add a photo to the selection, "
+"or click and drag the mouse over the desired photos.) If no photos are "
+"explicitly selected, all will be imported."
+msgstr ""
+"У діалоговому вікні імпортування буде показано мініатюри фотографій, які "
+"зберігаються на вибраному пристрої. Користувач може вибрати одну або "
+"декілька фотографій за допомогою звичайних методик вибору з використанням "
+"клавіатури або миші (наприклад, Ctrl+клацання для додавання фотографії до "
+"позначених або клацання із перетягуванням вказівника миші для обведення "
+"набору потрібних фотографій.) Якщо явним чином не буде вказано жодної "
+"фотографії, буде імпортовано усі фотографії."
+
+#. (itstool) path: page/p
+#: C/import.page:30
+msgid ""
+"Tags may optionally be associated with the imported photos, using the "
+"<gui>Tags</gui> control below the thumbnail window. Click the drop-down "
+"control to see the predefined tags."
+msgstr ""
+"Із імпортованими фотографіями можна пов'язати мітки за допомогою пункту "
+"<gui>Теги</gui> під панеллю мініатюр. Клацніть на спадному списку, щоб "
+"переглянути список попередньо визначених міток."
+
+#. (itstool) path: page/p
+#: C/import.page:34
+msgid ""
+"An event name may also be optionally associated with the photos. This event "
+"name can be used to generate an automatic subfolder name (possibly "
+"incorporating a date) as described below. For example, if the base "
+"destination folder is \"/photos\", and you enter \"Wedding-Jennifer\" in the "
+"<gui>Event</gui> field, you can configure generation of automatic subfolders "
+"like \"/photos/2010-07-31, Wedding-Jennifer\"."
+msgstr ""
+"Якщо потрібно, з фотографіями можна пов'язати назву події. Цією назвою події "
+"можна скористатися для створення автоматичних назв підтек (з можливим "
+"включенням дати), як це описано нижче. Наприклад, якщо базовою текою є «/"
+"Фотографії», і ви введете «Весілля-Ірина» у полі <gui>Подія</gui>, ви "
+"зможете налаштувати створення автоматичних підтек, наприклад «/"
+"Фотографії/2010-07-31, Весілля-Ірина»."
+
+#. (itstool) path: figure/title
+#: C/import.page:42
+msgid "Standard Date-Based Subfolders"
+msgstr "Стандартні підтеки на основі дат"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:43
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+msgstr ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+
+#. (itstool) path: page/p
+#: C/import.page:46
+msgid ""
+"As mentioned above, subfolders for imported photos can be automatically "
+"generated based on event names and dates. This is enabled or disabled by "
+"clicking on the destination foldername in the import dialog. This opens a "
+"second dialog, where the base folder for imports may be selected (the "
+"<gui>Destination</gui> folder). To generate automatic subfolders, select "
+"<gui>Automatic subfolder</gui>."
+msgstr ""
+"Як ми вже згадували вище, підтеки для імпортованих фотографій може бути "
+"створено автоматично на основі назв подій та дат. Увімкнути або вимкнути цю "
+"можливість можна клацанням на назві теки призначення у діалоговому вікні "
+"імпортування. У відповідь буде відкрито друге діалогове вікно, у якому можна "
+"вибрати базову теку для імпортування (теку <gui>Призначення</gui>). Щоб "
+"назви підтек було створено автоматично, позначте пункт <gui>Автоматичні "
+"підтеки</gui>."
+
+#. (itstool) path: page/p
+#: C/import.page:52
+#| msgid ""
+#| "You can select either the <gui>File Date</gui> or the <gui>Current Date</"
+#| "gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
+#| "examines the dates embedded in the file metadata to determine when the "
+#| "photo was taken.) A variety of standard date formats are available "
+#| "(<gui>year-month</gui> for example). The <gui>as single subfolder</gui> "
+#| "checkbox controls whether a \"deep\" or \"shallow\" hierarchy of files is "
+#| "made (for example, with <gui>year-month</gui>, you can have year "
+#| "subfolders with month subfolders under them, or all subfolders can be at "
+#| "the same level in the filesystem, with the year and name both the folder "
+#| "name."
+msgid ""
+"You can select either the <gui>File Date</gui> or the <gui>Current Date</"
+"gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
+"examines the dates embedded in the file metadata to determine when the photo "
+"was taken.) A variety of standard date formats are available (<gui>year-"
+"month</gui> for example). The <gui>as single subfolder</gui> checkbox "
+"controls whether a \"deep\" or \"shallow\" hierarchy of files is made (for "
+"example, with <gui>year-month</gui>, you can have year subfolders with month "
+"subfolders under them, or all subfolders can be at the same level in the "
+"filesystem, with the year and name both the folder name.)"
+msgstr ""
+"Ви можете вибрати для основи назв підтек або <gui>Дату файла</gui>, або "
+"<gui>Поточну дату</gui>. (<gui>Дату файла</gui> буде визначено на основі "
+"даних щодо дати створення файла, які вбудовано до метаданих файла.) Можна "
+"скористатися усім спектром доступних форматів дат (наприклад, <gui>рік-"
+"місяць</gui>). Пункт <gui>як одну підтеку</gui> керує тим, «глибоку» чи "
+"«мілку» ієрархію тек буде створено (наприклад, якщо вибрано <gui>рік-місяць</"
+"gui>, може бути створено підтеки за роками із підтеками за місяцями у них, "
+"або створено підтеки одного рівня у файловій системі, у назвах яких будуть і "
+"номер року, і назва місяця)."
+
+#. (itstool) path: page/p
+#: C/import.page:61
+msgid ""
+"It is not necessary to use the predefined date formats. If you select "
+"<gui>custom format</gui>, standard date codes can be used. Click on the help "
+"icon to the right of the custom format field for a list of format codes. \"%E"
+"\" is a special code that will embed the <gui>Event</gui> name defined in "
+"the main import dialog."
+msgstr ""
+"Використання попередньо визначених форматів дат не є обов'язковим. Якщо ви "
+"виберете <gui>інший формат</gui>, ви зможете скористатися стандартними "
+"кодами дат. Натисніть піктограму довідки, яку розташовано праворуч від поля "
+"іншого формату, щоб ознайомитися зі списком кодів форматування. Код «%E» є "
+"особливим — за його допомогою можна вбудувати назву <gui>Події</gui>, яку "
+"визначено у головному вікні імпортування."
+
+#. (itstool) path: page/p
+#: C/import.page:67
+msgid "See <link xref=\"gthumb-date-formats\"/> for more date format codes."
+msgstr ""
+"Див. розділ <link xref=\"gthumb-date-formats\"/>, щоб дізнатися більше про "
+"коди форматування дат."
+
+#. (itstool) path: page/p
+#: C/import.page:69
+msgid ""
+"If you use automatic subfolder naming, the <gui>Destination</gui> field in "
+"the main import dialog will show the automatic portion of the folder in red. "
+"(For date-based formats, dummy data may be shown in the red portion.)"
+msgstr ""
+"Якщо ви користуєтеся автоматичним іменуванням підтек, у полі "
+"<gui>Призначення</gui> головного вікна імпортування автоматично сформовану "
+"частину назви теки буде показано червоним кольором (для заснованих на даті "
+"форматів у червоній частині може бути показано фіктивну дату.)"
+
+#. (itstool) path: figure/title
+#: C/import.page:74
+msgid "Using Custom Formats"
+msgstr "Використання нетипових форматів"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:75
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+msgstr ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+
+#. (itstool) path: page/title
+#: C/slideshow.page:7
+msgid "Automatic Slideshow"
+msgstr "Автоматичний показ слайдів"
+
+#. (itstool) path: page/p
+#: C/slideshow.page:9
+msgid ""
+"A slideshow of the currently selected images can be started from the image "
+"browser by pressing <key>F5</key>, by clicking the slideshow toolbar icon, "
+"or by clicking <guiseq><gui>View</gui><gui>Slideshow</gui></guiseq>. If no "
+"images are selected, all images in the folder will be included."
+msgstr ""
+"Показ слайдів із поточних позначених зображень можна розпочати з панелі "
+"навігації натисканням клавіші <key>F5</key>, клацанням на кнопці показу "
+"слайдів на панелі інструментів або за допомогою пункту меню "
+"<guiseq><gui>Перегляд</gui><gui>Показ слайдів</gui></guiseq>. Якщо не "
+"позначено жодного зображення, до показу слайдів буде включено усі зображення "
+"з поточної теки."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:15
+msgid ""
+"The transition effects and the time each image is shown can be modified from "
+"the <guiseq><gui>Edit</gui><gui>Preferences</gui><gui>Slideshow</gui></"
+"guiseq> dialog."
+msgstr ""
+"Налаштувати ефекти переходу та час, протягом якого буде показано кожне "
+"зображення, можна за допомогою діалогового вікна, яке відкривається пунктом "
+"меню <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Показ слайдів</gui></"
+"guiseq>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:19
+msgid ""
+"Some graphics cards and drivers may experience problems (crashes) if "
+"transition effects are enabled. If you experience such difficulties, set the "
+"<gui>Transition effect</gui> preference to <gui>None</gui>."
+msgstr ""
+"Використання ефектів переходу на деяких графічних картках із деякими "
+"драйверами може призводити до проблем (аварійного завершення роботи). Якщо у "
+"вас виникають негаразди, встановіть для параметра <gui>Ефект переходу</gui> "
+"значення <gui>Немає</gui>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:23
+msgid ""
+"You can advance manually to the next image by pressing <key>Down Arrow</"
+"key>, <key>Right Arrow</key>, <key>Page Down</key> or <key>Space</key>."
+msgstr ""
+"Ви можете перейти до наступного зображення вручну натисканням клавіш <key>↓</"
+"key>, <key>→</key>, <key>Page Down</key> або <key>Пробіл</key>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:27
+msgid ""
+"You can go back to the previous image by pressing <key>Up Arrow</key>, "
+"<key>Left Arrow</key> or <key>Page Up</key>."
+msgstr ""
+"Ви можете перейти до попереднього зображення натисканням клавіш <key>↑</"
+"key>, <key>←</key>, або <key>Page Up</key>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:30
+msgid "You can pause or un-pause the slideshow by pressing <key>p</key>."
+msgstr ""
+"Щоб призупинити або поновити показ слайдів, натисніть клавішу <key>P</key>."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:32
+msgid "To exit the slideshow, press <key>Escape</key> or <key>F5</key>."
+msgstr ""
+"Щоб завершити показ слайдів, натисніть клавішу <key>Escape</key> або "
+"<key>F5</key>."
+
+#. (itstool) path: page/title
+#: C/file-copy-move.page:6
+msgid "Copying and Moving Files"
+msgstr "Копіювання і пересування файлів"
+
+#. (itstool) path: page/p
+#: C/file-copy-move.page:8
+msgid "There are three ways to copy or move files in <app>gThumb</app>."
+msgstr ""
+"Існує три способи копіювання або пересування файлів у <app>gThumb</app>."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:12
+msgid "Cut and Paste"
+msgstr "Вирізання зі вставленням"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:13
+msgid ""
+"To copy a file in the browser view, use <guiseq><gui>Edit</gui><gui>Copy</"
+"gui></guiseq>, or press <keyseq><key>Ctrl</key><key>C</key></keyseq>. To "
+"move a file, use <guiseq><gui>Edit</gui><gui>Cut</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>X</key></keyseq>. Then navigate to the "
+"destination folder using the folder tree. Use <guiseq><gui>Edit</"
+"gui><gui>Paste</gui></guiseq>, or press <keyseq><key>Ctrl</key><key>V</key></"
+"keyseq>, to complete the file transfer."
+msgstr ""
+"Щоб скопіювати файл на панелі навігації, скористайтеся пунктом меню "
+"<guiseq><gui>Зміни</gui><gui>Копіювати</gui></guiseq> або натисніть "
+"комбінацію клавіш <keyseq><key>Ctrl</key><key>C</key></keyseq>. Щоб "
+"пересунути файл, скористайтеся пунктом меню <guiseq><gui>Зміни</"
+"gui><gui>Вирізати</gui></guiseq> або натисніть комбінацію клавіш "
+"<keyseq><key>Ctrl</key><key>X</key></keyseq>. Далі, перейдіть до теки "
+"призначення за допомогою панелі ієрархії тек. Скористайтеся пунктом меню "
+"<guiseq><gui>Зміни</gui><gui>Вставити</gui></guiseq> або натисніть "
+"комбінацію клавіш <keyseq><key>Ctrl</key><key>V</key></keyseq>, щоб "
+"завершити перенесення файла."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:26
+msgid "Drag and Drop"
+msgstr "Перетягування зі скиданням"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:27
+msgid ""
+"To copy a file to another folder, simply drag the file (with a sustained "
+"left-mouse click) to the destination folder visible in the folder tree. To "
+"move a file, hold down the <key>Shift</key> key while dragging."
+msgstr ""
+"Щоб скопіювати файл до іншої теки, просто перетягніть позначку файла "
+"(утримуючи натиснутою ліву кнопку миші) до пункту теки призначення у "
+"ієрархії тек. Щоб пересунути файл, утримуйте під час перетягування "
+"натиснутою клавішу <key>Shift</key>."
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:31
+msgid ""
+"You can also use the middle mouse button to drag files. In this case, "
+"<app>gThumb</app> will ask you if you wish to copy the files, move the "
+"files, or cancel the operation."
+msgstr ""
+"Ви також можете скористатися середньою кнопкою миші для перетягування "
+"файлів. У цьому випадку <app>gThumb</app> спитає вас, хочете ви скопіювати "
+"файли, пересунути файли чи скасувати дію."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:37
+msgid "File Copy / Move Dialog"
+msgstr "Діалогове вікно копіювання та пересування файлів"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:38
+msgid ""
+"Select the files to be transferred, right-click on the selection, and choose "
+"<guiseq><gui>Copy to...</gui></guiseq> or <guiseq><gui>Move to...</gui></"
+"guiseq>. This will open a folder-selection dialog, where you can choose the "
+"destination folder. At the bottom of the dialog, you can enable the "
+"<guiseq><gui>View the destination</gui></guiseq> option if you want to go to "
+"the destination folder after the file transfer is complete."
+msgstr ""
+"Позначте файли, які слід перенести, клацніть правою кнопкою миші на будь-"
+"якому із позначених записів і виберіть у контекстному меню пункт "
+"<guiseq><gui>Скопіювати до...</gui></guiseq> або <guiseq><gui>Пересунути "
+"до...</gui></guiseq>. У відповідь буде відкрито діалогове вікно вибору теки, "
+"за допомогою якого ви зможете вибрати теку призначення. У нижній частині "
+"цього діалогового вікна ви зможете позначити пункт <guiseq><gui>Переглянути "
+"теку призначення</gui></guiseq>, якщо хочете перейти до теки призначення "
+"після завершення перенесення даних."
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-Share Alike 3.0 Unported License"
+msgstr "ліцензії Creative Commons Attribution-Share Alike 3.0 Unported"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Ця робота розповсюджується за умов дотримання <_:link-1/>."
+
+#. (itstool) path: license/p
+#: C/legal.xml:6
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"За виняткових обставин власники авторських прав можу надати вам дозвіл "
+"копіювати, змінювати і розповсюджувати приклади коду, що містяться у цьому "
+"документі, за довільних умов, без обмежень."

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,11 +23,9 @@
 #define OAUTH_ACCOUNT_MANAGER_DIALOG_H
 
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
-
-#define OAUTH_ACCOUNT_MANAGER_RESPONSE_NEW 1
 
 #define OAUTH_TYPE_ACCOUNT_MANAGER_DIALOG            (oauth_account_manager_dialog_get_type ())
 #define OAUTH_ACCOUNT_MANAGER_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), OAUTH_TYPE_ACCOUNT_MANAGER_DIALOG, OAuthAccountManagerDialog))

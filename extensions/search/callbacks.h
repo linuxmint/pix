@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,14 +22,17 @@
 #ifndef CALLBACKS_H
 #define CALLBACKS_H
 
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/catalogs/gth-catalog.h>
 #include <extensions/catalogs/gth-organize-task.h>
 
 void         search__gth_browser_construct_cb            (GthBrowser         *browser);
 void         search__gth_browser_update_sensitivity_cb   (GthBrowser         *browser);
 void         search__gth_browser_update_extra_widget_cb  (GthBrowser         *browser);
+void         search__gth_browser_load_location_before_cb (GthBrowser         *browser,
+							  GFile              *location);
 GthCatalog * search__gth_catalog_load_from_data_cb       (const void         *buffer);
+GthCatalog * search__gth_catalog_new_for_uri_cb          (const char         *uri);
 void         search__dlg_catalog_properties              (GtkBuilder         *builder,
 							  GthFileData        *file_data,
 							  GthCatalog         *catalog);

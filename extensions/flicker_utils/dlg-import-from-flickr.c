@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #define GDK_PIXBUF_ENABLE_BACKEND
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/importer/importer.h>
 #include "dlg-import-from-flickr.h"
 #include "flickr-account.h"
@@ -113,10 +113,6 @@ import_dialog_response_cb (GtkDialog *dialog,
 	DialogData *data = user_data;
 
 	switch (response_id) {
-	case GTK_RESPONSE_HELP:
-		show_help_dialog (GTK_WINDOW (data->browser), "export-to-picasaweb");
-		break;
-
 	case GTK_RESPONSE_DELETE_EVENT:
 	case GTK_RESPONSE_CANCEL:
 		gth_file_list_cancel (GTH_FILE_LIST (data->file_list), (DataFunc) gtk_widget_destroy, data->dialog);
@@ -129,7 +125,7 @@ import_dialog_response_cb (GtkDialog *dialog,
 			GList          *file_list;
 
 			if (! gtk_combo_box_get_active_iter (GTK_COMBO_BOX (GET_WIDGET ("photoset_combobox")), &iter)) {
-				gtk_widget_set_sensitive (GET_WIDGET ("download_button"), FALSE);
+				gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, FALSE);
 				return;
 			}
 
@@ -139,37 +135,29 @@ import_dialog_response_cb (GtkDialog *dialog,
 
 			file_list = get_files_to_download (data);
 			if (file_list != NULL) {
-				GSettings           *settings;
-				GFile               *destination;
-				gboolean             single_subfolder;
-				GthSubfolderType     subfolder_type;
-				GthSubfolderFormat   subfolder_format;
-				char                *custom_format;
-				GthTask             *task;
+				GSettings *settings;
+				GFile     *destination;
+				char      *subfolder_template;
+				GthTask   *task;
 
-				settings = g_settings_new (PIX_IMPORTER_SCHEMA);
+				settings = g_settings_new (GTHUMB_IMPORTER_SCHEMA);
 				destination = gth_import_preferences_get_destination ();
-				subfolder_type = g_settings_get_enum (settings, PREF_IMPORTER_SUBFOLDER_TYPE);
-				subfolder_format = g_settings_get_enum (settings, PREF_IMPORTER_SUBFOLDER_FORMAT);
-				single_subfolder = g_settings_get_boolean (settings, PREF_IMPORTER_SUBFOLDER_SINGLE);
-				custom_format = g_settings_get_string (settings, PREF_IMPORTER_SUBFOLDER_CUSTOM_FORMAT);
+				subfolder_template = g_settings_get_string (settings, PREF_IMPORTER_SUBFOLDER_TEMPLATE);
 
 				task = gth_import_task_new (data->browser,
 							    file_list,
 							    destination,
-							    subfolder_type,
-							    subfolder_format,
-							    single_subfolder,
-							    custom_format,
+							    subfolder_template,
 							    (photoset->title != NULL ? photoset->title : ""),
 							    NULL,
 							    FALSE,
 							    FALSE,
 							    FALSE);
-				gth_browser_exec_task (data->browser, task, FALSE);
+				gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 				gtk_widget_destroy (data->dialog);
 
 				g_object_unref (task);
+				g_free (subfolder_template);
 				_g_object_unref (destination);
 				g_object_unref (settings);
 			}
@@ -245,7 +233,7 @@ photoset_list_ready_cb (GObject      *source_object,
 		gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("photoset_liststore")), &iter);
 		gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("photoset_liststore")), &iter,
 				    PHOTOSET_DATA_COLUMN, photoset,
-				    PHOTOSET_ICON_COLUMN, "file-catalog",
+				    PHOTOSET_ICON_COLUMN, "file-catalog-symbolic",
 				    PHOTOSET_TITLE_COLUMN, photoset->title,
 				    PHOTOSET_N_PHOTOS_COLUMN, n_photos,
 				    -1);
@@ -369,7 +357,7 @@ list_photos_ready_cb (GObject      *source_object,
 	}
 	gth_file_list_set_files (GTH_FILE_LIST (data->file_list), list);
 	update_selection_status (data);
-	gtk_widget_set_sensitive (GET_WIDGET ("download_button"), list != NULL);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, list != NULL);
 
 	_g_object_list_unref (list);
 }
@@ -411,6 +399,7 @@ flickr_thumbnail_loader (GInputStream  *istream,
 			 int            requested_size,
 			 int           *original_width,
 			 int           *original_height,
+			 gboolean      *loaded_original,
 			 gpointer       user_data,
 			 GCancellable  *cancellable,
 		         GError       **error)
@@ -509,8 +498,21 @@ dlg_import_from_flickr (FlickrServer *server,
 	data->browser = browser;
 	data->location = gth_file_data_dup (gth_browser_get_location_data (browser));
 	data->builder = _gtk_builder_new_from_file ("import-from-flickr.ui", "flicker_utils");
-	data->dialog = _gtk_builder_get_widget (data->builder, "import_dialog");
 	data->cancellable = g_cancellable_new ();
+
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_("_Import"), GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 
 	{
 		GtkCellLayout   *cell_layout;
@@ -554,7 +556,7 @@ dlg_import_from_flickr (FlickrServer *server,
 
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (GET_WIDGET ("photoset_liststore")), PHOTOSET_TITLE_COLUMN, GTK_SORT_ASCENDING);
 
-	gtk_widget_set_sensitive (GET_WIDGET ("download_button"), FALSE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, FALSE);
 
 	data->preferences_dialog = gth_import_preferences_dialog_new ();
 	gtk_window_set_transient_for (GTK_WINDOW (data->preferences_dialog), GTK_WINDOW (data->dialog));
@@ -620,7 +622,7 @@ dlg_import_from_flickr (FlickrServer *server,
 			  data);
 
 	data->progress_dialog = gth_progress_dialog_new (GTK_WINDOW (data->browser));
-	gth_progress_dialog_add_task (GTH_PROGRESS_DIALOG (data->progress_dialog), GTH_TASK (data->service));
+	gth_progress_dialog_add_task (GTH_PROGRESS_DIALOG (data->progress_dialog), GTH_TASK (data->service), GTH_TASK_FLAGS_DEFAULT);
 
 	web_service_autoconnect (WEB_SERVICE (data->service));
 }

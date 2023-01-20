@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_COMMENTS_PREFERENCES_H
 #define DLG_COMMENTS_PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 void dlg_comments_preferences (GtkWindow *parent);
 

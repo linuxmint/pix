@@ -1,7 +1,7 @@
 /* DO NOT EDIT.  This file is generated automatically. */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -36,4 +36,4 @@ static char *text[] = {
 	N_("View the previous image"),
 	N_("View the previous page"),
 	NULL
-}
+};

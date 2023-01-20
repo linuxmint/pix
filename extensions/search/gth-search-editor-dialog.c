@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -22,12 +22,9 @@
 #include <config.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-search-editor.h"
 #include "gth-search-editor-dialog.h"
-
-
-G_DEFINE_TYPE (GthSearchEditorDialog, gth_search_editor_dialog, GTK_TYPE_DIALOG)
 
 
 struct _GthSearchEditorDialogPrivate {
@@ -35,35 +32,24 @@ struct _GthSearchEditorDialogPrivate {
 };
 
 
-static void
-gth_search_editor_dialog_finalize (GObject *object)
-{
-	GthSearchEditorDialog *dialog;
+G_DEFINE_TYPE_WITH_CODE (GthSearchEditorDialog,
+			 gth_search_editor_dialog,
+			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (GthSearchEditorDialog))
 
-	dialog = GTH_SEARCH_EDITOR_DIALOG (object);
-
-	if (dialog->priv != NULL) {
-		g_free (dialog->priv);
-		dialog->priv = NULL;
-	}
-
-	G_OBJECT_CLASS (gth_search_editor_dialog_parent_class)->finalize (object);
-}
 
 static void
 gth_search_editor_dialog_class_init (GthSearchEditorDialogClass *class)
 {
-	GObjectClass *object_class;
-
-	object_class = (GObjectClass*) class;
-	object_class->finalize = gth_search_editor_dialog_finalize;
+	/* void */
 }
 
 
 static void
 gth_search_editor_dialog_init (GthSearchEditorDialog *dialog)
 {
-	dialog->priv = g_new0 (GthSearchEditorDialogPrivate, 1);
+	dialog->priv = gth_search_editor_dialog_get_instance_private (dialog);
+	dialog->priv->search_editor = NULL;
 }
 
 
@@ -82,7 +68,7 @@ gth_search_editor_dialog_construct (GthSearchEditorDialog *self,
 	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
 
    	self->priv->search_editor = gth_search_editor_new (search);
-    	gtk_container_set_border_width (GTK_CONTAINER (self->priv->search_editor), 5);
+    	gtk_container_set_border_width (GTK_CONTAINER (self->priv->search_editor), 15);
     	gtk_widget_show (self->priv->search_editor);
   	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), self->priv->search_editor, TRUE, TRUE, 0);
 }
@@ -95,7 +81,13 @@ gth_search_editor_dialog_new (const char *title,
 {
 	GthSearchEditorDialog *self;
 
-	self = g_object_new (GTH_TYPE_SEARCH_EDITOR_DIALOG, NULL);
+	self = g_object_new (GTH_TYPE_SEARCH_EDITOR_DIALOG,
+			     "title", title,
+			     "transient-for", parent,
+			     "modal", FALSE,
+			     "destroy-with-parent", FALSE,
+			     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+			     NULL);
 	gth_search_editor_dialog_construct (self, title, search, parent);
 
 	return (GtkWidget *) self;
@@ -115,4 +107,11 @@ gth_search_editor_dialog_get_search (GthSearchEditorDialog  *self,
 				     GError                **error)
 {
 	return gth_search_editor_get_search (GTH_SEARCH_EDITOR (self->priv->search_editor), error);
+}
+
+
+void
+gth_search_editor_dialog_focus_first_rule (GthSearchEditorDialog *self)
+{
+	gth_search_editor_focus_first_rule (GTH_SEARCH_EDITOR (self->priv->search_editor));
 }

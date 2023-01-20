@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,9 +23,6 @@
 #include "gth-rename-task.h"
 
 
-G_DEFINE_TYPE (GthRenameTask, gth_rename_task, GTH_TYPE_TASK)
-
-
 struct _GthRenameTaskPrivate {
 	GList                 *old_files;
 	GList                 *new_files;
@@ -37,6 +34,12 @@ struct _GthRenameTaskPrivate {
 	GFile                 *destination;
 	GthOverwriteResponse   default_response;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthRenameTask,
+			 gth_rename_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthRenameTask))
 
 
 static void
@@ -175,7 +178,7 @@ _gth_rename_task_try_rename (GthRenameTask   *self,
 	if (self->priv->default_response == GTH_OVERWRITE_RESPONSE_ALWAYS_YES)
 		copy_flags = G_FILE_COPY_OVERWRITE;
 
-	if (! _g_move_file (source,
+	if (! _g_file_move (source,
 			    destination,
 			    G_FILE_COPY_ALL_METADATA | copy_flags,
 			    gth_task_get_cancellable (GTH_TASK (self)),
@@ -246,8 +249,6 @@ gth_rename_task_class_init (GthRenameTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthRenameTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_rename_task_finalize;
 
@@ -259,7 +260,7 @@ gth_rename_task_class_init (GthRenameTaskClass *klass)
 static void
 gth_rename_task_init (GthRenameTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_RENAME_TASK, GthRenameTaskPrivate);
+	self->priv = gth_rename_task_get_instance_private (self);
 	self->priv->default_response = GTH_OVERWRITE_RESPONSE_UNSPECIFIED;
 }
 

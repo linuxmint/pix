@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,18 +22,16 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gtk/gtk.h>
+#include <gthumb.h>
 
-#define DEFINE_ACTION(x) void x (GtkAction *action, gpointer data);
-
-DEFINE_ACTION(gth_browser_activate_action_edit_add_to_catalog)
-DEFINE_ACTION(gth_browser_activate_action_edit_remove_from_catalog)
-DEFINE_ACTION(gth_browser_activate_action_catalog_new)
-DEFINE_ACTION(gth_browser_activate_action_catalog_new_library)
-DEFINE_ACTION(gth_browser_activate_action_catalog_remove)
-DEFINE_ACTION(gth_browser_activate_action_catalog_rename)
-DEFINE_ACTION(gth_browser_activate_action_catalog_properties)
-DEFINE_ACTION(gth_browser_activate_action_go_to_container)
+DEF_ACTION_CALLBACK (gth_browser_activate_add_to_catalog)
+DEF_ACTION_CALLBACK (gth_browser_activate_remove_from_catalog)
+DEF_ACTION_CALLBACK (gth_browser_activate_create_catalog)
+DEF_ACTION_CALLBACK (gth_browser_activate_create_library)
+DEF_ACTION_CALLBACK (gth_browser_activate_remove_catalog)
+DEF_ACTION_CALLBACK (gth_browser_activate_rename_catalog)
+DEF_ACTION_CALLBACK (gth_browser_activate_catalog_properties)
+DEF_ACTION_CALLBACK (gth_browser_activate_go_to_container_from_catalog)
 
 void gth_browser_add_to_catalog (GthBrowser *browser,
 				 GFile      *catalog);

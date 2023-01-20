@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,8 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "callbacks.h"
 #include "dlg-rename-series.h"
 
 
@@ -43,11 +44,4 @@ rs__gth_browser_file_list_rename_cb (GthBrowser *browser)
 	_g_object_list_unref (file_list);
 	_g_object_list_unref (file_data_list);
 	_gtk_tree_path_list_free (items);
-}
-
-
-void
-rs__gth_browser_selection_changed_cb (GthBrowser *browser)
-{
-
 }

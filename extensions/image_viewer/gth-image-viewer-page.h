@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef GTH_IMAGE_VIEWER_PAGE_H
 #define GTH_IMAGE_VIEWER_PAGE_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
@@ -46,22 +46,37 @@ struct _GthImageViewerPageClass {
 	GObjectClass parent_class;
 };
 
-GType              gth_image_viewer_page_get_type          (void);
-GtkWidget *        gth_image_viewer_page_get_image_viewer  (GthImageViewerPage *page);
-GdkPixbuf *        gth_image_viewer_page_get_pixbuf        (GthImageViewerPage *page);
-void               gth_image_viewer_page_set_pixbuf        (GthImageViewerPage *page,
-							    GdkPixbuf          *pixbuf,
-							    gboolean            add_to_history);
-cairo_surface_t *  gth_image_viewer_page_get_image         (GthImageViewerPage *page);
-void               gth_image_viewer_page_set_image         (GthImageViewerPage *page,
-							    cairo_surface_t    *image,
-							    gboolean            add_to_history);
-void               gth_image_viewer_page_undo              (GthImageViewerPage *page);
-void               gth_image_viewer_page_redo              (GthImageViewerPage *page);
-GthImageHistory *  gth_image_viewer_page_get_history       (GthImageViewerPage *self);
-void               gth_image_viewer_page_reset             (GthImageViewerPage *self);
-void               gth_image_viewer_page_copy_image        (GthImageViewerPage *self);
-void               gth_image_viewer_page_paste_image       (GthImageViewerPage *self);
+GType              gth_image_viewer_page_get_type		(void);
+GtkWidget *        gth_image_viewer_page_get_image_viewer	(GthImageViewerPage	 *page);
+GdkPixbuf *        gth_image_viewer_page_get_pixbuf		(GthImageViewerPage	 *page);
+void               gth_image_viewer_page_set_pixbuf		(GthImageViewerPage	 *page,
+								 GdkPixbuf		 *pixbuf,
+								 gboolean		  add_to_history);
+cairo_surface_t *  gth_image_viewer_page_get_current_image	(GthImageViewerPage	 *page);
+cairo_surface_t *  gth_image_viewer_page_get_modified_image	(GthImageViewerPage	 *page);
+void               gth_image_viewer_page_set_image		(GthImageViewerPage	 *page,
+								 cairo_surface_t	 *image,
+								 gboolean		  add_to_history);
+void               gth_image_viewer_page_undo			(GthImageViewerPage	 *page);
+void               gth_image_viewer_page_redo			(GthImageViewerPage	 *page);
+GthImageHistory *  gth_image_viewer_page_get_history		(GthImageViewerPage	 *self);
+void               gth_image_viewer_page_reset			(GthImageViewerPage	 *self);
+void               gth_image_viewer_page_reset_viewer_tool	(GthImageViewerPage	 *self);
+gboolean           gth_image_viewer_page_get_is_modified        (GthImageViewerPage	 *self);
+void               gth_image_viewer_page_copy_image		(GthImageViewerPage	 *self);
+void               gth_image_viewer_page_paste_image		(GthImageViewerPage	 *self);
+void               gth_image_viewer_page_get_original		(GthImageViewerPage	 *self,
+								 GCancellable		 *cancellable,
+								 GAsyncReadyCallback	  ready_callback,
+								 gpointer		  user_data);
+gboolean           gth_image_viewer_page_get_original_finish	(GthImageViewerPage	 *self,
+								 GAsyncResult		 *result,
+								 cairo_surface_t	**image,
+								 GError			**error);
+GthTask *	   gth_original_image_task_new			(GthImageViewerPage	 *self);
+cairo_surface_t *  gth_original_image_task_get_image		(GthTask		 *task);
+void		   gth_image_viewer_page_apply_icc_profile	(GthImageViewerPage	 *self,
+								 gboolean                 apply);
 
 G_END_DECLS
 

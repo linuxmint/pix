@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/image_viewer/gth-image-viewer-page.h>
 #include "gth-file-tool-red-eye.h"
 
@@ -44,43 +44,10 @@ struct _GthFileToolRedEyePrivate {
 };
 
 
-G_DEFINE_TYPE (GthFileToolRedEye, gth_file_tool_red_eye, GTH_TYPE_FILE_TOOL)
-
-
-static void
-gth_file_tool_red_eye_update_sensitivity (GthFileTool *base)
-{
-	GtkWidget *window;
-	GtkWidget *viewer_page;
-
-	window = gth_file_tool_get_window (base);
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
-		gtk_widget_set_sensitive (GTK_WIDGET (base), FALSE);
-	else
-		gtk_widget_set_sensitive (GTK_WIDGET (base), TRUE);
-}
-
-
-static void
-ok_button_clicked_cb (GtkButton         *button,
-		      GthFileToolRedEye *self)
-{
-	GtkWidget *window;
-	GtkWidget *viewer_page;
-	GtkWidget *viewer;
-
-	if (self->priv->new_pixbuf == NULL)
-		return;
-
-	window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-
-	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (viewer), self->priv->original_zoom_change);
-	gth_image_viewer_page_set_pixbuf (GTH_IMAGE_VIEWER_PAGE (viewer_page), self->priv->new_pixbuf, TRUE);
-	gth_file_tool_hide_options (GTH_FILE_TOOL (self));
-}
+G_DEFINE_TYPE_WITH_CODE (GthFileToolRedEye,
+			 gth_file_tool_red_eye,
+			 GTH_TYPE_IMAGE_VIEWER_PAGE_TOOL,
+			 G_ADD_PRIVATE (GthFileToolRedEye))
 
 
 static int
@@ -342,11 +309,9 @@ selector_selected_cb (GthImageSelector  *selector,
 		      int                y,
 		      GthFileToolRedEye *self)
 {
-	GtkWidget *window;
-	GtkWidget *viewer_page;
+	GthViewerPage *viewer_page;
 
-	window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
+	viewer_page = gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
 
 	_g_object_unref (self->priv->new_pixbuf);
 	self->priv->new_pixbuf = gth_image_viewer_page_get_pixbuf (GTH_IMAGE_VIEWER_PAGE (viewer_page));
@@ -372,7 +337,7 @@ gth_file_tool_red_eye_get_options (GthFileTool *base)
 {
 	GthFileToolRedEye *self;
 	GtkWidget         *window;
-	GtkWidget         *viewer_page;
+	GthViewerPage     *viewer_page;
 	GtkWidget         *viewer;
 	GtkWidget         *options;
 
@@ -386,14 +351,7 @@ gth_file_tool_red_eye_get_options (GthFileTool *base)
 	self->priv->builder = _gtk_builder_new_from_file ("red-eye-removal-options.ui", "red_eye_removal");
 	options = _gtk_builder_get_widget (self->priv->builder, "options");
 	gtk_widget_show (options);
-	g_signal_connect_swapped (GET_WIDGET ("cancel_button"),
-				  "clicked",
-				  G_CALLBACK (gth_file_tool_cancel),
-				  self);
-	g_signal_connect (GET_WIDGET ("ok_button"),
-			  "clicked",
-			  G_CALLBACK (ok_button_clicked_cb),
-			  self);
+
 	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
 	self->priv->original_zoom_change = gth_image_viewer_get_zoom_change (GTH_IMAGE_VIEWER (viewer));
 	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (viewer), GTH_ZOOM_CHANGE_KEEP_PREV);
@@ -418,15 +376,13 @@ gth_file_tool_red_eye_destroy_options (GthFileTool *base)
 {
 	GthFileToolRedEye *self;
 	GtkWidget         *window;
-	GtkWidget         *viewer_page;
-	GtkWidget         *viewer;
+	GthViewerPage     *viewer_page;
 
 	self = (GthFileToolRedEye *) base;
 
 	window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
 	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	gth_image_viewer_set_tool (GTH_IMAGE_VIEWER (viewer), NULL);
+	gth_image_viewer_page_reset_viewer_tool (GTH_IMAGE_VIEWER_PAGE (viewer_page));
 
 	_g_object_unref (self->priv->builder);
 	_g_object_unref (self->priv->selector);
@@ -438,26 +394,23 @@ gth_file_tool_red_eye_destroy_options (GthFileTool *base)
 
 
 static void
-gth_file_tool_red_eye_activate (GthFileTool *base)
+gth_file_tool_red_eye_apply_options (GthFileTool *base)
 {
-	gth_file_tool_show_options (base);
-}
-
-
-static void
-gth_file_tool_red_eye_cancel (GthFileTool *base)
-{
-	GthFileToolRedEye *self = (GthFileToolRedEye *) base;
-	GtkWidget         *window;
-	GtkWidget         *viewer_page;
+	GthFileToolRedEye *self;
+	GthViewerPage     *viewer_page;
 	GtkWidget         *viewer;
 
-	window = gth_file_tool_get_window (GTH_FILE_TOOL (self));
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
+	self = (GthFileToolRedEye *) base;
+
+	if (self->priv->new_pixbuf == NULL)
+		return;
+
+	viewer_page = gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self));
 	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
 
 	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (viewer), self->priv->original_zoom_change);
-	gth_image_viewer_page_reset (GTH_IMAGE_VIEWER_PAGE (viewer_page));
+	gth_image_viewer_page_set_pixbuf (GTH_IMAGE_VIEWER_PAGE (viewer_page), self->priv->new_pixbuf, TRUE);
+	gth_file_tool_hide_options (GTH_FILE_TOOL (self));
 }
 
 
@@ -482,31 +435,39 @@ gth_file_tool_red_eye_finalize (GObject *object)
 
 
 static void
-gth_file_tool_red_eye_class_init (GthFileToolRedEyeClass *class)
+gth_file_tool_red_eye_reset_image (GthImageViewerPageTool *self)
 {
-	GObjectClass     *gobject_class;
-	GthFileToolClass *file_tool_class;
+	gth_image_viewer_page_reset (GTH_IMAGE_VIEWER_PAGE (gth_image_viewer_page_tool_get_page (GTH_IMAGE_VIEWER_PAGE_TOOL (self))));
+	gth_file_tool_hide_options (GTH_FILE_TOOL (self));
+}
 
-	g_type_class_add_private (class, sizeof (GthFileToolRedEyePrivate));
 
-	gobject_class = (GObjectClass*) class;
+static void
+gth_file_tool_red_eye_class_init (GthFileToolRedEyeClass *klass)
+{
+	GObjectClass		    *gobject_class;
+	GthFileToolClass	    *file_tool_class;
+	GthImageViewerPageToolClass *image_viewer_page_tool_class;
+
+	gobject_class = (GObjectClass*) klass;
 	gobject_class->finalize = gth_file_tool_red_eye_finalize;
 
-	file_tool_class = (GthFileToolClass *) class;
-	file_tool_class->update_sensitivity = gth_file_tool_red_eye_update_sensitivity;
-	file_tool_class->activate = gth_file_tool_red_eye_activate;
-	file_tool_class->cancel = gth_file_tool_red_eye_cancel;
+	file_tool_class = (GthFileToolClass *) klass;
 	file_tool_class->get_options = gth_file_tool_red_eye_get_options;
 	file_tool_class->destroy_options = gth_file_tool_red_eye_destroy_options;
+	file_tool_class->apply_options = gth_file_tool_red_eye_apply_options;
+
+	image_viewer_page_tool_class = (GthImageViewerPageToolClass *) klass;
+	image_viewer_page_tool_class->reset_image = gth_file_tool_red_eye_reset_image;
 }
 
 
 static void
 gth_file_tool_red_eye_init (GthFileToolRedEye *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_FILE_TOOL_RED_EYE, GthFileToolRedEyePrivate);
+	self->priv = gth_file_tool_red_eye_get_instance_private (self);
 	self->priv->new_pixbuf = NULL;
 	self->priv->is_red = NULL;
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "tool-red-eye", _("Red Eye Removal..."), _("Red Eye Removal"), FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "image-red-eye-symbolic", _("Red Eye Removal"), GTH_TOOLBOX_SECTION_COLORS);
 	gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Remove the red eye effect caused by camera flashes"));
 }

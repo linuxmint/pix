@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <librsvg/rsvg.h>
 #include "cairo-image-surface-svg.h"
 
@@ -42,9 +42,9 @@ typedef struct {
 
 typedef GthImageClass GthImageSvgClass;
 
-
 static gpointer gth_image_svg_parent_class;
 
+GType gth_image_svg_get_type (void);
 
 G_DEFINE_TYPE (GthImageSvg, gth_image_svg, GTH_TYPE_IMAGE)
 
@@ -140,22 +140,26 @@ gth_image_svg_new (void)
 }
 
 
-static void
+static gboolean
 gth_image_svg_set_handle (GthImageSvg *self,
 			  RsvgHandle  *rsvg)
 {
 	RsvgDimensionData dimension_data;
 
 	if (self->rsvg == rsvg)
-		return;
+		return TRUE;
+
+	rsvg_handle_get_dimensions (rsvg, &dimension_data);
+	if ((dimension_data.width == 0) || (dimension_data.height == 0))
+		return FALSE;
 
 	self->rsvg = g_object_ref (rsvg);
-
-	rsvg_handle_get_dimensions (self->rsvg, &dimension_data);
 	self->original_width = dimension_data.width;
 	self->original_height = dimension_data.height;
 
 	gth_image_svg_set_zoom (GTH_IMAGE (self), 1.0, NULL, NULL);
+
+	return TRUE;
 }
 
 
@@ -168,6 +172,7 @@ _cairo_image_surface_create_from_svg (GInputStream  *istream,
 				      int            requested_size,
 				      int           *original_width,
 				      int           *original_height,
+				      gboolean      *loaded_original,
 				      gpointer       user_data,
 				      GCancellable  *cancellable,
 				      GError       **error)
@@ -182,7 +187,11 @@ _cairo_image_surface_create_from_svg (GInputStream  *istream,
 						 cancellable,
 						 error);
 	if (rsvg != NULL) {
-		gth_image_svg_set_handle (GTH_IMAGE_SVG (image), rsvg);
+		if (! gth_image_svg_set_handle (GTH_IMAGE_SVG (image), rsvg)) {
+			g_set_error (error, G_IO_ERROR, G_IO_ERROR_INVALID_DATA, "Error");
+			g_object_unref (image);
+			image = NULL;
+		}
 		g_object_unref (rsvg);
 	}
 

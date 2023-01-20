@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-contact-sheet-theme.h"
 
 #define GTH_TYPE_CONTACT_SHEET_CREATOR            (gth_contact_sheet_creator_get_type ())
@@ -84,5 +84,7 @@ void       gth_contact_sheet_creator_set_thumb_size        (GthContactSheetCreat
 						            int                       height);
 void       gth_contact_sheet_creator_set_thumbnail_caption (GthContactSheetCreator   *self,
 						            const char               *caption);
+void       gth_contact_sheet_creator_set_location_name     (GthContactSheetCreator   *self,
+							    const char               *name);
 
 #endif /* GTH_CONTACT_SHEET_CREATOR_H */

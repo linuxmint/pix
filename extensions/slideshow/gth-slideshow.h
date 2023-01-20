@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef GTH_SLIDESHOW_H
 #define GTH_SLIDESHOW_H
 
-#include <pix.h>
+#include <gthumb.h>
 #ifdef HAVE_CLUTTER
 #include <clutter/clutter.h>
 #include <clutter-gtk/clutter-gtk.h>
@@ -43,7 +43,7 @@ typedef struct _GthSlideshowPrivate  GthSlideshowPrivate;
 
 struct _GthSlideshow
 {
-	GtkWindow __parent;
+	GthWindow __parent;
 #ifdef HAVE_CLUTTER
 	ClutterActor        *stage;
 	ClutterActor        *current_image;
@@ -57,7 +57,7 @@ struct _GthSlideshow
 
 struct _GthSlideshowClass
 {
-	GtkWindowClass __parent_class;
+	GthWindowClass __parent_class;
 };
 
 typedef struct {
@@ -67,7 +67,7 @@ typedef struct {
 	void (* hide_cursor)     (GthSlideshow *self);
 	void (* finalize)        (GthSlideshow *self);
 	void (* image_ready)     (GthSlideshow *self,
-			          GdkPixbuf    *pixbuf);
+			          GthImage     *image);
 	void (* load_prev_image) (GthSlideshow *self);
 	void (* load_next_image) (GthSlideshow *self);
 } GthProjector;
@@ -93,6 +93,12 @@ void             gth_slideshow_set_playlist     (GthSlideshow   *self,
 						 char          **files);
 void             gth_slideshow_set_random_order (GthSlideshow   *self,
 						 gboolean        random);
+void             gth_slideshow_toggle_pause     (GthSlideshow   *self);
+void             gth_slideshow_load_next_image  (GthSlideshow   *self);
+void             gth_slideshow_load_prev_image  (GthSlideshow   *self);
+void             gth_slideshow_next_image_or_resume
+						(GthSlideshow   *self);
+void             gth_slideshow_close            (GthSlideshow   *self);
 
 G_END_DECLS
 

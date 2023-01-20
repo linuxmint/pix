@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -24,9 +24,11 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
+
+#define OAUTH_ACCOUNT_CHOOSER_RESPONSE_NEW 1
 
 #define OAUTH_TYPE_ACCOUNT            (oauth_account_get_type ())
 #define OAUTH_ACCOUNT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), OAUTH_TYPE_ACCOUNT, OAuthAccount))

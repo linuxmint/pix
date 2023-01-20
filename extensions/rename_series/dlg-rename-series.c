@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "dlg-rename-series.h"
 #include "gth-template-editor-dialog.h"
 #include "gth-template-selector.h"
@@ -44,24 +44,19 @@ enum {
 
 
 #define GET_WIDGET(name) _gtk_builder_get_widget (data->builder, (name))
-
-#define DEFAULT_TEMPLATE       "####%E"
-#define DEFAULT_START_AT       1
-#define DEFAULT_SORT_BY        "general::unsorted"
-#define DEFAULT_REVERSE_ORDER  FALSE
-#define DEFAULT_CHANGE_CASE    GTH_CHANGE_CASE_NONE
-#define UPDATE_DELAY           500
+#define DEFAULT_START_AT 1
+#define DEFAULT_CHANGE_CASE GTH_CHANGE_CASE_NONE
+#define UPDATE_DELAY 250
 
 
 static GthTemplateCode Rename_Special_Codes[] = {
-	{ GTH_TEMPLATE_CODE_TYPE_TEXT, N_("Text"), 0 },
-	{ GTH_TEMPLATE_CODE_TYPE_ENUMERATOR, N_("Enumerator"), '#' },
-	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original filename"), 'F' },
-	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original extension"), 'E' },
-	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original enumerator"), 'N' },
-	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Modification date"), 'M' },
-	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Digitalization date"), 'D' },
-	{ GTH_TEMPLATE_CODE_TYPE_FILE_ATTRIBUTE, N_("File attribute"), 'A' }
+	{ GTH_TEMPLATE_CODE_TYPE_ENUMERATOR, N_("Enumerator") },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original filename"), 'F', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original extension"), 'E', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Original enumerator"), 'N', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Modification date"), 'M', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Digitalization date"), 'D', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_FILE_ATTRIBUTE, N_("File attribute"), 'A', 0 }
 };
 
 
@@ -81,7 +76,6 @@ typedef struct {
 	GtkWidget     *change_case_combobox;
 	GtkListStore  *list_store;
 	GtkListStore  *sort_model;
-	gboolean       help_visible;
 	char          *required_attributes;
 	guint          update_id;
 	gboolean       template_changed;
@@ -115,30 +109,20 @@ destroy_dialog (DialogData *data)
 
 
 typedef struct {
-	const char   *template;
-	GthFileData  *file_data;
-	int           n;
-	GError      **error;
+	GthFileData *file_data;
+	int          n;
 } TemplateData;
 
 
 static char *
-get_original_enum (GthFileData *file_data,
-	           char        *match)
+get_original_enum (GthFileData *file_data)
 {
-	char    *basename;
-	GRegex  *re;
-	char   **a;
-	char    *value = NULL;
+	char *basename;
+	char  *value = NULL;
 
 	basename = g_file_get_basename (file_data->file);
-	re = g_regex_new ("([0-9]+)", 0, 0, NULL);
-	a = g_regex_split (re, basename, 0);
-	if (g_strv_length (a) >= 2)
-		value = g_strdup (g_strstrip (a[1]));
+	value = _g_utf8_find_expr (basename, "[0-9]+");
 
-	g_strfreev (a);
-	g_regex_unref (re);
 	g_free (basename);
 
 	return value;
@@ -147,114 +131,105 @@ get_original_enum (GthFileData *file_data,
 
 static char *
 get_attribute_value (GthFileData *file_data,
-	             char        *match)
+		     const char  *attribute)
 {
-	GRegex    *re;
-	char     **a;
-	char      *attribute = NULL;
-	char      *value = NULL;
+	char *value;
 
-	re = g_regex_new ("%A\\{([^}]+)\\}", 0, 0, NULL);
-	a = g_regex_split (re, match, 0);
-	if (g_strv_length (a) >= 2)
-		attribute = g_strstrip (a[1]);
+	if (_g_str_empty (attribute))
+		return NULL;
 
-	if ((attribute != NULL) && (*attribute != '\0')) {
-		value = gth_file_data_get_attribute_as_string (file_data, attribute);
-		if (value != NULL) {
-			char *tmp_value;
-
-			tmp_value = _g_utf8_replace (value, "[\r\n]", " ");
-			g_free (value);
-			value = tmp_value;
-		}
+	value = gth_file_data_get_attribute_as_string (file_data, attribute);
+	if (value != NULL) {
+		char *tmp = _g_utf8_replace_pattern (value, "[\r\n]", " ");
+		g_free (value);
+		value = tmp;
 	}
-
-	g_strfreev (a);
-	g_regex_unref (re);
 
 	return value;
 }
 
 
 static gboolean
-template_eval_cb (const GMatchInfo *info,
-		  GString          *res,
-		  gpointer          data)
+template_eval_cb (TemplateFlags   flags,
+		  gunichar        parent_code,
+		  gunichar        code,
+		  char          **args,
+		  GString        *result,
+		  gpointer        user_data)
 {
-	TemplateData *template_data = data;
-	char         *r = NULL;
-	char         *match;
+	TemplateData *template_data = user_data;
+	char         *text = NULL;
+	char         *path;
+	GTimeVal      timeval;
 
-	match = g_match_info_fetch (info, 0);
+	switch (code) {
+	case '#':
+		text = _g_template_replace_enumerator (args[0], template_data->n);
+		break;
 
-	if (strncmp (match, "#", 1) == 0) {
-		char *format;
+	case 'A':
+		text = get_attribute_value (template_data->file_data, args[0]);
+		break;
 
-		format = g_strdup_printf ("%%0%" G_GSIZE_FORMAT "d", strlen (match));
-		r = g_strdup_printf (format, template_data->n);
+	case 'E':
+		path = g_file_get_path (template_data->file_data->file);
+		text = g_strdup (_g_path_get_extension (path));
+		g_free (path);
+		break;
 
-		g_free (format);
-	}
-	else if (strncmp (match, "%A", 2) == 0) {
-		r = get_attribute_value (template_data->file_data, match);
-		/*if (r == NULL)
-			*template_data->error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_FAILED, _("Malformed template"));*/
-	}
-	else if (strcmp (match, "%E") == 0) {
-		char *uri;
+	case 'F':
+		path = g_file_get_path (template_data->file_data->file);
+		text = g_strdup (_g_path_get_basename (path));
+		g_free (path);
+		break;
 
-		uri = g_file_get_uri (template_data->file_data->file);
-		r = g_strdup (_g_uri_get_file_extension (uri));
+	case 'N':
+		text = get_original_enum (template_data->file_data);
+		break;
 
-		g_free (uri);
-	}
-	else if (strcmp (match, "%F") == 0) {
-		char *basename;
+	case 'D':
+		if (gth_file_data_get_digitalization_time (template_data->file_data, &timeval))
+			text = _g_time_val_strftime (&timeval, (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		break;
 
-		basename = g_file_get_basename (template_data->file_data->file);
-		r = _g_uri_remove_extension (basename);
-
-		g_free (basename);
-	}
-	else if (strcmp (match, "%N") == 0) {
-		r = get_original_enum (template_data->file_data, match);
-	}
-	else if ((strncmp (match, "%D", 2) == 0) || (strncmp (match, "%M", 2) == 0)) {
-		gboolean value_available = FALSE;
-		GTimeVal timeval;
-
-		if (strncmp (match, "%D", 2) == 0) {
-			value_available = gth_file_data_get_digitalization_time (template_data->file_data, &timeval);
-		}
-		else if (strncmp (match, "%M", 2) == 0) {
-			timeval = *gth_file_data_get_modification_time (template_data->file_data);
-			value_available = TRUE;
-		}
-
-		if (value_available) {
-			GRegex  *re;
-			char   **a;
-			char    *format = NULL;
-
-			/* Get the date format */
-
-			re = g_regex_new ("%[A-Z]\\{([^}]+)\\}", 0, 0, NULL);
-			a = g_regex_split (re, match, 0);
-			if (g_strv_length (a) >= 2)
-				format = g_strstrip (a[1]);
-			r = _g_time_val_strftime (&timeval, format);
-
-			g_strfreev (a);
-			g_regex_unref (re);
-		}
+	case 'M':
+		timeval = *gth_file_data_get_modification_time (template_data->file_data);
+		text = _g_time_val_strftime (&timeval, (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		break;
 	}
 
-	if (r != NULL)
-		g_string_append (res, r);
+	if (text != NULL) {
+		g_string_append (result, text);
+		g_free (text);
+	}
 
-	g_free (r);
-	g_free (match);
+	return FALSE;
+}
+
+
+static gboolean
+collect_file_attributes_cb (gunichar   parent_code,
+			    gunichar   code,
+			    char     **args,
+			    gpointer   user_data)
+{
+	GHashTable *attributes = user_data;
+	int         i;
+
+	switch (code) {
+	case 'A':
+		g_hash_table_add (attributes, g_strdup (args[0]));
+		break;
+
+	case 'D':
+		for (i = 0; FileDataDigitalizationTags[i] != NULL; i++)
+			g_hash_table_add (attributes, g_strdup (FileDataDigitalizationTags[i]));
+		break;
+
+	case 'M':
+		g_hash_table_add (attributes, g_strdup (G_FILE_ATTRIBUTE_TIME_MODIFIED "," G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC));
+		break;
+	}
 
 	return FALSE;
 }
@@ -263,11 +238,13 @@ template_eval_cb (const GMatchInfo *info,
 static char *
 get_required_attributes (DialogData *data)
 {
-	GtkTreeIter  iter;
-	GString     *required_attributes;
-	const char  *template;
+	GHashTable   *attributes;
+	GtkTreeIter   iter;
+	char        **attributev;
+	char         *result;
 
-	required_attributes = g_string_new (GFILE_STANDARD_ATTRIBUTES);
+	attributes = g_hash_table_new (g_str_hash, g_str_equal);
+	g_hash_table_add (attributes, g_strdup (GFILE_STANDARD_ATTRIBUTES));
 
 	/* attributes required for sorting */
 
@@ -279,52 +256,24 @@ get_required_attributes (DialogData *data)
 				    SORT_DATA_COLUMN, &sort_type,
 				    -1);
 
-		if ((sort_type->required_attributes != NULL) && ! g_str_equal (sort_type->required_attributes, "")) {
-			g_string_append (required_attributes, ",");
-			g_string_append (required_attributes, sort_type->required_attributes);
-		}
+		if (! _g_str_empty (sort_type->required_attributes))
+			g_hash_table_add (attributes, g_strdup (sort_type->required_attributes));
 	}
 
 	/* attributes required for renaming */
 
-	template = gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("template_entry")));
+	_g_template_for_each_token (gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("template_entry"))),
+				    0,
+				    collect_file_attributes_cb,
+				    attributes);
 
-	if (g_strstr_len (template, -1, "%A") != NULL) {
-		GRegex  *re;
-		char   **a;
-		int      i;
+	attributev = (char **) g_hash_table_get_keys_as_array (attributes, NULL);
+	result = g_strjoinv (",", attributev);
 
-		re = g_regex_new ("%A\\{([^}]+)\\}", 0, 0, NULL);
-		a = g_regex_split (re, template, 0);
-		for (i = 1; i < g_strv_length (a); i += 2) {
-			char *id;
+	g_free (attributev);
+	g_hash_table_unref (attributes);
 
-			id = g_strstrip (g_strdup (a[i]));
-			g_string_append (required_attributes, ",");
-			g_string_append (required_attributes, id);
-
-			g_free (id);
-		}
-
-		g_strfreev (a);
-		g_regex_unref (re);
-	}
-
-	if (g_strstr_len (template, -1, "%D") != NULL) {
-		int i;
-
-		for (i = 0; FileDataDigitalizationTags[i] != NULL; i++) {
-			g_string_append (required_attributes, ",");
-			g_string_append (required_attributes, FileDataDigitalizationTags[i]);
-		}
-	}
-
-	if (g_strstr_len (template, -1, "%M") != NULL) {
-		g_string_append (required_attributes, ",");
-		g_string_append (required_attributes, G_FILE_ATTRIBUTE_TIME_MODIFIED "," G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC);
-	}
-
-	return g_string_free (required_attributes, FALSE);
+	return result;
 }
 
 
@@ -356,8 +305,8 @@ update_file_list__step2 (gpointer user_data)
 	DialogData   *data = update_data->data;
 	GtkTreeIter   iter;
 	int           change_case;
-	TemplateData *template_data;
-	GRegex       *re;
+	const char   *template;
+	TemplateData  template_data;
 	GList        *scan;
 	GError       *error = NULL;
 
@@ -417,38 +366,39 @@ update_file_list__step2 (gpointer user_data)
 
 	change_case = gtk_combo_box_get_active (GTK_COMBO_BOX (data->change_case_combobox));
 
-	template_data = g_new0 (TemplateData, 1);
-	template_data->error = &error;
-	template_data->n = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (GET_WIDGET ("start_at_spinbutton")));
-	template_data->template = gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("template_entry")));
-	re = g_regex_new ("#+|%[ADEFMN](\\{[^}]+\\})?", 0, 0, NULL);
+	template = gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("template_entry")));
+	template_data.n = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (GET_WIDGET ("start_at_spinbutton")));
+
 	for (scan = data->new_file_list; scan; scan = scan->next) {
 		char *new_name;
-		char *new_name2;
+		char *tmp;
 
-		template_data->file_data = scan->data;
-		new_name = g_regex_replace_eval (re, template_data->template, -1, 0, 0, template_eval_cb, template_data, &error);
-		if (error != NULL)
-			break;
+		template_data.file_data = (GthFileData *) scan->data;
+		new_name = _g_template_eval (template,
+					     0,
+					     template_eval_cb,
+					     &template_data);
 
 		switch (change_case) {
 		case GTH_CHANGE_CASE_LOWER:
-			new_name2 = g_utf8_strdown (new_name, -1);
+			tmp = g_utf8_strdown (new_name, -1);
+			g_free (new_name);
+			new_name = tmp;
 			break;
+
 		case GTH_CHANGE_CASE_UPPER:
-			new_name2 = g_utf8_strup (new_name, -1);
+			tmp = g_utf8_strup (new_name, -1);
+			g_free (new_name);
+			new_name = tmp;
 			break;
+
 		default:
-			new_name2 = g_strdup (new_name);
 			break;
 		}
 
-		data->new_names_list = g_list_prepend (data->new_names_list, new_name2);
-		template_data->n = template_data->n + 1;
-
-		g_free (new_name);
+		data->new_names_list = g_list_prepend (data->new_names_list, new_name);
+		template_data.n++;
 	}
-	g_regex_unref (re);
 	data->new_names_list = g_list_reverse (data->new_names_list);
 
 	if (update_data->ready_func)
@@ -468,7 +418,7 @@ load_file_data_task_completed_cb (GthTask  *task,
 
 	gtk_widget_hide (GET_WIDGET ("task_box"));
 	gtk_widget_set_sensitive (GET_WIDGET ("options_table"), TRUE);
-	gtk_widget_set_sensitive (GET_WIDGET ("ok_button"), TRUE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, TRUE);
 
 	data->tasks = g_list_remove (data->tasks, update_data->task);
 
@@ -511,6 +461,7 @@ update_file_list (DialogData *data,
 
 		required_attributes = get_required_attributes (data);
 		reload_required = attribute_list_reload_required (data->required_attributes, required_attributes);
+
 		g_free (data->required_attributes);
 		data->required_attributes = required_attributes;
 
@@ -518,7 +469,7 @@ update_file_list (DialogData *data,
 			GtkWidget *child;
 
 			gtk_widget_set_sensitive (GET_WIDGET ("options_table"), FALSE);
-			gtk_widget_set_sensitive (GET_WIDGET ("ok_button"), FALSE);
+			gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, FALSE);
 			gtk_widget_show (GET_WIDGET ("task_box"));
 
 			update_data->task = gth_load_file_data_task_new (data->file_list, data->required_attributes);
@@ -605,7 +556,7 @@ ok_button_clicked__step2 (GError   *error,
 	new_files = g_list_reverse (new_files);
 
 	task = gth_rename_task_new (old_files, new_files);
-	gth_browser_exec_task (data->browser, task, FALSE);
+	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (task);
 	destroy_dialog (data);
@@ -647,10 +598,6 @@ dialog_response_cb (GtkDialog *dialog,
 			destroy_dialog (data);
 		break;
 
-	case GTK_RESPONSE_HELP:
-		show_help_dialog (GTK_WINDOW (dialog), "pix-rename-series");
-		break;
-
 	case GTK_RESPONSE_OK:
 		ok_button_clicked (data);
 		break;
@@ -685,10 +632,10 @@ update_preview__step2 (GError   *error,
 
 		d = _gtk_message_dialog_new (GTK_WINDOW (data->dialog),
 					     GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-					     GTK_STOCK_DIALOG_ERROR,
+					     _GTK_ICON_NAME_DIALOG_ERROR,
 					     _("Could not rename the files"),
 					     error->message,
-					     GTK_STOCK_OK, GTK_RESPONSE_OK,
+					     _GTK_LABEL_OK, GTK_RESPONSE_OK,
 					     NULL);
 		g_signal_connect (d, "response", G_CALLBACK (error_dialog_response_cb), data);
 		gtk_window_present (GTK_WINDOW (d));
@@ -723,23 +670,6 @@ dlg_rename_series_update_preview (DialogData *data)
 }
 
 
-static void
-template_entry_icon_press_cb (GtkEntry             *entry,
-                              GtkEntryIconPosition  icon_pos,
-                              GdkEvent             *event,
-                              gpointer              user_data)
-{
-	DialogData *data = user_data;
-
-	data->help_visible = ! data->help_visible;
-
-	if (data->help_visible)
-		gtk_widget_show (GET_WIDGET("template_help_table"));
-	else
-		gtk_widget_hide (GET_WIDGET("template_help_table"));
-}
-
-
 static gboolean
 update_preview_after_delay_cb (gpointer user_data)
 {
@@ -768,48 +698,41 @@ update_preview_cb (GtkWidget  *widget,
 
 
 static void
-template_editor_dialog_response_cb (GtkDialog *dialog,
-				    int        response_id,
-				    gpointer   user_data)
-{
-	DialogData *data = user_data;
-	char       *template;
-	GError     *error = NULL;
-
-	if (response_id != GTK_RESPONSE_OK) {
-		gtk_widget_destroy (GTK_WIDGET (dialog));
-		return;
-	}
-
-	template = gth_template_editor_dialog_get_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog), &error);
-	if (error != NULL) {
-		_gtk_error_dialog_from_gerror_show (GTK_WINDOW (dialog), _("Could not save the template"), error);
-		g_clear_error (&error);
-		return;
-	}
-
-	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("template_entry")), template);
-	gtk_widget_destroy (GTK_WIDGET (dialog));
-
-	g_free (template);
-}
-
-
-static void
 edit_template_button_clicked_cb (GtkWidget  *widget,
 				 DialogData *data)
 {
 	GtkWidget *dialog;
 
-	dialog = gth_template_editor_dialog_new (Rename_Special_Codes, 8, _("Edit Template"), GTK_WINDOW (data->dialog));
+	dialog = gth_template_editor_dialog_new (Rename_Special_Codes,
+						 G_N_ELEMENTS (Rename_Special_Codes),
+						 0,
+						 _("Edit Template"),
+						 GTK_WINDOW (data->dialog));
 	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
 						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("template_entry"))));
 	g_signal_connect (dialog,
 			  "response",
-			  G_CALLBACK (template_editor_dialog_response_cb),
-			  data);
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET ("template_entry"));
 	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 	gtk_window_present (GTK_WINDOW (dialog));
+}
+
+
+static void
+revert_template_button_clicked_cb (GtkWidget  *widget,
+				   DialogData *data)
+{
+	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("template_entry")),
+			    g_settings_get_string (data->settings, PREF_RENAME_SERIES_TEMPLATE));
+}
+
+
+static void
+return_pressed_callback (GtkDialog *dialog,
+			 gpointer   user_data)
+{
+	ok_button_clicked (user_data);
 }
 
 
@@ -836,7 +759,7 @@ dlg_rename_series (GthBrowser *browser,
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("rename-series.ui", "rename_series");
-	data->settings = g_settings_new (PIX_RENAME_SERIES_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_RENAME_SERIES_SCHEMA);
 	data->file_list = _g_file_list_dup (file_list);
 	data->first_update = TRUE;
 	data->template_changed = TRUE;
@@ -844,7 +767,21 @@ dlg_rename_series (GthBrowser *browser,
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "rename_series_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Rename"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_("_Rename"), GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	gth_browser_set_dialog (browser, "rename_series", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
 
@@ -855,7 +792,6 @@ dlg_rename_series (GthBrowser *browser,
 					       G_TYPE_STRING);
 	data->list_view = gtk_tree_view_new_with_model (GTK_TREE_MODEL (data->list_store));
 	g_object_unref (data->list_store);
-	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (data->list_view), TRUE);
 
 	renderer = gtk_cell_renderer_text_new ();
 	g_object_set (renderer, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
@@ -968,12 +904,12 @@ dlg_rename_series (GthBrowser *browser,
 			  G_CALLBACK (dialog_response_cb),
 			  data);
 	g_signal_connect (GET_WIDGET ("template_entry"),
-  			  "icon-press",
-  			  G_CALLBACK (template_entry_icon_press_cb),
-  			  data);
-	g_signal_connect (GET_WIDGET ("template_entry"),
 			  "changed",
 			  G_CALLBACK (update_preview_cb),
+			  data);
+	g_signal_connect (GET_WIDGET("template_entry"),
+			  "activate",
+			  G_CALLBACK (return_pressed_callback),
 			  data);
 	g_signal_connect (GET_WIDGET ("start_at_spinbutton"),
 			  "value_changed",
@@ -984,17 +920,21 @@ dlg_rename_series (GthBrowser *browser,
 			  G_CALLBACK (update_preview_cb),
 			  data);
 	g_signal_connect (data->change_case_combobox,
-                          "changed",
-                          G_CALLBACK (update_preview_cb),
-                          data);
+			  "changed",
+			  G_CALLBACK (update_preview_cb),
+			  data);
 	g_signal_connect (GET_WIDGET ("reverse_order_checkbutton"),
 			  "toggled",
 			  G_CALLBACK (update_preview_cb),
 			  data);
-        g_signal_connect (GET_WIDGET ("edit_template_button"),
-                          "clicked",
-                          G_CALLBACK (edit_template_button_clicked_cb),
-                          data);
+	g_signal_connect (GET_WIDGET ("edit_template_button"),
+			  "clicked",
+			  G_CALLBACK (edit_template_button_clicked_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("revert_template_button"),
+			  "clicked",
+			  G_CALLBACK (revert_template_button_clicked_cb),
+			  data);
 
 	/* Run dialog. */
 

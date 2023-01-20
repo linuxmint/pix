@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,18 +21,21 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-image-saver-tga.h"
 #include "preferences.h"
-
-
-G_DEFINE_TYPE (GthImageSaverTga, gth_image_saver_tga, GTH_TYPE_IMAGE_SAVER)
 
 
 struct _GthImageSaverTgaPrivate {
 	GtkBuilder *builder;
 	GSettings  *settings;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthImageSaverTga,
+			 gth_image_saver_tga,
+			 GTH_TYPE_IMAGE_SAVER,
+			 G_ADD_PRIVATE (GthImageSaverTga))
 
 
 static void
@@ -219,7 +222,7 @@ _cairo_surface_write_as_tga (cairo_surface_t  *image,
 	width     = cairo_image_surface_get_width (image);
 	height    = cairo_image_surface_get_height (image);
 	alpha     = _cairo_image_surface_get_has_alpha (image);
-	pixels    = cairo_image_surface_get_data (image);
+	pixels    = _cairo_image_surface_flush_and_get_data (image);
 	rowstride = cairo_image_surface_get_stride (image);
 
 	buffer_data = gth_buffer_data_new ();
@@ -334,8 +337,6 @@ gth_image_saver_tga_class_init (GthImageSaverTgaClass *klass)
 	GObjectClass       *object_class;
 	GthImageSaverClass *image_saver_class;
 
-	g_type_class_add_private (klass, sizeof (GthImageSaverTgaPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_image_saver_tga_finalize;
 
@@ -355,7 +356,7 @@ gth_image_saver_tga_class_init (GthImageSaverTgaClass *klass)
 static void
 gth_image_saver_tga_init (GthImageSaverTga *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_SAVER_TGA, GthImageSaverTgaPrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_TGA_SCHEMA);
+	self->priv = gth_image_saver_tga_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_TGA_SCHEMA);
 	self->priv->builder = NULL;
 }

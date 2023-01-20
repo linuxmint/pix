@@ -1,6 +1,6 @@
 %{
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2003, 2010 Free Software Foundation, Inc.
  *
@@ -15,8 +15,7 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02111-1307, USA.
+ *  along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <glib.h>
@@ -30,6 +29,9 @@ GFileInputStream *yy_istream;
 	gssize n = g_input_stream_read (G_INPUT_STREAM (yy_istream), buf, max_size, NULL, NULL);	\
 	result = (n <= 0 ? YY_NULL : n);								\
 }
+
+#undef YY_FATAL_ERROR
+#define YY_FATAL_ERROR(msg) gth_albumtheme_yyfatalerror(msg)
 
 static int before_string = 0; /* the start condition before entering in STRING */
 
@@ -76,7 +78,7 @@ string           [^']*
 					return PRINT;
 				}
 <FUNCTION>{attribute_name}	{
-					if (g_str_equal (yytext, "eval") || g_str_equal (yytext, "translate")) 
+					if (g_str_equal (yytext, "eval") || g_str_equal (yytext, "translate"))
 						BEGIN (CONDITION);
 					else
 						BEGIN (ATTRIBUTES);
@@ -176,7 +178,7 @@ string           [^']*
 				}
 <QUOTE,CONDITION>".."		{
 					return RANGE;
-				}				
+				}
 <QUOTE,CONDITION>"in"		{
 					return IN;
 				}
@@ -187,7 +189,7 @@ string           [^']*
 <QUOTE,CONDITION>{name}		{
 					yylval.text = g_strdup (yytext);
 					return VARIABLE;
-				}		
+				}
 <ATTRIBUTES,QUOTE,CONDITION>[ \t\n]	{
 					/* Eat spaces inside tag. */
 				}

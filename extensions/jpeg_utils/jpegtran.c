@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2001, 2002, 2009 The Free Software Foundation, Inc.
  *
@@ -46,7 +46,7 @@
 #include <string.h>
 #include <jpeglib.h>
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "jmemorydest.h"
 #include "jmemorysrc.h"
 #include "jpegtran.h"
@@ -189,7 +189,15 @@ jpegtran_internal (struct jpeg_decompress_struct  *srcinfo,
 	transformoption.trim = (mcu_action == JPEG_MCU_ACTION_TRIM);
 	transformoption.force_grayscale = FALSE;
 #if JPEG_LIB_VERSION >= 80
-	transformoption.crop = 0;
+	transformoption.perfect = (mcu_action == JPEG_MCU_ACTION_ABORT);
+	transformoption.crop = FALSE;
+	transformoption.crop_width_set = FALSE;
+	transformoption.crop_height_set = FALSE;
+	transformoption.crop_xoffset_set = FALSE;
+	transformoption.crop_yoffset_set = FALSE;
+#ifdef LIBJPEG_TURBO_VERSION
+	transformoption.slow_hflip = FALSE;
+#endif
 #endif
 
 	/* Enable saving of extra markers that we want to copy */
@@ -207,7 +215,7 @@ jpegtran_internal (struct jpeg_decompress_struct  *srcinfo,
 					       transform))
 	{
 		if (error != NULL)
-                	g_set_error (error, JPEG_ERROR, JPEG_ERROR_MCU, "MCU Error");
+			g_set_error (error, JPEG_ERROR, JPEG_ERROR_MCU, "MCU Error");
 		return FALSE;
 	}
 
@@ -225,7 +233,7 @@ jpegtran_internal (struct jpeg_decompress_struct  *srcinfo,
 	/* Do not output a JFIF marker for EXIF thumbnails.
 	 * This is not the optimal way to detect the difference
 	 * between a thumbnail and a normal image, but it works
-	 * well for Pix. */
+	 * well for gThumb. */
 	if (option == JCOPYOPT_NONE)
 		dstinfo->write_JFIF_header = FALSE;
 

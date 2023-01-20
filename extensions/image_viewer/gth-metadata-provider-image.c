@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,13 +23,16 @@
 #include <setjmp.h>
 #include <glib.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
-#include <pix.h>
+#include <gthumb.h>
 #if HAVE_LIBJPEG
 #include <extensions/jpeg_utils/jpeg-info.h>
 #endif /* HAVE_LIBJPEG */
 #if HAVE_LIBWEBP
 #include <webp/decode.h>
 #endif /* HAVE_LIBWEBP */
+#if HAVE_LIBJXL
+#include <jxl/decode.h>
+#endif /* HAVE_LIBJXL */
 #include "gth-metadata-provider-image.h"
 
 
@@ -41,16 +44,17 @@ G_DEFINE_TYPE (GthMetadataProviderImage, gth_metadata_provider_image, GTH_TYPE_M
 
 static gboolean
 gth_metadata_provider_image_can_read (GthMetadataProvider  *self,
+				      GthFileData          *file_data,
 				      const char           *mime_type,
 				      char                **attribute_v)
 {
 	return _g_file_attributes_matches_any_v ("general::format,"
-			                         "general::dimensions,"
+						 "general::dimensions,"
 						 "image::width,"
 						 "image::height,"
 						 "frame::width,"
 						 "frame::height",
-					         attribute_v);
+						 attribute_v);
 }
 
 
@@ -62,7 +66,8 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 {
 	gboolean          format_recognized;
 	GFileInputStream *stream;
-	char             *description;
+	char             *description = NULL;
+	gboolean          free_description = FALSE;
 	int               width;
 	int               height;
 	const char       *mime_type = NULL;
@@ -73,16 +78,21 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 	if (stream != NULL) {
 		int     buffer_size;
 		guchar *buffer;
-		gssize  size;
+		gsize   size;
 
 		buffer_size = BUFFER_SIZE;
 		buffer = g_new (guchar, buffer_size);
-		size = g_input_stream_read (G_INPUT_STREAM (stream),
-					    buffer,
-					    buffer_size,
-					    cancellable,
-					    NULL);
-		if (size >= 0) {
+		if (! g_input_stream_read_all (G_INPUT_STREAM (stream),
+					       buffer,
+					       buffer_size,
+					       &size,
+					       cancellable,
+					       NULL))
+		{
+			size = 0;
+		}
+
+		if (size > 0) {
 			if ((size >= 24)
 
 			    /* PNG signature */
@@ -120,7 +130,9 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 			{
 				/* JPEG */
 
-				GthTransform orientation;
+				JpegInfoData jpeg_info;
+
+				_jpeg_info_data_init (&jpeg_info);
 
 				if (g_seekable_can_seek (G_SEEKABLE (stream))) {
 					g_seekable_seek (G_SEEKABLE (stream), 0, G_SEEK_SET, cancellable, NULL);
@@ -130,27 +142,33 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 					stream = g_file_read (file_data->file, cancellable, NULL);
 				}
 
-				if (_jpeg_get_image_info (G_INPUT_STREAM (stream),
-							  &width,
-							  &height,
-							  &orientation,
-							  cancellable,
-							  NULL))
-				{
+				_jpeg_info_get_from_stream (G_INPUT_STREAM (stream),
+							    _JPEG_INFO_IMAGE_SIZE | _JPEG_INFO_EXIF_ORIENTATION,
+							    &jpeg_info,
+							    cancellable,
+							    NULL);
+
+				if (jpeg_info.valid & _JPEG_INFO_IMAGE_SIZE) {
+					width = jpeg_info.width;
+					height = jpeg_info.height;
 					description = _("JPEG");
 					mime_type = "image/jpeg";
 					format_recognized = TRUE;
 
-					if ((orientation == GTH_TRANSFORM_ROTATE_90)
-					     ||	(orientation == GTH_TRANSFORM_ROTATE_270)
-					     ||	(orientation == GTH_TRANSFORM_TRANSPOSE)
-					     ||	(orientation == GTH_TRANSFORM_TRANSVERSE))
-					{
-						int tmp = width;
-						width = height;
-						height = tmp;
+					if (jpeg_info.valid & _JPEG_INFO_EXIF_ORIENTATION) {
+						if ((jpeg_info.orientation == GTH_TRANSFORM_ROTATE_90)
+						     ||	(jpeg_info.orientation == GTH_TRANSFORM_ROTATE_270)
+						     ||	(jpeg_info.orientation == GTH_TRANSFORM_TRANSPOSE)
+						     ||	(jpeg_info.orientation == GTH_TRANSFORM_TRANSVERSE))
+						{
+							int tmp = width;
+							width = height;
+							height = tmp;
+						}
 					}
 				}
+
+				_jpeg_info_data_dispose (&jpeg_info);
 			}
 #endif /* HAVE_LIBJPEG */
 
@@ -170,6 +188,44 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 				}
 			}
 #endif /* HAVE_LIBWEBP */
+
+#if HAVE_LIBJXL
+			else if (size >= 12) {
+				JxlSignature sig = JxlSignatureCheck(buffer, size);
+				if (sig > JXL_SIG_INVALID) {
+					JxlDecoder *dec = JxlDecoderCreate(NULL);
+					if (dec != NULL) {
+						if (JxlDecoderSubscribeEvents(dec, JXL_DEC_BASIC_INFO) == JXL_DEC_SUCCESS) {
+							if (JxlDecoderSetInput(dec, buffer, size) == JXL_DEC_SUCCESS) {
+								JxlDecoderStatus status = JXL_DEC_NEED_MORE_INPUT;
+								while (status != JXL_DEC_SUCCESS) {
+									status = JxlDecoderProcessInput(dec);
+									if (status == JXL_DEC_ERROR)
+										break;
+									if (status == JXL_DEC_NEED_MORE_INPUT)
+										break;
+									if (status == JXL_DEC_BASIC_INFO) {
+										JxlBasicInfo info;
+										if (JxlDecoderGetBasicInfo(dec, &info) == JXL_DEC_SUCCESS) {
+											width = info.xsize;
+											height = info.ysize;
+											if (sig == JXL_SIG_CONTAINER)
+												description = _("JPEG XL container");
+											else
+												description = _("JPEG XL");
+											mime_type = "image/jxl";
+											format_recognized = TRUE;
+										}
+										break;
+									}
+								}
+							}
+						}
+						JxlDecoderDestroy(dec);
+					}
+				}
+			}
+#endif /* HAVE_LIBJXL */
 
 			else if ((size >= 26)
 				 && (strncmp ((char *) buffer, "gimp xcf ", 9) == 0))
@@ -221,6 +277,7 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 			if (format != NULL) {
 				format_recognized = TRUE;
 				description = gdk_pixbuf_format_get_description (format);
+				free_description = TRUE;
 			}
 
 			g_free (filename);
@@ -245,6 +302,9 @@ gth_metadata_provider_image_read (GthMetadataProvider *self,
 
 		g_free (size);
 	}
+
+	if (free_description)
+		g_free (description);
 }
 
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef GTH_FILE_SOURCE_CATALOGS_H
 #define GTH_FILE_SOURCE_CATALOGS_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 #define GTH_TYPE_FILE_SOURCE_CATALOGS         (gth_file_source_catalogs_get_type ())
 #define GTH_FILE_SOURCE_CATALOGS(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_FILE_SOURCE_CATALOGS, GthFileSourceCatalogs))
@@ -49,6 +49,7 @@ struct _GthFileSourceCatalogsClass
 GType gth_file_source_catalogs_get_type (void) G_GNUC_CONST;
 void  gth_catalog_manager_remove_files  (GtkWindow   *parent,
 				  	 GthFileData *location,
-				  	 GList       *file_list /* GthFileData list */);
+				  	 GList       *file_list /* GFile list */,
+					 gboolean     notify);
 
 #endif /* GTH_FILE_SOURCE_CATALOGS_H */

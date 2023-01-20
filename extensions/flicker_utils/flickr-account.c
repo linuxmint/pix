@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -116,7 +116,7 @@ void
 flickr_account_set_accountname (FlickrAccount *self,
 				const char    *value)
 {
-	_g_strset (&self->accountname, value);
+	_g_str_set (&self->accountname, value);
 }
 
 

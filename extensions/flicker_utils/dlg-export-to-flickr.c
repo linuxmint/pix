@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "dlg-export-to-flickr.h"
 #include "flickr-account.h"
 #include "flickr-photoset.h"
@@ -103,12 +103,10 @@ completed_messagedialog_response_cb (GtkDialog *dialog,
 
 	case _OPEN_IN_BROWSER_RESPONSE:
 		{
-			GdkScreen    *screen;
 			OAuthAccount *account;
 			char         *url = NULL;
 			GError       *error = NULL;
 
-			screen = gtk_widget_get_screen (GTK_WIDGET (dialog));
 			gtk_widget_destroy (GTK_WIDGET (dialog));
 
 			account = web_service_get_current_account (WEB_SERVICE (data->service));
@@ -132,7 +130,7 @@ completed_messagedialog_response_cb (GtkDialog *dialog,
 			else if (data->photoset->id != NULL)
 				url = g_strconcat (data->server->url, "/photos/", account->id, "/sets/", data->photoset->id, NULL);
 
-			if ((url != NULL) && ! gtk_show_uri (screen, url, 0, &error)) {
+			if ((url != NULL) && ! gtk_show_uri_on_window (GTK_WINDOW (data->browser), url, GDK_CURRENT_TIME, &error)) {
 				if (data->service != NULL)
 					gth_task_dialog (GTH_TASK (data->service), TRUE, NULL);
 				_gtk_error_dialog_from_gerror_run (GTK_WINDOW (data->browser), _("Could not connect to the server"), error);
@@ -153,14 +151,18 @@ completed_messagedialog_response_cb (GtkDialog *dialog,
 static void
 export_completed_with_success (DialogData *data)
 {
-	GtkBuilder *builder;
-	GtkWidget  *dialog;
+	GtkWidget *dialog;
 
 	gth_task_dialog (GTH_TASK (data->service), TRUE, NULL);
 
-	builder = _gtk_builder_new_from_file ("flicker-export-completed.ui", "flicker_utils");
-	dialog = _gtk_builder_get_widget (builder, "completed_messagedialog");
-	g_object_set_data_full (G_OBJECT (dialog), "builder", builder, g_object_unref);
+	dialog = _gtk_message_dialog_new (GTK_WINDOW (data->browser),
+					  GTK_DIALOG_MODAL,
+					  NULL,
+					  _("Files successfully uploaded to the server."),
+					  NULL,
+					  _GTK_LABEL_CLOSE, GTK_RESPONSE_CLOSE,
+					  _("_Open in the Browser"), _OPEN_IN_BROWSER_RESPONSE,
+					  NULL);
 	g_signal_connect (dialog,
 			  "delete-event",
 			  G_CALLBACK (gtk_true),
@@ -170,8 +172,6 @@ export_completed_with_success (DialogData *data)
 			  G_CALLBACK (completed_messagedialog_response_cb),
 			  data);
 
-	gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (data->browser));
-	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 	gtk_window_present (GTK_WINDOW (dialog));
 }
 
@@ -288,10 +288,6 @@ export_dialog_response_cb (GtkDialog *dialog,
 	DialogData *data = user_data;
 
 	switch (response_id) {
-	case GTK_RESPONSE_HELP:
-		show_help_dialog (GTK_WINDOW (data->browser), "pix-export-social");
-		break;
-
 	case GTK_RESPONSE_DELETE_EVENT:
 	case GTK_RESPONSE_CANCEL:
 		gth_file_list_cancel (GTH_FILE_LIST (data->list_view), (DataFunc) destroy_dialog, data);
@@ -428,7 +424,7 @@ photoset_list_ready_cb (GObject      *source_object,
 		gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("photoset_liststore")), &iter);
 		gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("photoset_liststore")), &iter,
 				    PHOTOSET_DATA_COLUMN, photoset,
-				    PHOTOSET_ICON_COLUMN, "file-catalog",
+				    PHOTOSET_ICON_COLUMN, "file-catalog-symbolic",
 				    PHOTOSET_TITLE_COLUMN, photoset->title,
 				    PHOTOSET_N_PHOTOS_COLUMN, n_photos,
 				    -1);
@@ -436,7 +432,7 @@ photoset_list_ready_cb (GObject      *source_object,
 		g_free (n_photos);
 	}
 
-	gtk_widget_set_sensitive (GET_WIDGET ("upload_button"), TRUE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, TRUE);
 
 	gth_task_dialog (GTH_TASK (data->service), TRUE, NULL);
 
@@ -520,11 +516,24 @@ dlg_export_to_flickr (FlickrServer *server,
 	data = g_new0 (DialogData, 1);
 	data->server = server;
 	data->browser = browser;
-	data->settings = g_settings_new (PIX_FLICKR_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_FLICKR_SCHEMA);
 	data->location = gth_file_data_dup (gth_browser_get_location_data (browser));
 	data->builder = _gtk_builder_new_from_file ("export-to-flickr.ui", "flicker_utils");
-	data->dialog = _gtk_builder_get_widget (data->builder, "export_dialog");
 	data->cancellable = g_cancellable_new ();
+
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_UPLOAD, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 
 	{
 		GtkCellLayout   *cell_layout;
@@ -610,7 +619,7 @@ dlg_export_to_flickr (FlickrServer *server,
 
 	gtk_entry_set_text (GTK_ENTRY (gtk_bin_get_child (GTK_BIN (data->photoset_combobox))), g_file_info_get_edit_name (data->location->info));
 
-	gtk_widget_set_sensitive (GET_WIDGET ("upload_button"), FALSE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, FALSE);
 
 	title = g_strdup_printf (_("Export to %s"), data->server->name);
 	gtk_window_set_title (GTK_WINDOW (data->dialog), title);
@@ -662,7 +671,7 @@ dlg_export_to_flickr (FlickrServer *server,
 			  data);
 
 	data->progress_dialog = gth_progress_dialog_new (GTK_WINDOW (data->browser));
-	gth_progress_dialog_add_task (GTH_PROGRESS_DIALOG (data->progress_dialog), GTH_TASK (data->service));
+	gth_progress_dialog_add_task (GTH_PROGRESS_DIALOG (data->progress_dialog), GTH_TASK (data->service), GTH_TASK_FLAGS_DEFAULT);
 
 	web_service_autoconnect (WEB_SERVICE (data->service));
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,23 +22,19 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gtk/gtk.h>
+#include <gthumb.h>
 
-#define DEFINE_ACTION(x) void x (GtkAction *action, gpointer data);
+void gth_browser_show_selection        (GthBrowser *browser,
+					int         n_selection);
+void gth_browser_add_to_selection      (GthBrowser *browser,
+					int         n_selection);
+void gth_browser_remove_from_selection (GthBrowser *browser,
+					int         n_selection);
 
-void gth_browser_activate_action_show_selection        (GthBrowser *browser,
-							int         n_selection);
-void gth_browser_activate_action_add_to_selection      (GthBrowser *browser,
-						        int         n_selection);
-void gth_browser_activate_action_remove_from_selection (GthBrowser *browser,
-						        int         n_selection);
-
-DEFINE_ACTION(gth_browser_activate_action_go_selection_1)
-DEFINE_ACTION(gth_browser_activate_action_go_selection_2)
-DEFINE_ACTION(gth_browser_activate_action_go_selection_3)
-DEFINE_ACTION(gth_browser_activate_action_add_to_selection_1)
-DEFINE_ACTION(gth_browser_activate_action_add_to_selection_2)
-DEFINE_ACTION(gth_browser_activate_action_add_to_selection_3)
-DEFINE_ACTION(gth_browser_activate_action_selection_go_to_container)
+DEF_ACTION_CALLBACK (gth_browser_activate_go_to_selection)
+DEF_ACTION_CALLBACK (gth_browser_activate_add_to_selection)
+DEF_ACTION_CALLBACK (gth_browser_activate_remove_from_selection)
+DEF_ACTION_CALLBACK (gth_browser_activate_remove_from_current_selection)
+DEF_ACTION_CALLBACK (gth_browser_activate_go_to_file_container)
 
 #endif /* ACTIONS_H */

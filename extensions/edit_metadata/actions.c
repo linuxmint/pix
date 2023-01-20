@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,8 @@
 
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "actions.h"
 #include "dlg-edit-metadata.h"
 #include "gth-delete-metadata-task.h"
 #include "gth-edit-comment-dialog.h"
@@ -29,9 +30,12 @@
 
 
 void
-gth_browser_activate_action_edit_comment (GtkAction  *action,
-				 	  GthBrowser *browser)
+gth_browser_activate_edit_metadata (GSimpleAction	*action,
+				    GVariant		*parameter,
+				    gpointer		 user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
+
 	dlg_edit_metadata (browser,
 			   GTH_TYPE_EDIT_COMMENT_DIALOG,
 			   "edit-comment-dialog");
@@ -39,9 +43,12 @@ gth_browser_activate_action_edit_comment (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_edit_tags (GtkAction  *action,
-				       GthBrowser *browser)
+gth_browser_activate_edit_tags (GSimpleAction	*action,
+				GVariant	*parameter,
+				gpointer	 user_data)
 {
+	GthBrowser *browser = GTH_BROWSER (user_data);
+
 	dlg_edit_metadata (browser,
 			   GTH_TYPE_EDIT_TAGS_DIALOG,
 			   "edit-tags-dialog");
@@ -49,15 +56,17 @@ gth_browser_activate_action_edit_tags (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_tool_delete_metadata (GtkAction  *action,
-						  GthBrowser *browser)
+gth_browser_activate_delete_metadata (GSimpleAction	*action,
+				      GVariant		*parameter,
+				      gpointer		 user_data)
 {
-	GtkWidget *dialog;
-	int        result;
-	GList     *items;
-	GList     *file_data_list;
-	GList     *file_list;
-	GthTask   *task;
+	GthBrowser *browser = GTH_BROWSER (user_data);
+	GtkWidget  *dialog;
+	int         result;
+	GList      *items;
+	GList      *file_data_list;
+	GList      *file_list;
+	GthTask    *task;
 
 	dialog =  gtk_message_dialog_new (GTK_WINDOW (browser),
 					  GTK_DIALOG_MODAL,
@@ -65,8 +74,8 @@ gth_browser_activate_action_tool_delete_metadata (GtkAction  *action,
 					  GTK_BUTTONS_NONE,
 					  _("Are you sure you want to permanently delete the metadata of the selected files?"));
 	gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-			        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-			        GTK_STOCK_DELETE, GTK_RESPONSE_YES,
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+			        _GTK_LABEL_DELETE, GTK_RESPONSE_YES,
 			        NULL);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 						  "%s",
@@ -82,7 +91,7 @@ gth_browser_activate_action_tool_delete_metadata (GtkAction  *action,
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
 	file_list = gth_file_data_list_to_file_list (file_data_list);
 	task = gth_delete_metadata_task_new (browser, file_list);
-	gth_browser_exec_task (browser, task, FALSE);
+	gth_browser_exec_task (browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (task);
 	_g_object_list_unref (file_list);

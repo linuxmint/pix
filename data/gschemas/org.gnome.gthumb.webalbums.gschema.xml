@@ -1,0 +1,112 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.webalbums" path="/org/gnome/gthumb/webalbums/" gettext-domain="gthumb">
+    <key name="index-file" type="s">
+      <default>'index.html'</default>
+    </key>
+    <key name="destination" type="s">
+      <default>''</default>
+    </key>
+    <key name="copy-images" type="b">
+      <default>false</default>
+    </key>
+    <key name="resize-images" type="b">
+      <default>false</default>
+    </key>
+    <key name="resize-width" type="i">
+      <default>640</default>
+    </key>
+    <key name="resize-height" type="i">
+      <default>480</default>
+    </key>
+    <key name="images-per-index" type="i">
+      <default>12</default>
+    </key>
+    <key name="single-index" type="b">
+      <default>false</default>
+    </key>
+    <key name="columns" type="i">
+      <default>4</default>
+    </key>
+    <key name="adapt-to-width" type="b">
+      <default>true</default>
+    </key>
+    <key name="sort-type" type="s">
+      <default>'file::mtime'</default>
+    </key>
+    <key name="sort-inverse" type="b">
+      <default>false</default>
+    </key>
+    <key name="header" type="s">
+      <default>'%L'</default>
+    </key>
+    <key name="footer" type="s">
+      <default>''</default>
+    </key>
+    <key name="image-page-header" type="s">
+      <default>'%F'</default>
+    </key>
+    <key name="image-page-footer" type="s">
+      <default>''</default>
+    </key>
+    <key name="theme" type="s">
+      <default>'Wiki'</default>
+    </key>
+    <key name="enable-thumbnail-caption" type="b">
+      <default>true</default>
+    </key>
+    <key name="thumbnail-caption" type="s">
+      <default>'general::datetime,general::dimensions,gth::file::display-size'</default>
+    </key>
+    <key name="enable-image-description" type="b">
+      <default>true</default>
+    </key>
+    <key name="enable-image-attributes" type="b">
+      <default>true</default>
+    </key>
+    <key name="image-attributes" type="s">
+      <default>'gth::file::display-size,standard::fast-content-type,general::dimensions,general::format,general::location,general::datetime,general::rating,Exif::Image::Make,Exif::Image::Model,Exif::Image::Software,Exif::Image::Artist,Exif::Image::Copyright,Exif::Photo::ISOSpeedRatings,Exif::Photo::BrightnessValue,Exif::Photo::FNumber,Exif::Photo::ApertureValue,Exif::Photo::MaxApertureValue,Exif::Photo::ExposureTime,Exif::Photo::ExposureProgram,Exif::Photo::ExposureIndex,Exif::Photo::ExposureBiasValue,Exif::Photo::ExposureMode,Exif::Photo::ShutterSpeedValue,Exif::Photo::MeteringMode,Exif::Photo::LightSource,Exif::Photo::WhiteBalance,Exif::Photo::Flash,Exif::Photo::FocalLength,Exif::Photo::SubjectArea,Exif::Photo::Contrast,Exif::Photo::Saturation,Exif::Photo::Sharpness'</default>
+    </key>
+    <child name="directories" schema="org.gnome.gthumb.webalbums.directories" />
+  </schema>
+
+  <schema id="org.gnome.gthumb.webalbums.directories" path="/org/gnome/gthumb/webalbums/directories/" gettext-domain="gthumb">
+    <key name="previews" type="s">
+      <default>'previews'</default>
+    </key>
+    <key name="thumbnails" type="s">
+      <default>'thumbnails'</default>
+    </key>
+    <key name="images" type="s">
+      <default>'images'</default>
+    </key>
+    <key name="html-images" type="s">
+      <default>'html'</default>
+    </key>
+    <key name="html-indexes" type="s">
+      <default>'html'</default>
+    </key>
+    <key name="theme-files" type="s">
+      <default>'theme'</default>
+    </key>
+  </schema>
+
+</schemalist>

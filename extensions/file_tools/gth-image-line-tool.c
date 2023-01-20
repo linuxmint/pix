@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <stdlib.h>
 #include <math.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-image-line-tool.h"
 
 
@@ -69,8 +69,9 @@ static void gth_image_line_tool_gth_image_tool_interface_init (GthImageViewerToo
 G_DEFINE_TYPE_WITH_CODE (GthImageLineTool,
 			 gth_image_line_tool,
 			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthImageLineTool)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_IMAGE_VIEWER_TOOL,
-					        gth_image_line_tool_gth_image_tool_interface_init))
+						gth_image_line_tool_gth_image_tool_interface_init))
 
 
 static void
@@ -87,7 +88,7 @@ gth_image_line_tool_set_viewer (GthImageViewerTool *base,
 	gth_image_viewer_set_zoom_enabled (GTH_IMAGE_VIEWER (viewer), FALSE);
 	self->priv->first_point_set = FALSE;
 
-	cursor = gdk_cursor_new (GDK_CROSSHAIR);
+	cursor = _gdk_cursor_new_for_widget (GTK_WIDGET (self->priv->viewer), GDK_CROSSHAIR);
 	gth_image_viewer_set_cursor (self->priv->viewer, cursor);
 
 	g_object_unref (cursor);
@@ -147,7 +148,7 @@ update_image_surface (GthImageLineTool *self)
 	gtk_widget_get_allocation (GTK_WIDGET (self->priv->viewer), &allocation);
 	max_size = MAX (allocation.width, allocation.height) / G_SQRT2 + 2;
 	if (scale_keeping_ratio (&width, &height, max_size, max_size, FALSE))
-		preview_image = _cairo_image_surface_scale_bilinear (image, width, height);
+		preview_image = _cairo_image_surface_scale_fast (image, width, height);
 	else
 		preview_image = cairo_surface_reference (image);
 
@@ -334,8 +335,6 @@ gth_image_line_tool_class_init (GthImageLineToolClass *class)
 {
 	GObjectClass *gobject_class;
 
-	g_type_class_add_private (class, sizeof (GthImageLineToolPrivate));
-
 	gobject_class = (GObjectClass*) class;
 	gobject_class->finalize = gth_image_line_tool_finalize;
 
@@ -353,7 +352,7 @@ gth_image_line_tool_class_init (GthImageLineToolClass *class)
 static void
 gth_image_line_tool_init (GthImageLineTool *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_LINE_TOOL, GthImageLineToolPrivate);
+	self->priv = gth_image_line_tool_get_instance_private (self);
 	self->priv->preview_image = NULL;
 	self->priv->first_point_set = FALSE;
 }

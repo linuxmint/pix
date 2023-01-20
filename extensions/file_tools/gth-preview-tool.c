@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -22,19 +22,11 @@
 #include <config.h>
 #include <stdlib.h>
 #include <math.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-preview-tool.h"
 
 
 static void gth_preview_tool_gth_image_tool_interface_init (GthImageViewerToolInterface *iface);
-
-
-G_DEFINE_TYPE_WITH_CODE (GthPreviewTool,
-			 gth_preview_tool,
-			 G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (GTH_TYPE_IMAGE_VIEWER_TOOL,
-					        gth_preview_tool_gth_image_tool_interface_init))
-
 
 
 struct _GthPreviewToolPrivate {
@@ -45,6 +37,14 @@ struct _GthPreviewToolPrivate {
 	cairo_rectangle_int_t  preview_image_area;
 	GdkRGBA                background_color;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthPreviewTool,
+			 gth_preview_tool,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthPreviewTool)
+			 G_IMPLEMENT_INTERFACE (GTH_TYPE_IMAGE_VIEWER_TOOL,
+						gth_preview_tool_gth_image_tool_interface_init))
 
 
 static void
@@ -60,7 +60,7 @@ gth_preview_tool_set_viewer (GthImageViewerTool *base,
 	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (viewer), GTH_FIT_SIZE_IF_LARGER);
 	gth_image_viewer_set_zoom_enabled (GTH_IMAGE_VIEWER (viewer), FALSE);
 
-	cursor = gdk_cursor_new (GDK_LEFT_PTR);
+	cursor = _gdk_cursor_new_for_widget (GTK_WIDGET (self->priv->viewer), GDK_LEFT_PTR);
 	gth_image_viewer_set_cursor (self->priv->viewer, cursor);
 
 	g_object_unref (cursor);
@@ -119,7 +119,7 @@ update_preview_image (GthPreviewTool *self)
 	gtk_widget_get_allocation (GTK_WIDGET (self->priv->viewer), &allocation);
 	max_size = MAX (allocation.width, allocation.height) / G_SQRT2 + 2;
 	if (scale_keeping_ratio (&width, &height, max_size, max_size, FALSE))
-		self->priv->preview_image = _cairo_image_surface_scale_bilinear (image, width, height);
+		self->priv->preview_image = _cairo_image_surface_scale_fast (image, width, height);
 	else
 		self->priv->preview_image = cairo_surface_reference (image);
 
@@ -287,8 +287,6 @@ gth_preview_tool_class_init (GthPreviewToolClass *class)
 {
 	GObjectClass *gobject_class;
 
-	g_type_class_add_private (class, sizeof (GthPreviewToolPrivate));
-
 	gobject_class = (GObjectClass*) class;
 	gobject_class->finalize = gth_preview_tool_finalize;
 }
@@ -316,7 +314,7 @@ gth_preview_tool_gth_image_tool_interface_init (GthImageViewerToolInterface *ifa
 static void
 gth_preview_tool_init (GthPreviewTool *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_PREVIEW_TOOL, GthPreviewToolPrivate);
+	self->priv = gth_preview_tool_get_instance_private (self);
 	self->priv->preview_image = NULL;
 	self->priv->background_color.red = 0.2;
 	self->priv->background_color.green = 0.2;

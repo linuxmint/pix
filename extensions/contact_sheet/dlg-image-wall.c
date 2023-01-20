@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -28,6 +28,12 @@
 
 #define GET_WIDGET(name) _gtk_builder_get_widget (data->builder, (name))
 #define STRING_IS_VOID(x) (((x) == NULL) || (*(x) == 0))
+
+
+static GthTemplateCode Filename_Special_Codes[] = {
+	{ GTH_TEMPLATE_CODE_TYPE_ENUMERATOR, N_("Enumerator") },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Current date"), 'D', 1 },
+};
 
 
 enum {
@@ -79,14 +85,6 @@ destroy_cb (GtkWidget  *widget,
 	g_object_unref (data->settings);
 	g_object_unref (data->builder);
 	g_free (data);
-}
-
-
-static void
-help_clicked_cb (GtkWidget  *widget,
-		 DialogData *data)
-{
-	show_help_dialog (GTK_WINDOW (data->dialog), "image-wall");
 }
 
 
@@ -181,7 +179,7 @@ ok_clicked_cb (GtkWidget  *widget,
 	gth_contact_sheet_creator_set_thumb_size (GTH_CONTACT_SHEET_CREATOR (task), TRUE, thumbnail_size, thumbnail_size);
 	gth_contact_sheet_creator_set_thumbnail_caption (GTH_CONTACT_SHEET_CREATOR (task), "");
 
-	gth_browser_exec_task (data->browser, task, FALSE);
+	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 	gtk_widget_destroy (data->dialog);
 
 	g_object_unref (task);
@@ -200,24 +198,23 @@ update_sensitivity (DialogData *data)
 
 
 static void
-entry_help_icon_press_cb (GtkEntry             *entry,
-			  GtkEntryIconPosition  icon_pos,
-			  GdkEvent             *event,
-			  gpointer              user_data)
+edit_template_entry_button_clicked_cb (GtkWidget  *widget,
+				       DialogData *data)
 {
-	DialogData *data = user_data;
-	GtkWidget  *help_box = NULL;
+	GtkWidget *dialog;
 
-	if (GTK_WIDGET (entry) == GET_WIDGET ("template_entry"))
-		help_box = GET_WIDGET ("template_help_table");
-
-	if (help_box == NULL)
-		return;
-
-	if (gtk_widget_get_visible (help_box))
-		gtk_widget_hide (help_box);
-	else
-		gtk_widget_show (help_box);
+	dialog = gth_template_editor_dialog_new (Filename_Special_Codes,
+						 G_N_ELEMENTS (Filename_Special_Codes),
+						 0,
+						 _("Edit Template"),
+						 GTK_WINDOW (data->dialog));
+	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("template_entry"))));
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET ("template_entry"));
+	gtk_widget_show (dialog);
 }
 
 
@@ -231,6 +228,7 @@ dlg_image_wall (GthBrowser *browser,
 	char       *default_sort_type;
 	GList      *sort_types;
 	GList      *scan;
+	GFile      *location;
 	char       *s_value;
 	char       *default_mime_type;
 	GArray     *savers;
@@ -244,22 +242,35 @@ dlg_image_wall (GthBrowser *browser,
 	data->browser = browser;
 	data->file_list = _g_object_list_ref (file_list);
 	data->builder = _gtk_builder_new_from_file ("image-wall.ui", "contact_sheet");
-	data->settings = g_settings_new (PIX_IMAGE_WALL_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_IMAGE_WALL_SCHEMA);
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "image_wall_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Image Wall"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_SAVE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	gth_browser_set_dialog (browser, "image_wall", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
 
 	/* Set widgets data. */
 
-	s_value = _g_settings_get_uri (data->settings, PREF_IMAGE_WALL_DESTINATION);
-	if (s_value == NULL) {
-		GFile *location = gth_browser_get_location (data->browser);
-		if (location != NULL)
-			s_value = g_file_get_uri (location);
-		else
-			s_value = g_strdup (get_home_uri ());
-	}
+	location = gth_browser_get_location (data->browser);
+	if ((location != NULL) && g_file_has_uri_scheme (location, "file"))
+		s_value = g_file_get_uri (location);
+	else
+		s_value = _g_settings_get_uri (data->settings, PREF_IMAGE_WALL_DESTINATION);
+	if (s_value == NULL)
+		s_value = g_strdup (_g_uri_get_home ());
 	gtk_file_chooser_set_uri (GTK_FILE_CHOOSER (GET_WIDGET ("destination_filechooserbutton")), s_value);
 	g_free (s_value);
 
@@ -346,30 +357,24 @@ dlg_image_wall (GthBrowser *browser,
 			  "destroy",
 			  G_CALLBACK (destroy_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("ok_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (ok_clicked_cb),
 			  data);
-        g_signal_connect (GET_WIDGET ("help_button"),
-                          "clicked",
-                          G_CALLBACK (help_clicked_cb),
-                          data);
-	g_signal_connect_swapped (GET_WIDGET ("cancel_button"),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  data->dialog);
-	g_signal_connect (GET_WIDGET ("template_entry"),
-			  "icon-press",
-			  G_CALLBACK (entry_help_icon_press_cb),
-			  data);
 	g_signal_connect_swapped (GET_WIDGET ("single_index_checkbutton"),
 				  "toggled",
 				  G_CALLBACK (update_sensitivity),
 				  data);
+	g_signal_connect (GET_WIDGET ("edit_template_entry_button"),
+			  "clicked",
+			  G_CALLBACK (edit_template_entry_button_clicked_cb),
+			  data);
 
 	/* Run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), FALSE);
 	gtk_widget_show (data->dialog);
 }

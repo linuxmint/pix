@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -33,7 +33,10 @@ struct _GthImportMetadataTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthImportMetadataTask, gth_import_metadata_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthImportMetadataTask,
+			 gth_import_metadata_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthImportMetadataTask))
 
 
 static void
@@ -165,11 +168,11 @@ metadata_ready_cb (GObject      *source_object,
 		return;
 	}
 
-	settings = g_settings_new (PIX_GENERAL_SCHEMA);
+	settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
 	store_metadata_in_files = g_settings_get_boolean (settings, PREF_GENERAL_STORE_METADATA_IN_FILES);
 	g_object_unref (settings);
 
-	settings = g_settings_new (PIX_COMMENTS_SCHEMA);
+	settings = g_settings_new (GTHUMB_COMMENTS_SCHEMA);
 	synchronize = g_settings_get_boolean (settings, PREF_COMMENTS_SYNCHRONIZE);
 	g_object_unref (settings);
 
@@ -210,8 +213,6 @@ gth_import_metadata_task_class_init (GthImportMetadataTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthImportMetadataTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_import_metadata_task_finalize;
 
@@ -223,7 +224,7 @@ gth_import_metadata_task_class_init (GthImportMetadataTaskClass *klass)
 static void
 gth_import_metadata_task_init (GthImportMetadataTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMPORT_METADATA_TASK, GthImportMetadataTaskPrivate);
+	self->priv = gth_import_metadata_task_get_instance_private (self);
 	self->priv->file_data = NULL;
 }
 

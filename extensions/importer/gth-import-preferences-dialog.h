@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define GTH_IMPORT_PREFERENCES_DIALOG_H
 
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-import-task.h"
 
 G_BEGIN_DECLS
@@ -58,7 +58,7 @@ void         gth_import_preferences_dialog_set_event (GthImportPreferencesDialog
 						      const char                 *event);
 GFile *      gth_import_preferences_dialog_get_destination
 						     (GthImportPreferencesDialog *self);
-GFile *      gth_import_preferences_dialog_get_destination_example
+GFile *      gth_import_preferences_dialog_get_subfolder_example
 						     (GthImportPreferencesDialog *self);
 
 G_END_DECLS

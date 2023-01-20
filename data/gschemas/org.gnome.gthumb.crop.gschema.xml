@@ -1,0 +1,45 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.crop" path="/org/gnome/gthumb/crop/" gettext-domain="gthumb">
+    <key name="grid-type" enum="org.gnome.gthumb.GthGridType">
+      <default>'thirds'</default>
+    </key>
+    <key name="aspect-ratio" enum="org.gnome.gthumb.GthAspectRatio">
+      <default>'none'</default>
+    </key>
+    <key name="aspect-ratio-invert" type="b">
+      <default>false</default>
+    </key>
+    <key name="aspect-ratio-width" type="i">
+      <default>1</default>
+    </key>
+    <key name="aspect-ratio-height" type="i">
+      <default>1</default>
+    </key>
+    <key name="bind-dimensions" type="b">
+      <default>false</default>
+    </key>
+    <key name="bind-factor" type="i">
+      <default>8</default>
+    </key>
+  </schema>
+
+</schemalist>

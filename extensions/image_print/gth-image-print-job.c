@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-image-info.h"
 #include "gth-image-print-job.h"
 #include "gth-load-image-info-task.h"
@@ -33,7 +33,13 @@
 #define GET_WIDGET(name) _gtk_builder_get_widget (self->priv->builder, (name))
 
 
-G_DEFINE_TYPE (GthImagePrintJob, gth_image_print_job, G_TYPE_OBJECT)
+static GthTemplateCode Text_Special_Codes[] = {
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Current page number"), 'p', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Total number of pages"), 'P', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Current date"), 'D', 1 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Total number of files"), 'F', 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Event description"), 'E', 0 },
+};
 
 
 struct _GthImagePrintJobPrivate {
@@ -54,7 +60,6 @@ struct _GthImagePrintJobPrivate {
 	gulong              height_adjustment_value_changed_event;
 	gulong              position_combobox_changed_event;
 	GthMetric           unit;
-    gboolean            centered;
 
 	/* settings */
 
@@ -89,6 +94,12 @@ struct _GthImagePrintJobPrivate {
 	int                 current_page;
 	gboolean            printing;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthImagePrintJob,
+			 gth_image_print_job,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthImagePrintJob))
 
 
 static void
@@ -126,8 +137,6 @@ gth_image_print_job_class_init (GthImagePrintJobClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthImagePrintJobPrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_image_print_job_finalize;
 }
@@ -136,8 +145,8 @@ gth_image_print_job_class_init (GthImagePrintJobClass *klass)
 static void
 gth_image_print_job_init (GthImagePrintJob *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_PRINT_JOB, GthImagePrintJobPrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_PRINT_SCHEMA);
+	self->priv = gth_image_print_job_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_PRINT_SCHEMA);
 	self->priv->event_name = NULL;
 	self->priv->builder = NULL;
 	self->priv->task = NULL;
@@ -158,7 +167,6 @@ gth_image_print_job_init (GthImagePrintJob *self)
 	self->priv->header = NULL;
 	self->priv->footer = NULL;
 	self->priv->printing = FALSE;
-    self->priv->centered = TRUE;
 }
 
 
@@ -217,55 +225,65 @@ gth_image_print_job_set_font_options (GthImagePrintJob *self,
 
 
 static gboolean
-template_eval_cb (const GMatchInfo *match_info,
-		  GString          *result,
-		  gpointer          user_data)
+template_eval_cb (TemplateFlags   flags,
+		  gunichar        parent_code,
+		  gunichar        code,
+		  char          **args,
+		  GString        *result,
+		  gpointer        user_data)
 {
 	GthImagePrintJob *self = user_data;
-	char             *r = NULL;
-	char             *match;
+	gboolean          preview;
+	char             *text = NULL;
+	GDateTime        *timestamp;
 
-	match = g_match_info_fetch (match_info, 0);
-	if (strcmp (match, "%p") == 0) {
-		r = g_strdup_printf ("%d", self->priv->current_page + 1);
+	preview = flags & TEMPLATE_FLAGS_PREVIEW;
+
+	if (parent_code == 'D') {
+		/* strftime code, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		return FALSE;
 	}
-	else if (strcmp (match, "%P") == 0) {
-		r = g_strdup_printf ("%d", self->priv->n_pages);
-	}
-	else if (strcmp (match, "%F") == 0) {
-		r = g_strdup_printf ("%d", self->priv->n_images);
-	}
-	else if (strncmp (match, "%D", 2) == 0) {
-		GTimeVal   timeval;
-		GRegex    *re;
-		char     **a;
-		char      *format = NULL;
 
-		g_get_current_time (&timeval);
+	if (preview && (code != 0))
+		g_string_append (result, "<span foreground=\"#4696f8\">");
 
-		/* Get the date format */
+	switch (code) {
+	case 'p':
+		text = g_strdup_printf ("%d", self->priv->current_page + 1);
+		break;
 
-		re = g_regex_new ("%[A-Z]\\{([^}]+)\\}", 0, 0, NULL);
-		a = g_regex_split (re, match, 0);
-		if (g_strv_length (a) >= 2)
-			format = g_strstrip (a[1]);
-		r = _g_time_val_strftime (&timeval, format);
+	case 'P':
+		text = g_strdup_printf ("%d", self->priv->n_pages);
+		break;
 
-		g_strfreev (a);
-		g_regex_unref (re);
-	}
-	else if (strcmp (match, "%E") == 0) {
+	case 'F':
+		text = g_strdup_printf ("%d", self->priv->n_images);
+		break;
+
+	case 'D':
+		timestamp = g_date_time_new_now_local ();
+		text = g_date_time_format (timestamp,
+					   (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		g_date_time_unref (timestamp);
+		break;
+
+	case 'E':
 		if (self->priv->event_name != NULL)
-			r = g_strdup (self->priv->event_name);
-		else
-			r = g_strdup ("");
+			g_string_append (result, self->priv->event_name);
+		break;
+
+	default:
+		break;
 	}
 
-	if (r != NULL)
-		g_string_append (result, r);
+	if (text != NULL) {
+		g_string_append (result, text);
+		g_free (text);
+	}
 
-	g_free (r);
-	g_free (match);
+	if (preview && (code != 0))
+		g_string_append (result, "</span>");
 
 	return FALSE;
 }
@@ -275,20 +293,10 @@ static char *
 get_text_from_template (GthImagePrintJob *self,
 			const char       *text)
 {
-	GRegex *re;
-	char   *new_text;
-
-	if (text == NULL)
-		return NULL;
-
-	if (g_utf8_strchr (text,  -1, '%') == NULL)
-		return g_strdup (text);
-
-	re = g_regex_new ("%[DEFPp](\\{[^}]+\\})?", 0, 0, NULL);
-	new_text = g_regex_replace_eval (re, text, -1, 0, 0, template_eval_cb, self, NULL);
-	g_regex_unref (re);
-
-	return new_text;
+	return _g_template_eval (text,
+				 0,
+				 template_eval_cb,
+				 self);
 }
 
 
@@ -297,23 +305,23 @@ update_header_and_footer_texts (GthImagePrintJob *self)
 {
 	g_free (self->priv->header);
 	self->priv->header = NULL;
-	if ((self->priv->header_template != NULL) && (g_strcmp0 (self->priv->header_template, "") != 0))
+	if (! _g_str_empty (self->priv->header_template))
 		self->priv->header = get_text_from_template (self, self->priv->header_template);
 
 	g_free (self->priv->footer);
 	self->priv->footer = NULL;
-	if ((self->priv->footer_template != NULL) && (g_strcmp0 (self->priv->footer_template, "") != 0))
+	if (! _g_str_empty (self->priv->footer_template))
 		self->priv->footer = get_text_from_template (self, self->priv->footer_template);
 }
 
 
 static void
 gth_image_print_job_update_layout_info (GthImagePrintJob   *self,
-				        gdouble             page_width,
-				        gdouble             page_height,
-				        GtkPageOrientation  orientation,
-				        PangoLayout        *pango_layout,
-				        gboolean            preview)
+					gdouble             page_width,
+					gdouble             page_height,
+					GtkPageOrientation  orientation,
+					PangoLayout        *pango_layout,
+					gboolean            preview)
 {
 	gboolean height_changed = FALSE;
 	int      height;
@@ -560,9 +568,9 @@ gth_image_print_job_update_page_layout (GthImagePrintJob   *self,
 
 static void
 gth_image_print_job_update_layout (GthImagePrintJob   *self,
-			  	   gdouble             page_width,
-			  	   gdouble             page_height,
-			  	   GtkPageOrientation  orientation)
+				   gdouble             page_width,
+				   gdouble             page_height,
+				   GtkPageOrientation  orientation)
 {
 	PangoLayout *pango_layout;
 
@@ -818,9 +826,10 @@ from_unit_to_pixels (GthMetric unit,
 {
 	switch (unit) {
 	case GTH_METRIC_INCHES:
-		value = value * 25.4;
+		value = value * 2.54;
 		break;
 	case GTH_METRIC_MILLIMETERS:
+	case GTH_METRIC_PIXELS:
 		break;
 	}
 
@@ -834,9 +843,10 @@ from_pixels_to_unit (GthMetric unit,
 {
 	switch (unit) {
 	case GTH_METRIC_INCHES:
-		value = value / 25.4;
+		value = value / 2.54;
 		break;
 	case GTH_METRIC_MILLIMETERS:
+	case GTH_METRIC_PIXELS:
 		break;
 	}
 
@@ -889,7 +899,9 @@ gth_image_print_job_update_image_controls (GthImagePrintJob *self)
 	g_signal_handler_unblock (GET_WIDGET ("height_adjustment"), self->priv->height_adjustment_value_changed_event);
 
 	g_signal_handler_block (GET_WIDGET ("position_combobox"), self->priv->position_combobox_changed_event);
-	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("position_combobox")), self->priv->centered ? 0 : 1);
+	centered = (self->priv->selected->image_box.x == ((self->priv->selected->boundary_box.width - self->priv->selected->image_box.width) / 2.0))
+		    && (self->priv->selected->image_box.y == ((self->priv->selected->boundary_box.height - self->priv->selected->comment_box.height - self->priv->selected->image_box.height) / 2.0));
+	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("position_combobox")), centered ? 0 : 1);
 	g_signal_handler_unblock (GET_WIDGET ("position_combobox"), self->priv->position_combobox_changed_event);
 }
 
@@ -969,8 +981,8 @@ preview_draw_cb (GtkWidget *widget,
 
 	pango_layout = gtk_widget_create_pango_layout (GTK_WIDGET (self->priv->browser), NULL);
 	gth_image_print_job_paint (self,
-			           cr,
-			           pango_layout,
+				   cr,
+				   pango_layout,
 				   gtk_page_setup_get_left_margin (self->priv->page_setup, GTK_UNIT_MM),
 				   gtk_page_setup_get_top_margin (self->priv->page_setup, GTK_UNIT_MM),
 				   self->priv->current_page,
@@ -1190,20 +1202,6 @@ caption_chooser_changed_cb (GthMetadataChooser *chooser,
 		gth_image_print_job_update_preview (self);
 }
 
-static void
-update_spinbutton_props (GtkWidget *spin_button,
-                         gint       digits,
-                         gdouble    step,
-                         gdouble    climb_rate)
-{
-    GtkAdjustment *adjust = gtk_spin_button_get_adjustment (GTK_SPIN_BUTTON (spin_button));
-
-    gtk_spin_button_configure (GTK_SPIN_BUTTON (spin_button),
-                               adjust,
-                               climb_rate,
-                               digits);
-    gtk_adjustment_set_step_increment (adjust, step);
-}
 
 static void
 unit_combobox_changed_cb (GtkComboBox *combo_box,
@@ -1211,27 +1209,25 @@ unit_combobox_changed_cb (GtkComboBox *combo_box,
 {
 	GthImagePrintJob *self = user_data;
 	int               digits;
-    gdouble           step, climb_rate;
 
 	self->priv->unit = gtk_combo_box_get_active (combo_box);
 	switch (self->priv->unit) {
 	case GTH_METRIC_INCHES:
-		digits = 2;
-        step = 0.01;
-        climb_rate = .1;
+		digits = 1;
 		break;
 	case GTH_METRIC_MILLIMETERS:
-    default:
 		digits = 0;
-        step = 1.0;
-        climb_rate = 1.0;
+		break;
+	case GTH_METRIC_PIXELS:
+	default:
+		digits = 0;
 		break;
 	}
 
-    update_spinbutton_props (GET_WIDGET ("img_left_spinbutton"), digits, step, climb_rate);
-    update_spinbutton_props (GET_WIDGET ("img_top_spinbutton"), digits, step, climb_rate);
-    update_spinbutton_props (GET_WIDGET ("img_width_spinbutton"), digits, step, climb_rate);
-    update_spinbutton_props (GET_WIDGET ("img_height_spinbutton"), digits, step, climb_rate);
+	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_left_spinbutton")), digits);
+	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_top_spinbutton")), digits);
+	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_width_spinbutton")), digits);
+	gtk_spin_button_set_digits (GTK_SPIN_BUTTON (GET_WIDGET ("img_height_spinbutton")), digits);
 
 	gth_image_print_job_update_image_controls (self);
 }
@@ -1243,7 +1239,7 @@ header_entry_changed_cb (GtkEditable *editable,
 {
 	GthImagePrintJob *self = user_data;
 
-	_g_strset (&self->priv->header_template, gtk_entry_get_text (GTK_ENTRY (editable)));
+	_g_str_set (&self->priv->header_template, gtk_entry_get_text (GTK_ENTRY (editable)));
 	if (g_strcmp0 (self->priv->header_template, "") == 0) {
 		g_free (self->priv->header_template);
 		self->priv->header_template = NULL;
@@ -1259,7 +1255,7 @@ footer_entry_changed_cb (GtkEditable *editable,
 {
 	GthImagePrintJob *self = user_data;
 
-	_g_strset (&self->priv->footer_template, gtk_entry_get_text (GTK_ENTRY (editable)));
+	_g_str_set (&self->priv->footer_template, gtk_entry_get_text (GTK_ENTRY (editable)));
 	if (g_strcmp0 (self->priv->footer_template, "") == 0) {
 		g_free (self->priv->footer_template);
 		self->priv->footer_template = NULL;
@@ -1270,29 +1266,54 @@ footer_entry_changed_cb (GtkEditable *editable,
 
 
 static void
-header_or_footer_icon_press_cb (GtkEntry            *entry,
-				GtkEntryIconPosition icon_pos,
-				GdkEvent            *event,
-				gpointer             user_data)
+edit_header_button_clicked_cb (GtkButton *button,
+			       gpointer   user_data)
 {
 	GthImagePrintJob *self = user_data;
-	GtkWidget        *help_table;
+	GtkWidget        *dialog;
 
-	help_table = GET_WIDGET ("page_footer_help_table");
-	if (gtk_widget_get_visible (help_table))
-		gtk_widget_hide (help_table);
-	else
-		gtk_widget_show (help_table);
+	dialog = gth_template_editor_dialog_new (Text_Special_Codes,
+						 G_N_ELEMENTS (Text_Special_Codes),
+						 0,
+						 _("Edit Template"),
+						 NULL);
+	gth_template_editor_dialog_set_preview_cb (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						   template_eval_cb,
+						   self);
+	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("header_entry"))));
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET ("header_entry"));
+	gtk_widget_show (dialog);
 }
+
 
 static void
-center_image (GthImagePrintJob *self)
+edit_footer_button_clicked_cb (GtkButton *button,
+			       gpointer   user_data)
 {
-        self->priv->selected->image_box.x = (self->priv->selected->boundary_box.width - self->priv->selected->image_box.width) / 2.0;
-        self->priv->selected->image_box.y = (self->priv->selected->boundary_box.height - self->priv->selected->comment_box.height - self->priv->selected->image_box.height) / 2.0;
-        self->priv->selected->transformation.x = self->priv->selected->image_box.x / self->priv->max_image_width;
-        self->priv->selected->transformation.y = self->priv->selected->image_box.y / self->priv->max_image_height;
+	GthImagePrintJob *self = user_data;
+	GtkWidget        *dialog;
+
+	dialog = gth_template_editor_dialog_new (Text_Special_Codes,
+						 G_N_ELEMENTS (Text_Special_Codes),
+						 0,
+						 _("Edit Template"),
+						 NULL);
+	gth_template_editor_dialog_set_preview_cb (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						   template_eval_cb,
+						   self);
+	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("footer_entry"))));
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET ("footer_entry"));
+	gtk_widget_show (dialog);
 }
+
 
 static void
 rotation_combobox_changed_cb (GtkComboBox *combo_box,
@@ -1335,10 +1356,6 @@ gth_image_print_job_set_selected_zoom (GthImagePrintJob *self,
 	self->priv->selected->transformation.x = x / self->priv->max_image_width;
 	self->priv->selected->transformation.y = y / self->priv->max_image_height;
 
-    if (self->priv->centered) {
-        center_image (self);
-    }
-
 	gth_image_print_job_update_image_preview (self, self->priv->selected);
 }
 
@@ -1365,8 +1382,6 @@ left_adjustment_value_changed_cb (GtkAdjustment *adjustment,
 	if (self->priv->selected == NULL)
 		return;
 
-    self->priv->centered = FALSE;
-
 	self->priv->selected->transformation.x = TO_PIXELS (gtk_adjustment_get_value (adjustment)) / self->priv->max_image_width;
 	gth_image_print_job_update_preview (self);
 }
@@ -1380,8 +1395,6 @@ top_adjustment_value_changed_cb (GtkAdjustment *adjustment,
 
 	if (self->priv->selected == NULL)
 		return;
-
-    self->priv->centered = FALSE;
 
 	self->priv->selected->transformation.y = TO_PIXELS (gtk_adjustment_get_value (adjustment)) / self->priv->max_image_height;
 	gth_image_print_job_update_preview (self);
@@ -1424,12 +1437,12 @@ position_combobox_changed_cb (GtkComboBox *combo_box,
 		return;
 
 	if (gtk_combo_box_get_active (combo_box) == 0) {
-        self->priv->centered = TRUE;
-        center_image (self);
+		self->priv->selected->image_box.x = (self->priv->selected->boundary_box.width - self->priv->selected->image_box.width) / 2.0;
+		self->priv->selected->image_box.y = (self->priv->selected->boundary_box.height - self->priv->selected->comment_box.height - self->priv->selected->image_box.height) / 2.0;
+		self->priv->selected->transformation.x = self->priv->selected->image_box.x / self->priv->max_image_width;
+		self->priv->selected->transformation.y = self->priv->selected->image_box.y / self->priv->max_image_height;
 		gth_image_print_job_update_preview (self);
-	} else {
-        self->priv->centered = FALSE;
-    }
+	}
 }
 
 
@@ -1444,12 +1457,12 @@ image_scale_format_value_cb (GtkScale *scale,
 
 static GObject *
 operation_create_custom_widget_cb (GtkPrintOperation *operation,
-			           gpointer           user_data)
+				   gpointer           user_data)
 {
 	GthImagePrintJob *self = user_data;
 
 	self->priv->builder = _gtk_builder_new_from_file ("print-layout.ui", "image_print");
-	self->priv->caption_chooser = gth_metadata_chooser_new (GTH_METADATA_ALLOW_IN_PRINT);
+	self->priv->caption_chooser = gth_metadata_chooser_new (GTH_METADATA_ALLOW_IN_PRINT, TRUE);
 	gtk_widget_show (self->priv->caption_chooser);
 	gtk_container_add (GTK_CONTAINER (GET_WIDGET ("caption_scrolledwindow")), self->priv->caption_chooser);
 
@@ -1465,7 +1478,7 @@ operation_create_custom_widget_cb (GtkPrintOperation *operation,
 	g_signal_connect (GET_WIDGET ("preview_drawingarea"),
 			  "draw",
 			  G_CALLBACK (preview_draw_cb),
-	                  self);
+			  self);
 	g_signal_connect (GET_WIDGET ("preview_drawingarea"),
 			  "motion-notify-event",
 			  G_CALLBACK (preview_motion_notify_event_cb),
@@ -1480,12 +1493,12 @@ operation_create_custom_widget_cb (GtkPrintOperation *operation,
 			  self);
 	g_signal_connect (GET_WIDGET ("rows_spinbutton"),
 			  "value-changed",
-	                  G_CALLBACK (rows_spinbutton_changed_cb),
-	                  self);
+			  G_CALLBACK (rows_spinbutton_changed_cb),
+			  self);
 	g_signal_connect (GET_WIDGET ("columns_spinbutton"),
 			  "value-changed",
-	                  G_CALLBACK (columns_spinbutton_changed_cb),
-	                  self);
+			  G_CALLBACK (columns_spinbutton_changed_cb),
+			  self);
 	g_signal_connect (GET_WIDGET ("next_page_button"),
 			  "clicked",
 			  G_CALLBACK (next_page_button_clicked_cb),
@@ -1496,34 +1509,34 @@ operation_create_custom_widget_cb (GtkPrintOperation *operation,
 			  self);
 	g_signal_connect (self->priv->caption_chooser,
 			  "changed",
-	                  G_CALLBACK (caption_chooser_changed_cb),
-	                  self);
+			  G_CALLBACK (caption_chooser_changed_cb),
+			  self);
 	g_signal_connect (GET_WIDGET ("unit_combobox"),
 			  "changed",
-	                  G_CALLBACK (unit_combobox_changed_cb),
-	                  self);
+			  G_CALLBACK (unit_combobox_changed_cb),
+			  self);
 	g_signal_connect (GET_WIDGET ("header_entry"),
 			  "changed",
-	                  G_CALLBACK (header_entry_changed_cb),
-	                  self);
+			  G_CALLBACK (header_entry_changed_cb),
+			  self);
 	g_signal_connect (GET_WIDGET ("footer_entry"),
 			  "changed",
-	                  G_CALLBACK (footer_entry_changed_cb),
-	                  self);
-	g_signal_connect (GET_WIDGET ("header_entry"),
-			  "icon-press",
-	                  G_CALLBACK (header_or_footer_icon_press_cb),
-	                  self);
-	g_signal_connect (GET_WIDGET ("footer_entry"),
-			  "icon-press",
-	                  G_CALLBACK (header_or_footer_icon_press_cb),
-	                  self);
+			  G_CALLBACK (footer_entry_changed_cb),
+			  self);
+	g_signal_connect (GET_WIDGET ("edit_header_button"),
+			  "clicked",
+			  G_CALLBACK (edit_header_button_clicked_cb),
+			  self);
+	g_signal_connect (GET_WIDGET ("edit_footer_button"),
+			  "clicked",
+			  G_CALLBACK (edit_footer_button_clicked_cb),
+			  self);
 
 	self->priv->rotation_combobox_changed_event =
 			g_signal_connect (GET_WIDGET ("rotation_combobox"),
 					  "changed",
-			                  G_CALLBACK (rotation_combobox_changed_cb),
-			                  self);
+					  G_CALLBACK (rotation_combobox_changed_cb),
+					  self);
 	self->priv->scale_adjustment_value_changed_event =
 			g_signal_connect (GET_WIDGET ("scale_adjustment"),
 					  "value-changed",
@@ -1568,7 +1581,6 @@ operation_create_custom_widget_cb (GtkPrintOperation *operation,
 		for (i = 0; i < self->priv->n_images; i++)
 			gth_image_info_reset (self->priv->images[i]);
 		gth_image_print_job_update_preview (self);
-        unit_combobox_changed_cb (GTK_COMBO_BOX (GET_WIDGET ("unit_combobox")), self);
 	}
 
 	return gtk_builder_get_object (self->priv->builder, "print_layout");
@@ -1639,7 +1651,7 @@ print_operation_begin_print_cb (GtkPrintOperation *operation,
 
 	/* save the page setup */
 
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "page_setup", NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "page_setup", NULL);
 	filename = g_file_get_path (file);
 	gtk_page_setup_to_file (self->priv->page_setup, filename, NULL);
 	g_free (filename);
@@ -1718,7 +1730,7 @@ print_operation_done_cb (GtkPrintOperation       *operation,
 		char             *filename;
 
 		settings = gtk_print_operation_get_print_settings (operation);
-		file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "print_settings", NULL);
+		file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "print_settings", NULL);
 		filename = g_file_get_path (file);
 		gtk_print_settings_to_file (settings, filename, NULL);
 
@@ -1818,7 +1830,7 @@ _gth_image_print_job_set_output_uri (GthImagePrintJob *self,
 	char       *uri;
 
 	if (self->priv->n_images == 1)
-		basename = _g_uri_remove_extension (g_file_info_get_name (self->priv->images[0]->file_data->info));
+		basename = _g_path_remove_extension (g_file_info_get_name (self->priv->images[0]->file_data->info));
 	else
 		basename = g_strdup (g_file_info_get_edit_name (gth_browser_get_location_data (self->priv->browser)->info));
 	default_dir = g_get_user_special_dir (G_USER_DIRECTORY_PICTURES);
@@ -1893,7 +1905,7 @@ load_image_info_task_completed_cb (GthTask  *task,
 	self->priv->images = loaded_images;
 	self->priv->n_images = n_loaded_images;
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "print_settings", NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "print_settings", NULL);
 	filename = g_file_get_path (file);
 	settings = gtk_print_settings_new_from_file (filename, NULL);
 	if (settings != NULL) {
@@ -1903,7 +1915,7 @@ load_image_info_task_completed_cb (GthTask  *task,
 	g_free (filename);
 	g_object_unref (file);
 
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "page_setup", NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "page_setup", NULL);
 	filename = g_file_get_path (file);
 	self->priv->page_setup = gtk_page_setup_new_from_file (filename, NULL);
 	if (self->priv->page_setup != NULL)
@@ -1940,5 +1952,5 @@ gth_image_print_job_run (GthImagePrintJob        *self,
 			  "completed",
 			  G_CALLBACK (load_image_info_task_completed_cb),
 			  self);
-	gth_browser_exec_task (browser, self->priv->task, FALSE);
+	gth_browser_exec_task (browser, self->priv->task, GTH_TASK_FLAGS_DEFAULT);
 }

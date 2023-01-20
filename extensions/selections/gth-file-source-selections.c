@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-file-source-selections.h"
 #include "gth-selections-manager.h"
 
@@ -34,7 +34,10 @@ struct _GthFileSourceSelectionsPrivate {
 };
 
 
-G_DEFINE_TYPE (GthFileSourceSelections, gth_file_source_selections, GTH_TYPE_FILE_SOURCE)
+G_DEFINE_TYPE_WITH_CODE (GthFileSourceSelections,
+			 gth_file_source_selections,
+			 GTH_TYPE_FILE_SOURCE,
+			 G_ADD_PRIVATE (GthFileSourceSelections))
 
 
 static GList *
@@ -226,14 +229,6 @@ gth_file_source_selections_copy (GthFileSource    *file_source,
 
 
 static gboolean
-gth_file_source_selections_can_cut (GthFileSource *file_source,
-				    GFile         *file)
-{
-	return g_file_has_uri_scheme (file, "selection");
-}
-
-
-static gboolean
 gth_file_source_selections_is_reorderable (GthFileSource *file_source)
 {
 	return TRUE;
@@ -267,34 +262,58 @@ gth_file_source_selections_remove (GthFileSource *file_source,
 	GList *files;
 
 	files = gth_file_data_list_to_file_list (file_list);
-	gth_selections_manager_remove_files (location->file, files);
+	gth_selections_manager_remove_files (location->file, files, TRUE);
 
 	_g_object_list_unref (files);
 }
 
 
 static void
-gth_file_source_selections_finalize (GObject *object)
+gth_file_source_selections_deleted_from_disk (GthFileSource *file_source,
+					      GthFileData   *location,
+					      GList         *file_list)
 {
-	GthFileSourceSelections *self = GTH_FILE_SOURCE_SELECTIONS (object);
+	gth_selections_manager_remove_files (location->file, file_list, FALSE);
+}
 
-	if (self->priv != NULL) {
-		g_free (self->priv);
-		self->priv = NULL;
+
+static gboolean
+gth_file_source_selections_shows_extra_widget (GthFileSource *file_source)
+{
+	return TRUE;
+}
+
+
+static GdkDragAction
+gth_file_source_selections_get_drop_actions (GthFileSource *file_source,
+					     GFile         *destination,
+					     GFile         *file)
+{
+	GdkDragAction  actions = 0;
+	char          *file_uri;
+	char          *file_scheme;
+
+	file_uri = g_file_get_uri (file);
+	file_scheme = gth_main_get_source_scheme (file_uri);
+
+	if (_g_file_has_scheme (destination, "selection")
+		&& _g_str_equal (file_scheme, "file"))
+	{
+		/* Copy files into a selection. */
+		actions = GDK_ACTION_COPY;
 	}
 
-	G_OBJECT_CLASS (gth_file_source_selections_parent_class)->finalize (object);
+	g_free (file_scheme);
+	g_free (file_uri);
+
+	return actions;
 }
 
 
 static void
 gth_file_source_selections_class_init (GthFileSourceSelectionsClass *class)
 {
-	GObjectClass       *object_class;
 	GthFileSourceClass *file_source_class;
-
-	object_class = (GObjectClass*) class;
-	object_class->finalize = gth_file_source_selections_finalize;
 
 	file_source_class = (GthFileSourceClass*) class;
 	file_source_class->get_entry_points = get_entry_points;
@@ -306,10 +325,12 @@ gth_file_source_selections_class_init (GthFileSourceSelectionsClass *class)
 	file_source_class->rename = gth_file_source_selections_rename;
 	file_source_class->for_each_child = gth_file_source_selections_for_each_child;
 	file_source_class->copy = gth_file_source_selections_copy;
-	file_source_class->can_cut = gth_file_source_selections_can_cut;
 	file_source_class->is_reorderable  = gth_file_source_selections_is_reorderable;
 	file_source_class->reorder = gth_file_source_selections_reorder;
 	file_source_class->remove = gth_file_source_selections_remove;
+	file_source_class->deleted_from_disk = gth_file_source_selections_deleted_from_disk;
+	file_source_class->shows_extra_widget = gth_file_source_selections_shows_extra_widget;
+	file_source_class->get_drop_actions = gth_file_source_selections_get_drop_actions;
 }
 
 
@@ -317,6 +338,7 @@ static void
 gth_file_source_selections_init (GthFileSourceSelections *self)
 {
 	gth_file_source_add_scheme (GTH_FILE_SOURCE (self), "selection");
-
-	self->priv = g_new0 (GthFileSourceSelectionsPrivate, 1);
+	self->priv = gth_file_source_selections_get_instance_private (self);
+	self->priv->ready_func = NULL;
+	self->priv->ready_data = NULL;
 }

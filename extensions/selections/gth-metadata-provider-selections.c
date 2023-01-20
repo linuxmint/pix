@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-metadata-provider-selections.h"
 #include "gth-selections-manager.h"
 
@@ -31,11 +31,12 @@ G_DEFINE_TYPE (GthMetadataProviderSelections, gth_metadata_provider_selections, 
 
 static gboolean
 gth_metadata_provider_selections_can_read (GthMetadataProvider  *self,
-				           const char           *mime_type,
-				           char                **attribute_v)
+					   GthFileData          *file_data,
+					   const char           *mime_type,
+					   char                **attribute_v)
 {
 	return _g_file_attributes_matches_any_v (GTH_FILE_ATTRIBUTE_EMBLEMS,
-					         attribute_v);
+						 attribute_v);
 }
 
 
@@ -62,7 +63,7 @@ gth_metadata_provider_selections_read (GthMetadataProvider *self,
 	emblem_list = NULL;
 	for (i = GTH_SELECTIONS_MANAGER_N_SELECTIONS; i >= 0; i--) {
 		if (gth_selections_manager_file_exists (i, file_data->file))
-			emblem_list = g_list_prepend (emblem_list, g_strdup_printf ("selection%d", i));
+			emblem_list = g_list_prepend (emblem_list, g_strdup (gth_selection_get_icon_name (i)));
 	}
 
 	emblems = gth_string_list_new (emblem_list);

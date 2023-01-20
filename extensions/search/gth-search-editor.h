@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -51,5 +51,7 @@ void        gth_search_editor_set_search (GthSearchEditor  *self,
 				 	  GthSearch        *search);
 GthSearch * gth_search_editor_get_search (GthSearchEditor  *self,
 					  GError          **error);
+void        gth_search_editor_focus_first_rule
+					 (GthSearchEditor  *self);
 
 #endif /* GTH_SEARCH_EDITOR_H */

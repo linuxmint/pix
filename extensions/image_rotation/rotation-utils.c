@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2007, 2009 Free Software Foundation, Inc.
  *
@@ -82,6 +82,16 @@ ask_whether_to_trim (GtkWindow        *parent_window,
 	char        *filename;
 	char        *msg;
 
+	/* If the user disabled the warning dialog trim the image */
+
+	/* FIXME
+	 if (! eel_gconf_get_boolean (PREF_MSG_JPEG_MCU_WARNING, TRUE)) {
+		if (done_func != NULL)
+			done_func (JPEG_MCU_ACTION_TRIM, done_data);
+		return;
+	}
+	*/
+
 	/*
 	 * Image dimensions are not multiples of the jpeg minimal coding unit (mcu).
 	 * Warn about possible image distortions along one or more edges.
@@ -95,7 +105,7 @@ ask_whether_to_trim (GtkWindow        *parent_window,
 	msg = g_strdup_printf (_("Problem transforming the image: %s"), filename);
 	data->dialog = _gtk_message_dialog_new (parent_window,
 						GTK_DIALOG_MODAL,
-						GTK_STOCK_DIALOG_WARNING,
+						_GTK_ICON_NAME_DIALOG_WARNING,
 						msg,
 						_("This transformation may introduce small image distortions along "
                                                   "one or more edges, because the image dimensions are not multiples of 8.\n\nThe distortion "
@@ -104,7 +114,7 @@ ask_whether_to_trim (GtkWindow        *parent_window,
 						  "untransformable edge pixels. For practical use, this mode gives the best looking results, "
 						  "but the transformation is not strictly lossless anymore."),
 						_("_Trim"), GTH_RESPONSE_TRIM,
-					        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
 					        _("_Accept distortion"), GTK_RESPONSE_OK,
 					        NULL);
 	gtk_dialog_set_default_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK);

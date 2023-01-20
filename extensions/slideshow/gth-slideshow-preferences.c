@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -20,12 +20,9 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-slideshow-preferences.h"
 #include "gth-transition.h"
-
-
-G_DEFINE_TYPE (GthSlideshowPreferences, gth_slideshow_preferences, GTK_TYPE_BOX)
 
 
 enum {
@@ -47,6 +44,12 @@ struct _GthSlideshowPreferencesPrivate {
 };
 
 
+G_DEFINE_TYPE_WITH_CODE (GthSlideshowPreferences,
+			 gth_slideshow_preferences,
+			 GTK_TYPE_BOX,
+			 G_ADD_PRIVATE (GthSlideshowPreferences))
+
+
 static void
 gth_slideshow_preferences_finalize (GObject *object)
 {
@@ -62,8 +65,6 @@ gth_slideshow_preferences_class_init (GthSlideshowPreferencesClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthSlideshowPreferencesPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_slideshow_preferences_finalize;
 }
@@ -72,7 +73,7 @@ gth_slideshow_preferences_class_init (GthSlideshowPreferencesClass *klass)
 static void
 gth_slideshow_preferences_init (GthSlideshowPreferences *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_SLIDESHOW_PREFERENCES, GthSlideshowPreferencesPrivate);
+	self->priv = gth_slideshow_preferences_get_instance_private (self);
 	self->priv->builder = NULL;
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (self), GTK_ORIENTATION_VERTICAL);
 }
@@ -182,10 +183,10 @@ add_file_button_clicked_cb (GtkButton *button,
 	GtkFileFilter           *filter;
 
 	dialog = gtk_file_chooser_dialog_new (_("Choose the files to play"),
-					      GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (self))),
+					      _gtk_widget_get_toplevel_if_window (GTK_WIDGET (self)),
 					      GTK_FILE_CHOOSER_ACTION_OPEN,
-					      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-					      GTK_STOCK_OK, GTK_RESPONSE_OK,
+					      _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+					      _GTK_LABEL_OK, GTK_RESPONSE_OK,
 					      NULL);
 	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (dialog), TRUE);
 	gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), g_get_user_special_dir (G_USER_DIRECTORY_MUSIC));

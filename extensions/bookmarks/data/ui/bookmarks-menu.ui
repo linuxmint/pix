@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="bookmarks-menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Add Bookmark</attribute>
+        <attribute name="action">win.bookmarks-add</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Edit Bookmarks…</attribute>
+        <attribute name="action">win.bookmarks-edit</attribute>
+      </item>
+    </section>
+    <submenu id="system-bookmarks">
+      <attribute name="label" translatable="yes">_System Bookmarks</attribute>
+    </submenu>
+    <section id="entry-points">
+    </section>
+    <section id="bookmarks">
+    </section>
+  </menu>
+</interface>

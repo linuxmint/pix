@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <glib.h>
 #include <glib-object.h>
 #include <gio/gio.h>
-#include <pix.h>
+#include <gthumb.h>
 
 typedef enum {
 	GTH_CATALOG_TYPE_INVALID,
@@ -73,6 +73,10 @@ typedef void (*CatalogReadyCallback) (GthCatalog *catalog,
 
 GType         gth_catalog_get_type        (void) G_GNUC_CONST;
 GthCatalog *  gth_catalog_new             (void);
+GthCatalog *  gth_catalog_new_for_file    (GFile                *file);
+GthCatalog *  gth_catalog_new_from_data   (const void           *buffer,
+					   gsize                 count,
+					   GError              **error);
 void          gth_catalog_set_file        (GthCatalog           *catalog,
 					   GFile                *file);
 GFile *       gth_catalog_get_file        (GthCatalog           *catalog);
@@ -87,10 +91,6 @@ void          gth_catalog_set_order       (GthCatalog           *catalog,
 					   gboolean              inverse);
 const char *  gth_catalog_get_order       (GthCatalog           *catalog,
 					   gboolean             *inverse);
-void          gth_catalog_load_from_data  (GthCatalog           *catalog,
-					   const void           *buffer,
-					   gsize                 count,
-					   GError              **error);
 char *        gth_catalog_to_data         (GthCatalog           *catalog,
 		     			   gsize                *length);
 void          gth_catalog_set_file_list   (GthCatalog           *catalog,
@@ -101,14 +101,9 @@ gboolean      gth_catalog_insert_file     (GthCatalog           *catalog,
 					   int                   pos);
 int           gth_catalog_remove_file     (GthCatalog           *catalog,
 					   GFile                *file);
-void          gth_catalog_list_async      (GthCatalog           *catalog,
-					   const char           *attributes,
-					   GCancellable         *cancellable,
-					   CatalogReadyCallback  ready_func,
-					   gpointer              user_data);
-void          gth_catalog_cancel          (GthCatalog           *catalog);
 void          gth_catalog_update_metadata (GthCatalog           *catalog,
 					   GthFileData          *file_data);
+int           gth_catalog_get_size        (GthCatalog           *catalog);
 
 /* utils */
 
@@ -132,5 +127,10 @@ GFile *        gth_catalog_get_file_for_tag           (const char    *tag,
 		      	      	      	      	       const char    *extension);
 GthCatalog *   gth_catalog_load_from_file             (GFile         *file);
 void           gth_catalog_save                       (GthCatalog    *catalog);
+void           gth_catalog_list_async                 (GFile               *catalog,
+						       const char           *attributes,
+						       GCancellable         *cancellable,
+						       CatalogReadyCallback  ready_func,
+						       gpointer              user_data);
 
 #endif /*GTH_CATALOG_H*/

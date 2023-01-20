@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -32,7 +32,7 @@ typedef enum {
 
 /* schema */
 
-#define PIX_RENAME_SERIES_SCHEMA        PIX_SCHEMA ".rename-series"
+#define GTHUMB_RENAME_SERIES_SCHEMA        GTHUMB_SCHEMA ".rename-series"
 
 /* keys */
 

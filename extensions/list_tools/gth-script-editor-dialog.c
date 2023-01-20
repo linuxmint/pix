@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -22,16 +22,26 @@
 #include <config.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-script-editor-dialog.h"
 #include "gth-script-file.h"
 
 
 #define GET_WIDGET(name) _gtk_builder_get_widget (self->priv->builder, (name))
-#define NO_SHORTCUT 0
 
 
-G_DEFINE_TYPE (GthScriptEditorDialog, gth_script_editor_dialog, GTK_TYPE_DIALOG)
+static GthTemplateCode Command_Special_Codes[] = {
+	{ GTH_TEMPLATE_CODE_TYPE_QUOTED, N_("Quoted text"), GTH_SCRIPT_CODE_QUOTE, 1 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("File URI"), GTH_SCRIPT_CODE_URI, 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("File path"), GTH_SCRIPT_CODE_PATH, 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("File name"), GTH_SCRIPT_CODE_BASENAME, 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("File name, no extension"), GTH_SCRIPT_CODE_BASENAME_NO_EXTENSION, 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("File extension"), GTH_SCRIPT_CODE_EXTENSION, 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_SIMPLE, N_("Folder path"), GTH_SCRIPT_CODE_PARENT_PATH, 0 },
+	{ GTH_TEMPLATE_CODE_TYPE_DATE, N_("Current date"), GTH_SCRIPT_CODE_TIMESTAMP, 1 },
+	{ GTH_TEMPLATE_CODE_TYPE_ASK_VALUE, N_("Ask a value"), GTH_SCRIPT_CODE_ASK_VALUE, 2 },
+	{ GTH_TEMPLATE_CODE_TYPE_FILE_ATTRIBUTE, N_("File attribute"), GTH_SCRIPT_CODE_FILE_ATTRIBUTE, 1 },
+};
 
 
 enum {
@@ -40,14 +50,22 @@ enum {
 };
 
 struct _GthScriptEditorDialogPrivate {
-	GtkBuilder *builder;
-  	char       *script_id;
-  	gboolean    script_visible;
-  	gboolean    wait_command;
-  	gboolean    shell_script;
-  	gboolean    for_each_file;
-  	gboolean    help_visible;
+	GthWindow   *shortcut_window;
+	GtkBuilder  *builder;
+	GtkWidget   *accel_button;
+	char        *script_id;
+	gboolean     script_visible;
+	gboolean     wait_command;
+	gboolean     shell_script;
+	gboolean     for_each_file;
+	GthShortcut *shortcut;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthScriptEditorDialog,
+			 gth_script_editor_dialog,
+			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (GthScriptEditorDialog))
 
 
 static void
@@ -57,12 +75,8 @@ gth_script_editor_dialog_finalize (GObject *object)
 
 	dialog = GTH_SCRIPT_EDITOR_DIALOG (object);
 
-	if (dialog->priv != NULL) {
-		g_object_unref (dialog->priv->builder);
-		g_free (dialog->priv->script_id);
-		g_free (dialog->priv);
-		dialog->priv = NULL;
-	}
+	g_object_unref (dialog->priv->builder);
+	g_free (dialog->priv->script_id);
 
 	G_OBJECT_CLASS (gth_script_editor_dialog_parent_class)->finalize (object);
 }
@@ -81,8 +95,16 @@ gth_script_editor_dialog_class_init (GthScriptEditorDialogClass *class)
 static void
 gth_script_editor_dialog_init (GthScriptEditorDialog *dialog)
 {
-	dialog->priv = g_new0 (GthScriptEditorDialogPrivate, 1);
-	dialog->priv->help_visible = FALSE;
+	dialog->priv = gth_script_editor_dialog_get_instance_private (dialog);
+	dialog->priv->builder = NULL;
+	dialog->priv->accel_button = NULL;
+	dialog->priv->script_id = NULL;
+	dialog->priv->script_visible = FALSE;
+	dialog->priv->wait_command = FALSE;
+	dialog->priv->shell_script = FALSE;
+	dialog->priv->for_each_file = FALSE;
+	dialog->priv->shortcut = NULL;
+	dialog->priv->shortcut_window = NULL;
 }
 
 
@@ -94,19 +116,48 @@ update_sensitivity (GthScriptEditorDialog *self)
 
 
 static void
-command_entry_icon_press_cb (GtkEntry             *entry,
-                             GtkEntryIconPosition  icon_pos,
-                             GdkEvent             *event,
-                             gpointer              user_data)
+edit_command_button_clicked_cb (GtkButton *button,
+				gpointer   user_data)
 {
 	GthScriptEditorDialog *self = user_data;
+	GtkWidget             *dialog;
 
-	self->priv->help_visible = ! self->priv->help_visible;
+	dialog = gth_template_editor_dialog_new (Command_Special_Codes,
+						 G_N_ELEMENTS (Command_Special_Codes),
+						 0,
+						 _("Edit Command"),
+						 GTK_WINDOW (self));
+	gth_template_editor_dialog_set_preview_func (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						     (TemplatePreviewFunc) gth_script_get_preview,
+						     NULL);
+	gth_template_editor_dialog_set_template (GTH_TEMPLATE_EDITOR_DIALOG (dialog),
+						 gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("command_entry"))));
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (gth_template_editor_dialog_default_response),
+			  GET_WIDGET ("command_entry"));
+	gtk_widget_show (dialog);
+}
 
-	if (self->priv->help_visible)
-		gtk_widget_show (GET_WIDGET("command_help_box"));
-	else
-		gtk_widget_hide (GET_WIDGET("command_help_box"));
+
+static gboolean
+accel_button_change_value_cb (GthAccelButton  *button,
+			      guint            keycode,
+			      GdkModifierType  modifiers,
+			      gpointer         user_data)
+{
+	GthScriptEditorDialog *self = user_data;
+	gboolean               change;
+
+	change = gth_window_can_change_shortcut (self->priv->shortcut_window,
+						 self->priv->shortcut != NULL ? self->priv->shortcut->detailed_action : NULL,
+						 GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER,
+						 GTH_SHORTCUT_VIEWER_CONTEXT_ANY,
+						 keycode,
+						 modifiers,
+						 GTK_WINDOW (self));
+
+	return change ? GDK_EVENT_PROPAGATE : GDK_EVENT_STOP;
 }
 
 
@@ -115,49 +166,35 @@ gth_script_editor_dialog_construct (GthScriptEditorDialog *self,
 				    const char            *title,
 			            GtkWindow             *parent)
 {
-	GtkWidget   *content;
-	GtkTreeIter  iter;
-	int          i;
-
 	if (title != NULL)
 		gtk_window_set_title (GTK_WINDOW (self), title);
-	if (parent != NULL)
+	if (parent != NULL) {
 		gtk_window_set_transient_for (GTK_WINDOW (self), parent);
-	gtk_window_set_resizable (GTK_WINDOW (self), FALSE);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
-	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
+		_gtk_dialog_add_to_window_group (GTK_DIALOG (self));
+	}
 
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_SAVE, GTK_RESPONSE_OK);
-	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_HELP, GTK_RESPONSE_HELP);
+	gtk_dialog_add_buttons (GTK_DIALOG (self),
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_SAVE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (self), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 
-	self->priv->builder = _gtk_builder_new_from_file ("script-editor.ui", "list_tools");
+	self->priv->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/script-editor.ui");
+	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), _gtk_builder_get_widget (self->priv->builder, "script_editor"), TRUE, TRUE, 0);
 
-	content = _gtk_builder_get_widget (self->priv->builder, "script_editor");
-	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), content, TRUE, TRUE, 0);
-
-	g_signal_connect (GET_WIDGET ("command_entry"),
-			  "icon-press",
-			  G_CALLBACK (command_entry_icon_press_cb),
+	self->priv->accel_button = gth_accel_button_new ();
+	g_signal_connect (self->priv->accel_button,
+			  "change-value",
+			  G_CALLBACK (accel_button_change_value_cb),
 			  self);
 
-	gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("shortcut_liststore")), &iter);
-	gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("shortcut_liststore")), &iter,
-			    SHORTCUT_NAME_COLUMN, _("none"),
-			    -1);
+	gtk_widget_show (self->priv->accel_button);
+	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("accel_box")), self->priv->accel_button, FALSE, FALSE, 0);
 
-	for (i = 0; i <= 9; i++) {
-		char *value;
-
-		value = g_strdup_printf (_("key %d on the numeric keypad"), i);
-		gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("shortcut_liststore")), &iter);
-		gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("shortcut_liststore")), &iter,
-				    SHORTCUT_NAME_COLUMN, value,
-				    -1);
-
-		g_free (value);
-	}
+	g_signal_connect (GET_WIDGET ("edit_command_button"),
+			  "clicked",
+			  G_CALLBACK (edit_command_button_clicked_cb),
+			  self);
 
 	/**/
 
@@ -167,11 +204,16 @@ gth_script_editor_dialog_construct (GthScriptEditorDialog *self,
 
 GtkWidget *
 gth_script_editor_dialog_new (const char *title,
+			      GthWindow  *shortcut_window,
 			      GtkWindow  *parent)
 {
 	GthScriptEditorDialog *self;
 
-	self = g_object_new (GTH_TYPE_SCRIPT_EDITOR_DIALOG, NULL);
+	self = g_object_new (GTH_TYPE_SCRIPT_EDITOR_DIALOG,
+			     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+			     "resizable", TRUE,
+			     NULL);
+	self->priv->shortcut_window = shortcut_window;
 	gth_script_editor_dialog_construct (self, title, parent);
 
 	return (GtkWidget *) self;
@@ -186,7 +228,7 @@ _gth_script_editor_dialog_set_new_script (GthScriptEditorDialog *self)
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("shell_script_checkbutton")), TRUE);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("for_each_file_checkbutton")), FALSE);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("wait_command_checkbutton")), FALSE);
-	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("shortcut_combobox")), NO_SHORTCUT);
+	gth_accel_button_set_accelerator (GTH_ACCEL_BUTTON (self->priv->accel_button), 0, 0);
 }
 
 
@@ -194,20 +236,14 @@ void
 gth_script_editor_dialog_set_script (GthScriptEditorDialog *self,
 				     GthScript             *script)
 {
-	GtkTreeIter  iter;
-	GtkTreePath *path;
-	GList       *script_list;
-	GList       *scan;
-
 	g_free (self->priv->script_id);
 	self->priv->script_id = NULL;
 	self->priv->script_visible = TRUE;
+	self->priv->shortcut = NULL;
 
 	_gth_script_editor_dialog_set_new_script (self);
 
 	if (script != NULL) {
-		guint keyval;
-
 		self->priv->script_id = g_strdup (gth_script_get_id (script));
 		self->priv->script_visible = gth_script_is_visible (script);
 
@@ -217,42 +253,13 @@ gth_script_editor_dialog_set_script (GthScriptEditorDialog *self,
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("for_each_file_checkbutton")), gth_script_for_each_file (script));
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("wait_command_checkbutton")), gth_script_wait_command (script));
 
-		keyval = gth_script_get_shortcut (script);
-		if ((keyval >= GDK_KEY_KP_0) && (keyval <= GDK_KEY_KP_9))
-			gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("shortcut_combobox")), (keyval - GDK_KEY_KP_0) + 1);
-		else
-			gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("shortcut_combobox")), NO_SHORTCUT);
-	}
-
-	if (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (GET_WIDGET ("shortcut_liststore")), &iter)) {
-		do {
-			gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("shortcut_liststore")), &iter,
-					    SHORTCUT_SENSITIVE_COLUMN, TRUE,
-					    -1);
-		}
-		while (gtk_tree_model_iter_next (GTK_TREE_MODEL (GET_WIDGET ("shortcut_liststore")), &iter));
-	}
-
-	script_list = gth_script_file_get_scripts (gth_script_file_get ());
-	for (scan = script_list; scan; scan = scan->next) {
-		GthScript *other_script = scan->data;
-		guint      keyval;
-
-		keyval = gth_script_get_shortcut (other_script);
-		if ((keyval >= GDK_KEY_KP_0) && (keyval <= GDK_KEY_KP_9)) {
-			if (g_strcmp0 (gth_script_get_id (other_script), self->priv->script_id) == 0)
-				continue;
-
-			path = gtk_tree_path_new_from_indices (keyval - GDK_KEY_KP_0 + 1, -1);
-			gtk_tree_model_get_iter (GTK_TREE_MODEL (GET_WIDGET ("shortcut_liststore")), &iter, path);
-			gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("shortcut_liststore")), &iter,
-					    SHORTCUT_SENSITIVE_COLUMN, FALSE,
-					    -1);
-
-			gtk_tree_path_free (path);
+		self->priv->shortcut = gth_window_get_shortcut (self->priv->shortcut_window, gth_script_get_detailed_action (script));
+		if (self->priv->shortcut != NULL) {
+			gth_accel_button_set_accelerator (GTH_ACCEL_BUTTON (self->priv->accel_button),
+							  self->priv->shortcut->keyval,
+							  self->priv->shortcut->modifiers);
 		}
 	}
-	_g_object_list_unref (script_list);
 
 	update_sensitivity (self);
 }
@@ -262,19 +269,17 @@ GthScript *
 gth_script_editor_dialog_get_script (GthScriptEditorDialog  *self,
 				     GError                **error)
 {
-	GthScript *script;
-	int        keyval_index;
-	guint      keyval;
+	GthScript       *script;
+	guint            keyval;
+	GdkModifierType  modifiers;
+	char            *accelerator;
 
 	script = gth_script_new ();
 	if (self->priv->script_id != NULL)
 		g_object_set (script, "id", self->priv->script_id, NULL);
 
-	keyval_index = gtk_combo_box_get_active (GTK_COMBO_BOX (GET_WIDGET ("shortcut_combobox")));
-	if ((keyval_index >= 1) && (keyval_index <= 10))
-		keyval = GDK_KEY_KP_0 + (keyval_index - 1);
-	else
-		keyval = GDK_KEY_VoidSymbol;
+	gth_accel_button_get_accelerator (GTH_ACCEL_BUTTON (self->priv->accel_button), &keyval, &modifiers);
+	accelerator = gtk_accelerator_name (keyval, modifiers);
 
 	g_object_set (script,
 		      "display-name", gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("name_entry"))),
@@ -283,7 +288,7 @@ gth_script_editor_dialog_get_script (GthScriptEditorDialog  *self,
 		      "shell-script", gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("shell_script_checkbutton"))),
 		      "for-each-file", gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("for_each_file_checkbutton"))),
 		      "wait-command", gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("wait_command_checkbutton"))),
-		      "shortcut", keyval,
+		      "accelerator", accelerator,
 		      NULL);
 
 	if (g_strcmp0 (gth_script_get_display_name (script), "") == 0) {
@@ -297,6 +302,8 @@ gth_script_editor_dialog_get_script (GthScriptEditorDialog  *self,
 		g_object_unref (script);
 		return NULL;
 	}
+
+	g_free (accelerator);
 
 	return script;
 }

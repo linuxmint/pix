@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,14 +22,14 @@
 #ifndef PREFERENCES_H
 #define PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
 /* schemas */
 
-#define PIX_WEBALBUMS_SCHEMA                 PIX_SCHEMA ".webalbums"
-#define PIX_WEBALBUMS_DIRECTORIES_SCHEMA     PIX_WEBALBUMS_SCHEMA ".directories"
+#define GTHUMB_WEBALBUMS_SCHEMA                 GTHUMB_SCHEMA ".webalbums"
+#define GTHUMB_WEBALBUMS_DIRECTORIES_SCHEMA     GTHUMB_WEBALBUMS_SCHEMA ".directories"
 
 /* keys: webalbums */
 

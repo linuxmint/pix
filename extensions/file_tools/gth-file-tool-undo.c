@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/image_viewer/gth-image-viewer-page.h>
 #include "gth-file-tool-undo.h"
 
@@ -31,8 +31,8 @@ G_DEFINE_TYPE (GthFileToolUndo, gth_file_tool_undo, GTH_TYPE_FILE_TOOL)
 static void
 gth_file_tool_undo_update_sensitivity (GthFileTool *base)
 {
-	GtkWidget *window;
-	GtkWidget *viewer_page;
+	GtkWidget     *window;
+	GthViewerPage *viewer_page;
 
 	window = gth_file_tool_get_window (base);
 	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
@@ -46,8 +46,8 @@ gth_file_tool_undo_update_sensitivity (GthFileTool *base)
 static void
 gth_file_tool_undo_activate (GthFileTool *base)
 {
-	GtkWidget *window;
-	GtkWidget *viewer_page;
+	GtkWidget     *window;
+	GthViewerPage *viewer_page;
 
 	window = gth_file_tool_get_window (base);
 	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
@@ -72,5 +72,8 @@ gth_file_tool_undo_class_init (GthFileToolUndoClass *klass)
 static void
 gth_file_tool_undo_init (GthFileToolUndo *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "edit-undo-symbolic", _("Undo"), _("Undo"), TRUE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self),
+				 "edit-undo-symbolic",
+				 _("Undo"),
+				 GTH_TOOLBOX_SECTION_FILE);
 }

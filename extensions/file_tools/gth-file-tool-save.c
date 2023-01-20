@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,11 +20,11 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-file-tool-save.h"
 
 
-G_DEFINE_TYPE (GthFileToolSave, gth_file_tool_save, GTH_TYPE_FILE_TOOL)
+G_DEFINE_TYPE (GthFileToolSave, gth_file_tool_save, GTH_TYPE_IMAGE_VIEWER_PAGE_TOOL)
 
 
 static void
@@ -40,12 +40,12 @@ gth_file_tool_save_update_sensitivity (GthFileTool *base)
 static void
 gth_file_tool_save_activate (GthFileTool *tool)
 {
-	GtkWidget *window;
-	GtkWidget *viewer_page;
+	GtkWidget     *window;
+	GthViewerPage *viewer_page;
 
 	window = gth_file_tool_get_window (tool);
 	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	gth_viewer_page_save (GTH_VIEWER_PAGE (viewer_page), NULL, NULL, NULL);
+	gth_viewer_page_save (viewer_page, NULL, NULL, NULL);
 }
 
 
@@ -63,5 +63,5 @@ gth_file_tool_save_class_init (GthFileToolSaveClass *klass)
 static void
 gth_file_tool_save_init (GthFileToolSave *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-symbolic", _("Save"), _("Save"), FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-symbolic", _("Save"), GTH_TOOLBOX_SECTION_FILE);
 }

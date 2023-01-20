@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,27 +21,75 @@
 
 #include <config.h>
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-comment.h"
 #include "gth-metadata-provider-comment.h"
 
 
-G_DEFINE_TYPE (GthMetadataProviderComment, gth_metadata_provider_comment, GTH_TYPE_METADATA_PROVIDER)
+struct _GthMetadataProviderCommentPrivate {
+	GHashTable *checked_folders;
+};
+
+
+G_DEFINE_TYPE_WITH_CODE (GthMetadataProviderComment,
+			 gth_metadata_provider_comment,
+			 GTH_TYPE_METADATA_PROVIDER,
+			 G_ADD_PRIVATE (GthMetadataProviderComment))
 
 
 static gboolean
-gth_metadata_provider_comment_can_read (GthMetadataProvider  *self,
-				        const char           *mime_type,
-				        char                **attribute_v)
+gth_metadata_provider_comment_can_read (GthMetadataProvider  *base,
+					GthFileData          *file_data,
+					const char           *mime_type,
+					char                **attribute_v)
+
 {
-	return _g_file_attributes_matches_any_v ("comment::*,"
-						 "general::datetime,"
-						 "general::title,"
-						 "general::description,"
-						 "general::location,"
-						 "general::tags,"
-						 "general::rating",
-					         attribute_v);
+	GthMetadataProviderComment *self = GTH_METADATA_PROVIDER_COMMENT (base);
+	gboolean                    can_read;
+
+	can_read = _g_file_attributes_matches_any_v ("comment::*,"
+						     "general::datetime,"
+						     "general::title,"
+						     "general::description,"
+						     "general::location,"
+						     "general::tags,"
+						     "general::rating",
+						     attribute_v);
+
+	if (! can_read)
+		return FALSE;
+
+	if (file_data != NULL) {
+		GFile    *comment_file;
+		GFile    *comment_folder;
+		gboolean  comment_folder_exists;
+		gpointer  value;
+
+		comment_file = gth_comment_get_comment_file (file_data->file);
+		if (comment_file == NULL)
+			return FALSE;
+
+		comment_folder = g_file_get_parent (comment_file);
+		if (comment_folder == NULL)
+			return FALSE;
+
+		value = g_hash_table_lookup (self->priv->checked_folders, comment_folder);
+		if (value == NULL) {
+			comment_folder_exists = g_file_query_exists (comment_folder, NULL);
+			g_hash_table_insert (self->priv->checked_folders,
+					     g_object_ref (comment_folder),
+					     GINT_TO_POINTER (comment_folder_exists ? 1 : 2));
+		}
+		else
+			comment_folder_exists = GPOINTER_TO_INT (value) == 1;
+
+		can_read = comment_folder_exists;
+
+		g_object_unref (comment_folder);
+		g_object_unref (comment_file);
+	}
+
+	return can_read;
 }
 
 
@@ -221,9 +269,30 @@ gth_metadata_provider_comment_write (GthMetadataProvider   *self,
 
 
 static void
-gth_metadata_provider_comment_class_init (GthMetadataProviderCommentClass *klass)
+gth_metadata_provider_comment_finalize (GObject *object)
 {
+	GthMetadataProviderComment *self;
+
+	g_return_if_fail (object != NULL);
+	g_return_if_fail (GTH_IS_METADATA_PROVIDER_COMMENT (object));
+
+	self = GTH_METADATA_PROVIDER_COMMENT (object);
+	g_hash_table_unref (self->priv->checked_folders);
+
+	/* Chain up */
+	G_OBJECT_CLASS (gth_metadata_provider_comment_parent_class)->finalize (object);
+}
+
+
+static void
+gth_metadata_provider_comment_class_init (GthMetadataProviderCommentClass *klass)
+
+{
+	GObjectClass             *gobject_class;
 	GthMetadataProviderClass *mp_class;
+
+	gobject_class = G_OBJECT_CLASS (klass);
+	gobject_class->finalize = gth_metadata_provider_comment_finalize;
 
 	mp_class = GTH_METADATA_PROVIDER_CLASS (klass);
 	mp_class->can_read = gth_metadata_provider_comment_can_read;
@@ -232,8 +301,10 @@ gth_metadata_provider_comment_class_init (GthMetadataProviderCommentClass *klass
 	mp_class->write = gth_metadata_provider_comment_write;
 }
 
+
 static void
 gth_metadata_provider_comment_init (GthMetadataProviderComment *self)
 {
-	/* void */
+	self->priv = gth_metadata_provider_comment_get_instance_private (self);
+	self->priv->checked_folders = g_hash_table_new_full (g_file_hash, (GEqualFunc) g_file_equal, g_object_unref, NULL);
 }

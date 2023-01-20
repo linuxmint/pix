@@ -1,107 +1,99 @@
-Source: pix
+Source: gthumb
 Section: gnome
 Priority: optional
-Maintainer: Linux Mint <root@linuxmint.com>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends:
- debhelper-compat(=10)
- , dh-autoreconf
- , intltool
- , libexiv2-dev (>= 0.21)
- , flex
- , bison
- , libtiff-dev
- , libpng12-dev | libpng-dev
- , libjpeg-dev
- , libsm-dev
- , libice-dev
- , automake
- , autoconf
- , libtool
- , gnome-common
- , gsettings-desktop-schemas-dev
- , libgtk-3-dev (>= 3.20.0)
- , libxml2-dev (>= 2.4.0)
- , libglib2.0-dev (>= 2.34.0)
- , libcairo2-dev
- , libltdl3-dev
- , libsoup-gnome2.4-dev (>= 2.36)
- , librsvg2-dev (>= 2.34.0)
- , zlib1g-dev
- , yelp-tools
- , libgstreamer1.0-dev
- , libsecret-1-dev
- , libgstreamer-plugins-base1.0-dev
- , libwebp-dev
- , libwebkit2gtk-4.0-dev
-Standards-Version: 3.9.5
-Homepage: https://github.com/linuxmint/pix
+ bison,
+ debhelper-compat (= 13),
+ flex,
+ gnome-common,
+ gsettings-desktop-schemas-dev,
+ libbrasero-media3-dev,
+ libclutter-gtk-1.0-dev,
+ libexiv2-dev,
+ libgstreamer-plugins-base1.0-dev,
+ libgstreamer1.0-dev,
+ libgtk-3-dev,
+ libheif-dev (>= 1.11~),
+ libraw-dev,
+ librsvg2-dev,
+ libsecret-1-dev,
+ libsoup-gnome2.4-dev,
+ libtiff-dev,
+ libwebkit2gtk-4.0-dev,
+ libwebp-dev,
+ meson,
+ yelp-tools,
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/debian/gthumb.git
+Vcs-Browser: https://salsa.debian.org/debian/gthumb
+Homepage: https://wiki.gnome.org/Apps/Gthumb
 
-Package: pix
+Package: gthumb
 Architecture: any
-Pre-Depends: ${misc:Pre-Depends}
+Pre-Depends:
+ ${misc:Pre-Depends},
 Depends:
- ${shlibs:Depends}
- , ${misc:Depends}
- , pix-data (= ${source:Version})
- , dcraw
- , gsettings-desktop-schemas
- , xapps-common (>= 2.2.7)
-Recommends: gvfs-bin
- , gstreamer0.10-gnomevfs
- , bison
- , flex
+ gsettings-desktop-schemas,
+ gthumb-data (= ${source:Version}),
+ libgl1-mesa-dri,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ libgphoto2-6,
+ libgphoto2-port12,
+Conflicts:
+ gthumb2,
+Provides:
+ gthumb2,
+Breaks:
+ gthumb-data (<< 3:3.4.4.1-4~),
+Replaces:
+ gthumb-data (<< 3:3.4.4.1-4~),
 Description: image viewer and browser
- Pix is an advanced image viewer and browser. It has many useful
+ gThumb is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- For camera import feature, the gPhoto2 library is used.
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
 
-Package: pix-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends:
- ${misc:Depends}
- , pix (= ${binary:Version})
-Description: image viewer and browser - debugging symbols
- Pix is an advanced image viewer and browser. It has many useful
- features, such as filesystem browsing, slide show, image catalogs, web
- album creation, camera import, image CD burning, batch file operations and
- quick image editing features like transformation and color manipulation.
- .
- For camera import feature, the gPhoto2 library is used.
- .
- This package contains the debugging symbols for Pix.
-
-Package: pix-data
+Package: gthumb-data
 Architecture: all
-Recommends: yelp
+Breaks:
+ gthumb (<< 3:2.10.8-1),
+Replaces:
+ gthumb (<< 3:2.10.8-1),
+Recommends:
+ yelp,
 Depends:
- ${misc:Depends}
+ ${misc:Depends},
 Description: image viewer and browser - arch-independent files
- Pix is an advanced image viewer and browser. It has many useful
+ gThumb is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- For camera import feature, the gPhoto2 library is used.
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
  .
- This package contains the architecture-independent files needed by pix.
+ This package contains the architecture-independent files needed by gthumb.
 
-Package: pix-dev
+Package: gthumb-dev
 Architecture: any
+Multi-Arch: no
 Section: devel
 Depends:
- ${misc:Depends}
- , pix (= ${binary:Version})
+ gthumb (= ${binary:Version}),
+ ${misc:Depends},
 Description: image viewer and browser - development files
- Pix is an advanced image viewer and browser. It has many useful
+ gThumb is an advanced image viewer and browser. It has many useful
  features, such as filesystem browsing, slide show, image catalogs, web
  album creation, camera import, image CD burning, batch file operations and
  quick image editing features like transformation and color manipulation.
  .
- For camera import feature, the gPhoto2 library is used.
+ It's designed for GNOME desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
  .
  This package contains the files needed to develop third-party extensions.

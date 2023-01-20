@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <webp/decode.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "cairo-image-surface-webp.h"
 
 
@@ -35,6 +35,7 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 				       int            requested_size,
 				       int           *original_width,
 				       int           *original_height,
+				       gboolean      *loaded_original,
 				       gpointer       user_data,
 				       GCancellable  *cancellable,
 				       GError       **error)
@@ -42,7 +43,7 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 	GthImage                  *image;
 	WebPDecoderConfig          config;
 	guchar                    *buffer;
-	gssize                     bytes_read;
+	gsize                      bytes_read;
 	int                        width, height;
 	cairo_surface_t           *surface;
 	cairo_surface_metadata_t  *metadata;
@@ -54,11 +55,16 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 		return image;
 
 	buffer = g_new (guchar, BUFFER_SIZE);
-	bytes_read = g_input_stream_read (istream,
-					  buffer,
-					  BUFFER_SIZE,
-					  cancellable,
-					  error);
+	if (! g_input_stream_read_all (istream,
+				       buffer,
+				       BUFFER_SIZE,
+				       &bytes_read,
+				       cancellable,
+				       error))
+	{
+		g_free (buffer);
+		return image;
+	}
 
 	if (WebPGetFeatures (buffer, bytes_read, &config.input) != VP8_STATUS_OK) {
 		g_free (buffer);
@@ -79,16 +85,8 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 #endif
 
 	surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, width, height);
-
-	if (cairo_surface_status (surface) != CAIRO_STATUS_SUCCESS) {
-		cairo_surface_destroy (surface);
-		return image;
-	}
-
 	metadata = _cairo_image_surface_get_metadata (surface);
-	metadata->has_alpha = (config.input.has_alpha);
-
-	cairo_surface_flush (surface);
+	_cairo_metadata_set_has_alpha (metadata, config.input.has_alpha);
 
 	config.options.no_fancy_upsampling = 1;
 
@@ -105,7 +103,7 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 #elif G_BYTE_ORDER == G_BIG_ENDIAN
 	config.output.colorspace = MODE_ARGB;
 #endif
-	config.output.u.RGBA.rgba = (uint8_t *) cairo_image_surface_get_data (surface);
+	config.output.u.RGBA.rgba = (uint8_t *) _cairo_image_surface_flush_and_get_data (surface);
 	config.output.u.RGBA.stride = cairo_image_surface_get_stride (surface);
 	config.output.u.RGBA.size = cairo_image_surface_get_stride (surface) * height;
 	config.output.is_external_memory = 1;
@@ -116,20 +114,25 @@ _cairo_image_surface_create_from_webp (GInputStream  *istream,
 		return image;
 	}
 
-	do {
+	while (TRUE) {
 		VP8StatusCode status = WebPIAppend (idec, buffer, bytes_read);
 		if ((status != VP8_STATUS_OK) && (status != VP8_STATUS_SUSPENDED))
 			break;
+
+		gssize signed_bytes_read = g_input_stream_read (istream,
+							       buffer,
+							       BUFFER_SIZE,
+							       cancellable,
+							       error);
+		if (signed_bytes_read <= 0)
+			break;
+		bytes_read = signed_bytes_read;
 	}
-	while ((bytes_read = g_input_stream_read (istream,
-						  buffer,
-						  BUFFER_SIZE,
-						  cancellable,
-						  error)) > 0);
 
 	cairo_surface_mark_dirty (surface);
 	if (cairo_surface_status (surface) == CAIRO_STATUS_SUCCESS)
 		gth_image_set_cairo_surface (image, surface);
+	cairo_surface_destroy (surface);
 
 	WebPIDelete (idec);
 	WebPFreeDecBuffer (&config.output);

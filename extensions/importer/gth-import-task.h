@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define GTH_IMPORT_TASK_H
 
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "utils.h"
 
 G_BEGIN_DECLS
@@ -52,10 +52,7 @@ GType       gth_import_task_get_type         (void);
 GthTask *   gth_import_task_new              (GthBrowser         *browser,
 					      GList              *files, /* GthFileData list */
 					      GFile              *destination,
-					      GthSubfolderType    subfolder_type,
-					      GthSubfolderFormat  subfolder_format,
-					      gboolean            single_subfolder,
-					      const char         *custom_format,
+					      const char         *subfolder_template,
 					      const char         *event_name,
 					      char              **tags,
 					      gboolean            delete_imported,

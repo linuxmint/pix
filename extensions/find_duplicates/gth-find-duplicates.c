@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/catalogs/gth-catalog.h>
 #include <extensions/file_manager/actions.h>
 #include "gth-find-duplicates.h"
@@ -64,15 +64,15 @@ typedef struct {
 SelectCommand select_commands[] = {
 	{ N_("leave the newest duplicates"), SELECT_LEAVE_NEWEST },
 	{ N_("leave the oldest duplicates"), SELECT_LEAVE_OLDEST },
-	{ N_("by folder..."), SELECT_BY_FOLDER },
+	{ N_("by folder…"), SELECT_BY_FOLDER },
 	{ N_("all files"), SELECT_ALL },
 	{ N_("no file"), SELECT_NONE }
 };
 
 
-struct _GthFindDuplicatesPrivate
-{
+struct _GthFindDuplicatesPrivate {
 	GthBrowser    *browser;
+	GtkWidget     *dialog;
 	GFile         *location;
 	gboolean       recursive;
 	GthTest       *test;
@@ -102,7 +102,10 @@ struct _GthFindDuplicatesPrivate
 };
 
 
-G_DEFINE_TYPE (GthFindDuplicates, gth_find_duplicates, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_CODE (GthFindDuplicates,
+			 gth_find_duplicates,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthFindDuplicates))
 
 
 typedef struct {
@@ -174,8 +177,6 @@ gth_find_duplicates_class_init (GthFindDuplicatesClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthFindDuplicatesPrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_find_duplicates_finalize;
 }
@@ -184,7 +185,7 @@ gth_find_duplicates_class_init (GthFindDuplicatesClass *klass)
 static void
 gth_find_duplicates_init (GthFindDuplicates *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_FIND_DUPLICATES, GthFindDuplicatesPrivate);
+	self->priv = gth_find_duplicates_get_instance_private (self);
 	self->priv->test = NULL;
 	self->priv->builder = NULL;
 	self->priv->attributes = NULL;
@@ -371,6 +372,7 @@ duplicates_list_view_selection_changed_cb (GthFileView *fileview,
 	GList             *file_data_list;
 	GHashTable        *selected_files;
 	GtkTreeModel      *files_treemodel;
+	GtkTreeModel      *files_treemodelfilter;
 	GtkTreeIter        iter;
 	GList             *scan;
 
@@ -394,6 +396,11 @@ duplicates_list_view_selection_changed_cb (GthFileView *fileview,
 	}
 
 	files_treemodel = GTK_TREE_MODEL (GET_WIDGET ("files_liststore"));
+
+	files_treemodelfilter = GTK_TREE_MODEL (GET_WIDGET ("files_treemodelfilter"));
+	g_object_ref (files_treemodelfilter);
+	gtk_tree_view_set_model (GTK_TREE_VIEW (GET_WIDGET ("files_treeview")), NULL); /* to avoid excessive recomputation */
+
 	if (gtk_tree_model_get_iter_first (files_treemodel, &iter)) {
 		do {
 			GthFileData *file_data;
@@ -409,6 +416,9 @@ duplicates_list_view_selection_changed_cb (GthFileView *fileview,
 		}
 		while (gtk_tree_model_iter_next (files_treemodel, &iter));
 	}
+
+	gtk_tree_view_set_model (GTK_TREE_VIEW (GET_WIDGET ("files_treeview")), files_treemodelfilter);
+	g_object_unref (files_treemodelfilter);
 
 	update_file_list_sensitivity (self);
 	update_file_list_selection_info (self);
@@ -457,9 +467,6 @@ files_tree_view_selection_changed_cb (GtkTreeSelection *tree_selection,
 }
 
 
-static void start_next_checksum (GthFindDuplicates *self);
-
-
 static void
 update_total_duplicates_label (GthFindDuplicates *self)
 {
@@ -472,162 +479,6 @@ update_total_duplicates_label (GthFindDuplicates *self)
 
 	g_free (text);
 	g_free (size_formatted);
-}
-
-
-static void
-_file_list_add_file (GthFindDuplicates *self,
-		     GthFileData       *file_data)
-{
-	GFile       *parent;
-	char        *parent_name;
-	GTimeVal     timeval;
-	GtkTreeIter  iter;
-
-	parent = g_file_get_parent (file_data->file);
-	if (parent != NULL)
-		parent_name = g_file_get_parse_name (parent);
-	else
-		parent_name = NULL;
-
-	g_file_info_get_modification_time (file_data->info, &timeval);
-
-	gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("files_liststore")), &iter);
-	gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("files_liststore")), &iter,
-			    FILE_LIST_COLUMN_FILE, file_data,
-			    FILE_LIST_COLUMN_CHECKED, TRUE,
-			    FILE_LIST_COLUMN_FILENAME, g_file_info_get_display_name (file_data->info),
-			    FILE_LIST_COLUMN_POSITION, parent_name,
-			    FILE_LIST_COLUMN_LAST_MODIFIED, g_file_info_get_attribute_string (file_data->info, "gth::file::display-mtime"),
-			    FILE_LIST_COLUMN_VISIBLE, TRUE,
-			    FILE_LIST_COLUMN_LAST_MODIFIED_TIME, timeval.tv_sec,
-			    -1);
-
-	g_free (parent_name);
-	g_object_unref (parent);
-}
-
-
-static void
-file_input_stream_read_ready_cb (GObject      *source,
-		    	    	 GAsyncResult *result,
-		    	    	 gpointer      user_data)
-{
-	GthFindDuplicates *self = user_data;
-	GError            *error = NULL;
-	gssize             buffer_size;
-
-	self->priv->io_operation = FALSE;
-	if (self->priv->closing) {
-		gtk_widget_destroy (GET_WIDGET ("find_duplicates_dialog"));
-		return;
-	}
-
-	buffer_size = g_input_stream_read_finish (G_INPUT_STREAM (source), result, &error);
-
-	if (buffer_size < 0) {
-		start_next_checksum (self);
-		return;
-	}
-	else if (buffer_size == 0) {
-		const char     *checksum;
-		DuplicatedData *d_data;
-
-		self->priv->n_file += 1;
-
-		g_object_unref (self->priv->file_stream);
-		self->priv->file_stream = NULL;
-
-		checksum = g_checksum_get_string (self->priv->checksum);
-		g_file_info_set_attribute_string (self->priv->current_file->info,
-						  "find-duplicates::checksum",
-						  checksum);
-
-		d_data = g_hash_table_lookup (self->priv->duplicated, checksum);
-		if (d_data == NULL) {
-			d_data = duplicated_data_new ();
-			g_hash_table_insert (self->priv->duplicated, g_strdup (checksum), d_data);
-		}
-		if (d_data->file_data == NULL)
-			d_data->file_data = g_object_ref (self->priv->current_file);
-		d_data->files = g_list_prepend (d_data->files, g_object_ref (self->priv->current_file));
-		d_data->n_files += 1;
-		d_data->total_size += g_file_info_get_size (self->priv->current_file->info);
-		if (d_data->n_files > 1) {
-			char  *text;
-			GList *singleton;
-
-			text = g_strdup_printf (g_dngettext (NULL, "%d duplicate", "%d duplicates", d_data->n_files - 1), d_data->n_files - 1);
-			g_file_info_set_attribute_string (d_data->file_data->info,
-							  "find-duplicates::n-duplicates",
-							  text);
-			g_free (text);
-
-			singleton = g_list_append (NULL, d_data->file_data);
-			if (d_data->n_files == 2) {
-				gth_file_list_add_files (GTH_FILE_LIST (self->priv->duplicates_list), singleton, -1);
-				_file_list_add_file (self, d_data->file_data); /* add the first one as well */
-			}
-			else
-				gth_file_list_update_files (GTH_FILE_LIST (self->priv->duplicates_list), singleton);
-			_file_list_add_file (self, self->priv->current_file);
-			g_list_free (singleton);
-
-			self->priv->n_duplicates += 1;
-			self->priv->duplicates_size += g_file_info_get_size (d_data->file_data->info);
-			update_total_duplicates_label (self);
-		}
-
-		duplicates_list_view_selection_changed_cb (NULL, self);
-
-		start_next_checksum (self);
-
-		return;
-	}
-
-	self->priv->io_operation = TRUE;
-
-	g_checksum_update (self->priv->checksum, self->priv->buffer, buffer_size);
-	g_input_stream_read_async (self->priv->file_stream,
-				   self->priv->buffer,
-				   BUFFER_SIZE,
-				   G_PRIORITY_DEFAULT,
-				   self->priv->cancellable,
-				   file_input_stream_read_ready_cb,
-				   self);
-}
-
-
-static void
-read_current_file_ready_cb (GObject      *source,
-			    GAsyncResult *result,
-			    gpointer      user_data)
-{
-	GthFindDuplicates *self = user_data;
-	GError            *error = NULL;
-
-	self->priv->io_operation = FALSE;
-	if (self->priv->closing) {
-		gtk_widget_destroy (GET_WIDGET ("find_duplicates_dialog"));
-		return;
-	}
-
-	if (self->priv->file_stream != NULL)
-		g_object_unref (self->priv->file_stream);
-	self->priv->file_stream = (GInputStream *) g_file_read_finish (G_FILE (source), result, &error);
-	if (self->priv->file_stream == NULL) {
-		start_next_checksum (self);
-		return;
-	}
-
-	self->priv->io_operation = TRUE;
-	g_input_stream_read_async (self->priv->file_stream,
-				   self->priv->buffer,
-				   BUFFER_SIZE,
-				   G_PRIORITY_DEFAULT,
-				   self->priv->cancellable,
-				   file_input_stream_read_ready_cb,
-				   self);
 }
 
 
@@ -695,6 +546,181 @@ folder_changed_cb (GthMonitor      *monitor,
 
 
 static void
+after_checksums (GthFindDuplicates *self)
+{
+	self->priv->folder_changed_id = g_signal_connect (gth_main_get_default_monitor (),
+							  "folder-changed",
+							  G_CALLBACK (folder_changed_cb),
+							  self);
+
+	gtk_notebook_set_current_page (GTK_NOTEBOOK (GET_WIDGET ("pages_notebook")), (self->priv->n_duplicates > 0) ? 0 : 1);
+	gtk_label_set_text (GTK_LABEL (GET_WIDGET ("progress_label")), _("Search completed"));
+	gtk_label_set_text (GTK_LABEL (GET_WIDGET ("search_details_label")), "");
+	gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (GET_WIDGET ("search_progressbar")), 1.0);
+	gtk_widget_set_sensitive (GET_WIDGET ("stop_button"), FALSE);
+	duplicates_list_view_selection_changed_cb (NULL, self);
+}
+
+
+static void start_next_checksum (GthFindDuplicates *self);
+
+
+static void
+_file_list_add_file (GthFindDuplicates *self,
+		     GthFileData       *file_data)
+{
+	GFile       *parent;
+	char        *parent_name;
+	GTimeVal     timeval;
+	GtkTreeIter  iter;
+
+	parent = g_file_get_parent (file_data->file);
+	if (parent != NULL)
+		parent_name = g_file_get_parse_name (parent);
+	else
+		parent_name = NULL;
+
+	g_file_info_get_modification_time (file_data->info, &timeval);
+
+	gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("files_liststore")), &iter);
+	gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("files_liststore")), &iter,
+			    FILE_LIST_COLUMN_FILE, file_data,
+			    FILE_LIST_COLUMN_CHECKED, TRUE,
+			    FILE_LIST_COLUMN_FILENAME, g_file_info_get_display_name (file_data->info),
+			    FILE_LIST_COLUMN_POSITION, parent_name,
+			    FILE_LIST_COLUMN_LAST_MODIFIED, g_file_info_get_attribute_string (file_data->info, "gth::file::display-mtime"),
+			    FILE_LIST_COLUMN_VISIBLE, TRUE,
+			    FILE_LIST_COLUMN_LAST_MODIFIED_TIME, timeval.tv_sec,
+			    -1);
+
+	g_free (parent_name);
+	g_object_unref (parent);
+}
+
+
+static void
+file_input_stream_read_ready_cb (GObject      *source,
+		    	    	 GAsyncResult *result,
+		    	    	 gpointer      user_data)
+{
+	GthFindDuplicates *self = user_data;
+	GError            *error = NULL;
+	gssize             buffer_size;
+
+	self->priv->io_operation = FALSE;
+	if (self->priv->closing) {
+		gtk_widget_destroy (self->priv->dialog);
+		return;
+	}
+
+	buffer_size = g_input_stream_read_finish (G_INPUT_STREAM (source), result, &error);
+
+	if (buffer_size < 0) {
+		start_next_checksum (self);
+		return;
+	}
+	else if (buffer_size == 0) {
+		const char     *checksum;
+		DuplicatedData *d_data;
+
+		self->priv->n_file += 1;
+
+		g_object_unref (self->priv->file_stream);
+		self->priv->file_stream = NULL;
+
+		checksum = g_checksum_get_string (self->priv->checksum);
+		g_file_info_set_attribute_string (self->priv->current_file->info,
+						  "find-duplicates::checksum",
+						  checksum);
+
+		d_data = g_hash_table_lookup (self->priv->duplicated, checksum);
+		if (d_data == NULL) {
+			d_data = duplicated_data_new ();
+			g_hash_table_insert (self->priv->duplicated, g_strdup (checksum), d_data);
+		}
+		if (d_data->file_data == NULL)
+			d_data->file_data = g_object_ref (self->priv->current_file);
+		d_data->files = g_list_prepend (d_data->files, g_object_ref (self->priv->current_file));
+		d_data->n_files += 1;
+		d_data->total_size += g_file_info_get_size (self->priv->current_file->info);
+		if (d_data->n_files > 1) {
+			char  *text;
+			GList *singleton;
+
+			text = g_strdup_printf (g_dngettext (NULL, "%d duplicate", "%d duplicates", d_data->n_files - 1), d_data->n_files - 1);
+			g_file_info_set_attribute_string (d_data->file_data->info,
+							  "find-duplicates::n-duplicates",
+							  text);
+			g_free (text);
+
+			singleton = g_list_append (NULL, d_data->file_data);
+			if (d_data->n_files == 2) {
+				gth_file_list_add_files (GTH_FILE_LIST (self->priv->duplicates_list), singleton, -1);
+				_file_list_add_file (self, d_data->file_data); /* add the first one as well */
+			}
+			else
+				gth_file_list_update_files (GTH_FILE_LIST (self->priv->duplicates_list), singleton);
+			_file_list_add_file (self, self->priv->current_file);
+			g_list_free (singleton);
+
+			self->priv->n_duplicates += 1;
+			self->priv->duplicates_size += g_file_info_get_size (d_data->file_data->info);
+			update_total_duplicates_label (self);
+		}
+
+		duplicates_list_view_selection_changed_cb (NULL, self);
+		start_next_checksum (self);
+
+		return;
+	}
+
+	self->priv->io_operation = TRUE;
+
+	g_checksum_update (self->priv->checksum, self->priv->buffer, buffer_size);
+	g_input_stream_read_async (self->priv->file_stream,
+				   self->priv->buffer,
+				   BUFFER_SIZE,
+				   G_PRIORITY_DEFAULT,
+				   self->priv->cancellable,
+				   file_input_stream_read_ready_cb,
+				   self);
+}
+
+
+static void
+read_current_file_ready_cb (GObject      *source,
+			    GAsyncResult *result,
+			    gpointer      user_data)
+{
+	GthFindDuplicates *self = user_data;
+	GError            *error = NULL;
+
+	self->priv->io_operation = FALSE;
+	if (self->priv->closing) {
+		gtk_widget_destroy (self->priv->dialog);
+		return;
+	}
+
+	if (self->priv->file_stream != NULL)
+		g_object_unref (self->priv->file_stream);
+	self->priv->file_stream = (GInputStream *) g_file_read_finish (G_FILE (source), result, &error);
+	if (self->priv->file_stream == NULL) {
+		start_next_checksum (self);
+		return;
+	}
+
+	self->priv->io_operation = TRUE;
+	g_input_stream_read_async (self->priv->file_stream,
+				   self->priv->buffer,
+				   BUFFER_SIZE,
+				   G_PRIORITY_DEFAULT,
+				   self->priv->cancellable,
+				   file_input_stream_read_ready_cb,
+				   self);
+}
+
+
+static void
 start_next_checksum (GthFindDuplicates *self)
 {
 	GList *link;
@@ -703,17 +729,7 @@ start_next_checksum (GthFindDuplicates *self)
 
 	link = self->priv->files;
 	if (link == NULL) {
-		self->priv->folder_changed_id = g_signal_connect (gth_main_get_default_monitor (),
-								  "folder-changed",
-								  G_CALLBACK (folder_changed_cb),
-								  self);
-
-		gtk_notebook_set_current_page (GTK_NOTEBOOK (GET_WIDGET ("pages_notebook")), (self->priv->n_duplicates > 0) ? 0 : 1);
-		gtk_label_set_text (GTK_LABEL (GET_WIDGET ("progress_label")), _("Search completed"));
-		gtk_label_set_text (GTK_LABEL (GET_WIDGET ("search_details_label")), "");
-		gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (GET_WIDGET ("search_progressbar")), 1.0);
-		gtk_widget_set_sensitive (GET_WIDGET ("stop_button"), FALSE);
-		duplicates_list_view_selection_changed_cb (NULL, self);
+		after_checksums (self);
 		return;
 	}
 
@@ -746,29 +762,73 @@ start_next_checksum (GthFindDuplicates *self)
 }
 
 
+/* -- search_directory -- */
+
+
 static void
 done_func (GObject  *object,
 	   GError   *error,
 	   gpointer  user_data)
 {
 	GthFindDuplicates *self = user_data;
+	GList             *scan;
+	GHashTable        *file_sizes;
+	GList             *possible_duplicates;
 
 	g_source_remove (self->priv->pulse_event_id);
 	self->priv->pulse_event_id = 0;
 	self->priv->io_operation = FALSE;
 
 	if (self->priv->closing) {
-		gtk_widget_destroy (GET_WIDGET ("find_duplicates_dialog"));
+		gtk_widget_destroy (self->priv->dialog);
 		return;
 	}
 
 	if ((error != NULL) && ! g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
 		_gtk_error_dialog_from_gerror_show (GTK_WINDOW (self->priv->browser), _("Could not perform the operation"), error);
-		gtk_widget_destroy (GET_WIDGET ("find_duplicates_dialog"));
+		gtk_widget_destroy (self->priv->dialog);
 		return;
 	}
 
-	self->priv->files = g_list_reverse (self->priv->files);
+	/* ignore files with an unique size */
+
+	file_sizes = g_hash_table_new_full (g_int64_hash, g_int64_equal, NULL, NULL);
+	for (scan = self->priv->files; scan; scan = scan->next) {
+		GthFileData *file_data = scan->data;
+		gpointer     value;
+		int          n_files;
+		gint64       size;
+
+		size = g_file_info_get_size (file_data->info);
+		value = g_hash_table_lookup (file_sizes, &size);
+		n_files = (value == NULL) ? 0 : GPOINTER_TO_INT (value);
+		n_files += 1;
+		g_hash_table_insert (file_sizes, &size, GINT_TO_POINTER (n_files));
+	}
+
+	possible_duplicates = NULL;
+	for (scan = self->priv->files; scan; scan = scan->next) {
+		GthFileData *file_data = scan->data;
+		gint64       size;
+		gpointer     value;
+		int          n_files;
+
+		size = g_file_info_get_size (file_data->info);
+		value = g_hash_table_lookup (file_sizes, &size);
+		if (value == NULL)
+			continue;
+
+		n_files = GPOINTER_TO_INT (value);
+		if (n_files > 1)
+			possible_duplicates = g_list_prepend (possible_duplicates, g_object_ref (file_data));
+	}
+
+	g_hash_table_destroy (file_sizes);
+
+	/* start computing checksums */
+
+	_g_object_list_unref (self->priv->files);
+	self->priv->files = possible_duplicates;
 	self->priv->n_files = g_list_length (self->priv->files);
 	self->priv->n_file = 0;
 	start_next_checksum (self);
@@ -809,7 +869,7 @@ start_dir_func (GFile      *directory,
 }
 
 
-gboolean
+static gboolean
 pulse_progressbar_cb (gpointer user_data)
 {
 	GthFindDuplicates *self = user_data;
@@ -858,22 +918,12 @@ close_button_clicked_cb (GtkButton *button,
 	GthFindDuplicates *self = user_data;
 
 	if (! self->priv->io_operation) {
-		gtk_widget_destroy (GET_WIDGET ("find_duplicates_dialog"));
+		gtk_widget_destroy (self->priv->dialog);
 	}
 	else {
 		self->priv->closing = TRUE;
 		g_cancellable_cancel (self->priv->cancellable);
 	}
-}
-
-
-static void
-help_button_clicked_cb (GtkButton *button,
-			gpointer   user_data)
-{
-	GthFindDuplicates *self = user_data;
-
-	show_help_dialog (GTK_WINDOW (GET_WIDGET ("find_duplicates_dialog")), "pix-find-duplicates");
 }
 
 
@@ -964,6 +1014,7 @@ position_treeviewcolumn_clicked_cb (GtkTreeViewColumn *treeviewcolumn,
 	_file_list_set_sort_column_id (self, treeviewcolumn, FILE_LIST_COLUMN_POSITION);
 }
 
+
 static GList *
 get_selected_files (GthFindDuplicates *self)
 {
@@ -1035,7 +1086,7 @@ delete_button_clicked_cb (GtkWidget *button,
 
 	file_data_list = get_selected_files (self);
 	if (file_data_list != NULL) {
-		gth_file_mananger_delete_files (GTK_WINDOW (GET_WIDGET ("find_duplicates_dialog")), file_data_list);
+		gth_file_mananger_delete_files (GTK_WINDOW (self->priv->dialog), file_data_list);
 		_g_object_list_unref (file_data_list);
 	}
 }
@@ -1201,7 +1252,7 @@ select_menu_item_activate_cb (GtkMenuItem *menu_item,
 			}
 
 			dialog = gth_folder_chooser_dialog_new (folders);
-			gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (GET_WIDGET ("find_duplicates_dialog")));
+			gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (self->priv->dialog));
 			gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 			gtk_widget_show (dialog);
 
@@ -1274,7 +1325,7 @@ gth_find_duplicates_exec (GthBrowser *browser,
 
 	self = (GthFindDuplicates *) g_object_new (GTH_TYPE_FIND_DUPLICATES, NULL);
 
-	settings = g_settings_new (PIX_BROWSER_SCHEMA);
+	settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
 
 	self->priv->browser = browser;
 	self->priv->location = g_object_ref (location);
@@ -1294,19 +1345,33 @@ gth_find_duplicates_exec (GthBrowser *browser,
 	}
 
 	self->priv->builder = _gtk_builder_new_from_file ("find-duplicates-dialog.ui", "find_duplicates");
+
+	self->priv->dialog = g_object_new (GTK_TYPE_DIALOG,
+			     	     	   "title", _("Find Duplicates"),
+					   "transient-for", GTK_WINDOW (self->priv->browser),
+					   "modal", FALSE,
+					   "destroy-with-parent", FALSE,
+					   "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+					   NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (self->priv->dialog))),
+			   _gtk_builder_get_widget (self->priv->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (self->priv->dialog),
+				_GTK_LABEL_CLOSE, GTK_RESPONSE_CLOSE,
+				NULL);
+
 	self->priv->duplicates_list = gth_file_list_new (gth_grid_view_new (), GTH_FILE_LIST_MODE_NORMAL, FALSE);
 	gtk_tree_model_filter_set_visible_column (GTK_TREE_MODEL_FILTER (GET_WIDGET ("files_treemodelfilter")), FILE_LIST_COLUMN_VISIBLE);
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (GET_WIDGET ("files_liststore")), FILE_LIST_COLUMN_FILENAME, GTK_SORT_ASCENDING);
 	gth_file_selection_set_selection_mode (GTH_FILE_SELECTION (gth_file_list_get_view (GTH_FILE_LIST (self->priv->duplicates_list))), GTK_SELECTION_MULTIPLE);
 	gth_file_list_set_caption (GTH_FILE_LIST (self->priv->duplicates_list), "find-duplicates::n-duplicates,gth::file::display-size");
 	gth_file_list_set_thumb_size (GTH_FILE_LIST (self->priv->duplicates_list), 112);
-	gtk_widget_set_size_request (self->priv->duplicates_list, -1, 300);
+	gtk_widget_set_size_request (self->priv->duplicates_list, 750, 300);
 	gtk_widget_show (self->priv->duplicates_list);
-	gtk_container_add (GTK_CONTAINER (GET_WIDGET ("duplicates_list_box")), self->priv->duplicates_list);
+	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("duplicates_list_box")), self->priv->duplicates_list, TRUE, TRUE, 0);
 
-	self->priv->select_button = gth_menu_button_new ();
-	gth_menu_button_set_label (GTH_MENU_BUTTON (self->priv->select_button), _("Select"));
-	gtk_widget_show (self->priv->select_button);
+	self->priv->select_button = gtk_menu_button_new ();
+	gtk_container_add (GTK_CONTAINER (self->priv->select_button), gtk_label_new (_("Select")));
+	gtk_widget_show_all (self->priv->select_button);
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("select_button_box")), self->priv->select_button, FALSE, FALSE, 0);
 
 	self->priv->select_menu = gtk_menu_new ();
@@ -1324,15 +1389,15 @@ gth_find_duplicates_exec (GthBrowser *browser,
 
 		gtk_menu_shell_append (GTK_MENU_SHELL (self->priv->select_menu), menu_item);
 	}
-	gth_menu_button_set_menu (GTH_MENU_BUTTON (self->priv->select_button), self->priv->select_menu);
+	gtk_menu_button_set_popup (GTK_MENU_BUTTON (self->priv->select_button), self->priv->select_menu);
 
 	g_object_unref (settings);
 
-	g_signal_connect (GET_WIDGET ("find_duplicates_dialog"),
+	g_signal_connect (self->priv->dialog,
 			  "destroy",
 			  G_CALLBACK (find_duplicates_dialog_destroy_cb),
 			  self);
-	g_signal_connect (GET_WIDGET ("close_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (self->priv->dialog), GTK_RESPONSE_CLOSE),
 			  "clicked",
 			  G_CALLBACK (close_button_clicked_cb),
 			  self);
@@ -1340,10 +1405,6 @@ gth_find_duplicates_exec (GthBrowser *browser,
 				  "clicked",
 				  G_CALLBACK (g_cancellable_cancel),
 				  self->priv->cancellable);
-	g_signal_connect (GET_WIDGET ("help_button"),
-			  "clicked",
-			  G_CALLBACK (help_button_clicked_cb),
-			  self);
 	g_signal_connect (gth_file_list_get_view (GTH_FILE_LIST (self->priv->duplicates_list)),
 			  "file-selection-changed",
 			  G_CALLBACK (duplicates_list_view_selection_changed_cb),
@@ -1377,8 +1438,6 @@ gth_find_duplicates_exec (GthBrowser *browser,
 			  G_CALLBACK (delete_button_clicked_cb),
 			  self);
 
-	gtk_widget_show (GET_WIDGET ("find_duplicates_dialog"));
-	gtk_window_set_transient_for (GTK_WINDOW (GET_WIDGET ("find_duplicates_dialog")), GTK_WINDOW (self->priv->browser));
-
+	gtk_widget_show (self->priv->dialog);
 	search_directory (self, self->priv->location);
 }

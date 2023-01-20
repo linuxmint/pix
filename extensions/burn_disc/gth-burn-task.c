@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -29,12 +29,11 @@
 #include <brasero-session.h>
 #include <brasero-session-cfg.h>
 #include <brasero-track-data-cfg.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-burn-task.h"
 
 
-struct _GthBurnTaskPrivate
-{
+struct _GthBurnTaskPrivate {
 	GthBrowser          *browser;
 	GFile               *location;
 	GList               *selected_files;
@@ -51,7 +50,10 @@ struct _GthBurnTaskPrivate
 };
 
 
-G_DEFINE_TYPE (GthBurnTask, gth_burn_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthBurnTask,
+			 gth_burn_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthBurnTask))
 
 
 static void
@@ -70,23 +72,18 @@ gth_burn_task_finalize (GObject *object)
 
 	task = GTH_BURN_TASK (object);
 
-	if (task->priv != NULL) {
-		gtk_widget_destroy (task->priv->dialog);
-		g_hash_table_foreach (task->priv->content, free_file_list_from_content, NULL);
-		g_hash_table_unref (task->priv->content);
-		g_hash_table_unref (task->priv->parents);
-		g_free (task->priv->current_directory);
-		_g_object_unref (task->priv->file_source);
-		_g_object_unref (task->priv->test);
-		_g_object_unref (task->priv->builder);
-		_g_object_list_unref (task->priv->selected_files);
-		g_free (task->priv->base_directory);
-		g_object_unref (task->priv->location);
-		g_object_unref (task->priv->browser);
-
-		g_free (task->priv);
-		task->priv = NULL;
-	}
+	gtk_widget_destroy (task->priv->dialog);
+	g_hash_table_foreach (task->priv->content, free_file_list_from_content, NULL);
+	g_hash_table_unref (task->priv->content);
+	g_hash_table_unref (task->priv->parents);
+	g_free (task->priv->current_directory);
+	_g_object_unref (task->priv->file_source);
+	_g_object_unref (task->priv->test);
+	_g_object_unref (task->priv->builder);
+	_g_object_list_unref (task->priv->selected_files);
+	g_free (task->priv->base_directory);
+	g_object_unref (task->priv->location);
+	g_object_unref (task->priv->browser);
 
 	G_OBJECT_CLASS (gth_burn_task_parent_class)->finalize (object);
 }
@@ -125,13 +122,17 @@ add_file_to_track (GthBurnTask *task,
 			if ((strcmp (subfolder, "") != 0) && g_hash_table_lookup (task->priv->parents, subfolder) == NULL) {
 				GtkTreePath *subfolder_parent_tpath;
 				GtkTreePath *subfolder_tpath;
+				char        *basename;
 
 				if (subfolder_parent != NULL)
 					subfolder_parent_tpath = g_hash_table_lookup (task->priv->parents, subfolder_parent);
 				else
 					subfolder_parent_tpath = NULL;
-				subfolder_tpath = brasero_track_data_cfg_add_empty_directory (task->priv->track, _g_uri_get_basename (subfolder), subfolder_parent_tpath);
+				basename = _g_uri_get_basename (subfolder);
+				subfolder_tpath = brasero_track_data_cfg_add_empty_directory (task->priv->track, basename, subfolder_parent_tpath);
 				g_hash_table_insert (task->priv->parents, g_strdup (subfolder), subfolder_tpath);
+
+				g_free (basename);
 			}
 
 			g_free (subfolder_parent);
@@ -214,7 +215,7 @@ burn_content_to_disc (GthBurnTask *task)
 	GtkWidget       *options;
 	GtkResponseType  result;
 
-	cursor = gdk_cursor_new (GDK_WATCH);
+	cursor = _gdk_cursor_new_for_widget (GTK_WIDGET (task->priv->browser), GDK_WATCH);
 	gdk_window_set_cursor (gtk_widget_get_window (GTK_WIDGET (task->priv->browser)), cursor);
 	g_object_unref (cursor);
 
@@ -328,7 +329,7 @@ start_dir_func (GFile      *directory,
 	g_free (task->priv->current_directory);
 
 	parent = g_file_get_parent (directory);
-	escaped = _g_replace (g_file_info_get_display_name (info), "/", "-");
+	escaped = _g_utf8_replace_str (g_file_info_get_display_name (info), "/", "-");
 	destination = g_file_get_child_for_display_name (parent, escaped, NULL);
 	uri = g_file_get_uri (destination);
 	task->priv->current_directory = g_uri_unescape_string (uri, NULL);
@@ -348,44 +349,40 @@ source_dialog_response_cb (GtkDialog   *dialog,
 			   int          response,
 			   GthBurnTask *task)
 {
-	if (response == GTK_RESPONSE_HELP) {
-		show_help_dialog (GTK_WINDOW (dialog), "pix-export-disk");
-	} else {	
-		gtk_widget_hide (task->priv->dialog);
-		gth_task_dialog (GTH_TASK (task), FALSE, NULL);
+	gtk_widget_hide (task->priv->dialog);
+	gth_task_dialog (GTH_TASK (task), FALSE, NULL);
 
-		if (response == GTK_RESPONSE_OK) {
-			if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (_gtk_builder_get_widget (task->priv->builder, "selection_radiobutton")))) {
-				g_hash_table_replace (task->priv->content, g_file_get_uri (task->priv->location), g_list_reverse (task->priv->selected_files));
-				task->priv->selected_files = NULL;
-				burn_content_to_disc (task);
-			}
-			else {
-				GSettings *settings;
-				gboolean   recursive;
-
-				_g_object_list_unref (task->priv->selected_files);
-				task->priv->selected_files = NULL;
-
-				settings = g_settings_new (PIX_BROWSER_SCHEMA);
-				recursive = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (_gtk_builder_get_widget (task->priv->builder, "folder_recursive_radiobutton")));
-				task->priv->test = gth_main_get_general_filter ();
-				task->priv->file_source = gth_main_get_file_source (task->priv->location);
-				gth_file_source_for_each_child (task->priv->file_source,
-								task->priv->location,
-								recursive,
-								g_settings_get_boolean (settings, PREF_BROWSER_FAST_FILE_TYPE) ? GFILE_STANDARD_ATTRIBUTES_WITH_FAST_CONTENT_TYPE : GFILE_STANDARD_ATTRIBUTES_WITH_CONTENT_TYPE,
-								start_dir_func,
-								for_each_file_func,
-								done_func,
-								task);
-
-				g_object_unref (settings);
-			}
+	if (response == GTK_RESPONSE_OK) {
+		if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (_gtk_builder_get_widget (task->priv->builder, "selection_radiobutton")))) {
+			g_hash_table_replace (task->priv->content, g_file_get_uri (task->priv->location), g_list_reverse (task->priv->selected_files));
+			task->priv->selected_files = NULL;
+			burn_content_to_disc (task);
 		}
-		else
-			gth_task_completed (GTH_TASK (task), NULL);
+		else {
+			GSettings *settings;
+			gboolean   recursive;
+
+			_g_object_list_unref (task->priv->selected_files);
+			task->priv->selected_files = NULL;
+
+			settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
+			recursive = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (_gtk_builder_get_widget (task->priv->builder, "folder_recursive_radiobutton")));
+			task->priv->test = gth_main_get_general_filter ();
+			task->priv->file_source = gth_main_get_file_source (task->priv->location);
+			gth_file_source_for_each_child (task->priv->file_source,
+							task->priv->location,
+							recursive,
+							g_settings_get_boolean (settings, PREF_BROWSER_FAST_FILE_TYPE) ? GFILE_STANDARD_ATTRIBUTES_WITH_FAST_CONTENT_TYPE : GFILE_STANDARD_ATTRIBUTES_WITH_CONTENT_TYPE,
+							start_dir_func,
+							for_each_file_func,
+							done_func,
+							task);
+
+			g_object_unref (settings);
+		}
 	}
+	else
+		gth_task_completed (GTH_TASK (task), NULL);
 }
 
 static void
@@ -394,14 +391,21 @@ gth_burn_task_exec (GthTask *base)
 	GthBurnTask *task = (GthBurnTask *) base;
 
 	task->priv->builder = _gtk_builder_new_from_file ("burn-source-selector.ui", "burn_disc");
-	task->priv->dialog = gtk_dialog_new_with_buttons (_("Write to Disc"),
-							  GTK_WINDOW (task->priv->browser),
-							  0,
-							  GTK_STOCK_HELP, GTK_RESPONSE_HELP,
-							  GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-							  GTK_STOCK_OK, GTK_RESPONSE_OK,
-							  NULL);
-	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (task->priv->dialog))), _gtk_builder_get_widget (task->priv->builder, "source_selector"));
+
+	task->priv->dialog = g_object_new (GTK_TYPE_DIALOG,
+					   "title", _("Write to Disc"),
+					   "transient-for", GTK_WINDOW (task->priv->browser),
+					   "modal", FALSE,
+					   "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+					   NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (task->priv->dialog))),
+			   _gtk_builder_get_widget (task->priv->builder, "source_selector"));
+	gtk_dialog_add_buttons (GTK_DIALOG (task->priv->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_("_Continue"), GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (task->priv->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	if (task->priv->selected_files == NULL)
 		gtk_widget_set_sensitive (_gtk_builder_get_widget (task->priv->builder, "selection_radiobutton"), FALSE);
 	else if ((task->priv->selected_files != NULL) && (task->priv->selected_files->next != NULL))
@@ -442,10 +446,20 @@ gth_burn_task_class_init (GthBurnTaskClass *class)
 static void
 gth_burn_task_init (GthBurnTask *task)
 {
-	task->priv = g_new0 (GthBurnTaskPrivate, 1);
+	task->priv = gth_burn_task_get_instance_private (task);
+	task->priv->browser = NULL;
+	task->priv->location = NULL;
+	task->priv->selected_files = NULL;
+	task->priv->dialog = NULL;
+	task->priv->builder = NULL;
+	task->priv->test = NULL;
+	task->priv->file_source = NULL;
+	task->priv->base_directory = NULL;
+	task->priv->current_directory = NULL;
 	task->priv->content = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
 	task->priv->parents = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, (GDestroyNotify) gtk_tree_path_free);
-	task->priv->builder = NULL;
+	task->priv->session = NULL;
+	task->priv->track = NULL;
 }
 
 

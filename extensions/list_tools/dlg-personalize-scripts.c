@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,11 +22,12 @@
 #include <config.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "dlg-personalize-scripts.h"
 #include "gth-script.h"
 #include "gth-script-editor-dialog.h"
 #include "gth-script-file.h"
+#include "shortcuts.h"
 
 
 #define GET_WIDGET(name) _gtk_builder_get_widget (data->builder, (name))
@@ -131,18 +132,15 @@ row_inserted_cb (GtkTreeModel *tree_model,
 
 
 static char *
-get_script_shortcut (GthScript *script)
+get_shortcut_label (DialogData *data,
+		    GthScript  *script)
 {
-	guint        keyval;
-	char        *shortcut;
+	GthShortcut *shortcut;
 
-	keyval = gth_script_get_shortcut (script);
-	if ((keyval >= GDK_KEY_KP_0) && (keyval <= GDK_KEY_KP_9))
-		shortcut = g_strdup_printf ("%c", '0' + (keyval - GDK_KEY_KP_0));
-	else
-		shortcut = g_strdup ("");
+	shortcut = gth_window_get_shortcut (GTH_WINDOW (data->browser),
+					    gth_script_get_detailed_action (script));
 
-	return shortcut;
+	return (shortcut != NULL) ? shortcut->label : "";
 }
 
 
@@ -156,20 +154,15 @@ set_script_list (DialogData *data,
 
 	for (scan = script_list; scan; scan = scan->next) {
 		GthScript   *script = scan->data;
-		char        *shortcut;
 		GtkTreeIter  iter;
-
-		shortcut = get_script_shortcut (script);
 
 		gtk_list_store_append (data->list_store, &iter);
 		gtk_list_store_set (data->list_store, &iter,
 				    COLUMN_SCRIPT, script,
 				    COLUMN_NAME, gth_script_get_display_name (script),
-				    COLUMN_SHORTCUT, shortcut,
+				    COLUMN_SHORTCUT, get_shortcut_label (data, script),
 				    COLUMN_VISIBLE, gth_script_is_visible (script),
 				   -1);
-
-		g_free (shortcut);
 	}
 
 	g_signal_handlers_unblock_by_func (data->list_store, row_inserted_cb, data);
@@ -300,7 +293,31 @@ add_columns (GtkTreeView *treeview,
 
 
 static gboolean
-get_script_iter (DialogData  *data,
+get_iter_for_shortcut (DialogData  *data,
+		       GthShortcut *shortcut,
+		       GtkTreeIter *iter)
+{
+	GtkTreeModel *model = GTK_TREE_MODEL (data->list_store);
+	gboolean      found = FALSE;
+	if (! gtk_tree_model_get_iter_first (model, iter))
+		return FALSE;
+
+	do {
+		GthScript *script;
+
+		gtk_tree_model_get (model, iter, COLUMN_SCRIPT, &script, -1);
+		found = g_strcmp0 (shortcut->detailed_action, gth_script_get_detailed_action (script)) == 0;
+
+		g_object_unref (script);
+	}
+	while (! found && gtk_tree_model_iter_next (model, iter));
+
+	return found;
+}
+
+
+static gboolean
+get_iter_script (DialogData  *data,
 	         GthScript   *script,
 	         GtkTreeIter *iter)
 {
@@ -334,16 +351,12 @@ script_editor_dialog__response_cb (GtkDialog *dialog,
 	DialogData    *data = user_data;
 	GthScript     *script;
 	GError        *error = NULL;
+	GPtrArray     *shortcuts_v;
 	GthScriptFile *script_file;
 	gboolean       new_script;
+	GthShortcut   *shortcut;
 	GtkTreeIter    iter;
-	gboolean       change_list = TRUE;
-
-
-	if (response == GTK_RESPONSE_HELP) {
-		/* FIXME: show help dialog */
-		return;
-	}
+	gboolean       change_list;
 
 	if (response != GTK_RESPONSE_OK) {
 		gtk_widget_destroy (GTK_WIDGET (dialog));
@@ -357,15 +370,49 @@ script_editor_dialog__response_cb (GtkDialog *dialog,
 		return;
 	}
 
-	/* update the script file */
+	/* update the shortcuts */
+
+	shortcuts_v = _g_ptr_array_dup (gth_window_get_shortcuts (GTH_WINDOW (data->browser)),
+					(GCopyFunc) gth_shortcut_dup,
+					(GDestroyNotify) gth_shortcut_free);
+
+	/* If another shortcut has the same accelerator, reset the accelerator
+	 * for that shortcut. */
+
+	shortcut = gth_shortcut_array_find_by_accel (shortcuts_v,
+						     GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER,
+						     GTH_SHORTCUT_VIEWER_CONTEXT_ANY,
+						     gth_script_get_accelerator (script));
+	if (shortcut != NULL) {
+		if (g_strcmp0 (shortcut->detailed_action, gth_script_get_detailed_action (script)) != 0) {
+			if (get_iter_for_shortcut (data, shortcut, &iter))
+				gtk_list_store_set (data->list_store, &iter,
+						    COLUMN_SHORTCUT, "",
+						    -1);
+			gth_shortcut_set_key (shortcut, 0, 0);
+		}
+	}
+
+	/* update the script shortcut */
+
+	shortcut = gth_shortcut_array_find_by_action (shortcuts_v, gth_script_get_detailed_action (script));
+	if (shortcut != NULL)
+		g_ptr_array_remove (shortcuts_v, shortcut);
+
+	shortcut = gth_script_create_shortcut (script);
+	g_ptr_array_add (shortcuts_v, shortcut);
+
+	/* save the script */
 
 	script_file = gth_script_file_get ();
 	new_script = ! gth_script_file_has_script (script_file, script);
 
 	g_signal_handlers_block_by_func (script_file, scripts_changed_cb, data);
 	gth_script_file_add (script_file, script);
-	gth_script_file_save (script_file, NULL); /* FIXME: handle errors */
+	gth_script_file_save (script_file, NULL);
 	g_signal_handlers_unblock_by_func (script_file, scripts_changed_cb, data);
+
+	gth_main_shortcuts_changed (shortcuts_v);
 
 	/* update the script list */
 
@@ -373,26 +420,22 @@ script_editor_dialog__response_cb (GtkDialog *dialog,
 		g_signal_handlers_block_by_func (data->list_store, row_inserted_cb, data);
 		gtk_list_store_append (data->list_store, &iter);
 		g_signal_handlers_unblock_by_func (data->list_store, row_inserted_cb, data);
+		change_list = TRUE;
 	}
 	else
-		change_list = get_script_iter (data, script, &iter);
+		change_list = get_iter_script (data, script, &iter);
 
-	if (change_list) {
-		char *shortcut;
-
-		shortcut = get_script_shortcut (script);
+	if (change_list)
 		gtk_list_store_set (data->list_store, &iter,
 				    COLUMN_SCRIPT, script,
 				    COLUMN_NAME, gth_script_get_display_name (script),
-				    COLUMN_SHORTCUT, shortcut,
+				    COLUMN_SHORTCUT, shortcut->label,
 				    COLUMN_VISIBLE, gth_script_is_visible (script),
 				    -1);
 
-		g_free (shortcut);
-	}
-
 	gtk_widget_destroy (GTK_WIDGET (dialog));
 
+	g_ptr_array_unref (shortcuts_v);
 	g_object_unref (script);
 }
 
@@ -403,7 +446,7 @@ new_script_cb (GtkButton  *button,
 {
 	GtkWidget *dialog;
 
-	dialog = gth_script_editor_dialog_new (_("New Command"), GTK_WINDOW (data->dialog));
+	dialog = gth_script_editor_dialog_new (_("New Command"), GTH_WINDOW (data->browser), GTK_WINDOW (data->dialog));
 	g_signal_connect (dialog, "response",
 			  G_CALLBACK (script_editor_dialog__response_cb),
 			  data);
@@ -430,7 +473,7 @@ edit_script_cb (GtkButton  *button,
 	if (script == NULL)
 		return;
 
-	dialog = gth_script_editor_dialog_new (_("Edit Command"), GTK_WINDOW (data->dialog));
+	dialog = gth_script_editor_dialog_new (_("Edit Command"), GTH_WINDOW (data->browser), GTK_WINDOW (data->dialog));
 	gth_script_editor_dialog_set_script (GTH_SCRIPT_EDITOR_DIALOG (dialog), script);
 	g_signal_connect (dialog,
 			  "response",
@@ -453,15 +496,17 @@ delete_script_cb (GtkButton  *button,
 	GtkTreeModel     *model = GTK_TREE_MODEL (data->list_store);
 	GtkTreeIter       iter;
 	GthScript        *script;
+	GPtrArray        *shortcuts_v;
+	GthShortcut      *shortcut;
 	GthScriptFile    *script_file;
 
 	d = _gtk_message_dialog_new (GTK_WINDOW (data->dialog),
 				     GTK_DIALOG_MODAL,
-				     GTK_STOCK_DIALOG_QUESTION,
+				     _GTK_ICON_NAME_DIALOG_QUESTION,
 				     _("Are you sure you want to delete the selected command?"),
 				     NULL,
-				     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-				     GTK_STOCK_DELETE, GTK_RESPONSE_OK,
+				     _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				     _GTK_LABEL_DELETE, GTK_RESPONSE_OK,
 				     NULL);
 	result = gtk_dialog_run (GTK_DIALOG (d));
 	gtk_widget_destroy (d);
@@ -476,6 +521,16 @@ delete_script_cb (GtkButton  *button,
 	if (script == NULL)
 		return;
 
+	/* update the shortcuts */
+
+	shortcuts_v = _g_ptr_array_dup (gth_window_get_shortcuts (GTH_WINDOW (data->browser)),
+					(GCopyFunc) gth_shortcut_dup,
+					(GDestroyNotify) gth_shortcut_free);
+
+	shortcut = gth_shortcut_array_find_by_action (shortcuts_v, gth_script_get_detailed_action (script));
+	if (shortcut != NULL)
+		g_ptr_array_remove (shortcuts_v, shortcut);
+
 	/* update the script file */
 
 	script_file = gth_script_file_get ();
@@ -483,6 +538,8 @@ delete_script_cb (GtkButton  *button,
 	gth_script_file_remove (script_file, script);
 	gth_script_file_save (script_file, NULL);
 	g_signal_handlers_unblock_by_func (script_file, scripts_changed_cb, data);
+
+	gth_main_shortcuts_changed (shortcuts_v);
 
 	/* update the script list */
 
@@ -541,11 +598,23 @@ dlg_personalize_scripts (GthBrowser *browser)
 
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
-	data->builder = _gtk_builder_new_from_file ("personalize-scripts.ui", "list_tools");
+	data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/personalize-scripts.ui");
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "personalize_scripts_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Commands"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_OK, GTK_RESPONSE_CLOSE,
+				NULL);
+
 	gth_browser_set_dialog (browser, "personalize_scripts", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
 
@@ -578,7 +647,7 @@ dlg_personalize_scripts (GthBrowser *browser)
 			  "destroy",
 			  G_CALLBACK (destroy_cb),
 			  data);
-	g_signal_connect_swapped (G_OBJECT (GET_WIDGET ("close_button")),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CLOSE),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  G_OBJECT (data->dialog));
@@ -618,7 +687,5 @@ dlg_personalize_scripts (GthBrowser *browser)
 
 	/* run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), FALSE);
 	gtk_widget_show (data->dialog);
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -33,12 +33,15 @@ enum {
 };
 
 
-G_DEFINE_TYPE (GthFolderChooserDialog, gth_folder_chooser_dialog, GTK_TYPE_DIALOG)
-
-
 struct _GthFolderChooserDialogPrivate {
 	GtkBuilder *builder;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthFolderChooserDialog,
+			 gth_folder_chooser_dialog,
+			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (GthFolderChooserDialog))
 
 
 static void
@@ -58,8 +61,6 @@ static void
 gth_folder_chooser_dialog_class_init (GthFolderChooserDialogClass *klass)
 {
 	GObjectClass *object_class;
-
-	g_type_class_add_private (klass, sizeof (GthFolderChooserDialogPrivate));
 
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_folder_chooser_dialog_finalize;
@@ -96,15 +97,12 @@ gth_folder_chooser_dialog_init (GthFolderChooserDialog *self)
 {
 	GtkWidget *content;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_FOLDER_CHOOSER_DIALOG, GthFolderChooserDialogPrivate);
+	self->priv = gth_folder_chooser_dialog_get_instance_private (self);
 	self->priv->builder = _gtk_builder_new_from_file ("find-duplicates-choose-folders.ui", "find_duplicates");
 
 	gtk_window_set_resizable (GTK_WINDOW (self), TRUE);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
-	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
 
 	content = _gtk_builder_get_widget (self->priv->builder, "folder_chooser");
-	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), content, TRUE, TRUE, 0);
 
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (GET_WIDGET ("folders_liststore")), FOLDER_NAME_COLUMN, GTK_SORT_ASCENDING);
@@ -114,13 +112,10 @@ gth_folder_chooser_dialog_init (GthFolderChooserDialog *self)
 			  G_CALLBACK (folder_cellrenderertoggle_toggled_cb),
 			  self);
 
-	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_CANCEL,
-			       GTK_RESPONSE_CANCEL);
-	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_OK,
-			       GTK_RESPONSE_OK);
+	gtk_dialog_add_button (GTK_DIALOG (self), _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL);
+	gtk_dialog_add_button (GTK_DIALOG (self),  _GTK_LABEL_OK, GTK_RESPONSE_OK);
 	gtk_dialog_set_default_response (GTK_DIALOG (self), GTK_RESPONSE_OK);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (self), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 }
 
 
@@ -156,7 +151,10 @@ gth_folder_chooser_dialog_new (GList *folders)
 {
 	GthFolderChooserDialog *self;
 
-	self = g_object_new (GTH_TYPE_FOLDER_CHOOSER_DIALOG, NULL);
+	self = g_object_new (GTH_TYPE_FOLDER_CHOOSER_DIALOG,
+			     /*"title", _("Folders"),*/
+			     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+			     NULL);
 	gth_folder_chooser_dialog_construct (self, folders);
 
 	return (GtkWidget *) self;

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,16 +22,13 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/image_rotation/rotation-utils.h>
 #include "gth-contact-sheet-creator.h"
 #include "preferences.h"
 
 #define DEFAULT_THUMB_SIZE 128
 #define DEFAULT_FONT "Sans 12"
-
-
-G_DEFINE_TYPE (GthContactSheetCreator, gth_contact_sheet_creator, GTH_TYPE_TASK)
 
 
 typedef struct {
@@ -92,6 +89,7 @@ struct _GthContactSheetCreatorPrivate {
 	int                   thumb_width;
 	int                   thumb_height;
 	char                 *thumbnail_caption;
+	char                 *location_name;
 
 	/* private data */
 
@@ -114,7 +112,14 @@ struct _GthContactSheetCreatorPrivate {
 	int                   n_pages;
 	char                **thumbnail_caption_v;
 	char                **template_v;
+	GDateTime            *timestamp;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthContactSheetCreator,
+			 gth_contact_sheet_creator,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthContactSheetCreator))
 
 
 static int
@@ -228,17 +233,69 @@ get_page_height (GthContactSheetCreator *self,
 }
 
 
+typedef struct {
+	GthContactSheetCreator *creator;
+	int                     page;
+} TemplateData;
+
+
+static gboolean
+filename_template_eval_cb (TemplateFlags   flags,
+			   gunichar        parent_code,
+			   gunichar        code,
+			   char          **args,
+			   GString        *result,
+			   gpointer        user_data)
+{
+	TemplateData *template_data = user_data;
+	char         *text = NULL;
+
+	if (parent_code == 'D') {
+		/* strftime code, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		return FALSE;
+	}
+
+	switch (code) {
+	case '#':
+		text = _g_template_replace_enumerator (args[0], template_data->page);
+		break;
+
+	case 'D':
+		text = g_date_time_format (template_data->creator->priv->timestamp,
+					   (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		break;
+
+	default:
+		break;
+	}
+
+	if (text != NULL) {
+		g_string_append (result, text);
+		g_free (text);
+	}
+
+	return FALSE;
+}
+
+
 static void
 begin_page (GthContactSheetCreator *self,
 	    int                     page_n)
 {
+	TemplateData     template_data;
 	char            *name;
 	char            *display_name;
 	int              width;
 	int              height;
 	cairo_surface_t *surface;
 
-	name = _g_get_name_from_template (self->priv->template_v, page_n - 1);
+	template_data.creator = self;
+	template_data.page = page_n - 1;
+	name = _g_template_eval (self->priv->template,
+				 0,
+				 filename_template_eval_cb,
+				 &template_data);
 	display_name = g_strdup_printf ("%s.%s", name, self->priv->file_extension);
 	_g_object_unref (self->priv->destination_file);
 	self->priv->destination_file = g_file_get_child_for_display_name (self->priv->destination, display_name, NULL);
@@ -404,7 +461,7 @@ end_page (GthContactSheetCreator  *self,
 						       error))
 		{
 			return FALSE;
-	       	}
+		}
 
 		if (! g_output_stream_close (G_OUTPUT_STREAM (self->priv->imagemap_stream),
 					     gth_task_get_cancellable (GTH_TASK (self)),
@@ -422,35 +479,50 @@ end_page (GthContactSheetCreator  *self,
 /* -- get_text -- */
 
 
-typedef struct {
-	GthContactSheetCreator *self;
-	int                     page_n;
-} TemplateData;
-
-
 static gboolean
-text_eval_cb (const GMatchInfo *info,
-	      GString          *res,
-	      gpointer          data)
+text_template_eval_cb (TemplateFlags   flags,
+		       gunichar        parent_code,
+		       gunichar        code,
+		       char          **args,
+		       GString        *result,
+		       gpointer        user_data)
 {
-	TemplateData *template_data = data;
-	char         *r = NULL;
-	char         *match;
+	TemplateData *template_data = user_data;
+	char         *text = NULL;
 
-	match = g_match_info_fetch (info, 0);
-
-	if (strcmp (match, "%p") == 0) {
-		r = g_strdup_printf ("%d", template_data->page_n);
-	}
-	else if (strcmp (match, "%n") == 0) {
-		r = g_strdup_printf ("%d", template_data->self->priv->n_pages);
+	if (parent_code == 'D') {
+		/* strftime code, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		return FALSE;
 	}
 
-	if (r != NULL)
-		g_string_append (res, r);
+	switch (code) {
+	case 'p':
+		text = g_strdup_printf ("%d", template_data->page);
+		break;
 
-	g_free (r);
-	g_free (match);
+	case 'n':
+		text = g_strdup_printf ("%d", template_data->creator->priv->n_pages);
+		break;
+
+	case 'D':
+		text = g_date_time_format (template_data->creator->priv->timestamp,
+					   (args[0] != NULL) ? args[0] : DEFAULT_STRFTIME_FORMAT);
+		break;
+
+	case 'L':
+		if (template_data->creator->priv->location_name != NULL)
+			g_string_append (result, template_data->creator->priv->location_name);
+		break;
+
+	default:
+		break;
+	}
+
+	if (text != NULL) {
+		g_string_append (result, text);
+		g_free (text);
+	}
 
 	return FALSE;
 }
@@ -461,18 +533,14 @@ get_text (GthContactSheetCreator *self,
 	  const char             *text,
 	  int                     page_n)
 {
-	GRegex       *re;
-	TemplateData  template_data;
-	char         *new_text;
+	TemplateData template_data;
 
-	re = g_regex_new ("%[pn]", 0, 0, NULL);
-	template_data.self = self;
-	template_data.page_n = page_n;
-	new_text = g_regex_replace_eval (re, text, -1, 0, 0, text_eval_cb, &template_data, NULL);
-
-	g_regex_unref (re);
-
-	return new_text;
+	template_data.creator = self;
+	template_data.page = page_n;
+	return _g_template_eval (text,
+				 0,
+				 text_template_eval_cb,
+				 &template_data);
 }
 
 
@@ -556,7 +624,6 @@ paint_frame (GthContactSheetCreator *self,
 	if (self->priv->imagemap_stream != NULL) {
 		char   *file;
 		char   *destination;
-		char   *relative_uri;
 		char   *relative_path;
 		char   *alt_attribute;
 		char   *line;
@@ -564,9 +631,8 @@ paint_frame (GthContactSheetCreator *self,
 
 		file = g_file_get_uri (file_data->file);
 		destination = g_file_get_uri (self->priv->destination);
-		relative_uri = _g_uri_get_relative_path (file, destination);
-		relative_path = g_uri_unescape_string (relative_uri, "");
-		alt_attribute = _g_escape_for_html (relative_path, -1);
+		relative_path = _g_uri_get_relative_path (file, destination);
+		alt_attribute = _g_utf8_escape_xml (relative_path);
 
 		line = g_strdup_printf ("      <area shape=\"rect\" coords=\"%d,%d,%d,%d\" href=\"%s\" alt=\"%s\" />\n",
 					frame_rect->x,
@@ -583,7 +649,6 @@ paint_frame (GthContactSheetCreator *self,
 		g_free (line);
 		g_free (alt_attribute);
 		g_free (relative_path);
-		g_free (relative_uri);
 		g_free (destination);
 		g_free (file);
 	}
@@ -614,6 +679,10 @@ export (GthContactSheetCreator *self)
 	int        x, y;
 	GList     *scan;
 	GError    *error = NULL;
+
+	if (self->priv->timestamp != NULL)
+		g_date_time_unref (self->priv->timestamp);
+	self->priv->timestamp = g_date_time_new_now_local ();
 
 	columns = ((self->priv->page_width - self->priv->theme->col_spacing) / (self->priv->thumb_width + (self->priv->theme->frame_hpadding * 2) + self->priv->theme->col_spacing));
 	first_row = TRUE;
@@ -775,8 +844,13 @@ export (GthContactSheetCreator *self)
 					    self->priv->destination,
 					    self->priv->created_files,
 					    GTH_MONITOR_EVENT_CREATED);
-		if (error == NULL)
-			gth_browser_go_to (self->priv->browser, self->priv->destination, (GFile *) self->priv->created_files->data);
+		if (error == NULL) {
+			GtkWidget *new_window;
+
+			new_window = gth_browser_new ((GFile *) self->priv->created_files->data,
+						      NULL);
+			gtk_window_present (GTK_WINDOW (new_window));
+		}
 
 		_g_object_list_unref (self->priv->created_files);
 		self->priv->created_files = NULL;
@@ -880,7 +954,6 @@ static void
 load_current_image (GthContactSheetCreator *self)
 {
 	ItemData *item_data;
-	int       requested_size;
 
 	if (self->priv->current_file == NULL) {
 		if (self->priv->sort_type->cmp_func != 0)
@@ -898,16 +971,9 @@ load_current_image (GthContactSheetCreator *self)
 			   FALSE,
 			   ((double) ++self->priv->n_loaded_files) / (self->priv->n_files + 1));
 
-	if (self->priv->squared_thumbnails)
-		/* the squared thumbnail requires the original size to avoid
-		 * a thumbnail upscaling that degrades the image quality. */
-		requested_size = -1;
-	else
-		requested_size = MAX (self->priv->thumb_height, self->priv->thumb_width);
-
 	gth_image_loader_load (self->priv->image_loader,
 			       item_data->file_data,
-			       requested_size,
+			       -1,
 			       G_PRIORITY_DEFAULT,
 			       gth_task_get_cancellable (GTH_TASK (self)),
 			       image_loader_ready_cb,
@@ -933,6 +999,7 @@ image_loader_ready_cb (GObject      *source_object,
 					    &image,
 					    &original_width,
 					    &original_height,
+					    NULL,
 					    &error))
 	{
 		gth_task_completed (GTH_TASK (self), error);
@@ -942,10 +1009,19 @@ image_loader_ready_cb (GObject      *source_object,
 	image_surface = gth_image_get_cairo_surface (image);
 
 	item_data = self->priv->current_file->data;
-	if (self->priv->squared_thumbnails)
+	if (self->priv->squared_thumbnails) {
 		item_data->thumbnail = _cairo_image_surface_scale_squared (image_surface, MIN (self->priv->thumb_height, self->priv->thumb_width), SCALE_FILTER_BEST, NULL);
-	else
-		item_data->thumbnail = cairo_surface_reference (image_surface);
+	}
+	else {
+		int width, height;
+
+		width = cairo_image_surface_get_width (image_surface);
+		height = cairo_image_surface_get_height (image_surface);
+		if (scale_keeping_ratio (&width, &height, self->priv->thumb_width, self->priv->thumb_height, FALSE))
+			item_data->thumbnail = _cairo_image_surface_scale (image_surface, width, height, SCALE_FILTER_BEST, NULL);
+		else
+			item_data->thumbnail = cairo_surface_reference (image_surface);
+	}
 	item_data->original_width = original_width;
 	item_data->original_height = original_height;
 
@@ -1046,6 +1122,9 @@ gth_contact_sheet_creator_finalize (GObject *object)
 	g_free (self->priv->footer);
 	g_free (self->priv->header);
 	_g_object_list_unref (self->priv->gfile_list);
+	if (self->priv->timestamp != NULL)
+		g_date_time_unref (self->priv->timestamp);
+	g_free (self->priv->location_name);
 
 	G_OBJECT_CLASS (gth_contact_sheet_creator_parent_class)->finalize (object);
 }
@@ -1056,8 +1135,6 @@ gth_contact_sheet_creator_class_init (GthContactSheetCreatorClass *klass)
 {
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
-
-	g_type_class_add_private (klass, sizeof (GthContactSheetCreatorPrivate));
 
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_contact_sheet_creator_finalize;
@@ -1070,7 +1147,7 @@ gth_contact_sheet_creator_class_init (GthContactSheetCreatorClass *klass)
 static void
 gth_contact_sheet_creator_init (GthContactSheetCreator *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_CONTACT_SHEET_CREATOR, GthContactSheetCreatorPrivate);
+	self->priv = gth_contact_sheet_creator_get_instance_private (self);
 	self->priv->header = NULL;
 	self->priv->footer = NULL;
 	self->priv->destination = NULL;
@@ -1101,6 +1178,8 @@ gth_contact_sheet_creator_init (GthContactSheetCreator *self)
 	self->priv->thumb_width = DEFAULT_THUMB_SIZE;
 	self->priv->thumb_height = DEFAULT_THUMB_SIZE;
 	self->priv->thumbnail_caption = NULL;
+	self->priv->location_name = NULL;
+	self->priv->timestamp = NULL;
 }
 
 
@@ -1124,7 +1203,7 @@ void
 gth_contact_sheet_creator_set_header (GthContactSheetCreator *self,
 				      const char             *value)
 {
-	_g_strset (&self->priv->header, value);
+	_g_str_set (&self->priv->header, value);
 }
 
 
@@ -1132,7 +1211,7 @@ void
 gth_contact_sheet_creator_set_footer (GthContactSheetCreator *self,
 				      const char             *value)
 {
-	_g_strset (&self->priv->footer, value);
+	_g_str_set (&self->priv->footer, value);
 }
 
 
@@ -1149,10 +1228,10 @@ void
 gth_contact_sheet_creator_set_filename_template (GthContactSheetCreator *self,
 						 const char             *filename_template)
 {
-	_g_strset (&self->priv->template, filename_template);
+	_g_str_set (&self->priv->template, filename_template);
 	if (self->priv->template_v != NULL)
 		g_strfreev (self->priv->template_v);
-	self->priv->template_v = _g_get_template_from_text (self->priv->template);
+	self->priv->template_v = _g_template_tokenize (self->priv->template, 0);
 }
 
 
@@ -1161,8 +1240,8 @@ gth_contact_sheet_creator_set_mime_type (GthContactSheetCreator *self,
 					 const char             *mime_type,
 					 const char             *file_extension)
 {
-	_g_strset (&self->priv->mime_type, mime_type);
-	_g_strset (&self->priv->file_extension, file_extension);
+	_g_str_set (&self->priv->mime_type, mime_type);
+	_g_str_set (&self->priv->file_extension, file_extension);
 }
 
 
@@ -1246,6 +1325,14 @@ void
 gth_contact_sheet_creator_set_thumbnail_caption (GthContactSheetCreator *self,
 						 const char             *caption)
 {
-	_g_strset (&self->priv->thumbnail_caption, caption);
+	_g_str_set (&self->priv->thumbnail_caption, caption);
 	self->priv->thumbnail_caption_v = g_strsplit (self->priv->thumbnail_caption, ",", -1);
+}
+
+
+void
+gth_contact_sheet_creator_set_location_name (GthContactSheetCreator *self,
+					     const char             *name)
+{
+	_g_str_set (&self->priv->location_name, name);
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -22,11 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#ifdef HAVE_LIBSOUP_GNOME
-#include <libsoup/soup-gnome.h>
-#else
 #include <libsoup/soup.h>
-#endif /* HAVE_LIBSOUP_GNOME */
 #ifdef HAVE_LIBSECRET
 #include <libsecret/secret.h>
 #endif /* HAVE_LIBSECRET */
@@ -44,22 +40,19 @@ web_service_error_quark (void)
 {
 	static GQuark quark;
 
-        if (! quark)
-                quark = g_quark_from_static_string ("web-service-error");
+	if (! quark)
+		quark = g_quark_from_static_string ("web-service-error");
 
-        return quark;
+	return quark;
 }
 
 
-G_DEFINE_TYPE (WebService, web_service, GTH_TYPE_TASK)
-
-
 enum {
-        PROP_0,
-        PROP_SERVICE_NAME,
-        PROP_SERVICE_ADDRESS,
-        PROP_SERVICE_PROTOCOL,
-        PROP_ACCOUNT_TYPE,
+	PROP_0,
+	PROP_SERVICE_NAME,
+	PROP_SERVICE_ADDRESS,
+	PROP_SERVICE_PROTOCOL,
+	PROP_ACCOUNT_TYPE,
 	PROP_CANCELLABLE,
 	PROP_BROWSER,
 	PROP_DIALOG
@@ -86,13 +79,19 @@ struct _WebServicePrivate
 	SoupSession        *session;
 	SoupMessage        *msg;
 	GCancellable       *cancellable;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	GList              *accounts;
 	OAuthAccount       *account;
 	GtkWidget          *browser;
 	GtkWidget          *dialog;
 	GtkWidget          *auth_dialog;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (WebService,
+			 web_service,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (WebService))
 
 
 static void
@@ -102,7 +101,7 @@ web_service_finalize (GObject *object)
 
 	_g_object_unref (self->priv->account);
 	_g_object_list_unref (self->priv->accounts);
-	_g_object_unref (self->priv->result);
+	_g_object_unref (self->priv->task);
 	_g_object_unref (self->priv->cancellable);
 	_g_object_unref (self->priv->session);
 	g_free (self->priv->service_protocol);
@@ -123,13 +122,13 @@ web_service_set_property (GObject      *object,
 
 	switch (property_id) {
 	case PROP_SERVICE_NAME:
-		_g_strset (&self->priv->service_name, g_value_get_string (value));
+		_g_str_set (&self->priv->service_name, g_value_get_string (value));
 		break;
 	case PROP_SERVICE_ADDRESS:
-		_g_strset (&self->priv->service_address, g_value_get_string (value));
+		_g_str_set (&self->priv->service_address, g_value_get_string (value));
 		break;
 	case PROP_SERVICE_PROTOCOL:
-		_g_strset (&self->priv->service_protocol, g_value_get_string (value));
+		_g_str_set (&self->priv->service_protocol, g_value_get_string (value));
 		break;
 	case PROP_ACCOUNT_TYPE:
 		self->priv->account_type = g_value_get_gtype (value);
@@ -227,8 +226,6 @@ web_service_class_init (WebServiceClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (WebServicePrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = web_service_finalize;
 	object_class->set_property = web_service_set_property;
@@ -315,7 +312,7 @@ web_service_class_init (WebServiceClass *klass)
 static void
 web_service_init (WebService *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, WEB_TYPE_SERVICE, WebServicePrivate);
+	self->priv = web_service_get_instance_private (self);
 	self->priv->service_name = NULL;
 	self->priv->service_address = NULL;
 	self->priv->service_protocol = NULL;
@@ -323,7 +320,7 @@ web_service_init (WebService *self)
 	self->priv->session = NULL;
 	self->priv->msg = NULL;
 	self->priv->cancellable = NULL;
-	self->priv->result = NULL;
+	self->priv->task = NULL;
 	self->priv->accounts = NULL;
 	self->priv->account = NULL;
 	self->priv->browser = NULL;
@@ -376,11 +373,11 @@ show_authentication_error_dialog (WebService  *self,
 
 	dialog = _gtk_message_dialog_new (GTK_WINDOW (self->priv->browser),
 					  GTK_DIALOG_MODAL,
-					  GTK_STOCK_DIALOG_ERROR,
+					  _GTK_ICON_NAME_DIALOG_ERROR,
 					  _("Could not connect to the server"),
 					  (*error)->message,
-					  _("Choose _Account..."), WEB_AUTHENTICATION_RESPONSE_CHOOSE_ACCOUNT,
-					  GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					  _("Choose _Account…"), WEB_AUTHENTICATION_RESPONSE_CHOOSE_ACCOUNT,
+					  _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
 					  NULL);
 	gth_task_dialog (GTH_TASK (self), TRUE, dialog);
 
@@ -823,10 +820,7 @@ web_service_get_user_info_finish (WebService	   *self,
 				  GAsyncResult	   *result,
 				  GError	  **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return NULL;
-	else
-		return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
@@ -844,11 +838,7 @@ _web_service_send_message (WebService          *self,
 			   gpointer             soup_session_cb_data)
 {
 	if (self->priv->session == NULL) {
-		self->priv->session = soup_session_async_new_with_options (
-#ifdef HAVE_LIBSOUP_GNOME
-			SOUP_SESSION_ADD_FEATURE_BY_TYPE, SOUP_TYPE_PROXY_RESOLVER_GNOME,
-#endif
-			NULL);
+		self->priv->session = soup_session_new ();
 
 #ifdef DEBUG_WEB_CONNECTION
 		{
@@ -865,11 +855,11 @@ _web_service_send_message (WebService          *self,
 	_g_object_unref (self->priv->cancellable);
 	self->priv->cancellable = _g_object_ref (cancellable);
 
-	_g_object_unref (self->priv->result);
-	self->priv->result = g_simple_async_result_new (G_OBJECT (self),
-							callback,
-							user_data,
-							source_tag);
+	_g_object_unref (self->priv->task);
+	self->priv->task = g_task_new (G_OBJECT (self),
+				       self->priv->cancellable,
+				       callback,
+				       user_data);
 
 	self->priv->msg = msg;
 	g_object_add_weak_pointer (G_OBJECT (msg), (gpointer *) &self->priv->msg);
@@ -881,17 +871,17 @@ _web_service_send_message (WebService          *self,
 }
 
 
-GSimpleAsyncResult *
-_web_service_get_result (WebService *self)
+GTask *
+_web_service_get_task (WebService *self)
 {
-	return self->priv->result;
+	return self->priv->task;
 }
 
 
 void
-_web_service_reset_result (WebService *self)
+_web_service_reset_task (WebService *self)
 {
-	self->priv->result = NULL;
+	self->priv->task = NULL;
 }
 
 

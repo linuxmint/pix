@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -26,6 +26,7 @@
 #include <jpeglib.h>
 #include <glib.h>
 #include <gio/gio.h>
+#include "jmemorydest.h"
 
 
 #define TMP_BUF_SIZE  4096
@@ -37,7 +38,7 @@
 typedef struct {
 	struct jpeg_destination_mgr pub;
 
-	void   **out_buffer;
+	guchar **out_buffer;
 	gsize   *out_buffer_size;
 	gsize    bytes_written;
 	JOCTET  *tmp_buffer;
@@ -122,7 +123,7 @@ _jpeg_memory_dest (j_compress_ptr   cinfo,
 	dest->pub.init_destination = init_destination;
 	dest->pub.empty_output_buffer = empty_output_buffer;
 	dest->pub.term_destination = term_destination;
-	dest->out_buffer = out_buffer;
+	dest->out_buffer = (guchar **) out_buffer;
 	dest->out_buffer_size = out_buffer_size;
 	dest->bytes_written = 0;
 }

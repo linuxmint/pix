@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "oauth-ask-authorization-dialog.h"
 #include "oauth-consumer.h"
 #include "oauth-service.h"
@@ -33,12 +33,9 @@
 #define OAUTH_CALLBACK "http://localhost/"
 
 
-G_DEFINE_TYPE (OAuthService, oauth_service, WEB_TYPE_SERVICE)
-
-
 enum {
-        PROP_0,
-        PROP_CONSUMER
+	PROP_0,
+	PROP_CONSUMER
 };
 
 
@@ -51,6 +48,12 @@ struct _OAuthServicePrivate {
 	char          *token_secret;
 	char          *verifier;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (OAuthService,
+			 oauth_service,
+			 WEB_TYPE_SERVICE,
+			 G_ADD_PRIVATE (OAuthService))
 
 
 static void
@@ -121,21 +124,20 @@ _oauth_service_get_request_token_ready_cb (SoupSession *session,
 					   gpointer     user_data)
 {
 	OAuthService       *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	GHashTable         *values;
 	char               *token;
 	char               *token_secret;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		return;
 	}
 
@@ -146,16 +148,10 @@ _oauth_service_get_request_token_ready_cb (SoupSession *session,
 	if ((token != NULL) && (token_secret != NULL)) {
 		oauth_service_set_token (self, token);
 		oauth_service_set_token_secret (self, token_secret);
-		g_simple_async_result_set_op_res_gboolean (result, TRUE);
+		g_task_return_boolean (task, TRUE);
 	}
-	else {
-		GError *error;
-
-		error = g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error"));
-		g_simple_async_result_set_from_error (result, error);
-	}
-
-	g_simple_async_result_complete_in_idle (result);
+	else
+		g_task_return_error (task, g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error")));
 
 	g_hash_table_destroy (values);
 	soup_buffer_free (body);
@@ -188,15 +184,12 @@ _oauth_service_get_request_token (OAuthService        *self,
 }
 
 
-gboolean
+static gboolean
 oauth_service_get_request_token_finish (OAuthService  *self,
 					GAsyncResult  *result,
 					GError       **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return FALSE;
-	else
-		return TRUE;
+	return g_task_propagate_boolean (G_TASK (result), error);
 }
 
 
@@ -209,24 +202,22 @@ _oauth_service_get_access_token_ready_cb (SoupSession *session,
 					  gpointer     user_data)
 {
 	OAuthService       *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		return;
 	}
 
 	body = soup_message_body_flatten (msg->response_body);
-	self->priv->consumer->access_token_response (self, msg, body, result);
-	g_simple_async_result_complete_in_idle (result);
+	self->priv->consumer->access_token_response (self, msg, body, task);
 
 	soup_buffer_free (body);
 }
@@ -265,10 +256,7 @@ _oauth_service_get_access_token_finish (OAuthService  *self,
 					GAsyncResult  *result,
 					GError       **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return FALSE;
-	else
-		return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
@@ -319,7 +307,7 @@ ask_authorization_dialog_load_request_cb (OAuthAskAuthorizationDialog *dialog,
 		uri_data = uri + strlen (OAUTH_CALLBACK "?");
 
 		data = soup_form_decode (uri_data);
-		_g_strset (&self->priv->token, g_hash_table_lookup (data, "oauth_token"));
+		_g_str_set (&self->priv->token, g_hash_table_lookup (data, "oauth_token"));
 
 		if (self->priv->token != NULL) {
 			gtk_widget_hide (GTK_WIDGET (dialog));
@@ -390,8 +378,6 @@ oauth_service_class_init (OAuthServiceClass *klass)
 	GObjectClass    *object_class;
 	WebServiceClass *service_class;
 
-	g_type_class_add_private (klass, sizeof (OAuthServicePrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->set_property = oauth_service_set_property;
 	object_class->get_property = oauth_service_get_property;
@@ -414,7 +400,7 @@ oauth_service_class_init (OAuthServiceClass *klass)
 static void
 oauth_service_init (OAuthService *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, OAUTH_TYPE_SERVICE, OAuthServicePrivate);
+	self->priv = oauth_service_get_instance_private (self);
 	self->priv->consumer = NULL;
 	self->priv->timestamp = NULL;
 	self->priv->nonce = NULL;
@@ -532,7 +518,7 @@ void
 oauth_service_set_token (OAuthService *self,
 			 const char   *token)
 {
-	_g_strset (&self->priv->token, token);
+	_g_str_set (&self->priv->token, token);
 }
 
 
@@ -547,7 +533,7 @@ void
 oauth_service_set_token_secret (OAuthService *self,
 				const char   *token_secret)
 {
-	_g_strset (&self->priv->token_secret, token_secret);
+	_g_str_set (&self->priv->token_secret, token_secret);
 }
 
 

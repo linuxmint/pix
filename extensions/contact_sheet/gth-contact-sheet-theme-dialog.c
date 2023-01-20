@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -26,9 +26,6 @@
 #define GET_WIDGET(x) (_gtk_builder_get_widget (self->priv->builder, (x)))
 
 
-G_DEFINE_TYPE (GthContactSheetThemeDialog, gth_contact_sheet_theme_dialog, GTK_TYPE_DIALOG)
-
-
 struct _GthContactSheetThemeDialogPrivate {
 	GtkBuilder           *builder;
 	GtkWidget            *copy_from_button;
@@ -36,6 +33,12 @@ struct _GthContactSheetThemeDialogPrivate {
 	GthContactSheetTheme *theme;
 	GList                *all_themes;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthContactSheetThemeDialog,
+			 gth_contact_sheet_theme_dialog,
+			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (GthContactSheetThemeDialog))
 
 
 static void
@@ -57,8 +60,6 @@ static void
 gth_contact_sheet_theme_dialog_class_init (GthContactSheetThemeDialogClass *klass)
 {
 	GObjectClass *object_class;
-
-	g_type_class_add_private (klass, sizeof (GthContactSheetThemeDialogPrivate));
 
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_contact_sheet_theme_dialog_finalize;
@@ -125,17 +126,17 @@ update_theme_from_controls (GthContactSheetThemeDialog *self)
 
 	/* header */
 
-	self->priv->theme->header_font_name = g_strdup (gtk_font_button_get_font_name (GTK_FONT_BUTTON (GET_WIDGET ("header_fontpicker"))));
+	self->priv->theme->header_font_name = g_strdup (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (GET_WIDGET ("header_fontpicker"))));
 	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("header_colorpicker")), &self->priv->theme->header_color);
 
 	/* footer */
 
-	self->priv->theme->footer_font_name = g_strdup (gtk_font_button_get_font_name (GTK_FONT_BUTTON (GET_WIDGET ("footer_fontpicker"))));
+	self->priv->theme->footer_font_name = g_strdup (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (GET_WIDGET ("footer_fontpicker"))));
 	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("footer_colorpicker")), &self->priv->theme->footer_color);
 
 	/* caption */
 
-	self->priv->theme->caption_font_name = g_strdup (gtk_font_button_get_font_name (GTK_FONT_BUTTON (GET_WIDGET ("caption_fontpicker"))));
+	self->priv->theme->caption_font_name = g_strdup (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (GET_WIDGET ("caption_fontpicker"))));
 	gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("caption_colorpicker")), &self->priv->theme->caption_color);
 }
 
@@ -185,7 +186,7 @@ gth_contact_sheet_theme_dialog_init (GthContactSheetThemeDialog *self)
 {
 	GtkWidget *content;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_CONTACT_SHEET_THEME_DIALOG, GthContactSheetThemeDialogPrivate);
+	self->priv = gth_contact_sheet_theme_dialog_get_instance_private (self);
 	self->priv->builder = _gtk_builder_new_from_file ("contact-sheet-theme-properties.ui", "contact_sheet");
 	self->priv->theme = NULL;
 	self->priv->all_themes = NULL;
@@ -195,32 +196,28 @@ gth_contact_sheet_theme_dialog_init (GthContactSheetThemeDialog *self)
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
 	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
 
-	gtk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("v_gradient_swap_image")), "tool-mirror", GTK_ICON_SIZE_MENU);
-	gtk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("h_gradient_swap_image")), "tool-mirror", GTK_ICON_SIZE_MENU);
-
 	content = _gtk_builder_get_widget (self->priv->builder, "theme_properties");
 	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), content, TRUE, TRUE, 0);
 
 	/* "Copy from" button */
 
-	self->priv->copy_from_button = gth_menu_button_new ();
-	gth_menu_button_set_label (GTH_MENU_BUTTON (self->priv->copy_from_button), _("Copy _From"));
-	gth_menu_button_set_use_underline (GTH_MENU_BUTTON (self->priv->copy_from_button), TRUE);
-	gtk_widget_show (self->priv->copy_from_button);
+	self->priv->copy_from_button = gtk_menu_button_new ();
+	gtk_container_add (GTK_CONTAINER (self->priv->copy_from_button), gtk_label_new_with_mnemonic (_("Copy _From")));
+	gtk_widget_show_all (self->priv->copy_from_button);
 
 	self->priv->copy_from_menu = gtk_menu_new ();
-	gth_menu_button_set_menu (GTH_MENU_BUTTON (self->priv->copy_from_button), self->priv->copy_from_menu);
+	gtk_menu_button_set_popup (GTK_MENU_BUTTON (self->priv->copy_from_button), self->priv->copy_from_menu);
 
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (self))), self->priv->copy_from_button, FALSE, FALSE, 0);
+	gtk_dialog_add_action_widget (GTK_DIALOG (self), self->priv->copy_from_button, 100);
 
 	/* other buttons */
 
 	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_CANCEL,
+			       _GTK_LABEL_CANCEL,
 			       GTK_RESPONSE_CANCEL);
 	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_SAVE,
+			       _GTK_LABEL_SAVE,
 			       GTK_RESPONSE_OK);
 	gtk_dialog_set_default_response (GTK_DIALOG (self), GTK_RESPONSE_OK);
 
@@ -307,7 +304,7 @@ gth_contact_sheet_theme_dialog_init (GthContactSheetThemeDialog *self)
 }
 
 
-GthContactSheetTheme *
+static GthContactSheetTheme *
 _gth_contact_sheet_theme_new_default (void)
 {
 	GthContactSheetTheme *theme;
@@ -325,7 +322,7 @@ _gth_contact_sheet_theme_new_default (void)
 	gdk_rgba_parse (&theme->frame_color, "#000");
 
 	theme->header_font_name = g_strdup ("Sans 22");
-	gdk_rgba_parse (&theme->frame_color, "#000");
+	gdk_rgba_parse (&theme->header_color, "#000");
 
 	theme->footer_font_name = g_strdup ("Sans Bold 12");
 	gdk_rgba_parse (&theme->footer_color, "#000");
@@ -341,8 +338,10 @@ static void
 update_controls_from_theme (GthContactSheetThemeDialog *self,
 			    GthContactSheetTheme       *theme)
 {
+	GthContactSheetTheme *default_theme = NULL;
+
 	if (theme == NULL)
-		theme = _gth_contact_sheet_theme_new_default ();
+		theme = default_theme = _gth_contact_sheet_theme_new_default ();
 	self->priv->theme = gth_contact_sheet_theme_dup (theme);
 
 	gtk_entry_set_text (GTK_ENTRY (GET_WIDGET ("name_entry")), theme->display_name);
@@ -377,16 +376,18 @@ update_controls_from_theme (GthContactSheetThemeDialog *self,
 	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("frame_style_combobox")), theme->frame_style);
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("frame_colorpicker")), &theme->frame_color);
 
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (GET_WIDGET ("header_fontpicker")), theme->header_font_name);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (GET_WIDGET ("header_fontpicker")), theme->header_font_name);
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("header_colorpicker")), &theme->header_color);
 
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (GET_WIDGET ("footer_fontpicker")), theme->footer_font_name);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (GET_WIDGET ("footer_fontpicker")), theme->footer_font_name);
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("footer_colorpicker")), &theme->footer_color);
 
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (GET_WIDGET ("caption_fontpicker")), theme->caption_font_name);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (GET_WIDGET ("caption_fontpicker")), theme->caption_font_name);
 	gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (GET_WIDGET ("caption_colorpicker")), &theme->caption_color);
 
 	update_preview (self);
+
+	gth_contact_sheet_theme_unref (default_theme);
 }
 
 

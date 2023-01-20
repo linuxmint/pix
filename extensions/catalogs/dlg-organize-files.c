@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -57,18 +57,10 @@ start_button_clicked_cb (GtkWidget  *widget,
 	gth_organize_task_set_create_singletons (GTH_ORGANIZE_TASK (task), ! gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("ignore_singletons_checkbutton"))));
 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_singletons_catalog_checkbutton"))))
 		gth_organize_task_set_singletons_catalog (GTH_ORGANIZE_TASK (task), gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("single_catalog_entry"))));
-	gth_browser_exec_task (data->browser, task, FALSE);
+	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	gtk_widget_destroy (data->dialog);
 	g_object_unref (task);
-}
-
-
-static void
-help_button_clicked_cb (GtkWidget  *widget,
-			DialogData *data)
-{
-	show_help_dialog (GTK_WINDOW (data->dialog), "organize-files");
 }
 
 
@@ -109,9 +101,23 @@ dlg_organize_files (GthBrowser *browser,
 	data->browser = browser;
 	data->folder = g_file_dup (folder);
 	data->builder = _gtk_builder_new_from_file ("organize-files.ui", "catalogs");
-	data->dialog = GET_WIDGET ("organize_files_dialog");
 
-	info_bar = gth_info_bar_new (NULL, NULL, NULL);
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Organize Files"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", TRUE,
+				     "resizable", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_EXECUTE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
+	info_bar = gth_info_bar_new ();
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar), GTK_MESSAGE_INFO);
 	info_label = gth_info_bar_get_primary_label (GTH_INFO_BAR (info_bar));
 	gtk_label_set_ellipsize (GTK_LABEL (info_label), PANGO_ELLIPSIZE_NONE);
@@ -130,28 +136,28 @@ dlg_organize_files (GthBrowser *browser,
 		gtk_list_store_set (list_store, &iter,
 				    0, GTH_GROUP_POLICY_DIGITALIZED_DATE,
 				    1, _("Date photo was taken"),
-				    2, "camera-photo",
+				    2, "camera-photo-symbolic",
 				    -1);
 
 		gtk_list_store_append (list_store, &iter);
 		gtk_list_store_set (list_store, &iter,
 				    0, GTH_GROUP_POLICY_MODIFIED_DATE,
 				    1, _("File modified date"),
-				    2, "appointment-soon",
+				    2, "change-date-symbolic",
 				    -1);
 
 		gtk_list_store_append (list_store, &iter);
 		gtk_list_store_set (list_store, &iter,
 				    0, GTH_GROUP_POLICY_TAG,
 				    1, _("Tag"),
-				    2, "tag",
+				    2, "tag-symbolic",
 				    -1);
 
 		gtk_list_store_append (list_store, &iter);
 		gtk_list_store_set (list_store, &iter,
 				    0, GTH_GROUP_POLICY_TAG_EMBEDDED,
 				    1, _("Tag (embedded)"),
-				    2, "tag",
+				    2, "tag-symbolic",
 				    -1);
 	}
 
@@ -163,15 +169,11 @@ dlg_organize_files (GthBrowser *browser,
 			  "destroy",
 			  G_CALLBACK (destroy_cb),
 			  data);
-	g_signal_connect_swapped (G_OBJECT (GET_WIDGET ("cancel_button")),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  data->dialog);
-	g_signal_connect (G_OBJECT (GET_WIDGET ("help_button")),
-			  "clicked",
-			  G_CALLBACK (help_button_clicked_cb),
-			  data);
-	g_signal_connect (G_OBJECT (GET_WIDGET ("start_button")),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (start_button_clicked_cb),
 			  data);
@@ -191,7 +193,5 @@ dlg_organize_files (GthBrowser *browser,
 
 	/* run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
 	gtk_widget_show (data->dialog);
 }

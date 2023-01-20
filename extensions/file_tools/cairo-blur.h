@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 The Free Software Foundation, Inc.
  *
@@ -19,21 +19,24 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GDK_PIXBUF_BLUR_H
-#define GDK_PIXBUF_BLUR_H
+#ifndef CAIRO_BLUR_H
+#define CAIRO_BLUR_H
 
 #include <glib.h>
 #include <cairo.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
-void _cairo_image_surface_blur     (cairo_surface_t *source,
-	 	                    int              radius);
-void _cairo_image_surface_sharpen  (cairo_surface_t *source,
-				    int              radius,
-				    double           amount,
-				    guchar           threshold);
+gboolean _cairo_image_surface_blur     (cairo_surface_t *source,
+	 	                        int              radius,
+	 	                        GthAsyncTask    *task);
+gboolean _cairo_image_surface_sharpen  (cairo_surface_t *source,
+				        int              radius,
+				        double           amount,
+				        guchar           threshold,
+				        GthAsyncTask    *task);
 
 G_END_DECLS
 
-#endif /* GDK_PIXBUF_BLUR_H */
+#endif /* CAIRO_BLUR_H */

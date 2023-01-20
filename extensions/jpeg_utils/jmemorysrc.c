@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -26,6 +26,7 @@
 #include <jpeglib.h>
 #include <glib.h>
 #include <gio/gio.h>
+#include "jmemorysrc.h"
 
 
 #define JPEG_ERROR(cinfo,code)  \
@@ -76,7 +77,7 @@ skip_input_data (j_decompress_ptr cinfo,
 	if (num_bytes > 0) {
 		while (num_bytes > (long) src->bytes_in_buffer) {
 			num_bytes -= (long) src->bytes_in_buffer;
-			(void) fill_input_buffer (cinfo);
+			(void) (*src->fill_input_buffer) (cinfo);
 			/* note we assume that fill_input_buffer will never return FALSE,
 			 * so suspension need not be handled.
 			 */

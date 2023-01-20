@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,14 +22,14 @@
 #ifndef PREFERENCES_H
 #define PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
 /* schemas */
 
-#define PIX_CONTACT_SHEET_SCHEMA                 PIX_SCHEMA ".contact-sheet.contact-sheet"
-#define PIX_IMAGE_WALL_SCHEMA                    PIX_SCHEMA ".contact-sheet.image-wall"
+#define GTHUMB_CONTACT_SHEET_SCHEMA                 GTHUMB_SCHEMA ".contact-sheet.contact-sheet"
+#define GTHUMB_IMAGE_WALL_SCHEMA                    GTHUMB_SCHEMA ".contact-sheet.image-wall"
 
 /* keys: contact sheet */
 

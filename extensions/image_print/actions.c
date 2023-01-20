@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,23 +22,26 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/image_viewer/gth-image-viewer-page.h>
+#include "actions.h"
 #include "gth-image-print-job.h"
 
 
 void
-gth_browser_activate_action_file_print (GtkAction  *action,
-					GthBrowser *browser)
+gth_browser_activate_print (GSimpleAction *action,
+			    GVariant      *parameter,
+			    gpointer       user_data)
 {
-	GList *items;
-	GList *file_list;
+	GthBrowser *browser = GTH_BROWSER (user_data);
+	GList      *items;
+	GList      *file_list;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
 	if (file_list != NULL) {
 		cairo_surface_t  *current_image;
-		GtkWidget        *viewer_page;
+		GthViewerPage    *viewer_page;
 		GthImagePrintJob *print_job;
 		GError           *error = NULL;
 
@@ -46,12 +49,10 @@ gth_browser_activate_action_file_print (GtkAction  *action,
 		viewer_page = gth_browser_get_viewer_page (browser);
 		if ((gth_main_extension_is_active ("image_viewer"))
 		    && (viewer_page != NULL)
-		    && GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
+		    && GTH_IS_IMAGE_VIEWER_PAGE (viewer_page)
+		    && gth_image_viewer_page_get_is_modified (GTH_IMAGE_VIEWER_PAGE (viewer_page)))
 		{
-			GtkWidget *viewer;
-
-			viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-			current_image = gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (viewer));
+			current_image = gth_image_viewer_page_get_modified_image (GTH_IMAGE_VIEWER_PAGE (viewer_page));
 		}
 		print_job = gth_image_print_job_new (file_list,
 						     gth_browser_get_current_file (browser),

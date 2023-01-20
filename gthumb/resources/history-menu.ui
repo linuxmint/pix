@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="menu">
+    <section id="visited-locations">
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Delete History</attribute>
+        <attribute name="action">win.clear-history</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

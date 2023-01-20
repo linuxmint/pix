@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -32,7 +32,10 @@ struct _GthCopyTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthCopyTask, gth_copy_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthCopyTask,
+			 gth_copy_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthCopyTask))
 
 
 static void
@@ -57,10 +60,14 @@ copy_done_cb (GObject    *object,
 {
 	/* Errors with code G_IO_ERROR_EXISTS are generated when the user
 	 * chooses to not overwrite the files.  There is no need to show an
-	 * error dialog for this type of errors.  To do this the code is set to
-	 * G_IO_ERROR_CANCELLED, which is always ignored by GthBrowser. */
-	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_EXISTS))
-		error->code = G_IO_ERROR_CANCELLED;
+	 * error dialog for this type of errors.  To do this create a
+	 * GTH_TASK_ERROR_CANCELLED error, which is always ignored by
+	 * GthBrowser. */
+	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_EXISTS)
+		|| g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+	{
+		error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_CANCELLED, "");
+	}
 	gth_task_completed (GTH_TASK (user_data), error);
 }
 
@@ -118,8 +125,6 @@ gth_copy_task_class_init (GthCopyTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthCopyTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_copy_task_finalize;
 
@@ -131,7 +136,7 @@ gth_copy_task_class_init (GthCopyTaskClass *klass)
 static void
 gth_copy_task_init (GthCopyTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_COPY_TASK, GthCopyTaskPrivate);
+	self->priv = gth_copy_task_get_instance_private (self);
 }
 
 

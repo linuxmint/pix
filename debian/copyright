@@ -1,98 +1,567 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gthumb
+Upstream-Contact: Paolo Bacchilega <paobac@src.gnome.org>
+Source: http://ftp.gnome.org/pub/gnome/sources/gthumb/
 
 Files: *
-Copyright: © 2001-2012, The Free Software Foundation, Inc.
+Copyright: 2001-2019, The Free Software Foundation, Inc.
 License: GPL-2+
 
-Files: debian/*
-Copyright: © 2013, Jackson Doak <noskcaj@ubuntu.com>
- © 2008-2012, David Paleino <dapal@debian.org>
- © 2001-2007, Remco van de Meent <remco@debian.org>
-License: GPL-3+
-
-Files: libpix/gconf-utils.*
-Copyright: © 2001-2002, The Free Software Foundation, Inc.
- © 2000-2001, Eazel, Inc.
-License: GPL-2+ or LGPL-2+
-
-Files: libpix/pixbuf-utils.c
-Copyright: © 1999-2003, The Free Software Foundation, Inc.
- © 1999, Michael Zucchi
- © 1999, Red Hat, Inc.
- © 1995, Spencer Kimball and Peter Mattis
-License: GPL-2+ or LGPL-2+
-
-Files: src/gtkcellrendererthreestates.*
-Copyright: © 2001, The Free Software Foundation, Inc.
- © 2000, Red Hat, Inc. - Jonathan Blandford <jrb@redhat.com>
-License: GPL-2+ or LGPL-2+
-
-Files: libpix/md5.*
-Copyright: © 1995, Software Foundation, Inc.
+Files: po/am.po
+Copyright: 2002, Ge'ez Frontier Foundation <locales@geez.org>
 License: GPL-2+
 
-Files: src/albumtheme.c
-Copyright: © 1984, 1989, 1990, 2000-2006, The Free Software Foundation, Inc.
+Files: po/ar.po
+Copyright: 2007, Djihed Afifi <djihed@gmail.com>
 License: GPL-2+
 
-Files: libpix/eel-canvas-rect.*
-Copyright: © 2002, Alexander Larsson <alla@lysator.liu.se>
+Files: po/az.po
+Copyright: 2003-2004, Metin Amiroff <metin@karegen.com>
+License: GPL-2+
+
+Files: po/bg.po
+Copyright: 2004, Julia Velkova <konfeta@gmail.com>
+           2005, Vladimir Petkov <vpetkov@i-space.org>
+           2005, Julia Velkova <konfeta@gmail.com>
+License: GPL-2+
+
+Files: po/bs.po
+Copyright: 2015, Samir Ribic <samir.ribic@etf.unsa.ba>
+License: GPL-2+
+
+Files: po/ca.po
+Copyright: 2003-2004, 2006, Aleix Badia i Bosch <abadia@ica.es>
+           2006,            Maria Soler Climent <maria.soler@eupm.upc.edu>
+           2007,            Sílvia Miranda <silvia.gnome@gmail.com>
+           2016, 2019,      Jordi Mas i Hernàndez <jmas@softcatala.org>
+License: GPL-2+
+
+Files: po/ca@valencia.po
+Copyright: 2003-2004, 2006, Aleix Badia i Bosch <abadia@ica.es>
+           2006,            Maria Soler Climent <maria.soler@eupm.upc.edu>
+           2007,            Sílvia Miranda <silvia.gnome@gmail.com>
+           2016,            Jordi Mas i Hernàndez <jmas@softcatala.org>
+License: GPL-2+
+
+Files: po/cs.po
+Copyright: 2002,      Michal Bukovjan <bukm@centrum.cz>
+           2003-2006, Miloslav Trmac <mitr@volny.cz>
+           2006-2007, Jakub Friedl <jfriedl@suse.cz>
+           2008,      Kamil Páral <ripper42@gmail.com>
+           2010-2019, Marek Černocký <marek@manet.cz>
+License: GPL-2+
+
+Files: po/da.po
+Copyright: 2002,      Keld Simonsen <keld@dkuug.dk>
+           2003,      Ole Laursen
+           2004,      Søren Wedel Nielsen
+           2007,      Peter Bach <bach.peter@gmail.com>
+           2010-2012, Joe Hansen <joedalton2@yahoo.dk>
+           2016-2017, Ask Hjorth Larsen <asklarsen@gmail.com>
+License: GPL-2+
+
+Files: po/de.po
+Copyright: 2002-2004,             Paolo Bacchilega
+           2002-2004,             Christian Neumair <chris@gnome-de.org>
+           2005-2006,             Hendrik Richter <hendrikr@gnome.org>
+           2008,                  Maren Reinecke <ma-reinecke@web.de>
+           2008,                  Jochen Skulj <jochen@jochenskulj.de>
+           2010-2019,             Mario Blättermann <mario.blaettermann@gmail.com>
+           2010,                  Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>
+           2011-2016,             Wolfgang Stöggl <c72578@yahoo.de>
+           2008, 2010, 2012-2013, Christian Kirbach <christian.kirbach@gmail.com>
+           2015-2016,             Bernd Homuth <dev@hmt.im>
+License: GPL-2+
+
+Files: po/dz.po
+Copyright: 2007, sonam pelden <sonaa_peldn@yahoo.com>
+License: GPL-2+
+
+Files: po/el.po
+Copyright: 2005, Nikos Charonitakis <charosn@her.forthnet.gr>
+           2005, Stathis Kamperis <stathisk@med.auth.gr>
+           2006, Dimitris Glezos <dimitris@glezos.com>
+           2009, Sterios Prosiniklis <steriosprosiniklis@gmail.com>
+           2010, Dimitris Tsiolis <dimits7@gmail.com>
+           2011, Chris Triantafillis <christriant1995@gmail.com>
+           2014, Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>
+           2015, Tom Tryfonidis <tomtryf@gmail.com>
+License: GPL-2+
+
+Files: po/en_CA.po
+Copyright: 2004-2005, Adam Weinberger <adamw@gnome.org>
+License: GPL-2+
+
+Files: po/en_GB.po
+Copyright: 2003, Abigail Brady <morwen@evilmagic.org>
+           2003, Bastien Nocera <hadess@hadess.net>
+           2003, Peter Oliver <gtp@mavit.freeserve.co.uk>
+           2004, Gareth Owen <gowen72@yahoo.com>
+           2004, David Lodge <dave@cirt.net>
+License: GPL-2+
+
+Files: po/eo.po
+Copyright: 2011,2017, Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>
+License: GPL-2+
+
+Files: po/es.po
+Copyright: 2002,      Daniel Baeyens <danibens@terra.es>
+           2002-2003, Pablo Gonzalo del Campo <pablodc@bigfoot.com>
+           2003-2006, Francisco Javier F. Serrador <serrador@cvs.gnome.org>
+           2007-2011, Jorge González <jorgegonz@svn.gnome.org>
+           2008-2019, Daniel Mustieles <daniel.mustieles@gmail.com>
+License: GPL-2+
+
+Files: po/et.po
+Copyright: 2005-2007, Olle Niit <olle@teknet.ee>
+           2010-2011, Rene Pärts <rene87@hot.ee>
+License: GPL-2+
+
+Files: po/eu.po
+Copyright: 2003, Mikel Olasagasti <hey_neken@mundurat.net>
+           2004-2008, 2010, Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+License: GPL-2+
+
+Files: po/fa.po
+Copyright: 2005, Alireza Kheirkhahan <alireza@bamdad.org>
+           2005, Meelad Zakaria <meelad@farsiweb.info>
+License: GPL-2+
+
+Files: po/fi.po
+Copyright: 2004,       Ville Pohjanheimo <vpohjanheimo@hotmail.com>
+           2004,       Sami Pesonen <sampeson@iki.fi>
+           2005-2006,  Ilkka Tuohela <hile@iki.fi>
+           2007, 2010, Timo Jyrinki <timo.jyrinki@iki.fi>
+           2010,       Miika Laaksonen <miika@jeele.com>
+License: GPL-2+
+
+Files: po/fr.po
+Copyright: 2002-2006,       Christophe Merlet <redfox@redfoxcenter.org>
+           2002,            Stéphane Genaud <genaud@icps.u-strasbg.fr>
+           2003,            Christian Marillat <marillat.christian@wanadoo.fr>
+           2005,            Fabien Gatell-Rica <f.gatell@gmail.com>
+           2006,            Jonathan Ernst <jonathan@ernstfamily.ch>
+           2006,            Christophe Bliard <christophe.bliard@trux.info>
+           2007,            Cyprien Le Pannérer <cyplp@free.fr>
+           2007, 2010-2019, Claude Paroz <claude@2xlibre.net>
+           2007, 2010,      Bruno Brouard <annoa.b@gmail.com>
+           2007,            Stéphane Raimbault <stephane.raimbault@gmail.com>
+           2010,            Laurent Coudeur <laurentc@iol.ie>
+           2016,            Julien Hardelin <jhardlin@orange.fr>
+           2019,            Charles Monzat <charles.monzat@numericable.fr>
+License: GPL-2+
+
+Files: po/ga.po
+Copyright: 2003, Paul Duffy <dubhthach@frink.nuigalway.ie>
+           2004, Alastair McKinstry <mckinstry@computer.org>
+License: GPL-2+
+
+Files: po/gl.po
+Copyright: 2004-2007, Ignacio Casal Quinteiro <icq@cvs.gnome.org>
+           2009,      Francisco Diéguez <fran.dieguez@mabishu.com>
+License: GPL-2+
+
+Files: po/gu.po
+Copyright: 2004,      Ankit Patel <ankit@redhat.com>
+           2008-2009, Sweta Kothari <swkothar@redhat.com>
+License: GPL-2+
+
+Files: po/he.po
+Copyright: 2014-2015, Yosef Or Boczko <yoseforb@gnome.org>
+License: GPL-2+
+
+Files: po/hi.po
+Copyright: 2005, Rajesh Ranjan <rranjan@redhat.com>
+License: GPL-2+
+
+Files: po/hr.po
+Copyright: Antun Krasic <butch@gawab.com>
+           Automatski Prijevod <>
+           Boris Tudan <boris.tudan@ka.htnet.hr>
+           Bozo Juretic <bjuretic@srce.hr>
+           Denis Lackovic <delacko@fly.srk.fer.hr>
+           Ivan Jankovic <rbrrneck@gmx.net>
+           Nina Popovic <nina@vuka.hr>
+           Robert Sedak <robert.sedak@sk.tel.hr>
+           Sasa Poznanovic <sasa.poznanovic@vuka.hr>
+           Vanja Turković <vanja@kimore.net>
+           Vlatko Kosturjak <kost@linux.hr>
+           Zoran Jankovic <zoran.jankovic@inet.hr>
+License: GPL-2+
+
+Files: po/hu.po
+Copyright: 2003-2004,                   Andras Timar <timar at gnome dot hu>
+           2004,                        Laszlo Dvornik <dvornik at gnome dot hu>
+           2005, 2007, 2009, 2011-2012, Gabor Kelemen <kelemeng at gnome dot hu>
+           2011-2019,                   Balázs Úr <urbalazs at gmail dot com>
+License: GPL-2+
+
+Files: po/id.po
+Copyright: 2004,      Abdul Hamid.A.N <hameed@linuxmail.org>
+           2010-2017, Andika Triwidada <andika@gmail.com>
+License: GPL-2+
+
+Files: po/is.po
+Copyright: 2015, 2018, Sveinn í Felli <sv1@fellsnet.is>
+License: GPL-2+
+
+Files: po/it.po
+Copyright: 2003, 2010, Paolo Bacchilega <paolo.bacchilega@libero.it>
+           2003-2009,  Francesco Marletta <francesco.marletta@tiscali.it>
+           2009,       Luca Ferretti <elle.uca@libero.it>
+           2010,       Milo Casagrande <milo@ubuntu.com>
+           2011-2019,  Gianvito Cavasoli <gianvito@gmx.it>
+License: GPL-2+
+
+Files: po/ja.po
+Copyright: 2001-2007, 2009-2011, Takeshi AIHANA <takeshi.aihana@gmail.com>
+           2012,                 Jiro Matsuzawa <jmatsuzawa@gnome.org>
+           2012,                 Ritsuko Sato <satoritsu@gmail.com>
+License: GPL-2+
+
+Files: po/kn.po
+Copyright: 2009, Shankar Prasad <svenkate@redhat.com>
+License: GPL-2+
+
+Files: po/ko.po
+Copyright: 2001-2002, Kang, JeongHee <Keizi@mail.co.kr>
+           2005,      Young-Ho Cha <ganadist at mizi.com>
+License: GPL-2+
+
+Files: po/lt.po
+Copyright: 2004-2007, 2010, Žygimantas Beručka <zygis@gnome.org>
+           2008,            Gintautas Miliauskas <gintas@akl.lt>
+           2010-2019,       Aurimas Černius <aurisc4@gmail.com>
+License: GPL-2+
+
+Files: po/lv.po
+Copyright: 2002,           Artis Trops <hornet@navigator.lv>
+           2006-2007,     Raivis Dejus <orvils@gmail.com>
+           2012-2013,2017 Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>
+License: GPL-2+
+
+Files: po/mk.po
+Copyright: 2004, 2006, Arangel Angov <ufo@linux.net.mk>
+           2005,       Арангел Ангов <ufo@linux.net.mk>
+License: GPL-2+
+
+Files: po/ml.po
+Copyright: 2003, FSF-India <locale@gnu.org.in>
+License: GPL-2+
+
+Files: po/ms.po
+Copyright: 2002, Hasbullah Bin Pit <sebol@ikhlas.com>
+License: GPL-2+
+
+Files: po/nb.po
+Copyright: 2002-2012, Kjartan Maraas <kmaraas@gnome.org>
+License: GPL-2+
+
+Files: po/nds.po
+Copyright: 2009-2010, Nils-Christoph Fiedler <ncfiedler@gnome.org>
+License: GPL-2+
+
+Files: po/ne.po
+Copyright: 2005,      Pawan Chitrakar <pawan@mpp.org.np>
+           2005,      Jaydeep Bhusal <zaydeep@hotmail.com>
+           2005,      Ganesh Ghimire <gghimire@gmail.com>
+           2005,      Dadhiram Nepal <yourssymbol@gmail.com>
+           2005,      Shiva  Pokharel <pokharelshiva@hotmail.com>
+           2006-2007, Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>
+           2006,      Mahesh subedi <submanesh@hotmail.com>
+License: GPL-2+
+
+Files: po/nl.po
+Copyright:            Mark Van den Borre <mark@markvdb.be>
+           2001,      Dennis Smit <synap@area101.penguin.nl>
+           2003-2006, Tino Meinen <a.t.meinen@chello.nl>
+           2003,      Vincent van Adrighem <V.vanAdrighem@dirck.mine.nu>
+           2004,      Jeroen van der Vegt <ajvdvegt@123mail.org>
+           2004,      Michiel Sikkes <michiel@sikkes.xs4all.nl>
+           2007-2008, Filip Vervloesem <filip.vervloesem@member.fsf.org>
+           2013,      Hannie Dumoleyn <hannie@ubuntu-nl.org>
+           2013,      Pjotr <pjotrvertaalt@gmail.com>
+           2018,      Paul Matthijsse <paul.matthijsse@wanadoo.fr>
+License: GPL-2+
+
+Files: po/nn.po
+Copyright: 2004-2005, Åsmund Skjæveland <aasmunds@fys.uio.no>
+License: GPL-2+
+
+Files: po/oc.po
+Copyright: 2006-2008, Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>
+License: GPL-2+
+
+Files: po/pa.po
+Copyright: 2004,                 Punjab Linux Technology <punjablinux@netscape.net>
+           2004, 2006,           Amanpreet Singh Alam <aalam@redhat.com>
+           2005,                 Amanpreet Singh Alam <amanpreetalam@yahoo.com>
+           2006-2007, 2009-2010, A S Alam <aalam@users.sf.net>
+           2007,                 ASB <aalam@users.sf.net>
+License: GPL-2+
+
+Files: po/pl.po
+Copyright: 2003-2004, Artur Flinta <aflinta@at.kernel.pl>
+           2007,      Tomasz Dominikowski <dominikowski@gmail.com>
+           2011-2019, Piotr Drąg <piotrdrag@gmail.com>
+           2007-2019, Aviary.pl <gnomepl@aviary.pl>
+License: GPL-2+
+
+Files: po/ps.po
+Copyright: 2008, Zabeeh Khan <zabeehkhan@gmail.com>
+License: GPL-2+
+
+Files: po/pt_BR.po
+Copyright: 2001-2003, Gustavo Noronha Silva <kov@debian.org>
+           2004,      Joao Paulo Gomes Vanzuita <joaopaulo99@terra.com.br>
+           2004,      Viviani Ap. dos Santos <vivi_olivetti@brfree.com.br>
+           2004-2006, Raphael Higino <phhigino@gmail.com>
+           2007-2008, Igor Pires Soares <igor@projetofedora.org>
+           2009,      Leonardo Ferreira Fontenelle <leonardof@gnome.org>
+           2013-2019, Rafael Fontenelle <rffontenelle@gmail.com>
+           2013,      Enrico Nicoletto <liverig@gmail.com>
+           2014,      Antonio Fernandes C. Neto <fernandesn@gnome.org>
+License: GPL-2+
+
+Files: po/pt.po
+Copyright: 2007,2009,2015       Filipe Gomes <filipefgomes@gmail.com>
+           2006,                Luís Matos <gass@otiliamatos.ath.cx>
+           2003, 200X, 2009,    Duarte Loreto <happyguy_pt@hotmail.com>
+           2015                 Pedro Albuquerque <palbuquerque73@gmail.com>
+License: GPL-2+
+
+Files: po/ro.po
+Copyright: 2007, Alexandru Szasz <alexxed@gmail.com>
+           2008, Mihai Varzaru <mihaiv@gmail.com>
+           2008, Cristian KLEIN https://launchpad.net/~cristiklein
+           2009, Adi Roiban <adi@roiban.ro>
+License: GPL-2+
+
+Files: po/ru.po
+Copyright: 2002, Sergey Volozhanin <svo@asplinux.ru>
+           2003, Диконов Вячеслав (Vyacheslav Dikonov) <sdiconov@mail.ru>
+           2003, Yuri N. Sedunov <aris@altlinux.ru>
+           2006, Leonid Kanter <leon@asplinux.ru>
+           2008, Anton Shestakov <engored@ya.ru>
+           2010, Victor Vislobokov <corochoone@gmail.com>
+           2015, Ivan Komaritsyn <vantu5z@mail.ru>
+           2015, Stas Solovey <whats_up@tut.by>
+           2015, Yuri Myasoedov <ymyasoedov@yandex.ru>
+License: GPL-2+
+
+Files: po/rw.po
+Copyright: 2005, Steve Murphy <murf@e-tools.com>
+           2005, Philibert Ndandali <ndandali@yahoo.fr>
+           2005, Viateur MUGENZI <muvia1@yahoo.fr>
+           2005, Noëlla Mupole <s24211045@tuks.co.za>
+           2005, Carole Karema <karemacarole@hotmail.com>
+           2005, JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>
+           2005, Augustin KIBERWA <akiberwa@yahoo.co.uk>
+           2005, Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>
+License: GPL-2+
+
+Files: po/sk.po
+Copyright: 2005, Ivan Noris <vix@vazka.sk>
+           2007-2008, Peter Tuharsky <tuharsky@misbb.sk>
+License: GPL-2+
+
+Files: po/sl.po
+Copyright: 2009-2010, Andrej Žnidaršič <andrej.znidarsic@gmail.com>
+           2007-2014, Matej Urbančič <mateju@svn.gnome.org>
+License: GPL-2+
+
+Files: po/sq.po
+Copyright: 2004, Laurent Dhima <laurenti@alblinux.net>
+License: GPL-2+
+
+Files: po/sr@latin.po
+Copyright: 2003-2017, Prevod.org team (http://prevod.org/)
+           ?          Dušan Živojnov <calvin@verat.net>
+           2013,      Saša Petrović <salepetronije@gmail.com>
+           2013-2017, Miroslav Nikolić <miroslavnikolic@rocketmail.com>
+License: GPL-2+
+
+Files: po/sr.po
+Copyright: 2003-2017, Prevod.org team (http://prevod.org/)
+                      Душан Живојнов <calvin@verat.net>
+           2013,      Саша Петровић <salepetronije@gmail.com>
+           2013-2017, Мирослав Николић <miroslavnikolic@rocketmail.com>
+License: GPL-2+
+
+Files: po/sv.po
+Copyright: 2001,      Bo Rosén <bo.rosen@home.se>
+           2002-2004, Christian Rose <menthos@menthos.com>
+           2006-2015, Daniel Nylander <po@danielnylander.se>
+           2016,      Josef Andersson <josef.andersson@fripost.org>
+           2016-2019, Anders Jonsson <anders.jonsson@norsjovallen.se>
+License: GPL-2+
+
+Files: po/th.po
+Copyright: 2003-2004, Sapa <sapac@hotmail.com>
+           2004,      Chanchai Junlouchai <taz@opentle.org>
+           2004,      Supranee Thirawatthanasuk <supranee@opentle.org>
+           2005,      Theppitak Karoonboonyanan <thep@linux.thai.net>
+           2008,      Manatsawin Hanmongkolchai <manatsawin@gmail.com>
+           2010,      Sira Nokyoongtong <gumaraa@gmail.com>
+License: GPL-2+
+
+Files: po/tr.po
+Copyright: 2003, Gorkem Cetin <gorkem@bahcesehir.edu.tr>
+           2004, Ridvan CAN <<ridvan@gamebox.net>
+           2015, Necdet Yücel <necdetyucel@gmail.com>
+           2015, Simge Sezgin <simgesezgin88@gmail.com>
+License: GPL-2+
+
+Files: po/uk.po
+Copyright: 2003,       Maxim Dubovoy <max@mylinux.com.ua>
+           2007, 2010, Maxim Dziumanenko <dziumanenko@gmail.com>
+License: GPL-2+
+
+Files: po/vi.po
+Copyright: 2006-2007, Clytie Siddall <clytie@riverland.net.au>
+           2007,      Nguyễn Thái Ngọc Duy <pclouds@gmail.com>
+License: GPL-2+
+
+Files: po/xh.po
+Copyright: 2005, Canonical Ltd <translations@canonical.com>
+License: GPL-2+
+
+Files: po/zh_CN.po
+Copyright: 2002-2003, Abel Cheung <maddog@linux.org.hk>
+           2003-2004, Liu Songhe <jackliu9999@263.net>
+           2009,      Zhang Miao <mymzhang@gmail.com>
+           2010,      lainme <lainme993@gmail.com>
+           2012,      tuhaihe <1132321739qq@gmail.com>
+License: GPL-2+
+
+Files: po/zh_HK.po
+Copyright: 2002-2005, Abel Cheung <abel@oaka.org>
+           2004,      Woodman Tuen <woodman@culturecom.com>
+           2008,      Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>
+           2010,      Wei-Lun Chao <chaoweilun@gmail.com>
+           2012,      taijuin <taijuin@gmail.com>
+License: GPL-2+
+
+Files: po/zh_TW.po
+Copyright: 2002-2005, Abel Cheung <abel@oaka.org>
+           2004,      Woodman Tuen <woodman@culturecom.com>
+           2008,      Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>
+           2010,      Wei-Lun Chao <chaoweilun@gmail.com>
+           2012,      taijuin <taijuin@gmail.com>
+License: GPL-2+
+
+Files: help/C/*
+Copyright: Paolo Bacchilega <paobac@src.gnome.org>
+           Michael J. Chudobiak <mjc@avtechpulse.com>
+License: CC-BY-SA-3.0 or other
+
+Files: help/cs/cs.po
+Copyright: 2013-2017, Marek Černocký <marek@manet.cz>
+License: GPL-2+
+
+Files: help/de/*
+Copyright: 2008-2016, Christian Kirbach <Christian.Kirbach@googlemail.com>
+           2009-2017, Mario Blättermann <mario.blaettermann@gmail.com>
+License: CC-BY-SA-3.0 or other
+
+Files: help/el/*
+Copyright: 2009, Στέργιος Προσινικλής <steriosprosiniklis@gmail.com>
+           2014, Δημήτρης Σπίγγος, <dmtrs32@gmail.com>
+           2014, Μαρία Μαυρίδου <mavridou@gmail.com>
+License: CC-BY-SA-3.0 or other
+
+Files: help/es/*
+Copyright: 2007-2008, 2010, Jorge González <jorgegonz@svn.gnome.org>
+           2008-2017,       Daniel Mustieles <daniel.mustieles@gmail.com>
+License: CC-BY-SA-3.0 or other
+
+Files: help/eu/eu.po
+Copyright: 2011, Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+License: GPL-2+
+
+Files: help/fr/*
+Copyright: 2007, 2010, Bruno Brouard <annoa.b@gmail.com>
+           2007-2018,  Claude Paroz <claude@2xlibre.net>
+           2010,       Laurent Coudeur <laurentc@iol.ie>
+           2016,       Julien Hardelin <jhardlin@orange.fr>
+License: CC-BY-SA-3.0 or GPL-2+ or other
+
+Files: help/hu/*
+Copyright: 2015-2016, 2019, Balázs Úr urbalazs@gmail.com
+License: GPL-2+
+
+Files: help/nl/nl.po
+Copyright: 2018 PaulMatthijsse <paul.matthijsse@wanadoo.fr>
+License: GPL-2+
+
+Files: help/oc/oc.po
+Copyright: 2007, Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>
+License: GPL-2+
+
+Files: help/sl/sl.po
+Copyright: 2010-2012, Andrej Žnidaršič <andrej.znidarsic@gmail.com>
+License: GPL-2+
+
+Files: help/sv/*
+Copyright: 2006-2009, Daniel Nylander <po@danielnylander.se>
+           2015,      Josef Andersson <josef.andersson@fripost.org>
+           2016-2017, Anders Jonsson <anders.jonsson@norsjovallen.se>
+License: CC-BY-SA-3.0 or GPL-2+
+
+Files: help/zh_CN/zh_CN.po
+Copyright: 2009, Zhang Miao <mymzhang@gmail.com>
+License: GPL-2+
+
+Files: gthumb/gnome-desktop-thumbnail.c
+Copyright: 1999, Mark Crichton <crichton@gimp.org>
+           1999, Federico Mena-Quintero <federico@gimp.org>
+           1999, 2008-2009, The Free Software Foundation, Inc.
+           2002, Red Hat, Inc.
+License: GPL-2+ or LGPL-2+
+
+Files:gthumb/gnome-thumbnail-pixbuf-utils.c
+Copyright: 2002, Red Hat, Inc.
 License: LGPL-2+
 
-Files: libpix/jpegutils/jpeg-marker.*
- libpix/jpegutils/jpeg-data.*
-Copyright: © 2001, Lutz Müller <lutz@users.sourceforge.net>
+Files: gthumb/glib-utils.c
+Copyright: 2000, 2003, Red Hat, Inc.
+           2001-2008,  Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: gthumb/gnome-desktop-thumbnail.h
+Copyright: 2002, Red Hat, Inc.
 License: LGPL-2+
 
-Files: src/totem-scrsaver.*
-Copyright: © 2004-2005, Bastien Nocera <hadess@hadess.net>
-License: LGPL-2+
-
-Files: doc/C/pix.xml
-Copyright: © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
-License: GFDL-1.1+
- Permission is granted to copy, distribute and/or modify this document
- under the terms of the GNU Free Documentation License, Version 1.1
- or any later version published by the Free Software Foundation;
- with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-
-Files: doc/es/pix.xml
-Copyright: © 2007, Jorge González <jorgegonz@svn.gnome.org>
- © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
-License: GFDL-1.1+
-
-Files: doc/fr/pix.xml
-Copyright: © 2007, Bruno Brouard <annoa.b@gmail.com>
- © 2007, Claude Paroz <claude@2xlibre.net>
- © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
-License: GFDL-1.1+
-
-Files: doc/sv/pix.xml
-Copyright: © 2006-2007, Daniel Nylander <po@danielnylander.se>
- © 2001-2004, 2006, Paolo Bacchilega <paolo.bacch@tin.it>
-License: GFDL-1.1+
+Files: extensions/example/git.mk
+Copyright: 2009, Red Hat, Inc.
+License: PERMISSIVE
 
 Files: extensions/jpeg_utils/jpegint-80.h
-Copyright: © 1991-1997, Thomas G. Lane
- © 1997-2009, Guido Vollbeding
+       extensions/jpeg_utils/transupp-80.h
+Copyright: 1991-2009, Thomas G. Lane.
+           1997-2009, Guido Vollbeding <guido at jpegclub period org>.
 License: libjpeg
 
 Files: extensions/jpeg_utils/jpegtran.c
- extensions/jpeg_utils/transupp-62.*
-Copyright: © 1995-1997, Thomas G. Lane
- © 2001-2002, 2009, The Free Software Foundation, Inc.
-License: GPL-2+ and libjpeg
+       extensions/jpeg_utils/transupp-62.c
+       extensions/jpeg_utils/transupp-80.c
+Copyright: 1995-2009, Thomas G. Lane.
+           2001-2009, The Free Software Foundation, Inc.
+License: GPL-2+
 
-Files: extensions/jpeg_utils/transupp-80.c
-Copyright: © 1997-2009, Thomas G. Lane
- © 1997-2009, Guido Vollbeding
- © 2001-2002, The Free Software Foundation, Inc.
-License: GPL-2+ and libjpeg
+Files: data/appdata/org.gnome.gThumb.appdata.xml.in
+Copyright: 2014-2017 Paolo Bacchilega <paobac@src.gnome.org>
+License: GPL-2+ or CC0-1.0
 
-Files: extensions/jpeg_utils/transupp-80.h
-Copyright: © 1997-2009, Thomas G. Lane
- © 1997-2009, Guido Vollbeding
-License: libjpeg
+Files: debian/*
+Copyright: 2001-2007, Remco van de Meent <remco@debian.org>
+           2003,      Christian Marillat <marillat@debian.org>
+           2005,      Steve Langasek <vorlon@debian.org>
+           2006,      Loic Minier <lool@dooz.org>
+           2008-2012, David Paleino <dapal@debian.org>
+           2013-2014, Jackson Doak <noskcaj@ubuntu.com>
+           2015-2019, Herbert Parentes Fortes Neto <hpfn@debian.org>
+License: GPL-2+
 
 License: libjpeg
  LEGAL ISSUES
@@ -144,342 +613,7 @@ License: libjpeg
  commercial products, provided that all warranty or liability claims are
  assumed by the product vendor.
 X-Comment: the full READMEs can be found in ./extensions/jpeg_utils/README.6b
- and ./extensions/jpeg_utils/README.8a in Pix's sourcecode.
-
-License: GFDL-1.1+
- 		GNU Free Documentation License
- 		   Version 1.1, March 2000
- .
-  Copyright (C) 2000  Free Software Foundation, Inc.
-  51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-  Everyone is permitted to copy and distribute verbatim copies
-  of this license document, but changing it is not allowed.
- .
- .
- 0. PREAMBLE
- .
- The purpose of this License is to make a manual, textbook, or other
- written document "free" in the sense of freedom: to assure everyone
- the effective freedom to copy and redistribute it, with or without
- modifying it, either commercially or noncommercially. Secondarily,
- this License preserves for the author and publisher a way to get
- credit for their work, while not being considered responsible for
- modifications made by others.
- .
- This License is a kind of "copyleft", which means that derivative
- works of the document must themselves be free in the same sense. It
- complements the GNU General Public License, which is a copyleft
- license designed for free software.
- .
- We have designed this License in order to use it for manuals for free
- software, because free software needs free documentation: a free
- program should come with manuals providing the same freedoms that the
- software does. But this License is not limited to software manuals; it
- can be used for any textual work, regardless of subject matter or
- whether it is published as a printed book. We recommend this License
- principally for works whose purpose is instruction or reference.
- .
- .
- 1. APPLICABILITY AND DEFINITIONS
- .
- This License applies to any manual or other work that contains a
- notice placed by the copyright holder saying it can be distributed
- under the terms of this License. The "Document", below, refers to any
- such manual or work. Any member of the public is a licensee, and is
- addressed as "you".
- .
- A "Modified Version" of the Document means any work containing the
- Document or a portion of it, either copied verbatim, or with
- modifications and/or translated into another language.
- .
- A "Secondary Section" is a named appendix or a front-matter section of
- the Document that deals exclusively with the relationship of the
- publishers or authors of the Document to the Document's overall subject
- (or to related matters) and contains nothing that could fall directly
- within that overall subject. (For example, if the Document is in part a
- textbook of mathematics, a Secondary Section may not explain any
- mathematics.) The relationship could be a matter of historical
- connection with the subject or with related matters, or of legal,
- commercial, philosophical, ethical or political position regarding them.
- .
- The "Invariant Sections" are certain Secondary Sections whose titles are
- designated, as being those of Invariant Sections, in the notice that says
- that the Document is released under this License.
- .
- The "Cover Texts" are certain short passages of text that are listed, as
- Front-Cover Texts or Back-Cover Texts, in the notice that says that the
- Document is released under this License.
- .
- A "Transparent" copy of the Document means a machine-readable copy,
- represented in a format whose specification is available to the general
- public, whose contents can be viewed and edited directly and
- straightforwardly with generic text editors or (for images composed of
- pixels) generic paint programs or (for drawings) some widely available
- drawing editor, and that is suitable for input to text formatters or for
- automatic translation to a variety of formats suitable for input to text
- formatters. A copy made in an otherwise Transparent file format whose
- markup has been designed to thwart or discourage subsequent modification
- by readers is not Transparent. A copy that is not "Transparent" is
- called "Opaque".
- .
- Examples of suitable formats for Transparent copies include plain ASCII
- without markup, Texinfo input format, LaTeX input format, SGML or XML
- using a publicly available DTD, and standard-conforming simple HTML
- designed for human modification. Opaque formats include PostScript,
- PDF, proprietary formats that can be read and edited only by proprietary
- word processors, SGML or XML for which the DTD and/or processing tools
- are not generally available, and the machine-generated HTML produced by
- some word processors for output purposes only.
- .
- The "Title Page" means, for a printed book, the title page itself, plus
- such following pages as are needed to hold, legibly, the material this
- License requires to appear in the title page. For works in formats which
- do not have any title page as such, "Title Page" means the text near the
- most prominent appearance of the work's title, preceding the beginning of
- the body of the text.
- .
- .
- 2. VERBATIM COPYING
- .
- You may copy and distribute the Document in any medium, either commercially
- or noncommercially, provided that this License, the copyright notices, and
- the license notice saying this License applies to the Document are reproduced
- in all copies, and that you add no other conditions whatsoever to those of
- this License. You may not use technical measures to obstruct or control the
- reading or further copying of the copies you make or distribute. However, you
- may accept compensation in exchange for copies. If you distribute a large
- enough number of copies you must also follow the conditions in section 3.
- .
- You may also lend copies, under the same conditions stated above, and you may
- publicly display copies.
- .
- .
- 3. COPYING IN QUANTITY
- .
- If you publish printed copies of the Document numbering more than 100, and the
- Document's license notice requires Cover Texts, you must enclose the copies in
- covers that carry, clearly and legibly, all these Cover Texts: Front-Cover Texts
- on the front cover, and Back-Cover Texts on the back cover. Both covers must also
- clearly and legibly identify you as the publisher of these copies. The front cover
- must present the full title with all words of the title equally prominent and
- visible. You may add other material on the covers in addition. Copying with
- changes limited to the covers, as long as they preserve the title of the Document
- and satisfy these conditions, can be treated as verbatim copying in other respects.
- .
- If the required texts for either cover are too voluminous to fit legibly, you
- should put the first ones listed (as many as fit reasonably) on the actual cover,
- and continue the rest onto adjacent pages.
- .
- If you publish or distribute Opaque copies of the Document numbering more than 100,
- you must either include a machine-readable Transparent copy along with each Opaque
- copy, or state in or with each Opaque copy a publicly-accessible computer-network
- location containing a complete Transparent copy of the Document, free of added
- material, which the general network-using public has access to download anonymously
- at no charge using public-standard network protocols. If you use the latter option,
- you must take reasonably prudent steps, when you begin distribution of Opaque
- copies in quantity, to ensure that this Transparent copy will remain thus
- accessible at the stated location until at least one year after the last time you
- distribute an Opaque copy (directly or through your agents or retailers) of that
- edition to the public.
- .
- It is requested, but not required, that you contact the authors of the Document
- well before redistributing any large number of copies, to give them a chance to
- provide you with an updated version of the Document.
- .
- .
- 4. MODIFICATIONS
- .
- You may copy and distribute a Modified Version of the Document under the conditions
- of sections 2 and 3 above, provided that you release the Modified Version under
- precisely this License, with the Modified Version filling the role of the Document,
- thus licensing distribution and modification of the Modified Version to whoever
- possesses a copy of it. In addition, you must do these things in the Modified Version:
- .
-     * A. Use in the Title Page (and on the covers, if any) a title distinct from that
-          of the Document, and from those of previous versions (which should, if there
-          were any, be listed in the History section of the Document). You may use the
-          same title as a previous version if the original publisher of that version
-          gives permission.
-     * B. List on the Title Page, as authors, one or more persons or entities
-          responsible for authorship of the modifications in the Modified Version,
-          together with at least five of the principal authors of the Document (all of
-          its principal authors, if it has less than five).
-     * C. State on the Title page the name of the publisher of the Modified Version,
-          as the publisher.
-     * D. Preserve all the copyright notices of the Document.
-     * E. Add an appropriate copyright notice for your modifications adjacent to the
-          other copyright notices.
-     * F. Include, immediately after the copyright notices, a license notice giving
-          the public permission to use the Modified Version under the terms of this
-          License, in the form shown in the Addendum below.
-     * G. Preserve in that license notice the full lists of Invariant Sections and
-          required Cover Texts given in the Document's license notice.
-     * H. Include an unaltered copy of this License.
-     * I. Preserve the section entitled "History", and its title, and add to it an
-          item stating at least the title, year, new authors, and publisher of the
-          Modified Version as given on the Title Page. If there is no section
-          entitled "History" in the Document, create one stating the title, year,
-          authors, and publisher of the Document as given on its Title Page, then
-          add an item describing the Modified Version as stated in the previous
-          sentence.
-     * J. Preserve the network location, if any, given in the Document for public
-          access to a Transparent copy of the Document, and likewise the network
-          locations given in the Document for previous versions it was based on.
-          These may be placed in the "History" section. You may omit a network
-          location for a work that was published at least four years before the
-          Document itself, or if the original publisher of the version it refers
-          to gives permission.
-     * K. In any section entitled "Acknowledgements" or "Dedications", preserve
-          the section's title, and preserve in the section all the substance and
-          tone of each of the contributor acknowledgements and/or dedications given
-          therein.
-     * L. Preserve all the Invariant Sections of the Document, unaltered in their
-          text and in their titles. Section numbers or the equivalent are not
-          considered part of the section titles.
-     * M. Delete any section entitled "Endorsements". Such a section may not be
-          included in the Modified Version.
-     * N. Do not retitle any existing section as "Endorsements" or to conflict in
-          title with any Invariant Section. 
- .
- If the Modified Version includes new front-matter sections or appendices that
- qualify as Secondary Sections and contain no material copied from the Document,
- you may at your option designate some or all of these sections as invariant. To
- do this, add their titles to the list of Invariant Sections in the Modified
- Version's license notice. These titles must be distinct from any other section
- titles.
- .
- You may add a section entitled "Endorsements", provided it contains nothing but
- endorsements of your Modified Version by various parties--for example, statements
- of peer review or that the text has been approved by an organization as the
- authoritative definition of a standard.
- .
- You may add a passage of up to five words as a Front-Cover Text, and a passage of
- up to 25 words as a Back-Cover Text, to the end of the list of Cover Texts in the
- Modified Version. Only one passage of Front-Cover Text and one of Back-Cover Text
- may be added by (or through arrangements made by) any one entity. If the Document
- already includes a cover text for the same cover, previously added by you or by
- arrangement made by the same entity you are acting on behalf of, you may not add
- another; but you may replace the old one, on explicit permission from the previous
- publisher that added the old one.
- .
- The author(s) and publisher(s) of the Document do not by this License give permission
- to use their names for publicity for or to assert or imply endorsement of any
- Modified Version.
- .
- .
- 5. COMBINING DOCUMENTS
- .
- You may combine the Document with other documents released under this License, under
- the terms defined in section 4 above for modified versions, provided that you include
- in the combination all of the Invariant Sections of all of the original documents,
- unmodified, and list them all as Invariant Sections of your combined work in its
- license notice.
- .
- The combined work need only contain one copy of this License, and multiple identical
- Invariant Sections may be replaced with a single copy. If there are multiple Invariant
- Sections with the same name but different contents, make the title of each such section
- unique by adding at the end of it, in parentheses, the name of the original author or
- publisher of that section if known, or else a unique number. Make the same adjustment
- to the section titles in the list of Invariant Sections in the license notice of the
- combined work.
- .
- In the combination, you must combine any sections entitled "History" in the various
- original documents, forming one section entitled "History"; likewise combine any
- sections entitled "Acknowledgements", and any sections entitled "Dedications". You
- must delete all sections entitled "Endorsements."
- .
- .
- 6. COLLECTIONS OF DOCUMENTS
- .
- You may make a collection consisting of the Document and other documents released
- under this License, and replace the individual copies of this License in the various
- documents with a single copy that is included in the collection, provided that you
- follow the rules of this License for verbatim copying of each of the documents in all
- other respects.
- .
- You may extract a single document from such a collection, and distribute it individually
- under this License, provided you insert a copy of this License into the extracted
- document, and follow this License in all other respects regarding verbatim copying
- of that document.
- .
- .
- 7. AGGREGATION WITH INDEPENDENT WORKS
- .
- A compilation of the Document or its derivatives with other separate and independent
- documents or works, in or on a volume of a storage or distribution medium, does not
- as a whole count as a Modified Version of the Document, provided no compilation
- copyright is claimed for the compilation. Such a compilation is called an "aggregate",
- and this License does not apply to the other self-contained works thus compiled with
- the Document, on account of their being thus compiled, if they are not themselves
- derivative works of the Document.
- .
- If the Cover Text requirement of section 3 is applicable to these copies of the
- Document, then if the Document is less than one quarter of the entire aggregate,
- the Document's Cover Texts may be placed on covers that surround only the Document
- within the aggregate. Otherwise they must appear on covers around the whole aggregate.
- .
- .
- 8. TRANSLATION
- .
- Translation is considered a kind of modification, so you may distribute translations
- of the Document under the terms of section 4. Replacing Invariant Sections with
- translations requires special permission from their copyright holders, but you may
- include translations of some or all Invariant Sections in addition to the original
- versions of these Invariant Sections. You may include a translation of this License
- provided that you also include the original English version of this License. In case
- of a disagreement between the translation and the original English version of this
- License, the original English version will prevail.
- .
- .
- 9. TERMINATION
- .
- You may not copy, modify, sublicense, or distribute the Document except as expressly
- provided for under this License. Any other attempt to copy, modify, sublicense or
- distribute the Document is void, and will automatically terminate your rights under
- this License. However, parties who have received copies, or rights, from you under
- this License will not have their licenses terminated so long as such parties remain
- in full compliance.
- .
- .
- 10. FUTURE REVISIONS OF THIS LICENSE
- .
- The Free Software Foundation may publish new, revised versions of the GNU Free
- Documentation License from time to time. Such new versions will be similar in
- spirit to the present version, but may differ in detail to address new problems
- or concerns. See http://www.gnu.org/copyleft/.
- .
- Each version of the License is given a distinguishing version number. If the
- Document specifies that a particular numbered version of this License "or any later
- version" applies to it, you have the option of following the terms and conditions
- either of that specified version or of any later version that has been published
- (not as a draft) by the Free Software Foundation. If the Document does not specify
- a version number of this License, you may choose any version ever published (not
- as a draft) by the Free Software Foundation.
- .
- .
- How to use this License for your documents
- .
- To use this License in a document you have written, include a copy of the License
- in the document and put the following copyright and license notices just after the
- title page:
- .
-       Copyright (c)  YEAR  YOUR NAME.
-       Permission is granted to copy, distribute and/or modify this document
-       under the terms of the GNU Free Documentation License, Version 1.1
-       or any later version published by the Free Software Foundation;
-       with the Invariant Sections being LIST THEIR TITLES, with the
-       Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
-       A copy of the license is included in the section entitled "GNU
-       Free Documentation License".
- .
- If you have no Invariant Sections, write "with no Invariant Sections" instead of
- saying which ones are invariant. If you have no Front-Cover Texts, write "no
- Front-Cover Texts" instead of "Front-Cover Texts being LIST"; likewise for
- Back-Cover Texts.
- .
- If your document contains nontrivial examples of program code, we recommend
- releasing these examples in parallel under your choice of free software license,
- such as the GNU General Public License, to permit their use in free software. 
+ and ./extensions/jpeg_utils/README.8a in gThumb's sourcecode.
 
 License: GPL-2+
  This program is free software: you can redistribute it and/or modify
@@ -498,23 +632,6 @@ License: GPL-2+
  On Debian systems, you can find the complete text of the GNU General
  Public License version 2 in `/usr/share/common-licenses/GPL-2'.
 
-License: GPL-3+
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
- .
- On Debian systems, you can find the complete text of the GNU General
- Public License version 3 in `/usr/share/common-licenses/GPL-3'.
-
 License: LGPL-2+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Library General Public
@@ -532,3 +649,467 @@ License: LGPL-2+
  .
  On Debian systems, you can find the complete text of the GNU Library
  General Public License version 2 in `/usr/share/common-licenses/LGPL-2'.
+
+License: CC0-1.0
+ CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL
+ SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY-CLIENT
+ RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS.
+ CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE USE OF THIS DOCUMENT OR
+ THE INFORMATION OR WORKS PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR
+ DAMAGES RESULTING FROM THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS
+ PROVIDED HEREUNDER.
+ .
+ License
+ .
+ Statement of Purpose
+ .
+ The laws of most jurisdictions throughout the world automatically confer
+ exclusive Copyright and Related Rights (defined below) upon the creator and
+ subsequent owner(s) (each and all, an "owner") of an original work of
+ authorship and/or a database (each, a "Work").
+ .
+ Certain owners wish to permanently relinquish those rights to a Work for the
+ purpose of contributing to a commons of creative, cultural and scientific
+ works ("Commons") that the public can reliably and without fear of later
+ claims of infringement build upon, modify, incorporate in other works, reuse
+ and redistribute as freely as possible in any form whatsoever and for any
+ purposes, including without limitation commercial purposes. These owners may
+ contribute to the Commons to promote the ideal of a free culture and the
+ further production of creative, cultural and scientific works, or to gain
+ reputation or greater distribution for their Work in part through the use and
+ efforts of others.
+ .
+ For these and/or other purposes and motivations, and without any expectation
+ of additional consideration or compensation, the person associating CC0 with
+ a Work (the "Affirmer"), to the extent that he or she is an owner of
+ Copyright and Related Rights in the Work, voluntarily elects to apply CC0 to
+ the Work and publicly distribute the Work under its terms, with knowledge of
+ his or her Copyright and Related Rights in the Work and the meaning and
+ intended legal effect of CC0 on those rights.
+ .
+ 1. Copyright and Related Rights. A Work made available under CC0 may be
+ protected by copyright and related or neighboring rights ("Copyright and
+ Related Rights"). Copyright and Related Rights include, but are not limited
+ to, the following:
+ .
+     i. the right to reproduce, adapt, distribute, perform, display,
+        communicate, and translate a Work;
+    ii. moral rights retained by the original author(s) and/or performer(s);
+   iii. publicity and privacy rights pertaining to a person's image or
+        likeness depicted in a Work;
+    iv. rights protecting against unfair competition in regards to a Work,
+        subject to the limitations in paragraph 4(a), below;
+     v. rights protecting the extraction, dissemination, use and reuse of data
+        in a Work;
+    vi. database rights (such as those arising under Directive 96/9/EC of the
+        European Parliament and of the Council of 11 March 1996 on the legal
+        protection of databases, and under any national implementation
+        thereof, including any amended or successor version of such
+        directive); and
+   vii. other similar, equivalent or corresponding rights throughout the
+        world based on applicable law or treaty, and any national
+        implementations thereof.
+ .
+ 2. Waiver. To the greatest extent permitted by, but not in contravention of,
+ applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and
+ unconditionally waives, abandons, and surrenders all of Affirmer's Copyright
+ and Related Rights and associated claims and causes of action, whether now
+ known or unknown (including existing as well as future claims and causes of
+ action), in the Work (i) in all territories worldwide, (ii) for the maximum
+ duration provided by applicable law or treaty (including future time
+ extensions), (iii) in any current or future medium and for any number of
+ copies, and (iv) for any purpose whatsoever, including without limitation
+ commercial, advertising or promotional purposes (the "Waiver"). Affirmer
+ makes the Waiver for the benefit of each member of the public at large and to
+ the detriment of Affirmer's heirs and successors, fully intending that such
+ Waiver shall not be subject to revocation, rescission, cancellation,
+ termination, or any other legal or equitable action to disrupt the quiet
+ enjoyment of the Work by the public as contemplated by Affirmer's express
+ Statement of Purpose.
+ .
+ 3. Public License Fallback. Should any part of the Waiver for any reason be
+ judged legally invalid or ineffective under applicable law, then the Waiver
+ shall be preserved to the maximum extent permitted taking into account
+ Affirmer's express Statement of Purpose. In addition, to the extent the
+ Waiver is so judged Affirmer hereby grants to each affected person a
+ royalty-free, non transferable, non sublicensable, non exclusive, irrevocable
+ and unconditional license to exercise Affirmer's Copyright and Related Rights
+ in the Work (i) in all territories worldwide, (ii) for the maximum duration
+ provided by applicable law or treaty (including future time extensions), (iii)
+ in any current or future medium and for any number of copies, and (iv) for
+ any purpose whatsoever, including without limitation commercial, advertising
+ or promotional purposes (the "License"). The License shall be deemed
+ effective as of the date CC0 was applied by Affirmer to the Work. Should any
+ part of the License for any reason be judged legally invalid or ineffective
+ under applicable law, such partial invalidity or ineffectiveness shall not
+ invalidate the remainder of the License, and in such case Affirmer hereby
+ affirms that he or she will not (i) exercise any of his or her remaining
+ Copyright and Related Rights in the Work or (ii) assert any associated claims
+ and causes of action with respect to the Work, in either case contrary to
+ Affirmer's express Statement of Purpose.
+ .
+ 4. Limitations and Disclaimers.
+ .
+      a. No trademark or patent rights held by Affirmer are waived, abandoned,
+         surrendered, licensed or otherwise affected by this document.
+      b. Affirmer offers the Work as-is and makes no representations or
+         warranties of any kind concerning the Work, express, implied,
+         statutory or otherwise, including without limitation warranties of
+         title, merchantability, fitness for a particular purpose, non
+         infringement, or the absence of latent or other defects, accuracy, or
+         the present or absence of errors, whether or not discoverable, all to
+         the greatest extent permissible under applicable law.
+      c. Affirmer disclaims responsibility for clearing rights of other
+         persons that may apply to the Work or any use thereof, including
+         without limitation any person's Copyright and Related Rights in the
+         Work. Further, Affirmer disclaims responsibility for obtaining any
+         necessary consents, permissions or other rights required for any use
+         of the Work.
+      d. Affirmer understands and acknowledges that Creative Commons is not a
+         party to this document and has no duty or obligation with respect to
+         this CC0 or use of the Work.
+
+License: CC-BY-SA-3.0
+ Creative Commons Attribution 3.0 Unported
+ .
+ CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
+ LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN
+ ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION
+ ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE
+ INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM
+ ITS USE.
+ .
+ License
+ .
+ THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+ COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+ COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+ AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+ .
+ BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE
+ TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY
+ BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
+ CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
+ CONDITIONS.
+ .
+ 1. Definitions
+ .
+ a. "Adaptation" means a work based upon the Work, or upon the Work and
+ other pre-existing works, such as a translation, adaptation, derivative
+ work, arrangement of music or other alterations of a literary or
+ artistic work, or phonogram or performance and includes cinematographic
+ adaptations or any other form in which the Work may be recast,
+ transformed, or adapted including in any form recognizably derived from
+ the original, except that a work that constitutes a Collection will not
+ be considered an Adaptation for the purpose of this License. For the
+ avoidance of doubt, where the Work is a musical work, performance or
+ phonogram, the synchronization of the Work in timed-relation with a
+ moving image ("synching") will be considered an Adaptation for the
+ purpose of this License.
+ .
+ b. "Collection" means a collection of literary or artistic works, such
+ as encyclopedias and anthologies, or performances, phonograms or
+ broadcasts, or other works or subject matter other than works listed in
+ Section 1(f) below, which, by reason of the selection and arrangement of
+ their contents, constitute intellectual creations, in which the Work is
+ included in its entirety in unmodified form along with one or more other
+ contributions, each constituting separate and independent works in
+ themselves, which together are assembled into a collective whole. A work
+ that constitutes a Collection will not be considered an Adaptation (as
+ defined above) for the purposes of this License.
+ .
+ c. "Distribute" means to make available to the public the original and
+ copies of the Work or Adaptation, as appropriate, through sale or other
+ transfer of ownership.
+ .
+ d. "Licensor" means the individual, individuals, entity or entities that
+ offer(s) the Work under the terms of this License.
+ .
+ e. "Original Author" means, in the case of a literary or artistic work,
+ the individual, individuals, entity or entities who created the Work or
+ if no individual or entity can be identified, the publisher; and in
+ addition (i) in the case of a performance the actors, singers,
+ musicians, dancers, and other persons who act, sing, deliver, declaim,
+ play in, interpret or otherwise perform literary or artistic works or
+ expressions of folklore; (ii) in the case of a phonogram the producer
+ being the person or legal entity who first fixes the sounds of a
+ performance or other sounds; and, (iii) in the case of broadcasts, the
+ organization that transmits the broadcast.
+ .
+ f. "Work" means the literary and/or artistic work offered under the
+ terms of this License including without limitation any production in the
+ literary, scientific and artistic domain, whatever may be the mode or
+ form of its expression including digital form, such as a book, pamphlet
+ and other writing; a lecture, address, sermon or other work of the same
+ nature; a dramatic or dramatico-musical work; a choreographic work or
+ entertainment in dumb show; a musical composition with or without words;
+ a cinematographic work to which are assimilated works expressed by a
+ process analogous to cinematography; a work of drawing, painting,
+ architecture, sculpture, engraving or lithography; a photographic work
+ to which are assimilated works expressed by a process analogous to
+ photography; a work of applied art; an illustration, map, plan, sketch
+ or three-dimensional work relative to geography, topography,
+ architecture or science; a performance; a broadcast; a phonogram; a
+ compilation of data to the extent it is protected as a copyrightable
+ work; or a work performed by a variety or circus performer to the extent
+ it is not otherwise considered a literary or artistic work.
+ .
+ g. "You" means an individual or entity exercising rights under this
+ License who has not previously violated the terms of this License with
+ respect to the Work, or who has received express permission from the
+ Licensor to exercise rights under this License despite a previous
+ violation.
+ .
+ h. "Publicly Perform" means to perform public recitations of the Work
+ and to communicate to the public those public recitations, by any means
+ or process, including by wire or wireless means or public digital
+ performances; to make available to the public Works in such a way that
+ members of the public may access these Works from a place and at a place
+ individually chosen by them; to perform the Work to the public by any
+ means or process and the communication to the public of the performances
+ of the Work, including by public digital performance; to broadcast and
+ rebroadcast the Work by any means including signs, sounds or images.
+ .
+ i. "Reproduce" means to make copies of the Work by any means including
+ without limitation by sound or visual recordings and the right of
+ fixation and reproducing fixations of the Work, including storage of a
+ protected performance or phonogram in digital form or other electronic
+ medium.
+ .
+ 2. Fair Dealing Rights. Nothing in this License is intended to reduce,
+ limit, or restrict any uses free from copyright or rights arising from
+ limitations or exceptions that are provided for in connection with the
+ copyright protection under copyright law or other applicable laws.
+ .
+ 3. License Grant. Subject to the terms and conditions of this License,
+ Licensor hereby grants You a worldwide, royalty-free, non-exclusive,
+ perpetual (for the duration of the applicable copyright) license to
+ exercise the rights in the Work as stated below:
+ .
+ a. to Reproduce the Work, to incorporate the Work into one or more
+ Collections, and to Reproduce the Work as incorporated in the
+ Collections;
+ .
+ b. to create and Reproduce Adaptations provided that any such
+ Adaptation, including any translation in any medium, takes reasonable
+ steps to clearly label, demarcate or otherwise identify that changes
+ were made to the original Work. For example, a translation could be
+ marked "The original work was translated from English to Spanish," or a
+ modification could indicate "The original work has been modified.";
+ .
+ c. to Distribute and Publicly Perform the Work including as incorporated
+ in Collections; and,
+ .
+ d. to Distribute and Publicly Perform Adaptations.
+ .
+ e. For the avoidance of doubt:
+ .
+ i. Non-waivable Compulsory License Schemes. In those jurisdictions in
+ which the right to collect royalties through any statutory or compulsory
+ licensing scheme cannot be waived, the Licensor reserves the exclusive
+ right to collect such royalties for any exercise by You of the rights
+ granted under this License;
+ .
+ ii. Waivable Compulsory License Schemes. In those jurisdictions in which
+ the right to collect royalties through any statutory or compulsory
+ licensing scheme can be waived, the Licensor waives the exclusive right
+ to collect such royalties for any exercise by You of the rights granted
+ under this License; and,
+ .
+ iii. Voluntary License Schemes. The Licensor waives the right to collect
+ royalties, whether individually or, in the event that the Licensor is a
+ member of a collecting society that administers voluntary licensing
+ schemes, via that society, from any exercise by You of the rights
+ granted under this License.
+ .
+ The above rights may be exercised in all media and formats whether now
+ known or hereafter devised. The above rights include the right to make
+ such modifications as are technically necessary to exercise the rights
+ in other media and formats. Subject to Section 8(f), all rights not
+ expressly granted by Licensor are hereby reserved.
+ .
+ 4. Restrictions. The license granted in Section 3 above is expressly
+ made subject to and limited by the following restrictions:
+ .
+ a. You may Distribute or Publicly Perform the Work only under the terms
+ of this License. You must include a copy of, or the Uniform Resource
+ Identifier (URI) for, this License with every copy of the Work You
+ Distribute or Publicly Perform. You may not offer or impose any terms on
+ the Work that restrict the terms of this License or the ability of the
+ recipient of the Work to exercise the rights granted to that recipient
+ under the terms of the License. You may not sublicense the Work. You
+ must keep intact all notices that refer to this License and to the
+ disclaimer of warranties with every copy of the Work You Distribute or
+ Publicly Perform. When You Distribute or Publicly Perform the Work, You
+ may not impose any effective technological measures on the Work that
+ restrict the ability of a recipient of the Work from You to exercise the
+ rights granted to that recipient under the terms of the License. This
+ Section 4(a) applies to the Work as incorporated in a Collection, but
+ this does not require the Collection apart from the Work itself to be
+ made subject to the terms of this License. If You create a Collection,
+ upon notice from any Licensor You must, to the extent practicable,
+ remove from the Collection any credit as required by Section 4(b), as
+ requested. If You create an Adaptation, upon notice from any Licensor
+ You must, to the extent practicable, remove from the Adaptation any
+ credit as required by Section 4(b), as requested.
+ .
+ b. If You Distribute, or Publicly Perform the Work or any Adaptations or
+ Collections, You must, unless a request has been made pursuant to
+ Section 4(a), keep intact all copyright notices for the Work and
+ provide, reasonable to the medium or means You are utilizing: (i) the
+ name of the Original Author (or pseudonym, if applicable) if supplied,
+ and/or if the Original Author and/or Licensor designate another party or
+ parties (e.g., a sponsor institute, publishing entity, journal) for
+ attribution ("Attribution Parties") in Licensor's copyright notice,
+ terms of service or by other reasonable means, the name of such party or
+ parties; (ii) the title of the Work if supplied; (iii) to the extent
+ reasonably practicable, the URI, if any, that Licensor specifies to be
+ associated with the Work, unless such URI does not refer to the
+ copyright notice or licensing information for the Work; and (iv) ,
+ consistent with Section 3(b), in the case of an Adaptation, a credit
+ identifying the use of the Work in the Adaptation (e.g., "French
+ translation of the Work by Original Author," or "Screenplay based on
+ original Work by Original Author"). The credit required by this Section
+ 4 (b) may be implemented in any reasonable manner; provided, however,
+ that in the case of a Adaptation or Collection, at a minimum such credit
+ will appear, if a credit for all contributing authors of the Adaptation
+ or Collection appears, then as part of these credits and in a manner at
+ least as prominent as the credits for the other contributing authors.
+ For the avoidance of doubt, You may only use the credit required by this
+ Section for the purpose of attribution in the manner set out above and,
+ by exercising Your rights under this License, You may not implicitly or
+ explicitly assert or imply any connection with, sponsorship or
+ endorsement by the Original Author, Licensor and/or Attribution Parties,
+ as appropriate, of You or Your use of the Work, without the separate,
+ express prior written permission of the Original Author, Licensor and/or
+ Attribution Parties.
+ .
+ c. Except as otherwise agreed in writing by the Licensor or as may be
+ otherwise permitted by applicable law, if You Reproduce, Distribute or
+ Publicly Perform the Work either by itself or as part of any Adaptations
+ or Collections, You must not distort, mutilate, modify or take other
+ derogatory action in relation to the Work which would be prejudicial to
+ the Original Author's honor or reputation. Licensor agrees that in those
+ jurisdictions (e.g. Japan), in which any exercise of the right granted
+ in Section 3(b) of this License (the right to make Adaptations) would be
+ deemed to be a distortion, mutilation, modification or other derogatory
+ action prejudicial to the Original Author's honor and reputation, the
+ Licensor will waive or not assert, as appropriate, this Section, to the
+ fullest extent permitted by the applicable national law, to enable You
+ to reasonably exercise Your right under Section 3(b) of this License
+ (right to make Adaptations) but not otherwise.
+ .
+ 5. Representations, Warranties and Disclaimer
+ .
+ UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR
+ OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY
+ KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE,
+ INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF
+ LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS,
+ WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE
+ EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
+ .
+ 6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE
+ LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR
+ ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES
+ ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS
+ BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ .
+ 7. Termination
+ .
+ a. This License and the rights granted hereunder will terminate
+ automatically upon any breach by You of the terms of this License.
+ Individuals or entities who have received Adaptations or Collections
+ from You under this License, however, will not have their licenses
+ terminated provided such individuals or entities remain in full
+ compliance with those licenses. Sections 1, 2, 5, 6, 7, and 8 will
+ survive any termination of this License.
+ .
+ b. Subject to the above terms and conditions, the license granted here
+ is perpetual (for the duration of the applicable copyright in the Work).
+ Notwithstanding the above, Licensor reserves the right to release the
+ Work under different license terms or to stop distributing the Work at
+ any time; provided, however that any such election will not serve to
+ withdraw this License (or any other license that has been, or is
+ required to be, granted under the terms of this License), and this
+ License will continue in full force and effect unless terminated as
+ stated above.
+ .
+ 8. Miscellaneous
+ .
+ a. Each time You Distribute or Publicly Perform the Work or a
+ Collection, the Licensor offers to the recipient a license to the Work
+ on the same terms and conditions as the license granted to You under
+ this License.
+ .
+ b. Each time You Distribute or Publicly Perform an Adaptation, Licensor
+ offers to the recipient a license to the original Work on the same terms
+ and conditions as the license granted to You under this License.
+ .
+ c. If any provision of this License is invalid or unenforceable under
+ applicable law, it shall not affect the validity or enforceability of
+ the remainder of the terms of this License, and without further action
+ by the parties to this agreement, such provision shall be reformed to
+ the minimum extent necessary to make such provision valid and
+ enforceable.
+ .
+ d. No term or provision of this License shall be deemed waived and no
+ breach consented to unless such waiver or consent shall be in writing
+ and signed by the party to be charged with such waiver or consent. This
+ License constitutes the entire agreement between the parties with
+ respect to the Work licensed here. There are no understandings,
+ agreements or representations with respect to the Work not specified
+ here. Licensor shall not be bound by any additional provisions that may
+ appear in any communication from You.
+ .
+ e. This License may not be modified without the mutual written agreement
+ of the Licensor and You.
+ .
+ f. The rights granted under, and the subject matter referenced, in this
+ License were drafted utilizing the terminology of the Berne Convention
+ for the Protection of Literary and Artistic Works (as amended on
+ September 28, 1979), the Rome Convention of 1961, the WIPO Copyright
+ Treaty of 1996, the WIPO Performances and Phonograms Treaty of 1996 and
+ the Universal Copyright Convention (as revised on July 24, 1971). These
+ rights and subject matter take effect in the relevant jurisdiction in
+ which the License terms are sought to be enforced according to the
+ corresponding provisions of the implementation of those treaty
+ provisions in the applicable national law. If the standard suite of
+ rights granted under applicable copyright law includes additional rights
+ not granted under this License, such additional rights are deemed to be
+ included in the License; this License is not intended to restrict the
+ license of any rights under applicable law.
+ .
+ Creative Commons Notice
+ .
+ Creative Commons is not a party to this License, and makes no warranty
+ whatsoever in connection with the Work. Creative Commons will not be
+ liable to You or any party on any legal theory for any damages
+ whatsoever, including without limitation any general, special,
+ incidental or consequential damages arising in connection to this
+ license. Notwithstanding the foregoing two (2) sentences, if Creative
+ Commons has expressly identified itself as the Licensor hereunder, it
+ shall have all rights and obligations of Licensor.
+ .
+ Except for the limited purpose of indicating to the public that the Work
+ is licensed under the CCPL, Creative Commons does not authorize the use
+ by either party of the trademark "Creative Commons" or any related
+ trademark or logo of Creative Commons without the prior written consent
+ of Creative Commons. Any permitted use will be in compliance with
+ Creative Commons' then-current trademark usage guidelines, as may be
+ published on its website or otherwise made available upon request from
+ time to time. For the avoidance of doubt, this trademark restriction
+ does not form part of this License.
+ .
+ Creative Commons may be contacted at http://creativecommons.org/.
+
+License: other
+ As a special exception, the copyright holders give you permission to copy,
+ modify, and distribute the example code contained in this document under the
+ terms of your choosing, without restriction.
+
+License: PERMISSIVE
+ Copying and distribution of this file, with or without modification,
+ are permitted in any medium without royalty provided the copyright
+ notice and this notice are preserved.

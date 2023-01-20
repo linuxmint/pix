@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,25 +22,28 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "actions.h"
 #include "gth-reset-orientation-task.h"
 #include "gth-transform-task.h"
 
 
 void
-gth_browser_activate_action_tool_rotate_right (GtkAction  *action,
-					       GthBrowser *browser)
+gth_browser_activate_rotate_right (GSimpleAction	*action,
+				   GVariant		*parameter,
+				   gpointer	 	 user_data)
 {
-	GList   *items;
-	GList   *file_data_list;
-	GList   *file_list;
-	GthTask *task;
+	GthBrowser	*browser = GTH_BROWSER (user_data);
+	GList		*items;
+	GList		*file_data_list;
+	GList		*file_list;
+	GthTask		*task;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
 	file_list = gth_file_data_list_to_file_list (file_data_list);
 	task = gth_transform_task_new (browser, file_list, GTH_TRANSFORM_ROTATE_90);
-	gth_browser_exec_task (browser, task, FALSE);
+	gth_browser_exec_task (browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (task);
 	_g_object_list_unref (file_list);
@@ -50,19 +53,21 @@ gth_browser_activate_action_tool_rotate_right (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_tool_rotate_left (GtkAction  *action,
-					      GthBrowser *browser)
+gth_browser_activate_rotate_left (GSimpleAction *action,
+		  	  	  GVariant	*parameter,
+		  	  	  gpointer	 user_data)
 {
-	GList   *items;
-	GList   *file_data_list;
-	GList   *file_list;
-	GthTask *task;
+	GthBrowser	*browser = GTH_BROWSER (user_data);
+	GList		*items;
+	GList		*file_data_list;
+	GList		*file_list;
+	GthTask		*task;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
 	file_list = gth_file_data_list_to_file_list (file_data_list);
 	task = gth_transform_task_new (browser, file_list, GTH_TRANSFORM_ROTATE_270);
-	gth_browser_exec_task (browser, task, FALSE);
+	gth_browser_exec_task (browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (task);
 	_g_object_list_unref (file_list);
@@ -72,19 +77,21 @@ gth_browser_activate_action_tool_rotate_left (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_tool_apply_orientation (GtkAction  *action,
-						    GthBrowser *browser)
+gth_browser_activate_apply_orientation (GSimpleAction	*action,
+					GVariant	*parameter,
+					gpointer	 user_data)
 {
-	GList   *items;
-	GList   *file_data_list;
-	GList   *file_list;
-	GthTask *task;
+	GthBrowser	*browser = GTH_BROWSER (user_data);
+	GList		*items;
+	GList		*file_data_list;
+	GList		*file_list;
+	GthTask		*task;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
 	file_list = gth_file_data_list_to_file_list (file_data_list);
 	task = gth_transform_task_new (browser, file_list, GTH_TRANSFORM_NONE);
-	gth_browser_exec_task (browser, task, FALSE);
+	gth_browser_exec_task (browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (task);
 	_g_object_list_unref (file_list);
@@ -94,19 +101,21 @@ gth_browser_activate_action_tool_apply_orientation (GtkAction  *action,
 
 
 void
-gth_browser_activate_action_tool_reset_orientation (GtkAction  *action,
-						    GthBrowser *browser)
+gth_browser_activate_reset_orientation (GSimpleAction	*action,
+					GVariant	*parameter,
+					gpointer	 user_data)
 {
-	GList   *items;
-	GList   *file_data_list;
-	GList   *file_list;
-	GthTask *task;
+	GthBrowser	*browser = GTH_BROWSER (user_data);
+	GList		*items;
+	GList		*file_data_list;
+	GList		*file_list;
+	GthTask		*task;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
 	file_list = gth_file_data_list_to_file_list (file_data_list);
 	task = gth_reset_orientation_task_new (browser, file_list);
-	gth_browser_exec_task (browser, task, FALSE);
+	gth_browser_exec_task (browser, task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (task);
 	_g_object_list_unref (file_list);

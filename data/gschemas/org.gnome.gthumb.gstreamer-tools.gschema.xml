@@ -1,0 +1,39 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.gstreamer-tools" path="/org/gnome/gthumb/gstreamer-tools/" gettext-domain="gthumb">
+    <key name="screenshot-location" type="s">
+      <default>'file://~'</default>
+    </key>
+    <key name="volume" type="i">
+      <default>100</default>
+    </key>
+    <key name="mute" type="b">
+      <default>false</default>
+    </key>
+    <key name="use-hardware-acceleration" type="b">
+      <default>false</default>
+    </key>
+    <key name="zoom-to-fit" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+
+</schemalist>

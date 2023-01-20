@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,55 +23,28 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "actions.h"
+#include "callbacks.h"
 
 
 #define BROWSER_DATA_KEY "bookmarks-browser-data"
 
 
-static const char *fixed_ui_info =
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <placeholder name='OtherMenus'>"
-"      <menu name='Bookmarks' action='BookmarksMenu'>"
-"        <menuitem action='Bookmarks_Add'/>"
-"        <menuitem action='Bookmarks_Edit'/>"
-"        <separator/>"
-"        <menu name='SystemBookmarks' action='SystemBookmarksMenu'>"
-"        </menu>"
-"        <separator name='EntryPointListSeparator'/>"
-"        <placeholder name='EntryPointList'/>"
-"        <separator name='BookmarkListSeparator'/>"
-"        <placeholder name='BookmarkList'/>"
-"      </menu>"
-"    </placeholder>"
-"  </menubar>"
-"</ui>";
-
-
-static GtkActionEntry bookmarks_action_entries[] = {
-	{ "BookmarksMenu", NULL, N_("_Bookmarks") },
-	{ "SystemBookmarksMenu", NULL, N_("_System Bookmarks") },
-
-	{ "Bookmarks_Add", "bookmark-new-symbolic",
-	  N_("_Add Bookmark"), "<control>D",
-	  N_("Add current location to bookmarks"),
-	  G_CALLBACK (gth_browser_activate_action_bookmarks_add) },
-
-	{ "Bookmarks_Edit", NULL,
-	  N_("_Edit Bookmarks..."), "<control>B",
-	  N_("Edit bookmarks"),
-	  G_CALLBACK (gth_browser_activate_action_bookmarks_edit) },
+static const GActionEntry actions[] = {
+	{ "bookmarks-add", gth_browser_activate_bookmarks_add },
+	{ "bookmarks-edit", gth_browser_activate_bookmarks_edit }
 };
-static guint bookmarks_action_entries_size = G_N_ELEMENTS (bookmarks_action_entries);
 
 
 typedef struct {
-	GthBrowser     *browser;
-	GtkActionGroup *actions;
-	guint           bookmarks_changed_id;
-	guint           entry_points_changed_id;
+	GthBrowser *browser;
+	GtkBuilder *builder;
+	guint       bookmarks_changed_id;
+	guint       entry_points_changed_id;
+	GMenu      *system_bookmarks_menu;
+	GMenu      *entry_points_menu;
+	GMenu      *bookmarks_menu;
 } BrowserData;
 
 
@@ -88,6 +61,7 @@ browser_data_free (BrowserData *data)
 					     data->entry_points_changed_id);
 		data->entry_points_changed_id = 0;
 	}
+	_g_object_unref (data->builder);
 	g_free (data);
 }
 
@@ -118,23 +92,21 @@ static void
 update_system_bookmark_list_from_content (GthBrowser *browser,
 					  const char *content)
 {
-	GtkWidget  *bookmark_list;
-	GtkWidget  *menu;
-	char      **lines;
-	int         i;
+	BrowserData   *data;
+	char        **lines;
+	int           i;
 
-	bookmark_list = gtk_ui_manager_get_widget (gth_browser_get_ui_manager (browser), "/MenuBar/OtherMenus/Bookmarks/SystemBookmarks");
-	menu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (bookmark_list));
-
-	_gtk_container_remove_children (GTK_CONTAINER (menu), NULL, NULL);
+	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
+	g_return_if_fail (data != NULL);
 
 	lines = g_strsplit (content, "\n", -1);
 	for (i = 0; lines[i] != NULL; i++) {
-		char  **line;
-		char   *uri;
-		GFile  *file;
-		GIcon  *icon;
-		char   *name;
+		char      **line;
+		char       *uri;
+		GFile      *file;
+		char       *first_space;
+		char       *name;
+		GMenuItem  *item;
 
 		line = g_strsplit (lines[i], " ", 2);
 		uri = line[0];
@@ -144,31 +116,19 @@ update_system_bookmark_list_from_content (GthBrowser *browser,
 		}
 
 		file = g_file_new_for_uri (uri);
-		icon = _g_file_get_icon (file);
-		name = g_strdup (strchr (lines[i], ' '));
-		if (name == NULL)
-			name = _g_file_get_display_name (file);
-		if (name == NULL)
-			name = g_file_get_parse_name (file);
+		first_space = strchr (lines[i], ' ');
+		name = (first_space != NULL) ? g_strdup (first_space + 1) : NULL;
+		item = _g_menu_item_new_for_file (file, name);
+		g_menu_item_set_action_and_target (item, "win.go-to-location", "s", uri);
+		g_menu_append_item (data->system_bookmarks_menu, item);
 
-		_gth_browser_add_file_menu_item_full (browser,
-						      menu,
-						      file,
-						      icon,
-						      name,
-						      GTH_ACTION_GO_TO,
-						      i,
-						      -1);
-
+		g_object_unref (item);
 		g_free (name);
-		_g_object_unref (icon);
 		g_object_unref (file);
 		g_strfreev (line);
 	}
-	g_strfreev (lines);
 
-	if (i > 0)
-		gtk_widget_show (bookmark_list);
+	g_strfreev (lines);
 }
 
 
@@ -208,12 +168,19 @@ update_system_bookmark_list_ready (GObject      *source_object,
 static void
 _gth_browser_update_system_bookmark_list (GthBrowser *browser)
 {
+	BrowserData         *browser_data;
 	GFile               *bookmark_file;
 	GFileInputStream    *input_stream;
 	UpdateBookmarksData *data;
 
+	browser_data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
+	g_return_if_fail (browser_data != NULL);
+
+	g_menu_remove_all (browser_data->system_bookmarks_menu);
+
 	/* give priority to XDG_CONFIG_HOME/gtk-3.0/bookmarks if not found
 	 * try the old ~/.gtk-bookmarks */
+
 	bookmark_file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, "gtk-3.0", "bookmarks", NULL);
 	if (! g_file_query_exists (bookmark_file, NULL)) {
 		char *path;
@@ -249,41 +216,31 @@ _gth_browser_update_system_bookmark_list (GthBrowser *browser)
 static void
 _gth_browser_update_bookmark_list (GthBrowser *browser)
 {
-	GtkWidget      *menu;
-	GtkWidget      *bookmark_list;
-	GtkWidget      *bookmark_list_separator;
+	BrowserData    *data;
 	GBookmarkFile  *bookmarks;
 	char          **uris;
-	gsize           length;
 	int             i;
 
-	bookmark_list = gtk_ui_manager_get_widget (gth_browser_get_ui_manager (browser), "/MenuBar/OtherMenus/Bookmarks/BookmarkList");
-	menu = gtk_widget_get_parent (bookmark_list);
+	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
+	g_return_if_fail (data != NULL);
 
-	_gtk_container_remove_children (GTK_CONTAINER (menu), bookmark_list, NULL);
+	g_menu_remove_all (data->bookmarks_menu);
 
 	bookmarks = gth_main_get_default_bookmarks ();
-	uris = g_bookmark_file_get_uris (bookmarks, &length);
-
-	bookmark_list_separator = gtk_ui_manager_get_widget (gth_browser_get_ui_manager (browser), "/MenuBar/OtherMenus/Bookmarks/BookmarkListSeparator");
-	if (length > 0)
-		gtk_widget_show (bookmark_list_separator);
-	else
-		gtk_widget_hide (bookmark_list_separator);
+	uris = g_bookmark_file_get_uris (bookmarks, NULL);
 
 	for (i = 0; uris[i] != NULL; i++) {
-		GFile *file;
-		char  *name;
+		GFile     *file;
+		char      *name;
+		GMenuItem *item;
 
 		file = g_file_new_for_uri (uris[i]);
 		name = g_bookmark_file_get_title (bookmarks, uris[i], NULL);
-		_gth_browser_add_file_menu_item (browser,
-						 menu,
-						 file,
-						 name,
-						 GTH_ACTION_GO_TO,
-						 i);
+		item = _g_menu_item_new_for_file (file, name);
+		g_menu_item_set_action_and_target (item, "win.go-to-location", "s", uris[i]);
+		g_menu_append_item (data->bookmarks_menu, item);
 
+		g_object_unref (item);
 		g_free (name);
 		g_object_unref (file);
 	}
@@ -306,33 +263,28 @@ bookmarks_changed_cb (GthMonitor *monitor,
 static void
 _gth_browser_update_entry_point_list (GthBrowser *browser)
 {
-	GtkUIManager *ui;
-	GtkWidget    *separator1;
-	GtkWidget    *separator2;
-	GtkWidget    *menu;
+	BrowserData  *data;
 	GList        *entry_points;
 	GList        *scan;
-	int           position;
 
-	ui = gth_browser_get_ui_manager (browser);
-	separator1 = gtk_ui_manager_get_widget (ui, "/MenuBar/OtherMenus/Bookmarks/EntryPointListSeparator");
-	separator2 = gtk_ui_manager_get_widget (ui, "/MenuBar/OtherMenus/Bookmarks/BookmarkListSeparator");
-	menu = gtk_widget_get_parent (separator1);
-	_gtk_container_remove_children (GTK_CONTAINER (menu), separator1, separator2);
+	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
+	g_return_if_fail (data != NULL);
 
-	position = 6;
+	g_menu_remove_all (data->entry_points_menu);
+
 	entry_points = gth_main_get_all_entry_points ();
 	for (scan = entry_points; scan; scan = scan->next) {
 		GthFileData *file_data = scan->data;
+		GMenuItem   *item;
+		char        *uri;
 
-		_gth_browser_add_file_menu_item_full (browser,
-						      menu,
-						      file_data->file,
-						      g_file_info_get_icon (file_data->info),
-						      g_file_info_get_display_name (file_data->info),
-						      GTH_ACTION_GO_TO,
-						      0,
-						      position++);
+		item = _g_menu_item_new_for_file_data (file_data);
+		uri = g_file_get_uri (file_data->file);
+		g_menu_item_set_action_and_target (item, "win.go-to-location", "s", uri);
+		g_menu_append_item (data->entry_points_menu, item);
+
+		g_free (uri);
+		g_object_unref (item);
 	}
 
 	_g_object_list_unref (entry_points);
@@ -352,28 +304,38 @@ void
 bookmarks__gth_browser_construct_cb (GthBrowser *browser)
 {
 	BrowserData *data;
-	GError      *error = NULL;
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
 	data = g_new0 (BrowserData, 1);
 	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 
-	data->browser = browser;
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
 
-	data->actions = gtk_action_group_new ("Bookmarks Actions");
-	gtk_action_group_set_translation_domain (data->actions, NULL);
-	gtk_action_group_add_actions (data->actions,
-				      bookmarks_action_entries,
-				      bookmarks_action_entries_size,
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->actions, 0);
+	{
+		GtkWidget  *button;
+		GMenuModel *menu;
 
-	if (! gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), fixed_ui_info, -1, &error)) {
-		g_message ("building menus failed: %s", error->message);
-		g_error_free (error);
+		button = _gtk_menu_button_new_for_header_bar ("user-bookmarks-symbolic");
+		gtk_widget_set_tooltip_text (button, _("Bookmarks"));
+
+		data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/bookmarks/data/ui/bookmarks-menu.ui");
+		data->system_bookmarks_menu = G_MENU (gtk_builder_get_object (data->builder, "system-bookmarks"));
+		data->entry_points_menu = G_MENU (gtk_builder_get_object (data->builder, "entry-points"));
+		data->bookmarks_menu = G_MENU (gtk_builder_get_object (data->builder, "bookmarks"));
+
+		menu = G_MENU_MODEL (gtk_builder_get_object (data->builder, "bookmarks-menu"));
+		gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), menu);
+		_gtk_window_add_accelerators_from_menu ((GTK_WINDOW (browser)), menu);
+
+		gtk_widget_show (button);
+		gtk_box_pack_end (GTK_BOX (gth_browser_get_headerbar_section (browser, GTH_BROWSER_HEADER_SECTION_BROWSER_LOCATIONS)), button, FALSE, FALSE, 0);
 	}
 
+	data->browser = browser;
 	data->bookmarks_changed_id = g_signal_connect (gth_main_get_default_monitor (),
 						       "bookmarks-changed",
 						       G_CALLBACK (bookmarks_changed_cb),

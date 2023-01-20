@@ -1,0 +1,2631 @@
+# Hungarian translation for gthumb help.
+# Copyright (C) 2015, 2016, 2019, 2021 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gthumb package.
+#
+# Balázs Úr <ur.balazs at fsf dot hu>, 2015, 2016, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: gthumb master\n"
+"POT-Creation-Date: 2020-07-19 10:09+0000\n"
+"PO-Revision-Date: 2021-03-03 02:01+0100\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 19.12.3\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Úr Balázs <ur.balazs at fsf dot hu>, 2015, 2016, 2019, 2021."
+
+#. (itstool) path: credit/name
+#: C/index.page:7
+msgid "Paolo Bacchilega"
+msgstr "Paolo Bacchilega"
+
+#. (itstool) path: credit/name
+#: C/index.page:12
+msgid "Michael J. Chudobiak"
+msgstr "Michael J. Chudobiak"
+
+#. (itstool) path: page/title
+#: C/index.page:20
+msgid "gThumb Help"
+msgstr "gThumb súgó"
+
+#. (itstool) path: section/title
+#: C/index.page:23
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "File Management"
+msgstr "Fájlkezelés"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Editing Mode"
+msgstr "Szerkesztőmód"
+
+#. (itstool) path: p/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.page:33 C/edit-save-undo-redo.page:8 C/edit-colors.page:8
+#: C/edit-rotate.page:8 C/edit-resize-crop.page:8 C/edit-redeye.page:7
+msgctxt "_"
+msgid ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+msgstr ""
+"external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
+
+#. (itstool) path: section/p
+#: C/index.page:32
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
+"Numerous editing tools are provided for touching-up individual photos. Undo "
+"and redo functions are provided, up until the photo is saved. To access the "
+"editing tools, open an image and then click the <gui>Edit File</gui> toolbar "
+"button (the palette icon), or press <keyseq><key>e</key></keyseq>."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
+"Számos szerkesztőeszköz érhető el az egyes fényképek retusálásához. "
+"Visszavonás és ismétlés funkciók is biztosítottak egészen a fénykép "
+"elmentéséig. A szerkesztőeszközökhöz való hozzáféréshez nyisson meg egy "
+"képet, és kattintson a <gui>Fájl szerkesztése</gui> eszköztárgombra (a "
+"paletta ikon), vagy nyomja meg az <keyseq><key>e</key></keyseq> billentyűt."
+
+#. (itstool) path: section/title
+#: C/index.page:42
+msgid "Batch Tools"
+msgstr "Kötegelt eszközök"
+
+#. (itstool) path: section/p
+#: C/index.page:43
+msgid ""
+"Batch tools are provided to modify multiple images simultaneously. Changes "
+"are written immediately, and are not undoable."
+msgstr ""
+"Kötegelt eszközök biztosítottak több kép egyidejű módosításához. A "
+"változtatások azonnal ki lesznek írva, és nem vonhatók vissza."
+
+#. (itstool) path: section/title
+#: C/index.page:49
+msgid "Slideshows"
+msgstr "Diavetítések"
+
+#. (itstool) path: section/title
+#: C/index.page:53
+msgid "Importing"
+msgstr "Importálás"
+
+#. (itstool) path: section/title
+#: C/index.page:57
+msgid "Sharing"
+msgstr "Megosztás"
+
+#. (itstool) path: section/title
+#: C/index.page:61
+msgid "Organizing"
+msgstr "Rendszerezés"
+
+#. (itstool) path: section/title
+#: C/index.page:65
+msgid "Other Tools"
+msgstr "Egyéb eszközök"
+
+#. (itstool) path: section/title
+#: C/index.page:69
+msgid "Reference"
+msgstr "Hivatkozás"
+
+#. (itstool) path: page/title
+#: C/attributes.page:6
+msgid "Attribute Codes"
+msgstr "Jellemző kódok"
+
+#. (itstool) path: page/p
+#: C/attributes.page:7
+msgid ""
+"<app>gThumb</app> stores many different attributes for each file. Extensions "
+"may add more. The list below is a summary of some of the more common "
+"attributes:"
+msgstr ""
+"A <app>gThumb</app> számos különféle jellemzőt tárol minden egyes fájlnál. A "
+"kiterjesztések többet is hozzáadhatnak. Az alábbi lista néhány gyakoribb "
+"jellemző összegzése:"
+
+#. (itstool) path: item/p
+#: C/attributes.page:12
+msgid "gth::file::display-size"
+msgstr "gth::file::display-size"
+
+#. (itstool) path: item/p
+#: C/attributes.page:15
+msgid "standard::fast-content-type"
+msgstr "standard::fast-content-type"
+
+#. (itstool) path: item/p
+#: C/attributes.page:18
+msgid "general::dimensions"
+msgstr "general::dimensions"
+
+#. (itstool) path: item/p
+#: C/attributes.page:21
+msgid "general::format"
+msgstr "general::format"
+
+#. (itstool) path: item/p
+#: C/attributes.page:24
+msgid "general::location"
+msgstr "general::location"
+
+#. (itstool) path: item/p
+#: C/attributes.page:27
+msgid "general::datetime"
+msgstr "general::datetime"
+
+#. (itstool) path: item/p
+#: C/attributes.page:30
+msgid "general::rating"
+msgstr "general::rating"
+
+#. (itstool) path: item/p
+#: C/attributes.page:33
+msgid "Exif::Image::Make"
+msgstr "Exif::Image::Make"
+
+#. (itstool) path: item/p
+#: C/attributes.page:36
+msgid "Exif::Image::Model"
+msgstr "Exif::Image::Model"
+
+#. (itstool) path: item/p
+#: C/attributes.page:39
+msgid "Exif::Image::Software"
+msgstr "Exif::Image::Software"
+
+#. (itstool) path: item/p
+#: C/attributes.page:42
+msgid "Exif::Image::Artist"
+msgstr "Exif::Image::Artist"
+
+#. (itstool) path: item/p
+#: C/attributes.page:45
+msgid "Exif::Image::Copyright"
+msgstr "Exif::Image::Copyright"
+
+#. (itstool) path: item/p
+#: C/attributes.page:48
+msgid "Exif::Photo::ISOSpeedRatings"
+msgstr "Exif::Photo::ISOSpeedRatings"
+
+#. (itstool) path: item/p
+#: C/attributes.page:51
+msgid "Exif::Photo::BrightnessValue"
+msgstr "Exif::Photo::BrightnessValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:54
+msgid "Exif::Photo::FNumber"
+msgstr "Exif::Photo::FNumber"
+
+#. (itstool) path: item/p
+#: C/attributes.page:57
+msgid "Exif::Photo::ApertureValue"
+msgstr "Exif::Photo::ApertureValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:60
+msgid "Exif::Photo::MaxApertureValue"
+msgstr "Exif::Photo::MaxApertureValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:63
+msgid "Exif::Photo::ExposureTime"
+msgstr "Exif::Photo::ExposureTime"
+
+#. (itstool) path: item/p
+#: C/attributes.page:66
+msgid "Exif::Photo::ExposureProgram"
+msgstr "Exif::Photo::ExposureProgram"
+
+#. (itstool) path: item/p
+#: C/attributes.page:69
+msgid "Exif::Photo::ExposureIndex"
+msgstr "Exif::Photo::ExposureIndex"
+
+#. (itstool) path: item/p
+#: C/attributes.page:72
+msgid "Exif::Photo::ExposureBiasValue"
+msgstr "Exif::Photo::ExposureBiasValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:75
+msgid "Exif::Photo::ExposureMode"
+msgstr "Exif::Photo::ExposureMode"
+
+#. (itstool) path: item/p
+#: C/attributes.page:78
+msgid "Exif::Photo::ShutterSpeedValue"
+msgstr "Exif::Photo::ShutterSpeedValue"
+
+#. (itstool) path: item/p
+#: C/attributes.page:81
+msgid "Exif::Photo::MeteringMode"
+msgstr "Exif::Photo::MeteringMode"
+
+#. (itstool) path: item/p
+#: C/attributes.page:84
+msgid "Exif::Photo::LightSource"
+msgstr "Exif::Photo::LightSource"
+
+#. (itstool) path: item/p
+#: C/attributes.page:87
+msgid "Exif::Photo::WhiteBalance"
+msgstr "Exif::Photo::WhiteBalance"
+
+#. (itstool) path: item/p
+#: C/attributes.page:90
+msgid "Exif::Photo::Flash"
+msgstr "Exif::Photo::Flash"
+
+#. (itstool) path: item/p
+#: C/attributes.page:93
+msgid "Exif::Photo::FocalLength"
+msgstr "Exif::Photo::FocalLength"
+
+#. (itstool) path: item/p
+#: C/attributes.page:96
+msgid "Exif::Photo::SubjectArea"
+msgstr "Exif::Photo::SubjectArea"
+
+#. (itstool) path: item/p
+#: C/attributes.page:99
+msgid "Exif::Photo::Contrast"
+msgstr "Exif::Photo::Contrast"
+
+#. (itstool) path: item/p
+#: C/attributes.page:102
+msgid "Exif::Photo::Saturation"
+msgstr "Exif::Photo::Saturation"
+
+#. (itstool) path: item/p
+#: C/attributes.page:105
+msgid "Exif::Photo::Sharpness"
+msgstr "Exif::Photo::Sharpness"
+
+#. (itstool) path: page/title
+#: C/strftime.page:8
+msgid "Date/Time Format Codes"
+msgstr "Dátum és idő formátumkódok"
+
+#. (itstool) path: page/p
+#: C/strftime.page:10
+msgid ""
+"This is a summary of standard date/time codes that may be used in format "
+"strings:"
+msgstr ""
+"Ez a szabványos dátum és idő kódok összegzése, amelyek használhatók a "
+"formátumszövegekben:"
+
+#. (itstool) path: table/title
+#: C/strftime.page:14
+msgid "Valid format codes for custom subfolders"
+msgstr "Érvényes formátumkódok az egyéni almappáknál"
+
+#. (itstool) path: td/p
+#: C/strftime.page:20
+msgid "The abbreviated weekday name according to the current locale."
+msgstr "A rövidített hétköznapnév a jelenlegi területi beállítás szerint."
+
+#. (itstool) path: td/p
+#: C/strftime.page:29
+msgid "The full weekday name according to the current locale."
+msgstr "A teljes hétköznapnév a jelenlegi területi beállítás szerint."
+
+#. (itstool) path: td/p
+#: C/strftime.page:38
+msgid "The abbreviated month name according to the current locale."
+msgstr "A rövidített hónapnév a jelenlegi területi beállítás szerint."
+
+#. (itstool) path: td/p
+#: C/strftime.page:47
+msgid "The full month name according to the current locale."
+msgstr "A teljes hónapnév a jelenlegi területi beállítás szerint."
+
+#. (itstool) path: td/p
+#: C/strftime.page:55
+msgid "The preferred date and time representation for the current locale."
+msgstr ""
+"Az előnyben részesített dátum- és időábrázolás a jelenlegi területi "
+"beállításnál."
+
+#. (itstool) path: td/p
+#: C/strftime.page:64
+msgid "The century number (year/100) as a 2-digit integer."
+msgstr "Az évszázad száma (év/100) 2 számjegyű egészként."
+
+#. (itstool) path: td/p
+#: C/strftime.page:72
+msgid "The day of the month as a decimal number (range 01 to 31)."
+msgstr "A hónap napja decimális számként (01 és 31 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:81
+msgid ""
+"Equivalent to %m/%d/%y. (Yecch -- for Americans only. Americans should note "
+"that in other countries %d/%m/%y is rather common. This means that in "
+"international context this format is ambiguous and should not be used.)"
+msgstr ""
+"Egyenértékű a következővel: %m/%d/%y. (Yecch -- csak amerikaiaknak. Az "
+"amerikaiaknak figyelembe kell venniük, hogy más országokban inkább a %d/%m/"
+"%y gyakori. Ez azt jelenti, hogy nemzetközi környezetben ez a formátum "
+"kétértelmű, és nem kellene használni.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:92
+msgid ""
+"Like %d, the day of the month as a decimal number, but a leading zero is "
+"replaced by a space."
+msgstr ""
+"Mint a %d, a hónap napja decimális számként, de a vezető nulla egy szóközzel "
+"van helyettesítve."
+
+#. (itstool) path: td/p
+#: C/strftime.page:101 C/strftime.page:210
+msgid "Modifier: use alternative format, see below."
+msgstr "Módosító: alternatív formátum használata, lásd alább."
+
+#. (itstool) path: td/p
+#: C/strftime.page:109
+msgid "Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)"
+msgstr ""
+"Egyenértékű a következővel: %Y-%m-%d (az ISO 8601 dátumformátum). (C99)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:118
+msgid ""
+"The ISO 8601 year with century as a decimal number. The 4-digit year "
+"corresponding to the ISO week number (see %V). This has the same format and "
+"value as %y, except that if the ISO week number belongs to the previous or "
+"next year, that year is used instead."
+msgstr ""
+"Az ISO 8601 év évszázaddal egy decimális számként. A 4 számjegyű év az ISO "
+"hét számának megfelelően (lásd: %V). Ennek ugyanaz a formátuma és értéke van "
+"mint a %y-nak, kivéve, hogy ha az ISO hét száma az előző vagy a következő "
+"évhez tartozik, akkor az az év lesz használva helyette."
+
+#. (itstool) path: td/p
+#: C/strftime.page:130
+msgid "Like %G, but without century, i.e., with a 2-digit year (00-99)."
+msgstr "Mint a %G, de évszázad nélkül, azaz egy 2 számjegyű évvel (00-99)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:139
+msgid "Equivalent to %b."
+msgstr "Egyenértékű a %b-vel."
+
+#. (itstool) path: td/p
+#: C/strftime.page:147
+msgid "The hour as a decimal number using a 24-hour clock (range 00 to 23)."
+msgstr ""
+"A óra decimális számként 24-órás órát használva (00 és 23 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:156
+msgid "The hour as a decimal number using a 12-hour clock (range 01 to 12)."
+msgstr ""
+"A óra decimális számként 12-órás órát használva (01 és 12 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:165
+msgid "The day of the year as a decimal number (range 001 to 366)."
+msgstr "Az év napja decimális számként (001 és 366 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:174
+msgid ""
+"The hour (24-hour clock) as a decimal number (range 0 to 23); single digits "
+"are preceded by a blank. (See also %H.)"
+msgstr ""
+"Az óra (24-órás óra) decimális számként (0 és 23 közötti tartomány). Az "
+"egyedülálló számjegyeket egy üres hely előzi meg. (Lásd még: %H.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:184
+msgid ""
+"The hour (12-hour clock) as a decimal number (range 1 to 12); single digits "
+"are preceded by a blank. (See also %I.)"
+msgstr ""
+"Az óra (12-órás óra) decimális számként (1 és 12 közötti tartomány). Az "
+"egyedülálló számjegyeket egy üres hely előzi meg. (Lásd még: %I.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:194
+msgid "The month as a decimal number (range 01 to 12)."
+msgstr "A hónap decimális számként (01 és 12 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:202
+msgid "The minute as a decimal number (range 00 to 59)."
+msgstr "A perc decimális számként (00 és 59 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:218
+msgid ""
+"Either 'AM' or 'PM' according to the given time value, or the corresponding "
+"strings for the current locale. Noon is treated as 'pm' and midnight as 'am'."
+msgstr ""
+"Vagy „DE”, vagy „DU” a megadott időérték szerint, vagy a megfelelő szövegek "
+"a jelenlegi területi beállításnál. A dél „du”-ként, az éjfél „de”-ként "
+"értendő."
+
+#. (itstool) path: td/p
+#: C/strftime.page:228
+msgid ""
+"Like %p but in lowercase: 'am' or 'pm' or a corresponding string for the "
+"current locale."
+msgstr ""
+"Mint a %p, de kisbetűkkel: „de” vagy „du”, vagy a megfelelő szöveg a "
+"jelenlegi területi beállításnál."
+
+#. (itstool) path: td/p
+#: C/strftime.page:237
+msgid ""
+"The time in a.m. or p.m. notation. In the POSIX locale this is equivalent to "
+"'%I:%M:%S %p'."
+msgstr ""
+"Az idő d.e. vagy d.u. jelöléssel. A POSIX területi beállításnál ez "
+"egyenértékű a következővel: „%I:%M:%S %p”."
+
+#. (itstool) path: td/p
+#: C/strftime.page:246
+msgid ""
+"The time in 24-hour notation (%H:%M). For a version including the seconds, "
+"see %T below."
+msgstr ""
+"Az idő 24-órás jelölésben (%H:%M). Egy verziónál a másodperceket is "
+"beleértve, lásd lent: %T."
+
+#. (itstool) path: td/p
+#: C/strftime.page:255
+msgid ""
+"The number of seconds since the Epoch, i.e., since 1970-01-01 00:00:00 UTC."
+msgstr "Az epocha, azaz 1970-01-01 00:00:00 UTC óta eltelt másodpercek száma."
+
+#. (itstool) path: td/p
+#: C/strftime.page:264
+msgid ""
+"The second as a decimal number (range 00 to 60). (The range is up to 60 to "
+"allow for occasional leap seconds.)"
+msgstr ""
+"A másodperc decimális számként (00 és 60 közötti tartomány). (A tartomány "
+"legfeljebb 60, hogy lehetővé tegye az alkalmi szökőmásodperceket.)"
+
+#. (itstool) path: td/p
+#: C/strftime.page:274
+msgid "The time in 24-hour notation (%H:%M:%S)."
+msgstr "Az idő 24-órás jelölésben (%H:%M:%S)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:282
+msgid ""
+"The day of the week as a decimal number, range 1 to 7, Monday being 1. See "
+"also %w."
+msgstr ""
+"A hét napja decimális számként, 1 és 7 közötti tartomány, hétfő az 1. Lásd "
+"még: %w."
+
+#. (itstool) path: td/p
+#: C/strftime.page:291
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Sunday as the first day of week 01. See also %V and "
+"%W."
+msgstr ""
+"Az aktuális év hetének száma decimális számként, 00 és 53 közötti tartomány, "
+"az első vasárnaptól kezdve mint a 01. hét első napja. Lásd még: %V és %W."
+
+#. (itstool) path: td/p
+#: C/strftime.page:301
+msgid ""
+"The ISO 8601:1988 week number of the current year as a decimal number, range "
+"01 to 53, where week 1 is the first week that has at least 4 days in the "
+"current year, and with Monday as the first day of the week. See also %U and "
+"%W."
+msgstr ""
+"Az aktuális év ISO 8601:1988 hetének száma decimális számként, 01 és 53 "
+"közötti tartomány, ahol az 1. hét az első olyan hét, amelynek legalább 4 "
+"napja van az aktuális évben, és hétfővel a hét első napjaként. Lásd még: %U "
+"és %W."
+
+#. (itstool) path: td/p
+#: C/strftime.page:313
+msgid ""
+"The day of the week as a decimal, range 0 to 6, Sunday being 0. See also %u."
+msgstr ""
+"A hét napja decimális számként, 0 és 6 közötti tartomány, szombat a 0. Lásd "
+"még: %u."
+
+#. (itstool) path: td/p
+#: C/strftime.page:322
+msgid ""
+"The week number of the current year as a decimal number, range 00 to 53, "
+"starting with the first Monday as the first day of week 01."
+msgstr ""
+"Az aktuális év hetének száma decimális számként, 00 és 53 közötti tartomány, "
+"az első hétfőtől kezdve mint a 01. hét első napja."
+
+#. (itstool) path: td/p
+#: C/strftime.page:332
+msgid ""
+"The preferred date representation for the current locale without the time."
+msgstr ""
+"Az előnyben részesített dátumábrázolás a jelenlegi területi beállításnál az "
+"idő nélkül."
+
+#. (itstool) path: td/p
+#: C/strftime.page:341
+msgid ""
+"The preferred time representation for the current locale without the date."
+msgstr ""
+"Az előnyben részesített időábrázolás a jelenlegi területi beállításnál a "
+"dátum nélkül."
+
+#. (itstool) path: td/p
+#: C/strftime.page:350
+msgid "The year as a decimal number without a century (range 00 to 99)."
+msgstr "Az év decimális számként évszázad nélkül (00 és 99 közötti tartomány)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:359
+msgid "The year as a decimal number including the century."
+msgstr "Az év decimális számként, beleértve az évszázadot is."
+
+#. (itstool) path: td/p
+#: C/strftime.page:367
+msgid ""
+"The time-zone as hour offset from GMT. Required to emit RFC 822-conformant "
+"dates (using \"%a, %d %b %Y %H:%M:%S %z\")."
+msgstr ""
+"Az időzóna óraeltolásként a GMT-től. Szükséges az RFC 822-konform dátumok "
+"kibocsátása („%a, %d %b %Y %H:%M:%S %z” használata)."
+
+#. (itstool) path: td/p
+#: C/strftime.page:377
+msgid "The time zone or name or abbreviation."
+msgstr "Az időzóna vagy név vagy rövidítés."
+
+#. (itstool) path: page/p
+#: C/strftime.page:382
+msgid ""
+"Some conversion specifications can be modified by preceding the conversion "
+"specifier character by the E or O modifier to indicate that an alternative "
+"format should be used. If the alternative format or specification does not "
+"exist for the current locale, the behaviour will be as if the unmodified "
+"conversion specification were used. The Single Unix Specification mentions "
+"%Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, %Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, "
+"%OV, %Ow, %OW, %Oy, where the effect of the O modifier is to use alternative "
+"numeric symbols (say, roman numerals), and that of the E modifier is to use "
+"a locale-dependent alternative representation."
+msgstr ""
+"Néhány átalakítási specifikáció módosítható az átalakításmegadó karaktert "
+"megelőző E vagy 0 módosítóval annak jelzéséhez, hogy egy alternatív "
+"formátumot kell használni. Ha az alternatív formátum vagy specifikáció nem "
+"létezik a jelenlegi területi beállításnál, akkor a viselkedés olyan lesz, "
+"mint ha módosítatlan átalakítási specifikáció lett volna használva. A Single "
+"Unix Specification a következőket említi: %Ec, %EC, %Ex, %EX, %Ey, %EY, %Od, "
+"%Oe, %OH, %OI, %Om, %OM, %OS, %Ou, %OU, %OV, %Ow, %OW, %Oy, ahol a 0 "
+"módosító hatása az, hogy alternatív numerikus szimbólumokat (mondjuk római "
+"számokat) használjon, és az E módosítóé az, hogy területi beállítástól "
+"független alternatív ábrázolást használjon."
+
+#. (itstool) path: page/title
+#: C/introduction.page:6
+msgid "About gThumb"
+msgstr "A gThumb névjegye"
+
+#. (itstool) path: page/p
+#: C/introduction.page:8
+msgid ""
+"<app>gThumb</app> is an image viewer and browser written for the GNOME "
+"environment. It lets you browse your hard disk, showing you thumbnails of "
+"image files and view single images of many different formats."
+msgstr ""
+"A <app>gThumb</app> a GNOME környezethez írt képnézegető és -böngésző. "
+"Lehetővé teszi a merevlemez tallózását, a képfájlok bélyegképeinek "
+"megjelenítését és az egyes képek megtekintését számos különböző formátumban."
+
+#. (itstool) path: page/p
+#: C/introduction.page:13
+msgid ""
+"<app>gThumb</app> supports the most common graphics formats, including JPEG, "
+"GIF, TIF, and PNG. <app>gThumb</app> will also display other less common "
+"image types if the supporting libraries are installed, including TGA, ICO, "
+"BMP, XPM, and others."
+msgstr ""
+"A <app>gThumb</app> támogatja a leggyakoribb grafikus formátumokat, "
+"beleértve a JPEG, GIF, TIF és PNG formátumokat is. Ha a támogató "
+"programkönyvtárak telepíve vannak, akkor a <app>gThumb</app> meg fogja "
+"jeleníteni az egyéb, kevésbé gyakori képtípusokat is, beleértve a TGA, ICO, "
+"BMP, XPM és egyéb formátumokat."
+
+#. (itstool) path: page/p
+#: C/introduction.page:18
+msgid ""
+"Some support for RAW image types is included, especially if the dcraw "
+"program is installed on your system."
+msgstr ""
+"Valamennyi támogatást tartalmaz a RAW-képekhez is, különösen akkor, ha a "
+"dcraw program telepítve van a rendszerre."
+
+#. (itstool) path: page/p
+#: C/introduction.page:21
+msgid ""
+"<app>gThumb</app> not only lets you view image files but has many other "
+"features such as adding comments to images, organizing images into catalogs, "
+"printing images, slideshows, setting your desktop background, and more."
+msgstr ""
+"A <app>gThumb</app> nem csak a képfájlok megtekintését teszi lehetővé, hanem "
+"számos egyéb szolgáltatással is rendelkezik, mint például megjegyzések "
+"hozzáadása a képekhez, képek katalógusokba rendezése, képek nyomtatása, "
+"diavetítések, az asztal hátterének beállítása és még sok más."
+
+#. (itstool) path: page/p
+#: C/introduction.page:26
+msgid ""
+"<app>gThumb</app> includes a tool to import photos from attached cameras and "
+"memory card readers."
+msgstr ""
+"A <app>gThumb</app> tartalmaz egy eszközt a fényképek importálásához a "
+"csatlakoztatott fényképezőkről és memóriakártya-olvasókról."
+
+#. (itstool) path: page/p
+#: C/introduction.page:29
+msgid ""
+"<app>gThumb</app> can read EXIF, XMP, and IPTC metadata that is commonly "
+"embedded in files."
+msgstr ""
+"A <app>gThumb</app> be tudja olvasni az EXIF, XMP és IPTC metaadatokat, "
+"amelyek általában a fájlokba vannak ágyazva."
+
+#. (itstool) path: page/p
+#: C/introduction.page:32
+msgid ""
+"<app>gThumb</app> provides a systems of extensions (or plug-ins), to allow "
+"users to extend the functionality of <app>gThumb</app>."
+msgstr ""
+"A <app>gThumb</app> a kiterjesztések rendszerét (vagy bővítményeket) "
+"biztosítja, hogy lehetővé tegye a felhasználóknak a <app>gThumb</app> "
+"funkcionalitásának kiterjesztését."
+
+#. (itstool) path: page/p
+#: C/introduction.page:34
+msgid ""
+"More information about these extensions, and about <app>gThumb</app> "
+"generally, is available at <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.gnome.org/Apps/gthumb</link>."
+msgstr ""
+"Ezen kiterjesztésekről és általában a <app>gThumb</app> programról további "
+"információk érhetők el a <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.gnome.org/Apps/gthumb</link> címen."
+
+#. (itstool) path: page/title
+#: C/browser.page:6
+msgid "Browsing Your Files"
+msgstr "Fájlok tallózása"
+
+#. (itstool) path: page/p
+#: C/browser.page:8
+msgid "When you start <app>gThumb</app> the following window is displayed:"
+msgstr "A <app>gThumb</app> indításakor a következő ablak fog megjelenni:"
+
+#. (itstool) path: figure/title
+#: C/browser.page:11
+msgid "The main window"
+msgstr "A főablak"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/browser.page:13
+msgctxt "_"
+msgid ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+msgstr ""
+"external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
+
+#. (itstool) path: page/p
+#: C/browser.page:16
+msgid "The <app>gThumb</app> browser contains the following elements:"
+msgstr "A <app>gThumb</app> böngésző a következő elemeket tartalmazza:"
+
+#. (itstool) path: item/title
+#: C/browser.page:20
+msgid "Menubar"
+msgstr "Menüsáv"
+
+#. (itstool) path: item/p
+#: C/browser.page:21
+msgid ""
+"The menus on the menubar contain all of the commands that you can use in "
+"<app>gThumb</app>"
+msgstr ""
+"A menüsávon lévő menük az összes olyan parancsot tartalmazzák, amelyet a "
+"<app>gThumb</app> programban használhat."
+
+#. (itstool) path: item/title
+#: C/browser.page:25
+msgid "Toolbar"
+msgstr "Eszköztár"
+
+#. (itstool) path: item/p
+#: C/browser.page:26
+msgid ""
+"The toolbar contains a subset of the commands that you can access from the "
+"menubar. In particular, the Tools button contains functions for batch "
+"processing multiple images."
+msgstr ""
+"Az eszköztár olyan parancsok részhalmazát tartalmazza, amelyek elérhetők a "
+"menüsávról. Különösen az Eszközök gomb tartalmaz szolgáltatásokat több kép "
+"tömeges feldolgozásához."
+
+#. (itstool) path: item/title
+#: C/browser.page:31
+msgid "Locationbar"
+msgstr "Helysáv"
+
+#. (itstool) path: item/p
+#: C/browser.page:32
+msgid "The locationbar contains the current folder or catalog name."
+msgstr "A helysáv tartalmazza a jelenlegi mappa vagy katalógus nevét."
+
+#. (itstool) path: item/title
+#: C/browser.page:36
+msgid "Folder Tree"
+msgstr "Mappafa"
+
+#. (itstool) path: item/p
+#: C/browser.page:37
+msgid ""
+"The folder tree allows you to navigate the filesystem. Single-clicking on a "
+"folder will load its images in the browser view. Double-clicking a folder, "
+"or clicking the expander arrow, will also list folder's subfolders in the "
+"tree."
+msgstr ""
+"A mappafa lehetővé teszi a fájlrendszeren való navigációt. A mappára történő "
+"egyszeres kattintás be fogja tölteni annak képeit a böngészőnézetbe. Egy "
+"mappára történő dupla kattintás vagy a kibontó nyílra történő kattintás is "
+"fel fogja sorolni a mappa almappáit a fában."
+
+#. (itstool) path: item/title
+#: C/browser.page:44
+msgid "Browser View"
+msgstr "Böngészőnézet"
+
+#. (itstool) path: item/p
+#: C/browser.page:45
+msgid ""
+"The browser view shows the images in the current folder or catalog. Single-"
+"clicking an image will enable the Information Sidebar for that image. Double-"
+"clicking an image will open it in the viewer mode. Double-clicking with the "
+"middle mouse button will load the image in fullscreen viewer mode."
+msgstr ""
+"A böngészőnézet jeleníti meg a jelenlegi mappában vagy katalógusban lévő "
+"képeket. Egy képre történő egyszeres kattintás engedélyezni fogja a kép "
+"információs oldalsávját. Egy képre történő dupla kattintás meg fogja nyitni "
+"a megjelenítő módban. A középső egérgombbal történő dupla kattintás teljes "
+"képernyős megjelenítő módban fogja betölteni a képet."
+
+#. (itstool) path: item/title
+#: C/browser.page:52
+msgid "Organize Button"
+msgstr "Rendezés gomb"
+
+#. (itstool) path: item/p
+#: C/browser.page:53
+msgid ""
+"The Organize button, just above the browser view, allows you to group images "
+"into catalogs."
+msgstr ""
+"Közvetlenül a böngészőnézet fölött lévő Rendezés gomb teszi lehető a képek "
+"csoportosítását katalógusokba."
+
+#. (itstool) path: item/title
+#: C/browser.page:57
+msgid "Statusbar"
+msgstr "Állapotsáv"
+
+#. (itstool) path: item/p
+#: C/browser.page:58
+msgid "On the statusbar you can read:"
+msgstr "Az állapotsávon a következőket olvashatja:"
+
+#. (itstool) path: item/p
+#: C/browser.page:61
+msgid ""
+"the total number of images contained in the current folder or catalog and "
+"their total size."
+msgstr ""
+"a jelenlegi mappában vagy katalógusban található képek összes száma és azok "
+"teljes mérete."
+
+#. (itstool) path: item/p
+#: C/browser.page:65
+msgid "the number of the selected images and their size."
+msgstr "a kijelölt képek száma és azok mérete."
+
+#. (itstool) path: item/p
+#: C/browser.page:68
+msgid "some properties of the currently focused image."
+msgstr "a jelenleg kijelölt kép néhány tulajdonsága."
+
+#. (itstool) path: item/title
+#: C/browser.page:73
+msgid "Information Sidebar"
+msgstr "Információs oldalsáv"
+
+#. (itstool) path: item/p
+#: C/browser.page:74
+msgid ""
+"If a single image is selected, the information sidebar (below the folder "
+"tree) will display detailed information (such as EXIF or XMP tags) about the "
+"selected image."
+msgstr ""
+"Ha egyetlen kép van kijelölve, akkor az információs oldalsáv (a mappafa "
+"alatt) részletes információkat (úgymint EXIF vagy XMP címkék) fog "
+"megjeleníteni a kijelölt képről."
+
+#. (itstool) path: item/title
+#: C/browser.page:79
+msgid "Filter Bar"
+msgstr "Szűrősáv"
+
+#. (itstool) path: item/p
+#: C/browser.page:80
+msgid ""
+"An image filtering tool is provided just below the browser view. This can be "
+"used to filter the displayed images. For example, the browser view can be "
+"limited to files of a certain size, date, or name pattern, or other "
+"characteristics."
+msgstr ""
+"Közvetlenül a böngészőnézet alatt található egy képszűrőeszköz. Ez "
+"használható a megjelenített képek szűréséhez. Például a böngészőnézet "
+"korlátozható a fájlok egy bizonyos méretére, dátumára vagy névmintájára, "
+"vagy egyéb jellemzőkre."
+
+#. (itstool) path: page/title
+#: C/batch-rotate.page:6
+msgid "Rotating Images Losslessly"
+msgstr "Képek veszteségmentes forgatása"
+
+#. (itstool) path: page/p
+#: C/batch-rotate.page:8
+msgid ""
+"To rotate one or more images, select the images in the browser view. Then "
+"click the <gui>Tools</gui> button on the main toolbar, and select either "
+"<guiseq><gui>Tools</gui><gui>Rotate Right</gui></guiseq> or "
+"<guiseq><gui>Tools</gui><gui>Rotate Left</gui></guiseq>. The images will be "
+"rotated."
+msgstr ""
+"Egy vagy több kép forgatásához jelölje ki a képeket a böngészőnézetben. "
+"Ezután kattintson az <gui>Eszközök</gui> gombra a fő eszköztáron, és "
+"válassza vagy az <guiseq><gui>Eszközök</gui><gui>Forgatás jobbra</gui></"
+"guiseq>, vagy az <guiseq><gui>Eszközök</gui><gui>Forgatás balra</gui></"
+"guiseq> menüpontot. A képek el lesznek forgatva."
+
+#. (itstool) path: page/p
+#: C/batch-rotate.page:14
+msgid "Lossless rotation is used for jpeg images, when possible."
+msgstr ""
+"A veszteségmentes forgatás JPEG képeknél lesz használva, amikor lehetséges."
+
+#. (itstool) path: page/title
+#: C/batch-convert-format.page:6
+msgid "Converting File Formats"
+msgstr "Fájlformátumok átalakítása"
+
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:8
+msgid ""
+"To convert one or more images into a new file format, select the images in "
+"the browser view. Then click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Convert Format</gui></"
+"guiseq>."
+msgstr ""
+"Egy vagy több képnek egy új fájlformátumba történő átalakításához jelölje ki "
+"a képeket a böngészőnézetben. Ezután kattintson az <gui>Eszközök</gui> "
+"gombra a fő eszköztáron, és válassza az <guiseq><gui>Eszközök</"
+"gui><gui>Formátum átalakítása</gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:12
+msgid ""
+"Select the desired output format and destination folder. Click <gui>Execute</"
+"gui> to complete the process."
+msgstr ""
+"Válassza ki a kívánt kimeneti formátumot és a célmappát. Kattintson a "
+"<gui>Végrehajtás</gui> gombra a folyamat befejezéséhez."
+
+#. (itstool) path: page/title
+#: C/batch-resize.page:6
+msgid "Resizing Images"
+msgstr "Képek átméretezése"
+
+#. (itstool) path: page/p
+#: C/batch-resize.page:8
+msgid ""
+"To resize one or more images using the same dimensions or scaling factors, "
+"select the images in the browser view. Then click the <gui>Tools</gui> "
+"button on the main toolbar, and select <guiseq><gui>Tools</gui><gui>Resize "
+"Images</gui></guiseq>."
+msgstr ""
+"Egy vagy több képnek ugyanazon dimenziók vagy méretezési tényezők "
+"használatával történő átméretezéséhez jelölje ki a képeket a "
+"böngészőnézetben. Ezután kattintson az <gui>Eszközök</gui> gombra a fő "
+"eszköztáron, és válassza az <guiseq><gui>Eszközök</gui><gui>Képek "
+"átméretezése</gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/batch-resize.page:12
+msgid ""
+"Then select the desired maximum output dimensions, or the desired percentage "
+"scaling, and the destination folder. Click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Végül válassza ki a kívánt legnagyobb kimeneti dimenziókat vagy a kívánt "
+"százalékos méretezést, illetve a célmappát. Kattintson a <gui>Végrehajtás</"
+"gui> gombra a folyamat befejezéséhez."
+
+#. (itstool) path: page/title
+#: C/batch-change-date.page:6
+msgid "Changing Dates"
+msgstr "Dátumok megváltoztatása"
+
+#. (itstool) path: page/p
+#: C/batch-change-date.page:8
+msgid ""
+"To change the file modification times, the comment dates, or the Exif "
+"DateTimeOriginal tags of multiple files, select the files in the browser "
+"view. Then click the <gui>Tools</gui> button on the main toolbar, and select "
+"<guiseq><gui>Tools</gui><gui>Change Date</gui></guiseq>."
+msgstr ""
+"A fájl módosítási idejének, a megjegyzés dátumainak vagy több fájl "
+"DateTimeOriginal Exif-címkéjének megváltoztatásához jelölje ki a fájlokat a "
+"böngészőnézetben. Ezután kattintson az <gui>Eszközök</gui> gombra a fő "
+"eszköztáron, és válassza az <guiseq><gui>Eszközök</gui><gui>Dátum "
+"megváltoztatása</gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/batch-change-date.page:13
+msgid ""
+"Select the desired date options, and click <gui>Execute</gui> to complete "
+"the process."
+msgstr ""
+"Válassza ki a kívánt dátumbeállításokat, és kattintson a <gui>Végrehajtás</"
+"gui> gombra a folyamat befejezéséhez."
+
+#. (itstool) path: page/title
+#: C/batch-scripts.page:6
+msgid "User-Defined Scripts"
+msgstr "Felhasználó által meghatározott parancsfájlok"
+
+#. (itstool) path: page/p
+#: C/batch-scripts.page:8
+msgid ""
+"To define a script (a command-line sequence that <app>gThumb</app> will "
+"execute on your files), click the <gui>Tools</gui> button on the main "
+"toolbar, and select <guiseq><gui>Tools</gui><gui>Personalize</gui></guiseq>."
+msgstr ""
+"Egy parancsfájl meghatározásához (egy parancssori sorozat, amelyet a "
+"<app>gThumb</app> végre fog hajtani a fájlokon) kattintson az <gui>Eszközök</"
+"gui> gombra a fő eszköztáron, és válassza az <guiseq><gui>Eszközök</"
+"gui><gui>Személyre szabás</gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/batch-scripts.page:12
+msgid "TODO: further documentation is needed here."
+msgstr "TEENDŐ: ide további dokumentáció szükséges."
+
+#. (itstool) path: page/title
+#: C/thumbnails.page:6
+msgid "Thumbnail Sources"
+msgstr "Bélyegkép források"
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:8
+msgid ""
+"The browser window normally shows the thumbnails of the images and movies in "
+"the selected folder. Generic icons for other files (audio files, for "
+"instance) may also be shown."
+msgstr ""
+"A böngészőablak normális esetben a kijelölt mappában lévő képek és filmek "
+"bélyegképeit jeleníti meg. Az egyéb fájlok általános ikonjai (például "
+"hangfájloké) is megjelenhetnek."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:12
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui> </guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"A <guiseq><gui>Nézet</gui><gui>Szűrő</gui></guiseq> párbeszédablak "
+"használatával kiválaszthatja, hogy milyen típusú fájlokat jelenítsen meg a "
+"böngészőnézet. Az alapértelmezés az összes médiafájl (képek, filmek, hangok) "
+"megjelenítése, de ez megtehető többé vagy kevésbé korlátozóan."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:18
+msgid ""
+"The thumbnails may be generated by a number of different methods. "
+"<app>gThumb</app> will first check for existing thumbnails in the system "
+"cache."
+msgstr ""
+"A bélyegképek előállíthatók számos különböző módon. A <app>gThumb</app> "
+"először a rendszer gyorsítótárában meglévő bélyegképeket fogja ellenőrizni."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:22
+msgid ""
+"If no cached thumbnail is found, and an image file contains an embedded "
+"thumbnail (jpeg files generated by digital cameras normally do), "
+"<app>gThumb</app> will attempt to use that. <app>gThumb</app> will confirm "
+"that the aspect ratio of the thumbnail is similar to that of the main image, "
+"and ignore thumbnails that do not appear to match the main image."
+msgstr ""
+"Ha nem található gyorsítótárazott bélyegkép, és egy képfájl tartalmaz "
+"beágyazott bélyegképet (a digitális fényképezőgépek által előállított JPEG-"
+"fájlok általában ilyenek), akkor a <app>gThumb</app> meg fogja próbálni azt "
+"használni. A <app>gThumb</app> meg fogja erősíteni, hogy a bélyegkép "
+"méretaránya hasonló-e a fő képéhez, és figyelmen kívül fogja hagyni azokat a "
+"bélyegképeket, amelyekről úgy tűnik, hogy nem egyeznek a fő képpel."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:29
+msgid ""
+"If that doesn't work, <app>gThumb</app> will attempt to load the entire file "
+"and generate a scaled-down thumbnail."
+msgstr ""
+"Ha ez nem működik, akkor a <app>gThumb</app> meg fogja próbálni betölteni a "
+"teljes fájlt, és előállítani egy lekicsinyített bélyegképet."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:32
+msgid ""
+"Lastly, <app>gThumb</app> will use any system-defined scripts for "
+"thumbnailing particular media types. For example, some systems may use "
+"<app>mplayer</app> or <app>totem</app> or other movie viewers to generate "
+"movie thumbnails."
+msgstr ""
+"Végül a <app>gThumb</app> használni fogja a rendszer által meghatározott "
+"parancsfájlok egyikét az egyes médiatípusok bélyegképének elkészítéshez. "
+"Például néhány rendszer <app>mplayer</app> vagy <app>totem</app> vagy egyéb "
+"videomegjelenítő programot használhat a filmek bélyegképeinek előállításához."
+
+#. (itstool) path: page/p
+#: C/thumbnails.page:37
+msgid ""
+"<app>gThumb</app> will save thumbnails to a system cache, to share them with "
+"other applications. By default, Gnome systems prune cached thumbnails when "
+"they are older than 180 days, or when the thumbnail cache exceeds 512 MB. "
+"Technically-inclined users can explore these settings with <app>dconf-"
+"editor</app>. See the org.gnome.desktop.thumbnail_cache.maximum_age and org."
+"gnome.desktop.thumbnail_cache.maximum_size keys in particular. Certain "
+"applications (like <app>F-Spot</app>) may automatically increase these "
+"settings greatly."
+msgstr ""
+"A <app>gThumb</app> el fogja menteni a bélyegképeket a rendszer "
+"gyorsítótárába, hogy megoszthassa azokat az egyéb alkalmazásokkal. "
+"Alapértelmezetten a Gnome rendszerek törlik a gyorsítótárazott "
+"bélyegképeket, ha azok 180 napnál régebbiek, vagy ha a bélyegkép-gyorsítótár "
+"meghaladja az 512 MB-os méretet. A technikai vénájú felhasználók "
+"felfedezhetik ezeket a beállításokat <app>dconf-szerkesztővel</app>. "
+"Különösen az org.gnome.desktop.thumbnail_cache.maximum_age és az org.gnome."
+"desktop.thumbnail_cache.maximum_size kulcsokat nézze meg. Bizonyos "
+"alkalmazások (mint például az <app>F-Spot</app>) automatikusan nagymértékben "
+"növelhetik ezeket a beállításokat."
+
+#. (itstool) path: page/title
+#: C/thumbnail-pane.page:6
+msgid "Thumbnail Pane"
+msgstr "Bélyegkép ablaktábla"
+
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:8
+msgid ""
+"When an image has been opened in the <app>gThumb</app> viewer, the user has "
+"the option of enabling or disabling a thumbnail pane, which shows the other "
+"images in the folder as thumbnails. This feature can be toggled with the "
+"<guiseq><gui>View</gui><gui>Thumbnail Pane</gui></guiseq> command, or by "
+"pressing <key>F8</key>."
+msgstr ""
+"Amikor egy fényképet megnyitnak a <app>gThumb</app> megjelenítőben, akkor a "
+"felhasználónak lehetősége van egy bélyegkép ablaktábla engedélyezésére vagy "
+"letiltására, amely a mappában lévő többi képet jeleníti meg bélyegképként. "
+"Ez a szolgáltatás be- vagy kikapcsolható a <guiseq><gui>Nézet</"
+"gui><gui>Bélyegképek</gui></guiseq> menüponttal, vagy az <key>F8</key> "
+"megnyomásával."
+
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:14
+msgid ""
+"The thumbnail pane may be positioned along the bottom of the main image, or "
+"along the side. This is controlled by the settings in <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui><gui>General</gui><gui>Thumbnails in Viewer</gui></"
+"guiseq>."
+msgstr ""
+"A bélyegkép ablaktábla elhelyezhető a fő kép alja mentén vagy mellette. Ezt "
+"a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Általános</"
+"gui><gui>Bélyegképek a megjelenítőben</gui></guiseq> beállítással lehet "
+"vezérelni."
+
+#. (itstool) path: figure/title
+#: C/thumbnail-pane.page:19
+msgid "Thumbnail Pane, Along Bottom of Main Image"
+msgstr "Bélyegkép ablaktábla a fő kép alja mentén"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/thumbnail-pane.page:21 C/viewer.page:23
+msgctxt "_"
+msgid ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+msgstr ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+
+#. (itstool) path: page/title
+#: C/rename-series.page:8
+msgid "Renaming Files"
+msgstr "Fájlok átnevezése"
+
+#. (itstool) path: page/p
+#: C/rename-series.page:10
+msgid ""
+"To rename one or more images using a name template, select the files in the "
+"browser and choose <guiseq><gui>Edit</gui><gui>Rename</gui></guiseq>, or "
+"press <key>F2</key>."
+msgstr ""
+"Egy vagy több képnek egy sablon használatával történő átnevezéséhez jelölje "
+"ki a fájlokat a böngészőben, és válassza a <guiseq><gui>Szerkesztés</"
+"gui><gui>Átnevezés</gui></guiseq> menüpontot, vagy nyomja meg az <key>F2</"
+"key> billentyűt."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:15
+msgid ""
+"The name template is simply a pattern that is used for renaming all of the "
+"selected images. You can use some special characters to make the new names "
+"differ each other (this is essential if you are renaming more than one "
+"image, and optional if you are renaming a single image):"
+msgstr ""
+"A névsablon egyszerűen egy minta, amely az összes kijelölt kép átnevezéséhez "
+"használható. Néhány speciális karaktert is használhat, hogy az új neveket "
+"egymástól eltérővé tegye (ez elengedhetetlen, ha egynél több képet nevez át, "
+"és elhagyható egyetlen kép átnevezésekor):"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:24
+msgid "Symbol"
+msgstr "Szimbólum"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:27
+msgid "Description"
+msgstr "Leírás"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:32
+msgid "<key>#</key>"
+msgstr "<key>#</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:37
+#| msgid ""
+#| "This symbol will be replaced with the value of a counter that increments "
+#| "itself by 1 passing from one image to another. If you specify this "
+#| "symbols in sequence you'll get leading zeros if the counter value has a "
+#| "lesser number of digits, for example ### will produce the sequence: 001, "
+#| "002, 003, etc.."
+msgid ""
+"This symbol will be replaced with the value of a counter that increments "
+"itself by 1 passing from one image to another. If you specify this symbol in "
+"sequence you'll get leading zeros if the counter value has a lesser number "
+"of digits, for example ### will produce the sequence: 001, 002, 003, etc.."
+msgstr ""
+"Ez a szimbólum egy számláló értékével lesz helyettesítve, amely egyesével"
+" növeli magát, amikor átlép az egyik képről egy másikra. Ha ezt a szimbólumot"
+" sorozatban adja meg, akkor vezető nullákat fog kapni, ha a számláló értéke"
+" kevesebb számjeggyel rendelkezik. Például a ### a következő sorozatot fogja"
+" létrehozni: 001, 002, 003, stb."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:47
+msgid "<key>%F</key>"
+msgstr "<key>%F</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:52
+msgid ""
+"This symbol will be replaced with the file's original name, excluding the "
+"original extension."
+msgstr ""
+"Ez a szimbólum a fájl eredeti nevével lesz helyettesítve az eredeti "
+"kiterjesztés nélkül."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:58
+msgid "<key>%E</key>"
+msgstr "<key>%E</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:63
+msgid ""
+"This symbol will be replaced with the file's original filename extension."
+msgstr ""
+"Ez a szimbólum a fájl eredeti fájlnév kiterjesztésével lesz helyettesítve."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:69
+msgid "<key>%N</key>"
+msgstr "<key>%N</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:74
+msgid ""
+"This symbol will be replaced with original image enumerator. For instance, "
+"if the original filename was IMG_9876.JPG, this extracts the \"9876\" "
+"portion. If the filename has more than one group of digits embedded in it "
+"(for example, IMG_123_456.JPG) only the first number will be used (\"123\" "
+"in this example)."
+msgstr ""
+"Ez a szimbólum az eredeti kép számlálójával lesz helyettesítve. Például ha "
+"az eredeti fájlnév IMG_9876.JPG volt, akkor ez kiszedi a „9876” részt. Ha a "
+"fájlnévbe egynél több számjegycsoport van beágyazva (például IMG_123_456."
+"JPG), akkor csak az első számot fogja használni (ebben a példában a „123”-"
+"at)."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:84
+msgid "<key>%M{format}</key>"
+msgstr "<key>%M{formátum}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:89
+msgid ""
+"This symbol will be replaced with the file modification date. The formatting "
+"of this date (and optionally time) can be specified by adding a standard "
+"formatting code in curly braces. For example, \"%M{%Y-%m-%d, %T}\" would be "
+"replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Ez a szimbólum a fájl módosítási dátumával lesz helyettesítve. A dátum (és "
+"esetlegesen az idő) formázása egy szabványos formázási kód hozzáadásával "
+"adható meg kapcsos zárójelekben. Például a „%M{%Y-%m-%d, %T}” egy olyan "
+"dátummal és idővel lenne helyettesítve, mint „2010-04-01, 15:02:01”."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:98
+msgid "<key>%D{format}</key>"
+msgstr "<key>%D{formátum}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:103
+msgid ""
+"This symbol will be replaced with the date that the photo was original taken "
+"(normally determined from the EXIF datestamps embedded inside the photo). "
+"The formatting of this date (and optionally time) can be specified by adding "
+"a standard formatting code in curly braces. For example, \"%D{%Y-%m-%d, "
+"%T}\" would be replaced with a date and time like \"2010-04-01, 15:02:01\"."
+msgstr ""
+"Ez a szimbólum azzal a dátummal lesz helyettesítve, amikor a fényképet "
+"eredetileg készítették (normális esetben a fényképbe ágyazott EXIF "
+"dátumbélyegekből kerül meghatározásra). A dátum (és esetlegesen az idő) "
+"formázása egy szabványos formázási kód hozzáadásával adható meg kapcsos "
+"zárójelekben. Például a „%M{%Y-%m-%d, %T}” egy olyan dátummal és idővel "
+"lenne helyettesítve, mint „2010-04-01, 15:02:01”."
+
+#. (itstool) path: td/p
+#: C/rename-series.page:114
+msgid "<key>%A{identifier}</key>"
+msgstr "<key>%A{azonosító}</key>"
+
+#. (itstool) path: td/p
+#: C/rename-series.page:119
+msgid ""
+"This symbol will be replaced with the data that has been specified by the "
+"identifier. For example, \"%A{ general::dimensions }\" would be replaced "
+"with a size like \"320 x 240\"."
+msgstr ""
+"Ez a szimbólum azzal az adattal lesz helyettesítve, amelyet az azonosító "
+"határoz meg. Például a „%A{ general::dimensions }” egy olyan mérettel lenne "
+"helyettesítve, mint „320 x 240”."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:127
+msgid ""
+"A summary of these special codes may be viewed by clicking on the Help icon "
+"inside the template field."
+msgstr ""
+"Ezen speciális kódok összegzése a sablonmezőn belüli Súgó ikonra kattintva "
+"tekinthető meg."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:130
+msgid ""
+"The list at the bottom of the dialog displays how the filenames will be "
+"renamed."
+msgstr ""
+"A párbeszédablak alján lévő lista azt jeleníti meg, hogy a fájlnevek hogyan "
+"lesznek átnevezve."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:133
+msgid "To rename the images click on <gui>Rename</gui>."
+msgstr "A képek átnevezéséhez kattintson az <gui>Átnevezés</gui> gombra."
+
+#. (itstool) path: page/p
+#: C/rename-series.page:135
+msgid ""
+"If the renaming of an image can overwrite an already existing image you will "
+"be asked how to proceed, five options are available: overwrite the image; do "
+"not overwrite the image; always overwrite; never overwrite; specify a new "
+"name."
+msgstr ""
+"Ha egy kép átnevezése felülírhat egy már meglévő képet, akkor meg fogja "
+"kérdezni, hogy hogyan szeretné folytatni. Öt lehetőség érhető el: a kép "
+"felülírása, ne írja felül a képet, mindig felülírja, sose írja felül, egy új "
+"név megadása."
+
+#. (itstool) path: page/title
+#: C/edit-save-undo-redo.page:6
+msgid "File Save, Undo, Redo"
+msgstr "Fájlmentés, visszavonás, ismétlés"
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:8 C/edit-colors.page:8 C/edit-rotate.page:8
+#: C/edit-resize-crop.page:8 C/edit-redeye.page:7
+msgid ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> To "
+"access the editing tools, open an image and then click the <gui>Edit File</"
+"gui> toolbar button (the palette icon)."
+msgstr ""
+"<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> A "
+"szerkesztőeszközökhöz való hozzáféréshez nyisson meg egy képet, és "
+"kattintson a <gui>Fájl szerkesztése</gui> eszköztárgombra (a paletta ikon)."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:12
+msgid ""
+"Multiple changes may be made to an image before saving it. <gui>Undo</gui> "
+"and <gui>Redo</gui> buttons are provided, and may be used up until the file "
+"is saved."
+msgstr ""
+"Több változtatás is végrehajtható egy képen a mentés előtt. "
+"<gui>Visszavonás</gui> és <gui>Ismétlés</gui> gombok biztosítottak, és "
+"egészen a fájl mentéséig használhatók."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:16
+msgid ""
+"A modified image may be saved by pressing <gui>Save</gui>. To save the "
+"modified image to a new location instead, leaving the original image "
+"unchanged, use <gui>Save As</gui>."
+msgstr ""
+"Egy módosított kép a <gui>Mentés</gui> gomb megnyomásával menthető el. A "
+"módosított kép egy új helyre történő mentéséhez - az eredeti kép "
+"változatlanul hagyásával - használja a <gui>Mentés másként</gui> gombot."
+
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:20
+msgid ""
+"If you exit the editing mode (by pressing <key>Esc</key> or the <gui>View "
+"the Folders</gui> toolbar button), or navigate away from the current image, "
+"you will be prompted to save or discard your changes."
+msgstr ""
+"Ha kilép a szerkesztőmódból (az <key>Esc</key> billentyű megnyomásával vagy "
+"a <gui>Mappák megtekintése</gui> eszköztárgombbal), vagy elnavigál az "
+"aktuális képről, akkor meg fogja kérdezni, hogy menti vagy elveti a "
+"változtatásokat."
+
+#. (itstool) path: page/title
+#: C/edit-colors.page:6
+msgid "Color Adjustments"
+msgstr "Színigazítások"
+
+#. (itstool) path: page/p
+#: C/edit-colors.page:12
+msgid "Several tools are provided to manipulate the colors in images."
+msgstr "Számos eszközt biztosítanak a képeken lévő színek manipulálásához."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:17
+msgid "<gui>Enhance Colors</gui>"
+msgstr "<gui>Színek fokozása</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:18
+msgid ""
+"This tool provides automatic white balance correction. No user adjustments "
+"are required."
+msgstr ""
+"Ez az eszköz automatikus fehéregyensúly javítást biztosít. Nincs szükség "
+"felhasználói beállításra."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:22
+msgid "<gui>Adjust Colors</gui>"
+msgstr "<gui>Színek módosítása</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:23
+msgid ""
+"This tool provides manual color adjustments. Adjustments to the gamma, "
+"brightness, contrast, saturation, and the cyan/red, magenta/green, and "
+"yellow/blue color balances may be made."
+msgstr ""
+"Ez az eszköz kézi színbeállítást biztosít. Gamma, fényerő, kontraszt, "
+"telítettség, valamint cián/vörös, magenta/zöld és sárga/kék színegyensúly "
+"beállítások hajthatók végre."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:29
+msgid "<gui>Equalize</gui>"
+msgstr "<gui>Kiegyenlítés</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:30
+msgid ""
+"This tool provides automatic histogram equalization. No user adjustments are "
+"required."
+msgstr ""
+"Ez az eszköz automatikus hisztogram kiegyenlítést biztosít. Nincs szükség "
+"felhasználói beállításra."
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:34
+msgid "<gui>Desaturate</gui>"
+msgstr "<gui>Telítettségcsökkentés</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:35
+msgid ""
+"This tool converts the image colors into shades of grey. (This does not "
+"change this image storage format.)"
+msgstr ""
+"Ez az eszköz átalakítja a kép színeit szürke árnyalatokra. (Nem változtatja "
+"meg a kép tárolási formátumát.)"
+
+#. (itstool) path: item/title
+#: C/edit-colors.page:39
+msgid "<gui>Negative</gui>"
+msgstr "<gui>Negatív</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-colors.page:40
+msgid "This tool inverts the color levels, providing an image negative."
+msgstr ""
+"Ez az eszköz megfordítja a színszinteket, ezáltal egy negatív képet "
+"szolgáltatva."
+
+#. (itstool) path: page/title
+#: C/edit-rotate.page:6
+msgid "Rotations and Flips"
+msgstr "Forgatások és tükrözések"
+
+#. (itstool) path: page/p
+#: C/edit-rotate.page:12
+msgid "Several tools are provided to manipulate the orientation of images."
+msgstr "Számos eszközt biztosítanak a képek tájolásának manipulálásához."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:17
+msgid "<gui>Mirror</gui>"
+msgstr "<gui>Tükrözés</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:18
+msgid ""
+"This flips the image horizontally. The left and right sides are swapped."
+msgstr ""
+"Ez vízszintesen tükrözi a képet. A bal és jobb oldalak lesznek felcserélve."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:22
+msgid "<gui>Flip</gui>"
+msgstr "<gui>Megfordítás</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:23
+msgid "This flips the image vertically. The top and bottom are swapped."
+msgstr "Ez függőlegesen tükrözi a képet. A teteje és az alja lesz felcserélve."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:27
+msgid "<gui>Rotate Right</gui>"
+msgstr "<gui>Forgatás jobbra</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:28
+msgid "This rotates the image clockwise."
+msgstr "Ez az óramutató járásával megegyezően forgatja el a képet."
+
+#. (itstool) path: item/title
+#: C/edit-rotate.page:31
+msgid "<gui>Rotate Left</gui>"
+msgstr "<gui>Forgatás balra</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-rotate.page:32
+msgid "This rotates the image counter-clockwise."
+msgstr "Ez az óramutató járásával ellentétesen forgatja el a képet."
+
+#. (itstool) path: page/p
+#: C/edit-rotate.page:36
+msgid ""
+"The rotations offered in the edit mode act on the image in memory. They are "
+"not direct file operations. For jpeg images, these means they are not "
+"lossless operations - the image will degrade slightly when it it is re-"
+"encoded and saved. However, <app>gThumb</app> does provide lossless rotation "
+"tools. See <link xref=\"gthumb-batch-rotate\"/>."
+msgstr ""
+"A szerkesztőmódban felajánlott forgatások a memóriában hatnak a képre. Ezek "
+"nem közvetlen fájlműveletek. JPEG képek esetén ez azt jelenti, hogy ezek nem "
+"veszteségmentes műveletek - a kép kissé romlani fog, amikor újrakódolásra és "
+"mentésre kerül. Azonban a <app>gThumb</app> veszteségmentes forgatási "
+"eszközöket is biztosít. Lásd: <link xref=\"gthumb-batch-rotate\"/>."
+
+#. (itstool) path: page/title
+#: C/edit-resize-crop.page:6
+msgid "Resizing and Cropping"
+msgstr "Átméretezés és levágás"
+
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:12
+msgid "Two tools are provided to resize and crop images."
+msgstr "Két eszköz biztosított a képek átméretezéséhez és levágásához."
+
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:15
+msgid "<gui>Resize</gui>"
+msgstr "<gui>Átméretezés</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:16
+msgid ""
+"This allows you to resize the image. The image may be scaled to a certain "
+"physical size, or to a certain percentage of the original size. The aspect "
+"ratio may be locked to a specific value, or freely adjusted."
+msgstr ""
+"Ez teszi lehetővé a kép átméretezését. A kép méretezhető egy bizonyos "
+"fizikai méretre vagy az eredeti méret egy bizonyos százalékára. A méretarány "
+"rögzíthető egy adott értékhez, vagy szabadon állítható."
+
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:22
+msgid "<gui>Crop</gui>"
+msgstr "<gui>Levágás</gui>"
+
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:23
+msgid ""
+"This allows you to crop the image. Click and drag the mouse over the desired "
+"area of the image. The area may be locked to a specific aspect ratio, or it "
+"may be freely adjusted. A rule-of-thirds grid or golden-sections grid may be "
+"superimposed over the image for composition guidance."
+msgstr ""
+"Ez teszi lehetővé a kép levágását. Kattintson, és húzza az egeret a kép "
+"kívánt területe fölött. A terület rögzíthető egy adott méretarányra, vagy "
+"szabadon állítható. Egy harmadoló rács vagy egy aranymetszés rács helyezhető "
+"a kép fölé az összeállítás vezetéséhez."
+
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:31
+msgid ""
+"<app>gThumb</app> also offers a batch-mode tool for resizing multiple images "
+"simultaneously. See <link xref=\"gthumb-batch-resize\"/>."
+msgstr ""
+"A <app>gThumb</app> kötegelt módú eszközöket is nyújt több kép egyidejű "
+"átméretezéséhez. Lásd: <link xref=\"gthumb-batch-resize\"/>."
+
+#. (itstool) path: page/title
+#: C/edit-redeye.page:6
+msgid "Red Eye Removal"
+msgstr "Vörös szem eltávolítás"
+
+#. (itstool) path: page/p
+#: C/edit-redeye.page:11
+msgid ""
+"<app>gThumb</app> provides a <gui>Red Eye Removal</gui> tool. To remove a "
+"red eye, position the mouse pointer over the red eye and click on it. "
+"<app>gThumb</app> will attempt to remove the red region and replace it with "
+"a more natural-looking gray region. If the results do not look correct, "
+"press <key>Escape</key> and click on the <gui>Undo</gui> item."
+msgstr ""
+"A <app>gThumb</app> egy <gui>Vörös szem eltávolítás</gui> eszközt is "
+"biztosít. Egy vörös szem eltávolításához helyezze az egérmutatót a vörös "
+"szem fölé, és kattintson rá. A <app>gThumb</app> meg fogja próbálni "
+"eltávolítani a vörös területet, és egy természetesebbnek tűnő szürke "
+"területtel fogja helyettesíteni. Ha az eredmény nem tűnik helyesnek, akkor "
+"nyomja meg az <key>Escape</key> billentyűt, vagy kattintson a "
+"<gui>Visszavonás</gui> elemre."
+
+#. (itstool) path: page/p
+#: C/edit-redeye.page:18
+msgid ""
+"This tool works best when there is a high color contrast between the red eye "
+"and the surrounding facial area. It does not work well for \"orange eye\" "
+"sometimes seen in photos of children, or if the surrounding skin has a "
+"reddish tinge. This tool could use improvement - if you are fiendishly "
+"clever, love matrix algebra and open source software, please <link href="
+"\"https://wiki.gnome.org/Apps/gthumb/development\">submit a patch!</link>"
+msgstr ""
+"Ez az eszköz akkor működik a legjobban, amikor nagy színkontraszt van a "
+"vörös szem és a környező arcterület között. Nem működik túl jól a gyermekek "
+"fényképein néha látható „narancs szemnél”, vagy ha a környező bőrnek vöröses "
+"árnyalata van. Ez az eszköz javításokra szorulna - ha ördögien ügyes, "
+"valamint szereti a mátrix algebrát és a nyílt forrású szoftvereket, akkor "
+"<link href=\"https://wiki.gnome.org/Apps/gthumb/development\">küldjön egy "
+"javítást!</link>"
+
+#. (itstool) path: page/title
+#: C/extensions.page:6
+msgid "Extending gThumb"
+msgstr "A gThumb kiterjesztése"
+
+#. (itstool) path: page/p
+#: C/extensions.page:8
+msgid ""
+"<app>gThumb</app> has a plug-in system for extensions. Some standard "
+"features are implemented as extensions and are supplied with the standard "
+"distribution. Users may write (and share) additional extensions."
+msgstr ""
+"A <app>gThumb</app> a kiterjesztések bővítményrendszerével rendelkezik. "
+"Néhány szabványos szolgáltatás kiterjesztésekként van megvalósítva, és "
+"mellékelve vannak a szabványos terjesztéshez. A felhasználók is írhatnak (és "
+"megoszthatnak) további kiterjesztéseket."
+
+#. (itstool) path: page/p
+#: C/extensions.page:12
+msgid ""
+"You can enable or disable extensions using <guiseq><gui>Edit</"
+"gui><gui>Extensions</gui></guiseq>. Some extensions will have "
+"<gui>Preferences</gui> that can be modified from this dialog."
+msgstr ""
+"Engedélyezheti vagy letilthatja a kiterjesztéseket a "
+"<guiseq><gui>Szerkesztés</gui><gui>Kiterjesztések</gui></guiseq> menüpont "
+"használatával. Néhány kiterjesztésnek lesznek olyan <gui>Beállításai</gui>, "
+"amelyek erről a párbeszédablakról módosíthatók."
+
+#. (itstool) path: page/p
+#: C/extensions.page:16
+msgid ""
+"This manual is written with the assumption that the standard extensions are "
+"enabled. If you seem to be missing a feature, check to see which extensions "
+"are actually enabled."
+msgstr ""
+"Ez a kézikönyvet azzal a feltételezéssel írták, hogy a szabványos "
+"kiterjesztések engedélyezve vannak. Ha úgy tűnik, hogy egy szolgáltatás "
+"hiányzik, akkor ellenőrizze, hogy mely kiterjesztések vannak jelenleg "
+"engedélyezve."
+
+#. (itstool) path: page/p
+#: C/extensions.page:20
+#| msgid ""
+#| "If you would like to write your own extension, please visit <link href="
+#| "\"https://wiki.gnome.org/Apps/gthumb\">https://wiki.gnome.org/Apps/"
+#| "gthumb</link> for development information. An example extension is "
+#| "provided in the source code, which you can base your own extension on."
+msgid ""
+"If you would like to write your own extension, please visit <link href="
+"\"https://wiki.gnome.org/Apps/Gthumb\">https://wiki.gnome.org/Apps/Gthumb</"
+"link> for development information. An example extension is provided in the "
+"source code, which you can base your own extension on."
+msgstr ""
+"Ha saját kiterjesztést szeretne írni, akkor látogassa meg a <link href="
+"\"https://wiki.gnome.org/Apps/Gthumb\">https://wiki.gnome.org/Apps/Gthumb</"
+"link> oldalt a fejlesztői információkért. Egy példakiterjesztés biztosítva "
+"van a forráskódban, amely a saját kiterjesztése alapjául szolgálhat."
+
+#. (itstool) path: page/title
+#: C/gimp.page:6
+msgid "Launching GIMP"
+msgstr "A GIMP indítása"
+
+#. (itstool) path: page/p
+#: C/gimp.page:7
+msgid ""
+"If you have files selected in the browser, or an image open in the viewer, "
+"you can open them in the <app>GNU Image Manipulation Program (GIMP)</app> by "
+"pressing <key>g</key>."
+msgstr ""
+"Ha fájlokat jelölt ki a böngészőben, vagy egy kép meg van nyitva a "
+"megjelenítőben, akkor megnyithatja azokat a <app>GNU Image Manipulation "
+"Program (GIMP)</app> használatával a <key>g</key> billentyű megnyomásakor."
+
+#. (itstool) path: page/p
+#: C/gimp.page:10
+msgid ""
+"<app>GIMP</app> provides a more sophisticated set of editing tools than that "
+"provided with <app>gThumb</app>."
+msgstr ""
+"A <app>GIMP</app> kifinomultabb szerkesztőeszközöket biztosít a <app>gThumb</"
+"app> által nyújtottakkal szemben."
+
+#. (itstool) path: page/title
+#: C/viewer.page:6
+msgid "Opening an Image"
+msgstr "Egy kép megnyitása"
+
+#. (itstool) path: page/p
+#: C/viewer.page:8
+msgid ""
+"The browser view shows the images in the current folder or catalog (see "
+"<link xref=\"gthumb-browser-view\"/>). Double-clicking an image (or pressing "
+"<key>Return</key>) in the browser will open it in the viewer mode."
+msgstr ""
+"A böngészőnézet a jelenlegi mappában vagy katalógusban lévő képeket jeleníti "
+"meg (lásd: <link xref=\"gthumb-browser-view\"/>). A böngészőben egy képre "
+"történő dupla kattintással (vagy az <key>Enter</key> megnyomásával) meg "
+"fogja nyitni azt a megjelenítő módban."
+
+#. (itstool) path: page/p
+#: C/viewer.page:13
+msgid ""
+"Pressing <key>Escape</key> will exit the viewer mode, and return the user to "
+"the browser mode. A toolbar button (<gui>View the folders</gui>) is also "
+"provided for this purpose."
+msgstr ""
+"Az <key>Escape</key> megnyomásával ki fog lépni a megjelenítő módból, és "
+"visszakerül a felhasználó a böngészőmódhoz. Egy eszköztárgomb (<gui>A mappák "
+"megtekintése</gui>) is ezt a célt szolgálja."
+
+#. (itstool) path: page/p
+#: C/viewer.page:17
+msgid ""
+"A <link xref=\"gthumb-thumbnail-pane\"/> may be displayed in the viewer "
+"mode, if desired."
+msgstr ""
+"Egy <link xref=\"gthumb-thumbnail-pane\"/> jeleníthető meg a megjelenítő "
+"módban igény szerint."
+
+#. (itstool) path: figure/title
+#: C/viewer.page:21
+msgid "Viewer Mode with Thumbnail Pane"
+msgstr "Megjelenítő mód bélyegkép ablaktáblával"
+
+#. (itstool) path: page/p
+#: C/viewer.page:26
+msgid ""
+"In the viewer mode, you can advance to the next image by clicking the "
+"<gui>Next</gui> button, or by pressing <key>Space</key> or <key>Page Down</"
+"key>. You can go back to the previous image by clicking the <gui>Previous</"
+"gui> button, or by pressing <key>Backspace</key> or <key>Page Up</key>. You "
+"can go also click on thumbnails in the thumbnail pane to open a different "
+"image."
+msgstr ""
+"A megjelenítő módban a <gui>Következő</gui> gombra kattintva, illetve a "
+"<key>Szóköz</key> vagy a <key>Page Down</key> billentyű megnyomásával léphet "
+"előre a következő képre. Az <gui>Előző</gui> gombra kattintva, illetve a "
+"<key>Backspace</key> vagy a <key>Page Up</key> billentyű megnyomásával "
+"visszaléphet az előző képre. Egy másik kép megnyitásához rákattinthat a "
+"bélyegképekre is a bélyegképek ablaktáblában."
+
+#. (itstool) path: page/title
+#: C/fullscreen.page:8
+msgid "Manual Fullscreen Mode"
+msgstr "Kézi teljes képernyős mód"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:10
+msgid ""
+"Pressing <key>f</key> in the browser or viewer modes will display the "
+"current image in fullscreen mode. (In the browser mode, you can also double-"
+"click with the middle mouse button.)"
+msgstr ""
+"Az <key>f</key> megnyomása a böngészőben vagy a megtekintő módokban teljes "
+"képernyős módban fogja megjeleníteni a jelenlegi képet. (A böngésző módban "
+"duplán is kattinthat a középső egérgombbal.)"
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:14
+msgid ""
+"Moving the mouse will activate a popup control panel briefly. This can be "
+"used to navigate to the next or previous image, or change zoom levels."
+msgstr ""
+"Az egér mozgatása be fog kapcsolni egy felugró vezérlőpanelt tömören. Ez "
+"használható a következő vagy az előző képre navigáláshoz , vagy a nagyítási "
+"szintek megváltoztatásához."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:18
+msgid ""
+"You can also advance to the next image by pressing <key>PageDown</key> or "
+"<key>Space</key>."
+msgstr ""
+"Előreléphet a következő képre a <key>PageDown</key> vagy a <key>Szóköz</key> "
+"billentyű megnyomásával is."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:21
+msgid ""
+"You can go back to the previous image by pressing <key>PageUp</key> or "
+"<key>Backspace</key>."
+msgstr ""
+"Visszaléphet az előző képre a <key>PageUp</key> vagy a <key>Backspace</key> "
+"billentyű megnyomásával."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:24
+msgid "This can be used to implement a manually-controlled slideshow."
+msgstr "Ez egy kézzel vezérelt diavetítés megvalósításához használható."
+
+#. (itstool) path: page/p
+#: C/fullscreen.page:27
+msgid "To exit the fullscreen mode, press <key>f</key> or <key>Escape</key>."
+msgstr ""
+"A teljes képernyős módból való kilépéshez nyomja meg az <key>f</key> vagy az "
+"<key>Escape</key> billentyűt."
+
+#. (itstool) path: page/title
+#: C/sorting.page:7
+msgid "Sorting Files"
+msgstr "Fájlok rendezése"
+
+#. (itstool) path: page/p
+#: C/sorting.page:9
+msgid ""
+"Use the <guiseq><gui>View</gui><gui>Sort By</gui></guiseq> menu to select "
+"the desired file-sorting method for the browser view. Files can be sorted on "
+"the basis of their name, the file size, the file modification date, or the "
+"date the photo was taken."
+msgstr ""
+"Használja a <guiseq><gui>Nézet</gui><gui>Rendezés</gui></guiseq> menüt a "
+"kívánt fájlrendezési mód kiválasztásához a böngészőnézetnél. A fájlok "
+"rendezhetők a nevük, a fájlméret, a fájl módosítási dátuma alapján, vagy "
+"azon dátum szerint, amikor a fénykép készült."
+
+#. (itstool) path: page/title
+#: C/filtering.page:7
+msgid "Filtering Files"
+msgstr "Fájlok szűrése"
+
+#. (itstool) path: page/p
+#: C/filtering.page:9
+msgid ""
+"You can select what types of files to show in the browser view using the "
+"<guiseq><gui>View</gui><gui>Filter</gui></guiseq> dialog. The default is to "
+"show all media files (images, movies, audio), but this can be made more or "
+"less restrictive."
+msgstr ""
+"A <guiseq><gui>Nézet</gui><gui>Szűrő</gui></guiseq> párbeszédablak "
+"használatával kiválaszthatja, hogy milyen típusú fájlokat jelenítsen meg a "
+"böngészőnézet. Az alapértelmezés az összes médiafájl (képek, filmek, hangok) "
+"megjelenítése, de ez megtehető többé vagy kevésbé korlátozóan."
+
+#. (itstool) path: figure/title
+#: C/filtering.page:15
+msgid "Enabling Filters"
+msgstr "Szűrők engedélyezése"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:17
+msgctxt "_"
+msgid ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+msgstr ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:20
+msgid ""
+"The figure above shows how to configure <app>gThumb</app> to display media "
+"files only, by setting the <gui>General Filter</gui>."
+msgstr ""
+"A fenti ábra azt mutatja be, hogy hogyan kell az <gui>Általános szűrő</gui> "
+"használatával beállítani a <app>gThumb</app> programot úgy, hogy csak a "
+"médiafájlokat jelenítse meg."
+
+#. (itstool) path: page/p
+#: C/filtering.page:23
+msgid ""
+"Also, by enabling <gui>Filename</gui> in <gui>Other Filters</gui>, a filter-"
+"by-filename ability is added to the filter bar at the bottom of the browser "
+"view:"
+msgstr ""
+"A <gui>Fájlnév</gui> engedélyezésével az <gui>Egyéb szűrőkben</gui> egy "
+"fájlnév szerinti szűrőképesség kerül hozzáadásra a böngészőnézet alján lévő "
+"szűrősávhoz:"
+
+#. (itstool) path: figure/title
+#: C/filtering.page:28
+msgid "Browser Filter Bar"
+msgstr "A böngésző szűrősávja"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:30
+msgctxt "_"
+msgid ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+msgstr ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:33
+msgid ""
+"In the above figure, the filename filter has been configured to show only "
+"files with \"gen\" in the filename. The matching is case-insensitive."
+msgstr ""
+"A fenti ábrán a fájlnévszűrő úgy lett beállítva, hogy csak azokat a fájlokat "
+"jelenítse meg, amelyek nevében szerepel a „gen” szöveg. Az illesztés nem "
+"érzékeny a kis- és nagybetűkre."
+
+#. (itstool) path: page/title
+#: C/printing.page:7
+msgid "Printing Images"
+msgstr "Képek nyomtatása"
+
+#. (itstool) path: page/p
+#: C/printing.page:9
+msgid ""
+"To print the current image in the viewer mode, use <guiseq><gui>File</"
+"gui><gui>Print</gui></guiseq> or <keyseq><key>Ctrl</key><key>p</key></"
+"keyseq>."
+msgstr ""
+"A megjelenítő módban lévő jelenlegi kép nyomtatásához használja a "
+"<guiseq><gui>Fájl</gui><gui>Nyomtatás</gui></guiseq> menüpontot, vagy a "
+"<keyseq><key>Ctrl</key><key>p</key></keyseq> billentyűkombinációt."
+
+#. (itstool) path: page/p
+#: C/printing.page:13
+msgid ""
+"To print one or more images from the browser mode, select the desired images "
+"and then use <guiseq><gui>File</gui><gui>Print</gui></guiseq> or "
+"<keyseq><key>Ctrl</key><key>p</key></keyseq>."
+msgstr ""
+"Egy vagy több kép nyomtatásához a böngésző módból jelölje ki a kívánt "
+"képeket, majd használja a <guiseq><gui>Fájl</gui><gui>Nyomtatás</gui></"
+"guiseq> menüpontot, vagy a <keyseq><key>Ctrl</key><key>p</key></keyseq> "
+"billentyűkombinációt."
+
+#. (itstool) path: page/p
+#: C/printing.page:18
+msgid ""
+"The printer to use can be selected from the <gui>General</gui> tab of the "
+"print dialog."
+msgstr ""
+"A használandó nyomtató a nyomtatási párbeszédablak <gui>Általános</gui> "
+"lapjáról választható ki."
+
+#. (itstool) path: page/p
+#: C/printing.page:21
+msgid ""
+"The type of paper to use can be selected from the <gui>Page Setup</gui> tab."
+msgstr ""
+"A használandó papír típusa az <gui>Oldalbeállítás</gui> lapról választható "
+"ki."
+
+#. (itstool) path: page/p
+#: C/printing.page:24
+msgid ""
+"The <gui>Layout</gui> tab provides some additional <app>gThumb</app>-"
+"specific options. You can set the number of images to include on each page "
+"here, and a preview pane is provided. Captions can also be added under the "
+"image, in a configurable font. The captions can be chosen from a selection "
+"of listed file attributes (like the file name, the date of the photo, camera "
+"shutter speed, and others). Each image can be repositioned inside its print "
+"area using the controls on this tab."
+msgstr ""
+"Az <gui>Elrendezés</gui> lap néhány <app>gThumb</app>-specifikus beállítást "
+"biztosít. Itt állíthatja be az egyes oldalakra felvenni kívánt képek számát, "
+"valamint egy előnézet ablaktáblát is nyújt. Feliratok is adhatók a képek alá "
+"egy beállítható betűkészlettel. A feliratok a felsorolt fájljellemzők "
+"kijelöléséből választhatók ki (mint például fájlnév, a fénykép dátuma, "
+"fényképező zársebessége, és egyebek). Minden kép újrapozicionálható a "
+"nyomtatási területén belül az ezen a lapon lévő vezérlők használatával."
+
+#. (itstool) path: page/p
+#: C/printing.page:34
+msgid "When you are ready to print, press the <gui>Print</gui> button."
+msgstr ""
+"Amikor készen áll a nyomtatásra, akkor nyomja meg a <gui>Nyomtatás</gui> "
+"gombot."
+
+#. (itstool) path: page/title
+#: C/sharing-disc.page:6
+msgid "Creating a CD/DVD/ISO"
+msgstr "CD/DVD/ISO létrehozása"
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:7
+msgid ""
+"To write a series of files to an optical disk (CD or DVD), or to create an "
+"ISO disk image file, use the <guiseq><gui>File</gui> <gui>Export To</"
+"gui><gui>Optical Disc</gui></guiseq> menu item."
+msgstr ""
+"Egy fájlsorozat kiírásához egy optikai lemezre (CD vagy DVD), vagy egy ISO "
+"lemezképfájl létrehozásához használja a <guiseq><gui>Fájl</"
+"gui><gui>Exportálás ide</gui><gui>Optikai lemez</gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:13
+msgid ""
+"You will be offered the choice of writing the currently selected files, the "
+"entire current folder, or the entire current folder and its subfolders. "
+"Click <gui>OK</gui> when you have made the appropriate selection."
+msgstr ""
+"Fel fogja ajánlani a következő írási lehetőségeket: az jelenleg kijelölt "
+"fájlok, a teljes jelenlegi mappa, vagy a teljes jelenlegi mappa és azok "
+"almappái. Kattintson az <gui>OK</gui> gombra, amikor elvégezte a megfelelő "
+"kiválasztást."
+
+#. (itstool) path: page/p
+#: C/sharing-disc.page:19
+msgid ""
+"The next dialog will select the destination disk, or the ISO file to save. "
+"When you are ready to complete the process, click <gui>Create Image</gui>. "
+"The optical disk writing process will then commence, or the ISO file will be "
+"written, completing the process."
+msgstr ""
+"A következő párbeszédablak fogja kiválasztani a céllemezt vagy az ISO-fájlt "
+"a mentéshez. Amikor készen áll a folyamat befejezésére, akkor kattintson a "
+"<gui>Lemezkép létrehozása</gui> gombra. Az optikai lemez írási folyamata "
+"ekkor meg fog kezdődni, vagy az ISO-fájl lesz kiírva a lemezre a folyamat "
+"befejezéséül."
+
+#. (itstool) path: page/title
+#: C/sharing-social.page:6
+msgid "Uploading to Photo-Sharing Web Sites"
+msgstr "Feltöltés fényképmegosztó weboldalakra"
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:7
+msgid ""
+"gThumb is provided with a number of extensions for uploading photos to "
+"various \"social media\" web sites. By default, uploaders for Facebook, "
+"Flickr, Picasa, and Photobucket are enabled."
+msgstr ""
+"A gThumb számos kiterjesztést biztosít a fényképek feltöltéséhez a különféle "
+"„közösségi média” weboldalakra. Alapértelmezetten a Facebook, Flickr, Picasa "
+"és Photobucket feltöltők vannak engedélyezve."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:13
+msgid ""
+"To upload a series of photos, select the images in the browser view, and "
+"click the <gui>Share</gui> button in the toolbar. Select the appropriate web "
+"site from the menu that appears."
+msgstr ""
+"Egy fényképsorozat feltöltéséhez jelölje ki a képeket a böngészőnézetben, és "
+"kattintson a <gui>Megosztás</gui> gombra az eszköztáron. Válassza ki a "
+"megfelelő weboldalt a megjelenő menüből."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:17
+msgid ""
+"You may be prompted for additional information specific to the destination "
+"site, like an album name. You may also be prompted for your user name and "
+"password for the site. It may be necessary for gThumb to open a web browser, "
+"where you complete the required authentication steps. Once you have "
+"completed the required authentication steps in the browser, return to gThumb "
+"and continue the upload."
+msgstr ""
+"A céloldalra jellemző további információk lehetnek bekérve, mint például egy "
+"albumnév. Esetleg bekérhetik az oldalhoz tartozó felhasználónevét és "
+"jelszavát is. Szükséges lehet a gThumb számára egy webböngésző megnyitása, "
+"ahol befejezheti a szükséges hitelesítési lépeseket. Miután befejezte a "
+"szükséges hitelesítési lépéseket a böngészőben, térjen vissza a gThumb "
+"alkalmazáshoz, és folytassa a feltöltést."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:26
+msgid ""
+"If you do not see the expected upload sites in the <gui>Share</gui> menu, "
+"check that the appropriate exporter extensions are enabled in "
+"<guiseq><gui>Edit</gui><gui>Extensions</gui></guiseq>."
+msgstr ""
+"Ha nem látja az elvárt feltöltőoldalakat a <gui>Megosztás</gui> menüben, "
+"akkor ellenőrizze, hogy a megfelelő exportáló kiterjesztések engedélyezve "
+"vannak-e a <guiseq><gui>Szerkesztés</gui><gui>Kiterjesztések</gui></guiseq> "
+"menüpontban."
+
+#. (itstool) path: page/p
+#: C/sharing-social.page:31
+msgid ""
+"For some sites, gThumb also supports downloading photos from the site into "
+"gThumb. See the <guiseq><gui>File</gui><gui>Import From</gui></guiseq> menu "
+"for the available download options."
+msgstr ""
+"Néhány oldalnál a gThumb támogatja a fényképek letöltését is az oldalról a "
+"gThumb alkalmazásba. Nézze meg a <guiseq><gui>Fájl</gui><gui>Importálás "
+"innen</gui></guiseq> menüpontot az elérhető letöltési lehetőségekért."
+
+#. (itstool) path: page/title
+#: C/wallpaper.page:6
+msgid "Desktop Wallpaper"
+msgstr "Asztali háttérkép"
+
+#. (itstool) path: page/p
+#: C/wallpaper.page:7
+msgid ""
+"To set an image as the system desktop wallpaper, right-click on the image "
+"and select <guiseq><gui>Set as Desktop Background</gui></guiseq> from the "
+"pop-up menu. The desktop background will change, and the Gnome Appearance "
+"Preferences dialog will appear. You can use this dialog to make adjustments "
+"to the background settings (positioning, stretching, tiling, et cetera.)."
+msgstr ""
+"Egy kép beállításához a rendszer asztalának háttérképeként, kattintson a "
+"képre a jobb egérgombbal, és válassza a <guiseq><gui>Beállítás asztali "
+"háttérként</gui></guiseq> menüpontot a felugró menüből. Az asztal háttere "
+"meg fog változni, és a Gnome megjelenés beállításai párbeszédablaka fog "
+"megjelenni. Ezt a párbeszédablakot használhatja a háttér beállításainak "
+"finomhangolásához (elrendezés, nyújtás, csempézés, stb.)."
+
+#. (itstool) path: page/title
+#: C/bookmarks.page:6
+msgid "Using Bookmarks"
+msgstr "Könyvjelzők használata"
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:8
+msgid ""
+"Frequently-used folders can be added to the bookmark list for rapid access. "
+"To add the current folder to the bookmark list, press <keyseq><key>Ctrl</"
+"key><key>D</key></keyseq> or use the command <guiseq><gui>Bookmarks</"
+"gui><gui>Add Bookmark</gui></guiseq>."
+msgstr ""
+"A gyakran használt mappák hozzáadhatók a könyvjelzőlistához a gyors elérés "
+"érdekében. Az aktuális mappának a könyvjelzőlistához történő hozzáadásához "
+"nyomja meg a <keyseq><key>Ctrl</key><key>D</key></keyseq> "
+"billentyűkombinációt, vagy használja a <guiseq><gui>Könyvjelzők</"
+"gui><gui>Könyvjelző hozzáadása</gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:13
+msgid ""
+"To remove or rearrange bookmarks in a different order use the "
+"<guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq> command."
+msgstr ""
+"Az eltávolításhoz, vagy a könyvjelzők más sorrendbe történő átrendezéséhez "
+"használja a <guiseq><gui>Könyvjelzők</gui><gui>Könyvjelzők szerkesztése</"
+"gui></guiseq> menüpontot."
+
+#. (itstool) path: page/p
+#: C/bookmarks.page:16
+msgid ""
+"<guiseq><gui>Bookmarks</gui><gui>System Bookmarks</gui></guiseq> provides "
+"access to the system bookmarks that have been defined in <app>Nautilus</app> "
+"or the file-chooser dialog used in most Gnome applications."
+msgstr ""
+"A <guiseq><gui>Könyvjelzők</gui><gui>Rendszerkönyvjelzők</gui></guiseq> "
+"azokhoz a rendszerkönyvjelzőkhöz biztosítanak hozzáférést, amelyek a "
+"<app>Nautilus</app> fájlkezelőben vagy a legtöbb Gnome alkalmazásban "
+"használt fájlválasztó párbeszédablakban vannak meghatározva."
+
+#. (itstool) path: page/title
+#: C/import.page:8
+msgid "Importing From a Camera"
+msgstr "Importálás egy fényképezőgépről"
+
+#. (itstool) path: page/p
+#: C/import.page:10
+msgid ""
+"On most systems, <app>gThumb</app> will automatically launch the import "
+"dialog when a digital camera is connected to the computer, or a memory card "
+"with photos is plugged into a card reader. (It does this because it is "
+"registered as the default handler for x-content/image-dcf and x-content/"
+"image-picturecd mime types.)"
+msgstr ""
+"A legtöbb rendszeren a <app>gThumb</app> automatikusan el fogja indítani az "
+"importálás párbeszédablakot, amikor egy digitális fényképezőgépet "
+"csatlakoztatnak a számítógéphez, vagy fényképekkel rendelkező memóriakártyát "
+"helyeznek egy kártyaolvasóba. (Ezt azért teszi, mert alapértelmezett "
+"kezelőként van regisztrálva az x-content/image-dcf és az x-content/image-"
+"picturecd MIME-típusokhoz.)"
+
+#. (itstool) path: page/p
+#: C/import.page:16
+msgid ""
+"To manually launch the import dialog, use <guiseq><gui>File</gui><gui>Import "
+"From</gui><gui>Removable Device</gui></guiseq>."
+msgstr ""
+"Az importálás párbeszédablak kézi indításához használja <guiseq><gui>Fájl</"
+"gui><gui>Importálás innen</gui><gui>Eltávolítható eszköz</gui></guiseq> "
+"menüpontot."
+
+#. (itstool) path: figure/title
+#: C/import.page:20
+msgid "The Import Dialog"
+msgstr "Az importálás párbeszédablak"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:21
+msgctxt "_"
+msgid ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+msgstr ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+
+#. (itstool) path: page/p
+#: C/import.page:24
+msgid ""
+"The import dialog shows thumbnails of the photos available on the selected "
+"device. The user can select one of more photos using normal keyboard or "
+"mouse techniques (for example, Ctrl+click to add a photo to the selection, "
+"or click and drag the mouse over the desired photos.) If no photos are "
+"explicitly selected, all will be imported."
+msgstr ""
+"Az importálás párbeszédablak a kijelölt eszközön elérhető fényképek "
+"bélyegképeit jeleníti meg. A felhasználó kijelölhet egy vagy több képet "
+"normál billentyű vagy egértechnikák használatával (például Ctrl+kattintás "
+"egy fényképen a kijelöléshez való hozzáadásához, vagy a kívánt fényképek "
+"fölött kattintás és az egér húzása.) Ha nincsenek képek kifejezetten "
+"kijelölve, akkor az összes importálásra kerül."
+
+#. (itstool) path: page/p
+#: C/import.page:30
+msgid ""
+"Tags may optionally be associated with the imported photos, using the "
+"<gui>Tags</gui> control below the thumbnail window. Click the drop-down "
+"control to see the predefined tags."
+msgstr ""
+"Esetlegesen címkék is hozzárendelhetők az importált fényképekhez a "
+"bélyegképablak alatti <gui>Címkék</gui> vezérlő használatával. Kattintson a "
+"legördülő vezérlőre az előre meghatározott címkék megtekintéséhez."
+
+#. (itstool) path: page/p
+#: C/import.page:34
+msgid ""
+"An event name may also be optionally associated with the photos. This event "
+"name can be used to generate an automatic subfolder name (possibly "
+"incorporating a date) as described below. For example, if the base "
+"destination folder is \"/photos\", and you enter \"Wedding-Jennifer\" in the "
+"<gui>Event</gui> field, you can configure generation of automatic subfolders "
+"like \"/photos/2010-07-31, Wedding-Jennifer\"."
+msgstr ""
+"Egy eseménynév is hozzárendelhető esetlegesen a fényképekhez. Ez az "
+"eseménynév egy automatikus (valószínűleg egy dátumot tartalmazó) almappanév "
+"előállításához használható, amint alább látható. Például ha az alap célmappa "
+"a „/fényképek”, és a „Judit-esküvője” eseményt adja meg az <gui>Esemény</"
+"gui> mezőben, akkor az automatikus almappák előállítását ehhez hasonlóan "
+"állíthatja be: „/fényképek/2010-07-31, Judit-esküvője”."
+
+#. (itstool) path: figure/title
+#: C/import.page:42
+msgid "Standard Date-Based Subfolders"
+msgstr "Szabványos dátum-alapú almappák"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:43
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+msgstr ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+
+#. (itstool) path: page/p
+#: C/import.page:46
+msgid ""
+"As mentioned above, subfolders for imported photos can be automatically "
+"generated based on event names and dates. This is enabled or disabled by "
+"clicking on the destination foldername in the import dialog. This opens a "
+"second dialog, where the base folder for imports may be selected (the "
+"<gui>Destination</gui> folder). To generate automatic subfolders, select "
+"<gui>Automatic subfolder</gui>."
+msgstr ""
+"Mint fentebb említettük, az importált fényképek almappái automatikusan "
+"előállíthatók eseménynevek és dátumok alapján. Ez a célmappanévre kattintva "
+"engedélyezhető vagy tiltható le az importálás párbeszédablakban. Megnyit egy "
+"második párbeszédablakot, ahol az importálások alap mappája kiválasztható (a "
+"<gui>Cél</gui> mappa). Az automatikus almappák előállításához válassza az "
+"<gui>Automatikus almappa</gui> lehetőséget."
+
+#. (itstool) path: page/p
+#: C/import.page:52
+#| msgid ""
+#| "You can select either the <gui>File Date</gui> or the <gui>Current Date</"
+#| "gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
+#| "examines the dates embedded in the file metadata to determine when the "
+#| "photo was taken.) A variety of standard date formats are available "
+#| "(<gui>year-month</gui> for example). The <gui>as single subfolder</gui> "
+#| "checkbox controls whether a \"deep\" or \"shallow\" hierarchy of files is "
+#| "made (for example, with <gui>year-month</gui>, you can have year "
+#| "subfolders with month subfolders under them, or all subfolders can be at "
+#| "the same level in the filesystem, with the year and name both the folder "
+#| "name."
+msgid ""
+"You can select either the <gui>File Date</gui> or the <gui>Current Date</"
+"gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
+"examines the dates embedded in the file metadata to determine when the photo "
+"was taken.) A variety of standard date formats are available (<gui>year-"
+"month</gui> for example). The <gui>as single subfolder</gui> checkbox "
+"controls whether a \"deep\" or \"shallow\" hierarchy of files is made (for "
+"example, with <gui>year-month</gui>, you can have year subfolders with month "
+"subfolders under them, or all subfolders can be at the same level in the "
+"filesystem, with the year and name both the folder name.)"
+msgstr ""
+"Kiválaszthatja az almappa elnevezés alapjául használandó <gui>Fájl dátumot</"
+"gui> vagy a <gui>Jelenlegi dátumot</gui>. (A <gui>Fájl dátum</gui> "
+"megvizsgálja a fájl metaadataiba ágyazott dátumokat annak meghatározásához, "
+"hogy mikor készült a fénykép.) Különféle szabványos dátumformátumok érhetők "
+"el (például <gui>év-hónap</gui>). Az <gui>egyedülálló almappaként</gui> "
+"jelölőnégyzet szabályozza, hogy „mély” vagy „sekély” fájlhierarchia legyen "
+"elkészítve (például az <gui>év-hónap</gui> használatával lehetnek év "
+"almappái, amelyek hónap almappákat tartalmaznak, vagy az összes almappa a "
+"fájlrendszer ugyanazon a szintjén lehet az évvel és a névvel együtt a "
+"mappanévben)."
+
+#. (itstool) path: page/p
+#: C/import.page:61
+msgid ""
+"It is not necessary to use the predefined date formats. If you select "
+"<gui>custom format</gui>, standard date codes can be used. Click on the help "
+"icon to the right of the custom format field for a list of format codes. \"%E"
+"\" is a special code that will embed the <gui>Event</gui> name defined in "
+"the main import dialog."
+msgstr ""
+"Nem szükséges az előre meghatározott dátumformátumokat használni. Ha az "
+"<gui>egyéni formátumot</gui> választja, akkor szabványos dátumkódok "
+"használhatók. Kattintson az egyéni formátum mező jobb oldalán lévő súgó "
+"ikonra a formátumkódok listájáért. A „%E” egy speciális kód, amely a fő "
+"importálás párbeszédablakon meghatározott <gui>Esemény</gui> nevét fogja "
+"beágyazni."
+
+#. (itstool) path: page/p
+#: C/import.page:67
+msgid "See <link xref=\"gthumb-date-formats\"/> for more date format codes."
+msgstr ""
+"További dátumformátum kódokért nézze meg a <link xref=\"gthumb-date-formats"
+"\"/> szakaszt."
+
+#. (itstool) path: page/p
+#: C/import.page:69
+msgid ""
+"If you use automatic subfolder naming, the <gui>Destination</gui> field in "
+"the main import dialog will show the automatic portion of the folder in red. "
+"(For date-based formats, dummy data may be shown in the red portion.)"
+msgstr ""
+"Ha automatikus almappa elnevezést használ, akkor a fő importálás "
+"párbeszédablakon lévő <gui>Cél</gui> mező pirossal fogja megjeleníteni a "
+"mappa automatikus részét. (Dátum-alapú formátumoknál üres adatok lehetnek "
+"megjelenítve a piros részen.)"
+
+#. (itstool) path: figure/title
+#: C/import.page:74
+msgid "Using Custom Formats"
+msgstr "Egyéni formátumok használata"
+
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:75
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+msgstr ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+
+#. (itstool) path: page/title
+#: C/slideshow.page:7
+msgid "Automatic Slideshow"
+msgstr "Automatikus diavetítés"
+
+#. (itstool) path: page/p
+#: C/slideshow.page:9
+msgid ""
+"A slideshow of the currently selected images can be started from the image "
+"browser by pressing <key>F5</key>, by clicking the slideshow toolbar icon, "
+"or by clicking <guiseq><gui>View</gui><gui>Slideshow</gui></guiseq>. If no "
+"images are selected, all images in the folder will be included."
+msgstr ""
+"Az aktuálisan kijelölt képek diavetítése a képböngészőből indítható az "
+"<key>F5</key> megnyomásával, a diavetítés eszköztárikonra történő "
+"kattintással, vagy a <guiseq><gui>Nézet</gui><gui>Diavetítés</gui></guiseq> "
+"menüpontra kattintva. Ha nincsenek képek kijelölve, akkor a mappában lévő "
+"összes képet fel fogja venni."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:15
+msgid ""
+"The transition effects and the time each image is shown can be modified from "
+"the <guiseq><gui>Edit</gui><gui>Preferences</gui><gui>Slideshow</gui></"
+"guiseq> dialog."
+msgstr ""
+"Az átmeneti hatások és az egyes képek megjelenítési ideje a "
+"<guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Diavetítés</gui></"
+"guiseq> párbeszédablakon módosítható."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:19
+msgid ""
+"Some graphics cards and drivers may experience problems (crashes) if "
+"transition effects are enabled. If you experience such difficulties, set the "
+"<gui>Transition effect</gui> preference to <gui>None</gui>."
+msgstr ""
+"Néhány grafikus kártyánál és illesztőprogramnál problémákat (összeomlásokat) "
+"tapasztalhat, ha az átmeneti hatások engedélyezve vannak. Ha ilyen "
+"nehézségeket tapasztal, akkor állítsa az <gui>Átmenti hatás</gui> "
+"beállítását <gui>Nincs</gui> értékre."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:23
+msgid ""
+"You can advance manually to the next image by pressing <key>Down Arrow</"
+"key>, <key>Right Arrow</key>, <key>Page Down</key> or <key>Space</key>."
+msgstr ""
+"Kézzel is előre léphet a következő képre a <key>Lefelé nyíl</key>, a "
+"<key>Jobbra nyíl</key>, a <key>Page Down</key> vagy a <key>Szóköz</key> "
+"billentyű megnyomásával."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:27
+msgid ""
+"You can go back to the previous image by pressing <key>Up Arrow</key>, "
+"<key>Left Arrow</key> or <key>Page Up</key>."
+msgstr ""
+"Visszaléphet az előző képre a <key>Felfelé nyíl</key>, a <key>Balra nyíl</"
+"key> vagy a <key>Page Up</key> billentyű megnyomásával."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:30
+msgid "You can pause or un-pause the slideshow by pressing <key>p</key>."
+msgstr ""
+"Szüneteltetheti vagy folytathatja a diavetítést a <key>p</key> billentyű "
+"megnyomásával."
+
+#. (itstool) path: page/p
+#: C/slideshow.page:32
+msgid "To exit the slideshow, press <key>Escape</key> or <key>F5</key>."
+msgstr ""
+"A diavetítésből való kilépéshez nyomja meg az <key>Escape</key> vagy az "
+"<key>F5</key> billentyűt."
+
+#. (itstool) path: page/title
+#: C/file-copy-move.page:6
+msgid "Copying and Moving Files"
+msgstr "Fájlok másolása és áthelyezése"
+
+#. (itstool) path: page/p
+#: C/file-copy-move.page:8
+msgid "There are three ways to copy or move files in <app>gThumb</app>."
+msgstr ""
+"Három módon lehet fájlokat másolni vagy áthelyezni a <app>gThumb</app> "
+"programban."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:12
+msgid "Cut and Paste"
+msgstr "Kivágás és beillesztés"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:13
+msgid ""
+"To copy a file in the browser view, use <guiseq><gui>Edit</gui><gui>Copy</"
+"gui></guiseq>, or press <keyseq><key>Ctrl</key><key>C</key></keyseq>. To "
+"move a file, use <guiseq><gui>Edit</gui><gui>Cut</gui></guiseq>, or press "
+"<keyseq><key>Ctrl</key><key>X</key></keyseq>. Then navigate to the "
+"destination folder using the folder tree. Use <guiseq><gui>Edit</"
+"gui><gui>Paste</gui></guiseq>, or press <keyseq><key>Ctrl</key><key>V</key></"
+"keyseq>, to complete the file transfer."
+msgstr ""
+"A böngészőnézetben egy fájl másolásához használja a "
+"<guiseq><gui>Szerkesztés</gui><gui>Másolás</gui></guiseq> menüpontot, vagy "
+"nyomja meg a <keyseq><key>Ctrl</key><key>C</key></keyseq> billentyűket. Egy "
+"fájl áthelyezéséhez használja a <guiseq><gui>Szerkesztés</gui><gui>Kivágás</"
+"gui></guiseq> menüpontot, vagy nyomja meg a <keyseq><key>Ctrl</key><key>X</"
+"key></keyseq> billentyűket. Ezután navigáljon a célmappához a mappafa "
+"használatával. Használja a <guiseq><gui>Szerkesztés</gui><gui>Beillesztés</"
+"gui></guiseq> menüpontot, vagy nyomja meg a <keyseq><key>Ctrl</key><key>V</"
+"key></keyseq> billentyűket a fájlátvitel befejezéséhez."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:26
+msgid "Drag and Drop"
+msgstr "Fogd és vidd"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:27
+msgid ""
+"To copy a file to another folder, simply drag the file (with a sustained "
+"left-mouse click) to the destination folder visible in the folder tree. To "
+"move a file, hold down the <key>Shift</key> key while dragging."
+msgstr ""
+"A fájl egy másik mappába történő átmásolásához egyszerűen húzza át a fájlt "
+"(egy hosszan tartó bal kattintással) a mappafában látható célmappába. Egy "
+"fájl áthelyezéséhez tartsa nyomva a <key>Shift</key> billentyűt a húzás "
+"közben."
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:31
+msgid ""
+"You can also use the middle mouse button to drag files. In this case, "
+"<app>gThumb</app> will ask you if you wish to copy the files, move the "
+"files, or cancel the operation."
+msgstr ""
+"Használhatja a középső egérgombot is a fájlok húzásához. Ebben az esetben a "
+"<app>gThumb</app> meg fogja kérdezni, hogy a fájlokat másolni vagy "
+"áthelyezni szeretné-e, esetleg megszakítja-e a műveletet."
+
+#. (itstool) path: item/title
+#: C/file-copy-move.page:37
+msgid "File Copy / Move Dialog"
+msgstr "Fájl másolása / áthelyezése párbeszédablak"
+
+#. (itstool) path: item/p
+#: C/file-copy-move.page:38
+msgid ""
+"Select the files to be transferred, right-click on the selection, and choose "
+"<guiseq><gui>Copy to...</gui></guiseq> or <guiseq><gui>Move to...</gui></"
+"guiseq>. This will open a folder-selection dialog, where you can choose the "
+"destination folder. At the bottom of the dialog, you can enable the "
+"<guiseq><gui>View the destination</gui></guiseq> option if you want to go to "
+"the destination folder after the file transfer is complete."
+msgstr ""
+"Jelölje ki az átvinni kívánt fájlokat, kattintson a jobb egérgombbal a "
+"kijelölésre, és válassza a <guiseq><gui>Másolás ide…</gui></guiseq> vagy az "
+"<guiseq><gui>Áthelyezés ide…</gui></guiseq> menüpontot. Ez meg fog nyitni "
+"egy mappakiválasztó párbeszédablakot, ahol kiválaszthatja a célmappát. A "
+"párbeszédablak alján engedélyezheti <guiseq><gui>A cél megtekintése</gui></"
+"guiseq> lehetőséget, ha be szeretne lépni a célmappába a fájlátvitel "
+"befejezése után."
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-Share Alike 3.0 Unported License"
+msgstr "Creative Commons Nevezd meg!-Így add tovább 3.0 átíratlan licenc"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
+
+#. (itstool) path: license/p
+#: C/legal.xml:6
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Speciális kivételként a szerzői jog tulajdonosai az Ön által választott "
+"tetszőleges feltételek mellett, korlátozás nélkül engedélyezik a "
+"dokumentumban található példakódok másolását, módosítását és terjesztését."

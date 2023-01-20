@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -26,9 +26,6 @@
 #define GET_WIDGET(x) (_gtk_builder_get_widget (self->priv->builder, (x)))
 
 
-G_DEFINE_TYPE (OAuthAccountChooserDialog, oauth_account_chooser_dialog, GTK_TYPE_DIALOG)
-
-
 enum {
 	ACCOUNT_DATA_COLUMN,
 	ACCOUNT_NAME_COLUMN,
@@ -40,6 +37,12 @@ enum {
 struct _OAuthAccountChooserDialogPrivate {
 	GtkBuilder *builder;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (OAuthAccountChooserDialog,
+			 oauth_account_chooser_dialog,
+			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (OAuthAccountChooserDialog))
 
 
 static void
@@ -59,8 +62,6 @@ static void
 oauth_account_chooser_dialog_class_init (OAuthAccountChooserDialogClass *klass)
 {
 	GObjectClass *object_class;
-
-	g_type_class_add_private (klass, sizeof (OAuthAccountChooserDialogPrivate));
 
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = oauth_account_chooser_dialog_finalize;
@@ -111,15 +112,10 @@ oauth_account_chooser_dialog_init (OAuthAccountChooserDialog *self)
 {
 	GtkWidget *content;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, OAUTH_TYPE_ACCOUNT_CHOOSER_DIALOG, OAuthAccountChooserDialogPrivate);
+	self->priv = oauth_account_chooser_dialog_get_instance_private (self);
 	self->priv->builder = _gtk_builder_new_from_file ("oauth-account-chooser.ui", "oauth");
 
-	gtk_window_set_resizable (GTK_WINDOW (self), FALSE);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
-	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
-
 	content = _gtk_builder_get_widget (self->priv->builder, "account_chooser");
-	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), content, TRUE, TRUE, 0);
 
 	{
@@ -149,16 +145,12 @@ oauth_account_chooser_dialog_init (OAuthAccountChooserDialog *self)
 			  G_CALLBACK (account_combobox_changed_cb),
 			  self);
 
-	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_NEW,
-			       OAUTH_ACCOUNT_CHOOSER_RESPONSE_NEW);
-	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_CANCEL,
-			       GTK_RESPONSE_CANCEL);
-	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_OK,
-			       GTK_RESPONSE_OK);
+	gtk_dialog_add_buttons (GTK_DIALOG (self),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_("_Continue"), GTK_RESPONSE_OK,
+				NULL);
 	gtk_dialog_set_default_response (GTK_DIALOG (self), GTK_RESPONSE_OK);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (self), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 }
 
 
@@ -177,15 +169,15 @@ oauth_account_chooser_dialog_construct (OAuthAccountChooserDialog *self,
 	for (scan = accounts, idx = 0; scan; scan = scan->next, idx++) {
 		OAuthAccount *account = scan->data;
 
-		if ((default_account != NULL) && (g_strcmp0 (account->username, default_account->username) == 0))
+		if ((default_account != NULL) && (oauth_account_cmp (account, default_account) == 0))
 			active = idx;
 
 		gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("account_liststore")), &iter);
 		gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("account_liststore")), &iter,
 				    ACCOUNT_DATA_COLUMN, account,
-				    ACCOUNT_NAME_COLUMN, account->username,
+				    ACCOUNT_NAME_COLUMN, account->name,
 				    ACCOUNT_SEPARATOR_COLUMN, FALSE,
-				    ACCOUNT_ICON_COLUMN, "dialog-password",
+				    ACCOUNT_ICON_COLUMN, "dialog-password-symbolic",
 				    -1);
 	}
 
@@ -197,9 +189,9 @@ oauth_account_chooser_dialog_construct (OAuthAccountChooserDialog *self,
 	gtk_list_store_append (GTK_LIST_STORE (GET_WIDGET ("account_liststore")), &iter);
 	gtk_list_store_set (GTK_LIST_STORE (GET_WIDGET ("account_liststore")), &iter,
 			    ACCOUNT_DATA_COLUMN, NULL,
-			    ACCOUNT_NAME_COLUMN, _("New authentication..."),
+			    ACCOUNT_NAME_COLUMN, _("New authentication…"),
 			    ACCOUNT_SEPARATOR_COLUMN, FALSE,
-			    ACCOUNT_ICON_COLUMN, GTK_STOCK_NEW,
+			    ACCOUNT_ICON_COLUMN, "list-add-symbolic",
 			    -1);
 
 	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("account_combobox")), active);
@@ -212,7 +204,10 @@ oauth_account_chooser_dialog_new (GList        *accounts,
 {
 	OAuthAccountChooserDialog *self;
 
-	self = g_object_new (OAUTH_TYPE_ACCOUNT_CHOOSER_DIALOG, NULL);
+	self = g_object_new (OAUTH_TYPE_ACCOUNT_CHOOSER_DIALOG,
+			     "resizable", FALSE,
+			     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+			     NULL);
 	oauth_account_chooser_dialog_construct (self, accounts, default_account);
 
 	return (GtkWidget *) self;

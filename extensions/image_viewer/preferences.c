@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -31,6 +31,7 @@
 typedef struct {
 	GtkBuilder *builder;
 	GSettings  *settings;
+	GSettings  *browser_settings;
 } BrowserData;
 
 
@@ -39,17 +40,9 @@ browser_data_free (BrowserData *data)
 {
 	g_object_unref (data->builder);
 	g_object_unref (data->settings);
+	g_object_unref (data->browser_settings);
 	g_free (data);
 }
-
-
-static void
-zoom_quality_changed_cb (GtkComboBox *combo_box,
-			 BrowserData *data)
-{
-	g_settings_set_enum (data->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY, gtk_combo_box_get_active (combo_box));
-}
-
 
 
 static void
@@ -69,10 +62,29 @@ reset_scrollbars_toggled_cb (GtkToggleButton *button,
 
 
 static void
-transp_type_changed_cb (GtkComboBox *combo_box,
-			BrowserData *data)
+scroll_event_toggled_cb (GtkToggleButton *button,
+			 BrowserData     *data)
 {
-	g_settings_set_enum (data->settings, PREF_IMAGE_VIEWER_TRANSP_TYPE, gtk_combo_box_get_active (combo_box));
+	g_settings_set_enum (data->browser_settings,
+			     PREF_VIEWER_SCROLL_ACTION,
+			     (GTK_WIDGET (button) == GET_WIDGET ("scroll_event_change_image_radiobutton")) ? GTH_SCROLL_ACTION_CHANGE_FILE : GTH_SCROLL_ACTION_ZOOM);
+}
+
+static void
+zoom_quality_radiobutton_toggled_cb (GtkToggleButton *button,
+				     BrowserData     *data)
+{
+	g_settings_set_enum (data->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY, (GTK_WIDGET (button) == GET_WIDGET ("zoom_quality_high_radiobutton")) ? GTH_ZOOM_QUALITY_HIGH : GTH_ZOOM_QUALITY_LOW);
+}
+
+
+static void
+transparency_style_changed_cb (GtkComboBox *combo_box,
+			       BrowserData *data)
+{
+	g_settings_set_enum (data->settings,
+			     PREF_IMAGE_VIEWER_TRANSPARENCY_STYLE,
+			     gtk_combo_box_get_active (combo_box));
 }
 
 
@@ -88,38 +100,59 @@ image_viewer__dlg_preferences_construct_cb (GtkWidget  *dialog,
 
 	data = g_new0 (BrowserData, 1);
 	data->builder = _gtk_builder_new_from_file ("image-viewer-preferences.ui", "image_viewer");
-	data->settings = g_settings_new (PIX_IMAGE_VIEWER_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_IMAGE_VIEWER_SCHEMA);
+	data->browser_settings = g_settings_new (GTHUMB_BROWSER_SCHEMA);
 
 	notebook = _gtk_builder_get_widget (dialog_builder, "notebook");
 
 	page = _gtk_builder_get_widget (data->builder, "preferences_page");
-	g_object_set_data (G_OBJECT (page), "extension-name", "image_viewer");
 	gtk_widget_show (page);
 
 	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("change_zoom_combobox")),
 				  g_settings_get_enum (data->settings, PREF_IMAGE_VIEWER_ZOOM_CHANGE));
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("toggle_reset_scrollbars")),
 				      g_settings_get_boolean (data->settings, PREF_IMAGE_VIEWER_RESET_SCROLLBARS));
-	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("transp_type_combobox")),
-				  g_settings_get_enum (data->settings, PREF_IMAGE_VIEWER_TRANSP_TYPE));
-	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("zoom_quality_combobox")),
-				  g_settings_get_enum (data->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY));
 
-	g_signal_connect (GET_WIDGET ("zoom_quality_combobox"),
-			  "changed",
-			  G_CALLBACK (zoom_quality_changed_cb),
-			  data);
+	if (g_settings_get_enum (data->settings, PREF_IMAGE_VIEWER_ZOOM_QUALITY) == GTH_ZOOM_QUALITY_LOW)
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("zoom_quality_low_radiobutton")), TRUE);
+	else
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("zoom_quality_high_radiobutton")), TRUE);
+
+	if (g_settings_get_enum (data->browser_settings, PREF_VIEWER_SCROLL_ACTION) == GTH_SCROLL_ACTION_CHANGE_FILE)
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("scroll_event_change_image_radiobutton")), TRUE);
+	else
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("scroll_event_zoom_radiobutton")), TRUE);
+
+	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("transparency_style_combobox")),
+				  g_settings_get_enum (data->settings, PREF_IMAGE_VIEWER_TRANSPARENCY_STYLE));
+
 	g_signal_connect (GET_WIDGET ("change_zoom_combobox"),
 			  "changed",
 			  G_CALLBACK (zoom_change_changed_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("transp_type_combobox"),
-			  "changed",
-			  G_CALLBACK (transp_type_changed_cb),
+	g_signal_connect (GET_WIDGET ("scroll_event_change_image_radiobutton"),
+			  "toggled",
+			  G_CALLBACK (scroll_event_toggled_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("scroll_event_zoom_radiobutton"),
+			  "toggled",
+			  G_CALLBACK (scroll_event_toggled_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("zoom_quality_low_radiobutton"),
+			  "toggled",
+			  G_CALLBACK (zoom_quality_radiobutton_toggled_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("zoom_quality_high_radiobutton"),
+			  "toggled",
+			  G_CALLBACK (zoom_quality_radiobutton_toggled_cb),
 			  data);
 	g_signal_connect (GET_WIDGET ("toggle_reset_scrollbars"),
 			  "toggled",
 			  G_CALLBACK (reset_scrollbars_toggled_cb),
+			  data);
+	g_signal_connect (GET_WIDGET ("transparency_style_combobox"),
+			  "changed",
+			  G_CALLBACK (transparency_style_changed_cb),
 			  data);
 
 	label = gtk_label_new (_("Viewer"));

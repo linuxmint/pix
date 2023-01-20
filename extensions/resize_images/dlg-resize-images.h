@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2005-2009 The Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef DLG_RESIZE_IMAGES_H
 #define DLG_RESIZE_IMAGES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 
 void   dlg_resize_images  (GthBrowser *browser,

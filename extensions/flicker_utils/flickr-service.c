@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "flickr-account.h"
 #include "flickr-consumer.h"
 #include "flickr-photo.h"
@@ -34,12 +34,9 @@
 #define RESPONSE_FORMAT "rest"
 
 
-G_DEFINE_TYPE (FlickrService, flickr_service, OAUTH_TYPE_SERVICE)
-
-
 enum {
-        PROP_0,
-        PROP_SERVER
+	PROP_0,
+	PROP_SERVER
 };
 
 
@@ -51,8 +48,8 @@ typedef struct {
 	int                  max_height;
 	GList               *file_list;
 	GCancellable        *cancellable;
-        GAsyncReadyCallback  callback;
-        gpointer             user_data;
+	GAsyncReadyCallback  callback;
+	gpointer             user_data;
 	GList               *current;
 	goffset              total_size;
 	goffset              uploaded_size;
@@ -79,11 +76,11 @@ typedef struct {
 	FlickrPhotoset      *photoset;
 	GList               *photo_ids;
 	GCancellable        *cancellable;
-        GAsyncReadyCallback  callback;
-        gpointer             user_data;
-        int                  n_files;
-        GList               *current;
-        int                  n_current;
+	GAsyncReadyCallback  callback;
+	gpointer             user_data;
+	int                  n_files;
+	GList               *current;
+	int                  n_current;
 } AddPhotosData;
 
 
@@ -110,6 +107,12 @@ struct _FlickrServicePrivate {
 	GChecksum      *checksum;
 	char           *frob;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (FlickrService,
+			 flickr_service,
+			 OAUTH_TYPE_SERVICE,
+			 G_ADD_PRIVATE (FlickrService))
 
 
 static void
@@ -213,7 +216,7 @@ flickr_service_old_auth_get_frob_ready_cb (SoupSession *session,
 					   gpointer     user_data)
 {
 	FlickrService      *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	DomDocument        *doc = NULL;
 	GError             *error = NULL;
@@ -221,7 +224,7 @@ flickr_service_old_auth_get_frob_ready_cb (SoupSession *session,
 	g_free (self->priv->frob);
 	self->priv->frob = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	body = soup_message_body_flatten (msg->response_body);
 	if (flickr_utils_parse_response (body, &doc, &error)) {
@@ -233,25 +236,21 @@ flickr_service_old_auth_get_frob_ready_cb (SoupSession *session,
 			if (g_strcmp0 (child->tag_name, "frob") == 0)
 				self->priv->frob = g_strdup (dom_element_get_inner_text (child));
 
-		if (self->priv->frob == NULL) {
-			error = g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error"));
-			g_simple_async_result_set_from_error (result, error);
-		}
+		if (self->priv->frob == NULL)
+			g_task_return_error (task, g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error")));
 		else
-			g_simple_async_result_set_op_res_gboolean (result, TRUE);
+			g_task_return_boolean (task, TRUE);
 
 		g_object_unref (doc);
 	}
 	else
-		g_simple_async_result_set_from_error (result, error);
-
-	g_simple_async_result_complete_in_idle (result);
+		g_task_return_error (task, error);
 
 	soup_buffer_free (body);
 }
 
 
-void
+static void
 flickr_service_old_auth_get_frob (FlickrService       *self,
 				  GCancellable        *cancellable,
 				  GAsyncReadyCallback  callback,
@@ -284,10 +283,7 @@ flickr_service_old_auth_get_frob_finish (FlickrService  *self,
 					 GAsyncResult   *result,
 					 GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return FALSE;
-	else
-		return TRUE;
+	return g_task_propagate_boolean (G_TASK (result), error);
 }
 
 
@@ -300,12 +296,12 @@ flickr_service_old_auth_get_token_ready_cb (SoupSession *session,
 					    gpointer     user_data)
 {
 	FlickrService      *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	DomDocument        *doc = NULL;
 	GError             *error = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	body = soup_message_body_flatten (msg->response_body);
 	if (flickr_utils_parse_response (body, &doc, &error)) {
@@ -337,24 +333,20 @@ flickr_service_old_auth_get_token_ready_cb (SoupSession *session,
 									"name", dom_element_get_attribute (node, "fullname"),
 									"token", token,
 									NULL);
-						g_simple_async_result_set_op_res_gpointer (result, account, g_object_unref);
+						g_task_return_pointer (task, account, g_object_unref);
 						break;
 					}
 				}
 			}
 		}
 
-		if (token == NULL) {
-			error = g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error"));
-			g_simple_async_result_set_from_error (result, error);
-		}
+		if (token == NULL)
+			g_task_return_error (task, g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error")));
 
 		g_object_unref (doc);
 	}
 	else
-		g_simple_async_result_set_from_error (result, error);
-
-	g_simple_async_result_complete_in_idle (result);
+		g_task_return_error (task, error);
 
 	soup_buffer_free (body);
 }
@@ -394,10 +386,7 @@ flickr_service_old_auth_get_token_finish (FlickrService  *self,
 					  GAsyncResult   *result,
 					  GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return FALSE;
-	else
-		return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
@@ -420,7 +409,7 @@ old_auth_get_access_type_name (WebAuthorization access_type)
 }
 
 
-char *
+static char *
 flickr_service_old_auth_get_login_link (FlickrService    *self,
 					WebAuthorization  access_type)
 {
@@ -491,16 +480,16 @@ static void
 old_authorization_complete (FlickrService *self)
 {
 	GtkWidget  *dialog;
-	GtkBuilder *builder;
 	char       *text;
 	char       *secondary_text;
 
 	dialog = _web_service_get_auth_dialog (WEB_SERVICE (self));
-	builder = g_object_get_data (G_OBJECT (dialog), "builder");
-	gtk_widget_hide (_gtk_builder_get_widget (builder, "authorize_button"));
-	gtk_widget_show (_gtk_builder_get_widget (builder, "complete_button"));
+
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), _RESPONSE_AUTHORIZE, FALSE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), _RESPONSE_CONTINUE, TRUE);
+
 	text = g_strdup_printf (_("Return to this window when you have finished the authorization process on %s"), self->priv->server->display_name);
-	secondary_text = g_strdup (_("Once you're done, click the 'Continue' button below."));
+	secondary_text = g_strdup (_("Once you’re done, click the “Continue” button below."));
 	g_object_set (dialog, "text", text, "secondary-text", secondary_text, NULL);
 	gtk_window_present (GTK_WINDOW (dialog));
 
@@ -519,13 +508,11 @@ old_authorization_dialog_response_cb (GtkDialog *dialog,
 	switch (response_id) {
 	case _RESPONSE_AUTHORIZE:
 		{
-			GdkScreen *screen;
-			char      *url;
-			GError    *error = NULL;
+			char   *url;
+			GError *error = NULL;
 
-			screen = gtk_widget_get_screen (GTK_WIDGET (dialog));
 			url = flickr_service_old_auth_get_login_link (self, WEB_AUTHORIZATION_WRITE);
-			if (gtk_show_uri (screen, url, 0, &error))
+			if (gtk_show_uri_on_window (GTK_WINDOW (dialog), url, GDK_CURRENT_TIME, &error))
 				old_authorization_complete (self);
 			else
 				gth_task_completed (GTH_TASK (self), error);
@@ -556,7 +543,6 @@ old_auth_frob_ready_cb (GObject      *source_object,
 {
 	FlickrService *self = user_data;
 	GError        *error = NULL;
-	GtkBuilder    *builder;
 	GtkWidget     *dialog;
 	char          *text;
 	char          *secondary_text;
@@ -566,14 +552,24 @@ old_auth_frob_ready_cb (GObject      *source_object,
 		return;
 	}
 
-	builder = _gtk_builder_new_from_file ("flickr-ask-authorization-old.ui", "flicker_utils");
-	dialog = _gtk_builder_get_widget (builder, "ask_authorization_dialog");
-	text = g_strdup_printf (_("Pix requires your authorization to upload the photos to %s"), self->priv->server->display_name);
-	secondary_text = g_strdup_printf (_("Click 'Authorize' to open your web browser and authorize pix to upload photos to %s. When you're finished, return to this window to complete the authorization."), self->priv->server->display_name);
+	dialog = gtk_message_dialog_new (NULL,
+				         GTK_DIALOG_MODAL,
+					 GTK_MESSAGE_OTHER,
+					 GTK_BUTTONS_NONE,
+					 NULL);
+	gtk_dialog_add_buttons (GTK_DIALOG (dialog),
+			        _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_("C_ontinue"), _RESPONSE_CONTINUE,
+				_("_Authorize…"), _RESPONSE_AUTHORIZE,
+				NULL);
+
+	text = g_strdup_printf (_("gThumb requires your authorization to upload the photos to %s"), self->priv->server->display_name);
+	secondary_text = g_strdup_printf (_("Click “Authorize” to open your web browser and authorize gthumb to upload photos to %s. When you’re finished, return to this window to complete the authorization."), self->priv->server->display_name);
 	g_object_set (dialog, "text", text, "secondary-text", secondary_text, NULL);
-	gtk_widget_show (_gtk_builder_get_widget (builder, "authorize_button"));
-	gtk_widget_hide (_gtk_builder_get_widget (builder, "complete_button"));
-	g_object_set_data_full (G_OBJECT (dialog), "builder", builder, g_object_unref);
+
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), _RESPONSE_AUTHORIZE, TRUE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), _RESPONSE_CONTINUE, FALSE);
+
 	g_signal_connect (dialog,
 			  "response",
 			  G_CALLBACK (old_authorization_dialog_response_cb),
@@ -628,20 +624,19 @@ get_user_info_ready_cb (SoupSession *session,
 			gpointer     user_data)
 {
 	FlickrService      *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	DomDocument        *doc = NULL;
 	GError             *error = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		return;
 	}
 
@@ -664,22 +659,18 @@ get_user_info_ready_cb (SoupSession *session,
 			if (g_strcmp0 (node->tag_name, "user") == 0) {
 				success = TRUE;
 				flickr_account_load_extra_data (FLICKR_ACCOUNT (account), node);
-				g_simple_async_result_set_op_res_gpointer (result, g_object_ref (account), (GDestroyNotify) g_object_unref);
+				g_task_return_pointer (task, g_object_ref (account), (GDestroyNotify) g_object_unref);
 			}
 		}
 
-		if (! success) {
-			error = g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error"));
-			g_simple_async_result_set_from_error (result, error);
-		}
+		if (! success)
+			g_task_return_error (task, g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error")));
 
 		g_object_unref (account);
 		g_object_unref (doc);
 	}
 	else
-		g_simple_async_result_set_from_error (result, error);
-
-	g_simple_async_result_complete_in_idle (result);
+		g_task_return_error (task, error);
 
 	soup_buffer_free (body);
 }
@@ -726,8 +717,6 @@ flickr_service_class_init (FlickrServiceClass *klass)
 	GObjectClass    *object_class;
 	WebServiceClass *service_class;
 
-	g_type_class_add_private (klass, sizeof (FlickrServicePrivate));
-
 	object_class = (GObjectClass*) klass;
 	object_class->set_property = flickr_service_set_property;
 	object_class->get_property = flickr_service_get_property;
@@ -751,7 +740,7 @@ flickr_service_class_init (FlickrServiceClass *klass)
 static void
 flickr_service_init (FlickrService *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, FLICKR_TYPE_SERVICE, FlickrServicePrivate);
+	self->priv = flickr_service_get_instance_private (self);
 	self->priv->post_photos = NULL;
 	self->priv->add_photos = NULL;
 	self->priv->server = NULL;
@@ -797,20 +786,19 @@ list_photosets_ready_cb (SoupSession *session,
 			 gpointer     user_data)
 {
 	FlickrService      *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	DomDocument        *doc = NULL;
 	GError             *error = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		return;
 	}
 
@@ -838,14 +826,12 @@ list_photosets_ready_cb (SoupSession *session,
 		}
 
 		photosets = g_list_reverse (photosets);
-		g_simple_async_result_set_op_res_gpointer (result, photosets, (GDestroyNotify) _g_object_list_unref);
+		g_task_return_pointer (task, photosets, (GDestroyNotify) _g_object_list_unref);
 
 		g_object_unref (doc);
 	}
 	else
-		g_simple_async_result_set_from_error (result, error);
-
-	g_simple_async_result_complete_in_idle (result);
+		g_task_return_error (task, error);
 
 	soup_buffer_free (body);
 }
@@ -885,10 +871,7 @@ flickr_service_list_photosets_finish (FlickrService  *service,
 				      GAsyncResult   *result,
 				      GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return NULL;
-	else
-		return _g_object_list_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
@@ -901,20 +884,19 @@ create_photoset_ready_cb (SoupSession *session,
 			  gpointer     user_data)
 {
 	FlickrService      *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	DomDocument        *doc = NULL;
 	GError             *error = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		return;
 	}
 
@@ -929,21 +911,17 @@ create_photoset_ready_cb (SoupSession *session,
 			if (g_strcmp0 (node->tag_name, "photoset") == 0) {
 				photoset = flickr_photoset_new ();
 				dom_domizable_load_from_element (DOM_DOMIZABLE (photoset), node);
-				g_simple_async_result_set_op_res_gpointer (result, photoset, (GDestroyNotify) g_object_unref);
+				g_task_return_pointer (task, photoset, (GDestroyNotify) g_object_unref);
 			}
 		}
 
-		if (photoset == NULL) {
-			error = g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error"));
-			g_simple_async_result_set_from_error (result, error);
-		}
+		if (photoset == NULL)
+			g_task_return_error (task, g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error")));
 
 		g_object_unref (doc);
 	}
 	else
-		g_simple_async_result_set_from_error (result, error);
-
-	g_simple_async_result_complete_in_idle (result);
+		g_task_return_error (task, error);
 
 	soup_buffer_free (body);
 }
@@ -989,10 +967,7 @@ flickr_service_create_photoset_finish (FlickrService  *self,
 				       GAsyncResult   *result,
 				       GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return NULL;
-	else
-		return g_object_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
@@ -1003,22 +978,19 @@ static void
 add_photos_to_set_done (FlickrService *self,
 			GError        *error)
 {
-	GSimpleAsyncResult *result;
+	GTask *task;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
-
-	if (result == NULL)
-		result = g_simple_async_result_new (G_OBJECT (self),
-						    self->priv->add_photos->callback,
-						    self->priv->add_photos->user_data,
-						    flickr_service_add_photos_to_set);
+	task = _web_service_get_task (WEB_SERVICE (self));
+	if (task == NULL)
+		task = g_task_new (G_OBJECT (self),
+				   NULL,
+				   self->priv->add_photos->callback,
+				   self->priv->add_photos->user_data);
 
 	if (error == NULL)
-		g_simple_async_result_set_op_res_gboolean (result, TRUE);
+		g_task_return_boolean (task, TRUE);
 	else
-		g_simple_async_result_set_from_error (result, error);
-
-	g_simple_async_result_complete_in_idle (result);
+		g_task_return_error (task, g_error_copy (error));
 }
 
 
@@ -1040,20 +1012,19 @@ add_current_photo_to_set_ready_cb (SoupSession *session,
 				   gpointer     user_data)
 {
 	FlickrService      *self = user_data;
-	GSimpleAsyncResult *result;
+	GTask              *task;
 	SoupBuffer         *body;
 	DomDocument        *doc = NULL;
 	GError             *error = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		return;
 	}
 
@@ -1136,7 +1107,7 @@ flickr_service_add_photos_to_set (FlickrService        *self,
 	self->priv->add_photos->current = self->priv->add_photos->photo_ids;
 	self->priv->add_photos->n_current = 1;
 
-	_web_service_reset_result (WEB_SERVICE (self));
+	_web_service_reset_task (WEB_SERVICE (self));
 	add_current_photo_to_set (self);
 }
 
@@ -1146,10 +1117,7 @@ flickr_service_add_photos_to_set_finish (FlickrService  *self,
 					 GAsyncResult   *result,
 					 GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return FALSE;
-	else
-		return TRUE;
+	return g_task_propagate_boolean (G_TASK (result), error);
 }
 
 
@@ -1160,12 +1128,12 @@ static void
 post_photos_done (FlickrService *self,
 		  GError        *error)
 {
-	GSimpleAsyncResult *result;
+	GTask *task;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 	if (error == NULL) {
 		self->priv->post_photos->ids = g_list_reverse (self->priv->post_photos->ids);
-		g_simple_async_result_set_op_res_gpointer (result, self->priv->post_photos->ids, (GDestroyNotify) _g_string_list_free);
+		g_task_return_pointer (task, self->priv->post_photos->ids, (GDestroyNotify) _g_string_list_free);
 		self->priv->post_photos->ids = NULL;
 	}
 	else {
@@ -1173,14 +1141,12 @@ post_photos_done (FlickrService *self,
 			GthFileData *file_data = self->priv->post_photos->current->data;
 			char        *msg;
 
-			msg = g_strdup_printf (_("Could not upload '%s': %s"), g_file_info_get_display_name (file_data->info), error->message);
+			msg = g_strdup_printf (_("Could not upload “%s”: %s"), g_file_info_get_display_name (file_data->info), error->message);
 			g_free (error->message);
 			error->message = msg;
 		}
-		g_simple_async_result_set_from_error (result, error);
+		g_task_return_error (task, error);
 	}
-
-	g_simple_async_result_complete_in_idle (result);
 }
 
 
@@ -1284,7 +1250,7 @@ upload_photo_wrote_body_data_cb (SoupMessage *msg,
 
 	file_data = self->priv->post_photos->current->data;
 	/* Translators: %s is a filename */
-	details = g_strdup_printf (_("Uploading '%s'"), g_file_info_get_display_name (file_data->info));
+	details = g_strdup_printf (_("Uploading “%s”"), g_file_info_get_display_name (file_data->info));
 	current_file_fraction = (double) self->priv->post_photos->wrote_body_data_size / msg->request_body->length;
 	gth_task_progress (GTH_TASK (self),
 			   NULL,
@@ -1363,6 +1329,8 @@ post_photo_file_buffer_ready_cb (void     **buffer,
 
 		g_free (tags);
 		g_list_free (keys);
+		g_free (description);
+		g_free (title);
 		g_hash_table_unref (data_set);
 	}
 
@@ -1511,10 +1479,7 @@ flickr_service_post_photos_finish (FlickrService  *self,
 				   GAsyncResult   *result,
 				   GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return NULL;
-	else
-		return _g_string_list_dup (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }
 
 
@@ -1556,20 +1521,19 @@ flickr_service_list_photoset_paged_ready_cb (SoupSession *session,
 {
 	FlickrListPhotosData *data = user_data;
 	FlickrService        *self = data->self;
-	GSimpleAsyncResult   *result;
+	GTask                *task;
 	SoupBuffer           *body;
 	DomDocument          *doc = NULL;
 	GError               *error = NULL;
 
-	result = _web_service_get_result (WEB_SERVICE (self));
+	task = _web_service_get_task (WEB_SERVICE (self));
 
 	if (msg->status_code != 200) {
-		g_simple_async_result_set_error (result,
-						 SOUP_HTTP_ERROR,
-						 msg->status_code,
-						 "%s",
-						 soup_status_get_phrase (msg->status_code));
-		g_simple_async_result_complete_in_idle (result);
+		g_task_return_new_error (task,
+					 SOUP_HTTP_ERROR,
+					 msg->status_code,
+					 "%s",
+					 soup_status_get_phrase (msg->status_code));
 		flickr_list_photos_data_free (data);
 		return;
 	}
@@ -1603,12 +1567,11 @@ flickr_service_list_photoset_paged_ready_cb (SoupSession *session,
 		}
 
 		if (page > pages) {
-			g_simple_async_result_set_error (result,
-							 SOUP_HTTP_ERROR,
-							 0,
-							 "%s",
-							 "Invalid data");
-			g_simple_async_result_complete_in_idle (result);
+			g_task_return_new_error (task,
+						 SOUP_HTTP_ERROR,
+						 0,
+						 "%s",
+						 "Invalid data");
 			flickr_list_photos_data_free (data);
 		}
 		else if (page < pages) {
@@ -1617,19 +1580,16 @@ flickr_service_list_photoset_paged_ready_cb (SoupSession *session,
 		}
 		else { /* page == pages */
 			data->photos = g_list_reverse (data->photos);
-			g_simple_async_result_set_op_res_gpointer (result,
-								   _g_object_list_ref (data->photos),
-								   (GDestroyNotify) _g_object_list_unref);
-			g_simple_async_result_complete_in_idle (result);
+			g_task_return_pointer (task,
+					       _g_object_list_ref (data->photos),
+					       (GDestroyNotify) _g_object_list_unref);
 			flickr_list_photos_data_free (data);
 		}
 
 		g_object_unref (doc);
 	}
-	else {
-		g_simple_async_result_set_from_error (result, error);
-		g_simple_async_result_complete_in_idle (result);
-	}
+	else
+		g_task_return_error (task, error);
 
 	soup_buffer_free (body);
 }
@@ -1714,8 +1674,5 @@ flickr_service_list_photos_finish (FlickrService  *self,
 				   GAsyncResult   *result,
 				   GError        **error)
 {
-	if (g_simple_async_result_propagate_error (G_SIMPLE_ASYNC_RESULT (result), error))
-		return NULL;
-	else
-		return _g_object_list_ref (g_simple_async_result_get_op_res_gpointer (G_SIMPLE_ASYNC_RESULT (result)));
+	return g_task_propagate_pointer (G_TASK (result), error);
 }

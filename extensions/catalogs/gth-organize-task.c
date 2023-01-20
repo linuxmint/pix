@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-catalog.h"
 #include "gth-organize-task.h"
 
@@ -39,8 +39,7 @@ enum {
 };
 
 
-struct _GthOrganizeTaskPrivate
-{
+struct _GthOrganizeTaskPrivate {
 	GthBrowser     *browser;
 	GFile          *folder;
 	GthGroupPolicy  group_policy;
@@ -48,6 +47,7 @@ struct _GthOrganizeTaskPrivate
 	gboolean        create_singletons;
 	GthCatalog     *singletons_catalog;
 	GtkBuilder     *builder;
+	GtkWidget      *dialog;
 	GtkListStore   *results_liststore;
 	GHashTable     *catalogs;
 	GdkPixbuf      *icon_pixbuf;
@@ -59,7 +59,10 @@ struct _GthOrganizeTaskPrivate
 };
 
 
-G_DEFINE_TYPE (GthOrganizeTask, gth_organize_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthOrganizeTask,
+			 gth_organize_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthOrganizeTask))
 
 
 static void
@@ -69,7 +72,7 @@ gth_organize_task_finalize (GObject *object)
 
 	self = GTH_ORGANIZE_TASK (object);
 
-	gtk_widget_destroy (GET_WIDGET ("organize_files_dialog"));
+	gtk_widget_destroy (self->priv->dialog);
 	g_object_unref (self->priv->folder);
 	_g_object_unref (self->priv->singletons_catalog);
 	g_object_unref (self->priv->builder);
@@ -165,20 +168,24 @@ done_func (GError   *error,
 						    CARDINALITY_COLUMN, &n,
 						    -1);
 				if (n == 1) {
-					GthCatalog *catalog;
-					GList      *file_list;
-
 					gtk_list_store_set (self->priv->results_liststore, &iter,
 							    CREATE_CATALOG_COLUMN, FALSE,
 							    -1);
 					singletons++;
-					catalog = g_hash_table_lookup (self->priv->catalogs, key);
-					file_list = gth_catalog_get_file_list (catalog);
-					gth_catalog_insert_file (self->priv->singletons_catalog, file_list->data, -1);
-					if (singletons == 1)
-						g_hash_table_insert (self->priv->catalogs,
-								     g_strdup (gth_catalog_get_name (self->priv->singletons_catalog)),
-								     g_object_ref (self->priv->singletons_catalog));
+
+					if (self->priv->singletons_catalog != NULL) {
+						GthCatalog *catalog;
+						GList      *file_list;
+
+						catalog = g_hash_table_lookup (self->priv->catalogs, key);
+						file_list = gth_catalog_get_file_list (catalog);
+
+						gth_catalog_insert_file (self->priv->singletons_catalog, file_list->data, -1);
+						if (singletons == 1)
+							g_hash_table_insert (self->priv->catalogs,
+									     g_strdup (gth_catalog_get_name (self->priv->singletons_catalog)),
+									     g_object_ref (self->priv->singletons_catalog));
+					}
 				}
 
 				g_free (key);
@@ -191,7 +198,7 @@ done_func (GError   *error,
 			gtk_list_store_set (self->priv->results_liststore, &iter,
 					    KEY_COLUMN, gth_catalog_get_name (self->priv->singletons_catalog),
 					    NAME_COLUMN, gth_catalog_get_name (self->priv->singletons_catalog),
-					    CARDINALITY_COLUMN, singletons,
+					    CARDINALITY_COLUMN, gth_catalog_get_size (self->priv->singletons_catalog),
 					    CREATE_CATALOG_COLUMN, TRUE,
 					    ICON_COLUMN, self->priv->icon_pixbuf,
 					    -1);
@@ -204,9 +211,8 @@ done_func (GError   *error,
 	gtk_label_set_ellipsize (GTK_LABEL (GET_WIDGET ("progress_label")), PANGO_ELLIPSIZE_NONE);
 	g_free (status_text);
 
-	gtk_widget_hide (GET_WIDGET ("cancel_button"));
-	gtk_widget_show (GET_WIDGET ("close_button"));
-	gtk_widget_show (GET_WIDGET ("ok_button"));
+	gtk_widget_set_sensitive (GET_WIDGET ("cancel_button"), FALSE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (self->priv->dialog), GTK_RESPONSE_OK, TRUE);
 }
 
 
@@ -274,8 +280,7 @@ add_catalog_for_date (GthOrganizeTask *self,
 			catalog_file = gth_catalog_get_file_for_date (date_time, ".search");
 
 			catalog = (GthCatalog *) gth_search_new ();
-			gth_search_set_folder (GTH_SEARCH (catalog), self->priv->folder);
-			gth_search_set_recursive (GTH_SEARCH (catalog), self->priv->recursive);
+			gth_search_set_source (GTH_SEARCH (catalog), self->priv->folder, self->priv->recursive);
 
 			date_test = gth_main_get_registered_object (GTH_TYPE_TEST, (self->priv->group_policy == GTH_GROUP_POLICY_MODIFIED_DATE) ? "file::mtime" : "Embedded::Photo::DateTimeOriginal");
 			gth_test_simple_set_data_as_date (GTH_TEST_SIMPLE (date_test), date_time->date);
@@ -372,8 +377,7 @@ add_catalog_for_tag (GthOrganizeTask *self,
 			catalog_file = gth_catalog_get_file_for_tag (tag, ".search");
 
 			catalog = (GthCatalog *) gth_search_new ();
-			gth_search_set_folder (GTH_SEARCH (catalog), self->priv->folder);
-			gth_search_set_recursive (GTH_SEARCH (catalog), self->priv->recursive);
+			gth_search_set_source (GTH_SEARCH (catalog), self->priv->folder, self->priv->recursive);
 
 			tag_test = gth_main_get_registered_object (GTH_TYPE_TEST, (self->priv->group_policy == GTH_GROUP_POLICY_TAG) ? "comment::category" : "general::tags");
 			gth_test_category_set (GTH_TEST_CATEGORY (tag_test), GTH_TEST_OP_CONTAINS, FALSE, tag);
@@ -417,6 +421,9 @@ add_file_to_catalog (GthOrganizeTask *self,
 	GtkTreeIter iter;
 	int         n = 0;
 
+	if (! gth_catalog_insert_file (catalog, file_data->file, -1))
+		return;
+
 	if (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (self->priv->results_liststore), &iter)) {
 		do {
 			char *k;
@@ -427,11 +434,11 @@ add_file_to_catalog (GthOrganizeTask *self,
 					    CARDINALITY_COLUMN, &n,
 					    -1);
 			if (g_strcmp0 (k, catalog_key) == 0) {
-				gtk_list_store_set (self->priv->results_liststore, &iter,
-						    CARDINALITY_COLUMN, n + 1,
-						    -1);
 				self->priv->n_files++;
-
+				n += 1;
+				gtk_list_store_set (self->priv->results_liststore, &iter,
+						    CARDINALITY_COLUMN, n,
+						    -1);
 				g_free (k);
 				break;
 			}
@@ -440,8 +447,6 @@ add_file_to_catalog (GthOrganizeTask *self,
 		}
 		while (gtk_tree_model_iter_next (GTK_TREE_MODEL (self->priv->results_liststore), &iter));
 	}
-
-	gth_catalog_insert_file (catalog, file_data->file, -1);
 }
 
 
@@ -566,7 +571,7 @@ gth_organize_task_exec (GthTask *base)
 		break;
 	}
 
-	g_directory_foreach_child (self->priv->folder,
+	_g_directory_foreach_child (self->priv->folder,
 				   self->priv->recursive,
 				   TRUE,
 				   attributes,
@@ -576,14 +581,13 @@ gth_organize_task_exec (GthTask *base)
 				   done_func,
 				   self);
 
-	gtk_widget_show (GET_WIDGET ("cancel_button"));
-	gtk_widget_hide (GET_WIDGET ("close_button"));
-	gtk_widget_hide (GET_WIDGET ("ok_button"));
-	gtk_window_set_transient_for (GTK_WINDOW (GET_WIDGET ("organize_files_dialog")), GTK_WINDOW (self->priv->browser));
-	gtk_window_set_modal (GTK_WINDOW (GET_WIDGET ("organize_files_dialog")), TRUE);
-	gtk_widget_show (GET_WIDGET ("organize_files_dialog"));
+	gtk_widget_set_sensitive (GET_WIDGET ("cancel_button"), TRUE);
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (self->priv->dialog), GTK_RESPONSE_OK, FALSE);
+	gtk_window_set_transient_for (GTK_WINDOW (self->priv->dialog), GTK_WINDOW (self->priv->browser));
+	gtk_window_set_modal (GTK_WINDOW (self->priv->dialog), TRUE);
+	gtk_widget_show (self->priv->dialog);
 
-	gth_task_dialog (base, TRUE, GET_WIDGET ("organize_files_dialog"));
+	gth_task_dialog (base, TRUE, self->priv->dialog);
 }
 
 
@@ -607,6 +611,9 @@ organize_files_dialog_response_cb (GtkDialog *dialog,
 			response_id = GTK_RESPONSE_CANCEL;
 	}
 
+	if (self->priv->organized && (response_id == GTK_RESPONSE_CANCEL))
+		response_id = GTK_RESPONSE_CLOSE;
+
 	switch (response_id) {
 	case GTK_RESPONSE_CANCEL:
 		gth_task_cancel (GTH_TASK (self));
@@ -628,8 +635,6 @@ gth_organize_task_class_init (GthOrganizeTaskClass *klass)
 {
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
-
-	g_type_class_add_private (klass, sizeof (GthOrganizeTaskPrivate));
 
 	object_class = (GObjectClass*) klass;
 	object_class->finalize = gth_organize_task_finalize;
@@ -733,12 +738,12 @@ organization_treeview_selection_changed_cb (GtkTreeSelection *treeselection,
 		gtk_widget_show (GET_WIDGET ("preview_box"));
 
 		file_list = gth_catalog_get_file_list (catalog);
-		_g_query_info_async (file_list,
-				     GTH_LIST_DEFAULT,
-				     GFILE_STANDARD_ATTRIBUTES_WITH_FAST_CONTENT_TYPE,
-				     NULL,
-				     file_list_info_ready_cb,
-				     self);
+		_g_file_list_query_info_async (file_list,
+					       GTH_LIST_DEFAULT,
+					       GFILE_STANDARD_ATTRIBUTES_WITH_FAST_CONTENT_TYPE,
+					       NULL,
+					       file_list_info_ready_cb,
+					       self);
 	}
 
 	g_free (key);
@@ -782,28 +787,57 @@ select_none_button_clicked_cb (GtkButton *button,
 
 
 static void
+cancel_button_clicked_cb (GtkButton *button,
+			  gpointer   user_data)
+{
+	GthOrganizeTask *self = user_data;
+
+	if (! self->priv->organized)
+		gth_task_cancel (GTH_TASK (self));
+}
+
+
+static void
 gth_organize_task_init (GthOrganizeTask *self)
 {
 	GIcon *icon;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_ORGANIZE_TASK, GthOrganizeTaskPrivate);
+	self->priv = gth_organize_task_get_instance_private (self);
 	self->priv->builder = _gtk_builder_new_from_file ("organize-files-task.ui", "catalogs");
 	self->priv->results_liststore = (GtkListStore *) gtk_builder_get_object (self->priv->builder, "results_liststore");
 	self->priv->catalogs = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_object_unref);
 	self->priv->filter = gth_main_get_general_filter ();
 
+	self->priv->dialog = g_object_new (GTK_TYPE_DIALOG,
+				           "title", _("Organize Files"),
+					   "transient-for", GTK_WINDOW (self->priv->browser),
+					   "resizable", TRUE,
+					   "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+					   NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (self->priv->dialog))),
+			   _gtk_builder_get_widget (self->priv->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (self->priv->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_SAVE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (self->priv->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
 	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (self->priv->results_liststore), KEY_COLUMN, GTK_SORT_ASCENDING);
 	g_object_set (GET_WIDGET ("catalog_name_cellrenderertext"), "editable", TRUE, NULL);
 
-	icon = g_themed_icon_new ("file-catalog");
+	icon = g_themed_icon_new ("file-catalog-symbolic");
 	self->priv->icon_pixbuf = _g_icon_get_pixbuf (icon,
 						      _gtk_widget_lookup_for_size (GET_WIDGET ("organization_treeview"), GTK_ICON_SIZE_MENU),
 						      _gtk_widget_get_icon_theme (GET_WIDGET ("organization_treeview")));
 	g_object_unref (icon);
 
 	self->priv->file_list = gth_file_list_new (gth_grid_view_new (), GTH_FILE_LIST_MODE_NORMAL, FALSE);
+	gth_file_list_set_filter (GTH_FILE_LIST (self->priv->file_list), NULL);
 	gth_file_list_set_caption (GTH_FILE_LIST (self->priv->file_list), "standard::display-name");
+	gth_file_list_set_thumb_size (GTH_FILE_LIST (self->priv->file_list), 128);
+	gth_file_list_set_ignore_hidden (GTH_FILE_LIST (self->priv->file_list), FALSE);
 	gtk_widget_show (self->priv->file_list);
+	gtk_widget_set_size_request (self->priv->file_list, 350, -1);
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("preview_box")), self->priv->file_list, TRUE, TRUE, 0);
 
 	g_signal_connect (GET_WIDGET ("catalog_name_cellrenderertext"),
@@ -814,11 +848,11 @@ gth_organize_task_init (GthOrganizeTask *self)
 			  "toggled",
 			  G_CALLBACK (create_cellrenderertoggle_toggled_cb),
 			  self);
-	g_signal_connect (GET_WIDGET ("organize_files_dialog"),
+	g_signal_connect (self->priv->dialog,
 			  "delete-event",
 			  G_CALLBACK (gtk_true),
 			  NULL);
-	g_signal_connect (GET_WIDGET ("organize_files_dialog"),
+	g_signal_connect (self->priv->dialog,
 			  "response",
 			  G_CALLBACK (organize_files_dialog_response_cb),
 			  self);
@@ -833,6 +867,10 @@ gth_organize_task_init (GthOrganizeTask *self)
 	g_signal_connect (GET_WIDGET ("select_none_button"),
 			  "clicked",
 			  G_CALLBACK (select_none_button_clicked_cb),
+			  self);
+	g_signal_connect (GET_WIDGET ("cancel_button"),
+			  "clicked",
+			  G_CALLBACK (cancel_button_clicked_cb),
 			  self);
 }
 

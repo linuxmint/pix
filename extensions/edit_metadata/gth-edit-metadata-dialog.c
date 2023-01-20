@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -47,3 +47,4 @@ gth_edit_metadata_dialog_update_info (GthEditMetadataDialog *self,
 {
 	GTH_EDIT_METADATA_DIALOG_GET_INTERFACE (self)->update_info (self, file_list);
 }
+

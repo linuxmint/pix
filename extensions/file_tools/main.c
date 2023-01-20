@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,15 +21,19 @@
 
 
 #include <config.h>
+#include <gth-file-tool-color-picker.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
 #include "gth-file-tool-adjust-colors.h"
 #include "gth-file-tool-adjust-contrast.h"
+#include "gth-file-tool-color-picker.h"
 #include "gth-file-tool-crop.h"
-#include "gth-file-tool-equalize.h"
+#include "gth-file-tool-curves.h"
+#include "gth-file-tool-effects.h"
 #include "gth-file-tool-flip.h"
 #include "gth-file-tool-grayscale.h"
+#include "gth-file-tool-lomo.h"
 #include "gth-file-tool-mirror.h"
 #include "gth-file-tool-negative.h"
 #include "gth-file-tool-redo.h"
@@ -44,8 +48,10 @@
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
+	int p;
+
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_SAVE);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_SAVE_AS);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_UNDO);
@@ -54,12 +60,13 @@ pix_extension_activate (void)
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_ADJUST_CONTRAST);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_ADJUST_COLORS);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_SHARPEN);
-	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_EQUALIZE);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_GRAYSCALE);
-	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_NEGATIVE);
+	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_CURVES);
+	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_EFFECTS);
+	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_COLOR_PICKER);
 
-	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_ROTATE_RIGHT);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_ROTATE_LEFT);
+	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_ROTATE_RIGHT);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_MIRROR);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_FLIP);
 
@@ -67,24 +74,46 @@ pix_extension_activate (void)
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_RESIZE);
 	gth_main_register_type ("file-tools", GTH_TYPE_FILE_TOOL_CROP);
 
-	gth_hook_add_callback ("gth-browser-file-list-key-press", 10, G_CALLBACK (file_tools__gth_browser_file_list_key_press_cb), NULL);
+	gth_hook_add_callback ("gth-browser-construct", 10, G_CALLBACK (file_tools__gth_browser_construct_cb), NULL);
+
+	/**
+	 * Add a filter to the filter list shown in the Effects tool
+	 *
+	 * @filter_grid (GthFilterGrid*): the filter grid to add the effect to.
+	 **/
+	gth_hook_register ("add-special-effect", 1);
+
+	p = 10;
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (desert_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (cherry_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (soil_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (artic_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (fresh_blue_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (mangos_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (warmer_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (cooler_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (vintage_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (lomo_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (vignette_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (blurred_edges_add_to_special_effects), NULL);
+	gth_hook_add_callback ("add-special-effect", p++, G_CALLBACK (negative_add_to_special_effects), NULL);
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

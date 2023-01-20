@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,96 +23,25 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
-
-
-#define BROWSER_DATA_KEY "export-tools-browser-data"
-
-
-static const char *ui_info =
-"<ui>"
-"  <toolbar name='ToolBar'>"
-"    <placeholder name='Edit_Actions_2'>"
-"      <toolitem action='ExportTools'/>"
-"    </placeholder>"
-"  </toolbar>"
-"  <popup name='ExportPopup'>"
-"    <placeholder name='Web_Services'/>"
-"    <separator/>"
-"    <placeholder name='Misc_Actions'/>"
-"  </popup>"
-"</ui>";
-
-
-typedef struct {
-	GthBrowser     *browser;
-	GtkActionGroup *action_group;
-	gboolean        menu_initialized;
-} BrowserData;
-
-
-static void
-browser_data_free (BrowserData *data)
-{
-	g_free (data);
-}
-
-
-static void
-export_tools_show_menu_func (GtkAction *action,
-			     gpointer   user_data)
-{
-	BrowserData *data = user_data;
-	GtkWidget   *menu;
-
-	if (data->menu_initialized)
-		return;
-
-	data->menu_initialized = TRUE;
-
-	menu = gtk_ui_manager_get_widget (gth_browser_get_ui_manager (data->browser), "/ExportPopup");
-	g_object_set (action, "menu", menu, NULL);
-}
+#include "export-tools.h"
 
 
 void
 export_tools__gth_browser_construct_cb (GthBrowser *browser)
 {
-	BrowserData *data;
-	GtkAction   *action;
-	GError      *error = NULL;
-	guint        merge_id;
+	GtkBuilder *builder;
+	GMenuModel *export_menu;
+	GMenu      *other_actions;
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
-	data->browser = browser;
-	data->action_group = gtk_action_group_new ("Export Tools Actions");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
+	builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/export_tools/data/ui/export-menu.ui");
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_WEB_EXPORTERS, G_MENU (gtk_builder_get_object (builder, "web-exporters")));
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_OTHER_EXPORTERS, G_MENU (gtk_builder_get_object (builder, "other-exporters")));
+	export_menu = G_MENU_MODEL (gtk_builder_get_object (builder, "export-menu"));
 
-	/* tools menu action */
-
-	action = g_object_new (GTH_TYPE_TOGGLE_MENU_ACTION,
-			       "name", "ExportTools",
-			       "icon-name", "send-to-symbolic",
-			       "tooltip",  _("Share"),
-			       "is-important", TRUE,
-			       NULL);
-	gth_toggle_menu_action_set_show_menu_func (GTH_TOGGLE_MENU_ACTION (action),
-						   export_tools_show_menu_func,
-						   data,
-						   NULL);
-	gtk_action_group_add_action (data->action_group, action);
-	g_object_unref (action);
-
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
-
-	merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), ui_info, -1, &error);
-	if (merge_id == 0) {
-		g_warning ("building ui failed: %s", error->message);
-		g_clear_error (&error);
-	}
-
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
+	other_actions = gth_menu_manager_get_menu (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_GEARS_OTHER_ACTIONS));
+	g_menu_append_submenu (other_actions, _("_Export To"), export_menu);
 }

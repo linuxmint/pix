@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #ifdef HAVE_LIBSECRET
 #include <libsecret/secret.h>
 #endif /* HAVE_LIBSECRET */
-#include <pix.h>
+#include <gthumb.h>
 #include "oauth-account.h"
 
 
@@ -33,13 +33,13 @@
 
 
 enum {
-        PROP_0,
-        PROP_ID,
-        PROP_USERNAME,
-        PROP_NAME,
-        PROP_TOKEN,
-        PROP_TOKEN_SECRET,
-        PROP_IS_DEFAULT
+	PROP_0,
+	PROP_ID,
+	PROP_USERNAME,
+	PROP_NAME,
+	PROP_TOKEN,
+	PROP_TOKEN_SECRET,
+	PROP_IS_DEFAULT
 };
 
 
@@ -50,7 +50,7 @@ G_DEFINE_TYPE_WITH_CODE (OAuthAccount,
 			 oauth_account,
 			 G_TYPE_OBJECT,
 			 G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
-					        oauth_account_dom_domizable_interface_init))
+						oauth_account_dom_domizable_interface_init))
 
 
 static void
@@ -82,21 +82,21 @@ oauth_account_set_property (GObject      *object,
 
 	switch (property_id) {
 	case PROP_ID:
-		_g_strset (&self->id, g_value_get_string (value));
+		_g_str_set (&self->id, g_value_get_string (value));
 		break;
 	case PROP_USERNAME:
-		_g_strset (&self->username, g_value_get_string (value));
+		_g_str_set (&self->username, g_value_get_string (value));
 		if (self->name == NULL)
-			_g_strset (&self->name, g_value_get_string (value));
+			_g_str_set (&self->name, g_value_get_string (value));
 		break;
 	case PROP_NAME:
-		_g_strset (&self->name, g_value_get_string (value));
+		_g_str_set (&self->name, g_value_get_string (value));
 		break;
 	case PROP_TOKEN:
-		_g_strset (&self->token, g_value_get_string (value));
+		_g_str_set (&self->token, g_value_get_string (value));
 		break;
 	case PROP_TOKEN_SECRET:
-		_g_strset (&self->token_secret, g_value_get_string (value));
+		_g_str_set (&self->token_secret, g_value_get_string (value));
 		break;
 	case PROP_IS_DEFAULT:
 		self->is_default = g_value_get_boolean (value);
@@ -286,7 +286,7 @@ void
 oauth_account_set_username (OAuthAccount *self,
 			    const char    *value)
 {
-	_g_strset (&self->username, value);
+	_g_str_set (&self->username, value);
 }
 
 
@@ -294,7 +294,7 @@ void
 oauth_account_set_token (OAuthAccount *self,
 			 const char    *value)
 {
-	_g_strset (&self->token, value);
+	_g_str_set (&self->token, value);
 }
 
 
@@ -302,7 +302,7 @@ void
 oauth_account_set_token_secret (OAuthAccount *self,
 				const char   *value)
 {
-	_g_strset (&self->token_secret, value);
+	_g_str_set (&self->token_secret, value);
 }
 
 
@@ -341,7 +341,7 @@ oauth_accounts_load_from_file (const char *service_name,
 		account_type = OAUTH_TYPE_ACCOUNT;
 
 	filename = g_strconcat (service_name, ".xml", NULL);
-	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, PIX_DIR, "accounts", filename, NULL);
+	file = gth_user_dir_get_file_for_read (GTH_DIR_CONFIG, GTHUMB_DIR, "accounts", filename, NULL);
 	if (! _g_file_load_in_buffer (file, (void **) &buffer, &len, NULL, &error)) {
 		g_error_free (error);
 		g_object_unref (file);
@@ -425,7 +425,7 @@ oauth_accounts_save_to_file (const char   *service_name,
 		OAuthAccount *account = scan->data;
 		DomElement    *node;
 
-		if ((default_account != NULL) && g_strcmp0 (account->username, default_account->username) == 0)
+		if ((default_account != NULL) && g_strcmp0 (account->id, default_account->id) == 0)
 			account->is_default = TRUE;
 		else
 			account->is_default = FALSE;
@@ -434,7 +434,7 @@ oauth_accounts_save_to_file (const char   *service_name,
 	}
 
 	filename = g_strconcat (service_name, ".xml", NULL);
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, PIX_DIR, "accounts", filename, NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CONFIG, GTHUMB_DIR, "accounts", filename, NULL);
 	buffer = dom_document_dump (doc, &len);
 	_g_file_write (file, FALSE, G_FILE_CREATE_PRIVATE | G_FILE_CREATE_REPLACE_DESTINATION, buffer, len, NULL, NULL);
 

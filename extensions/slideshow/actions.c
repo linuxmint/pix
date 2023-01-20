@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,16 +22,19 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "actions.h"
 #include "gth-slideshow.h"
 #include "gth-transition.h"
 #include "preferences.h"
 
 
 void
-gth_browser_activate_action_view_slideshow (GtkAction  *action,
-					    GthBrowser *browser)
+gth_browser_activate_slideshow (GSimpleAction *action,
+				GVariant      *parameter,
+				gpointer       user_data)
 {
+	GthBrowser   *browser = user_data;
 	GSettings    *settings;
 	GList        *items;
 	GList        *file_list;
@@ -42,7 +45,6 @@ gth_browser_activate_action_view_slideshow (GtkAction  *action,
 	GthFileData  *location;
 	char         *transition_id;
 	GList        *transitions = NULL;
-	GdkScreen    *screen;
 
 	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
 	if ((items == NULL) || (items->next == NULL))
@@ -65,7 +67,7 @@ gth_browser_activate_action_view_slideshow (GtkAction  *action,
 		return;
 	}
 
-	settings = g_settings_new (PIX_SLIDESHOW_SCHEMA);
+	settings = g_settings_new (GTHUMB_SLIDESHOW_SCHEMA);
 
 	location = gth_browser_get_location_data (browser);
 	if (g_file_info_get_attribute_boolean (location->info, "slideshow::personalize"))
@@ -126,10 +128,18 @@ gth_browser_activate_action_view_slideshow (GtkAction  *action,
 	}
 	gth_slideshow_set_transitions (GTH_SLIDESHOW (slideshow), transitions);
 
-	screen = gtk_widget_get_screen (slideshow);
-	gtk_window_set_default_size (GTK_WINDOW (slideshow), gdk_screen_get_width (screen), gdk_screen_get_height (screen));
-	gtk_window_fullscreen (GTK_WINDOW (slideshow));
-	gtk_window_present (GTK_WINDOW (slideshow));
+	{
+		GdkRectangle  monitor_geometry;
+		int           monitor_num;
+
+		if (_gtk_window_get_monitor_info (GTK_WINDOW (browser), &monitor_geometry, &monitor_num, NULL)) {
+			gtk_window_set_default_size (GTK_WINDOW (slideshow), monitor_geometry.width, monitor_geometry.height);
+			gtk_window_fullscreen_on_monitor (GTK_WINDOW (slideshow), gtk_window_get_screen (GTK_WINDOW (browser)), monitor_num);
+		}
+		else
+			gtk_window_fullscreen (GTK_WINDOW (slideshow));
+		gtk_window_present (GTK_WINDOW (slideshow));
+	}
 
 	_g_object_list_unref (transitions);
 	g_object_unref (settings);
@@ -138,3 +148,40 @@ gth_browser_activate_action_view_slideshow (GtkAction  *action,
 	_g_object_list_unref (file_list);
 	_gtk_tree_path_list_free (items);
 }
+
+
+void
+gth_slideshow_activate_close (GSimpleAction *action,
+			      GVariant      *parameter,
+			      gpointer       user_data)
+{
+	gth_slideshow_close (GTH_SLIDESHOW (user_data));
+}
+
+
+void
+gth_slideshow_activate_toggle_pause (GSimpleAction *action,
+				     GVariant      *parameter,
+				     gpointer       user_data)
+{
+	gth_slideshow_toggle_pause (GTH_SLIDESHOW (user_data));
+}
+
+
+void
+gth_slideshow_activate_next_image (GSimpleAction *action,
+				   GVariant      *parameter,
+				   gpointer       user_data)
+{
+	gth_slideshow_next_image_or_resume (GTH_SLIDESHOW (user_data));
+}
+
+
+void
+gth_slideshow_activate_previous_image (GSimpleAction *action,
+				       GVariant      *parameter,
+				       gpointer       user_data)
+{
+	gth_slideshow_load_prev_image (GTH_SLIDESHOW (user_data));
+}
+

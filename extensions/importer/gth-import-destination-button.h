@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define GTH_IMPORT_DESTINATION_BUTTON_H
 
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-import-preferences-dialog.h"
 
 G_BEGIN_DECLS

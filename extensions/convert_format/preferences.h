@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,13 +22,13 @@
 #ifndef PREFERENCES_H
 #define PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
 /* schema */
 
-#define PIX_CONVERT_FORMAT_SCHEMA   PIX_SCHEMA ".convert-format"
+#define GTHUMB_CONVERT_FORMAT_SCHEMA   GTHUMB_SCHEMA ".convert-format"
 
 /* keys */
 

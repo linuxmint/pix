@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,10 +22,12 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gtk/gtk.h>
+#include <gthumb.h>
 
-#define DEFINE_ACTION(x) void x (GtkAction *action, gpointer data);
-
-DEFINE_ACTION(gth_browser_activate_action_view_slideshow)
+DEF_ACTION_CALLBACK (gth_browser_activate_slideshow)
+DEF_ACTION_CALLBACK (gth_slideshow_activate_close)
+DEF_ACTION_CALLBACK (gth_slideshow_activate_toggle_pause)
+DEF_ACTION_CALLBACK (gth_slideshow_activate_next_image)
+DEF_ACTION_CALLBACK (gth_slideshow_activate_previous_image)
 
 #endif /* ACTIONS_H */

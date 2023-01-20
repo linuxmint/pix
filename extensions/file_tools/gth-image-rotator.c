@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #include <config.h>
 #include <stdlib.h>
 #include <math.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "cairo-rotate.h"
 #include "gth-image-rotator.h"
 
@@ -46,14 +46,6 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 
 static void gth_image_rotator_gth_image_tool_interface_init (GthImageViewerToolInterface *iface);
-
-
-G_DEFINE_TYPE_WITH_CODE (GthImageRotator,
-			 gth_image_rotator,
-			 G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (GTH_TYPE_IMAGE_VIEWER_TOOL,
-					        gth_image_rotator_gth_image_tool_interface_init))
-
 
 
 struct _GthImageRotatorPrivate {
@@ -88,6 +80,14 @@ struct _GthImageRotatorPrivate {
 };
 
 
+G_DEFINE_TYPE_WITH_CODE (GthImageRotator,
+			 gth_image_rotator,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthImageRotator)
+			 G_IMPLEMENT_INTERFACE (GTH_TYPE_IMAGE_VIEWER_TOOL,
+						gth_image_rotator_gth_image_tool_interface_init))
+
+
 static void
 gth_image_rotator_set_viewer (GthImageViewerTool *base,
 			      GthImageViewer     *viewer)
@@ -101,7 +101,7 @@ gth_image_rotator_set_viewer (GthImageViewerTool *base,
 	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (viewer), GTH_FIT_SIZE_IF_LARGER);
 	gth_image_viewer_set_zoom_enabled (GTH_IMAGE_VIEWER (viewer), FALSE);
 
-	cursor = gdk_cursor_new (GDK_LEFT_PTR);
+	cursor = _gdk_cursor_new_for_widget (GTK_WIDGET (self->priv->viewer), GDK_LEFT_PTR);
 	gth_image_viewer_set_cursor (self->priv->viewer, cursor);
 	g_object_unref (cursor);
 }
@@ -232,14 +232,16 @@ update_image_surface (GthImageRotator *self)
 	if (image == NULL)
 		return;
 
-	self->priv->original_width = cairo_image_surface_get_width (image);
-	self->priv->original_height = cairo_image_surface_get_height (image);
-	width = self->priv->original_width;
-	height = self->priv->original_height;
+	if (! _cairo_image_surface_get_original_size (image, &self->priv->original_width, &self->priv->original_height)) {
+		self->priv->original_width = cairo_image_surface_get_width (image);
+		self->priv->original_height = cairo_image_surface_get_height (image);
+	}
+	width = cairo_image_surface_get_width (image);
+	height = cairo_image_surface_get_height (image);
 	gtk_widget_get_allocation (GTK_WIDGET (self->priv->viewer), &allocation);
 	max_size = MAX (allocation.width, allocation.height) / G_SQRT2 + 2;
 	if (scale_keeping_ratio (&width, &height, max_size, max_size, FALSE))
-		preview_image = _cairo_image_surface_scale_bilinear (image, width, height);
+		preview_image = _cairo_image_surface_scale_fast (image, width, height);
 	else
 		preview_image = cairo_surface_reference (image);
 
@@ -283,7 +285,6 @@ paint_image (GthImageRotator *self,
 	cairo_matrix_t matrix;
 
 	cairo_save (cr);
-
 	cairo_get_matrix (cr, &matrix);
 	cairo_matrix_multiply (&matrix, &self->priv->matrix, &matrix);
 	cairo_set_matrix (cr, &matrix);
@@ -296,7 +297,6 @@ paint_image (GthImageRotator *self,
   			 self->priv->preview_image_area.width,
   			 self->priv->preview_image_area.height);
   	cairo_fill (cr);
-
   	cairo_restore (cr);
 }
 
@@ -328,6 +328,8 @@ paint_darker_background (GthImageRotator *self,
 		allocation.width /= self->priv->preview_zoom;
 		allocation.height /= self->priv->preview_zoom;
 		break;
+	default:
+		g_assert_not_reached ();
 	}
 
 	/* left side */
@@ -490,7 +492,7 @@ gth_image_rotator_button_release (GthImageViewerTool *base,
 	self->priv->drag_p2.x = 0;
 	self->priv->drag_p2.y = 0;
 
-	cursor = gdk_cursor_new (GDK_LEFT_PTR);
+	cursor = _gdk_cursor_new_for_widget (GTK_WIDGET (self->priv->viewer), GDK_LEFT_PTR);
 	gth_image_viewer_set_cursor (self->priv->viewer, cursor);
 	g_object_unref (cursor);
 
@@ -637,8 +639,6 @@ gth_image_rotator_class_init (GthImageRotatorClass *class)
 {
 	GObjectClass *gobject_class;
 
-	g_type_class_add_private (class, sizeof (GthImageRotatorPrivate));
-
 	gobject_class = (GObjectClass*) class;
 	gobject_class->finalize = gth_image_rotator_finalize;
 
@@ -694,7 +694,7 @@ gth_image_rotator_gth_image_tool_interface_init (GthImageViewerToolInterface *if
 static void
 gth_image_rotator_init (GthImageRotator *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_ROTATOR, GthImageRotatorPrivate);
+	self->priv = gth_image_rotator_get_instance_private (self);
 	self->priv->preview_image = NULL;
 	self->priv->grid_type = GTH_GRID_NONE;
 	self->priv->resize = GTH_TRANSFORM_RESIZE_BOUNDING_BOX;
@@ -853,7 +853,7 @@ gth_image_rotator_get_background (GthImageRotator *self,
 }
 
 
-static cairo_surface_t *
+G_GNUC_UNUSED static cairo_surface_t *
 gth_image_rotator_get_result_fast (GthImageRotator *self)
 {
 	double                 tx, ty;
@@ -928,15 +928,19 @@ gth_image_rotator_get_result_fast (GthImageRotator *self)
 
 
 static cairo_surface_t *
-gth_image_rotator_get_result_high_quality (GthImageRotator *self)
+gth_image_rotator_get_result_high_quality (GthImageRotator *self,
+					   cairo_surface_t *image,
+					   GthAsyncTask    *task)
 {
 	cairo_surface_t *rotated;
 	cairo_surface_t *result;
+	double           zoom;
 
-	rotated = _cairo_image_surface_rotate (gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (self->priv->viewer)),
+	rotated = _cairo_image_surface_rotate (image,
 					       self->priv->angle / G_PI * 180.0,
 					       TRUE,
-					       &self->priv->background_color);
+					       &self->priv->background_color,
+					       task);
 
 	switch (self->priv->resize) {
 	case GTH_TRANSFORM_RESIZE_BOUNDING_BOX:
@@ -947,14 +951,23 @@ gth_image_rotator_get_result_high_quality (GthImageRotator *self)
 		break;
 
 	case GTH_TRANSFORM_RESIZE_CLIP:
-		self->priv->crop_region.x = MAX (((double) cairo_image_surface_get_width (rotated) - self->priv->original_width) / 2.0, 0);
-		self->priv->crop_region.y = MAX (((double) cairo_image_surface_get_height (rotated) - self->priv->original_height) / 2.0, 0);
-		self->priv->crop_region.width = self->priv->original_width;
-		self->priv->crop_region.height = self->priv->original_height;
+		self->priv->crop_region.x = MAX (((double) cairo_image_surface_get_width (rotated) - cairo_image_surface_get_width (image)) / 2.0, 0);
+		self->priv->crop_region.y = MAX (((double) cairo_image_surface_get_height (rotated) - cairo_image_surface_get_height (image)) / 2.0, 0);
+		self->priv->crop_region.width = cairo_image_surface_get_width (image);
+		self->priv->crop_region.height = cairo_image_surface_get_height (image);
 		break;
 
 	case GTH_TRANSFORM_RESIZE_CROP:
 		/* set by the user */
+
+		zoom = (double) cairo_image_surface_get_width (image) / self->priv->original_width;
+		self->priv->crop_region.x *= zoom;
+		self->priv->crop_region.width *= zoom;
+
+		zoom = (double) cairo_image_surface_get_height (image) / self->priv->original_height;
+		self->priv->crop_region.y *= zoom;
+		self->priv->crop_region.height *= zoom;
+
 		break;
 	}
 
@@ -972,10 +985,8 @@ gth_image_rotator_get_result_high_quality (GthImageRotator *self)
 
 cairo_surface_t *
 gth_image_rotator_get_result (GthImageRotator *self,
-			      gboolean         high_quality)
+			      cairo_surface_t *image,
+			      GthAsyncTask    *task)
 {
-	if (high_quality)
-		return gth_image_rotator_get_result_high_quality (self);
-	else
-		return gth_image_rotator_get_result_fast (self);
+	return gth_image_rotator_get_result_high_quality (self, image, task);
 }

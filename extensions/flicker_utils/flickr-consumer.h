@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -22,7 +22,7 @@
 #ifndef FLICKR_CONSUMER_H
 #define FLICKR_CONSUMER_H
 
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/oauth/oauth.h>
 
 extern OAuthConsumer flickr_consumer;

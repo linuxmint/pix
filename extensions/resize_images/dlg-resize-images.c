@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2005-2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/image_viewer/gth-metadata-provider-image.h>
 #include "dlg-resize-images.h"
 #include "preferences.h"
@@ -96,7 +96,7 @@ exec_resize (GthAsyncTask *task,
 	int              max_w, max_h;
 	GthImage        *destination_image;
 
-	source = gth_image_get_cairo_surface (gth_image_task_get_source (GTH_IMAGE_TASK (task)));
+	source = gth_image_task_get_source_surface (GTH_IMAGE_TASK (task));
 	w = cairo_image_surface_get_width (source);
 	h = cairo_image_surface_get_height (source);
 
@@ -135,14 +135,6 @@ exec_resize (GthAsyncTask *task,
 	cairo_surface_destroy (source);
 
 	return NULL;
-}
-
-
-static void
-help_clicked_cb (GtkWidget  *widget,
-		 DialogData *data)
-{
-	show_help_dialog (GTK_WINDOW (data->dialog), "pix-batch-resize");
 }
 
 
@@ -193,7 +185,7 @@ ok_clicked_cb (GtkWidget  *widget,
 
 		g_object_unref (destination);
 	}
-	gth_browser_exec_task (data->browser, list_task, FALSE);
+	gth_browser_exec_task (data->browser, list_task, GTH_TASK_FLAGS_DEFAULT);
 
 	g_object_unref (list_task);
 	g_object_unref (resize_task);
@@ -339,13 +331,28 @@ dlg_resize_images (GthBrowser *browser,
 	data = g_new0 (DialogData, 1);
 	data->browser = browser;
 	data->builder = _gtk_builder_new_from_file ("resize-images.ui", "resize_images");
-	data->settings = g_settings_new (PIX_RESIZE_IMAGES_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_RESIZE_IMAGES_SCHEMA);
 	data->file_list = gth_file_data_list_dup (file_list);
 	data->use_destination = TRUE;
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "resize_images_dialog");
+	data->dialog = g_object_new (GTK_TYPE_DIALOG,
+				     "title", _("Resize Images"),
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "destroy-with-parent", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))),
+			   _gtk_builder_get_widget (data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_EXECUTE, GTK_RESPONSE_OK,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
+
+
 	gth_browser_set_dialog (browser, "resize_images", data->dialog);
 	g_object_set_data (G_OBJECT (data->dialog), "dialog_data", data);
 
@@ -458,15 +465,11 @@ dlg_resize_images (GthBrowser *browser,
 			  "destroy",
 			  G_CALLBACK (destroy_cb),
 			  data);
-	g_signal_connect (GET_WIDGET ("ok_button"),
+	g_signal_connect (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK),
 			  "clicked",
 			  G_CALLBACK (ok_clicked_cb),
 			  data);
-        g_signal_connect (GET_WIDGET ("help_button"),
-                          "clicked",
-                          G_CALLBACK (help_clicked_cb),
-                          data);
-	g_signal_connect_swapped (GET_WIDGET ("cancel_button"),
+	g_signal_connect_swapped (gtk_dialog_get_widget_for_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_CANCEL),
 				  "clicked",
 				  G_CALLBACK (gtk_widget_destroy),
 				  G_OBJECT (data->dialog));
@@ -496,7 +499,5 @@ dlg_resize_images (GthBrowser *browser,
         if (GTH_IS_FILE_SOURCE_VFS (gth_browser_get_location_source (browser)))
         	gtk_widget_hide (GET_WIDGET ("use_destination_checkbutton"));
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (browser));
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), FALSE);
 	gtk_widget_show (data->dialog);
 }

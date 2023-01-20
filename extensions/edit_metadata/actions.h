@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,11 +23,10 @@
 #define ACTIONS_H
 
 #include <gtk/gtk.h>
+#include <gthumb.h>
 
-#define DEFINE_ACTION(x) void x (GtkAction *action, gpointer data);
-
-DEFINE_ACTION(gth_browser_activate_action_edit_comment)
-DEFINE_ACTION(gth_browser_activate_action_edit_tags)
-DEFINE_ACTION(gth_browser_activate_action_tool_delete_metadata)
+DEF_ACTION_CALLBACK (gth_browser_activate_edit_metadata)
+DEF_ACTION_CALLBACK (gth_browser_activate_edit_tags)
+DEF_ACTION_CALLBACK (gth_browser_activate_delete_metadata)
 
 #endif /* ACTIONS_H */

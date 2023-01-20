@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <gst/gst.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
@@ -36,8 +36,6 @@ gboolean    gstreamer_read_metadata_from_file (GFile               *file,
 					       GFileInfo           *info,
 					       GError             **error);
 gboolean    _gst_playbin_get_current_frame    (GstElement          *playbin,
-					       int                  video_fps_n,
-					       int                  video_fps_d,
 					       FrameReadyCallback   cb,
 					       gpointer             user_data);
 

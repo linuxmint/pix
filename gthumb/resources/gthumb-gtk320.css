@@ -1,0 +1,94 @@
+/* GthGridView  */
+
+iconview.icon {
+	background: @theme_bg_color;
+	color: @theme_fg_color;
+	border-radius: 4px;
+}
+
+iconview.icon:selected,
+iconview.icon:selected:focus {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+iconview.icon-effect {
+	background-color: alpha(@theme_bg_color, 0.5);
+	color: @theme_fg_color;
+	border-radius: 0;
+}
+
+iconview.icon-effect:selected,
+iconview.icon-effect:selected:focus {
+	background-color: alpha(@theme_selected_bg_color, 0.5);
+	color: @theme_selected_fg_color;
+	border-radius: 0;
+}
+
+/* -- comment -- */
+
+scrolledwindow.comment {
+	background-color: @comment_bg;
+	padding: 10px 0 10px 5px;
+}
+
+scrolledwindow.comment:backdrop {
+	background-color: @comment_bg_backdrop;
+}
+
+scrolledwindow.comment {
+	border-color: @comment_border;
+}
+
+scrolledwindow.comment scrollbar trough {
+	background-color: @comment_bg;
+}
+
+scrolledwindow.comment scrollbar trough:backdrop {
+	background-color: @comment_bg_backdrop;
+}
+
+scrolledwindow.comment scrollbar slider {
+	background-color: @comment_border;
+}
+
+scrolledwindow.comment scrollbar slider:backdrop {
+	background-color: @comment_border_backdrop;
+}
+
+scrolledwindow.comment.overshoot {
+	background-color: transparent;
+}
+
+scrolledwindow.comment.undershoot {
+	background-color: transparent;
+}
+
+textview.comment,
+textview.comment text {
+	background-color: @comment_bg;
+	color: #000000;
+}
+
+textview.comment text:backdrop {
+	background-color: @comment_bg_backdrop;
+	color: #666666;
+}
+
+textview.comment text:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+textview.comment text:backdrop:selected {
+	background-color: @theme_unfocused_selected_bg_color;
+	color: @theme_unfocused_selected_fg_color;
+}
+
+/* -- preview button in the filter grid -- */
+
+button.filter-preview:checked {
+	background-image: none;
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}

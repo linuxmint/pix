@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -24,13 +24,10 @@
 #include <tiffio.h>
 #endif /* HAVE_LIBTIFF */
 #include <glib/gi18n.h>
-#include <pix.h>
-#include "enum-types.h"
+#include <gthumb.h>
+#include "cairo-io-enum-types.h"
 #include "gth-image-saver-tiff.h"
 #include "preferences.h"
-
-
-G_DEFINE_TYPE (GthImageSaverTiff, gth_image_saver_tiff, GTH_TYPE_IMAGE_SAVER)
 
 
 struct _GthImageSaverTiffPrivate {
@@ -38,6 +35,12 @@ struct _GthImageSaverTiffPrivate {
 	GtkBuilder *builder;
 	char       *default_ext;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthImageSaverTiff,
+			 gth_image_saver_tiff,
+			 GTH_TYPE_IMAGE_SAVER,
+			 G_ADD_PRIVATE (GthImageSaverTiff))
 
 
 static void
@@ -210,14 +213,14 @@ gth_image_saver_tiff_can_save (GthImageSaver *self,
 
 
 static tsize_t
-tiff_save_read (thandle_t handle, tdata_t buf, tsize_t size)
+tiff_read (thandle_t handle, tdata_t buf, tsize_t size)
 {
 	return -1;
 }
 
 
 static tsize_t
-tiff_save_write (thandle_t handle, tdata_t buf, tsize_t size)
+tiff_write (thandle_t handle, tdata_t buf, tsize_t size)
 {
         GthBufferData *buffer_data = (GthBufferData *)handle;
 
@@ -227,7 +230,7 @@ tiff_save_write (thandle_t handle, tdata_t buf, tsize_t size)
 
 
 static toff_t
-tiff_save_seek (thandle_t handle, toff_t offset, int whence)
+tiff_seek (thandle_t handle, toff_t offset, int whence)
 {
 	GthBufferData *buffer_data = (GthBufferData *)handle;
 
@@ -236,14 +239,14 @@ tiff_save_seek (thandle_t handle, toff_t offset, int whence)
 
 
 static int
-tiff_save_close (thandle_t context)
+tiff_close (thandle_t context)
 {
         return 0;
 }
 
 
 static toff_t
-tiff_save_size (thandle_t handle)
+tiff_size (thandle_t handle)
 {
         return -1;
 }
@@ -367,11 +370,15 @@ _cairo_surface_write_as_tiff (cairo_surface_t  *image,
 	rowsperstrip = TILE_HEIGHT;
 
 	buffer_data = gth_buffer_data_new ();
-	tif = TIFFClientOpen ("gth-tiff-writer", "w", buffer_data,
-	                      tiff_save_read, tiff_save_write,
-	                      tiff_save_seek, tiff_save_close,
-	                      tiff_save_size,
-	                      NULL, NULL);
+	tif = TIFFClientOpen ("gth-tiff-writer", "w",
+			      buffer_data,
+	                      tiff_read,
+	                      tiff_write,
+	                      tiff_seek,
+	                      tiff_close,
+	                      tiff_size,
+	                      NULL,
+	                      NULL);
 	if (tif == NULL) {
 		g_set_error_literal (error,
 				     GDK_PIXBUF_ERROR,
@@ -383,7 +390,7 @@ _cairo_surface_write_as_tiff (cairo_surface_t  *image,
 	cols      = cairo_image_surface_get_width (image);
 	rows      = cairo_image_surface_get_height (image);
 	alpha     = _cairo_image_surface_get_has_alpha (image);
-	pixels    = cairo_image_surface_get_data (image);
+	pixels    = _cairo_image_surface_flush_and_get_data (image);
 	rowstride = cairo_image_surface_get_stride (image);
 
 	predictor       = 2;
@@ -549,8 +556,6 @@ gth_image_saver_tiff_class_init (GthImageSaverTiffClass *klass)
 	GObjectClass       *object_class;
 	GthImageSaverClass *image_saver_class;
 
-	g_type_class_add_private (klass, sizeof (GthImageSaverTiffPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_image_saver_tiff_finalize;
 
@@ -570,8 +575,8 @@ gth_image_saver_tiff_class_init (GthImageSaverTiffClass *klass)
 static void
 gth_image_saver_tiff_init (GthImageSaverTiff *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_IMAGE_SAVER_TIFF, GthImageSaverTiffPrivate);
-	self->priv->settings = g_settings_new (PIX_IMAGE_SAVERS_TIFF_SCHEMA);
+	self->priv = gth_image_saver_tiff_get_instance_private (self);
+	self->priv->settings = g_settings_new (GTHUMB_IMAGE_SAVERS_TIFF_SCHEMA);
 	self->priv->builder = NULL;
 	self->priv->default_ext = NULL;
 }

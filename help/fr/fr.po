@@ -1,72 +1,81 @@
-# French translation of pix documentation.
-# Copyright (C) 2007-2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the pix
+# French translation of gthumb documentation.
+# Copyright (C) 2007-2018 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gthumb
 # documentation package.
 #
-# Claude Paroz <claude@2xlibre.net>, 2007,2011.
+# Claude Paroz <claude@2xlibre.net>, 2007-2018.
 # Laurent Coudeur <laurentc@iol.ie>, 2010.
 # Bruno Brouard <annoa.b@gmail.com>, 2007,2010.
+# Julien Hardelin <jhardlin@orange.fr>, 2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pix.help\n"
+"Project-Id-Version: gthumb.help\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 09:34+0000\n"
-"PO-Revision-Date: 2013-03-23 14:50+0100\n"
-"Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
+"POT-Creation-Date: 2018-04-16 16:32+0000\n"
+"PO-Revision-Date: 2018-04-17 09:00+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Bruno Brouard <annoa.b@gmail.com>, 2007,2010\n"
-"Claude Paroz <claude@2xlibre.net>, 2007,2011\n"
-"Laurent Coudeur <laurentc@iol.ie>, 2010"
+"Claude Paroz <claude@2xlibre.net>, 2007,2011,2018\n"
+"Laurent Coudeur <laurentc@iol.ie>, 2010\n"
+"Julien Hardelin, <jhardlin@orange.fr>, 2016"
 
+#. (itstool) path: credit/name
+#: C/index.page:7
+msgid "Paolo Bacchilega"
+msgstr "Paolo Bacchilega"
+
+#. (itstool) path: credit/name
+#: C/index.page:12
+msgid "Michael J. Chudobiak"
+msgstr "Michael J. Chudobiak"
+
+#. (itstool) path: page/title
+#: C/index.page:20
+msgid "gThumb Help"
+msgstr "Manuel de gThumb"
+
+#. (itstool) path: section/title
+#: C/index.page:23
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "File Management"
+msgstr "Gestion des fichiers"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Editing Mode"
+msgstr "Mode Édition"
+
+#. (itstool) path: p/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.page:33(media) C/edit-save-undo-redo.page:8(media)
-#: C/edit-colors.page:8(media) C/edit-rotate.page:8(media)
-#: C/edit-resize-crop.page:8(media) C/edit-redeye.page:7(media)
+#: C/index.page:33 C/edit-save-undo-redo.page:8 C/edit-colors.page:8
+#: C/edit-rotate.page:8 C/edit-resize-crop.page:8 C/edit-redeye.page:7
 msgctxt "_"
 msgid ""
 "external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
 msgstr ""
 "external ref='figures/palette.png' md5='32835e7d77efd9833244ca80a4adb48e'"
 
-#: C/index.page:7(credit/name)
-msgid "Paolo Bacchilega"
-msgstr "Paolo Bacchilega"
-
-#: C/index.page:12(credit/name)
-msgid "Michael J. Chudobiak"
-msgstr "Michael J. Chudobiak"
-
-#: C/index.page:20(page/title)
-msgid "Pix Help"
-msgstr "Manuel de Pix"
-
-#: C/index.page:23(section/title)
-msgid "Welcome"
-msgstr "Bienvenue"
-
-#: C/index.page:27(section/title)
-msgid "File Management"
-msgstr "Gestion des fichiers"
-
-#: C/index.page:31(section/title)
-msgid "Editing Mode"
-msgstr "Mode Édition"
-
-#: C/index.page:32(section/p)
+#. (itstool) path: section/p
+#: C/index.page:32
 msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> "
 "Numerous editing tools are provided for touching-up individual photos. Undo "
@@ -82,11 +91,13 @@ msgstr ""
 "barre d'outils (l'icône palette) ou appuyez sur la touche <keyseq><key>e</"
 "key></keyseq>."
 
-#: C/index.page:42(section/title)
+#. (itstool) path: section/title
+#: C/index.page:42
 msgid "Batch Tools"
 msgstr "Outils de traitement par lot"
 
-#: C/index.page:43(section/p)
+#. (itstool) path: section/p
+#: C/index.page:43
 msgid ""
 "Batch tools are provided to modify multiple images simultaneously. Changes "
 "are written immediately, and are not undoable."
@@ -95,177 +106,219 @@ msgstr ""
 "en même temps. Les modifications sont enregistrées immédiatement et ne sont "
 "pas réversibles."
 
-#: C/index.page:49(section/title)
+#. (itstool) path: section/title
+#: C/index.page:49
 msgid "Slideshows"
 msgstr "Diaporamas"
 
-#: C/index.page:53(section/title)
+#. (itstool) path: section/title
+#: C/index.page:53
 msgid "Importing"
 msgstr "Importation"
 
-#: C/index.page:57(section/title)
+#. (itstool) path: section/title
+#: C/index.page:57
 msgid "Sharing"
 msgstr "Partage"
 
-#: C/index.page:61(section/title)
+#. (itstool) path: section/title
+#: C/index.page:61
 msgid "Organizing"
 msgstr "Organisation"
 
-#: C/index.page:65(section/title)
+#. (itstool) path: section/title
+#: C/index.page:65
 msgid "Other Tools"
 msgstr "Autres outils"
 
-#: C/index.page:69(section/title)
+#. (itstool) path: section/title
+#: C/index.page:69
 msgid "Reference"
 msgstr "Référence"
 
-#: C/attributes.page:6(page/title)
+#. (itstool) path: page/title
+#: C/attributes.page:6
 msgid "Attribute Codes"
 msgstr "Codes d'attributs"
 
-#: C/attributes.page:7(page/p)
+#. (itstool) path: page/p
+#: C/attributes.page:7
 msgid ""
-"<app>Pix</app> stores many different attributes for each file. Extensions "
+"<app>gThumb</app> stores many different attributes for each file. Extensions "
 "may add more. The list below is a summary of some of the more common "
 "attributes:"
 msgstr ""
-"<app>Pix</app> enregistre de nombreux attributs pour chaque fichier. Les "
+"<app>gThumb</app> enregistre de nombreux attributs pour chaque fichier. Les "
 "extensions en ajoutent encore plus. La liste qui suit est un résumé d'une "
 "partie des attributs les plus courants :"
 
-#: C/attributes.page:12(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:12
 msgid "gth::file::display-size"
 msgstr "gth::file::display-size"
 
-#: C/attributes.page:15(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:15
 msgid "standard::fast-content-type"
 msgstr "standard::fast-content-type"
 
-#: C/attributes.page:18(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:18
 msgid "general::dimensions"
 msgstr "general::dimensions"
 
-#: C/attributes.page:21(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:21
 msgid "general::format"
 msgstr "general::format"
 
-#: C/attributes.page:24(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:24
 msgid "general::location"
 msgstr "general::location"
 
-#: C/attributes.page:27(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:27
 msgid "general::datetime"
 msgstr "general::datetime"
 
-#: C/attributes.page:30(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:30
 msgid "general::rating"
 msgstr "general::rating"
 
-#: C/attributes.page:33(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:33
 msgid "Exif::Image::Make"
 msgstr "Exif::Image::Make"
 
-#: C/attributes.page:36(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:36
 msgid "Exif::Image::Model"
 msgstr "Exif::Image::Model"
 
-#: C/attributes.page:39(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:39
 msgid "Exif::Image::Software"
 msgstr "Exif::Image::Software"
 
-#: C/attributes.page:42(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:42
 msgid "Exif::Image::Artist"
 msgstr "Exif::Image::Artist"
 
-#: C/attributes.page:45(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:45
 msgid "Exif::Image::Copyright"
 msgstr "Exif::Image::Copyright"
 
-#: C/attributes.page:48(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:48
 msgid "Exif::Photo::ISOSpeedRatings"
 msgstr "Exif::Photo::ISOSpeedRatings"
 
-#: C/attributes.page:51(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:51
 msgid "Exif::Photo::BrightnessValue"
 msgstr "Exif::Photo::BrightnessValue"
 
-#: C/attributes.page:54(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:54
 msgid "Exif::Photo::FNumber"
 msgstr "Exif::Photo::FNumber"
 
-#: C/attributes.page:57(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:57
 msgid "Exif::Photo::ApertureValue"
 msgstr "Exif::Photo::ApertureValue"
 
-#: C/attributes.page:60(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:60
 msgid "Exif::Photo::MaxApertureValue"
 msgstr "Exif::Photo::MaxApertureValue"
 
-#: C/attributes.page:63(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:63
 msgid "Exif::Photo::ExposureTime"
 msgstr "Exif::Photo::ExposureTime"
 
-#: C/attributes.page:66(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:66
 msgid "Exif::Photo::ExposureProgram"
 msgstr "Exif::Photo::ExposureProgram"
 
-#: C/attributes.page:69(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:69
 msgid "Exif::Photo::ExposureIndex"
 msgstr "Exif::Photo::ExposureIndex"
 
-#: C/attributes.page:72(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:72
 msgid "Exif::Photo::ExposureBiasValue"
 msgstr "Exif::Photo::ExposureBiasValue"
 
-#: C/attributes.page:75(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:75
 msgid "Exif::Photo::ExposureMode"
 msgstr "Exif::Photo::ExposureMode"
 
-#: C/attributes.page:78(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:78
 msgid "Exif::Photo::ShutterSpeedValue"
 msgstr "Exif::Photo::ShutterSpeedValue"
 
-#: C/attributes.page:81(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:81
 msgid "Exif::Photo::MeteringMode"
 msgstr "Exif::Photo::MeteringMode"
 
-#: C/attributes.page:84(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:84
 msgid "Exif::Photo::LightSource"
 msgstr "Exif::Photo::LightSource"
 
-#: C/attributes.page:87(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:87
 msgid "Exif::Photo::WhiteBalance"
 msgstr "Exif::Photo::WhiteBalance"
 
-#: C/attributes.page:90(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:90
 msgid "Exif::Photo::Flash"
 msgstr "Exif::Photo::Flash"
 
-#: C/attributes.page:93(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:93
 msgid "Exif::Photo::FocalLength"
 msgstr "Exif::Photo::FocalLength"
 
-#: C/attributes.page:96(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:96
 msgid "Exif::Photo::SubjectArea"
 msgstr "Exif::Photo::SubjectArea"
 
-#: C/attributes.page:99(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:99
 msgid "Exif::Photo::Contrast"
 msgstr "Exif::Photo::Contrast"
 
-#: C/attributes.page:102(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:102
 msgid "Exif::Photo::Saturation"
 msgstr "Exif::Photo::Saturation"
 
-#: C/attributes.page:105(item/p)
+#. (itstool) path: item/p
+#: C/attributes.page:105
 msgid "Exif::Photo::Sharpness"
 msgstr "Exif::Photo::Sharpness"
 
-#: C/strftime.page:6(page/title)
+#. (itstool) path: page/title
+#: C/strftime.page:8
 msgid "Date/Time Format Codes"
 msgstr "Codes des formats de date/heure"
 
-#: C/strftime.page:8(page/p)
+#. (itstool) path: page/p
+#: C/strftime.page:10
 msgid ""
 "This is a summary of standard date/time codes that may be used in format "
 "strings:"
@@ -273,82 +326,59 @@ msgstr ""
 "Voici un résumé des codes standards de date et d'heure qui peuvent être "
 "utilisés dans les chaînes de format :"
 
-#: C/strftime.page:12(table/title)
+#. (itstool) path: table/title
+#: C/strftime.page:14
 msgid "Valid format codes for custom subfolders"
 msgstr "Codes de format valides pour les sous-dossiers personnalisés"
 
-#: C/strftime.page:15(td/p)
-msgid "%a"
-msgstr "%a"
-
-#: C/strftime.page:18(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:20
 msgid "The abbreviated weekday name according to the current locale."
 msgstr ""
 "Le nom du jour de la semaine sous forme abrégée conformément à "
 "l'environnement linguistique actuel."
 
-#: C/strftime.page:24(td/p)
-msgid "%A"
-msgstr "%A"
-
-#: C/strftime.page:27(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:29
 msgid "The full weekday name according to the current locale."
 msgstr ""
 "Le nom complet du jour de la semaine conformément à l'environnement "
 "linguistique actuel."
 
-#: C/strftime.page:33(td/p)
-msgid "%b"
-msgstr "%b"
-
-#: C/strftime.page:36(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:38
 msgid "The abbreviated month name according to the current locale."
 msgstr ""
 "Le nom du mois sous forme abrégée conformément à l'environnement "
 "linguistique actuel."
 
-#: C/strftime.page:42(td/p)
-msgid "%B"
-msgstr "%B"
-
-#: C/strftime.page:45(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:47
 msgid "The full month name according to the current locale."
 msgstr ""
 "Le nom complet du mois conformément à l'environnement linguistique actuel."
 
-#: C/strftime.page:50(td/p)
-msgid "%c"
-msgstr "%c"
-
-#: C/strftime.page:53(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:55
 msgid "The preferred date and time representation for the current locale."
 msgstr ""
 "La représentation préférée de la date et de l'heure conformément à "
 "l'environnement linguistique actuel."
 
-#: C/strftime.page:59(td/p)
-msgid "%C"
-msgstr "%C"
-
-#: C/strftime.page:62(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:64
 msgid "The century number (year/100) as a 2-digit integer."
 msgstr ""
 "Le numéro du siècle (année/100) sous la forme d'un entier à 2 chiffres."
 
-#: C/strftime.page:67(td/p)
-msgid "%d"
-msgstr "%d"
-
-#: C/strftime.page:70(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:72
 msgid "The day of the month as a decimal number (range 01 to 31)."
 msgstr ""
 "Le jour du mois sous la forme d'un nombre décimal (compris entre 01 et 31)."
 
-#: C/strftime.page:76(td/p)
-msgid "%D"
-msgstr "%D"
-
-#: C/strftime.page:79(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:81
 msgid ""
 "Equivalent to %m/%d/%y. (Yecch -- for Americans only. Americans should note "
 "that in other countries %d/%m/%y is rather common. This means that in "
@@ -359,11 +389,8 @@ msgstr ""
 "courant. Cela signifie que, dans un contexte international, ce format est "
 "ambigu et ne devrait pas être utilisé.)"
 
-#: C/strftime.page:87(td/p)
-msgid "%e"
-msgstr "%e"
-
-#: C/strftime.page:90(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:92
 msgid ""
 "Like %d, the day of the month as a decimal number, but a leading zero is "
 "replaced by a space."
@@ -371,27 +398,18 @@ msgstr ""
 "Comme pour %d, le jour du mois sous la forme d'un nombre décimal mais un "
 "zéro à gauche est remplacé par un espace."
 
-#: C/strftime.page:96(td/p)
-msgid "%E"
-msgstr "%E"
-
-#: C/strftime.page:99(td/p) C/strftime.page:208(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:101 C/strftime.page:210
 msgid "Modifier: use alternative format, see below."
 msgstr "Modificateur : utilisez un format alternatif, voyez plus bas."
 
-#: C/strftime.page:104(td/p)
-msgid "%F"
-msgstr "%F"
-
-#: C/strftime.page:107(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:109
 msgid "Equivalent to %Y-%m-%d (the ISO 8601 date format). (C99)"
 msgstr "Équivalent à %Y-%m-%d (le format de date ISO 8601). (C99)"
 
-#: C/strftime.page:113(td/p)
-msgid "%G"
-msgstr "%G"
-
-#: C/strftime.page:116(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:118
 msgid ""
 "The ISO 8601 year with century as a decimal number. The 4-digit year "
 "corresponding to the ISO week number (see %V). This has the same format and "
@@ -404,59 +422,41 @@ msgstr ""
 "appartient à l'année précédente ou à l'année suivante, cette année est "
 "utilisée à la place."
 
-#: C/strftime.page:125(td/p)
-msgid "%g"
-msgstr "%g"
-
-#: C/strftime.page:128(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:130
 msgid "Like %G, but without century, i.e., with a 2-digit year (00-99)."
 msgstr ""
 "Comme %G mais sans le siècle, c.-à-d. avec une année à 2 chiffres (compris "
 "entre 00 et 99)."
 
-#: C/strftime.page:134(td/p)
-msgid "%h"
-msgstr "%h"
-
-#: C/strftime.page:137(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:139
 msgid "Equivalent to %b."
 msgstr "Équivalent à %b."
 
-#: C/strftime.page:142(td/p)
-msgid "%H"
-msgstr "%H"
-
-#: C/strftime.page:145(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:147
 msgid "The hour as a decimal number using a 24-hour clock (range 00 to 23)."
 msgstr ""
 "L'heure sous la forme d'un nombre décimal en utilisant une horloge à 24 "
 "heures (compris entre 00 et 23)."
 
-#: C/strftime.page:151(td/p)
-msgid "%I"
-msgstr "%I"
-
-#: C/strftime.page:154(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:156
 msgid "The hour as a decimal number using a 12-hour clock (range 01 to 12)."
 msgstr ""
 "L'heure sous la forme d'un nombre décimal en utilisant une horloge à 12 "
 "heures (compris entre 01 et 12)."
 
-#: C/strftime.page:160(td/p)
-msgid "%j"
-msgstr "%j"
-
-#: C/strftime.page:163(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:165
 msgid "The day of the year as a decimal number (range 001 to 366)."
 msgstr ""
 "Le jour de l'année sous la forme d'un nombre décimal (compris entre 001 et "
 "366)."
 
-#: C/strftime.page:169(td/p)
-msgid "%k"
-msgstr "%k"
-
-#: C/strftime.page:172(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:174
 msgid ""
 "The hour (24-hour clock) as a decimal number (range 0 to 23); single digits "
 "are preceded by a blank. (See also %H.)"
@@ -464,11 +464,8 @@ msgstr ""
 "L'heure (horloge à 24 heures) sous la forme d'un nombre décimal (compris "
 "entre 0 et 23), un chiffre seul est précédé d'un espace (voir également %H)."
 
-#: C/strftime.page:179(td/p)
-msgid "%l"
-msgstr "%l"
-
-#: C/strftime.page:182(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:184
 msgid ""
 "The hour (12-hour clock) as a decimal number (range 1 to 12); single digits "
 "are preceded by a blank. (See also %I.)"
@@ -476,32 +473,19 @@ msgstr ""
 "L'heure (horloge à 12 heures) sous la forme d'un nombre décimal (compris "
 "entre 1 et 12), un chiffre seul est précédé d'un espace (voir également %I)."
 
-#: C/strftime.page:189(td/p)
-msgid "%m"
-msgstr "%m"
-
-#: C/strftime.page:192(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:194
 msgid "The month as a decimal number (range 01 to 12)."
 msgstr "Le mois sous la forme d'un nombre décimal (compris entre 01 et 12)."
 
-#: C/strftime.page:197(td/p)
-msgid "%M"
-msgstr "%M"
-
-#: C/strftime.page:200(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:202
 msgid "The minute as a decimal number (range 00 to 59)."
 msgstr ""
 "Les minutes sous la forme d'un nombre décimal (compris entre 00 et 59)."
 
-#: C/strftime.page:205(td/p)
-msgid "%O"
-msgstr "%O"
-
-#: C/strftime.page:213(td/p)
-msgid "%p"
-msgstr "%p"
-
-#: C/strftime.page:216(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:218
 msgid ""
 "Either 'AM' or 'PM' according to the given time value, or the corresponding "
 "strings for the current locale. Noon is treated as 'pm' and midnight as 'am'."
@@ -510,11 +494,8 @@ msgstr ""
 "correspondante conformément à l'environnement linguistique actuel. Midi est "
 "vu comme « pm » et minuit comme « am »."
 
-#: C/strftime.page:223(td/p)
-msgid "%P"
-msgstr "%P"
-
-#: C/strftime.page:226(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:228
 msgid ""
 "Like %p but in lowercase: 'am' or 'pm' or a corresponding string for the "
 "current locale."
@@ -522,11 +503,8 @@ msgstr ""
 "Comme %p mais en minuscule : « am » ou « pm » ou une chaîne correspondante "
 "conformément à l'environnement linguistique actuel."
 
-#: C/strftime.page:232(td/p)
-msgid "%r"
-msgstr "%r"
-
-#: C/strftime.page:235(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:237
 msgid ""
 "The time in a.m. or p.m. notation. In the POSIX locale this is equivalent to "
 "'%I:%M:%S %p'."
@@ -534,11 +512,8 @@ msgstr ""
 "L'heure en notation a.m. ou p.m. Dans l'environnement linguistique actuel "
 "POSIX, c'est équivalent à « %I:%M:%S %p »."
 
-#: C/strftime.page:241(td/p)
-msgid "%R"
-msgstr "%R"
-
-#: C/strftime.page:244(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:246
 msgid ""
 "The time in 24-hour notation (%H:%M). For a version including the seconds, "
 "see %T below."
@@ -546,22 +521,16 @@ msgstr ""
 "L'heure en notation à 24 heures (%H:%M). Pour une version incluant les "
 "secondes, consultez %T ci-dessous."
 
-#: C/strftime.page:250(td/p)
-msgid "%s"
-msgstr "%s"
-
-#: C/strftime.page:253(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:255
 msgid ""
 "The number of seconds since the Epoch, i.e., since 1970-01-01 00:00:00 UTC."
 msgstr ""
 "Le nombre de secondes depuis la date Epoch, c.-à-d. depuis le 01/01/1970 "
 "00:00:00 UTC."
 
-#: C/strftime.page:259(td/p)
-msgid "%S"
-msgstr "%S"
-
-#: C/strftime.page:262(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:264
 msgid ""
 "The second as a decimal number (range 00 to 60). (The range is up to 60 to "
 "allow for occasional leap seconds.)"
@@ -569,19 +538,13 @@ msgstr ""
 "Les secondes en nombre décimal (compris entre 00 et 60) (la plage va jusqu'à "
 "60 pour permettre des secondes intercalaires occasionnelles)."
 
-#: C/strftime.page:269(td/p)
-msgid "%T"
-msgstr "%T"
-
-#: C/strftime.page:272(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:274
 msgid "The time in 24-hour notation (%H:%M:%S)."
 msgstr "L'heure en notation à 24 heures (%H:%M:%S)."
 
-#: C/strftime.page:277(td/p)
-msgid "%u"
-msgstr "%u"
-
-#: C/strftime.page:280(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:282
 msgid ""
 "The day of the week as a decimal number, range 1 to 7, Monday being 1. See "
 "also %w."
@@ -589,11 +552,8 @@ msgstr ""
 "Le jour de la semaine représenté par un chiffre compris entre 1 et 7, lundi "
 "étant représenté par 1. Consultez aussi %w."
 
-#: C/strftime.page:286(td/p)
-msgid "%U"
-msgstr "%U"
-
-#: C/strftime.page:289(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:291
 msgid ""
 "The week number of the current year as a decimal number, range 00 to 53, "
 "starting with the first Sunday as the first day of week 01. See also %V and "
@@ -603,11 +563,8 @@ msgstr ""
 "décimal compris entre 00 et 53, le premier dimanche est le premier jour de "
 "la semaine 01. Consultez également %V et %W."
 
-#: C/strftime.page:296(td/p)
-msgid "%V"
-msgstr "%V"
-
-#: C/strftime.page:299(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:301
 msgid ""
 "The ISO 8601:1988 week number of the current year as a decimal number, range "
 "01 to 53, where week 1 is the first week that has at least 4 days in the "
@@ -619,22 +576,16 @@ msgstr ""
 "semaine qui possède au moins 4 jours dans l'année actuelle, le lundi étant "
 "le premier jour de la semaine. Consultez également %U et %W."
 
-#: C/strftime.page:308(td/p)
-msgid "%w"
-msgstr "%w"
-
-#: C/strftime.page:311(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:313
 msgid ""
 "The day of the week as a decimal, range 0 to 6, Sunday being 0. See also %u."
 msgstr ""
 "Le jour de la semaine sous la forme d'un nombre décimal, compris entre 0 et "
 "6, le dimanche correspond à 0. Consultez également %u."
 
-#: C/strftime.page:317(td/p)
-msgid "%W"
-msgstr "%W"
-
-#: C/strftime.page:320(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:322
 msgid ""
 "The week number of the current year as a decimal number, range 00 to 53, "
 "starting with the first Monday as the first day of week 01."
@@ -643,51 +594,36 @@ msgstr ""
 "décimal, compris entre 00 et 53, le premier lundi est le premier jour de la "
 "semaine 01."
 
-#: C/strftime.page:327(td/p)
-msgid "%x"
-msgstr "%x"
-
-#: C/strftime.page:330(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:332
 msgid ""
 "The preferred date representation for the current locale without the time."
 msgstr ""
 "La représentation préférée de la date conformément à l'environnement "
 "linguistique actuel, sans l'heure."
 
-#: C/strftime.page:336(td/p)
-msgid "%X"
-msgstr "%X"
-
-#: C/strftime.page:339(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:341
 msgid ""
 "The preferred time representation for the current locale without the date."
 msgstr ""
 "La représentation préférée de l'heure conformément à l'environnement "
 "linguistique actuel, sans la date."
 
-#: C/strftime.page:345(td/p)
-msgid "%y"
-msgstr "%y"
-
-#: C/strftime.page:348(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:350
 msgid "The year as a decimal number without a century (range 00 to 99)."
 msgstr ""
 "L'année sous la forme d'un nombre décimal sans le siècle (compris entre 00 "
 "et 99)."
 
-#: C/strftime.page:354(td/p)
-msgid "%Y"
-msgstr "%Y"
-
-#: C/strftime.page:357(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:359
 msgid "The year as a decimal number including the century."
 msgstr "L'année sous la forme d'un nombre décimal avec le siècle."
 
-#: C/strftime.page:362(td/p)
-msgid "%z"
-msgstr "%z"
-
-#: C/strftime.page:365(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:367
 msgid ""
 "The time-zone as hour offset from GMT. Required to emit RFC 822-conformant "
 "dates (using \"%a, %d %b %Y %H:%M:%S %z\")."
@@ -696,15 +632,13 @@ msgstr ""
 "est nécessaire pour émettre des dates conformes à RFC 822 (en utilisant "
 "« %a, %d %b %Y %H:%M:%S %z »)."
 
-#: C/strftime.page:372(td/p)
-msgid "%Z"
-msgstr "%Z"
-
-#: C/strftime.page:375(td/p)
+#. (itstool) path: td/p
+#: C/strftime.page:377
 msgid "The time zone or name or abbreviation."
 msgstr "Le fuseau horaire ou le nom ou l'abréviation."
 
-#: C/strftime.page:380(page/p)
+#. (itstool) path: page/p
+#: C/strftime.page:382
 msgid ""
 "Some conversion specifications can be modified by preceding the conversion "
 "specifier character by the E or O modifier to indicate that an alternative "
@@ -728,32 +662,38 @@ msgstr ""
 "préfixe E sont l'usage d'une représentation alternative dépendante de "
 "l'environnement linguistique."
 
-#: C/introduction.page:6(page/title)
-msgid "About Pix"
-msgstr "À propos de Pix"
+#. (itstool) path: page/title
+#: C/introduction.page:6
+msgid "About gThumb"
+msgstr "À propos de gThumb"
 
-#: C/introduction.page:8(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:8
 msgid ""
-"<app>Pix</app> is an image viewer and browser. It lets you browse your hard disk, showing you thumbnails of "
+"<app>gThumb</app> is an image viewer and browser written for the GNOME "
+"environment. It lets you browse your hard disk, showing you thumbnails of "
 "image files and view single images of many different formats."
 msgstr ""
-"<app>Pix</app> est un navigateur et visionneur d'images. Il vous permet de naviguer sur votre disque dur en "
+"<app>gThumb</app> est un navigateur et visionneur d'images écrit pour "
+"l'environnement GNOME. Il vous permet de naviguer sur votre disque dur en "
 "affichant des vignettes des images et d'afficher des images seules dans de "
 "nombreux formats."
 
-#: C/introduction.page:13(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:13
 msgid ""
-"<app>Pix</app> supports the most common graphics formats, including JPEG, "
-"GIF, TIF, and PNG. <app>Pix</app> will also display other less common "
+"<app>gThumb</app> supports the most common graphics formats, including JPEG, "
+"GIF, TIF, and PNG. <app>gThumb</app> will also display other less common "
 "image types if the supporting libraries are installed, including TGA, ICO, "
 "BMP, XPM, and others."
 msgstr ""
-"<app>Pix</app> prend en charge les formats graphiques les plus courants "
-"parmi JPEG, GIF, TIF et PNG. <app>Pix</app> affiche aussi des types "
+"<app>gThumb</app> prend en charge les formats graphiques les plus courants "
+"parmi JPEG, GIF, TIF et PNG. <app>gThumb</app> affiche aussi des types "
 "d'images moins courants, si les bibliothèques de prise en charge sont "
 "installées, parmi TGA, ICO, BMP, XPM et bien d'autres."
 
-#: C/introduction.page:18(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:18
 msgid ""
 "Some support for RAW image types is included, especially if the dcraw "
 "program is installed on your system."
@@ -761,97 +701,111 @@ msgstr ""
 "La prise en charge de certains types d'images RAW est incluse, plus "
 "particulièrement si le programme « dcraw » est installé sur votre système."
 
-#: C/introduction.page:21(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:21
 msgid ""
-"<app>Pix</app> not only lets you view image files but has many other "
+"<app>gThumb</app> not only lets you view image files but has many other "
 "features such as adding comments to images, organizing images into catalogs, "
 "printing images, slideshows, setting your desktop background, and more."
 msgstr ""
-"<app>Pix</app> permet non seulement d'afficher des images, mais il "
+"<app>gThumb</app> permet non seulement d'afficher des images, mais il "
 "présente d'autres possibilités telles que l'ajout de commentaires aux "
 "images, l'organisation des images dans des catalogues, l'impression des "
 "images, l'affichage en diaporama, le paramétrage de l'arrière-plan du bureau "
 "et bien d'autres."
 
-#: C/introduction.page:26(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:26
 msgid ""
-"<app>Pix</app> includes a tool to import photos from attached cameras and "
+"<app>gThumb</app> includes a tool to import photos from attached cameras and "
 "memory card readers."
 msgstr ""
-"<app>Pix</app> inclut un outil d'importation de photos à partir des "
+"<app>gThumb</app> inclut un outil d'importation de photos à partir des "
 "appareils photos connectés et des lecteurs de cartes mémoire."
 
-#: C/introduction.page:29(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:29
 msgid ""
-"<app>Pix</app> can read EXIF, XMP, and IPTC metadata that is commonly "
+"<app>gThumb</app> can read EXIF, XMP, and IPTC metadata that is commonly "
 "embedded in files."
 msgstr ""
-"<app>Pix</app> peut lire les méta-données EXIF, XMP et IPTC qui sont très "
+"<app>gThumb</app> peut lire les méta-données EXIF, XMP et IPTC qui sont très "
 "souvent intégrées dans les fichiers."
 
-#: C/introduction.page:32(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:32
 msgid ""
-"<app>Pix</app> provides a systems of extensions (or plug-ins), to allow "
-"users to extend the functionality of <app>Pix</app>."
+"<app>gThumb</app> provides a systems of extensions (or plug-ins), to allow "
+"users to extend the functionality of <app>gThumb</app>."
 msgstr ""
-"<app>Pix</app> fournit un système d'extensions (ou greffons) qui "
-"permettent aux utilisateurs d'étendre les fonctionnalités de <app>Pix</"
+"<app>gThumb</app> fournit un système d'extensions (ou greffons) qui "
+"permettent aux utilisateurs d'étendre les fonctionnalités de <app>gThumb</"
 "app>."
 
-#: C/introduction.page:34(page/p)
+#. (itstool) path: page/p
+#: C/introduction.page:34
 msgid ""
-"More information about these extensions, and about <app>Pix</app> "
-"generally, is available at <link href=\"http://github.com/linuxmint/pix"
-"\">http://github.com/linuxmint/pix</link>."
+"More information about these extensions, and about <app>gThumb</app> "
+"generally, is available at <link href=\"https://wiki.gnome.org/Apps/gthumb"
+"\">https://wiki.gnome.org/Apps/gthumb</link>."
 msgstr ""
-"Plus d'informations à propos de ces extensions, et de <app>Pix</app> en "
-"général, sont disponibles sur cette page <link href=\"http://github.com/linuxmint/"
-"pix\">http://github.com/linuxmint/pix</link>."
+"Plus d'informations à propos de ces extensions, et de <app>gThumb</app> en "
+"général, sont disponibles sur cette page <link href=\"https://wiki.gnome.org/"
+"Apps/gthumb\">https://wiki.gnome.org/Apps/gthumb</link>."
 
+#. (itstool) path: page/title
+#: C/browser.page:6
+msgid "Browsing Your Files"
+msgstr "Navigation parmi vos fichiers"
+
+#. (itstool) path: page/p
+#: C/browser.page:8
+msgid "When you start <app>gThumb</app> the following window is displayed:"
+msgstr "Quand vous lancez <app>gThumb</app> la fenêtre suivante s'affiche :"
+
+#. (itstool) path: figure/title
+#: C/browser.page:11
+msgid "The main window"
+msgstr "La fenêtre principale"
+
+#. (itstool) path: figure/media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/browser.page:13(media)
+#: C/browser.page:13
 msgctxt "_"
 msgid ""
 "external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
 msgstr ""
 "external ref='figures/main-win.png' md5='93cf84bd05a153ab61951ae12bbe3f26'"
 
-#: C/browser.page:6(page/title)
-msgid "Browsing Your Files"
-msgstr "Navigation parmi vos fichiers"
+#. (itstool) path: page/p
+#: C/browser.page:16
+msgid "The <app>gThumb</app> browser contains the following elements:"
+msgstr "Le navigateur <app>gThumb</app> contient les éléments suivants :"
 
-#: C/browser.page:8(page/p)
-msgid "When you start <app>Pix</app> the following window is displayed:"
-msgstr "Quand vous lancez <app>Pix</app> la fenêtre suivante s'affiche :"
-
-#: C/browser.page:11(figure/title)
-msgid "The main window"
-msgstr "La fenêtre principale"
-
-#: C/browser.page:16(page/p)
-msgid "The <app>Pix</app> browser contains the following elements:"
-msgstr "Le navigateur <app>Pix</app> contient les éléments suivants :"
-
-#: C/browser.page:20(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:20
 msgid "Menubar"
 msgstr "Barre de menus"
 
-#: C/browser.page:21(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:21
 msgid ""
 "The menus on the menubar contain all of the commands that you can use in "
-"<app>Pix</app>"
+"<app>gThumb</app>"
 msgstr ""
 "Les menus de la barre de menus contiennent toutes les commandes que vous "
-"pouvez utiliser dans <app>Pix</app>."
+"pouvez utiliser dans <app>gThumb</app>."
 
-#: C/browser.page:25(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:25
 msgid "Toolbar"
 msgstr "Barre d'outils"
 
-#: C/browser.page:26(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:26
 msgid ""
 "The toolbar contains a subset of the commands that you can access from the "
 "menubar. In particular, the Tools button contains functions for batch "
@@ -861,19 +815,23 @@ msgstr ""
 "partir de la barre de menus. En particulier, le bouton Outils contient "
 "certaines fonctions de traitement par lot des images."
 
-#: C/browser.page:31(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:31
 msgid "Locationbar"
 msgstr "Barre d'adresse"
 
-#: C/browser.page:32(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:32
 msgid "The locationbar contains the current folder or catalog name."
 msgstr "La barre d'adresse contient le nom du dossier ou du catalogue actuel."
 
-#: C/browser.page:36(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:36
 msgid "Folder Tree"
 msgstr "Arborescence des dossiers"
 
-#: C/browser.page:37(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:37
 msgid ""
 "The folder tree allows you to navigate the filesystem. Single-clicking on a "
 "folder will load its images in the browser view. Double-clicking a folder, "
@@ -886,11 +844,13 @@ msgstr ""
 "flèche d'extension pour afficher la liste des sous-dossiers qu'il contient "
 "dans l'arborescence."
 
-#: C/browser.page:44(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:44
 msgid "Browser View"
 msgstr "Fenêtre de Navigation"
 
-#: C/browser.page:45(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:45
 msgid ""
 "The browser view shows the images in the current folder or catalog. Single-"
 "clicking an image will enable the Information Sidebar for that image. Double-"
@@ -903,11 +863,13 @@ msgstr ""
 "en mode de visualisation. Double-cliquez avec le bouton central de la souris "
 "pour charger l'image en mode d'affichage plein écran."
 
-#: C/browser.page:52(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:52
 msgid "Organize Button"
 msgstr "Bouton Organiser"
 
-#: C/browser.page:53(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:53
 msgid ""
 "The Organize button, just above the browser view, allows you to group images "
 "into catalogs."
@@ -915,15 +877,18 @@ msgstr ""
 "Le bouton Organiser, juste au dessus de la fenêtre de navigation, vous "
 "permet de regrouper les images dans des catalogues."
 
-#: C/browser.page:57(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:57
 msgid "Statusbar"
 msgstr "Barre d'état"
 
-#: C/browser.page:58(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:58
 msgid "On the statusbar you can read:"
 msgstr "Dans la barre d'état, vous pouvez lire :"
 
-#: C/browser.page:61(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:61
 msgid ""
 "the total number of images contained in the current folder or catalog and "
 "their total size."
@@ -931,19 +896,23 @@ msgstr ""
 "le nombre total d'images contenues dans le dossier ou le catalogue actuel et "
 "la taille totale,"
 
-#: C/browser.page:65(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:65
 msgid "the number of the selected images and their size."
 msgstr "le nombre d'images sélectionnées et leur taille,"
 
-#: C/browser.page:68(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:68
 msgid "some properties of the currently focused image."
 msgstr "certaines propriétés de l'image actuellement sélectionnée."
 
-#: C/browser.page:73(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:73
 msgid "Information Sidebar"
 msgstr "Barre latérale d'informations"
 
-#: C/browser.page:74(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:74
 msgid ""
 "If a single image is selected, the information sidebar (below the folder "
 "tree) will display detailed information (such as EXIF or XMP tags) about the "
@@ -953,11 +922,13 @@ msgstr ""
 "l'arborescence des dossiers) affiche les informations détaillées de l'image "
 "sélectionnée (telles que les balises EXIF ou XMP)."
 
-#: C/browser.page:79(item/title)
+#. (itstool) path: item/title
+#: C/browser.page:79
 msgid "Filter Bar"
 msgstr "Barre de filtre"
 
-#: C/browser.page:80(item/p)
+#. (itstool) path: item/p
+#: C/browser.page:80
 msgid ""
 "An image filtering tool is provided just below the browser view. This can be "
 "used to filter the displayed images. For example, the browser view can be "
@@ -969,11 +940,13 @@ msgstr ""
 "la fenêtre de navigation peut être limitée aux fichiers d'une certaine "
 "taille, date, motif de nom ou d'autres caractéristiques."
 
-#: C/batch-rotate.page:6(page/title)
+#. (itstool) path: page/title
+#: C/batch-rotate.page:6
 msgid "Rotating Images Losslessly"
 msgstr "Rotation d'images sans perte"
 
-#: C/batch-rotate.page:8(page/p)
+#. (itstool) path: page/p
+#: C/batch-rotate.page:8
 msgid ""
 "To rotate one or more images, select the images in the browser view. Then "
 "click the <gui>Tools</gui> button on the main toolbar, and select either "
@@ -988,17 +961,20 @@ msgstr ""
 "gui><gui>Pivoter vers la gauche</gui></guiseq>. Les images sont ensuite "
 "tournées."
 
-#: C/batch-rotate.page:14(page/p)
+#. (itstool) path: page/p
+#: C/batch-rotate.page:14
 msgid "Lossless rotation is used for jpeg images, when possible."
 msgstr ""
 "La rotation sans perte est utilisée pour les images jpeg lorsque c'est "
 "possible."
 
-#: C/batch-convert-format.page:6(page/title)
+#. (itstool) path: page/title
+#: C/batch-convert-format.page:6
 msgid "Converting File Formats"
 msgstr "Conversion du format des fichiers"
 
-#: C/batch-convert-format.page:8(page/p)
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:8
 msgid ""
 "To convert one or more images into a new file format, select the images in "
 "the browser view. Then click the <gui>Tools</gui> button on the main "
@@ -1011,7 +987,8 @@ msgstr ""
 "sélectionnez <guiseq><gui>Outils</gui><gui>Convertir le format</gui></"
 "guiseq>."
 
-#: C/batch-convert-format.page:12(page/p)
+#. (itstool) path: page/p
+#: C/batch-convert-format.page:12
 msgid ""
 "Select the desired output format and destination folder. Click <gui>Execute</"
 "gui> to complete the process."
@@ -1019,11 +996,13 @@ msgstr ""
 "Sélectionnez le format de sortie souhaité et le dossier de destination. "
 "Cliquez sur <gui>Exécuter</gui> pour terminer le processus."
 
-#: C/batch-resize.page:6(page/title)
+#. (itstool) path: page/title
+#: C/batch-resize.page:6
 msgid "Resizing Images"
 msgstr "Redimensionnement des images"
 
-#: C/batch-resize.page:8(page/p)
+#. (itstool) path: page/p
+#: C/batch-resize.page:8
 msgid ""
 "To resize one or more images using the same dimensions or scaling factors, "
 "select the images in the browser view. Then click the <gui>Tools</gui> "
@@ -1036,7 +1015,8 @@ msgstr ""
 "sélectionnez <guiseq><gui>Outils</gui><gui>Redimensionner les images</gui></"
 "guiseq>."
 
-#: C/batch-resize.page:12(page/p)
+#. (itstool) path: page/p
+#: C/batch-resize.page:12
 msgid ""
 "Then select the desired maximum output dimensions, or the desired percentage "
 "scaling, and the destination folder. Click <gui>Execute</gui> to complete "
@@ -1046,11 +1026,13 @@ msgstr ""
 "pourcentage de l'échelle et le dossier de destination. Cliquez sur "
 "<gui>Exécuter</gui> pour terminer le processus."
 
-#: C/batch-change-date.page:6(page/title)
+#. (itstool) path: page/title
+#: C/batch-change-date.page:6
 msgid "Changing Dates"
 msgstr "Modification de dates"
 
-#: C/batch-change-date.page:8(page/p)
+#. (itstool) path: page/p
+#: C/batch-change-date.page:8
 msgid ""
 "To change the file modification times, the comment dates, or the Exif "
 "DateTimeOriginal tags of multiple files, select the files in the browser "
@@ -1063,7 +1045,8 @@ msgstr ""
 "gui> dans la barre d'outils principale et sélectionnez <guiseq><gui>Outils</"
 "gui><gui>Modifier la date</gui></guiseq>."
 
-#: C/batch-change-date.page:13(page/p)
+#. (itstool) path: page/p
+#: C/batch-change-date.page:13
 msgid ""
 "Select the desired date options, and click <gui>Execute</gui> to complete "
 "the process."
@@ -1071,30 +1054,35 @@ msgstr ""
 "Sélectionnez les options de dates souhaitées et cliquez sur <gui>Exécuter</"
 "gui> pour terminer le processus."
 
-#: C/batch-scripts.page:6(page/title)
+#. (itstool) path: page/title
+#: C/batch-scripts.page:6
 msgid "User-Defined Scripts"
 msgstr "Scripts utilisateur"
 
-#: C/batch-scripts.page:8(page/p)
+#. (itstool) path: page/p
+#: C/batch-scripts.page:8
 msgid ""
-"To define a script (a command-line sequence that <app>Pix</app> will "
+"To define a script (a command-line sequence that <app>gThumb</app> will "
 "execute on your files), click the <gui>Tools</gui> button on the main "
 "toolbar, and select <guiseq><gui>Tools</gui><gui>Personalize</gui></guiseq>."
 msgstr ""
 "Pour définir un script (une succession de lignes de commandes que "
-"<app>Pix</app> exécute sur vos fichiers), cliquez sur le bouton "
+"<app>gThumb</app> exécute sur vos fichiers), cliquez sur le bouton "
 "<gui>Outils</gui> dans la barre d'outils principale et sélectionnez "
 "<guiseq><gui>Outils</gui><gui>Personnaliser</gui></guiseq>."
 
-#: C/batch-scripts.page:12(page/p)
-msgid "TODO: further documentation is need here."
-msgstr "TODO: la documentation doit être complétée ici."
+#. (itstool) path: page/p
+#: C/batch-scripts.page:12
+msgid "TODO: further documentation is needed here."
+msgstr "TODO : la documentation doit être complétée ici."
 
-#: C/thumbnails.page:6(page/title)
+#. (itstool) path: page/title
+#: C/thumbnails.page:6
 msgid "Thumbnail Sources"
 msgstr "Sources des vignettes"
 
-#: C/thumbnails.page:8(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:8
 msgid ""
 "The browser window normally shows the thumbnails of the images and movies in "
 "the selected folder. Generic icons for other files (audio files, for "
@@ -1104,7 +1092,8 @@ msgstr ""
 "vidéos du dossier sélectionné. Les icônes génériques des autres fichiers "
 "(audio par exemple) peuvent aussi être affichées."
 
-#: C/thumbnails.page:12(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:12
 msgid ""
 "You can select what types of files to show in the browser view using the "
 "<guiseq><gui>View</gui><gui>Filter</gui> </guiseq> dialog. The default is to "
@@ -1116,105 +1105,100 @@ msgstr ""
 "gui></guiseq>. Par défaut tous les fichiers multimédia (image, vidéo, audio) "
 "sont affichés, mais cela peut être rendu plus ou moins strict."
 
-#: C/thumbnails.page:18(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:18
 msgid ""
 "The thumbnails may be generated by a number of different methods. "
-"<app>Pix</app> will first check for existing thumbnails in the system "
+"<app>gThumb</app> will first check for existing thumbnails in the system "
 "cache."
 msgstr ""
-"Les vignettes peuvent être générées de plusieurs façons, <app>Pix</app> "
+"Les vignettes peuvent être générées de plusieurs façons, <app>gThumb</app> "
 "vérifie en premier si des vignettes n'existent pas déjà dans le cache du "
 "système."
 
-#: C/thumbnails.page:22(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:22
 msgid ""
 "If no cached thumbnail is found, and an image file contains an embedded "
 "thumbnail (jpeg files generated by digital cameras normally do), "
-"<app>Pix</app> will attempt to use that. <app>Pix</app> will confirm "
+"<app>gThumb</app> will attempt to use that. <app>gThumb</app> will confirm "
 "that the aspect ratio of the thumbnail is similar to that of the main image, "
 "and ignore thumbnails that do not appear to match the main image."
 msgstr ""
 "Si aucune vignette n'est trouvée dans le cache et que l'image contient une "
 "vignette intégrée (généralement les images jpeg générées par les appareils "
-"photo numériques en contiennent une), <app>Pix</app> essaye alors "
-"d'utiliser celle-ci. <app>Pix</app> vérifie que les proportions de la "
+"photo numériques en contiennent une), <app>gThumb</app> essaye alors "
+"d'utiliser celle-ci. <app>gThumb</app> vérifie que les proportions de la "
 "vignette correspondent à celle de l'image et ignore les vignettes qui ne "
 "semblent pas correspondre à l'image principale."
 
-#: C/thumbnails.page:29(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:29
 msgid ""
-"If that doesn't work, <app>Pix</app> will attempt to load the entire file "
+"If that doesn't work, <app>gThumb</app> will attempt to load the entire file "
 "and generate a scaled-down thumbnail."
 msgstr ""
-"Si cela ne fonctionne pas, <app>Pix</app> tente de charger le fichier "
+"Si cela ne fonctionne pas, <app>gThumb</app> tente de charger le fichier "
 "complet et de générer une vignette à l'échelle."
 
-#: C/thumbnails.page:32(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:32
 msgid ""
-"Lastly, <app>Pix</app> will use any system-defined scripts for "
+"Lastly, <app>gThumb</app> will use any system-defined scripts for "
 "thumbnailing particular media types. For example, some systems may use "
 "<app>mplayer</app> or <app>totem</app> or other movie viewers to generate "
 "movie thumbnails."
 msgstr ""
-"Enfin, <app>Pix</app> utilise tous les scripts définis par le système "
+"Enfin, <app>gThumb</app> utilise tous les scripts définis par le système "
 "pour le vignettage des différents types de supports. Par exemple, certains "
 "systèmes utilisent <app>mplayer</app> ou <app>totem</app> ou un autre "
 "lecteur vidéo pour générer les vignettes de vidéos."
 
-#: C/thumbnails.page:37(page/p)
+#. (itstool) path: page/p
+#: C/thumbnails.page:37
 msgid ""
-"<app>Pix</app> will save thumbnails to a system cache, to share them with "
+"<app>gThumb</app> will save thumbnails to a system cache, to share them with "
 "other applications. By default, Gnome systems prune cached thumbnails when "
 "they are older than 180 days, or when the thumbnail cache exceeds 512 MB. "
-"Technically-inclined users can explore these settings with <app>gconf-"
-"editor</app>. See the /desktop/gnome/thumbnail_cache/maximum_age and /"
-"desktop/gnome/thumbnail_cache/maximum_size keys in particular. Certain "
+"Technically-inclined users can explore these settings with <app>dconf-"
+"editor</app>. See the org.gnome.desktop.thumbnail_cache.maximum_age and org."
+"gnome.desktop.thumbnail_cache.maximum_size keys in particular. Certain "
 "applications (like <app>F-Spot</app>) may automatically increase these "
 "settings greatly."
 msgstr ""
-"<app>Pix</app> enregistre les vignettes dans un cache système pour les "
+"<app>gThumb</app> enregistre les vignettes dans un cache système pour les "
 "partager avec les autres applications. Par défaut, les systèmes GNOME "
 "effacent les vignettes dans le cache lorsqu'elles ont plus de 180 jours ou "
-"que la taille du cache excède 512 Mio. Les utilisateurs plus techniques qui "
+"que la taille du cache excède 512 Mio. Les utilisateurs plus techniques "
 "peuvent examiner ces paramètres avec <app>gconf-editor</app>. Consultez plus "
-"particulièrement les clés /desktop/gnome/thumbnail_cache/maximum_age et /"
-"desktop/gnome/thumbnail_cache/maximum_size. Certaines applications (comme "
-"<app>F-Spot</app>) peuvent augmenter automatiquement ces paramètres "
+"particulièrement les clés org.gnome.desktop.thumbnail_cache.maximum_age et "
+"org.gnome.desktop.thumbnail_cache.maximum_size. Certaines applications "
+"(comme <app>F-Spot</app>) peuvent augmenter automatiquement ces paramètres "
 "drastiquement."
 
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/thumbnail-pane.page:21(media) C/viewer.page:23(media)
-msgctxt "_"
-msgid ""
-"external ref='figures/thumbnail-pane.png' "
-"md5='af28541956094195dac6bc0e11624d64'"
-msgstr ""
-"external ref='figures/thumbnail-pane.png' "
-"md5='af28541956094195dac6bc0e11624d64'"
-
-#: C/thumbnail-pane.page:6(page/title)
+#. (itstool) path: page/title
+#: C/thumbnail-pane.page:6
 msgid "Thumbnail Pane"
 msgstr "Volet des vignettes"
 
-#: C/thumbnail-pane.page:8(page/p)
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:8
 msgid ""
-"When an image has been opened in the <app>Pix</app> viewer, the user has "
+"When an image has been opened in the <app>gThumb</app> viewer, the user has "
 "the option of enabling or disabling a thumbnail pane, which shows the other "
 "images in the folder as thumbnails. This feature can be toggled with the "
 "<guiseq><gui>View</gui><gui>Thumbnail Pane</gui></guiseq> command, or by "
 "pressing <key>F8</key>."
 msgstr ""
-"Lorsqu'une image est ouverte dans le visionneur <app>Pix</app>, "
+"Lorsqu'une image est ouverte dans le visionneur <app>gThumb</app>, "
 "l'utilisateur peut afficher ou masquer le volet des vignettes qui affiche "
 "les autres images contenues dans le dossier sous forme de vignettes. Cette "
 "fonction peut être activée/désactivée avec la commande "
 "<guiseq><gui>Affichage</gui><gui>Panneau des vignettes</gui></guiseq> ou "
 "avec la touche<key>F8</key>."
 
-#: C/thumbnail-pane.page:14(page/p)
+#. (itstool) path: page/p
+#: C/thumbnail-pane.page:14
 msgid ""
 "The thumbnail pane may be positioned along the bottom of the main image, or "
 "along the side. This is controlled by the settings in <guiseq><gui>Edit</"
@@ -1226,15 +1210,32 @@ msgstr ""
 "gui><gui>Préférences</gui><gui>Général</gui><gui>Vignettes dans le "
 "visionneur</gui></guiseq>."
 
-#: C/thumbnail-pane.page:19(figure/title)
+#. (itstool) path: figure/title
+#: C/thumbnail-pane.page:19
 msgid "Thumbnail Pane, Along Bottom of Main Image"
 msgstr "Volet des vignettes, en bas de l'image principale"
 
-#: C/rename-series.page:8(page/title)
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/thumbnail-pane.page:21 C/viewer.page:23
+msgctxt "_"
+msgid ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+msgstr ""
+"external ref='figures/thumbnail-pane.png' "
+"md5='af28541956094195dac6bc0e11624d64'"
+
+#. (itstool) path: page/title
+#: C/rename-series.page:8
 msgid "Renaming Files"
 msgstr "Renommage de fichiers"
 
-#: C/rename-series.page:10(page/p)
+#. (itstool) path: page/p
+#: C/rename-series.page:10
 msgid ""
 "To rename one or more images using a name template, select the files in the "
 "browser and choose <guiseq><gui>Edit</gui><gui>Rename</gui></guiseq>, or "
@@ -1244,7 +1245,8 @@ msgstr ""
 "choisissez <guiseq><gui>Édition</gui><gui>Renommer</gui></guiseq> ou appuyez "
 "sur <key>F2</key>."
 
-#: C/rename-series.page:15(page/p)
+#. (itstool) path: page/p
+#: C/rename-series.page:15
 msgid ""
 "The name template is simply a pattern that is used for renaming all of the "
 "selected images. You can use some special characters to make the new names "
@@ -1257,21 +1259,24 @@ msgstr ""
 "si vous renommez plus d'une image, et facultatif si vous renommez une seule "
 "image) :"
 
-#: C/rename-series.page:24(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:24
 msgid "Symbol"
 msgstr "Symbole"
 
-#: C/rename-series.page:27(td/p) C/shortcuts.page:17(td/p)
-#: C/shortcuts.page:94(td/p) C/shortcuts.page:189(td/p)
-#: C/shortcuts.page:273(td/p) C/shortcuts.page:498(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:27 C/shortcuts.page:17 C/shortcuts.page:84
+#: C/shortcuts.page:189 C/shortcuts.page:273 C/shortcuts.page:538
 msgid "Description"
 msgstr "Description"
 
-#: C/rename-series.page:32(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:32
 msgid "<key>#</key>"
 msgstr "<key>#</key>"
 
-#: C/rename-series.page:37(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:37
 msgid ""
 "This symbol will be replaced with the value of a counter that increments "
 "itself by 1 passing from one image to another. If you specify this symbols "
@@ -1285,31 +1290,37 @@ msgstr ""
 "compteur possède moins de chiffres ; par exemple, ### produit la suite : "
 "001, 002, 003, etc."
 
-#: C/rename-series.page:47(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:47
 msgid "<key>%F</key>"
-msgstr ""
+msgstr "<key>%F</key>"
 
-#: C/rename-series.page:52(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:52
 msgid ""
 "This symbol will be replaced with the file's original name, excluding the "
 "original extension."
 msgstr ""
 "Ce symbole est remplacé par le nom original du fichier, sans son extension."
 
-#: C/rename-series.page:58(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:58
 msgid "<key>%E</key>"
-msgstr ""
+msgstr "<key>%E</key>"
 
-#: C/rename-series.page:63(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:63
 msgid ""
 "This symbol will be replaced with the file's original filename extension."
 msgstr "Ce symbole est remplacé par l'extension du nom de fichier original."
 
-#: C/rename-series.page:69(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:69
 msgid "<key>%N</key>"
 msgstr "<key>%N</key>"
 
-#: C/rename-series.page:74(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:74
 msgid ""
 "This symbol will be replaced with original image enumerator. For instance, "
 "if the original filename was IMG_9876.JPG, this extracts the \"9876\" "
@@ -1323,11 +1334,13 @@ msgstr ""
 "nombres (par ex. IMG_123_456.JPG), seul le premier groupe est utilisé "
 "(« 123 » dans cet exemple)."
 
-#: C/rename-series.page:84(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:84
 msgid "<key>%M{format}</key>"
 msgstr "<key>%M{format}</key>"
 
-#: C/rename-series.page:89(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:89
 msgid ""
 "This symbol will be replaced with the file modification date. The formatting "
 "of this date (and optionally time) can be specified by adding a standard "
@@ -1340,11 +1353,13 @@ msgstr ""
 "%m-%d, %T} » est remplacé par la date et l'heure suivante « 2010-04-01, "
 "15:02:01 »."
 
-#: C/rename-series.page:98(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:98
 msgid "<key>%D{format}</key>"
 msgstr "<key>%D{format}</key>"
 
-#: C/rename-series.page:103(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:103
 msgid ""
 "This symbol will be replaced with the date that the photo was original taken "
 "(normally determined from the EXIF datestamps embedded inside the photo). "
@@ -1358,11 +1373,13 @@ msgstr ""
 "code de formatage standard entre accolades. Par exemple, « %D{%Y-%m-%d, "
 "%T} » est remplacé par la date et l'heure suivante « 2010-04-01, 15:02:01 »."
 
-#: C/rename-series.page:114(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:114
 msgid "<key>%A{identifier}</key>"
 msgstr "<key>%A{identifier}</key>"
 
-#: C/rename-series.page:119(td/p)
+#. (itstool) path: td/p
+#: C/rename-series.page:119
 msgid ""
 "This symbol will be replaced with the data that has been specified by the "
 "identifier. For example, \"%A{ general::dimensions }\" would be replaced "
@@ -1372,7 +1389,8 @@ msgstr ""
 "exemple : « %A{ general::dimensions } » est remplacé par les dimensions "
 "suivantes « 320 x 240 »."
 
-#: C/rename-series.page:127(page/p)
+#. (itstool) path: page/p
+#: C/rename-series.page:127
 msgid ""
 "A summary of these special codes may be viewed by clicking on the Help icon "
 "inside the template field."
@@ -1380,7 +1398,8 @@ msgstr ""
 "Un résumé de ces codes spéciaux s'affiche si vous cliquez sur l'icône d'aide "
 "dans le champ du modèle."
 
-#: C/rename-series.page:130(page/p)
+#. (itstool) path: page/p
+#: C/rename-series.page:130
 msgid ""
 "The list at the bottom of the dialog displays how the filenames will be "
 "renamed."
@@ -1388,11 +1407,13 @@ msgstr ""
 "La liste en bas de la boîte de dialogue montre comment les noms de fichiers "
 "sont renommés."
 
-#: C/rename-series.page:133(page/p)
+#. (itstool) path: page/p
+#: C/rename-series.page:133
 msgid "To rename the images click on <gui>Rename</gui>."
 msgstr "Pour renommer les images, cliquez sur <gui>Renommer</gui>."
 
-#: C/rename-series.page:135(page/p)
+#. (itstool) path: page/p
+#: C/rename-series.page:135
 msgid ""
 "If the renaming of an image can overwrite an already existing image you will "
 "be asked how to proceed, five options are available: overwrite the image; do "
@@ -1403,13 +1424,14 @@ msgstr ""
 "manières de procéder vous sont proposées : écraser l'image, ne pas écraser "
 "l'image, toujours écraser, ne jamais écraser ou spécifier un nouveau nom."
 
-#: C/edit-save-undo-redo.page:6(page/title)
+#. (itstool) path: page/title
+#: C/edit-save-undo-redo.page:6
 msgid "File Save, Undo, Redo"
 msgstr "Enregistrement des fichiers, annulation, rétablissement"
 
-#: C/edit-save-undo-redo.page:8(page/p) C/edit-colors.page:8(page/p)
-#: C/edit-rotate.page:8(page/p) C/edit-resize-crop.page:8(page/p)
-#: C/edit-redeye.page:7(page/p)
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:8 C/edit-colors.page:8 C/edit-rotate.page:8
+#: C/edit-resize-crop.page:8 C/edit-redeye.page:7
 msgid ""
 "<media type=\"image\" mime=\"image/png\" src=\"figures/palette.png\"/> To "
 "access the editing tools, open an image and then click the <gui>Edit File</"
@@ -1419,7 +1441,8 @@ msgstr ""
 "accéder aux outils de modification, ouvrez une image et cliquez sur le "
 "bouton <gui>Modifier le fichier</gui> de la barre d'outils (icône palette)."
 
-#: C/edit-save-undo-redo.page:12(page/p)
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:12
 msgid ""
 "Multiple changes may be made to an image before saving it. <gui>Undo</gui> "
 "and <gui>Redo</gui> buttons are provided, and may be used up until the file "
@@ -1430,7 +1453,8 @@ msgstr ""
 "disponibles et peuvent être utilisés tant que le fichier n'est pas "
 "enregistré."
 
-#: C/edit-save-undo-redo.page:16(page/p)
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:16
 msgid ""
 "A modified image may be saved by pressing <gui>Save</gui>. To save the "
 "modified image to a new location instead, leaving the original image "
@@ -1440,7 +1464,8 @@ msgstr ""
 "Pour enregistrer l'image modifiée dans un autre emplacement et conserver "
 "l'image originale, utilisez <gui>Enregistrer sous</gui>."
 
-#: C/edit-save-undo-redo.page:20(page/p)
+#. (itstool) path: page/p
+#: C/edit-save-undo-redo.page:20
 msgid ""
 "If you exit the editing mode (by pressing <key>Esc</key> or the <gui>View "
 "the Folders</gui> toolbar button), or navigate away from the current image, "
@@ -1451,20 +1476,24 @@ msgstr ""
 "d'image, vous aurez alors la possibilité d'enregistrer ou d'abandonner vos "
 "modifications."
 
-#: C/edit-colors.page:6(page/title)
+#. (itstool) path: page/title
+#: C/edit-colors.page:6
 msgid "Color Adjustments"
 msgstr "Ajustements des couleur"
 
-#: C/edit-colors.page:12(page/p)
+#. (itstool) path: page/p
+#: C/edit-colors.page:12
 msgid "Several tools are provided to manipulate the colors in images."
 msgstr ""
 "Il existe plusieurs outils pour manipuler les couleurs dans les images."
 
-#: C/edit-colors.page:17(item/title)
+#. (itstool) path: item/title
+#: C/edit-colors.page:17
 msgid "<gui>Enhance Colors</gui>"
 msgstr "<gui>Améliorer les couleurs</gui>"
 
-#: C/edit-colors.page:18(item/p)
+#. (itstool) path: item/p
+#: C/edit-colors.page:18
 msgid ""
 "This tool provides automatic white balance correction. No user adjustments "
 "are required."
@@ -1472,11 +1501,13 @@ msgstr ""
 "Cet outil fournit une correction automatique de la balance des blancs. "
 "L'utilisateur n'a pas besoin de faire d'ajustements."
 
-#: C/edit-colors.page:22(item/title)
+#. (itstool) path: item/title
+#: C/edit-colors.page:22
 msgid "<gui>Adjust Colors</gui>"
 msgstr "<gui>Ajuster les couleurs</gui>"
 
-#: C/edit-colors.page:23(item/p)
+#. (itstool) path: item/p
+#: C/edit-colors.page:23
 msgid ""
 "This tool provides manual color adjustments. Adjustments to the gamma, "
 "brightness, contrast, saturation, and the cyan/red, magenta/green, and "
@@ -1486,11 +1517,13 @@ msgstr ""
 "Les ajustements disponibles sont le gamma, la luminosité, le contraste, la "
 "saturation et les balances de couleur cyan/rouge, magenta/vert et jaune/bleu."
 
-#: C/edit-colors.page:29(item/title)
+#. (itstool) path: item/title
+#: C/edit-colors.page:29
 msgid "<gui>Equalize</gui>"
 msgstr "<gui>Égaliser</gui>"
 
-#: C/edit-colors.page:30(item/p)
+#. (itstool) path: item/p
+#: C/edit-colors.page:30
 msgid ""
 "This tool provides automatic histogram equalization. No user adjustments are "
 "required."
@@ -1498,11 +1531,13 @@ msgstr ""
 "Cet outil fournit une égalisation automatique de l'histogramme. "
 "L'utilisateur n'a pas besoin de faire d'ajustements."
 
-#: C/edit-colors.page:34(item/title)
+#. (itstool) path: item/title
+#: C/edit-colors.page:34
 msgid "<gui>Desaturate</gui>"
 msgstr "<gui>Désaturer</gui>"
 
-#: C/edit-colors.page:35(item/p)
+#. (itstool) path: item/p
+#: C/edit-colors.page:35
 msgid ""
 "This tool converts the image colors into shades of grey. (This does not "
 "change this image storage format.)"
@@ -1510,87 +1545,104 @@ msgstr ""
 "Cet outil convertit les couleurs de l'image en niveaux de gris (cela ne "
 "modifie pas le format d'enregistrement de l'image)."
 
-#: C/edit-colors.page:39(item/title)
+#. (itstool) path: item/title
+#: C/edit-colors.page:39
 msgid "<gui>Negative</gui>"
 msgstr "<gui>Négatif</gui>"
 
-#: C/edit-colors.page:40(item/p)
+#. (itstool) path: item/p
+#: C/edit-colors.page:40
 msgid "This tool inverts the color levels, providing an image negative."
 msgstr ""
 "Cet outil inverse les couleurs de l'image, fournissant un négatif de l'image."
 
-#: C/edit-rotate.page:6(page/title)
+#. (itstool) path: page/title
+#: C/edit-rotate.page:6
 msgid "Rotations and Flips"
 msgstr "Pivotement et retournement"
 
-#: C/edit-rotate.page:12(page/p)
+#. (itstool) path: page/p
+#: C/edit-rotate.page:12
 msgid "Several tools are provided to manipulate the orientation of images."
 msgstr ""
 "Plusieurs outils sont disponibles pour modifier l'orientation des images."
 
-#: C/edit-rotate.page:17(item/title)
+#. (itstool) path: item/title
+#: C/edit-rotate.page:17
 msgid "<gui>Mirror</gui>"
 msgstr "<gui>Miroir</gui>"
 
-#: C/edit-rotate.page:18(item/p)
+#. (itstool) path: item/p
+#: C/edit-rotate.page:18
 msgid ""
 "This flips the image horizontally. The left and right sides are swapped."
 msgstr ""
 "Cela retourne l'image horizontalement. Les cotés droit et gauche sont "
 "échangés."
 
-#: C/edit-rotate.page:22(item/title)
+#. (itstool) path: item/title
+#: C/edit-rotate.page:22
 msgid "<gui>Flip</gui>"
 msgstr "<gui>Retourner</gui>"
 
-#: C/edit-rotate.page:23(item/p)
+#. (itstool) path: item/p
+#: C/edit-rotate.page:23
 msgid "This flips the image vertically. The top and bottom are swapped."
 msgstr "Cela retourne l'image verticalement. Le haut et le bas sont échangés."
 
-#: C/edit-rotate.page:27(item/title)
+#. (itstool) path: item/title
+#: C/edit-rotate.page:27
 msgid "<gui>Rotate Right</gui>"
 msgstr "<gui>Pivoter sur la droite</gui>"
 
-#: C/edit-rotate.page:28(item/p)
+#. (itstool) path: item/p
+#: C/edit-rotate.page:28
 msgid "This rotates the image clockwise."
 msgstr "Cela tourne l'image dans le sens horaire."
 
-#: C/edit-rotate.page:31(item/title)
+#. (itstool) path: item/title
+#: C/edit-rotate.page:31
 msgid "<gui>Rotate Left</gui>"
 msgstr "<gui>Pivoter sur la gauche</gui>"
 
-#: C/edit-rotate.page:32(item/p)
+#. (itstool) path: item/p
+#: C/edit-rotate.page:32
 msgid "This rotates the image counter-clockwise."
 msgstr "Cela tourne l'image dans le sens anti-horaire."
 
-#: C/edit-rotate.page:36(page/p)
+#. (itstool) path: page/p
+#: C/edit-rotate.page:36
 msgid ""
 "The rotations offered in the edit mode act on the image in memory. They are "
 "not direct file operations. For jpeg images, these means they are not "
 "lossless operations - the image will degrade slightly when it it is re-"
-"encoded and saved. However, <app>Pix</app> does provide lossless rotation "
-"tools. See <link xref=\"pix-batch-rotate\"/>."
+"encoded and saved. However, <app>gThumb</app> does provide lossless rotation "
+"tools. See <link xref=\"gthumb-batch-rotate\"/>."
 msgstr ""
 "Les rotations proposées dans le mode édition agissent sur l'image en "
 "mémoire. Il ne s'agit pas d'opérations directes sur les fichiers. Pour les "
 "images jpeg, cela signifie que ce ne sont pas des opérations sans perte de "
 "données ; l'image est légèrement dégradée lorsqu'elle est codée à nouveau et "
-"enregistrée. <app>Pix</app> fournit des outils de rotation sans perte. "
-"Consultez la section <link xref=\"pix-batch-rotate\"/>."
+"enregistrée. <app>gThumb</app> fournit des outils de rotation sans perte. "
+"Consultez la section <link xref=\"gthumb-batch-rotate\"/>."
 
-#: C/edit-resize-crop.page:6(page/title)
+#. (itstool) path: page/title
+#: C/edit-resize-crop.page:6
 msgid "Resizing and Cropping"
 msgstr "Redimensionnement et découpe"
 
-#: C/edit-resize-crop.page:12(page/p)
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:12
 msgid "Two tools are provided to resize and crop images."
 msgstr "Il existe deux outils pour redimensionner et découper les images."
 
-#: C/edit-resize-crop.page:15(item/title)
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:15
 msgid "<gui>Resize</gui>"
 msgstr "<gui>Redimensionner</gui>"
 
-#: C/edit-resize-crop.page:16(item/p)
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:16
 msgid ""
 "This allows you to resize the image. The image may be scaled to a certain "
 "physical size, or to a certain percentage of the original size. The aspect "
@@ -1601,11 +1653,13 @@ msgstr ""
 "originale. Les proportions de l'image peuvent être conservées ou ajustées "
 "librement."
 
-#: C/edit-resize-crop.page:22(item/title)
+#. (itstool) path: item/title
+#: C/edit-resize-crop.page:22
 msgid "<gui>Crop</gui>"
 msgstr "<gui>Découper</gui>"
 
-#: C/edit-resize-crop.page:23(item/p)
+#. (itstool) path: item/p
+#: C/edit-resize-crop.page:23
 msgid ""
 "This allows you to crop the image. Click and drag the mouse over the desired "
 "area of the image. The area may be locked to a specific aspect ratio, or it "
@@ -1619,66 +1673,74 @@ msgstr ""
 "règle des tiers ou du nombre d'or pour vous aider dans la composition de "
 "l'image."
 
-#: C/edit-resize-crop.page:31(page/p)
+#. (itstool) path: page/p
+#: C/edit-resize-crop.page:31
 msgid ""
-"<app>Pix</app> also offers a batch-mode tool for resizing multiple images "
-"simultaneously. See <link xref=\"pix-batch-resize\"/>."
+"<app>gThumb</app> also offers a batch-mode tool for resizing multiple images "
+"simultaneously. See <link xref=\"gthumb-batch-resize\"/>."
 msgstr ""
-"<app>Pix</app> fournit aussi un utilitaire de traitement par lots pour "
+"<app>gThumb</app> fournit aussi un utilitaire de traitement par lots pour "
 "redimensionner plusieurs images à la fois. Consultez la section <link xref="
-"\"pix-batch-resize\"/>."
+"\"gthumb-batch-resize\"/>."
 
-#: C/edit-redeye.page:6(page/title)
+#. (itstool) path: page/title
+#: C/edit-redeye.page:6
 msgid "Red Eye Removal"
 msgstr "Correction des yeux rouges"
 
-#: C/edit-redeye.page:11(page/p)
+#. (itstool) path: page/p
+#: C/edit-redeye.page:11
 msgid ""
-"<app>Pix</app> provides a <gui>Red Eye Removal</gui> tool. To remove a "
+"<app>gThumb</app> provides a <gui>Red Eye Removal</gui> tool. To remove a "
 "red eye, position the mouse pointer over the red eye and click on it. "
-"<app>Pix</app> will attempt to remove the red region and replace it with "
+"<app>gThumb</app> will attempt to remove the red region and replace it with "
 "a more natural-looking gray region. If the results do not look correct, "
 "press <key>Escape</key> and click on the <gui>Undo</gui> item."
 msgstr ""
-"<app>Pix</app> fournit un outil de <gui>Correction des yeux rouges</gui>. "
+"<app>gThumb</app> fournit un outil de <gui>Correction des yeux rouges</gui>. "
 "Pour corriger un œil rouge, positionnez le pointeur de la souris sur l'œil "
-"et cliquez dessus. <app>Pix</app> tente de supprimer la zone rouge et de "
+"et cliquez dessus. <app>gThumb</app> tente de supprimer la zone rouge et de "
 "la remplacer par une zone grise plus naturelle. Si les résultats ne sont pas "
 "satisfaisants, appuyez sur la touche <key>Échap</key> et cliquez sur le "
 "bouton <gui>Annuler</gui>."
 
-#: C/edit-redeye.page:18(page/p)
+#. (itstool) path: page/p
+#: C/edit-redeye.page:18
 msgid ""
 "This tool works best when there is a high color contrast between the red eye "
 "and the surrounding facial area. It does not work well for \"orange eye\" "
 "sometimes seen in photos of children, or if the surrounding skin has a "
 "reddish tinge. This tool could use improvement - if you are fiendishly "
 "clever, love matrix algebra and open source software, please <link href="
-"\"http://github.com/linuxmint/pix\">submit a patch!</link>"
+"\"https://wiki.gnome.org/Apps/gthumb/development\">submit a patch!</link>"
 msgstr ""
 "Cet outil fonctionne mieux lorsqu'il y a un contraste de couleur important "
 "entre l'œil rouge et la zone du visage qui l'entoure. Il ne fonctionne pas "
 "bien avec les « yeux orange » que l'on voit parfois sur les photos "
 "d'enfants, ou si la peau autour de l'œil possède une teinte rouge. Cet outil "
 "peut être amélioré ; si vous êtes très intelligent, aimez l'algèbre "
-"matricielle et le logiciel libre, vous pouvez <link href=\"http://github.com/linuxmint/pix\">soumettre un correctif</link>."
+"matricielle et le logiciel libre, vous pouvez <link href=\"https://wiki."
+"gnome.org/Apps/gthumb/development\">soumettre un correctif</link>."
 
-#: C/extensions.page:6(page/title)
-msgid "Extending Pix"
-msgstr "Extension de Pix"
+#. (itstool) path: page/title
+#: C/extensions.page:6
+msgid "Extending gThumb"
+msgstr "Extension de gThumb"
 
-#: C/extensions.page:8(page/p)
+#. (itstool) path: page/p
+#: C/extensions.page:8
 msgid ""
-"<app>Pix</app> has a plug-in system for extensions. Some standard "
+"<app>gThumb</app> has a plug-in system for extensions. Some standard "
 "features are implemented as extensions and are supplied with the standard "
 "distribution. Users may write (and share) additional extensions."
 msgstr ""
-"<app>Pix</app> possède un système de greffons pour ses extensions. "
+"<app>gThumb</app> possède un système de greffons pour ses extensions. "
 "Certaines fonctionnalités de base sont implémentées sous la forme "
 "d'extensions et sont fournies avec la distribution standard. Les "
 "utilisateurs peuvent écrire (et partager) des extensions supplémentaires."
 
-#: C/extensions.page:12(page/p)
+#. (itstool) path: page/p
+#: C/extensions.page:12
 msgid ""
 "You can enable or disable extensions using <guiseq><gui>Edit</"
 "gui><gui>Extensions</gui></guiseq>. Some extensions will have "
@@ -1689,7 +1751,8 @@ msgstr ""
 "extensions possèdent des <gui>Préférences</gui> qui peuvent être configurées "
 "dans cette boîte de dialogue."
 
-#: C/extensions.page:16(page/p)
+#. (itstool) path: page/p
+#: C/extensions.page:16
 msgid ""
 "This manual is written with the assumption that the standard extensions are "
 "enabled. If you seem to be missing a feature, check to see which extensions "
@@ -1699,23 +1762,27 @@ msgstr ""
 "S'il vous semble qu'une fonction est manquante, vérifiez les extensions "
 "activées."
 
-#: C/extensions.page:20(page/p)
+#. (itstool) path: page/p
+#: C/extensions.page:20
 msgid ""
 "If you would like to write your own extension, please visit <link href="
-"\"http://github.com/linuxmint/pix\">http://github.com/linuxmint/pix</link> for "
-"development information. An example extension is provided in the source "
-"code, which you can base your own extension on."
+"\"https://wiki.gnome.org/Apps/gthumb\">https://wiki.gnome.org/Apps/gthumb</"
+"link> for development information. An example extension is provided in the "
+"source code, which you can base your own extension on."
 msgstr ""
-"Si vous souhaitez écrire votre propre extension, visitez <link href=\"http://"
-"github.com/linuxmint/pix\">http://github.com/linuxmint/pix</link> pour obtenir des "
-"informations sur le développement. Un exemple d'extension est fourni dans le "
-"code source, il peut vous servir de point de départ pour votre extension."
+"Si vous souhaitez écrire votre propre extension, visitez <link href="
+"\"https://wiki.gnome.org/Apps/gthumb\">https://wiki.gnome.org/Apps/gthumb</"
+"link> pour obtenir des informations sur le développement. Un exemple "
+"d'extension est fourni dans le code source, il peut vous servir de point de "
+"départ pour votre extension."
 
-#: C/gimp.page:6(page/title)
+#. (itstool) path: page/title
+#: C/gimp.page:6
 msgid "Launching GIMP"
 msgstr "Lancement de GIMP"
 
-#: C/gimp.page:7(page/p)
+#. (itstool) path: page/p
+#: C/gimp.page:7
 msgid ""
 "If you have files selected in the browser, or an image open in the viewer, "
 "you can open them in the <app>GNU Image Manipulation Program (GIMP)</app> by "
@@ -1725,30 +1792,34 @@ msgstr ""
 "ouverte dans le visionneur, vous pouvez les ouvrir dans l'<app>Éditeur "
 "d'images GIMP</app> en appuyant sur la touche <key>g</key>."
 
-#: C/gimp.page:10(page/p)
+#. (itstool) path: page/p
+#: C/gimp.page:10
 msgid ""
 "<app>GIMP</app> provides a more sophisticated set of editing tools than that "
-"provided with <app>Pix</app>."
+"provided with <app>gThumb</app>."
 msgstr ""
 "<app>GIMP</app> fournit un ensemble d'outils de modification plus "
-"sophistiqués que ceux fournis avec <app>Pix</app>."
+"sophistiqués que ceux fournis avec <app>gThumb</app>."
 
-#: C/viewer.page:6(page/title)
+#. (itstool) path: page/title
+#: C/viewer.page:6
 msgid "Opening an Image"
 msgstr "Ouverture d'une image"
 
-#: C/viewer.page:8(page/p)
+#. (itstool) path: page/p
+#: C/viewer.page:8
 msgid ""
 "The browser view shows the images in the current folder or catalog (see "
-"<link xref=\"pix-browser-view\"/>). Double-clicking an image (or pressing "
+"<link xref=\"gthumb-browser-view\"/>). Double-clicking an image (or pressing "
 "<key>Return</key>) in the browser will open it in the viewer mode."
 msgstr ""
 "Le navigateur affiche les images contenues dans le dossier ou le catalogue "
-"actuel (voir la section <link xref=\"pix-browser-view\"/>). Double-"
+"actuel (voir la section <link xref=\"gthumb-browser-view\"/>). Double-"
 "cliquez sur une image (ou appuyez sur <key>Entrée</key>) dans le navigateur "
 "pour ouvrir celle-ci dans le visionneur."
 
-#: C/viewer.page:13(page/p)
+#. (itstool) path: page/p
+#: C/viewer.page:13
 msgid ""
 "Pressing <key>Escape</key> will exit the viewer mode, and return the user to "
 "the browser mode. A toolbar button (<gui>View the folders</gui>) is also "
@@ -1758,19 +1829,22 @@ msgstr ""
 "dans le navigateur. Un bouton de la barre d'outils (<gui>Afficher les "
 "dossiers</gui>) est aussi fourni dans ce but."
 
-#: C/viewer.page:17(page/p)
+#. (itstool) path: page/p
+#: C/viewer.page:17
 msgid ""
-"A <link xref=\"pix-thumbnail-pane\"/> may be displayed in the viewer "
+"A <link xref=\"gthumb-thumbnail-pane\"/> may be displayed in the viewer "
 "mode, if desired."
 msgstr ""
-"Le <link xref=\"pix-thumbnail-pane\"/> peut être affiché dans le "
+"Le <link xref=\"gthumb-thumbnail-pane\"/> peut être affiché dans le "
 "visionneur, si vous le souhaitez."
 
-#: C/viewer.page:21(figure/title)
+#. (itstool) path: figure/title
+#: C/viewer.page:21
 msgid "Viewer Mode with Thumbnail Pane"
 msgstr "Visionneur avec volet des vignettes"
 
-#: C/viewer.page:26(page/p)
+#. (itstool) path: page/p
+#: C/viewer.page:26
 msgid ""
 "In the viewer mode, you can advance to the next image by clicking the "
 "<gui>Next</gui> button, or by pressing <key>Space</key> or <key>Page Down</"
@@ -1786,11 +1860,13 @@ msgstr ""
 "<key>Page haut</key>. Vous pouvez aussi cliquer sur les vignettes dans le "
 "volet des vignettes pour ouvrir une autre image."
 
-#: C/fullscreen.page:8(page/title)
+#. (itstool) path: page/title
+#: C/fullscreen.page:8
 msgid "Manual Fullscreen Mode"
 msgstr "Mode plein écran manuel"
 
-#: C/fullscreen.page:10(page/p)
+#. (itstool) path: page/p
+#: C/fullscreen.page:10
 msgid ""
 "Pressing <key>f</key> in the browser or viewer modes will display the "
 "current image in fullscreen mode. (In the browser mode, you can also double-"
@@ -1800,7 +1876,8 @@ msgstr ""
 "visionneur, l'image actuelle s'affiche alors plein écran (dans le "
 "navigateur, vous pouvez aussi cliquer deux fois avec le bouton du milieu)."
 
-#: C/fullscreen.page:14(page/p)
+#. (itstool) path: page/p
+#: C/fullscreen.page:14
 msgid ""
 "Moving the mouse will activate a popup control panel briefly. This can be "
 "used to navigate to the next or previous image, or change zoom levels."
@@ -1809,7 +1886,8 @@ msgstr ""
 "contrôle. Il peut être utilisé pour naviguer vers l'image suivante ou "
 "précédente ou pour modifier le niveau de zoom."
 
-#: C/fullscreen.page:18(page/p)
+#. (itstool) path: page/p
+#: C/fullscreen.page:18
 msgid ""
 "You can also advance to the next image by pressing <key>PageDown</key> or "
 "<key>Space</key>."
@@ -1817,7 +1895,8 @@ msgstr ""
 "Vous pouvez aussi appuyer sur <key>Page bas</key> ou <key>Espace</key> pour "
 "aller à l'image suivante."
 
-#: C/fullscreen.page:21(page/p)
+#. (itstool) path: page/p
+#: C/fullscreen.page:21
 msgid ""
 "You can go back to the previous image by pressing <key>PageUp</key> or "
 "<key>Backspace</key>."
@@ -1825,23 +1904,27 @@ msgstr ""
 "Vous pouvez appuyer sur la touche <key>Page Haut</key> ou <key>Retour "
 "arrière</key> pour aller à l'image précédente."
 
-#: C/fullscreen.page:24(page/p)
+#. (itstool) path: page/p
+#: C/fullscreen.page:24
 msgid "This can be used to implement a manually-controlled slideshow."
 msgstr ""
 "Vous pouvez utiliser ce mode pour préparer un diaporama contrôlé "
 "manuellement."
 
-#: C/fullscreen.page:27(page/p)
+#. (itstool) path: page/p
+#: C/fullscreen.page:27
 msgid "To exit the fullscreen mode, press <key>f</key> or <key>Escape</key>."
 msgstr ""
 "Pour quitter le mode d'affichage plein écran, appuyez sur <key>f</key> ou "
 "<key>Échap</key>."
 
-#: C/sorting.page:7(page/title)
+#. (itstool) path: page/title
+#: C/sorting.page:7
 msgid "Sorting Files"
 msgstr "Tri des fichiers"
 
-#: C/sorting.page:9(page/p)
+#. (itstool) path: page/p
+#: C/sorting.page:9
 msgid ""
 "Use the <guiseq><gui>View</gui><gui>Sort By</gui></guiseq> menu to select "
 "the desired file-sorting method for the browser view. Files can be sorted on "
@@ -1853,37 +1936,13 @@ msgstr ""
 "navigateur. Les fichiers peuvent être triés par nom, taille, date de "
 "modification ou date de prise de vue."
 
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/filtering.page:17(media)
-msgctxt "_"
-msgid ""
-"external ref='figures/general-filter.png' "
-"md5='818fcb0f12da6496f3c72699f12beb28'"
-msgstr ""
-"external ref='figures/general-filter.png' "
-"md5='818fcb0f12da6496f3c72699f12beb28'"
-
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/filtering.page:30(media)
-msgctxt "_"
-msgid ""
-"external ref='figures/specific-filter.png' "
-"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
-msgstr ""
-"external ref='figures/specific-filter.png' "
-"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
-
-#: C/filtering.page:7(page/title)
+#. (itstool) path: page/title
+#: C/filtering.page:7
 msgid "Filtering Files"
 msgstr "Filtrage des fichiers"
 
-#: C/filtering.page:9(page/p)
+#. (itstool) path: page/p
+#: C/filtering.page:9
 msgid ""
 "You can select what types of files to show in the browser view using the "
 "<guiseq><gui>View</gui><gui>Filter</gui></guiseq> dialog. The default is to "
@@ -1895,20 +1954,37 @@ msgstr ""
 "gui></guiseq>. Par défaut tous les fichiers multimédia (image, vidéo, audio) "
 "sont affichés, mais cela peut être rendu plus ou moins strict."
 
-#: C/filtering.page:15(figure/title)
+#. (itstool) path: figure/title
+#: C/filtering.page:15
 msgid "Enabling Filters"
 msgstr "Activation des filtres"
 
-#: C/filtering.page:20(page/p)
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:17
+msgctxt "_"
 msgid ""
-"The figure above shows how to configure <app>Pix</app> to display media "
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+msgstr ""
+"external ref='figures/general-filter.png' "
+"md5='818fcb0f12da6496f3c72699f12beb28'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:20
+msgid ""
+"The figure above shows how to configure <app>gThumb</app> to display media "
 "files only, by setting the <gui>General Filter</gui>."
 msgstr ""
-"La figure ci-dessus montre comment configurer <app>Pix</app> pour que "
+"La figure ci-dessus montre comment configurer <app>gThumb</app> pour que "
 "seuls les fichiers multimédias s'affichent, en paramétrant le <gui>Filtre "
 "général</gui>."
 
-#: C/filtering.page:23(page/p)
+#. (itstool) path: page/p
+#: C/filtering.page:23
 msgid ""
 "Also, by enabling <gui>Filename</gui> in <gui>Other Filters</gui>, a filter-"
 "by-filename ability is added to the filter bar at the bottom of the browser "
@@ -1918,11 +1994,27 @@ msgstr ""
 "fonctionnalité de filtrage par nom est ajoutée à la barre de filtre en bas "
 "de la fenêtre de visualisation :"
 
-#: C/filtering.page:28(figure/title)
+#. (itstool) path: figure/title
+#: C/filtering.page:28
 msgid "Browser Filter Bar"
 msgstr "Barre de filtre du navigateur"
 
-#: C/filtering.page:33(page/p)
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/filtering.page:30
+msgctxt "_"
+msgid ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+msgstr ""
+"external ref='figures/specific-filter.png' "
+"md5='e7036e5b958301c6acb3ab5e4a618bbe'"
+
+#. (itstool) path: page/p
+#: C/filtering.page:33
 msgid ""
 "In the above figure, the filename filter has been configured to show only "
 "files with \"gen\" in the filename. The matching is case-insensitive."
@@ -1931,11 +2023,13 @@ msgstr ""
 "n'afficher que ceux qui contiennent « gen ». Le critère de recherche n'est "
 "pas sensible à la casse."
 
-#: C/printing.page:7(page/title)
+#. (itstool) path: page/title
+#: C/printing.page:7
 msgid "Printing Images"
 msgstr "Impression d'images"
 
-#: C/printing.page:9(page/p)
+#. (itstool) path: page/p
+#: C/printing.page:9
 msgid ""
 "To print the current image in the viewer mode, use <guiseq><gui>File</"
 "gui><gui>Print</gui></guiseq> or <keyseq><key>Ctrl</key><key>p</key></"
@@ -1945,7 +2039,8 @@ msgstr ""
 "<guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq> ou <keyseq><key>Ctrl</"
 "key><key>p</key></keyseq>."
 
-#: C/printing.page:13(page/p)
+#. (itstool) path: page/p
+#: C/printing.page:13
 msgid ""
 "To print one or more images from the browser mode, select the desired images "
 "and then use <guiseq><gui>File</gui><gui>Print</gui></guiseq> or "
@@ -1955,7 +2050,8 @@ msgstr ""
 "images souhaitées et utilisez <guiseq><gui>Fichier</gui><gui>Imprimer</gui></"
 "guiseq> ou <keyseq><key>Ctrl</key><key>p</key></keyseq>."
 
-#: C/printing.page:18(page/p)
+#. (itstool) path: page/p
+#: C/printing.page:18
 msgid ""
 "The printer to use can be selected from the <gui>General</gui> tab of the "
 "print dialog."
@@ -1963,7 +2059,8 @@ msgstr ""
 "L'imprimante à utiliser peut être sélectionnée dans l'onglet <gui>Général</"
 "gui> de la boîte de dialogue d'impression."
 
-#: C/printing.page:21(page/p)
+#. (itstool) path: page/p
+#: C/printing.page:21
 msgid ""
 "The type of paper to use can be selected from the <gui>Page Setup</gui> tab."
 msgstr ""
@@ -1971,9 +2068,10 @@ msgstr ""
 "en page</gui> de la boîte de dialogue d'impression."
 
 # note preview is separated window
-#: C/printing.page:24(page/p)
+#. (itstool) path: page/p
+#: C/printing.page:24
 msgid ""
-"The <gui>Layout</gui> tab provides some additional <app>Pix</app>-"
+"The <gui>Layout</gui> tab provides some additional <app>gThumb</app>-"
 "specific options. You can set the number of images to include on each page "
 "here, and a preview pane is provided. Captions can also be added under the "
 "image, in a configurable font. The captions can be chosen from a selection "
@@ -1982,7 +2080,7 @@ msgid ""
 "area using the controls on this tab."
 msgstr ""
 "L'onglet <gui>Agencement</gui> fournit des options supplémentaires "
-"spécifiques à <app>Pix</app>. Vous pouvez définir le nombre d'images à "
+"spécifiques à <app>gThumb</app>. Vous pouvez définir le nombre d'images à "
 "inclure dans chaque page et un onglet de prévisualisation est disponible. Il "
 "est possible d'ajouter une légende sous l'image, la police de caractère de "
 "celle-ci est paramétrable. Les légendes peuvent être choisies parmi les "
@@ -1991,29 +2089,35 @@ msgstr ""
 "être repositionnée dans sa zone d'impression à l'aide des éléments de "
 "contrôle de cet onglet."
 
-#: C/printing.page:34(page/p)
+#. (itstool) path: page/p
+#: C/printing.page:34
 msgid "When you are ready to print, press the <gui>Print</gui> button."
 msgstr ""
 "Quand vous êtes prêt à imprimer, appuyez sur le bouton <gui>Imprimer</gui>."
 
-#: C/shortcuts.page:7(page/title)
+#. (itstool) path: page/title
+#: C/shortcuts.page:7
 msgid "Keyboard Shortcuts"
 msgstr "Raccourcis clavier"
 
-#: C/shortcuts.page:10(section/title)
+#. (itstool) path: section/title
+#: C/shortcuts.page:10
 msgid "Viewing and hiding parts of the user interface"
 msgstr "Affichage et masquage de certaines parties de l'interface utilisateur"
 
-#: C/shortcuts.page:14(td/p) C/shortcuts.page:91(td/p)
-#: C/shortcuts.page:270(td/p) C/shortcuts.page:495(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:14 C/shortcuts.page:81 C/shortcuts.page:270
+#: C/shortcuts.page:535
 msgid "Keyboard Shortcut"
 msgstr "Raccourci clavier"
 
-#: C/shortcuts.page:22(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:22
 msgid "<key>F9</key>"
 msgstr "<key>F9</key>"
 
-#: C/shortcuts.page:27(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:27
 msgid ""
 "Show/Hide the sidebar in the browser mode. The sidebar contains the folder "
 "tree and the file properties summary (if enabled)."
@@ -2022,386 +2126,537 @@ msgstr ""
 "contient l'arborescence des dossiers et le résumé des propriétés de fichier "
 "(si activé)."
 
-#: C/shortcuts.page:33(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:33
 msgid "<key>i</key>"
 msgstr "<key>i</key>"
 
-#: C/shortcuts.page:38(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:38
 msgid "Show the file properties summary."
 msgstr "Affiche le résumé des propriétés du fichier."
 
-#: C/shortcuts.page:43(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:43
 msgid "<key>F8</key>"
 msgstr "<key>F8</key>"
 
-#: C/shortcuts.page:48(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:48
 msgid "Shows/hides the thumbnail pane in the viewer mode."
 msgstr "Affiche/masque le volet des vignettes dans le mode visionneur."
 
-#: C/shortcuts.page:53(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:53
 msgid "<key>F11</key> or <key>f</key>"
 msgstr "<key>F11</key> ou <key>f</key>"
 
-#: C/shortcuts.page:58(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:58
 msgid "Toggles the fullscreen mode."
 msgstr "Bascule dans le mode plein écran."
 
-#: C/shortcuts.page:63(td/p)
-msgid "<keyseq><key>Ctrl</key><key>t</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>t</key></keyseq>"
-
-#: C/shortcuts.page:68(td/p)
-msgid "Shows/hides the thumbnails in the browser mode."
-msgstr "Affiche/masque les vignettes dans le navigateur."
-
-#: C/shortcuts.page:73(td/p) C/shortcuts.page:523(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:63
 msgid "<key>Esc</key>"
 msgstr "<key>Échap</key>"
 
-#: C/shortcuts.page:78(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:68
 msgid "Closes the viewer or fullscreen mode."
 msgstr "Quitte le visionneur ou le mode plein écran."
 
-#: C/shortcuts.page:87(section/title)
+#. (itstool) path: section/title
+#: C/shortcuts.page:77
 msgid "Editing shortcuts for the browser and viewer"
 msgstr "Raccourcis pour l'édition dans le navigateur et le visionneur"
 
 # note: missing space
-#: C/shortcuts.page:99(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:89
 msgid "<key>e</key>"
 msgstr "<key>e</key>"
 
-#: C/shortcuts.page:104(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:94
 msgid "Edit the image. Opens the viewer and shows the editing tools."
 msgstr ""
 "Modifie l'image. Ouvre le visionneur et affiche les outils de modification."
 
-#: C/shortcuts.page:109(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:99
 msgid "<key>g</key>"
 msgstr "<key>g</key>"
 
-#: C/shortcuts.page:114(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:104
 msgid "Open the image with the GNU Image Manipulation Program (GIMP)."
 msgstr "Ouvre l'image avec le logiciel de manipulation d'image (GIMP) de GNU."
 
-#: C/shortcuts.page:119(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:109
 msgid "<key>F2</key>"
 msgstr "<key>F2</key>"
 
-#: C/shortcuts.page:124(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:114
 msgid "Rename the image."
 msgstr "Renomme une image."
 
-#: C/shortcuts.page:129(td/p)
-msgid "<key>c</key> or <keyseq><key>Ctrl</key><key>m</key></keyseq>"
-msgstr "<key>c</key> ou <keyseq><key>Ctrl</key><key>m</key></keyseq>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:119
+msgid "<key>c</key>"
+msgstr "<key>c</key>"
 
-#: C/shortcuts.page:134(td/p)
-msgid "Add comments or metadata to an image."
-msgstr "Ajoute des commentaires ou des métadonnées à une image."
+#. (itstool) path: td/p
+#: C/shortcuts.page:124
+msgid "Add comments or metadata to the selected images."
+msgstr "Ajoute des commentaires ou des métadonnées aux images sélectionnées."
 
-#: C/shortcuts.page:139(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:129
+msgid "<key>t</key>"
+msgstr "<key>t</key>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:134
+msgid "Add tags to the selected images."
+msgstr "Ajoute des étiquettes aux images sélectionnées."
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:139
 msgid "<key>]</key>"
 msgstr "<key>]</key>"
 
-#: C/shortcuts.page:144(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:144
 msgid "Rotate right, losslessly if possible. The file is saved automatically."
 msgstr ""
 "Pivote vers la droite, sans perte de données si possible. Le fichier est "
 "enregistré automatiquement."
 
-#: C/shortcuts.page:149(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:149
 msgid "<key>[</key>"
 msgstr "<key>[</key>"
 
-#: C/shortcuts.page:154(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:154
 msgid "Rotate left, losslessly if possible. The file is saved automatically."
 msgstr ""
 "Pivote vers la gauche, sans perte de données si possible. Le fichier est "
 "enregistré automatiquement."
 
-#: C/shortcuts.page:159(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:159
 msgid "<key>Delete</key>"
 msgstr "<key>Suppr</key>"
 
-#: C/shortcuts.page:164(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:164
 msgid "Move the selected files to the Trash."
 msgstr "Déplace les images sélectionnées dans la corbeille."
 
-#: C/shortcuts.page:169(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:169
 msgid "<keyseq><key>Shift</key><key>Delete</key></keyseq>"
 msgstr "<keyseq><key>Maj</key><key>Suppr</key></keyseq>"
 
-#: C/shortcuts.page:174(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:174
 msgid "Delete the selected files permanently."
 msgstr "Supprime les images sélectionnées définitivement."
 
-#: C/shortcuts.page:182(section/title)
+#. (itstool) path: section/title
+#: C/shortcuts.page:182
 msgid "Editing shortcuts for the viewer mode only"
 msgstr "Raccourcis pour l'édition dans le visionneur uniquement"
 
-#: C/shortcuts.page:186(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:186
 msgid "Keyboard Shortcut (Case Sensitive)"
 msgstr "Raccourci clavier (sensible à la casse)"
 
-#: C/shortcuts.page:194(td/p)
-msgid "<key>h</key>"
-msgstr "<key>h</key>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:194
+msgid "<key>a</key>"
+msgstr "<key>a</key>"
 
-#: C/shortcuts.page:199(td/p)
-msgid "Enhance colors."
-msgstr "Améliore les couleurs."
+#. (itstool) path: td/p
+#: C/shortcuts.page:199
+msgid "Adjust contrast."
+msgstr "Ajuste le contraste."
 
-#: C/shortcuts.page:204(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:204
 msgid "<key>l</key>"
 msgstr "<key>l</key>"
 
-#: C/shortcuts.page:209(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:209
 msgid "Flip image."
 msgstr "Retourne l'image."
 
-#: C/shortcuts.page:214(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:214
 msgid "<key>m</key>"
 msgstr "<key>m</key>"
 
-#: C/shortcuts.page:219(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:219
 msgid "Mirror image."
 msgstr "Image en miroir."
 
 # note: missing space
-#: C/shortcuts.page:224(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:224
 msgid "<key>r</key>"
 msgstr "<key>r</key>"
 
-#: C/shortcuts.page:229(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:229
 msgid "Rotate right."
 msgstr "Pivote sur la droite."
 
-#: C/shortcuts.page:234(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:234
 msgid "<key>R</key>"
 msgstr "<key>R</key>"
 
-#: C/shortcuts.page:239(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:239
 msgid "Rotate left."
 msgstr "Pivote sur la gauche."
 
-#: C/shortcuts.page:244(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:244
 msgid "<key>C</key>"
 msgstr "<key>C</key>"
 
-#: C/shortcuts.page:249(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:249
 msgid "Crop image."
 msgstr "Découpe l'image."
 
-#: C/shortcuts.page:254(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:254
 msgid "<key>S</key>"
 msgstr "<key>S</key>"
 
-#: C/shortcuts.page:259(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:259
 msgid "Resize image."
 msgstr "Redimensionne l'image."
 
-#: C/shortcuts.page:266(section/title)
+#. (itstool) path: section/title
+#: C/shortcuts.page:266
 msgid "Viewer shortcuts"
 msgstr "Raccourcis clavier du visionneur"
 
-#: C/shortcuts.page:278(td/p)
-msgid "<key>Right Arrow</key> or <key>Down Arrow</key> or <key>Space</key> or <key>Page Down</key>"
-msgstr "<key>Flèche droite</key> ou <key>Flèche bas</key> ou <key>Espace</key> ou <key>Page bas</key>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:278
+msgid "<key>Space</key> or <key>Page Down</key>"
+msgstr "<key>Espace</key> ou <key>Page bas</key>"
 
-#: C/shortcuts.page:283(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:283
 msgid "View the next image."
 msgstr "Affiche l'image suivante."
 
-#: C/shortcuts.page:288(td/p)
-msgid "<key>Left Arrow</key> or <key>Up Arrow</key> or <key>Backspace</key> or <key>Page Up</key>"
-msgstr "<key>Flèche gauche</key> ou <key>Flèche haut</key> ou <key>Retour Arrière</key> ou <key>Page Haut</key>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:288
+msgid "<key>Backspace</key> or <key>Page Up</key>"
+msgstr "<key>Retour Arrière</key> ou <key>Page Haut</key>"
 
-#: C/shortcuts.page:293(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:293
 msgid "View the previous image."
 msgstr "Affiche l'image précédente."
 
 # note: missing space
-#: C/shortcuts.page:298(td/p) C/shortcuts.page:415(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:298 C/shortcuts.page:446
 msgid "<key>Home</key>"
 msgstr "<key>Origine</key>"
 
-#: C/shortcuts.page:303(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:303
 msgid "View the first image."
 msgstr "Affiche la première image."
 
-#: C/shortcuts.page:308(td/p) C/shortcuts.page:425(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:308 C/shortcuts.page:456
 msgid "<key>End</key>"
 msgstr "<key>Fin</key>"
 
-#: C/shortcuts.page:313(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:313
 msgid "View the last image."
 msgstr "Affiche la dernière image."
 
-#: C/shortcuts.page:318(td/p)
-msgid "<keyseq> <key>Ctrl</key> <key>D</key> </keyseq>"
-msgstr "<keyseq> <key>Ctrl</key> <key>D</key> </keyseq>"
-
-#: C/shortcuts.page:326(td/p)
-msgid "Add the current location to the bookmarks."
-msgstr "Ajoute l'emplacement actuel aux signets."
-
 # note: missing space
-#: C/shortcuts.page:331(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:318
 msgid "<key>+</key> or <key>=</key>"
 msgstr "<key>+</key> ou <key>=</key>"
 
-#: C/shortcuts.page:336(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:323
 msgid "Zoom in."
 msgstr "Zoom avant."
 
-#: C/shortcuts.page:341(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:328
 msgid "<key>-</key>"
 msgstr "<key>-</key>"
 
-#: C/shortcuts.page:346(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:333
 msgid "Zoom out."
 msgstr "Zoom arrière."
 
-#: C/shortcuts.page:351(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:338
 msgid "<key>1</key> or <key>z</key> or <key>/ (numeric keypad)</key>"
 msgstr "<key>1</key> ou <key>z</key> ou <key>/ (pavé numérique)</key>"
 
-#: C/shortcuts.page:357(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:344
 msgid "Actual size."
 msgstr "Taille réelle."
 
-#: C/shortcuts.page:362(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:349
 msgid "<key>x</key> or <key>* (numeric keypad)</key>"
 msgstr "<key>x</key> ou <key>*</key> (pavé numérique)"
 
-#: C/shortcuts.page:367(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:354
 msgid "Zoom to fit (scales down only, does not magnify)"
-msgstr "Taille ajustée (uniquement en réduction, pas d'agrandissement)"
+msgstr ""
+"Zoom pour ajuster la taille (uniquement en réduction, pas d'agrandissement)"
 
-#: C/shortcuts.page:372(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:359
 msgid "<keyseq> <key>Shift</key> <key>x</key> </keyseq>"
 msgstr "<keyseq> <key>Maj</key> <key>x</key> </keyseq>"
 
-#: C/shortcuts.page:380(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:367
 msgid "Zoom to fit (scale down or magnify, as required)"
-msgstr "Taille ajustée (réduction ou agrandissement selon les besoins)"
+msgstr ""
+"Zoom pour ajuster la taille (réduction ou agrandissement selon les besoins)"
 
-#: C/shortcuts.page:385(td/p)
-msgid "<keyseq> <key>Ctrl</key> <key>Arrows</key> </keyseq>"
-msgstr "<keyseq> <key>Ctrl</key> <key>Flèches</key> </keyseq>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:372
+msgid "<key>w</key>"
+msgstr "<key>w</key>"
 
-#: C/shortcuts.page:390(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:376
+msgid "Zoom to fit width (scales down only, does not magnify)"
+msgstr ""
+"Zoom pour ajuster la largeur (uniquement en réduction, pas d'agrandissement)"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:381
+msgid "<keyseq> <key>Shift</key> <key>w</key> </keyseq>"
+msgstr "<keyseq> <key>Maj</key> <key>w</key> </keyseq>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:389
+msgid "Zoom to fit width (scale down or magnify, as required)"
+msgstr ""
+"Zoom pour ajuster la largeur (réduction ou agrandissement selon les besoins)"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:394
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:398
+msgid "Zoom to fit height (scales down only, does not magnify)"
+msgstr ""
+"Zoom pour ajuster la hauteur (uniquement en réduction, pas d'agrandissement)"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:403
+msgid "<keyseq> <key>Shift</key> <key>h</key> </keyseq>"
+msgstr "<keyseq> <key>Maj</key> <key>h</key> </keyseq>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:411
+msgid "Zoom to fit height (scale down or magnify, as required)"
+msgstr ""
+"Zoom pour ajuster la hauteur (réduction ou agrandissement selon les besoins)"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:416
+msgid "<key>Arrows</key>"
+msgstr "<key>Flèches</key>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:421
 msgid "Scroll the image."
 msgstr "Fait défiler l'image."
 
-#: C/shortcuts.page:395(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:426
 msgid "<keyseq> <key>Shift</key> <key>Arrows</key> </keyseq>"
 msgstr "<keyseq> <key>Maj</key> <key>Flèches</key> </keyseq>"
 
-#: C/shortcuts.page:403(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:434
 msgid "Scroll the image faster."
 msgstr "Fait défiler l'image plus rapidement."
 
-#: C/shortcuts.page:410(section/title)
+#. (itstool) path: section/title
+#: C/shortcuts.page:441
 msgid "Browser Navigation"
 msgstr "Déplacement dans le navigateur"
 
-#: C/shortcuts.page:420(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:451
 msgid "Go to the first file in the browser view."
 msgstr "Va au premier fichier dans le navigateur."
 
-#: C/shortcuts.page:431(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:461
 msgid "Go to the last file in the browser view."
 msgstr "Va au dernier fichier dans le navigateur."
 
-#: C/shortcuts.page:436(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:466
 msgid "<key>Down Arrow</key> or <key>Page Down</key>"
 msgstr "<key>Flèche bas</key> ou <key>Page bas</key>"
 
-#: C/shortcuts.page:441(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:471
 msgid "Scroll downwards through the thumbnails."
 msgstr "Fait défiler les vignettes vers le bas."
 
-#: C/shortcuts.page:446(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:476
 msgid "<key>Up Arrow</key> or <key>Page Up</key>"
 msgstr "<key>Flèche haut</key> ou <key>Page haut</key>"
 
-#: C/shortcuts.page:451(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:481
 msgid "Scroll upwards through the thumbnails."
 msgstr "Fait défiler les vignettes vers le haut."
 
-#: C/shortcuts.page:456(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:486
 msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Flèche gauche</key></keyseq>"
 
-#: C/shortcuts.page:461(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:491
 msgid "Go back to the previously viewed folder."
 msgstr "Retourne au précédent dossier visité."
 
-#: C/shortcuts.page:466(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:496
 msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Flèche droite</key></keyseq>"
 
-#: C/shortcuts.page:471(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:501
 msgid "Go forward (after going back to a folder)."
 msgstr "Avance (après être revenu d'un dossier)."
 
-#: C/shortcuts.page:476(td/p)
-msgid "<keyseq> <key>Alt</key> <key>Up</key> </keyseq>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:506
+msgid "<keyseq> <key>Alt</key> <key>Up Arrow</key> </keyseq>"
 msgstr "<keyseq> <key>Alt</key> <key>Flèche haut</key> </keyseq>"
 
-#: C/shortcuts.page:484(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:514
 msgid "Go up one level."
 msgstr "Remonte d'un niveau."
 
-#: C/shortcuts.page:491(section/title)
+#. (itstool) path: td/p
+#: C/shortcuts.page:519
+msgid "<keyseq><key>Ctrl</key><key>o</key></keyseq>"
+msgstr "<keyseq><key>Ctrl</key><key>o</key></keyseq>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:524
+msgid "Open a location typing the path."
+msgstr "Ouvre un emplacement en saisissant le chemin."
+
+#. (itstool) path: section/title
+#: C/shortcuts.page:531
 msgid "Slideshow controls"
 msgstr "Contrôles du diaporama"
 
-#: C/shortcuts.page:503(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:543
 msgid "<key>F5</key>"
 msgstr "<key>F5</key>"
 
-#: C/shortcuts.page:508(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:548
 msgid "Start a slideshow."
 msgstr "Démarre un diaporama."
 
-#: C/shortcuts.page:513(td/p)
-msgid "<key>Space</key>"
-msgstr "<key>Espace</key>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:553
+msgid "<key>p</key>"
+msgstr "<key>p</key>"
 
-#: C/shortcuts.page:518(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:558
 msgid "Pause/Unpause the slideshow."
 msgstr "Interrompt/reprend le diaporama."
 
-#: C/shortcuts.page:528(td/p)
+# note: missing space
+#. (itstool) path: td/p
+#: C/shortcuts.page:563
+msgid "<key>Esc</key> or <key>q</key>"
+msgstr "<key>Échap</key> ou <key>q</key>"
+
+#. (itstool) path: td/p
+#: C/shortcuts.page:568
 msgid "Close the slideshow."
 msgstr "Ferme le diaporama."
 
-#: C/shortcuts.page:533(td/p)
-msgid "<key>Down Arrow</key> or <key>Right Arrow</key> or <key>Page Down</key>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:573
+msgid ""
+"<key>Space</key> or <key>Down Arrow</key> or <key>Right Arrow</key> or "
+"<key>Page Down</key>"
 msgstr ""
-"<key>Flèche bas</key> ou <key>Flèche droite</key> ou <key>Page bas</key>"
+"<key>Espace</key> ou <key>Flèche bas</key> ou <key>Flèche droite</key> ou "
+"<key>Page bas</key>"
 
-#: C/shortcuts.page:538(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:578
 msgid "Load the next image."
 msgstr "Charge l'image suivante."
 
-#: C/shortcuts.page:543(td/p)
-msgid "<key>Up Arrow</key> or <key>Left Arrow</key> or <key>Page Up</key>"
+#. (itstool) path: td/p
+#: C/shortcuts.page:583
+msgid ""
+"<key>Backspace</key> or <key>Up Arrow</key> or <key>Left Arrow</key> or "
+"<key>Page Up</key>"
 msgstr ""
-"<key>Flèche haut</key> ou <key>Flèche gauche</key> ou <key>Page haut</key>"
+"<key>Retour arrière</key> ou <key>Flèche haut</key> ou <key>Flèche gauche</"
+"key> ou <key>Page haut</key>"
 
-#: C/shortcuts.page:548(td/p)
+#. (itstool) path: td/p
+#: C/shortcuts.page:588
 msgid "Load the previous image."
 msgstr "Charge l'image précédente."
 
-#: C/sharing-disc.page:6(page/title)
+#. (itstool) path: page/title
+#: C/sharing-disc.page:6
 msgid "Creating a CD/DVD/ISO"
 msgstr "Création d'un CD/DVD/ISO"
 
-#: C/sharing-disc.page:7(page/p)
+#. (itstool) path: page/p
+#: C/sharing-disc.page:7
 msgid ""
 "To write a series of files to an optical disk (CD or DVD), or to create an "
 "ISO disk image file, use the <guiseq><gui>File</gui> <gui>Export To</"
@@ -2411,7 +2666,8 @@ msgstr ""
 "créer un fichier image de disque ISO, utilisez le menu <guiseq><gui>Fichier</"
 "gui><gui>Exporter vers</gui><gui>Disque optique</gui></guiseq>."
 
-#: C/sharing-disc.page:13(page/p)
+#. (itstool) path: page/p
+#: C/sharing-disc.page:13
 msgid ""
 "You will be offered the choice of writing the currently selected files, the "
 "entire current folder, or the entire current folder and its subfolders. "
@@ -2421,7 +2677,8 @@ msgstr ""
 "le dossier actuel ou le dossier actuel et ses sous-dossiers. Cliquez sur "
 "<gui>OK</gui> lorsque votre choix est fait."
 
-#: C/sharing-disc.page:19(page/p)
+#. (itstool) path: page/p
+#: C/sharing-disc.page:19
 msgid ""
 "The next dialog will select the destination disk, or the ISO file to save. "
 "When you are ready to complete the process, click <gui>Create Image</gui>. "
@@ -2433,21 +2690,24 @@ msgstr ""
 "l'image</gui>. La gravure sur le disque optique commence alors ou le fichier "
 "ISO est enregistré, complétant ainsi le processus."
 
-#: C/sharing-social.page:6(page/title)
+#. (itstool) path: page/title
+#: C/sharing-social.page:6
 msgid "Uploading to Photo-Sharing Web Sites"
 msgstr "Envoi de photos sur des sites Web de partage"
 
-#: C/sharing-social.page:7(page/p)
+#. (itstool) path: page/p
+#: C/sharing-social.page:7
 msgid ""
-"Pix is provided with a number of extensions for uploading photos to "
+"gThumb is provided with a number of extensions for uploading photos to "
 "various \"social media\" web sites. By default, uploaders for Facebook, "
 "Flickr, Picasa, and Photobucket are enabled."
 msgstr ""
-"Pix possède un certain nombre d'extensions pour envoyer des photos sur "
+"gThumb possède un certain nombre d'extensions pour envoyer des photos sur "
 "divers sites Web de réseaux sociaux. Par défaut, les extensions pour "
 "Facebook, Flickr, Picasa et Photobucket sont activés."
 
-#: C/sharing-social.page:13(page/p)
+#. (itstool) path: page/p
+#: C/sharing-social.page:13
 msgid ""
 "To upload a series of photos, select the images in the browser view, and "
 "click the <gui>Share</gui> button in the toolbar. Select the appropriate web "
@@ -2457,23 +2717,25 @@ msgstr ""
 "et cliquez sur le bouton <gui>Partager</gui> de la barre d'outils. "
 "Choisissez le site Web souhaité dans le menu qui apparaît."
 
-#: C/sharing-social.page:17(page/p)
+#. (itstool) path: page/p
+#: C/sharing-social.page:17
 msgid ""
 "You may be prompted for additional information specific to the destination "
 "site, like an album name. You may also be prompted for your user name and "
-"password for the site. It may be necessary for Pix to open a web browser, "
+"password for the site. It may be necessary for gThumb to open a web browser, "
 "where you complete the required authentication steps. Once you have "
-"completed the required authentication steps in the browser, return to Pix "
+"completed the required authentication steps in the browser, return to gThumb "
 "and continue the upload."
 msgstr ""
 "Il se peut que vous deviez renseigner des informations supplémentaires "
 "spécifiques au site de destination, comme par exemple un nom d'album ou vos "
 "nom d'utilisateur et mot de passe pour se connecter au site. Il peut arriver "
-"que Pix doive ouvrir un navigateur Web pour que vous puissiez effectuer "
+"que gThumb doive ouvrir un navigateur Web pour que vous puissiez effectuer "
 "la phase d'authentification. Lorsque celle-ci est terminée, revenez dans "
-"Pix pour continuer l'envoi des photos."
+"gThumb pour continuer l'envoi des photos."
 
-#: C/sharing-social.page:26(page/p)
+#. (itstool) path: page/p
+#: C/sharing-social.page:26
 msgid ""
 "If you do not see the expected upload sites in the <gui>Share</gui> menu, "
 "check that the appropriate exporter extensions are enabled in "
@@ -2483,41 +2745,46 @@ msgstr ""
 "vérifiez que l'extension correspondante est bien activée dans "
 "<guiseq><gui>Édition</gui><gui>Extensions</gui></guiseq>."
 
-#: C/sharing-social.page:31(page/p)
+#. (itstool) path: page/p
+#: C/sharing-social.page:31
 msgid ""
-"For some sites, Pix also supports downloading photos from the site into "
-"Pix. See the <guiseq><gui>File</gui><gui>Import From</gui></guiseq> menu "
+"For some sites, gThumb also supports downloading photos from the site into "
+"gThumb. See the <guiseq><gui>File</gui><gui>Import From</gui></guiseq> menu "
 "for the available download options."
 msgstr ""
-"Pour certains sites, Pix est aussi capable de télécharger les photos du "
-"site dans Pix. Examinez le menu <guiseq><gui>Fichier</gui><gui>Importer "
+"Pour certains sites, gThumb est aussi capable de télécharger les photos du "
+"site dans gThumb. Examinez le menu <guiseq><gui>Fichier</gui><gui>Importer "
 "depuis</gui></guiseq> pour connaître les options de téléchargement "
 "disponibles."
 
-#: C/wallpaper.page:6(page/title)
+#. (itstool) path: page/title
+#: C/wallpaper.page:6
 msgid "Desktop Wallpaper"
 msgstr "Papier peint du bureau"
 
-#: C/wallpaper.page:7(page/p)
+#. (itstool) path: page/p
+#: C/wallpaper.page:7
 msgid ""
 "To set an image as the system desktop wallpaper, right-click on the image "
 "and select <guiseq><gui>Set as Desktop Background</gui></guiseq> from the "
-"pop-up menu. The desktop background will change, and the Appearance "
+"pop-up menu. The desktop background will change, and the Gnome Appearance "
 "Preferences dialog will appear. You can use this dialog to make adjustments "
 "to the background settings (positioning, stretching, tiling, et cetera.)."
 msgstr ""
 "Pour définir une image comme fond d'écran, faites un clic droit sur l'image "
 "et sélectionnez dans le menu contextuel <guiseq><gui>Définir comme arrière-"
 "plan du bureau</gui></guiseq>. Le fond d'écran change et la boîte de "
-"dialogue des préférences Apparence s'affiche. Vous pouvez utiliser "
+"dialogue des préférences Apparence de GNOME s'affiche. Vous pouvez utiliser "
 "cette boîte de dialogue pour faire des ajustements aux paramètres du fond "
 "d'écran (positionnement, étirement, mosaïque, etc)."
 
-#: C/bookmarks.page:6(page/title)
+#. (itstool) path: page/title
+#: C/bookmarks.page:6
 msgid "Using Bookmarks"
 msgstr "Utilisation des signets"
 
-#: C/bookmarks.page:8(page/p)
+#. (itstool) path: page/p
+#: C/bookmarks.page:8
 msgid ""
 "Frequently-used folders can be added to the bookmark list for rapid access. "
 "To add the current folder to the bookmark list, press <keyseq><key>Ctrl</"
@@ -2530,7 +2797,8 @@ msgstr ""
 "utilisez la commande <guiseq><gui>Signets</gui><gui>Ajouter un signet</gui></"
 "guiseq>."
 
-#: C/bookmarks.page:13(page/p)
+#. (itstool) path: page/p
+#: C/bookmarks.page:13
 msgid ""
 "To remove or rearrange bookmarks in a different order use the "
 "<guiseq><gui>Bookmarks</gui><gui>Edit Bookmarks</gui></guiseq> command."
@@ -2538,71 +2806,41 @@ msgstr ""
 "Pour supprimer ou modifier l'ordre des signets, utilisez la commande "
 "<guiseq><gui>Signets</gui><gui>Éditer les signets</gui></guiseq>."
 
-#: C/bookmarks.page:16(page/p)
+#. (itstool) path: page/p
+#: C/bookmarks.page:16
 msgid ""
 "<guiseq><gui>Bookmarks</gui><gui>System Bookmarks</gui></guiseq> provides "
-"access to the system bookmarks."
+"access to the system bookmarks that have been defined in <app>Nautilus</app> "
+"or the file-chooser dialog used in most Gnome applications."
 msgstr ""
 "Le menu <guiseq><gui>Signets</gui><gui>Signets du système</gui></guiseq> "
-"donne accès aux signets du système."
+"donne accès aux signets du système qui ont été définis dans <app>Nautilus</"
+"app> ou la boîte de dialogue de sélection de fichiers utilisée dans de "
+"nombreuses applications GNOME."
 
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/import.page:21(media)
-msgctxt "_"
-msgid ""
-"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
-msgstr ""
-"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
-
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/import.page:43(media)
-msgctxt "_"
-msgid ""
-"external ref='figures/import-pref-auto-folder.png' "
-"md5='0a41de83da83b762e37f3962a7e4c042'"
-msgstr ""
-"external ref='figures/import-pref-auto-folder.png' "
-"md5='0a41de83da83b762e37f3962a7e4c042'"
-
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/import.page:75(media)
-msgctxt "_"
-msgid ""
-"external ref='figures/import-pref-custom-format.png' "
-"md5='989ca536c873ec926a4a71c876004b9f'"
-msgstr ""
-"external ref='figures/import-pref-custom-format.png' "
-"md5='989ca536c873ec926a4a71c876004b9f'"
-
-#: C/import.page:8(page/title)
+#. (itstool) path: page/title
+#: C/import.page:8
 msgid "Importing From a Camera"
 msgstr "Importation depuis un appareil photo"
 
-#: C/import.page:10(page/p)
+#. (itstool) path: page/p
+#: C/import.page:10
 msgid ""
-"On most systems, <app>Pix</app> will automatically launch the import "
+"On most systems, <app>gThumb</app> will automatically launch the import "
 "dialog when a digital camera is connected to the computer, or a memory card "
 "with photos is plugged into a card reader. (It does this because it is "
 "registered as the default handler for x-content/image-dcf and x-content/"
 "image-picturecd mime types.)"
 msgstr ""
-"Sur la plupart des systèmes, <app>Pix</app> ouvre automatiquement la "
+"Sur la plupart des systèmes, <app>gThumb</app> ouvre automatiquement la "
 "boîte de dialogue d'importation quand un appareil photo numérique est "
 "connecté à l'ordinateur, ou si une carte mémoire contenant des photos est "
-"insérée dans un lecteur de carte car <app>Pix</app> est déclaré comme "
+"insérée dans un lecteur de carte car <app>gThumb</app> est déclaré comme "
 "gestionnaire par défaut des types MIME x-content/image-dcf et x-content/"
 "image-picturecd."
 
-#: C/import.page:16(page/p)
+#. (itstool) path: page/p
+#: C/import.page:16
 msgid ""
 "To manually launch the import dialog, use <guiseq><gui>File</gui><gui>Import "
 "From</gui><gui>Removable Device</gui></guiseq>."
@@ -2611,11 +2849,25 @@ msgstr ""
 "menu <guiseq><gui>Fichier</gui><gui>Importer depuis</gui><gui>Périphérique "
 "amovible</gui></guiseq>."
 
-#: C/import.page:20(figure/title)
+#. (itstool) path: figure/title
+#: C/import.page:20
 msgid "The Import Dialog"
 msgstr "Boîte de dialogue d'importation"
 
-#: C/import.page:24(page/p)
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:21
+msgctxt "_"
+msgid ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+msgstr ""
+"external ref='figures/import.png' md5='aab2ba4d889d170b219c554294d69b0f'"
+
+#. (itstool) path: page/p
+#: C/import.page:24
 msgid ""
 "The import dialog shows thumbnails of the photos available on the selected "
 "device. The user can select one of more photos using normal keyboard or "
@@ -2630,7 +2882,8 @@ msgstr ""
 "clic et déplacement de la souris sur les photos souhaitées). Si aucune photo "
 "n'est sélectionnée explicitement alors elles sont toutes importées."
 
-#: C/import.page:30(page/p)
+#. (itstool) path: page/p
+#: C/import.page:30
 msgid ""
 "Tags may optionally be associated with the imported photos, using the "
 "<gui>Tags</gui> control below the thumbnail window. Click the drop-down "
@@ -2640,7 +2893,8 @@ msgstr ""
 "contrôle <gui>Étiquettes</gui> en dessous de la fenêtres des vignettes. "
 "Cliquez sur la liste déroulante pour visualiser les étiquettes prédéfinies."
 
-#: C/import.page:34(page/p)
+#. (itstool) path: page/p
+#: C/import.page:34
 msgid ""
 "An event name may also be optionally associated with the photos. This event "
 "name can be used to generate an automatic subfolder name (possibly "
@@ -2657,11 +2911,27 @@ msgstr ""
 "génération automatique des sous-dossiers comme cela « /photos/2010-07-31, "
 "Mariage-Magalie »."
 
-#: C/import.page:42(figure/title)
+#. (itstool) path: figure/title
+#: C/import.page:42
 msgid "Standard Date-Based Subfolders"
 msgstr "Sous-dossiers standards basés sur la date"
 
-#: C/import.page:46(page/p)
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:43
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+msgstr ""
+"external ref='figures/import-pref-auto-folder.png' "
+"md5='0a41de83da83b762e37f3962a7e4c042'"
+
+#. (itstool) path: page/p
+#: C/import.page:46
 msgid ""
 "As mentioned above, subfolders for imported photos can be automatically "
 "generated based on event names and dates. This is enabled or disabled by "
@@ -2678,7 +2948,8 @@ msgstr ""
 "(le dossier <gui>Destination</gui>). Pour générer des sous-dossiers "
 "automatiquement, sélectionnez <gui>Sous-dossier automatique</gui>."
 
-#: C/import.page:52(page/p)
+#. (itstool) path: page/p
+#: C/import.page:52
 msgid ""
 "You can select either the <gui>File Date</gui> or the <gui>Current Date</"
 "gui> to use as the basis for subfolder naming. (The <gui>File Date</gui> "
@@ -2701,7 +2972,8 @@ msgstr ""
 "dossiers « mois » ou bien tous les sous-dossiers au même niveau dans le "
 "système de fichiers, contenant l'année et le mois dans leur nom."
 
-#: C/import.page:61(page/p)
+#. (itstool) path: page/p
+#: C/import.page:61
 msgid ""
 "It is not necessary to use the predefined date formats. If you select "
 "<gui>custom format</gui>, standard date codes can be used. Click on the help "
@@ -2716,13 +2988,15 @@ msgstr ""
 "« %E » est un code spécial qui permet d'inclure le nom de l'<gui>Évènement</"
 "gui> défini dans la boîte de dialogue d'importation principale."
 
-#: C/import.page:67(page/p)
-msgid "See <link xref=\"pix-date-formats\"/> for more date format codes."
+#. (itstool) path: page/p
+#: C/import.page:67
+msgid "See <link xref=\"gthumb-date-formats\"/> for more date format codes."
 msgstr ""
 "Pour plus d'informations sur les codes de format de date, consultez la "
-"section <link xref=\"pix-date-formats\"/>."
+"section <link xref=\"gthumb-date-formats\"/>."
 
-#: C/import.page:69(page/p)
+#. (itstool) path: page/p
+#: C/import.page:69
 msgid ""
 "If you use automatic subfolder naming, the <gui>Destination</gui> field in "
 "the main import dialog will show the automatic portion of the folder in red. "
@@ -2733,15 +3007,32 @@ msgstr ""
 "affiche la partie automatique du nom de dossier en rouge (pour les formats "
 "de date, une valeur fictive peut être affichée dans la partie en rouge)."
 
-#: C/import.page:74(figure/title)
+#. (itstool) path: figure/title
+#: C/import.page:74
 msgid "Using Custom Formats"
 msgstr "Utilisation des formats personnalisés"
 
-#: C/slideshow.page:7(page/title)
+#. (itstool) path: figure/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/import.page:75
+msgctxt "_"
+msgid ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+msgstr ""
+"external ref='figures/import-pref-custom-format.png' "
+"md5='989ca536c873ec926a4a71c876004b9f'"
+
+#. (itstool) path: page/title
+#: C/slideshow.page:7
 msgid "Automatic Slideshow"
 msgstr "Diaporama automatique"
 
-#: C/slideshow.page:9(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:9
 msgid ""
 "A slideshow of the currently selected images can be started from the image "
 "browser by pressing <key>F5</key>, by clicking the slideshow toolbar icon, "
@@ -2754,7 +3045,8 @@ msgstr ""
 "guiseq>. Si aucune image n'est sélectionnée, toutes les images du dossier "
 "sont inclues."
 
-#: C/slideshow.page:15(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:15
 msgid ""
 "The transition effects and the time each image is shown can be modified from "
 "the <guiseq><gui>Edit</gui><gui>Preferences</gui><gui>Slideshow</gui></"
@@ -2765,7 +3057,8 @@ msgstr ""
 "<guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Diaporama</gui></"
 "guiseq>."
 
-#: C/slideshow.page:19(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:19
 msgid ""
 "Some graphics cards and drivers may experience problems (crashes) if "
 "transition effects are enabled. If you experience such difficulties, set the "
@@ -2776,7 +3069,8 @@ msgstr ""
 "ce type de problèmes, configurez les préférences <gui>Effet de transition</"
 "gui> à <gui>Aucun</gui>."
 
-#: C/slideshow.page:23(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:23
 msgid ""
 "You can advance manually to the next image by pressing <key>Down Arrow</"
 "key>, <key>Right Arrow</key>, <key>Page Down</key> or <key>Space</key>."
@@ -2784,7 +3078,8 @@ msgstr ""
 "Pour aller à l'image suivante, appuyez sur la touche <key>Flèche bas</key>, "
 "<key>Flèche droite</key>, <key>Page bas</key> ou <key>Espace</key>."
 
-#: C/slideshow.page:27(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:27
 msgid ""
 "You can go back to the previous image by pressing <key>Up Arrow</key>, "
 "<key>Left Arrow</key> or <key>Page Up</key>."
@@ -2792,30 +3087,36 @@ msgstr ""
 "Pour retourner à l'image précédente, appuyez sur la touche <key>Flèche haut</"
 "key>, <key>Flèche gauche</key> ou <key>Page haut</key>."
 
-#: C/slideshow.page:30(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:30
 msgid "You can pause or un-pause the slideshow by pressing <key>p</key>."
 msgstr "Pour interrompre ou reprendre un diaporama, appuyez sur <key>p</key>."
 
-#: C/slideshow.page:32(page/p)
+#. (itstool) path: page/p
+#: C/slideshow.page:32
 msgid "To exit the slideshow, press <key>Escape</key> or <key>F5</key>."
 msgstr ""
 "Pour quitter le diaporama, appuyez sur <key>Échap</key> ou <key>F5</key>."
 
-#: C/file-copy-move.page:6(page/title)
+#. (itstool) path: page/title
+#: C/file-copy-move.page:6
 msgid "Copying and Moving Files"
 msgstr "Copie et déplacement de fichiers"
 
-#: C/file-copy-move.page:8(page/p)
-msgid "There are three ways to copy or move files in <app>Pix</app>."
+#. (itstool) path: page/p
+#: C/file-copy-move.page:8
+msgid "There are three ways to copy or move files in <app>gThumb</app>."
 msgstr ""
-"Il y a trois façons de copier ou de déplacer des fichiers dans <app>Pix</"
+"Il y a trois façons de copier ou de déplacer des fichiers dans <app>gThumb</"
 "app>."
 
-#: C/file-copy-move.page:12(item/title)
+#. (itstool) path: item/title
+#: C/file-copy-move.page:12
 msgid "Cut and Paste"
 msgstr "Couper et coller"
 
-#: C/file-copy-move.page:13(item/p)
+#. (itstool) path: item/p
+#: C/file-copy-move.page:13
 msgid ""
 "To copy a file in the browser view, use <guiseq><gui>Edit</gui><gui>Copy</"
 "gui></guiseq>, or press <keyseq><key>Ctrl</key><key>C</key></keyseq>. To "
@@ -2834,11 +3135,13 @@ msgstr ""
 "guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>V</key></keyseq> pour "
 "terminer le transfert du fichier."
 
-#: C/file-copy-move.page:26(item/title)
+#. (itstool) path: item/title
+#: C/file-copy-move.page:26
 msgid "Drag and Drop"
 msgstr "Glisser-déposer"
 
-#: C/file-copy-move.page:27(item/p)
+#. (itstool) path: item/p
+#: C/file-copy-move.page:27
 msgid ""
 "To copy a file to another folder, simply drag the file (with a sustained "
 "left-mouse click) to the destination folder visible in the folder tree. To "
@@ -2849,21 +3152,24 @@ msgstr ""
 "visible dans l'arborescence des dossiers. Pour déplacer un fichier, appuyez "
 "sur la touche <key>Maj</key> tout en effectuant le glisser-déposer."
 
-#: C/file-copy-move.page:31(item/p)
+#. (itstool) path: item/p
+#: C/file-copy-move.page:31
 msgid ""
 "You can also use the middle mouse button to drag files. In this case, "
-"<app>Pix</app> will ask you if you wish to copy the files, move the "
+"<app>gThumb</app> will ask you if you wish to copy the files, move the "
 "files, or cancel the operation."
 msgstr ""
 "Il est aussi possible d'utiliser le bouton central de la souris pour faire "
-"glisser des fichiers. Dans ce cas, <app>Pix</app> demande si vous voulez "
+"glisser des fichiers. Dans ce cas, <app>gThumb</app> demande si vous voulez "
 "copier les fichiers, les déplacer ou annuler l'opération."
 
-#: C/file-copy-move.page:37(item/title)
+#. (itstool) path: item/title
+#: C/file-copy-move.page:37
 msgid "File Copy / Move Dialog"
 msgstr "Boîte de dialogue de copie/déplacement de fichier"
 
-#: C/file-copy-move.page:38(item/p)
+#. (itstool) path: item/p
+#: C/file-copy-move.page:38
 msgid ""
 "Select the files to be transferred, right-click on the selection, and choose "
 "<guiseq><gui>Copy to...</gui></guiseq> or <guiseq><gui>Move to...</gui></"
@@ -2880,18 +3186,25 @@ msgstr ""
 "<guiseq><gui>Afficher la destination</gui></guiseq> si vous souhaitez aller "
 "dans le dossier de destination après la fin du transfert de fichier."
 
-#: C/legal.xml:4(p/link)
+#. (itstool) path: p/link
+#: C/legal.xml:4
 msgid "Creative Commons Attribution-Share Alike 3.0 Unported License"
 msgstr ""
+"Creative Commons Attribution - Partage dans les Mêmes Conditions 3.0 non "
+"transposée"
 
-#: C/legal.xml:3(license/p)
+#. (itstool) path: license/p
+#: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
-msgstr ""
+msgstr "Cet ouvrage est sous licence <_:link-1/>."
 
-#: C/legal.xml:6(license/p)
+#. (itstool) path: license/p
+#: C/legal.xml:6
 msgid ""
 "As a special exception, the copyright holders give you permission to copy, "
 "modify, and distribute the example code contained in this document under the "
 "terms of your choosing, without restriction."
 msgstr ""
-
+"À titre d'exception spéciale, les titulaires du copyright vous autorisent à "
+"copier, modifier et distribuer l'exemple de code contenu dans ce document "
+"dans les termes de votre choix, sans restriction."

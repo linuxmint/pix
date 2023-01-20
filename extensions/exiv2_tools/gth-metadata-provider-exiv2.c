@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "exiv2-utils.h"
 #include "gth-metadata-provider-exiv2.h"
 
@@ -33,7 +33,10 @@ struct _GthMetadataProviderExiv2Private {
 };
 
 
-G_DEFINE_TYPE (GthMetadataProviderExiv2, gth_metadata_provider_exiv2, GTH_TYPE_METADATA_PROVIDER)
+G_DEFINE_TYPE_WITH_CODE (GthMetadataProviderExiv2,
+			 gth_metadata_provider_exiv2,
+			 GTH_TYPE_METADATA_PROVIDER,
+			 G_ADD_PRIVATE (GthMetadataProviderExiv2))
 
 
 static void
@@ -51,6 +54,7 @@ gth_metadata_provider_exiv2_finalize (GObject *object)
 
 static gboolean
 gth_metadata_provider_exiv2_can_read (GthMetadataProvider  *self,
+				      GthFileData          *file_data,
 				      const char           *mime_type,
 				      char                **attribute_v)
 {
@@ -111,7 +115,7 @@ gth_metadata_provider_exiv2_read (GthMetadataProvider *base,
 	 * not store metadata in files. */
 
 	if (self->priv->general_settings == NULL)
-		self->priv->general_settings = g_settings_new (PIX_GENERAL_SCHEMA);
+		self->priv->general_settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
 	update_general_attributes = g_settings_get_boolean (self->priv->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES);
 
 	/* this function is executed in a secondary thread, so calling
@@ -155,7 +159,7 @@ gth_metadata_provider_exiv2_write (GthMetadataProvider   *base,
 	int                       i;
 
 	if (self->priv->general_settings == NULL)
-		self->priv->general_settings = g_settings_new (PIX_GENERAL_SCHEMA);
+		self->priv->general_settings = g_settings_new (GTHUMB_GENERAL_SCHEMA);
 
 	if (! (flags & GTH_METADATA_WRITE_FORCE_EMBEDDED)
 	    && ! g_settings_get_boolean (self->priv->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES))
@@ -336,8 +340,6 @@ gth_metadata_provider_exiv2_class_init (GthMetadataProviderExiv2Class *klass)
 	GObjectClass             *object_class;
 	GthMetadataProviderClass *mp_class;
 
-	g_type_class_add_private (klass, sizeof (GthMetadataProviderExiv2Private));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_metadata_provider_exiv2_finalize;
 
@@ -352,6 +354,6 @@ gth_metadata_provider_exiv2_class_init (GthMetadataProviderExiv2Class *klass)
 static void
 gth_metadata_provider_exiv2_init (GthMetadataProviderExiv2 *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_METADATA_PROVIDER_EXIV2, GthMetadataProviderExiv2Private);
+	self->priv = gth_metadata_provider_exiv2_get_instance_private (self);
 	self->priv->general_settings = NULL;
 }

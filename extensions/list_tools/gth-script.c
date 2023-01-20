@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,47 +20,50 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <gdk/gdkkeysyms.h>
 #include "gth-script.h"
+#include "shortcuts.h"
 
 
 static void gth_script_dom_domizable_interface_init (DomDomizableInterface *iface);
 static void gth_script_gth_duplicable_interface_init (GthDuplicableInterface *iface);
 
 
-G_DEFINE_TYPE_WITH_CODE (GthScript,
-			 gth_script,
-			 G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
-					        gth_script_dom_domizable_interface_init)
-		         G_IMPLEMENT_INTERFACE (GTH_TYPE_DUPLICABLE,
-		        		        gth_script_gth_duplicable_interface_init))
-
-
 enum {
-        PROP_0,
-        PROP_ID,
-        PROP_DISPLAY_NAME,
-        PROP_COMMAND,
-        PROP_VISIBLE,
-        PROP_SHELL_SCRIPT,
-        PROP_FOR_EACH_FILE,
-        PROP_WAIT_COMMAND,
-        PROP_SHORTCUT
+	PROP_0,
+	PROP_ID,
+	PROP_DISPLAY_NAME,
+	PROP_COMMAND,
+	PROP_VISIBLE,
+	PROP_SHELL_SCRIPT,
+	PROP_FOR_EACH_FILE,
+	PROP_WAIT_COMMAND,
+	PROP_ACCELERATOR
 };
 
 
 struct _GthScriptPrivate {
-	char     *id;
-	char     *display_name;
-	char     *command;
-	gboolean  visible;
-	gboolean  shell_script;
-	gboolean  for_each_file;
-	gboolean  wait_command;
-	guint     shortcut;
+	char            *id;
+	char            *display_name;
+	char            *command;
+	gboolean         visible;
+	gboolean         shell_script;
+	gboolean         for_each_file;
+	gboolean         wait_command;
+	char            *accelerator;
+	char            *detailed_action;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthScript,
+			 gth_script,
+			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthScript)
+			 G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
+						gth_script_dom_domizable_interface_init)
+			 G_IMPLEMENT_INTERFACE (GTH_TYPE_DUPLICABLE,
+						gth_script_gth_duplicable_interface_init))
 
 
 static DomElement*
@@ -73,6 +76,7 @@ gth_script_real_create_element (DomDomizable *base,
 	g_return_val_if_fail (DOM_IS_DOCUMENT (doc), NULL);
 
 	self = GTH_SCRIPT (base);
+
 	element = dom_document_create_element (doc, "script",
 					       "id", self->priv->id,
 					       "display-name", self->priv->display_name,
@@ -80,22 +84,11 @@ gth_script_real_create_element (DomDomizable *base,
 					       "shell-script", (self->priv->shell_script ? "true" : "false"),
 					       "for-each-file", (self->priv->for_each_file ? "true" : "false"),
 					       "wait-command", (self->priv->wait_command ? "true" : "false"),
-					       "shortcut", gdk_keyval_name (self->priv->shortcut),
 					       NULL);
 	if (! self->priv->visible)
 		dom_element_set_attribute (element, "display", "none");
 
 	return element;
-}
-
-
-static guint
-_gdk_keyval_from_name (const gchar *keyval_name)
-{
-	if (keyval_name != NULL)
-		return gdk_keyval_from_name (keyval_name);
-	else
-		return GDK_KEY_VoidSymbol;
 }
 
 
@@ -116,12 +109,12 @@ gth_script_real_load_from_element (DomDomizable *base,
 		      "shell-script", (g_strcmp0 (dom_element_get_attribute (element, "shell-script"), "true") == 0),
 		      "for-each-file", (g_strcmp0 (dom_element_get_attribute (element, "for-each-file"), "true") == 0),
 		      "wait-command", (g_strcmp0 (dom_element_get_attribute (element, "wait-command"), "true") == 0),
-		      "shortcut", _gdk_keyval_from_name (dom_element_get_attribute (element, "shortcut")),
+		      "accelerator", "",
 		      NULL);
 }
 
 
-GObject *
+static GObject *
 gth_script_real_duplicate (GthDuplicable *duplicable)
 {
 	GthScript *script = GTH_SCRIPT (duplicable);
@@ -136,7 +129,7 @@ gth_script_real_duplicate (GthDuplicable *duplicable)
 		      "shell-script", script->priv->shell_script,
 		      "for-each-file", script->priv->for_each_file,
 		      "wait-command", script->priv->wait_command,
-		      "shortcut", script->priv->shortcut,
+		      "accelerator", script->priv->accelerator,
 		      NULL);
 
 	return (GObject *) new_script;
@@ -152,20 +145,37 @@ gth_script_finalize (GObject *base)
 	g_free (self->priv->id);
 	g_free (self->priv->display_name);
 	g_free (self->priv->command);
+	g_free (self->priv->accelerator);
+	g_free (self->priv->detailed_action);
 
 	G_OBJECT_CLASS (gth_script_parent_class)->finalize (base);
 }
 
 
+static char *
+detailed_action_from_id (char *id)
+{
+	GVariant *param;
+	char     *detailed_action;
+
+	param = g_variant_new_string (id);
+	detailed_action = g_action_print_detailed_name ("exec-script", param);
+
+	g_variant_unref (param);
+
+	return detailed_action;
+}
+
+
 static void
 gth_script_set_property (GObject      *object,
-		         guint         property_id,
-		         const GValue *value,
-		         GParamSpec   *pspec)
+			 guint         property_id,
+			 const GValue *value,
+			 GParamSpec   *pspec)
 {
 	GthScript *self;
 
-        self = GTH_SCRIPT (object);
+	self = GTH_SCRIPT (object);
 
 	switch (property_id) {
 	case PROP_ID:
@@ -173,6 +183,8 @@ gth_script_set_property (GObject      *object,
 		self->priv->id = g_value_dup_string (value);
 		if (self->priv->id == NULL)
 			self->priv->id = g_strdup ("");
+		g_free (self->priv->detailed_action);
+		self->priv->detailed_action = detailed_action_from_id (self->priv->id);
 		break;
 	case PROP_DISPLAY_NAME:
 		g_free (self->priv->display_name);
@@ -198,8 +210,9 @@ gth_script_set_property (GObject      *object,
 	case PROP_WAIT_COMMAND:
 		self->priv->wait_command = g_value_get_boolean (value);
 		break;
-	case PROP_SHORTCUT:
-		self->priv->shortcut = g_value_get_uint (value);
+	case PROP_ACCELERATOR:
+		g_free (self->priv->accelerator);
+		self->priv->accelerator = g_value_dup_string (value);
 		break;
 	default:
 		break;
@@ -209,13 +222,13 @@ gth_script_set_property (GObject      *object,
 
 static void
 gth_script_get_property (GObject    *object,
-		         guint       property_id,
-		         GValue     *value,
-		         GParamSpec *pspec)
+			 guint       property_id,
+			 GValue     *value,
+			 GParamSpec *pspec)
 {
 	GthScript *self;
 
-        self = GTH_SCRIPT (object);
+	self = GTH_SCRIPT (object);
 
 	switch (property_id) {
 	case PROP_ID:
@@ -239,8 +252,8 @@ gth_script_get_property (GObject    *object,
 	case PROP_WAIT_COMMAND:
 		g_value_set_boolean (value, self->priv->wait_command);
 		break;
-	case PROP_SHORTCUT:
-		g_value_set_uint (value, self->priv->wait_command);
+	case PROP_ACCELERATOR:
+		g_value_set_string (value, self->priv->accelerator);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -254,8 +267,6 @@ gth_script_class_init (GthScriptClass *klass)
 {
 	GObjectClass *object_class;
 
-	g_type_class_add_private (klass, sizeof (GthScriptPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->set_property = gth_script_set_property;
 	object_class->get_property = gth_script_get_property;
@@ -266,24 +277,24 @@ gth_script_class_init (GthScriptClass *klass)
 	g_object_class_install_property (object_class,
 					 PROP_ID,
 					 g_param_spec_string ("id",
-                                                              "ID",
-                                                              "The object id",
-                                                              NULL,
-                                                              G_PARAM_READWRITE));
+							      "ID",
+							      "The object id",
+							      NULL,
+							      G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_DISPLAY_NAME,
 					 g_param_spec_string ("display-name",
-                                                              "Display name",
-                                                              "The user visible name",
-                                                              NULL,
-                                                              G_PARAM_READWRITE));
+							      "Display name",
+							      "The user visible name",
+							      NULL,
+							      G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_COMMAND,
 					 g_param_spec_string ("command",
-                                                              "Command",
-                                                              "The command to execute",
-                                                              NULL,
-                                                              G_PARAM_READWRITE));
+							      "Command",
+							      "The command to execute",
+							      NULL,
+							      G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_VISIBLE,
 					 g_param_spec_boolean ("visible",
@@ -313,14 +324,12 @@ gth_script_class_init (GthScriptClass *klass)
 							       FALSE,
 							       G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
-					 PROP_SHORTCUT,
-					 g_param_spec_uint ("shortcut",
-							    "Shortcut",
-							    "The keyboard shortcut to activate the script",
-							    0,
-							    G_MAXUINT,
-							    GDK_KEY_VoidSymbol,
-							    G_PARAM_READWRITE));
+					 PROP_ACCELERATOR,
+					 g_param_spec_string ("accelerator",
+							      "Accelerator",
+							      "The keyboard shortcut to activate the script",
+							      "",
+							      G_PARAM_READWRITE));
 }
 
 
@@ -342,10 +351,16 @@ gth_script_gth_duplicable_interface_init (GthDuplicableInterface *iface)
 static void
 gth_script_init (GthScript *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_SCRIPT, GthScriptPrivate);
+	self->priv = gth_script_get_instance_private (self);
 	self->priv->id = NULL;
 	self->priv->display_name = NULL;
 	self->priv->command = NULL;
+	self->priv->visible = FALSE;
+	self->priv->shell_script = FALSE;
+	self->priv->for_each_file = FALSE;
+	self->priv->wait_command = FALSE;
+	self->priv->accelerator = NULL;
+	self->priv->detailed_action = NULL;
 }
 
 
@@ -355,7 +370,7 @@ gth_script_new (void)
 	GthScript *script;
 	char      *id;
 
-	id = _g_rand_string (ID_LENGTH);
+	id = _g_str_random (ID_LENGTH);
 	script = (GthScript *) g_object_new (GTH_TYPE_SCRIPT, "id", id, NULL);
 	g_free (id);
 
@@ -381,6 +396,13 @@ const char *
 gth_script_get_command (GthScript *script)
 {
 	return script->priv->command;
+}
+
+
+const char *
+gth_script_get_detailed_action (GthScript *self)
+{
+	return self->priv->detailed_action;
 }
 
 
@@ -412,82 +434,146 @@ gth_script_wait_command (GthScript *script)
 }
 
 
+/* -- gth_script_get_requested_attributes -- */
+
+
+static gboolean
+collect_attributes_cb (gunichar   parent_code,
+		       gunichar   code,
+		       char     **args,
+		       gpointer   user_data)
+{
+	GString *result = user_data;
+
+	if (code == GTH_SCRIPT_CODE_FILE_ATTRIBUTE) {
+		if (result->str[0] != 0)
+			g_string_append_c (result, ',');
+		g_string_append (result, args[0]);
+	}
+
+	return FALSE;
+}
+
+
 char *
 gth_script_get_requested_attributes (GthScript *script)
 {
-	GRegex   *re;
-	char    **a;
-	int       i, n, j;
-	char    **b;
-	char     *attributes;
+	GString *result;
+	char    *attributes;
 
-	re = g_regex_new ("%attr\\{([^}]+)\\}", 0, 0, NULL);
-	a = g_regex_split (re, script->priv->command, 0);
-	for (i = 0, n = 0; a[i] != NULL; i++)
-		if ((i > 0) && (i % 2 == 0))
-			n++;
-	if (n == 0)
-		return NULL;
+	result = g_string_new ("");
+	_g_template_for_each_token (script->priv->command,
+				    TEMPLATE_FLAGS_NO_ENUMERATOR,
+				    collect_attributes_cb,
+				    result);
 
-	b = g_new (char *, n + 1);
-	for (i = 1, j = 0; a[i] != NULL; i += 2, j++) {
-		b[j] = g_strstrip (a[i]);
+	if (result->str[0] == 0) {
+		attributes = NULL;
+		g_string_free (result, TRUE);
 	}
-	b[j] = NULL;
-	attributes = g_strjoinv (",", b);
-
-	g_free (b);
-	g_strfreev (a);
-	g_regex_unref (re);
+	else
+		attributes = g_string_free (result, FALSE);
 
 	return attributes;
 }
 
 
-/* -- gth_script_get_command_line -- */
+/* -- gth_script_get_command_line_async -- */
 
 
 typedef struct {
-	GtkWindow  *parent;
-	GthScript  *script;
-	GList      *file_list;
-	GError    **error;
-	gboolean    quote_values;
-} ReplaceData;
+	GList  *file_list;
+	GError *error;
+	GList  *asked_values;
+	GList  *last_asked_value;
+} EvalData;
+
+
+typedef struct {
+	EvalData        eval_data;
+	GtkWindow      *parent;
+	GthScript      *script;
+	GtkBuilder     *builder;
+	GthThumbLoader *thumb_loader;
+	GtkCallback     dialog_callback;
+	gpointer        user_data;
+} CommandLineData;
 
 
 typedef char * (*GetFileDataValueFunc) (GthFileData *file_data);
 
 
-static char *
-create_file_list (GList                *file_list,
-		  GetFileDataValueFunc  func,
-		  gboolean              quote_value)
-{
-	GString *s;
-	GList   *scan;
+typedef struct {
+	int        n_param;
+	char      *prompt;
+	char      *default_value;
+	char      *value;
+	GtkWidget *entry;
+} AskedValue;
 
-	s = g_string_new ("");
+
+static AskedValue *
+asked_value_new (int n_param)
+{
+	AskedValue *asked_value;
+
+	asked_value = g_new (AskedValue, 1);
+	asked_value->n_param = n_param;
+	asked_value->prompt = g_strdup (_("Enter a value:"));;
+	asked_value->default_value = NULL;
+	asked_value->value = NULL;
+	asked_value->entry = NULL;
+
+	return asked_value;
+}
+
+
+static void
+asked_value_free (AskedValue *asked_value)
+{
+	g_free (asked_value->prompt);
+	g_free (asked_value->default_value);
+	g_free (asked_value->value);
+	g_free (asked_value);
+}
+
+
+static void
+command_line_data_free (CommandLineData *command_data)
+{
+	_g_object_unref (command_data->thumb_loader);
+	_g_object_unref (command_data->builder);
+	g_list_free_full (command_data->eval_data.asked_values, (GDestroyNotify) asked_value_free);
+	_g_object_list_unref (command_data->eval_data.file_list);
+	g_object_unref (command_data->script);
+	g_free (command_data);
+}
+
+
+static void
+_append_file_list (GString              *str,
+		   GList                *file_list,
+		   GetFileDataValueFunc  func,
+		   gboolean              quote_value)
+{
+	GList *scan;
+
 	for (scan = file_list; scan; scan = scan->next) {
 		GthFileData *file_data = scan->data;
 		char        *value;
 		char        *quoted;
 
 		value = func (file_data);
-		if (quote_value)
-			quoted = g_shell_quote (value);
-		else
-			quoted = g_strdup (value);
 
-		g_string_append (s, quoted);
+		quoted = quote_value ? g_shell_quote (value) : g_strdup (value);
+		g_string_append (str, quoted);
+
 		if (scan->next != NULL)
-			g_string_append (s, " ");
+			g_string_append_c (str, ' ');
 
 		g_free (quoted);
 		g_free (value);
 	}
-
-	return g_string_free (s, FALSE);
 }
 
 
@@ -519,7 +605,7 @@ get_basename_wo_ext_func (GthFileData *file_data)
 	char *basename_wo_ext;
 
 	basename = g_file_get_basename (file_data->file);
-	basename_wo_ext = _g_uri_remove_extension (basename);
+	basename_wo_ext = _g_path_remove_extension (basename);
 
 	g_free (basename);
 
@@ -534,7 +620,7 @@ get_ext_func (GthFileData *file_data)
 	char *ext;
 
 	path = g_file_get_path (file_data->file);
-	ext = g_strdup (_g_uri_get_file_extension (path));
+	ext = g_strdup (_g_path_get_extension (path));
 
 	g_free (path);
 
@@ -557,133 +643,39 @@ get_parent_func (GthFileData *file_data)
 }
 
 
+static char *
+_get_timestamp (const char *format,
+		gboolean    quote_value)
+{
+	GDateTime *now;
+	char      *str;
+
+	now = g_date_time_new_now_local ();
+	str = g_date_time_format (now, (format != NULL) ? format : DEFAULT_STRFTIME_FORMAT);
+	if (quote_value) {
+		char *tmp = str;
+		str = g_shell_quote (tmp);
+		g_free (tmp);
+	}
+	g_date_time_unref (now);
+
+	return str;
+}
+
+
 static void
-thumb_loader_ready_cb (GObject      *source_object,
-		       GAsyncResult *result,
-		       gpointer      user_data)
+_append_attribute_list (GString  *str,
+			GList    *file_list,
+			char     *attribute,
+			gboolean  quote_value)
 {
-	GtkBuilder      *builder = user_data;
-	cairo_surface_t *image;
+	gboolean  first_value;
+	GList    *scan;
 
-	if (! gth_thumb_loader_load_finish (GTH_THUMB_LOADER (source_object),
-		  	 	 	    result,
-		  	 	 	    &image,
-		  	 	 	    NULL))
-	{
+	if (attribute == NULL)
 		return;
-	}
 
-	if (image != NULL) {
-		GdkPixbuf *pixbuf;
-
-		pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
-		gtk_image_set_from_pixbuf (GTK_IMAGE (_gtk_builder_get_widget (builder, "request_image")), pixbuf);
-
-		g_object_unref (pixbuf);
-		cairo_surface_destroy (image);
-	}
-
-	g_object_unref (builder);
-}
-
-
-static char *
-ask_value (ReplaceData  *replace_data,
-	   char         *match,
-	   GError      **error)
-{
-	GthFileData     *file_data;
-	GRegex          *re;
-	char           **a;
-	int              len;
-	char            *prompt;
-	char            *default_value;
-	GtkBuilder      *builder;
-	GtkWidget       *dialog;
-	GthThumbLoader  *thumb_loader;
-	int              result;
-	char            *value;
-
-	file_data = (GthFileData *) replace_data->file_list->data;
-
-	re = g_regex_new ("%ask(\\{([^}]+)\\}(\\{([^}]+)\\})?)?", 0, 0, NULL);
-	a = g_regex_split (re, match, 0);
-	len = g_strv_length (a);
-	if (len >= 3)
-		prompt = g_strstrip (a[2]);
-	else
-		prompt = _("Enter a value:");
-	if (len >= 5)
-		default_value = g_strstrip (a[4]);
-	else
-		default_value = "";
-
-	builder = _gtk_builder_new_from_file ("ask-value.ui", "list_tools");
-	dialog = _gtk_builder_get_widget (builder, "ask_value_dialog");
-	gtk_label_set_text (GTK_LABEL (_gtk_builder_get_widget (builder, "title_label")), gth_script_get_display_name (replace_data->script));
-	gtk_label_set_text (GTK_LABEL (_gtk_builder_get_widget (builder, "filename_label")), g_file_info_get_display_name (file_data->info));
-	gtk_label_set_text (GTK_LABEL (_gtk_builder_get_widget (builder, "request_label")), prompt);
-	gtk_entry_set_text (GTK_ENTRY (_gtk_builder_get_widget (builder, "request_entry")), default_value);
-	gtk_window_set_title (GTK_WINDOW (dialog), "");
-	gtk_window_set_transient_for (GTK_WINDOW (dialog), replace_data->parent);
-	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
-	if (! gth_script_for_each_file (replace_data->script))
-		gtk_widget_hide (_gtk_builder_get_widget (builder, "skip_button"));
-
-	g_object_ref (builder);
-	thumb_loader = gth_thumb_loader_new (128);
-	gth_thumb_loader_load (thumb_loader,
-			       file_data,
-			       NULL,
-			       thumb_loader_ready_cb,
-			       builder);
-
-	result = gtk_dialog_run (GTK_DIALOG (dialog));
-	if (result == 2) {
-		value = g_utf8_normalize (gtk_entry_get_text (GTK_ENTRY (_gtk_builder_get_widget (builder, "request_entry"))), -1, G_NORMALIZE_NFC);
-	}
-	else {
-		if (result == 3)
-			*error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_SKIP_TO_NEXT_FILE, "");
-		else
-			*error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_CANCELLED, "");
-		value = NULL;
-	}
-
-	gtk_widget_destroy (dialog);
-
-	g_object_unref (builder);
-	g_strfreev (a);
-	g_regex_unref (re);
-
-	return value;
-}
-
-
-static char *
-create_attribute_list (GList    *file_list,
-		      char     *match,
-		      gboolean  quote_value)
-{
-	GRegex    *re;
-	char     **a;
-	char      *attribute = NULL;
-	gboolean   first_value = TRUE;
-	GString   *s;
-	GList     *scan;
-
-	re = g_regex_new ("%attr\\{([^}]+)\\}", 0, 0, NULL);
-	a = g_regex_split (re, match, 0);
-	if (g_strv_length (a) >= 2)
-		attribute = g_strstrip (a[1]);
-
-	if (attribute == NULL) {
-		g_strfreev (a);
-		g_regex_unref (re);
-		return NULL;
-	}
-
-	s = g_string_new ("");
+	first_value = TRUE;
 	for (scan = file_list; scan; scan = scan->next) {
 		GthFileData *file_data = scan->data;
 		char        *value;
@@ -693,139 +685,423 @@ create_attribute_list (GList    *file_list,
 		if (value == NULL)
 			continue;
 
-		if (value != NULL) {
-			char *tmp_value;
-
-			tmp_value = _g_utf8_replace (value, "[\r\n]", " ");
-			g_free (value);
-			value = tmp_value;
+		if (! first_value) {
+			g_string_append_c (str, ' ');
+			first_value = FALSE;
 		}
-		if (quote_value)
-			quoted = g_shell_quote (value);
-		else
-			quoted = g_strdup (value);
 
-		if (! first_value)
-			g_string_append (s, " ");
-		g_string_append (s, quoted);
-
-		first_value = FALSE;
+		if (value != NULL) {
+			char *tmp = _g_utf8_replace_pattern (value, "[\r\n]", " ");
+			g_free (value);
+			value = tmp;
+		}
+		quoted = quote_value ? g_shell_quote (value) : g_strdup (value);
+		g_string_append (str, quoted);
 
 		g_free (quoted);
 		g_free (value);
 	}
-
-	g_strfreev (a);
-	g_regex_unref (re);
-
-	return g_string_free (s, FALSE);
 }
 
 
 static gboolean
-command_line_eval_cb (const GMatchInfo *info,
-		      GString          *res,
-		      gpointer          data)
+eval_template_cb (TemplateFlags   flags,
+		  gunichar        parent_code,
+		  gunichar        code,
+		  char          **args,
+		  GString        *result,
+		  gpointer        user_data)
 {
-	ReplaceData *replace_data = data;
-	char        *r = NULL;
-	char        *match;
+	EvalData *eval_data = user_data;
+	gboolean  preview;
+	gboolean  quote_values;
+	gboolean  highlight;
+	char     *text;
 
-	match = g_match_info_fetch (info, 0);
-	if (strcmp (match, "%U") == 0)
-		r = create_file_list (replace_data->file_list, get_uri_func, replace_data->quote_values);
-	else if (strcmp (match, "%F") == 0)
-		r = create_file_list (replace_data->file_list, get_filename_func, replace_data->quote_values);
-	else if (strcmp (match, "%B") == 0)
-		r = create_file_list (replace_data->file_list, get_basename_func, replace_data->quote_values);
-	else if (strcmp (match, "%N") == 0)
-		r = create_file_list (replace_data->file_list, get_basename_wo_ext_func, replace_data->quote_values);
-	else if (strcmp (match, "%E") == 0)
-		r = create_file_list (replace_data->file_list, get_ext_func, replace_data->quote_values);
-	else if (strcmp (match, "%P") == 0)
-		r = create_file_list (replace_data->file_list, get_parent_func, replace_data->quote_values);
-	else if (strncmp (match, "%attr", 5) == 0) {
-		r = create_attribute_list (replace_data->file_list, match, replace_data->quote_values);
-		if (r == NULL)
-			*replace_data->error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_FAILED, _("Malformed command"));
+	if (parent_code == GTH_SCRIPT_CODE_TIMESTAMP) {
+		/* strftime code, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		return FALSE;
 	}
-	else if (strncmp (match, "%ask", 4) == 0) {
-		r = ask_value (replace_data, match, replace_data->error);
-		if ((r != NULL) && replace_data->quote_values) {
-			char *q;
 
-			q = g_shell_quote (r);
-			g_free (r);
-			r = q;
+	preview = (flags & TEMPLATE_FLAGS_PREVIEW) != 0;
+	quote_values = ((flags & TEMPLATE_FLAGS_PARTIAL) == 0) && (parent_code == 0);
+	highlight = preview && (code != 0) && (parent_code == 0);
+	text = NULL;
+
+	if (highlight)
+		g_string_append (result, "<span foreground=\"#4696f8\">");
+
+	switch (code) {
+	case GTH_SCRIPT_CODE_URI: /* File URI */
+		_append_file_list (result, eval_data->file_list, get_uri_func, quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_PATH: /* File path */
+		_append_file_list (result, eval_data->file_list, get_filename_func, quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_BASENAME: /* File basename */
+		_append_file_list (result, eval_data->file_list, get_basename_func, quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_BASENAME_NO_EXTENSION: /* File basename, no extension */
+		_append_file_list (result, eval_data->file_list, get_basename_wo_ext_func, quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_EXTENSION: /* File extension */
+		_append_file_list (result, eval_data->file_list, get_ext_func, quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_PARENT_PATH: /* Parent path */
+		_append_file_list (result, eval_data->file_list, get_parent_func, quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_TIMESTAMP: /* Timestamp */
+		text = _get_timestamp (args[0], quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_ASK_VALUE: /* Ask value */
+		if (preview) {
+			if ((args[0] != NULL) && ! _g_utf8_all_spaces (args[1]))
+				g_string_append (result, args[1]);
+			else if (! _g_utf8_all_spaces (args[0]))
+				_g_string_append_markup_escaped (result, "{ %s }", args[0]);
+			else
+				g_string_append_unichar (result, code);
 		}
+		else if (eval_data->last_asked_value != NULL) {
+			AskedValue *asked_value;
+
+			asked_value = eval_data->last_asked_value->data;
+			text = quote_values ? g_shell_quote (asked_value->value) : g_strdup (asked_value->value);
+			eval_data->last_asked_value = eval_data->last_asked_value->next;
+		}
+		break;
+
+	case GTH_SCRIPT_CODE_FILE_ATTRIBUTE: /* File attribute */
+		if (preview)
+			g_string_append_printf (result, "{ %s }", args[0]);
+		else
+			_append_attribute_list (result, eval_data->file_list, args[0], quote_values);
+		break;
+
+	case GTH_SCRIPT_CODE_QUOTE: /* Quote text. */
+		if (args[0] != NULL)
+			text = g_shell_quote (args[0]);
+		break;
+
+	default:
+		/* Code not recognized, return the code itself. */
+		_g_string_append_template_code (result, code, args);
+		break;
 	}
 
-	if (r != NULL)
-		g_string_append (res, r);
+	if (text != NULL) {
+		g_string_append (result, text);
+		g_free (text);
+	}
 
-	g_free (r);
-	g_free (match);
+	if (highlight)
+		g_string_append (result, "</span>");
+
+	return (eval_data->error != NULL);
+}
+
+
+static void
+_gth_script_get_command_line (GTask *task)
+{
+	CommandLineData *command_data;
+	char            *result;
+
+	command_data = g_task_get_task_data (task);
+	command_data->eval_data.last_asked_value = command_data->eval_data.asked_values;
+	command_data->eval_data.error = NULL;
+
+	result = _g_template_eval (command_data->script->priv->command,
+				   TEMPLATE_FLAGS_NO_ENUMERATOR,
+				   eval_template_cb,
+				   &command_data->eval_data);
+
+	if (command_data->eval_data.error != NULL) {
+		g_free (result);
+		g_task_return_error (task, command_data->eval_data.error);
+	}
+	else
+		g_task_return_pointer (task, result, g_free);
+}
+
+
+static void
+ask_values_dialog_response_cb (GtkDialog *dialog,
+			       int        response_id,
+			       gpointer   user_data)
+{
+	GTask           *task = user_data;
+	CommandLineData *command_data;
+
+	command_data = g_task_get_task_data (task);
+	if (command_data->dialog_callback)
+		command_data->dialog_callback (NULL, command_data->user_data);
+
+	if (response_id != GTK_RESPONSE_OK) {
+		GError *error = NULL;
+
+		if (response_id == GTK_RESPONSE_NO)
+			error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_SKIP_TO_NEXT_FILE, "");
+		else
+			error = g_error_new_literal (GTH_TASK_ERROR, GTH_TASK_ERROR_CANCELLED, "");
+		g_task_return_error (task, error);
+	}
+	else {
+		GList *scan;
+
+		for (scan = command_data->eval_data.asked_values; scan; scan = scan->next) {
+			AskedValue *asked_value = scan->data;
+
+			g_free (asked_value->value);
+			asked_value->value = g_utf8_normalize (gtk_entry_get_text (GTK_ENTRY (asked_value->entry)), -1, G_NORMALIZE_NFC);
+		}
+
+		_gth_script_get_command_line (task);
+	}
+
+	gtk_widget_destroy (GTK_WIDGET (dialog));
+}
+
+
+static void
+thumb_loader_ready_cb (GObject      *source_object,
+		       GAsyncResult *result,
+		       gpointer      user_data)
+{
+	CommandLineData *command_data = user_data;
+	cairo_surface_t *image;
+
+	if (gth_thumb_loader_load_finish (GTH_THUMB_LOADER (source_object),
+					  result,
+					  &image,
+					  NULL))
+	{
+		gtk_image_set_from_surface (GTK_IMAGE (_gtk_builder_get_widget (command_data->builder, "request_image")), image);
+		cairo_surface_destroy (image);
+	}
+
+	g_object_unref (command_data->builder);
+}
+
+
+/* -- gth_script_get_command_line_async -- */
+
+
+typedef struct {
+	CommandLineData *command_data;
+	int              n;
+} CollectValuesData;
+
+
+static gboolean
+collect_asked_values_cb (gunichar   parent_code,
+			 gunichar   code,
+			 char     **args,
+			 gpointer   user_data)
+{
+	CollectValuesData *collect_data = user_data;
+	CommandLineData   *command_data = collect_data->command_data;
+	AskedValue        *asked_value;
+
+	if (code != GTH_SCRIPT_CODE_ASK_VALUE)
+		return FALSE;
+
+	asked_value = asked_value_new (collect_data->n++);
+	asked_value->prompt = _g_utf8_strip (args[0]);
+	asked_value->default_value = _g_utf8_strip (args[1]);
+	command_data->eval_data.asked_values = g_list_prepend (command_data->eval_data.asked_values, asked_value);
 
 	return FALSE;
 }
 
 
-char *
-gth_script_get_command_line (GthScript  *script,
-			     GtkWindow  *parent,
-			     GList      *file_list /* GthFileData */,
-			     GError    **error)
+void
+gth_script_get_command_line_async (GthScript           *script,
+				   GtkWindow           *parent,
+				   GList               *file_list /* GthFileData */,
+				   gboolean             can_skip,
+				   GCancellable        *cancellable,
+				   GtkCallback          dialog_callback,
+				   GAsyncReadyCallback  callback,
+				   gpointer             user_data)
 {
-	ReplaceData  *replace_data;
-	GRegex       *qre;
-	GRegex       *re;
-	char        **a;
-	GString      *command_line;
-	int           i;
-	char         *result;
+	CommandLineData   *command_data;
+	GTask             *task;
+	CollectValuesData  collect_data;
+	GthFileData       *file_data;
+	GtkWidget         *dialog;
 
-	replace_data = g_new0 (ReplaceData, 1);
-	replace_data->parent = parent;
-	replace_data->script = script;
-	replace_data->file_list = file_list;
-	replace_data->error = error;
+	command_data = g_new0 (CommandLineData, 1);
+	command_data->script = g_object_ref (script);
+	command_data->parent = parent;
+	command_data->dialog_callback = dialog_callback;
+	command_data->user_data = user_data;
+	command_data->eval_data.file_list = _g_object_list_ref (file_list);
+	command_data->eval_data.error = NULL;
 
-	re = g_regex_new ("%U|%F|%B|%N|%E|%P|%ask(\\{[^}]+\\}(\\{[^}]+\\})?)?|%attr\\{[^}]+\\}", 0, 0, NULL);
+	task = g_task_new (script, cancellable, callback, user_data);
+	g_task_set_task_data (task, command_data, (GDestroyNotify) command_line_data_free);
 
-	replace_data->quote_values = FALSE;
-	command_line = g_string_new ("");
-	qre = g_regex_new ("%quote\\{([^}]+)\\}", 0, 0, NULL);
-	a = g_regex_split (qre, script->priv->command, 0);
-	for (i = 0; a[i] != NULL; i++) {
-		if (i % 2 == 1) {
-			char *sub_result;
-			char *quoted;
+	/* collect the values to ask to the user */
 
-			sub_result = g_regex_replace_eval (re, a[i], -1, 0, 0, command_line_eval_cb, replace_data, error);
-			quoted = g_shell_quote (g_strstrip (sub_result));
-			g_string_append (command_line, quoted);
+	collect_data.command_data = command_data;
+	collect_data.n = 0;
+	_g_template_for_each_token (script->priv->command,
+				    TEMPLATE_FLAGS_NO_ENUMERATOR,
+				    collect_asked_values_cb,
+				    &collect_data);
 
-			g_free (quoted);
-			g_free (sub_result);
-		}
-		else
-			g_string_append (command_line, a[i]);
+	if (command_data->eval_data.asked_values == NULL) {
+		/* No values to ask to the user. */
+		_gth_script_get_command_line (task);
+		return;
 	}
 
-	replace_data->quote_values = TRUE;
-	result = g_regex_replace_eval (re, command_line->str, -1, 0, 0, command_line_eval_cb, replace_data, error);
+	command_data->eval_data.asked_values = g_list_reverse (command_data->eval_data.asked_values);
 
-	g_free (replace_data);
-	g_string_free (command_line, TRUE);
-	g_regex_unref (qre);
-	g_regex_unref (re);
+	command_data->builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/ask-values.ui");
+	dialog = g_object_new (GTK_TYPE_DIALOG,
+			       "title", "",
+			       "transient-for", GTK_WINDOW (command_data->parent),
+			       "modal", FALSE,
+			       "destroy-with-parent", FALSE,
+			       "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+			       "resizable", TRUE,
+			       NULL);
+	gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
+			   _gtk_builder_get_widget (command_data->builder, "dialog_content"));
+	gtk_dialog_add_buttons (GTK_DIALOG (dialog),
+				_GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_EXECUTE, GTK_RESPONSE_OK,
+				! can_skip ? NULL : (gth_script_for_each_file (command_data->script) ? _("_Skip") : NULL), GTK_RESPONSE_NO,
+				NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (dialog),
+					   GTK_RESPONSE_OK,
+					   GTK_STYLE_CLASS_SUGGESTED_ACTION);
 
-	return result;
+	gtk_label_set_text (GTK_LABEL (_gtk_builder_get_widget (command_data->builder, "title_label")),
+			    gth_script_get_display_name (command_data->script));
+
+	file_data = (GthFileData *) command_data->eval_data.file_list->data;
+	gtk_label_set_text (GTK_LABEL (_gtk_builder_get_widget (command_data->builder, "filename_label")),
+			    g_file_info_get_display_name (file_data->info));
+
+	{
+		GtkWidget *prompts = _gtk_builder_get_widget (command_data->builder, "prompts");
+		GList     *scan;
+
+		for (scan = command_data->eval_data.asked_values; scan; scan = scan->next) {
+			AskedValue *asked_value = scan->data;
+			GtkWidget  *label;
+			GtkWidget  *entry;
+			GtkWidget  *box;
+
+			label = gtk_label_new (asked_value->prompt);
+			gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+
+			entry = gtk_entry_new ();
+			if (asked_value->default_value != NULL)
+				gtk_entry_set_text (GTK_ENTRY (entry), asked_value->default_value);
+			gtk_widget_set_size_request (entry, 300, -1);
+
+			box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+			gtk_box_pack_start (GTK_BOX (box), label, TRUE, FALSE, 0);
+			gtk_box_pack_start (GTK_BOX (box), entry, TRUE, FALSE, 0);
+			gtk_widget_show_all (box);
+			gtk_box_pack_start (GTK_BOX (prompts), box, FALSE, FALSE, 0);
+
+			asked_value->entry = entry;
+		}
+	}
+
+	g_object_ref (command_data->builder);
+	command_data->thumb_loader = gth_thumb_loader_new (128);
+	gth_thumb_loader_load (command_data->thumb_loader,
+			       file_data,
+			       NULL,
+			       thumb_loader_ready_cb,
+			       command_data);
+
+	g_signal_connect (dialog,
+			  "response",
+			  G_CALLBACK (ask_values_dialog_response_cb),
+			  task);
+
+	gtk_widget_show (dialog);
+
+	if (command_data->dialog_callback)
+		command_data->dialog_callback (dialog, command_data->user_data);
 }
 
 
-guint
-gth_script_get_shortcut (GthScript *script)
+char *
+gth_script_get_command_line_finish (GthScript       *script,
+				    GAsyncResult    *result,
+				    GError         **error)
 {
-	return script->priv->shortcut;
+	g_return_val_if_fail (g_task_is_valid (result, script), NULL);
+	return g_task_propagate_pointer (G_TASK (result), error);
+}
+
+
+const char *
+gth_script_get_accelerator (GthScript *self)
+{
+	g_return_val_if_fail (GTH_IS_SCRIPT (self), NULL);
+	return self->priv->accelerator;
+}
+
+
+GthShortcut *
+gth_script_create_shortcut (GthScript *self)
+{
+	GthShortcut *shortcut;
+
+	shortcut = gth_shortcut_new ("exec-script", g_variant_new_string (gth_script_get_id (self)));
+	shortcut->description = g_strdup (self->priv->display_name);
+	shortcut->context = GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER;
+	shortcut->category = GTH_SHORTCUT_CATEGORY_LIST_TOOLS;
+	gth_shortcut_set_accelerator (shortcut, self->priv->accelerator);
+	shortcut->default_accelerator = g_strdup ("");
+
+	return shortcut;
+}
+
+
+/* -- gth_script_get_preview -- */
+
+
+#define PREVIEW_URI "file:///home/user/images/filename.jpeg"
+
+
+char *
+gth_script_get_preview (const char    *template,
+			TemplateFlags  flags)
+{
+	EvalData  preview_data;
+	char     *result;
+
+	preview_data.file_list = g_list_append (NULL,
+						gth_file_data_new_for_uri (PREVIEW_URI, NULL));
+
+	preview_data.error = NULL;
+	preview_data.asked_values = NULL;
+	preview_data.last_asked_value = NULL;
+
+	result = _g_template_eval (template,
+				   flags | TEMPLATE_FLAGS_NO_ENUMERATOR | TEMPLATE_FLAGS_PREVIEW,
+				   eval_template_cb,
+				   &preview_data);
+
+	_g_object_list_unref (preview_data.file_list);
+
+	return result;
 }

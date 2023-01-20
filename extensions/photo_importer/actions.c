@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,15 +22,17 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "actions.h"
 #include "dlg-photo-importer.h"
 
 
 void
-gth_browser_activate_action_import_from_device (GtkAction  *action,
-						GthBrowser *browser)
+gth_browser_activate_import_device (GSimpleAction	*action,
+				    GVariant		*parameter,
+				    gpointer		 user_data)
 {
-	dlg_photo_importer_from_device (browser, NULL);
+	dlg_photo_importer_from_device (GTH_BROWSER (user_data), NULL);
 }
 
 
@@ -58,25 +60,28 @@ folder_chooser_response_cb (GtkDialog *dialog,
 
 
 void
-gth_browser_activate_action_import_from_folder (GtkAction  *action,
-						GthBrowser *browser)
+gth_browser_activate_import_folder (GSimpleAction	*action,
+				    GVariant		*parameter,
+				    gpointer		 user_data)
 {
-	GtkWidget *chooser;
-	GFile     *folder;
+	GthBrowser *browser = GTH_BROWSER (user_data);
+	GtkWidget  *chooser;
+	GFile      *folder;
 
 	chooser = gtk_file_chooser_dialog_new (_("Choose a folder"),
 					       GTK_WINDOW (browser),
 					       GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-					       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					       _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL,
 					       _("Import"), GTK_RESPONSE_OK,
 					       NULL);
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (chooser), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), FALSE);
 
 	folder = NULL;
 	if (GTH_IS_FILE_SOURCE_VFS (gth_browser_get_location_source (browser)))
 		folder = _g_object_ref (gth_browser_get_location (browser));
 	if (folder == NULL)
-		folder = g_file_new_for_uri (get_home_uri ());
+		folder = g_file_new_for_uri (_g_uri_get_home ());
 	gtk_file_chooser_set_file (GTK_FILE_CHOOSER (chooser), folder, NULL);
 
 	g_signal_connect (chooser,

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,7 +22,8 @@
 #ifndef GTH_FILE_TOOL_SAVE_H
 #define GTH_FILE_TOOL_SAVE_H
 
-#include <pix.h>
+#include <gthumb.h>
+#include <extensions/image_viewer/image-viewer.h>
 
 G_BEGIN_DECLS
 
@@ -37,11 +38,11 @@ typedef struct _GthFileToolSave GthFileToolSave;
 typedef struct _GthFileToolSaveClass GthFileToolSaveClass;
 
 struct _GthFileToolSave {
-	GthFileTool parent_instance;
+	GthImageViewerPageTool parent_instance;
 };
 
 struct _GthFileToolSaveClass {
-	GthFileToolClass parent_class;
+	GthImageViewerPageToolClass parent_class;
 };
 
 GType  gth_file_tool_save_get_type  (void);

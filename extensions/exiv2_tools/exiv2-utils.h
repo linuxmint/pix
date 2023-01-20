@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2003-2009 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib.h>
 #include <gio/gio.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 The Free Software Foundation, Inc.
  *
@@ -20,7 +20,7 @@
  */
 
 #include <math.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "cairo-rotate.h"
 
 
@@ -173,7 +173,8 @@ rotate (cairo_surface_t *image,
 	guchar           r0,
 	guchar           g0,
 	guchar           b0,
-	guchar           a0)
+	guchar           a0,
+	GthAsyncTask    *task)
 {
 	cairo_surface_t *image_with_background;
 	cairo_surface_t *rotated;
@@ -215,8 +216,8 @@ rotate (cairo_surface_t *image,
 		/* pre-multiply the background color */
 
 		image_with_background = _cairo_image_surface_copy (image);
-		p_src = cairo_image_surface_get_data (image);
-		p_new = cairo_image_surface_get_data (image_with_background);
+		p_src = _cairo_image_surface_flush_and_get_data (image);
+		p_new = _cairo_image_surface_flush_and_get_data (image_with_background);
 		src_rowstride = cairo_image_surface_get_stride (image);
 		new_rowstride = cairo_image_surface_get_stride (image_with_background);
 
@@ -247,8 +248,8 @@ rotate (cairo_surface_t *image,
 
 	rotated = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, new_width, new_height);
 
-	p_src = cairo_image_surface_get_data (image_with_background);
-	p_new = cairo_image_surface_get_data (rotated);
+	p_src = _cairo_image_surface_flush_and_get_data (image_with_background);
+	p_new = _cairo_image_surface_flush_and_get_data (rotated);
 	src_rowstride = cairo_image_surface_get_stride (image_with_background);
 	new_rowstride = cairo_image_surface_get_stride (rotated);
 
@@ -295,6 +296,18 @@ rotate (cairo_surface_t *image,
 
 	y = - half_new_height;
 	for (yi = 0; yi < new_height; yi++) {
+		if (task != NULL) {
+			gboolean cancelled;
+			double   progress;
+
+			gth_async_task_get_data (task, NULL, &cancelled, NULL);
+			if (cancelled)
+				goto out;
+
+			progress = (double) yi / new_height;
+			gth_async_task_set_data (task, NULL, NULL, &progress);
+		}
+
 		p_new2 = p_new;
 
 		x = - half_new_width;
@@ -348,6 +361,8 @@ rotate (cairo_surface_t *image,
 		y += 1.0;
 	}
 
+	out:
+
 	cairo_surface_mark_dirty (rotated);
 	cairo_surface_destroy (image_with_background);
 
@@ -362,7 +377,8 @@ cairo_surface_t *
 _cairo_image_surface_rotate (cairo_surface_t *image,
 		    	     double           angle,
 		    	     gboolean         high_quality,
-		    	     GdkRGBA         *background_color)
+		    	     GdkRGBA         *background_color,
+		    	     GthAsyncTask    *task)
 {
 	cairo_surface_t *rotated;
 	cairo_surface_t *tmp = NULL;
@@ -383,7 +399,8 @@ _cairo_image_surface_rotate (cairo_surface_t *image,
 				  background_color->red * 255.0,
 				  background_color->green * 255.0,
 				  background_color->blue * 255.0,
-				  background_color->alpha * 255.0);
+				  background_color->alpha * 255.0,
+				  task);
 	else
 		rotated = cairo_surface_reference (image);
 

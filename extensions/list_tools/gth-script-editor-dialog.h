@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -49,6 +49,7 @@ struct _GthScriptEditorDialogClass {
 
 GType       gth_script_editor_dialog_get_type   (void);
 GtkWidget * gth_script_editor_dialog_new        (const char             *title,
+						 GthWindow              *shortcut_window,
 						 GtkWindow              *parent);
 void        gth_script_editor_dialog_set_script (GthScriptEditorDialog  *self,
 						 GthScript              *script);

@@ -1,7 +1,7 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
+	/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009-2010 Free Software Foundation, Inc.
  *
@@ -23,115 +23,67 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "actions.h"
 #include "callbacks.h"
 #include "gth-slideshow-preferences.h"
 #include "preferences.h"
+#include "shortcuts.h"
 
 
-#define BROWSER_DATA_KEY "slideshow-browser-data"
-
-
-static const char *ui_info =
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='View' action='ViewMenu'>"
-"      <placeholder name='View_Actions'>"
-"        <menuitem action='View_Slideshow'/>"
-"      </placeholder>"
-"    </menu>"
-"  </menubar>"
-"  <toolbar name='ToolBar'>"
-"      <placeholder name='BrowserCommands'>"
-"        <toolitem action='View_Fullscreen'/>"
-"        <toolitem action='View_Slideshow'/>"
-"      </placeholder>"
-"  </toolbar>"
-"</ui>";
-
-
-static GtkActionEntry action_entries[] = {
-	{ "View_Slideshow", "xapp-diaporama-symbolic",
-	  N_("_Slideshow"), "F5",
-	  N_("View as a slideshow"),
-	  G_CALLBACK (gth_browser_activate_action_view_slideshow) }
+static const GActionEntry actions[] = {
+	{ "slideshow", gth_browser_activate_slideshow }
 };
 
 
-typedef struct {
-	GtkActionGroup *action_group;
-	guint           actions_merge_id;
-} BrowserData;
-
-
-static void
-browser_data_free (BrowserData *data)
-{
-	g_free (data);
-}
+static const GthShortcut shortcuts[] = {
+	{ "slideshow", N_("Start presentation"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_VIEWER, "F5" },
+	{ "slideshow-close", N_("Terminate presentation"), GTH_SHORTCUT_CONTEXT_SLIDESHOW, GTH_SHORTCUT_CATEGORY_SLIDESHOW, "Escape" },
+	{ "slideshow-toggle-pause", N_("Pause/Resume presentation"), GTH_SHORTCUT_CONTEXT_SLIDESHOW, GTH_SHORTCUT_CATEGORY_SLIDESHOW, "p" },
+	{ "slideshow-next-image", N_("Show next file"), GTH_SHORTCUT_CONTEXT_SLIDESHOW, GTH_SHORTCUT_CATEGORY_SLIDESHOW, "space" },
+	{ "slideshow-previous-image", N_("Show previous file"), GTH_SHORTCUT_CONTEXT_SLIDESHOW, GTH_SHORTCUT_CATEGORY_SLIDESHOW, "b" },
+};
 
 
 void
 ss__gth_browser_construct_cb (GthBrowser *browser)
 {
-	BrowserData *data;
-	GError      *error = NULL;
-
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
 
-	data->action_group = gtk_action_group_new ("Slideshow Action");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
-	gtk_action_group_add_actions (data->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
+	gth_window_add_shortcuts (GTH_WINDOW (browser),
+				  shortcuts,
+				  G_N_ELEMENTS (shortcuts));
 
-	data->actions_merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), ui_info, -1, &error);
-	if (data->actions_merge_id == 0) {
-		g_warning ("building menus failed: %s", error->message);
-		g_error_free (error);
-	}
-
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
-}
-
-
-static void
-set_action_sensitive (BrowserData *data,
-		      const char  *action_name,
-		      gboolean     sensitive)
-{
-	GtkAction *action;
-
-	action = gtk_action_group_get_action (data->action_group, action_name);
-	g_object_set (action, "sensitive", sensitive, NULL);
+	gth_browser_add_header_bar_button (browser,
+					   GTH_BROWSER_HEADER_SECTION_BROWSER_VIEW,
+					   "view-presentation-symbolic",
+					   _("Presentation"),
+					   "win.slideshow",
+					   NULL);
 }
 
 
 void
 ss__gth_browser_update_sensitivity_cb (GthBrowser *browser)
 {
-	BrowserData  *data;
 	GtkTreeModel *file_store;
 	gboolean      sensitive;
 
-	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
 	file_store = gth_file_view_get_model (GTH_FILE_VIEW (gth_browser_get_file_list_view (browser)));
 	sensitive = (gth_file_store_n_visibles (GTH_FILE_STORE (file_store)) > 0);
-	set_action_sensitive (data, "View_Slideshow", sensitive);
+	g_object_set (g_action_map_lookup_action (G_ACTION_MAP (browser), "slideshow"), "enabled", sensitive, NULL);
 }
 
 
 void
 ss__slideshow_cb (GthBrowser *browser)
 {
-	gth_browser_activate_action_view_slideshow (NULL, browser);
+	gth_browser_activate_slideshow (NULL, NULL, browser);
 }
 
 
@@ -371,7 +323,7 @@ ss__dlg_catalog_properties (GtkBuilder  *builder,
 		GSettings *settings;
 		char      *current_transition;
 
-		settings = g_settings_new (PIX_SLIDESHOW_SCHEMA);
+		settings = g_settings_new (GTHUMB_SLIDESHOW_SCHEMA);
 		current_transition = g_settings_get_string (settings, PREF_SLIDESHOW_TRANSITION);
 		slideshow_preferences = gth_slideshow_preferences_new (current_transition,
 								       g_settings_get_boolean (settings, PREF_SLIDESHOW_AUTOMATIC),
@@ -407,7 +359,7 @@ ss__dlg_catalog_properties (GtkBuilder  *builder,
 	gtk_widget_hide (gth_slideshow_preferences_get_widget (GTH_SLIDESHOW_PREFERENCES (slideshow_preferences), "transition_box"));
 #endif /* ! HAVE_CLUTTER */
 
-	label = gtk_label_new (_("Slideshow"));
+	label = gtk_label_new (_("Presentation"));
 	gtk_widget_show (label);
 
 	gtk_notebook_append_page (GTK_NOTEBOOK (_gtk_builder_get_widget (builder, "properties_notebook")), slideshow_preferences, label);

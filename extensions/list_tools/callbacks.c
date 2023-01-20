@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,67 +23,28 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "actions.h"
 #include "callbacks.h"
 #include "gth-script-file.h"
 #include "gth-script-task.h"
+#include "list-tools.h"
+#include "shortcuts.h"
 
 
 #define BROWSER_DATA_KEY "list-tools-browser-data"
 
 
-static const char *fixed_ui_info =
-"<ui>"
-"  <toolbar name='ToolBar'>"
-"    <placeholder name='Edit_Actions_2'>"
-"      <toolitem action='ListTools'/>"
-"    </placeholder>"
-"  </toolbar>"
-"  <toolbar name='ViewerToolBar'>"
-"    <placeholder name='Edit_Actions_2'>"
-"      <toolitem action='ListTools'/>"
-"    </placeholder>"
-"  </toolbar>"
-/*
-"  <popup name='FileListPopup'>"
-"    <placeholder name='Open_Actions'>"
-"      <menu name='ExecWith' action='ExecWithMenu'>"
-"        <placeholder name='Tools'/>"
-"        <placeholder name='Scripts'/>"
-"        <separator name='ScriptsListSeparator'/>"
-"        <menuitem name='EditScripts' action='ListTools_EditScripts'/>"
-"      </menu>"
-"    </placeholder>"
-"  </popup>"
-*/
-"  <popup name='ListToolsPopup'>"
-"    <placeholder name='Tools'/>"
-"    <separator/>"
-"    <placeholder name='Tools_2'/>"
-"    <separator name='ToolsSeparator'/>"
-"    <placeholder name='Scripts'/>"
-"    <separator name='ScriptsListSeparator'/>"
-"    <menuitem name='EditScripts' action='ListTools_EditScripts'/>"
-"  </popup>"
-"</ui>";
-
-
-static GtkActionEntry action_entries[] = {
-	/*{ "ExecWithMenu", GTK_STOCK_EXECUTE, N_("_Tools") },*/
-
-	{ "ListTools_EditScripts", NULL,
-	  N_("Personalize..."), NULL,
-	  NULL,
-	  G_CALLBACK (gth_browser_action_edit_scripts) }
+static const GActionEntry actions[] = {
+	{ "exec-script", gth_browser_activate_exec_script, "s" },
+	{ "personalize-tools", gth_browser_activate_personalize_tools }
 };
 
 
 typedef struct {
-	GthBrowser     *browser;
-	GtkActionGroup *action_group;
-	gulong          scripts_changed_id;
-	gboolean        menu_initialized;
+	GthBrowser *browser;
+	gulong      scripts_changed_id;
+	guint       menu_merge_id;
 } BrowserData;
 
 
@@ -96,201 +57,62 @@ browser_data_free (BrowserData *data)
 }
 
 
-static GtkWidget *
-get_widget_with_prefix (BrowserData *data,
-			const char  *prefix,
-			const char  *path)
-{
-	char      *full_path;
-	GtkWidget *widget;
-
-	full_path = g_strconcat (prefix, path, NULL);
-	widget = gtk_ui_manager_get_widget (gth_browser_get_ui_manager (data->browser), full_path);
-
-	g_free (full_path);
-
-	return widget;
-}
-
-
 static void
-_update_sensitivity (GthBrowser *browser,
-		     const char *prefix)
+update_scripts (BrowserData *data)
 {
-	BrowserData *data;
-	int          n_selected;
-	gboolean     sensitive;
-	GtkWidget   *separator1;
-	GtkWidget   *separator2;
-	GtkWidget   *menu;
+	GthMenuManager	*menu_manager;
+	GList		*script_list;
+	GList		*scan;
 
-	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	menu_manager = gth_browser_get_menu_manager (data->browser, GTH_BROWSER_MENU_MANAGER_TOOLS3);
+	if (data->menu_merge_id != 0)
+		gth_menu_manager_remove_entries (menu_manager, data->menu_merge_id);
+	data->menu_merge_id = gth_menu_manager_new_merge_id (menu_manager);
 
-	n_selected = gth_file_selection_get_n_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
-	sensitive = (n_selected > 0);
-
-	separator1 = get_widget_with_prefix (data, prefix, "/ToolsSeparator");
-	separator2 = get_widget_with_prefix (data, prefix, "/Scripts");
-	menu = gtk_widget_get_parent (separator1);
-	{
-		GList *children;
-		GList *scan;
-
-		children = gtk_container_get_children (GTK_CONTAINER (menu));
-
-		if (separator1 != NULL) {
-			for (scan = children; scan; scan = scan->next)
-				if (scan->data == separator1) {
-					scan = scan->next;
-					break;
-				}
-		}
-		else
-			scan = children;
-
-		for (/* void */; scan && (scan->data != separator2); scan = scan->next)
-			gtk_widget_set_sensitive (scan->data, sensitive);
-	}
-}
-
-
-static void
-list_tools__gth_browser_update_sensitivity_cb (GthBrowser *browser)
-{
-	_update_sensitivity (browser, "/ListToolsPopup");
-	/*_update_sensitivity (browser, "/FileListPopup/Open_Actions/ExecWith");*/
-}
-
-
-static void
-exec_script (GthBrowser *browser,
-	     GthScript  *script)
-{
-	GList *items;
-	GList *file_list;
-
-	items = gth_file_selection_get_selected (GTH_FILE_SELECTION (gth_browser_get_file_list_view (browser)));
-	file_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (browser)), items);
-	if (file_list != NULL) {
-		GthTask *task;
-
-		task = gth_script_task_new (GTK_WINDOW (browser), script, file_list);
-		gth_browser_exec_task (browser, task, FALSE);
-
-		g_object_unref (task);
-	}
-
-	_g_object_list_unref (file_list);
-	_gtk_tree_path_list_free (items);
-}
-
-
-static void
-activate_script_menu_item (GtkMenuItem *menuitem,
-			   gpointer     user_data)
-{
-	BrowserData *data = user_data;
-	GthScript   *script;
-
-	script = gth_script_file_get_script (gth_script_file_get (), g_object_get_data (G_OBJECT (menuitem), "script_id"));
-	if (script != NULL)
-		exec_script (data->browser, script);
-}
-
-
-static void
-_update_scripts_menu (BrowserData *data,
-		      const char  *prefix)
-{
-	GtkWidget *separator1;
-	GtkWidget *separator2;
-	GtkWidget *menu;
-	GList     *script_list;
-	GList     *scan;
-	int        pos;
-	gboolean   script_present = FALSE;
-
-	separator1 = get_widget_with_prefix (data, prefix, "/ToolsSeparator");
-	separator2 = get_widget_with_prefix (data, prefix, "/Scripts");
-	menu = gtk_widget_get_parent (separator1);
-	_gtk_container_remove_children (GTK_CONTAINER (menu), separator1, separator2);
+	gth_window_remove_shortcuts (GTH_WINDOW (data->browser), SCRIPTS_GROUP);
 
 	script_list = gth_script_file_get_scripts (gth_script_file_get ());
-	pos = _gtk_container_get_pos (GTK_CONTAINER (menu), separator2);
 	for (scan = script_list; scan; scan = scan->next) {
-		GthScript *script = scan->data;
-		GtkWidget *menu_item;
+		GthScript   *script = scan->data;
+		GthShortcut *shortcut;
 
-		if (! gth_script_is_visible (script))
-			continue;
+		shortcut = gth_script_create_shortcut (script);
+		gth_window_add_removable_shortcut (GTH_WINDOW (data->browser),
+						   SCRIPTS_GROUP,
+						   shortcut);
 
-		menu_item = gtk_image_menu_item_new_with_label (gth_script_get_display_name (script));
-		/*gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), gtk_image_new_from_stock (GTK_STOCK_EXECUTE, GTK_ICON_SIZE_MENU));*/
-		gtk_widget_show (menu_item);
-		gtk_menu_shell_insert (GTK_MENU_SHELL (menu), menu_item, pos++);
+		if (gth_script_is_visible (script)) {
+			const char *script_action;
+			char       *detailed_action;
 
-		g_object_set_data_full (G_OBJECT (menu_item),
-					"script_id",
-					g_strdup (gth_script_get_id (script)),
-					(GDestroyNotify) g_free);
-		g_signal_connect (menu_item,
-				  "activate",
-				  G_CALLBACK (activate_script_menu_item),
-			  	  data);
+			script_action = gth_script_get_detailed_action (script);
+			if (! g_str_has_prefix (script_action, "win."))
+				detailed_action = g_strdup_printf ("win.%s", script_action);
+			else
+				detailed_action = g_strdup (script_action);
 
-		script_present = TRUE;
+			gth_menu_manager_append_entry (menu_manager,
+						       data->menu_merge_id,
+						       gth_script_get_display_name (script),
+						       detailed_action,
+						       "",
+						       NULL);
+
+			g_free (detailed_action);
+		}
+
+		gth_shortcut_free (shortcut);
 	}
-
-	separator1 = get_widget_with_prefix (data, prefix, "/ScriptsListSeparator");
-	if (script_present)
-		gtk_widget_show (separator1);
-	else
-		gtk_widget_hide (separator1);
-
-	list_tools__gth_browser_update_sensitivity_cb (data->browser);
 
 	_g_object_list_unref (script_list);
 }
 
 
 static void
-update_scripts_menu (BrowserData *data)
-{
-	_update_scripts_menu (data, "/ListToolsPopup");
-	/*_update_scripts_menu (data, "/FileListPopup/Open_Actions/ExecWith");*/
-}
-
-
-static void
 scripts_changed_cb (GthScriptFile *script_file,
-		     BrowserData   *data)
+		    BrowserData   *data)
 {
-	update_scripts_menu (data);
-}
-
-
-static void
-list_tools_show_menu_func (GtkAction *action,
-		           gpointer   user_data)
-{
-	BrowserData *data = user_data;
-	GtkWidget   *menu;
-
-	if (! data->menu_initialized) {
-		data->menu_initialized = TRUE;
-
-		menu = gtk_ui_manager_get_widget (gth_browser_get_ui_manager (data->browser), "/ListToolsPopup");
-		g_object_set (action, "menu", menu, NULL);
-		update_scripts_menu (data);
-
-		data->scripts_changed_id = g_signal_connect (gth_script_file_get (),
-							     "changed",
-							     G_CALLBACK (scripts_changed_cb),
-							     data);
-	}
-
-	list_tools__gth_browser_update_sensitivity_cb (data->browser);
+	update_scripts (data);
 }
 
 
@@ -298,66 +120,64 @@ void
 list_tools__gth_browser_construct_cb (GthBrowser *browser)
 {
 	BrowserData *data;
-	GtkAction   *action;
-	GError      *error = NULL;
+	GtkBuilder  *builder;
+	GMenuModel  *menu;
+	GtkWidget   *button;
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
 	data = g_new0 (BrowserData, 1);
 	data->browser = browser;
-	data->action_group = gtk_action_group_new ("List Tools Manager Actions");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
-	gtk_action_group_add_actions (data->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      browser);
-
-	/* tools menu action */
-
-	action = g_object_new (GTH_TYPE_TOGGLE_MENU_ACTION,
-			       "name", "ListTools",
-			       "icon-name", "open-menu-symbolic",
-			       "tooltip",  _("Tools"),
-			       "is-important", TRUE,
-			       NULL);
-	gth_toggle_menu_action_set_show_menu_func (GTH_TOGGLE_MENU_ACTION (action),
-						   list_tools_show_menu_func,
-						   data,
-						   NULL);
-	gtk_action_group_add_action (data->action_group, action);
-	g_object_unref (action);
-
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
-
-	if (! gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), fixed_ui_info, -1, &error)) {
-		g_message ("building menus failed: %s", error->message);
-		g_clear_error (&error);
-	}
-
 	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
+
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
+
+	builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/list_tools/data/ui/tools-menu.ui");
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_TOOLS, G_MENU (gtk_builder_get_object (builder, "tools1")));
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_MORE_TOOLS, G_MENU (gtk_builder_get_object (builder, "tools2")));
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_TOOLS3, G_MENU (gtk_builder_get_object (builder, "tools3")));
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_TOOLS4, G_MENU (gtk_builder_get_object (builder, "tools4")));
+	menu = G_MENU_MODEL (gtk_builder_get_object (builder, "tools-menu"));
+
+	/* browser tools */
+
+	button = _gtk_menu_button_new_for_header_bar ("tools-symbolic");
+	gtk_widget_set_tooltip_text (button, _("Tools"));
+	gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), menu);
+	gtk_widget_set_halign (GTK_WIDGET (gtk_menu_button_get_popup (GTK_MENU_BUTTON (button))), GTK_ALIGN_CENTER);
+	gtk_widget_show (button);
+	gtk_box_pack_end (GTK_BOX (gth_browser_get_headerbar_section (browser, GTH_BROWSER_HEADER_SECTION_BROWSER_TOOLS)), button, FALSE, FALSE, 0);
+
+	/* viewer edit */
+
+	button = _gtk_menu_button_new_for_header_bar ("tools-symbolic");
+	gtk_widget_set_tooltip_text (button, _("Tools"));
+	gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), menu);
+	gtk_widget_set_halign (GTK_WIDGET (gtk_menu_button_get_popup (GTK_MENU_BUTTON (button))), GTK_ALIGN_CENTER);
+	gtk_widget_show (button);
+	gtk_box_pack_end (GTK_BOX (gth_browser_get_headerbar_section (browser, GTH_BROWSER_HEADER_SECTION_VIEWER_EDIT)), button, FALSE, FALSE, 0);
+
+	g_object_unref (builder);
+
+	update_scripts (data);
+	data->scripts_changed_id = g_signal_connect (gth_script_file_get (),
+						     "changed",
+						     G_CALLBACK (scripts_changed_cb),
+						     data);
 }
 
 
-gpointer
-list_tools__gth_browser_file_list_key_press_cb (GthBrowser  *browser,
-						GdkEventKey *event)
+void
+list_tools__gth_browser_selection_changed_cb (GthBrowser *browser,
+					      int         n_selected)
 {
-	gpointer  result = NULL;
-	GList    *script_list;
-	GList    *scan;
+	BrowserData *data;
 
-	script_list = gth_script_file_get_scripts (gth_script_file_get ());
-	for (scan = script_list; scan; scan = scan->next) {
-		GthScript *script = scan->data;
+	data = g_object_get_data (G_OBJECT (browser), BROWSER_DATA_KEY);
+	g_return_if_fail (data != NULL);
 
-		if (gth_script_get_shortcut (script) == event->keyval) {
-			exec_script (browser, script);
-			result = GINT_TO_POINTER (1);
-			break;
-		}
-	}
-
-	_g_object_list_unref (script_list);
-
-	return result;
+	gth_window_enable_action (GTH_WINDOW (browser), "exec-script", n_selected > 0);
 }

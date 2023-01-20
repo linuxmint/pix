@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,9 +23,6 @@
 #include "gth-script-task.h"
 
 
-G_DEFINE_TYPE (GthScriptTask, gth_script_task, GTH_TYPE_TASK)
-
-
 struct _GthScriptTaskPrivate {
 	GthScript *script;
 	GtkWindow *parent;
@@ -36,6 +33,12 @@ struct _GthScriptTaskPrivate {
 	GPid       pid;
 	guint      script_watch;
 };
+
+
+G_DEFINE_TYPE_WITH_CODE (GthScriptTask,
+			 gth_script_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthScriptTask))
 
 
 static void
@@ -93,44 +96,31 @@ watch_script_cb (GPid     pid,
 
 
 static void
-_gth_script_task_exec (GthScriptTask *self)
+child_setup (gpointer user_data)
 {
-	char      *command_line;
-	GError    *error = NULL;
-	gboolean   retval = FALSE;
+	/* detach from the tty */
 
-	if (gth_script_for_each_file (self->priv->script)) {
-		GthFileData *file_data = self->priv->current->data;
-		GList       *list;
+	setsid ();
 
-		gth_task_progress (GTH_TASK (self),
-				   gth_script_get_display_name (self->priv->script),
-				   g_file_info_get_display_name (file_data->info),
-				   FALSE,
-				   (double) self->priv->n_current / (self->priv->n_files + 1));
+	/* create a process group to kill all the child processes when
+	 * canceling the operation. */
 
-		list = g_list_prepend (NULL, file_data);
-		command_line = gth_script_get_command_line (self->priv->script,
-							    self->priv->parent,
-							    list,
-							    &error);
+	setpgid (0, 0);
+}
 
-		g_list_free (list);
-	}
-	else {
-		gth_task_progress (GTH_TASK (self),
-				   gth_script_get_display_name (self->priv->script),
-				   NULL,
-				   TRUE,
-				   0.0);
 
-		command_line = gth_script_get_command_line (self->priv->script,
-							    self->priv->parent,
-							    self->priv->file_list,
-							    &error);
-	}
+static void
+get_command_line_ready_cb (GObject      *source,
+			   GAsyncResult *result,
+			   gpointer      user_data)
+{
+	GthScriptTask *self = user_data;
+	char          *command_line;
+	GError        *error = NULL;
+	gboolean       retval = FALSE;
 
-	if (error == NULL) {
+	command_line = gth_script_get_command_line_finish (GTH_SCRIPT (source), result, &error);
+	if (command_line != NULL) {
 		char **argv;
 		int    argc;
 
@@ -150,7 +140,7 @@ _gth_script_task_exec (GthScriptTask *self)
 						   argv,
 						   NULL,
 						   G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH,
-						   NULL,
+						   child_setup,
 						   NULL,
 						   &self->priv->pid,
 						   &error))
@@ -162,8 +152,17 @@ _gth_script_task_exec (GthScriptTask *self)
 				}
 			}
 			else {
-				if (g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error))
+				if (g_spawn_async (NULL,
+						   argv,
+						   NULL,
+						   G_SPAWN_SEARCH_PATH,
+						   NULL,
+						   NULL,
+						   NULL,
+						   &error))
+				{
 					retval = TRUE;
+				}
 			}
 		}
 
@@ -191,6 +190,58 @@ _gth_script_task_exec (GthScriptTask *self)
 	}
 
 	gth_task_completed (GTH_TASK (self), NULL);
+}
+
+
+static void
+get_command_line_dialog_cb (GtkWidget *dialog,
+			    gpointer   user_data)
+{
+	gth_task_dialog (GTH_TASK (user_data), (dialog != NULL), dialog);
+}
+
+
+static void
+_gth_script_task_exec (GthScriptTask *self)
+{
+	if (gth_script_for_each_file (self->priv->script)) {
+		GthFileData *file_data = self->priv->current->data;
+		GList       *list;
+
+		gth_task_progress (GTH_TASK (self),
+				   gth_script_get_display_name (self->priv->script),
+				   g_file_info_get_display_name (file_data->info),
+				   FALSE,
+				   (double) self->priv->n_current / (self->priv->n_files + 1));
+
+		list = g_list_prepend (NULL, file_data);
+		gth_script_get_command_line_async (self->priv->script,
+						   self->priv->parent,
+						   list,
+						   (self->priv->file_list->next != NULL),
+						   gth_task_get_cancellable (GTH_TASK (self)),
+						   get_command_line_dialog_cb,
+						   get_command_line_ready_cb,
+						   self);
+
+		g_list_free (list);
+	}
+	else {
+		gth_task_progress (GTH_TASK (self),
+				   gth_script_get_display_name (self->priv->script),
+				   NULL,
+				   TRUE,
+				   0.0);
+
+		gth_script_get_command_line_async (self->priv->script,
+						   self->priv->parent,
+						   self->priv->file_list,
+						   FALSE,
+						   gth_task_get_cancellable (GTH_TASK (self)),
+						   get_command_line_dialog_cb,
+						   get_command_line_ready_cb,
+						   self);
+	}
 }
 
 
@@ -246,7 +297,7 @@ gth_script_task_cancelled (GthTask *task)
 	self = GTH_SCRIPT_TASK (task);
 
 	if (self->priv->pid != 0)
-		kill (self->priv->pid, SIGTERM);
+		killpg (self->priv->pid, SIGTERM);
 }
 
 
@@ -255,8 +306,6 @@ gth_script_task_class_init (GthScriptTaskClass *klass)
 {
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
-
-	g_type_class_add_private (klass, sizeof (GthScriptTaskPrivate));
 
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_script_task_finalize;
@@ -270,7 +319,7 @@ gth_script_task_class_init (GthScriptTaskClass *klass)
 static void
 gth_script_task_init (GthScriptTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_SCRIPT_TASK, GthScriptTaskPrivate);
+	self->priv = gth_script_task_get_instance_private (self);
 	self->priv->pid = 0;
 }
 

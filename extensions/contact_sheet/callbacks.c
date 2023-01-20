@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,87 +23,33 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
+#include <extensions/list_tools/list-tools.h>
 #include "actions.h"
+#include "callbacks.h"
 
 
-#define BROWSER_DATA_KEY "contact-sheet-browser-data"
-
-
-static const char *ui_info =
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='File' action='FileMenu'>"
-"      <menu name='Export' action='ExportMenu'>"
-"        <placeholder name='Misc_Actions'>"
-"          <menu name='ContactSheet' action='ContactSheetMenu'>"
-"            <menuitem action='Tool_CreateContactSheet'/>"
-"            <menuitem action='Tool_CreateImageWall'/>"
-"          </menu>"
-"        </placeholder>"
-"      </menu>"
-"    </menu>"
-"  </menubar>"
-"  <popup name='ExportPopup'>"
-"    <placeholder name='Misc_Actions'>"
-"      <menu name='ContactSheet' action='ContactSheetMenu'>"
-"        <menuitem action='Tool_CreateContactSheet'/>"
-"        <menuitem action='Tool_CreateImageWall'/>"
-"      </menu>"
-"    </placeholder>"
-"  </popup>"
-"</ui>";
-
-
-static GtkActionEntry action_entries[] = {
-	{ "ContactSheetMenu", NULL, N_("Contact _Sheet") },
-	{ "Tool_CreateContactSheet", "contact-sheet",
-	  N_("Contact _Sheet..."), NULL,
-	  N_("Create a contact sheet"),
-	  G_CALLBACK (gth_browser_activate_action_create_contact_sheet) },
-	{ "Tool_CreateImageWall", "image-wall",
-	  N_("Image _Wall..."), NULL,
-	  N_("Create an image-wall"),
-	  G_CALLBACK (gth_browser_activate_action_create_image_wall) },
+static const GActionEntry actions[] = {
+	{ "create-contact-sheet", gth_browser_activate_create_contact_sheet },
+	{ "create-image-wall", gth_browser_activate_create_image_wall }
 };
 
-
-typedef struct {
-	GtkActionGroup *action_group;
-} BrowserData;
-
-
-static void
-browser_data_free (BrowserData *data)
-{
-	g_free (data);
-}
+static const GthMenuEntry action_entries[] = {
+	{ N_("Contact _Sheet…"), "win.create-contact-sheet" },
+	{ N_("Image _Wall…"), "win.create-image-wall" }
+};
 
 
 void
 cs__gth_browser_construct_cb (GthBrowser *browser)
 {
-	BrowserData *data;
-	GError      *error = NULL;
-	guint        merge_id;
-
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
-
-	data->action_group = gtk_action_group_new ("Contact Sheet Actions");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
-	gtk_action_group_add_actions (data->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
-
-	merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), ui_info, -1, &error);
-	if (merge_id == 0) {
-		g_warning ("building ui failed: %s", error->message);
-		g_clear_error (&error);
-	}
-
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
+	gth_menu_manager_append_entries (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_TOOLS4),
+					 action_entries,
+					 G_N_ELEMENTS (action_entries));
 }

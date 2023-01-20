@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,35 +22,35 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
 #include "preferences.h"
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
-	gth_hook_add_callback ("gth-browser-construct", 10, G_CALLBACK (ip__gth_browser_construct_cb), NULL);
-	gth_hook_add_callback ("gth-browser-update-sensitivity", 10, G_CALLBACK (ip__gth_browser_update_sensitivity_cb), NULL);
+	gth_hook_add_callback ("gth-browser-construct", 9, G_CALLBACK (ip__gth_browser_construct_cb), NULL);
+	gth_hook_add_callback ("gth-browser-selection-changed", 10, G_CALLBACK (ip__gth_browser_selection_changed_cb), NULL);
 	gth_hook_add_callback ("dlg-preferences-construct", 40, G_CALLBACK (ip__dlg_preferences_construct_cb), NULL);
 	gth_hook_add_callback ("dlg-preferences-apply", 10, G_CALLBACK (ip__dlg_preferences_apply_cb), NULL);
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

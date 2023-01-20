@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define GTH_FIND_DUPLICATES_H
 
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 
 #define GTH_TYPE_FIND_DUPLICATES                (gth_find_duplicates_get_type ())
 #define GTH_FIND_DUPLICATES(o)           	(G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_FIND_DUPLICATES, GthFindDuplicates))

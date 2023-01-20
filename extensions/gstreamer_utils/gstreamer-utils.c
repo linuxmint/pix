@@ -1,7 +1,7 @@
 /* -*- Mode: CPP; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2008-2009 Free Software Foundation, Inc.
  *
@@ -42,7 +42,8 @@
 
 #include <config.h>
 #include <gst/gst.h>
-#include <pix.h>
+#include <gst/video/video.h>
+#include <gthumb.h>
 #include "gstreamer-utils.h"
 
 
@@ -71,7 +72,7 @@ static void
 reset_extractor_data (MetadataExtractor *extractor)
 {
 	if (extractor->tagcache != NULL) {
-		gst_tag_list_free (extractor->tagcache);
+		gst_tag_list_unref (extractor->tagcache);
 		extractor->tagcache = NULL;
 	}
 
@@ -558,7 +559,7 @@ message_loop_to_state_change (MetadataExtractor *extractor,
 			gst_message_parse_tag (message, &tag_list);
 			result = gst_tag_list_merge (extractor->tagcache, tag_list, GST_TAG_MERGE_KEEP);
 			if (extractor->tagcache != NULL)
-				gst_tag_list_free (extractor->tagcache);
+				gst_tag_list_unref (extractor->tagcache);
 			extractor->tagcache = result;
 
 			gst_tag_list_free (tag_list);
@@ -652,8 +653,6 @@ gstreamer_read_metadata_from_file (GFile       *file,
 
 /* -- _gst_playbin_get_current_frame -- */
 
-/* this is voodoo code taken from totem, kudos to the authors, license is GPL */
-
 
 typedef struct {
 	GdkPixbuf          *pixbuf;
@@ -680,42 +679,35 @@ destroy_pixbuf (guchar *pix, gpointer data)
 
 gboolean
 _gst_playbin_get_current_frame (GstElement          *playbin,
-				int                  video_fps_n,
-				int                  video_fps_d,
 				FrameReadyCallback   cb,
 				gpointer             user_data)
 {
 	ScreenshotData *data;
-	GstCaps        *to_caps;
+	GstElement     *sink;
 	GstSample      *sample;
 	GstCaps        *sample_caps;
+	const char     *format;
 	GstStructure   *s;
-	int             outwidth;
-	int             outheight;
+	int             width;
+	int             height;
 
 	data = g_new0 (ScreenshotData, 1);
 	data->cb = cb;
 	data->user_data = user_data;
 
-	/* our desired output format (RGB24) */
-	to_caps = gst_caps_new_simple ("video/x-raw",
-				       "format", G_TYPE_STRING, "RGB",
-				       /* Note: we don't ask for a specific width/height here, so that
-				        * videoscale can adjust dimensions from a non-1/1 pixel aspect
-				        * ratio to a 1/1 pixel-aspect-ratio. We also don't ask for a
-				        * specific framerate, because the input framerate won't
-				        * necessarily match the output framerate if there's a deinterlacer
-				        * in the pipeline. */
-				       "pixel-aspect-ratio", GST_TYPE_FRACTION, 1, 1,
-				       NULL);
+	sink = gst_bin_get_by_name (GST_BIN(playbin), "sink");
+	if (sink == NULL) {
+		g_warning ("Could not take screenshot: %s", "no sink on playbin");
+		screenshot_data_finalize (data);
+		return FALSE;
+	}
 
-	/* get frame */
 	sample = NULL;
-	g_signal_emit_by_name (playbin, "convert-sample", to_caps, &sample);
-	gst_caps_unref (to_caps);
+	g_object_get (sink, "last-sample", &sample, NULL);
+	g_object_unref (sink);
 
 	if (sample == NULL) {
-		g_warning ("Could not take screenshot: %s", "failed to retrieve or convert video frame");
+		g_warning ("Could not take screenshot: %s", "failed to retrieve video frame");
 		screenshot_data_finalize (data);
 		return FALSE;
 	}
@@ -723,36 +715,94 @@ _gst_playbin_get_current_frame (GstElement          *playbin,
 	sample_caps = gst_sample_get_caps (sample);
 	if (sample_caps == NULL) {
 		g_warning ("Could not take screenshot: %s", "no caps on output buffer");
+		screenshot_data_finalize (data);
 		return FALSE;
 	}
 
 	s = gst_caps_get_structure (sample_caps, 0);
-	gst_structure_get_int (s, "width", &outwidth);
-	gst_structure_get_int (s, "height", &outheight);
-	if ((outwidth > 0) && (outheight > 0)) {
-		GstMemory  *memory;
-		GstMapInfo  info;
+	format = gst_structure_get_string (s, "format");
 
-		memory = gst_buffer_get_memory (gst_sample_get_buffer (sample), 0);
-		gst_memory_map (memory, &info, GST_MAP_READ);
-		data->pixbuf = gdk_pixbuf_new_from_data (info.data,
-							 GDK_COLORSPACE_RGB,
-							 FALSE,
-							 8,
-							 outwidth,
-							 outheight,
-							 GST_ROUND_UP_4 (outwidth * 3),
-							 destroy_pixbuf,
-							 sample);
+	/*g_print ("cap: %s\n", gst_caps_to_string (sample_caps));
+	g_print ("format: %s\n", format);*/
 
-		gst_memory_unmap (memory, &info);
+	if (! _g_str_equal (format, "RGB") && ! _g_str_equal (format, "RGBA")) {
+		GstCaps   *to_caps;
+		GstSample *to_sample;
+		GError    *error = NULL;
+
+		/* our desired output format (RGB24) */
+		to_caps = gst_caps_new_simple ("video/x-raw",
+					       "format", G_TYPE_STRING, "RGB",
+					       /* Note: we don't ask for a specific width/height here, so that
+						* videoscale can adjust dimensions from a non-1/1 pixel aspect
+						* ratio to a 1/1 pixel-aspect-ratio. We also don't ask for a
+						* specific framerate, because the input framerate won't
+						* necessarily match the output framerate if there's a deinterlacer
+						* in the pipeline. */
+					       "pixel-aspect-ratio", GST_TYPE_FRACTION, 1, 1,
+					       NULL);
+		to_sample = gst_video_convert_sample (sample, to_caps, GST_CLOCK_TIME_NONE, &error);
+
+		gst_caps_unref (to_caps);
+		gst_sample_unref (sample);
+
+		if (to_sample == NULL) {
+			g_warning ("Could not take screenshot: %s", (error != NULL) ? error->message : "failed to convert video frame");
+			g_clear_error (&error);
+			screenshot_data_finalize (data);
+			return FALSE;
+		}
+
+		sample = to_sample;
 	}
 
-	if (data->pixbuf == NULL)
+	sample_caps = gst_sample_get_caps (sample);
+	if (sample_caps == NULL) {
+		g_warning ("Could not take screenshot: %s", "no caps on output buffer");
+		screenshot_data_finalize (data);
+		return FALSE;
+	}
+
+	/*g_print ("cap: %s\n", gst_caps_to_string (sample_caps));*/
+
+	s = gst_caps_get_structure (sample_caps, 0);
+	gst_structure_get_int (s, "width", &width);
+	gst_structure_get_int (s, "height", &height);
+	format = gst_structure_get_string (s, "format");
+
+	if (! _g_str_equal (format, "RGB") && ! _g_str_equal (format, "RGBA")) {
+		g_warning ("Could not take screenshot: %s", "wrong format");
+		screenshot_data_finalize (data);
+		return FALSE;
+	}
+
+	if ((width > 0) && (height > 0)) {
+		GstMemory  *memory;
+		GstMapInfo  info;
+		gboolean    with_alpha = _g_str_equal (format, "RGBA");
+
+		memory = gst_buffer_get_memory (gst_sample_get_buffer (sample), 0);
+		if (gst_memory_map (memory, &info, GST_MAP_READ))
+			data->pixbuf = gdk_pixbuf_new_from_data (info.data,
+								 GDK_COLORSPACE_RGB,
+								 with_alpha,
+								 8,
+								 width,
+								 height,
+								 GST_ROUND_UP_4 (width * (with_alpha ? 4 : 3)),
+								 destroy_pixbuf,
+								 sample);
+
+		gst_memory_unmap (memory, &info);
+		gst_memory_unref (memory);
+	}
+
+	if (data->pixbuf == NULL) {
+		gst_sample_unref (sample);
 		g_warning ("Could not take screenshot: %s", "could not create pixbuf");
+	}
 
 	screenshot_data_finalize (data);
 
 	return TRUE;
 }
-

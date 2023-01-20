@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -24,7 +24,7 @@
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
@@ -62,7 +62,8 @@ gboolean gth_selections_manager_add_files        (GFile                *folder,
 						  GList                *file_list, /* GFile list */
 						  int                   destination_position);
 void     gth_selections_manager_remove_files     (GFile                *folder,
-						  GList                *file_list);
+						  GList                *file_list,
+						  gboolean              notify);
 void     gth_selections_manager_reorder          (GFile                *folder,
 						  GList                *visible_files, /* GFile list */
 						  GList                *files_to_move, /* GFile list */
@@ -74,10 +75,15 @@ void     gth_selections_manager_update_file_info (GFile                *file,
 						  GFileInfo            *info);
 gboolean gth_selections_manager_file_exists      (int                   n_selection,
 						  GFile                *file);
+gboolean gth_selections_manager_get_is_empty     (int                   n_selection);
 
 /* utilities */
 
 int      _g_file_get_n_selection                 (GFile                *file);
+const char *
+	 gth_selection_get_icon_name		 (int			n_selection);
+const char *
+	 gth_selection_get_symbolic_icon_name	 (int			n_selection);
 
 G_END_DECLS
 

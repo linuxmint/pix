@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <string.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-comment.h"
 
 
@@ -48,10 +48,11 @@ static void gth_comment_dom_domizable_interface_init (DomDomizableInterface *ifa
 G_DEFINE_TYPE_WITH_CODE (GthComment,
 			 gth_comment,
 			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (GthComment)
 			 G_IMPLEMENT_INTERFACE (GTH_TYPE_DUPLICABLE,
-					 	gth_comment_gth_duplicable_interface_init)
-		         G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
-		        		 	gth_comment_dom_domizable_interface_init))
+						gth_comment_gth_duplicable_interface_init)
+			 G_IMPLEMENT_INTERFACE (DOM_TYPE_DOMIZABLE,
+						gth_comment_dom_domizable_interface_init))
 
 
 static void
@@ -81,7 +82,7 @@ gth_comment_finalize (GObject *obj)
 
 	gth_comment_free_data (self);
 	gth_comment_clear_categories (self);
-	g_ptr_array_free (self->priv->categories, TRUE);
+	g_ptr_array_unref (self->priv->categories);
 	g_date_free (self->priv->date);
 	gth_time_free (self->priv->time_of_day);
 
@@ -92,7 +93,6 @@ gth_comment_finalize (GObject *obj)
 static void
 gth_comment_class_init (GthCommentClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (GthCommentPrivate));
 	G_OBJECT_CLASS (klass)->finalize = gth_comment_finalize;
 }
 
@@ -100,7 +100,7 @@ gth_comment_class_init (GthCommentClass *klass)
 static void
 gth_comment_init (GthComment *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_COMMENT, GthCommentPrivate);
+	self->priv = gth_comment_get_instance_private (self);
 	self->priv->caption = NULL;
 	self->priv->note = NULL;
 	self->priv->place = NULL;
@@ -425,7 +425,7 @@ void
 gth_comment_clear_categories (GthComment *self)
 {
 	g_ptr_array_foreach (self->priv->categories, (GFunc) g_free, NULL);
-	g_ptr_array_free (self->priv->categories, TRUE);
+	g_ptr_array_unref (self->priv->categories);
 	self->priv->categories = g_ptr_array_new ();
 }
 
@@ -638,8 +638,12 @@ gth_comment_update_from_general_attributes (GthFileData *file_data)
 	if (metadata != NULL) {
 		text = g_file_info_get_attribute_string (file_data->info, "comment::note");
 		if (! dom_str_equal (gth_metadata_get_formatted (metadata), text)) {
-			gth_comment_set_note (comment, gth_metadata_get_formatted (metadata));
-			write_comment = TRUE;
+			char *value = _g_utf8_try_from_any (gth_metadata_get_formatted (metadata));
+			if (value != NULL) {
+				gth_comment_set_note (comment, value);
+				g_free (value);
+				write_comment = TRUE;
+			}
 		}
 	}
 
@@ -647,8 +651,12 @@ gth_comment_update_from_general_attributes (GthFileData *file_data)
 	if (metadata != NULL) {
 		text = g_file_info_get_attribute_string (file_data->info, "comment::caption");
 		if (! dom_str_equal (gth_metadata_get_formatted (metadata), text)) {
-			gth_comment_set_caption (comment, gth_metadata_get_formatted (metadata));
-			write_comment = TRUE;
+			char *value = _g_utf8_try_from_any (gth_metadata_get_formatted (metadata));
+			if (value != NULL) {
+				gth_comment_set_caption (comment, value);
+				g_free (value);
+				write_comment = TRUE;
+			}
 		}
 	}
 
@@ -656,8 +664,12 @@ gth_comment_update_from_general_attributes (GthFileData *file_data)
 	if (metadata != NULL) {
 		text = g_file_info_get_attribute_string (file_data->info, "comment::place");
 		if (! dom_str_equal (gth_metadata_get_formatted (metadata), text)) {
-			gth_comment_set_place (comment, gth_metadata_get_formatted (metadata));
-			write_comment = TRUE;
+			char *value = _g_utf8_try_from_any (gth_metadata_get_formatted (metadata));
+			if (value != NULL) {
+				gth_comment_set_place (comment, value);
+				g_free (value);
+				write_comment = TRUE;
+			}
 		}
 	}
 
@@ -680,12 +692,17 @@ gth_comment_update_from_general_attributes (GthFileData *file_data)
 	if (categories != NULL) {
 		metadata = (GthMetadata *) g_file_info_get_attribute_object (file_data->info, "comment::categories");
 		comment_categories = gth_metadata_get_string_list (metadata);
-		if (! gth_string_list_equal (categories, comment_categories)) {
+		if (! gth_string_list_equal_custom (categories, comment_categories, (GCompareFunc) dom_str_find)) {
 			GList *scan;
 
 			gth_comment_clear_categories (comment);
-			for (scan = gth_string_list_get_list (categories); scan; scan = scan->next)
-				gth_comment_add_category (comment, scan->data);
+			for (scan = gth_string_list_get_list (categories); scan; scan = scan->next) {
+				char *value = _g_utf8_try_from_any (scan->data);
+				if (value != NULL) {
+					gth_comment_add_category (comment, value);
+					g_free (value);
+				}
+			}
 			write_comment = TRUE;
 		}
 	}

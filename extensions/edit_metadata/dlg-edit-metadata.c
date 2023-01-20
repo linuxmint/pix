@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 The Free Software Foundation, Inc.
  *
@@ -21,18 +21,20 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "dlg-edit-metadata.h"
 #include "gth-edit-metadata-dialog.h"
 
 
-#define UPDATE_SELECTION_DELAY 300
+#define UPDATE_SELECTION_DELAY 50
 
 
 typedef struct {
 	int         ref;
 	GthBrowser *browser;
 	GtkWidget  *dialog;
+	GtkWidget  *keep_open_checkbutton;
+	GtkWidget  *info;
 	char       *dialog_name;
 	GList      *file_list; /* GthFileData list */
 	GList      *parents;
@@ -123,9 +125,12 @@ saver_completed_cb (GthTask  *task,
 	else {
 		for (scan = data->file_list; scan; scan = scan->next) {
 			GthFileData *file_data = scan->data;
+			GFile       *parent;
 			GList       *files;
 
+			parent = g_file_get_parent (file_data->file);
 			files = g_list_prepend (NULL, g_object_ref (file_data->file));
+			gth_monitor_folder_changed (monitor, parent, files, GTH_MONITOR_EVENT_CHANGED);
 			gth_monitor_metadata_changed (monitor, file_data);
 
 			_g_object_list_unref (files);
@@ -134,8 +139,11 @@ saver_completed_cb (GthTask  *task,
 
 	if (data->close_dialog)
 		close_dialog (data);
+	else
+		gth_browser_show_next_image (data->browser, FALSE, FALSE);
 
 	dialog_data_unref (data);
+	_g_object_unref (task);
 }
 
 
@@ -150,12 +158,7 @@ edit_metadata_dialog__response_cb (GtkDialog *dialog,
 	GList      *scan;
 	GthTask    *task;
 
-	if (response == GTK_RESPONSE_HELP) {
-		show_help_dialog (GTK_WINDOW (dialog), data->dialog_name);
-		return;
-	}
-
-	if ((response != GTK_RESPONSE_OK) && (response != GTK_RESPONSE_APPLY)) {
+	if (response != GTK_RESPONSE_OK) {
 		cancel_file_list_loading (data);
 		close_dialog (data);
 		return;
@@ -164,7 +167,7 @@ edit_metadata_dialog__response_cb (GtkDialog *dialog,
 	if (data->file_list == NULL)
 		return;
 
-	data->close_dialog = (response == GTK_RESPONSE_OK);
+	data->close_dialog = ! gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->keep_open_checkbutton));
 
 	/* get the parents list */
 
@@ -199,10 +202,7 @@ edit_metadata_dialog__response_cb (GtkDialog *dialog,
 			  "completed",
 			  G_CALLBACK (saver_completed_cb),
 			  data);
-	gth_browser_exec_task (data->browser, task, FALSE);
-
-	g_object_unref (task);
-
+	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_IGNORE_ERROR);
 }
 
 
@@ -241,6 +241,7 @@ loader_completed_cb (GthTask  *task,
 	_g_object_list_unref (data->file_list);
 	data->file_list = _g_object_list_ref (gth_load_file_data_task_get_result (GTH_LOAD_FILE_DATA_TASK (task)));
 
+	gth_file_selection_info_set_file_list (GTH_FILE_SELECTION_INFO (data->info), data->file_list);
 	gth_edit_metadata_dialog_set_file_list (GTH_EDIT_METADATA_DIALOG (data->dialog), data->file_list);
 
 	gtk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (data->browser));
@@ -275,12 +276,14 @@ update_file_list (gpointer user_data)
 	file_data_list = gth_file_list_get_files (GTH_FILE_LIST (gth_browser_get_file_list (data->browser)), items);
 	loader_data->files = gth_file_data_list_to_file_list (file_data_list);
 
+	gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, loader_data->files != NULL);
+
 	data->loader = gth_load_file_data_task_new (loader_data->files, "*");
 	g_signal_connect (data->loader,
 			  "completed",
 			  G_CALLBACK (loader_completed_cb),
 			  loader_data);
-	gth_browser_exec_task (data->browser, data->loader, FALSE);
+	gth_browser_exec_task (data->browser, data->loader, GTH_TASK_FLAGS_IGNORE_ERROR);
 
 	_g_object_list_unref (file_data_list);
 	_gtk_tree_path_list_free (items);
@@ -299,6 +302,15 @@ file_selection_changed_cb (GthFileSelection *self,
 }
 
 
+static void
+keep_open_button_toggled_cb (GtkToggleButton *button,
+			     DialogData      *data)
+{
+	gth_file_selection_info_set_visible (GTH_FILE_SELECTION_INFO (data->info),
+					     gtk_toggle_button_get_active (button));
+}
+
+
 void
 dlg_edit_metadata (GthBrowser *browser,
 		   GType       dialog_type,
@@ -314,10 +326,29 @@ dlg_edit_metadata (GthBrowser *browser,
 	data = g_new0 (DialogData, 1);
 	data->ref = 1;
 	data->browser = browser;
-	data->dialog = g_object_new (dialog_type, 0);
+	data->dialog = g_object_new (dialog_type,
+				     "transient-for", GTK_WINDOW (browser),
+				     "modal", FALSE,
+				     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
+				     NULL);
 	data->dialog_name = g_strdup (dialog_name);
 	data->never_shown = TRUE;
 
+	data->info = gth_file_selection_info_new ();
+	gtk_widget_show (data->info);
+	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (data->dialog))), data->info, FALSE, FALSE, 0);
+
+	gtk_dialog_add_buttons (GTK_DIALOG (data->dialog),
+				_GTK_LABEL_CLOSE, GTK_RESPONSE_CANCEL,
+				_GTK_LABEL_SAVE, GTK_RESPONSE_OK,
+				NULL);
+
+	data->keep_open_checkbutton = _gtk_toggle_image_button_new_for_header_bar ("pinned-symbolic");
+	gtk_widget_set_tooltip_text (data->keep_open_checkbutton, _("Keep the dialog open"));
+	gtk_widget_show (data->keep_open_checkbutton);
+	_gtk_dialog_add_action_widget (GTK_DIALOG (data->dialog), data->keep_open_checkbutton);
+
+	_gtk_dialog_add_class_to_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK, GTK_STYLE_CLASS_SUGGESTED_ACTION);
 	gth_browser_set_dialog (browser, data->dialog_name, data->dialog);
 
 	g_signal_connect (G_OBJECT (data->dialog),
@@ -327,6 +358,10 @@ dlg_edit_metadata (GthBrowser *browser,
 	g_signal_connect (data->dialog,
 			  "response",
 			  G_CALLBACK (edit_metadata_dialog__response_cb),
+			  data);
+	g_signal_connect (data->keep_open_checkbutton,
+			  "toggled",
+			  G_CALLBACK (keep_open_button_toggled_cb),
 			  data);
 	data->file_selection_changed_event =
 			g_signal_connect (gth_browser_get_file_list_view (data->browser),

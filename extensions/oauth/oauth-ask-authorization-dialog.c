@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -30,9 +30,6 @@
 #define _WEB_VIEW_PAGE 0
 
 
-G_DEFINE_TYPE (OAuthAskAuthorizationDialog, oauth_ask_authorization_dialog, GTK_TYPE_DIALOG)
-
-
 /* Signals */
 enum {
 	LOAD_REQUEST,
@@ -51,6 +48,12 @@ struct _OAuthAskAuthorizationDialogPrivate {
 };
 
 
+G_DEFINE_TYPE_WITH_CODE (OAuthAskAuthorizationDialog,
+			 oauth_ask_authorization_dialog,
+			 GTK_TYPE_DIALOG,
+			 G_ADD_PRIVATE (OAuthAskAuthorizationDialog))
+
+
 static void
 oauth_ask_authorization_dialog_finalize (GObject *obj)
 {
@@ -67,8 +70,6 @@ static void
 oauth_ask_authorization_dialog_class_init (OAuthAskAuthorizationDialogClass *klass)
 {
 	GObjectClass   *object_class;
-
-	g_type_class_add_private (klass, sizeof (OAuthAskAuthorizationDialogPrivate));
 
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = oauth_ask_authorization_dialog_finalize;
@@ -145,19 +146,19 @@ static void
 webkit_view_ready_to_show_cb (WebKitWebView *web_view,
 			      gpointer       user_data)
 {
-	GtkWidget              *window;
+	GtkWindow              *window;
 	WebKitWindowProperties *prop;
 	GdkRectangle            geometry;
 
-	window = gtk_widget_get_toplevel (GTK_WIDGET (web_view));
-	if (! gtk_widget_is_toplevel (window))
+	window = _gtk_widget_get_toplevel_if_window (GTK_WIDGET (web_view));
+	if (window == NULL)
 		return;
 
 	prop = webkit_web_view_get_window_properties (web_view);
 	webkit_window_properties_get_geometry (prop, &geometry);
 
-	gtk_window_set_default_size (GTK_WINDOW (window), geometry.width, geometry.height);
-	gtk_widget_show_all (window);
+	gtk_window_set_default_size (window, geometry.width, geometry.height);
+	gtk_widget_show_all (GTK_WIDGET (window));
 }
 
 
@@ -179,7 +180,7 @@ _webkit_web_view_new (OAuthAskAuthorizationDialog *self)
 	webkit_settings_set_javascript_can_open_windows_automatically (settings, TRUE);
 	webkit_web_view_set_settings (WEBKIT_WEB_VIEW (view), settings);
 
-	file = gth_user_dir_get_file_for_write (GTH_DIR_CACHE, PIX_DIR, "cookies", NULL);
+	file = gth_user_dir_get_file_for_write (GTH_DIR_CACHE, GTHUMB_DIR, "cookies", NULL);
 	cookie_filename = g_file_get_path (file);
 
 	cookie_manager = webkit_web_context_get_cookie_manager (context);
@@ -208,17 +209,13 @@ oauth_ask_authorization_dialog_init (OAuthAskAuthorizationDialog *self)
 {
 	GtkWidget *dialog_content;
 
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, OAUTH_TYPE_ASK_AUTHORIZATION_DIALOG, OAuthAskAuthorizationDialogPrivate);
+	self->priv = oauth_ask_authorization_dialog_get_instance_private (self);
 	self->priv->builder = _gtk_builder_new_from_file ("oauth-ask-authorization.ui", "oauth");
 
 	gtk_window_set_default_size (GTK_WINDOW (self), 500, 500);
-	gtk_window_set_resizable (GTK_WINDOW (self), TRUE);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), 5);
-	gtk_container_set_border_width (GTK_CONTAINER (self), 5);
 
 	dialog_content = GET_WIDGET ("dialog_content");
 	gtk_widget_show (dialog_content);
-	gtk_container_set_border_width (GTK_CONTAINER (dialog_content), 5);
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (self))), dialog_content, TRUE, TRUE, 0);
 
 	self->priv->view = _webkit_web_view_new (self);
@@ -230,9 +227,7 @@ oauth_ask_authorization_dialog_init (OAuthAskAuthorizationDialog *self)
 			  G_CALLBACK (webkit_view_load_changed_cb),
 			  self);
 
-	gtk_dialog_add_button (GTK_DIALOG (self),
-			       GTK_STOCK_CANCEL,
-			       GTK_RESPONSE_CANCEL);
+	gtk_dialog_add_button (GTK_DIALOG (self), _GTK_LABEL_CANCEL, GTK_RESPONSE_CANCEL);
 }
 
 
@@ -243,6 +238,8 @@ oauth_ask_authorization_dialog_new (const char *uri)
 
 	self = g_object_new (OAUTH_TYPE_ASK_AUTHORIZATION_DIALOG,
 			     "title", _("Authorization Required"),
+			     "resizable", TRUE,
+			     "use-header-bar", _gtk_settings_get_dialogs_use_header (),
 			     NULL);
 	if (uri != NULL)
 		webkit_web_view_load_uri (WEBKIT_WEB_VIEW (self->priv->view), uri);

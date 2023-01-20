@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,11 +22,12 @@
 #ifndef CALLBACKS_H
 #define CALLBACKS_H
 
-#include <pix.h>
+#include <gthumb.h>
 
-void      ir__gth_browser_construct_cb           (GthBrowser  *browser);
-void      ir__gth_browser_update_sensitivity_cb  (GthBrowser  *browser);
-gpointer  ir__gth_browser_file_list_key_press_cb (GthBrowser  *browser,
-						  GdkEventKey *event);
+void      ir__gth_browser_construct_cb              (GthBrowser  *browser);
+void      ir__gth_browser_selection_changed_cb      (GthBrowser  *browser,
+						     int          n_selected);
+void	  ir__gth_browser_activate_viewer_page_cb   (GthBrowser  *browser);
+void	  ir__gth_browser_deactivate_viewer_page_cb (GthBrowser  *browser);
 
 #endif /* CALLBACKS_H */

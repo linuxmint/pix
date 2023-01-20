@@ -1,0 +1,101 @@
+option('warn-deprecated',
+  type : 'boolean',
+  value : true,
+  description : 'Enable deprecated declaration warnings in debug mode'
+)
+
+option('run-in-place',
+  type : 'boolean',
+  value : false,
+  description : 'Load extensions and other resources from the source tree'
+)
+
+option('exiv2',
+  type : 'boolean',
+  value : true,
+  description : 'Use exiv2 to read and write metadata'
+)
+
+option('clutter',
+  type : 'boolean',
+  value : true,
+  description : 'Use clutter to make animated slideshows'
+)
+
+option('gstreamer',
+  type : 'boolean',
+  value : true,
+  description : 'Use gstreamer to play multimedia files and to view the metadata'
+)
+
+option('libchamplain',
+  type : 'boolean',
+  value : false,
+  description : 'Use libchamplain to show the position the image refers to'
+)
+
+option('lcms2',
+  type : 'boolean',
+  value : true,
+  description : 'Use lcms2 to get color management support'
+)
+
+option('colord',
+  type : 'boolean',
+  value : true,
+  description : 'Use colord to read the monitor color profile'
+)
+
+option('libtiff',
+  type : 'boolean',
+  value : true,
+  description : 'Use libtiff to load Tiff images'
+)
+
+option('libwebp',
+  type : 'boolean',
+  value : true,
+  description : 'Use libwebp to load WebP images'
+)
+
+option('libjxl',
+  type : 'boolean',
+  value : true,
+  description : 'Use libjxl to load JPEG XL images'
+)
+
+option('libheif',
+  type : 'boolean',
+  value : true,
+  description : 'Use libheif to load HEIF and AVIF images'
+)
+
+option('libraw',
+  type : 'boolean',
+  value : true,
+  description : 'Use libraw to load RAW images'
+)
+
+option('librsvg',
+  type : 'boolean',
+  value : true,
+  description : 'Use librsvg to load SVG images'
+)
+
+option('libsecret',
+  type : 'boolean',
+  value : true,
+  description : 'Use libsecret to save web service account data'
+)
+
+option('webservices',
+  type : 'boolean',
+  value : true,
+  description : 'Compile extensions that import/export images from web services'
+)
+
+option('libbrasero',
+  type : 'boolean',
+  value : true,
+  description : 'Use libbrasero to save images and metadata to discs'
+)

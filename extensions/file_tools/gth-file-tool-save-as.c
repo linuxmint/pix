@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -20,11 +20,11 @@
  */
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "gth-file-tool-save-as.h"
 
 
-G_DEFINE_TYPE (GthFileToolSaveAs, gth_file_tool_save_as, GTH_TYPE_FILE_TOOL)
+G_DEFINE_TYPE (GthFileToolSaveAs, gth_file_tool_save_as, GTH_TYPE_IMAGE_VIEWER_PAGE_TOOL)
 
 
 static void
@@ -35,7 +35,7 @@ gth_file_tool_save_as_update_sensitivity (GthFileTool *base)
 
 	window = gth_file_tool_get_window (base);
 
-	can_save = gth_viewer_page_can_save (GTH_VIEWER_PAGE (gth_browser_get_viewer_page (GTH_BROWSER (window))));
+	can_save = gth_viewer_page_can_save (gth_browser_get_viewer_page (GTH_BROWSER (window)));
 	can_save = can_save && (gth_browser_get_current_file (GTH_BROWSER (window)) != NULL);
 	gtk_widget_set_sensitive (GTK_WIDGET (base), can_save);
 }
@@ -44,12 +44,12 @@ gth_file_tool_save_as_update_sensitivity (GthFileTool *base)
 static void
 gth_file_tool_save_as_activate (GthFileTool *tool)
 {
-	GtkWidget *window;
-	GtkWidget *viewer_page;
+	GtkWidget     *window;
+	GthViewerPage *viewer_page;
 
 	window = gth_file_tool_get_window (tool);
 	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	gth_viewer_page_save_as (GTH_VIEWER_PAGE (viewer_page), NULL, NULL);
+	gth_viewer_page_save_as (viewer_page, NULL, NULL);
 }
 
 
@@ -67,5 +67,5 @@ gth_file_tool_save_as_class_init (GthFileToolSaveAsClass *klass)
 static void
 gth_file_tool_save_as_init (GthFileToolSaveAs *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-as-symbolic", _("Save As"), NULL, FALSE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-as-symbolic", _("Save As…"), GTH_TOOLBOX_SECTION_FILE);
 }

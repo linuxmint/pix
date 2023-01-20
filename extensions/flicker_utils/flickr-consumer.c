@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #include <config.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "flickr-account.h"
 #include "flickr-consumer.h"
 #include "flickr-service.h"
@@ -92,7 +92,7 @@ static void
 flickr_access_token_response (OAuthService       *self,
 			      SoupMessage        *msg,
 			      SoupBuffer         *body,
-			      GSimpleAsyncResult *result)
+			      GTask              *task)
 {
 	GHashTable *values;
 	char       *username;
@@ -116,14 +116,10 @@ flickr_access_token_response (OAuthService       *self,
 					"token", token,
 					"token-secret", token_secret,
 					NULL);
-		g_simple_async_result_set_op_res_gpointer (result, account, g_object_unref);
+		g_task_return_pointer (task, account, g_object_unref);
 	}
-	else {
-		GError *error;
-
-		error = g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error"));
-		g_simple_async_result_set_from_error (result, error);
-	}
+	else
+		g_task_return_error (task, g_error_new_literal (WEB_SERVICE_ERROR, WEB_SERVICE_ERROR_GENERIC, _("Unknown error")));
 
 	g_hash_table_destroy (values);
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define CAIRO_IMAGE_SURFACE_JPEG_H
 
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
@@ -32,6 +32,7 @@ GthImage *  _cairo_image_surface_create_from_jpeg (GInputStream  *istream,
 						   int            requested_size,
 						   int           *original_width,
 						   int           *original_height,
+						   gboolean      *loaded_original,
 						   gpointer       user_data,
 						   GCancellable  *cancellable,
 						   GError       **error);

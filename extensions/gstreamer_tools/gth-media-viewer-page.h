@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,7 +23,7 @@
 #define GTH_MEDIA_VIEWER_PAGE_H
 
 #include <gst/gst.h>
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
@@ -54,7 +54,17 @@ gboolean       gth_media_viewer_page_is_playing     (GthMediaViewerPage *self);
 void           gth_media_viewer_page_get_video_fps  (GthMediaViewerPage *self,
 						     int                *video_fps_n,
 						     int                *video_fps_d);
-GthFileData * gth_media_viewer_page_get_file_data   (GthMediaViewerPage *self);
+GthFileData *  gth_media_viewer_page_get_file_data  (GthMediaViewerPage *self);
+void           gth_media_viewer_page_toggle_play    (GthMediaViewerPage *self);
+void           gth_media_viewer_page_set_fit_if_larger
+						    (GthMediaViewerPage *self,
+						     gboolean            fit_if_larger);
+void           gth_media_viewer_page_skip	    (GthMediaViewerPage *self,
+						     int                 seconds);
+void           gth_media_viewer_page_next_frame	    (GthMediaViewerPage *self);
+void           gth_media_viewer_page_toggle_mute    (GthMediaViewerPage *self);
+void           gth_media_viewer_page_play_faster    (GthMediaViewerPage *self);
+void           gth_media_viewer_page_play_slower    (GthMediaViewerPage *self);
 
 G_END_DECLS
 

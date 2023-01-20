@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -22,7 +22,8 @@
 #ifndef GTH_FILE_TOOL_SHARPEN_H
 #define GTH_FILE_TOOL_SHARPEN_H
 
-#include <pix.h>
+#include <gthumb.h>
+#include <extensions/image_viewer/image-viewer.h>
 
 G_BEGIN_DECLS
 
@@ -38,12 +39,12 @@ typedef struct _GthFileToolSharpenClass GthFileToolSharpenClass;
 typedef struct _GthFileToolSharpenPrivate GthFileToolSharpenPrivate;
 
 struct _GthFileToolSharpen {
-	GthFileTool parent_instance;
+	GthImageViewerPageTool parent_instance;
 	GthFileToolSharpenPrivate *priv;
 };
 
 struct _GthFileToolSharpenClass {
-	GthFileToolClass parent_class;
+	GthImageViewerPageToolClass parent_class;
 };
 
 GType  gth_file_tool_sharpen_get_type  (void);

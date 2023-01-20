@@ -1,0 +1,98 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers" path="/org/gnome/gthumb/pixbuf-savers/">
+    <child name="avif" schema="org.gnome.gthumb.pixbuf-savers.avif" />
+    <child name="jpeg" schema="org.gnome.gthumb.pixbuf-savers.jpeg" />
+    <child name="png" schema="org.gnome.gthumb.pixbuf-savers.png" />
+    <child name="tga" schema="org.gnome.gthumb.pixbuf-savers.tga" />
+    <child name="tiff" schema="org.gnome.gthumb.pixbuf-savers.tiff" />
+    <child name="webp" schema="org.gnome.gthumb.pixbuf-savers.webp" />
+  </schema>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers.avif" path="/org/gnome/gthumb/pixbuf-savers/avif/" gettext-domain="gthumb">
+    <key name="lossless" type="b">
+      <default>false</default>
+    </key>
+    <key name="quality" type="i">
+      <default>50</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers.jpeg" path="/org/gnome/gthumb/pixbuf-savers/jpeg/" gettext-domain="gthumb">
+    <key name="default-ext" type="s">
+      <default>'jpeg'</default>
+      <description>Possible values are: jpeg, jpg.</description>
+    </key>
+    <key name="quality" type="i">
+      <default>85</default>
+    </key>
+    <key name="smoothing" type="i">
+      <default>0</default>
+    </key>
+    <key name="optimize" type="b">
+      <default>true</default>
+    </key>
+    <key name="progressive" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers.png" path="/org/gnome/gthumb/pixbuf-savers/png/" gettext-domain="gthumb">
+    <key name="compression-level" type="i">
+      <default>6</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers.tga" path="/org/gnome/gthumb/pixbuf-savers/tga/" gettext-domain="gthumb">
+    <key name="rle-compression" type="b">
+      <default>true</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers.tiff" path="/org/gnome/gthumb/pixbuf-savers/tiff/" gettext-domain="gthumb">
+    <key name="default-ext" type="s">
+      <default>'tiff'</default>
+      <description>Possible values are: tiff, tif.</description>
+    </key>
+    <key name="compression" enum="org.gnome.gthumb.GthTiffCompression">
+      <default>'deflate'</default>
+    </key>
+    <key name="horizontal-resolution" type="i">
+      <default>72</default>
+    </key>
+    <key name="vertical-resolution" type="i">
+      <default>72</default>
+    </key>
+  </schema>
+
+  <schema id="org.gnome.gthumb.pixbuf-savers.webp" path="/org/gnome/gthumb/pixbuf-savers/webp/" gettext-domain="gthumb">
+    <key name="lossless" type="b">
+      <default>false</default>
+    </key>
+    <key name="quality" type="i">
+      <default>75</default>
+    </key>
+    <key name="method" type="i">
+      <default>4</default>
+    </key>
+  </schema>
+
+</schemalist>

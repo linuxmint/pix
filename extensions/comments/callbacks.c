@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2012 Free Software Foundation, Inc.
  *
@@ -24,68 +24,34 @@
 #include <glib/gi18n.h>
 #include <glib-object.h>
 #include <gdk/gdkkeysyms.h>
-#include <pix.h>
+#include <gthumb.h>
+#include <extensions/list_tools/list-tools.h>
 #include "actions.h"
+#include "callbacks.h"
 
 
-#define BROWSER_DATA_KEY "comments-data"
-
-
-static const char *fixed_ui_file_tools_info =
-"<ui>"
-"  <popup name='ListToolsPopup'>"
-"    <placeholder name='Tools_2'>"
-"      <menuitem name='ImportEmbeddedMetadata' action='Tool_ImportEmbeddedMetadata'/>"
-"    </placeholder>"
-"  </popup>"
-"</ui>";
-
-
-static GthActionEntryExt comments_action_entries[] = {
-	{ "Tool_ImportEmbeddedMetadata", NULL,
-	  N_("Import Embedded Metadata"), NULL,
-	  N_("Import the metadata stored inside files into the Pix comment system"),
-	  GTH_ACTION_FLAG_NONE,
-	  G_CALLBACK (gth_browser_activate_action_tool_import_embedded_metadata) }
+static const GActionEntry actions[] = {
+	{ "import-embedded-metadata", gth_browser_activate_import_embedded_metadata }
 };
 
 
-typedef struct {
-	GthBrowser     *browser;
-	GtkActionGroup *actions;
-} BrowserData;
-
-
-static void
-browser_data_free (BrowserData *data)
-{
-	g_free (data);
-}
+static const GthMenuEntry action_entries[] = {
+	{ N_("Import Embedded Metadata"), "win.import-embedded-metadata" }
+};
 
 
 void
 comments__gth_browser_construct_cb (GthBrowser *browser)
 {
-	BrowserData *data;
-	GError      *error = NULL;
-
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
-	data->browser = browser;
-
-	data->actions = gtk_action_group_new ("Comments Actions");
-	gtk_action_group_set_translation_domain (data->actions, NULL);
-	_gtk_action_group_add_actions_with_flags (data->actions,
-						  comments_action_entries,
-						  G_N_ELEMENTS (comments_action_entries),
-						  browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->actions, 0);
-
-	if (gth_main_extension_is_active ("list_tools") && ! gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), fixed_ui_file_tools_info, -1, &error)) {
-		g_message ("building menus failed: %s", error->message);
-		g_error_free (error);
+	if (gth_main_extension_is_active ("list_tools")) {
+		g_action_map_add_action_entries (G_ACTION_MAP (browser),
+						 actions,
+						 G_N_ELEMENTS (actions),
+						 browser);
+		gth_menu_manager_append_entries (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_GEARS_OTHER_ACTIONS),
+						 action_entries,
+						 G_N_ELEMENTS (action_entries));
 	}
-
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 }

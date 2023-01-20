@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <glib.h>
-#include <pix.h>
+#include <gthumb.h>
 #include <extensions/gstreamer_utils/gstreamer-utils.h>
 #include "gth-metadata-provider-gstreamer.h"
 
@@ -31,8 +31,9 @@ G_DEFINE_TYPE (GthMetadataProviderGstreamer, gth_metadata_provider_gstreamer, GT
 
 static gboolean
 gth_metadata_provider_gstreamer_can_read (GthMetadataProvider  *self,
-				          const char           *mime_type,
-				          char                **attribute_v)
+					  GthFileData          *file_data,
+					  const char           *mime_type,
+					  char                **attribute_v)
 {
 	if (! g_str_equal (mime_type, "*")
 	    && ! _g_content_type_is_a (mime_type, "audio/*")
@@ -44,10 +45,11 @@ gth_metadata_provider_gstreamer_can_read (GthMetadataProvider  *self,
 	return _g_file_attributes_matches_any_v ("general::title,"
 						 "general::format,"
 						 "general::dimensions,"
+						 "general::duration,"
 						 "frame::width,"
-			 	 	 	 "frame::height,"
+						 "frame::height,"
 						 "audio-video::*",
-					         attribute_v);
+						 attribute_v);
 }
 
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -24,30 +24,14 @@
 
 G_BEGIN_DECLS
 
-#include <pix.h>
-
-typedef enum {
-	GTH_SUBFOLDER_TYPE_NONE = 0,
-        GTH_SUBFOLDER_TYPE_FILE_DATE,
-	GTH_SUBFOLDER_TYPE_CURRENT_DATE,
-} GthSubfolderType;
-
-typedef enum {
-	GTH_SUBFOLDER_FORMAT_YYYYMMDD,
-	GTH_SUBFOLDER_FORMAT_YYYYMM,
-	GTH_SUBFOLDER_FORMAT_YYYY,
-	GTH_SUBFOLDER_FORMAT_CUSTOM
-} GthSubfolderFormat;
+#include <gthumb.h>
 
 GFile *   gth_import_preferences_get_destination  (void);
-GFile *   gth_import_utils_get_file_destination   (GthFileData        *file_data,
-						   GFile              *destination,
-						   GthSubfolderType    subfolder_type,
-						   GthSubfolderFormat  subfolder_format,
-						   gboolean            single_subfolder,
-						   const char         *custom_format,
-						   const char         *event_name,
-						   GTimeVal            import_start_time);
+GFile *   gth_import_utils_get_file_destination   (GthFileData *file_data,
+						   GFile       *destination,
+						   const char  *subfolder_template,
+						   const char  *event_name,
+						   GTimeVal     import_start_time);
 
 G_END_DECLS
 

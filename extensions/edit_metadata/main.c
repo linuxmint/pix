@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,13 +22,13 @@
 
 #include <config.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "callbacks.h"
 #include "gth-edit-general-page.h"
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
 	/**
 	 * Called to delete a file metadata
@@ -41,26 +41,24 @@ pix_extension_activate (void)
 
 	gth_main_register_type ("edit-comment-dialog-page", GTH_TYPE_EDIT_GENERAL_PAGE);
 	gth_hook_add_callback ("gth-browser-construct", 7, G_CALLBACK (edit_metadata__gth_browser_construct_cb), NULL);
-	gth_hook_add_callback ("gth-browser-set-current-page", 5, G_CALLBACK (edit_metadata__gth_browser_set_current_page_cb), NULL);
-	gth_hook_add_callback ("gth-browser-update-sensitivity", 10, G_CALLBACK (edit_metadata__gth_browser_update_sensitivity_cb), NULL);
-	gth_hook_add_callback ("gth-browser-file-list-key-press", 10, G_CALLBACK (edit_metadata__gth_browser_file_list_key_press_cb), NULL);
+	gth_hook_add_callback ("gth-browser-selection-changed", 10, G_CALLBACK (edit_metadata__gth_browser_selection_changed_cb), NULL);
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

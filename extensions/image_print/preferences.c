@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -21,7 +21,7 @@
 
 #include <config.h>
 #include <glib/gi18n.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "preferences.h"
 
 
@@ -57,7 +57,7 @@ ip__dlg_preferences_construct_cb (GtkWidget  *dialog,
 
 	data = g_new0 (BrowserData, 1);
 	data->builder = _gtk_builder_new_from_file ("print-preferences.ui", "image_print");
-	data->settings = g_settings_new (PIX_IMAGE_PRINT_SCHEMA);
+	data->settings = g_settings_new (GTHUMB_IMAGE_PRINT_SCHEMA);
 
 	notebook = _gtk_builder_get_widget (dialog_builder, "notebook");
 
@@ -65,15 +65,15 @@ ip__dlg_preferences_construct_cb (GtkWidget  *dialog,
 	gtk_widget_show (page);
 
 	font_name = g_settings_get_string (data->settings, PREF_IMAGE_PRINT_FONT_NAME);
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (GET_WIDGET ("caption_fontbutton")), font_name);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (GET_WIDGET ("caption_fontbutton")), font_name);
 	g_free (font_name);
 
 	font_name = g_settings_get_string (data->settings, PREF_IMAGE_PRINT_HEADER_FONT_NAME);
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (GET_WIDGET ("header_fontbutton")), font_name);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (GET_WIDGET ("header_fontbutton")), font_name);
 	g_free (font_name);
 
 	font_name = g_settings_get_string (data->settings, PREF_IMAGE_PRINT_FOOTER_FONT_NAME);
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (GET_WIDGET ("footer_fontbutton")), font_name);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (GET_WIDGET ("footer_fontbutton")), font_name);
 	g_free (font_name);
 
 	label = gtk_label_new (_("Print"));
@@ -94,7 +94,7 @@ ip__dlg_preferences_apply_cb (GtkWidget  *dialog,
 	data = g_object_get_data (G_OBJECT (dialog), BROWSER_DATA_KEY);
 	g_return_if_fail (data != NULL);
 
-	g_settings_set_string (data->settings, PREF_IMAGE_PRINT_FONT_NAME, gtk_font_button_get_font_name (GTK_FONT_BUTTON (GET_WIDGET ("caption_fontbutton"))));
-	g_settings_set_string (data->settings, PREF_IMAGE_PRINT_HEADER_FONT_NAME, gtk_font_button_get_font_name (GTK_FONT_BUTTON (GET_WIDGET ("header_fontbutton"))));
-	g_settings_set_string (data->settings, PREF_IMAGE_PRINT_FOOTER_FONT_NAME, gtk_font_button_get_font_name (GTK_FONT_BUTTON (GET_WIDGET ("footer_fontbutton"))));
+	g_settings_set_string (data->settings, PREF_IMAGE_PRINT_FONT_NAME, gtk_font_chooser_get_font (GTK_FONT_CHOOSER (GET_WIDGET ("caption_fontbutton"))));
+	g_settings_set_string (data->settings, PREF_IMAGE_PRINT_HEADER_FONT_NAME, gtk_font_chooser_get_font (GTK_FONT_CHOOSER (GET_WIDGET ("header_fontbutton"))));
+	g_settings_set_string (data->settings, PREF_IMAGE_PRINT_FOOTER_FONT_NAME, gtk_font_chooser_get_font (GTK_FONT_CHOOSER (GET_WIDGET ("footer_fontbutton"))));
 }

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,29 +22,11 @@
 #ifndef GTH_FILE_TOOL_NEGATIVE_H
 #define GTH_FILE_TOOL_NEGATIVE_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
-#define GTH_TYPE_FILE_TOOL_NEGATIVE (gth_file_tool_negative_get_type ())
-#define GTH_FILE_TOOL_NEGATIVE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTH_TYPE_FILE_TOOL_NEGATIVE, GthFileToolNegative))
-#define GTH_FILE_TOOL_NEGATIVE_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), GTH_TYPE_FILE_TOOL_NEGATIVE, GthFileToolNegativeClass))
-#define GTH_IS_FILE_TOOL_NEGATIVE(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTH_TYPE_FILE_TOOL_NEGATIVE))
-#define GTH_IS_FILE_TOOL_NEGATIVE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), GTH_TYPE_FILE_TOOL_NEGATIVE))
-#define GTH_FILE_TOOL_NEGATIVE_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), GTH_TYPE_FILE_TOOL_NEGATIVE, GthFileToolNegativeClass))
-
-typedef struct _GthFileToolNegative GthFileToolNegative;
-typedef struct _GthFileToolNegativeClass GthFileToolNegativeClass;
-
-struct _GthFileToolNegative {
-	GthFileTool parent_instance;
-};
-
-struct _GthFileToolNegativeClass {
-	GthFileToolClass parent_class;
-};
-
-GType  gth_file_tool_negative_get_type  (void);
+void negative_add_to_special_effects (GthFilterGrid *);
 
 G_END_DECLS
 

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2003-2010 Free Software Foundation, Inc.
  *
@@ -25,7 +25,7 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-#include <pix.h>
+#include <gthumb.h>
 
 #define GTH_TYPE_WEB_EXPORTER            (gth_web_exporter_get_type ())
 #define GTH_WEB_EXPORTER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTH_TYPE_WEB_EXPORTER, GthWebExporter))

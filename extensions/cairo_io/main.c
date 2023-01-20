@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2011 Free Software Foundation, Inc.
  *
@@ -21,12 +21,16 @@
 
 
 #include <config.h>
-#include <pix.h>
+#include <gthumb.h>
+#include "cairo-image-surface-avif.h"
 #include "cairo-image-surface-jpeg.h"
 #include "cairo-image-surface-png.h"
 #include "cairo-image-surface-svg.h"
+#include "cairo-image-surface-tiff.h"
 #include "cairo-image-surface-webp.h"
+#include "cairo-image-surface-jxl.h"
 #include "cairo-image-surface-xcf.h"
+#include "gth-image-saver-avif.h"
 #include "gth-image-saver-jpeg.h"
 #include "gth-image-saver-png.h"
 #include "gth-image-saver-tga.h"
@@ -36,7 +40,7 @@
 
 
 G_MODULE_EXPORT void
-pix_extension_activate (void)
+gthumb_extension_activate (void)
 {
 #ifdef HAVE_LIBJPEG
 	gth_main_register_image_loader_func (_cairo_image_surface_create_from_jpeg,
@@ -62,12 +66,36 @@ pix_extension_activate (void)
 	gth_main_register_type ("image-saver", GTH_TYPE_IMAGE_SAVER_TGA);
 	gth_main_register_type ("image-saver", GTH_TYPE_IMAGE_SAVER_TIFF);
 
+#ifdef HAVE_LIBTIFF
+	gth_main_register_image_loader_func (_cairo_image_surface_create_from_tiff,
+					     GTH_IMAGE_FORMAT_CAIRO_SURFACE,
+					     "image/tiff",
+					     NULL);
+#endif
+
 #ifdef HAVE_LIBWEBP
 	gth_main_register_image_loader_func (_cairo_image_surface_create_from_webp,
 					     GTH_IMAGE_FORMAT_CAIRO_SURFACE,
 					     "image/webp",
 					     NULL);
 	gth_main_register_type ("image-saver", GTH_TYPE_IMAGE_SAVER_WEBP);
+#endif
+
+#ifdef HAVE_LIBJXL
+	gth_main_register_image_loader_func (_cairo_image_surface_create_from_jxl,
+					     GTH_IMAGE_FORMAT_CAIRO_SURFACE,
+					     "image/jxl",
+					     NULL);
+#endif
+
+#ifdef HAVE_LIBHEIF
+	gth_main_register_image_loader_func (_cairo_image_surface_create_from_avif,
+					     GTH_IMAGE_FORMAT_CAIRO_SURFACE,
+					     "image/avif",
+					     "image/heic",
+					     "image/heif",
+					     NULL);
+	gth_main_register_type ("image-saver", GTH_TYPE_IMAGE_SAVER_AVIF);
 #endif
 
 	gth_main_register_image_loader_func (_cairo_image_surface_create_from_xcf,
@@ -81,19 +109,19 @@ pix_extension_activate (void)
 
 
 G_MODULE_EXPORT void
-pix_extension_deactivate (void)
+gthumb_extension_deactivate (void)
 {
 }
 
 
 G_MODULE_EXPORT gboolean
-pix_extension_is_configurable (void)
+gthumb_extension_is_configurable (void)
 {
 	return FALSE;
 }
 
 
 G_MODULE_EXPORT void
-pix_extension_configure (GtkWindow *parent)
+gthumb_extension_configure (GtkWindow *parent)
 {
 }

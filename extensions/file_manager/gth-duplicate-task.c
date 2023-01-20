@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2001-2009 Free Software Foundation, Inc.
  *
@@ -30,7 +30,10 @@ struct _GthDuplicateTaskPrivate {
 };
 
 
-G_DEFINE_TYPE (GthDuplicateTask, gth_duplicate_task, GTH_TYPE_TASK)
+G_DEFINE_TYPE_WITH_CODE (GthDuplicateTask,
+			 gth_duplicate_task,
+			 GTH_TYPE_TASK,
+			 G_ADD_PRIVATE (GthDuplicateTask))
 
 
 static void
@@ -77,6 +80,7 @@ static void duplicate_current_file (GthDuplicateTask *self);
 
 static void
 copy_ready_cb (GthOverwriteResponse  response,
+	       GList                *other_files,
 	       GError               *error,
                gpointer              user_data)
 {
@@ -118,19 +122,19 @@ duplicate_current_file (GthDuplicateTask *self)
 		g_object_unref (tmp);
 	}
 
-	_g_copy_file_async (file_data,
-			    self->priv->destination,
-			    FALSE,
-			    G_FILE_COPY_ALL_METADATA,
-			    GTH_OVERWRITE_RESPONSE_ALWAYS_NO,
-			    G_PRIORITY_DEFAULT,
-			    gth_task_get_cancellable (GTH_TASK (self)),
-			    copy_progress_cb,
-			    self,
-			    copy_dialog_cb,
-			    self,
-			    copy_ready_cb,
-			    self);
+	_gth_file_data_copy_async (file_data,
+				   self->priv->destination,
+				   FALSE,
+				   GTH_FILE_COPY_ALL_METADATA,
+				   GTH_OVERWRITE_RESPONSE_ALWAYS_NO,
+				   G_PRIORITY_DEFAULT,
+				   gth_task_get_cancellable (GTH_TASK (self)),
+				   copy_progress_cb,
+				   self,
+				   copy_dialog_cb,
+				   self,
+				   copy_ready_cb,
+				   self);
 }
 
 
@@ -154,8 +158,6 @@ gth_duplicate_task_class_init (GthDuplicateTaskClass *klass)
 	GObjectClass *object_class;
 	GthTaskClass *task_class;
 
-	g_type_class_add_private (klass, sizeof (GthDuplicateTaskPrivate));
-
 	object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = gth_duplicate_task_finalize;
 
@@ -167,7 +169,7 @@ gth_duplicate_task_class_init (GthDuplicateTaskClass *klass)
 static void
 gth_duplicate_task_init (GthDuplicateTask *self)
 {
-	self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, GTH_TYPE_DUPLICATE_TASK, GthDuplicateTaskPrivate);
+	self->priv = gth_duplicate_task_get_instance_private (self);
 	self->priv->destination = NULL;
 }
 

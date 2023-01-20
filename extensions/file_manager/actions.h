@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,30 +22,34 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gtk/gtk.h>
+#include <gthumb.h>
 
-#define DEFINE_ACTION(x) void x (GtkAction *action, gpointer data);
+DEF_ACTION_CALLBACK (gth_browser_activate_create_folder)
+DEF_ACTION_CALLBACK (gth_browser_activate_edit_cut)
+DEF_ACTION_CALLBACK (gth_browser_activate_edit_copy)
+DEF_ACTION_CALLBACK (gth_browser_activate_edit_paste)
+DEF_ACTION_CALLBACK (gth_browser_activate_duplicate)
+DEF_ACTION_CALLBACK (gth_browser_activate_trash)
+DEF_ACTION_CALLBACK (gth_browser_activate_delete)
+DEF_ACTION_CALLBACK (gth_browser_activate_remove_from_source)
+DEF_ACTION_CALLBACK (gth_browser_activate_remove_from_source_permanently)
+DEF_ACTION_CALLBACK (gth_browser_activate_rename)
+DEF_ACTION_CALLBACK (gth_browser_activate_file_list_rename)
+DEF_ACTION_CALLBACK (gth_browser_activate_copy_to_folder)
+DEF_ACTION_CALLBACK (gth_browser_activate_move_to_folder)
 
-DEFINE_ACTION(gth_browser_action_new_folder)
-DEFINE_ACTION(gth_browser_action_rename_folder)
-DEFINE_ACTION(gth_browser_activate_action_edit_cut_files)
-DEFINE_ACTION(gth_browser_activate_action_edit_copy_files)
-DEFINE_ACTION(gth_browser_activate_action_edit_paste)
-DEFINE_ACTION(gth_browser_activate_action_edit_duplicate)
-DEFINE_ACTION(gth_browser_activate_action_edit_trash)
-DEFINE_ACTION(gth_browser_activate_action_edit_delete)
-DEFINE_ACTION(gth_browser_activate_action_edit_rename)
-DEFINE_ACTION(gth_browser_activate_action_folder_open_in_file_manager)
-DEFINE_ACTION(gth_browser_activate_action_folder_create)
-DEFINE_ACTION(gth_browser_activate_action_folder_rename)
-DEFINE_ACTION(gth_browser_activate_action_folder_cut)
-DEFINE_ACTION(gth_browser_activate_action_folder_copy)
-DEFINE_ACTION(gth_browser_activate_action_folder_paste)
-DEFINE_ACTION(gth_browser_activate_action_folder_trash)
-DEFINE_ACTION(gth_browser_activate_action_folder_delete)
-DEFINE_ACTION(gth_browser_activate_action_folder_copy_to_folder)
-DEFINE_ACTION(gth_browser_activate_action_folder_move_to_folder)
-DEFINE_ACTION(gth_browser_activate_action_tool_copy_to_folder)
-DEFINE_ACTION(gth_browser_activate_action_tool_move_to_folder)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_open_in_file_manager)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_create)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_rename)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_cut)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_copy)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_paste_into_folder)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_trash)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_delete)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_copy_to)
+DEF_ACTION_CALLBACK (gth_browser_activate_folder_context_move_to)
+
+DEF_ACTION_CALLBACK (gth_browser_activate_open_with_gimp)
+DEF_ACTION_CALLBACK (gth_browser_activate_open_with_application)
 
 #endif /* ACTIONS_H */

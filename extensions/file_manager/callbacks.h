@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,14 +22,13 @@
 #ifndef CALLBACKS_H
 #define CALLBACKS_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 void      fm__gth_browser_construct_cb                      (GthBrowser    *browser);
 void      fm__gth_browser_update_sensitivity_cb             (GthBrowser    *browser);
 void      fm__gth_browser_set_current_page_cb               (GthBrowser    *browser);
 void      fm__gth_browser_load_location_after_cb            (GthBrowser    *browser,
-							     GthFileData   *location_data,
-							     const GError  *error);
+							     GthFileData   *location_data);
 void      fm__gth_browser_folder_tree_popup_before_cb       (GthBrowser    *browser,
 		     	     	     	     	     	     GthFileSource *file_source,
 		     	     	     	     	     	     GthFileData   *folder);
@@ -37,10 +36,8 @@ void      fm__gth_browser_folder_tree_drag_data_received_cb (GthBrowser    *brow
 							     GthFileData   *destination,
 							     GList         *file_list,
 							     GdkDragAction  action);
-void      fm__gth_browser_selection_changed_cb              (GthBrowser    *browser);
+void      fm__gth_browser_folder_tree_selection_changed_cb  (GthBrowser    *browser);
 void      fm__gth_browser_realize_cb                        (GthBrowser    *browser);
 void      fm__gth_browser_unrealize_cb                      (GthBrowser    *browser);
-gpointer  fm__gth_browser_file_list_key_press_cb            (GthBrowser    *browser,
-						             GdkEventKey   *event);
 
 #endif /* CALLBACKS_H */

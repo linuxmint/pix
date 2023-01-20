@@ -1,9 +1,9 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
- *  Copyright (C) 2009 Free Software Foundation, Inc.
+ *  Copyright (C) 2009-2014 Free Software Foundation, Inc.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,64 +20,20 @@
  */
 
 #include <config.h>
-#include <pix.h>
-#include <extensions/image_viewer/gth-image-viewer-page.h>
+#include <gthumb.h>
 #include "gth-file-tool-negative.h"
-
-
-G_DEFINE_TYPE (GthFileToolNegative, gth_file_tool_negative, GTH_TYPE_FILE_TOOL)
-
-
-typedef struct {
-	GtkWidget       *viewer_page;
-	cairo_surface_t *source;
-	cairo_surface_t *destination;
-} NegativeData;
-
-
-static void
-gth_file_tool_negative_update_sensitivity (GthFileTool *base)
-{
-	GtkWidget *window;
-	GtkWidget *viewer_page;
-
-	window = gth_file_tool_get_window (base);
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
-		gtk_widget_set_sensitive (GTK_WIDGET (base), FALSE);
-	else
-		gtk_widget_set_sensitive (GTK_WIDGET (base), TRUE);
-}
-
-
-static void
-negative_data_free (gpointer user_data)
-{
-	NegativeData *negative_data = user_data;
-
-	cairo_surface_destroy (negative_data->destination);
-	cairo_surface_destroy (negative_data->source);
-	g_free (negative_data);
-}
-
-
-static void
-negative_init (GthAsyncTask *task,
-	       gpointer      user_data)
-{
-	gth_task_progress (GTH_TASK (task), _("Applying changes"), NULL, TRUE, 0.0);
-}
 
 
 static gpointer
 negative_exec (GthAsyncTask *task,
 	       gpointer      user_data)
 {
-	NegativeData    *negative_data = user_data;
+	cairo_surface_t *source;
 	cairo_format_t   format;
 	int              width;
 	int              height;
 	int              source_stride;
+	cairo_surface_t *destination;
 	int              destination_stride;
 	unsigned char   *p_source_line;
 	unsigned char   *p_destination_line;
@@ -85,24 +41,26 @@ negative_exec (GthAsyncTask *task,
 	unsigned char   *p_destination;
 	gboolean         cancelled;
 	double           progress;
-	gboolean         terminated;
-	int              x, y;
+	int              x, y, temp;
 	unsigned char    red, green, blue, alpha;
 
-	format = cairo_image_surface_get_format (negative_data->source);
-	width = cairo_image_surface_get_width (negative_data->source);
-	height = cairo_image_surface_get_height (negative_data->source);
-	source_stride = cairo_image_surface_get_stride (negative_data->source);
+	source = gth_image_task_get_source_surface (GTH_IMAGE_TASK (task));
+	format = cairo_image_surface_get_format (source);
+	width = cairo_image_surface_get_width (source);
+	height = cairo_image_surface_get_height (source);
+	source_stride = cairo_image_surface_get_stride (source);
 
-	negative_data->destination = cairo_image_surface_create (format, width, height);
-	cairo_surface_flush (negative_data->destination);
-	destination_stride = cairo_image_surface_get_stride (negative_data->destination);
-	p_source_line = cairo_image_surface_get_data (negative_data->source);
-	p_destination_line = cairo_image_surface_get_data (negative_data->destination);
+	destination = cairo_image_surface_create (format, width, height);
+	destination_stride = cairo_image_surface_get_stride (destination);
+	p_source_line = _cairo_image_surface_flush_and_get_data (source);
+	p_destination_line = _cairo_image_surface_flush_and_get_data (destination);
 	for (y = 0; y < height; y++) {
 		gth_async_task_get_data (task, NULL, &cancelled, NULL);
-		if (cancelled)
+		if (cancelled) {
+			cairo_surface_destroy (destination);
+			cairo_surface_destroy (source);
 			return NULL;
+		}
 
 		progress = (double) y / height;
 		gth_async_task_set_data (task, NULL, NULL, &progress);
@@ -124,75 +82,22 @@ negative_exec (GthAsyncTask *task,
 		p_destination_line += destination_stride;
 	}
 
-	cairo_surface_mark_dirty (negative_data->destination);
-	terminated = TRUE;
-	gth_async_task_set_data (task, &terminated, NULL, NULL);
+	cairo_surface_mark_dirty (destination);
+	gth_image_task_set_destination_surface (GTH_IMAGE_TASK (task), destination);
+
+	cairo_surface_destroy (destination);
+	cairo_surface_destroy (source);
 
 	return NULL;
 }
 
 
-static void
-negative_after (GthAsyncTask *task,
-		GError       *error,
-	        gpointer      user_data)
+void
+negative_add_to_special_effects (GthFilterGrid *grid)
 {
-	NegativeData *negative_data = user_data;
-
-	if (error == NULL)
-		gth_image_viewer_page_set_image (GTH_IMAGE_VIEWER_PAGE (negative_data->viewer_page),
-					         negative_data->destination,
-					         TRUE);
-}
-
-
-static void
-gth_file_tool_negative_activate (GthFileTool *base)
-{
-	GtkWidget       *window;
-	GtkWidget       *viewer_page;
-	GtkWidget       *viewer;
-	cairo_surface_t *image;
-	NegativeData    *negative_data;
-	GthTask         *task;
-
-	window = gth_file_tool_get_window (base);
-	viewer_page = gth_browser_get_viewer_page (GTH_BROWSER (window));
-	if (! GTH_IS_IMAGE_VIEWER_PAGE (viewer_page))
-		return;
-
-	viewer = gth_image_viewer_page_get_image_viewer (GTH_IMAGE_VIEWER_PAGE (viewer_page));
-	image = gth_image_viewer_get_current_image (GTH_IMAGE_VIEWER (viewer));
-	if (image == NULL)
-		return;
-
-	negative_data = g_new0 (NegativeData, 1);
-	negative_data->viewer_page = viewer_page;
-	negative_data->source = cairo_surface_reference (image);
-	task = gth_async_task_new (negative_init,
-				   negative_exec,
-				   negative_after,
-				   negative_data,
-				   negative_data_free);
-	gth_browser_exec_task (GTH_BROWSER (window), task, FALSE);
-
-	g_object_unref (task);
-}
-
-
-static void
-gth_file_tool_negative_class_init (GthFileToolNegativeClass *klass)
-{
-	GthFileToolClass *file_tool_class;
-
-	file_tool_class = GTH_FILE_TOOL_CLASS (klass);
-	file_tool_class->update_sensitivity = gth_file_tool_negative_update_sensitivity;
-	file_tool_class->activate = gth_file_tool_negative_activate;
-}
-
-
-static void
-gth_file_tool_negative_init (GthFileToolNegative *self)
-{
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "tool-invert", _("Negative"), _("Negative"), FALSE);
+	gth_filter_grid_add_filter (grid,
+				    GTH_FILTER_GRID_NEW_FILTER_ID,
+				    gth_image_task_new (_("Applying changes"), NULL, negative_exec, NULL, NULL, NULL),
+				    _("Negative"),
+				    NULL);
 }

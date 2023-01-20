@@ -1,0 +1,40 @@
+<!--
+  gThumb
+
+  Copyright © 2011 Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<schemalist>
+
+  <schema id="org.gnome.gthumb.image-viewer" path="/org/gnome/gthumb/image-viewer/" gettext-domain="gthumb">
+    <key name="zoom-quality" enum="org.gnome.gthumb.GthZoomQuality">
+      <default>'high'</default>
+    </key>
+    <key name="zoom-change" enum="org.gnome.gthumb.GthZoomChange">
+      <default>'fit-size-if-larger'</default>
+    </key>
+    <key name="reset-scrollbars" type="b">
+      <default>true</default>
+      <description>Whether to reset the scrollbars position after changing image</description>
+    </key>
+    <key name="histogram-scale" enum="org.gnome.gthumb.GthHistogramScale">
+      <default>'linear'</default>
+    </key>
+    <key name="transparency-style" enum="org.gnome.gthumb.GthTransparencyStyle">
+      <default>'checkered'</default>
+    </key>
+  </schema>
+
+</schemalist>

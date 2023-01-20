@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -23,80 +23,54 @@
 #include <config.h>
 #include <glib/gi18n.h>
 #include <glib-object.h>
-#include <pix.h>
+#include <gthumb.h>
 #include "actions.h"
+#include "callbacks.h"
 #include "dlg-photo-importer.h"
+#include "photo-importer.h"
 #include "preferences.h"
 
 
-#define BROWSER_DATA_KEY "photo-importer-browser-data"
-
-
-static const char *ui_info =
-"<ui>"
-"  <menubar name='MenuBar'>"
-"    <menu name='File' action='FileMenu'>"
-"      <menu name='Import' action='ImportMenu'>"
-"        <placeholder name='Misc_Actions'>"
-"          <menuitem action='File_ImportFromDevice'/>"
-"          <menuitem action='File_ImportFromFolder'/>"
-"        </placeholder>"
-"      </menu>"
-"    </menu>"
-"  </menubar>"
-"</ui>";
-
-
-static GtkActionEntry action_entries[] = {
-	{ "File_ImportFromDevice", "camera-photo",
-	  N_("_Removable Device..."), NULL,
-	  N_("Import photos and other files from a removable device"),
-	  G_CALLBACK (gth_browser_activate_action_import_from_device) },
-	{ "File_ImportFromFolder", "folder",
-	  N_("F_older..."), NULL,
-	  N_("Import photos and other files from a folder"),
-	  G_CALLBACK (gth_browser_activate_action_import_from_folder) }
+static const GActionEntry actions[] = {
+	{ "import-device", gth_browser_activate_import_device },
+	{ "import-folder", gth_browser_activate_import_folder }
 };
 
 
-typedef struct {
-	GtkActionGroup *action_group;
-} BrowserData;
-
-
-static void
-browser_data_free (BrowserData *data)
-{
-	g_free (data);
-}
+static const GthMenuEntry action_entries[] = {
+	{ N_("_Removable Device…"), "win.import-device", NULL, "camera-photo-symbolic" },
+	{ N_("F_older…"), "win.import-folder", NULL, "folder-symbolic" }
+};
 
 
 void
 pi__gth_browser_construct_cb (GthBrowser *browser)
 {
-	BrowserData *data;
-	GError      *error = NULL;
-	guint        merge_id;
+	GtkBuilder	*builder;
+	GMenuModel	*import_menu;
+	GMenu		*other_actions;
 
 	g_return_if_fail (GTH_IS_BROWSER (browser));
 
-	data = g_new0 (BrowserData, 1);
+	g_action_map_add_action_entries (G_ACTION_MAP (browser),
+					 actions,
+					 G_N_ELEMENTS (actions),
+					 browser);
 
-	data->action_group = gtk_action_group_new ("Photo Importer Actions");
-	gtk_action_group_set_translation_domain (data->action_group, NULL);
-	gtk_action_group_add_actions (data->action_group,
-				      action_entries,
-				      G_N_ELEMENTS (action_entries),
-				      browser);
-	gtk_ui_manager_insert_action_group (gth_browser_get_ui_manager (browser), data->action_group, 0);
+	builder = gtk_builder_new_from_resource ("/org/gnome/gThumb/photo_importer/data/ui/import-menu.ui");
+	import_menu = G_MENU_MODEL (gtk_builder_get_object (builder, "import-menu"));
+	other_actions = gth_menu_manager_get_menu (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_GEARS_OTHER_ACTIONS));
+	g_menu_append_submenu (other_actions, _("I_mport From"), import_menu);
 
-	merge_id = gtk_ui_manager_add_ui_from_string (gth_browser_get_ui_manager (browser), ui_info, -1, &error);
-	if (merge_id == 0) {
-		g_warning ("building ui failed: %s", error->message);
-		g_clear_error (&error);
-	}
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_WEB_IMPORTERS, G_MENU (gtk_builder_get_object (builder, "web-importers")));
+	gth_browser_add_menu_manager_for_menu (browser, GTH_BROWSER_MENU_MANAGER_OTHER_IMPORTERS, G_MENU (gtk_builder_get_object (builder, "other-importers")));
 
-	g_object_set_data_full (G_OBJECT (browser), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
+	gth_menu_manager_append_entries (gth_browser_get_menu_manager (browser, GTH_BROWSER_MENU_MANAGER_OTHER_IMPORTERS),
+				       	 action_entries,
+				       	 G_N_ELEMENTS (action_entries));
+
+	g_object_unref (builder);
+
 }
 
 
@@ -144,70 +118,4 @@ pi__import_photos_cb (GthBrowser *browser,
 			 import_photos_idle_cb,
 			 data,
 			 import_data_unref);
-}
-
-
-/* -- pi__dlg_preferences_construct_cb -- */
-
-
-#define PREFERENCES_DATA_KEY "photo-import-preference-data"
-
-
-typedef struct {
-	GtkBuilder *builder;
-	GSettings  *settings;
-} PreferencesData;
-
-
-static void
-preferences_data_free (PreferencesData *data)
-{
-	g_object_unref (data->settings);
-	g_object_unref (data->builder);
-	g_free (data);
-}
-
-
-static void
-adjust_orientation_checkbutton_toggled_cb (GtkToggleButton *button,
-					   PreferencesData *data)
-{
-	g_settings_set_boolean (data->settings, PREF_PHOTO_IMPORTER_ADJUST_ORIENTATION, gtk_toggle_button_get_active (button));
-}
-
-
-void
-pi__dlg_preferences_construct_cb (GtkWidget  *dialog,
-				  GthBrowser *browser,
-				  GtkBuilder *dialog_builder)
-{
-	PreferencesData *data;
-	GtkWidget       *general_vbox;
-	GtkWidget       *importer_options;
-	GtkWidget       *widget;
-
-	data = g_new0 (PreferencesData, 1);
-	data->builder = _gtk_builder_new_from_file("photo-importer-options.ui", "photo_importer");
-	data->settings = g_settings_new (PIX_PHOTO_IMPORTER_SCHEMA);
-
-	general_vbox = _gtk_builder_get_widget (dialog_builder, "general_vbox");
-	importer_options = _gtk_builder_get_widget (data->builder, "importer_options");
-	gtk_box_pack_start (GTK_BOX (general_vbox),
-			    importer_options,
-			    FALSE,
-			    FALSE,
-			    0);
-	/* move the options before the 'other' options */
-	gtk_box_reorder_child (GTK_BOX (general_vbox),
-			       importer_options,
-			       _gtk_container_get_n_children (GTK_CONTAINER (general_vbox)) - 2);
-
-	widget = _gtk_builder_get_widget (data->builder, "adjust_orientation_checkbutton");
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), g_settings_get_boolean (data->settings, PREF_PHOTO_IMPORTER_ADJUST_ORIENTATION));
-	g_signal_connect (widget,
-			  "toggled",
-			  G_CALLBACK (adjust_orientation_checkbutton_toggled_cb),
-			  data);
-
-	g_object_set_data_full (G_OBJECT (dialog), PREFERENCES_DATA_KEY, data, (GDestroyNotify) preferences_data_free);
 }

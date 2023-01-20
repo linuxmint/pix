@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Pix
+ *  GThumb
  *
  *  Copyright (C) 2009 Free Software Foundation, Inc.
  *
@@ -22,18 +22,19 @@
 #ifndef PHOTO_IMPORTER_PREFERENCES_H
 #define PHOTO_IMPORTER_PREFERENCES_H
 
-#include <pix.h>
+#include <gthumb.h>
 
 G_BEGIN_DECLS
 
 /* schemas */
 
-#define PIX_PHOTO_IMPORTER_SCHEMA             PIX_SCHEMA ".photo-importer"
+#define GTHUMB_PHOTO_IMPORTER_SCHEMA             GTHUMB_SCHEMA ".photo-importer"
 
-/* keys: viewer */
+/* keys */
 
 #define PREF_PHOTO_IMPORTER_DELETE_FROM_DEVICE   "delete-from-device"
 #define PREF_PHOTO_IMPORTER_ADJUST_ORIENTATION   "adjust-orientation"
+#define PREF_PHOTO_IMPORTER_FILTER               "filter"
 
 G_END_DECLS
 
