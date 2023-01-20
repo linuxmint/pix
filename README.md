@@ -1,10 +1,9 @@
-# gThumb
+# Pix
+![build](https://github.com/linuxmint/pix/actions/workflows/build.yml/badge.svg)
 
-An image viewer and browser utility for the GNOME environment.
-More information can be found at <https://wiki.gnome.org/Apps/Gthumb>.
-
-![Image](https://gitlab.gnome.org/GNOME/gthumb/raw/master/data/appdata/ss-viewer.png)
-
+An image viewer and browser utility.
+Pix is part of the X-Apps project, which aims at producing cross-distribution and cross-desktop software.
+ 
 ## Features
 
  * Image browser
@@ -54,14 +53,6 @@ More information can be found at <https://wiki.gnome.org/Apps/Gthumb>.
    + JPEG lossless transformations.
    + Find duplicated images.
 
-## Extensions
-
-  gThumb has a plug-in system for extensions. Some standard features
-  are implemented as extensions and are supplied with the standard
-  distribution. Users may write (and share) additional extensions.
-
-  See <https://wiki.gnome.org/Apps/Gthumb/extensions> for details.
-
 ## Licensing
 
   This program is released under the terms of the GNU General Public
@@ -101,20 +92,14 @@ More information can be found at <https://wiki.gnome.org/Apps/Gthumb>.
   * brasero - write images and comments to CDs
   * bison, flex - web albums
 
-## Download
-
-  Source archives available at <http://ftp.gnome.org/pub/GNOME/sources/gthumb>.
-
-  Clone the Git repository:
-
-    git clone https://gitlab.gnome.org/GNOME/gthumb.git
-
 ## Installation
 
-    cd gthumb
+    cd pix
     meson build
     ninja -C build
     sudo ninja -C build install
 
-   More development information is available at
-   <https://wiki.gnome.org/Apps/Gthumb/development>.
+## Credits
+
+  Pix is based on gThumb 3.12.0.
+  Many thanks to the original developers and to all the people who contributed to gThumb.
