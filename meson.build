@@ -1,6 +1,6 @@
 project('pix', ['c', 'cpp'],
   license : 'GPL2+',
-  version : '3.12.0',
+  version : '2.8.9',
   meson_version : '>=0.43'
 )
 
