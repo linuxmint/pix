@@ -6,14 +6,14 @@ install_man('pix.1')
 desktop_data = configuration_data()
 desktop_data.set('VERSION', meson.project_version())
 desktop_in_file = configure_file(
-  input : 'org.x.Pix.desktop.in.in',
-  output : 'org.x.Pix.desktop.in',
+  input : 'pix.desktop.in.in',
+  output : 'pix.desktop.in',
   configuration : desktop_data
 )
 
 i18n.merge_file(
   input : desktop_in_file,
-  output : 'org.x.Pix.desktop',
+  output : 'pix.desktop',
   type : 'desktop',
   po_dir : po_dir,
   install : true,
@@ -21,14 +21,14 @@ i18n.merge_file(
 )
 
 desktop_import_in_file = configure_file(
-  input : 'org.x.Pix.Import.desktop.in.in',
-  output : 'org.x.Pix.Import.desktop.in',
+  input : 'pix-import.desktop.in.in',
+  output : 'pix-import.desktop.in',
   configuration : desktop_data
 )
 
 i18n.merge_file(
   input : desktop_import_in_file,
-  output : 'org.x.Pix.Import.desktop',
+  output : 'pix-import.desktop',
   type : 'desktop',
   po_dir : po_dir,
   install : true,

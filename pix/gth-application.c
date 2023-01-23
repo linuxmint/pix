@@ -98,7 +98,7 @@ gth_application_init (GthApplication *app)
 {
 	GDesktopAppInfo *app_info;
 
-	app_info = g_desktop_app_info_new ("org.x.Pix.desktop");
+	app_info = g_desktop_app_info_new ("pix.desktop");
 	if (app_info == NULL) {
 		/* manually set name and icon */
 
