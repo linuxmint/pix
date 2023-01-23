@@ -1170,7 +1170,7 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 	self->priv->buttons[APPLY_ICC_PROFILE_BUTTON] =
 			gth_browser_add_header_bar_toggle_button (browser,
 							   	  GTH_BROWSER_HEADER_SECTION_VIEWER_OTHER_COMMANDS,
-								  "color-profile",
+								  "preferences-color-symbolic",
 								  _("Apply the embedded color profile"),
 								  "win.apply-icc-profile",
 								  NULL);
