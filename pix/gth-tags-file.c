@@ -238,7 +238,6 @@ gth_tags_file_get_tags (GthTagsFile *tags)
 					 N_("Science"),
 					 N_("Favorite"),
 					 N_("Important"),
-					 N_("GNOME"),
 					 N_("Games"),
 					 N_("Party"),
 					 N_("Birthday"),
