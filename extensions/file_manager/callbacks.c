@@ -125,8 +125,8 @@ static const GthShortcut shortcuts[] = {
 	{ "edit-paste", N_("Paste"), GTH_SHORTCUT_CONTEXT_BROWSER | GTH_SHORTCUT_CONTEXT_FIXED, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "<Primary>v" },
 	{ "rename", N_("Rename"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "F2" },
 	{ "duplicate", N_("Duplicate"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "<Primary>d" },
-	{ "remove-from-source", N_("Delete"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "Delete" },
-	{ "remove-from-source-permanently", N_("Delete permanently"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "<Shift>Delete" },
+	{ "remove-from-source", N_("Delete"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "<Shift>Delete" },
+	{ "remove-from-source-permanently", N_("Delete permanently"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "Delete" },
 	{ "open-with-gimp", N_("Open with Gimp"), GTH_SHORTCUT_CONTEXT_BROWSER_VIEWER, GTH_SHORTCUT_CATEGORY_FILE_MANAGER, "g" },
 };
 
