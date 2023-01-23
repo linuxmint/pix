@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-23 15:54+0000\n"
+"POT-Creation-Date: 2023-01-23 16:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,7 +219,7 @@ msgstr ""
 
 #: ../extensions/catalogs/callbacks.c:78
 #: ../extensions/catalogs/dlg-catalog-properties.c:205
-#: ../pix/gth-browser.c:4769 ../pix/gth-browser.c:4881
+#: ../pix/gth-browser.c:4783 ../pix/gth-browser.c:4895
 #: ../pix/gth-file-properties.c:274
 msgid "Properties"
 msgstr ""
@@ -722,21 +722,21 @@ msgid "Enter the folder name:"
 msgstr ""
 
 #: ../extensions/file_manager/actions.c:410
-#: ../extensions/file_manager/callbacks.c:551
-#: ../extensions/file_manager/callbacks.c:989
+#: ../extensions/file_manager/callbacks.c:561
+#: ../extensions/file_manager/callbacks.c:991
 #: ../extensions/find_duplicates/gth-find-duplicates.c:788
-#: ../pix/gth-browser.c:5811 ../pix/gth-browser.c:5854
+#: ../pix/gth-browser.c:5825 ../pix/gth-browser.c:5868
 #: ../pix/gth-progress-dialog.c:429
 msgid "Could not perform the operation"
 msgstr ""
 
 #: ../extensions/file_manager/actions.c:423
-#: ../extensions/file_manager/callbacks.c:277
+#: ../extensions/file_manager/callbacks.c:280
 msgid "Could not move the files"
 msgstr ""
 
 #: ../extensions/file_manager/actions.c:424
-#: ../extensions/file_manager/callbacks.c:278
+#: ../extensions/file_manager/callbacks.c:281
 msgid ""
 "Files cannot be moved to the current location, as alternative you can choose "
 "to copy them."
@@ -759,7 +759,7 @@ msgid "Copy To"
 msgstr ""
 
 #: ../extensions/file_manager/actions.c:743
-#: ../extensions/file_manager/callbacks.c:1028
+#: ../extensions/file_manager/callbacks.c:1030
 msgid "Move"
 msgstr ""
 
@@ -829,36 +829,36 @@ msgstr ""
 msgid "Open with Gimp"
 msgstr ""
 
-#: ../extensions/file_manager/callbacks.c:725 ../pix/gth-file-source-vfs.c:305
+#: ../extensions/file_manager/callbacks.c:735 ../pix/gth-file-source-vfs.c:305
 msgid "Home Folder"
 msgstr ""
 
-#: ../extensions/file_manager/callbacks.c:732
-#: ../extensions/file_manager/callbacks.c:735
+#: ../extensions/file_manager/callbacks.c:742
+#: ../extensions/file_manager/callbacks.c:745
 msgid "Open _With"
-msgstr ""
-
-#: ../extensions/file_manager/callbacks.c:1009
-#, c-format
-msgid "Do you want to move “%s” to “%s”?"
 msgstr ""
 
 #: ../extensions/file_manager/callbacks.c:1011
 #, c-format
-msgid "Do you want to copy “%s” to “%s”?"
+msgid "Do you want to move “%s” to “%s”?"
 msgstr ""
 
-#: ../extensions/file_manager/callbacks.c:1018
+#: ../extensions/file_manager/callbacks.c:1013
 #, c-format
-msgid "Do you want to move the dragged files to “%s”?"
+msgid "Do you want to copy “%s” to “%s”?"
 msgstr ""
 
 #: ../extensions/file_manager/callbacks.c:1020
 #, c-format
+msgid "Do you want to move the dragged files to “%s”?"
+msgstr ""
+
+#: ../extensions/file_manager/callbacks.c:1022
+#, c-format
 msgid "Do you want to copy the dragged files to “%s”?"
 msgstr ""
 
-#: ../extensions/file_manager/callbacks.c:1028
+#: ../extensions/file_manager/callbacks.c:1030
 msgid "_Copy"
 msgstr ""
 
@@ -1142,7 +1142,7 @@ msgstr ""
 #: ../extensions/file_tools/gth-file-tool-curves.c:533
 #: ../extensions/gstreamer_tools/actions.c:69
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1632
-#: ../pix/gth-browser.c:1970
+#: ../pix/gth-browser.c:1984
 msgid "Could not save the file"
 msgstr ""
 
@@ -2564,8 +2564,8 @@ msgid "Could not create a temporary folder"
 msgstr ""
 
 #: ../pix/dlg-location.c:239 ../pix/gth-browser.c:1175
-#: ../pix/gth-browser.c:6853 ../pix/gth-browser.c:6872
-#: ../pix/gth-browser.c:6896 ../pix/gth-vfs-tree.c:393
+#: ../pix/gth-browser.c:6867 ../pix/gth-browser.c:6886
+#: ../pix/gth-browser.c:6910 ../pix/gth-vfs-tree.c:393
 #, c-format
 msgid "Could not load the position “%s”"
 msgstr ""
@@ -2785,13 +2785,17 @@ msgstr ""
 msgid "Show version"
 msgstr ""
 
+#: ../pix/gth-application.c:71
+msgid "[FILE…] [DIRECTORY…]"
+msgstr ""
+
 #. manually set name and icon
-#: ../pix/gth-application.c:106 ../pix/gth-browser.c:428
+#: ../pix/gth-application.c:105 ../pix/gth-browser.c:428
 #: ../pix/gth-progress-dialog.c:413
 msgid "Pix"
 msgstr ""
 
-#: ../pix/gth-application.c:178
+#: ../pix/gth-application.c:177
 msgid "— Image browser and viewer"
 msgstr ""
 
@@ -2855,8 +2859,8 @@ msgid "Open location"
 msgstr ""
 
 #: ../pix/gth-browser-actions-entries.h:109
-#: ../pix/gth-browser-actions-entries.h:110 ../pix/gth-browser.c:4784
-#: ../pix/gth-browser.c:4802
+#: ../pix/gth-browser-actions-entries.h:110 ../pix/gth-browser.c:4798
+#: ../pix/gth-browser.c:4816
 msgid "Fullscreen"
 msgstr ""
 
@@ -2956,71 +2960,71 @@ msgstr[1] ""
 msgid "%s of free space"
 msgstr ""
 
-#: ../pix/gth-browser.c:1893 ../pix/gth-browser.c:1909
+#: ../pix/gth-browser.c:1907 ../pix/gth-browser.c:1923
 #, c-format
 msgid "No suitable module found for %s"
 msgstr ""
 
-#: ../pix/gth-browser.c:2014
+#: ../pix/gth-browser.c:2028
 #, c-format
 msgid "Save changes to file “%s”?"
 msgstr ""
 
-#: ../pix/gth-browser.c:2019
+#: ../pix/gth-browser.c:2033
 msgid "If you don’t save, changes to the file will be permanently lost."
 msgstr ""
 
-#: ../pix/gth-browser.c:2020
+#: ../pix/gth-browser.c:2034
 msgid "Do _Not Save"
 msgstr ""
 
-#: ../pix/gth-browser.c:2510 ../pix/gth-browser.c:4810
+#: ../pix/gth-browser.c:2524 ../pix/gth-browser.c:4824
 msgid "Accept"
 msgstr ""
 
-#: ../pix/gth-browser.c:2510 ../pix/gtk-utils.h:37
+#: ../pix/gth-browser.c:2524 ../pix/gtk-utils.h:37
 msgid "_Close"
 msgstr ""
 
-#: ../pix/gth-browser.c:3049
+#: ../pix/gth-browser.c:3063
 msgid "Could not change name"
 msgstr ""
 
-#: ../pix/gth-browser.c:3543
+#: ../pix/gth-browser.c:3557
 msgid "Modified"
 msgstr ""
 
-#: ../pix/gth-browser.c:4732
+#: ../pix/gth-browser.c:4746
 msgid "Go to the previous visited location"
 msgstr ""
 
-#: ../pix/gth-browser.c:4738
+#: ../pix/gth-browser.c:4752
 msgid "Go to the next visited location"
 msgstr ""
 
-#: ../pix/gth-browser.c:4746
+#: ../pix/gth-browser.c:4760
 msgid "History"
 msgstr ""
 
-#: ../pix/gth-browser.c:4760
+#: ../pix/gth-browser.c:4774
 msgid "View the folders"
 msgstr ""
 
-#: ../pix/gth-browser.c:4775
+#: ../pix/gth-browser.c:4789
 msgid "Edit file"
 msgstr ""
 
-#: ../pix/gth-browser.c:4866 ../pix/gth-progress-dialog.c:310
+#: ../pix/gth-browser.c:4880 ../pix/gth-progress-dialog.c:310
 #: ../pix/gth-progress-dialog.c:455
 msgid "Operations"
 msgstr ""
 
-#: ../pix/gth-browser.c:6854
+#: ../pix/gth-browser.c:6868
 #, c-format
 msgid "File type not supported"
 msgstr ""
 
-#: ../pix/gth-browser.c:6897
+#: ../pix/gth-browser.c:6911
 #, c-format
 msgid "No suitable module found"
 msgstr ""
@@ -3048,7 +3052,7 @@ msgid "No file"
 msgstr ""
 
 #. the message pane
-#: ../pix/gth-file-list.c:575 ../pix/gth-folder-tree.c:1160
+#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1160
 msgid "Loading…"
 msgstr ""
 
@@ -3539,25 +3543,25 @@ msgstr ""
 msgid "Rotation"
 msgstr ""
 
-#: ../pix/gth-window.c:1074
+#: ../pix/gth-window.c:1073
 #, c-format
 msgid ""
 "The key combination «%s» is already assigned to the action «%s».  Do you "
 "want to reassign it to this action instead?"
 msgstr ""
 
-#: ../pix/gth-window.c:1082
+#: ../pix/gth-window.c:1081
 msgid "Reassign"
 msgstr ""
 
-#: ../pix/gth-window.c:1100
+#: ../pix/gth-window.c:1099
 #, c-format
 msgid ""
 "The key combination «%s» is already assigned to the action «%s» and cannot "
 "be changed."
 msgstr ""
 
-#: ../pix/gth-window.c:1104
+#: ../pix/gth-window.c:1103
 #, c-format
 msgid "The key combination «%s» is already assigned and cannot be changed."
 msgstr ""
