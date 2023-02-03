@@ -124,7 +124,7 @@ gth_browser_activate_about (GSimpleAction *action,
 
 	gtk_show_about_dialog (GTK_WINDOW (browser),
 			       "version", PACKAGE_VERSION,
-			       "copyright", "Copyright \xc2\xa9 2001-2020 Free Software Foundation, Inc.",
+			       "copyright", "Copyright \xc2\xa9 2001-2023 Free Software Foundation, Inc.",
 			       "comments", _("An image viewer and browser."),
 			       "authors", authors,
 			       "documenters", documenters,
