@@ -263,7 +263,7 @@ ok_clicked_cb (GtkWidget  *widget,
 	gth_contact_sheet_creator_set_same_size (GTH_CONTACT_SHEET_CREATOR (task), same_size);
 	gth_contact_sheet_creator_set_thumb_size (GTH_CONTACT_SHEET_CREATOR (task), squared_thumbnail, thumbnail_size, thumbnail_size);
 	gth_contact_sheet_creator_set_thumbnail_caption (GTH_CONTACT_SHEET_CREATOR (task), thumbnail_caption);
-	gth_contact_sheet_creator_set_location_name (GTH_CONTACT_SHEET_CREATOR (task), g_file_info_get_edit_name (gth_browser_get_location_data (data->browser)->info));
+	gth_contact_sheet_creator_set_location_name (GTH_CONTACT_SHEET_CREATOR (task), _g_file_info_get_edit_name (gth_browser_get_location_data (data->browser)->info));
 
 	gth_browser_exec_task (data->browser, task, GTH_TASK_FLAGS_DEFAULT);
 	close_dialog (data);
@@ -735,7 +735,7 @@ text_preview_cb (TemplateFlags   flags,
 		break;
 
 	case 'L':
-		g_string_append (result, g_file_info_get_edit_name (data->location->info));
+		g_string_append (result, _g_file_info_get_edit_name (data->location->info));
 		break;
 
 	default:

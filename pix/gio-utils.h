@@ -155,6 +155,7 @@ void		_g_file_list_copy_async	(GList			 *sources, /* GFile list */
 						 gpointer		  dialog_callback_data,
 						 ReadyFunc		  callback,
 						 gpointer		  user_data);
+const gchar *_g_file_info_get_edit_name (GFileInfo *info);
 gboolean	_g_file_list_delete		(GList			 *file_list, /* GFile list */
 						 gboolean		  include_metadata,
 						 GError		**error);

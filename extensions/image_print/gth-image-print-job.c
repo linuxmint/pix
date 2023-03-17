@@ -1863,7 +1863,7 @@ _gth_image_print_job_set_output_uri (GthImagePrintJob *self,
 	if (self->priv->n_images == 1)
 		basename = _g_path_remove_extension (g_file_info_get_name (self->priv->images[0]->file_data->info));
 	else
-		basename = g_strdup (g_file_info_get_edit_name (gth_browser_get_location_data (self->priv->browser)->info));
+		basename = g_strdup (_g_file_info_get_edit_name (gth_browser_get_location_data (self->priv->browser)->info));
 	default_dir = g_get_user_special_dir (G_USER_DIRECTORY_PICTURES);
 	if (default_dir == NULL)
 		default_dir = g_get_home_dir ();

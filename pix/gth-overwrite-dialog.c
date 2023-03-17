@@ -251,7 +251,7 @@ info_ready_cb (GList    *files,
 	gtk_label_set_text (GTK_LABEL (_gtk_builder_get_widget (self->priv->builder, "old_image_time_label")), text);
 	g_free (text);
 
-	gtk_entry_set_text (GTK_ENTRY (_gtk_builder_get_widget (self->priv->builder, "overwrite_rename_entry")), g_file_info_get_edit_name (self->priv->destination_data->info));
+	gtk_entry_set_text (GTK_ENTRY (_gtk_builder_get_widget (self->priv->builder, "overwrite_rename_entry")), _g_file_info_get_edit_name (self->priv->destination_data->info));
 
 	icon = (GIcon*) g_file_info_get_attribute_object (self->priv->destination_data->info, "preview::icon");
 	if (icon == NULL)

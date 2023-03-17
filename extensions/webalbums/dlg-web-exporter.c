@@ -297,7 +297,7 @@ text_preview_cb (TemplateFlags   flags,
 		break;
 
 	case 'L':
-		_g_string_append_markup_escaped (result, "%s", g_file_info_get_edit_name (data->location->info));
+		_g_string_append_markup_escaped (result, "%s", _g_file_info_get_edit_name (data->location->info));
 		break;
 
 	default:

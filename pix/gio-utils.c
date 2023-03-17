@@ -2440,6 +2440,11 @@ _g_file_get_info_for_display (GFile *file)
 	return file_info;
 }
 
+const gchar *
+_g_file_info_get_edit_name (GFileInfo *info)
+{
+    return g_file_info_get_attribute_string (info, G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME);
+}
 
 GMenuItem *
 _g_menu_item_new_for_file (GFile      *file,
