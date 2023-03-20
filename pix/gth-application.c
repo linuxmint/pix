@@ -398,7 +398,7 @@ gth_application_local_command_line (GApplication   *application,
 	}
 
 	if (version) {
-		g_printf ("%s %s, Copyright © 2001-2010 Free Software Foundation, Inc.\n", PACKAGE_NAME, PACKAGE_VERSION);
+		g_printf ("%s %s\n", PACKAGE_NAME, PACKAGE_VERSION);
 		handled_locally = TRUE;
 	}
 
