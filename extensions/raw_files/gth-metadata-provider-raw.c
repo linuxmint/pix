@@ -62,7 +62,7 @@ gth_metadata_provider_raw_read (GthMetadataProvider *self,
 	if (!_g_mime_type_is_raw (gth_file_data_get_mime_type (file_data)))
 		return;
 
-	raw_data = libraw_init (LIBRAW_OPIONS_NO_MEMERR_CALLBACK | LIBRAW_OPIONS_NO_DATAERR_CALLBACK);
+	raw_data = libraw_init (GTH_LIBRAW_INIT_OPTIONS);
 	if (raw_data == NULL)
 		goto fatal_error;
 

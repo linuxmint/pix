@@ -25,6 +25,13 @@
 #include <glib.h>
 #include <glib-object.h>
 #include <pix.h>
+#include <libraw.h>
+
+#if LIBRAW_COMPILE_CHECK_VERSION_NOTLESS(0, 21)
+#define GTH_LIBRAW_INIT_OPTIONS (LIBRAW_OPIONS_NO_DATAERR_CALLBACK)
+#else
+#define GTH_LIBRAW_INIT_OPTIONS (LIBRAW_OPIONS_NO_MEMERR_CALLBACK | LIBRAW_OPIONS_NO_DATAERR_CALLBACK)
+#endif
 
 #define GTH_TYPE_METADATA_PROVIDER_RAW         (gth_metadata_provider_raw_get_type ())
 #define GTH_METADATA_PROVIDER_RAW(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GTH_TYPE_METADATA_PROVIDER_RAW, GthMetadataProviderRaw))

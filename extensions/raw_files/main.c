@@ -213,7 +213,7 @@ _cairo_image_surface_create_from_raw (GInputStream  *istream,
 	size_t         size;
 	GthImage      *image = NULL;
 
-	raw_data = libraw_init (LIBRAW_OPIONS_NO_MEMERR_CALLBACK | LIBRAW_OPIONS_NO_DATAERR_CALLBACK);
+	raw_data = libraw_init (GTH_LIBRAW_INIT_OPTIONS);
 	if (raw_data == NULL) {
 		_libraw_set_gerror (error, errno);
 		goto fatal_error;
@@ -300,7 +300,7 @@ _cairo_image_surface_create_from_raw (GInputStream  *istream,
 		if ((original_width != NULL) && (original_height != NULL)) {
 			libraw_close (raw_data);
 
-			raw_data = libraw_init (LIBRAW_OPIONS_NO_MEMERR_CALLBACK | LIBRAW_OPIONS_NO_DATAERR_CALLBACK);
+			raw_data = libraw_init (GTH_LIBRAW_INIT_OPTIONS);
 			if (raw_data == NULL)
 				goto fatal_error;
 
