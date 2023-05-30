@@ -145,8 +145,6 @@ gth_application_startup (GApplication *application)
 {
 	G_APPLICATION_CLASS (gth_application_parent_class)->startup (application);
 
-	g_object_set (gtk_settings_get_default (), "gtk-application-prefer-dark-theme", TRUE, NULL);
-
 	gth_pref_initialize ();
 	migrate_data ();
 	gth_main_initialize ();
