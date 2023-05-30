@@ -21,6 +21,7 @@ Build-Depends:
  libtiff-dev,
  libwebkit2gtk-4.0-dev,
  libwebp-dev,
+ libxapp-dev (>= 2.5.0),
  meson,
  yelp-tools,
 Standards-Version: 4.6.0
@@ -37,7 +38,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  dcraw,
- xapps-common (>= 2.2.7),
+ xapps-common (>= 2.5.0),
 Recommends:
  libgphoto2-6,
  libgphoto2-port12,

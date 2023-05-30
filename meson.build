@@ -234,7 +234,8 @@ common_deps = [
   dependency('gtk+-3.0', version : gtk_version),
   dependency('libpng'),
   dependency('zlib'),
-  dependency('gsettings-desktop-schemas')
+  dependency('gsettings-desktop-schemas'),
+  dependency('xapp', version: '>= 2.5.0')
 ]
 
 # config.h

@@ -25,6 +25,7 @@
 #include <glib.h>
 #include <glib-object.h>
 #include <gobject/gvaluecollector.h>
+#include <libxapp/xapp-dark-mode-manager.h>
 #include "glib-utils.h"
 #include "gth-duplicable.h"
 #include "gth-file-source-vfs.h"
@@ -116,6 +117,7 @@ struct _GthMainPrivate {
 	GthMonitor          *monitor;
 	GthExtensionManager *extension_manager;
 	GthColorManager     *color_manager;
+	XAppDarkModeManager *dark_mode_manager;
 };
 
 
@@ -161,6 +163,8 @@ gth_main_finalize (GObject *object)
 	gth_filter_file_free (gth_main->priv->filters);
 	gth_tags_file_free (gth_main->priv->tags);
 
+	g_clear_object (&gth_main->priv->dark_mode_manager);
+
 	G_OBJECT_CLASS (gth_main_parent_class)->finalize (object);
 }
 
@@ -201,6 +205,8 @@ gth_main_init (GthMain *main)
 	main->priv->monitor = NULL;
 	main->priv->extension_manager = gth_extension_manager_new ();
 	main->priv->color_manager = NULL;
+
+	main->priv->dark_mode_manager = xapp_dark_mode_manager_new (TRUE);
 }
 
 
