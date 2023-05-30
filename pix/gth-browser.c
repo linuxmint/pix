@@ -4230,13 +4230,6 @@ pref_thumbnail_size_changed (GSettings  *settings,
 	gth_browser_reload (browser);
 }
 
-static void
-pref_use_dark_theme_changed (GSettings  *settings,
-				const char *key,
-				gpointer    user_data)
-{
-	g_object_set (gtk_settings_get_default (), "gtk-application-prefer-dark-theme", g_settings_get_boolean (settings, key), NULL);
-}
 
 static void
 pref_thumbnail_caption_changed (GSettings  *settings,
@@ -5310,10 +5303,6 @@ gth_browser_init (GthBrowser *browser)
 	g_signal_connect (browser->priv->browser_settings,
 			  "changed::" PREF_VIEWER_SCROLL_ACTION,
 			  G_CALLBACK (pref_scroll_action_changed),
-			  browser);
-	g_signal_connect (browser->priv->browser_settings,
-			  "changed::" PREF_BROWSER_USE_DARK_THEME,
-			  G_CALLBACK (pref_use_dark_theme_changed),
 			  browser);
 
 	browser->priv->constructed = TRUE;

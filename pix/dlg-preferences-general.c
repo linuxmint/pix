@@ -66,12 +66,6 @@ statusbar_toggled_cb (GtkWidget   *widget,
 	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_STATUSBAR_VISIBLE, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("statusbar_checkbutton"))));
 }
 
-static void
-use_dark_theme_toggled_cb (GtkWidget   *widget,
-		      BrowserData *data)
-{
-	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_USE_DARK_THEME, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_dark_theme_checkbutton"))));
-}
 
 static void
 use_startup_toggled_cb (GtkWidget   *widget,
@@ -159,13 +153,6 @@ general__dlg_preferences_construct_cb (GtkWidget  *dialog,
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("statusbar_checkbutton")),
 				      g_settings_get_boolean (data->browser_settings, PREF_BROWSER_STATUSBAR_VISIBLE));
 
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_dark_theme_checkbutton")),
-				      g_settings_get_boolean (data->browser_settings, PREF_BROWSER_USE_DARK_THEME));
-
-	if (g_strcmp0 (g_getenv ("XDG_CURRENT_DESKTOP"), "XFCE") == 0) {
-		gtk_widget_hide (GET_WIDGET ("use_dark_theme_checkbutton"));
-	}
-
 	/* starup location */
 	{
 		char  *uri;
@@ -245,10 +232,6 @@ general__dlg_preferences_construct_cb (GtkWidget  *dialog,
 			  "toggled",
 			  G_CALLBACK (ask_to_save_toggled_cb),
 			  data);
-	g_signal_connect (G_OBJECT (GET_WIDGET ("use_dark_theme_checkbutton")),
-			  "toggled",
-			  G_CALLBACK (use_dark_theme_toggled_cb),
-			  data);
 
 	g_object_set_data_full (G_OBJECT (dialog), BROWSER_DATA_KEY, data, (GDestroyNotify) browser_data_free);
 }
@@ -269,7 +252,6 @@ general__dlg_preferences_apply (GtkWidget  *dialog,
 	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_GO_TO_LAST_LOCATION, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("go_to_last_location_radiobutton"))));
 	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_USE_STARTUP_LOCATION, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_startup_location_radiobutton"))));
 	g_settings_set_boolean (data->general_settings, PREF_GENERAL_STORE_METADATA_IN_FILES, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("embed_metadata_checkbutton"))));
-	g_settings_set_boolean (data->browser_settings, PREF_BROWSER_USE_DARK_THEME, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("use_dark_theme_checkbutton"))));
 
 	if (g_settings_get_boolean (data->browser_settings, PREF_BROWSER_USE_STARTUP_LOCATION)) {
 		GFile *location;
