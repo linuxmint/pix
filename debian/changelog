@@ -1,3 +1,109 @@
+pix (3.0.0) victoria; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Rename Gthumb -> Pix (files)
+  * Rename org.gnome.gthumb -> org.x.pix and org/gnome/ghumb -> org/x/pix
+  * Remove debian/watch
+  * Rename links
+  * Rename gthumb -> pix (strings)
+  * Remove references to GNOME
+  * Removed GNOME refs in help
+  * Fix renaming issue
+  * Add support for dark mode
+  * Extensions: Remove obsolete link
+
+  [ Michael Webster ]
+  * Disable 'fast' content detection by default.
+
+  [ Isaac Carter ]
+  * Fix crash with Darktable jpg (#141)
+
+  [ brkeh ]
+  * Fix issue 28 (#123)
+
+  [ Michael Webster ]
+  * Add favorites:/// to the sidebar file browser.
+  * print settings: Fix inch-to-metric conversion
+
+  [ Clement Lefebvre ]
+  * UI: Add a bit of padding around location combo
+  * Make desktop background plugin work in Cinnamon and MATE
+  * When setting backgrounds picture, don't mess with the options (picture aspect)
+  * Background extension: Added support for Xfce
+  * Grid view: Activate item when pressing Space
+
+  [ Mike Durso ]
+  * Make the slideshow feature respect the preferences zoom quality setting instead of always being low (#83)
+
+  [ Michael Webster ]
+  * print settings: Remove 'pixel' option in units selector. It is confusing because it's treated *exactly* the same as millimeters, and doesn't make much sense as a physical unit of measure even if it was properly calculated.
+  * print settings: Keep images centered until explicitly moved off center (or Custom is explicitly selected).  It makes no sense to have the center combobox revert to Custom when adjusting the image size.
+  * gth-image-print-job.c: Update spin button settings when the view is first created, not just when the units combobox is changed.
+  * gth-image-print-job.c: Use better spinbutton settings, and allow adjustment to two decimal places when inch units are selected.
+  * various: check for valid surfaces after creating them.
+
+  [ icarter09 ]
+  * Added line on how to remove image from selection
+
+  [ Clement Lefebvre ]
+  * Edit default settings
+  * Improve navigation
+  * Assign Del to delete files
+  * Fix color-profile icon
+  * Remove GNOME tag
+  * l10n: Update POT
+  * gThumb 3.12.0
+
+  [ Paolo Bacchilega ]
+  * Merge branch 'jirutka/gthumb-fix-204'
+  * Fixed location loading after mounting volume
+  * Merge branch 'zorgnac/gthumb-master'
+  * Merge branch 'kendy.kutzner/gthumb-kendy.kutzner-master-patch-97900'
+  * Crash when dropping files on an empty folder/catalog
+  * grid view: show the drop destination even when the list is empty
+  * JPEG image dimensions not displayed for files inside the trash
+  * Transparent webp images are rendered incorrectly
+  * webp: set width and height
+  * --help: mention that user can open files and/or directories
+  * PNG loader ignores gAMA
+  * icc profile: fixed variable name
+  * icc profile: renamed function for clarity
+  * icc profile: better description for profiles with gamma correction
+
+  [ Clement Lefebvre ]
+  * gThumb 3.12.1
+
+  [ Paolo Bacchilega ]
+  * Fixed possible crash when changing directory during thumbnails creation
+  * thumbnailer: added support for larger sizes
+  * thumbnailer: give priority to the xdg directory
+  * thumbnailer: fixed variable name
+
+  [ Clement Lefebvre ]
+  * gThumb 3.12.2
+  * l10n: Update POT
+  * Rename desktop files and icons: org.x.Pix -> pix
+  * meson: fix version
+
+  [ Michael Webster ]
+  * Add .gitignore.
+  * Use the generic getter for some fileinfo queries.
+
+  [ Bobby Rong ]
+  * Fixed build with libraw 0.21 (#168)
+
+  [ Michael Webster ]
+  * Remove copyright notice from --version and About.
+  * debian/control: Remove gnome-common (obsolete).
+
+  [ Clement Lefebvre ]
+  * Revert "Add support for dark mode"
+  * Remove non-configurable dark mode
+  * Add dark mode support
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Jun 2023 13:55:21 +0100
+
 pix (2.8.9) vera; urgency=medium
 
   * l10n: Update translations
