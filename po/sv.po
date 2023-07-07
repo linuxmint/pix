@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 14:42+0100\n"
-"PO-Revision-Date: 2023-06-06 13:00+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"POT-Creation-Date: 2023-06-26 13:19+0200\n"
+"PO-Revision-Date: 2023-06-30 20:38+0000\n"
+"Last-Translator: Jan-Olof Svensson <jan-olof.svensson@abc.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2023-06-08 10:21+0000\n"
-"X-Generator: Launchpad (build 620cd5280e3a973662e263ebf9346837ed657a46)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:57+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 "Language: sv\n"
 
 #: ../data/gschemas/org.x.pix.gschema.xml.h:1
@@ -53,10 +53,332 @@ msgstr ""
 "Möjliga värden inkluderar: allmänna::osorterade, fil::namn, fil::storlek, "
 "fil::mtid, exif::foto::datumtidoriginal"
 
+#: ../data/ui/browser-preferences.ui.h:1
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
+#: ../extensions/image_print/data/ui/print-layout.ui.h:21
+msgid "Caption"
+msgstr "Text"
+
+#: ../data/ui/browser-preferences.ui.h:2
+msgid "Behavior"
+msgstr "Beteende"
+
+#: ../data/ui/browser-preferences.ui.h:3
+msgid "_Single click to open files"
+msgstr "Enkelklick för att öppna filer (_S)"
+
+#: ../data/ui/browser-preferences.ui.h:4
+msgid "_Double click to open files"
+msgstr "_Dubbelklick för att öppna filer"
+
+#: ../data/ui/browser-preferences.ui.h:5
+msgid "_Open files in fullscreen mode"
+msgstr "Öppna filer i fullskärmsläge (_O)"
+
+#: ../data/ui/browser-preferences.ui.h:6 ../data/ui/preferences.ui.h:15
+#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
+#: ../extensions/gstreamer_tools/main.c:41
+#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
+msgid "Other"
+msgstr "Övrigt"
+
+#: ../data/ui/browser-preferences.ui.h:7
+msgid "Thumbnail _size:"
+msgstr "_Storlek på miniatyrbild:"
+
+#: ../data/ui/browser-preferences.ui.h:8
+msgid "D_etermine image type from content (slower)"
+msgstr "Fastställ bildtyp från inn_ehåll (långsammare)"
+
+#: ../data/ui/code-selector.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:5
+msgid "1"
+msgstr "1"
+
+#: ../data/ui/code-selector.ui.h:2
+msgid "digits"
+msgstr "siffror"
+
+#: ../data/ui/code-selector.ui.h:3 ../extensions/comments/main.c:44
+#: ../extensions/comments/main.c:170
+#: ../extensions/image_print/data/ui/print-layout.ui.h:10
+#: ../pix/gth-main-default-metadata.c:64
+msgid "Description"
+msgstr "Beskrivning"
+
+#: ../data/ui/code-selector.ui.h:4
+msgid "Edit"
+msgstr "Redigera"
+
+#: ../data/ui/code-selector.ui.h:5
+msgid "Default value"
+msgstr "Standardvärde"
+
+#: ../data/ui/code-selector.ui.h:6
+msgid "remove"
+msgstr "ta bort"
+
+#: ../data/ui/code-selector.ui.h:7
+msgid "add"
+msgstr "lägg till"
+
+#: ../data/ui/extensions-preferences.ui.h:1
+msgid "_Extensions:"
+msgstr "Filtyper (_E):"
+
+#: ../data/ui/file-selection-info.ui.h:1
+#: ../extensions/webalbums/data/albumthemes/text.h:32
+msgid "Previous"
+msgstr "Föregående"
+
+#: ../data/ui/file-selection-info.ui.h:2
+#: ../extensions/webalbums/data/albumthemes/text.h:30
+msgid "Next"
+msgstr "Nästa"
+
+#: ../data/ui/filter-editor.ui.h:1
+msgid "Filter _Name:"
+msgstr "Filtrera _Namn:"
+
+#: ../data/ui/filter-editor.ui.h:2
+#: ../extensions/search/data/ui/search-editor.ui.h:1
+msgid "_Match:"
+msgstr "Träff (_M):"
+
+#: ../data/ui/filter-editor.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:3
+msgid "Rules:"
+msgstr "Regler:"
+
+#. limit label
+#: ../data/ui/filter-editor.ui.h:4 ../pix/gth-filter.c:270
+#: ../pix/gth-filter.c:338
+msgid "_Limit to"
+msgstr "_Begränsa till"
+
+#: ../data/ui/filter-editor.ui.h:5
+msgid "selected by"
+msgstr "valda genom"
+
+#: ../data/ui/histogram-info.ui.h:1
+msgid "Mean:"
+msgstr "Medel:"
+
+#. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsized at the end.
+#: ../data/ui/histogram-info.ui.h:3
+msgid "Std dev:"
+msgstr "Std.avvik.:"
+
+#: ../data/ui/histogram-info.ui.h:4
+msgid "Median:"
+msgstr "Median:"
+
+#. After the colon there is the total number of pixels
+#: ../data/ui/histogram-info.ui.h:6
+msgid "Pixels:"
+msgstr "Bildpunkter:"
+
+#. After the colon there is a percentile.
+#: ../data/ui/histogram-info.ui.h:8
+msgctxt "Pixels"
+msgid "Max:"
+msgstr "Max:"
+
+#. After the colon there is the percentile of selected pixels.
+#: ../data/ui/histogram-info.ui.h:10
+msgctxt "Pixels"
+msgid "Selected:"
+msgstr "Valda:"
+
+#: ../data/ui/location.ui.h:1
+msgid "_Location:"
+msgstr "P_lats:"
+
+#: ../data/ui/overwrite-dialog.ui.h:1
+msgid "Overwrite the old file with the new one?"
+msgstr "Ersätta den gamla filen med den nya?"
+
+#: ../data/ui/overwrite-dialog.ui.h:2
+msgid "Old File:"
+msgstr "Gammal fil:"
+
+#: ../data/ui/overwrite-dialog.ui.h:3
+msgid "Filename:"
+msgstr "Filnamn:"
+
+#: ../data/ui/overwrite-dialog.ui.h:4
+#: ../extensions/image_print/data/ui/print-layout.ui.h:26
+msgid "Size:"
+msgstr "Storlek:"
+
+#: ../data/ui/overwrite-dialog.ui.h:5
+msgid "Modified:"
+msgstr "Ändrad:"
+
+#: ../data/ui/overwrite-dialog.ui.h:6
+msgid "New File:"
+msgstr "Ny fil:"
+
+#: ../data/ui/overwrite-dialog.ui.h:7
+msgid "Over_write the old file"
+msgstr "Ersätt den gamla filen (_w)"
+
+#: ../data/ui/overwrite-dialog.ui.h:8
+msgid "Do not overwrite _the old file"
+msgstr "Ersätt inte den gamla filen (_t)"
+
+#: ../data/ui/overwrite-dialog.ui.h:9
+msgid "Overwrite _all files"
+msgstr "Ersätt _alla filer"
+
+#: ../data/ui/overwrite-dialog.ui.h:10
+msgid "_Do not overwrite any file"
+msgstr "Ersätt inte några filer (_D)"
+
+#: ../data/ui/overwrite-dialog.ui.h:11
+msgid "_Save the new file as:"
+msgstr "_Spara den nya filen som:"
+
+#: ../data/ui/personalize-filters.ui.h:1
+msgid "_General filter:"
+msgstr "Allmänt filter (_G):"
+
+#: ../data/ui/personalize-filters.ui.h:2
+msgid "_Other filters:"
+msgstr "Övriga filter (_O):"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "below the folder list"
+msgstr "under mapplistan"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "on the right"
+msgstr "till höger"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Pix Preferences"
+msgstr "Programinställningar"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Appearance"
+msgstr "Utseende"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "T_humbnails in viewer:"
+msgstr "Miniatyrbilder i visningsprogrammet (_h):"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "on the bottom"
+msgstr "längst ned"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "on the side"
+msgstr "vid sidan"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "File _properties in browser:"
+msgstr "Filegenskaper i webbläsaren (_p):"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "_Statusbar"
+msgstr "_Statusfält"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "On startup:"
+msgstr "Vid start:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Go to last _visited location"
+msgstr "Gå till senast besökta plats (_v)"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Go to this _folder:"
+msgstr "Gå till denna mapp (_f):"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Set to C_urrent"
+msgstr "Ange som aktuell (_u)"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "_Reuse the active window to open files"
+msgstr "Återanvänd det aktiva fönstret för att öppna filer (_R)"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "As_k confirmation before deleting files or catalogs"
+msgstr "Be om bekräftelse innan filer eller mappar raderas"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Ask whether to save _modified files"
+msgstr "Fråga om ändrade filer ska sparas"
+
+#: ../data/ui/preferences.ui.h:18
+msgid "_Store metadata inside files if possible"
+msgstr "Lagra metadata inuti filer om möjligt (_S)"
+
+#: ../data/ui/preferences.ui.h:19
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
+#: ../extensions/edit_metadata/gth-edit-general-page.c:482
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
+#: ../pix/gth-main-default-types.c:38
+msgid "General"
+msgstr "Allmänt"
+
+#: ../data/ui/shortcuts-preferences.ui.h:1
+msgid "Shortcuts:"
+msgstr "Genvägar:"
+
+#: ../data/ui/shortcuts-preferences.ui.h:2
+msgid "_Restore All…"
+msgstr "Återställ allt… (_R)"
+
+#: ../data/ui/sort-order.ui.h:1
+msgid "_Inverse order"
+msgstr "Omvänd ordning (_I)"
+
+#: ../data/ui/template-editor-dialog.ui.h:1
+#: ../extensions/importer/data/ui/import-preferences.ui.h:4
+msgid "Example:"
+msgstr "Exempel:"
+
 #: ../extensions/bookmarks/callbacks.c:323
 #: ../extensions/bookmarks/dlg-bookmarks.c:350
 msgid "Bookmarks"
 msgstr "Bokmärken"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:1
+msgid "_Add Bookmark"
+msgstr "Lägg till bokmärke (_A)"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:2
+msgid "_Edit Bookmarks…"
+msgstr "Redigera bokmärken… (_E)"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:3
+msgid "_System Bookmarks"
+msgstr "_Systemets bokmärken"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
+msgid "_Bookmarks:"
+msgstr "_Bokmärken:"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
+msgid "Go to this location"
+msgstr "Gå till denna plats"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
+#: ../extensions/catalogs/callbacks.c:72
+#: ../extensions/search/gth-search-source-selector.c:140
+msgid "Remove"
+msgstr "Ta bort"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
+msgid "_Name"
+msgstr "_Namn"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:5
+msgid "_Location"
+msgstr "P_lats"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:192
 msgid "Could not remove the bookmark"
@@ -65,6 +387,26 @@ msgstr "Kunde inte ta bort bokmärket"
 #: ../extensions/burn_disc/callbacks.c:48
 msgid "_Optical Disc…"
 msgstr "_Optisk skiva…"
+
+#: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
+msgid "Disc Name"
+msgstr "Skivans namn"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
+msgid "Current _folder"
+msgstr "Aktuell mapp (_f)"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
+msgid "Current folder and its s_ub-folders"
+msgstr "Aktuell mapp och dess _undermappar"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
+msgid "_Selected files"
+msgstr "Markerade filer (_S)"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
+msgid "Source"
+msgstr "Källa"
 
 #: ../extensions/burn_disc/gth-burn-task.c:239
 #: ../extensions/burn_disc/gth-burn-task.c:260
@@ -87,6 +429,84 @@ msgstr "Fel vid tolkning av JPEG-bildfil: %s"
 #, c-format
 msgid "Unknown JPEG color space (%d)"
 msgstr "Okänd JPEG-färgrymd (%d)"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
+msgid "_Quality:"
+msgstr "Kvalitet (_Q):"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
+msgid "_Lossless"
+msgstr "För_lustfri"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
+msgid "_Default extension:"
+msgstr "Förvald filtyp (_D):"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:3
+msgid "_Smoothing:"
+msgstr "Utjämnande (_S):"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:4
+msgid "Opti_mize"
+msgstr "Opti_mera"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:5
+msgid "_Progressive"
+msgstr "_Progressiv"
+
+#: ../extensions/cairo_io/data/ui/png-options.ui.h:1
+msgid "Compression _level:"
+msgstr "Komprimeringsnivå (_l):"
+
+#: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
+msgid "Default options:"
+msgstr "Standardinställningar:"
+
+#: ../extensions/cairo_io/data/ui/tga-options.ui.h:1
+msgid "_RLE compression"
+msgstr "_RLE-komprimering"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:2
+msgid "Compression"
+msgstr "Komprimering"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:3
+msgid "_No compression"
+msgstr "Ingen komprimering (_N)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:4
+msgid "No_rmal (Deflate)"
+msgstr "No_rmal (minska)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:5
+msgid "_Loss compression (JPEG)"
+msgstr "Komprimering med för_luster (JPEG)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:6
+msgid "Resolution"
+msgstr "Upplösning"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:7
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:12
+msgid "_Horizontal:"
+msgstr "_Horisontell:"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:8
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:13
+msgid "_Vertical:"
+msgstr "_Vertikal:"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:9
+msgid "dpi"
+msgstr "punkter per tum (dpi)"
+
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
+msgid "_Method:"
+msgstr "_Metod:"
 
 #: ../extensions/cairo_io/gth-image-saver-avif.c:365
 msgid "AVIF"
@@ -122,7 +542,10 @@ msgid "WebP"
 msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1703
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:11
 msgid "Saving"
 msgstr "Sparning"
 
@@ -210,11 +633,6 @@ msgstr "Skapa katalog"
 msgid "Create Library"
 msgstr "Skapa bibliotek"
 
-#: ../extensions/catalogs/callbacks.c:72
-#: ../extensions/search/gth-search-source-selector.c:140
-msgid "Remove"
-msgstr "Ta bort"
-
 #: ../extensions/catalogs/callbacks.c:73
 #: ../extensions/file_manager/callbacks.c:82
 #: ../extensions/file_manager/callbacks.c:109
@@ -256,6 +674,93 @@ msgstr "Organisera"
 msgid "Automatically organize files by date"
 msgstr "Organisera automatiskt filer efter datum"
 
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
+msgid "C_atalogs:"
+msgstr "Album (_C):"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
+#: ../extensions/catalogs/dlg-add-to-catalog.c:620
+msgid "New Library"
+msgstr "Nytt bibliotek"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
+#: ../extensions/catalogs/dlg-add-to-catalog.c:461
+msgid "New Catalog"
+msgstr "Ny katalog"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
+#: ../extensions/file_manager/actions.c:766
+#: ../extensions/webalbums/gth-web-exporter.c:1820
+msgid "_View the destination"
+msgstr "_Visa målet"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:2
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:1
+msgid "_Name:"
+msgstr "_Namn:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
+msgid "_Date:"
+msgstr "_Datum:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
+msgid "Catalog"
+msgstr "Album"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
+#: ../pix/gth-progress-dialog.c:158
+msgid "Cancel operation"
+msgstr "Avbryt åtgärden"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
+msgid "Organization:"
+msgstr "Organisation:"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
+msgid "Files"
+msgstr "Filer"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
+msgid "Create"
+msgstr "Skapa"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
+msgid "Select All"
+msgstr "Välj alla"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:7
+msgid "Select None"
+msgstr "Välj ingen"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:8
+msgid "Catalog _Preview:"
+msgstr "Förhandsvisning av album (_P):"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
+msgid "_Group files by:"
+msgstr "_Gruppera filer enligt:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:2
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
+#: ../extensions/search/gth-search-source-selector.c:123
+msgid "_Include sub-folders"
+msgstr "_Inkludera undermappar"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
+msgid "Ignore catalogs with a single file"
+msgstr "Hoppa över album med en enda fil"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
+msgid "Put single files in the catalog:"
+msgstr "Placera enstaka filer i albumet:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
+msgid "Singles"
+msgstr "Enstaka filer"
+
 #: ../extensions/catalogs/dlg-add-to-catalog.c:156
 msgid "Could not add the files to the catalog"
 msgstr "Kunde inte lägga till filerna till albumet"
@@ -264,14 +769,6 @@ msgstr "Kunde inte lägga till filerna till albumet"
 #: ../extensions/search/gth-search-task.c:396
 msgid "Could not create the catalog"
 msgstr "Kunde inte skapa albumet"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:461
-msgid "New Catalog"
-msgstr "Ny katalog"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:620
-msgid "New Library"
-msgstr "Nytt bibliotek"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:687
 msgid "Add to Catalog"
@@ -388,6 +885,64 @@ msgstr "Åtgärden är färdigställd. Album: %d. Bilder: %d."
 msgid "Change _Date…"
 msgstr "Ändra _Datum…"
 
+#: ../extensions/change_date/data/ui/change-date.ui.h:1
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
+msgid "+"
+msgstr "+"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:2
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
+msgid "-"
+msgstr "-"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:3
+msgid "Change the following values:"
+msgstr "Ändra följande värden:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:4
+msgid "_Last modified date"
+msgstr "_Datum för senaste ändring"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:5
+msgid "Co_mment date"
+msgstr "Kom_mentarsdatum"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:6
+msgid "Change to:"
+msgstr "Ändra till:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:7
+msgid "The _following date:"
+msgstr "_Följande datum:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:8
+msgid "File _modified date"
+msgstr "Datum då filen ändrades (_m)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:9
+msgid "File c_reation date"
+msgstr "Datum då filen skapades (_c)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:10
+msgid "Date p_hoto was taken"
+msgstr "Datum då bilden togs (_p)"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:11
+msgid "A_djust by"
+msgstr "Än_dra med"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:12
+msgid "hours"
+msgstr "timmar"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:13
+msgid "minutes"
+msgstr "minuter"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:14
+msgid "seconds"
+msgstr "sekunder"
+
 #: ../extensions/change_date/dlg-change-date.c:177
 msgid "Change Date"
 msgstr "Ändra datum"
@@ -395,6 +950,10 @@ msgstr "Ändra datum"
 #: ../extensions/comments/callbacks.c:39
 msgid "Import Embedded Metadata"
 msgstr "Importera Inbäddad Metadata"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:1
+msgid "_Synchronize with the embedded metadata"
+msgstr "_Synkronisera med inbäddade metadata"
 
 #: ../extensions/comments/dlg-comments-preferences.c:68
 #: ../extensions/gstreamer_tools/dlg-media-viewer-preferences.c:75
@@ -419,11 +978,6 @@ msgstr "Kommentar"
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/comments/main.c:44 ../extensions/comments/main.c:170
-#: ../pix/gth-main-default-metadata.c:64
-msgid "Description"
-msgstr "Beskrivning"
-
 #: ../extensions/comments/main.c:45 ../extensions/comments/main.c:178
 #: ../pix/gth-main-default-metadata.c:63
 msgid "Place"
@@ -445,6 +999,218 @@ msgstr "Kontaktformulär (_S)"
 #: ../extensions/contact_sheet/callbacks.c:39
 msgid "Image _Wall…"
 msgstr "Bildvägg (_W)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:439
+#: ../extensions/file_tools/gth-file-tool-crop.c:469
+#: ../extensions/file_tools/gth-file-tool-resize.c:589
+#: ../extensions/file_tools/gth-file-tool-rotate.c:396
+#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
+msgid "None"
+msgstr "Ingen"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
+msgid "Simple"
+msgstr "Enkel"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
+msgid "Simple with shadow"
+msgstr "Enkel med skugga"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
+msgid "Shadow only"
+msgstr "Skugga endast"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
+msgid "Slide"
+msgstr "Bildspel"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
+msgid "Inward Shadow"
+msgstr "Inåtvänd skugga"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
+msgid "Outward Shadow"
+msgstr "Utåtvänd skugga"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
+msgid "Background"
+msgstr "Bakgrund"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
+msgid "_Solid color"
+msgstr "Enfärgad (_S)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
+msgid "_Gradient"
+msgstr "Färgskala (_G)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
+msgid "Select a color"
+msgstr "Välj en färg"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
+msgid "Frame"
+msgstr "Bildruta"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
+msgid "_Style:"
+msgstr "_Stil:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
+msgid "C_olor:"
+msgstr "Färg (_o):"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
+#: ../pix/gth-template-editor-dialog.c:419
+msgid "Text"
+msgstr "Text"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
+#: ../extensions/image_print/data/ui/print-layout.ui.h:5
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:3
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:4
+msgid "_Header:"
+msgstr "Sid_huvud:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
+msgid "Select a font"
+msgstr "Välj ett teckensnitt"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
+#: ../extensions/image_print/data/ui/print-layout.ui.h:6
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
+msgid "_Footer:"
+msgstr "Sid_fot:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:2
+msgid "Caption:"
+msgstr "Rubrik:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
+#: ../extensions/image_print/data/ui/print-layout.ui.h:17
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
+#: ../pix/gth-browser-actions-entries.h:99
+msgid "Help"
+msgstr "Hjälp"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:8
+msgid "Edit template"
+msgstr "Redigera mall"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:5
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
+msgid "Contact Sheet"
+msgstr "Kontakt Ark"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:6
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:5
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
+msgid "_Destination:"
+msgstr "_Destination:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:7
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:3
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:9
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
+msgid "Choose destination folder"
+msgstr "Välj destinationsmapp"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:3
+msgid "File_name:"
+msgstr "Fil_namn:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
+msgid "Create _HTML image map"
+msgstr "Skapa _HTML-bildkarta"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
+msgid "Create a new theme"
+msgstr "Skapa ett nytt tema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:13
+msgid "Edit the selected theme"
+msgstr "Redigera det valda temat"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
+msgid "Delete the selected theme"
+msgstr "Ta bort det valda temat"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
+msgid "Theme"
+msgstr "Tema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
+#: ../extensions/image_print/data/ui/print-layout.ui.h:19
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:16
+msgid "Columns:"
+msgstr "Kolumner:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
+msgid "0"
+msgstr "0"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:7
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
+msgid "Images per page:"
+msgstr "Bilder per sida:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
+msgid "All images on a single page"
+msgstr "Alla bilder på en enda sida"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
+msgid "_All pages with the same size"
+msgstr "_Alla sidor med samma storlek"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:18
+msgid "Layout"
+msgstr "Utformning"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
+msgid "S_ort:"
+msgstr "S_ortera:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
+msgid "Re_verse order"
+msgstr "Om_vänd ordning"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
+msgid "_Size:"
+msgstr "_Storlek:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
+msgid "Sq_uared"
+msgstr "Fyrkantig (_u)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:13
+msgid "Thumbnails"
+msgstr "Miniatyrbilder"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:35
 #: ../extensions/contact_sheet/dlg-image-wall.c:34
@@ -506,10 +1272,6 @@ msgstr "Kunde inte ta bort temat"
 msgid "Edit Template"
 msgstr "Redigera mall"
 
-#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
-msgid "Contact Sheet"
-msgstr "Kontakt Ark"
-
 #: ../extensions/contact_sheet/dlg-image-wall.c:248
 msgid "Image Wall"
 msgstr "Bildvägg"
@@ -542,13 +1304,23 @@ msgstr "Sidhuvud"
 msgid "Footer"
 msgstr "Sidfot"
 
-#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
-msgid "Caption"
-msgstr "Text"
-
 #: ../extensions/convert_format/callbacks.c:38
 msgid "Convert Format…"
 msgstr "Ändra format…"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:1
+msgid "New format"
+msgstr "Nytt format"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:2
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:8
+msgid "Destination"
+msgstr "Destination"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:4
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:10
+msgid "_Use the original image folder"
+msgstr "Använd den _ursprungliga bildmappen"
 
 #: ../extensions/convert_format/dlg-convert-format.c:87
 msgid "Converting images"
@@ -563,6 +1335,7 @@ msgid "Could not show the desktop background properties"
 msgstr "Kunde inte visa egenskaperna för skrivbordsbakgrunden"
 
 #: ../extensions/desktop_background/actions.c:368
+#: ../pix/resources/gears-menu.ui.h:8
 msgid "_Preferences"
 msgstr "Inställningar (_P)"
 
@@ -604,6 +1377,27 @@ msgstr "Redigera etiketter"
 msgid "Delete Metadata"
 msgstr "Ta bort metadata"
 
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
+msgid "D_escription:"
+msgstr "B_eskrivning:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
+msgid "_Place:"
+msgstr "_Plats:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
+#: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
+msgid "T_ags:"
+msgstr "Etiketter (_a):"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
+msgid "_Rating:"
+msgstr "Betyg (_R):"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
+msgid "_Title:"
+msgstr "_Titel:"
+
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:123
 msgid "Could not save the file metadata"
 msgstr "Kunde inte spara filens metadata"
@@ -616,11 +1410,6 @@ msgstr "Kan inte läsa filinformation"
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:138
 msgid "Save only cha_nged fields"
 msgstr "Spara endast än_drade fält"
-
-#: ../extensions/edit_metadata/gth-edit-general-page.c:482
-#: ../pix/gth-main-default-types.c:38
-msgid "General"
-msgstr "Allmänt"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:554
 msgid "No date"
@@ -655,6 +1444,55 @@ msgstr "Skrivning av filer"
 msgid "Reading files"
 msgstr "Läsning av filer"
 
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
+msgid "C_opyright:"
+msgstr "Upphovsrätt (_o):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
+msgid "Co_untry:"
+msgstr "Land (_u):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
+msgid "_Code:"
+msgstr "Kod (_C):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
+msgid "Cr_edit:"
+msgstr "Tack till (_e):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
+msgid "_Source:"
+msgstr "Källa (_S):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
+msgid "_Urgency:"
+msgstr "Prioritet (_U)"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
+msgid "_Object Name:"
+msgstr "_Objektnamn:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
+msgid "Byline _Title:"
+msgstr "Upphovsrättsinnehavarens _titel:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
+msgid "_Byline:"
+msgstr "Upphovsrättsinnehavare (_B):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
+msgid "_City:"
+msgstr "Ort (_C):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
+msgid "_Language:"
+msgstr "Språk (_L):"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
+msgid "State/Province:"
+msgstr "Stat eller provins:"
+
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:47 ../pix/glib-utils.c:1114
 #: ../pix/glib-utils.c:2091 ../pix/str-utils.c:641
 msgid "(invalid value)"
@@ -663,12 +1501,6 @@ msgstr "(felaktigt värde)"
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:711
 msgid "Exposure"
 msgstr "Exponering"
-
-#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
-#: ../extensions/gstreamer_tools/main.c:41
-#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
-msgid "Other"
-msgstr "Övrigt"
 
 #: ../extensions/exiv2_tools/main.c:33
 msgid "Exif General"
@@ -757,7 +1589,9 @@ msgstr ""
 #: ../extensions/file_manager/actions.c:743
 #: ../extensions/file_manager/callbacks.c:74
 #: ../extensions/file_manager/callbacks.c:103
-#: ../extensions/file_manager/callbacks.c:124 ../pix/gtk-utils.h:38
+#: ../extensions/file_manager/callbacks.c:124
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:5
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:32 ../pix/gtk-utils.h:38
 msgid "Copy"
 msgstr "Kopiera"
 
@@ -773,11 +1607,6 @@ msgstr "Kopiera till"
 #: ../extensions/file_manager/callbacks.c:1030
 msgid "Move"
 msgstr "Flytta"
-
-#: ../extensions/file_manager/actions.c:766
-#: ../extensions/webalbums/gth-web-exporter.c:1820
-msgid "_View the destination"
-msgstr "_Visa målet"
 
 #: ../extensions/file_manager/actions.c:870
 msgid "Could not open the location"
@@ -906,6 +1735,249 @@ msgstr "Beskär"
 #: ../extensions/file_tools/gth-file-tool-resize.c:840
 msgid "Resize"
 msgstr "Ändra storlek"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:1
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
+msgid "_Preview"
+msgstr "Förhandsvisa (_P)"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
+msgid "B_rightness:"
+msgstr "Ljusstyrka (_r):"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
+msgid "Con_trast:"
+msgstr "Kon_trast:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
+msgid "_Saturation:"
+msgstr "Mättnad (_S):"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
+msgid "G_amma:"
+msgstr "G_amma:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
+msgid "Cyan-_Red:"
+msgstr "Cyan-_Röd:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
+msgid "_Magenta-Green:"
+msgstr "_Magenta-Grön:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
+msgid "_Yellow-Blue:"
+msgstr "Gul-Blå (_Y):"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
+msgid "Color Levels"
+msgstr "Färgnivåer"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:1
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:5
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
+msgid "Position"
+msgstr "Position"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:2
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
+msgid "_X:"
+msgstr "_X:"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:3
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:4
+msgid "Color"
+msgstr "Färg"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:1
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:1
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:661
+#: ../extensions/file_tools/gth-file-tool-resize.c:759
+#: ../extensions/file_tools/gth-file-tool-rotate.c:617
+#: ../pix/gth-file-chooser-dialog.c:258
+msgid "Options"
+msgstr "Alternativ"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:2
+msgid "_Grid:"
+msgstr "Rutnät (_G):"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:3
+msgid "Selection"
+msgstr "Val"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:4
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:7
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:5
+msgid "_Width:"
+msgstr "Bredd (_W):"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:5
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:8
+msgid "Heigh_t:"
+msgstr "Höjd (_t):"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:6
+msgid "_Position:"
+msgstr "_Position:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:7
+msgid "Maximize"
+msgstr "Maximera"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:8
+msgid "Center"
+msgstr "Centrera"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:9
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:10
+#: ../pix/gth-main-default-tests.c:406
+msgid "Aspect ratio"
+msgstr "Bildförhållande"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:10
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:11
+msgid "I_nvert aspect ratio"
+msgstr "I_nvertera bildförhållande"
+
+#. after the colon there is a control to select the size in pixels
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:12
+msgid "M_ultiple of:"
+msgstr "Storlek i bildpunkter (_u):"
+
+#. abbreviation of pixel
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:14
+msgid "px"
+msgstr "bildpunkter"
+
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:2
+msgid "Include current channel"
+msgstr "Inkludera aktuell kanal"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:2
+msgid "High _quality"
+msgstr "Hög kvalitet (_q)"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:3
+msgid "pixels"
+msgstr "bildpunkter"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:5
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:3
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:6
+#: ../pix/gth-main-default-metadata.c:48
+msgid "Dimensions"
+msgstr "Dimensioner"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:9
+msgid "Set the image size to this value"
+msgstr "Ställ in bildstorleken till detta värde"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:12
+msgid "Original dimensions:"
+msgstr "Ursprungsstorlek:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:13
+msgid "Scale factor:"
+msgstr "Skalningsfaktor:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:14
+msgid "New dimensions:"
+msgstr "Ny storlek:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
+msgid "Grid:"
+msgstr "Rutnät:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
+msgid "_Background:"
+msgstr "_Bakgrund:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
+msgid "Pick a background color"
+msgstr "Välj en bakgrundsfärg"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
+msgid "_Transparent"
+msgstr "_Transparent"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
+msgid "Original size"
+msgstr "Ursprunglig storlek"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
+msgid "Bounding box"
+msgstr "Begränsningsområde"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
+msgid "Crop borders"
+msgstr "Beskär kanter"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
+msgid "Angle"
+msgstr "Vinkel"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
+msgid "Align"
+msgstr "Justera"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
+msgid "Image size"
+msgstr "Bildstorlek"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
+msgid "Point 1:"
+msgstr "Punkt 1:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
+msgid "Point 2:"
+msgstr "Punkt 2:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:14
+msgid "Keep aspect ratio"
+msgstr "Behåll proportioner"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
+msgid ""
+"Draw a line on the image \n"
+"to set the alignment."
+msgstr ""
+"Dra en linje på bilden \n"
+"för att ange justering."
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
+msgid "Parallel"
+msgstr "Parallell"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
+msgid "Perpendicular"
+msgstr "Vinkelrät"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
+msgid "Alignment"
+msgstr "Justering"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
+msgid "Threshold:"
+msgstr "Tröskelvärde:"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
+msgid "Radius:"
+msgstr "Radie:"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
+msgid "Amount:"
+msgstr "Värde:"
 
 #. Translators: the first number is converted to the second number
 #: ../extensions/file_tools/gth-curve-editor.c:417
@@ -1041,14 +2113,6 @@ msgid "Pick a color from the image"
 msgstr "Välj en färg från bilden"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:439
-#: ../extensions/file_tools/gth-file-tool-crop.c:469
-#: ../extensions/file_tools/gth-file-tool-resize.c:589
-#: ../extensions/file_tools/gth-file-tool-rotate.c:396
-#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
-msgid "None"
-msgstr "Ingen"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:439
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
 #: ../pix/gth-test-aspect-ratio.c:47
 msgid "Square"
@@ -1134,13 +2198,6 @@ msgstr "Gyllene Sektioner"
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
 msgid "Center Lines"
 msgstr "Mittlinjer"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:661
-#: ../extensions/file_tools/gth-file-tool-resize.c:759
-#: ../extensions/file_tools/gth-file-tool-rotate.c:617
-#: ../pix/gth-file-chooser-dialog.c:258
-msgid "Options"
-msgstr "Alternativ"
 
 #: ../extensions/file_tools/gth-file-tool-curves.c:410
 msgid "Add to Presets"
@@ -1296,10 +2353,12 @@ msgid "Rotate"
 msgstr "Rotera"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
+#: ../pix/resources/gears-menu.ui.h:4
 msgid "Save As…"
 msgstr "Spara som…"
 
 #: ../extensions/file_tools/gth-file-tool-save.c:66
+#: ../pix/resources/gears-menu.ui.h:3
 msgid "Save"
 msgstr "Spara"
 
@@ -1318,6 +2377,50 @@ msgstr "Ångra"
 #: ../extensions/find_duplicates/callbacks.c:37
 msgid "Find _Duplicates…"
 msgstr "Sök kopior… (_D)"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
+msgid "_Folders:"
+msgstr "Mappar (_F):"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
+msgid "Duplicates:"
+msgstr "Dubbletter:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
+msgid "Files:"
+msgstr "Filer:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
+#: ../pix/gth-main-default-metadata.c:32
+msgid "File"
+msgstr "Fil"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
+msgid "Last modified"
+msgstr "Senast ändrad"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
+msgid "_View"
+msgstr "_Visa"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:7
+#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
+msgid "_Delete"
+msgstr "_Ta bort"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:8
+msgid "No duplicates found."
+msgstr "Inga dubbletter hittades"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:1
+#: ../extensions/search/data/ui/search-editor.ui.h:2
+msgid "Start _at:"
+msgstr "Starta från (_a):"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
+msgid "_Filter:"
+msgstr "_Filter:"
 
 #: ../extensions/find_duplicates/dlg-find-duplicates.c:98
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1350
@@ -1394,6 +2497,78 @@ msgstr "Dubletter"
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1373
 msgid "Select"
 msgstr "Välj"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
+msgid "Public photos"
+msgstr "Offentliga foton"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:2
+msgid "Private photos, visible to family and friends"
+msgstr "Privata foton, synliga för familj och vänner"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:3
+msgid "Private photos, visible to friends"
+msgstr "Privata foton, synliga för vänner"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
+msgid "Private photos, visible to family"
+msgstr "Privata foton, synliga för familjen"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
+msgid "Private photos"
+msgstr "Privata foton"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
+msgid "Safe content"
+msgstr "Säkert innehåll"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
+msgid "Moderate content"
+msgstr "Relativt säkert innehåll"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
+msgid "Restricted content"
+msgstr "Begränsat innehåll"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
+msgid "_Account:"
+msgstr "Konto (_A):"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
+msgid "Edit accounts"
+msgstr "Redigera konton"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
+msgid "Free space:"
+msgstr "Ledigt utrymme:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:3
+msgid "Ph_otoset:"
+msgstr "F_otoset:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
+msgid "_Privacy:"
+msgstr "Sekretess (_P):"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
+msgid "_Safety:"
+msgstr "_Säkerhet:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
+msgid "Hi_de from public searches"
+msgstr "_Dölj från offentliga sökningar"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:10
+msgid "_Resize if larger than:"
+msgstr "Ändra storlek om större än (_R):"
+
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:2
+#: ../extensions/oauth/data/ui/oauth-account-chooser.ui.h:1
+msgid "A_ccount:"
+msgstr "Konto (_A):"
 
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:136
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:410
@@ -1576,44 +2751,134 @@ msgid "Next frame"
 msgstr "Nästa bild"
 
 #: ../extensions/gstreamer_tools/callbacks.c:38
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:38
 msgid "Go forward 1 second"
 msgstr "Gå fram 1 sekund"
 
 #: ../extensions/gstreamer_tools/callbacks.c:39
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:22
 msgid "Go forward 5 seconds"
 msgstr "Gå fram 5 sekunder"
 
 #: ../extensions/gstreamer_tools/callbacks.c:40
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:25
 msgid "Go forward 10 seconds"
 msgstr "Gå fram 10 sekunder"
 
 #: ../extensions/gstreamer_tools/callbacks.c:41
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:28
 msgid "Go forward 1 minute"
 msgstr "Gå fram 1 minut"
 
 #: ../extensions/gstreamer_tools/callbacks.c:42
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:31
 msgid "Go forward 5 minutes"
 msgstr "Gå fram 5 minuter"
 
 #: ../extensions/gstreamer_tools/callbacks.c:43
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:35
 msgid "Go back 1 second"
 msgstr "Gå tillbaka 1 sekund"
 
 #: ../extensions/gstreamer_tools/callbacks.c:44
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:10
 msgid "Go back 5 seconds"
 msgstr "Gå tillbaka 5 sekunder"
 
 #: ../extensions/gstreamer_tools/callbacks.c:45
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:13
 msgid "Go back 10 seconds"
 msgstr "Gå tillbaka 10 sekunder"
 
 #: ../extensions/gstreamer_tools/callbacks.c:46
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:16
 msgid "Go back 1 minute"
 msgstr "Gå tillbaka 1 minut"
 
 #: ../extensions/gstreamer_tools/callbacks.c:47
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:19
 msgid "Go back 5 minutes"
 msgstr "Gå tillbaka 5 minuter"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:1
+msgid "Use hardware acceleration"
+msgstr "Använd hårdvaruacceleration"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:2
+msgid "_Screenshots location:"
+msgstr "Plats för _skärmbilder:"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
+msgid "Play"
+msgstr "Spela upp"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
+msgid "Slower"
+msgstr "Långsammare"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:3
+msgid "Faster"
+msgstr "Snabbare"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
+msgid "Restart when finished"
+msgstr "Starta om när det är klart"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
+msgid "Time:"
+msgstr "Tid:"
+
+#. minus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:9
+msgid "-5s"
+msgstr "-5 sek"
+
+#. minus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:12
+msgid "-10s"
+msgstr "-10 sek"
+
+#. minus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:15
+msgid "-1m"
+msgstr "-1 min"
+
+#. minus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:18
+msgid "-5m"
+msgstr "-5 min"
+
+#. plus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:21
+msgid "+5s"
+msgstr "+5 sek"
+
+#. plus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:24
+msgid "+10s"
+msgstr "+10 sek"
+
+#. plus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:27
+msgid "+1m"
+msgstr "+1 min"
+
+#. plus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:30
+msgid "+5m"
+msgstr "+5 min"
+
+#. minus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:34
+msgid "-1s"
+msgstr "-1 sek"
+
+#. plus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:37
+msgid "+1s"
+msgstr "+1 sek"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:595
 msgid "Playing video"
@@ -1623,16 +2888,13 @@ msgstr "Spelar video"
 msgid "Pause"
 msgstr "Paus"
 
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
-msgid "Play"
-msgstr "Spela upp"
-
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1127
 msgid "Take a screenshot"
 msgstr "Ta en skärmbild"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1134
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:6
 msgid "Fit to window"
 msgstr "Anpassa till fönster"
 
@@ -1653,6 +2915,7 @@ msgid "Artist"
 msgstr "Artist"
 
 #: ../extensions/gstreamer_tools/main.c:48
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "Album"
 msgstr "Album"
 
@@ -1674,10 +2937,12 @@ msgid "Framerate"
 msgstr "Bildfrekvens"
 
 #: ../extensions/gstreamer_tools/main.c:54
+#: ../extensions/image_print/data/ui/print-layout.ui.h:27
 msgid "Width"
 msgstr "Bredd"
 
 #: ../extensions/gstreamer_tools/main.c:55
+#: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Height"
 msgstr "Höjd"
 
@@ -1717,6 +2982,100 @@ msgstr "Kunde inte skriva ut markerade filer"
 #: ../extensions/image_print/preferences.c:79
 msgid "Print"
 msgstr "Skriv ut"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:1
+msgid "Centered"
+msgstr "Centrerad"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:2
+msgid "Custom"
+msgstr "Anpassad"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:3
+msgid "millimeters"
+msgstr "millimeter"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:4
+msgid "inches"
+msgstr "tum"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:7
+msgid "The current page number"
+msgstr "Aktuellt sidnummer"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:8
+msgid "The total number of pages"
+msgstr "Totalt sidantal"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:9
+msgid "Special code"
+msgstr "Särskild kod"
+
+#. translate only the text in the curly brackets
+#: ../extensions/image_print/data/ui/print-layout.ui.h:13
+#, no-c-format
+msgid "%D{ format }"
+msgstr "%D{ format }"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:14
+msgid "The current date"
+msgstr "Dagens datum"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:15
+msgid "The total number of files"
+msgstr "Totalt antal filer"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:16
+msgid "The event description"
+msgstr "Beskrivning av händelsen"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:20
+msgid "_Rows:"
+msgstr "_Rader:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:22
+msgid "Image"
+msgstr "Bild"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:23
+msgid "Position:"
+msgstr "Position:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:24
+msgid "Left"
+msgstr "Vänster"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:25
+msgid "Top"
+msgstr "Längst upp"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
+msgid "Rotation:"
+msgstr "Rotation:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+msgid "Unit:"
+msgstr "Enhet:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+msgid "Preview"
+msgstr "Förhandsgranskning"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:1
+msgid "Fonts"
+msgstr "Teckensnitt"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:5
+msgid "Select Caption Font"
+msgstr "Välj teckensnitt för bildtext"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:6
+msgid "Select Header Font"
+msgstr "Välj teckensnitt för sidhuvud"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:7
+msgid "Select Footer Font"
+msgstr "Välj teckensnitt för sidfot"
 
 #: ../extensions/image_print/gth-image-print-job.c:40
 msgid "Total number of files"
@@ -1900,6 +3259,117 @@ msgstr "Rulla snabbt åt nedåt"
 msgid "Scroll to center"
 msgstr "Rulla till mitten"
 
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
+msgid "After loading an image:"
+msgstr "Efter inläsning av en bild:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
+msgid "Set to actual size"
+msgstr "Ställ in till faktisk storlek"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
+msgid "Keep previous zoom"
+msgstr "Behåll föregående zoomning"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
+msgid "Fit to window if larger"
+msgstr "Anpassa till fönster om större"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:7
+msgid "Fit to width"
+msgstr "Anpassa till bredd"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
+msgid "Fit to width if larger"
+msgstr "Anpassa till bredd om större"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
+msgid "Reset scrollbar positions"
+msgstr "Återställ rullningslisternas positioner"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
+msgid "Mouse wheel action:"
+msgstr "Mushjulets funktion:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:10
+msgctxt "zoom quality"
+msgid "Change image"
+msgstr "Ändra bild"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
+msgctxt "zoom quality"
+msgid "Zoom image"
+msgstr "Zooma bild"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:12
+msgid "Zoom quality:"
+msgstr "Zoomkvalitet:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:13
+msgctxt "zoom quality"
+msgid "_High"
+msgstr "_Hög"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:14
+msgctxt "zoom quality"
+msgid "_Low"
+msgstr "_Låg"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:15
+msgid "Transparency:"
+msgstr "Transparens:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:16
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:1
+msgid "Checkered"
+msgstr "Rutig"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:17
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:2
+msgid "White"
+msgstr "Vit"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:18
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:3
+msgid "Gray"
+msgstr "Grå"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:19
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:4
+msgid "Black"
+msgstr "Svart"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:5
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:8
+msgid "Fit to height"
+msgstr "Anpassa till höjd"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:10
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:12
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:14
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:16
+#, no-c-format
+msgid "300%"
+msgstr "300%"
+
 #: ../extensions/image_viewer/gth-image-histogram.c:94
 msgid "Histogram"
 msgstr "Histogram"
@@ -1911,14 +3381,6 @@ msgstr "Kopiera bild"
 #: ../extensions/image_viewer/gth-image-viewer-page.c:85
 msgid "Paste Image"
 msgstr "Klistra in bild"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
-msgid "Set to actual size"
-msgstr "Ställ in till faktisk storlek"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
-msgid "Fit to window if larger"
-msgstr "Anpassa till fönster om större"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1174
 msgid "Apply the embedded color profile"
@@ -1960,6 +3422,19 @@ msgstr "Bildredigerare"
 #: ../pix/gth-main-default-types.c:42 ../pix/gth-shortcuts-window.c:40
 msgid "Viewer"
 msgstr "Visare"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:1
+msgid "_Destination"
+msgstr "Mål (_D)"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:2
+msgid "_Automatic subfolder"
+msgstr "_Automatisk undermapp"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:3
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:7
+msgid "_Template:"
+msgstr "Mall (_T):"
 
 #: ../extensions/importer/gth-import-destination-button.c:113
 msgid "Invalid Destination"
@@ -2014,6 +3489,39 @@ msgstr ""
 #: ../extensions/list_tools/callbacks.c:157 ../extensions/list_tools/main.c:31
 msgid "Tools"
 msgstr "Verktyg"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
+msgid "Co_mmands:"
+msgstr "Ko_mmandon:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:2
+msgid "_Wait for the command to finish"
+msgstr "Vänta tills kommandot har slutförts (_W)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:3
+msgid "E_xecute command once for every file"
+msgstr "Utför kommandot en gång för varje fil (_x)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:4
+msgid "_Terminal command (shell script)"
+msgstr "_Terminalkommando (skript)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:5
+msgid "Sh_ortcut:"
+msgstr "Snabbk_ommando:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:6
+msgid "_Command:"
+msgstr "Kommando (_C):"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:7
+msgid "Edit command"
+msgstr "Redigera kommando"
+
+#: ../extensions/list_tools/data/ui/tools-menu.ui.h:1
+#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
+msgid "Personalize…"
+msgstr "Anpassa…"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:250
 msgid "Script"
@@ -2129,6 +3637,16 @@ msgstr "Ö"
 msgid "Map"
 msgstr "Karta"
 
+#: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
+msgid "A_ccounts:"
+msgstr "Konton (_c):"
+
+#. the message pane
+#: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
+#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
+msgid "Loading…"
+msgstr "Läser in…"
+
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:192
 msgid "New authentication…"
 msgstr "Ny autentisering…"
@@ -2182,6 +3700,33 @@ msgstr "Mapp (_F)"
 msgid "I_mport From"
 msgstr "Imp_ortera från"
 
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
+msgid "After importing from a device:"
+msgstr "Efter import från en enhet:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
+msgid "_Rotate the images physically"
+msgstr "_Rotera bilderna fysiskt"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:3
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:6
+msgid "_Delete the imported files from the source"
+msgstr "Ta bort de importerade filerna från källan"
+
+#. view label
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
+#: ../pix/gth-filterbar.c:391
+msgid "S_how:"
+msgstr "V_isa:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
+msgid "_Event:"
+msgstr "Händelse (_E):"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
+msgid "_Tags:"
+msgstr "Etiketter (_T):"
+
 #: ../extensions/photo_importer/dlg-photo-importer.c:218
 msgid "Could not import the files"
 msgstr "Kunde inte importera filerna"
@@ -2219,6 +3764,27 @@ msgstr "Ta bort röda ögon"
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:472
 msgid "Remove the red eye effect caused by camera flashes"
 msgstr "Ta bort röda ögon orsakade av kamerablixtar"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:2
+msgid "_Sort by:"
+msgstr "_Sortera efter:"
+
+#. Translators: this is the text case (upper or lower case).
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:4
+msgid "Cas_e:"
+msgstr "Skiftläg_e:"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:6
+msgid "Re_verse Order"
+msgstr "Om_vänd ordning"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:9
+msgid "Revert to the last used template"
+msgstr "Återgå till den senast använda mallen"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:10
+msgid "_Preview:"
+msgstr "Förhandsvisning (_P):"
 
 #: ../extensions/rename_series/dlg-rename-series.c:54
 #: ../extensions/webalbums/dlg-web-exporter.c:45
@@ -2279,6 +3845,27 @@ msgstr "Byter namn på filer"
 msgid "Resize Images…"
 msgstr "Ändra bildernas storlek…"
 
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:1
+msgid "pixel"
+msgstr "bildpunkt"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:4
+msgid "New dimensions"
+msgstr "Nya dimensioner"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:6
+msgid "_Height:"
+msgstr "_Höjd:"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:7
+msgid "_Preserve original aspect ratios"
+msgstr "Bevara ursprungliga bildförhållanden (_P)"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:11
+#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
+msgid "Format"
+msgstr "Format"
+
 #: ../extensions/resize_images/dlg-resize-images.c:341
 msgid "Resize Images"
 msgstr "Ändra storlek på bilder"
@@ -2322,10 +3909,6 @@ msgstr "alla regler som följer"
 #: ../pix/gth-filter-editor-dialog.c:168
 msgid "any of the following rules"
 msgstr "vilken som helst av följande regler"
-
-#: ../extensions/search/gth-search-source-selector.c:123
-msgid "_Include sub-folders"
-msgstr "_Inkludera undermappar"
 
 #: ../extensions/search/gth-search-source-selector.c:130
 msgid "Add another location"
@@ -2430,10 +4013,50 @@ msgid "Show previous file"
 msgstr "Visa föregående fil"
 
 #: ../extensions/slideshow/callbacks.c:65
-#: ../extensions/slideshow/callbacks.c:362 ../extensions/slideshow/main.c:286
-#: ../extensions/slideshow/preferences.c:142 ../pix/gth-shortcuts-window.c:41
+#: ../extensions/slideshow/callbacks.c:362
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
+#: ../extensions/slideshow/main.c:286 ../extensions/slideshow/preferences.c:142
+#: ../pix/gth-shortcuts-window.c:41
 msgid "Presentation"
 msgstr "Presentation"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
+msgid "_Personalize"
+msgstr "Anpassa (_P)"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
+msgid "_Transition effect:"
+msgstr "Övergångseffekt (_T):"
+
+#. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
+msgid "_Change automatically, every"
+msgstr "Ändra automatiskt, varje"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
+msgctxt "Every x seconds"
+msgid "seconds"
+msgstr "sekunder"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
+msgid "_Restart when finished"
+msgstr "Sta_rta om när det är klart"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
+msgid "R_andom order"
+msgstr "Slumpmässig ordning"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
+msgid "Playlist"
+msgstr "Spellista"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
+msgid "Add files to the playlist"
+msgstr "Lägg till filer i spellistan"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
+msgid "Remove the selected files"
+msgstr "Ta bort markerade filer"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:185
 msgid "Choose the files to play"
@@ -2512,14 +4135,6 @@ msgstr "Bild %d av %d"
 msgid "Index"
 msgstr "Index"
 
-#: ../extensions/webalbums/data/albumthemes/text.h:30
-msgid "Next"
-msgstr "Nästa"
-
-#: ../extensions/webalbums/data/albumthemes/text.h:32
-msgid "Previous"
-msgstr "Föregående"
-
 #: ../extensions/webalbums/data/albumthemes/text.h:33
 #, c-format
 msgid "View page %d"
@@ -2540,6 +4155,46 @@ msgstr "Visa föregående bild"
 #: ../extensions/webalbums/data/albumthemes/text.h:37
 msgid "View the previous page"
 msgstr "Visa föregående sida"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
+msgid "All images on a single image"
+msgstr "Alla bilder på en enda bild"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
+msgid "Adapts to the window width"
+msgstr "Anpassar sig till fönstrets bredd"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
+msgid "_Copy originals to destination"
+msgstr "Kopiera originalbilder till mål (_C)"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:17
+msgid "_Adapt to the window width "
+msgstr "_Anpassar sig till fönstrets bredd "
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
+msgid "Index Page"
+msgstr "Indexsida"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
+msgid "Thumbnail Caption"
+msgstr "Bildtext för miniatyrbild"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
+msgid "Image Page"
+msgstr "Bildsida"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
+msgid "Show the description, if available"
+msgstr "Visa beskrivningen, om sådan finns"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:24
+msgid "Show the following attributes:"
+msgstr "Visa följande egenskaper:"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
+msgid "Image Attributes"
+msgstr "Bildegenskaper"
 
 #: ../extensions/webalbums/dlg-web-exporter.c:43
 msgid "Current image number"
@@ -2699,7 +4354,7 @@ msgid "_Restart"
 msgstr "Starta _om"
 
 #: ../pix/dlg-preferences-shortcuts.c:296
-#: ../pix/dlg-preferences-shortcuts.c:371
+#: ../pix/dlg-preferences-shortcuts.c:371 ../pix/resources/gears-menu.ui.h:5
 msgid "Revert"
 msgstr "Återgå"
 
@@ -2874,15 +4529,11 @@ msgstr ""
 "  Jan-Olof Svensson https://launchpad.net/~jan-olof-svensson\n"
 "  kristian https://launchpad.net/~kristianm24"
 
-#: ../pix/gth-browser-actions-entries.h:98
+#: ../pix/gth-browser-actions-entries.h:98 ../pix/resources/gears-menu.ui.h:1
 msgid "New Window"
 msgstr "Nytt fönster"
 
-#: ../pix/gth-browser-actions-entries.h:99
-msgid "Help"
-msgstr "Hjälp"
-
-#: ../pix/gth-browser-actions-entries.h:100
+#: ../pix/gth-browser-actions-entries.h:100 ../pix/resources/gears-menu.ui.h:9
 msgid "Keyboard Shortcuts"
 msgstr "Snabbkommandon"
 
@@ -2905,7 +4556,8 @@ msgstr "Öppna plats"
 
 #: ../pix/gth-browser-actions-entries.h:109
 #: ../pix/gth-browser-actions-entries.h:110 ../pix/gth-browser.c:4791
-#: ../pix/gth-browser.c:4809
+#: ../pix/gth-browser.c:4809 ../pix/resources/file-list-menu.ui.h:1
+#: ../pix/resources/file-menu.ui.h:1
 msgid "Fullscreen"
 msgstr "Helskärm"
 
@@ -3097,11 +4749,6 @@ msgstr "Visa formatval (_S)"
 msgid "No file"
 msgstr "Ingen fil"
 
-#. the message pane
-#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
-msgid "Loading…"
-msgstr "Läser in…"
-
 #: ../pix/gth-file-source-vfs.c:298
 msgid "Computer"
 msgstr "Dator"
@@ -3167,20 +4814,6 @@ msgstr "fallande"
 msgid "No limit specified"
 msgstr "Ingen gräns specifierad"
 
-#. limit label
-#: ../pix/gth-filter.c:270 ../pix/gth-filter.c:338
-msgid "_Limit to"
-msgstr "_Begränsa till"
-
-#. view label
-#: ../pix/gth-filterbar.c:391
-msgid "S_how:"
-msgstr "V_isa:"
-
-#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
-msgid "Personalize…"
-msgstr "Anpassa…"
-
 #: ../pix/gth-folder-tree.c:1467
 msgid "(Open Parent)"
 msgstr "(Öppna Föräldramapp)"
@@ -3215,17 +4848,13 @@ msgstr "Kunde inte hitta någon lämplig modul för att spara bilden som “%s�
 msgid "Reading file information"
 msgstr "Läser filinformation"
 
-#: ../pix/gth-location-chooser-dialog.c:194
+#: ../pix/gth-location-chooser-dialog.c:194 ../pix/resources/gears-menu.ui.h:7
 msgid "Hidden Files"
 msgstr "Dolda filer"
 
 #: ../pix/gth-location-chooser.c:572
 msgid "Locations"
 msgstr "Platser"
-
-#: ../pix/gth-main-default-metadata.c:32
-msgid "File"
-msgstr "Fil"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -3247,14 +4876,6 @@ msgstr "Datum & tid för ändring"
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Type"
 msgstr "Typ"
-
-#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
-msgid "Format"
-msgstr "Format"
-
-#: ../pix/gth-main-default-metadata.c:48
-msgid "Dimensions"
-msgstr "Dimensioner"
 
 #: ../pix/gth-main-default-metadata.c:49
 msgid "Duration"
@@ -3372,10 +4993,6 @@ msgstr "Titel (inbäddad)"
 msgid "Description (embedded)"
 msgstr "Beskrivning (inbäddad)"
 
-#: ../pix/gth-main-default-tests.c:406
-msgid "Aspect ratio"
-msgstr "Bildförhållande"
-
 #: ../pix/gth-main-default-types.c:39
 msgid "Show/Hide"
 msgstr "Visa/dölj"
@@ -3391,10 +5008,6 @@ msgstr "Filhanterare"
 #: ../pix/gth-overwrite-dialog.c:326
 msgid "Overwrite"
 msgstr "Ersätt"
-
-#: ../pix/gth-progress-dialog.c:158
-msgid "Cancel operation"
-msgstr "Avbryt åtgärden"
 
 #: ../pix/gth-save-file-data-task.c:105
 msgid "Saving file information"
@@ -3414,10 +5027,6 @@ msgstr "Skapa etiketten “%s”"
 #: ../pix/gth-tags-entry.c:1090
 msgid "Show all the tags"
 msgstr "Visa alla taggar"
-
-#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
-msgid "_Delete"
-msgstr "_Ta bort"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
@@ -3462,10 +5071,6 @@ msgstr "Astronomi"
 #: ../pix/gth-tags-file.c:245
 msgid "Family"
 msgstr "Familj"
-
-#: ../pix/gth-template-editor-dialog.c:419
-msgid "Text"
-msgstr "Text"
 
 #. Translators: The space character not the Astronomy space.
 #: ../pix/gth-template-editor-dialog.c:424
@@ -3645,7 +5250,7 @@ msgstr "Avbryt"
 msgid "_Cancel"
 msgstr "Avbryt (_C)"
 
-#: ../pix/gtk-utils.h:40
+#: ../pix/gtk-utils.h:40 ../pix/resources/gears-menu.ui.h:10
 msgid "_Help"
 msgstr "_Hjälp"
 
@@ -3672,3 +5277,23 @@ msgstr "_Kör"
 #: ../pix/gtk-utils.h:46
 msgid "_Upload"
 msgstr "Skicka _upp"
+
+#: ../pix/resources/folder-menu.ui.h:1
+msgid "Open in New Window"
+msgstr "Öppna i nytt fönster"
+
+#: ../pix/resources/gears-menu.ui.h:2
+msgid "Open Location…"
+msgstr "Öppna plats…"
+
+#: ../pix/resources/gears-menu.ui.h:6
+msgid "Sort By…"
+msgstr "Sortera efter…"
+
+#: ../pix/resources/gears-menu.ui.h:11
+msgid "_About Pix"
+msgstr "Om Pix (_A)"
+
+#: ../pix/resources/history-menu.ui.h:1
+msgid "_Delete History"
+msgstr "Ta bort historik (_D)"

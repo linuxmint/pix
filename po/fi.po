@@ -12,16 +12,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 14:42+0100\n"
-"PO-Revision-Date: 2023-06-08 10:13+0000\n"
-"Last-Translator: Clement Lefebvre <root@linuxmint.com>\n"
+"POT-Creation-Date: 2023-06-26 13:19+0200\n"
+"PO-Revision-Date: 2023-06-27 12:36+0000\n"
+"Last-Translator: Kimmo Kujansuu <Unknown>\n"
 "Language-Team: suomi <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2023-06-08 10:21+0000\n"
-"X-Generator: Launchpad (build 620cd5280e3a973662e263ebf9346837ed657a46)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:57+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 "Language: fi\n"
 
 #: ../data/gschemas/org.x.pix.gschema.xml.h:1
@@ -47,20 +47,342 @@ msgstr "Mahdolliset arvot ovat: jpeg,jpg."
 
 #: ../data/gschemas/org.x.pix.pixbuf-savers.gschema.xml.h:2
 msgid "Possible values are: tiff, tif."
-msgstr "Mahdolliset arvot ovat:tiff,tif."
+msgstr "Mahdolliset arvot ovat: tiff,tif."
 
 #: ../data/gschemas/org.x.pix.rename-series.gschema.xml.h:1
 msgid ""
 "Possible values include: general::unsorted, file::name, file::size, "
 "file::mtime, exif::photo::datetimeoriginal"
 msgstr ""
-"Mahdolliset arvot sisältävät: yleinen::lajittelematon, tiedosto::nimi, "
-"tiedosto::koko, tiedosto::muokkausaika, exif::kuva::päivämääräalkuperäinen"
+"Mahdolliset arvot: general::unsorted, file::name, file::size, file::mtime, "
+"exif::photo::datetimeoriginal"
+
+#: ../data/ui/browser-preferences.ui.h:1
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
+#: ../extensions/image_print/data/ui/print-layout.ui.h:21
+msgid "Caption"
+msgstr "Kuvateksti"
+
+#: ../data/ui/browser-preferences.ui.h:2
+msgid "Behavior"
+msgstr "Toiminta"
+
+#: ../data/ui/browser-preferences.ui.h:3
+msgid "_Single click to open files"
+msgstr "Kertapai_nallus avaa tiedostot"
+
+#: ../data/ui/browser-preferences.ui.h:4
+msgid "_Double click to open files"
+msgstr "_Kaksoispainallus avaa tiedostot"
+
+#: ../data/ui/browser-preferences.ui.h:5
+msgid "_Open files in fullscreen mode"
+msgstr "_Avaa tiedostot koko näytössä"
+
+#: ../data/ui/browser-preferences.ui.h:6 ../data/ui/preferences.ui.h:15
+#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
+#: ../extensions/gstreamer_tools/main.c:41
+#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
+msgid "Other"
+msgstr "Muut"
+
+#: ../data/ui/browser-preferences.ui.h:7
+msgid "Thumbnail _size:"
+msgstr "_Esikatselukuvien koko:"
+
+#: ../data/ui/browser-preferences.ui.h:8
+msgid "D_etermine image type from content (slower)"
+msgstr "T_unnista kuvatyyppi sisällöstä (hitaampi)"
+
+#: ../data/ui/code-selector.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:5
+msgid "1"
+msgstr "1"
+
+#: ../data/ui/code-selector.ui.h:2
+msgid "digits"
+msgstr "numeroa"
+
+#: ../data/ui/code-selector.ui.h:3 ../extensions/comments/main.c:44
+#: ../extensions/comments/main.c:170
+#: ../extensions/image_print/data/ui/print-layout.ui.h:10
+#: ../pix/gth-main-default-metadata.c:64
+msgid "Description"
+msgstr "Kuvaus"
+
+#: ../data/ui/code-selector.ui.h:4
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: ../data/ui/code-selector.ui.h:5
+msgid "Default value"
+msgstr "Oletusarvo"
+
+#: ../data/ui/code-selector.ui.h:6
+msgid "remove"
+msgstr "poista"
+
+#: ../data/ui/code-selector.ui.h:7
+msgid "add"
+msgstr "lisää"
+
+#: ../data/ui/extensions-preferences.ui.h:1
+msgid "_Extensions:"
+msgstr "Laajennuks_et:"
+
+#: ../data/ui/file-selection-info.ui.h:1
+#: ../extensions/webalbums/data/albumthemes/text.h:32
+msgid "Previous"
+msgstr "Edellinen"
+
+#: ../data/ui/file-selection-info.ui.h:2
+#: ../extensions/webalbums/data/albumthemes/text.h:30
+msgid "Next"
+msgstr "Seuraava"
+
+#: ../data/ui/filter-editor.ui.h:1
+msgid "Filter _Name:"
+msgstr "Suodattimen _nimi:"
+
+#: ../data/ui/filter-editor.ui.h:2
+#: ../extensions/search/data/ui/search-editor.ui.h:1
+msgid "_Match:"
+msgstr "_Osuma:"
+
+#: ../data/ui/filter-editor.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:3
+msgid "Rules:"
+msgstr "Säännöt:"
+
+#. limit label
+#: ../data/ui/filter-editor.ui.h:4 ../pix/gth-filter.c:270
+#: ../pix/gth-filter.c:338
+msgid "_Limit to"
+msgstr "_Rajoita"
+
+#: ../data/ui/filter-editor.ui.h:5
+msgid "selected by"
+msgstr "määräytyen"
+
+#: ../data/ui/histogram-info.ui.h:1
+msgid "Mean:"
+msgstr "Keskiarvo:"
+
+#. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsized at the end.
+#: ../data/ui/histogram-info.ui.h:3
+msgid "Std dev:"
+msgstr "Keskihajonta:"
+
+#: ../data/ui/histogram-info.ui.h:4
+msgid "Median:"
+msgstr "Mediaani:"
+
+#. After the colon there is the total number of pixels
+#: ../data/ui/histogram-info.ui.h:6
+msgid "Pixels:"
+msgstr "Pikseliä:"
+
+#. After the colon there is a percentile.
+#: ../data/ui/histogram-info.ui.h:8
+msgctxt "Pixels"
+msgid "Max:"
+msgstr "Enintään:"
+
+#. After the colon there is the percentile of selected pixels.
+#: ../data/ui/histogram-info.ui.h:10
+msgctxt "Pixels"
+msgid "Selected:"
+msgstr "Valittu:"
+
+#: ../data/ui/location.ui.h:1
+msgid "_Location:"
+msgstr "_Sijainti:"
+
+#: ../data/ui/overwrite-dialog.ui.h:1
+msgid "Overwrite the old file with the new one?"
+msgstr "Korvataanko vanha tiedosto uudella?"
+
+#: ../data/ui/overwrite-dialog.ui.h:2
+msgid "Old File:"
+msgstr "Vanha tiedosto:"
+
+#: ../data/ui/overwrite-dialog.ui.h:3
+msgid "Filename:"
+msgstr "Tiedostonimi:"
+
+#: ../data/ui/overwrite-dialog.ui.h:4
+#: ../extensions/image_print/data/ui/print-layout.ui.h:26
+msgid "Size:"
+msgstr "Koko:"
+
+#: ../data/ui/overwrite-dialog.ui.h:5
+msgid "Modified:"
+msgstr "Muokattu:"
+
+#: ../data/ui/overwrite-dialog.ui.h:6
+msgid "New File:"
+msgstr "Uusi tiedosto:"
+
+#: ../data/ui/overwrite-dialog.ui.h:7
+msgid "Over_write the old file"
+msgstr "_Korvaa vanha tiedosto"
+
+#: ../data/ui/overwrite-dialog.ui.h:8
+msgid "Do not overwrite _the old file"
+msgstr "Älä korvaa _vanhaa tiedostoa"
+
+#: ../data/ui/overwrite-dialog.ui.h:9
+msgid "Overwrite _all files"
+msgstr "Korvaa k_aikki tiedostot"
+
+#: ../data/ui/overwrite-dialog.ui.h:10
+msgid "_Do not overwrite any file"
+msgstr "_Älä korvaa tiedostoja"
+
+#: ../data/ui/overwrite-dialog.ui.h:11
+msgid "_Save the new file as:"
+msgstr "_Tallenna uusi nimellä:"
+
+#: ../data/ui/personalize-filters.ui.h:1
+msgid "_General filter:"
+msgstr "_Käytettävä suodatin:"
+
+#: ../data/ui/personalize-filters.ui.h:2
+msgid "_Other filters:"
+msgstr "_Valittavat suodattimet:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "below the folder list"
+msgstr "kansiolistan alla"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "on the right"
+msgstr "oikealla"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Pix Preferences"
+msgstr "Pix lisäasetukset"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Appearance"
+msgstr "Ulkoasu"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "T_humbnails in viewer:"
+msgstr "_Pikkukuvat katselussa:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "on the bottom"
+msgstr "alhaalla"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "on the side"
+msgstr "sivulla"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "File _properties in browser:"
+msgstr "Tiedoston _ominaisuudet selaimessa:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "_Statusbar"
+msgstr "T_ilarivi"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "On startup:"
+msgstr "Käynnistettäessä:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Go to last _visited location"
+msgstr "Palaa edelliseen sijaintiin"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Go to this _folder:"
+msgstr "Siirry tähän _kansioon:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Set to C_urrent"
+msgstr "Aseta nykyiseen"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "_Reuse the active window to open files"
+msgstr "_Käytä tiedostojen avaukseen aktiivista ikkunaa"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "As_k confirmation before deleting files or catalogs"
+msgstr "Kysy _vahvistus ennen tiedostojen poistamista"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Ask whether to save _modified files"
+msgstr "Kysy tallennusta _muokatuissa tiedostoissa"
+
+#: ../data/ui/preferences.ui.h:18
+msgid "_Store metadata inside files if possible"
+msgstr "_Tallenna metatiedot tiedoston sisään"
+
+#: ../data/ui/preferences.ui.h:19
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
+#: ../extensions/edit_metadata/gth-edit-general-page.c:482
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
+#: ../pix/gth-main-default-types.c:38
+msgid "General"
+msgstr "Yleiset"
+
+#: ../data/ui/shortcuts-preferences.ui.h:1
+msgid "Shortcuts:"
+msgstr "Pikanäppäimet:"
+
+#: ../data/ui/shortcuts-preferences.ui.h:2
+msgid "_Restore All…"
+msgstr "_Palauta kaikki…"
+
+#: ../data/ui/sort-order.ui.h:1
+msgid "_Inverse order"
+msgstr "Kään_teinen järjestys"
+
+#: ../data/ui/template-editor-dialog.ui.h:1
+#: ../extensions/importer/data/ui/import-preferences.ui.h:4
+msgid "Example:"
+msgstr "Esimerkki:"
 
 #: ../extensions/bookmarks/callbacks.c:323
 #: ../extensions/bookmarks/dlg-bookmarks.c:350
 msgid "Bookmarks"
 msgstr "Kirjanmerkit"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:1
+msgid "_Add Bookmark"
+msgstr "_Lisää kirjanmerkki"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:2
+msgid "_Edit Bookmarks…"
+msgstr "_Muokkaa kirjanmerkkejä…"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:3
+msgid "_System Bookmarks"
+msgstr "_Järjestelmän kirjanmerkit"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
+msgid "_Bookmarks:"
+msgstr "_Kirjanmerkit:"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
+msgid "Go to this location"
+msgstr "Siirry tähän sijaintiin"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
+#: ../extensions/catalogs/callbacks.c:72
+#: ../extensions/search/gth-search-source-selector.c:140
+msgid "Remove"
+msgstr "Poista"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
+msgid "_Name"
+msgstr "_Nimi"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:5
+msgid "_Location"
+msgstr "_Sijainti"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:192
 msgid "Could not remove the bookmark"
@@ -69,6 +391,26 @@ msgstr "Kirjanmerkkiä ei voitu poistaa"
 #: ../extensions/burn_disc/callbacks.c:48
 msgid "_Optical Disc…"
 msgstr "_Optinen levy…"
+
+#: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
+msgid "Disc Name"
+msgstr "Levyn nimi"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
+msgid "Current _folder"
+msgstr "Nykyinen _kansio"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
+msgid "Current folder and its s_ub-folders"
+msgstr "Nykyinen kansio alikansioinen"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
+msgid "_Selected files"
+msgstr "_Valitut tiedostot"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
+msgid "Source"
+msgstr "Lähde"
 
 #: ../extensions/burn_disc/gth-burn-task.c:239
 #: ../extensions/burn_disc/gth-burn-task.c:260
@@ -85,12 +427,90 @@ msgstr "_Jatka"
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:62
 #, c-format
 msgid "Error interpreting JPEG image file: %s"
-msgstr "Virhe tulkittaessa JPEG kuvatiedostoa: %s"
+msgstr "Virhe tulkittaessa JPEG-tiedostoa: %s"
 
 #: ../extensions/cairo_io/cairo-image-surface-jpeg.c:558
 #, c-format
 msgid "Unknown JPEG color space (%d)"
-msgstr "Tuntematon JPEG väriavaruus (%d)"
+msgstr "Tuntematon JPEG-väriavaruus (%d)"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
+msgid "_Quality:"
+msgstr "_Laatu:"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
+msgid "_Lossless"
+msgstr "_Häviötön"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
+msgid "_Default extension:"
+msgstr "_Oletuspääte:"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:3
+msgid "_Smoothing:"
+msgstr "_Pehmennys:"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:4
+msgid "Opti_mize"
+msgstr "Opti_moi"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:5
+msgid "_Progressive"
+msgstr "_Progressiivinen"
+
+#: ../extensions/cairo_io/data/ui/png-options.ui.h:1
+msgid "Compression _level:"
+msgstr "Pakkaustaso:"
+
+#: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
+msgid "Default options:"
+msgstr "Oletusvalinnat:"
+
+#: ../extensions/cairo_io/data/ui/tga-options.ui.h:1
+msgid "_RLE compression"
+msgstr "_RLE-pakkaus"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:2
+msgid "Compression"
+msgstr "Pakkaus"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:3
+msgid "_No compression"
+msgstr "_Ei pakkausta"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:4
+msgid "No_rmal (Deflate)"
+msgstr "No_rmaali (pura)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:5
+msgid "_Loss compression (JPEG)"
+msgstr "_Laatua heikentävä pakkaus (JPEG)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:6
+msgid "Resolution"
+msgstr "Tarkkuus"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:7
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:12
+msgid "_Horizontal:"
+msgstr "_Vaakataso:"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:8
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:13
+msgid "_Vertical:"
+msgstr "_Pystytaso:"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:9
+msgid "dpi"
+msgstr "dpi"
+
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
+msgid "_Method:"
+msgstr "_Metodi:"
 
 #: ../extensions/cairo_io/gth-image-saver-avif.c:365
 msgid "AVIF"
@@ -126,7 +546,10 @@ msgid "WebP"
 msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1703
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:11
 msgid "Saving"
 msgstr "Tallennus"
 
@@ -139,7 +562,7 @@ msgstr "Tallennus"
 #: ../pix/gth-filter-editor-dialog.c:467 ../pix/gth-folder-tree.c:1926
 #, c-format
 msgid "No name specified"
-msgstr "Nimeä ei ole määritelty"
+msgstr "Nimeä ei ole"
 
 #: ../extensions/catalogs/actions.c:96 ../extensions/catalogs/actions.c:219
 #: ../extensions/catalogs/dlg-add-to-catalog.c:383
@@ -157,7 +580,7 @@ msgstr "Virheellinen nimi. Seuraavia merkkejä ei hyväksytä: %s"
 #: ../extensions/catalogs/gth-file-source-catalogs.c:516
 #: ../extensions/file_manager/actions.c:109
 msgid "Name already used"
-msgstr "Nimi on jo käytössä"
+msgstr "Nimi on käytössä"
 
 #: ../extensions/catalogs/actions.c:177
 msgid "New catalog"
@@ -186,7 +609,7 @@ msgstr "Anna kirjaston nimi:"
 
 #: ../extensions/catalogs/actions.c:327
 msgid "Could not remove the catalog"
-msgstr "Luettelon poisto ei onnistunut"
+msgstr "Kuvaston poisto ei onnistunut"
 
 #: ../extensions/catalogs/actions.c:366
 #, c-format
@@ -195,7 +618,7 @@ msgstr "Haluatko varmasti poistaa “%s”?"
 
 #: ../extensions/catalogs/callbacks.c:52
 msgid "Add to Catalog…"
-msgstr "Lisää luetteloon…"
+msgstr "Lisää kuvastoon…"
 
 #: ../extensions/catalogs/callbacks.c:57
 #: ../extensions/selections/callbacks.c:78
@@ -204,20 +627,15 @@ msgstr "Avaa kansio"
 
 #: ../extensions/catalogs/callbacks.c:62
 msgid "Remove from Catalog"
-msgstr "Poista luettelosta"
+msgstr "Poista kuvastosta"
 
 #: ../extensions/catalogs/callbacks.c:67
 msgid "Create Catalog"
-msgstr "Luo luettelo"
+msgstr "Luo kuvasto"
 
 #: ../extensions/catalogs/callbacks.c:68
 msgid "Create Library"
 msgstr "Luo kirjasto"
-
-#: ../extensions/catalogs/callbacks.c:72
-#: ../extensions/search/gth-search-source-selector.c:140
-msgid "Remove"
-msgstr "Poista"
 
 #: ../extensions/catalogs/callbacks.c:73
 #: ../extensions/file_manager/callbacks.c:82
@@ -241,7 +659,7 @@ msgstr "Ominaisuudet"
 #: ../extensions/catalogs/gth-catalog.c:917
 #: ../extensions/catalogs/gth-catalog.c:918
 msgid "Catalogs"
-msgstr "Luettelot"
+msgstr "Kuvastot"
 
 #: ../extensions/catalogs/callbacks.c:223
 #: ../extensions/catalogs/callbacks.c:226
@@ -250,7 +668,7 @@ msgstr "Komentorivi"
 
 #: ../extensions/catalogs/callbacks.c:379
 msgid "Catalog Properties"
-msgstr "Luettelon ominaisuudet"
+msgstr "Kuvaston ominaisuudet"
 
 #: ../extensions/catalogs/callbacks.c:395
 msgid "Organize"
@@ -258,28 +676,107 @@ msgstr "Järjestele"
 
 #: ../extensions/catalogs/callbacks.c:396
 msgid "Automatically organize files by date"
-msgstr "Järjestele tiedostot automaattisesti päivän mukaan"
+msgstr "Järjestele automaattisesti päivän mukaan"
 
-#: ../extensions/catalogs/dlg-add-to-catalog.c:156
-msgid "Could not add the files to the catalog"
-msgstr "Tiedostoja ei voitu lisätä luetteloon"
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
+msgid "C_atalogs:"
+msgstr "Kuvastot:"
 
-#: ../extensions/catalogs/dlg-add-to-catalog.c:319
-#: ../extensions/search/gth-search-task.c:396
-msgid "Could not create the catalog"
-msgstr "Luettelon luonti ei onnistunut"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:461
-msgid "New Catalog"
-msgstr "Uusi luettelo"
-
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
 #: ../extensions/catalogs/dlg-add-to-catalog.c:620
 msgid "New Library"
 msgstr "Uusi kirjasto"
 
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
+#: ../extensions/catalogs/dlg-add-to-catalog.c:461
+msgid "New Catalog"
+msgstr "Uusi kuvasto"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
+#: ../extensions/file_manager/actions.c:766
+#: ../extensions/webalbums/gth-web-exporter.c:1820
+msgid "_View the destination"
+msgstr "_Näytä kohde"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:2
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:1
+msgid "_Name:"
+msgstr "_Nimi:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
+msgid "_Date:"
+msgstr "_Päivämäärä:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
+msgid "Catalog"
+msgstr "Kuvasto"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
+#: ../pix/gth-progress-dialog.c:158
+msgid "Cancel operation"
+msgstr "Peru toiminto"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
+msgid "Organization:"
+msgstr "Järjestely:"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
+msgid "Files"
+msgstr "Tiedostot"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
+msgid "Create"
+msgstr "Luo"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
+msgid "Select All"
+msgstr "Valitse kaikki"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:7
+msgid "Select None"
+msgstr "Ei mitään"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:8
+msgid "Catalog _Preview:"
+msgstr "Kuvaston _katselu:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
+msgid "_Group files by:"
+msgstr "_Ryhmittelyn peruste:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:2
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
+#: ../extensions/search/gth-search-source-selector.c:123
+msgid "_Include sub-folders"
+msgstr "_Hae alikansioista"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
+msgid "Ignore catalogs with a single file"
+msgstr "Älä huomioi yhden tiedoston kuvastoja"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
+msgid "Put single files in the catalog:"
+msgstr "Laita yksittäiset kuvastoon:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
+msgid "Singles"
+msgstr "Yksittäiset"
+
+#: ../extensions/catalogs/dlg-add-to-catalog.c:156
+msgid "Could not add the files to the catalog"
+msgstr "Tiedostoja ei voitu lisätä kuvastoon"
+
+#: ../extensions/catalogs/dlg-add-to-catalog.c:319
+#: ../extensions/search/gth-search-task.c:396
+msgid "Could not create the catalog"
+msgstr "Kuvaston luonti ei onnistunut"
+
 #: ../extensions/catalogs/dlg-add-to-catalog.c:687
 msgid "Add to Catalog"
-msgstr "Lisää Luetteloon"
+msgstr "Lisää kuvastoon"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:710
 msgid "_Add"
@@ -288,15 +785,15 @@ msgstr "_Lisää"
 #: ../extensions/catalogs/dlg-add-to-catalog.c:714
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:347
 msgid "Keep the dialog open"
-msgstr "Pidä valintaikkuna auki"
+msgstr "Pidä ikkuna avoinna"
 
 #: ../extensions/catalogs/dlg-catalog-properties.c:80
 msgid "Could not save the catalog"
-msgstr "Luetteloa ei voitu tallentaa"
+msgstr "Kuvastoa ei voitu tallentaa"
 
 #: ../extensions/catalogs/dlg-catalog-properties.c:154
 msgid "Could not load the catalog"
-msgstr "Luetteloa ei voitu avata"
+msgstr "Kuvastoa ei voitu avata"
 
 #: ../extensions/catalogs/dlg-organize-files.c:106
 #: ../extensions/catalogs/gth-organize-task.c:812
@@ -306,19 +803,18 @@ msgstr "Järjestele tiedostoja"
 #: ../extensions/catalogs/dlg-organize-files.c:126
 msgid "Files will be organized in catalogs. No file will be moved on disk."
 msgstr ""
-"Tiedostot ryhmitellään automaattiset luetteloihin. Tiedostoja ei siirretä "
-"levyllä."
+"Ryhmitellään automaattisesti kuvastoon. Tiedostoja ei siirretä levyllä."
 
 #: ../extensions/catalogs/dlg-organize-files.c:138
 #: ../extensions/edit_metadata/gth-edit-general-page.c:557
 #: ../pix/gth-main-default-tests.c:367
 msgid "Date photo was taken"
-msgstr "Kuvanottohetki"
+msgstr "Kuvausaika"
 
 #: ../extensions/catalogs/dlg-organize-files.c:145
 #: ../pix/gth-main-default-tests.c:359
 msgid "File modified date"
-msgstr "Viimeisin muokkauspäivä"
+msgstr "Muokkauspäivä"
 
 #: ../extensions/catalogs/dlg-organize-files.c:152
 #: ../extensions/comments/main.c:186
@@ -351,12 +847,12 @@ msgstr "Tunnisteet"
 #: ../extensions/catalogs/gth-file-source-catalogs.c:958
 #, c-format
 msgid "The catalog “%s” already exists, do you want to overwrite it?"
-msgstr "Luettelo \"%s\" on jo olemassa, haluatko korvata sen?"
+msgstr "Kuvasto \"%s\" on olemassa, haluatko korvata sen?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:960
 #, c-format
 msgid "The library “%s” already exists, do you want to overwrite it?"
-msgstr "Kirjasto \"%s\" on jo olemassa, haluatko korvata sen?"
+msgstr "Kirjasto \"%s\" on olemassa, haluatko korvata sen?"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:968
 msgid "Over_write"
@@ -381,16 +877,74 @@ msgstr "Kopioidaan tiedostoja \"%s\""
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1321
 msgid "Could not remove the files from the catalog"
-msgstr "Tiedostoja ei voitu poistaa luettelosta"
+msgstr "Kuvastosta ei voitu poistaa tiedostoja"
 
 #: ../extensions/catalogs/gth-organize-task.c:209
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr "Järjestely suoritettu. Luettelot: %d Kuvat: %d."
+msgstr "Suoritettu. Kuvastot: %d Kuvat: %d."
 
 #: ../extensions/change_date/callbacks.c:38
 msgid "Change _Date…"
 msgstr "Muuta _päivämäärää…"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:1
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
+msgid "+"
+msgstr "+"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:2
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
+msgid "-"
+msgstr "-"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:3
+msgid "Change the following values:"
+msgstr "Muuta seuraavia arvoja:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:4
+msgid "_Last modified date"
+msgstr "_Muokkauspäivä"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:5
+msgid "Co_mment date"
+msgstr "Ko_mmentin päivämäärä"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:6
+msgid "Change to:"
+msgstr "Muuta päiväksi:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:7
+msgid "The _following date:"
+msgstr "_Seuraava päivämäärä:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:8
+msgid "File _modified date"
+msgstr "Tiedoston _muokkauspäivä"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:9
+msgid "File c_reation date"
+msgstr "Tiedoston _luontipäivä"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:10
+msgid "Date p_hoto was taken"
+msgstr "Kuvan kuvausaika"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:11
+msgid "A_djust by"
+msgstr "_Vaihda"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:12
+msgid "hours"
+msgstr "tuntia"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:13
+msgid "minutes"
+msgstr "minuuttia"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:14
+msgid "seconds"
+msgstr "sekuntia"
 
 #: ../extensions/change_date/dlg-change-date.c:177
 msgid "Change Date"
@@ -398,7 +952,11 @@ msgstr "Muuta päivämäärää"
 
 #: ../extensions/comments/callbacks.c:39
 msgid "Import Embedded Metadata"
-msgstr "Tuo sisällytetty metadata"
+msgstr "Tuo upotettu metadata"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:1
+msgid "_Synchronize with the embedded metadata"
+msgstr "_Päivitä upotettu metadata samaksi"
 
 #: ../extensions/comments/dlg-comments-preferences.c:68
 #: ../extensions/gstreamer_tools/dlg-media-viewer-preferences.c:75
@@ -423,11 +981,6 @@ msgstr "Kommentti"
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../extensions/comments/main.c:44 ../extensions/comments/main.c:170
-#: ../pix/gth-main-default-metadata.c:64
-msgid "Description"
-msgstr "Kuvaus"
-
 #: ../extensions/comments/main.c:45 ../extensions/comments/main.c:178
 #: ../pix/gth-main-default-metadata.c:63
 msgid "Place"
@@ -444,17 +997,229 @@ msgstr "Arviointi"
 
 #: ../extensions/contact_sheet/callbacks.c:38
 msgid "Contact _Sheet…"
-msgstr "_Yhteyssivu…"
+msgstr "_Lomake…"
 
 #: ../extensions/contact_sheet/callbacks.c:39
 msgid "Image _Wall…"
 msgstr "_Kuvaseinä…"
 
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:439
+#: ../extensions/file_tools/gth-file-tool-crop.c:469
+#: ../extensions/file_tools/gth-file-tool-resize.c:589
+#: ../extensions/file_tools/gth-file-tool-rotate.c:396
+#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
+msgid "None"
+msgstr "Ei mitään"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
+msgid "Simple"
+msgstr "Koruton"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
+msgid "Simple with shadow"
+msgstr "Koruton varjolla"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
+msgid "Shadow only"
+msgstr "Vain varjo"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
+msgid "Slide"
+msgstr "Liuku"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
+msgid "Inward Shadow"
+msgstr "Sisäinen varjo"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
+msgid "Outward Shadow"
+msgstr "Ulkoinen varjo"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
+msgid "Background"
+msgstr "Tausta"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
+msgid "_Solid color"
+msgstr "_Yksivärinen"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
+msgid "_Gradient"
+msgstr "_Väriliuku"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
+msgid "Select a color"
+msgstr "Valitse väri"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
+msgid "Frame"
+msgstr "Kehys"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
+msgid "_Style:"
+msgstr "_Tyyli:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
+msgid "C_olor:"
+msgstr "V_äri:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
+#: ../pix/gth-template-editor-dialog.c:419
+msgid "Text"
+msgstr "Teksti"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
+#: ../extensions/image_print/data/ui/print-layout.ui.h:5
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:3
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:4
+msgid "_Header:"
+msgstr "_Otsikko:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
+msgid "Select a font"
+msgstr "Valitse fontti"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
+#: ../extensions/image_print/data/ui/print-layout.ui.h:6
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
+msgid "_Footer:"
+msgstr "_Alaviite:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:2
+msgid "Caption:"
+msgstr "Kuvateksti:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
+#: ../extensions/image_print/data/ui/print-layout.ui.h:17
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
+#: ../pix/gth-browser-actions-entries.h:99
+msgid "Help"
+msgstr "Ohje"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:8
+msgid "Edit template"
+msgstr "Muokkaa mallia"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:5
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
+msgid "Contact Sheet"
+msgstr "Lomake"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:6
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:5
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
+msgid "_Destination:"
+msgstr "Ko_hdekansio:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:7
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:3
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:9
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
+msgid "Choose destination folder"
+msgstr "Valitse kohdekansio"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:3
+msgid "File_name:"
+msgstr "Tie_dostonimi:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
+msgid "Create _HTML image map"
+msgstr "Luo _HTML-linkkikartta"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
+msgid "Create a new theme"
+msgstr "Luo uusi teema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:13
+msgid "Edit the selected theme"
+msgstr "Muokkaa valittua teemaa"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
+msgid "Delete the selected theme"
+msgstr "Poista valittu teema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
+msgid "Theme"
+msgstr "Teema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
+#: ../extensions/image_print/data/ui/print-layout.ui.h:19
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:16
+msgid "Columns:"
+msgstr "Sarakkeet:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
+msgid "0"
+msgstr "0"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:7
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
+msgid "Images per page:"
+msgstr "Kuvia sivulla:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
+msgid "All images on a single page"
+msgstr "Kaikki kuvat yhdellä sivulla"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
+msgid "_All pages with the same size"
+msgstr "_Kaikki sivut ovat saman kokoisia"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:18
+msgid "Layout"
+msgstr "Asettelu"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
+msgid "S_ort:"
+msgstr "_Järjestä:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
+msgid "Re_verse order"
+msgstr "Kään_teinen järjestys"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
+msgid "_Size:"
+msgstr "_Koko:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
+msgid "Sq_uared"
+msgstr "_Neliö"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:13
+msgid "Thumbnails"
+msgstr "Pikkukuvat"
+
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:35
 #: ../extensions/contact_sheet/dlg-image-wall.c:34
 #: ../extensions/rename_series/dlg-rename-series.c:53
 msgid "Enumerator"
-msgstr "Luettelointi"
+msgstr "Numerointi"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:36
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:42
@@ -466,7 +1231,7 @@ msgstr "Luettelointi"
 #: ../extensions/webalbums/dlg-web-exporter.c:38
 #: ../extensions/webalbums/dlg-web-exporter.c:47
 msgid "Current date"
-msgstr "Nykyhetki"
+msgstr "Tämä päivä"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:40
 #: ../extensions/image_print/gth-image-print-job.c:37
@@ -510,10 +1275,6 @@ msgstr "Teemaa ei voitu poistaa"
 msgid "Edit Template"
 msgstr "Muokkaa mallia"
 
-#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
-msgid "Contact Sheet"
-msgstr "Yhteyssivu"
-
 #: ../extensions/contact_sheet/dlg-image-wall.c:248
 msgid "Image Wall"
 msgstr "Kuvaseinä"
@@ -524,7 +1285,7 @@ msgstr "Kuvien luominen"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-creator.c:969
 msgid "Generating thumbnails"
-msgstr "Luodaan pienoiskuvia"
+msgstr "Luodaan pikkukuvia"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:194
 msgid "Theme Properties"
@@ -532,7 +1293,7 @@ msgstr "Teeman ominaisuudet"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:206
 msgid "Copy _From"
-msgstr "Kopioi_kohteesta"
+msgstr "Kopioi _teemasta"
 
 #: ../extensions/contact_sheet/gth-contact-sheet-theme-dialog.c:313
 msgid "New theme"
@@ -546,13 +1307,23 @@ msgstr "Ylätunniste"
 msgid "Footer"
 msgstr "Alaviite"
 
-#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
-msgid "Caption"
-msgstr "Kuvateksti"
-
 #: ../extensions/convert_format/callbacks.c:38
 msgid "Convert Format…"
 msgstr "Muunto formaatti…"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:1
+msgid "New format"
+msgstr "Uusi formaatti"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:2
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:8
+msgid "Destination"
+msgstr "Kohde"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:4
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:10
+msgid "_Use the original image folder"
+msgstr "K_äytä kuvan alkuperäistä kansiota"
 
 #: ../extensions/convert_format/dlg-convert-format.c:87
 msgid "Converting images"
@@ -560,13 +1331,14 @@ msgstr "Muunnetaan kuvia"
 
 #: ../extensions/convert_format/dlg-convert-format.c:149
 msgid "Convert Format"
-msgstr "Muunna tiedostotyyppi"
+msgstr "Muunto formaatti"
 
 #: ../extensions/desktop_background/actions.c:327
 msgid "Could not show the desktop background properties"
 msgstr "Työpöydän taustakuvan ominaisuuksia ei voitu näyttää"
 
 #: ../extensions/desktop_background/actions.c:368
+#: ../pix/resources/gears-menu.ui.h:8
 msgid "_Preferences"
 msgstr "_Asetukset"
 
@@ -590,8 +1362,7 @@ msgstr "Aseta taustakuvaksi"
 msgid ""
 "Are you sure you want to permanently delete the metadata of the selected "
 "files?"
-msgstr ""
-"Haluatko varmasti poistaa pysyvästi valittujen tiedostojen metadatan?"
+msgstr "Haluatko poistaa pysyvästi valittujen tiedostojen metadatan?"
 
 #: ../extensions/edit_metadata/actions.c:82
 msgid "If you delete the metadata, it will be permanently lost."
@@ -609,9 +1380,30 @@ msgstr "Muokkaa tunnisteita"
 msgid "Delete Metadata"
 msgstr "Poista metadata"
 
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
+msgid "D_escription:"
+msgstr "_Kuvaus:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
+msgid "_Place:"
+msgstr "_Sijainti:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
+#: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
+msgid "T_ags:"
+msgstr "_Tunnisteet:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
+msgid "_Rating:"
+msgstr "_Arviointi:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
+msgid "_Title:"
+msgstr "_Otsikko:"
+
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:123
 msgid "Could not save the file metadata"
-msgstr "Metatietoja ei voitu tallentaa"
+msgstr "Metadataa ei voitu tallentaa"
 
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:234
 #: ../pix/gth-overwrite-dialog.c:184
@@ -621,11 +1413,6 @@ msgstr "Tietoja ei voitu lukea"
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:138
 msgid "Save only cha_nged fields"
 msgstr "Tallenna vain muuttuneet kentät"
-
-#: ../extensions/edit_metadata/gth-edit-general-page.c:482
-#: ../pix/gth-main-default-types.c:38
-msgid "General"
-msgstr "Yleiset"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:554
 msgid "No date"
@@ -637,11 +1424,11 @@ msgstr "Aseta käsin"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:558
 msgid "Last modified date"
-msgstr "Viimeisin muokkausaika"
+msgstr "Muokkausaika"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:559
 msgid "File creation date"
-msgstr "Kuvan luontiaika"
+msgstr "Luontiaika"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:560
 msgid "Do not modify"
@@ -660,6 +1447,55 @@ msgstr "Kirjoitetaan tiedostoja"
 msgid "Reading files"
 msgstr "Luetaan tiedostoja"
 
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
+msgid "C_opyright:"
+msgstr "_Tekijänoikeus:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
+msgid "Co_untry:"
+msgstr "_Maa:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
+msgid "_Code:"
+msgstr "Maa_tunnus:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
+msgid "Cr_edit:"
+msgstr "_Tekijä:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
+msgid "_Source:"
+msgstr "_Lähde:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
+msgid "_Urgency:"
+msgstr "Tä_rkeys:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
+msgid "_Object Name:"
+msgstr "Kohteen _nimi:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
+msgid "Byline _Title:"
+msgstr "Maininnan _otsikko:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
+msgid "_Byline:"
+msgstr "_Tekijästä maininta:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
+msgid "_City:"
+msgstr "_Kaupunki:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
+msgid "_Language:"
+msgstr "_Kieli:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
+msgid "State/Province:"
+msgstr "Osavaltio/lääni:"
+
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:47 ../pix/glib-utils.c:1114
 #: ../pix/glib-utils.c:2091 ../pix/str-utils.c:641
 msgid "(invalid value)"
@@ -669,43 +1505,37 @@ msgstr "(virheellinen arvo)"
 msgid "Exposure"
 msgstr "Valotus"
 
-#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
-#: ../extensions/gstreamer_tools/main.c:41
-#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
-msgid "Other"
-msgstr "Muut"
-
 #: ../extensions/exiv2_tools/main.c:33
 msgid "Exif General"
-msgstr "Exif Yleiset"
+msgstr "Exif yleiset"
 
 #: ../extensions/exiv2_tools/main.c:34
 msgid "Exif Conditions"
-msgstr "Exif Olosuhteet"
+msgstr "Exif olosuhteet"
 
 #: ../extensions/exiv2_tools/main.c:35
 msgid "Exif Structure"
-msgstr "Exif Rakenne"
+msgstr "Exif rakenne"
 
 #: ../extensions/exiv2_tools/main.c:36
 msgid "Exif Thumbnail"
-msgstr "Exif Pienoiskuvat"
+msgstr "Exif pikkukuvat"
 
 #: ../extensions/exiv2_tools/main.c:37
 msgid "Exif GPS"
-msgstr "Exif GPS"
+msgstr "Exif gps"
 
 #: ../extensions/exiv2_tools/main.c:38
 msgid "Exif Maker Notes"
-msgstr "Exif Kommentit"
+msgstr "Exif kommentit"
 
 #: ../extensions/exiv2_tools/main.c:39
 msgid "Exif Versions"
-msgstr "Exif Versiot"
+msgstr "Exif versiot"
 
 #: ../extensions/exiv2_tools/main.c:40
 msgid "Exif Other"
-msgstr "Exif Muut"
+msgstr "Exif muut"
 
 #: ../extensions/exiv2_tools/main.c:41
 msgid "IPTC"
@@ -713,19 +1543,19 @@ msgstr "IPTC"
 
 #: ../extensions/exiv2_tools/main.c:42
 msgid "XMP Embedded"
-msgstr "XMP - upotettu"
+msgstr "XMP upotettu"
 
 #: ../extensions/exiv2_tools/main.c:43
 msgid "XMP Attached"
-msgstr "XMP - liitetty"
+msgstr "XMP liitetty"
 
 #: ../extensions/exiv2_tools/main.c:272
 msgid "date photo was taken"
-msgstr "kuvaamishetken mukaan"
+msgstr "kuvausaika"
 
 #: ../extensions/export_tools/callbacks.c:46
 msgid "_Export To"
-msgstr "Vi_e kohteeseen"
+msgstr "Vi_e"
 
 #: ../extensions/file_manager/actions.c:137
 msgid "New folder"
@@ -733,7 +1563,7 @@ msgstr "Uusi kansio"
 
 #: ../extensions/file_manager/actions.c:138
 msgid "Enter the folder name:"
-msgstr "Siirry hakemistoon:"
+msgstr "Kirjoita kansion nimi:"
 
 #: ../extensions/file_manager/actions.c:410
 #: ../extensions/file_manager/callbacks.c:561
@@ -755,38 +1585,35 @@ msgid ""
 "Files cannot be moved to the current location, as alternative you can choose "
 "to copy them."
 msgstr ""
-"Tiedostojen siirto tähän sijaintiin ei onnistunut. Voit kokeilla tiedostojen "
-"kopioimista siirtämisen sijaan."
+"Siirto tähän sijaintiin ei onnistunut. Voit kokeilla tiedostojen kopioimista "
+"siirtämisen sijaan."
 
 #: ../extensions/file_manager/actions.c:426
 #: ../extensions/file_manager/actions.c:743
 #: ../extensions/file_manager/callbacks.c:74
 #: ../extensions/file_manager/callbacks.c:103
-#: ../extensions/file_manager/callbacks.c:124 ../pix/gtk-utils.h:38
+#: ../extensions/file_manager/callbacks.c:124
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:5
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:32 ../pix/gtk-utils.h:38
 msgid "Copy"
 msgstr "Kopioi"
 
 #: ../extensions/file_manager/actions.c:739
 msgid "Move To"
-msgstr "Siirrä kohteeseen"
+msgstr "Siirrä sijaintiin"
 
 #: ../extensions/file_manager/actions.c:739
 msgid "Copy To"
-msgstr "Kopioi kohteeseen"
+msgstr "Kopioi sijaintiin"
 
 #: ../extensions/file_manager/actions.c:743
 #: ../extensions/file_manager/callbacks.c:1030
 msgid "Move"
 msgstr "Siirrä"
 
-#: ../extensions/file_manager/actions.c:766
-#: ../extensions/webalbums/gth-web-exporter.c:1820
-msgid "_View the destination"
-msgstr "_Näytä kohde"
-
 #: ../extensions/file_manager/actions.c:870
 msgid "Could not open the location"
-msgstr "Sijaintia ei voitu avata"
+msgstr "Kohdetta ei voitu avata"
 
 #: ../extensions/file_manager/callbacks.c:73
 #: ../extensions/file_manager/callbacks.c:102
@@ -847,7 +1674,7 @@ msgstr "Avaa ohjelmalla Gimp"
 
 #: ../extensions/file_manager/callbacks.c:735 ../pix/gth-file-source-vfs.c:305
 msgid "Home Folder"
-msgstr "Kotikansio"
+msgstr "Koti"
 
 #: ../extensions/file_manager/callbacks.c:742
 #: ../extensions/file_manager/callbacks.c:745
@@ -912,6 +1739,249 @@ msgstr "Rajaa"
 msgid "Resize"
 msgstr "Muuta kokoa"
 
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:1
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
+msgid "_Preview"
+msgstr "_Esikatselu"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
+msgid "B_rightness:"
+msgstr "_Kirkkaus:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
+msgid "Con_trast:"
+msgstr "Kon_trasti:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
+msgid "_Saturation:"
+msgstr "_Kylläisyys:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
+msgid "G_amma:"
+msgstr "G_amma:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
+msgid "Cyan-_Red:"
+msgstr "Syaani-_Punainen:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
+msgid "_Magenta-Green:"
+msgstr "_Magenta-Vihreä:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
+msgid "_Yellow-Blue:"
+msgstr "_Keltainen-Sininen:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
+msgid "Color Levels"
+msgstr "Väritasot"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:1
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:5
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
+msgid "Position"
+msgstr "Paikka"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:2
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
+msgid "_X:"
+msgstr "_X:"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:3
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:4
+msgid "Color"
+msgstr "Väri"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:1
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:1
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:661
+#: ../extensions/file_tools/gth-file-tool-resize.c:759
+#: ../extensions/file_tools/gth-file-tool-rotate.c:617
+#: ../pix/gth-file-chooser-dialog.c:258
+msgid "Options"
+msgstr "Asetukset"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:2
+msgid "_Grid:"
+msgstr "_Apuviivat:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:3
+msgid "Selection"
+msgstr "Valinta"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:4
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:7
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:5
+msgid "_Width:"
+msgstr "_Leveys:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:5
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:8
+msgid "Heigh_t:"
+msgstr "_Korkeus:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:6
+msgid "_Position:"
+msgstr "_Paikka:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:7
+msgid "Maximize"
+msgstr "Suurenna"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:8
+msgid "Center"
+msgstr "Keskitä"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:9
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:10
+#: ../pix/gth-main-default-tests.c:406
+msgid "Aspect ratio"
+msgstr "Kuvasuhde"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:10
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:11
+msgid "I_nvert aspect ratio"
+msgstr "_Käännä sivusuhde"
+
+#. after the colon there is a control to select the size in pixels
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:12
+msgid "M_ultiple of:"
+msgstr "Kerroin:"
+
+#. abbreviation of pixel
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:14
+msgid "px"
+msgstr "px"
+
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:2
+msgid "Include current channel"
+msgstr "Sisällytä nykyinen kanava"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:2
+msgid "High _quality"
+msgstr "Korkea_laatu"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:3
+msgid "pixels"
+msgstr "pikseliä"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:5
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:3
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:6
+#: ../pix/gth-main-default-metadata.c:48
+msgid "Dimensions"
+msgstr "Mitat"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:9
+msgid "Set the image size to this value"
+msgstr "Aseta koko tähän arvoon"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:12
+msgid "Original dimensions:"
+msgstr "Alkuperäiset mitat:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:13
+msgid "Scale factor:"
+msgstr "Skaalaus:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:14
+msgid "New dimensions:"
+msgstr "Uudet mitat:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
+msgid "Grid:"
+msgstr "Apuviivat:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
+msgid "_Background:"
+msgstr "_Tausta:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
+msgid "Pick a background color"
+msgstr "Valitse taustaväri"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
+msgid "_Transparent"
+msgstr "_Läpinäkyvä"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
+msgid "Original size"
+msgstr "Alkuperäinen koko"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
+msgid "Bounding box"
+msgstr "Suorakaide"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
+msgid "Crop borders"
+msgstr "Rajaa reunat"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
+msgid "Angle"
+msgstr "Kulma"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
+msgid "Align"
+msgstr "Tasaus"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
+msgid "Image size"
+msgstr "Kuvan koko"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
+msgid "Point 1:"
+msgstr "Piste 1:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
+msgid "Point 2:"
+msgstr "Piste 2:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:14
+msgid "Keep aspect ratio"
+msgstr "Säilytä kuvasuhde"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
+msgid ""
+"Draw a line on the image \n"
+"to set the alignment."
+msgstr ""
+"Piirrä viiva jolla asetetaan\n"
+"kuvan suunta."
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
+msgid "Parallel"
+msgstr "Sama suunta"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
+msgid "Perpendicular"
+msgstr "Pystysuora"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
+msgid "Alignment"
+msgstr "Tasaus"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
+msgid "Threshold:"
+msgstr "Kynnysarvo:"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
+msgid "Radius:"
+msgstr "Säde:"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
+msgid "Amount:"
+msgstr "Määrä:"
+
 #. Translators: the first number is converted to the second number
 #: ../extensions/file_tools/gth-curve-editor.c:417
 #, c-format
@@ -921,12 +1991,12 @@ msgstr "%d → %d"
 #: ../extensions/file_tools/gth-curve-editor.c:894
 #: ../pix/gth-histogram-view.c:838
 msgid "Linear scale"
-msgstr "Lineaarinen asteikko"
+msgstr "Lineaarinen skaalaus"
 
 #: ../extensions/file_tools/gth-curve-editor.c:906
 #: ../pix/gth-histogram-view.c:850
 msgid "Logarithmic scale"
-msgstr "Logaritminen asteikko"
+msgstr "Logaritminen skaalaus"
 
 #: ../extensions/file_tools/gth-curve-editor.c:926
 #: ../pix/gth-histogram-view.c:870
@@ -1000,7 +2070,7 @@ msgstr "Säädä värejä"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-colors.c:599
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr "Säädä kirkkaus-, kontrasti-, kylläisyys- ja gammatasoja"
+msgstr "Säädä kirkkaus, kontrasti, kylläisyys ja gamma"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:536
 msgid "Stretch"
@@ -1023,7 +2093,7 @@ msgstr "Tasaa histogrammi neliöjuurifunktiolla"
 #: ../extensions/file_tools/gth-file-tool-crop.c:473
 #: ../extensions/file_tools/gth-file-tool-rotate.c:400
 msgid "Uniform"
-msgstr "Yhtenäinen"
+msgstr "Tasainen"
 
 #: ../extensions/file_tools/gth-file-tool-adjust-contrast.c:548
 msgid "Equalize the histogram using the linear function"
@@ -1044,14 +2114,6 @@ msgstr "Värivalitsin"
 #: ../extensions/file_tools/gth-file-tool-color-picker.c:292
 msgid "Pick a color from the image"
 msgstr "Valitse väri kuvasta"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:439
-#: ../extensions/file_tools/gth-file-tool-crop.c:469
-#: ../extensions/file_tools/gth-file-tool-resize.c:589
-#: ../extensions/file_tools/gth-file-tool-rotate.c:396
-#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
-msgid "None"
-msgstr "Ei mitään"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:439
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
@@ -1081,7 +2143,7 @@ msgstr "5∶4"
 #: ../extensions/file_tools/gth-file-tool-resize.c:600
 #: ../pix/gth-test-aspect-ratio.c:49
 msgid "4∶3 (DVD, Book)"
-msgstr "4∶3 (DVD, kirja)"
+msgstr "4∶3 (dvd, kirja)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:449
 #: ../extensions/file_tools/gth-file-tool-resize.c:601
@@ -1105,7 +2167,7 @@ msgstr "16∶10"
 #: ../extensions/file_tools/gth-file-tool-resize.c:604
 #: ../pix/gth-test-aspect-ratio.c:53
 msgid "16∶9 (DVD)"
-msgstr "16∶9 (DVD)"
+msgstr "16∶9 (dvd)"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:453
 #: ../extensions/file_tools/gth-file-tool-resize.c:605
@@ -1128,7 +2190,7 @@ msgstr "Muu…"
 #: ../extensions/file_tools/gth-file-tool-crop.c:470
 #: ../extensions/file_tools/gth-file-tool-rotate.c:397
 msgid "Rule of Thirds"
-msgstr "Kolmanneksen sääntö"
+msgstr "Kolmeen osaan"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:471
 #: ../extensions/file_tools/gth-file-tool-rotate.c:398
@@ -1138,14 +2200,7 @@ msgstr "Kultainen leikkaus"
 #: ../extensions/file_tools/gth-file-tool-crop.c:472
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
 msgid "Center Lines"
-msgstr "Keskilinjat"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:661
-#: ../extensions/file_tools/gth-file-tool-resize.c:759
-#: ../extensions/file_tools/gth-file-tool-rotate.c:617
-#: ../pix/gth-file-chooser-dialog.c:258
-msgid "Options"
-msgstr "Asetukset"
+msgstr "Keskilinja"
 
 #: ../extensions/file_tools/gth-file-tool-curves.c:410
 msgid "Add to Presets"
@@ -1206,7 +2261,7 @@ msgstr "Arktinen"
 #. Translators: this is the name of an image filter
 #: ../extensions/file_tools/gth-file-tool-effects.c:640
 msgid "Mangos"
-msgstr "Mangot"
+msgstr "Mango"
 
 #. Translators: this is the name of an image filter
 #: ../extensions/file_tools/gth-file-tool-effects.c:688
@@ -1243,11 +2298,11 @@ msgstr "_Kirkkaus"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:378
 msgid "_Saturation"
-msgstr "_Saturaatio"
+msgstr "_Kylläisyys"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:383
 msgid "_Average"
-msgstr "_Keskimääräinen"
+msgstr "_Keskiverto"
 
 #: ../extensions/file_tools/gth-file-tool-grayscale.c:498
 msgid "Grayscale"
@@ -1301,10 +2356,12 @@ msgid "Rotate"
 msgstr "Käännä"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
+#: ../pix/resources/gears-menu.ui.h:4
 msgid "Save As…"
 msgstr "Tallenna nimellä…"
 
 #: ../extensions/file_tools/gth-file-tool-save.c:66
+#: ../pix/resources/gears-menu.ui.h:3
 msgid "Save"
 msgstr "Tallenna"
 
@@ -1324,10 +2381,54 @@ msgstr "Peru"
 msgid "Find _Duplicates…"
 msgstr "Etsi _samanlaiset…"
 
+#: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
+msgid "_Folders:"
+msgstr "_Kansiot:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
+msgid "Duplicates:"
+msgstr "Samanlaiset:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
+msgid "Files:"
+msgstr "Tiedostot:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
+#: ../pix/gth-main-default-metadata.c:32
+msgid "File"
+msgstr "Tiedosto"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
+msgid "Last modified"
+msgstr "Muokkausaika"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
+msgid "_View"
+msgstr "_Näytä"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:7
+#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
+msgid "_Delete"
+msgstr "_Poista"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:8
+msgid "No duplicates found."
+msgstr "Samanlaisia ei löytynyt."
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:1
+#: ../extensions/search/data/ui/search-editor.ui.h:2
+msgid "Start _at:"
+msgstr "A_loita:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
+msgid "_Filter:"
+msgstr "_Suodatin:"
+
 #: ../extensions/find_duplicates/dlg-find-duplicates.c:98
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1350
 msgid "Find Duplicates"
-msgstr "Etsi kuvien toisia kopioita"
+msgstr "Etsi samanlaisia"
 
 #: ../extensions/find_duplicates/dlg-find-duplicates.c:106
 #: ../extensions/search/actions.c:80
@@ -1336,11 +2437,11 @@ msgstr "_Etsi"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
-msgstr "jätä uusimmat kaksoiskappaleet"
+msgstr "jätä uusimmat samanlaiset"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:66
 msgid "leave the oldest duplicates"
-msgstr "jätä vanhimmat kaksoiskappaleet"
+msgstr "jätä vanhimmat samanlaiset"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder…"
@@ -1369,8 +2470,8 @@ msgstr[1] "%d tiedostoa (%s)"
 #, c-format
 msgid "%d duplicate"
 msgid_plural "%d duplicates"
-msgstr[0] "%d kaksoiskappale"
-msgstr[1] "%d kaksoiskappaleita"
+msgstr[0] "%d samanlainen"
+msgstr[1] "%d samanlaista"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:557
 msgid "Search completed"
@@ -1378,7 +2479,7 @@ msgstr "Haku valmis"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:741
 msgid "Searching for duplicates"
-msgstr "Etsitään kaksoiskappaleita"
+msgstr "Etsitään samanlaisia"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:744
 #: ../pix/gth-load-file-data-task.c:109 ../pix/gth-save-file-data-task.c:103
@@ -1390,15 +2491,87 @@ msgstr[1] "%d tiedostoa jäljellä"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:890
 msgid "Getting the file list"
-msgstr "Haetaan tiedostolista"
+msgstr "Haetaan tiedostolistaa"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1067
 msgid "Duplicates"
-msgstr "Kopioita"
+msgstr "Samanlaisia"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1373
 msgid "Select"
 msgstr "Valitse"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
+msgid "Public photos"
+msgstr "Julkisia kuvia"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:2
+msgid "Private photos, visible to family and friends"
+msgstr "Yksityisiä kuvia, näytetään perheelle ja kavereille"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:3
+msgid "Private photos, visible to friends"
+msgstr "Yksityisiä kuvia, näytetään kavereille"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
+msgid "Private photos, visible to family"
+msgstr "Yksityisiä kuvia, näytetään perheelle"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
+msgid "Private photos"
+msgstr "Yksityisiä kuvia"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
+msgid "Safe content"
+msgstr "Turvallinen sisältö"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
+msgid "Moderate content"
+msgstr "Maltillista sisältöä"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
+msgid "Restricted content"
+msgstr "Rajoitettua sisältöä"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
+msgid "_Account:"
+msgstr "_Tunnus:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
+msgid "Edit accounts"
+msgstr "Muokkaa tunnuksia"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
+msgid "Free space:"
+msgstr "Vapaa tila:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:3
+msgid "Ph_otoset:"
+msgstr "_Kuvasetti:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
+msgid "_Privacy:"
+msgstr "_Yksityisyys:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
+msgid "_Safety:"
+msgstr "_Turvallisuus:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
+msgid "Hi_de from public searches"
+msgstr "_Piilota julkisista hakutuloksista"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:10
+msgid "_Resize if larger than:"
+msgstr "_Muuta kokoa, jos suurempi kuin:"
+
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:2
+#: ../extensions/oauth/data/ui/oauth-account-chooser.ui.h:1
+msgid "A_ccount:"
+msgstr "_Tunnus:"
 
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:136
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:410
@@ -1409,7 +2582,7 @@ msgstr "Palvelimeen ei saatu yhteyttä"
 
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:161
 msgid "Files successfully uploaded to the server."
-msgstr "Kuvat lähetetty onnistuneesti palvelimelle."
+msgstr "Kuvat lähetetty palvelimelle."
 
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:164
 #: ../extensions/webalbums/gth-web-exporter.c:1819
@@ -1437,7 +2610,7 @@ msgstr "Tiedostojen vienti ei onistunut"
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:624
 #, c-format
 msgid "Export to %s"
-msgstr "Vie nimellä %s"
+msgstr "Vie %s"
 
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:312
 #: ../pix/gth-file-selection-info.c:143
@@ -1449,7 +2622,7 @@ msgstr[1] "%d tiedostoa"
 
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:337
 msgid "Could not get the photo list"
-msgstr "Kuvaluetteloa ei saatu"
+msgstr "Kuvien listaa ei saatu"
 
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:374
 #: ../extensions/flicker_utils/dlg-import-from-flickr.c:553
@@ -1547,16 +2720,16 @@ msgstr "Kuva tallennettu %s"
 #: ../extensions/gstreamer_tools/actions.c:101
 msgctxt "Filename"
 msgid "Screenshot"
-msgstr "Kuvakaappaus"
+msgstr "Kaappaus"
 
 #: ../extensions/gstreamer_tools/actions.c:137
 #: ../extensions/gstreamer_tools/actions.c:148
 msgid "Could not take a screenshot"
-msgstr "Kuvakaappausta ei voitu ottaa"
+msgstr "Kaappausta ei voitu ottaa"
 
 #: ../extensions/gstreamer_tools/callbacks.c:32
 msgid "Screenshot"
-msgstr "Kuvakaappaus"
+msgstr "Kaappaus"
 
 #: ../extensions/gstreamer_tools/callbacks.c:33
 msgid "Play/Pause"
@@ -1580,44 +2753,134 @@ msgid "Next frame"
 msgstr "Seuraava kuva"
 
 #: ../extensions/gstreamer_tools/callbacks.c:38
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:38
 msgid "Go forward 1 second"
-msgstr "Eteenpäin 1 sekunti"
+msgstr "Eteen 1 sekunti"
 
 #: ../extensions/gstreamer_tools/callbacks.c:39
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:22
 msgid "Go forward 5 seconds"
-msgstr "Eteenpäin 5 sekuntia"
+msgstr "Eteen 5 sekuntia"
 
 #: ../extensions/gstreamer_tools/callbacks.c:40
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:25
 msgid "Go forward 10 seconds"
-msgstr "Eteenpäin 10 sekuntia"
+msgstr "Eteen 10 sekuntia"
 
 #: ../extensions/gstreamer_tools/callbacks.c:41
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:28
 msgid "Go forward 1 minute"
-msgstr "Eteenpäin 1 minuutti"
+msgstr "Eteen 1 minuutti"
 
 #: ../extensions/gstreamer_tools/callbacks.c:42
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:31
 msgid "Go forward 5 minutes"
-msgstr "Eteenpäin 5 minuuttia"
+msgstr "Eteen 5 minuuttia"
 
 #: ../extensions/gstreamer_tools/callbacks.c:43
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:35
 msgid "Go back 1 second"
-msgstr "1 sekunti taaksepäin"
+msgstr "1 sekunti taakse"
 
 #: ../extensions/gstreamer_tools/callbacks.c:44
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:10
 msgid "Go back 5 seconds"
-msgstr "5 sekuntia taaksepäin"
+msgstr "5 sekuntia taakse"
 
 #: ../extensions/gstreamer_tools/callbacks.c:45
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:13
 msgid "Go back 10 seconds"
-msgstr "10 sekuntia taaksepäin"
+msgstr "10 sekuntia taakse"
 
 #: ../extensions/gstreamer_tools/callbacks.c:46
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:16
 msgid "Go back 1 minute"
-msgstr "1 minuutti taaksepäin"
+msgstr "1 minuutti taakse"
 
 #: ../extensions/gstreamer_tools/callbacks.c:47
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:19
 msgid "Go back 5 minutes"
-msgstr "5 minuuttia taaksepäin"
+msgstr "5 minuuttia taakse"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:1
+msgid "Use hardware acceleration"
+msgstr "Käytä laitteistokiihdytystä"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:2
+msgid "_Screenshots location:"
+msgstr "_Kaappausten sijainti:"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
+msgid "Play"
+msgstr "Toista"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
+msgid "Slower"
+msgstr "Hidasta"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:3
+msgid "Faster"
+msgstr "Nopeuta"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
+msgid "Restart when finished"
+msgstr "Aloita alusta"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
+msgid "Time:"
+msgstr "Aika:"
+
+#. minus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:9
+msgid "-5s"
+msgstr "-5s"
+
+#. minus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:12
+msgid "-10s"
+msgstr "-10s"
+
+#. minus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:15
+msgid "-1m"
+msgstr "-1m"
+
+#. minus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:18
+msgid "-5m"
+msgstr "-5m"
+
+#. plus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:21
+msgid "+5s"
+msgstr "+5s"
+
+#. plus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:24
+msgid "+10s"
+msgstr "+10s"
+
+#. plus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:27
+msgid "+1m"
+msgstr "+1m"
+
+#. plus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:30
+msgid "+5m"
+msgstr "+5m"
+
+#. minus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:34
+msgid "-1s"
+msgstr "-1s"
+
+#. plus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:37
+msgid "+1s"
+msgstr "+1s"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:595
 msgid "Playing video"
@@ -1627,16 +2890,13 @@ msgstr "Videon toistaminen"
 msgid "Pause"
 msgstr "Pysäytä"
 
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
-msgid "Play"
-msgstr "Toista"
-
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1127
 msgid "Take a screenshot"
-msgstr "Ota kuvakaappaus"
+msgstr "Ota kaappaus"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1134
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:6
 msgid "Fit to window"
 msgstr "Sovita ikkunaan"
 
@@ -1657,6 +2917,7 @@ msgid "Artist"
 msgstr "Esittäjä"
 
 #: ../extensions/gstreamer_tools/main.c:48
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "Album"
 msgstr "Albumi"
 
@@ -1678,10 +2939,12 @@ msgid "Framerate"
 msgstr "Kuvanopeus"
 
 #: ../extensions/gstreamer_tools/main.c:54
+#: ../extensions/image_print/data/ui/print-layout.ui.h:27
 msgid "Width"
 msgstr "Leveys"
 
 #: ../extensions/gstreamer_tools/main.c:55
+#: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Height"
 msgstr "Korkeus"
 
@@ -1722,6 +2985,100 @@ msgstr "Valittuja kuvia ei voitu tulostaa"
 msgid "Print"
 msgstr "Tulosta"
 
+#: ../extensions/image_print/data/ui/print-layout.ui.h:1
+msgid "Centered"
+msgstr "Keskitetty"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:2
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:3
+msgid "millimeters"
+msgstr "millimetriä"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:4
+msgid "inches"
+msgstr "tuumaa"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:7
+msgid "The current page number"
+msgstr "Sivunumero"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:8
+msgid "The total number of pages"
+msgstr "Sivujen kokonaismäärä"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:9
+msgid "Special code"
+msgstr "Erikoismerkit"
+
+#. translate only the text in the curly brackets
+#: ../extensions/image_print/data/ui/print-layout.ui.h:13
+#, no-c-format
+msgid "%D{ format }"
+msgstr "%D{ formaatti }"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:14
+msgid "The current date"
+msgstr "Nykyhetki"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:15
+msgid "The total number of files"
+msgstr "Tiedostojen kokonaismäärä"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:16
+msgid "The event description"
+msgstr "Tapahtuman kuvaus"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:20
+msgid "_Rows:"
+msgstr "_Riviä:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:22
+msgid "Image"
+msgstr "Kuva"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:23
+msgid "Position:"
+msgstr "Paikka:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:24
+msgid "Left"
+msgstr "Vasen"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:25
+msgid "Top"
+msgstr "Ylös"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
+msgid "Rotation:"
+msgstr "Kääntäminen:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+msgid "Unit:"
+msgstr "Yksikkö:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+msgid "Preview"
+msgstr "Esikatselu"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:1
+msgid "Fonts"
+msgstr "Fontit"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:5
+msgid "Select Caption Font"
+msgstr "Valitse fontti"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:6
+msgid "Select Header Font"
+msgstr "Valitse ylätunnisteen fontti"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:7
+msgid "Select Footer Font"
+msgstr "Valitse alatunnisteen fontti"
+
 #: ../extensions/image_print/gth-image-print-job.c:40
 msgid "Total number of files"
 msgstr "Tiedostojen kokonaismäärä"
@@ -1751,7 +3108,7 @@ msgstr "Kuvat"
 #: ../pix/gth-image-loader.c:258 ../pix/gth-image-loader.c:390
 #: ../pix/gth-image-utils.c:117 ../pix/gth-image-utils.c:123
 msgid "No suitable loader available for this file type"
-msgstr "Tälle tiedostotyypille sopivaa lataajaa ei ole saatavilla"
+msgstr "Tiedostotyypille ei ole soveltuvaa latainta"
 
 #. translators: %s is a filename
 #: ../extensions/image_print/gth-load-image-info-task.c:168
@@ -1770,7 +3127,7 @@ msgstr "Käännä fyysisesti"
 
 #: ../extensions/image_rotation/callbacks.c:60
 msgid "Reset the EXIF Orientation"
-msgstr "Palauta EXIF-asento"
+msgstr "Palauta asento EXIF"
 
 #: ../extensions/image_rotation/gth-reset-orientation-task.c:114
 #: ../extensions/image_rotation/gth-transform-task.c:146
@@ -1904,6 +3261,117 @@ msgstr "Vieritä nopeasti alas"
 msgid "Scroll to center"
 msgstr "Vieritä keskelle"
 
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
+msgid "After loading an image:"
+msgstr "Kuvan latauksen jälkeen:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
+msgid "Set to actual size"
+msgstr "Näytä todellisessa koossa"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
+msgid "Keep previous zoom"
+msgstr "Säilytä viimeisin suurennos"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
+msgid "Fit to window if larger"
+msgstr "Sovita ikkunaan jos suurempi"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:7
+msgid "Fit to width"
+msgstr "Sovita leveyteen"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
+msgid "Fit to width if larger"
+msgstr "Sovita leveyteen jos suurempi"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
+msgid "Reset scrollbar positions"
+msgstr "Nollaa vierityspalkin paikka"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
+msgid "Mouse wheel action:"
+msgstr "Hiiren rullan toiminta:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:10
+msgctxt "zoom quality"
+msgid "Change image"
+msgstr "Vaihda kuva"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
+msgctxt "zoom quality"
+msgid "Zoom image"
+msgstr "Suurenna kuvaa"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:12
+msgid "Zoom quality:"
+msgstr "Suurennuksen laatu:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:13
+msgctxt "zoom quality"
+msgid "_High"
+msgstr "_Korkea"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:14
+msgctxt "zoom quality"
+msgid "_Low"
+msgstr "_Matala"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:15
+msgid "Transparency:"
+msgstr "Läpinäkyvyys:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:16
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:1
+msgid "Checkered"
+msgstr "Ruudullinen"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:17
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:2
+msgid "White"
+msgstr "Valkoinen"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:18
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:3
+msgid "Gray"
+msgstr "Harmaa"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:19
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:4
+msgid "Black"
+msgstr "Musta"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:5
+msgid "Automatic"
+msgstr "Automaattinen"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:8
+msgid "Fit to height"
+msgstr "Sovita korkeuteen"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:10
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:12
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:14
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:16
+#, no-c-format
+msgid "300%"
+msgstr "300%"
+
 #: ../extensions/image_viewer/gth-image-histogram.c:94
 msgid "Histogram"
 msgstr "Pylväskaavio"
@@ -1915,14 +3383,6 @@ msgstr "Kopioi kuva"
 #: ../extensions/image_viewer/gth-image-viewer-page.c:85
 msgid "Paste Image"
 msgstr "Liitä kuva"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
-msgid "Set to actual size"
-msgstr "Näytä todellisessa koossa"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
-msgid "Fit to window if larger"
-msgstr "Sovita ikkunaan jos suurempi"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1174
 msgid "Apply the embedded color profile"
@@ -1964,6 +3424,19 @@ msgstr "Kuvankäsittely"
 #: ../pix/gth-main-default-types.c:42 ../pix/gth-shortcuts-window.c:40
 msgid "Viewer"
 msgstr "Kuvakatselin"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:1
+msgid "_Destination"
+msgstr "Ko_hdekansio"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:2
+msgid "_Automatic subfolder"
+msgstr "_Alikansiot automaattisesti"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:3
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:7
+msgid "_Template:"
+msgstr "_Malli:"
 
 #: ../extensions/importer/gth-import-destination-button.c:113
 msgid "Invalid Destination"
@@ -2018,6 +3491,39 @@ msgstr ""
 #: ../extensions/list_tools/callbacks.c:157 ../extensions/list_tools/main.c:31
 msgid "Tools"
 msgstr "Työkalut"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
+msgid "Co_mmands:"
+msgstr "Ko_mennot:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:2
+msgid "_Wait for the command to finish"
+msgstr "_Odota komennon loppumista"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:3
+msgid "E_xecute command once for every file"
+msgstr "Suorita komento _jokaiselle erikseen"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:4
+msgid "_Terminal command (shell script)"
+msgstr "_Päätteen komento (shell script)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:5
+msgid "Sh_ortcut:"
+msgstr "_Pikanäppäin:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:6
+msgid "_Command:"
+msgstr "Ko_mento:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:7
+msgid "Edit command"
+msgstr "Muokkaa komentoa"
+
+#: ../extensions/list_tools/data/ui/tools-menu.ui.h:1
+#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
+msgid "Personalize…"
+msgstr "Mukauta…"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:250
 msgid "Script"
@@ -2133,6 +3639,16 @@ msgstr "I"
 msgid "Map"
 msgstr "Kartta"
 
+#: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
+msgid "A_ccounts:"
+msgstr "T_unnukset:"
+
+#. the message pane
+#: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
+#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
+msgid "Loading…"
+msgstr "Ladataan…"
+
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:192
 msgid "New authentication…"
 msgstr "Uusi todennus…"
@@ -2143,15 +3659,15 @@ msgstr "Valtuutus vaaditaan"
 
 #: ../extensions/oauth/web-service.c:379
 msgid "Choose _Account…"
-msgstr "Valitse _tili…"
+msgstr "Valitse _tunnus…"
 
 #: ../extensions/oauth/web-service.c:657
 msgid "Choose Account"
-msgstr "Valitse käyttäjätunnus"
+msgstr "Valitse tunnus"
 
 #: ../extensions/oauth/web-service.c:774
 msgid "Edit Accounts"
-msgstr "Muokkaa käyttäjätunnuksia"
+msgstr "Muokkaa tunnuksia"
 
 #: ../extensions/oauth/web-service.c:792 ../extensions/oauth/web-service.c:809
 msgid "Connecting to the server"
@@ -2185,6 +3701,33 @@ msgstr "Kansi_o…"
 #: ../extensions/photo_importer/callbacks.c:63
 msgid "I_mport From"
 msgstr "_Tuo"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
+msgid "After importing from a device:"
+msgstr "Laitteesta tuonnin jälkeen:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
+msgid "_Rotate the images physically"
+msgstr "_Käännä kuvat fyysisesti"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:3
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:6
+msgid "_Delete the imported files from the source"
+msgstr "_Poista laitteesta tuodut kuvat siirron jälkeen"
+
+#. view label
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
+#: ../pix/gth-filterbar.c:391
+msgid "S_how:"
+msgstr "_Näytä:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
+msgid "_Event:"
+msgstr "Ta_pahtuma:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
+msgid "_Tags:"
+msgstr "_Tunnisteet:"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:218
 msgid "Could not import the files"
@@ -2224,6 +3767,27 @@ msgstr "Punasilmäisyyden poisto"
 msgid "Remove the red eye effect caused by camera flashes"
 msgstr "Poista kameran salaman aiheuttamat punaiset silmät"
 
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:2
+msgid "_Sort by:"
+msgstr "_Järjestä:"
+
+#. Translators: this is the text case (upper or lower case).
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:4
+msgid "Cas_e:"
+msgstr "Kirjainkoko:"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:6
+msgid "Re_verse Order"
+msgstr "Kään_teinen järjestys"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:9
+msgid "Revert to the last used template"
+msgstr "Palauta viimeksi käytettyyn mallipohjaan"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:10
+msgid "_Preview:"
+msgstr "_Esikatselu:"
+
 #: ../extensions/rename_series/dlg-rename-series.c:54
 #: ../extensions/webalbums/dlg-web-exporter.c:45
 msgid "Original filename"
@@ -2235,7 +3799,7 @@ msgstr "Alkuperäinen tiedostopääte"
 
 #: ../extensions/rename_series/dlg-rename-series.c:56
 msgid "Original enumerator"
-msgstr "Alkuperäinen luettelointi"
+msgstr "Alkuperäinen numerointi"
 
 #: ../extensions/rename_series/dlg-rename-series.c:57
 msgid "Modification date"
@@ -2248,7 +3812,7 @@ msgstr "Digitalisointipäivä"
 #: ../extensions/rename_series/dlg-rename-series.c:509
 #: ../extensions/rename_series/dlg-rename-series.c:636
 msgid "Could not rename the files"
-msgstr "Nimen muuttaminen ei onnistunut kuville"
+msgstr "Nimien muutos ei onnistunut"
 
 #: ../extensions/rename_series/dlg-rename-series.c:781
 #: ../pix/gth-folder-tree.c:1976
@@ -2283,13 +3847,34 @@ msgstr "Nimetään uudelleen tiedostoja"
 msgid "Resize Images…"
 msgstr "Muuta kokoa…"
 
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:1
+msgid "pixel"
+msgstr "kuvapiste"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:4
+msgid "New dimensions"
+msgstr "Uudet mitat"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:6
+msgid "_Height:"
+msgstr "_Korkeus:"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:7
+msgid "_Preserve original aspect ratios"
+msgstr "Säilytä alkuperäinen _kuvasuhde"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:11
+#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
+msgid "Format"
+msgstr "Muoto"
+
 #: ../extensions/resize_images/dlg-resize-images.c:341
 msgid "Resize Images"
 msgstr "Muuta kokoa"
 
 #: ../extensions/resize_images/dlg-resize-images.c:427
 msgid "Keep the original format"
-msgstr "Pidä alkuperäinen muoto"
+msgstr "Pidä alkuperäinen formaatti"
 
 #: ../extensions/search/actions.c:50 ../extensions/search/actions.c:122
 #: ../extensions/search/actions.c:128
@@ -2326,10 +3911,6 @@ msgstr "jos kaikki ehdot täytetään"
 #: ../pix/gth-filter-editor-dialog.c:168
 msgid "any of the following rules"
 msgstr "jos joku ehdoista täyttyy"
-
-#: ../extensions/search/gth-search-source-selector.c:123
-msgid "_Include sub-folders"
-msgstr "_Hae alikansioista"
 
 #: ../extensions/search/gth-search-source-selector.c:130
 msgid "Add another location"
@@ -2405,7 +3986,7 @@ msgstr "Valinnat"
 
 #: ../extensions/slideshow/callbacks.c:40
 msgid "Start presentation"
-msgstr "Käynnistä esitys"
+msgstr "Aloita esitys"
 
 #: ../extensions/slideshow/callbacks.c:41
 msgid "Terminate presentation"
@@ -2413,7 +3994,7 @@ msgstr "Lopeta esitys"
 
 #: ../extensions/slideshow/callbacks.c:42
 msgid "Pause/Resume presentation"
-msgstr "Keskeytä/Jatka esitystä"
+msgstr "Pysäytä tai Jatka esitystä"
 
 #: ../extensions/slideshow/callbacks.c:43
 #: ../pix/gth-browser-actions-entries.h:131
@@ -2434,10 +4015,50 @@ msgid "Show previous file"
 msgstr "Näytä edellinen tiedosto"
 
 #: ../extensions/slideshow/callbacks.c:65
-#: ../extensions/slideshow/callbacks.c:362 ../extensions/slideshow/main.c:286
-#: ../extensions/slideshow/preferences.c:142 ../pix/gth-shortcuts-window.c:41
+#: ../extensions/slideshow/callbacks.c:362
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
+#: ../extensions/slideshow/main.c:286 ../extensions/slideshow/preferences.c:142
+#: ../pix/gth-shortcuts-window.c:41
 msgid "Presentation"
 msgstr "Esitys"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
+msgid "_Personalize"
+msgstr "_Mukauta"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
+msgid "_Transition effect:"
+msgstr "_Siirtymän tyyli:"
+
+#. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
+msgid "_Change automatically, every"
+msgstr "_Vaihda automaattisesti joka"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
+msgctxt "Every x seconds"
+msgid "seconds"
+msgstr "sekunti"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
+msgid "_Restart when finished"
+msgstr "_Aloita alusta"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
+msgid "R_andom order"
+msgstr "_Satunnainen järjestys"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
+msgid "Playlist"
+msgstr "Soittolista"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
+msgid "Add files to the playlist"
+msgstr "Lisää tiedostoja soittolistalle"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
+msgid "Remove the selected files"
+msgstr "Poista valitut tiedostot"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:185
 msgid "Choose the files to play"
@@ -2481,11 +4102,11 @@ msgstr "Pyöräytä kuva"
 
 #: ../extensions/slideshow/main.c:339
 msgid "Cube from right"
-msgstr "Kuution kierto vasemmalle"
+msgstr "Kuutiona vasemmalle"
 
 #: ../extensions/slideshow/main.c:345
 msgid "Cube from bottom"
-msgstr "Kuution kierto ylös"
+msgstr "Kuutiona ylös"
 
 #: ../extensions/terminal/actions.c:53
 msgid "Terminal"
@@ -2505,7 +4126,7 @@ msgstr "Näytä kuva"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:27
 msgid "Go back to the index"
-msgstr "Takaisin luettelosivulle"
+msgstr "Takaisin pääsivulle"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:28
 #, c-format
@@ -2515,14 +4136,6 @@ msgstr "Kuva %d / %d"
 #: ../extensions/webalbums/data/albumthemes/text.h:29
 msgid "Index"
 msgstr "Kuvaluettelo"
-
-#: ../extensions/webalbums/data/albumthemes/text.h:30
-msgid "Next"
-msgstr "Seuraava"
-
-#: ../extensions/webalbums/data/albumthemes/text.h:32
-msgid "Previous"
-msgstr "Edellinen"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:33
 #, c-format
@@ -2545,13 +4158,53 @@ msgstr "Näytä edellinen kuva"
 msgid "View the previous page"
 msgstr "Näytä edellinen sivu"
 
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
+msgid "All images on a single image"
+msgstr "Kaikki kuvat yhdessä kuvassa"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
+msgid "Adapts to the window width"
+msgstr "Mukauta ikkunan leveyteen"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
+msgid "_Copy originals to destination"
+msgstr "_Luo kopiot alkuperäisistä kuvista kansioon"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:17
+msgid "_Adapt to the window width "
+msgstr "_Mukauta ikkunan leveyteen "
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
+msgid "Index Page"
+msgstr "Pääsivu"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
+msgid "Thumbnail Caption"
+msgstr "Pikkukuvan kuvateksti"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
+msgid "Image Page"
+msgstr "Kuvasivu"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
+msgid "Show the description, if available"
+msgstr "Näytä mahdollinen kuvaus"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:24
+msgid "Show the following attributes:"
+msgstr "Näytä seuraavat tiedot:"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
+msgid "Image Attributes"
+msgstr "Kuvan tiedot"
+
 #: ../extensions/webalbums/dlg-web-exporter.c:43
 msgid "Current image number"
-msgstr "Nykyisen kuvan numero"
+msgstr "Kuvan numero"
 
 #: ../extensions/webalbums/dlg-web-exporter.c:44
 msgid "Total number of images"
-msgstr "Kuvien määrä yhteensä"
+msgstr "Kuvien määrä"
 
 #: ../extensions/webalbums/dlg-web-exporter.c:531
 msgid "Web Album"
@@ -2582,7 +4235,7 @@ msgstr "Tallennetaan HTML-sivuja: Kuvia"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2199
 msgid "Saving HTML pages: Indexes"
-msgstr "Tallennetaan HTML-sivuja: kuvaluettelot"
+msgstr "Tallennetaan HTML-sivuja: Pääsivut"
 
 #: ../extensions/webalbums/gth-web-exporter.c:2484
 msgid "Copying original images"
@@ -2703,7 +4356,7 @@ msgid "_Restart"
 msgstr "_käynnistä uudelleen"
 
 #: ../pix/dlg-preferences-shortcuts.c:296
-#: ../pix/dlg-preferences-shortcuts.c:371
+#: ../pix/dlg-preferences-shortcuts.c:371 ../pix/resources/gears-menu.ui.h:5
 msgid "Revert"
 msgstr "Kumoa"
 
@@ -2877,15 +4530,11 @@ msgstr ""
 "  Kimmo Kujansuu https://launchpad.net/~mahtiankka\n"
 "  Miika Laaksonen https://launchpad.net/~miika"
 
-#: ../pix/gth-browser-actions-entries.h:98
+#: ../pix/gth-browser-actions-entries.h:98 ../pix/resources/gears-menu.ui.h:1
 msgid "New Window"
 msgstr "Uusi ikkuna"
 
-#: ../pix/gth-browser-actions-entries.h:99
-msgid "Help"
-msgstr "Ohje"
-
-#: ../pix/gth-browser-actions-entries.h:100
+#: ../pix/gth-browser-actions-entries.h:100 ../pix/resources/gears-menu.ui.h:9
 msgid "Keyboard Shortcuts"
 msgstr "Pikanäppäimet"
 
@@ -2908,9 +4557,10 @@ msgstr "Avaa sijainti"
 
 #: ../pix/gth-browser-actions-entries.h:109
 #: ../pix/gth-browser-actions-entries.h:110 ../pix/gth-browser.c:4791
-#: ../pix/gth-browser.c:4809
+#: ../pix/gth-browser.c:4809 ../pix/resources/file-list-menu.ui.h:1
+#: ../pix/resources/file-menu.ui.h:1
 msgid "Fullscreen"
-msgstr "Koko näyttö"
+msgstr "Koko näytössä"
 
 #: ../pix/gth-browser-actions-entries.h:111
 msgid "Revert image to saved"
@@ -3020,7 +4670,7 @@ msgstr "Tallennetaanko muutokset \"%s\"?"
 
 #: ../pix/gth-browser.c:2033
 msgid "If you don’t save, changes to the file will be permanently lost."
-msgstr "Jos et tallenna, tiedostoon tehdyt muutokset menetetään."
+msgstr "Jos et tallenna, tehdyt muutokset menetetään."
 
 #: ../pix/gth-browser.c:2034
 msgid "Do _Not Save"
@@ -3099,11 +4749,6 @@ msgstr "_Näytä formaatin valinnat"
 msgid "No file"
 msgstr "Ei tiedostoa"
 
-#. the message pane
-#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
-msgid "Loading…"
-msgstr "Ladataan…"
-
 #: ../pix/gth-file-source-vfs.c:298
 msgid "Computer"
 msgstr "Tietokone"
@@ -3168,20 +4813,6 @@ msgstr "laskeva järjestys"
 msgid "No limit specified"
 msgstr "Rajaa ei määritelty"
 
-#. limit label
-#: ../pix/gth-filter.c:270 ../pix/gth-filter.c:338
-msgid "_Limit to"
-msgstr "_Rajoita"
-
-#. view label
-#: ../pix/gth-filterbar.c:391
-msgid "S_how:"
-msgstr "_Näytä:"
-
-#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
-msgid "Personalize…"
-msgstr "Mukauta…"
-
 #: ../pix/gth-folder-tree.c:1467
 msgid "(Open Parent)"
 msgstr "(Avaa yläkansio)"
@@ -3216,17 +4847,13 @@ msgstr "Sopivaa moduulia kuvan tallentamiseen nimellä \"%s\" ei löytynyt"
 msgid "Reading file information"
 msgstr "Luetaan tiedoston tietoja"
 
-#: ../pix/gth-location-chooser-dialog.c:194
+#: ../pix/gth-location-chooser-dialog.c:194 ../pix/resources/gears-menu.ui.h:7
 msgid "Hidden Files"
 msgstr "Piilotiedostot"
 
 #: ../pix/gth-location-chooser.c:572
 msgid "Locations"
 msgstr "Sijainnit"
-
-#: ../pix/gth-main-default-metadata.c:32
-msgid "File"
-msgstr "Tiedosto"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -3248,14 +4875,6 @@ msgstr "Muokkausaika"
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Type"
 msgstr "Tyyppi"
-
-#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
-msgid "Format"
-msgstr "Muoto"
-
-#: ../pix/gth-main-default-metadata.c:48
-msgid "Dimensions"
-msgstr "Mitat"
 
 #: ../pix/gth-main-default-metadata.c:49
 msgid "Duration"
@@ -3323,7 +4942,7 @@ msgstr "tiedostokoko"
 
 #: ../pix/gth-main-default-sort-types.c:169
 msgid "file modified date"
-msgstr "tiedoston muokkausajan mukaan"
+msgstr "muokkausaika"
 
 #: ../pix/gth-main-default-sort-types.c:170
 msgid "no sorting"
@@ -3373,10 +4992,6 @@ msgstr "Aihe (upotettu)"
 msgid "Description (embedded)"
 msgstr "Kuvaus (upotettu)"
 
-#: ../pix/gth-main-default-tests.c:406
-msgid "Aspect ratio"
-msgstr "Kuvasuhde"
-
 #: ../pix/gth-main-default-types.c:39
 msgid "Show/Hide"
 msgstr "Näytä/piilota"
@@ -3392,10 +5007,6 @@ msgstr "Tiedostonhallinta"
 #: ../pix/gth-overwrite-dialog.c:326
 msgid "Overwrite"
 msgstr "Korvaa"
-
-#: ../pix/gth-progress-dialog.c:158
-msgid "Cancel operation"
-msgstr "Peru toiminto"
 
 #: ../pix/gth-save-file-data-task.c:105
 msgid "Saving file information"
@@ -3416,10 +5027,6 @@ msgstr "Luo tunniste “%s”"
 msgid "Show all the tags"
 msgstr "Näytä kaikki tunnisteet"
 
-#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
-msgid "_Delete"
-msgstr "_Poista"
-
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
 msgstr "Lomat"
@@ -3430,7 +5037,7 @@ msgstr "Väliaikainen"
 
 #: ../pix/gth-tags-file.c:237
 msgid "Screenshots"
-msgstr "Kuvakaappaus"
+msgstr "Ruudunkaappaus"
 
 #: ../pix/gth-tags-file.c:238
 msgid "Science"
@@ -3458,15 +5065,11 @@ msgstr "Syntymäpäivä"
 
 #: ../pix/gth-tags-file.c:244
 msgid "Astronomy"
-msgstr "Astronomia"
+msgstr "Tähtitiede"
 
 #: ../pix/gth-tags-file.c:245
 msgid "Family"
 msgstr "Perhe"
-
-#: ../pix/gth-template-editor-dialog.c:419
-msgid "Text"
-msgstr "Teksti"
 
 #. Translators: The space character not the Astronomy space.
 #: ../pix/gth-template-editor-dialog.c:424
@@ -3645,7 +5248,7 @@ msgstr "Peru"
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../pix/gtk-utils.h:40
+#: ../pix/gtk-utils.h:40 ../pix/resources/gears-menu.ui.h:10
 msgid "_Help"
 msgstr "_Ohje"
 
@@ -3667,8 +5270,28 @@ msgstr "_Tallenna"
 
 #: ../pix/gtk-utils.h:45
 msgid "E_xecute"
-msgstr "_Suoritus"
+msgstr "_Suorita"
 
 #: ../pix/gtk-utils.h:46
 msgid "_Upload"
 msgstr "_Lähetä"
+
+#: ../pix/resources/folder-menu.ui.h:1
+msgid "Open in New Window"
+msgstr "Avaa uudessa ikkunassa"
+
+#: ../pix/resources/gears-menu.ui.h:2
+msgid "Open Location…"
+msgstr "Avaa sijainti…"
+
+#: ../pix/resources/gears-menu.ui.h:6
+msgid "Sort By…"
+msgstr "Järjestä…"
+
+#: ../pix/resources/gears-menu.ui.h:11
+msgid "_About Pix"
+msgstr "_Tietoja Pix"
+
+#: ../pix/resources/history-menu.ui.h:1
+msgid "_Delete History"
+msgstr "_Poista historia"

@@ -22,16 +22,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 14:42+0100\n"
-"PO-Revision-Date: 2023-06-06 13:00+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"POT-Creation-Date: 2023-06-26 13:19+0200\n"
+"PO-Revision-Date: 2023-06-27 17:36+0000\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2023-06-08 10:21+0000\n"
-"X-Generator: Launchpad (build 620cd5280e3a973662e263ebf9346837ed657a46)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:57+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 "Language: da\n"
 
 #: ../data/gschemas/org.x.pix.gschema.xml.h:1
@@ -66,10 +66,332 @@ msgstr ""
 "Mulige værdier inkluderer: generel::usorteret, fil::navn, fil::størrelse, "
 "fil::mtid, exif::billede::datotidoriginal"
 
+#: ../data/ui/browser-preferences.ui.h:1
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
+#: ../extensions/image_print/data/ui/print-layout.ui.h:21
+msgid "Caption"
+msgstr "Billedtekst"
+
+#: ../data/ui/browser-preferences.ui.h:2
+msgid "Behavior"
+msgstr "Opførsel"
+
+#: ../data/ui/browser-preferences.ui.h:3
+msgid "_Single click to open files"
+msgstr "_Enkeltklik for at åbne filer"
+
+#: ../data/ui/browser-preferences.ui.h:4
+msgid "_Double click to open files"
+msgstr "_Dobbeltklik for at åbne filer"
+
+#: ../data/ui/browser-preferences.ui.h:5
+msgid "_Open files in fullscreen mode"
+msgstr "_Åbn filer i fuldskærmstilstand"
+
+#: ../data/ui/browser-preferences.ui.h:6 ../data/ui/preferences.ui.h:15
+#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
+#: ../extensions/gstreamer_tools/main.c:41
+#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
+msgid "Other"
+msgstr "Andet"
+
+#: ../data/ui/browser-preferences.ui.h:7
+msgid "Thumbnail _size:"
+msgstr "Miniaturebilledernes _størrelse:"
+
+#: ../data/ui/browser-preferences.ui.h:8
+msgid "D_etermine image type from content (slower)"
+msgstr "Bestem billedtype fra _indhold (langsommere)"
+
+#: ../data/ui/code-selector.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:5
+msgid "1"
+msgstr "1"
+
+#: ../data/ui/code-selector.ui.h:2
+msgid "digits"
+msgstr "cifre"
+
+#: ../data/ui/code-selector.ui.h:3 ../extensions/comments/main.c:44
+#: ../extensions/comments/main.c:170
+#: ../extensions/image_print/data/ui/print-layout.ui.h:10
+#: ../pix/gth-main-default-metadata.c:64
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: ../data/ui/code-selector.ui.h:4
+msgid "Edit"
+msgstr "Redigér"
+
+#: ../data/ui/code-selector.ui.h:5
+msgid "Default value"
+msgstr "Standardværdi"
+
+#: ../data/ui/code-selector.ui.h:6
+msgid "remove"
+msgstr "fjern"
+
+#: ../data/ui/code-selector.ui.h:7
+msgid "add"
+msgstr "tilføj"
+
+#: ../data/ui/extensions-preferences.ui.h:1
+msgid "_Extensions:"
+msgstr "_Udvidelser:"
+
+#: ../data/ui/file-selection-info.ui.h:1
+#: ../extensions/webalbums/data/albumthemes/text.h:32
+msgid "Previous"
+msgstr "Foregående"
+
+#: ../data/ui/file-selection-info.ui.h:2
+#: ../extensions/webalbums/data/albumthemes/text.h:30
+msgid "Next"
+msgstr "Næste"
+
+#: ../data/ui/filter-editor.ui.h:1
+msgid "Filter _Name:"
+msgstr "Filter_navn:"
+
+#: ../data/ui/filter-editor.ui.h:2
+#: ../extensions/search/data/ui/search-editor.ui.h:1
+msgid "_Match:"
+msgstr "_Match:"
+
+#: ../data/ui/filter-editor.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:3
+msgid "Rules:"
+msgstr "Regler:"
+
+#. limit label
+#: ../data/ui/filter-editor.ui.h:4 ../pix/gth-filter.c:270
+#: ../pix/gth-filter.c:338
+msgid "_Limit to"
+msgstr "_Begræns til"
+
+#: ../data/ui/filter-editor.ui.h:5
+msgid "selected by"
+msgstr "valgt af"
+
+#: ../data/ui/histogram-info.ui.h:1
+msgid "Mean:"
+msgstr "Gennemsnit:"
+
+#. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsized at the end.
+#: ../data/ui/histogram-info.ui.h:3
+msgid "Std dev:"
+msgstr "Stdafv.:"
+
+#: ../data/ui/histogram-info.ui.h:4
+msgid "Median:"
+msgstr "Median:"
+
+#. After the colon there is the total number of pixels
+#: ../data/ui/histogram-info.ui.h:6
+msgid "Pixels:"
+msgstr "Pixler:"
+
+#. After the colon there is a percentile.
+#: ../data/ui/histogram-info.ui.h:8
+msgctxt "Pixels"
+msgid "Max:"
+msgstr "Maks:"
+
+#. After the colon there is the percentile of selected pixels.
+#: ../data/ui/histogram-info.ui.h:10
+msgctxt "Pixels"
+msgid "Selected:"
+msgstr "Markering:"
+
+#: ../data/ui/location.ui.h:1
+msgid "_Location:"
+msgstr "_Placering:"
+
+#: ../data/ui/overwrite-dialog.ui.h:1
+msgid "Overwrite the old file with the new one?"
+msgstr "Overskriv den gamle fil med den nye?"
+
+#: ../data/ui/overwrite-dialog.ui.h:2
+msgid "Old File:"
+msgstr "Gammel fil:"
+
+#: ../data/ui/overwrite-dialog.ui.h:3
+msgid "Filename:"
+msgstr "Filnavn:"
+
+#: ../data/ui/overwrite-dialog.ui.h:4
+#: ../extensions/image_print/data/ui/print-layout.ui.h:26
+msgid "Size:"
+msgstr "Størrelse:"
+
+#: ../data/ui/overwrite-dialog.ui.h:5
+msgid "Modified:"
+msgstr "Ændret:"
+
+#: ../data/ui/overwrite-dialog.ui.h:6
+msgid "New File:"
+msgstr "Ny fil:"
+
+#: ../data/ui/overwrite-dialog.ui.h:7
+msgid "Over_write the old file"
+msgstr "Over_skriv den gamle fil"
+
+#: ../data/ui/overwrite-dialog.ui.h:8
+msgid "Do not overwrite _the old file"
+msgstr "Overskriv ikke den gamle _fil"
+
+#: ../data/ui/overwrite-dialog.ui.h:9
+msgid "Overwrite _all files"
+msgstr "Overskriv _alle filer"
+
+#: ../data/ui/overwrite-dialog.ui.h:10
+msgid "_Do not overwrite any file"
+msgstr "_Overskriv ikke nogen filer"
+
+#: ../data/ui/overwrite-dialog.ui.h:11
+msgid "_Save the new file as:"
+msgstr "_Gem den nye fil som:"
+
+#: ../data/ui/personalize-filters.ui.h:1
+msgid "_General filter:"
+msgstr "_Generelt filter:"
+
+#: ../data/ui/personalize-filters.ui.h:2
+msgid "_Other filters:"
+msgstr "_Andre filtre:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "below the folder list"
+msgstr "under mappelisten"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "on the right"
+msgstr "til højre"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Pix Preferences"
+msgstr "Indstillinger for Pix"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Appearance"
+msgstr "Udseende"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "T_humbnails in viewer:"
+msgstr "_Miniaturebilleder i fremviser:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "on the bottom"
+msgstr "i bunden"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "on the side"
+msgstr "på siden"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "File _properties in browser:"
+msgstr "Fil_egenskaber i browser:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "_Statusbar"
+msgstr "_Statuslinje"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "On startup:"
+msgstr "Ved opstart:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Go to last _visited location"
+msgstr "Gå til senest _besøgte placering"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Go to this _folder:"
+msgstr "Gå til denne _mappe:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Set to C_urrent"
+msgstr "Gør til _aktuel"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "_Reuse the active window to open files"
+msgstr "_Genbrug det aktive vindue til at åbne filer"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "As_k confirmation before deleting files or catalogs"
+msgstr "Spørg om _bekræftelse, inden filer eller albummer slettes"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Ask whether to save _modified files"
+msgstr "Spørg, om _ændrede filer skal gemmes"
+
+#: ../data/ui/preferences.ui.h:18
+msgid "_Store metadata inside files if possible"
+msgstr "_Gem metadata i filer, hvis det er muligt"
+
+#: ../data/ui/preferences.ui.h:19
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
+#: ../extensions/edit_metadata/gth-edit-general-page.c:482
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
+#: ../pix/gth-main-default-types.c:38
+msgid "General"
+msgstr "Generelt"
+
+#: ../data/ui/shortcuts-preferences.ui.h:1
+msgid "Shortcuts:"
+msgstr "Genveje:"
+
+#: ../data/ui/shortcuts-preferences.ui.h:2
+msgid "_Restore All…"
+msgstr "_Gendan alle …"
+
+#: ../data/ui/sort-order.ui.h:1
+msgid "_Inverse order"
+msgstr "_Omvendt rækkefølge"
+
+#: ../data/ui/template-editor-dialog.ui.h:1
+#: ../extensions/importer/data/ui/import-preferences.ui.h:4
+msgid "Example:"
+msgstr "Eksempel:"
+
 #: ../extensions/bookmarks/callbacks.c:323
 #: ../extensions/bookmarks/dlg-bookmarks.c:350
 msgid "Bookmarks"
 msgstr "Bogmærker"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:1
+msgid "_Add Bookmark"
+msgstr "_Tilføj bogmærke"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:2
+msgid "_Edit Bookmarks…"
+msgstr "_Redigér bogmærker …"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:3
+msgid "_System Bookmarks"
+msgstr "_Systembogmærker"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
+msgid "_Bookmarks:"
+msgstr "_Bogmærker:"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
+msgid "Go to this location"
+msgstr "Gå til denne placering"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
+#: ../extensions/catalogs/callbacks.c:72
+#: ../extensions/search/gth-search-source-selector.c:140
+msgid "Remove"
+msgstr "Fjern"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
+msgid "_Name"
+msgstr "_Navn"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:5
+msgid "_Location"
+msgstr "_Placering"
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:192
 msgid "Could not remove the bookmark"
@@ -78,6 +400,26 @@ msgstr "Kunne ikke fjerne bogmærket"
 #: ../extensions/burn_disc/callbacks.c:48
 msgid "_Optical Disc…"
 msgstr "_Optisk disk …"
+
+#: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
+msgid "Disc Name"
+msgstr "Disknavn"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
+msgid "Current _folder"
+msgstr "Aktuel _mappe"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
+msgid "Current folder and its s_ub-folders"
+msgstr "Aktuel mappe og dennes _undermapper"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
+msgid "_Selected files"
+msgstr "_Valgte filer"
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
+msgid "Source"
+msgstr "Kilde"
 
 #: ../extensions/burn_disc/gth-burn-task.c:239
 #: ../extensions/burn_disc/gth-burn-task.c:260
@@ -100,6 +442,84 @@ msgstr "Der opstod en fejl under fortolkning af JPEG-billedfilen: %s"
 #, c-format
 msgid "Unknown JPEG color space (%d)"
 msgstr "Ukendt JPEG-farverum (%d)"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
+msgid "_Quality:"
+msgstr "_Kvalitet:"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
+msgid "_Lossless"
+msgstr "_Tabsfri"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
+msgid "_Default extension:"
+msgstr "_Standardfilendelse:"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:3
+msgid "_Smoothing:"
+msgstr "_Udjævning:"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:4
+msgid "Opti_mize"
+msgstr "Opti_mér"
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:5
+msgid "_Progressive"
+msgstr "_Progressiv"
+
+#: ../extensions/cairo_io/data/ui/png-options.ui.h:1
+msgid "Compression _level:"
+msgstr "Komprimerings_niveau:"
+
+#: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
+msgid "Default options:"
+msgstr "Standardindstillinger:"
+
+#: ../extensions/cairo_io/data/ui/tga-options.ui.h:1
+msgid "_RLE compression"
+msgstr "_RLE-komprimering"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:2
+msgid "Compression"
+msgstr "Komprimering"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:3
+msgid "_No compression"
+msgstr "_Ingen komprimering"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:4
+msgid "No_rmal (Deflate)"
+msgstr "No_rmal (mindsk)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:5
+msgid "_Loss compression (JPEG)"
+msgstr "_Komprimering med tab (JPEG)"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:6
+msgid "Resolution"
+msgstr "Opløsning"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:7
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:12
+msgid "_Horizontal:"
+msgstr "_Vandret:"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:8
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:13
+msgid "_Vertical:"
+msgstr "_Lodret:"
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:9
+msgid "dpi"
+msgstr "dpi"
+
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
+msgid "_Method:"
+msgstr "_Metode:"
 
 #: ../extensions/cairo_io/gth-image-saver-avif.c:365
 msgid "AVIF"
@@ -135,7 +555,10 @@ msgid "WebP"
 msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1703
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:11
 msgid "Saving"
 msgstr "Gemme"
 
@@ -223,11 +646,6 @@ msgstr "Opret album"
 msgid "Create Library"
 msgstr "Opret bibliotek"
 
-#: ../extensions/catalogs/callbacks.c:72
-#: ../extensions/search/gth-search-source-selector.c:140
-msgid "Remove"
-msgstr "Fjern"
-
 #: ../extensions/catalogs/callbacks.c:73
 #: ../extensions/file_manager/callbacks.c:82
 #: ../extensions/file_manager/callbacks.c:109
@@ -269,6 +687,93 @@ msgstr "Organisér"
 msgid "Automatically organize files by date"
 msgstr "Organisér automatisk filer efter dato"
 
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
+msgid "C_atalogs:"
+msgstr "_Albummer:"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
+#: ../extensions/catalogs/dlg-add-to-catalog.c:620
+msgid "New Library"
+msgstr "Nyt bibliotek"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
+#: ../extensions/catalogs/dlg-add-to-catalog.c:461
+msgid "New Catalog"
+msgstr "Nyt album"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
+#: ../extensions/file_manager/actions.c:766
+#: ../extensions/webalbums/gth-web-exporter.c:1820
+msgid "_View the destination"
+msgstr "_Vis målmappen"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:2
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:1
+msgid "_Name:"
+msgstr "_Navn:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
+msgid "_Date:"
+msgstr "_Dato:"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
+msgid "Catalog"
+msgstr "Album"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
+#: ../pix/gth-progress-dialog.c:158
+msgid "Cancel operation"
+msgstr "Afbryd handling"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
+msgid "Organization:"
+msgstr "Organisation:"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
+msgid "Files"
+msgstr "Filer"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
+msgid "Create"
+msgstr "Opret"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
+msgid "Select All"
+msgstr "Vælg alle"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:7
+msgid "Select None"
+msgstr "Vælg ingen"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:8
+msgid "Catalog _Preview:"
+msgstr "_Forhåndsvisning af album:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
+msgid "_Group files by:"
+msgstr "_Gruppér filer efter:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:2
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
+#: ../extensions/search/gth-search-source-selector.c:123
+msgid "_Include sub-folders"
+msgstr "M_edtag undermapper"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
+msgid "Ignore catalogs with a single file"
+msgstr "Ignorér albummer med kun én fil"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
+msgid "Put single files in the catalog:"
+msgstr "Placér enlige filer i albummet:"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
+msgid "Singles"
+msgstr "Enlige filer"
+
 #: ../extensions/catalogs/dlg-add-to-catalog.c:156
 msgid "Could not add the files to the catalog"
 msgstr "Kunne ikke tilføje filerne til albummet"
@@ -277,14 +782,6 @@ msgstr "Kunne ikke tilføje filerne til albummet"
 #: ../extensions/search/gth-search-task.c:396
 msgid "Could not create the catalog"
 msgstr "Kunne ikke oprette albummet"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:461
-msgid "New Catalog"
-msgstr "Nyt album"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:620
-msgid "New Library"
-msgstr "Nyt bibliotek"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:687
 msgid "Add to Catalog"
@@ -401,6 +898,64 @@ msgstr "Handling færdig. Albummer: %d. Billeder: %d."
 msgid "Change _Date…"
 msgstr "Ændr _dato …"
 
+#: ../extensions/change_date/data/ui/change-date.ui.h:1
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
+msgid "+"
+msgstr "+"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:2
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
+msgid "-"
+msgstr "-"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:3
+msgid "Change the following values:"
+msgstr "Ændr følgende værdier:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:4
+msgid "_Last modified date"
+msgstr "Dato for _seneste ændring"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:5
+msgid "Co_mment date"
+msgstr "Ko_mmentardato"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:6
+msgid "Change to:"
+msgstr "Ændr til:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:7
+msgid "The _following date:"
+msgstr "_Følgende dato:"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:8
+msgid "File _modified date"
+msgstr "Fils _ændringsdato"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:9
+msgid "File c_reation date"
+msgstr "Fils _oprettelsesdato"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:10
+msgid "Date p_hoto was taken"
+msgstr "Dato _billedet blev taget"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:11
+msgid "A_djust by"
+msgstr "_Justér efter"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:12
+msgid "hours"
+msgstr "timer"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:13
+msgid "minutes"
+msgstr "minutter"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:14
+msgid "seconds"
+msgstr "sekunder"
+
 #: ../extensions/change_date/dlg-change-date.c:177
 msgid "Change Date"
 msgstr "Ændr dato"
@@ -408,6 +963,10 @@ msgstr "Ændr dato"
 #: ../extensions/comments/callbacks.c:39
 msgid "Import Embedded Metadata"
 msgstr "Importér indlejrede metadata"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:1
+msgid "_Synchronize with the embedded metadata"
+msgstr "_Synkronisér med de indlejrede metadata"
 
 #: ../extensions/comments/dlg-comments-preferences.c:68
 #: ../extensions/gstreamer_tools/dlg-media-viewer-preferences.c:75
@@ -432,11 +991,6 @@ msgstr "Kommentar"
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/comments/main.c:44 ../extensions/comments/main.c:170
-#: ../pix/gth-main-default-metadata.c:64
-msgid "Description"
-msgstr "Beskrivelse"
-
 #: ../extensions/comments/main.c:45 ../extensions/comments/main.c:178
 #: ../pix/gth-main-default-metadata.c:63
 msgid "Place"
@@ -458,6 +1012,218 @@ msgstr "_Kontaktark …"
 #: ../extensions/contact_sheet/callbacks.c:39
 msgid "Image _Wall…"
 msgstr "Billed_væg …"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:439
+#: ../extensions/file_tools/gth-file-tool-crop.c:469
+#: ../extensions/file_tools/gth-file-tool-resize.c:589
+#: ../extensions/file_tools/gth-file-tool-rotate.c:396
+#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
+msgid "None"
+msgstr "Ingen"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
+msgid "Simple"
+msgstr "Enkel"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
+msgid "Simple with shadow"
+msgstr "Enkel med skygge"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
+msgid "Shadow only"
+msgstr "Kun skygge"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
+msgid "Slide"
+msgstr "Slide"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
+msgid "Inward Shadow"
+msgstr "Indadvendt skygge"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
+msgid "Outward Shadow"
+msgstr "Udadvendt skygge"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
+msgid "Background"
+msgstr "Baggrund"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
+msgid "_Solid color"
+msgstr "_Ensfarvet"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
+msgid "_Gradient"
+msgstr "F_arveovergang"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
+msgid "Select a color"
+msgstr "Vælg en farve"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
+msgid "Frame"
+msgstr "Ramme"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
+msgid "_Style:"
+msgstr "_Stil:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
+msgid "C_olor:"
+msgstr "Farv_e:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
+#: ../pix/gth-template-editor-dialog.c:419
+msgid "Text"
+msgstr "Tekst"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
+#: ../extensions/image_print/data/ui/print-layout.ui.h:5
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:3
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:4
+msgid "_Header:"
+msgstr "_Hoved:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
+msgid "Select a font"
+msgstr "Vælg en skrifttype"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
+#: ../extensions/image_print/data/ui/print-layout.ui.h:6
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
+msgid "_Footer:"
+msgstr "F_od:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:2
+msgid "Caption:"
+msgstr "Billedtekst:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
+#: ../extensions/image_print/data/ui/print-layout.ui.h:17
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
+#: ../pix/gth-browser-actions-entries.h:99
+msgid "Help"
+msgstr "Hjælp"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:8
+msgid "Edit template"
+msgstr "Redigér skabelon"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:5
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
+msgid "Contact Sheet"
+msgstr "Kontaktark"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:6
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:5
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
+msgid "_Destination:"
+msgstr "_Destination:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:7
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:3
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:9
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
+msgid "Choose destination folder"
+msgstr "Vælg destinationsmappe"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:3
+msgid "File_name:"
+msgstr "Fil_navn:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
+msgid "Create _HTML image map"
+msgstr "Opret klikbart _HTML-grafikobjekt"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
+msgid "Create a new theme"
+msgstr "Opret et nyt tema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:13
+msgid "Edit the selected theme"
+msgstr "Redigér det valgte tema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
+msgid "Delete the selected theme"
+msgstr "Slet det valgte tema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
+msgid "Theme"
+msgstr "Tema"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
+#: ../extensions/image_print/data/ui/print-layout.ui.h:19
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:16
+msgid "Columns:"
+msgstr "Kolonner:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
+msgid "0"
+msgstr "0"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:7
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
+msgid "Images per page:"
+msgstr "Billeder pr. side:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
+msgid "All images on a single page"
+msgstr "Alle billeder på en enkelt side"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
+msgid "_All pages with the same size"
+msgstr "_Alle sider med den samme størrelse"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:18
+msgid "Layout"
+msgstr "Layout"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
+msgid "S_ort:"
+msgstr "S_ortering:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
+msgid "Re_verse order"
+msgstr "Om_vendt rækkefølge"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
+msgid "_Size:"
+msgstr "_Størrelse:"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
+msgid "Sq_uared"
+msgstr "_Kvadratisk"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:13
+msgid "Thumbnails"
+msgstr "Miniaturebilleder"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:35
 #: ../extensions/contact_sheet/dlg-image-wall.c:34
@@ -493,7 +1259,7 @@ msgstr "Samlet antal sider"
 #: ../extensions/webalbums/dlg-web-exporter.c:37
 #: ../pix/gth-location-chooser.c:274 ../pix/gth-main-default-metadata.c:46
 msgid "Location"
-msgstr "Sted"
+msgstr "Placering"
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:506
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:517
@@ -518,10 +1284,6 @@ msgstr "Kunne ikke slette temaet"
 #: ../pix/gth-template-selector.c:357
 msgid "Edit Template"
 msgstr "Redigér skabelon"
-
-#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
-msgid "Contact Sheet"
-msgstr "Kontaktark"
 
 #: ../extensions/contact_sheet/dlg-image-wall.c:248
 msgid "Image Wall"
@@ -555,13 +1317,23 @@ msgstr "Sidehoved"
 msgid "Footer"
 msgstr "Sidefod"
 
-#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
-msgid "Caption"
-msgstr "Billedtekst"
-
 #: ../extensions/convert_format/callbacks.c:38
 msgid "Convert Format…"
 msgstr "Konvertér format …"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:1
+msgid "New format"
+msgstr "Nyt format"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:2
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:8
+msgid "Destination"
+msgstr "Destination"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:4
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:10
+msgid "_Use the original image folder"
+msgstr "_Brug den oprindelige billedmappe"
 
 #: ../extensions/convert_format/dlg-convert-format.c:87
 msgid "Converting images"
@@ -576,6 +1348,7 @@ msgid "Could not show the desktop background properties"
 msgstr "Kunne ikke vise egenskaber for skrivebordsbaggrunden"
 
 #: ../extensions/desktop_background/actions.c:368
+#: ../pix/resources/gears-menu.ui.h:8
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
@@ -617,6 +1390,27 @@ msgstr "Redigér mærker"
 msgid "Delete Metadata"
 msgstr "Slet metadata"
 
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
+msgid "D_escription:"
+msgstr "_Beskrivelse:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
+msgid "_Place:"
+msgstr "_Sted:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
+#: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
+msgid "T_ags:"
+msgstr "_Mærker:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
+msgid "_Rating:"
+msgstr "B_edømmelse:"
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
+msgid "_Title:"
+msgstr "_Titel:"
+
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:123
 msgid "Could not save the file metadata"
 msgstr "Kunne ikke gemme filmetadataene"
@@ -629,11 +1423,6 @@ msgstr "Kan ikke læse filinformation"
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:138
 msgid "Save only cha_nged fields"
 msgstr "Gem kun _ændrede felter"
-
-#: ../extensions/edit_metadata/gth-edit-general-page.c:482
-#: ../pix/gth-main-default-types.c:38
-msgid "General"
-msgstr "Generelt"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:554
 msgid "No date"
@@ -668,6 +1457,55 @@ msgstr "Skriver filer"
 msgid "Reading files"
 msgstr "Læser filer"
 
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
+msgid "C_opyright:"
+msgstr "_Ophavsret:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
+msgid "Co_untry:"
+msgstr "_Land:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
+msgid "_Code:"
+msgstr "_Kode:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
+msgid "Cr_edit:"
+msgstr "A_nerkendelse:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
+msgid "_Source:"
+msgstr "K_ilde:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
+msgid "_Urgency:"
+msgstr "_Prioritet:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
+msgid "_Object Name:"
+msgstr "_Objektnavn:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
+msgid "Byline _Title:"
+msgstr "_Titel for byline:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
+msgid "_Byline:"
+msgstr "_Byline:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
+msgid "_City:"
+msgstr "B_y:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
+msgid "_Language:"
+msgstr "_Sprog:"
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
+msgid "State/Province:"
+msgstr "Stat/provins:"
+
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:47 ../pix/glib-utils.c:1114
 #: ../pix/glib-utils.c:2091 ../pix/str-utils.c:641
 msgid "(invalid value)"
@@ -676,12 +1514,6 @@ msgstr "(ugyldig værdi)"
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:711
 msgid "Exposure"
 msgstr "Eksponering"
-
-#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
-#: ../extensions/gstreamer_tools/main.c:41
-#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
-msgid "Other"
-msgstr "Andet"
 
 #: ../extensions/exiv2_tools/main.c:33
 msgid "Exif General"
@@ -771,7 +1603,9 @@ msgstr ""
 #: ../extensions/file_manager/actions.c:743
 #: ../extensions/file_manager/callbacks.c:74
 #: ../extensions/file_manager/callbacks.c:103
-#: ../extensions/file_manager/callbacks.c:124 ../pix/gtk-utils.h:38
+#: ../extensions/file_manager/callbacks.c:124
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:5
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:32 ../pix/gtk-utils.h:38
 msgid "Copy"
 msgstr "Kopiér"
 
@@ -787,11 +1621,6 @@ msgstr "Kopiér til"
 #: ../extensions/file_manager/callbacks.c:1030
 msgid "Move"
 msgstr "Flyt"
-
-#: ../extensions/file_manager/actions.c:766
-#: ../extensions/webalbums/gth-web-exporter.c:1820
-msgid "_View the destination"
-msgstr "_Vis målmappen"
 
 #: ../extensions/file_manager/actions.c:870
 msgid "Could not open the location"
@@ -920,6 +1749,249 @@ msgstr "Beskær"
 #: ../extensions/file_tools/gth-file-tool-resize.c:840
 msgid "Resize"
 msgstr "Ændr størrelse"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:1
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
+msgid "_Preview"
+msgstr "_Forhåndsvisning"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
+msgid "B_rightness:"
+msgstr "_Lysstyrke:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
+msgid "Con_trast:"
+msgstr "Kon_trast:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
+msgid "_Saturation:"
+msgstr "M_ætning:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
+msgid "G_amma:"
+msgstr "G_amma:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
+msgid "Cyan-_Red:"
+msgstr "Cyan-_rød:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
+msgid "_Magenta-Green:"
+msgstr "_Magenta-grøn:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
+msgid "_Yellow-Blue:"
+msgstr "_Gul-blå:"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
+msgid "Color Levels"
+msgstr "Farveniveauer"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:1
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:5
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
+msgid "Position"
+msgstr "Placering"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:2
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
+msgid "_X:"
+msgstr "_x:"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:3
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
+msgid "_Y:"
+msgstr "_y:"
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:4
+msgid "Color"
+msgstr "Farve"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:1
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:1
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:661
+#: ../extensions/file_tools/gth-file-tool-resize.c:759
+#: ../extensions/file_tools/gth-file-tool-rotate.c:617
+#: ../pix/gth-file-chooser-dialog.c:258
+msgid "Options"
+msgstr "Indstillinger"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:2
+msgid "_Grid:"
+msgstr "_Gitter:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:3
+msgid "Selection"
+msgstr "Markering"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:4
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:7
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:5
+msgid "_Width:"
+msgstr "_Bredde:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:5
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:8
+msgid "Heigh_t:"
+msgstr "_Højde:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:6
+msgid "_Position:"
+msgstr "_Placering:"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:7
+msgid "Maximize"
+msgstr "Maksimér"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:8
+msgid "Center"
+msgstr "Centrér"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:9
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:10
+#: ../pix/gth-main-default-tests.c:406
+msgid "Aspect ratio"
+msgstr "Højde-breddeforhold"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:10
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:11
+msgid "I_nvert aspect ratio"
+msgstr "I_nvertér højde-/breddeforhold"
+
+#. after the colon there is a control to select the size in pixels
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:12
+msgid "M_ultiple of:"
+msgstr "M_ultiplum af:"
+
+#. abbreviation of pixel
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:14
+msgid "px"
+msgstr "px"
+
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:2
+msgid "Include current channel"
+msgstr "Inkludér nuværende kanal"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:2
+msgid "High _quality"
+msgstr "Høj _kvalitet"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:3
+msgid "pixels"
+msgstr "pixler"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:5
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:3
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:6
+#: ../pix/gth-main-default-metadata.c:48
+msgid "Dimensions"
+msgstr "Dimensioner"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:9
+msgid "Set the image size to this value"
+msgstr "Angiv billedets størrelse til denne værdi"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:12
+msgid "Original dimensions:"
+msgstr "Oprindelige dimensioner:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:13
+msgid "Scale factor:"
+msgstr "Skaleringsfaktor:"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:14
+msgid "New dimensions:"
+msgstr "Nye dimensioner:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
+msgid "Grid:"
+msgstr "Gitter:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
+msgid "_Background:"
+msgstr "_Baggrund:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
+msgid "Pick a background color"
+msgstr "Vælg en baggrundsfarve"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
+msgid "_Transparent"
+msgstr "_Gennemsigtig"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
+msgid "Original size"
+msgstr "Oprindelig størrelse"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
+msgid "Bounding box"
+msgstr "Afgrænsningsramme"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
+msgid "Crop borders"
+msgstr "Beskæringsgrænser"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
+msgid "Angle"
+msgstr "Vinkel"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
+msgid "Align"
+msgstr "Justér"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
+msgid "Image size"
+msgstr "Billedstørrelse"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
+msgid "Point 1:"
+msgstr "Punkt 1:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
+msgid "Point 2:"
+msgstr "Punkt 2:"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:14
+msgid "Keep aspect ratio"
+msgstr "Behold højde-/breddeforhold"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
+msgid ""
+"Draw a line on the image \n"
+"to set the alignment."
+msgstr ""
+"Tegn en linje på billedet \n"
+"for at angive justeringen."
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
+msgid "Parallel"
+msgstr "Parallel"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
+msgid "Perpendicular"
+msgstr "Vinkelret"
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
+msgid "Alignment"
+msgstr "Justering"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
+msgid "Threshold:"
+msgstr "Tærskel:"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
+msgid "Radius:"
+msgstr "Radius:"
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
+msgid "Amount:"
+msgstr "Størrelse:"
 
 #. Translators: the first number is converted to the second number
 #: ../extensions/file_tools/gth-curve-editor.c:417
@@ -1055,14 +2127,6 @@ msgid "Pick a color from the image"
 msgstr "Vælg en farve fra billedet"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:439
-#: ../extensions/file_tools/gth-file-tool-crop.c:469
-#: ../extensions/file_tools/gth-file-tool-resize.c:589
-#: ../extensions/file_tools/gth-file-tool-rotate.c:396
-#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
-msgid "None"
-msgstr "Ingen"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:439
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
 #: ../pix/gth-test-aspect-ratio.c:47
 msgid "Square"
@@ -1148,13 +2212,6 @@ msgstr "Gyldne snit"
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
 msgid "Center Lines"
 msgstr "Midterlinjer"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:661
-#: ../extensions/file_tools/gth-file-tool-resize.c:759
-#: ../extensions/file_tools/gth-file-tool-rotate.c:617
-#: ../pix/gth-file-chooser-dialog.c:258
-msgid "Options"
-msgstr "Indstillinger"
 
 #: ../extensions/file_tools/gth-file-tool-curves.c:410
 msgid "Add to Presets"
@@ -1310,10 +2367,12 @@ msgid "Rotate"
 msgstr "Rotér"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
+#: ../pix/resources/gears-menu.ui.h:4
 msgid "Save As…"
 msgstr "Gem som …"
 
 #: ../extensions/file_tools/gth-file-tool-save.c:66
+#: ../pix/resources/gears-menu.ui.h:3
 msgid "Save"
 msgstr "Gem"
 
@@ -1332,6 +2391,50 @@ msgstr "Fortryd"
 #: ../extensions/find_duplicates/callbacks.c:37
 msgid "Find _Duplicates…"
 msgstr "Find _dubletter …"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
+msgid "_Folders:"
+msgstr "_Mapper:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
+msgid "Duplicates:"
+msgstr "Dubletter:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
+msgid "Files:"
+msgstr "Filer:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
+#: ../pix/gth-main-default-metadata.c:32
+msgid "File"
+msgstr "Fil"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
+msgid "Last modified"
+msgstr "Sidst ændret"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
+msgid "_View"
+msgstr "_Vis"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:7
+#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
+msgid "_Delete"
+msgstr "_Slet"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:8
+msgid "No duplicates found."
+msgstr "Ingen dubletter fundet."
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:1
+#: ../extensions/search/data/ui/search-editor.ui.h:2
+msgid "Start _at:"
+msgstr "Start _i:"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
+msgid "_Filter:"
+msgstr "Fi_lter:"
 
 #: ../extensions/find_duplicates/dlg-find-duplicates.c:98
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1350
@@ -1408,6 +2511,78 @@ msgstr "Dubletter"
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1373
 msgid "Select"
 msgstr "Vælg"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
+msgid "Public photos"
+msgstr "Offentlige billeder"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:2
+msgid "Private photos, visible to family and friends"
+msgstr "Private billeder, synlige for familie og venner"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:3
+msgid "Private photos, visible to friends"
+msgstr "Private billeder, synlige for venner"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
+msgid "Private photos, visible to family"
+msgstr "Private billeder, synlige for familie"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
+msgid "Private photos"
+msgstr "Private billeder"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
+msgid "Safe content"
+msgstr "Sikkert indhold"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
+msgid "Moderate content"
+msgstr "Moderat indhold"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
+msgid "Restricted content"
+msgstr "Begrænset indhold"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
+msgid "_Account:"
+msgstr "_Konto:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
+msgid "Edit accounts"
+msgstr "Redigér konti"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
+msgid "Free space:"
+msgstr "Ledig plads:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:3
+msgid "Ph_otoset:"
+msgstr "_Billedsæt:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
+msgid "_Privacy:"
+msgstr "_Privatliv:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
+msgid "_Safety:"
+msgstr "_Sikkerhed:"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
+msgid "Hi_de from public searches"
+msgstr "Sk_jul for offentlige søgninger"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:10
+msgid "_Resize if larger than:"
+msgstr "_Ændr størrelse hvis større end:"
+
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:2
+#: ../extensions/oauth/data/ui/oauth-account-chooser.ui.h:1
+msgid "A_ccount:"
+msgstr "Ko_nto:"
 
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:136
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:410
@@ -1591,44 +2766,134 @@ msgid "Next frame"
 msgstr "Næste billede"
 
 #: ../extensions/gstreamer_tools/callbacks.c:38
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:38
 msgid "Go forward 1 second"
 msgstr "Gå 1 sekund frem"
 
 #: ../extensions/gstreamer_tools/callbacks.c:39
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:22
 msgid "Go forward 5 seconds"
 msgstr "Gå 5 sekunder frem"
 
 #: ../extensions/gstreamer_tools/callbacks.c:40
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:25
 msgid "Go forward 10 seconds"
 msgstr "Gå 10 sekunder frem"
 
 #: ../extensions/gstreamer_tools/callbacks.c:41
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:28
 msgid "Go forward 1 minute"
 msgstr "Gå 1 minut frem"
 
 #: ../extensions/gstreamer_tools/callbacks.c:42
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:31
 msgid "Go forward 5 minutes"
 msgstr "Gå 5 minutter frem"
 
 #: ../extensions/gstreamer_tools/callbacks.c:43
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:35
 msgid "Go back 1 second"
 msgstr "Gå 1 sekund tilbage"
 
 #: ../extensions/gstreamer_tools/callbacks.c:44
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:10
 msgid "Go back 5 seconds"
 msgstr "Gå 5 sekunder tilbage"
 
 #: ../extensions/gstreamer_tools/callbacks.c:45
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:13
 msgid "Go back 10 seconds"
 msgstr "Gå 10 sekunder tilbage"
 
 #: ../extensions/gstreamer_tools/callbacks.c:46
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:16
 msgid "Go back 1 minute"
 msgstr "Gå 1 minut tilbage"
 
 #: ../extensions/gstreamer_tools/callbacks.c:47
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:19
 msgid "Go back 5 minutes"
 msgstr "Gå 5 minutter tilbage"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:1
+msgid "Use hardware acceleration"
+msgstr "Benyt hardwareacceleration"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:2
+msgid "_Screenshots location:"
+msgstr "Placering af _skærmbilleder:"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
+msgid "Play"
+msgstr "Afspil"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
+msgid "Slower"
+msgstr "Langsommere"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:3
+msgid "Faster"
+msgstr "Hurtigere"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
+msgid "Restart when finished"
+msgstr "Genstart efter afslutning"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
+msgid "Time:"
+msgstr "Tid:"
+
+#. minus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:9
+msgid "-5s"
+msgstr "-5 s"
+
+#. minus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:12
+msgid "-10s"
+msgstr "-10 s"
+
+#. minus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:15
+msgid "-1m"
+msgstr "-1 m"
+
+#. minus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:18
+msgid "-5m"
+msgstr "-5 m"
+
+#. plus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:21
+msgid "+5s"
+msgstr "+5 s"
+
+#. plus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:24
+msgid "+10s"
+msgstr "+10 s"
+
+#. plus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:27
+msgid "+1m"
+msgstr "+1 m"
+
+#. plus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:30
+msgid "+5m"
+msgstr "+5 m"
+
+#. minus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:34
+msgid "-1s"
+msgstr "-1 s"
+
+#. plus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:37
+msgid "+1s"
+msgstr "+1 s"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:595
 msgid "Playing video"
@@ -1638,16 +2903,13 @@ msgstr "Afspiller video"
 msgid "Pause"
 msgstr "Pause"
 
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
-msgid "Play"
-msgstr "Afspil"
-
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1127
 msgid "Take a screenshot"
 msgstr "Tag et skærmbillede"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1134
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:6
 msgid "Fit to window"
 msgstr "Tilpas til vindue"
 
@@ -1668,6 +2930,7 @@ msgid "Artist"
 msgstr "Kunstner"
 
 #: ../extensions/gstreamer_tools/main.c:48
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "Album"
 msgstr "Album"
 
@@ -1689,10 +2952,12 @@ msgid "Framerate"
 msgstr "Billedfrekvens"
 
 #: ../extensions/gstreamer_tools/main.c:54
+#: ../extensions/image_print/data/ui/print-layout.ui.h:27
 msgid "Width"
 msgstr "Bredde"
 
 #: ../extensions/gstreamer_tools/main.c:55
+#: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Height"
 msgstr "Højde"
 
@@ -1732,6 +2997,100 @@ msgstr "Kunne ikke udskrive de valgte filer"
 #: ../extensions/image_print/preferences.c:79
 msgid "Print"
 msgstr "Udskriv"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:1
+msgid "Centered"
+msgstr "Centreret"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:2
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:3
+msgid "millimeters"
+msgstr "millimeter"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:4
+msgid "inches"
+msgstr "inch (tomme)"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:7
+msgid "The current page number"
+msgstr "Det aktuelle sidetal"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:8
+msgid "The total number of pages"
+msgstr "Samlet antal sider"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:9
+msgid "Special code"
+msgstr "Speciel kode"
+
+#. translate only the text in the curly brackets
+#: ../extensions/image_print/data/ui/print-layout.ui.h:13
+#, no-c-format
+msgid "%D{ format }"
+msgstr "%D{ format }"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:14
+msgid "The current date"
+msgstr "Den aktuelle dato"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:15
+msgid "The total number of files"
+msgstr "Samlet antal filer"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:16
+msgid "The event description"
+msgstr "Beskrivelse af begivenheden"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:20
+msgid "_Rows:"
+msgstr "_Rækker:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:22
+msgid "Image"
+msgstr "Billede"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:23
+msgid "Position:"
+msgstr "Placering:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:24
+msgid "Left"
+msgstr "Venstre"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:25
+msgid "Top"
+msgstr "Øverst"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
+msgid "Rotation:"
+msgstr "Rotation:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+msgid "Unit:"
+msgstr "Enhed:"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:1
+msgid "Fonts"
+msgstr "Skrifttyper"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:5
+msgid "Select Caption Font"
+msgstr "Vælg en skrifttype til billedtekst"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:6
+msgid "Select Header Font"
+msgstr "Vælg skrifttype til sidehoved"
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:7
+msgid "Select Footer Font"
+msgstr "Vælg skrifttype til sidefod"
 
 #: ../extensions/image_print/gth-image-print-job.c:40
 msgid "Total number of files"
@@ -1915,6 +3274,117 @@ msgstr "Rul hurtigt ned"
 msgid "Scroll to center"
 msgstr "Rul til midten"
 
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
+msgid "After loading an image:"
+msgstr "Når et billede er indlæst:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
+msgid "Set to actual size"
+msgstr "Indstil til faktisk størrelse"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
+msgid "Keep previous zoom"
+msgstr "Behold foregående forstørrelse"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
+msgid "Fit to window if larger"
+msgstr "Tilpas til vinduet, hvis billedet er større"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:7
+msgid "Fit to width"
+msgstr "Tilpas til bredde"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
+msgid "Fit to width if larger"
+msgstr "Tilpas til bredde hvis større"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
+msgid "Reset scrollbar positions"
+msgstr "Nulstil rullebjælkepositioner"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
+msgid "Mouse wheel action:"
+msgstr "Handling for musehjul:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:10
+msgctxt "zoom quality"
+msgid "Change image"
+msgstr "Skift billede"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
+msgctxt "zoom quality"
+msgid "Zoom image"
+msgstr "Zoom billede"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:12
+msgid "Zoom quality:"
+msgstr "Zoomkvalitet:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:13
+msgctxt "zoom quality"
+msgid "_High"
+msgstr "_Høj"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:14
+msgctxt "zoom quality"
+msgid "_Low"
+msgstr "_Lav"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:15
+msgid "Transparency:"
+msgstr "Gennemsigtighed:"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:16
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:1
+msgid "Checkered"
+msgstr "Ternet"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:17
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:2
+msgid "White"
+msgstr "Hvid"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:18
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:3
+msgid "Gray"
+msgstr "Grå"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:19
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:4
+msgid "Black"
+msgstr "Sort"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:5
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:8
+msgid "Fit to height"
+msgstr "Tilpas til højde"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:10
+#, no-c-format
+msgid "50%"
+msgstr "50 %"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:12
+#, no-c-format
+msgid "100%"
+msgstr "100 %"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:14
+#, no-c-format
+msgid "200%"
+msgstr "200 %"
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:16
+#, no-c-format
+msgid "300%"
+msgstr "300 %"
+
 #: ../extensions/image_viewer/gth-image-histogram.c:94
 msgid "Histogram"
 msgstr "Histogram"
@@ -1926,14 +3396,6 @@ msgstr "Kopiér billede"
 #: ../extensions/image_viewer/gth-image-viewer-page.c:85
 msgid "Paste Image"
 msgstr "Indsæt billede"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
-msgid "Set to actual size"
-msgstr "Indstil til faktisk størrelse"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
-msgid "Fit to window if larger"
-msgstr "Tilpas til vinduet hvis billedet er større"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1174
 msgid "Apply the embedded color profile"
@@ -1975,6 +3437,19 @@ msgstr "Billedredigering"
 #: ../pix/gth-main-default-types.c:42 ../pix/gth-shortcuts-window.c:40
 msgid "Viewer"
 msgstr "Fremviser"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:1
+msgid "_Destination"
+msgstr "_Destination"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:2
+msgid "_Automatic subfolder"
+msgstr "_Automatisk undermappe"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:3
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:7
+msgid "_Template:"
+msgstr "_Skabelon:"
 
 #: ../extensions/importer/gth-import-destination-button.c:113
 msgid "Invalid Destination"
@@ -2029,6 +3504,39 @@ msgstr ""
 #: ../extensions/list_tools/callbacks.c:157 ../extensions/list_tools/main.c:31
 msgid "Tools"
 msgstr "Værktøjer"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
+msgid "Co_mmands:"
+msgstr "_Kommandoer:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:2
+msgid "_Wait for the command to finish"
+msgstr "_Vent på, at kommandoen afsluttes"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:3
+msgid "E_xecute command once for every file"
+msgstr "_Udfør kommando en gang for hver fil"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:4
+msgid "_Terminal command (shell script)"
+msgstr "_Terminalkommando (skalskript)"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:5
+msgid "Sh_ortcut:"
+msgstr "G_envej:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:6
+msgid "_Command:"
+msgstr "_Kommando:"
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:7
+msgid "Edit command"
+msgstr "Redigér kommando"
+
+#: ../extensions/list_tools/data/ui/tools-menu.ui.h:1
+#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
+msgid "Personalize…"
+msgstr "Tilpas …"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:250
 msgid "Script"
@@ -2144,6 +3652,16 @@ msgstr "Ø"
 msgid "Map"
 msgstr "Kort"
 
+#: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
+msgid "A_ccounts:"
+msgstr "_Konti:"
+
+#. the message pane
+#: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
+#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
+msgid "Loading…"
+msgstr "Indlæser …"
+
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:192
 msgid "New authentication…"
 msgstr "Ny godkendelse …"
@@ -2197,6 +3715,33 @@ msgstr "_Mappe …"
 msgid "I_mport From"
 msgstr "I_mportér fra"
 
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
+msgid "After importing from a device:"
+msgstr "Efter import fra en enhed:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
+msgid "_Rotate the images physically"
+msgstr "_Rotér billederne fysisk"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:3
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:6
+msgid "_Delete the imported files from the source"
+msgstr "_Slet de importerede billeder fra kilden"
+
+#. view label
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
+#: ../pix/gth-filterbar.c:391
+msgid "S_how:"
+msgstr "_Vis:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
+msgid "_Event:"
+msgstr "_Begivenhed:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
+msgid "_Tags:"
+msgstr "_Mærker:"
+
 #: ../extensions/photo_importer/dlg-photo-importer.c:218
 msgid "Could not import the files"
 msgstr "Kunne ikke importere filerne"
@@ -2234,6 +3779,27 @@ msgstr "Fjern røde øjne"
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:472
 msgid "Remove the red eye effect caused by camera flashes"
 msgstr "Fjern røde øjne udløst af kamerablitz"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:2
+msgid "_Sort by:"
+msgstr "So_rter efter:"
+
+#. Translators: this is the text case (upper or lower case).
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:4
+msgid "Cas_e:"
+msgstr "S_tore/små bogstaver:"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:6
+msgid "Re_verse Order"
+msgstr "Om_vendt rækkefølge"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:9
+msgid "Revert to the last used template"
+msgstr "Vend tilbage til den sidst brugte skabelon"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:10
+msgid "_Preview:"
+msgstr "_Udseende:"
 
 #: ../extensions/rename_series/dlg-rename-series.c:54
 #: ../extensions/webalbums/dlg-web-exporter.c:45
@@ -2294,6 +3860,27 @@ msgstr "Omdøber filer"
 msgid "Resize Images…"
 msgstr "Ændr billeders størrelse …"
 
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:1
+msgid "pixel"
+msgstr "pixel"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:4
+msgid "New dimensions"
+msgstr "Nye dimensioner"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:6
+msgid "_Height:"
+msgstr "_Højde:"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:7
+msgid "_Preserve original aspect ratios"
+msgstr "B_evar oprindeligt højde-/breddeforhold"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:11
+#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
+msgid "Format"
+msgstr "Format"
+
 #: ../extensions/resize_images/dlg-resize-images.c:341
 msgid "Resize Images"
 msgstr "Ændr billeders størrelse"
@@ -2337,10 +3924,6 @@ msgstr "alle de følgende regler"
 #: ../pix/gth-filter-editor-dialog.c:168
 msgid "any of the following rules"
 msgstr "enhver af de følgende regler"
-
-#: ../extensions/search/gth-search-source-selector.c:123
-msgid "_Include sub-folders"
-msgstr "M_edtag undermapper"
 
 #: ../extensions/search/gth-search-source-selector.c:130
 msgid "Add another location"
@@ -2445,10 +4028,50 @@ msgid "Show previous file"
 msgstr "Vis foregående fil"
 
 #: ../extensions/slideshow/callbacks.c:65
-#: ../extensions/slideshow/callbacks.c:362 ../extensions/slideshow/main.c:286
-#: ../extensions/slideshow/preferences.c:142 ../pix/gth-shortcuts-window.c:41
+#: ../extensions/slideshow/callbacks.c:362
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
+#: ../extensions/slideshow/main.c:286 ../extensions/slideshow/preferences.c:142
+#: ../pix/gth-shortcuts-window.c:41
 msgid "Presentation"
 msgstr "Slideshow"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
+msgid "_Personalize"
+msgstr "_Tilpas"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
+msgid "_Transition effect:"
+msgstr "_Overgangseffekt:"
+
+#. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
+msgid "_Change automatically, every"
+msgstr "_Ændr automatisk efter"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
+msgctxt "Every x seconds"
+msgid "seconds"
+msgstr "sekunder"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
+msgid "_Restart when finished"
+msgstr "_Genstart efter sidste billede"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
+msgid "R_andom order"
+msgstr "_Vilkårlig rækkefølge"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
+msgid "Playlist"
+msgstr "Afspilningsliste"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
+msgid "Add files to the playlist"
+msgstr "Tilføj filer til afspilningslisten"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
+msgid "Remove the selected files"
+msgstr "Fjern de valgte filer"
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:185
 msgid "Choose the files to play"
@@ -2527,14 +4150,6 @@ msgstr "Billede %d af %d"
 msgid "Index"
 msgstr "Indeks"
 
-#: ../extensions/webalbums/data/albumthemes/text.h:30
-msgid "Next"
-msgstr "Næste"
-
-#: ../extensions/webalbums/data/albumthemes/text.h:32
-msgid "Previous"
-msgstr "Foregående"
-
 #: ../extensions/webalbums/data/albumthemes/text.h:33
 #, c-format
 msgid "View page %d"
@@ -2555,6 +4170,46 @@ msgstr "Vis det forrige billede"
 #: ../extensions/webalbums/data/albumthemes/text.h:37
 msgid "View the previous page"
 msgstr "Vis den forrige side"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
+msgid "All images on a single image"
+msgstr "Alle billeder på et enkelt billede"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
+msgid "Adapts to the window width"
+msgstr "Tilpasses vinduesbredden"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
+msgid "_Copy originals to destination"
+msgstr "_Kopiér de oprindelige til destinationen"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:17
+msgid "_Adapt to the window width "
+msgstr "_Tilpas til vinduesbredden "
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
+msgid "Index Page"
+msgstr "Indeksside"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
+msgid "Thumbnail Caption"
+msgstr "Billedtekst til miniaturebillede"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
+msgid "Image Page"
+msgstr "Billedside"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
+msgid "Show the description, if available"
+msgstr "Vis beskrivelsen hvis tilgængelig"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:24
+msgid "Show the following attributes:"
+msgstr "Vis de følgende attributter:"
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
+msgid "Image Attributes"
+msgstr "Billedattributter"
 
 #: ../extensions/webalbums/dlg-web-exporter.c:43
 msgid "Current image number"
@@ -2714,7 +4369,7 @@ msgid "_Restart"
 msgstr "_Genstart"
 
 #: ../pix/dlg-preferences-shortcuts.c:296
-#: ../pix/dlg-preferences-shortcuts.c:371
+#: ../pix/dlg-preferences-shortcuts.c:371 ../pix/resources/gears-menu.ui.h:5
 msgid "Revert"
 msgstr "Fortryd"
 
@@ -2887,15 +4542,11 @@ msgstr ""
 "  Joe Hansen https://launchpad.net/~joedalton2\n"
 "  scootergrisen https://launchpad.net/~scootergrisen"
 
-#: ../pix/gth-browser-actions-entries.h:98
+#: ../pix/gth-browser-actions-entries.h:98 ../pix/resources/gears-menu.ui.h:1
 msgid "New Window"
 msgstr "Nyt vindue"
 
-#: ../pix/gth-browser-actions-entries.h:99
-msgid "Help"
-msgstr "Hjælp"
-
-#: ../pix/gth-browser-actions-entries.h:100
+#: ../pix/gth-browser-actions-entries.h:100 ../pix/resources/gears-menu.ui.h:9
 msgid "Keyboard Shortcuts"
 msgstr "Tastaturgenveje"
 
@@ -2914,11 +4565,12 @@ msgstr "Luk vindue"
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Open location"
-msgstr "Åbn sted"
+msgstr "Åbn placering"
 
 #: ../pix/gth-browser-actions-entries.h:109
 #: ../pix/gth-browser-actions-entries.h:110 ../pix/gth-browser.c:4791
-#: ../pix/gth-browser.c:4809
+#: ../pix/gth-browser.c:4809 ../pix/resources/file-list-menu.ui.h:1
+#: ../pix/resources/file-menu.ui.h:1
 msgid "Fullscreen"
 msgstr "Fuldskærm"
 
@@ -2948,11 +4600,11 @@ msgstr "Miniatureliste"
 
 #: ../pix/gth-browser-actions-entries.h:118
 msgid "Load previous location"
-msgstr "Indlæs forrige sted"
+msgstr "Indlæs forrige placering"
 
 #: ../pix/gth-browser-actions-entries.h:119
 msgid "Load next location"
-msgstr "Indlæs næste sted"
+msgstr "Indlæs næste placering"
 
 #: ../pix/gth-browser-actions-entries.h:120
 msgid "Load parent folder"
@@ -2964,7 +4616,7 @@ msgstr "Indlæs hjem"
 
 #: ../pix/gth-browser-actions-entries.h:122
 msgid "Reload location"
-msgstr "Genindlæs sted"
+msgstr "Genindlæs placering"
 
 #: ../pix/gth-browser-actions-entries.h:123
 msgid "Show/Hide hidden files"
@@ -3109,11 +4761,6 @@ msgstr "_Vis formatindstillinger"
 msgid "No file"
 msgstr "Ingen fil"
 
-#. the message pane
-#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
-msgid "Loading…"
-msgstr "Indlæser …"
-
 #: ../pix/gth-file-source-vfs.c:298
 msgid "Computer"
 msgstr "Computer"
@@ -3179,20 +4826,6 @@ msgstr "faldende"
 msgid "No limit specified"
 msgstr "Ingen grænse angivet"
 
-#. limit label
-#: ../pix/gth-filter.c:270 ../pix/gth-filter.c:338
-msgid "_Limit to"
-msgstr "_Begræns til"
-
-#. view label
-#: ../pix/gth-filterbar.c:391
-msgid "S_how:"
-msgstr "_Vis:"
-
-#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
-msgid "Personalize…"
-msgstr "Tilpas …"
-
 #: ../pix/gth-folder-tree.c:1467
 msgid "(Open Parent)"
 msgstr "(Åbn overordnet)"
@@ -3227,17 +4860,13 @@ msgstr "Kunne ikke finde et passende modul til at gemme billedet som “%s”"
 msgid "Reading file information"
 msgstr "Læser filinformation"
 
-#: ../pix/gth-location-chooser-dialog.c:194
+#: ../pix/gth-location-chooser-dialog.c:194 ../pix/resources/gears-menu.ui.h:7
 msgid "Hidden Files"
 msgstr "Skjulte filer"
 
 #: ../pix/gth-location-chooser.c:572
 msgid "Locations"
-msgstr "Steder"
-
-#: ../pix/gth-main-default-metadata.c:32
-msgid "File"
-msgstr "Fil"
+msgstr "Placeringer"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -3259,14 +4888,6 @@ msgstr "Ændringsdato og -klokkeslæt"
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Type"
 msgstr "Type"
-
-#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
-msgid "Format"
-msgstr "Format"
-
-#: ../pix/gth-main-default-metadata.c:48
-msgid "Dimensions"
-msgstr "Dimensioner"
 
 #: ../pix/gth-main-default-metadata.c:49
 msgid "Duration"
@@ -3384,10 +5005,6 @@ msgstr "Titel (indlejret)"
 msgid "Description (embedded)"
 msgstr "Beskrivelse (indlejret)"
 
-#: ../pix/gth-main-default-tests.c:406
-msgid "Aspect ratio"
-msgstr "Højde-breddeforhold"
-
 #: ../pix/gth-main-default-types.c:39
 msgid "Show/Hide"
 msgstr "Vis/skjul"
@@ -3403,10 +5020,6 @@ msgstr "Filhåndtering"
 #: ../pix/gth-overwrite-dialog.c:326
 msgid "Overwrite"
 msgstr "Overskriv"
-
-#: ../pix/gth-progress-dialog.c:158
-msgid "Cancel operation"
-msgstr "Afbryd handling"
 
 #: ../pix/gth-save-file-data-task.c:105
 msgid "Saving file information"
@@ -3426,10 +5039,6 @@ msgstr "Opret mærket “%s”"
 #: ../pix/gth-tags-entry.c:1090
 msgid "Show all the tags"
 msgstr "Vis alle mærker"
-
-#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
-msgid "_Delete"
-msgstr "_Slet"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
@@ -3474,10 +5083,6 @@ msgstr "Astronomi"
 #: ../pix/gth-tags-file.c:245
 msgid "Family"
 msgstr "Familie"
-
-#: ../pix/gth-template-editor-dialog.c:419
-msgid "Text"
-msgstr "Tekst"
 
 #. Translators: The space character not the Astronomy space.
 #: ../pix/gth-template-editor-dialog.c:424
@@ -3657,7 +5262,7 @@ msgstr "Annullér"
 msgid "_Cancel"
 msgstr "_Annullér"
 
-#: ../pix/gtk-utils.h:40
+#: ../pix/gtk-utils.h:40 ../pix/resources/gears-menu.ui.h:10
 msgid "_Help"
 msgstr "_Hjælp"
 
@@ -3684,3 +5289,23 @@ msgstr "_Udfør"
 #: ../pix/gtk-utils.h:46
 msgid "_Upload"
 msgstr "_Overfør"
+
+#: ../pix/resources/folder-menu.ui.h:1
+msgid "Open in New Window"
+msgstr "Åbn i nyt vindue"
+
+#: ../pix/resources/gears-menu.ui.h:2
+msgid "Open Location…"
+msgstr "Åbn placering …"
+
+#: ../pix/resources/gears-menu.ui.h:6
+msgid "Sort By…"
+msgstr "Sortér efter …"
+
+#: ../pix/resources/gears-menu.ui.h:11
+msgid "_About Pix"
+msgstr "_Om Pix"
+
+#: ../pix/resources/history-menu.ui.h:1
+msgid "_Delete History"
+msgstr "_Slet historik"

@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 14:42+0100\n"
-"PO-Revision-Date: 2023-06-06 13:00+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
+"POT-Creation-Date: 2023-06-26 13:19+0200\n"
+"PO-Revision-Date: 2023-07-02 17:29+0000\n"
+"Last-Translator: Vladm <Unknown>\n"
 "Language-Team: Gnome Romanian Team <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2023-06-08 10:21+0000\n"
-"X-Generator: Launchpad (build 620cd5280e3a973662e263ebf9346837ed657a46)\n"
+"X-Launchpad-Export-Date: 2023-07-07 12:57+0000\n"
+"X-Generator: Launchpad (build 2ac9e3bf4ab511504f8fc651371e24a6a047ba12)\n"
 "Language: ro\n"
 
 #: ../data/gschemas/org.x.pix.gschema.xml.h:1
@@ -25,7 +25,7 @@ msgid ""
 "Images over this size (in bytes) will not be thumbnailed. Use 0 if you want "
 "to generate thumbnails for all images."
 msgstr ""
-"Imaginile cu dimensiune mai mare decât aceasta (in octeți) nu vor avea "
+"Imaginile cu dimensiune mai mare decât aceasta (în octeți) nu vor avea "
 "miniaturi. Folosește 0 dacă vrei să generezi pictograme pentru toate "
 "imaginile."
 
@@ -53,10 +53,332 @@ msgstr ""
 "Valorile posibile includ: general :: nesortat, fișier :: nume, fișier :: "
 "mărime, fișier :: m_timp, exif :: fotografie :: dată_timp_original"
 
+#: ../data/ui/browser-preferences.ui.h:1
+#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
+#: ../extensions/image_print/data/ui/print-layout.ui.h:21
+msgid "Caption"
+msgstr "Titlu"
+
+#: ../data/ui/browser-preferences.ui.h:2
+msgid "Behavior"
+msgstr "Comportament"
+
+#: ../data/ui/browser-preferences.ui.h:3
+msgid "_Single click to open files"
+msgstr "Clic _simplu pentru a deschide fișiere"
+
+#: ../data/ui/browser-preferences.ui.h:4
+msgid "_Double click to open files"
+msgstr "Clic _dublu pentru a deschide fișiere"
+
+#: ../data/ui/browser-preferences.ui.h:5
+msgid "_Open files in fullscreen mode"
+msgstr "Deschide fișierele în m_odul ecran complet"
+
+#: ../data/ui/browser-preferences.ui.h:6 ../data/ui/preferences.ui.h:15
+#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
+#: ../extensions/gstreamer_tools/main.c:41
+#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
+msgid "Other"
+msgstr "Altele"
+
+#: ../data/ui/browser-preferences.ui.h:7
+msgid "Thumbnail _size:"
+msgstr "Dimen_siunea miniaturilor"
+
+#: ../data/ui/browser-preferences.ui.h:8
+msgid "D_etermine image type from content (slower)"
+msgstr "D_etermină tipul imaginii după conținut (mai lent)"
+
+#: ../data/ui/code-selector.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:5
+msgid "1"
+msgstr "1"
+
+#: ../data/ui/code-selector.ui.h:2
+msgid "digits"
+msgstr "cifre"
+
+#: ../data/ui/code-selector.ui.h:3 ../extensions/comments/main.c:44
+#: ../extensions/comments/main.c:170
+#: ../extensions/image_print/data/ui/print-layout.ui.h:10
+#: ../pix/gth-main-default-metadata.c:64
+msgid "Description"
+msgstr "Descriere"
+
+#: ../data/ui/code-selector.ui.h:4
+msgid "Edit"
+msgstr "Editează"
+
+#: ../data/ui/code-selector.ui.h:5
+msgid "Default value"
+msgstr "Valoare implicită"
+
+#: ../data/ui/code-selector.ui.h:6
+msgid "remove"
+msgstr "elimină"
+
+#: ../data/ui/code-selector.ui.h:7
+msgid "add"
+msgstr "adaugă"
+
+#: ../data/ui/extensions-preferences.ui.h:1
+msgid "_Extensions:"
+msgstr "_Extensii:"
+
+#: ../data/ui/file-selection-info.ui.h:1
+#: ../extensions/webalbums/data/albumthemes/text.h:32
+msgid "Previous"
+msgstr "Înapoi"
+
+#: ../data/ui/file-selection-info.ui.h:2
+#: ../extensions/webalbums/data/albumthemes/text.h:30
+msgid "Next"
+msgstr "Înainte"
+
+#: ../data/ui/filter-editor.ui.h:1
+msgid "Filter _Name:"
+msgstr "Filtrează _numele:"
+
+#: ../data/ui/filter-editor.ui.h:2
+#: ../extensions/search/data/ui/search-editor.ui.h:1
+msgid "_Match:"
+msgstr "_Potrivire:"
+
+#: ../data/ui/filter-editor.ui.h:3
+#: ../extensions/search/data/ui/search-editor.ui.h:3
+msgid "Rules:"
+msgstr "Reguli:"
+
+#. limit label
+#: ../data/ui/filter-editor.ui.h:4 ../pix/gth-filter.c:270
+#: ../pix/gth-filter.c:338
+msgid "_Limit to"
+msgstr "_Limitează la"
+
+#: ../data/ui/filter-editor.ui.h:5
+msgid "selected by"
+msgstr "selectat după"
+
+#: ../data/ui/histogram-info.ui.h:1
+msgid "Mean:"
+msgstr "Medie:"
+
+#. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsized at the end.
+#: ../data/ui/histogram-info.ui.h:3
+msgid "Std dev:"
+msgstr "Dev. std:"
+
+#: ../data/ui/histogram-info.ui.h:4
+msgid "Median:"
+msgstr "Mediană:"
+
+#. After the colon there is the total number of pixels
+#: ../data/ui/histogram-info.ui.h:6
+msgid "Pixels:"
+msgstr "Pixeli:"
+
+#. After the colon there is a percentile.
+#: ../data/ui/histogram-info.ui.h:8
+msgctxt "Pixels"
+msgid "Max:"
+msgstr "Max:"
+
+#. After the colon there is the percentile of selected pixels.
+#: ../data/ui/histogram-info.ui.h:10
+msgctxt "Pixels"
+msgid "Selected:"
+msgstr "Selectat:"
+
+#: ../data/ui/location.ui.h:1
+msgid "_Location:"
+msgstr "_Locație:"
+
+#: ../data/ui/overwrite-dialog.ui.h:1
+msgid "Overwrite the old file with the new one?"
+msgstr "Suprascrie vechiul fișier cu cel nou?"
+
+#: ../data/ui/overwrite-dialog.ui.h:2
+msgid "Old File:"
+msgstr "Fișier vechi:"
+
+#: ../data/ui/overwrite-dialog.ui.h:3
+msgid "Filename:"
+msgstr "Numele fișierului:"
+
+#: ../data/ui/overwrite-dialog.ui.h:4
+#: ../extensions/image_print/data/ui/print-layout.ui.h:26
+msgid "Size:"
+msgstr "Dimensiune:"
+
+#: ../data/ui/overwrite-dialog.ui.h:5
+msgid "Modified:"
+msgstr "Modificat:"
+
+#: ../data/ui/overwrite-dialog.ui.h:6
+msgid "New File:"
+msgstr "Fișier nou:"
+
+#: ../data/ui/overwrite-dialog.ui.h:7
+msgid "Over_write the old file"
+msgstr ""
+
+#: ../data/ui/overwrite-dialog.ui.h:8
+msgid "Do not overwrite _the old file"
+msgstr ""
+
+#: ../data/ui/overwrite-dialog.ui.h:9
+msgid "Overwrite _all files"
+msgstr ""
+
+#: ../data/ui/overwrite-dialog.ui.h:10
+msgid "_Do not overwrite any file"
+msgstr ""
+
+#: ../data/ui/overwrite-dialog.ui.h:11
+msgid "_Save the new file as:"
+msgstr ""
+
+#: ../data/ui/personalize-filters.ui.h:1
+msgid "_General filter:"
+msgstr ""
+
+#: ../data/ui/personalize-filters.ui.h:2
+msgid "_Other filters:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:1
+msgid "below the folder list"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:2
+msgid "on the right"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Pix Preferences"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Appearance"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:5
+msgid "T_humbnails in viewer:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:6
+msgid "on the bottom"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:7
+msgid "on the side"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:8
+msgid "File _properties in browser:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:9
+msgid "_Statusbar"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:10
+msgid "On startup:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Go to last _visited location"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Go to this _folder:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Set to C_urrent"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:14
+msgid "_Reuse the active window to open files"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:16
+msgid "As_k confirmation before deleting files or catalogs"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Ask whether to save _modified files"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:18
+msgid "_Store metadata inside files if possible"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:19
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:1
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:11
+#: ../extensions/edit_metadata/gth-edit-general-page.c:482
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:13
+#: ../pix/gth-main-default-types.c:38
+msgid "General"
+msgstr "General"
+
+#: ../data/ui/shortcuts-preferences.ui.h:1
+msgid "Shortcuts:"
+msgstr ""
+
+#: ../data/ui/shortcuts-preferences.ui.h:2
+msgid "_Restore All…"
+msgstr ""
+
+#: ../data/ui/sort-order.ui.h:1
+msgid "_Inverse order"
+msgstr ""
+
+#: ../data/ui/template-editor-dialog.ui.h:1
+#: ../extensions/importer/data/ui/import-preferences.ui.h:4
+msgid "Example:"
+msgstr ""
+
 #: ../extensions/bookmarks/callbacks.c:323
 #: ../extensions/bookmarks/dlg-bookmarks.c:350
 msgid "Bookmarks"
 msgstr "Semne de carte"
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:1
+msgid "_Add Bookmark"
+msgstr ""
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:2
+msgid "_Edit Bookmarks…"
+msgstr ""
+
+#: ../extensions/bookmarks/data/ui/bookmarks-menu.ui.h:3
+msgid "_System Bookmarks"
+msgstr ""
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:1
+msgid "_Bookmarks:"
+msgstr ""
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:2
+msgid "Go to this location"
+msgstr ""
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:3
+#: ../extensions/catalogs/callbacks.c:72
+#: ../extensions/search/gth-search-source-selector.c:140
+msgid "Remove"
+msgstr "Elimină"
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:4
+msgid "_Name"
+msgstr ""
+
+#: ../extensions/bookmarks/data/ui/bookmarks.ui.h:5
+msgid "_Location"
+msgstr ""
 
 #: ../extensions/bookmarks/dlg-bookmarks.c:192
 msgid "Could not remove the bookmark"
@@ -64,7 +386,27 @@ msgstr "Nu s-a putut elimina semnul de carte"
 
 #: ../extensions/burn_disc/callbacks.c:48
 msgid "_Optical Disc…"
-msgstr "Disc _optic..."
+msgstr "Disc _optic…"
+
+#: ../extensions/burn_disc/data/ui/burn-disc-options.ui.h:1
+msgid "Disc Name"
+msgstr ""
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:1
+msgid "Current _folder"
+msgstr ""
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:2
+msgid "Current folder and its s_ub-folders"
+msgstr ""
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:3
+msgid "_Selected files"
+msgstr ""
+
+#: ../extensions/burn_disc/data/ui/burn-source-selector.ui.h:4
+msgid "Source"
+msgstr ""
 
 #: ../extensions/burn_disc/gth-burn-task.c:239
 #: ../extensions/burn_disc/gth-burn-task.c:260
@@ -87,6 +429,84 @@ msgstr "Eroare la interpretarea fișierului de imagine JPEG: %s"
 #, c-format
 msgid "Unknown JPEG color space (%d)"
 msgstr "Spațiu de culoare JPEG necunoscut (%d)"
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:1
+msgid "_Quality:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/avif-options.ui.h:2
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:3
+msgid "_Lossless"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:1
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:1
+msgid "_Default extension:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:3
+msgid "_Smoothing:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:4
+msgid "Opti_mize"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/jpeg-options.ui.h:5
+msgid "_Progressive"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/png-options.ui.h:1
+msgid "Compression _level:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/save-options-preferences.ui.h:1
+msgid "Default options:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tga-options.ui.h:1
+msgid "_RLE compression"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:2
+msgid "Compression"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:3
+msgid "_No compression"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:4
+msgid "No_rmal (Deflate)"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:5
+msgid "_Loss compression (JPEG)"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:6
+msgid "Resolution"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:7
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:12
+msgid "_Horizontal:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:8
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:13
+msgid "_Vertical:"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/tiff-options.ui.h:9
+msgid "dpi"
+msgstr ""
+
+#: ../extensions/cairo_io/data/ui/webp-options.ui.h:2
+msgid "_Method:"
+msgstr ""
 
 #: ../extensions/cairo_io/gth-image-saver-avif.c:365
 msgid "AVIF"
@@ -122,7 +542,10 @@ msgid "WebP"
 msgstr "WebP"
 
 #: ../extensions/cairo_io/preferences.c:134
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:10
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:5
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1703
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:11
 msgid "Saving"
 msgstr "Se salvează"
 
@@ -191,7 +614,7 @@ msgstr "Sigur vrei să ștergi „%s”?"
 
 #: ../extensions/catalogs/callbacks.c:52
 msgid "Add to Catalog…"
-msgstr "Adaugă în catalog..."
+msgstr "Adaugă în catalog…"
 
 #: ../extensions/catalogs/callbacks.c:57
 #: ../extensions/selections/callbacks.c:78
@@ -209,11 +632,6 @@ msgstr "Creează un catalog"
 #: ../extensions/catalogs/callbacks.c:68
 msgid "Create Library"
 msgstr "Creează o bibliotecă"
-
-#: ../extensions/catalogs/callbacks.c:72
-#: ../extensions/search/gth-search-source-selector.c:140
-msgid "Remove"
-msgstr "Elimină"
 
 #: ../extensions/catalogs/callbacks.c:73
 #: ../extensions/file_manager/callbacks.c:82
@@ -256,6 +674,93 @@ msgstr "Aranja"
 msgid "Automatically organize files by date"
 msgstr "Aranjarea automată a fișierelor după data"
 
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:1
+msgid "C_atalogs:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:2
+#: ../extensions/catalogs/dlg-add-to-catalog.c:620
+msgid "New Library"
+msgstr "Bibliotecă nouă"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:3
+#: ../extensions/catalogs/dlg-add-to-catalog.c:461
+msgid "New Catalog"
+msgstr "Catalog nou"
+
+#: ../extensions/catalogs/data/ui/add-to-catalog.ui.h:4
+#: ../extensions/file_manager/actions.c:766
+#: ../extensions/webalbums/gth-web-exporter.c:1820
+msgid "_View the destination"
+msgstr "_Vezi destinația"
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:2
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:8
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:1
+msgid "_Name:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:3
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:2
+msgid "_Date:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/catalog-properties.ui.h:4
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:3
+msgid "Catalog"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:1
+#: ../pix/gth-progress-dialog.c:158
+msgid "Cancel operation"
+msgstr "Anulează operația"
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:2
+msgid "Organization:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:4
+msgid "Files"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:5
+msgid "Create"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:6
+msgid "Select All"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:7
+msgid "Select None"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files-task.ui.h:8
+msgid "Catalog _Preview:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:1
+msgid "_Group files by:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:2
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:2
+#: ../extensions/search/gth-search-source-selector.c:123
+msgid "_Include sub-folders"
+msgstr "_Include sub-dosare"
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:3
+msgid "Ignore catalogs with a single file"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:4
+msgid "Put single files in the catalog:"
+msgstr ""
+
+#: ../extensions/catalogs/data/ui/organize-files.ui.h:5
+msgid "Singles"
+msgstr ""
+
 #: ../extensions/catalogs/dlg-add-to-catalog.c:156
 msgid "Could not add the files to the catalog"
 msgstr "Nu s-a putut adăuga fișierele în catalog"
@@ -264,14 +769,6 @@ msgstr "Nu s-a putut adăuga fișierele în catalog"
 #: ../extensions/search/gth-search-task.c:396
 msgid "Could not create the catalog"
 msgstr "Nu s-a putut crea catalogul"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:461
-msgid "New Catalog"
-msgstr "Catalog nou"
-
-#: ../extensions/catalogs/dlg-add-to-catalog.c:620
-msgid "New Library"
-msgstr "Bibliotecă nouă"
 
 #: ../extensions/catalogs/dlg-add-to-catalog.c:687
 msgid "Add to Catalog"
@@ -368,7 +865,7 @@ msgstr "Nu se pot copia fișierele"
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1094
 msgid "Invalid destination."
-msgstr "Destinație invalidă"
+msgstr "Destinație invalidă."
 
 #: ../extensions/catalogs/gth-file-source-catalogs.c:1141
 #, c-format
@@ -386,7 +883,65 @@ msgstr "Operațiunea finalizată. Cataloage: %d. Imagini: %d."
 
 #: ../extensions/change_date/callbacks.c:38
 msgid "Change _Date…"
-msgstr "Schimbă _data..."
+msgstr "Schimbă _data…"
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:1
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:6
+msgid "+"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:2
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:7
+msgid "-"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:3
+msgid "Change the following values:"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:4
+msgid "_Last modified date"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:5
+msgid "Co_mment date"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:6
+msgid "Change to:"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:7
+msgid "The _following date:"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:8
+msgid "File _modified date"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:9
+msgid "File c_reation date"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:10
+msgid "Date p_hoto was taken"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:11
+msgid "A_djust by"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:12
+msgid "hours"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:13
+msgid "minutes"
+msgstr ""
+
+#: ../extensions/change_date/data/ui/change-date.ui.h:14
+msgid "seconds"
+msgstr ""
 
 #: ../extensions/change_date/dlg-change-date.c:177
 msgid "Change Date"
@@ -395,6 +950,10 @@ msgstr "Schimbă data"
 #: ../extensions/comments/callbacks.c:39
 msgid "Import Embedded Metadata"
 msgstr "Importați metadate încorporate"
+
+#: ../extensions/comments/data/ui/comments-preferences.ui.h:1
+msgid "_Synchronize with the embedded metadata"
+msgstr ""
 
 #: ../extensions/comments/dlg-comments-preferences.c:68
 #: ../extensions/gstreamer_tools/dlg-media-viewer-preferences.c:75
@@ -419,11 +978,6 @@ msgstr "Comentariu"
 msgid "Title"
 msgstr "Titlu"
 
-#: ../extensions/comments/main.c:44 ../extensions/comments/main.c:170
-#: ../pix/gth-main-default-metadata.c:64
-msgid "Description"
-msgstr "Descriere"
-
 #: ../extensions/comments/main.c:45 ../extensions/comments/main.c:178
 #: ../pix/gth-main-default-metadata.c:63
 msgid "Place"
@@ -445,6 +999,218 @@ msgstr "Foaia cu contacte...(_S)"
 #: ../extensions/contact_sheet/callbacks.c:39
 msgid "Image _Wall…"
 msgstr "Peretele cu imagini...(_W)"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:439
+#: ../extensions/file_tools/gth-file-tool-crop.c:469
+#: ../extensions/file_tools/gth-file-tool-resize.c:589
+#: ../extensions/file_tools/gth-file-tool-rotate.c:396
+#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
+msgid "None"
+msgstr "Nici unul"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:2
+msgid "Simple"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:3
+msgid "Simple with shadow"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:4
+msgid "Shadow only"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:5
+msgid "Slide"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:6
+msgid "Inward Shadow"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:7
+msgid "Outward Shadow"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:9
+msgid "Background"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:10
+msgid "_Solid color"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:11
+msgid "_Gradient"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:14
+msgid "Select a color"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:15
+msgid "Frame"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:16
+msgid "_Style:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:17
+msgid "C_olor:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:18
+#: ../pix/gth-template-editor-dialog.c:419
+msgid "Text"
+msgstr "Text"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:19
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:2
+#: ../extensions/image_print/data/ui/print-layout.ui.h:5
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:3
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:4
+msgid "_Header:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:20
+msgid "Select a font"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:21
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:1
+#: ../extensions/image_print/data/ui/print-layout.ui.h:6
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:3
+msgid "_Footer:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui.h:22
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:26
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:2
+msgid "Caption:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:3
+#: ../extensions/image_print/data/ui/print-layout.ui.h:17
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:5
+#: ../pix/gth-browser-actions-entries.h:99
+msgid "Help"
+msgstr "Ajutor"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:4
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:4
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:8
+msgid "Edit template"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:5
+#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
+msgid "Contact Sheet"
+msgstr "Fișă de contact"
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:6
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:1
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:5
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:4
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:4
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:7
+msgid "_Destination:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:7
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:2
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:3
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:9
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:8
+msgid "Choose destination folder"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:8
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:3
+msgid "File_name:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:9
+msgid "Create _HTML image map"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:12
+msgid "Create a new theme"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:13
+msgid "Edit the selected theme"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:14
+msgid "Delete the selected theme"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:15
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:12
+msgid "Theme"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:16
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:6
+#: ../extensions/image_print/data/ui/print-layout.ui.h:19
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:16
+msgid "Columns:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:17
+msgid "0"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:18
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:7
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:19
+msgid "Images per page:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:19
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:8
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:18
+msgid "All images on a single page"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:20
+msgid "_All pages with the same size"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:21
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:9
+#: ../extensions/image_print/data/ui/print-layout.ui.h:18
+msgid "Layout"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:22
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:10
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:14
+msgid "S_ort:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:23
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:11
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:15
+msgid "Re_verse order"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:24
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:12
+msgid "_Size:"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:25
+msgid "Sq_uared"
+msgstr ""
+
+#: ../extensions/contact_sheet/data/ui/contact-sheet.ui.h:27
+#: ../extensions/contact_sheet/data/ui/image-wall.ui.h:13
+msgid "Thumbnails"
+msgstr ""
 
 #: ../extensions/contact_sheet/dlg-contact-sheet.c:35
 #: ../extensions/contact_sheet/dlg-image-wall.c:34
@@ -506,10 +1272,6 @@ msgstr "Nu s-a putut șterge tema"
 msgid "Edit Template"
 msgstr "Editare șablon"
 
-#: ../extensions/contact_sheet/dlg-contact-sheet.c:852
-msgid "Contact Sheet"
-msgstr "Fișă de contact"
-
 #: ../extensions/contact_sheet/dlg-image-wall.c:248
 msgid "Image Wall"
 msgstr "Peretele imaginii"
@@ -542,13 +1304,23 @@ msgstr "Antet"
 msgid "Footer"
 msgstr "Subsol"
 
-#: ../extensions/contact_sheet/gth-contact-sheet-theme.c:34
-msgid "Caption"
-msgstr "Titlu"
-
 #: ../extensions/convert_format/callbacks.c:38
 msgid "Convert Format…"
-msgstr "Convertește formatul..."
+msgstr "Convertește formatul…"
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:1
+msgid "New format"
+msgstr ""
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:2
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:8
+msgid "Destination"
+msgstr ""
+
+#: ../extensions/convert_format/data/ui/convert-format.ui.h:4
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:10
+msgid "_Use the original image folder"
+msgstr ""
 
 #: ../extensions/convert_format/dlg-convert-format.c:87
 msgid "Converting images"
@@ -563,6 +1335,7 @@ msgid "Could not show the desktop background properties"
 msgstr "Nu s-a putut afișa proprietățile fundalului desktop"
 
 #: ../extensions/desktop_background/actions.c:368
+#: ../pix/resources/gears-menu.ui.h:8
 msgid "_Preferences"
 msgstr "_Preferințe"
 
@@ -604,6 +1377,27 @@ msgstr "Modifică etichetele"
 msgid "Delete Metadata"
 msgstr "Ștergeți metadate"
 
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:1
+msgid "D_escription:"
+msgstr ""
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:3
+msgid "_Place:"
+msgstr ""
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:4
+#: ../extensions/edit_metadata/data/ui/tag-chooser.ui.h:1
+msgid "T_ags:"
+msgstr ""
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:5
+msgid "_Rating:"
+msgstr ""
+
+#: ../extensions/edit_metadata/data/ui/edit-comment-page.ui.h:6
+msgid "_Title:"
+msgstr ""
+
 #: ../extensions/edit_metadata/dlg-edit-metadata.c:123
 msgid "Could not save the file metadata"
 msgstr "Nu s-a putut salva metadatele fișierului"
@@ -616,11 +1410,6 @@ msgstr "Nu se pot citi informațiile despre fișiere"
 #: ../extensions/edit_metadata/gth-edit-comment-dialog.c:138
 msgid "Save only cha_nged fields"
 msgstr "Salvează doar câmpurile schi_mbate"
-
-#: ../extensions/edit_metadata/gth-edit-general-page.c:482
-#: ../pix/gth-main-default-types.c:38
-msgid "General"
-msgstr "General"
 
 #: ../extensions/edit_metadata/gth-edit-general-page.c:554
 msgid "No date"
@@ -655,6 +1444,55 @@ msgstr "Fișiere de scris"
 msgid "Reading files"
 msgstr "Fișiere de citit"
 
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:1
+msgid "C_opyright:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:2
+msgid "Co_untry:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:3
+msgid "_Code:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:4
+msgid "Cr_edit:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:6
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:1
+msgid "_Source:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:7
+msgid "_Urgency:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:8
+msgid "_Object Name:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:9
+msgid "Byline _Title:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:10
+msgid "_Byline:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:11
+msgid "_City:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:12
+msgid "_Language:"
+msgstr ""
+
+#: ../extensions/exiv2_tools/data/ui/edit-exiv2-page.ui.h:13
+msgid "State/Province:"
+msgstr ""
+
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:47 ../pix/glib-utils.c:1114
 #: ../pix/glib-utils.c:2091 ../pix/str-utils.c:641
 msgid "(invalid value)"
@@ -663,12 +1501,6 @@ msgstr "(valoare invalidă)"
 #: ../extensions/exiv2_tools/exiv2-utils.cpp:711
 msgid "Exposure"
 msgstr "Expunere"
-
-#: ../extensions/exiv2_tools/gth-edit-iptc-page.c:199
-#: ../extensions/gstreamer_tools/main.c:41
-#: ../pix/dlg-preferences-shortcuts.c:335 ../pix/gth-shortcuts-window.c:96
-msgid "Other"
-msgstr "Altele"
 
 #: ../extensions/exiv2_tools/main.c:33
 msgid "Exif General"
@@ -757,7 +1589,9 @@ msgstr ""
 #: ../extensions/file_manager/actions.c:743
 #: ../extensions/file_manager/callbacks.c:74
 #: ../extensions/file_manager/callbacks.c:103
-#: ../extensions/file_manager/callbacks.c:124 ../pix/gtk-utils.h:38
+#: ../extensions/file_manager/callbacks.c:124
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:5
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:32 ../pix/gtk-utils.h:38
 msgid "Copy"
 msgstr "Copiază"
 
@@ -773,11 +1607,6 @@ msgstr "Copiază la"
 #: ../extensions/file_manager/callbacks.c:1030
 msgid "Move"
 msgstr "Mută"
-
-#: ../extensions/file_manager/actions.c:766
-#: ../extensions/webalbums/gth-web-exporter.c:1820
-msgid "_View the destination"
-msgstr "_Vezi destinația"
 
 #: ../extensions/file_manager/actions.c:870
 msgid "Could not open the location"
@@ -906,6 +1735,247 @@ msgstr "Decupează"
 #: ../extensions/file_tools/gth-file-tool-resize.c:840
 msgid "Resize"
 msgstr "Redimensionare"
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:1
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:1
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:1
+msgid "_Preview"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:2
+msgid "B_rightness:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:3
+msgid "Con_trast:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:4
+msgid "_Saturation:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:5
+msgid "G_amma:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:6
+msgid "Cyan-_Red:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:7
+msgid "_Magenta-Green:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:8
+msgid "_Yellow-Blue:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/adjust-colors-options.ui.h:9
+msgid "Color Levels"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:1
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:5
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:1
+msgid "Position"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:2
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:2
+msgid "_X:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:3
+#: ../extensions/red_eye_removal/data/ui/red-eye-removal-options.ui.h:3
+msgid "_Y:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/color-picker-options.ui.h:4
+msgid "Color"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:1
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:1
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:1
+#: ../extensions/file_tools/gth-file-tool-crop.c:661
+#: ../extensions/file_tools/gth-file-tool-resize.c:759
+#: ../extensions/file_tools/gth-file-tool-rotate.c:617
+#: ../pix/gth-file-chooser-dialog.c:258
+msgid "Options"
+msgstr "Opțiuni"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:2
+msgid "_Grid:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:3
+msgid "Selection"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:4
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:7
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:5
+msgid "_Width:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:5
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:8
+msgid "Heigh_t:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:6
+msgid "_Position:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:7
+msgid "Maximize"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:8
+msgid "Center"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:9
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:10
+#: ../pix/gth-main-default-tests.c:406
+msgid "Aspect ratio"
+msgstr "Raport de aspect"
+
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:10
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:11
+msgid "I_nvert aspect ratio"
+msgstr ""
+
+#. after the colon there is a control to select the size in pixels
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:12
+msgid "M_ultiple of:"
+msgstr ""
+
+#. abbreviation of pixel
+#: ../extensions/file_tools/data/ui/crop-options.ui.h:14
+msgid "px"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/curves-options.ui.h:2
+msgid "Include current channel"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:2
+msgid "High _quality"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:3
+msgid "pixels"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:5
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:3
+#, no-c-format
+msgid "%"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:6
+#: ../pix/gth-main-default-metadata.c:48
+msgid "Dimensions"
+msgstr "Dimensiuni"
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:9
+msgid "Set the image size to this value"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:12
+msgid "Original dimensions:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:13
+msgid "Scale factor:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/resize-options.ui.h:14
+msgid "New dimensions:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:2
+msgid "Grid:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:3
+msgid "_Background:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:4
+msgid "Pick a background color"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:5
+msgid "_Transparent"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:6
+msgid "Original size"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:7
+msgid "Bounding box"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:8
+msgid "Crop borders"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:9
+msgid "Angle"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:10
+msgid "Align"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:11
+msgid "Image size"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:12
+msgid "Point 1:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:13
+msgid "Point 2:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:14
+msgid "Keep aspect ratio"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:15
+msgid ""
+"Draw a line on the image \n"
+"to set the alignment."
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:17
+msgid "Parallel"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:18
+msgid "Perpendicular"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/rotate-options.ui.h:19
+msgid "Alignment"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:2
+msgid "Threshold:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:3
+msgid "Radius:"
+msgstr ""
+
+#: ../extensions/file_tools/data/ui/sharpen-options.ui.h:4
+msgid "Amount:"
+msgstr ""
 
 #. Translators: the first number is converted to the second number
 #: ../extensions/file_tools/gth-curve-editor.c:417
@@ -1042,14 +2112,6 @@ msgid "Pick a color from the image"
 msgstr "Alege o culoare din imagine"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:439
-#: ../extensions/file_tools/gth-file-tool-crop.c:469
-#: ../extensions/file_tools/gth-file-tool-resize.c:589
-#: ../extensions/file_tools/gth-file-tool-rotate.c:396
-#: ../extensions/slideshow/main.c:297 ../pix/gth-accel-button.c:201
-msgid "None"
-msgstr "Nici unul"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:439
 #: ../extensions/file_tools/gth-file-tool-resize.c:589
 #: ../pix/gth-test-aspect-ratio.c:47
 msgid "Square"
@@ -1119,7 +2181,7 @@ msgstr "2,39/1"
 #: ../extensions/file_tools/gth-file-tool-resize.c:607
 #: ../pix/gth-location-chooser.c:617 ../pix/gth-template-selector.c:434
 msgid "Other…"
-msgstr "Altceva..."
+msgstr "Altceva…"
 
 #: ../extensions/file_tools/gth-file-tool-crop.c:470
 #: ../extensions/file_tools/gth-file-tool-rotate.c:397
@@ -1135,13 +2197,6 @@ msgstr "Secțiuni de aur"
 #: ../extensions/file_tools/gth-file-tool-rotate.c:399
 msgid "Center Lines"
 msgstr "Linii de centru"
-
-#: ../extensions/file_tools/gth-file-tool-crop.c:661
-#: ../extensions/file_tools/gth-file-tool-resize.c:759
-#: ../extensions/file_tools/gth-file-tool-rotate.c:617
-#: ../pix/gth-file-chooser-dialog.c:258
-msgid "Options"
-msgstr "Opțiuni"
 
 #: ../extensions/file_tools/gth-file-tool-curves.c:410
 msgid "Add to Presets"
@@ -1297,10 +2352,12 @@ msgid "Rotate"
 msgstr "Rotire"
 
 #: ../extensions/file_tools/gth-file-tool-save-as.c:70
+#: ../pix/resources/gears-menu.ui.h:4
 msgid "Save As…"
 msgstr "Salvează ca…"
 
 #: ../extensions/file_tools/gth-file-tool-save.c:66
+#: ../pix/resources/gears-menu.ui.h:3
 msgid "Save"
 msgstr "Salvează"
 
@@ -1318,7 +2375,51 @@ msgstr "Anulează"
 
 #: ../extensions/find_duplicates/callbacks.c:37
 msgid "Find _Duplicates…"
-msgstr "Găsește _Dubluri..."
+msgstr "Găsește _Dubluri…"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui.h:1
+msgid "_Folders:"
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:1
+msgid "Duplicates:"
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:2
+msgid "Files:"
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:3
+#: ../pix/gth-main-default-metadata.c:32
+msgid "File"
+msgstr "Fișier"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:4
+msgid "Last modified"
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:6
+msgid "_View"
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:7
+#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
+msgid "_Delete"
+msgstr "_Şterge"
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates-dialog.ui.h:8
+msgid "No duplicates found."
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:1
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:1
+#: ../extensions/search/data/ui/search-editor.ui.h:2
+msgid "Start _at:"
+msgstr ""
+
+#: ../extensions/find_duplicates/data/ui/find-duplicates.ui.h:3
+msgid "_Filter:"
+msgstr ""
 
 #: ../extensions/find_duplicates/dlg-find-duplicates.c:98
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1350
@@ -1340,7 +2441,7 @@ msgstr "lasă cele mai vechi dubluri"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder…"
-msgstr "după dosar..."
+msgstr "după dosar…"
 
 #: ../extensions/find_duplicates/gth-find-duplicates.c:68
 msgid "all files"
@@ -1398,6 +2499,78 @@ msgstr "Duplicate"
 #: ../extensions/find_duplicates/gth-find-duplicates.c:1373
 msgid "Select"
 msgstr "Selectează"
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:1
+msgid "Public photos"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:2
+msgid "Private photos, visible to family and friends"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:3
+msgid "Private photos, visible to friends"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:4
+msgid "Private photos, visible to family"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:5
+msgid "Private photos"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:6
+msgid "Safe content"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:7
+msgid "Moderate content"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:8
+msgid "Restricted content"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:9
+msgid "_Account:"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:10
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:1
+msgid "Edit accounts"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:11
+msgid "Free space:"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:12
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:3
+msgid "Ph_otoset:"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:13
+msgid "_Privacy:"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:14
+msgid "_Safety:"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:15
+msgid "Hi_de from public searches"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/export-to-flickr.ui.h:16
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:10
+msgid "_Resize if larger than:"
+msgstr ""
+
+#: ../extensions/flicker_utils/data/ui/import-from-flickr.ui.h:2
+#: ../extensions/oauth/data/ui/oauth-account-chooser.ui.h:1
+msgid "A_ccount:"
+msgstr ""
 
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:136
 #: ../extensions/flicker_utils/dlg-export-to-flickr.c:410
@@ -1493,7 +2666,7 @@ msgstr "C_ontinuă"
 
 #: ../extensions/flicker_utils/flickr-service.c:563
 msgid "_Authorize…"
-msgstr "_Autorizează..."
+msgstr "_Autorizează…"
 
 #: ../extensions/flicker_utils/flickr-service.c:566
 #, c-format
@@ -1574,7 +2747,7 @@ msgstr "Redare mai rapidă"
 
 #: ../extensions/gstreamer_tools/callbacks.c:36
 msgid "Play slower"
-msgstr "redare mai lentă"
+msgstr "Redă mai lent"
 
 #: ../extensions/gstreamer_tools/callbacks.c:37
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1189
@@ -1582,44 +2755,134 @@ msgid "Next frame"
 msgstr "Cadrul următor"
 
 #: ../extensions/gstreamer_tools/callbacks.c:38
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:38
 msgid "Go forward 1 second"
 msgstr "Mergi în față 1 secundă"
 
 #: ../extensions/gstreamer_tools/callbacks.c:39
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:22
 msgid "Go forward 5 seconds"
 msgstr "Mergi în față 5 secunde"
 
 #: ../extensions/gstreamer_tools/callbacks.c:40
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:25
 msgid "Go forward 10 seconds"
 msgstr "Mergi în față 10 secunde"
 
 #: ../extensions/gstreamer_tools/callbacks.c:41
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:28
 msgid "Go forward 1 minute"
 msgstr "Mergi în față 1 minut"
 
 #: ../extensions/gstreamer_tools/callbacks.c:42
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:31
 msgid "Go forward 5 minutes"
 msgstr "Mergi în față 5 minute"
 
 #: ../extensions/gstreamer_tools/callbacks.c:43
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:35
 msgid "Go back 1 second"
 msgstr "Mergi în spate 1 secundă"
 
 #: ../extensions/gstreamer_tools/callbacks.c:44
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:10
 msgid "Go back 5 seconds"
 msgstr "Mergi în spate 5 secunde"
 
 #: ../extensions/gstreamer_tools/callbacks.c:45
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:13
 msgid "Go back 10 seconds"
 msgstr "Mergi în spate 10 secunde"
 
 #: ../extensions/gstreamer_tools/callbacks.c:46
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:16
 msgid "Go back 1 minute"
 msgstr "Mergi în spate 1 minut"
 
 #: ../extensions/gstreamer_tools/callbacks.c:47
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:19
 msgid "Go back 5 minutes"
 msgstr "Mergi în spate 5 minute"
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:1
+msgid "Use hardware acceleration"
+msgstr ""
+
+#: ../extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui.h:2
+msgid "_Screenshots location:"
+msgstr ""
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:1
+#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
+msgid "Play"
+msgstr "Redare"
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:2
+msgid "Slower"
+msgstr ""
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:3
+msgid "Faster"
+msgstr ""
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:4
+msgid "Restart when finished"
+msgstr ""
+
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:5
+msgid "Time:"
+msgstr ""
+
+#. minus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:9
+msgid "-5s"
+msgstr ""
+
+#. minus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:12
+msgid "-10s"
+msgstr ""
+
+#. minus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:15
+msgid "-1m"
+msgstr ""
+
+#. minus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:18
+msgid "-5m"
+msgstr ""
+
+#. plus 5 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:21
+msgid "+5s"
+msgstr ""
+
+#. plus 10 seconds
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:24
+msgid "+10s"
+msgstr ""
+
+#. plus 1 minute
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:27
+msgid "+1m"
+msgstr ""
+
+#. plus 5 minutes
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:30
+msgid "+5m"
+msgstr ""
+
+#. minus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:34
+msgid "-1s"
+msgstr ""
+
+#. plus 1 second
+#: ../extensions/gstreamer_tools/data/ui/mediabar.ui.h:37
+msgid "+1s"
+msgstr ""
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:595
 msgid "Playing video"
@@ -1629,16 +2892,13 @@ msgstr "Redare video"
 msgid "Pause"
 msgstr "Pauză"
 
-#: ../extensions/gstreamer_tools/gth-media-viewer-page.c:622
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1182
-msgid "Play"
-msgstr "Redare"
-
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1127
 msgid "Take a screenshot"
 msgstr "Fă o captură de ecran"
 
 #: ../extensions/gstreamer_tools/gth-media-viewer-page.c:1134
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:4
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:6
 msgid "Fit to window"
 msgstr "Se potrivesc la fereastră"
 
@@ -1659,6 +2919,7 @@ msgid "Artist"
 msgstr "Artist"
 
 #: ../extensions/gstreamer_tools/main.c:48
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:6
 msgid "Album"
 msgstr "Album"
 
@@ -1680,10 +2941,12 @@ msgid "Framerate"
 msgstr "Frecvență cadre"
 
 #: ../extensions/gstreamer_tools/main.c:54
+#: ../extensions/image_print/data/ui/print-layout.ui.h:27
 msgid "Width"
 msgstr "Lungime"
 
 #: ../extensions/gstreamer_tools/main.c:55
+#: ../extensions/image_print/data/ui/print-layout.ui.h:28
 msgid "Height"
 msgstr "Înălțime"
 
@@ -1723,6 +2986,100 @@ msgstr "Nu s-a putut tipări fișierele selectate"
 #: ../extensions/image_print/preferences.c:79
 msgid "Print"
 msgstr "Tipărire"
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:1
+msgid "Centered"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:2
+msgid "Custom"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:3
+msgid "millimeters"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:4
+msgid "inches"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:7
+msgid "The current page number"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:8
+msgid "The total number of pages"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:9
+msgid "Special code"
+msgstr ""
+
+#. translate only the text in the curly brackets
+#: ../extensions/image_print/data/ui/print-layout.ui.h:13
+#, no-c-format
+msgid "%D{ format }"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:14
+msgid "The current date"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:15
+msgid "The total number of files"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:16
+msgid "The event description"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:20
+msgid "_Rows:"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:22
+msgid "Image"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:23
+msgid "Position:"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:24
+msgid "Left"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:25
+msgid "Top"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:29
+msgid "Rotation:"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:30
+msgid "Unit:"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-layout.ui.h:31
+msgid "Preview"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:1
+msgid "Fonts"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:5
+msgid "Select Caption Font"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:6
+msgid "Select Header Font"
+msgstr ""
+
+#: ../extensions/image_print/data/ui/print-preferences.ui.h:7
+msgid "Select Footer Font"
+msgstr ""
 
 #: ../extensions/image_print/gth-image-print-job.c:40
 msgid "Total number of files"
@@ -1906,6 +3263,117 @@ msgstr "Derulează rapid în jos"
 msgid "Scroll to center"
 msgstr "Derulează către centru"
 
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:1
+msgid "After loading an image:"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:2
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
+msgid "Set to actual size"
+msgstr "Setat la dimensiunea reală"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:3
+msgid "Keep previous zoom"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:5
+#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
+msgid "Fit to window if larger"
+msgstr "Potrivește cu dimensiunea ferestrei dacă este mai mare"
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:6
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:7
+msgid "Fit to width"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:7
+msgid "Fit to width if larger"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:8
+msgid "Reset scrollbar positions"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:9
+msgid "Mouse wheel action:"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:10
+msgctxt "zoom quality"
+msgid "Change image"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:11
+msgctxt "zoom quality"
+msgid "Zoom image"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:12
+msgid "Zoom quality:"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:13
+msgctxt "zoom quality"
+msgid "_High"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:14
+msgctxt "zoom quality"
+msgid "_Low"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:15
+msgid "Transparency:"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:16
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:1
+msgid "Checkered"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:17
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:2
+msgid "White"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:18
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:3
+msgid "Gray"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/image-viewer-preferences.ui.h:19
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:4
+msgid "Black"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:5
+msgid "Automatic"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:8
+msgid "Fit to height"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:10
+#, no-c-format
+msgid "50%"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:12
+#, no-c-format
+msgid "100%"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:14
+#, no-c-format
+msgid "200%"
+msgstr ""
+
+#: ../extensions/image_viewer/data/ui/toolbar-zoom-menu.ui.h:16
+#, no-c-format
+msgid "300%"
+msgstr ""
+
 #: ../extensions/image_viewer/gth-image-histogram.c:94
 msgid "Histogram"
 msgstr "Histogramă"
@@ -1917,14 +3385,6 @@ msgstr "Copiază imagine"
 #: ../extensions/image_viewer/gth-image-viewer-page.c:85
 msgid "Paste Image"
 msgstr "Lipește imagine"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1139
-msgid "Set to actual size"
-msgstr "Setat la dimensiunea reală"
-
-#: ../extensions/image_viewer/gth-image-viewer-page.c:1146
-msgid "Fit to window if larger"
-msgstr "Potrivește cu dimensiunea ferestrei dacă este mai mare"
 
 #: ../extensions/image_viewer/gth-image-viewer-page.c:1174
 msgid "Apply the embedded color profile"
@@ -1966,6 +3426,19 @@ msgstr "Editor de imagini"
 #: ../pix/gth-main-default-types.c:42 ../pix/gth-shortcuts-window.c:40
 msgid "Viewer"
 msgstr "Vizualizator"
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:1
+msgid "_Destination"
+msgstr ""
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:2
+msgid "_Automatic subfolder"
+msgstr ""
+
+#: ../extensions/importer/data/ui/import-preferences.ui.h:3
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:7
+msgid "_Template:"
+msgstr ""
 
 #: ../extensions/importer/gth-import-destination-button.c:113
 msgid "Invalid Destination"
@@ -2020,6 +3493,39 @@ msgstr ""
 #: ../extensions/list_tools/callbacks.c:157 ../extensions/list_tools/main.c:31
 msgid "Tools"
 msgstr "Unelte"
+
+#: ../extensions/list_tools/data/ui/personalize-scripts.ui.h:1
+msgid "Co_mmands:"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:2
+msgid "_Wait for the command to finish"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:3
+msgid "E_xecute command once for every file"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:4
+msgid "_Terminal command (shell script)"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:5
+msgid "Sh_ortcut:"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:6
+msgid "_Command:"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/script-editor.ui.h:7
+msgid "Edit command"
+msgstr ""
+
+#: ../extensions/list_tools/data/ui/tools-menu.ui.h:1
+#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
+msgid "Personalize…"
+msgstr "Personalizează…"
 
 #: ../extensions/list_tools/dlg-personalize-scripts.c:250
 msgid "Script"
@@ -2135,9 +3641,19 @@ msgstr "E"
 msgid "Map"
 msgstr "Hartă"
 
+#: ../extensions/oauth/data/ui/oauth-account-manager.ui.h:1
+msgid "A_ccounts:"
+msgstr ""
+
+#. the message pane
+#: ../extensions/oauth/data/ui/oauth-ask-authorization.ui.h:1
+#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
+msgid "Loading…"
+msgstr "Se încarcă…"
+
 #: ../extensions/oauth/oauth-account-chooser-dialog.c:192
 msgid "New authentication…"
-msgstr "Noua autentificare..."
+msgstr "Autentificare nouă…"
 
 #: ../extensions/oauth/oauth-ask-authorization-dialog.c:240
 msgid "Authorization Required"
@@ -2145,7 +3661,7 @@ msgstr "Este necesară autorizarea"
 
 #: ../extensions/oauth/web-service.c:379
 msgid "Choose _Account…"
-msgstr "Alegeți _Cont..."
+msgstr "Alege un _cont…"
 
 #: ../extensions/oauth/web-service.c:657
 msgid "Choose Account"
@@ -2178,15 +3694,42 @@ msgstr "Importă"
 
 #: ../extensions/photo_importer/callbacks.c:41
 msgid "_Removable Device…"
-msgstr "_Dispozitiv detașabil..."
+msgstr "_Dispozitiv detașabil…"
 
 #: ../extensions/photo_importer/callbacks.c:42
 msgid "F_older…"
-msgstr "Dosar"
+msgstr "D_osar…"
 
 #: ../extensions/photo_importer/callbacks.c:63
 msgid "I_mport From"
 msgstr "I_mportat din"
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:1
+msgid "After importing from a device:"
+msgstr ""
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:2
+msgid "_Rotate the images physically"
+msgstr ""
+
+#: ../extensions/photo_importer/data/ui/photo-importer-options.ui.h:3
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:6
+msgid "_Delete the imported files from the source"
+msgstr ""
+
+#. view label
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:2
+#: ../pix/gth-filterbar.c:391
+msgid "S_how:"
+msgstr "Ara_tă:"
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:3
+msgid "_Event:"
+msgstr ""
+
+#: ../extensions/photo_importer/data/ui/photo-importer.ui.h:5
+msgid "_Tags:"
+msgstr ""
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:218
 msgid "Could not import the files"
@@ -2204,7 +3747,7 @@ msgstr "Nu s-a putut încărca dosarul"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:352
 msgid "Getting the folder content…"
-msgstr "Se obține conținutul dosarului..."
+msgstr "Se obține conținutul dosarului…"
 
 #: ../extensions/photo_importer/dlg-photo-importer.c:585
 msgid "Import from Removable Device"
@@ -2225,6 +3768,27 @@ msgstr "Îndepărtarea ochilor roșii"
 #: ../extensions/red_eye_removal/gth-file-tool-red-eye.c:472
 msgid "Remove the red eye effect caused by camera flashes"
 msgstr "Îndepărtați efectul de ochi roșii cauzat de blițul camerei"
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:2
+msgid "_Sort by:"
+msgstr ""
+
+#. Translators: this is the text case (upper or lower case).
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:4
+msgid "Cas_e:"
+msgstr ""
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:6
+msgid "Re_verse Order"
+msgstr ""
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:9
+msgid "Revert to the last used template"
+msgstr ""
+
+#: ../extensions/rename_series/data/ui/rename-series.ui.h:10
+msgid "_Preview:"
+msgstr ""
 
 #: ../extensions/rename_series/dlg-rename-series.c:54
 #: ../extensions/webalbums/dlg-web-exporter.c:45
@@ -2283,7 +3847,28 @@ msgstr "Redenumirea fișierelor"
 
 #: ../extensions/resize_images/callbacks.c:38
 msgid "Resize Images…"
-msgstr "Redimensionați imaginile..."
+msgstr "Redimensionează imaginile…"
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:1
+msgid "pixel"
+msgstr ""
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:4
+msgid "New dimensions"
+msgstr ""
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:6
+msgid "_Height:"
+msgstr ""
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:7
+msgid "_Preserve original aspect ratios"
+msgstr ""
+
+#: ../extensions/resize_images/data/ui/resize-images.ui.h:11
+#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
+msgid "Format"
+msgstr "Format"
 
 #: ../extensions/resize_images/dlg-resize-images.c:341
 msgid "Resize Images"
@@ -2328,10 +3913,6 @@ msgstr "toate regulile următoare"
 #: ../pix/gth-filter-editor-dialog.c:168
 msgid "any of the following rules"
 msgstr "oricare dintre următoarele reguli"
-
-#: ../extensions/search/gth-search-source-selector.c:123
-msgid "_Include sub-folders"
-msgstr "_Include sub-dosare"
 
 #: ../extensions/search/gth-search-source-selector.c:130
 msgid "Add another location"
@@ -2425,7 +4006,7 @@ msgstr "Întrerupeți/Reluați prezentarea"
 #: ../pix/gth-browser-actions-entries.h:134
 #: ../pix/gth-browser-actions-entries.h:135
 msgid "Show next file"
-msgstr ""
+msgstr "Arată următorul fișier"
 
 #: ../extensions/slideshow/callbacks.c:44
 #: ../pix/gth-browser-actions-entries.h:126
@@ -2434,12 +4015,52 @@ msgstr ""
 #: ../pix/gth-browser-actions-entries.h:129
 #: ../pix/gth-browser-actions-entries.h:130
 msgid "Show previous file"
-msgstr ""
+msgstr "Arată fișierul precedent"
 
 #: ../extensions/slideshow/callbacks.c:65
-#: ../extensions/slideshow/callbacks.c:362 ../extensions/slideshow/main.c:286
-#: ../extensions/slideshow/preferences.c:142 ../pix/gth-shortcuts-window.c:41
+#: ../extensions/slideshow/callbacks.c:362
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:2
+#: ../extensions/slideshow/main.c:286 ../extensions/slideshow/preferences.c:142
+#: ../pix/gth-shortcuts-window.c:41
 msgid "Presentation"
+msgstr "Prezentare"
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:1
+msgid "_Personalize"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:3
+msgid "_Transition effect:"
+msgstr ""
+
+#. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:5
+msgid "_Change automatically, every"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:6
+msgctxt "Every x seconds"
+msgid "seconds"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:7
+msgid "_Restart when finished"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:8
+msgid "R_andom order"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:9
+msgid "Playlist"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:10
+msgid "Add files to the playlist"
+msgstr ""
+
+#: ../extensions/slideshow/data/ui/slideshow-preferences.ui.h:11
+msgid "Remove the selected files"
 msgstr ""
 
 #: ../extensions/slideshow/gth-slideshow-preferences.c:185
@@ -2456,7 +4077,7 @@ msgstr "Aleator"
 
 #: ../extensions/slideshow/gth-slideshow.c:238
 msgid "Playing a presentation"
-msgstr ""
+msgstr "Se redă o prezentare"
 
 #: ../extensions/slideshow/main.c:303
 msgid "Push from right"
@@ -2492,15 +4113,15 @@ msgstr "Cub de jos"
 
 #: ../extensions/terminal/actions.c:53
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: ../extensions/terminal/callbacks.c:40 ../extensions/terminal/callbacks.c:45
 msgid "Open in Terminal"
-msgstr ""
+msgstr "Deschide în terminal"
 
 #: ../extensions/webalbums/callbacks.c:48
 msgid "_Web Album…"
-msgstr ""
+msgstr "Album _web…"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:26
 msgid "Click to view the image"
@@ -2518,14 +4139,6 @@ msgstr "Imaginea %d din %d"
 #: ../extensions/webalbums/data/albumthemes/text.h:29
 msgid "Index"
 msgstr "Index"
-
-#: ../extensions/webalbums/data/albumthemes/text.h:30
-msgid "Next"
-msgstr "Înainte"
-
-#: ../extensions/webalbums/data/albumthemes/text.h:32
-msgid "Previous"
-msgstr "Înapoi"
 
 #: ../extensions/webalbums/data/albumthemes/text.h:33
 #, c-format
@@ -2548,13 +4161,53 @@ msgstr "Vizualizați imaginea anterioară"
 msgid "View the previous page"
 msgstr "Vizualizați pagina anterioară"
 
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:1
+msgid "All images on a single image"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:2
+msgid "Adapts to the window width"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:9
+msgid "_Copy originals to destination"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:17
+msgid "_Adapt to the window width "
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:20
+msgid "Index Page"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:21
+msgid "Thumbnail Caption"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:22
+msgid "Image Page"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:23
+msgid "Show the description, if available"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:24
+msgid "Show the following attributes:"
+msgstr ""
+
+#: ../extensions/webalbums/data/ui/web-album-exporter.ui.h:25
+msgid "Image Attributes"
+msgstr ""
+
 #: ../extensions/webalbums/dlg-web-exporter.c:43
 msgid "Current image number"
-msgstr ""
+msgstr "Numărul imaginii actuale"
 
 #: ../extensions/webalbums/dlg-web-exporter.c:44
 msgid "Total number of images"
-msgstr ""
+msgstr "Numărul total de imagini"
 
 #: ../extensions/webalbums/dlg-web-exporter.c:531
 msgid "Web Album"
@@ -2604,7 +4257,7 @@ msgstr "Nu pot crea un dosar temporar"
 #: ../pix/gth-browser.c:6899 ../pix/gth-vfs-tree.c:393
 #, c-format
 msgid "Could not load the position “%s”"
-msgstr ""
+msgstr "Nu s-a putut încărca poziția „%s”"
 
 #: ../pix/dlg-location.c:450 ../pix/dlg-location.c:460
 msgid "Open"
@@ -2639,17 +4292,17 @@ msgstr "Navigator"
 #: ../pix/dlg-preferences-extensions.c:61
 msgctxt "Extensions"
 msgid "All"
-msgstr ""
+msgstr "Toate"
 
 #: ../pix/dlg-preferences-extensions.c:62
 msgctxt "Extensions"
 msgid "Enabled"
-msgstr ""
+msgstr "Activate"
 
 #: ../pix/dlg-preferences-extensions.c:63
 msgctxt "Extensions"
 msgid "Disabled"
-msgstr ""
+msgstr "Dezactivate"
 
 #: ../pix/dlg-preferences-extensions.c:66
 msgid "Viewers"
@@ -2686,7 +4339,7 @@ msgstr "Nu s-a putut dezactiva extensia"
 
 #: ../pix/dlg-preferences-extensions.c:491
 msgid "Pix Development Team"
-msgstr ""
+msgstr "Echipa dezvoltatorilor Pix"
 
 #. add the page to the preferences dialog
 #: ../pix/dlg-preferences-extensions.c:664
@@ -2706,28 +4359,29 @@ msgid "_Restart"
 msgstr "_Repornire"
 
 #: ../pix/dlg-preferences-shortcuts.c:296
-#: ../pix/dlg-preferences-shortcuts.c:371
+#: ../pix/dlg-preferences-shortcuts.c:371 ../pix/resources/gears-menu.ui.h:5
 msgid "Revert"
 msgstr "Revenire"
 
 #: ../pix/dlg-preferences-shortcuts.c:369
 msgid "Do you want to revert all the changes and use the default shortcuts?"
 msgstr ""
+"Dorești să anulezi toate schimbările și să folosești scurtăturile implicite?"
 
 #: ../pix/dlg-preferences-shortcuts.c:542
 msgctxt "Shortcuts"
 msgid "All"
-msgstr ""
+msgstr "Toate"
 
 #: ../pix/dlg-preferences-shortcuts.c:548
 msgctxt "Shortcuts"
 msgid "Modified"
-msgstr ""
+msgstr "Modificate"
 
 #. add the page to the preferences dialog
 #: ../pix/dlg-preferences-shortcuts.c:577
 msgid "Shortcuts"
-msgstr ""
+msgstr "Scurtături"
 
 #: ../pix/dlg-sort-order.c:113
 msgid "Sort By"
@@ -2742,12 +4396,12 @@ msgstr "%s din %s"
 #: ../pix/gio-utils.c:1148
 #, c-format
 msgid "Moving “%s” to “%s”"
-msgstr ""
+msgstr "Se mută „%s” în „%s”"
 
 #: ../pix/gio-utils.c:1150
 #, c-format
 msgid "Copying “%s” to “%s”"
-msgstr ""
+msgstr "Se copiază „%s” în „%s”"
 
 #: ../pix/gio-utils.c:1561
 msgid "Moving files"
@@ -2767,7 +4421,7 @@ msgstr "Ștergerea fișierelor"
 
 #: ../pix/gio-utils.c:1869
 msgid "Moving files to trash"
-msgstr ""
+msgstr "Se mută fișierele la gunoi"
 
 #. hour:minutes:seconds
 #. Translators: This is a time format, like "9∶05∶02" for 9
@@ -2779,7 +4433,7 @@ msgstr ""
 #, c-format
 msgctxt "long time format"
 msgid "%d∶%02d∶%02d"
-msgstr ""
+msgstr "%d:%02d:%02d"
 
 #. minutes:seconds
 #. Translators: This is a time format, like "5∶02" for 5
@@ -2791,15 +4445,15 @@ msgstr ""
 #, c-format
 msgctxt "short time format"
 msgid "%d∶%02d"
-msgstr ""
+msgstr "%d:%02d"
 
 #: ../pix/gth-accel-dialog.c:121
 msgid "Press a combination of keys to use as shortcut."
-msgstr ""
+msgstr "Apasă o combinație de taste pentru a o folosi ca și scurtătură."
 
 #: ../pix/gth-accel-dialog.c:122
 msgid "Press Esc to cancel"
-msgstr ""
+msgstr "Apasă Esc pentru a anula"
 
 #: ../pix/gth-application.c:52
 msgid "Open a new window"
@@ -2811,7 +4465,7 @@ msgstr "Pornește în regim de ecran complet"
 
 #: ../pix/gth-application.c:60
 msgid "Automatically start a presentation"
-msgstr ""
+msgstr "Începe o prezentare automat"
 
 #: ../pix/gth-application.c:64
 msgid "Automatically import digital camera photos"
@@ -2823,7 +4477,7 @@ msgstr "Afișează versiunea"
 
 #: ../pix/gth-application.c:71
 msgid "[FILE…] [DIRECTORY…]"
-msgstr ""
+msgstr "[FILE…] [DIRECTORY…]"
 
 #. manually set name and icon
 #: ../pix/gth-application.c:105 ../pix/gth-browser.c:428
@@ -2833,7 +4487,7 @@ msgstr "Pix"
 
 #: ../pix/gth-application.c:168
 msgid "— Image browser and viewer"
-msgstr ""
+msgstr "— Navigator și vizualizator de imagini"
 
 #: ../pix/gth-browser-actions-callbacks.c:101
 msgid ""
@@ -2842,6 +4496,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Pix este software liber, îl puteți redistribui și/sau modifica sub termenii "
+"Licenței Publice Generale așa cum este publicată de Free Software "
+"Foundation; ori versiunea 2 a licenței sau (la latitudinea dumneavoastră) "
+"orice versiune mai nouă."
 
 #: ../pix/gth-browser-actions-callbacks.c:105
 msgid ""
@@ -2850,12 +4508,17 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Pix este distribuit în speranța că vă va fi util, dar FĂRĂ NICIO GARANȚIE, "
+"nici măcar garanția de VANTABILITATE sau POTRIVIRE PENTRU UN ANUMIT SCOP. "
+"Vedeți Licența Publică Generală GNU pentru mai multe informații."
 
 #: ../pix/gth-browser-actions-callbacks.c:109
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "Pix.  If not, see http://www.gnu.org/licenses/."
 msgstr ""
+"Ar trebui să fiți primit o copie a Licenței Publice Generale GNU împreună cu "
+"Pix. Dacă nu, vedeți http://www.gnu.org/licenses/."
 
 #: ../pix/gth-browser-actions-callbacks.c:127
 msgid "An image viewer and browser."
@@ -2873,100 +4536,97 @@ msgstr ""
 "  Vladm https://launchpad.net/~gugalcrom123\n"
 "  george logan https://launchpad.net/~georgelogan"
 
-#: ../pix/gth-browser-actions-entries.h:98
+#: ../pix/gth-browser-actions-entries.h:98 ../pix/resources/gears-menu.ui.h:1
 msgid "New Window"
-msgstr ""
+msgstr "Fereastră nouă"
 
-#: ../pix/gth-browser-actions-entries.h:99
-msgid "Help"
-msgstr ""
-
-#: ../pix/gth-browser-actions-entries.h:100
+#: ../pix/gth-browser-actions-entries.h:100 ../pix/resources/gears-menu.ui.h:9
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Scurtături de taste"
 
 #: ../pix/gth-browser-actions-entries.h:101
 msgid "Quit"
-msgstr ""
+msgstr "Ieșire"
 
 #: ../pix/gth-browser-actions-entries.h:104
 #: ../pix/gth-browser-actions-entries.h:105
 msgid "Show browser"
-msgstr ""
+msgstr "Arată navigatorul"
 
 #: ../pix/gth-browser-actions-entries.h:106
 msgid "Close window"
-msgstr ""
+msgstr "Închide fereastra"
 
 #: ../pix/gth-browser-actions-entries.h:108
 msgid "Open location"
-msgstr ""
+msgstr "Deschide locația"
 
 #: ../pix/gth-browser-actions-entries.h:109
 #: ../pix/gth-browser-actions-entries.h:110 ../pix/gth-browser.c:4791
-#: ../pix/gth-browser.c:4809
+#: ../pix/gth-browser.c:4809 ../pix/resources/file-list-menu.ui.h:1
+#: ../pix/resources/file-menu.ui.h:1
 msgid "Fullscreen"
 msgstr "Ecran complet"
 
 #: ../pix/gth-browser-actions-entries.h:111
 msgid "Revert image to saved"
-msgstr ""
+msgstr "Adu imaginea la starea salvată"
 
 #: ../pix/gth-browser-actions-entries.h:112
 msgid "Save image"
-msgstr ""
+msgstr "Salvează imaginea"
 
 #: ../pix/gth-browser-actions-entries.h:113
 msgid "Save image as"
-msgstr ""
+msgstr "Salvează imaginea ca"
 
 #: ../pix/gth-browser-actions-entries.h:114
 msgid "Sidebar"
-msgstr ""
+msgstr "Bara laterală"
 
 #: ../pix/gth-browser-actions-entries.h:115
 msgid "Statusbar"
-msgstr ""
+msgstr "Bara de stare"
 
 #: ../pix/gth-browser-actions-entries.h:116
 msgid "Thumbnails list"
-msgstr ""
+msgstr "Lista cu poze"
 
 #: ../pix/gth-browser-actions-entries.h:118
 msgid "Load previous location"
-msgstr ""
+msgstr "Încarcă locația anterioară"
 
 #: ../pix/gth-browser-actions-entries.h:119
 msgid "Load next location"
-msgstr ""
+msgstr "Încarcă următoarea locație"
 
 #: ../pix/gth-browser-actions-entries.h:120
 msgid "Load parent folder"
-msgstr ""
+msgstr "Încarcă directorul părinte"
 
 #: ../pix/gth-browser-actions-entries.h:121
 msgid "Load home"
-msgstr ""
+msgstr "Încarcă dosarul personal"
 
 #: ../pix/gth-browser-actions-entries.h:122
 msgid "Reload location"
-msgstr ""
+msgstr "Reîncarcă locația"
 
 #: ../pix/gth-browser-actions-entries.h:123
 msgid "Show/Hide hidden files"
-msgstr ""
+msgstr "Arată/ascunde fișierele ascunse"
 
 #: ../pix/gth-browser-actions-entries.h:124
 msgid "Change sorting order"
-msgstr ""
+msgstr "Schimbă ordinea sortării"
 
 #: ../pix/gth-browser-actions-entries.h:136
 msgid "Show first file"
-msgstr ""
+msgstr "Arată primul fișier"
 
 #: ../pix/gth-browser-actions-entries.h:137
 msgid "Show last file"
-msgstr ""
+msgstr "Arată ultimul fișier"
 
 #: ../pix/gth-browser-actions-entries.h:139
 msgid "Image tools"
@@ -2974,15 +4634,15 @@ msgstr "Instrumente de imagine"
 
 #: ../pix/gth-browser-actions-entries.h:140
 msgid "File properties"
-msgstr ""
+msgstr "Proprietățile fișierului"
 
 #: ../pix/gth-browser-actions-entries.h:142
 msgid "Select all"
-msgstr ""
+msgstr "Selectează tot"
 
 #: ../pix/gth-browser-actions-entries.h:143
 msgid "Select none"
-msgstr ""
+msgstr "Nu selecta nimic"
 
 #: ../pix/gth-browser-actions-entries.h:145 ../pix/gth-filterbar.c:526
 msgid "All"
@@ -3013,11 +4673,12 @@ msgstr "Nu a fost găsit un modul adecvat pentru %s"
 #: ../pix/gth-browser.c:2028
 #, c-format
 msgid "Save changes to file “%s”?"
-msgstr ""
+msgstr "Salvează schimbările pentru fișierul „%s”?"
 
 #: ../pix/gth-browser.c:2033
 msgid "If you don’t save, changes to the file will be permanently lost."
 msgstr ""
+"Dacă nu salvezi, schimbările efectuate fișierului vor fi pierdute permanent."
 
 #: ../pix/gth-browser.c:2034
 msgid "Do _Not Save"
@@ -3025,11 +4686,11 @@ msgstr "_Nu salva"
 
 #: ../pix/gth-browser.c:2524 ../pix/gth-browser.c:4817
 msgid "Accept"
-msgstr ""
+msgstr "Acceptă"
 
 #: ../pix/gth-browser.c:2524 ../pix/gtk-utils.h:37
 msgid "_Close"
-msgstr ""
+msgstr "În_chide"
 
 #: ../pix/gth-browser.c:3063
 msgid "Could not change name"
@@ -3049,7 +4710,7 @@ msgstr "Mergi la imaginea urmator vizitată"
 
 #: ../pix/gth-browser.c:4753
 msgid "History"
-msgstr ""
+msgstr "Istoric"
 
 #: ../pix/gth-browser.c:4767
 msgid "View the folders"
@@ -3062,7 +4723,7 @@ msgstr "Editează fișierul"
 #: ../pix/gth-browser.c:4873 ../pix/gth-progress-dialog.c:310
 #: ../pix/gth-progress-dialog.c:455
 msgid "Operations"
-msgstr ""
+msgstr "Operațiuni"
 
 #: ../pix/gth-browser.c:6857
 #, c-format
@@ -3077,12 +4738,12 @@ msgstr "Nu a fost găsit niciun modul adecvat"
 #: ../pix/gth-extensions.c:206
 #, c-format
 msgid "Could not open the module “%s”: %s"
-msgstr ""
+msgstr "Nu s-a putut încărca modulul „%s”: „%s”"
 
 #: ../pix/gth-extensions.c:759
 #, c-format
 msgid "The extension “%1$s” is required by the extension “%2$s”"
-msgstr ""
+msgstr "Extensia „%1$s” este necesară pentru extensia „%2$s”"
 
 #: ../pix/gth-file-chooser-dialog.c:145
 msgid "All Supported Files"
@@ -3090,20 +4751,15 @@ msgstr "Toate fișierele acceptate"
 
 #: ../pix/gth-file-chooser-dialog.c:195
 msgid "_Show Format Options"
-msgstr ""
+msgstr "Arată opțiunile de formate(_S)"
 
 #: ../pix/gth-file-list.c:41 ../pix/gth-folder-tree.c:1187
 msgid "No file"
-msgstr ""
-
-#. the message pane
-#: ../pix/gth-file-list.c:577 ../pix/gth-folder-tree.c:1161
-msgid "Loading…"
-msgstr ""
+msgstr "Niciun fișier"
 
 #: ../pix/gth-file-source-vfs.c:298
 msgid "Computer"
-msgstr ""
+msgstr "Calculator"
 
 #: ../pix/gth-file-source-vfs.c:890
 msgid ""
@@ -3120,7 +4776,7 @@ msgstr "Nu s-a putut muta fișierele în Coșul de gunoi"
 #: ../pix/gth-file-source-vfs.c:946
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
-msgstr ""
+msgstr "Ești sigur că vrei să ștergi permanent „%s”?"
 
 #: ../pix/gth-file-source-vfs.c:949
 #, c-format
@@ -3168,27 +4824,13 @@ msgstr "descendent"
 msgid "No limit specified"
 msgstr "Fără limită specificată"
 
-#. limit label
-#: ../pix/gth-filter.c:270 ../pix/gth-filter.c:338
-msgid "_Limit to"
-msgstr "_Limitează la"
-
-#. view label
-#: ../pix/gth-filterbar.c:391
-msgid "S_how:"
-msgstr "A_rată"
-
-#: ../pix/gth-filterbar.c:556 ../pix/gth-test-aspect-ratio.c:193
-msgid "Personalize…"
-msgstr ""
-
 #: ../pix/gth-folder-tree.c:1467
 msgid "(Open Parent)"
 msgstr "(Părinte deschis)"
 
 #: ../pix/gth-folder-tree.c:1974
 msgid "Enter the new name:"
-msgstr ""
+msgstr "Introdu noul nume:"
 
 #: ../pix/gth-histogram-view.c:911
 msgid "Alpha"
@@ -3211,22 +4853,19 @@ msgstr "Nu sunt opțiuni valabile pentru acest tip de fișier"
 #, c-format
 msgid "Could not find a suitable module to save the image as “%s”"
 msgstr ""
+"Nu s-a putut găsi un modul potrivit pentru a salva imaginea ca și „%s”"
 
 #: ../pix/gth-load-file-data-task.c:111
 msgid "Reading file information"
 msgstr "Citirea fișierelor cu informații"
 
-#: ../pix/gth-location-chooser-dialog.c:194
+#: ../pix/gth-location-chooser-dialog.c:194 ../pix/resources/gears-menu.ui.h:7
 msgid "Hidden Files"
-msgstr ""
+msgstr "Fișiere ascunse"
 
 #: ../pix/gth-location-chooser.c:572
 msgid "Locations"
-msgstr ""
-
-#: ../pix/gth-main-default-metadata.c:32
-msgid "File"
-msgstr "Fișier"
+msgstr "Locații"
 
 #: ../pix/gth-main-default-metadata.c:39
 msgid "Name"
@@ -3238,24 +4877,16 @@ msgstr "Dimensiune"
 
 #: ../pix/gth-main-default-metadata.c:41
 msgid "Bytes"
-msgstr ""
+msgstr "Octeți"
 
 #. Translators: the file modified time.
 #: ../pix/gth-main-default-metadata.c:43
 msgid "Modified Date & Time"
-msgstr ""
+msgstr "Data și ora modificării"
 
 #: ../pix/gth-main-default-metadata.c:44
 msgid "Type"
 msgstr "Tip"
-
-#: ../pix/gth-main-default-metadata.c:47 ../pix/gth-toolbox.c:148
-msgid "Format"
-msgstr "Format"
-
-#: ../pix/gth-main-default-metadata.c:48
-msgid "Dimensions"
-msgstr "Dimensiuni"
 
 #: ../pix/gth-main-default-metadata.c:49
 msgid "Duration"
@@ -3263,51 +4894,51 @@ msgstr "Durată"
 
 #: ../pix/gth-main-default-metadata.c:51
 msgid "Exposure Settings"
-msgstr ""
+msgstr "Setări de expunere"
 
 #: ../pix/gth-main-default-metadata.c:52
 msgid "Aperture"
-msgstr ""
+msgstr "Diafragmă"
 
 #: ../pix/gth-main-default-metadata.c:53
 msgid "ISO Speed"
-msgstr ""
+msgstr "Viteză ISO"
 
 #: ../pix/gth-main-default-metadata.c:54
 msgid "Exposure Time"
-msgstr ""
+msgstr "Timp de expunere"
 
 #: ../pix/gth-main-default-metadata.c:55
 msgid "Shutter Speed"
-msgstr ""
+msgstr "Viteză obturator"
 
 #: ../pix/gth-main-default-metadata.c:56
 msgid "Focal Length"
-msgstr ""
+msgstr "Lungime de focalizare"
 
 #: ../pix/gth-main-default-metadata.c:57
 msgid "Flash"
-msgstr ""
+msgstr "Bliț"
 
 #: ../pix/gth-main-default-metadata.c:58
 msgid "Camera Model"
-msgstr ""
+msgstr "Modelul camerei"
 
 #: ../pix/gth-main-default-metadata.c:59
 msgid "Color Profile"
-msgstr ""
+msgstr "Profil de culoare"
 
 #: ../pix/gth-main-default-metadata.c:61
 msgid "General Date & Time"
-msgstr ""
+msgstr "Data și ora generale"
 
 #: ../pix/gth-main-default-metadata.c:68
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: ../pix/gth-main-default-metadata.c:69
 msgid "Copyright"
-msgstr ""
+msgstr "Drepturi de autor"
 
 #: ../pix/gth-main-default-sort-types.c:166
 msgid "file name"
@@ -3335,7 +4966,7 @@ msgstr "dimensiune"
 
 #: ../pix/gth-main-default-sort-types.c:172
 msgid "aspect ratio"
-msgstr ""
+msgstr "raport de aspect"
 
 #: ../pix/gth-main-default-tests.c:286
 msgid "All Files"
@@ -3343,15 +4974,15 @@ msgstr "Toate fișierele"
 
 #: ../pix/gth-main-default-tests.c:293
 msgid "All Images"
-msgstr ""
+msgstr "Toate imaginile"
 
 #: ../pix/gth-main-default-tests.c:300
 msgid "JPEG Images"
-msgstr ""
+msgstr "Imagini JPEG"
 
 #: ../pix/gth-main-default-tests.c:307
 msgid "Raw Photos"
-msgstr ""
+msgstr "Imagini brute"
 
 #: ../pix/gth-main-default-tests.c:328
 msgid "Media"
@@ -3373,29 +5004,21 @@ msgstr "Titlu (încorporat)"
 msgid "Description (embedded)"
 msgstr "Descriere (încorporată)"
 
-#: ../pix/gth-main-default-tests.c:406
-msgid "Aspect ratio"
-msgstr "Raport de aspect"
-
 #: ../pix/gth-main-default-types.c:39
 msgid "Show/Hide"
-msgstr ""
+msgstr "Arată/ascunde"
 
 #: ../pix/gth-main-default-types.c:40
 msgid "Navigation"
-msgstr ""
+msgstr "Navigare"
 
 #: ../pix/gth-main-default-types.c:41
 msgid "File Manager"
-msgstr ""
+msgstr "Manager de fișiere"
 
 #: ../pix/gth-overwrite-dialog.c:326
 msgid "Overwrite"
-msgstr ""
-
-#: ../pix/gth-progress-dialog.c:158
-msgid "Cancel operation"
-msgstr "Anulează operația"
+msgstr "Suprascrie"
 
 #: ../pix/gth-save-file-data-task.c:105
 msgid "Saving file information"
@@ -3405,20 +5028,16 @@ msgstr "Salvarea informațiilor despre fișiere"
 #: ../pix/gth-save-image-task.c:161
 #, c-format
 msgid "Saving “%s”"
-msgstr ""
+msgstr "Se salvează „%s”"
 
 #: ../pix/gth-tags-entry.c:507
 #, c-format
 msgid "Create tag “%s”"
-msgstr ""
+msgstr "Se creează eticheta „%s”"
 
 #: ../pix/gth-tags-entry.c:1090
 msgid "Show all the tags"
 msgstr "Afișați toate etichetele"
-
-#: ../pix/gth-tags-entry.c:1148 ../pix/gtk-utils.h:39
-msgid "_Delete"
-msgstr "_Şterge"
 
 #: ../pix/gth-tags-file.c:235
 msgid "Holidays"
@@ -3464,39 +5083,35 @@ msgstr "Astronomie"
 msgid "Family"
 msgstr "Familie"
 
-#: ../pix/gth-template-editor-dialog.c:419
-msgid "Text"
-msgstr "Text"
-
 #. Translators: The space character not the Astronomy space.
 #: ../pix/gth-template-editor-dialog.c:424
 msgid "Space"
-msgstr ""
+msgstr "Spațiu"
 
 #: ../pix/gth-template-selector.c:35
 msgid "Year"
-msgstr ""
+msgstr "An"
 
 #: ../pix/gth-template-selector.c:36
 msgid "Month"
-msgstr ""
+msgstr "Lună"
 
 #: ../pix/gth-template-selector.c:37
 msgid "Day of the month"
-msgstr ""
+msgstr "Zi"
 
 #: ../pix/gth-template-selector.c:38
 msgid "Hour"
-msgstr ""
+msgstr "Oră"
 
 #: ../pix/gth-template-selector.c:39
 msgid "Minute"
-msgstr ""
+msgstr "Minut"
 
 #. Translators: the time second, not the second place.
 #: ../pix/gth-template-selector.c:41
 msgid "Second"
-msgstr ""
+msgstr "Secundă"
 
 #: ../pix/gth-test-aspect-ratio.c:67 ../pix/gth-test-simple.c:57
 msgid "is lower than"
@@ -3585,11 +5200,11 @@ msgstr "Acum"
 
 #: ../pix/gth-toolbox.c:146
 msgid "Colors"
-msgstr ""
+msgstr "Culori"
 
 #: ../pix/gth-toolbox.c:147
 msgid "Rotation"
-msgstr ""
+msgstr "Rotire"
 
 #: ../pix/gth-window.c:1073
 #, c-format
@@ -3597,10 +5212,12 @@ msgid ""
 "The key combination «%s» is already assigned to the action «%s».  Do you "
 "want to reassign it to this action instead?"
 msgstr ""
+"Această combinație de taste «%s» este deja atribuită acțiunii „%s”. Vrei să "
+"o reatribui acestei acțiuni în schimb?"
 
 #: ../pix/gth-window.c:1081
 msgid "Reassign"
-msgstr ""
+msgstr "Reatribuie"
 
 #: ../pix/gth-window.c:1099
 #, c-format
@@ -3608,11 +5225,14 @@ msgid ""
 "The key combination «%s» is already assigned to the action «%s» and cannot "
 "be changed."
 msgstr ""
+"Combinația de taste «%s» este deja atribuită acțiunii „%s” și nu poate fi "
+"schimbată."
 
 #: ../pix/gth-window.c:1103
 #, c-format
 msgid "The key combination «%s» is already assigned and cannot be changed."
 msgstr ""
+"Combinația de taste «%s» este deja atribuită și nu poate fi schimbată."
 
 #: ../pix/gtk-utils.c:370
 msgid "Could not display help"
@@ -3640,32 +5260,52 @@ msgstr "Renunță"
 
 #: ../pix/gtk-utils.h:36
 msgid "_Cancel"
-msgstr ""
+msgstr "_Anulare"
 
-#: ../pix/gtk-utils.h:40
+#: ../pix/gtk-utils.h:40 ../pix/resources/gears-menu.ui.h:10
 msgid "_Help"
 msgstr "_Ajutor"
 
 #: ../pix/gtk-utils.h:41
 msgid "_New"
-msgstr ""
+msgstr "_Nou"
 
 #: ../pix/gtk-utils.h:42
 msgid "_Ok"
-msgstr ""
+msgstr "_Ok"
 
 #: ../pix/gtk-utils.h:43
 msgid "_Remove"
-msgstr ""
+msgstr "Ște_rge"
 
 #: ../pix/gtk-utils.h:44
 msgid "_Save"
-msgstr ""
+msgstr "_Salvează"
 
 #: ../pix/gtk-utils.h:45
 msgid "E_xecute"
-msgstr ""
+msgstr "E_xecută"
 
 #: ../pix/gtk-utils.h:46
 msgid "_Upload"
 msgstr "_Încarcă"
+
+#: ../pix/resources/folder-menu.ui.h:1
+msgid "Open in New Window"
+msgstr ""
+
+#: ../pix/resources/gears-menu.ui.h:2
+msgid "Open Location…"
+msgstr ""
+
+#: ../pix/resources/gears-menu.ui.h:6
+msgid "Sort By…"
+msgstr ""
+
+#: ../pix/resources/gears-menu.ui.h:11
+msgid "_About Pix"
+msgstr ""
+
+#: ../pix/resources/history-menu.ui.h:1
+msgid "_Delete History"
+msgstr ""
