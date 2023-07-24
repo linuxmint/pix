@@ -278,14 +278,6 @@ void           gth_image_viewer_set_cursor               (GthImageViewer        
 							  GdkCursor             *cursor);
 gboolean       gth_image_viewer_is_cursor_visible        (GthImageViewer        *viewer);
 
-/* Frame. */
-
-void           gth_image_viewer_show_frame               (GthImageViewer        *viewer,
-							  int                    frame_border);
-void           gth_image_viewer_hide_frame               (GthImageViewer        *viewer);
-gboolean       gth_image_viewer_is_frame_visible         (GthImageViewer        *viewer);
-int            gth_image_viewer_get_frame_border         (GthImageViewer        *self);
-
 /*< protected, used by the tools >*/
 
 void           gth_image_viewer_paint                    (GthImageViewer        *viewer,

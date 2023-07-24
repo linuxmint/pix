@@ -31,7 +31,6 @@
 
 #define SIZE_TOO_BIG_FOR_SCALE_BILINEAR (3000 * 3000)
 #define MAX_ZOOM_LEVEL_FOR_HIGH_QUALITY 3.0
-#define FRAME_BORDER 15
 #define DRAG_ICON_SIZE 128
 
 
@@ -107,12 +106,6 @@ gth_image_dragger_set_property (GObject      *object,
 	switch (property_id) {
 	case PROP_SHOW_FRAME:
 		self->priv->show_frame = g_value_get_boolean (value);
-		if (self->priv->viewer != NULL) {
-			if (self->priv->show_frame)
-				gth_image_viewer_show_frame (self->priv->viewer, FRAME_BORDER);
-			else
-				gth_image_viewer_hide_frame (self->priv->viewer);
-		}
 		break;
 	default:
 		break;
@@ -191,8 +184,6 @@ gth_image_dragger_set_viewer (GthImageViewerTool *base,
 
 	self->priv->viewer = image_viewer;
 	g_object_add_weak_pointer (G_OBJECT (image_viewer), (gpointer *) &self->priv->viewer);
-	if (self->priv->show_frame)
-		gth_image_viewer_show_frame (self->priv->viewer, FRAME_BORDER);
 }
 
 
@@ -202,8 +193,6 @@ gth_image_dragger_unset_viewer (GthImageViewerTool *base,
 {
 	GthImageDragger *self = GTH_IMAGE_DRAGGER (base);
 
-	if ((self->priv->viewer != NULL) && self->priv->show_frame)
-		gth_image_viewer_hide_frame (self->priv->viewer);
 	g_object_remove_weak_pointer (G_OBJECT (image_viewer),  (gpointer *) &self->priv->viewer);
 	self->priv->viewer = NULL;
 }

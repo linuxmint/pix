@@ -323,8 +323,8 @@ get_event_area_from_position (GthImageSelector *self,
 		cairo_rectangle_int_t  widget_area;
 
 		widget_area = event_area->area;
-		widget_area.x += MAX (self->priv->viewer->image_area.x, gth_image_viewer_get_frame_border (self->priv->viewer));
-		widget_area.y += MAX (self->priv->viewer->image_area.y, gth_image_viewer_get_frame_border (self->priv->viewer));
+		widget_area.x += self->priv->viewer->image_area.x;
+		widget_area.y += self->priv->viewer->image_area.y;
 
 		if (point_in_rectangle (x, y, widget_area))
 			return event_area;
@@ -617,7 +617,6 @@ gth_image_selector_set_viewer (GthImageViewerTool *base,
 	GthImageSelector *self = GTH_IMAGE_SELECTOR (base);
 
 	self->priv->viewer = image_viewer;
-	gth_image_viewer_show_frame (self->priv->viewer, 25);
 }
 
 
@@ -627,8 +626,6 @@ gth_image_selector_unset_viewer (GthImageViewerTool *base,
 {
 	GthImageSelector *self = GTH_IMAGE_SELECTOR (base);
 
-	if (self->priv->viewer != NULL)
-		gth_image_viewer_hide_frame (self->priv->viewer);
 	self->priv->viewer = NULL;
 }
 
@@ -731,11 +728,7 @@ paint_selection (GthImageSelector *self,
 	cairo_rectangle_int_t selection_area;
 
 	if (! self->priv->viewer->dragging) {
-		int frame_border = gth_image_viewer_get_frame_border (self->priv->viewer);
-
 		selection_area = self->priv->selection_area;
-		selection_area.x += frame_border;
-		selection_area.y += frame_border;
 		gth_image_viewer_paint_region (self->priv->viewer,
 					       cr,
 					       self->priv->surface,

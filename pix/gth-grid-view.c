@@ -47,7 +47,6 @@
 #define DEFAULT_CAPTION_PADDING    2
 #define DEFAULT_CELL_SPACING       16
 #define DEFAULT_CELL_PADDING       5
-#define DEFAULT_THUMBNAIL_BORDER   3
 #define SCROLL_DELAY               30
 #define LAYOUT_DELAY               20
 #define RUBBERBAND_BORDER          2
@@ -152,7 +151,6 @@ struct _GthGridViewPrivate {
 	int                    width;               /* size of the view */
 	int                    height;
 	int                    thumbnail_size;
-	int                    thumbnail_border;
 	int                    cell_size;           /* max size of any cell area */
 	int                    cell_spacing;        /* vertical space and mininum horizontal space between adjacent cell areas */
 	double                 cell_x_spacing;      /* horizontal space between adjacent cell areas (calculated automatically to fill the horizontal space uniformly). */
@@ -667,11 +665,11 @@ _gth_grid_view_update_item_size (GthGridView     *self,
 	switch (item->style) {
 	case ITEM_STYLE_VIDEO:
 		item->thumbnail_area.width = item->pixbuf_area.width;
-		item->thumbnail_area.height = thumbnail_size - (self->priv->thumbnail_border * 2);
+		item->thumbnail_area.height = thumbnail_size;
 		break;
 	case ITEM_STYLE_IMAGE:
-		item->thumbnail_area.width = item->pixbuf_area.width + (self->priv->thumbnail_border * 2);
-		item->thumbnail_area.height = item->pixbuf_area.height + (self->priv->thumbnail_border * 2);
+		item->thumbnail_area.width = item->pixbuf_area.width;
+		item->thumbnail_area.height = item->pixbuf_area.height;
 		break;
 	case ITEM_STYLE_ICON:
 		item->thumbnail_area.width = thumbnail_size;
@@ -1300,7 +1298,6 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 {
 	cairo_surface_t       *image;
 	GtkStyleContext       *style_context;
-	cairo_rectangle_int_t  frame_rect;
 
 	image = item->thumbnail;
 	if (image == NULL)
@@ -1318,8 +1315,6 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 	gtk_style_context_remove_class (style_context, GTK_STYLE_CLASS_VIEW);
 	gtk_style_context_add_class (style_context, GTK_STYLE_CLASS_CELL);
 #endif
-
-	frame_rect = item->pixbuf_area;
 
 	if ((item->style == ITEM_STYLE_ICON)
             || ! (item->is_image || (item_state & GTK_STATE_FLAG_SELECTED) || (item_state == GTK_STATE_FLAG_NORMAL)))
@@ -1365,8 +1360,6 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 	}
 
 	if (item->style == ITEM_STYLE_VIDEO) {
-		frame_rect = item->thumbnail_area;
-
 		_cairo_draw_film_background (cr,
 					     item->thumbnail_area.x,
 					     item->thumbnail_area.y,
@@ -1387,34 +1380,6 @@ _gth_grid_view_item_draw_thumbnail (GthGridViewItem *item,
 					     item->thumbnail_area.width,
 					     item->thumbnail_area.height,
 					     grid_view->priv->thumbnail_size);
-	}
-
-	if ((item_state & GTK_STATE_FLAG_SELECTED) || (item_state & GTK_STATE_FLAG_FOCUSED)) {
-#if GTK_CHECK_VERSION(3, 20, 0)
-		gtk_style_context_save (style_context);
-		gtk_style_context_add_class (style_context, "icon-effect");
-		gtk_render_background (style_context,
-				       cr,
-				       frame_rect.x,
-				       frame_rect.y,
-				       frame_rect.width,
-				       frame_rect.height);
-		gtk_style_context_restore (style_context);
-#else
-		GdkRGBA color;
-		gtk_style_context_get_background_color (style_context, item_state, &color);
-		cairo_set_source_rgba (cr, color.red, color.green, color.blue, 0.5);
-		cairo_rectangle (cr,
-				 frame_rect.x,
-				 frame_rect.y,
-				 frame_rect.width,
-				 frame_rect.height);
-		cairo_fill_preserve (cr);
-
-		cairo_set_line_width (cr, 2);
-		cairo_set_source_rgb (cr, color.red, color.green, color.blue);
-		cairo_stroke (cr);
-#endif
 	}
 
 	gtk_style_context_restore (style_context);
@@ -3476,7 +3441,7 @@ _gth_grid_view_set_thumbnail_size (GthGridView *self,
 				   int          size)
 {
 	self->priv->thumbnail_size = size;
-	self->priv->cell_size = self->priv->thumbnail_size + (self->priv->thumbnail_border * 2) + (self->priv->cell_padding * 2);
+	self->priv->cell_size = self->priv->thumbnail_size + (self->priv->cell_padding * 2);
 	self->priv->update_caption_height = TRUE;
 	g_object_notify (G_OBJECT (self), "thumbnail-size");
 
@@ -3858,7 +3823,6 @@ gth_grid_view_init (GthGridView *self)
 	self->priv->width = 0;
 	self->priv->height = 0;
 	/* self->priv->thumbnail_size = 0; */
-	self->priv->thumbnail_border = DEFAULT_THUMBNAIL_BORDER;
 
 	/* self->priv->cell_size = 0; */
 	self->priv->cell_spacing = DEFAULT_CELL_SPACING;

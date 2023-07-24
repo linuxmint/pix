@@ -325,12 +325,8 @@ _gth_image_overview_update_preview (GthImageOverview *self)
 static void
 _gth_image_overview_update_visible_area (GthImageOverview *self)
 {
-	int frame_border;
-
 	if (self->priv->viewer == NULL)
 		return;
-
-	frame_border = gth_image_viewer_get_frame_border (self->priv->viewer);
 
 	/* visible area size */
 
@@ -339,8 +335,8 @@ _gth_image_overview_update_visible_area (GthImageOverview *self)
 
 	/* visible area position */
 
-	self->priv->visible_area.x = (self->priv->viewer->visible_area.x - frame_border) * self->priv->zoom_factor + IMAGE_BORDER;
-	self->priv->visible_area.y = (self->priv->viewer->visible_area.y - frame_border) * self->priv->zoom_factor + IMAGE_BORDER;
+	self->priv->visible_area.x = self->priv->viewer->visible_area.x * self->priv->zoom_factor + IMAGE_BORDER;
+	self->priv->visible_area.y = self->priv->viewer->visible_area.y * self->priv->zoom_factor + IMAGE_BORDER;
 
 	gtk_widget_queue_draw (GTK_WIDGET (self));
 }

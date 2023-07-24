@@ -1273,10 +1273,10 @@ _cairo_draw_thumbnail_frame (cairo_t *cr,
 
 	cairo_set_source_rgba (cr, 0.0, 0.0, 0.0, 0.33);
 	_cairo_draw_rounded_box (cr,
-				 x + 2,
-				 y + 2,
-				 width - 1,
-				 height - 1,
+				 x + 1,
+				 y + 1,
+				 width,
+				 height,
 				 0);
 	cairo_fill (cr);
 
@@ -1498,9 +1498,10 @@ _cairo_create_dnd_icon (cairo_surface_t *image,
 		break;
 
 	case ITEM_STYLE_IMAGE:
-		if (multi_dnd)
+		if (multi_dnd) {
 			_cairo_draw_thumbnail_frame (cr, frame_rect.x + DRAG_ICON_THUMBNAIL_OFFSET, frame_rect.y + DRAG_ICON_THUMBNAIL_OFFSET, frame_rect.width, frame_rect.height);
-		_cairo_draw_thumbnail_frame (cr, frame_rect.x, frame_rect.y, frame_rect.width, frame_rect.height);
+            _cairo_draw_thumbnail_frame (cr, frame_rect.x, frame_rect.y, frame_rect.width, frame_rect.height);
+        }
 		break;
 
 	case ITEM_STYLE_VIDEO:

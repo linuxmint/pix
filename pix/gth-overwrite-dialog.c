@@ -371,14 +371,12 @@ gth_overwrite_dialog_construct (GthOverwriteDialog   *self,
 
 	self->priv->old_image_viewer = gth_image_viewer_new ();
 	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->old_image_viewer), GTH_FIT_SIZE_IF_LARGER);
-	gth_image_viewer_hide_frame (GTH_IMAGE_VIEWER (self->priv->old_image_viewer));
 	gth_image_viewer_set_transparency_style (GTH_IMAGE_VIEWER (self->priv->old_image_viewer), GTH_TRANSPARENCY_STYLE_GRAY);
 	gtk_widget_show (self->priv->old_image_viewer);
 	gtk_container_add (GTK_CONTAINER (_gtk_builder_get_widget (self->priv->builder, "old_image_frame")), self->priv->old_image_viewer);
 
 	self->priv->new_image_viewer = gth_image_viewer_new ();
 	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->new_image_viewer), GTH_FIT_SIZE_IF_LARGER);
-	gth_image_viewer_hide_frame (GTH_IMAGE_VIEWER (self->priv->new_image_viewer));
 	gth_image_viewer_set_transparency_style (GTH_IMAGE_VIEWER (self->priv->new_image_viewer), GTH_TRANSPARENCY_STYLE_GRAY);
 	gtk_widget_show (self->priv->new_image_viewer);
 	gtk_container_add (GTK_CONTAINER (_gtk_builder_get_widget (self->priv->builder, "new_image_frame")), self->priv->new_image_viewer);

@@ -758,7 +758,6 @@ default_projector_construct (GthSlideshow *self)
 	self->priv->paint_paused = FALSE;
 
 	self->priv->viewer = gth_image_viewer_new ();
-	gth_image_viewer_hide_frame (GTH_IMAGE_VIEWER (self->priv->viewer));
 	gth_image_viewer_set_fit_mode (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_FIT_SIZE);
 	gth_image_viewer_set_zoom_change (GTH_IMAGE_VIEWER (self->priv->viewer), GTH_ZOOM_CHANGE_FIT_SIZE);
 

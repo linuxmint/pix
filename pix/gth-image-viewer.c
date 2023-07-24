@@ -88,9 +88,6 @@ struct _GthImageViewerPrivate {
 	gboolean                play_animation;
 	gboolean                cursor_visible;
 
-	gboolean                frame_visible;
-	int                     frame_border;
-
 	GthImageViewerTool     *tool;
 
 	GdkCursor              *cursor;
@@ -216,17 +213,6 @@ _gth_image_viewer_get_quality_zoom (GthImageViewer *self)
 	return (double) cairo_image_surface_get_width (image) / self->priv->original_width;
 }
 
-
-static int
-_gth_image_viewer_get_frame_border (GthImageViewer *self)
-{
-	if (! self->priv->frame_visible)
-		return 0;
-
-	return self->priv->frame_border;
-}
-
-
 static void
 _gth_image_viewer_get_zoomed_size_for_zoom (GthImageViewer *self,
 					    int            *width,
@@ -238,9 +224,8 @@ _gth_image_viewer_get_zoomed_size_for_zoom (GthImageViewer *self,
 		if (height != NULL) *height = 0;
 	}
 	else {
-		int frame_border = _gth_image_viewer_get_frame_border (self);
-		if (width != NULL) *width  = (int) round ((double) self->priv->original_width * zoom_level) + (frame_border * 2);
-		if (height != NULL) *height = (int) round ((double) self->priv->original_height * zoom_level) + (frame_border * 2);
+		if (width != NULL) *width  = (int) round ((double) self->priv->original_width * zoom_level);
+		if (height != NULL) *height = (int) round ((double) self->priv->original_height * zoom_level);
 	}
 }
 
@@ -283,10 +268,10 @@ _gth_image_viewer_update_image_area (GthImageViewer *self)
 	self->frame_area.width = zoomed_width;
 	self->frame_area.height = zoomed_height;
 
-	self->image_area.x = self->frame_area.x + self->priv->frame_border;
-	self->image_area.y = self->frame_area.y + self->priv->frame_border;
-	self->image_area.width = self->frame_area.width - (self->priv->frame_border * 2);
-	self->image_area.height = self->frame_area.height - (self->priv->frame_border * 2);
+	self->image_area.x = self->frame_area.x;
+	self->image_area.y = self->frame_area.y;
+	self->image_area.width = self->frame_area.width;
+	self->image_area.height = self->frame_area.height;
 }
 
 
@@ -335,7 +320,6 @@ set_zoom (GthImageViewer *self,
 
 		image = gth_image_viewer_get_current_image (self);
 		if (image != NULL) {
-			int    frame_border;
 			double quality_zoom;
 			double old_zoom_level;
 			int    x, y;
@@ -343,7 +327,6 @@ set_zoom (GthImageViewer *self,
 			double dx, dy;
 			int    new_center_x, new_center_y;
 
-			frame_border = _gth_image_viewer_get_frame_border (self);
 			quality_zoom = (double) self->priv->original_width / cairo_image_surface_get_width (image);
 			old_zoom_level = self->priv->zoom_level * quality_zoom;
 
@@ -360,8 +343,8 @@ set_zoom (GthImageViewer *self,
 			dy = ((y - y0) * zoom_level) - ((y - y0) * old_zoom_level);
 
 			/* Center on (x0, y0) and add (dx, dy) */
-			new_center_x = round ((x0 * zoom_level * quality_zoom) + frame_border + dx);
-			new_center_y = round ((y0 * zoom_level * quality_zoom) + frame_border + dy);
+			new_center_x = round ((x0 * zoom_level * quality_zoom) + dx);
+			new_center_y = round ((y0 * zoom_level * quality_zoom) + dy);
 
 			self->visible_area.x = new_center_x - (self->visible_area.width / 2);
 			self->visible_area.y = new_center_y - (self->visible_area.height / 2);
@@ -589,18 +572,16 @@ get_zoom_to_fit (GthImageViewer *self,
 {
 	int    original_width = 0;
 	int    original_height = 0;
-	int    frame_border_2;
 	double x_level;
 	double y_level;
 
 	gth_image_viewer_get_original_size (self, &original_width, &original_height);
-	frame_border_2 = _gth_image_viewer_get_frame_border (self) * 2;
 
 	if ((original_width == 0) || (original_height == 0))
 		return 1.0;
 
-	x_level = (double) (allocation->width - frame_border_2) / original_width;
-	y_level = (double) (allocation->height - frame_border_2) / original_height;
+	x_level = (double) allocation->width / original_width;
+	y_level = (double) allocation->height / original_height;
 
 	return (x_level < y_level) ? x_level : y_level;
 }
@@ -611,13 +592,11 @@ get_zoom_to_fit_width (GthImageViewer *self,
 		       GtkAllocation  *allocation)
 {
 	int original_width = 0;
-	int frame_border_2;
 
 	gth_image_viewer_get_original_size (self, &original_width, NULL);
-	frame_border_2 = _gth_image_viewer_get_frame_border (self) * 2;
 
 	if (original_width > 0)
-		return (double) (allocation->width - frame_border_2) / original_width;
+		return (double) allocation->width / original_width;
 	else
 		return 0;
 }
@@ -628,13 +607,11 @@ get_zoom_to_fit_height (GthImageViewer *self,
 		        GtkAllocation  *allocation)
 {
 	int original_height = 0;
-	int frame_border_2;
 
 	gth_image_viewer_get_original_size (self, NULL, &original_height);
-	frame_border_2 = _gth_image_viewer_get_frame_border (self) * 2;
 
 	if (original_height > 0)
-		return (double) (allocation->height - frame_border_2) / original_height;
+		return (double) allocation->height / original_height;
 	else
 		return 0;
 }
@@ -648,7 +625,6 @@ get_zoom_level_for_allocation (GthImageViewer *self,
 	cairo_surface_t *current_image;
 	int              original_width;
 	int              original_height;
-	int              frame_border_2;
 
 	zoom_level = self->priv->zoom_level;
 	current_image = gth_image_viewer_get_current_image (self);
@@ -656,14 +632,13 @@ get_zoom_level_for_allocation (GthImageViewer *self,
 		return zoom_level;
 
 	gth_image_viewer_get_original_size (self, &original_width, &original_height);
-	frame_border_2 = _gth_image_viewer_get_frame_border (self) * 2;
 
 	switch (self->priv->fit) {
 	case GTH_FIT_SIZE:
 		zoom_level = get_zoom_to_fit (self, allocation);
 		break;
 	case GTH_FIT_SIZE_IF_LARGER:
-		if ((allocation->width < original_width + frame_border_2) || (allocation->height < original_height + frame_border_2))
+		if ((allocation->width < original_width) || (allocation->height < original_height))
 			zoom_level = get_zoom_to_fit (self, allocation);
 		else
 			zoom_level = 1.0;
@@ -672,7 +647,7 @@ get_zoom_level_for_allocation (GthImageViewer *self,
 		zoom_level = get_zoom_to_fit_width (self, allocation);
 		break;
 	case GTH_FIT_WIDTH_IF_LARGER:
-		if (allocation->width < original_width + frame_border_2)
+		if (allocation->width < original_width)
 			zoom_level = get_zoom_to_fit_width (self, allocation);
 		else
 			zoom_level = 1.0;
@@ -681,7 +656,7 @@ get_zoom_level_for_allocation (GthImageViewer *self,
 		zoom_level = get_zoom_to_fit_height (self, allocation);
 		break;
 	case GTH_FIT_HEIGHT_IF_LARGER:
-		if (allocation->height < original_height + frame_border_2)
+		if (allocation->height < original_height)
 			zoom_level = get_zoom_to_fit_height (self, allocation);
 		else
 			zoom_level = 1.0;
@@ -1538,9 +1513,6 @@ gth_image_viewer_init (GthImageViewer *self)
 	self->priv->is_animation = FALSE;
 	self->priv->play_animation = TRUE;
 	self->priv->cursor_visible = TRUE;
-
-	self->priv->frame_visible = FALSE;
-	self->priv->frame_border = 0;
 
 	self->priv->anim_id = 0;
 	self->priv->iter = NULL;
@@ -2574,42 +2546,6 @@ gth_image_viewer_is_cursor_visible (GthImageViewer *self)
 	return self->priv->cursor_visible;
 }
 
-
-void
-gth_image_viewer_show_frame (GthImageViewer *self,
-			     int             frame_border)
-{
-	self->priv->frame_visible = TRUE;
-	self->priv->frame_border = frame_border;
-
-	gtk_widget_queue_resize (GTK_WIDGET (self));
-}
-
-
-void
-gth_image_viewer_hide_frame (GthImageViewer *self)
-{
-	self->priv->frame_visible = FALSE;
-	self->priv->frame_border = 0;
-
-	gtk_widget_queue_resize (GTK_WIDGET (self));
-}
-
-
-gboolean
-gth_image_viewer_is_frame_visible (GthImageViewer *self)
-{
-	return self->priv->frame_visible;
-}
-
-
-int
-gth_image_viewer_get_frame_border (GthImageViewer *self)
-{
-	return _gth_image_viewer_get_frame_border (self);
-}
-
-
 void
 gth_image_viewer_paint (GthImageViewer  *self,
 			cairo_t         *cr,
@@ -2671,18 +2607,15 @@ gth_image_viewer_paint_region (GthImageViewer        *self,
 			       cairo_rectangle_int_t *paint_area,
 			       cairo_filter_t         filter)
 {
-	int frame_border;
-
-	frame_border = _gth_image_viewer_get_frame_border (self);
 	gth_image_viewer_paint (self,
 				cr,
 				surface,
-				paint_area->x - frame_border,
-				paint_area->y - frame_border,
-				dest_x - frame_border,
-				dest_y - frame_border,
-				MIN (paint_area->width, self->image_area.width + frame_border),
-				MIN (paint_area->height, self->image_area.height + frame_border),
+				paint_area->x,
+				paint_area->y,
+				dest_x,
+				dest_y,
+				MIN (paint_area->width, self->image_area.width),
+				MIN (paint_area->height, self->image_area.height),
 				filter);
 }
 
@@ -2713,25 +2646,9 @@ void
 gth_image_viewer_paint_frame (GthImageViewer *self,
 			      cairo_t        *cr)
 {
-	gboolean background_only;
-
-	background_only = ! gth_image_viewer_is_frame_visible (self);
-
 	cairo_save (cr);
 
 	cairo_translate (cr, -self->visible_area.x, -self->visible_area.y);
-
-	if (! background_only) {
-		/* drop shadow */
-
-		cairo_set_source_rgba (cr, 0.0, 0.0, 0.0, 0.5);
-		cairo_rectangle (cr,
-				 self->image_area.x + FRAME_SHADOW_OFS + 0.5,
-				 self->image_area.y + FRAME_SHADOW_OFS + 0.5,
-				 self->image_area.width + 2 + FRAME_SHADOW_OFS,
-				 self->image_area.height + 2 + FRAME_SHADOW_OFS);
-		cairo_fill (cr);
-	}
 
 	/* background */
 
@@ -2756,28 +2673,6 @@ gth_image_viewer_paint_frame (GthImageViewer *self,
 			 self->image_area.width,
 			 self->image_area.height);
 	cairo_fill (cr);
-
-	if (! background_only) {
-		/* frame */
-
-		cairo_set_line_width (cr, 2.0);
-		cairo_set_source_rgb (cr, 1.0, 1.0, 1.0);
-		cairo_rectangle (cr,
-				 self->image_area.x - 1,
-				 self->image_area.y - 1,
-				 self->image_area.width + 2,
-				 self->image_area.height + 2);
-		cairo_stroke (cr);
-
-		cairo_set_line_width (cr, 1.0);
-		cairo_set_source_rgb (cr, 0.0, 0.0, 0.0);
-		cairo_rectangle (cr,
-				 self->image_area.x - 2,
-				 self->image_area.y - 2,
-				 self->image_area.width + 5,
-				 self->image_area.height + 5);
-		cairo_stroke (cr);
-	}
 
 	cairo_restore (cr);
 }
