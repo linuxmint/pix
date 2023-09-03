@@ -192,7 +192,7 @@ thumb_loader_ready_cb (GObject      *source_object,
 			pixbuf = _gdk_pixbuf_new_from_cairo_surface (image);
 			gtk_image_set_from_pixbuf (GTK_IMAGE (self->priv->icon), pixbuf);
 
-			_g_object_unref (pixbuf);
+			g_object_unref (pixbuf);
 		}
 
 		gth_viewer_page_file_loaded (GTH_VIEWER_PAGE (self), self->priv->file_data, NULL, TRUE);
@@ -219,7 +219,7 @@ gth_file_viewer_page_real_view (GthViewerPage *base,
 	if (icon != NULL)
 		gtk_image_set_from_gicon (GTK_IMAGE (self->priv->icon), icon, GTK_ICON_SIZE_DIALOG);
 
-	_g_object_unref (self->priv->file_data);
+	g_object_unref (self->priv->file_data);
 	self->priv->file_data = g_object_ref (file_data);
 
 	gth_viewer_page_focus (GTH_VIEWER_PAGE (self));
@@ -281,9 +281,9 @@ gth_file_viewer_page_real_update_info (GthViewerPage *base,
 {
 	GthFileViewerPage *self = GTH_FILE_VIEWER_PAGE (base);
 
-	if (! _g_file_equal (self->priv->file_data->file, file_data->file))
+	if (! g_file_equal (self->priv->file_data->file, file_data->file))
 		return;
-	_g_object_unref (self->priv->file_data);
+	g_object_unref (self->priv->file_data);
 	self->priv->file_data = gth_file_data_dup (file_data);
 }
 
@@ -295,8 +295,8 @@ gth_file_viewer_page_finalize (GObject *obj)
 
 	self = GTH_FILE_VIEWER_PAGE (obj);
 
-	_g_object_unref (self->priv->file_data);
-	_g_object_unref (self->priv->thumb_loader);
+	g_object_unref (self->priv->file_data);
+	g_object_unref (self->priv->thumb_loader);
 
 	G_OBJECT_CLASS (gth_file_viewer_page_parent_class)->finalize (obj);
 }
