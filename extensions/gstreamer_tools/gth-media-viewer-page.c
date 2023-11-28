@@ -1374,6 +1374,8 @@ _gth_media_viewer_page_set_uri (GthMediaViewerPage *self,
 				const char         *uri,
 				GstState            state)
 {
+	GstElement *videoflip;
+
 	g_return_if_fail (self->priv->playbin != NULL);
 
 	gst_element_set_state (self->priv->playbin, GST_STATE_NULL);
@@ -1381,7 +1383,14 @@ _gth_media_viewer_page_set_uri (GthMediaViewerPage *self,
 	/* Re-create videoflip every time because the auto-mode will remember
 	   the last-seen orientation tag and will happily use it for a new
 	   file that does not contain any orientation tag. */
-	GstElement *videoflip = gst_element_factory_make ("videoflip", "");
+
+	g_object_get (self->priv->playbin, "video-filter", &videoflip, NULL);
+	if (videoflip != NULL) {
+		gst_object_unref (GST_OBJECT (videoflip));
+		videoflip = NULL;
+	}
+
+	videoflip = gst_element_factory_make ("videoflip", "");
 	g_object_set (videoflip, "video-direction", GST_VIDEO_ORIENTATION_AUTO, NULL);
 	g_object_set (self->priv->playbin, "video-filter", videoflip, NULL);
 
