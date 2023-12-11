@@ -1,0 +1,20 @@
+rm -f pix.pot
+touch pix.pot
+
+# Main
+xgettext --verbose --package-name=pix --language=Glade --join-existing --add-comments \
+         --output=pix.pot data/ui/*.ui pix/resources/*.ui
+xgettext --verbose --package-name=pix --language=Desktop --join-existing \
+          -k --keyword=Comment --output=pix.pot data/pix.desktop.in
+xgettext --verbose --package-name=pix --language=Desktop --join-existing \
+          -k --keyword=Comment --keyword=Name --output=pix.pot data/pix-import.desktop.in
+xgettext --verbose --language=C --from-code=UTF-8 --join-existing --keyword=_ --keyword=N_\
+          --output=pix.pot pix/*.c
+
+# Extensions directory
+xgettext --verbose --package-name=pix --language=Desktop --join-existing \
+          -k --keyword=Comment --keyword=Name --output=pix.pot extensions/*/*.desktop.in.in
+xgettext --verbose --package-name=pix --language=Glade --join-existing --add-comments \
+         --output=pix.pot extensions/*/data/ui/*.ui
+xgettext --verbose --language=C --from-code=UTF-8 --join-existing --keyword=_ --keyword=N_\
+          --output=pix.pot extensions/*/*.c
