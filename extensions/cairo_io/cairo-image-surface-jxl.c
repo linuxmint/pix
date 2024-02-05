@@ -234,18 +234,30 @@ _cairo_image_surface_create_from_jxl(GInputStream  *istream,
 
 		case JXL_DEC_COLOR_ENCODING:
 #if HAVE_LCMS2
-			if (JxlDecoderGetColorAsEncodedProfile(dec, &pixel_format, JXL_COLOR_PROFILE_TARGET_DATA, NULL) == JXL_DEC_SUCCESS)
+			if (JxlDecoderGetColorAsEncodedProfile(dec,
+#if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0,9,0)
+			&pixel_format,
+#endif
+			JXL_COLOR_PROFILE_TARGET_DATA, NULL) == JXL_DEC_SUCCESS)
 				break;
 
 			{
 				gsize profile_size;
-				if (JxlDecoderGetICCProfileSize(dec, &pixel_format, JXL_COLOR_PROFILE_TARGET_DATA, &profile_size) > 0) {
+				if (JxlDecoderGetICCProfileSize(dec,
+#if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0,9,0)
+				&pixel_format,
+#endif
+				JXL_COLOR_PROFILE_TARGET_DATA, &profile_size) > 0) {
 					g_message("Could not get ICC profile size.\n");
 					break;
 				}
 
 				guchar *profile_data = g_new(guchar, profile_size);
-				if (JxlDecoderGetColorAsICCProfile(dec, &pixel_format, JXL_COLOR_PROFILE_TARGET_DATA, profile_data, profile_size) > 0) {
+				if (JxlDecoderGetColorAsICCProfile(dec,
+#if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0,9,0)
+				&pixel_format,
+#endif
+				JXL_COLOR_PROFILE_TARGET_DATA, profile_data, profile_size) > 0) {
 					g_message("Could not get ICC profile.\n");
 					g_free(profile_data);
 					break;
