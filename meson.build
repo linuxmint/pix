@@ -195,7 +195,10 @@ use_libsecret = false
 if get_option('webservices')
   libsoup_dep = dependency('libsoup-2.4', version : libsoup_version, required : false)
   libjson_glib_dep = dependency('json-glib-1.0', version : libjson_glib_version, required : false)
-  webkit2_dep = dependency('webkit2gtk-4.0', version : webkit2_version, required : false)
+  webkit2_dep = dependency('webkit2gtk-4.1', version : webkit2_version, required : false)
+  if not webkit2_dep.found()
+    webkit2_dep = dependency('webkit2gtk-4.0', version : webkit2_version, required : false)
+  endif
   if not webkit2_dep.found()
     webkit2_dep = dependency('webkit2gtk-3.0', version : webkit2_version, required : false)
   endif
