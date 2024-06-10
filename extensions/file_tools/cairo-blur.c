@@ -238,7 +238,7 @@ _cairo_image_surface_box_blur (cairo_surface_t *source,
 
     if (cairo_surface_status (tmp) != CAIRO_STATUS_SUCCESS) {
         cairo_surface_destroy (tmp);
-        return;
+        return FALSE;
     }
 
 	while (completed && (iterations-- > 0)) {
@@ -305,7 +305,7 @@ _cairo_image_surface_sharpen (cairo_surface_t *source,
 	blurred = _cairo_image_surface_copy (source);
 	if (cairo_surface_status (blurred) != CAIRO_STATUS_SUCCESS) {
 		cairo_surface_destroy (blurred);
-		return;
+		return FALSE;
 	}
 
 	if (! _cairo_image_surface_blur_with_progress (blurred, radius, &progress_data)) {

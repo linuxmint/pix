@@ -961,7 +961,7 @@ gth_file_mananger_delete_files (GtkWindow *window,
 					     _GTK_LABEL_DELETE, GTK_RESPONSE_YES,
 					     NULL);
 		_gtk_dialog_add_class_to_response (GTK_DIALOG (d), GTK_RESPONSE_YES, GTK_STYLE_CLASS_DESTRUCTIVE_ACTION);
-		gtk_dialog_set_default_response (d, GTK_RESPONSE_YES);
+		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
 		g_signal_connect (d, "response", G_CALLBACK (delete_permanently_response_cb), file_list);
 		gtk_widget_show (d);
 
