@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-12 10:17+0000\n"
-"PO-Revision-Date: 2023-12-15 02:56+0000\n"
+"PO-Revision-Date: 2024-05-04 08:36+0000\n"
 "Last-Translator: Butterfly <Unknown>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2024-01-04 14:58+0000\n"
-"X-Generator: Launchpad (build e1eeab5b20e19239bd7d5f36676f7a52988db88b)\n"
+"X-Launchpad-Export-Date: 2024-06-18 17:55+0000\n"
+"X-Generator: Launchpad (build bbfa2351d9d6a9ddfe262109428f7bf5516e65d1)\n"
 "Language: tr\n"
 
 #: data/ui/browser-preferences.ui:20
@@ -121,7 +121,7 @@ msgstr ""
 
 #: data/ui/histogram-info.ui:26
 msgid "Mean:"
-msgstr ""
+msgstr "Ortalama:"
 
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsized at the end.
 #: data/ui/histogram-info.ui:41
@@ -260,7 +260,7 @@ msgstr "_Geçerli olarak ayarla"
 
 #: data/ui/preferences.ui:318
 msgid "_Reuse the active window to open files"
-msgstr ""
+msgstr "Aktif olan pencereyi _kullanarak dosyaları aç"
 
 #: data/ui/preferences.ui:377
 msgid "As_k confirmation before deleting files or catalogs"
@@ -630,9 +630,12 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Ali Kömesöğütlü https://launchpad.net/~byzlo685\n"
+"  Ali Rıza ÖZTÜRK https://launchpad.net/~alidirza\n"
 "  Butterfly https://launchpad.net/~kelebek333\n"
 "  Clement Lefebvre https://launchpad.net/~clementlefebvre\n"
 "  Hasan Yılmaz https://launchpad.net/~hasanyilmaz\n"
+"  Mehran Bayyüz https://launchpad.net/~shean-bayyuz\n"
+"  Mustafa Koca https://launchpad.net/~mustafakoca99\n"
 "  Mustafa124563 https://launchpad.net/~mustafaicten12-deactivatedaccount\n"
 "  Sabri Ünal https://launchpad.net/~libreajans\n"
 "  Sahin Elci https://launchpad.net/~msahinelci\n"
@@ -1590,7 +1593,7 @@ msgstr "Yer İmleri"
 
 #: extensions/bookmarks/bookmarks.extension.desktop.in.in:4
 msgid "Add bookmarks support."
-msgstr ""
+msgstr "Yer imleri desteği ekleyin."
 
 #: extensions/burn_disc/burn_disc.extension.desktop.in.in:3
 msgid "Burn CD/DVD"
@@ -1637,6 +1640,8 @@ msgstr "İletişim Sayfası"
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
 msgstr ""
+"Seçilen dosyaların küçük resimlerini görüntüleyen bir dizin görüntüsü "
+"oluşturun."
 
 #: extensions/convert_format/convert_format.extension.desktop.in.in:3
 msgid "Convert format"
@@ -1710,11 +1715,11 @@ msgstr "Resim yazdırma"
 
 #: extensions/image_print/image_print.extension.desktop.in.in:4
 msgid "Allow to print images choosing the page layout."
-msgstr ""
+msgstr "Sayfa düzeni seçerek resim yazdırmaya izin ver."
 
 #: extensions/image_rotation/image_rotation.extension.desktop.in.in:3
 msgid "Image rotation"
-msgstr ""
+msgstr "Görüntü döndürme"
 
 #: extensions/image_rotation/image_rotation.extension.desktop.in.in:4
 msgid "Rotate images without data loss."
@@ -1726,7 +1731,7 @@ msgstr "Dosya listesi araçları"
 
 #: extensions/list_tools/list_tools.extension.desktop.in.in:4
 msgid "Scripting and batch manipulation of files."
-msgstr ""
+msgstr "Dosyaların komut dosyası oluşturma ve toplu işlenmesi."
 
 #: extensions/map_view/map_view.extension.desktop.in.in:3
 #: extensions/map_view/gth-map-view.c:225
@@ -1735,7 +1740,7 @@ msgstr "Harita"
 
 #: extensions/map_view/map_view.extension.desktop.in.in:4
 msgid "View the photo position on the map"
-msgstr ""
+msgstr "Fotoğrafın konumunu haritada görüntüleyin"
 
 #: extensions/photo_importer/photo_importer.extension.desktop.in.in:3
 msgid "Import photos"
@@ -1893,11 +1898,11 @@ msgstr "Yumu_şatma:"
 
 #: extensions/cairo_io/data/ui/jpeg-options.ui:100
 msgid "Opti_mize"
-msgstr ""
+msgstr "Opti_mize et"
 
 #: extensions/cairo_io/data/ui/jpeg-options.ui:119
 msgid "_Progressive"
-msgstr ""
+msgstr "_İlerlemeli"
 
 #: extensions/cairo_io/data/ui/png-options.ui:24
 msgid "Compression _level:"
@@ -1921,11 +1926,11 @@ msgstr "Sıkıştırma _yok"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:118
 msgid "No_rmal (Deflate)"
-msgstr ""
+msgstr "No_rmal (Söndür)"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:137
 msgid "_Loss compression (JPEG)"
-msgstr ""
+msgstr "_Kayıplı sıkıştırma (JPEG)"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:179
 msgid "Resolution"
@@ -1948,7 +1953,7 @@ msgstr "dpi"
 
 #: extensions/cairo_io/data/ui/webp-options.ui:49
 msgid "_Method:"
-msgstr ""
+msgstr "_Yöntem"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:19
 msgid "C_atalogs:"
@@ -2012,7 +2017,7 @@ msgstr "Katalog _Önizleme:"
 
 #: extensions/catalogs/data/ui/organize-files.ui:93
 msgid "_Group files by:"
-msgstr ""
+msgstr "_Dosyaları şuna göre gruplandır:"
 
 #: extensions/catalogs/data/ui/organize-files.ui:139
 #: extensions/find_duplicates/data/ui/find-duplicates.ui:64
@@ -2048,7 +2053,7 @@ msgstr "Aşağıdaki değerleri değiştir:"
 
 #: extensions/change_date/data/ui/change-date.ui:82
 msgid "_Last modified date"
-msgstr ""
+msgstr "_Son değiştirilme tarihi"
 
 #: extensions/change_date/data/ui/change-date.ui:99
 msgid "Co_mment date"
@@ -2056,7 +2061,7 @@ msgstr "A_çıklama tarihi"
 
 #: extensions/change_date/data/ui/change-date.ui:140
 msgid "Change to:"
-msgstr ""
+msgstr "Olarak değiştir:"
 
 #: extensions/change_date/data/ui/change-date.ui:171
 msgid "The _following date:"
@@ -2064,19 +2069,19 @@ msgstr ""
 
 #: extensions/change_date/data/ui/change-date.ui:217
 msgid "File _modified date"
-msgstr ""
+msgstr "Dosya _değiştirilme tarihi"
 
 #: extensions/change_date/data/ui/change-date.ui:235
 msgid "File c_reation date"
-msgstr ""
+msgstr "Dosya _oluşturulma tarihi"
 
 #: extensions/change_date/data/ui/change-date.ui:253
 msgid "Date p_hoto was taken"
-msgstr ""
+msgstr "_Fotoğrafın çekildiği tarih"
 
 #: extensions/change_date/data/ui/change-date.ui:291
 msgid "A_djust by"
-msgstr ""
+msgstr "Şuna göre a_yarla"
 
 #: extensions/change_date/data/ui/change-date.ui:386
 msgid "hours"
@@ -2092,7 +2097,7 @@ msgstr "saniye"
 
 #: extensions/comments/data/ui/comments-preferences.ui:12
 msgid "_Synchronize with the embedded metadata"
-msgstr ""
+msgstr "Gömülü meta verilerle _senkronize edin"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:15
 msgid "Simple"
@@ -2108,15 +2113,15 @@ msgstr "Sadece gölge"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:24
 msgid "Slide"
-msgstr ""
+msgstr "Kaydırma"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:27
 msgid "Inward Shadow"
-msgstr ""
+msgstr "İç Gölge"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:30
 msgid "Outward Shadow"
-msgstr ""
+msgstr "Dış Gölge"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:96
 msgid "Background"
@@ -2124,11 +2129,11 @@ msgstr "Arkaplan"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:122
 msgid "_Solid color"
-msgstr ""
+msgstr "_Düz renk"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:140
 msgid "_Gradient"
-msgstr ""
+msgstr "_Renk geçişi"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:281
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:297
@@ -2148,11 +2153,11 @@ msgstr "Çerçeve"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:421
 msgid "_Style:"
-msgstr ""
+msgstr "_Biçim:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:435
 msgid "C_olor:"
-msgstr ""
+msgstr "R_enk:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:548
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:106
@@ -2161,7 +2166,7 @@ msgstr ""
 #: extensions/webalbums/data/ui/web-album-exporter.ui:116
 #: extensions/webalbums/data/ui/web-album-exporter.ui:827
 msgid "_Header:"
-msgstr ""
+msgstr "_Üst bilgi:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:569
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:626
@@ -2176,13 +2181,13 @@ msgstr "Bir yazıtipi seç"
 #: extensions/webalbums/data/ui/web-album-exporter.ui:101
 #: extensions/webalbums/data/ui/web-album-exporter.ui:812
 msgid "_Footer:"
-msgstr ""
+msgstr "_Alt bilgi:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:663
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:896
 #: extensions/image_print/data/ui/print-preferences.ui:43
 msgid "Caption:"
-msgstr ""
+msgstr "Başlık:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:125
 #: extensions/image_print/data/ui/print-layout.ui:415
@@ -2209,7 +2214,7 @@ msgstr "Şablonu düzenle"
 #: extensions/photo_importer/data/ui/photo-importer.ui:216
 #: extensions/webalbums/data/ui/web-album-exporter.ui:268
 msgid "_Destination:"
-msgstr ""
+msgstr "_Hedef:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:277
 #: extensions/contact_sheet/data/ui/image-wall.ui:97
@@ -2222,11 +2227,11 @@ msgstr "Hedef dizini seç"
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:289
 #: extensions/contact_sheet/data/ui/image-wall.ui:109
 msgid "File_name:"
-msgstr ""
+msgstr "Dosya_adı:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:391
 msgid "Create _HTML image map"
-msgstr ""
+msgstr "_HTML resim haritası oluştur"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:414
 #: extensions/contact_sheet/data/ui/image-wall.ui:216
@@ -2238,7 +2243,7 @@ msgstr "Kaydetme"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:497
 msgid "Create a new theme"
-msgstr ""
+msgstr "Yeni tema oluştur"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:518
 msgid "Edit the selected theme"
@@ -2275,34 +2280,34 @@ msgstr "Her sayfadaki resim:"
 #: extensions/contact_sheet/data/ui/image-wall.ui:339
 #: extensions/webalbums/data/ui/web-album-exporter.ui:650
 msgid "All images on a single page"
-msgstr ""
+msgstr "Tüm görseller tek sayfada"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:700
 msgid "_All pages with the same size"
-msgstr ""
+msgstr "_Tüm sayfalar aynı boyutta"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:733
 #: extensions/contact_sheet/data/ui/image-wall.ui:361
 #: extensions/image_print/data/ui/print-layout.ui:519
 msgid "Layout"
-msgstr ""
+msgstr "Düzen"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:758
 #: extensions/contact_sheet/data/ui/image-wall.ui:405
 #: extensions/webalbums/data/ui/web-album-exporter.ui:507
 msgid "S_ort:"
-msgstr ""
+msgstr "Sı_rala:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:793
 #: extensions/contact_sheet/data/ui/image-wall.ui:439
 #: extensions/webalbums/data/ui/web-album-exporter.ui:544
 msgid "Re_verse order"
-msgstr ""
+msgstr "_Tersine sırala"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:819
 #: extensions/contact_sheet/data/ui/image-wall.ui:465
 msgid "_Size:"
-msgstr ""
+msgstr "_Boyut:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:857
 msgid "Sq_uared"
@@ -2311,54 +2316,54 @@ msgstr ""
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:936
 #: extensions/contact_sheet/data/ui/image-wall.ui:524
 msgid "Thumbnails"
-msgstr ""
+msgstr "Önizlemeler"
 
 #: extensions/convert_format/data/ui/convert-format.ui:40
 msgid "New format"
-msgstr ""
+msgstr "Yeni biçim"
 
 #: extensions/convert_format/data/ui/convert-format.ui:100
 #: extensions/resize_images/data/ui/resize-images.ui:245
 msgid "Destination"
-msgstr ""
+msgstr "Hedef"
 
 #: extensions/convert_format/data/ui/convert-format.ui:138
 #: extensions/resize_images/data/ui/resize-images.ui:283
 msgid "_Use the original image folder"
-msgstr ""
+msgstr "Asıl resim dizinini kullan"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:17
 msgid "D_escription:"
-msgstr ""
+msgstr "A_çıklama:"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:81
 msgid "_Place:"
-msgstr ""
+msgstr "_Yer:"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:120
 #: extensions/edit_metadata/data/ui/tag-chooser.ui:16
 msgid "T_ags:"
-msgstr ""
+msgstr "E_tiketler:"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:207
 msgid "_Rating:"
-msgstr ""
+msgstr "_Popülerlik:"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:239
 msgid "_Title:"
-msgstr ""
+msgstr "_Başlık:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:30
 msgid "C_opyright:"
-msgstr ""
+msgstr "T_elif:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:44
 msgid "Co_untry:"
-msgstr ""
+msgstr "Ül_ke:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:77
 msgid "_Code:"
-msgstr ""
+msgstr "_Kod:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:128
 msgid "Cr_edit:"
@@ -2367,15 +2372,15 @@ msgstr ""
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:188
 #: extensions/photo_importer/data/ui/photo-importer.ui:21
 msgid "_Source:"
-msgstr ""
+msgstr "_Kaynak:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:229
 msgid "_Urgency:"
-msgstr ""
+msgstr "_Aciliyet:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:244
 msgid "_Object Name:"
-msgstr ""
+msgstr "_Nesne adı:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:293
 msgid "Byline _Title:"
@@ -2387,11 +2392,11 @@ msgstr ""
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:363
 msgid "_City:"
-msgstr ""
+msgstr "_Şehir:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:379
 msgid "_Language:"
-msgstr ""
+msgstr "_Dil:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:435
 msgid "State/Province:"
@@ -2401,59 +2406,59 @@ msgstr ""
 #: extensions/file_tools/data/ui/curves-options.ui:35
 #: extensions/file_tools/data/ui/sharpen-options.ui:45
 msgid "_Preview"
-msgstr ""
+msgstr "_Önizleme"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:94
 msgid "B_rightness:"
-msgstr ""
+msgstr "_Parlaklık:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:113
 msgid "Con_trast:"
-msgstr ""
+msgstr "Kar_şıtlık:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:132
 msgid "_Saturation:"
-msgstr ""
+msgstr "_Doygunluk:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:213
 msgid "G_amma:"
-msgstr ""
+msgstr "G_amma:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:230
 msgid "Cyan-_Red:"
-msgstr ""
+msgstr "Camgöbeği-_Kırmızı:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:249
 msgid "_Magenta-Green:"
-msgstr ""
+msgstr "_Macenta-Yeşil:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:268
 msgid "_Yellow-Blue:"
-msgstr ""
+msgstr "_Sarı-Mavi:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:294
 msgid "Color Levels"
-msgstr ""
+msgstr "Renk Seviyeleri"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:40
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:395
 #: extensions/red_eye_removal/data/ui/red-eye-removal-options.ui:36
 msgid "Position"
-msgstr ""
+msgstr "Konum"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:63
 #: extensions/red_eye_removal/data/ui/red-eye-removal-options.ui:60
 msgid "_X:"
-msgstr ""
+msgstr "_X:"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:77
 #: extensions/red_eye_removal/data/ui/red-eye-removal-options.ui:74
 msgid "_Y:"
-msgstr ""
+msgstr "_Y:"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:175
 msgid "Color"
-msgstr ""
+msgstr "Renk"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:206
 #: extensions/file_tools/data/ui/color-picker-options.ui:219
@@ -2471,26 +2476,26 @@ msgstr "Kopyala"
 
 #: extensions/file_tools/data/ui/crop-options.ui:77
 msgid "_Grid:"
-msgstr ""
+msgstr "Iz_gara:"
 
 #: extensions/file_tools/data/ui/crop-options.ui:141
 msgid "Selection"
-msgstr ""
+msgstr "Seçim"
 
 #: extensions/file_tools/data/ui/crop-options.ui:201
 #: extensions/file_tools/data/ui/resize-options.ui:170
 #: extensions/resize_images/data/ui/resize-images.ui:106
 msgid "_Width:"
-msgstr ""
+msgstr "_Genişlik:"
 
 #: extensions/file_tools/data/ui/crop-options.ui:242
 #: extensions/file_tools/data/ui/resize-options.ui:184
 msgid "Heigh_t:"
-msgstr ""
+msgstr "Yükse_klik:"
 
 #: extensions/file_tools/data/ui/crop-options.ui:257
 msgid "_Position:"
-msgstr ""
+msgstr "_Konum:"
 
 #: extensions/file_tools/data/ui/crop-options.ui:350
 msgid "Maximize"
@@ -2517,11 +2522,11 @@ msgstr "px"
 
 #: extensions/file_tools/data/ui/curves-options.ui:53
 msgid "Include current channel"
-msgstr ""
+msgstr "Mevcut kanalı içer"
 
 #: extensions/file_tools/data/ui/resize-options.ui:51
 msgid "High _quality"
-msgstr ""
+msgstr "Yüksek _kalite"
 
 #: extensions/file_tools/data/ui/resize-options.ui:105
 msgid "pixels"
@@ -2545,11 +2550,11 @@ msgstr "Asıl boyutlar:"
 
 #: extensions/file_tools/data/ui/resize-options.ui:530
 msgid "Scale factor:"
-msgstr ""
+msgstr "Ölçek faktörü:"
 
 #: extensions/file_tools/data/ui/resize-options.ui:581
 msgid "New dimensions:"
-msgstr ""
+msgstr "Yeni boyutlar:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:77
 msgid "Grid:"
@@ -2557,15 +2562,15 @@ msgstr "Izgara:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:90
 msgid "_Background:"
-msgstr ""
+msgstr "_Arkaplan:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:116
 msgid "Pick a background color"
-msgstr ""
+msgstr "Bir arkaplan rengi seçin"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:134
 msgid "_Transparent"
-msgstr ""
+msgstr "_Saydam"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:182
 msgid "Original size"
@@ -2573,7 +2578,7 @@ msgstr "Asıl boyut"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:185
 msgid "Bounding box"
-msgstr ""
+msgstr "Sınırlayıcı kutular"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:188
 msgid "Crop borders"
@@ -2593,11 +2598,11 @@ msgstr "Resim boyutu"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:416
 msgid "Point 1:"
-msgstr ""
+msgstr "Nokta 1:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:433
 msgid "Point 2:"
-msgstr ""
+msgstr "Nokta 2:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:447
 msgid "Keep aspect ratio"
@@ -2608,6 +2613,8 @@ msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
 msgstr ""
+"Hizalamayı ayarlamak için \n"
+"resmin üzerine bir çizgi çizin."
 
 #: extensions/file_tools/data/ui/rotate-options.ui:563
 msgid "Parallel"
@@ -2627,15 +2634,15 @@ msgstr "Eşik:"
 
 #: extensions/file_tools/data/ui/sharpen-options.ui:133
 msgid "Radius:"
-msgstr ""
+msgstr "Yarıçap:"
 
 #: extensions/file_tools/data/ui/sharpen-options.ui:151
 msgid "Amount:"
-msgstr ""
+msgstr "Miktar:"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui:26
 msgid "_Folders:"
-msgstr ""
+msgstr "_Dizinler:"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:225
 msgid "Duplicates:"
@@ -2655,49 +2662,49 @@ msgstr ""
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:544
 msgid "No duplicates found."
-msgstr ""
+msgstr "Tekrarlanan dosya bulunamadı."
 
 #: extensions/find_duplicates/data/ui/find-duplicates.ui:32
 #: extensions/rename_series/data/ui/rename-series.ui:28
 #: extensions/search/data/ui/search-editor.ui:73
 msgid "Start _at:"
-msgstr ""
+msgstr "Buradan_başla:"
 
 #: extensions/find_duplicates/data/ui/find-duplicates.ui:94
 msgid "_Filter:"
-msgstr ""
+msgstr "_Süzgeç:"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:35
 msgid "Public photos"
-msgstr ""
+msgstr "Herkese açık fotoğraflar"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:39
 msgid "Private photos, visible to family and friends"
-msgstr ""
+msgstr "Gizli fotoğraflar, ailenize ve arkadaşlarınıza görünür"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:43
 msgid "Private photos, visible to friends"
-msgstr ""
+msgstr "Gizli fotoğraflar, arkadaşlarınıza görünür"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:47
 msgid "Private photos, visible to family"
-msgstr ""
+msgstr "Gizli fotoğraflar, ailenize görünür"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:51
 msgid "Private photos"
-msgstr ""
+msgstr "Gizli fotoğraflar"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:73
 msgid "Safe content"
-msgstr ""
+msgstr "Güvenli içerik"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:77
 msgid "Moderate content"
-msgstr ""
+msgstr "Orta düzeyde içerik"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:81
 msgid "Restricted content"
-msgstr ""
+msgstr "Kısıtlanmış içerik"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:150
 msgid "_Account:"
@@ -2715,15 +2722,15 @@ msgstr "Boş alan:"
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:275
 #: extensions/flicker_utils/data/ui/import-from-flickr.ui:134
 msgid "Ph_otoset:"
-msgstr ""
+msgstr "Fo_toğraf seti:"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:291
 msgid "_Privacy:"
-msgstr ""
+msgstr "_Gizlilik:"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:329
 msgid "_Safety:"
-msgstr ""
+msgstr "_Güvenlik:"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:405
 msgid "Hi_de from public searches"
@@ -2916,7 +2923,7 @@ msgstr "Olay açıklaması"
 
 #: extensions/image_print/data/ui/print-layout.ui:610
 msgid "_Rows:"
-msgstr ""
+msgstr "_Satırlar:"
 
 #: extensions/image_print/data/ui/print-layout.ui:720
 msgid "Image"
@@ -2924,7 +2931,7 @@ msgstr "Resim"
 
 #: extensions/image_print/data/ui/print-layout.ui:762
 msgid "Position:"
-msgstr ""
+msgstr "Konum:"
 
 #: extensions/image_print/data/ui/print-layout.ui:779
 msgid "Left"
@@ -2962,19 +2969,19 @@ msgstr "Yazı tipleri"
 
 #: extensions/image_print/data/ui/print-preferences.ui:87
 msgid "Select Caption Font"
-msgstr ""
+msgstr "Altyazı Yazı Tipini Seçin"
 
 #: extensions/image_print/data/ui/print-preferences.ui:104
 msgid "Select Header Font"
-msgstr ""
+msgstr "Başlık Yazı Tipini Seçin"
 
 #: extensions/image_print/data/ui/print-preferences.ui:121
 msgid "Select Footer Font"
-msgstr ""
+msgstr "Alt Bilgi Yazı Tipini Seçin"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:20
 msgid "After loading an image:"
-msgstr ""
+msgstr "Bir görüntüyü yüklendikten sonra:"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:49
 #: extensions/image_viewer/gth-image-viewer-page.c:1139
@@ -2983,7 +2990,7 @@ msgstr "Asıl boyutuna ayarla"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:50
 msgid "Keep previous zoom"
-msgstr ""
+msgstr "Önceki büyültmeyi koru"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:51
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:71
@@ -3003,11 +3010,11 @@ msgstr "Genişliğe uydur"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:54
 msgid "Fit to width if larger"
-msgstr ""
+msgstr "Eğer genişse genişliği uydur"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:72
 msgid "Reset scrollbar positions"
-msgstr ""
+msgstr "Kaydırma çubuğu konumlarını sıfırla"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:109
 msgid "Mouse wheel action:"
@@ -3030,21 +3037,21 @@ msgstr "Yakınlaştırma kalitesi:"
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:209
 msgctxt "zoom quality"
 msgid "_High"
-msgstr ""
+msgstr "_Yüksek"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:226
 msgctxt "zoom quality"
 msgid "_Low"
-msgstr ""
+msgstr "_Düşük"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:266
 msgid "Transparency:"
-msgstr ""
+msgstr "Şeffaflık:"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:295
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:15
 msgid "Checkered"
-msgstr ""
+msgstr "Damalı"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:296
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:24
@@ -3087,16 +3094,16 @@ msgstr "%300"
 
 #: extensions/importer/data/ui/import-preferences.ui:21
 msgid "_Destination"
-msgstr ""
+msgstr "_Hedef"
 
 #: extensions/importer/data/ui/import-preferences.ui:59
 msgid "_Automatic subfolder"
-msgstr ""
+msgstr "_Otomatik alt klasör"
 
 #: extensions/importer/data/ui/import-preferences.ui:89
 #: extensions/rename_series/data/ui/rename-series.ui:156
 msgid "_Template:"
-msgstr ""
+msgstr "_Şablon:"
 
 #: extensions/list_tools/data/ui/personalize-scripts.ui:29
 msgid "Co_mmands:"
@@ -3108,7 +3115,7 @@ msgstr "Komutun _bitmesini bekle"
 
 #: extensions/list_tools/data/ui/script-editor.ui:65
 msgid "E_xecute command once for every file"
-msgstr ""
+msgstr "Komutu her dosya için bir kez ç_alıştır"
 
 #: extensions/list_tools/data/ui/script-editor.ui:82
 msgid "_Terminal command (shell script)"
@@ -3116,7 +3123,7 @@ msgstr "_Uçbirim komutu (kabuk betiği)"
 
 #: extensions/list_tools/data/ui/script-editor.ui:101
 msgid "Sh_ortcut:"
-msgstr ""
+msgstr "Kı_sayol:"
 
 #: extensions/list_tools/data/ui/script-editor.ui:137
 msgid "_Command:"
@@ -3128,49 +3135,49 @@ msgstr "Komutu düzenle"
 
 #: extensions/oauth/data/ui/oauth-account-manager.ui:23
 msgid "A_ccounts:"
-msgstr ""
+msgstr "H_esaplar:"
 
 #: extensions/photo_importer/data/ui/photo-importer-options.ui:15
 msgid "After importing from a device:"
-msgstr ""
+msgstr "Bir cihazdan içe aktardıktan sonra:"
 
 #: extensions/photo_importer/data/ui/photo-importer-options.ui:42
 msgid "_Rotate the images physically"
-msgstr ""
+msgstr "Görüntüleri fiziksel olarak _döndürün"
 
 #: extensions/photo_importer/data/ui/photo-importer-options.ui:59
 #: extensions/photo_importer/data/ui/photo-importer.ui:273
 msgid "_Delete the imported files from the source"
-msgstr ""
+msgstr "İçe aktarılan dosyaları kaynaktan _silin"
 
 #: extensions/photo_importer/data/ui/photo-importer.ui:185
 msgid "_Event:"
-msgstr ""
+msgstr "_Etkinlik:"
 
 #: extensions/photo_importer/data/ui/photo-importer.ui:245
 msgid "_Tags:"
-msgstr ""
+msgstr "_Etiketler:"
 
 #: extensions/rename_series/data/ui/rename-series.ui:42
 msgid "_Sort by:"
-msgstr ""
+msgstr "Göre _sırala:"
 
 #. Translators: this is the text case (upper or lower case).
 #: extensions/rename_series/data/ui/rename-series.ui:55
 msgid "Cas_e:"
-msgstr ""
+msgstr "Metin Büyüklük Dur_umu:"
 
 #: extensions/rename_series/data/ui/rename-series.ui:110
 msgid "Re_verse Order"
-msgstr ""
+msgstr "Te_rsten Sırala"
 
 #: extensions/rename_series/data/ui/rename-series.ui:226
 msgid "Revert to the last used template"
-msgstr ""
+msgstr "Son kullanılan şablona geri dön"
 
 #: extensions/rename_series/data/ui/rename-series.ui:265
 msgid "_Preview:"
-msgstr ""
+msgstr "_Ön İzleme:"
 
 #: extensions/resize_images/data/ui/resize-images.ui:29
 msgid "pixel"
@@ -3182,19 +3189,19 @@ msgstr "Yeni boyutlar"
 
 #: extensions/resize_images/data/ui/resize-images.ui:120
 msgid "_Height:"
-msgstr ""
+msgstr "_Yükseklik:"
 
 #: extensions/resize_images/data/ui/resize-images.ui:203
 msgid "_Preserve original aspect ratios"
-msgstr ""
+msgstr "Orijinal en boy oranlarını _koru"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:46
 msgid "_Personalize"
-msgstr ""
+msgstr "_Kişiselleştir"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:100
 msgid "_Transition effect:"
-msgstr ""
+msgstr "_Geçiş etkisi:"
 
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:126
@@ -3228,11 +3235,11 @@ msgstr "Seçili dosyaları sil"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:19
 msgid "All images on a single image"
-msgstr ""
+msgstr "Tüm görseller tek görselde"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:22
 msgid "Adapts to the window width"
-msgstr ""
+msgstr "Pencere genişliğine uyum sağlar"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:227
 #: extensions/gstreamer_tools/main.c:48
@@ -3241,25 +3248,25 @@ msgstr "Albüm"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:302
 msgid "_Copy originals to destination"
-msgstr ""
+msgstr "Asıl resimleri hedefe _kopyala"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:605
 msgid "_Adapt to the window width "
-msgstr ""
+msgstr "_Pencere genişliğine uyum sağlat "
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:693
 #: extensions/webalbums/data/ui/web-album-exporter.ui:768
 msgid "Index Page"
-msgstr ""
+msgstr "Dizin Sayfası"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:743
 msgid "Thumbnail Caption"
-msgstr ""
+msgstr "Küçük Resim Başlığı"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:945
 #: extensions/webalbums/data/ui/web-album-exporter.ui:1061
 msgid "Image Page"
-msgstr ""
+msgstr "Resim Sayfası"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:979
 msgid "Show the description, if available"
