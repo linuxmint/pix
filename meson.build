@@ -1,9 +1,9 @@
 project(
   'pix',
   ['c', 'cpp'],
-  license : 'GPL2+',
-  version : '3.4.0',
-  meson_version : '>=0.43'
+license : 'GPL2+',
+version : '3.4.1',
+meson_version : '>=0.43'
 )
 
 glib_version = '>=2.54.0'
