@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: pix 2.12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-12 10:17+0000\n"
-"PO-Revision-Date: 2024-10-02 18:14+0000\n"
+"PO-Revision-Date: 2025-06-04 05:06+0000\n"
 "Last-Translator: 爽自由 <coby2023t@gmail.com>\n"
 "Language-Team: Chinese/Traditional <ubuntu-l10n-zh-tw@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2025-01-06 11:58+0000\n"
-"X-Generator: Launchpad (build 6394e03793719e8d73f5a60b5439440e693c92f1)\n"
+"X-Launchpad-Export-Date: 2025-07-31 09:22+0000\n"
+"X-Generator: Launchpad (build 647c49fc7f614412c17a151d8ba4fadd90c06a00)\n"
 "Language: \n"
 
 #: data/ui/browser-preferences.ui:20
@@ -33,15 +33,15 @@ msgstr "行為"
 
 #: data/ui/browser-preferences.ui:88
 msgid "_Single click to open files"
-msgstr "單擊 (_S) 開啟檔案"
+msgstr "單擊開啟檔案 (_S)"
 
 #: data/ui/browser-preferences.ui:104
 msgid "_Double click to open files"
-msgstr "雙擊 (_D) 開啟檔案"
+msgstr "雙擊開啟檔案  (_D)"
 
 #: data/ui/browser-preferences.ui:121
 msgid "_Open files in fullscreen mode"
-msgstr "以全螢幕模式開啟 (_O) 檔案"
+msgstr "以全螢幕模式開啟檔案 (_O)"
 
 #: data/ui/browser-preferences.ui:158 data/ui/preferences.ui:355
 #: pix/dlg-preferences-shortcuts.c:335 pix/gth-shortcuts-window.c:96
@@ -52,11 +52,11 @@ msgstr "其他"
 
 #: data/ui/browser-preferences.ui:187
 msgid "Thumbnail _size:"
-msgstr "縮圖大小 (_s)"
+msgstr "縮圖大小 (_s):"
 
 #: data/ui/browser-preferences.ui:242
 msgid "D_etermine image type from content (slower)"
-msgstr "從內容決定圖片檔類型 (較慢_e)"
+msgstr "從圖片檔內容決定格式，較慢 (_e)"
 
 #: data/ui/code-selector.ui:99
 #: extensions/rename_series/data/ui/rename-series.ui:73
@@ -95,15 +95,15 @@ msgstr "擴充 (_E)："
 
 #: data/ui/file-selection-info.ui:23
 msgid "Previous"
-msgstr "上一幅"
+msgstr "上一個"
 
 #: data/ui/file-selection-info.ui:61
 msgid "Next"
-msgstr "下一幅"
+msgstr "下一個"
 
 #: data/ui/filter-editor.ui:20
 msgid "Filter _Name:"
-msgstr "過濾名 (_N)"
+msgstr "過濾名稱 (_N)"
 
 #: data/ui/filter-editor.ui:61 extensions/search/data/ui/search-editor.ui:21
 msgid "_Match:"
@@ -128,7 +128,7 @@ msgstr "平均值："
 #. Short for "Standard deviation".  Try to keep it under the 12 characters in the translation or it will be ellipsized at the end.
 #: data/ui/histogram-info.ui:41
 msgid "Std dev:"
-msgstr ""
+msgstr "標準差:"
 
 #: data/ui/histogram-info.ui:58
 msgid "Median:"
@@ -210,7 +210,7 @@ msgstr "其他篩選 (_O)"
 
 #: data/ui/preferences.ui:12
 msgid "below the folder list"
-msgstr ""
+msgstr "在目錄列表下方"
 
 #: data/ui/preferences.ui:15
 msgid "on the right"
@@ -735,7 +735,7 @@ msgstr "無法開啟模組 “%s”: %s"
 #: pix/gth-extensions.c:759
 #, c-format
 msgid "The extension “%1$s” is required by the extension “%2$s”"
-msgstr ""
+msgstr "“%1$s”為 “%2$s” 擴展功能所需要。"
 
 #: pix/gth-file-chooser-dialog.c:145
 msgid "All Supported Files"
@@ -1694,11 +1694,11 @@ msgstr ""
 
 #: extensions/image_rotation/image_rotation.extension.desktop.in.in:3
 msgid "Image rotation"
-msgstr ""
+msgstr "圖片旋轉"
 
 #: extensions/image_rotation/image_rotation.extension.desktop.in.in:4
 msgid "Rotate images without data loss."
-msgstr ""
+msgstr "不失真旋轉圖片。"
 
 #: extensions/list_tools/list_tools.extension.desktop.in.in:3
 msgid "File list tools"
@@ -1774,11 +1774,11 @@ msgstr "選取"
 
 #: extensions/selections/selections.extension.desktop.in.in:4
 msgid "Advanced file selection."
-msgstr ""
+msgstr "進階檔案選取。"
 
 #: extensions/slideshow/slideshow.extension.desktop.in.in:4
 msgid "Play a presentation of images."
-msgstr ""
+msgstr "播放圖片簡報"
 
 #: extensions/terminal/terminal.extension.desktop.in.in:3
 #: extensions/terminal/actions.c:53
@@ -1845,7 +1845,7 @@ msgstr "目前資料夾及其子資料夾(_U)"
 
 #: extensions/burn_disc/data/ui/burn-source-selector.ui:64
 msgid "_Selected files"
-msgstr ""
+msgstr "已選取檔案 (_S)"
 
 #: extensions/burn_disc/data/ui/burn-source-selector.ui:86
 msgid "Source"
@@ -1855,49 +1855,49 @@ msgstr "來源"
 #: extensions/cairo_io/data/ui/jpeg-options.ui:71
 #: extensions/cairo_io/data/ui/webp-options.ui:33
 msgid "_Quality:"
-msgstr ""
+msgstr "品質 (_Q):"
 
 #: extensions/cairo_io/data/ui/avif-options.ui:46
 #: extensions/cairo_io/data/ui/webp-options.ui:62
 msgid "_Lossless"
-msgstr ""
+msgstr "無損 (_L)"
 
 #: extensions/cairo_io/data/ui/jpeg-options.ui:25
 #: extensions/cairo_io/data/ui/tiff-options.ui:32
 msgid "_Default extension:"
-msgstr ""
+msgstr "預設擴展功能 (_D):"
 
 #: extensions/cairo_io/data/ui/jpeg-options.ui:87
 msgid "_Smoothing:"
-msgstr ""
+msgstr "平滑化 (_S):"
 
 #: extensions/cairo_io/data/ui/jpeg-options.ui:100
 msgid "Opti_mize"
-msgstr ""
+msgstr "最優化 (_m)"
 
 #: extensions/cairo_io/data/ui/jpeg-options.ui:119
 msgid "_Progressive"
-msgstr ""
+msgstr "漸進 (_P)"
 
 #: extensions/cairo_io/data/ui/png-options.ui:24
 msgid "Compression _level:"
-msgstr ""
+msgstr "壓縮段數 (_L):"
 
 #: extensions/cairo_io/data/ui/save-options-preferences.ui:25
 msgid "Default options:"
-msgstr ""
+msgstr "預設選項:"
 
 #: extensions/cairo_io/data/ui/tga-options.ui:11
 msgid "_RLE compression"
-msgstr ""
+msgstr "_RLE 壓縮"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:78
 msgid "Compression"
-msgstr ""
+msgstr "壓縮"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:99
 msgid "_No compression"
-msgstr ""
+msgstr "不壓縮 (_N)"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:118
 msgid "No_rmal (Deflate)"
@@ -1905,44 +1905,44 @@ msgstr ""
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:137
 msgid "_Loss compression (JPEG)"
-msgstr ""
+msgstr "失真壓縮 (JPEG) _L"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:179
 msgid "Resolution"
-msgstr ""
+msgstr "解析度"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:203
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:173
 msgid "_Horizontal:"
-msgstr ""
+msgstr "水平 (_H):"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:219
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:206
 msgid "_Vertical:"
-msgstr ""
+msgstr "垂直 (_V):"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:253
 #: extensions/cairo_io/data/ui/tiff-options.ui:292
 msgid "dpi"
-msgstr ""
+msgstr "dpi"
 
 #: extensions/cairo_io/data/ui/webp-options.ui:49
 msgid "_Method:"
-msgstr ""
+msgstr "方法 (_M):"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:19
 msgid "C_atalogs:"
-msgstr ""
+msgstr "圖片集 (_A):"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:34
 #: extensions/catalogs/dlg-add-to-catalog.c:620
 msgid "New Library"
-msgstr ""
+msgstr "新增圖庫"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:57
 #: extensions/catalogs/dlg-add-to-catalog.c:461
 msgid "New Catalog"
-msgstr ""
+msgstr "新圖片集"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:103
 #: extensions/file_manager/actions.c:766
@@ -1954,37 +1954,37 @@ msgstr "檢視目的端(_V)"
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:53
 #: extensions/list_tools/data/ui/script-editor.ui:23
 msgid "_Name:"
-msgstr ""
+msgstr "名稱 (_N):"
 
 #: extensions/catalogs/data/ui/catalog-properties.ui:82
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:31
 msgid "_Date:"
-msgstr ""
+msgstr "日期 (_D):"
 
 #: extensions/catalogs/data/ui/catalog-properties.ui:143
 #: extensions/catalogs/data/ui/organize-files-task.ui:199
 msgid "Catalog"
-msgstr ""
+msgstr "目錄"
 
 #: extensions/catalogs/data/ui/organize-files-task.ui:145
 msgid "Organization:"
-msgstr ""
+msgstr "組織:"
 
 #: extensions/catalogs/data/ui/organize-files-task.ui:224
 msgid "Files"
-msgstr ""
+msgstr "檔案"
 
 #: extensions/catalogs/data/ui/organize-files-task.ui:240
 msgid "Create"
-msgstr ""
+msgstr "建立"
 
 #: extensions/catalogs/data/ui/organize-files-task.ui:281
 msgid "Select All"
-msgstr ""
+msgstr "全選"
 
 #: extensions/catalogs/data/ui/organize-files-task.ui:295
 msgid "Select None"
-msgstr ""
+msgstr "全不選"
 
 #: extensions/catalogs/data/ui/organize-files-task.ui:330
 msgid "Catalog _Preview:"
@@ -1992,7 +1992,7 @@ msgstr ""
 
 #: extensions/catalogs/data/ui/organize-files.ui:93
 msgid "_Group files by:"
-msgstr ""
+msgstr "檔案分組依:"
 
 #: extensions/catalogs/data/ui/organize-files.ui:139
 #: extensions/find_duplicates/data/ui/find-duplicates.ui:64
@@ -2015,60 +2015,60 @@ msgstr ""
 #: extensions/change_date/data/ui/change-date.ui:12
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:243
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: extensions/change_date/data/ui/change-date.ui:15
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:251
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: extensions/change_date/data/ui/change-date.ui:57
 msgid "Change the following values:"
-msgstr ""
+msgstr "更改下列數據:"
 
 #: extensions/change_date/data/ui/change-date.ui:82
 msgid "_Last modified date"
-msgstr ""
+msgstr "最後修改日期 (_L)"
 
 #: extensions/change_date/data/ui/change-date.ui:99
 msgid "Co_mment date"
-msgstr ""
+msgstr "註解日期 (_M)"
 
 #: extensions/change_date/data/ui/change-date.ui:140
 msgid "Change to:"
-msgstr ""
+msgstr "更換為:"
 
 #: extensions/change_date/data/ui/change-date.ui:171
 msgid "The _following date:"
-msgstr ""
+msgstr "以下日期 (_F):"
 
 #: extensions/change_date/data/ui/change-date.ui:217
 msgid "File _modified date"
-msgstr ""
+msgstr "檔案更改日期 (_m)"
 
 #: extensions/change_date/data/ui/change-date.ui:235
 msgid "File c_reation date"
-msgstr ""
+msgstr "檔案建立日期 (_r)"
 
 #: extensions/change_date/data/ui/change-date.ui:253
 msgid "Date p_hoto was taken"
-msgstr ""
+msgstr "拍照日期 (_h)"
 
 #: extensions/change_date/data/ui/change-date.ui:291
 msgid "A_djust by"
-msgstr ""
+msgstr "調整由"
 
 #: extensions/change_date/data/ui/change-date.ui:386
 msgid "hours"
-msgstr ""
+msgstr "小時"
 
 #: extensions/change_date/data/ui/change-date.ui:399
 msgid "minutes"
-msgstr ""
+msgstr "分鐘"
 
 #: extensions/change_date/data/ui/change-date.ui:414
 msgid "seconds"
-msgstr ""
+msgstr "秒"
 
 #: extensions/comments/data/ui/comments-preferences.ui:12
 msgid "_Synchronize with the embedded metadata"
@@ -2076,15 +2076,15 @@ msgstr ""
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:15
 msgid "Simple"
-msgstr ""
+msgstr "簡易"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:18
 msgid "Simple with shadow"
-msgstr ""
+msgstr "普通邊框加陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:21
 msgid "Shadow only"
-msgstr ""
+msgstr "只顯示陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:24
 msgid "Slide"
@@ -2092,23 +2092,23 @@ msgstr ""
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:27
 msgid "Inward Shadow"
-msgstr ""
+msgstr "向內陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:30
 msgid "Outward Shadow"
-msgstr ""
+msgstr "向外陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:96
 msgid "Background"
-msgstr ""
+msgstr "背景"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:122
 msgid "_Solid color"
-msgstr ""
+msgstr "固定顏色 (_S)"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:140
 msgid "_Gradient"
-msgstr ""
+msgstr "漸層 (_G)"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:281
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:297
@@ -2120,19 +2120,19 @@ msgstr ""
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:640
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:698
 msgid "Select a color"
-msgstr ""
+msgstr "選取顏色"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:392
 msgid "Frame"
-msgstr ""
+msgstr "外框"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:421
 msgid "_Style:"
-msgstr ""
+msgstr "樣式 (_S):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:435
 msgid "C_olor:"
-msgstr ""
+msgstr "顏色 (_O):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:548
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:106
@@ -2147,7 +2147,7 @@ msgstr ""
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:626
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:684
 msgid "Select a font"
-msgstr ""
+msgstr "選擇字型"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:604
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:91
@@ -2156,13 +2156,13 @@ msgstr ""
 #: extensions/webalbums/data/ui/web-album-exporter.ui:101
 #: extensions/webalbums/data/ui/web-album-exporter.ui:812
 msgid "_Footer:"
-msgstr ""
+msgstr "頁尾 (_F):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:663
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:896
 #: extensions/image_print/data/ui/print-preferences.ui:43
 msgid "Caption:"
-msgstr ""
+msgstr "標題:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:125
 #: extensions/image_print/data/ui/print-layout.ui:415
@@ -2172,7 +2172,7 @@ msgstr ""
 #: extensions/webalbums/data/ui/web-album-exporter.ui:846
 #: extensions/webalbums/data/ui/web-album-exporter.ui:894
 msgid "Help"
-msgstr ""
+msgstr "說明"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:138
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:186
@@ -2180,7 +2180,7 @@ msgstr ""
 #: extensions/contact_sheet/data/ui/image-wall.ui:148
 #: extensions/rename_series/data/ui/rename-series.ui:205
 msgid "Edit template"
-msgstr ""
+msgstr "編輯範本"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:261
 #: extensions/contact_sheet/data/ui/image-wall.ui:82
@@ -2189,7 +2189,7 @@ msgstr ""
 #: extensions/photo_importer/data/ui/photo-importer.ui:216
 #: extensions/webalbums/data/ui/web-album-exporter.ui:268
 msgid "_Destination:"
-msgstr ""
+msgstr "目的地 (_D):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:277
 #: extensions/contact_sheet/data/ui/image-wall.ui:97
@@ -2197,16 +2197,16 @@ msgstr ""
 #: extensions/resize_images/data/ui/resize-images.ui:273
 #: extensions/webalbums/data/ui/web-album-exporter.ui:285
 msgid "Choose destination folder"
-msgstr ""
+msgstr "選取目標資料夾"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:289
 #: extensions/contact_sheet/data/ui/image-wall.ui:109
 msgid "File_name:"
-msgstr ""
+msgstr "檔名 (_N):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:391
 msgid "Create _HTML image map"
-msgstr ""
+msgstr "製作 _HTML 影像地圖"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:414
 #: extensions/contact_sheet/data/ui/image-wall.ui:216
@@ -2218,20 +2218,20 @@ msgstr "儲存"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:497
 msgid "Create a new theme"
-msgstr ""
+msgstr "建立新主題"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:518
 msgid "Edit the selected theme"
-msgstr ""
+msgstr "編輯選取的主題"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:539
 msgid "Delete the selected theme"
-msgstr ""
+msgstr "刪除選取的主題"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:570
 #: extensions/webalbums/data/ui/web-album-exporter.ui:450
 msgid "Theme"
-msgstr ""
+msgstr "主題"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:598
 #: extensions/contact_sheet/data/ui/image-wall.ui:257
@@ -2243,46 +2243,46 @@ msgstr ""
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:620
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:650
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:672
 #: extensions/contact_sheet/data/ui/image-wall.ui:327
 #: extensions/webalbums/data/ui/web-album-exporter.ui:675
 msgid "Images per page:"
-msgstr ""
+msgstr "每頁圖片數目:"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:684
 #: extensions/contact_sheet/data/ui/image-wall.ui:339
 #: extensions/webalbums/data/ui/web-album-exporter.ui:650
 msgid "All images on a single page"
-msgstr ""
+msgstr "單頁放入全部圖片"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:700
 msgid "_All pages with the same size"
-msgstr ""
+msgstr "全部頁面相同尺寸 (_A)"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:733
 #: extensions/contact_sheet/data/ui/image-wall.ui:361
 #: extensions/image_print/data/ui/print-layout.ui:519
 msgid "Layout"
-msgstr ""
+msgstr "佈局"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:758
 #: extensions/contact_sheet/data/ui/image-wall.ui:405
 #: extensions/webalbums/data/ui/web-album-exporter.ui:507
 msgid "S_ort:"
-msgstr ""
+msgstr "排序 (o):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:793
 #: extensions/contact_sheet/data/ui/image-wall.ui:439
 #: extensions/webalbums/data/ui/web-album-exporter.ui:544
 msgid "Re_verse order"
-msgstr ""
+msgstr "反向排列 (_V)"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:819
 #: extensions/contact_sheet/data/ui/image-wall.ui:465
 msgid "_Size:"
-msgstr ""
+msgstr "大小 (_S):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:857
 msgid "Sq_uared"
@@ -2291,50 +2291,50 @@ msgstr ""
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:936
 #: extensions/contact_sheet/data/ui/image-wall.ui:524
 msgid "Thumbnails"
-msgstr ""
+msgstr "縮圖"
 
 #: extensions/convert_format/data/ui/convert-format.ui:40
 msgid "New format"
-msgstr ""
+msgstr "新格式"
 
 #: extensions/convert_format/data/ui/convert-format.ui:100
 #: extensions/resize_images/data/ui/resize-images.ui:245
 msgid "Destination"
-msgstr ""
+msgstr "目的地"
 
 #: extensions/convert_format/data/ui/convert-format.ui:138
 #: extensions/resize_images/data/ui/resize-images.ui:283
 msgid "_Use the original image folder"
-msgstr ""
+msgstr "使用圖檔原目錄 (_U)"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:17
 msgid "D_escription:"
-msgstr ""
+msgstr "描述 (_E):"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:81
 msgid "_Place:"
-msgstr ""
+msgstr "位置 (_P):"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:120
 #: extensions/edit_metadata/data/ui/tag-chooser.ui:16
 msgid "T_ags:"
-msgstr ""
+msgstr "標籤 (_A):"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:207
 msgid "_Rating:"
-msgstr ""
+msgstr "評價 (_R):"
 
 #: extensions/edit_metadata/data/ui/edit-comment-page.ui:239
 msgid "_Title:"
-msgstr ""
+msgstr "標題 (_T):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:30
 msgid "C_opyright:"
-msgstr ""
+msgstr "版權 (_O):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:44
 msgid "Co_untry:"
-msgstr ""
+msgstr "國家 (_U):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:77
 msgid "_Code:"
@@ -2342,20 +2342,20 @@ msgstr ""
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:128
 msgid "Cr_edit:"
-msgstr ""
+msgstr "貢獻 (_E):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:188
 #: extensions/photo_importer/data/ui/photo-importer.ui:21
 msgid "_Source:"
-msgstr ""
+msgstr "來源 (_S):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:229
 msgid "_Urgency:"
-msgstr ""
+msgstr "急迫性 (_U):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:244
 msgid "_Object Name:"
-msgstr ""
+msgstr "目標名稱 (_O):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:293
 msgid "Byline _Title:"
@@ -2367,73 +2367,73 @@ msgstr ""
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:363
 msgid "_City:"
-msgstr ""
+msgstr "城市 (_C)："
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:379
 msgid "_Language:"
-msgstr ""
+msgstr "語言 (_L)："
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:435
 msgid "State/Province:"
-msgstr ""
+msgstr "州/省："
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:56
 #: extensions/file_tools/data/ui/curves-options.ui:35
 #: extensions/file_tools/data/ui/sharpen-options.ui:45
 msgid "_Preview"
-msgstr ""
+msgstr "預覽 (_P)"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:94
 msgid "B_rightness:"
-msgstr ""
+msgstr "亮度 (_R)："
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:113
 msgid "Con_trast:"
-msgstr ""
+msgstr "對比 (_T):"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:132
 msgid "_Saturation:"
-msgstr ""
+msgstr "飽和度 (_S)："
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:213
 msgid "G_amma:"
-msgstr ""
+msgstr "G_amma:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:230
 msgid "Cyan-_Red:"
-msgstr ""
+msgstr "青色-紅色:"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:249
 msgid "_Magenta-Green:"
-msgstr ""
+msgstr "紫紅色－綠色(_M):"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:268
 msgid "_Yellow-Blue:"
-msgstr ""
+msgstr "黃色－藍色(_Y):"
 
 #: extensions/file_tools/data/ui/adjust-colors-options.ui:294
 msgid "Color Levels"
-msgstr ""
+msgstr "色階"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:40
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:395
 #: extensions/red_eye_removal/data/ui/red-eye-removal-options.ui:36
 msgid "Position"
-msgstr ""
+msgstr "位置"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:63
 #: extensions/red_eye_removal/data/ui/red-eye-removal-options.ui:60
 msgid "_X:"
-msgstr ""
+msgstr "_X:"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:77
 #: extensions/red_eye_removal/data/ui/red-eye-removal-options.ui:74
 msgid "_Y:"
-msgstr ""
+msgstr "_Y:"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:175
 msgid "Color"
-msgstr ""
+msgstr "色彩"
 
 #: extensions/file_tools/data/ui/color-picker-options.ui:206
 #: extensions/file_tools/data/ui/color-picker-options.ui:219
@@ -2451,34 +2451,34 @@ msgstr "複製"
 
 #: extensions/file_tools/data/ui/crop-options.ui:77
 msgid "_Grid:"
-msgstr ""
+msgstr "格線:"
 
 #: extensions/file_tools/data/ui/crop-options.ui:141
 msgid "Selection"
-msgstr ""
+msgstr "選取"
 
 #: extensions/file_tools/data/ui/crop-options.ui:201
 #: extensions/file_tools/data/ui/resize-options.ui:170
 #: extensions/resize_images/data/ui/resize-images.ui:106
 msgid "_Width:"
-msgstr ""
+msgstr "寬度(_W):"
 
 #: extensions/file_tools/data/ui/crop-options.ui:242
 #: extensions/file_tools/data/ui/resize-options.ui:184
 msgid "Heigh_t:"
-msgstr ""
+msgstr "高度 (_t):"
 
 #: extensions/file_tools/data/ui/crop-options.ui:257
 msgid "_Position:"
-msgstr ""
+msgstr "位置(_P):"
 
 #: extensions/file_tools/data/ui/crop-options.ui:350
 msgid "Maximize"
-msgstr ""
+msgstr "最大化"
 
 #: extensions/file_tools/data/ui/crop-options.ui:373
 msgid "Center"
-msgstr ""
+msgstr "中央"
 
 #: extensions/file_tools/data/ui/crop-options.ui:503
 #: extensions/file_tools/data/ui/resize-options.ui:460
@@ -2493,35 +2493,35 @@ msgstr ""
 #. abbreviation of pixel
 #: extensions/file_tools/data/ui/crop-options.ui:559
 msgid "px"
-msgstr ""
+msgstr "像素"
 
 #: extensions/file_tools/data/ui/curves-options.ui:53
 msgid "Include current channel"
-msgstr ""
+msgstr "含目前頻道"
 
 #: extensions/file_tools/data/ui/resize-options.ui:51
 msgid "High _quality"
-msgstr ""
+msgstr "高品質 (_q)"
 
 #: extensions/file_tools/data/ui/resize-options.ui:105
 msgid "pixels"
-msgstr ""
+msgstr "像素"
 
 #: extensions/file_tools/data/ui/resize-options.ui:109
 #: extensions/resize_images/data/ui/resize-images.ui:32
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: extensions/file_tools/data/ui/resize-options.ui:295
 #: extensions/file_tools/data/ui/resize-options.ui:296
 #: extensions/file_tools/data/ui/resize-options.ui:322
 #: extensions/file_tools/data/ui/resize-options.ui:323
 msgid "Set the image size to this value"
-msgstr ""
+msgstr "設定圖形尺寸為此"
 
 #: extensions/file_tools/data/ui/resize-options.ui:515
 msgid "Original dimensions:"
-msgstr ""
+msgstr "原始尺寸:"
 
 #: extensions/file_tools/data/ui/resize-options.ui:530
 msgid "Scale factor:"
@@ -2529,195 +2529,195 @@ msgstr ""
 
 #: extensions/file_tools/data/ui/resize-options.ui:581
 msgid "New dimensions:"
-msgstr ""
+msgstr "新尺寸:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:77
 msgid "Grid:"
-msgstr ""
+msgstr "格線:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:90
 msgid "_Background:"
-msgstr ""
+msgstr "背景(_B):"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:116
 msgid "Pick a background color"
-msgstr ""
+msgstr "選取背景色"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:134
 msgid "_Transparent"
-msgstr ""
+msgstr "透明(_T)"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:182
 msgid "Original size"
-msgstr ""
+msgstr "原始尺寸"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:185
 msgid "Bounding box"
-msgstr ""
+msgstr "邊界框"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:188
 msgid "Crop borders"
-msgstr ""
+msgstr "裁邊"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:222
 msgid "Angle"
-msgstr ""
+msgstr "角度"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:281
 msgid "Align"
-msgstr ""
+msgstr "對齊"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:326
 msgid "Image size"
-msgstr ""
+msgstr "圖片大小"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:416
 msgid "Point 1:"
-msgstr ""
+msgstr "點1:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:433
 msgid "Point 2:"
-msgstr ""
+msgstr "點2:"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:447
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "保持比例"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:528
 msgid ""
 "Draw a line on the image \n"
 "to set the alignment."
-msgstr ""
+msgstr "在圖上畫線進行對齊。"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:563
 msgid "Parallel"
-msgstr ""
+msgstr "平行"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:580
 msgid "Perpendicular"
-msgstr ""
+msgstr "垂直"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:604
 msgid "Alignment"
-msgstr ""
+msgstr "對齊"
 
 #: extensions/file_tools/data/ui/sharpen-options.ui:83
 msgid "Threshold:"
-msgstr ""
+msgstr "臨界值:"
 
 #: extensions/file_tools/data/ui/sharpen-options.ui:133
 msgid "Radius:"
-msgstr ""
+msgstr "半徑:"
 
 #: extensions/file_tools/data/ui/sharpen-options.ui:151
 msgid "Amount:"
-msgstr ""
+msgstr "總量:"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-choose-folders.ui:26
 msgid "_Folders:"
-msgstr ""
+msgstr "檔案夾 (_F):"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:225
 msgid "Duplicates:"
-msgstr ""
+msgstr "重複:"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:291
 msgid "Files:"
-msgstr ""
+msgstr "檔案:"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:381
 msgid "Last modified"
-msgstr ""
+msgstr "最近修改"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:438
 msgid "_View"
-msgstr ""
+msgstr "顯示 (_V)"
 
 #: extensions/find_duplicates/data/ui/find-duplicates-dialog.ui:544
 msgid "No duplicates found."
-msgstr ""
+msgstr "沒找到重複檔"
 
 #: extensions/find_duplicates/data/ui/find-duplicates.ui:32
 #: extensions/rename_series/data/ui/rename-series.ui:28
 #: extensions/search/data/ui/search-editor.ui:73
 msgid "Start _at:"
-msgstr ""
+msgstr "起始數字 (_A):"
 
 #: extensions/find_duplicates/data/ui/find-duplicates.ui:94
 msgid "_Filter:"
-msgstr ""
+msgstr "篩選(_F):"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:35
 msgid "Public photos"
-msgstr ""
+msgstr "可公開的照片"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:39
 msgid "Private photos, visible to family and friends"
-msgstr ""
+msgstr "私人照片，限家人和朋友可看"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:43
 msgid "Private photos, visible to friends"
-msgstr ""
+msgstr "私人照片，朋友可看"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:47
 msgid "Private photos, visible to family"
-msgstr ""
+msgstr "私人照片，家人可看"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:51
 msgid "Private photos"
-msgstr ""
+msgstr "私人照片"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:73
 msgid "Safe content"
-msgstr ""
+msgstr "安全內容"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:77
 msgid "Moderate content"
-msgstr ""
+msgstr "中性內容"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:81
 msgid "Restricted content"
-msgstr ""
+msgstr "受限制內容"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:150
 msgid "_Account:"
-msgstr ""
+msgstr "帳號 (_A):"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:198
 #: extensions/flicker_utils/data/ui/import-from-flickr.ui:86
 msgid "Edit accounts"
-msgstr ""
+msgstr "編輯帳號"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:229
 msgid "Free space:"
-msgstr ""
+msgstr "可用空間:"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:275
 #: extensions/flicker_utils/data/ui/import-from-flickr.ui:134
 msgid "Ph_otoset:"
-msgstr ""
+msgstr "相片組 (_o):"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:291
 msgid "_Privacy:"
-msgstr ""
+msgstr "隱私 (_P):"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:329
 msgid "_Safety:"
-msgstr ""
+msgstr "安全 (_S):"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:405
 msgid "Hi_de from public searches"
-msgstr ""
+msgstr "隱藏於公開搜尋 (_d):"
 
 #: extensions/flicker_utils/data/ui/export-to-flickr.ui:426
 #: extensions/webalbums/data/ui/web-album-exporter.ui:329
 msgid "_Resize if larger than:"
-msgstr ""
+msgstr "縮放如大於 (_R):"
 
 #: extensions/flicker_utils/data/ui/import-from-flickr.ui:120
 #: extensions/oauth/data/ui/oauth-account-chooser.ui:33
 msgid "A_ccount:"
-msgstr ""
+msgstr "帳號 (_C):"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:29
 #: extensions/gstreamer_tools/gth-media-viewer-page.c:622
@@ -2727,151 +2727,151 @@ msgstr "播放"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:50
 msgid "Slower"
-msgstr ""
+msgstr "放慢"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:72
 msgid "Faster"
-msgstr ""
+msgstr "加快"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:94
 msgid "Restart when finished"
-msgstr ""
+msgstr "完成時重啟"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:130
 msgid "Time:"
-msgstr ""
+msgstr "時間:"
 
 #. minus 5 seconds
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:297
 msgid "-5s"
-msgstr ""
+msgstr "-5秒"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:301
 #: extensions/gstreamer_tools/callbacks.c:44
 msgid "Go back 5 seconds"
-msgstr ""
+msgstr "倒轉 5 秒"
 
 #. minus 10 seconds
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:311
 msgid "-10s"
-msgstr ""
+msgstr "-10秒"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:315
 #: extensions/gstreamer_tools/callbacks.c:45
 msgid "Go back 10 seconds"
-msgstr ""
+msgstr "倒轉 10 秒"
 
 #. minus 1 minute
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:325
 msgid "-1m"
-msgstr ""
+msgstr "-1分鐘"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:329
 #: extensions/gstreamer_tools/callbacks.c:46
 msgid "Go back 1 minute"
-msgstr ""
+msgstr "倒轉 1 分鐘"
 
 #. minus 5 minutes
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:339
 msgid "-5m"
-msgstr ""
+msgstr "-5分鐘"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:343
 #: extensions/gstreamer_tools/callbacks.c:47
 msgid "Go back 5 minutes"
-msgstr ""
+msgstr "倒轉 5分鐘"
 
 #. plus 5 seconds
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:353
 msgid "+5s"
-msgstr ""
+msgstr "+5秒"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:357
 #: extensions/gstreamer_tools/callbacks.c:39
 msgid "Go forward 5 seconds"
-msgstr ""
+msgstr "向前5秒"
 
 #. plus 10 seconds
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:367
 msgid "+10s"
-msgstr ""
+msgstr "+10秒"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:371
 #: extensions/gstreamer_tools/callbacks.c:40
 msgid "Go forward 10 seconds"
-msgstr ""
+msgstr "向前10秒"
 
 #. plus 1 minute
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:381
 msgid "+1m"
-msgstr ""
+msgstr "+1分鐘"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:385
 #: extensions/gstreamer_tools/callbacks.c:41
 msgid "Go forward 1 minute"
-msgstr ""
+msgstr "向前1分鐘"
 
 #. plus 5 minutes
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:395
 msgid "+5m"
-msgstr ""
+msgstr "+5分鐘"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:399
 #: extensions/gstreamer_tools/callbacks.c:42
 msgid "Go forward 5 minutes"
-msgstr ""
+msgstr "向前5分鐘"
 
 #. minus 1 second
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:443
 msgid "-1s"
-msgstr ""
+msgstr "-1秒"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:447
 #: extensions/gstreamer_tools/callbacks.c:43
 msgid "Go back 1 second"
-msgstr ""
+msgstr "後退1秒"
 
 #. plus 1 second
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:457
 msgid "+1s"
-msgstr ""
+msgstr "+1秒"
 
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:461
 #: extensions/gstreamer_tools/callbacks.c:38
 msgid "Go forward 1 second"
-msgstr ""
+msgstr "向前1秒"
 
 #: extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui:13
 msgid "Use hardware acceleration"
-msgstr ""
+msgstr "使手硬體加速"
 
 #: extensions/gstreamer_tools/data/ui/media-viewer-preferences.ui:35
 msgid "_Screenshots location:"
-msgstr ""
+msgstr "螢幕抓圖位置 (_S):"
 
 #: extensions/image_print/data/ui/print-layout.ui:14
 msgid "Centered"
-msgstr ""
+msgstr "置中"
 
 #: extensions/image_print/data/ui/print-layout.ui:18
 msgid "Custom"
-msgstr ""
+msgstr "自訂"
 
 #: extensions/image_print/data/ui/print-layout.ui:126
 msgid "millimeters"
-msgstr ""
+msgstr "公厘"
 
 #: extensions/image_print/data/ui/print-layout.ui:129
 msgid "inches"
-msgstr ""
+msgstr "英吋"
 
 #: extensions/image_print/data/ui/print-layout.ui:231
 msgid "The current page number"
-msgstr ""
+msgstr "目前頁數"
 
 #: extensions/image_print/data/ui/print-layout.ui:249
 msgid "The total number of pages"
-msgstr ""
+msgstr "全部頁數"
 
 #: extensions/image_print/data/ui/print-layout.ui:267
 msgid "Special code"
