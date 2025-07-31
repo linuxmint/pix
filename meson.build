@@ -2,7 +2,7 @@ project(
   'pix',
   ['c', 'cpp'],
   license : 'GPL2+',
-  version : '3.4.5',
+  version : '3.4.6',
   meson_version : '>=0.43'
 )
 
