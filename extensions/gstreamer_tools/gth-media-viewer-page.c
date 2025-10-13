@@ -604,7 +604,7 @@ update_play_button (GthMediaViewerPage *self,
 {
 	if (! self->priv->playing && (new_state == GST_STATE_PLAYING)) {
 		set_playing_state (self, TRUE);
-		gtk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("play_button_image")), "media-playback-pause-symbolic", GTK_ICON_SIZE_LARGE_TOOLBAR);
+		gtk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("play_button_image")), "xapp-media-playback-pause-symbolic", GTK_ICON_SIZE_LARGE_TOOLBAR);
 		gtk_widget_set_tooltip_text (GET_WIDGET ("play_button_image"), _("Pause"));
 
 		if (self->priv->update_progress_id == 0)
@@ -617,7 +617,7 @@ update_play_button (GthMediaViewerPage *self,
 
 		set_playing_state (self, FALSE);
 		gtk_image_set_from_icon_name (GTK_IMAGE (play_button),
-					      "media-playback-start-symbolic",
+					      "xapp-media-playback-start-symbolic",
 					      GTK_ICON_SIZE_LARGE_TOOLBAR);
 		gtk_widget_set_tooltip_text (GET_WIDGET ("play_button_image"), _("Play"));
 
@@ -1123,7 +1123,7 @@ gth_media_viewer_page_real_activate (GthViewerPage *base,
 	self->priv->screenshot_button =
 			gth_browser_add_header_bar_button (browser,
 							   GTH_BROWSER_HEADER_SECTION_VIEWER_VIEW,
-							   "camera-photo-symbolic",
+							   "xapp-camera-symbolic",
 							   _("Take a screenshot"),
 							   "win.video-screenshot",
 							   NULL);
@@ -1163,10 +1163,10 @@ gth_media_viewer_page_real_activate (GthViewerPage *base,
 	gtk_widget_set_valign (self->priv->mediabar, GTK_ALIGN_END);
 
 	gtk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("play_slower_image")),
-				      "media-seek-backward-symbolic",
+				      "xapp-media-seek-backward-symbolic",
 				      GTK_ICON_SIZE_MENU);
 	gtk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("play_faster_image")),
-				      "media-seek-forward-symbolic",
+				      "xapp-media-seek-forward-symbolic",
 				      GTK_ICON_SIZE_MENU);
 
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("loop_button")), self->priv->loop);

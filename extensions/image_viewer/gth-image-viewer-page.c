@@ -1058,7 +1058,7 @@ paint_comment_over_image_func (GthImageViewer *image_viewer,
         if (icon == NULL) {
         	GIcon *gicon;
 
-        	gicon = g_themed_icon_new ("dialog-information-symbolic");
+        	gicon = g_themed_icon_new ("xapp-dialog-information-symbolic");
         	icon = _g_icon_get_pixbuf (gicon, 24, _gtk_widget_get_icon_theme (GTK_WIDGET (image_viewer)));
 
         	g_object_unref (gicon);
@@ -1170,7 +1170,7 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 	self->priv->buttons[APPLY_ICC_PROFILE_BUTTON] =
 			gth_browser_add_header_bar_toggle_button (browser,
 							   	  GTH_BROWSER_HEADER_SECTION_VIEWER_OTHER_COMMANDS,
-								  "preferences-color-symbolic",
+								  "xapp-color-symbolic",
 								  _("Apply the embedded color profile"),
 								  "win.apply-icc-profile",
 								  NULL);
@@ -1178,14 +1178,14 @@ gth_image_viewer_page_real_activate (GthViewerPage *base,
 	self->priv->buttons[TOGGLE_ANIMATION_BUTTON] =
 			gth_browser_add_header_bar_toggle_button (browser,
 							   	  GTH_BROWSER_HEADER_SECTION_VIEWER_COMMANDS,
-								  "media-playback-start-symbolic",
+								  "xapp-media-playback-start-symbolic",
 								  _("Play"),
 								  "win.toggle-animation",
 								  NULL);
 	self->priv->buttons[STEP_ANIMATION_BUTTON] =
 			gth_browser_add_header_bar_button (browser,
 							   GTH_BROWSER_HEADER_SECTION_VIEWER_COMMANDS,
-							   "media-skip-forward-symbolic",
+							   "xapp-media-skip-forward-symbolic",
 							   _("Next frame"),
 							   "win.step-animation",
 							   NULL);

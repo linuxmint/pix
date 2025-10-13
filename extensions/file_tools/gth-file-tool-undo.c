@@ -73,7 +73,7 @@ static void
 gth_file_tool_undo_init (GthFileToolUndo *self)
 {
 	gth_file_tool_construct (GTH_FILE_TOOL (self),
-				 "edit-undo-symbolic",
+				 "xapp-edit-undo-symbolic",
 				 _("Undo"),
 				 GTH_TOOLBOX_SECTION_FILE);
 }

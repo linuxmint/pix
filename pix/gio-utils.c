@@ -2427,7 +2427,7 @@ _g_file_get_info_for_display (GFile *file)
 		g_file_info_set_display_name (file_info, name);
 
 		uri = g_file_get_uri (file);
-		icon = g_themed_icon_new (g_str_has_prefix (uri, "file://") ? "folder-symbolic" : "folder-remote-symbolic");
+		icon = g_themed_icon_new (g_str_has_prefix (uri, "file://") ? "xapp-folder-symbolic" : "xapp-folder-remote-symbolic");
 		g_file_info_set_symbolic_icon (file_info, icon);
 
 		g_object_unref (icon);

@@ -296,7 +296,7 @@ gth_file_source_vfs_get_file_info (GthFileSource *file_source,
 		GIcon *icon;
 
 		g_file_info_set_display_name (file_info, _("Computer"));
-		icon = g_themed_icon_new ("drive-harddisk-symbolic");
+		icon = g_themed_icon_new ("xapp-drive-harddisk-symbolic");
 		g_file_info_set_symbolic_icon (file_info, icon);
 
 		g_object_unref (icon);

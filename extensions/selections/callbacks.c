@@ -360,7 +360,7 @@ selections__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 
 	info_bar = gth_browser_get_list_info_bar (browser);
 	gtk_info_bar_set_message_type (GTK_INFO_BAR(info_bar), GTK_MESSAGE_INFO);
-	gth_info_bar_set_icon_name (GTH_INFO_BAR (info_bar), "dialog-information-symbolic", GTK_ICON_SIZE_MENU);
+	gth_info_bar_set_icon_name (GTH_INFO_BAR (info_bar), "xapp-dialog-information-symbolic", GTK_ICON_SIZE_MENU);
 	gth_info_bar_set_primary_text (GTH_INFO_BAR (info_bar), NULL);
 	msg = g_strdup_printf (_("Use Alt-%d to add files to this selection, Ctrl-%d to view this selection, Alt+Shift+%d to remove files from this selection"), n_selection, n_selection, n_selection);
 	gth_info_bar_set_secondary_text (GTH_INFO_BAR (info_bar), msg);

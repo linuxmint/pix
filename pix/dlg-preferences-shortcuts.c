@@ -291,7 +291,7 @@ _new_shortcut_row (GthShortcut *shortcut,
 	gtk_size_group_add_widget (GTK_SIZE_GROUP (gtk_builder_get_object (data->builder, "column3_size_group")), button_box);
 	gtk_box_pack_start (GTK_BOX (box), button_box, FALSE, FALSE, 0);
 
-	row_data->revert_button = button = gtk_button_new_from_icon_name ("edit-clear-symbolic", GTK_ICON_SIZE_MENU);
+	row_data->revert_button = button = gtk_button_new_from_icon_name ("xapp-edit-clear-symbolic", GTK_ICON_SIZE_MENU);
 	gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text (button, _("Revert"));
 	gtk_style_context_add_class (gtk_widget_get_style_context (button), "circular");

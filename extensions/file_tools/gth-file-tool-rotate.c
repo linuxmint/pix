@@ -600,7 +600,7 @@ gth_file_tool_rotate_populate_headerbar (GthFileTool *base,
 
 	button = gth_browser_add_header_bar_button (browser,
 						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
-						    "edit-undo-symbolic",
+						    "xapp-edit-undo-symbolic",
 						    _("Reset"),
 						    NULL,
 						    NULL);
@@ -613,7 +613,7 @@ gth_file_tool_rotate_populate_headerbar (GthFileTool *base,
 
 	button = gth_browser_add_header_bar_button (browser,
 						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
-						    "preferences-system-symbolic",
+						    "xapp-tools-symbolic",
 						    _("Options"),
 						    NULL,
 						    NULL);

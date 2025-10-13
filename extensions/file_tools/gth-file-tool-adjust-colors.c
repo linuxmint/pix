@@ -553,7 +553,7 @@ gth_file_tool_adjust_colors_populate_headerbar (GthFileTool *base,
 
 	button = gth_browser_add_header_bar_button (browser,
 						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
-						    "edit-undo-symbolic",
+						    "xapp-edit-undo-symbolic",
 						    _("Reset"),
 						    NULL,
 						    NULL);

@@ -333,14 +333,14 @@ browser_location_ready_cb (GthBrowser    *browser,
 	gth_file_list_clear (GTH_FILE_LIST (gth_browser_get_file_list (browser)), _("Searching…"));
 
 	task->priv->dialog = gth_browser_get_list_info_bar (browser);
-	gth_info_bar_set_icon_name (GTH_INFO_BAR (task->priv->dialog), "edit-find-symbolic", GTK_ICON_SIZE_BUTTON);
+	gth_info_bar_set_icon_name (GTH_INFO_BAR (task->priv->dialog), "xapp-edit-find-symbolic", GTK_ICON_SIZE_BUTTON);
 	gth_info_bar_set_primary_text (GTH_INFO_BAR (task->priv->dialog), _("Searching…"));
 	update_secondary_text (task);
 	_gtk_info_bar_clear_action_area (GTK_INFO_BAR (task->priv->dialog));
 	gtk_widget_show (task->priv->dialog);
 
 	button = gtk_button_new ();
-	gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("process-stop-symbolic", GTK_ICON_SIZE_BUTTON));
+	gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xapp-process-stop-symbolic", GTK_ICON_SIZE_BUTTON));
 	gtk_widget_set_tooltip_text (button, _("Cancel the operation"));
 	gtk_widget_show_all (button);
 	gtk_info_bar_add_action_widget (GTK_INFO_BAR (task->priv->dialog),

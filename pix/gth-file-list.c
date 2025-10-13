@@ -1224,7 +1224,7 @@ gth_file_list_set_thumb_size (GthFileList *file_list,
 
 	gth_icon_cache_free (file_list->priv->icon_cache);
 	file_list->priv->icon_cache = gth_icon_cache_new (gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (file_list))), size / 2);
-	gth_icon_cache_set_fallback (file_list->priv->icon_cache, g_themed_icon_new ("text-x-generic-symbolic"));
+	gth_icon_cache_set_fallback (file_list->priv->icon_cache, g_themed_icon_new ("xapp-text-x-generic-symbolic"));
 
 	gth_file_view_set_thumbnail_size (GTH_FILE_VIEW (file_list->priv->view), file_list->priv->thumb_size);
 
@@ -1797,7 +1797,7 @@ _gth_file_list_update_next_thumb (GthFileList *file_list)
 		g_print (">LOADING: %s\n", g_file_get_uri (job->file_data->file));
 #endif
 
-		icon = g_themed_icon_new ("content-loading-symbolic");
+		icon = g_themed_icon_new ("xapp-content-loading-symbolic");
 		icon_image = gth_icon_cache_get_surface (file_list->priv->icon_cache, icon);
 		gth_file_store_set (file_store,
 				    &file_list->priv->thumbnailer_state.current,

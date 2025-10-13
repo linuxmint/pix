@@ -685,7 +685,7 @@ gth_file_tool_curves_get_options (GthFileTool *base)
 		header_bar = gtk_header_bar_new ();
 		gtk_header_bar_set_title (GTK_HEADER_BAR (header_bar), _("Presets"));
 
-		button = gtk_button_new_from_icon_name ("go-previous-symbolic", GTK_ICON_SIZE_BUTTON);
+		button = gtk_button_new_from_icon_name ("xapp-go-previous-symbolic", GTK_ICON_SIZE_BUTTON);
 		g_signal_connect (button,
 				  "clicked",
 				  G_CALLBACK (show_options_button_clicked_cb),
@@ -815,7 +815,7 @@ gth_file_tool_curves_populate_headerbar (GthFileTool *base,
 
 	button = gth_browser_add_header_bar_button (browser,
 						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
-						    "edit-undo-symbolic",
+						    "xapp-edit-undo-symbolic",
 						    _("Reset"),
 						    NULL,
 						    NULL);
@@ -829,7 +829,7 @@ gth_file_tool_curves_populate_headerbar (GthFileTool *base,
 
 	button = gth_browser_add_header_bar_button (browser,
 						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
-						    "list-add-symbolic",
+						    "xapp-list-add-symbolic",
 						    _("Add to presets"),
 						    NULL,
 						    NULL);

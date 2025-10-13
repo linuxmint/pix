@@ -433,7 +433,7 @@ _gth_slideshow_construct (GthSlideshow *self,
 							     NULL);
 	if (self->priv->pause_pixbuf == NULL)
 		self->priv->pause_pixbuf = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),
-								     "media-playback-pause-symbolic",
+								     "xapp-media-playback-pause-symbolic",
 								     100,
 								     0,
 								     NULL);
@@ -1205,7 +1205,7 @@ clutter_projector_construct (GthSlideshow *self)
 	else
 		gtk_clutter_texture_set_from_icon_name (GTK_CLUTTER_TEXTURE (self->priv->paused_actor),
 						    	GTK_WIDGET (self),
-						    	"media-playback-pause-symbolic",
+						    	"xapp-media-playback-pause-symbolic",
 						    	GTK_ICON_SIZE_DIALOG,
 						    	NULL);
 	clutter_actor_hide (self->priv->paused_actor);

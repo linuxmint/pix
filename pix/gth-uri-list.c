@@ -209,7 +209,7 @@ _gth_uri_list_set_iter (GthUriList  *uri_list,
 	}
 	else {
 		display_name = (name != NULL) ? g_strdup (name) : _g_file_get_display_name (file);
-		icon = g_themed_icon_new ("text-x-generic-symbolic");
+		icon = g_themed_icon_new ("xapp-text-x-generic-symbolic");
 	}
 
 	gtk_list_store_set (uri_list->priv->list_store, iter,
@@ -290,7 +290,7 @@ gth_uri_list_set_bookmarks (GthUriList    *uri_list,
 		else {
 			if (display_name == NULL)
 				display_name = _g_file_get_display_name (file);
-			icon = g_themed_icon_new ("text-x-generic-symbolic");
+			icon = g_themed_icon_new ("xapp-text-x-generic-symbolic");
 		}
 
 		gtk_list_store_append (uri_list->priv->list_store, &iter);

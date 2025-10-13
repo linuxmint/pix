@@ -67,5 +67,5 @@ gth_file_tool_save_as_class_init (GthFileToolSaveAsClass *klass)
 static void
 gth_file_tool_save_as_init (GthFileToolSaveAs *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "document-save-as-symbolic", _("Save As…"), GTH_TOOLBOX_SECTION_FILE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "xapp-document-save-as-symbolic", _("Save As…"), GTH_TOOLBOX_SECTION_FILE);
 }

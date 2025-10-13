@@ -278,7 +278,7 @@ gth_file_properties_real_get_name (GthPropertyView *self)
 static const char *
 gth_file_properties_real_get_icon (GthPropertyView *self)
 {
-	return "document-properties-symbolic";
+	return "xapp-document-properties-symbolic";
 }
 
 

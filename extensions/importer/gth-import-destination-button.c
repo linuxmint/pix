@@ -92,7 +92,7 @@ preferences_dialog_destination_changed_cb (GthImportPreferencesDialog *dialog,
 		char *destination_name;
 		char *subfolder_name;
 
-		gtk_image_set_from_icon_name (GTK_IMAGE (self->priv->destination_icon), "folder-symbolic", GTK_ICON_SIZE_MENU);
+		gtk_image_set_from_icon_name (GTK_IMAGE (self->priv->destination_icon), "xapp-folder-symbolic", GTK_ICON_SIZE_MENU);
 
 		destination_name = g_file_get_parse_name (destination);
 		gtk_label_set_text (GTK_LABEL (self->priv->destination_label), destination_name);

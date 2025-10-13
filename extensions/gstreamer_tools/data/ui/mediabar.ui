@@ -53,7 +53,7 @@
               <object class="GtkImage" id="play_slower_image">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="icon-name">media-seek-backward-symbolic</property>
+                <property name="icon-name">xapp-media-seek-backward-symbolic</property>
                 <property name="icon_size">1</property>
               </object>
             </child>
@@ -75,7 +75,7 @@
               <object class="GtkImage" id="play_faster_image">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="icon-name">media-seek-forward-symbolic</property>
+                <property name="icon-name">xapp-media-seek-forward-symbolic</property>
                 <property name="icon_size">1</property>
               </object>
             </child>
@@ -97,7 +97,7 @@
               <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="icon-name">view-refresh-symbolic</property>
+                <property name="icon-name">xapp-view-refresh-symbolic</property>
               </object>
             </child>
           </object>
@@ -234,10 +234,10 @@
             <property name="relief">none</property>
             <property name="orientation">vertical</property>
             <property name="adjustment">volume_adjustment</property>
-            <property name="icons">audio-volume-muted-symbolic
-audio-volume-high-symbolic
-audio-volume-low-symbolic
-audio-volume-medium-symbolic</property>
+            <property name="icons">xapp-audio-volume-muted-symbolic
+xapp-audio-volume-high-symbolic
+xapp-audio-volume-low-symbolic
+xapp-audio-volume-medium-symbolic</property>
             <child internal-child="plus_button">
               <object class="GtkButton" id="volumebutton-plus_button1">
                 <property name="label" translatable="yes">+</property>
@@ -421,7 +421,7 @@ audio-volume-medium-symbolic</property>
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="icon-name">edit-copy-symbolic</property>
+                    <property name="icon-name">xapp-edit-copy-symbolic</property>
                   </object>
                 </child>
               </object>

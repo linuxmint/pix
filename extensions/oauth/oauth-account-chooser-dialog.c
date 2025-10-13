@@ -177,7 +177,7 @@ oauth_account_chooser_dialog_construct (OAuthAccountChooserDialog *self,
 				    ACCOUNT_DATA_COLUMN, account,
 				    ACCOUNT_NAME_COLUMN, account->name,
 				    ACCOUNT_SEPARATOR_COLUMN, FALSE,
-				    ACCOUNT_ICON_COLUMN, "dialog-password-symbolic",
+				    ACCOUNT_ICON_COLUMN, "xapp-dialog-password-symbolic",
 				    -1);
 	}
 
@@ -191,7 +191,7 @@ oauth_account_chooser_dialog_construct (OAuthAccountChooserDialog *self,
 			    ACCOUNT_DATA_COLUMN, NULL,
 			    ACCOUNT_NAME_COLUMN, _("New authentication…"),
 			    ACCOUNT_SEPARATOR_COLUMN, FALSE,
-			    ACCOUNT_ICON_COLUMN, "list-add-symbolic",
+			    ACCOUNT_ICON_COLUMN, "xapp-list-add-symbolic",
 			    -1);
 
 	gtk_combo_box_set_active (GTK_COMBO_BOX (GET_WIDGET ("account_combobox")), active);

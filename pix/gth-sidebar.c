@@ -216,7 +216,7 @@ _gth_sidebar_construct (GthSidebar *sidebar)
 	gtk_widget_show (empty_view);
 	gtk_stack_add_named (GTK_STACK (sidebar), empty_view, GTH_SIDEBAR_PAGE_EMPTY);
 
-	icon = gtk_image_new_from_icon_name("action-unavailable-symbolic", GTK_ICON_SIZE_DIALOG);
+	icon = gtk_image_new_from_icon_name("xapp-sign-forbidden-symbolic", GTK_ICON_SIZE_DIALOG);
 	gtk_style_context_add_class (gtk_widget_get_style_context (icon), "void-view");
 	gtk_widget_show (icon);
 	gtk_box_pack_start (GTK_BOX (empty_view), icon, TRUE, FALSE, 0);

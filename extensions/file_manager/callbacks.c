@@ -731,7 +731,7 @@ fm__gth_browser_construct_cb (GthBrowser *browser)
 
 	gth_browser_add_header_bar_button (browser,
 					   GTH_BROWSER_HEADER_SECTION_BROWSER_LOCATIONS,
-					   "user-home-symbolic",
+					   "xapp-user-home-symbolic",
 					   _("Home Folder"),
 					   "win.go-home",
 					   NULL);

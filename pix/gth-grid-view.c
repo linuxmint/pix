@@ -3062,7 +3062,7 @@ gth_grid_view_motion_notify (GtkWidget      *widget,
 			}
 			else
 				gtk_drag_set_icon_name (context,
-							multi_dnd ? "emblem-documents-symbolic" : "folder-documents-symbolic",
+							multi_dnd ? "xapp-emblem-documents-symbolic" : "xapp-folder-documents-symbolic",
 							-4,
 							-4);
 		}

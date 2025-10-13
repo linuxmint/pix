@@ -73,7 +73,7 @@ static void
 gth_file_tool_redo_init (GthFileToolRedo *self)
 {
 	gth_file_tool_construct (GTH_FILE_TOOL (self),
-				 "edit-redo-symbolic",
+				 "xapp-edit-redo-symbolic",
 				 _("Redo"),
 				 GTH_TOOLBOX_SECTION_FILE);
 }

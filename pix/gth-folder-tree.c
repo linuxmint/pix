@@ -1457,7 +1457,7 @@ gth_folder_tree_set_list (GthFolderTree *folder_tree,
 		GtkTreeIter  iter;
 
 		sort_key = g_utf8_collate_key_for_filename (PARENT_URI, -1);
-		icon = g_themed_icon_new ("go-up-symbolic");
+		icon = g_themed_icon_new ("xapp-go-up-symbolic");
 
 		gtk_tree_store_append (folder_tree->priv->tree_store, &iter, NULL);
 		gtk_tree_store_set (folder_tree->priv->tree_store, &iter,
