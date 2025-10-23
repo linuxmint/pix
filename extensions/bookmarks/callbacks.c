@@ -319,7 +319,7 @@ bookmarks__gth_browser_construct_cb (GthBrowser *browser)
 		GtkWidget  *button;
 		GMenuModel *menu;
 
-		button = _gtk_menu_button_new_for_header_bar ("xapp-user-bookmarks-symbolic");
+		button = _gtk_menu_button_new_for_header_bar ("xsi-user-bookmarks-symbolic");
 		gtk_widget_set_tooltip_text (button, _("Bookmarks"));
 
 		data->builder = gtk_builder_new_from_resource ("/org/x/Pix/bookmarks/data/ui/bookmarks-menu.ui");

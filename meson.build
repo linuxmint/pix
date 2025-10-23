@@ -241,7 +241,7 @@ common_deps = [
   dependency('zlib'),
   dependency('x11'),
   dependency('gsettings-desktop-schemas'),
-  dependency('xapp', version: '>= 3.0.0')
+  dependency('xapp', version: '>= 2.5.0')
 ]
 
 # config.h

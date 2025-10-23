@@ -126,7 +126,7 @@ _gth_sidebar_section_add_view (GthSidebarSection *self,
 	_gtk_widget_set_margin (self->priv->void_view, 0, 2, 0, 2);
 	gtk_widget_hide (self->priv->void_view);
 
-	icon = gtk_image_new_from_icon_name ("xapp-sign-forbidden-symbolic", GTK_ICON_SIZE_LARGE_TOOLBAR);
+	icon = gtk_image_new_from_icon_name ("xsi-sign-forbidden-symbolic", GTK_ICON_SIZE_LARGE_TOOLBAR);
 	gtk_widget_set_sensitive (icon, FALSE);
 	_gtk_widget_set_margin (icon, 10, 0, 10, 0);
 	gtk_style_context_add_class (gtk_widget_get_style_context (icon), "void-view");

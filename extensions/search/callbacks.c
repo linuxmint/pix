@@ -75,7 +75,7 @@ search__gth_browser_construct_cb (GthBrowser *browser)
 
 	gth_browser_add_header_bar_button (browser,
 					   GTH_BROWSER_HEADER_SECTION_BROWSER_COMMANDS,
-					   "xapp-edit-find-symbolic",
+					   "xsi-edit-find-symbolic",
 					   _("Find files"),
 					   "win.find",
 					   NULL);
@@ -107,7 +107,7 @@ search__gth_browser_update_extra_widget_cb (GthBrowser *browser)
 
 	if (data->refresh_button == NULL) {
 		data->refresh_button = gtk_button_new ();
-		gtk_container_add (GTK_CONTAINER (data->refresh_button), gtk_image_new_from_icon_name ("xapp-view-refresh-symbolic", GTK_ICON_SIZE_MENU));
+		gtk_container_add (GTK_CONTAINER (data->refresh_button), gtk_image_new_from_icon_name ("xsi-view-refresh-symbolic", GTK_ICON_SIZE_MENU));
 		g_object_add_weak_pointer (G_OBJECT (data->refresh_button), (gpointer *)&data->refresh_button);
 		gtk_button_set_relief (GTK_BUTTON (data->refresh_button), GTK_RELIEF_NONE);
 		gtk_widget_set_tooltip_text (data->refresh_button, _("Search again"));

@@ -347,7 +347,7 @@ wallpaper_data_set__step2 (WallpaperData *wdata)
 	wallpaper_style_set_as_current (&wdata->new_style);
 
 	infobar = gth_browser_get_infobar (wdata->browser);
-	gth_info_bar_set_icon_name (GTH_INFO_BAR (infobar), "xapp-dialog-information-symbolic", GTK_ICON_SIZE_DIALOG);
+	gth_info_bar_set_icon_name (GTH_INFO_BAR (infobar), "xsi-dialog-information-symbolic", GTK_ICON_SIZE_DIALOG);
 
 	{
 		char *name;

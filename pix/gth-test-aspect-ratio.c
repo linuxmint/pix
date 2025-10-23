@@ -213,7 +213,7 @@ gth_test_aspect_ratio_real_create_control (GthTest *base)
 	gtk_spin_button_set_value (GTK_SPIN_BUTTON (self->priv->ratio_spinbutton), self->priv->aspect_ratio);
 	gtk_widget_show (self->priv->ratio_spinbutton);
 
-	reset_button = gtk_button_new_from_icon_name ("xapp-edit-undo-symbolic", GTK_ICON_SIZE_BUTTON);
+	reset_button = gtk_button_new_from_icon_name ("xsi-edit-undo-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_relief (GTK_BUTTON (reset_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text (reset_button, _("Reset"));
 	gtk_widget_show (reset_button);

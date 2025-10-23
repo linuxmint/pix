@@ -63,5 +63,5 @@ gth_file_tool_save_class_init (GthFileToolSaveClass *klass)
 static void
 gth_file_tool_save_init (GthFileToolSave *self)
 {
-	gth_file_tool_construct (GTH_FILE_TOOL (self), "xapp-document-save-symbolic", _("Save"), GTH_TOOLBOX_SECTION_FILE);
+	gth_file_tool_construct (GTH_FILE_TOOL (self), "xsi-document-save-symbolic", _("Save"), GTH_TOOLBOX_SECTION_FILE);
 }

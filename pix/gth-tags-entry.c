@@ -1088,7 +1088,7 @@ gth_tags_entry_init (GthTagsEntry *self)
 
 	self->priv->expand_button = gtk_toggle_button_new ();
 	gtk_widget_set_tooltip_text (self->priv->expand_button, _("Show all the tags"));
-	gtk_container_add (GTK_CONTAINER (self->priv->expand_button), gtk_image_new_from_icon_name ("xapp-go-down-symbolic", GTK_ICON_SIZE_BUTTON));
+	gtk_container_add (GTK_CONTAINER (self->priv->expand_button), gtk_image_new_from_icon_name ("xsi-go-down-symbolic", GTK_ICON_SIZE_BUTTON));
 	gtk_widget_show_all (self->priv->expand_button);
 	gtk_box_pack_start (GTK_BOX (hbox), self->priv->expand_button, FALSE, FALSE, 0);
 

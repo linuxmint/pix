@@ -493,7 +493,7 @@ gth_time_selector_construct (GthTimeSelector *self)
 	gtk_box_pack_start (GTK_BOX (box), self->priv->date_entry, FALSE, FALSE, 0);
 
 	self->priv->calendar_button = gtk_toggle_button_new ();
-	gtk_container_add (GTK_CONTAINER (self->priv->calendar_button), gtk_image_new_from_icon_name ("xapp-go-down-symbolic", GTK_ICON_SIZE_BUTTON));
+	gtk_container_add (GTK_CONTAINER (self->priv->calendar_button), gtk_image_new_from_icon_name ("xsi-go-down-symbolic", GTK_ICON_SIZE_BUTTON));
 	gtk_widget_show_all (self->priv->calendar_button);
 	gtk_box_pack_start (GTK_BOX (box), self->priv->calendar_button, FALSE, FALSE, 0);
 	g_signal_connect (self->priv->calendar_button,

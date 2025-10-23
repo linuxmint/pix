@@ -38,8 +38,8 @@ static const GActionEntry actions[] = {
 
 
 static const GthMenuEntry action_entries[] = {
-	{ N_("_Removable Device…"), "win.import-device", NULL, "xapp-camera-symbolic" },
-	{ N_("F_older…"), "win.import-folder", NULL, "xapp-folder-symbolic" }
+	{ N_("_Removable Device…"), "win.import-device", NULL, "xsi-camera-symbolic" },
+	{ N_("F_older…"), "win.import-folder", NULL, "xsi-folder-symbolic" }
 };
 
 

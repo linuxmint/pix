@@ -235,11 +235,11 @@ gth_toolbox_init (GthToolbox *toolbox)
 	gtk_widget_show (options_box);
 	gtk_stack_add_named (GTK_STACK (toolbox), options_box, GTH_TOOLBOX_PAGE_OPTIONS);
 
-	close_button = gtk_button_new_from_icon_name ("xapp-go-previous-symbolic", GTK_ICON_SIZE_BUTTON);
+	close_button = gtk_button_new_from_icon_name ("xsi-go-previous-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_widget_show (close_button);
 	g_signal_connect (close_button, "clicked", G_CALLBACK (close_button_clicked_cb), toolbox);
 
-	ok_button = gtk_button_new_from_icon_name ("xapp-object-select-symbolic", GTK_ICON_SIZE_BUTTON);
+	ok_button = gtk_button_new_from_icon_name ("xsi-object-select-symbolic", GTK_ICON_SIZE_BUTTON);
 #ifdef GTK_STYLE_CLASS_SUGGESTED_ACTION
 	gtk_style_context_add_class (gtk_widget_get_style_context (ok_button), GTK_STYLE_CLASS_SUGGESTED_ACTION);
 #endif

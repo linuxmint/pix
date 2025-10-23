@@ -136,7 +136,7 @@ dlg_organize_files (GthBrowser *browser,
 		gtk_list_store_set (list_store, &iter,
 				    0, GTH_GROUP_POLICY_DIGITALIZED_DATE,
 				    1, _("Date photo was taken"),
-				    2, "xapp-camera-symbolic",
+				    2, "xsi-camera-symbolic",
 				    -1);
 
 		gtk_list_store_append (list_store, &iter);

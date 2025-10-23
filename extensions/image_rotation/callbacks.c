@@ -50,8 +50,8 @@ static const GthShortcut shortcuts[] = {
 
 
 static const GthMenuEntry tools1_action_entries[] = {
-	{ N_("Rotate Left"), "win.rotate-left", NULL, "xapp-object-rotate-left-symbolic" },
-	{ N_("Rotate Right"), "win.rotate-right", NULL, "xapp-object-rotate-right-symbolic" },
+	{ N_("Rotate Left"), "win.rotate-left", NULL, "xsi-object-rotate-left-symbolic" },
+	{ N_("Rotate Right"), "win.rotate-right", NULL, "xsi-object-rotate-right-symbolic" },
 };
 
 
@@ -159,7 +159,7 @@ ir__gth_browser_activate_viewer_page_cb (GthBrowser *browser)
 			data->buttons[0] =
 					gth_browser_add_header_bar_button (browser,
 									   GTH_BROWSER_HEADER_SECTION_VIEWER_COMMANDS,
-									   "xapp-object-rotate-left-symbolic",
+									   "xsi-object-rotate-left-symbolic",
 									   _("Rotate Left"),
 									   "win.rotate-left",
 									   NULL);
@@ -167,7 +167,7 @@ ir__gth_browser_activate_viewer_page_cb (GthBrowser *browser)
 			data->buttons[1] =
 					gth_browser_add_header_bar_button (browser,
 									   GTH_BROWSER_HEADER_SECTION_VIEWER_COMMANDS,
-									   "xapp-object-rotate-right-symbolic",
+									   "xsi-object-rotate-right-symbolic",
 									   _("Rotate Right"),
 									   "win.rotate-right",
 									   NULL);

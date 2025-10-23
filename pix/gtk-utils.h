@@ -28,10 +28,10 @@
 
 G_BEGIN_DECLS
 
-#define _GTK_ICON_NAME_DIALOG_ERROR "xapp-dialog-error-symbolic"
-#define _GTK_ICON_NAME_DIALOG_INFO "xapp-dialog-information-symbolic"
-#define _GTK_ICON_NAME_DIALOG_QUESTION "xapp-dialog-question-symbolic"
-#define _GTK_ICON_NAME_DIALOG_WARNING "xapp-dialog-warning-symbolic"
+#define _GTK_ICON_NAME_DIALOG_ERROR "xsi-dialog-error-symbolic"
+#define _GTK_ICON_NAME_DIALOG_INFO "xsi-dialog-information-symbolic"
+#define _GTK_ICON_NAME_DIALOG_QUESTION "xsi-dialog-question-symbolic"
+#define _GTK_ICON_NAME_DIALOG_WARNING "xsi-dialog-warning-symbolic"
 
 #define _GTK_LABEL_CANCEL _("_Cancel")
 #define _GTK_LABEL_CLOSE _("_Close")

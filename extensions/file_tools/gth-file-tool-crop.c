@@ -657,7 +657,7 @@ gth_file_tool_crop_populate_headerbar (GthFileTool *base,
 
 	button = gth_browser_add_header_bar_button (browser,
 						    GTH_BROWSER_HEADER_SECTION_EDITOR_COMMANDS,
-						    "xapp-tools-symbolic",
+						    "xsi-tools-symbolic",
 						    _("Options"),
 						    NULL,
 						    NULL);

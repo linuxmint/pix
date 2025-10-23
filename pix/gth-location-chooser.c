@@ -564,7 +564,7 @@ update_location_list (gpointer user_data)
 		if (self->priv->show_root) {
 			GIcon *icon;
 
-			icon = g_themed_icon_new ("xapp-computer-symbolic");
+			icon = g_themed_icon_new ("xsi-computer-symbolic");
 			gtk_tree_store_insert (self->priv->model, &iter, NULL, position++);
 			gtk_tree_store_set (self->priv->model, &iter,
 					    TYPE_COLUMN, ITEM_TYPE_LOCATION,

@@ -125,7 +125,7 @@ gth_search_source_selector_construct (GthSearchSourceSelector *self)
 
 	/* add/remove buttons */
 
-	self->priv->add_button = gtk_button_new_from_icon_name ("xapp-list-add-symbolic", GTK_ICON_SIZE_BUTTON);
+	self->priv->add_button = gtk_button_new_from_icon_name ("xsi-list-add-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_relief (GTK_BUTTON (self->priv->add_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text (self->priv->add_button, _("Add another location"));
 	gtk_widget_show_all (self->priv->add_button);
@@ -135,7 +135,7 @@ gth_search_source_selector_construct (GthSearchSourceSelector *self)
 			  G_CALLBACK (add_button_clicked_cb),
 			  self);
 
-	self->priv->remove_button = gtk_button_new_from_icon_name ("xapp-list-remove-symbolic", GTK_ICON_SIZE_BUTTON);
+	self->priv->remove_button = gtk_button_new_from_icon_name ("xsi-list-remove-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_relief (GTK_BUTTON (self->priv->remove_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text (self->priv->remove_button, _("Remove"));
 	gtk_widget_show_all (self->priv->remove_button);

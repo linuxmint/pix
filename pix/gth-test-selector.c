@@ -254,7 +254,7 @@ gth_test_selector_construct (GthTestSelector *self,
 
 	/**/
 
-	self->priv->add_button = gtk_button_new_from_icon_name ("xapp-list-add-symbolic", GTK_ICON_SIZE_BUTTON);
+	self->priv->add_button = gtk_button_new_from_icon_name ("xsi-list-add-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_relief (GTK_BUTTON (self->priv->add_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text (self->priv->add_button, _("Add a new rule"));
 	gtk_widget_show_all (self->priv->add_button);
@@ -264,7 +264,7 @@ gth_test_selector_construct (GthTestSelector *self,
 			  G_CALLBACK (add_button_clicked_cb),
 			  self);
 
-	self->priv->remove_button = gtk_button_new_from_icon_name ("xapp-list-remove-symbolic", GTK_ICON_SIZE_BUTTON);
+	self->priv->remove_button = gtk_button_new_from_icon_name ("xsi-list-remove-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_relief (GTK_BUTTON (self->priv->remove_button), GTK_RELIEF_NONE);
 	gtk_widget_set_tooltip_text (self->priv->remove_button, _("Remove this rule"));
 	gtk_widget_show_all (self->priv->remove_button);

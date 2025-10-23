@@ -1062,7 +1062,7 @@ _gth_browser_show_error (GthBrowser *browser,
 	gth_info_bar_set_secondary_text (GTH_INFO_BAR (browser->priv->infobar), error->message);
 
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (gtk_info_bar_get_action_area (GTK_INFO_BAR (browser->priv->infobar))), GTK_ORIENTATION_HORIZONTAL);
-	gth_info_bar_set_icon_name (GTH_INFO_BAR (browser->priv->infobar), "xapp-dialog-error-symbolic", GTK_ICON_SIZE_DIALOG);
+	gth_info_bar_set_icon_name (GTH_INFO_BAR (browser->priv->infobar), "xsi-dialog-error-symbolic", GTK_ICON_SIZE_DIALOG);
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (browser->priv->infobar), GTK_MESSAGE_ERROR);
 	_gtk_info_bar_clear_action_area (GTK_INFO_BAR (browser->priv->infobar));
 	gtk_info_bar_add_buttons (GTK_INFO_BAR (browser->priv->infobar),
@@ -4707,7 +4707,7 @@ gth_browser_init (GthBrowser *browser)
 
 		builder = _gtk_builder_new_from_resource ("gears-menu.ui");
 		menu = G_MENU_MODEL (gtk_builder_get_object (builder, "menu"));
-		browser->priv->menu_button = _gtk_menu_button_new_for_header_bar ("xapp-open-menu-symbolic");
+		browser->priv->menu_button = _gtk_menu_button_new_for_header_bar ("xsi-open-menu-symbolic");
 		gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (browser->priv->menu_button), menu);
 		gtk_widget_set_halign (GTK_WIDGET (gtk_menu_button_get_popup (GTK_MENU_BUTTON (browser->priv->menu_button))), GTK_ALIGN_END);
 		gtk_widget_show_all (browser->priv->menu_button);
@@ -4735,13 +4735,13 @@ gth_browser_init (GthBrowser *browser)
 
 		gth_browser_add_header_bar_button (browser,
 						   GTH_BROWSER_HEADER_SECTION_BROWSER_NAVIGATION,
-						   "xapp-go-previous-symbolic",
+						   "xsi-go-previous-symbolic",
 						   _("Go to the previous visited location"),
 						   "win.go-back",
 						   NULL);
 		gth_browser_add_header_bar_button (browser,
 						   GTH_BROWSER_HEADER_SECTION_BROWSER_NAVIGATION,
-						   "xapp-go-next-symbolic",
+						   "xsi-go-next-symbolic",
 						   _("Go to the next visited location"),
 						   "win.go-forward",
 						   NULL);
@@ -4749,7 +4749,7 @@ gth_browser_init (GthBrowser *browser)
 		/* history menu button */
 
 		builder = _gtk_builder_new_from_resource ("history-menu.ui");
-		button = _gtk_menu_button_new_for_header_bar ("xapp-document-open-recent-symbolic");
+		button = _gtk_menu_button_new_for_header_bar ("xsi-document-open-recent-symbolic");
 		gtk_widget_set_tooltip_text (button, _("History"));
 
 		browser->priv->history_menu = g_object_ref (G_MENU (gtk_builder_get_object (builder, "visited-locations")));
@@ -4763,7 +4763,7 @@ gth_browser_init (GthBrowser *browser)
 
 		gth_browser_add_header_bar_button (browser,
 						   GTH_BROWSER_HEADER_SECTION_VIEWER_NAVIGATION,
-						   "xapp-go-previous-symbolic",
+						   "xsi-go-previous-symbolic",
 						   _("View the folders"),
 						   "win.browser-mode",
 						   NULL);
@@ -4772,7 +4772,7 @@ gth_browser_init (GthBrowser *browser)
 
 		gth_browser_add_header_bar_toggle_button (browser,
 							  GTH_BROWSER_HEADER_SECTION_VIEWER_SIDEBAR,
-							  "xapp-dialog-information-symbolic",
+							  "xsi-dialog-information-symbolic",
 							  _("Properties"),
 							  "win.viewer-properties",
 							  NULL);
@@ -4787,7 +4787,7 @@ gth_browser_init (GthBrowser *browser)
 
 		gth_browser_add_header_bar_button (browser,
 						   GTH_BROWSER_HEADER_SECTION_VIEWER_OTHER_VIEW,
-						   "xapp-view-fullscreen-symbolic",
+						   "xsi-view-fullscreen-symbolic",
 						   _("Fullscreen"),
 						   "win.fullscreen",
 						   NULL);
@@ -4796,7 +4796,7 @@ gth_browser_init (GthBrowser *browser)
 
 		gth_browser_add_header_bar_button (browser,
 						   GTH_BROWSER_HEADER_SECTION_EDITOR_NAVIGATION,
-						   "xapp-go-previous-symbolic",
+						   "xsi-go-previous-symbolic",
 						   NULL,
 						   "win.browser-mode",
 						   NULL);
@@ -4805,7 +4805,7 @@ gth_browser_init (GthBrowser *browser)
 
 		gth_browser_add_header_bar_button (browser,
 						   GTH_BROWSER_HEADER_SECTION_EDITOR_VIEW,
-						   "xapp-view-fullscreen-symbolic",
+						   "xsi-view-fullscreen-symbolic",
 						   _("Fullscreen"),
 						   "win.fullscreen",
 						   NULL);
@@ -4835,7 +4835,7 @@ gth_browser_init (GthBrowser *browser)
 	{
 		/* show next image */
 
-		browser->priv->next_image_button = gtk_button_new_from_icon_name ("xapp-go-next-symbolic", GTK_ICON_SIZE_BUTTON);
+		browser->priv->next_image_button = gtk_button_new_from_icon_name ("xsi-go-next-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (browser->priv->next_image_button), "win.show-next-image");
 		gtk_style_context_add_class (gtk_widget_get_style_context (browser->priv->next_image_button), GTK_STYLE_CLASS_OSD);
 		gtk_widget_set_can_focus (browser->priv->next_image_button, FALSE);
@@ -4844,7 +4844,7 @@ gth_browser_init (GthBrowser *browser)
 
 		/* show previous image */
 
-		browser->priv->previous_image_button = gtk_button_new_from_icon_name ("xapp-go-previous-symbolic", GTK_ICON_SIZE_BUTTON);
+		browser->priv->previous_image_button = gtk_button_new_from_icon_name ("xsi-go-previous-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (browser->priv->previous_image_button), "win.show-previous-image");
 		gtk_style_context_add_class (gtk_widget_get_style_context (browser->priv->previous_image_button), GTK_STYLE_CLASS_OSD);
 		gtk_widget_set_can_focus (browser->priv->previous_image_button, FALSE);
@@ -4869,7 +4869,7 @@ gth_browser_init (GthBrowser *browser)
 		/* statusbar commands available in all modes */
 
 		browser->priv->show_progress_dialog_button = button = gtk_button_new ();
-		gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xapp-run-symbolic", GTK_ICON_SIZE_MENU));
+		gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xsi-run-symbolic", GTK_ICON_SIZE_MENU));
 		gtk_widget_set_tooltip_text (button, _("Operations"));
 		gtk_widget_show_all (button);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.show-progress-dialog");
@@ -4884,7 +4884,7 @@ gth_browser_init (GthBrowser *browser)
 		gtk_box_pack_start (GTK_BOX (gth_statubar_get_action_area (GTH_STATUSBAR (browser->priv->statusbar))), browser->priv->browser_status_commands, FALSE, FALSE, 0);
 
 		button = gtk_toggle_button_new ();
-		gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xapp-dialog-information-symbolic", GTK_ICON_SIZE_MENU));
+		gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xsi-dialog-information-symbolic", GTK_ICON_SIZE_MENU));
 		gtk_widget_set_tooltip_text (button, _("Properties"));
 		gtk_widget_show_all (button);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.browser-properties");
@@ -4898,7 +4898,7 @@ gth_browser_init (GthBrowser *browser)
 		gtk_box_pack_start (GTK_BOX (gth_statubar_get_action_area (GTH_STATUSBAR (browser->priv->statusbar))), browser->priv->viewer_status_commands, FALSE, FALSE, 0);
 
 		button = gtk_toggle_button_new ();
-		gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xapp-view-grid-symbolic", GTK_ICON_SIZE_MENU));
+		gtk_container_add (GTK_CONTAINER (button), gtk_image_new_from_icon_name ("xsi-view-grid-symbolic", GTK_ICON_SIZE_MENU));
 		gtk_widget_show_all (button);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.show-thumbnail-list");
 		gtk_box_pack_end (GTK_BOX (browser->priv->viewer_status_commands), button, FALSE, FALSE, 0);

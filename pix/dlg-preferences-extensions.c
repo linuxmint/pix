@@ -479,7 +479,7 @@ create_extensions_row (GthExtensionDescription	*description,
 
 	extension = gth_extension_description_get_extension (description);
 	if ((extension != NULL) && gth_extension_is_configurable (extension)) {
-		button = gtk_button_new_from_icon_name ("xapp-emblem-system-symbolic", GTK_ICON_SIZE_BUTTON);
+		button = gtk_button_new_from_icon_name ("xsi-emblem-system-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_set_tooltip_text (button, _("Preferences"));
 		gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
 		g_signal_connect (button,
@@ -489,7 +489,7 @@ create_extensions_row (GthExtensionDescription	*description,
 		gtk_box_pack_start (GTK_BOX (row_box), button, FALSE, FALSE, 0);
 	}
 	if ((extension != NULL) && (g_strcmp0 (description->authors[0], _("Pix Development Team")) != 0)) {
-		button = gtk_button_new_from_icon_name ("xapp-dialog-information-symbolic", GTK_ICON_SIZE_BUTTON);
+		button = gtk_button_new_from_icon_name ("xsi-dialog-information-symbolic", GTK_ICON_SIZE_BUTTON);
 		gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
 		g_signal_connect (button,
 				  "clicked",
