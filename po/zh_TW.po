@@ -10,22 +10,22 @@ msgstr ""
 "Project-Id-Version: pix 2.12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-12 10:17+0000\n"
-"PO-Revision-Date: 2025-10-05 02:46+0000\n"
-"Last-Translator: 爽自由 <coby2023t@gmail.com>\n"
+"PO-Revision-Date: 2026-01-06 02:45+0000\n"
+"Last-Translator: Steven Liao <stevenliao0119@yahoo.com.tw>\n"
 "Language-Team: Chinese/Traditional <ubuntu-l10n-zh-tw@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2025-12-12 13:31+0000\n"
-"X-Generator: Launchpad (build 379e22b8475e3402088a4cdb4a6e7936a4d28414)\n"
+"X-Launchpad-Export-Date: 2026-01-08 15:41+0000\n"
+"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
 "Language: \n"
 
 #: data/ui/browser-preferences.ui:20
 #: extensions/image_print/data/ui/print-layout.ui:651
 #: extensions/contact_sheet/gth-contact-sheet-theme.c:34
 msgid "Caption"
-msgstr "圖片標題"
+msgstr "影像說明"
 
 #: data/ui/browser-preferences.ui:66
 msgid "Behavior"
@@ -56,7 +56,7 @@ msgstr "縮圖大小 (_s):"
 
 #: data/ui/browser-preferences.ui:242
 msgid "D_etermine image type from content (slower)"
-msgstr "從圖片檔內容決定格式，較慢 (_e)"
+msgstr "從影像檔內容決定格式，較慢 (_e)"
 
 #: data/ui/code-selector.ui:99
 #: extensions/rename_series/data/ui/rename-series.ui:73
@@ -226,7 +226,7 @@ msgstr "外觀"
 
 #: data/ui/preferences.ui:123
 msgid "T_humbnails in viewer:"
-msgstr ""
+msgstr "檢視器中的縮圖(_H)："
 
 #: data/ui/preferences.ui:137
 msgid "on the bottom"
@@ -274,7 +274,7 @@ msgstr "詢問是否儲存有更改的檔案 (_m)"
 
 #: data/ui/preferences.ui:407
 msgid "_Store metadata inside files if possible"
-msgstr ""
+msgstr "若可行，請將詮釋資料儲存於檔案內部(_S)"
 
 #: data/ui/preferences.ui:440 pix/gth-main-default-types.c:38
 #: extensions/catalogs/data/ui/catalog-properties.ui:39
@@ -316,7 +316,7 @@ msgstr "新視窗"
 
 #: pix/resources/gears-menu.ui:11
 msgid "Open Location…"
-msgstr "開啟位圚..."
+msgstr "開啟位置…"
 
 #: pix/resources/gears-menu.ui:17 extensions/file_tools/gth-file-tool-save.c:66
 msgid "Save"
@@ -362,7 +362,7 @@ msgstr "刪除紀錄 (_D)"
 
 #: data/pix.desktop.in:4
 msgid "View and organize your images"
-msgstr "檢視並管理圖片"
+msgstr "檢視並管理影像"
 
 #: data/pix-import.desktop.in:3
 msgid "Import with Pix"
@@ -420,7 +420,7 @@ msgstr "篩選器"
 #: pix/dlg-preferences-browser.c:188 pix/dlg-preferences-extensions.c:65
 #: pix/gth-shortcuts-window.c:39
 msgid "Browser"
-msgstr "圖片清單"
+msgstr "瀏覽器"
 
 #: pix/dlg-preferences-extensions.c:66
 msgid "Viewers"
@@ -429,7 +429,7 @@ msgstr "檢視器"
 #: pix/dlg-preferences-extensions.c:67 pix/gth-file-details.c:42
 #: pix/gth-main-default-metadata.c:33
 msgid "Metadata"
-msgstr "註解資料"
+msgstr "詮釋資料"
 
 #: pix/dlg-preferences-extensions.c:68
 msgid "File tools"
@@ -586,7 +586,7 @@ msgstr "Pix"
 
 #: pix/gth-application.c:168
 msgid "— Image browser and viewer"
-msgstr "— 圖片瀏覽和檢視"
+msgstr "— 影像瀏覽和檢視"
 
 #: pix/gth-browser-actions-callbacks.c:101
 msgid ""
@@ -620,6 +620,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Cheng-Chia Tseng https://launchpad.net/~zerng07\n"
 "  Rockworld https://launchpad.net/~rockrock2222222\n"
+"  Steven Liao https://launchpad.net/~stevenliao0119\n"
 "  happylittle7 https://launchpad.net/~happylittle7\n"
 "  taijuin lee https://launchpad.net/~taijuin\n"
 "  tomoe_musashi https://launchpad.net/~musashi\n"
@@ -963,7 +964,7 @@ msgstr "無選項可用於此檔案類型"
 #: pix/gth-image-saver.c:185
 #, c-format
 msgid "Could not find a suitable module to save the image as “%s”"
-msgstr "找不到合適的模組來儲存圖片成 “%s”"
+msgstr "找不到適合的模組將影像儲存為「%s」"
 
 #: pix/gth-load-file-data-task.c:111
 msgid "Reading file information"
@@ -1128,7 +1129,7 @@ msgstr "所有檔案"
 
 #: pix/gth-main-default-tests.c:293
 msgid "All Images"
-msgstr "全部圖片"
+msgstr "所有影像"
 
 #: pix/gth-main-default-tests.c:300
 msgid "JPEG Images"
@@ -1203,7 +1204,7 @@ msgstr "檔案管理員"
 #: pix/gth-main-default-types.c:42 pix/gth-shortcuts-window.c:40
 #: extensions/image_viewer/preferences.c:158
 msgid "Viewer"
-msgstr "圖片顯示"
+msgstr "檢視器"
 
 #: pix/gth-overwrite-dialog.c:184
 #: extensions/edit_metadata/dlg-edit-metadata.c:234
@@ -1560,7 +1561,7 @@ msgstr "23"
 
 #: extensions/23hq/23hq.extension.desktop.in.in:4
 msgid "Upload images to 23hq.com"
-msgstr "上傳圖片到 23hq.com"
+msgstr "上傳影像至 23hq.com"
 
 #: extensions/bookmarks/bookmarks.extension.desktop.in.in:3
 #: extensions/bookmarks/callbacks.c:323
@@ -1616,7 +1617,7 @@ msgstr "縮圖目錄"
 #: extensions/contact_sheet/contact_sheet.extension.desktop.in.in:4
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
-msgstr "建立索引圖片來展示選用檔案的快照"
+msgstr "建立索引影像以顯示所選檔案的縮圖。"
 
 #: extensions/convert_format/convert_format.extension.desktop.in.in:3
 msgid "Convert format"
@@ -1632,15 +1633,15 @@ msgstr "桌面的背景圖"
 
 #: extensions/desktop_background/desktop_background.extension.desktop.in.in:4
 msgid "Set the image as desktop background"
-msgstr "將圖片設為桌面背景"
+msgstr "將影像設為桌面背景"
 
 #: extensions/edit_metadata/edit_metadata.extension.desktop.in.in:3
 msgid "Edit metadata"
-msgstr "編輯屬性資料"
+msgstr "編輯詮釋資料"
 
 #: extensions/edit_metadata/edit_metadata.extension.desktop.in.in:4
 msgid "Allow to edit files metadata."
-msgstr "允許編輯檔案屬性資料"
+msgstr "允許編輯檔案詮釋資料"
 
 #: extensions/exiv2_tools/exiv2_tools.extension.desktop.in.in:3
 msgid "EXIF, IPTC, XMP support"
@@ -1648,7 +1649,7 @@ msgstr "支援 EXIF, IPTC, XMP"
 
 #: extensions/exiv2_tools/exiv2_tools.extension.desktop.in.in:4
 msgid "Read and write exif, iptc and xmp metadata."
-msgstr "讀寫 exif, iptc 和 xmp 的屬性資料"
+msgstr "讀寫 exif, iptc 和 xmp 的詮釋資料"
 
 #: extensions/file_manager/file_manager.extension.desktop.in.in:3
 msgid "File manager"
@@ -1674,7 +1675,7 @@ msgstr "Flicker"
 
 #: extensions/flicker/flicker.extension.desktop.in.in:4
 msgid "Upload images to Flickr"
-msgstr "上傳圖片到 Flickr"
+msgstr "上傳影像至 Flickr"
 
 #: extensions/gstreamer_tools/gstreamer_tools.extension.desktop.in.in:3
 msgid "Audio/Video support"
@@ -1690,15 +1691,15 @@ msgstr "相片列印"
 
 #: extensions/image_print/image_print.extension.desktop.in.in:4
 msgid "Allow to print images choosing the page layout."
-msgstr ""
+msgstr "允許列印影像時選擇頁面配置"
 
 #: extensions/image_rotation/image_rotation.extension.desktop.in.in:3
 msgid "Image rotation"
-msgstr "圖片旋轉"
+msgstr "影像旋轉"
 
 #: extensions/image_rotation/image_rotation.extension.desktop.in.in:4
 msgid "Rotate images without data loss."
-msgstr "不失真旋轉圖片。"
+msgstr "無損旋轉影像。"
 
 #: extensions/list_tools/list_tools.extension.desktop.in.in:3
 msgid "File list tools"
@@ -1731,7 +1732,7 @@ msgstr "支援 RAW 格式"
 
 #: extensions/raw_files/raw_files.extension.desktop.in.in:4
 msgid "Allow to load raw format images."
-msgstr "允許載入 RAW 格式的圖片"
+msgstr "允許載入 Raw 格式影像。"
 
 #: extensions/red_eye_removal/red_eye_removal.extension.desktop.in.in:3
 msgid "Red-eye removal"
@@ -1751,11 +1752,11 @@ msgstr "更改一系列檔案"
 
 #: extensions/resize_images/resize_images.extension.desktop.in.in:3
 msgid "Resize images"
-msgstr "圖片縮放"
+msgstr "調整影像大小"
 
 #: extensions/resize_images/resize_images.extension.desktop.in.in:4
 msgid "Resize series of images."
-msgstr "縮放一系列圖片"
+msgstr "批次調整影像大小"
 
 #: extensions/search/search.extension.desktop.in.in:3
 #: extensions/search/callbacks.c:197
@@ -1778,7 +1779,7 @@ msgstr "進階檔案選取。"
 
 #: extensions/slideshow/slideshow.extension.desktop.in.in:4
 msgid "Play a presentation of images."
-msgstr "播放圖片簡報"
+msgstr "以簡報方式播放影像。"
 
 #: extensions/terminal/terminal.extension.desktop.in.in:3
 #: extensions/terminal/actions.c:53
@@ -1901,7 +1902,7 @@ msgstr "不壓縮 (_N)"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:118
 msgid "No_rmal (Deflate)"
-msgstr ""
+msgstr "正常 (Deflate 壓縮)"
 
 #: extensions/cairo_io/data/ui/tiff-options.ui:137
 msgid "_Loss compression (JPEG)"
@@ -1932,7 +1933,7 @@ msgstr "方法 (_M):"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:19
 msgid "C_atalogs:"
-msgstr "圖片集 (_A):"
+msgstr "目錄:"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:34
 #: extensions/catalogs/dlg-add-to-catalog.c:620
@@ -1942,7 +1943,7 @@ msgstr "新增圖庫"
 #: extensions/catalogs/data/ui/add-to-catalog.ui:57
 #: extensions/catalogs/dlg-add-to-catalog.c:461
 msgid "New Catalog"
-msgstr "新圖片集"
+msgstr "新增目錄"
 
 #: extensions/catalogs/data/ui/add-to-catalog.ui:103
 #: extensions/file_manager/actions.c:766
@@ -2002,15 +2003,15 @@ msgstr "包括子資料夾(_I)"
 
 #: extensions/catalogs/data/ui/organize-files.ui:156
 msgid "Ignore catalogs with a single file"
-msgstr ""
+msgstr "忽略僅包含單一檔案的目錄"
 
 #: extensions/catalogs/data/ui/organize-files.ui:182
 msgid "Put single files in the catalog:"
-msgstr ""
+msgstr "將單一檔案放入目錄:"
 
 #: extensions/catalogs/data/ui/organize-files.ui:202
 msgid "Singles"
-msgstr ""
+msgstr "單一檔案"
 
 #: extensions/change_date/data/ui/change-date.ui:12
 #: extensions/gstreamer_tools/data/ui/mediabar.ui:243
@@ -2072,31 +2073,31 @@ msgstr "秒"
 
 #: extensions/comments/data/ui/comments-preferences.ui:12
 msgid "_Synchronize with the embedded metadata"
-msgstr ""
+msgstr "與嵌入式詮釋資料同步(_S)"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:15
 msgid "Simple"
-msgstr "簡易"
+msgstr "簡約"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:18
 msgid "Simple with shadow"
-msgstr "普通邊框加陰影"
+msgstr "簡約帶陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:21
 msgid "Shadow only"
-msgstr "只顯示陰影"
+msgstr "僅顯示陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:24
 msgid "Slide"
-msgstr ""
+msgstr "幻燈片"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:27
 msgid "Inward Shadow"
-msgstr "向內陰影"
+msgstr "內側陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:30
 msgid "Outward Shadow"
-msgstr "向外陰影"
+msgstr "外側陰影"
 
 #: extensions/contact_sheet/data/ui/contact-sheet-theme-properties.ui:96
 msgid "Background"
@@ -2249,13 +2250,13 @@ msgstr "0"
 #: extensions/contact_sheet/data/ui/image-wall.ui:327
 #: extensions/webalbums/data/ui/web-album-exporter.ui:675
 msgid "Images per page:"
-msgstr "每頁圖片數目:"
+msgstr "每頁影像數："
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:684
 #: extensions/contact_sheet/data/ui/image-wall.ui:339
 #: extensions/webalbums/data/ui/web-album-exporter.ui:650
 msgid "All images on a single page"
-msgstr "單頁放入全部圖片"
+msgstr "所有影像顯示於單一頁面"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:700
 msgid "_All pages with the same size"
@@ -2265,7 +2266,7 @@ msgstr "全部頁面相同尺寸 (_A)"
 #: extensions/contact_sheet/data/ui/image-wall.ui:361
 #: extensions/image_print/data/ui/print-layout.ui:519
 msgid "Layout"
-msgstr "佈局"
+msgstr "版面配置"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:758
 #: extensions/contact_sheet/data/ui/image-wall.ui:405
@@ -2277,7 +2278,7 @@ msgstr "排序 (o):"
 #: extensions/contact_sheet/data/ui/image-wall.ui:439
 #: extensions/webalbums/data/ui/web-album-exporter.ui:544
 msgid "Re_verse order"
-msgstr "反向排列 (_V)"
+msgstr "反向排序"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:819
 #: extensions/contact_sheet/data/ui/image-wall.ui:465
@@ -2286,7 +2287,7 @@ msgstr "大小 (_S):"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:857
 msgid "Sq_uared"
-msgstr ""
+msgstr "方格化"
 
 #: extensions/contact_sheet/data/ui/contact-sheet.ui:936
 #: extensions/contact_sheet/data/ui/image-wall.ui:524
@@ -2338,7 +2339,7 @@ msgstr "國家 (_U):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:77
 msgid "_Code:"
-msgstr ""
+msgstr "代碼:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:128
 msgid "Cr_edit:"
@@ -2359,11 +2360,11 @@ msgstr "目標名稱 (_O):"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:293
 msgid "Byline _Title:"
-msgstr ""
+msgstr "署名標題:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:332
 msgid "_Byline:"
-msgstr ""
+msgstr "署名:"
 
 #: extensions/exiv2_tools/data/ui/edit-exiv2-page.ui:363
 msgid "_City:"
@@ -2483,12 +2484,12 @@ msgstr "中央"
 #: extensions/file_tools/data/ui/crop-options.ui:503
 #: extensions/file_tools/data/ui/resize-options.ui:460
 msgid "I_nvert aspect ratio"
-msgstr ""
+msgstr "反轉寬高比(_N)"
 
 #. after the colon there is a control to select the size in pixels
 #: extensions/file_tools/data/ui/crop-options.ui:525
 msgid "M_ultiple of:"
-msgstr ""
+msgstr "倍數(_U)："
 
 #. abbreviation of pixel
 #: extensions/file_tools/data/ui/crop-options.ui:559
@@ -2569,7 +2570,7 @@ msgstr "對齊"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:326
 msgid "Image size"
-msgstr "圖片大小"
+msgstr "影像大小"
 
 #: extensions/file_tools/data/ui/rotate-options.ui:416
 msgid "Point 1:"
@@ -2875,7 +2876,7 @@ msgstr "全部頁數"
 
 #: extensions/image_print/data/ui/print-layout.ui:267
 msgid "Special code"
-msgstr ""
+msgstr "特殊代碼"
 
 #. translate only the text in the curly brackets
 #: extensions/image_print/data/ui/print-layout.ui:299
@@ -2892,7 +2893,7 @@ msgstr "全部檔案數"
 
 #: extensions/image_print/data/ui/print-layout.ui:383
 msgid "The event description"
-msgstr ""
+msgstr "事件描述"
 
 #: extensions/image_print/data/ui/print-layout.ui:610
 msgid "_Rows:"
@@ -2900,7 +2901,7 @@ msgstr "列 (_R):"
 
 #: extensions/image_print/data/ui/print-layout.ui:720
 msgid "Image"
-msgstr "圖片"
+msgstr "影像"
 
 #: extensions/image_print/data/ui/print-layout.ui:762
 msgid "Position:"
@@ -2926,35 +2927,35 @@ msgstr "高度"
 
 #: extensions/image_print/data/ui/print-layout.ui:943
 msgid "Rotation:"
-msgstr ""
+msgstr "旋轉："
 
 #: extensions/image_print/data/ui/print-layout.ui:1002
 msgid "Unit:"
-msgstr ""
+msgstr "單位："
 
 #: extensions/image_print/data/ui/print-layout.ui:1056
 msgid "Preview"
-msgstr ""
+msgstr "預覽"
 
 #: extensions/image_print/data/ui/print-preferences.ui:14
 msgid "Fonts"
-msgstr ""
+msgstr "字型"
 
 #: extensions/image_print/data/ui/print-preferences.ui:87
 msgid "Select Caption Font"
-msgstr ""
+msgstr "選擇說明文字字型"
 
 #: extensions/image_print/data/ui/print-preferences.ui:104
 msgid "Select Header Font"
-msgstr ""
+msgstr "選擇標題字型"
 
 #: extensions/image_print/data/ui/print-preferences.ui:121
 msgid "Select Footer Font"
-msgstr ""
+msgstr "選擇頁尾字型"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:20
 msgid "After loading an image:"
-msgstr ""
+msgstr "載入影像後:"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:49
 #: extensions/image_viewer/gth-image-viewer-page.c:1139
@@ -2963,7 +2964,7 @@ msgstr "設置為實際尺寸"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:50
 msgid "Keep previous zoom"
-msgstr ""
+msgstr "保持先前縮放比例"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:51
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:71
@@ -2974,245 +2975,245 @@ msgstr "符合視窗"
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:52
 #: extensions/image_viewer/gth-image-viewer-page.c:1146
 msgid "Fit to window if larger"
-msgstr "如果圖片太大則縮小至視窗尺寸"
+msgstr "大圖縮小以符合視窗"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:53
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:80
 msgid "Fit to width"
-msgstr ""
+msgstr "符合寬度"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:54
 msgid "Fit to width if larger"
-msgstr ""
+msgstr "若較大，則調整為符合寬度"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:72
 msgid "Reset scrollbar positions"
-msgstr ""
+msgstr "重設捲動列位置"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:109
 msgid "Mouse wheel action:"
-msgstr ""
+msgstr "滑鼠滾輪操作："
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:131
 msgctxt "zoom quality"
 msgid "Change image"
-msgstr ""
+msgstr "變更影像"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:148
 msgctxt "zoom quality"
 msgid "Zoom image"
-msgstr ""
+msgstr "縮放影像"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:187
 msgid "Zoom quality:"
-msgstr ""
+msgstr "縮放品質："
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:209
 msgctxt "zoom quality"
 msgid "_High"
-msgstr ""
+msgstr "高(_H)"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:226
 msgctxt "zoom quality"
 msgid "_Low"
-msgstr ""
+msgstr "低(_L)"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:266
 msgid "Transparency:"
-msgstr ""
+msgstr "透明度："
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:295
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:15
 msgid "Checkered"
-msgstr ""
+msgstr "格紋"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:296
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:24
 msgid "White"
-msgstr ""
+msgstr "白色"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:297
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:33
 msgid "Gray"
-msgstr ""
+msgstr "灰色"
 
 #: extensions/image_viewer/data/ui/image-viewer-preferences.ui:298
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:42
 msgid "Black"
-msgstr ""
+msgstr "黑色"
 
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:62
 msgid "Automatic"
-msgstr ""
+msgstr "自動"
 
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:89
 msgid "Fit to height"
-msgstr ""
+msgstr "符合高度"
 
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:106
 msgid "50%"
-msgstr ""
+msgstr "50%"
 
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:115
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:124
 msgid "200%"
-msgstr ""
+msgstr "200%"
 
 #: extensions/image_viewer/data/ui/toolbar-zoom-menu.ui:133
 msgid "300%"
-msgstr ""
+msgstr "300%"
 
 #: extensions/importer/data/ui/import-preferences.ui:21
 msgid "_Destination"
-msgstr ""
+msgstr "目的地(_D)"
 
 #: extensions/importer/data/ui/import-preferences.ui:59
 msgid "_Automatic subfolder"
-msgstr ""
+msgstr "自動子資料夾(_A)"
 
 #: extensions/importer/data/ui/import-preferences.ui:89
 #: extensions/rename_series/data/ui/rename-series.ui:156
 msgid "_Template:"
-msgstr ""
+msgstr "範本(_T)："
 
 #: extensions/list_tools/data/ui/personalize-scripts.ui:29
 msgid "Co_mmands:"
-msgstr ""
+msgstr "命令(_M)："
 
 #: extensions/list_tools/data/ui/script-editor.ui:47
 msgid "_Wait for the command to finish"
-msgstr ""
+msgstr "等待命令完成(_W)"
 
 #: extensions/list_tools/data/ui/script-editor.ui:65
 msgid "E_xecute command once for every file"
-msgstr ""
+msgstr "對每個檔案執行一次命令(_X)"
 
 #: extensions/list_tools/data/ui/script-editor.ui:82
 msgid "_Terminal command (shell script)"
-msgstr ""
+msgstr "終端命令（Shell 腳本）(_T)"
 
 #: extensions/list_tools/data/ui/script-editor.ui:101
 msgid "Sh_ortcut:"
-msgstr ""
+msgstr "捷徑(_O)："
 
 #: extensions/list_tools/data/ui/script-editor.ui:137
 msgid "_Command:"
-msgstr ""
+msgstr "命令(_C)："
 
 #: extensions/list_tools/data/ui/script-editor.ui:172
 msgid "Edit command"
-msgstr ""
+msgstr "編輯命令"
 
 #: extensions/oauth/data/ui/oauth-account-manager.ui:23
 msgid "A_ccounts:"
-msgstr ""
+msgstr "帳號(_C)："
 
 #: extensions/photo_importer/data/ui/photo-importer-options.ui:15
 msgid "After importing from a device:"
-msgstr ""
+msgstr "從裝置匯入後："
 
 #: extensions/photo_importer/data/ui/photo-importer-options.ui:42
 msgid "_Rotate the images physically"
-msgstr ""
+msgstr "實際旋轉影像:"
 
 #: extensions/photo_importer/data/ui/photo-importer-options.ui:59
 #: extensions/photo_importer/data/ui/photo-importer.ui:273
 msgid "_Delete the imported files from the source"
-msgstr ""
+msgstr "從來源刪除已匯入的檔案(_D)"
 
 #: extensions/photo_importer/data/ui/photo-importer.ui:185
 msgid "_Event:"
-msgstr ""
+msgstr "活動(_E)："
 
 #: extensions/photo_importer/data/ui/photo-importer.ui:245
 msgid "_Tags:"
-msgstr ""
+msgstr "標籤："
 
 #: extensions/rename_series/data/ui/rename-series.ui:42
 msgid "_Sort by:"
-msgstr ""
+msgstr "排序方式(_S)："
 
 #. Translators: this is the text case (upper or lower case).
 #: extensions/rename_series/data/ui/rename-series.ui:55
 msgid "Cas_e:"
-msgstr ""
+msgstr "大小寫:"
 
 #: extensions/rename_series/data/ui/rename-series.ui:110
 msgid "Re_verse Order"
-msgstr ""
+msgstr "倒序"
 
 #: extensions/rename_series/data/ui/rename-series.ui:226
 msgid "Revert to the last used template"
-msgstr ""
+msgstr "還原至上次使用的範本"
 
 #: extensions/rename_series/data/ui/rename-series.ui:265
 msgid "_Preview:"
-msgstr ""
+msgstr "預覽:"
 
 #: extensions/resize_images/data/ui/resize-images.ui:29
 msgid "pixel"
-msgstr ""
+msgstr "像素"
 
 #: extensions/resize_images/data/ui/resize-images.ui:68
 msgid "New dimensions"
-msgstr ""
+msgstr "新尺寸"
 
 #: extensions/resize_images/data/ui/resize-images.ui:120
 msgid "_Height:"
-msgstr ""
+msgstr "高度:"
 
 #: extensions/resize_images/data/ui/resize-images.ui:203
 msgid "_Preserve original aspect ratios"
-msgstr ""
+msgstr "維持原始長寬比"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:46
 msgid "_Personalize"
-msgstr ""
+msgstr "自訂:"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:100
 msgid "_Transition effect:"
-msgstr ""
+msgstr "轉場效果:"
 
 #. This is the first part of the phrase "change automatically, every x seconds", where x is an input control that let the user choose a value.
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:126
 msgid "_Change automatically, every"
-msgstr ""
+msgstr "自動變更，每隔"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:162
 msgctxt "Every x seconds"
 msgid "seconds"
-msgstr ""
+msgstr "秒"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:186
 msgid "_Restart when finished"
-msgstr ""
+msgstr "完成後重新啟動"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:201
 msgid "R_andom order"
-msgstr ""
+msgstr "隨機排序"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:237
 msgid "Playlist"
-msgstr ""
+msgstr "播放列表"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:314
 msgid "Add files to the playlist"
-msgstr ""
+msgstr "將檔案加入播放列表"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:334
 msgid "Remove the selected files"
-msgstr ""
+msgstr "移除選取檔案"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:19
 msgid "All images on a single image"
-msgstr ""
+msgstr "將所有影像整合為單一影像"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:22
 msgid "Adapts to the window width"
-msgstr ""
+msgstr "自動調整至視窗寬度"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:227
 #: extensions/gstreamer_tools/main.c:48
@@ -3221,37 +3222,37 @@ msgstr "相簿"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:302
 msgid "_Copy originals to destination"
-msgstr ""
+msgstr "將原始檔複製到目的地"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:605
 msgid "_Adapt to the window width "
-msgstr ""
+msgstr "自動調整至視窗寬度 "
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:693
 #: extensions/webalbums/data/ui/web-album-exporter.ui:768
 msgid "Index Page"
-msgstr ""
+msgstr "索引頁"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:743
 msgid "Thumbnail Caption"
-msgstr ""
+msgstr "縮圖標題"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:945
 #: extensions/webalbums/data/ui/web-album-exporter.ui:1061
 msgid "Image Page"
-msgstr ""
+msgstr "影像頁面"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:979
 msgid "Show the description, if available"
-msgstr ""
+msgstr "如果有描述則顯示"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:1005
 msgid "Show the following attributes:"
-msgstr ""
+msgstr "顯示下列屬性:"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:1039
 msgid "Image Attributes"
-msgstr ""
+msgstr "影像屬性"
 
 #: extensions/bookmarks/dlg-bookmarks.c:192
 msgid "Could not remove the bookmark"
@@ -3259,7 +3260,7 @@ msgstr "無法移除書籤"
 
 #: extensions/burn_disc/callbacks.c:48
 msgid "_Optical Disc…"
-msgstr ""
+msgstr "光碟..."
 
 #: extensions/burn_disc/gth-burn-task.c:239
 #: extensions/burn_disc/gth-burn-task.c:260
@@ -3279,7 +3280,7 @@ msgstr "不明的 JPEG 色彩空間 (%d)"
 
 #: extensions/cairo_io/gth-image-saver-avif.c:365
 msgid "AVIF"
-msgstr ""
+msgstr "AVIF"
 
 #: extensions/cairo_io/gth-image-saver-jpeg.c:517
 #: extensions/image_viewer/gth-metadata-provider-image.c:154
@@ -3344,27 +3345,27 @@ msgstr "無法移除目錄"
 #: extensions/catalogs/actions.c:366
 #, c-format
 msgid "Are you sure you want to remove “%s”?"
-msgstr ""
+msgstr "您確定要移除「%s」嗎?"
 
 #: extensions/catalogs/callbacks.c:52
 msgid "Add to Catalog…"
-msgstr ""
+msgstr "加入目錄…"
 
 #: extensions/catalogs/callbacks.c:57 extensions/selections/callbacks.c:78
 msgid "Open Folder"
-msgstr ""
+msgstr "開啟資料夾"
 
 #: extensions/catalogs/callbacks.c:62
 msgid "Remove from Catalog"
-msgstr ""
+msgstr "從目錄移除"
 
 #: extensions/catalogs/callbacks.c:67
 msgid "Create Catalog"
-msgstr ""
+msgstr "建立目錄"
 
 #: extensions/catalogs/callbacks.c:68
 msgid "Create Library"
-msgstr ""
+msgstr "建立收藏庫"
 
 #: extensions/catalogs/callbacks.c:223 extensions/catalogs/callbacks.c:226
 msgid "Command Line"
@@ -3397,12 +3398,12 @@ msgstr "加入至目錄"
 
 #: extensions/catalogs/dlg-add-to-catalog.c:710
 msgid "_Add"
-msgstr ""
+msgstr "加入 (_A)"
 
 #: extensions/catalogs/dlg-add-to-catalog.c:714
 #: extensions/edit_metadata/dlg-edit-metadata.c:347
 msgid "Keep the dialog open"
-msgstr ""
+msgstr "保留對話框"
 
 #: extensions/catalogs/dlg-catalog-properties.c:80
 msgid "Could not save the catalog"
@@ -3428,12 +3429,12 @@ msgstr "標籤"
 #: extensions/catalogs/gth-file-source-catalogs.c:958
 #, c-format
 msgid "The catalog “%s” already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "目錄「%s」已經存在，您要覆蓋它嗎?"
 
 #: extensions/catalogs/gth-file-source-catalogs.c:960
 #, c-format
 msgid "The library “%s” already exists, do you want to overwrite it?"
-msgstr ""
+msgstr "收藏庫「%s」已經存在，您要覆蓋它嗎？"
 
 #: extensions/catalogs/gth-file-source-catalogs.c:968
 msgid "Over_write"
@@ -3454,7 +3455,7 @@ msgstr "無效目的地。"
 #: extensions/catalogs/gth-file-source-catalogs.c:1141
 #, c-format
 msgid "Copying files to “%s”"
-msgstr ""
+msgstr "正在將檔案複製至「%s」"
 
 #: extensions/catalogs/gth-file-source-catalogs.c:1321
 msgid "Could not remove the files from the catalog"
@@ -3463,11 +3464,11 @@ msgstr "無法從目錄移除檔案"
 #: extensions/catalogs/gth-organize-task.c:209
 #, c-format
 msgid "Operation completed. Catalogs: %d. Images: %d."
-msgstr "操作完成。目錄: %d 個。影像: %d 張。"
+msgstr "操作完成。目錄數：%d。圖片數：%d。"
 
 #: extensions/change_date/callbacks.c:38
 msgid "Change _Date…"
-msgstr ""
+msgstr "變更日期..."
 
 #: extensions/change_date/dlg-change-date.c:177
 msgid "Change Date"
@@ -3479,15 +3480,15 @@ msgstr "匯入嵌入式詮釋資料"
 
 #: extensions/comments/main.c:46
 msgid "Comment Date & Time"
-msgstr ""
+msgstr "註解日期與時間"
 
 #: extensions/contact_sheet/callbacks.c:38
 msgid "Contact _Sheet…"
-msgstr ""
+msgstr "縮圖目錄..."
 
 #: extensions/contact_sheet/callbacks.c:39
 msgid "Image _Wall…"
-msgstr ""
+msgstr "影像牆…"
 
 #: extensions/contact_sheet/dlg-contact-sheet.c:35
 #: extensions/contact_sheet/dlg-image-wall.c:34
@@ -3511,13 +3512,13 @@ msgstr "現在的日期"
 #: extensions/image_print/gth-image-print-job.c:37
 #: extensions/webalbums/dlg-web-exporter.c:35
 msgid "Current page number"
-msgstr ""
+msgstr "目前頁碼"
 
 #: extensions/contact_sheet/dlg-contact-sheet.c:41
 #: extensions/image_print/gth-image-print-job.c:38
 #: extensions/webalbums/dlg-web-exporter.c:36
 msgid "Total number of pages"
-msgstr ""
+msgstr "總頁數"
 
 #: extensions/contact_sheet/dlg-contact-sheet.c:506
 #: extensions/contact_sheet/dlg-contact-sheet.c:517
@@ -3563,7 +3564,7 @@ msgstr "新主題"
 
 #: extensions/convert_format/callbacks.c:38
 msgid "Convert Format…"
-msgstr ""
+msgstr "轉換格式…"
 
 #: extensions/convert_format/dlg-convert-format.c:87
 msgid "Converting images"
@@ -3579,7 +3580,7 @@ msgstr "無法顯示桌面背景屬性"
 
 #: extensions/desktop_background/actions.c:369
 msgid "_Undo"
-msgstr ""
+msgstr "復原"
 
 #: extensions/desktop_background/actions.c:399
 #: extensions/desktop_background/actions.c:448
@@ -3591,7 +3592,7 @@ msgstr "無法設置桌面背景"
 #: extensions/desktop_background/callbacks.c:47
 #: extensions/desktop_background/callbacks.c:53
 msgid "Set as Background"
-msgstr ""
+msgstr "設為背景"
 
 #: extensions/edit_metadata/actions.c:75
 msgid ""
@@ -3601,15 +3602,15 @@ msgstr "您確定要永久刪除所選檔案的詮釋資料？"
 
 #: extensions/edit_metadata/actions.c:82
 msgid "If you delete the metadata, it will be permanently lost."
-msgstr "如果您將詮釋資料刪除，則其將會永久消失。"
+msgstr "若刪除詮釋資料，該資料將永久消失。"
 
 #: extensions/edit_metadata/callbacks.c:45
 msgid "Edit comment"
-msgstr ""
+msgstr "編輯註解"
 
 #: extensions/edit_metadata/callbacks.c:46
 msgid "Edit tags"
-msgstr ""
+msgstr "編輯標籤"
 
 #: extensions/edit_metadata/callbacks.c:51
 msgid "Delete Metadata"
@@ -3706,7 +3707,7 @@ msgstr "照片的拍攝日期"
 
 #: extensions/export_tools/callbacks.c:46
 msgid "_Export To"
-msgstr ""
+msgstr "匯出至"
 
 #: extensions/file_manager/actions.c:137
 msgid "New folder"
@@ -3759,48 +3760,48 @@ msgstr "貼上"
 #: extensions/file_manager/callbacks.c:80
 #: extensions/file_manager/callbacks.c:110
 msgid "Copy to…"
-msgstr ""
+msgstr "複製至…"
 
 #: extensions/file_manager/callbacks.c:81
 #: extensions/file_manager/callbacks.c:111
 msgid "Move to…"
-msgstr ""
+msgstr "移動至…"
 
 #: extensions/file_manager/callbacks.c:87
 #: extensions/file_manager/callbacks.c:112
 msgid "Move to Trash"
-msgstr ""
+msgstr "移至垃圾桶"
 
 #: extensions/file_manager/callbacks.c:88
 #: extensions/file_manager/callbacks.c:113
 #: extensions/file_manager/callbacks.c:128
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: extensions/file_manager/callbacks.c:92
 msgid "Open with the File Manager"
-msgstr ""
+msgstr "使用檔案管理員開啟"
 
 #: extensions/file_manager/callbacks.c:97
 msgid "Create Folder"
-msgstr ""
+msgstr "建立資料夾"
 
 #: extensions/file_manager/callbacks.c:104
 msgid "Paste Into Folder"
-msgstr ""
+msgstr "貼上至資料夾"
 
 #: extensions/file_manager/callbacks.c:118
 #: extensions/file_manager/callbacks.c:127
 msgid "Duplicate"
-msgstr ""
+msgstr "製作複本"
 
 #: extensions/file_manager/callbacks.c:129
 msgid "Delete permanently"
-msgstr ""
+msgstr "永久刪除"
 
 #: extensions/file_manager/callbacks.c:130
 msgid "Open with Gimp"
-msgstr ""
+msgstr "使用 Gimp 開啟"
 
 #: extensions/file_manager/callbacks.c:742
 #: extensions/file_manager/callbacks.c:745
@@ -3810,30 +3811,30 @@ msgstr "開啟以(_W)"
 #: extensions/file_manager/callbacks.c:1011
 #, c-format
 msgid "Do you want to move “%s” to “%s”?"
-msgstr ""
+msgstr "您確定要將「%s」移動到「%s」嗎?"
 
 #: extensions/file_manager/callbacks.c:1013
 #, c-format
 msgid "Do you want to copy “%s” to “%s”?"
-msgstr ""
+msgstr "您確定要將「%s」複製到「%s」嗎?"
 
 #: extensions/file_manager/callbacks.c:1020
 #, c-format
 msgid "Do you want to move the dragged files to “%s”?"
-msgstr ""
+msgstr "您確定要將拖曳的檔案移動至「%s」嗎?"
 
 #: extensions/file_manager/callbacks.c:1022
 #, c-format
 msgid "Do you want to copy the dragged files to “%s”?"
-msgstr ""
+msgstr "您確定要將拖曳的檔案複製至「%s」嗎?"
 
 #: extensions/file_manager/callbacks.c:1030
 msgid "_Copy"
-msgstr ""
+msgstr "複製"
 
 #: extensions/file_tools/callbacks.c:53
 msgid "Adjust contrast"
-msgstr ""
+msgstr "調整對比"
 
 #: extensions/file_tools/callbacks.c:54
 #: extensions/file_tools/gth-file-tool-flip.c:90
@@ -3848,12 +3849,12 @@ msgstr "左右倒置"
 #: extensions/file_tools/callbacks.c:56
 #: extensions/image_rotation/callbacks.c:47
 msgid "Rotate right"
-msgstr ""
+msgstr "向右旋轉"
 
 #: extensions/file_tools/callbacks.c:57
 #: extensions/image_rotation/callbacks.c:48
 msgid "Rotate left"
-msgstr ""
+msgstr "向左旋轉"
 
 #: extensions/file_tools/callbacks.c:58
 #: extensions/file_tools/gth-file-tool-crop.c:687
@@ -3868,13 +3869,13 @@ msgstr "調整大小"
 #: extensions/file_tools/gth-curve-editor.c:417
 #, c-format
 msgid "%d → %d"
-msgstr ""
+msgstr "%d → %d"
 
 #: extensions/file_tools/gth-curve-preset-editor-dialog.c:267
 #: extensions/file_tools/gth-file-tool-curves.c:686
 #: extensions/file_tools/gth-file-tool-curves.c:847
 msgid "Presets"
-msgstr ""
+msgstr "預設值"
 
 #: extensions/file_tools/gth-file-tool-adjust-colors.c:340
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:393
@@ -3908,16 +3909,16 @@ msgstr "調整顏色"
 
 #: extensions/file_tools/gth-file-tool-adjust-colors.c:599
 msgid "Change brightness, contrast, saturation and gamma level of the image"
-msgstr "更改影像的亮度、對比、飽和度和灰色階調"
+msgstr "調整影像的亮度、對比、飽和度與 Gamma 值"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:536
 msgid "Stretch"
-msgstr ""
+msgstr "拉伸"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:538
 #, no-c-format
 msgid "Stretch the histogram after trimming 0.5% from both ends"
-msgstr ""
+msgstr "裁切兩端各 0.5% 的數據後拉伸色階分佈圖"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:542
 msgid "Equalize"
@@ -3925,7 +3926,7 @@ msgstr "均等"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:543
 msgid "Equalize the histogram using the square root function"
-msgstr ""
+msgstr "使用平方根函數進行色階分佈圖等化"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:547
 #: extensions/file_tools/gth-file-tool-crop.c:473
@@ -3935,7 +3936,7 @@ msgstr "均勻分佈"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:548
 msgid "Equalize the histogram using the linear function"
-msgstr ""
+msgstr "使用線性函數進行色階分佈圖等化"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:661
 msgid "Adjust Contrast"
@@ -3947,23 +3948,23 @@ msgstr "自動對比度調整"
 
 #: extensions/file_tools/gth-file-tool-color-picker.c:289
 msgid "Color Picker"
-msgstr ""
+msgstr "取色器"
 
 #: extensions/file_tools/gth-file-tool-color-picker.c:292
 msgid "Pick a color from the image"
-msgstr ""
+msgstr "從影像取色"
 
 #: extensions/file_tools/gth-file-tool-crop.c:440
 #: extensions/file_tools/gth-file-tool-resize.c:590
 #, c-format
 msgid "%d × %d (Image)"
-msgstr ""
+msgstr "%d × %d (影像)"
 
 #: extensions/file_tools/gth-file-tool-crop.c:443
 #: extensions/file_tools/gth-file-tool-resize.c:594
 #, c-format
 msgid "%d × %d (Screen)"
-msgstr ""
+msgstr "%d × %d (螢幕)"
 
 #: extensions/file_tools/gth-file-tool-crop.c:470
 #: extensions/file_tools/gth-file-tool-rotate.c:397
@@ -3982,71 +3983,71 @@ msgstr "中心線"
 
 #: extensions/file_tools/gth-file-tool-curves.c:410
 msgid "Add to Presets"
-msgstr ""
+msgstr "加入預設值"
 
 #: extensions/file_tools/gth-file-tool-curves.c:411
 msgid "Enter the preset name:"
-msgstr ""
+msgstr "輸入預設名稱:"
 
 #: extensions/file_tools/gth-file-tool-curves.c:833
 msgid "Add to presets"
-msgstr ""
+msgstr "加入預設值"
 
 #: extensions/file_tools/gth-file-tool-curves.c:892
 msgid "Color Curves"
-msgstr ""
+msgstr "色彩曲線"
 
 #: extensions/file_tools/gth-file-tool-curves.c:893
 msgid "Adjust color curves"
-msgstr ""
+msgstr "調整色彩曲線"
 
 #: extensions/file_tools/gth-file-tool-effects.c:359
 msgid "Special Effects"
-msgstr ""
+msgstr "特效"
 
 #: extensions/file_tools/gth-file-tool-effects.c:403
 msgid "Warmer"
-msgstr ""
+msgstr "暖調化"
 
 #: extensions/file_tools/gth-file-tool-effects.c:447
 msgid "Cooler"
-msgstr ""
+msgstr "冷調化"
 
 #: extensions/file_tools/gth-file-tool-effects.c:495
 msgid "Soil"
-msgstr ""
+msgstr "汙損效果"
 
 #: extensions/file_tools/gth-file-tool-effects.c:544
 msgid "Desert"
-msgstr ""
+msgstr "荒漠效果"
 
 #: extensions/file_tools/gth-file-tool-effects.c:592
 msgid "Arctic"
-msgstr ""
+msgstr "極地效果"
 
 #: extensions/file_tools/gth-file-tool-effects.c:640
 msgid "Mangos"
-msgstr ""
+msgstr "絞碎效果"
 
 #: extensions/file_tools/gth-file-tool-effects.c:688
 msgid "Fresh Blue"
-msgstr ""
+msgstr "清新藍"
 
 #: extensions/file_tools/gth-file-tool-effects.c:735
 msgid "Cherry"
-msgstr ""
+msgstr "櫻桃紅"
 
 #: extensions/file_tools/gth-file-tool-effects.c:784
 msgid "Vintage"
-msgstr ""
+msgstr "復古效果"
 
 #: extensions/file_tools/gth-file-tool-effects.c:906
 msgid "Blurred Edges"
-msgstr ""
+msgstr "模糊邊緣"
 
 #: extensions/file_tools/gth-file-tool-effects.c:941
 msgid "Vignette"
-msgstr ""
+msgstr "暗角效果"
 
 #: extensions/file_tools/gth-file-tool-flip.c:91
 msgid "Flip the image vertically"
@@ -4070,11 +4071,11 @@ msgstr "灰階"
 
 #: extensions/file_tools/gth-file-tool-lomo.c:183
 msgid "Lomo"
-msgstr ""
+msgstr "Lomo 效果"
 
 #: extensions/file_tools/gth-file-tool-mirror.c:91
 msgid "Mirror the image horizontally"
-msgstr "水平鏡像影像"
+msgstr "水平翻轉影像"
 
 #: extensions/file_tools/gth-file-tool-negative.c:101
 msgid "Negative"
@@ -4096,7 +4097,7 @@ msgstr "向左旋轉"
 
 #: extensions/file_tools/gth-file-tool-rotate-left.c:91
 msgid "Rotate the image by 90 degrees counterclockwise"
-msgstr "逆時針旋轉影像 90 度"
+msgstr "將影像逆時針旋轉 90 度"
 
 #: extensions/file_tools/gth-file-tool-rotate-right.c:90
 #: extensions/image_rotation/callbacks.c:54
@@ -4106,11 +4107,11 @@ msgstr "向右旋轉"
 
 #: extensions/file_tools/gth-file-tool-rotate-right.c:91
 msgid "Rotate the image by 90 degrees clockwise"
-msgstr "順時針旋轉影像 90 度"
+msgstr "將影像順時針旋轉 90 度"
 
 #: extensions/file_tools/gth-file-tool-sharpen.c:334
 msgid "Sharpening image"
-msgstr "正在銳利化影像"
+msgstr "正在銳化影像"
 
 #: extensions/file_tools/gth-file-tool-sharpen.c:435
 msgid "Enhance Focus"
@@ -4122,12 +4123,12 @@ msgstr "復原"
 
 #: extensions/find_duplicates/callbacks.c:37
 msgid "Find _Duplicates…"
-msgstr ""
+msgstr "搜尋重複項..."
 
 #: extensions/find_duplicates/dlg-find-duplicates.c:106
 #: extensions/search/actions.c:80
 msgid "_Find"
-msgstr ""
+msgstr "搜尋"
 
 #: extensions/find_duplicates/gth-find-duplicates.c:65
 msgid "leave the newest duplicates"
@@ -4139,7 +4140,7 @@ msgstr "保留最舊的重複檔案"
 
 #: extensions/find_duplicates/gth-find-duplicates.c:67
 msgid "by folder…"
-msgstr ""
+msgstr "依資料夾..."
 
 #: extensions/find_duplicates/gth-find-duplicates.c:68
 msgid "all files"
@@ -4244,7 +4245,7 @@ msgstr "當您已完成在  %s  的授權過程，請返回此視窗"
 
 #: extensions/flicker_utils/flickr-service.c:492
 msgid "Once you’re done, click the “Continue” button below."
-msgstr ""
+msgstr "完成後，點擊下方「繼續」按鈕。"
 
 #: extensions/flicker_utils/flickr-service.c:562
 msgid "C_ontinue"
@@ -4252,7 +4253,7 @@ msgstr "繼續(_O)"
 
 #: extensions/flicker_utils/flickr-service.c:563
 msgid "_Authorize…"
-msgstr ""
+msgstr "授權..."
 
 #: extensions/flicker_utils/flickr-service.c:566
 #, c-format
@@ -4265,7 +4266,7 @@ msgid ""
 "Click “Authorize” to open your web browser and authorize pix to upload "
 "photos to %s. When you’re finished, return to this window to complete the "
 "authorization."
-msgstr ""
+msgstr "點擊「授權」將會開啟網頁瀏覽器，以授權 pix 上傳相片至 %s。完成後，請回到此視窗以完成授權程序。"
 
 #: extensions/flicker_utils/flickr-service.c:849
 msgid "Getting the album list"
@@ -4280,12 +4281,12 @@ msgstr "建立新的相簿"
 #: extensions/flicker_utils/flickr-service.c:1144
 #, c-format
 msgid "Could not upload “%s”: %s"
-msgstr ""
+msgstr "無法上傳「%s」: %s"
 
 #: extensions/flicker_utils/flickr-service.c:1253
 #, c-format
 msgid "Uploading “%s”"
-msgstr ""
+msgstr "正在上傳「%s」"
 
 #: extensions/flicker_utils/flickr-service.c:1450
 msgid "Uploading the files to the server"
@@ -4298,7 +4299,7 @@ msgstr "獲取照片清單"
 #: extensions/gstreamer_tools/actions.c:75
 #, c-format
 msgid "Image saved as %s"
-msgstr ""
+msgstr "影像已儲存為 %s"
 
 #: extensions/gstreamer_tools/actions.c:137
 #: extensions/gstreamer_tools/actions.c:148
@@ -4311,24 +4312,24 @@ msgstr "螢幕擷圖"
 
 #: extensions/gstreamer_tools/callbacks.c:33
 msgid "Play/Pause"
-msgstr ""
+msgstr "播放/暫停"
 
 #: extensions/gstreamer_tools/callbacks.c:34
 msgid "Mute"
-msgstr ""
+msgstr "靜音"
 
 #: extensions/gstreamer_tools/callbacks.c:35
 msgid "Play faster"
-msgstr ""
+msgstr "加速播放"
 
 #: extensions/gstreamer_tools/callbacks.c:36
 msgid "Play slower"
-msgstr ""
+msgstr "減速播放"
 
 #: extensions/gstreamer_tools/callbacks.c:37
 #: extensions/image_viewer/gth-image-viewer-page.c:1189
 msgid "Next frame"
-msgstr ""
+msgstr "下一影格"
 
 #: extensions/gstreamer_tools/gth-media-viewer-page.c:595
 msgid "Playing video"
@@ -4344,7 +4345,7 @@ msgstr "拍下螢幕擷圖"
 
 #: extensions/gstreamer_tools/main.c:34
 msgid "Audio/Video Player"
-msgstr ""
+msgstr "音訊/視訊播放器"
 
 #: extensions/gstreamer_tools/main.c:47
 msgid "Artist"
@@ -4394,12 +4395,12 @@ msgstr "列印"
 
 #: extensions/image_print/gth-image-print-job.c:40
 msgid "Total number of files"
-msgstr ""
+msgstr "檔案總數"
 
 #: extensions/image_print/gth-image-print-job.c:41
 #: extensions/importer/gth-import-preferences-dialog.c:47
 msgid "Event description"
-msgstr ""
+msgstr "事件描述"
 
 #: extensions/image_print/gth-image-print-job.c:922
 #, c-format
@@ -4419,12 +4420,12 @@ msgstr "影像"
 #: extensions/image_print/gth-load-image-info-task.c:168
 #, c-format
 msgid "Loading “%s”"
-msgstr ""
+msgstr "正在載入「%s」"
 
 #: extensions/image_print/gth-load-image-info-task.c:170
 #: extensions/webalbums/gth-web-exporter.c:2707
 msgid "Loading images"
-msgstr "影像載入中"
+msgstr "正在載入影像"
 
 #: extensions/image_rotation/callbacks.c:59
 msgid "Rotate Physically"
@@ -4444,7 +4445,7 @@ msgstr "正在儲存影像"
 #: extensions/image_rotation/rotation-utils.c:105
 #, c-format
 msgid "Problem transforming the image: %s"
-msgstr "影像轉向發生問題: %s"
+msgstr "影像轉換時發生問題: %s"
 
 #: extensions/image_rotation/rotation-utils.c:110
 msgid ""
@@ -4459,11 +4460,11 @@ msgid ""
 "For practical use, this mode gives the best looking results, but the "
 "transformation is not strictly lossless anymore."
 msgstr ""
-"這個轉向可能會造成一或多個邊緣的破壞，因為此影像的尺寸並非 8 的倍數。\n"
+"由於影像尺寸並非 8 的倍數，此轉換可能會在一個或多個邊緣產生輕微的影像失真。\n"
 "\n"
-"然而，這種破壞是可以回復的。如果對產生的影像不滿意，只要套用反向轉向就可以回復到原本的影像。\n"
+"然而，這種失真是可逆的。若產生的影像無法接受，只需執行反向轉換，即可恢復至原始影像。\n"
 "\n"
-"您也可以選擇放棄 (或修剪) 任何無法轉向的邊緣像素。在實際使用上，這會產生最佳的視覺效果，但這樣就不能保證轉向為無失真。"
+"您也可以選擇捨棄（或修剪）任何無法轉換的邊緣像素。在實際應用中，此模式的效果最好，但轉換過程將不再屬於嚴格意義上的「無損」。"
 
 #: extensions/image_rotation/rotation-utils.c:116
 msgid "_Trim"
@@ -4483,23 +4484,23 @@ msgstr "拉遠"
 
 #: extensions/image_viewer/callbacks.c:34
 msgid "Zoom 100%"
-msgstr ""
+msgstr "原始大小"
 
 #: extensions/image_viewer/callbacks.c:35
 msgid "Zoom 200%"
-msgstr ""
+msgstr "放大至 200%"
 
 #: extensions/image_viewer/callbacks.c:36
 msgid "Zoom 300%"
-msgstr ""
+msgstr "放大至 300%"
 
 #: extensions/image_viewer/callbacks.c:38
 msgid "Zoom to fit"
-msgstr ""
+msgstr "縮放以符合視窗"
 
 #: extensions/image_viewer/callbacks.c:39
 msgid "Zoom to fit if larger"
-msgstr ""
+msgstr "大圖縮小以符合視窗"
 
 #: extensions/image_viewer/callbacks.c:40
 msgid "Zoom to fit width"
@@ -4507,59 +4508,59 @@ msgstr "縮放至符合寬度"
 
 #: extensions/image_viewer/callbacks.c:41
 msgid "Zoom to fit width if larger"
-msgstr ""
+msgstr "大圖縮小以符合寬度"
 
 #: extensions/image_viewer/callbacks.c:42
 msgid "Zoom to fit height"
-msgstr ""
+msgstr "縮放以符合高度"
 
 #: extensions/image_viewer/callbacks.c:43
 msgid "Zoom to fit height if larger"
-msgstr ""
+msgstr "大圖縮小以符合高度"
 
 #: extensions/image_viewer/callbacks.c:45
 msgid "Undo edit"
-msgstr ""
+msgstr "復原編輯"
 
 #: extensions/image_viewer/callbacks.c:46
 msgid "Redo edit"
-msgstr ""
+msgstr "取消復原編輯"
 
 #: extensions/image_viewer/callbacks.c:48
 msgid "Scroll left"
-msgstr ""
+msgstr "向左捲動"
 
 #: extensions/image_viewer/callbacks.c:49
 msgid "Scroll right"
-msgstr ""
+msgstr "向右捲動"
 
 #: extensions/image_viewer/callbacks.c:50
 msgid "Scroll up"
-msgstr ""
+msgstr "向上捲動"
 
 #: extensions/image_viewer/callbacks.c:51
 msgid "Scroll down"
-msgstr ""
+msgstr "向下捲動"
 
 #: extensions/image_viewer/callbacks.c:53
 msgid "Scroll left fast"
-msgstr ""
+msgstr "快速向左捲動"
 
 #: extensions/image_viewer/callbacks.c:54
 msgid "Scroll right fast"
-msgstr ""
+msgstr "快速向右捲動"
 
 #: extensions/image_viewer/callbacks.c:55
 msgid "Scroll up fast"
-msgstr ""
+msgstr "快速向上捲動"
 
 #: extensions/image_viewer/callbacks.c:56
 msgid "Scroll down fast"
-msgstr ""
+msgstr "快速向下捲動"
 
 #: extensions/image_viewer/callbacks.c:58
 msgid "Scroll to center"
-msgstr ""
+msgstr "置中顯示"
 
 #: extensions/image_viewer/gth-image-histogram.c:94
 msgid "Histogram"
@@ -4575,11 +4576,11 @@ msgstr "貼上影像"
 
 #: extensions/image_viewer/gth-image-viewer-page.c:1174
 msgid "Apply the embedded color profile"
-msgstr ""
+msgstr "套用內嵌色彩設定檔"
 
 #: extensions/image_viewer/gth-image-viewer-page.c:1196
 msgid "Transparency"
-msgstr ""
+msgstr "透明度"
 
 #: extensions/image_viewer/gth-image-viewer-page.c:1804
 msgid "Save Image"
@@ -4587,15 +4588,15 @@ msgstr "儲存影像"
 
 #: extensions/image_viewer/gth-image-viewer-page.c:2528
 msgid "Loading the original image"
-msgstr ""
+msgstr "正在載入原始影像"
 
 #: extensions/image_viewer/gth-metadata-provider-image.c:213
 msgid "JPEG XL container"
-msgstr ""
+msgstr "JPEG XL 封裝格式"
 
 #: extensions/image_viewer/gth-metadata-provider-image.c:215
 msgid "JPEG XL"
-msgstr ""
+msgstr "JPEG XL"
 
 #: extensions/image_viewer/main.c:35
 msgid "Image Viewer"
@@ -4603,11 +4604,11 @@ msgstr "影像檢視器"
 
 #: extensions/image_viewer/main.c:36
 msgid "Scroll Image"
-msgstr ""
+msgstr "捲動影像"
 
 #: extensions/image_viewer/main.c:37
 msgid "Image Editor"
-msgstr ""
+msgstr "影像編輯器"
 
 #: extensions/importer/gth-import-destination-button.c:113
 msgid "Invalid Destination"
@@ -4649,6 +4650,8 @@ msgid ""
 "Not enough free space in “%s”.\n"
 "%s of space is required but only %s is available."
 msgstr ""
+"「%s」的剩餘空間不足。\n"
+"需要 %s 的空間，但目前僅剩 %s。"
 
 #: extensions/list_tools/callbacks.c:148 extensions/list_tools/callbacks.c:157
 #: extensions/list_tools/main.c:31
@@ -4690,35 +4693,35 @@ msgstr "略過(_S)"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:34
 msgid "Quoted text"
-msgstr ""
+msgstr "引用文字"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:35
 msgid "File URI"
-msgstr ""
+msgstr "檔案 URI"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:36
 msgid "File path"
-msgstr ""
+msgstr "檔案路徑"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:37
 msgid "File name"
-msgstr ""
+msgstr "檔案名稱"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:38
 msgid "File name, no extension"
-msgstr ""
+msgstr "檔案名稱 (不含副檔名)"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:39
 msgid "File extension"
-msgstr ""
+msgstr "副檔名"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:40
 msgid "Folder path"
-msgstr ""
+msgstr "資料夾路徑"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:42
 msgid "Ask a value"
-msgstr ""
+msgstr "請求輸入數值"
 
 #: extensions/list_tools/gth-script-editor-dialog.c:43
 #: extensions/rename_series/dlg-rename-series.c:59
@@ -4736,7 +4739,7 @@ msgstr "指令以不正常的 %d 狀態結束。"
 
 #: extensions/oauth/oauth-account-chooser-dialog.c:192
 msgid "New authentication…"
-msgstr ""
+msgstr "新增驗證…"
 
 #: extensions/oauth/oauth-ask-authorization-dialog.c:240
 msgid "Authorization Required"
@@ -4744,7 +4747,7 @@ msgstr "需要授權"
 
 #: extensions/oauth/web-service.c:379
 msgid "Choose _Account…"
-msgstr ""
+msgstr "選擇帳戶…"
 
 #: extensions/oauth/web-service.c:657
 msgid "Choose Account"
@@ -4777,11 +4780,11 @@ msgstr "匯入"
 
 #: extensions/photo_importer/callbacks.c:41
 msgid "_Removable Device…"
-msgstr ""
+msgstr "卸除式裝置…"
 
 #: extensions/photo_importer/callbacks.c:42
 msgid "F_older…"
-msgstr ""
+msgstr "資料夾…"
 
 #: extensions/photo_importer/callbacks.c:63
 msgid "I_mport From"
@@ -4802,7 +4805,7 @@ msgstr "無法載入資料夾"
 
 #: extensions/photo_importer/dlg-photo-importer.c:352
 msgid "Getting the folder content…"
-msgstr ""
+msgstr "正在取得資料夾內容…"
 
 #: extensions/photo_importer/dlg-photo-importer.c:585
 msgid "Import from Removable Device"
@@ -4814,7 +4817,7 @@ msgstr "從資料夾匯入"
 
 #: extensions/raw_files/gth-metadata-provider-raw.c:91
 msgid "RAW Format"
-msgstr ""
+msgstr "RAW 格式"
 
 #: extensions/red_eye_removal/gth-file-tool-red-eye.c:471
 msgid "Red Eye Removal"
@@ -4876,7 +4879,7 @@ msgstr "重新命名檔案"
 
 #: extensions/resize_images/callbacks.c:38
 msgid "Resize Images…"
-msgstr ""
+msgstr "調整影像大小…"
 
 #: extensions/resize_images/dlg-resize-images.c:341
 msgid "Resize Images"
@@ -4909,21 +4912,21 @@ msgstr "再搜尋一次"
 
 #: extensions/search/gth-search-source-selector.c:130
 msgid "Add another location"
-msgstr ""
+msgstr "新增其他路徑"
 
 #: extensions/search/gth-search-task.c:113
 msgid "No file found"
-msgstr ""
+msgstr "找不到檔案"
 
 #: extensions/search/gth-search-task.c:191
 #, c-format
 msgid "Files found so far: %s"
-msgstr ""
+msgstr "目前找到的檔案數: %s"
 
 #: extensions/search/gth-search-task.c:333
 #: extensions/search/gth-search-task.c:337
 msgid "Searching…"
-msgstr ""
+msgstr "搜尋中…"
 
 #: extensions/search/gth-search-task.c:344
 msgid "Cancel the operation"
@@ -4932,33 +4935,33 @@ msgstr "取消操作"
 #: extensions/selections/callbacks.c:57 extensions/selections/callbacks.c:58
 #: extensions/selections/callbacks.c:59 extensions/selections/callbacks.c:71
 msgid "Add to selection"
-msgstr ""
+msgstr "加入選取"
 
 #: extensions/selections/callbacks.c:61 extensions/selections/callbacks.c:62
 #: extensions/selections/callbacks.c:63 extensions/selections/callbacks.c:72
 msgid "Remove from selection"
-msgstr ""
+msgstr "從選取移除"
 
 #: extensions/selections/callbacks.c:65 extensions/selections/callbacks.c:66
 #: extensions/selections/callbacks.c:67 extensions/selections/callbacks.c:73
 msgid "Show selection"
-msgstr ""
+msgstr "顯示選取"
 
 #: extensions/selections/callbacks.c:83
 msgid "Remove from Selection"
-msgstr ""
+msgstr "從選取移除"
 
 #: extensions/selections/callbacks.c:128
 #, c-format
 msgid "Show selection %d"
-msgstr ""
+msgstr "顯示已選取 %d"
 
 #: extensions/selections/callbacks.c:365
 #, c-format
 msgid ""
 "Use Alt-%d to add files to this selection, Ctrl-%d to view this selection, "
 "Alt+Shift+%d to remove files from this selection"
-msgstr ""
+msgstr "使用 Alt-%d 將檔案加入此選取，Ctrl-%d 查看此選取，Alt+Shift+%d 從此選取移除檔案"
 
 #: extensions/selections/gth-selections-manager.c:228
 #, c-format
@@ -4967,27 +4970,27 @@ msgstr "選取 %d"
 
 #: extensions/slideshow/callbacks.c:40
 msgid "Start presentation"
-msgstr ""
+msgstr "開始簡報"
 
 #: extensions/slideshow/callbacks.c:41
 msgid "Terminate presentation"
-msgstr ""
+msgstr "結束簡報"
 
 #: extensions/slideshow/callbacks.c:42
 msgid "Pause/Resume presentation"
-msgstr ""
+msgstr "暫停/恢復簡報"
 
 #: extensions/slideshow/callbacks.c:43
 msgid "Show next file"
-msgstr ""
+msgstr "顯示下一個檔案"
 
 #: extensions/slideshow/callbacks.c:44
 msgid "Show previous file"
-msgstr ""
+msgstr "顯示上一個檔案"
 
 #: extensions/slideshow/gth-slideshow.c:238
 msgid "Playing a presentation"
-msgstr ""
+msgstr "正在播放簡報"
 
 #: extensions/slideshow/gth-slideshow-preferences.c:185
 msgid "Choose the files to play"
@@ -5035,19 +5038,19 @@ msgstr "從下方以立方體方式進入"
 
 #: extensions/terminal/callbacks.c:40 extensions/terminal/callbacks.c:45
 msgid "Open in Terminal"
-msgstr ""
+msgstr "在終端機中開啟"
 
 #: extensions/webalbums/callbacks.c:48
 msgid "_Web Album…"
-msgstr ""
+msgstr "網路相簿…"
 
 #: extensions/webalbums/dlg-web-exporter.c:43
 msgid "Current image number"
-msgstr ""
+msgstr "目前影像編號"
 
 #: extensions/webalbums/dlg-web-exporter.c:44
 msgid "Total number of images"
-msgstr ""
+msgstr "影像總數"
 
 #: extensions/webalbums/dlg-web-exporter.c:531
 msgid "Web Album"
@@ -5074,7 +5077,7 @@ msgstr "儲存縮圖"
 
 #: extensions/webalbums/gth-web-exporter.c:2141
 msgid "Saving HTML pages: Images"
-msgstr "儲存 HTML 頁面: 影像"
+msgstr "正在儲存 HTML 網頁: 影像"
 
 #: extensions/webalbums/gth-web-exporter.c:2199
 msgid "Saving HTML pages: Indexes"
