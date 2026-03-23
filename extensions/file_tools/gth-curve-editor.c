@@ -1003,6 +1003,7 @@ gth_curve_editor_init (GthCurveEditor *self)
 				| GDK_POINTER_MOTION_HINT_MASK
 				| GDK_ENTER_NOTIFY_MASK
 				| GDK_LEAVE_NOTIFY_MASK
+				| GDK_SCROLL_MASK
 				| GDK_STRUCTURE_MASK));
 	gtk_widget_show (self->priv->view);
 	gtk_container_add (GTK_CONTAINER (view_container), self->priv->view);

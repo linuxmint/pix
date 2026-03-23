@@ -936,7 +936,7 @@ gth_histogram_view_init (GthHistogramView *self)
 	gtk_widget_show (view_container);
 
 	self->priv->view = gtk_drawing_area_new ();
-	gtk_widget_add_events (self->priv->view, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_POINTER_MOTION_MASK | GDK_STRUCTURE_MASK);
+	gtk_widget_add_events (self->priv->view, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_POINTER_MOTION_MASK | GDK_STRUCTURE_MASK | GDK_SCROLL_MASK);
 	gtk_widget_show (self->priv->view);
 	gtk_container_add (GTK_CONTAINER (view_container), self->priv->view);
 
