@@ -427,6 +427,7 @@ gth_image_viewer_realize (GtkWidget *widget)
 				  | GDK_POINTER_MOTION_HINT_MASK
 				  | GDK_BUTTON_MOTION_MASK
 				  | GDK_SCROLL_MASK
+				  | GDK_SMOOTH_SCROLL_MASK
 				  | GDK_STRUCTURE_MASK);
 	attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_WMCLASS;
 	window = gdk_window_new (gtk_widget_get_parent_window (widget),
@@ -2187,6 +2188,21 @@ gth_image_viewer_zoom_from_scroll (GthImageViewer *self,
 		set_zoom_centered_at (self, new_zoom_level, FALSE, (int) event->x, (int) event->y);
 		gtk_widget_queue_resize (GTK_WIDGET (self));
 		handled = TRUE;
+		break;
+	case GDK_SCROLL_SMOOTH:
+		gdouble y_delta;
+		if (gdk_event_get_scroll_deltas ((GdkEvent *)event, NULL, &y_delta))
+		{
+			if (y_delta < 0)
+				new_zoom_level = get_prev_zoom (self->priv->zoom_level);
+			else if (y_delta > 0)
+				new_zoom_level = get_next_zoom (self->priv->zoom_level);
+			else
+				break;
+			set_zoom_centered_at (self, new_zoom_level, FALSE, (int) event->x, (int) event->y);
+			gtk_widget_queue_resize (GTK_WIDGET (self));
+			handled = TRUE;
+		}
 		break;
 
 	default:
