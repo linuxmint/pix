@@ -37,6 +37,7 @@ shared_library('cairo_io',
   dependencies : [
     extension_common_deps,
     jpeg_deps,
+    use_lcms2 ? lcms2_dep : [],
     use_libtiff ? tiff_deps : [],
     use_librsvg ? librsvg_dep : [],
     use_libwebp ? libwebp_dep : [],

@@ -14,7 +14,11 @@ gresource_files = gnome.compile_resources('image-viewer-resources', 'resources.x
 
 image_viewer_mod = shared_library('image_viewer',
   sources : [ source_files, gresource_files ],
-  dependencies : extension_common_deps,
+  dependencies : [
+    extension_common_deps,
+    use_libwebp ? libwebp_dep : [],
+    use_libjxl ? libjxl_deps : []
+  ],
   include_directories : [ config_inc, pix_inc ],
   c_args : c_args,
   link_with : jpeg_utils_mod,
