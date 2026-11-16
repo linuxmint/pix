@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: pix 2.14\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2023-12-12 10:17+0000\n"
-"PO-Revision-Date: 2025-02-13 21:22+0000\n"
+"PO-Revision-Date: 2026-11-13 00:09+0000\n"
 "Last-Translator: AO <Unknown>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:41+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 11:58+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: fr\n"
 
 #: data/ui/browser-preferences.ui:20
@@ -608,7 +608,7 @@ msgid ""
 msgstr ""
 "Pix est distribué dans l’espoir qu’il sera utile, mais SANS AUCUNE GARANTIE, "
 "ni explicite ni implicite, y compris les garanties de COMMERCIALISATION ou "
-"D'ADÉQUATION À UN BUT PARTICULIER. Pour plus de précisions, consultez la "
+"D’ADÉQUATION À UN BUT PARTICULIER. Pour plus de précisions, consultez la "
 "Licence publique générale GNU."
 
 #: pix/gth-browser-actions-callbacks.c:109
@@ -820,9 +820,8 @@ msgstr "Voulez-vous supprimer « %s » irrémédiablement ?"
 msgid "Are you sure you want to permanently delete the %'d selected file?"
 msgid_plural ""
 "Are you sure you want to permanently delete the %'d selected files?"
-msgstr[0] "Voulez-vous supprimer le fichier sélectionné irrémédiablement ?"
-msgstr[1] ""
-"Voulez-vous supprimer les %'d fichiers sélectionnés irrémédiablement ?"
+msgstr[0] "Voulez-vous supprimer irrémédiablement %'d fichier choisi ?"
+msgstr[1] "Voulez-vous supprimer irrémédiablement les %'d fichiers choisis ?"
 
 #: pix/gth-file-source-vfs.c:959
 msgid "If you delete a file, it will be permanently lost."
@@ -1642,7 +1641,7 @@ msgstr "Planche-contact"
 msgid ""
 "Create an index image displaying the thumbnails of the selected files."
 msgstr ""
-"Créer une image d’index qui affiche les vignettes des fichiers sélectionnés."
+"Créer une image d’index qui affiche les vignettes des fichiers choisis."
 
 #: extensions/convert_format/convert_format.extension.desktop.in.in:3
 msgid "Convert format"
@@ -3232,7 +3231,7 @@ msgstr "Ajouter des fichiers à la liste de lecture"
 
 #: extensions/slideshow/data/ui/slideshow-preferences.ui:334
 msgid "Remove the selected files"
-msgstr "Supprimer les fichiers sélectionnés"
+msgstr "Supprimer les fichiers choisis"
 
 #: extensions/webalbums/data/ui/web-album-exporter.ui:19
 msgid "All images on a single image"
@@ -3628,8 +3627,7 @@ msgid ""
 "Are you sure you want to permanently delete the metadata of the selected "
 "files?"
 msgstr ""
-"Voulez-vous supprimer les métadonnées des fichiers sélectionnés "
-"irrémédiablement ?"
+"Voulez-vous supprimer les métadonnées des fichiers choisis irrémédiablement ?"
 
 #: extensions/edit_metadata/actions.c:82
 msgid "If you delete the metadata, it will be permanently lost."
@@ -3679,7 +3677,7 @@ msgstr "Ne pas modifier"
 #: extensions/edit_metadata/gth-tag-task.c:122
 #: extensions/edit_metadata/gth-tag-task.c:139
 msgid "Assigning tags to the selected files"
-msgstr "Attribution d’étiquettes aux fichiers sélectionnés"
+msgstr "Attribution d’étiquettes aux fichiers choisis"
 
 #: extensions/edit_metadata/gth-tag-task.c:122
 msgid "Writing files"
@@ -3954,7 +3952,7 @@ msgstr "Étirer"
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:538
 #, no-c-format
 msgid "Stretch the histogram after trimming 0.5% from both ends"
-msgstr "Étirer l’histogramme après avoir coupé 0,5 % des deux extrémités"
+msgstr "Étirer l’histogramme après avoir retranché 0,5 % à chaque extrémité"
 
 #: extensions/file_tools/gth-file-tool-adjust-contrast.c:542
 msgid "Equalize"
@@ -4407,7 +4405,7 @@ msgstr "Codec"
 
 #: extensions/gstreamer_tools/main.c:53
 msgid "Framerate"
-msgstr "Fréquence d'images"
+msgstr "Fréquence d’images"
 
 #: extensions/gstreamer_tools/main.c:58
 msgid "Channels"
@@ -4427,7 +4425,7 @@ msgstr "Mono"
 
 #: extensions/image_print/actions.c:69
 msgid "Could not print the selected files"
-msgstr "Impossible d’imprimer les fichiers sélectionnés"
+msgstr "Impossible d’imprimer les fichiers choisis"
 
 #: extensions/image_print/callbacks.c:38 extensions/image_print/callbacks.c:53
 #: extensions/image_print/callbacks.c:59
@@ -4678,7 +4676,7 @@ msgstr "Aucun fichier n’a été importé"
 
 #: extensions/importer/gth-import-task.c:619
 msgid "The selected files are already present in the destination."
-msgstr "Les fichiers sélectionnés sont déjà présents sur la destination."
+msgstr "Les fichiers choisis sont déjà présents sur la destination."
 
 #: extensions/importer/gth-import-task.c:643
 msgid "Delete operation not supported."
@@ -4725,7 +4723,7 @@ msgstr "Modifier la commande"
 
 #: extensions/list_tools/dlg-personalize-scripts.c:506
 msgid "Are you sure you want to delete the selected command?"
-msgstr "Voulez-vous supprimer la commande sélectionnée ?"
+msgstr "Voulez-vous supprimer la commande choisie ?"
 
 #: extensions/list_tools/dlg-personalize-scripts.c:606
 msgid "Commands"

@@ -16,15 +16,15 @@ msgstr ""
 "http://bugzilla.gnome.org/enter_bug.cgi?product=pix&keywords=I18N+L10N&compon"
 "ent=general\n"
 "POT-Creation-Date: 2023-12-12 10:17+0000\n"
-"PO-Revision-Date: 2025-07-02 10:08+0000\n"
-"Last-Translator: Vasilis Kosmidis <Unknown>\n"
+"PO-Revision-Date: 2026-10-13 22:54+0000\n"
+"Last-Translator: Dimitris Spentzos <Unknown>\n"
 "Language-Team: Ελληνικά, Σύγχρονα <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:42+0000\n"
-"X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-11-16 11:58+0000\n"
+"X-Generator: Launchpad (build 72ba15af7e009b17d4aa1467977127ac8392a4de)\n"
 "Language: el\n"
 
 #: data/ui/browser-preferences.ui:20
@@ -39,15 +39,15 @@ msgstr "Συμπεριφορά"
 
 #: data/ui/browser-preferences.ui:88
 msgid "_Single click to open files"
-msgstr "_Μονό κλικ για άνοιγμα αρχείων"
+msgstr "Άνοιγμα αρχείων με _μονό κλικ"
 
 #: data/ui/browser-preferences.ui:104
 msgid "_Double click to open files"
-msgstr "_Διπλό κλικ για άνοιγμα αρχείων"
+msgstr "Άνοιγμα αρχείων με _διπλό κλικ"
 
 #: data/ui/browser-preferences.ui:121
 msgid "_Open files in fullscreen mode"
-msgstr "_Άνοιγμα αρχείων σε λειτουργία πλήρους οθόνης"
+msgstr "Άν_οιγμα αρχείων σε λειτουργία πλήρους οθόνης"
 
 #: data/ui/browser-preferences.ui:158 data/ui/preferences.ui:355
 #: pix/dlg-preferences-shortcuts.c:335 pix/gth-shortcuts-window.c:96
@@ -58,11 +58,11 @@ msgstr "Άλλα"
 
 #: data/ui/browser-preferences.ui:187
 msgid "Thumbnail _size:"
-msgstr "Μέγεθος_μικρογραφίας:"
+msgstr "Μέγεθος μικρογρα_φιών:"
 
 #: data/ui/browser-preferences.ui:242
 msgid "D_etermine image type from content (slower)"
-msgstr "Κ_αθορισμός του τύπου της εικόνας από το περιεχόμενό της (πιο αργό)"
+msgstr "Προ_σδιορισμός τύπου εικόνων βάσει περιεχομένου (πιο αργό)"
 
 #: data/ui/code-selector.ui:99
 #: extensions/rename_series/data/ui/rename-series.ui:73
@@ -224,7 +224,7 @@ msgstr "στα δεξιά"
 
 #: data/ui/preferences.ui:22
 msgid "Pix Preferences"
-msgstr "Προτιμήσεις Pix"
+msgstr "Προτιμήσεις του Pix"
 
 #: data/ui/preferences.ui:98
 msgid "Appearance"
@@ -232,7 +232,7 @@ msgstr "Εμφάνιση"
 
 #: data/ui/preferences.ui:123
 msgid "T_humbnails in viewer:"
-msgstr "Εικονίδια προεπισκόπησης στην προβολή"
+msgstr "Μικρο_γραφίες στην προβολή:"
 
 #: data/ui/preferences.ui:137
 msgid "on the bottom"
@@ -244,7 +244,7 @@ msgstr "στο πλάι"
 
 #: data/ui/preferences.ui:150
 msgid "File _properties in browser:"
-msgstr "Ι_διότητες αρχείου στο πρόγραμμα περιήγησης"
+msgstr "_Ιδιότητες αρχείων στην προβολή εξερεύνησης:"
 
 #: data/ui/preferences.ui:179
 msgid "_Statusbar"
@@ -264,7 +264,7 @@ msgstr "Μ_ετάβαση στον φάκελο:"
 
 #: data/ui/preferences.ui:296
 msgid "Set to C_urrent"
-msgstr "Ο_ρισμός ως τρέχον"
+msgstr "_Χρήση τρέχοντος"
 
 #: data/ui/preferences.ui:318
 msgid "_Reuse the active window to open files"
@@ -272,11 +272,11 @@ msgstr "_Χρήση του ενεργού παραθύρου για το άνο�
 
 #: data/ui/preferences.ui:377
 msgid "As_k confirmation before deleting files or catalogs"
-msgstr "Πριν την διαγραφή αρχείων ή καταλόγων να ζη_τείται επιβεβαίωση"
+msgstr "Επι_βεβαίωση πριν από τη διαγραφή αρχείων ή καταλόγων"
 
 #: data/ui/preferences.ui:392
 msgid "Ask whether to save _modified files"
-msgstr "Ερώτηση πού θα αποθηκεύονται τα _τροποποιημένα αρχεία"
+msgstr "Ερώτηση για την αποθήκευση τροποποιη_μένων αρχείων"
 
 #: data/ui/preferences.ui:407
 msgid "_Store metadata inside files if possible"
@@ -981,7 +981,8 @@ msgstr "Αδύνατη η μετονομασία του αρχείου"
 #: pix/gth-image-utils.c:117 pix/gth-image-utils.c:123
 #: extensions/image_print/gth-image-print-job.c:1921
 msgid "No suitable loader available for this file type"
-msgstr "Δεν υπάρχει κατάλληλο πρόγραμμα φόρτωσης για αυτό τον τύπο αρχείου"
+msgstr ""
+"Δεν διατίθενται κατάλληλες εφαρμογές για τη φόρτωση αυτού του τύπου αρχείου"
 
 #: pix/gth-image-saver.c:39
 msgid "No options available for this file type"
@@ -1925,7 +1926,7 @@ msgstr "_Επίπεδο συμπίεσης:"
 
 #: extensions/cairo_io/data/ui/save-options-preferences.ui:25
 msgid "Default options:"
-msgstr "Αρχικές επιλογές:"
+msgstr "Προεπιλογές:"
 
 #: extensions/cairo_io/data/ui/tga-options.ui:11
 msgid "_RLE compression"
@@ -3636,7 +3637,7 @@ msgstr "Αδύνατη η ρύθμιση παρασκήνιου επιφάνει
 #: extensions/desktop_background/callbacks.c:47
 #: extensions/desktop_background/callbacks.c:53
 msgid "Set as Background"
-msgstr "Ορισμός ως παρασκήνιο"
+msgstr "Ορισμός ως φόντο"
 
 #: extensions/edit_metadata/actions.c:75
 msgid ""
