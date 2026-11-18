@@ -6009,13 +6009,35 @@ gth_browser_viewer_scroll_event_cb (GthBrowser     *browser,
 	if (event->state & GDK_CONTROL_MASK)
 		return FALSE;
 
-	if ((event->direction != GDK_SCROLL_UP) && (event->direction != GDK_SCROLL_DOWN))
+	if ((event->direction != GDK_SCROLL_UP) && (event->direction != GDK_SCROLL_DOWN)
+		&& (event->direction != GDK_SCROLL_SMOOTH))
 		return FALSE;
 
 	handled = FALSE;
 	switch (browser->priv->scroll_action) {
 	case GTH_SCROLL_ACTION_CHANGE_FILE:
-		if (event->direction == GDK_SCROLL_UP)
+		if (event->direction == GDK_SCROLL_SMOOTH)
+		{
+			gdouble y_delta;
+			if (gdk_event_get_scroll_deltas ((GdkEvent *)event, NULL, &y_delta))
+			{
+				/* Introduce a small threshold that must be crossed to trigger
+				 * the action. This helps cancel out short touch scroll movements
+				 * which may be unintended. */
+				if (fabs(y_delta) < 0.5)
+				{
+					handled = FALSE;
+					break;
+				}
+				if (y_delta > 0)
+					gth_browser_show_next_image (browser, FALSE, FALSE);
+				else
+					gth_browser_show_prev_image (browser, FALSE, FALSE);
+				handled = TRUE;
+			}
+			break;
+		}
+		else if (event->direction == GDK_SCROLL_UP)
 			gth_browser_show_prev_image (browser, FALSE, FALSE);
 		else
 			gth_browser_show_next_image (browser, FALSE, FALSE);
